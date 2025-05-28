@@ -34,8 +34,8 @@ namespace Amazon.CostOptimizationHub.Model
     /// 
     ///  <note> 
     /// <para>
-    /// MemoryDB reserved instances are referred to as "MemoryDB reserved nodes" in customer-facing
-    /// documentation.
+    /// While the API reference uses "MemoryDB reserved instances", the user guide and other
+    /// documentation refer to them as "MemoryDB reserved nodes", as the terms are used interchangeably.
     /// </para>
     ///  </note>
     /// </summary>

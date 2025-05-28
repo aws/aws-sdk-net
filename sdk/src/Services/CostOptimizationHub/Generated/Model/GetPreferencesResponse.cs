@@ -35,6 +35,7 @@ namespace Amazon.CostOptimizationHub.Model
     public partial class GetPreferencesResponse : AmazonWebServiceResponse
     {
         private MemberAccountDiscountVisibility _memberAccountDiscountVisibility;
+        private PreferredCommitment _preferredCommitment;
         private SavingsEstimationMode _savingsEstimationMode;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetMemberAccountDiscountVisibility()
         {
             return this._memberAccountDiscountVisibility != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredCommitment. 
+        /// <para>
+        /// Retrieves the current preferences for how Reserved Instances and Savings Plans cost-saving
+        /// opportunities are prioritized in terms of payment option and term length.
+        /// </para>
+        /// </summary>
+        public PreferredCommitment PreferredCommitment
+        {
+            get { return this._preferredCommitment; }
+            set { this._preferredCommitment = value; }
+        }
+
+        // Check to see if PreferredCommitment property is set
+        internal bool IsSetPreferredCommitment()
+        {
+            return this._preferredCommitment != null;
         }
 
         /// <summary>

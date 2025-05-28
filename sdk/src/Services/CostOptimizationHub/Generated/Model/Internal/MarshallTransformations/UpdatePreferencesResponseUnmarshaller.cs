@@ -58,6 +58,12 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     response.MemberAccountDiscountVisibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("preferredCommitment", targetDepth))
+                {
+                    var unmarshaller = PreferredCommitmentUnmarshaller.Instance;
+                    response.PreferredCommitment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("savingsEstimationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

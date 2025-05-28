@@ -75,6 +75,17 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MemberAccountDiscountVisibility);
                 }
 
+                if(publicRequest.IsSetPreferredCommitment())
+                {
+                    context.Writer.WritePropertyName("preferredCommitment");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PreferredCommitmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PreferredCommitment, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSavingsEstimationMode())
                 {
                     context.Writer.WritePropertyName("savingsEstimationMode");
