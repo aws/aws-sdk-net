@@ -432,6 +432,11 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.CanaryRunConfigInput.EphemeralStorage</property>
+    <min>1024</min>
+    <max>5120</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigInput.MemoryInMB</property>
     <min>960</min>
     <max>3008</max>
@@ -440,6 +445,11 @@
     <property>Amazon.Synthetics.Model.CanaryRunConfigInput.TimeoutInSeconds</property>
     <min>3</min>
     <max>840</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.CanaryRunConfigOutput.EphemeralStorage</property>
+    <min>1024</min>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigOutput.MemoryInMB</property>

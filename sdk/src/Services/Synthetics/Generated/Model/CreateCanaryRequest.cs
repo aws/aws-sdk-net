@@ -98,7 +98,7 @@ namespace Amazon.Synthetics.Model
         /// <para>
         /// The location in Amazon S3 where Synthetics stores artifacts from the test runs of
         /// this canary. Artifacts include the log file, screenshots, and HAR files. The name
-        /// of the S3 bucket can't include a period (.).
+        /// of the Amazon S3 bucket can't include a period (.).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -118,8 +118,8 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// A structure that includes the entry point from which the canary should start running
-        /// your script. If the script is stored in an S3 bucket, the bucket name, key, and version
-        /// are also included. 
+        /// your script. If the script is stored in an Amazon S3 bucket, the bucket name, key,
+        /// and version are also included. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
