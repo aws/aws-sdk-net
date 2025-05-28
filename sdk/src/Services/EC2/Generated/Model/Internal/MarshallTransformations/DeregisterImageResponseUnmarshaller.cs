@@ -56,6 +56,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("deleteSnapshotResultSet/item", targetDepth))
+                    {
+                        var unmarshaller = DeleteSnapshotReturnCodeUnmarshaller.Instance;
+                        if (response.DeleteSnapshotResults == null)
+                        {
+                            response.DeleteSnapshotResults = new List<DeleteSnapshotReturnCode>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.DeleteSnapshotResults.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("return", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        response.Return = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 
