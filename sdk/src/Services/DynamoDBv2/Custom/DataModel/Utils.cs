@@ -334,6 +334,17 @@ namespace Amazon.DynamoDBv2.DataModel
             new Type[] { typeof(DynamoDBContext) }
         };
 
+        internal static bool IsCollectionType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type type)
+        {
+            if (type == typeof(string))
+                return false;
+
+            if (type.IsGenericType && typeof(IEnumerable).IsAssignableFrom(type))
+                return true;
+
+            return typeof(IEnumerable).IsAssignableFrom(type);
+        }
+
         internal static object InstantiateConverter([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, IDynamoDBContext context)
         {
             return InstantiateHelper(objectType, validConverterConstructorInputs, new object[] { context });
@@ -421,12 +432,13 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
+        
         internal static Type GetType(MemberInfo member)
         {
             var pi = member as PropertyInfo;
             var fi = member as FieldInfo;
             if (pi == null && fi == null)
-                throw new ArgumentOutOfRangeException("member", "member must be of type PropertyInfo or FieldInfo");
+                throw new ArgumentOutOfRangeException(nameof(member), "member must be of type PropertyInfo or FieldInfo");
 
             return (pi != null ? pi.PropertyType : fi.FieldType);
         }
@@ -528,7 +540,6 @@ namespace Amazon.DynamoDBv2.DataModel
             return members.Values.ToList();
         }
 
-#endregion
-
+        #endregion
     }
 }
