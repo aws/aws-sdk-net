@@ -72,6 +72,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActiveTracing = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EphemeralStorage", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MemoryInMB", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

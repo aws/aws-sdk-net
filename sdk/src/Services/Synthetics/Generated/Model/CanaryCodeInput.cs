@@ -32,9 +32,9 @@ namespace Amazon.Synthetics.Model
     /// <summary>
     /// Use this structure to input your script code for the canary. This structure contains
     /// the Lambda handler with the location where the canary should start running the script.
-    /// If the script is stored in an S3 bucket, the bucket name, key, and version are also
-    /// included. If the script was passed into the canary directly, the script code is contained
-    /// in the value of <c>Zipfile</c>. 
+    /// If the script is stored in an Amazon S3 bucket, the bucket name, key, and version
+    /// are also included. If the script was passed into the canary directly, the script code
+    /// is contained in the value of <c>Zipfile</c>. 
     /// 
     ///  
     /// <para>
@@ -92,8 +92,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// If your canary script is located in S3, specify the bucket name here. Do not include
-        /// <c>s3://</c> as the start of the bucket name.
+        /// If your canary script is located in Amazon S3, specify the bucket name here. Do not
+        /// include <c>s3://</c> as the start of the bucket name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -112,7 +112,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property S3Key. 
         /// <para>
-        /// The S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working
+        /// The Amazon S3 key of your script. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working
         /// with Amazon S3 Objects</a>.
         /// </para>
         /// </summary>
@@ -132,7 +132,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property S3Version. 
         /// <para>
-        /// The S3 version ID of your script.
+        /// The Amazon S3 version ID of your script.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -152,13 +152,13 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property ZipFile. 
         /// <para>
         /// If you input your canary script directly into the canary instead of referring to an
-        /// S3 location, the value of this parameter is the base64-encoded contents of the .zip
-        /// file that contains the script. It must be smaller than 225 Kb.
+        /// Amazon S3 location, the value of this parameter is the base64-encoded contents of
+        /// the .zip file that contains the script. It must be smaller than 225 Kb.
         /// </para>
         ///  
         /// <para>
-        /// For large canary scripts, we recommend that you use an S3 location instead of inputting
-        /// it directly with this parameter.
+        /// For large canary scripts, we recommend that you use an Amazon S3 location instead
+        /// of inputting it directly with this parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000000)]

@@ -84,6 +84,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     unmarshalledObject.StateReasonCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TestResult", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
