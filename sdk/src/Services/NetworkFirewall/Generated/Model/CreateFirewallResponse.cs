@@ -63,6 +63,13 @@ namespace Amazon.NetworkFirewall.Model
         /// this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall
         /// name and ARN.
         /// </para>
+        ///  
+        /// <para>
+        /// The firewall status indicates a combined status. It indicates whether all subnets
+        /// are up-to-date with the latest firewall configurations, which is based on the sync
+        /// states config values, and also whether all subnets have their endpoints fully enabled,
+        /// based on their sync states attachment values. 
+        /// </para>
         /// </summary>
         public FirewallStatus FirewallStatus
         {

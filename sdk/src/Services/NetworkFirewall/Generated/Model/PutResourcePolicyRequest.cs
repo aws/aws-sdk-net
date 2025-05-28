@@ -31,22 +31,27 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the PutResourcePolicy operation.
-    /// Creates or updates an IAM policy for your rule group or firewall policy. Use this
-    /// to share rule groups and firewall policies between accounts. This operation works
-    /// in conjunction with the Amazon Web Services Resource Access Manager (RAM) service
-    /// to manage resource sharing for Network Firewall. 
+    /// Creates or updates an IAM policy for your rule group, firewall policy, or firewall.
+    /// Use this to share these resources between accounts. This operation works in conjunction
+    /// with the Amazon Web Services Resource Access Manager (RAM) service to manage resource
+    /// sharing for Network Firewall. 
     /// 
     ///  
     /// <para>
-    /// Use this operation to create or update a resource policy for your rule group or firewall
-    /// policy. In the policy, you specify the accounts that you want to share the resource
-    /// with and the operations that you want the accounts to be able to perform. 
+    /// For information about using sharing with Network Firewall resources, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/sharing.html">Sharing
+    /// Network Firewall resources</a> in the <i>Network Firewall Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Use this operation to create or update a resource policy for your Network Firewall
+    /// rule group, firewall policy, or firewall. In the resource policy, you specify the
+    /// accounts that you want to share the Network Firewall resource with and the operations
+    /// that you want the accounts to be able to perform. 
     /// </para>
     ///  
     /// <para>
     /// When you add an account in the resource policy, you then run the following Resource
-    /// Access Manager (RAM) operations to access and accept the shared rule group or firewall
-    /// policy. 
+    /// Access Manager (RAM) operations to access and accept the shared resource. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -72,9 +77,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The IAM policy statement that lists the accounts that you want to share your rule
-        /// group or firewall policy with and the operations that you want the accounts to be
-        /// able to perform. 
+        /// The IAM policy statement that lists the accounts that you want to share your Network
+        /// Firewall resources with and the operations that you want the accounts to be able to
+        /// perform. 
         /// </para>
         ///  
         /// <para>
@@ -108,9 +113,25 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// In the Resource section of the statement, you specify the ARNs for the rule groups
-        /// and firewall policies that you want to share with the account that you specified in
-        /// <c>Arn</c>.
+        /// For a firewall resource, you can specify the following operations in the Actions section
+        /// of the statement:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// network-firewall:CreateVpcEndpointAssociation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// network-firewall:DescribeFirewallMetadata
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// network-firewall:ListFirewalls
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// In the Resource section of the statement, you specify the ARNs for the Network Firewall
+        /// resources that you want to share with the account that you specified in <c>Arn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=395000)]
@@ -129,8 +150,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the account that you want to share rule groups and
-        /// firewall policies with.
+        /// The Amazon Resource Name (ARN) of the account that you want to share your Network
+        /// Firewall resources with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
