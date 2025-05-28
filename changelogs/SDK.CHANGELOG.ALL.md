@@ -1,3 +1,15 @@
+### 4.0.21.0 (2025-05-28 18:20 UTC)
+* CostOptimizationHub (4.0.1.0)
+	* This release allows customers to modify their preferred commitment term and payment options.
+* EC2 (4.0.12.0)
+	* Enable the option to automatically delete underlying Amazon EBS snapshots when deregistering Amazon Machine Images (AMIs)
+* EventBridge (4.0.1.0)
+	* Allow for more than 2 characters for location codes in EventBridge ARNs
+* NetworkFirewall (4.0.1.0)
+	* You can now use VPC endpoint associations to create multiple firewall endpoints for a single firewall.
+* Synthetics (4.0.3.0)
+	* Add support to change ephemeral storage. Add a new field "TestResult" under CanaryRunStatus.
+
 ### 4.0.20.0 (2025-05-27 18:20 UTC)
 * CostExplorer (4.0.1.0)
 	* This release introduces Cost Comparison feature (GetCostAndUsageComparisons, GetCostComparisonDrivers) allowing you find cost variations across multiple dimensions and identify key drivers of spending changes.
