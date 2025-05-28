@@ -99,6 +99,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetVpcEndpointAssociationArn())
+                {
+                    context.Writer.WritePropertyName("VpcEndpointAssociationArn");
+                    context.Writer.Write(publicRequest.VpcEndpointAssociationArn);
+                }
+
+                if(publicRequest.IsSetVpcEndpointId())
+                {
+                    context.Writer.WritePropertyName("VpcEndpointId");
+                    context.Writer.Write(publicRequest.VpcEndpointId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

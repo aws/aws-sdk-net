@@ -136,15 +136,19 @@ namespace Amazon.NetworkFirewall
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// In Network Firewall, create stateless and stateful rule groups, to define the components
-    /// of the network traffic filtering behavior that you want your firewall to have. 
+    /// In Network Firewall, define the firewall behavior as follows: 
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Create stateless and stateful rule groups, to define the components of the network
+    /// traffic filtering behavior that you want your firewall to have. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// In Network Firewall, create a firewall policy that uses your rule groups and specifies
-    /// additional default traffic filtering behavior. 
+    /// Create a firewall policy that uses your rule groups and specifies additional default
+    /// traffic filtering behavior. 
     /// </para>
-    ///  </li> <li> 
+    ///  </li> </ol> </li> <li> 
     /// <para>
     /// In Network Firewall, create a firewall and specify your new firewall policy and VPC
     /// subnets. Network Firewall creates a firewall endpoint in each subnet that you specify,
@@ -155,7 +159,14 @@ namespace Amazon.NetworkFirewall
     /// In Amazon VPC, use ingress routing enhancements to route traffic through the new firewall
     /// endpoints.
     /// </para>
-    ///  </li> </ol>
+    ///  </li> </ol> 
+    /// <para>
+    /// After your firewall is established, you can add firewall endpoints for new Availability
+    /// Zones by following the prior steps for the Amazon VPC setup and firewall subnet definitions.
+    /// You can also add endpoints to Availability Zones that you're using in the firewall,
+    /// either for the same VPC or for another VPC, by following the prior steps for the Amazon
+    /// VPC setup, and defining the new VPC subnets as VPC endpoint associations. 
+    /// </para>
     /// </summary>
     public partial class AmazonNetworkFirewallClient : AmazonServiceClient, IAmazonNetworkFirewall
     {
@@ -886,6 +897,83 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  CreateVpcEndpointAssociation
+
+        internal virtual CreateVpcEndpointAssociationResponse CreateVpcEndpointAssociation(CreateVpcEndpointAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcEndpointAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEndpointAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcEndpointAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a firewall endpoint for an Network Firewall firewall. This type of firewall
+        /// endpoint is independent of the firewall endpoints that you specify in the <c>Firewall</c>
+        /// itself, and you define it in addition to those endpoints after the firewall has been
+        /// created. You can define a VPC endpoint association using a different VPC than the
+        /// one you used in the firewall specifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpointAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcEndpointAssociation service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateVpcEndpointAssociation">REST API Reference for CreateVpcEndpointAssociation Operation</seealso>
+        public virtual Task<CreateVpcEndpointAssociationResponse> CreateVpcEndpointAssociationAsync(CreateVpcEndpointAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcEndpointAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEndpointAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcEndpointAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteFirewall
 
         internal virtual DeleteFirewallResponse DeleteFirewall(DeleteFirewallRequest request)
@@ -1241,6 +1329,83 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  DeleteVpcEndpointAssociation
+
+        internal virtual DeleteVpcEndpointAssociationResponse DeleteVpcEndpointAssociation(DeleteVpcEndpointAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEndpointAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEndpointAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcEndpointAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified <a>VpcEndpointAssociation</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can check whether an endpoint association is in use by reviewing the route tables
+        /// for the Availability Zones where you have the endpoint subnet mapping. You can retrieve
+        /// the subnet mapping by calling <a>DescribeVpcEndpointAssociation</a>. You define and
+        /// update the route tables through Amazon VPC. As needed, update the route tables for
+        /// the Availability Zone to remove the firewall endpoint for the association. When the
+        /// route tables no longer use the firewall endpoint, you can remove the endpoint association
+        /// safely.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcEndpointAssociation service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteVpcEndpointAssociation">REST API Reference for DeleteVpcEndpointAssociation Operation</seealso>
+        public virtual Task<DeleteVpcEndpointAssociationResponse> DeleteVpcEndpointAssociationAsync(DeleteVpcEndpointAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEndpointAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEndpointAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcEndpointAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeFirewall
 
         internal virtual DescribeFirewallResponse DescribeFirewall(DescribeFirewallRequest request)
@@ -1299,6 +1464,69 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = DescribeFirewallResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFirewallResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFirewallMetadata
+
+        internal virtual DescribeFirewallMetadataResponse DescribeFirewallMetadata(DescribeFirewallMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFirewallMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFirewallMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFirewallMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the high-level information about a firewall, including the Availability Zones
+        /// where the Firewall is currently in use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFirewallMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFirewallMetadata service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallMetadata">REST API Reference for DescribeFirewallMetadata Operation</seealso>
+        public virtual Task<DescribeFirewallMetadataResponse> DescribeFirewallMetadataAsync(DescribeFirewallMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFirewallMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFirewallMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFirewallMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1735,6 +1963,68 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = DescribeTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTLSInspectionConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcEndpointAssociation
+
+        internal virtual DescribeVpcEndpointAssociationResponse DescribeVpcEndpointAssociation(DescribeVpcEndpointAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEndpointAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEndpointAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the data object for the specified VPC endpoint association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpointAssociation service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeVpcEndpointAssociation">REST API Reference for DescribeVpcEndpointAssociation Operation</seealso>
+        public virtual Task<DescribeVpcEndpointAssociationResponse> DescribeVpcEndpointAssociationAsync(DescribeVpcEndpointAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEndpointAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEndpointAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2410,6 +2700,73 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  ListVpcEndpointAssociations
+
+        internal virtual ListVpcEndpointAssociationsResponse ListVpcEndpointAssociations(ListVpcEndpointAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcEndpointAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the metadata for the VPC endpoint associations that you have defined. If
+        /// you specify a fireawll, this returns only the endpoint associations for that firewall.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Depending on your setting for max results and the number of associations, a single
+        /// call might not return the full list. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcEndpointAssociations service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListVpcEndpointAssociations">REST API Reference for ListVpcEndpointAssociations Operation</seealso>
+        public virtual Task<ListVpcEndpointAssociationsResponse> ListVpcEndpointAssociationsAsync(ListVpcEndpointAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVpcEndpointAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutResourcePolicy
 
         internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
@@ -2424,22 +2781,27 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Creates or updates an IAM policy for your rule group or firewall policy. Use this
-        /// to share rule groups and firewall policies between accounts. This operation works
-        /// in conjunction with the Amazon Web Services Resource Access Manager (RAM) service
-        /// to manage resource sharing for Network Firewall. 
+        /// Creates or updates an IAM policy for your rule group, firewall policy, or firewall.
+        /// Use this to share these resources between accounts. This operation works in conjunction
+        /// with the Amazon Web Services Resource Access Manager (RAM) service to manage resource
+        /// sharing for Network Firewall. 
         /// 
         ///  
         /// <para>
-        /// Use this operation to create or update a resource policy for your rule group or firewall
-        /// policy. In the policy, you specify the accounts that you want to share the resource
-        /// with and the operations that you want the accounts to be able to perform. 
+        /// For information about using sharing with Network Firewall resources, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/sharing.html">Sharing
+        /// Network Firewall resources</a> in the <i>Network Firewall Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this operation to create or update a resource policy for your Network Firewall
+        /// rule group, firewall policy, or firewall. In the resource policy, you specify the
+        /// accounts that you want to share the Network Firewall resource with and the operations
+        /// that you want the accounts to be able to perform. 
         /// </para>
         ///  
         /// <para>
         /// When you add an account in the resource policy, you then run the following Resource
-        /// Access Manager (RAM) operations to access and accept the shared rule group or firewall
-        /// policy. 
+        /// Access Manager (RAM) operations to access and accept the shared resource. 
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -100,6 +100,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     response.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcEndpointAssociationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VpcEndpointAssociationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcEndpointId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VpcEndpointId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

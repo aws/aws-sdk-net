@@ -116,5 +116,15 @@ namespace Amazon.NetworkFirewall.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListTLSInspectionConfigurationsPaginator ListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListVpcEndpointAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListVpcEndpointAssociationsPaginator ListVpcEndpointAssociations(ListVpcEndpointAssociationsRequest request);
     }
 }

@@ -42,6 +42,8 @@ namespace Amazon.NetworkFirewall.Model
         private FlowOperationType _flowOperationType;
         private DateTime? _flowRequestTimestamp;
         private string _statusMessage;
+        private string _vpcEndpointAssociationArn;
+        private string _vpcEndpointId;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -205,6 +207,44 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointAssociationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a VPC endpoint association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string VpcEndpointAssociationArn
+        {
+            get { return this._vpcEndpointAssociationArn; }
+            set { this._vpcEndpointAssociationArn = value; }
+        }
+
+        // Check to see if VpcEndpointAssociationArn property is set
+        internal bool IsSetVpcEndpointAssociationArn()
+        {
+            return this._vpcEndpointAssociationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointId. 
+        /// <para>
+        /// A unique identifier for the primary endpoint associated with a firewall.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=256)]
+        public string VpcEndpointId
+        {
+            get { return this._vpcEndpointId; }
+            set { this._vpcEndpointId = value; }
+        }
+
+        // Check to see if VpcEndpointId property is set
+        internal bool IsSetVpcEndpointId()
+        {
+            return this._vpcEndpointId != null;
         }
 
     }
