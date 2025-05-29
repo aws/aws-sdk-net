@@ -57,6 +57,7 @@ namespace Amazon.MWAA.Model
         private string _startupScriptS3Path;
         private WebserverAccessMode _webserverAccessMode;
         private string _weeklyMaintenanceWindowStart;
+        private WorkerReplacementStrategy _workerReplacementStrategy;
 
         /// <summary>
         /// Gets and sets the property AirflowConfigurationOptions. 
@@ -571,6 +572,39 @@ namespace Amazon.MWAA.Model
         internal bool IsSetWeeklyMaintenanceWindowStart()
         {
             return this._weeklyMaintenanceWindowStart != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerReplacementStrategy. 
+        /// <para>
+        /// The worker replacement strategy to use when updating the environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can select one of the following strategies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Forced -</b> Stops and replaces Apache Airflow workers without waiting for tasks
+        /// to complete before an update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Graceful -</b> Allows Apache Airflow workers to complete running tasks for up
+        /// to 12 hours during an update before they're stopped and replaced.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public WorkerReplacementStrategy WorkerReplacementStrategy
+        {
+            get { return this._workerReplacementStrategy; }
+            set { this._workerReplacementStrategy = value; }
+        }
+
+        // Check to see if WorkerReplacementStrategy property is set
+        internal bool IsSetWorkerReplacementStrategy()
+        {
+            return this._workerReplacementStrategy != null;
         }
 
     }

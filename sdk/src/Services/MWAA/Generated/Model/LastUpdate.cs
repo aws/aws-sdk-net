@@ -39,6 +39,7 @@ namespace Amazon.MWAA.Model
         private UpdateError _error;
         private string _source;
         private UpdateStatus _status;
+        private WorkerReplacementStrategy _workerReplacementStrategy;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -112,6 +113,24 @@ namespace Amazon.MWAA.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerReplacementStrategy. 
+        /// <para>
+        /// The worker replacement strategy used in the last update of the environment.
+        /// </para>
+        /// </summary>
+        public WorkerReplacementStrategy WorkerReplacementStrategy
+        {
+            get { return this._workerReplacementStrategy; }
+            set { this._workerReplacementStrategy = value; }
+        }
+
+        // Check to see if WorkerReplacementStrategy property is set
+        internal bool IsSetWorkerReplacementStrategy()
+        {
+            return this._workerReplacementStrategy != null;
         }
 
     }
