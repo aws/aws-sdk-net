@@ -131,7 +131,7 @@ namespace Amazon.SageMaker.Model
         /// The number of instances in the reserved capacity offering.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }

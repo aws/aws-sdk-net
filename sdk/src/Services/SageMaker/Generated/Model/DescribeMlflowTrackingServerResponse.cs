@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         private string _mlflowVersion;
         private string _roleArn;
         private string _trackingServerArn;
+        private TrackingServerMaintenanceStatus _trackingServerMaintenanceStatus;
         private string _trackingServerName;
         private TrackingServerSize _trackingServerSize;
         private TrackingServerStatus _trackingServerStatus;
@@ -229,6 +230,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrackingServerArn()
         {
             return this._trackingServerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrackingServerMaintenanceStatus. 
+        /// <para>
+        ///  The current maintenance status of the described MLflow Tracking Server. 
+        /// </para>
+        /// </summary>
+        public TrackingServerMaintenanceStatus TrackingServerMaintenanceStatus
+        {
+            get { return this._trackingServerMaintenanceStatus; }
+            set { this._trackingServerMaintenanceStatus = value; }
+        }
+
+        // Check to see if TrackingServerMaintenanceStatus property is set
+        internal bool IsSetTrackingServerMaintenanceStatus()
+        {
+            return this._trackingServerMaintenanceStatus != null;
         }
 
         /// <summary>

@@ -6775,7 +6775,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SearchTrainingPlanOfferingsRequest.InstanceCount</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -12702,7 +12702,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ReservedCapacityOffering.InstanceCount</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
