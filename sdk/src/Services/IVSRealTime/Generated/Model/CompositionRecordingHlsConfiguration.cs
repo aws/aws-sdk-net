@@ -40,8 +40,7 @@ namespace Amazon.IVSRealTime.Model
         /// Gets and sets the property TargetSegmentDurationSeconds. 
         /// <para>
         /// Defines the target duration for recorded segments generated when using composite recording.
-        /// Segments may have durations shorter than the specified value when needed to ensure
-        /// each segment begins with a keyframe. Default: 2.
+        /// Default: 2.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]

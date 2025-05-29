@@ -47,7 +47,11 @@ namespace Amazon.IVSRealTime.Model
         private string _recordings3BucketName;
         private string _recordings3Prefix;
         private ParticipantRecordingState _recordingState;
+        private ReplicationState _replicationState;
+        private ReplicationType _replicationType;
         private string _sdkVersion;
+        private string _sourceSessionId;
+        private string _sourceStageArn;
         private ParticipantState _state;
         private string _userId;
 
@@ -266,7 +270,10 @@ namespace Amazon.IVSRealTime.Model
         /// <para>
         /// S3 prefix of the S3 bucket where the participant is being recorded, if individual
         /// participant recording is enabled, or <c>""</c> (empty string), if recording is not
-        /// enabled.
+        /// enabled. If individual participant recording merge is enabled, and if a stage publisher
+        /// disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix
+        /// as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag">
+        /// Merge Fragmented Individual Participant Recordings</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -301,6 +308,43 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationState. 
+        /// <para>
+        /// The participant's replication state.
+        /// </para>
+        /// </summary>
+        public ReplicationState ReplicationState
+        {
+            get { return this._replicationState; }
+            set { this._replicationState = value; }
+        }
+
+        // Check to see if ReplicationState property is set
+        internal bool IsSetReplicationState()
+        {
+            return this._replicationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationType. 
+        /// <para>
+        /// Indicates if the participant has been replicated to another stage or is a replica
+        /// from another stage. Default: <c>NONE</c>. 
+        /// </para>
+        /// </summary>
+        public ReplicationType ReplicationType
+        {
+            get { return this._replicationType; }
+            set { this._replicationType = value; }
+        }
+
+        // Check to see if ReplicationType property is set
+        internal bool IsSetReplicationType()
+        {
+            return this._replicationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SdkVersion. 
         /// <para>
         /// The participant’s SDK version.
@@ -317,6 +361,45 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetSdkVersion()
         {
             return this._sdkVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceSessionId. 
+        /// <para>
+        /// ID of the session within the source stage, if <c>replicationType</c> is <c>REPLICA</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=16, Max=16)]
+        public string SourceSessionId
+        {
+            get { return this._sourceSessionId; }
+            set { this._sourceSessionId = value; }
+        }
+
+        // Check to see if SourceSessionId property is set
+        internal bool IsSetSourceSessionId()
+        {
+            return this._sourceSessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceStageArn. 
+        /// <para>
+        /// Source stage ARN from which this participant is replicated, if <c>replicationType</c>
+        /// is <c>REPLICA</c>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SourceStageArn
+        {
+            get { return this._sourceStageArn; }
+            set { this._sourceStageArn = value; }
+        }
+
+        // Check to see if SourceStageArn property is set
+        internal bool IsSetSourceStageArn()
+        {
+            return this._sourceStageArn != null;
         }
 
         /// <summary>

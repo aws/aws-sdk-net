@@ -77,6 +77,29 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// For participant replication:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Source stage</b> — The stage where the participant originally joined, which is
+    /// used as the source for replication.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Destination stage</b> — The stage to which the participant is replicated. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Replicated participant</b> — A participant in a stage that is replicated to one
+    /// or more destination stages. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Replica participant</b> — A participant in a destination stage that is replicated
+    /// from another stage (the source stage).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// For more information about your IVS live stream, also see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting
     /// Started with Amazon IVS Real-Time Streaming</a>.
     /// </para>
@@ -1992,6 +2015,66 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  ListParticipantReplicas
+
+        /// <summary>
+        /// Lists all the replicas for a participant from a source stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipantReplicas service method.</param>
+        /// 
+        /// <returns>The response from the ListParticipantReplicas service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">REST API Reference for ListParticipantReplicas Operation</seealso>
+        public virtual ListParticipantReplicasResponse ListParticipantReplicas(ListParticipantReplicasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParticipantReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParticipantReplicasResponseUnmarshaller.Instance;
+
+            return Invoke<ListParticipantReplicasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListParticipantReplicas operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipantReplicas operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListParticipantReplicas
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">REST API Reference for ListParticipantReplicas Operation</seealso>
+        public virtual IAsyncResult BeginListParticipantReplicas(ListParticipantReplicasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParticipantReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParticipantReplicasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListParticipantReplicas operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParticipantReplicas.</param>
+        /// 
+        /// <returns>Returns a  ListParticipantReplicasResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">REST API Reference for ListParticipantReplicas Operation</seealso>
+        public virtual ListParticipantReplicasResponse EndListParticipantReplicas(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListParticipantReplicasResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListParticipants
 
         /// <summary>
@@ -2473,6 +2556,81 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  StartParticipantReplication
+
+        /// <summary>
+        /// Starts replicating a publishing participant from a source stage to a destination stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartParticipantReplication service method.</param>
+        /// 
+        /// <returns>The response from the StartParticipantReplication service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">REST API Reference for StartParticipantReplication Operation</seealso>
+        public virtual StartParticipantReplicationResponse StartParticipantReplication(StartParticipantReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartParticipantReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartParticipantReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartParticipantReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartParticipantReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartParticipantReplication operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartParticipantReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">REST API Reference for StartParticipantReplication Operation</seealso>
+        public virtual IAsyncResult BeginStartParticipantReplication(StartParticipantReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartParticipantReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartParticipantReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartParticipantReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartParticipantReplication.</param>
+        /// 
+        /// <returns>Returns a  StartParticipantReplicationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">REST API Reference for StartParticipantReplication Operation</seealso>
+        public virtual StartParticipantReplicationResponse EndStartParticipantReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartParticipantReplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopComposition
 
         /// <summary>
@@ -2542,6 +2700,72 @@ namespace Amazon.IVSRealTime
         public virtual StopCompositionResponse EndStopComposition(IAsyncResult asyncResult)
         {
             return EndInvoke<StopCompositionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopParticipantReplication
+
+        /// <summary>
+        /// Stops a replicated participant session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopParticipantReplication service method.</param>
+        /// 
+        /// <returns>The response from the StopParticipantReplication service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">REST API Reference for StopParticipantReplication Operation</seealso>
+        public virtual StopParticipantReplicationResponse StopParticipantReplication(StopParticipantReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopParticipantReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopParticipantReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopParticipantReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopParticipantReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopParticipantReplication operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopParticipantReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">REST API Reference for StopParticipantReplication Operation</seealso>
+        public virtual IAsyncResult BeginStopParticipantReplication(StopParticipantReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopParticipantReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopParticipantReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopParticipantReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopParticipantReplication.</param>
+        /// 
+        /// <returns>Returns a  StopParticipantReplicationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">REST API Reference for StopParticipantReplication Operation</seealso>
+        public virtual StopParticipantReplicationResponse EndStopParticipantReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopParticipantReplicationResponse>(asyncResult);
         }
 
         #endregion

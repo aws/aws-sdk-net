@@ -49,7 +49,7 @@ namespace Amazon.IVSRealTime.Model
         /// (for streams using RTMP ingest).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=64)]
         public string ParticipantId
         {
             get { return this._participantId; }

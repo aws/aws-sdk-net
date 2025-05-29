@@ -37,6 +37,7 @@ namespace Amazon.IVSRealTime.Model
         private ParticipantRecordingHlsConfiguration _hlsConfiguration;
         private List<string> _mediaTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _recordingReconnectWindowSeconds;
+        private bool? _recordParticipantReplicas;
         private string _storageConfigurationArn;
         private ParticipantThumbnailConfiguration _thumbnailConfiguration;
 
@@ -99,6 +100,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetRecordingReconnectWindowSeconds()
         {
             return this._recordingReconnectWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordParticipantReplicas. 
+        /// <para>
+        /// Optional field to disable replica participant recording. If this is set to <c>false</c>
+        /// when a participant is a replica, replica participants are not recorded. Default: <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool RecordParticipantReplicas
+        {
+            get { return this._recordParticipantReplicas.GetValueOrDefault(); }
+            set { this._recordParticipantReplicas = value; }
+        }
+
+        // Check to see if RecordParticipantReplicas property is set
+        internal bool IsSetRecordParticipantReplicas()
+        {
+            return this._recordParticipantReplicas.HasValue; 
         }
 
         /// <summary>

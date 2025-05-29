@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoParticipantRecordingConfiguration Object
+    /// Response Unmarshaller for ParticipantReplica Object
     /// </summary>  
-    public class AutoParticipantRecordingConfigurationUnmarshaller : IUnmarshaller<AutoParticipantRecordingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AutoParticipantRecordingConfiguration, JsonUnmarshallerContext>
+    public class ParticipantReplicaUnmarshaller : IUnmarshaller<ParticipantReplica, XmlUnmarshallerContext>, IUnmarshaller<ParticipantReplica, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoParticipantRecordingConfiguration IUnmarshaller<AutoParticipantRecordingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ParticipantReplica IUnmarshaller<ParticipantReplica, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoParticipantRecordingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ParticipantReplica Unmarshall(JsonUnmarshallerContext context)
         {
-            AutoParticipantRecordingConfiguration unmarshalledObject = new AutoParticipantRecordingConfiguration();
+            ParticipantReplica unmarshalledObject = new ParticipantReplica();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,40 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("hlsConfiguration", targetDepth))
-                {
-                    var unmarshaller = ParticipantRecordingHlsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mediaTypes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.MediaTypes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recordingReconnectWindowSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RecordingReconnectWindowSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recordParticipantReplicas", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.RecordParticipantReplicas = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storageConfigurationArn", targetDepth))
+                if (context.TestExpression("destinationSessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageConfigurationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationSessionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("thumbnailConfiguration", targetDepth))
+                if (context.TestExpression("destinationStageArn", targetDepth))
                 {
-                    var unmarshaller = ParticipantThumbnailConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ThumbnailConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationStageArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("participantId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParticipantId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("replicationState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceSessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceSessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceStageArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceStageArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +107,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoParticipantRecordingConfigurationUnmarshaller _instance = new AutoParticipantRecordingConfigurationUnmarshaller();        
+        private static ParticipantReplicaUnmarshaller _instance = new ParticipantReplicaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoParticipantRecordingConfigurationUnmarshaller Instance
+        public static ParticipantReplicaUnmarshaller Instance
         {
             get
             {

@@ -66,6 +66,18 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("destinationSessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationSessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("destinationStageArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationStageArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("errorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,6 +106,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RemoteParticipantId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("replica", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Replica = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -90,6 +90,30 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecordingState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("replicationState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("replicationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceSessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceSessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceStageArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceStageArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
