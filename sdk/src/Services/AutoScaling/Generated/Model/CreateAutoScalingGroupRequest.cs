@@ -677,7 +677,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the placement group into which to launch your instances. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// groups</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
