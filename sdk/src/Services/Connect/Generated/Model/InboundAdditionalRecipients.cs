@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// The additional recipients information present in cc list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=50)]
         public List<EmailAddressInfo> CcAddresses
         {
             get { return this._ccAddresses; }
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// The additional recipients information present in to list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=50)]
         public List<EmailAddressInfo> ToAddresses
         {
             get { return this._toAddresses; }
