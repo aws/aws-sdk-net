@@ -195,6 +195,7 @@ namespace ServiceClientGenerator
 
             if (Configuration.Namespace == "Amazon.S3")
             {
+                // The AmazonS3RetryPolicy simply populates the static list of requests to retry for a status code of 200 which returns an exception.
                 ExecuteGenerator(new AmazonS3RetryPolicy(), "AmazonS3RetryPolicy.cs");
             }
             // The top level request that all operation requests are children of
@@ -213,7 +214,6 @@ namespace ServiceClientGenerator
           
             // Any paginators for the service
             // skip paginators for s3 until we're at the end of s3 client generation
-
             if (Configuration.ServiceModel.HasPaginators && Configuration.ServiceId != "S3")
             {
                 foreach (var operation in Configuration.ServiceModel.Operations)
@@ -282,12 +282,11 @@ namespace ServiceClientGenerator
                 var fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
                 ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName, "Marshalling");
             }
-
+            ExecuteProjectFileGenerators();
             // Test that simple customizations were generated correctly
             if (this.Configuration.ServiceId != "S3")
             {
                 GenerateCustomizationTests();
-                ExecuteProjectFileGenerators();
                 if (this.Configuration.ServiceModel.Customizations.HasExamples)
                 {
                     var servicename = Configuration.Namespace.Split('.').Last();
@@ -477,8 +476,6 @@ namespace ServiceClientGenerator
                 }
                 else
                 {
-                    //if (this.Configuration.ServiceId == "S3" && operation.ResponseStructure.IsEvent)
-                    //    return;
                     var resultGenerator = new StructureGenerator
                     {
                         ClassName = operation.Name + "Response",

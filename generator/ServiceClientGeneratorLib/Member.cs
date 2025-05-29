@@ -299,7 +299,6 @@ namespace ServiceClientGenerator
                         // if list, lookup member/metadata/xmlName
                         // otherwise, lookup metadata/xmlName
                         var source = this.OriginalMember != null ? this.OriginalMember : data;
-                        //var source = data;
                         if (IsList)
                         {
                             var member = data[MemberKey];

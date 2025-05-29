@@ -760,7 +760,7 @@ this.Write("            }\r\n");
             {
             if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
                 continue;
-				if(isGreedy && this.Config.ServiceId != "S3")
+		    if(isGreedy && this.Config.ServiceId != "S3")
 				{
 
         

@@ -1177,20 +1177,5 @@ namespace ServiceClientGenerator
                 return null;
             }
         }
-        public override bool Equals(object obj)
-        {
-            return obj is Operation o &&
-                o.Name == Name;
-        }
-
-        public override int GetHashCode()
-        {
-            unchecked // allow overflow
-            {
-                int hash = 17;
-                hash = hash * 23 + (Name != null ? Name.GetHashCode() : 0);
-                return hash;
-            }
-        }
     }
 }
