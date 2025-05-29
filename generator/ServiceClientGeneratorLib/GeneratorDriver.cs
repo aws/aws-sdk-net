@@ -204,10 +204,17 @@ namespace ServiceClientGenerator
                 string.Format("ServiceEnumerations.{0}.cs", Configuration.ClassName) : "ServiceEnumerations.cs";
 
             // Any enumerations for the service
-            this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
+            // skip s3 until we're at the end of s3 client generation
+            if (this.Configuration.ServiceId != "S3")
+            {
+                this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
+            }
+
           
             // Any paginators for the service
-            if (Configuration.ServiceModel.HasPaginators)
+            // skip paginators for s3 until we're at the end of s3 client generation
+
+            if (Configuration.ServiceModel.HasPaginators && Configuration.ServiceId != "S3")
             {
                 foreach (var operation in Configuration.ServiceModel.Operations)
                 {
@@ -224,7 +231,7 @@ namespace ServiceClientGenerator
       
             // Do not generate base exception if this is a child model.
             // We use the base exceptions generated for the parent model.
-            if (!this.Configuration.IsChildConfig)
+            if (!this.Configuration.IsChildConfig && this.Configuration.ServiceId != "S3")
             {
                 this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.ClassName + "Exception.cs");
             }
@@ -277,14 +284,18 @@ namespace ServiceClientGenerator
             }
 
             // Test that simple customizations were generated correctly
-            GenerateCustomizationTests();
-            ExecuteProjectFileGenerators();
-            if (this.Configuration.ServiceModel.Customizations.HasExamples)
+            if (this.Configuration.ServiceId != "S3")
             {
-                var servicename = Configuration.Namespace.Split('.').Last();
-                ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
-                ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
+                GenerateCustomizationTests();
+                ExecuteProjectFileGenerators();
+                if (this.Configuration.ServiceModel.Customizations.HasExamples)
+                {
+                    var servicename = Configuration.Namespace.Split('.').Last();
+                    ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
+                    ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
+                }
             }
+
         }
 
         /// <summary>
@@ -808,7 +819,6 @@ namespace ServiceClientGenerator
                 // Skip exceptions that have already been generated for the parent model
                 if (IsExceptionPresentInParentModel(this.Configuration, exceptionShape.Name) || this._processedStructures.Contains(exceptionShape.Name))
                     continue;
-
                 var generator = new StructureGenerator()
                 {
                     ClassName = exceptionShape.Name,
