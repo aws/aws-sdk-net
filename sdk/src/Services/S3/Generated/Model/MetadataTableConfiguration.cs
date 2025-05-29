@@ -13,40 +13,50 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// <para>
     /// The metadata table configuration for a general purpose bucket.
-    /// </para>
     /// </summary>
-    public class MetadataTableConfiguration
+    public partial class MetadataTableConfiguration
     {
-        private S3TablesDestination s3TablesDestination;
+        private S3TablesDestination _s3TablesDestination;
 
         /// <summary>
+        /// Gets and sets the property S3TablesDestination. 
         /// <para>
-        /// The destination information for the metadata table configuration. The destination table bucket
-        /// must be in the same Region and Amazon Web Services account as the general purpose bucket. The specified metadata
-        /// table name must be unique within the <c>aws_s3_metadata</c> namespace in the destination 
-        /// table bucket.
+        ///  The destination information for the metadata table configuration. The destination
+        /// table bucket must be in the same Region and Amazon Web Services account as the general
+        /// purpose bucket. The specified metadata table name must be unique within the <c>aws_s3_metadata</c>
+        /// namespace in the destination table bucket. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3TablesDestination S3TablesDestination
         {
-            get { return this.s3TablesDestination; }
-            set { this.s3TablesDestination = value; }
+            get { return this._s3TablesDestination; }
+            set { this._s3TablesDestination = value; }
         }
 
+        // Check to see if S3TablesDestination property is set
         internal bool IsSetS3TablesDestination()
         {
-            return s3TablesDestination != null;
+            return this._s3TablesDestination != null;
         }
+
     }
 }

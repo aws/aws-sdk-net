@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Generate AbortMultipartUpload and CreateBucketMetadataTableConfiguration from the model. Delete custom files."
+            ]
+        }
+    ]
+}
