@@ -38,9 +38,12 @@ namespace Amazon.DataSync.Model
         private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AzureBlobAuthenticationType _authenticationType;
         private AzureBlobType _blobType;
+        private CmkSecretConfig _cmkSecretConfig;
         private DateTime? _creationTime;
+        private CustomSecretConfig _customSecretConfig;
         private string _locationArn;
         private string _locationUri;
+        private ManagedSecretConfig _managedSecretConfig;
 
         /// <summary>
         /// Gets and sets the property AccessTier. 
@@ -122,6 +125,26 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CmkSecretConfig. 
+        /// <para>
+        /// Describes configuration information for a DataSync-managed secret, such as an authentication
+        /// token that DataSync uses to access a specific storage location, with a customer-managed
+        /// KMS key.
+        /// </para>
+        /// </summary>
+        public CmkSecretConfig CmkSecretConfig
+        {
+            get { return this._cmkSecretConfig; }
+            set { this._cmkSecretConfig = value; }
+        }
+
+        // Check to see if CmkSecretConfig property is set
+        internal bool IsSetCmkSecretConfig()
+        {
+            return this._cmkSecretConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The time that your Azure Blob Storage transfer location was created.
@@ -137,6 +160,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomSecretConfig. 
+        /// <para>
+        /// Describes configuration information for a customer-managed secret, such as an authentication
+        /// token that DataSync uses to access a specific storage location, with a customer-managed
+        /// KMS key.
+        /// </para>
+        /// </summary>
+        public CustomSecretConfig CustomSecretConfig
+        {
+            get { return this._customSecretConfig; }
+            set { this._customSecretConfig = value; }
+        }
+
+        // Check to see if CustomSecretConfig property is set
+        internal bool IsSetCustomSecretConfig()
+        {
+            return this._customSecretConfig != null;
         }
 
         /// <summary>
@@ -175,6 +218,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetLocationUri()
         {
             return this._locationUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedSecretConfig. 
+        /// <para>
+        /// Describes configuration information for a DataSync-managed secret, such as an authentication
+        /// token that DataSync uses to access a specific storage location. DataSync uses the
+        /// default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.
+        /// </para>
+        /// </summary>
+        public ManagedSecretConfig ManagedSecretConfig
+        {
+            get { return this._managedSecretConfig; }
+            set { this._managedSecretConfig = value; }
+        }
+
+        // Check to see if ManagedSecretConfig property is set
+        internal bool IsSetManagedSecretConfig()
+        {
+            return this._managedSecretConfig != null;
         }
 
     }
