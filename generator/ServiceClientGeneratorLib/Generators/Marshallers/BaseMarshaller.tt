@@ -134,7 +134,7 @@ using Amazon.Runtime.Internal.Util;
             {
             if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
                 continue;
-				if(isGreedy)
+				if(isGreedy && this.Config.ServiceId != "S3")
 				{
 #>
 			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
@@ -166,7 +166,7 @@ using Amazon.Runtime.Internal.Util;
                 }
             if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
                 continue;
-			if(isGreedy)
+			if(isGreedy && this.Config.ServiceId != "S3")
 				{
 #>
 			request.AddPathResource("<#=marshallLocationName#>", <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));

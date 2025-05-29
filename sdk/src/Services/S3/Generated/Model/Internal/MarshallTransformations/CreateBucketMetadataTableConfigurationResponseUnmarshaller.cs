@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CreateBucketMetadataTableConfiguration operation
-    /// </summary>
+    /// </summary>  
     public class CreateBucketMetadataTableConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>

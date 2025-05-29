@@ -14,7 +14,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> operation
-    /// </summary>
+    /// </summary>  
 <#
      if (this.Config.ServiceId == "S3")
      {

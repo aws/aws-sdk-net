@@ -760,7 +760,7 @@ this.Write("            }\r\n");
             {
             if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
                 continue;
-				if(isGreedy)
+				if(isGreedy && this.Config.ServiceId != "S3")
 				{
 
         
@@ -1128,7 +1128,7 @@ this.Write(" set\");\r\n");
                 }
             if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
                 continue;
-			if(isGreedy)
+			if(isGreedy && this.Config.ServiceId != "S3")
 				{
 
         

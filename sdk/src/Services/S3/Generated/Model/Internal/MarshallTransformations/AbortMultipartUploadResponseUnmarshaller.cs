@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AbortMultipartUpload operation
-    /// </summary>
+    /// </summary>  
     public class AbortMultipartUploadResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>

@@ -53,7 +53,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write(" operation\r\n    /// </summary>\r\n");
+            this.Write(" operation\r\n    /// </summary>  \r\n");
             
             #line 18 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
