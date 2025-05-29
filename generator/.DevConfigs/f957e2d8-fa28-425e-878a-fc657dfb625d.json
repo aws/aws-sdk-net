@@ -1,9 +1,0 @@
-{
-  "services": [
-    {
-      "serviceName": "S3",
-      "type": "patch",
-      "changeLogMessages": [ "Fixed an issue where NullReferenceException was thrown when calling AddPartETags() on CompleteMultipartUploadRequest object." ]
-    }
-  ]
-}
