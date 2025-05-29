@@ -34,11 +34,54 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class Event
     {
+        private string _destinationSessionId;
+        private string _destinationStageArn;
         private EventErrorCode _errorCode;
         private DateTime? _eventTime;
         private EventName _name;
         private string _participantId;
         private string _remoteParticipantId;
+        private bool? _replica;
+
+        /// <summary>
+        /// Gets and sets the property DestinationSessionId. 
+        /// <para>
+        /// ID of the session within the destination stage. Applicable only if the event name
+        /// is <c>REPLICATION_STARTED</c> or <c>REPLICATION_STOPPED</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=16, Max=16)]
+        public string DestinationSessionId
+        {
+            get { return this._destinationSessionId; }
+            set { this._destinationSessionId = value; }
+        }
+
+        // Check to see if DestinationSessionId property is set
+        internal bool IsSetDestinationSessionId()
+        {
+            return this._destinationSessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationStageArn. 
+        /// <para>
+        /// ARN of the stage where the participant is replicated. Applicable only if the event
+        /// name is <c>REPLICATION_STARTED</c> or <c>REPLICATION_STOPPED</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string DestinationStageArn
+        {
+            get { return this._destinationStageArn; }
+            set { this._destinationStageArn = value; }
+        }
+
+        // Check to see if DestinationStageArn property is set
+        internal bool IsSetDestinationStageArn()
+        {
+            return this._destinationStageArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ErrorCode. 
@@ -213,6 +256,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetRemoteParticipantId()
         {
             return this._remoteParticipantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Replica. 
+        /// <para>
+        /// If true, this indicates the <c>participantId</c> is a replicated participant. If this
+        /// is a subscribe event, then this flag refers to <c>remoteParticipantId</c>.
+        /// </para>
+        /// </summary>
+        public bool? Replica
+        {
+            get { return this._replica; }
+            set { this._replica = value; }
+        }
+
+        // Check to see if Replica property is set
+        internal bool IsSetReplica()
+        {
+            return this._replica.HasValue; 
         }
 
     }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoParticipantRecordingConfiguration Object
+    /// Response Unmarshaller for ParticipantReplica Object
     /// </summary>  
-    public class AutoParticipantRecordingConfigurationUnmarshaller : IJsonUnmarshaller<AutoParticipantRecordingConfiguration, JsonUnmarshallerContext>
+    public class ParticipantReplicaUnmarshaller : IJsonUnmarshaller<ParticipantReplica, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoParticipantRecordingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ParticipantReplica Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AutoParticipantRecordingConfiguration unmarshalledObject = new AutoParticipantRecordingConfiguration();
+            ParticipantReplica unmarshalledObject = new ParticipantReplica();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,40 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hlsConfiguration", targetDepth))
-                {
-                    var unmarshaller = ParticipantRecordingHlsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("mediaTypes", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.MediaTypes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recordingReconnectWindowSeconds", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RecordingReconnectWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recordParticipantReplicas", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RecordParticipantReplicas = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("storageConfigurationArn", targetDepth))
+                if (context.TestExpression("destinationSessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DestinationSessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thumbnailConfiguration", targetDepth))
+                if (context.TestExpression("destinationStageArn", targetDepth))
                 {
-                    var unmarshaller = ParticipantThumbnailConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ThumbnailConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationStageArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("participantId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParticipantId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("replicationState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicationState = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sourceSessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceSessionId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sourceStageArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceStageArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +97,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoParticipantRecordingConfigurationUnmarshaller _instance = new AutoParticipantRecordingConfigurationUnmarshaller();        
+        private static ParticipantReplicaUnmarshaller _instance = new ParticipantReplicaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoParticipantRecordingConfigurationUnmarshaller Instance
+        public static ParticipantReplicaUnmarshaller Instance
         {
             get
             {
