@@ -51,6 +51,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putBucketOwnershipControlsRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketOwnershipControlsRequest.ExpectedBucketOwner));
 
+            if (putBucketOwnershipControlsRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketOwnershipControlsRequest.ChecksumAlgorithm));
+
             request.ResourcePath = "/";
 
             request.AddSubResource("ownershipControls");
@@ -86,9 +89,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                // This operation is modeled with "httpChecksum":{"requestChecksumRequired":true}, but S3 doesn't validate the checksum at the moment. 
-                // We'll use the default behavior for now (which is to populate the Content-MD5 header).
-                ChecksumUtils.SetChecksumData(request);
+                ChecksumUtils.SetChecksumData(
+                    request,
+                    putBucketOwnershipControlsRequest.ChecksumAlgorithm,
+                    fallbackToMD5: false,
+                    isRequestChecksumRequired: true,
+                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+                );
             }
             catch (EncoderFallbackException e)
             {
