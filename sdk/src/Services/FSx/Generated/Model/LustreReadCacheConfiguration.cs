@@ -30,19 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration for the optional provisioned SSD read cache on Amazon FSx for OpenZFS
+    /// The configuration for the optional provisioned SSD read cache on Amazon FSx for Lustre
     /// file systems that use the Intelligent-Tiering storage class.
     /// </summary>
-    public partial class OpenZFSReadCacheConfiguration
+    public partial class LustreReadCacheConfiguration
     {
         private int? _sizeGiB;
-        private OpenZFSReadCacheSizingMode _sizingMode;
+        private LustreReadCacheSizingMode _sizingMode;
 
         /// <summary>
         /// Gets and sets the property SizeGiB. 
         /// <para>
         ///  Required if <c>SizingMode</c> is set to <c>USER_PROVISIONED</c>. Specifies the size
         /// of the file system's SSD read cache, in gibibytes (GiB). 
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSD read cache size is distributed across provisioned file servers in your file
+        /// system. Intelligent-Tiering file systems support a minimum of 32 GiB and maximum of
+        /// 131072 GiB for SSD read cache size for every 4,000 MB/s of throughput capacity provisioned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
@@ -79,7 +85,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public OpenZFSReadCacheSizingMode SizingMode
+        public LustreReadCacheSizingMode SizingMode
         {
             get { return this._sizingMode; }
             set { this._sizingMode = value; }

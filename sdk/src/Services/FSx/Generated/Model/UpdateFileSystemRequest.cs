@@ -52,6 +52,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>DiskIopsConfiguration</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>SelfManagedActiveDirectoryConfiguration</c> 
     /// </para>
     ///  </li> <li> 
@@ -65,10 +69,6 @@ namespace Amazon.FSx.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>ThroughputCapacity</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>DiskIopsConfiguration</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -104,6 +104,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>LustreReadCacheConfiguration</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>LustreRootSquashConfiguration</c> 
     /// </para>
     ///  </li> <li> 
@@ -117,6 +121,10 @@ namespace Amazon.FSx.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>StorageCapacity</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ThroughputCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>

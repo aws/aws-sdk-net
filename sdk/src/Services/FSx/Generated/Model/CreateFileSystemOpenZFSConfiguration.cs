@@ -206,7 +206,7 @@ namespace Amazon.FSx.Model
         /// file system will be created. By default in the Amazon FSx API and Amazon FSx console,
         /// Amazon FSx selects an available /28 IP address range for you from one of the VPC's
         /// CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed
-        /// in the same VPC/route tables.
+        /// in the same VPC/route tables, as long as they don't overlap with any subnet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=9, Max=17)]
@@ -306,7 +306,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
         /// Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes
-        /// per second (MBps). Valid values depend on the DeploymentType you choose, as follows:
+        /// per second (MBps). Valid values depend on the <c>DeploymentType</c> that you choose,
+        /// as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>

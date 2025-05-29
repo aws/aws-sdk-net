@@ -39,10 +39,12 @@ namespace Amazon.FSx.Model
         private int? _automaticBackupRetentionDays;
         private string _dailyAutomaticBackupStartTime;
         private DataCompressionType _dataCompressionType;
+        private LustreReadCacheConfiguration _dataReadCacheConfiguration;
         private LustreLogCreateConfiguration _logConfiguration;
         private UpdateFileSystemLustreMetadataConfiguration _metadataConfiguration;
         private int? _perUnitStorageThroughput;
         private LustreRootSquashConfiguration _rootSquashConfiguration;
+        private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -170,6 +172,25 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataReadCacheConfiguration. 
+        /// <para>
+        /// Specifies the optional provisioned SSD read cache on Amazon FSx for Lustre file systems
+        /// that use the Intelligent-Tiering storage class.
+        /// </para>
+        /// </summary>
+        public LustreReadCacheConfiguration DataReadCacheConfiguration
+        {
+            get { return this._dataReadCacheConfiguration; }
+            set { this._dataReadCacheConfiguration = value; }
+        }
+
+        // Check to see if DataReadCacheConfiguration property is set
+        internal bool IsSetDataReadCacheConfiguration()
+        {
+            return this._dataReadCacheConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogConfiguration. 
         /// <para>
         /// The Lustre logging configuration used when updating an Amazon FSx for Lustre file
@@ -264,6 +285,27 @@ namespace Amazon.FSx.Model
         internal bool IsSetRootSquashConfiguration()
         {
             return this._rootSquashConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputCapacity. 
+        /// <para>
+        /// The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering
+        /// storage class, measured in megabytes per second (MBps). You can only increase your
+        /// file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4000, Max=2000000)]
+        public int ThroughputCapacity
+        {
+            get { return this._throughputCapacity.GetValueOrDefault(); }
+            set { this._throughputCapacity = value; }
+        }
+
+        // Check to see if ThroughputCapacity property is set
+        internal bool IsSetThroughputCapacity()
+        {
+            return this._throughputCapacity.HasValue; 
         }
 
         /// <summary>

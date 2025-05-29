@@ -90,6 +90,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataCompressionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataReadCacheConfiguration", targetDepth))
+                {
+                    var unmarshaller = LustreReadCacheConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DataReadCacheConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataRepositoryConfiguration", targetDepth))
                 {
                     var unmarshaller = DataRepositoryConfigurationUnmarshaller.Instance;
@@ -142,6 +148,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LustreRootSquashConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RootSquashConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThroughputCapacity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ThroughputCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth))

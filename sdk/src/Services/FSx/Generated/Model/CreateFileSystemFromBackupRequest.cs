@@ -255,8 +255,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Sets the storage type for the Windows or OpenZFS file system that you're creating
-        /// from a backup. Valid values are <c>SSD</c> and <c>HDD</c>.
+        /// Sets the storage type for the Windows, OpenZFS, or Lustre file system that you're
+        /// creating from a backup. Valid values are <c>SSD</c>, <c>HDD</c>, and <c>INTELLIGENT_TIERING</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -267,6 +267,12 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Set to <c>HDD</c> to use hard disk drive storage. HDD is supported on <c>SINGLE_AZ_2</c>
         /// and <c>MULTI_AZ_1</c> FSx for Windows File Server file system deployment types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set to <c>INTELLIGENT_TIERING</c> to use fully elastic, intelligently-tiered storage.
+        /// Intelligent-Tiering is only available for OpenZFS file systems with the Multi-AZ deployment
+        /// type and for Lustre file systems with the Persistent_2 deployment type.
         /// </para>
         ///  </li> </ul> 
         /// <para>

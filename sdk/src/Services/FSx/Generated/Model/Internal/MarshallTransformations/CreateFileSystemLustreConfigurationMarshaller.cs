@@ -78,6 +78,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DataCompressionType);
             }
 
+            if(requestObject.IsSetDataReadCacheConfiguration())
+            {
+                context.Writer.WritePropertyName("DataReadCacheConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LustreReadCacheConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataReadCacheConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeploymentType())
             {
                 context.Writer.WritePropertyName("DeploymentType");
@@ -151,6 +162,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.RootSquashConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetThroughputCapacity())
+            {
+                context.Writer.WritePropertyName("ThroughputCapacity");
+                context.Writer.Write(requestObject.ThroughputCapacity);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())

@@ -62,6 +62,7 @@ namespace Amazon.FSx.Model
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
         private DataCompressionType _dataCompressionType;
+        private LustreReadCacheConfiguration _dataReadCacheConfiguration;
         private LustreDeploymentType _deploymentType;
         private DriveCacheType _driveCacheType;
         private bool? _efaEnabled;
@@ -72,6 +73,7 @@ namespace Amazon.FSx.Model
         private CreateFileSystemLustreMetadataConfiguration _metadataConfiguration;
         private int? _perUnitStorageThroughput;
         private LustreRootSquashConfiguration _rootSquashConfiguration;
+        private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -233,6 +235,26 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataReadCacheConfiguration. 
+        /// <para>
+        /// Specifies the optional provisioned SSD read cache on FSx for Lustre file systems that
+        /// use the Intelligent-Tiering storage class. Required when <c>StorageType</c> is set
+        /// to <c>INTELLIGENT_TIERING</c>.
+        /// </para>
+        /// </summary>
+        public LustreReadCacheConfiguration DataReadCacheConfiguration
+        {
+            get { return this._dataReadCacheConfiguration; }
+            set { this._dataReadCacheConfiguration = value; }
+        }
+
+        // Check to see if DataReadCacheConfiguration property is set
+        internal bool IsSetDataReadCacheConfiguration()
+        {
+            return this._dataReadCacheConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
         /// (Optional) Choose <c>SCRATCH_1</c> and <c>SCRATCH_2</c> deployment types when you
@@ -250,14 +272,14 @@ namespace Amazon.FSx.Model
         ///  
         /// <para>
         /// Choose <c>PERSISTENT_2</c> for longer-term storage and for latency-sensitive workloads
-        /// that require the highest levels of IOPS/throughput. <c>PERSISTENT_2</c> supports SSD
-        /// storage, and offers higher <c>PerUnitStorageThroughput</c> (up to 1000 MB/s/TiB).
-        /// You can optionally specify a metadata configuration mode for <c>PERSISTENT_2</c> which
-        /// supports increasing metadata performance. <c>PERSISTENT_2</c> is available in a limited
-        /// number of Amazon Web Services Regions. For more information, and an up-to-date list
-        /// of Amazon Web Services Regions in which <c>PERSISTENT_2</c> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File
-        /// system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User
-        /// Guide</i>.
+        /// that require the highest levels of IOPS/throughput. <c>PERSISTENT_2</c> supports the
+        /// SSD and Intelligent-Tiering storage classes. You can optionally specify a metadata
+        /// configuration mode for <c>PERSISTENT_2</c> which supports increasing metadata performance.
+        /// <c>PERSISTENT_2</c> is available in a limited number of Amazon Web Services Regions.
+        /// For more information, and an up-to-date list of Amazon Web Services Regions in which
+        /// <c>PERSISTENT_2</c> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html">Deployment
+        /// and storage class options for FSx for Lustre file systems</a> in the <i>Amazon FSx
+        /// for Lustre User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -479,11 +501,11 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property PerUnitStorageThroughput. 
         /// <para>
-        /// Required with <c>PERSISTENT_1</c> and <c>PERSISTENT_2</c> deployment types, provisions
-        /// the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage
-        /// capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying
-        /// ﬁle system storage capacity (TiB) by the <c>PerUnitStorageThroughput</c> (MB/s/TiB).
-        /// For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <c>PerUnitStorageThroughput</c>
+        /// Required with <c>PERSISTENT_1</c> and <c>PERSISTENT_2</c> deployment types using an
+        /// SSD or HDD storage class, provisions the amount of read and write throughput for each
+        /// 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput
+        /// capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <c>PerUnitStorageThroughput</c>
+        /// (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <c>PerUnitStorageThroughput</c>
         /// yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that
         /// you provision. 
         /// </para>
@@ -536,6 +558,27 @@ namespace Amazon.FSx.Model
         internal bool IsSetRootSquashConfiguration()
         {
             return this._rootSquashConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputCapacity. 
+        /// <para>
+        /// Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering
+        /// storage class, measured in megabytes per second (MBps). Valid values are 4000 MBps
+        /// or multiples of 4000 MBps. You pay for the amount of throughput that you provision.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4000, Max=2000000)]
+        public int ThroughputCapacity
+        {
+            get { return this._throughputCapacity.GetValueOrDefault(); }
+            set { this._throughputCapacity = value; }
+        }
+
+        // Check to see if ThroughputCapacity property is set
+        internal bool IsSetThroughputCapacity()
+        {
+            return this._throughputCapacity.HasValue; 
         }
 
         /// <summary>

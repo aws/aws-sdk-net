@@ -38,6 +38,7 @@ namespace Amazon.FSx.Model
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
         private DataCompressionType _dataCompressionType;
+        private LustreReadCacheConfiguration _dataReadCacheConfiguration;
         private DataRepositoryConfiguration _dataRepositoryConfiguration;
         private LustreDeploymentType _deploymentType;
         private DriveCacheType _driveCacheType;
@@ -47,6 +48,7 @@ namespace Amazon.FSx.Model
         private string _mountName;
         private int? _perUnitStorageThroughput;
         private LustreRootSquashConfiguration _rootSquashConfiguration;
+        private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -137,6 +139,25 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataReadCacheConfiguration. 
+        /// <para>
+        /// Required when <c>StorageType</c> is set to <c>INTELLIGENT_TIERING</c>. Specifies the
+        /// optional provisioned SSD read cache.
+        /// </para>
+        /// </summary>
+        public LustreReadCacheConfiguration DataReadCacheConfiguration
+        {
+            get { return this._dataReadCacheConfiguration; }
+            set { this._dataReadCacheConfiguration = value; }
+        }
+
+        // Check to see if DataReadCacheConfiguration property is set
+        internal bool IsSetDataReadCacheConfiguration()
+        {
+            return this._dataReadCacheConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DataRepositoryConfiguration.
         /// </summary>
         public DataRepositoryConfiguration DataRepositoryConfiguration
@@ -170,8 +191,8 @@ namespace Amazon.FSx.Model
         /// storage and workloads and encryption of data in transit. <c>PERSISTENT_2</c> offers
         /// higher <c>PerUnitStorageThroughput</c> (up to 1000 MB/s/TiB) along with a lower minimum
         /// storage capacity requirement (600 GiB). To learn more about FSx for Lustre deployment
-        /// types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
-        /// FSx for Lustre deployment options</a>.
+        /// types, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html">Deployment
+        /// and storage class options for FSx for Lustre file systems</a>.
         /// </para>
         ///  
         /// <para>
@@ -355,6 +376,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetRootSquashConfiguration()
         {
             return this._rootSquashConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputCapacity. 
+        /// <para>
+        /// The throughput of an Amazon FSx for Lustre file system using the Intelligent-Tiering
+        /// storage class, measured in megabytes per second (MBps).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4000, Max=2000000)]
+        public int ThroughputCapacity
+        {
+            get { return this._throughputCapacity.GetValueOrDefault(); }
+            set { this._throughputCapacity = value; }
+        }
+
+        // Check to see if ThroughputCapacity property is set
+        internal bool IsSetThroughputCapacity()
+        {
+            return this._throughputCapacity.HasValue; 
         }
 
         /// <summary>
