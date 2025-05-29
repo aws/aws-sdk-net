@@ -41,9 +41,9 @@ namespace Amazon.DataSync
     ///
     /// DataSync 
     /// <para>
-    /// DataSync is an online data movement and discovery service that simplifies data migration
-    /// and helps you quickly, easily, and securely transfer your file or object data to,
-    /// from, and between Amazon Web Services storage services.
+    /// DataSync is an online data movement service that simplifies data migration and helps
+    /// you quickly, easily, and securely transfer your file or object data to, from, and
+    /// between Amazon Web Services storage services.
     /// </para>
     ///  
     /// <para>
@@ -420,15 +420,16 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates a transfer <i>location</i> for a Microsoft Azure Blob Storage container. DataSync
-        /// can use this location as a transfer source or destination.
+        /// can use this location as a transfer source or destination. You can make transfers
+        /// with or without a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
+        /// agent</a> that connects to your container.
         /// 
         ///  
         /// <para>
         /// Before you begin, make sure you know <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
         /// DataSync accesses Azure Blob Storage</a> and works with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
         /// tiers</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
-        /// types</a>. You also need a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
-        /// agent</a> that can connect to your container.
+        /// types</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationAzureBlob service method.</param>
@@ -453,15 +454,16 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates a transfer <i>location</i> for a Microsoft Azure Blob Storage container. DataSync
-        /// can use this location as a transfer source or destination.
+        /// can use this location as a transfer source or destination. You can make transfers
+        /// with or without a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
+        /// agent</a> that connects to your container.
         /// 
         ///  
         /// <para>
         /// Before you begin, make sure you know <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
         /// DataSync accesses Azure Blob Storage</a> and works with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
         /// tiers</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
-        /// types</a>. You also need a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
-        /// agent</a> that can connect to your container.
+        /// types</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationAzureBlob service method.</param>
@@ -976,7 +978,9 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates a transfer <i>location</i> for an object storage system. DataSync can use
-        /// this location as a source or destination for transferring data.
+        /// this location as a source or destination for transferring data. You can make transfers
+        /// with or without a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#when-agent-required">DataSync
+        /// agent</a>.
         /// 
         ///  
         /// <para>
@@ -1006,7 +1010,9 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates a transfer <i>location</i> for an object storage system. DataSync can use
-        /// this location as a source or destination for transferring data.
+        /// this location as a source or destination for transferring data. You can make transfers
+        /// with or without a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#when-agent-required">DataSync
+        /// agent</a>.
         /// 
         ///  
         /// <para>

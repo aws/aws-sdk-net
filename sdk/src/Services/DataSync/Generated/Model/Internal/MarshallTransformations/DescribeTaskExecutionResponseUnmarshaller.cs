@@ -70,6 +70,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.BytesWritten = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EstimatedBytesToTransfer", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
                     response.Includes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LaunchTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LaunchTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ManifestConfig", targetDepth))

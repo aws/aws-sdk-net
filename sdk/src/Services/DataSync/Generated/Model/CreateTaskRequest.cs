@@ -286,7 +286,9 @@ namespace Amazon.DataSync.Model
         ///  <c>ENHANCED</c> - Transfer virtually unlimited numbers of objects with higher performance
         /// than Basic mode. Enhanced mode tasks optimize the data transfer process by listing,
         /// preparing, transferring, and verifying data in parallel. Enhanced mode is currently
-        /// available for transfers between Amazon S3 locations.
+        /// available for transfers between Amazon S3 locations, transfers between Azure Blob
+        /// and Amazon S3 without an agent, and transfers between other clouds and Amazon S3 without
+        /// an agent.
         /// </para>
         ///  <note> 
         /// <para>

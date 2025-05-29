@@ -98,10 +98,32 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BlobType);
                 }
 
+                if(publicRequest.IsSetCmkSecretConfig())
+                {
+                    context.Writer.WritePropertyName("CmkSecretConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CmkSecretConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CmkSecretConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetContainerUrl())
                 {
                     context.Writer.WritePropertyName("ContainerUrl");
                     context.Writer.Write(publicRequest.ContainerUrl);
+                }
+
+                if(publicRequest.IsSetCustomSecretConfig())
+                {
+                    context.Writer.WritePropertyName("CustomSecretConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomSecretConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomSecretConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSasConfiguration())

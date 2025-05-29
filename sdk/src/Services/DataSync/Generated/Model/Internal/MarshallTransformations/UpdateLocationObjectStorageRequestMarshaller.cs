@@ -86,6 +86,28 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetCmkSecretConfig())
+                {
+                    context.Writer.WritePropertyName("CmkSecretConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CmkSecretConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CmkSecretConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCustomSecretConfig())
+                {
+                    context.Writer.WritePropertyName("CustomSecretConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomSecretConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomSecretConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLocationArn())
                 {
                     context.Writer.WritePropertyName("LocationArn");

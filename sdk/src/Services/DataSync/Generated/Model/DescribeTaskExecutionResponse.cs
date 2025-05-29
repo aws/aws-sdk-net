@@ -37,6 +37,7 @@ namespace Amazon.DataSync.Model
         private long? _bytesCompressed;
         private long? _bytesTransferred;
         private long? _bytesWritten;
+        private DateTime? _endTime;
         private long? _estimatedBytesToTransfer;
         private long? _estimatedFilesToDelete;
         private long? _estimatedFilesToTransfer;
@@ -49,6 +50,7 @@ namespace Amazon.DataSync.Model
         private long? _filesTransferred;
         private long? _filesVerified;
         private List<FilterRule> _includes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
+        private DateTime? _launchTime;
         private ManifestConfig _manifestConfig;
         private Options _options;
         private ReportResult _reportResult;
@@ -115,6 +117,24 @@ namespace Amazon.DataSync.Model
         internal bool IsSetBytesWritten()
         {
             return this._bytesWritten.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The time that the transfer task ends.
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
@@ -420,6 +440,27 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchTime. 
+        /// <para>
+        /// The time that the task execution actually begins. For non-queued tasks, <c>LaunchTime</c>
+        /// and <c>StartTime</c> are typically the same. For queued tasks, <c>LaunchTime</c> is
+        /// typically later than <c>StartTime</c> because previously queued tasks must finish
+        /// running before newer tasks can begin.
+        /// </para>
+        /// </summary>
+        public DateTime LaunchTime
+        {
+            get { return this._launchTime.GetValueOrDefault(); }
+            set { this._launchTime = value; }
+        }
+
+        // Check to see if LaunchTime property is set
+        internal bool IsSetLaunchTime()
+        {
+            return this._launchTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ManifestConfig. 
         /// <para>
         /// The configuration of the manifest that lists the files or objects to transfer. For
@@ -494,7 +535,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time when the task execution started.
+        /// The time that DataSync sends the request to start the task execution. For non-queued
+        /// tasks, <c>LaunchTime</c> and <c>StartTime</c> are typically the same. For queued tasks,
+        /// <c>LaunchTime</c> is typically later than <c>StartTime</c> because previously queued
+        /// tasks must finish running before newer tasks can begin.
         /// </para>
         /// </summary>
         public DateTime StartTime
