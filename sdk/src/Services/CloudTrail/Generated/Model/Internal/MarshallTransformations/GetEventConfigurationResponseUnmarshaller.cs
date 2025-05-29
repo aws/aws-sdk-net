@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StopEventDataStoreIngestion operation
+    /// Response Unmarshaller for GetEventConfiguration operation
     /// </summary>  
-    public class StopEventDataStoreIngestionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetEventConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,31 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StopEventDataStoreIngestionResponse response = new StopEventDataStoreIngestionResponse();
+            GetEventConfigurationResponse response = new GetEventConfigurationResponse();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("ContextKeySelectors", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ContextKeySelector, ContextKeySelectorUnmarshaller>(ContextKeySelectorUnmarshaller.Instance);
+                    response.ContextKeySelectors = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("EventDataStoreArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EventDataStoreArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MaxEventSize", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MaxEventSize = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -71,9 +95,9 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CloudTrailARNInvalidException"))
                 {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return CloudTrailARNInvalidExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EventDataStoreARNInvalidException"))
                 {
@@ -83,10 +107,6 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return EventDataStoreNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientDependencyServiceAccessPermissionException"))
-                {
-                    return InsufficientDependencyServiceAccessPermissionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidEventDataStoreCategoryException"))
                 {
                     return InvalidEventDataStoreCategoryExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -95,6 +115,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return InvalidEventDataStoreStatusExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
+                {
+                    return InvalidParameterCombinationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -102,10 +126,6 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoManagementAccountSLRExistsException"))
                 {
                     return NoManagementAccountSLRExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NotOrganizationMasterAccountException"))
-                {
-                    return NotOrganizationMasterAccountExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
                 {
@@ -119,9 +139,9 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             return new AmazonCloudTrailException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StopEventDataStoreIngestionResponseUnmarshaller _instance = new StopEventDataStoreIngestionResponseUnmarshaller();        
+        private static GetEventConfigurationResponseUnmarshaller _instance = new GetEventConfigurationResponseUnmarshaller();        
 
-        internal static StopEventDataStoreIngestionResponseUnmarshaller GetInstance()
+        internal static GetEventConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -129,7 +149,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StopEventDataStoreIngestionResponseUnmarshaller Instance
+        public static GetEventConfigurationResponseUnmarshaller Instance
         {
             get
             {
