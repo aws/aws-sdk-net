@@ -68,8 +68,7 @@ namespace Amazon.AutoScaling.Model
     /// a mixed instances group using attribute-based instance type selection</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>. For help determining which instance types match your
     /// attributes before you apply them to your Auto Scaling group, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-get-instance-types-from-instance-requirements">Preview
-    /// instance types with specified attributes</a> in the <i>Amazon EC2 User Guide for Linux
-    /// Instances</i>.
+    /// instance types with specified attributes</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class InstanceRequirements
@@ -340,7 +339,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The minimum and maximum baseline bandwidth performance for an instance type, in Mbps.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-        /// EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -382,7 +381,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Indicates whether burstable performance instance types are included, excluded, or
         /// required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// performance instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -417,6 +416,10 @@ namespace Amazon.AutoScaling.Model
         ///  </li> <li> 
         /// <para>
         /// For instance types with Amazon Web Services CPUs, specify <c>amazon-web-services</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Apple CPUs, specify <c>apple</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -489,7 +492,7 @@ namespace Amazon.AutoScaling.Model
         /// includes EC2 instance types currently recommended for use. This typically includes
         /// the latest two to three generations in each instance family. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -517,7 +520,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Indicates whether instance types with instance store volumes are included, excluded,
         /// or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
-        /// EC2 instance store</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>

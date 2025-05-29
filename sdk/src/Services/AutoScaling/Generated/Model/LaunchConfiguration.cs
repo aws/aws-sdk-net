@@ -86,7 +86,7 @@ namespace Amazon.AutoScaling.Model
         /// The block device mapping entries that define the block devices to attach to the instances
         /// at launch. By default, the block devices specified in the block device mapping for
         /// the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-        /// device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// device mappings</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -162,7 +162,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Specifies whether the launch configuration is optimized for EBS I/O (<c>true</c>)
         /// or not (<c>false</c>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-        /// EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// EBS-optimized instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -205,7 +205,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
-        /// a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// a Linux AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -250,7 +250,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The instance type for the instances. For information about available instance types,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-        /// instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// instance types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -293,8 +293,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-        /// EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide for Linux
-        /// Instances</i>.
+        /// EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -456,10 +455,10 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The user data to make available to the launched EC2 instances. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
-        /// metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding
-        /// is performed for you, and you can load the text from a file. Otherwise, you must provide
-        /// base64-encoded text. User data is limited to 16 KB.
+        /// metadata and user data</a> in the <i>Amazon EC2 User Guide</i>. If you are using a
+        /// command line tool, base64-encoding is performed for you, and you can load the text
+        /// from a file. Otherwise, you must provide base64-encoded text. User data is limited
+        /// to 16 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Max=21847)]
