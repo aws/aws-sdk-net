@@ -57,6 +57,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string expectedBucketOwner;
         private OwnershipControls ownershipControls;
+        private ChecksumAlgorithm _checksumAlgorithm;
 
         /// <summary>
         /// The name of the Amazon S3 bucket whose OwnershipControls you want to set
@@ -104,6 +105,36 @@ namespace Amazon.S3.Model
         {
             get { return this.ownershipControls; }
             set { this.ownershipControls = value; }
+        }
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// SDK. This header will not provide any additional functionality if you don't use the
+        /// SDK. When you send this header, there must be a corresponding <c>x-amz-checksum-<i>algorithm</i>
+        /// </c> or <c>x-amz-trailer</c> header sent. Otherwise, Amazon S3 fails the
+        /// request with the HTTP status code <c>400 Bad Request</c>.
+        /// </para>
+        /// 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <c>ChecksumAlgorithm</c> parameter.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
         }
     }
 }

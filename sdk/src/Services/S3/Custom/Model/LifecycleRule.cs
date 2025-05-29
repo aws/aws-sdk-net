@@ -102,6 +102,16 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Filter identifying one or more objects to which the rule applies.
+        /// <para>
+        /// The <c>Filter</c> is used to identify objects that a Lifecycle Rule applies to. A <c>Filter</c> must have exactly one of 
+        /// <c>Prefix</c>, <c>Tag</c>, <c>ObjectSizeGreaterThan</c>, <c>ObjectSizeLessThan</c>, or <c>And</c> specified.
+        /// <c>Filter</c> is required if the <c>LifecycleRule</c> does not contain a <c>Prefix</c> element.
+        /// </para>
+        /// <note>
+        /// <para>
+        /// <c>Tag</c> filters are not supported for directory buckets.
+        /// </para> 
+        /// </note>
         /// </summary>
         public LifecycleFilter Filter
         {
