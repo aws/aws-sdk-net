@@ -214,6 +214,12 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WeeklyMaintenanceWindowStart);
                 }
 
+                if(publicRequest.IsSetWorkerReplacementStrategy())
+                {
+                    context.Writer.WritePropertyName("WorkerReplacementStrategy");
+                    context.Writer.Write(publicRequest.WorkerReplacementStrategy);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
