@@ -82,6 +82,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("UpdatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
