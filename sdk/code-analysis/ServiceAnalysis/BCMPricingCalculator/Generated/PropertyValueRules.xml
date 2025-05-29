@@ -230,6 +230,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListBillEstimateCommitmentsRequest.MaxResults</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -252,6 +253,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListBillEstimateInputCommitmentModificationsRequest.MaxResults</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -274,6 +276,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListBillEstimateInputUsageModificationsRequest.MaxResults</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -296,6 +299,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListBillEstimateLineItemsRequest.MaxResults</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -312,6 +316,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListBillEstimatesRequest.MaxResults</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -334,6 +339,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListBillScenarioCommitmentModificationsRequest.MaxResults</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -350,6 +356,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListBillScenariosRequest.MaxResults</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -372,6 +379,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListBillScenarioUsageModificationsRequest.MaxResults</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -394,6 +402,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListWorkloadEstimatesRequest.MaxResults</property>
+    <min>0</min>
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
@@ -410,7 +419,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListWorkloadEstimateUsageRequest.MaxResults</property>
-    <max>25</max>
+    <min>0</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.ListWorkloadEstimateUsageRequest.NextToken</property>

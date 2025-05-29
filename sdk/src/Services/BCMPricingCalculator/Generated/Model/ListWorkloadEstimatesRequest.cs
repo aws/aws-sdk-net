@@ -101,7 +101,7 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The maximum number of results to return per page. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=25)]
+        [AWSProperty(Min=0, Max=25)]
         public int? MaxResults
         {
             get { return this._maxResults; }
