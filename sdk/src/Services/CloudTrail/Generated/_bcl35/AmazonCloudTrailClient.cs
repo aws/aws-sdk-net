@@ -2542,6 +2542,116 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  GetEventConfiguration
+
+        /// <summary>
+        /// Retrieves the current event configuration settings for the specified event data store,
+        /// including details about maximum event size and context key selectors configured for
+        /// the event data store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetEventConfiguration service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with an ARN that is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of a trail ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
+        /// This exception is thrown when event categories of specified event data stores are
+        /// not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
+        /// The event data store is not in a status that supports the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
+        /// This exception is thrown when the combination of parameters provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventConfiguration">REST API Reference for GetEventConfiguration Operation</seealso>
+        public virtual GetEventConfigurationResponse GetEventConfiguration(GetEventConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventConfiguration operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventConfiguration">REST API Reference for GetEventConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetEventConfiguration(GetEventConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEventConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetEventConfigurationResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventConfiguration">REST API Reference for GetEventConfiguration Operation</seealso>
+        public virtual GetEventConfigurationResponse EndGetEventConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEventConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetEventDataStore
 
         /// <summary>
@@ -4365,6 +4475,144 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  PutEventConfiguration
+
+        /// <summary>
+        /// Updates the event configuration settings for the specified event data store. You can
+        /// update the maximum event size and context key selectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEventConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutEventConfiguration service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with an ARN that is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of a trail ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM identity that is used to create the organization
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientIAMAccessPermissionException">
+        /// The task can't be completed because you are signed in with an account that lacks permissions
+        /// to view or create a service-linked role. Sign in with an account that has the required
+        /// permissions and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
+        /// This exception is thrown when event categories of specified event data stores are
+        /// not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
+        /// The event data store is not in a status that supports the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
+        /// This exception is thrown when the combination of parameters provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-organizations.html">Organization
+        /// event data stores</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
+        /// This exception is thrown when the request rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventConfiguration">REST API Reference for PutEventConfiguration Operation</seealso>
+        public virtual PutEventConfigurationResponse PutEventConfiguration(PutEventConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutEventConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEventConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEventConfiguration operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEventConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventConfiguration">REST API Reference for PutEventConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutEventConfiguration(PutEventConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEventConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEventConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutEventConfigurationResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventConfiguration">REST API Reference for PutEventConfiguration Operation</seealso>
+        public virtual PutEventConfigurationResponse EndPutEventConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutEventConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutEventSelectors
 
         /// <summary>
@@ -4990,6 +5238,11 @@ namespace Amazon.CloudTrail
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientIAMAccessPermissionException">
+        /// The task can't be completed because you are signed in with an account that lacks permissions
+        /// to view or create a service-linked role. Sign in with an account that has the required
+        /// permissions and then try again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
@@ -5483,6 +5736,12 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the StartEventDataStoreIngestion service method.</param>
         /// 
         /// <returns>The response from the StartEventDataStoreIngestion service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store
         /// in your account.
@@ -5975,6 +6234,12 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the StopEventDataStoreIngestion service method.</param>
         /// 
         /// <returns>The response from the StopEventDataStoreIngestion service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store
         /// in your account.
