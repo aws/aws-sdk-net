@@ -499,7 +499,6 @@ internal sealed partial class BedrockChatClient : IChatClient
                         {
                             ToolUseId = frc.CallId,
                             Content = [new() { Json = new Document(new Dictionary<string, Document>() { ["result"] = result }) }],
-                            
                         },
                     });
                     break;
@@ -726,7 +725,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                 {
                     Name = f.Name,
                     Description = !string.IsNullOrEmpty(f.Description) ? f.Description : f.Name,
-                    InputSchema = new ToolInputSchema()
+                    InputSchema = new()
                     {
                         Json = new(schemaDictionary)
                     },
