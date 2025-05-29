@@ -28,21 +28,21 @@ namespace ServiceClientGenerator.Generators.S3
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write(@"            if (deleteBucketRequest.BucketRegion != null)
+            this.Write(@"            if (publicRequest.BucketRegion != null)
             {
                 RegionEndpoint regionEndpoint;
 #pragma warning disable CR1004
-                if (deleteBucketRequest.BucketRegion == S3Region.USEast1)
+                if (publicRequest.BucketRegion == S3Region.USEast1)
                 {
                     regionEndpoint = RegionEndpoint.USEast1;
                 }
-                else if (deleteBucketRequest.BucketRegion == S3Region.EUWest1)
+                else if (publicRequest.BucketRegion == S3Region.EUWest1)
                 {
                     regionEndpoint = RegionEndpoint.EUWest1;
                 }
                 else
                 {
-                    regionEndpoint = RegionEndpoint.GetBySystemName(deleteBucketRequest.BucketRegion.Value);
+                    regionEndpoint = RegionEndpoint.GetBySystemName(publicRequest.BucketRegion.Value);
                 }
 #pragma warning restore CR1004
                 request.AlternateEndpoint = regionEndpoint;

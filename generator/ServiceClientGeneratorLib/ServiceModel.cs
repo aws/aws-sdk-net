@@ -472,7 +472,7 @@ namespace ServiceClientGenerator
                         new Operation(this,"AbortMultipartUpload", DocumentRoot[OperationsKey]["AbortMultipartUpload"]),
                         new Operation(this,"CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
                         //new Operation(this, "CreateSession", DocumentRoot[OperationsKey]["CreateSession"]),
-                        //new Operation(this, "DeleteBucket", DocumentRoot[OperationsKey]["DeleteBucket"]),
+                        new Operation(this, "DeleteBucket", DocumentRoot[OperationsKey]["DeleteBucket"]),
                         //new Operation(this, "DeleteBucketEncryption", DocumentRoot[OperationsKey]["DeleteBucketEncryption"]),
                         //new Operation(this, "DeleteBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetadataTableConfiguration"]),
                         //new Operation(this, "DeleteBucketOwnershipControls", DocumentRoot[OperationsKey]["DeleteBucketOwnershipControls"]),

@@ -34,9 +34,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateBucketMetadataTableConfiguration operation
+    /// Response Unmarshaller for DeleteBucket operation
     /// </summary>  
-    public class CreateBucketMetadataTableConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
+    public class DeleteBucketResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateBucketMetadataTableConfigurationResponse response = new CreateBucketMetadataTableConfigurationResponse();
+            DeleteBucketResponse response = new DeleteBucketResponse();
             
             return response;
         }        
@@ -73,9 +73,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
-        private static CreateBucketMetadataTableConfigurationResponseUnmarshaller _instance = new CreateBucketMetadataTableConfigurationResponseUnmarshaller();        
+        private static DeleteBucketResponseUnmarshaller _instance = new DeleteBucketResponseUnmarshaller();        
 
-        internal static CreateBucketMetadataTableConfigurationResponseUnmarshaller GetInstance()
+        internal static DeleteBucketResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +83,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateBucketMetadataTableConfigurationResponseUnmarshaller Instance
+        public static DeleteBucketResponseUnmarshaller Instance
         {
             get
             {

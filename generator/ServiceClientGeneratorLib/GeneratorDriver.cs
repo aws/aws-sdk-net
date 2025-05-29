@@ -307,7 +307,7 @@ namespace ServiceClientGenerator
             var requestGenerator = new StructureGenerator
             {
                 ClassName = operation.Name + "Request",
-                BaseClass = string.Format("Amazon{0}Request", Configuration.ClassName),
+                BaseClass = this.Configuration.ServiceId != "S3" ? string.Format("Amazon{0}Request", Configuration.ClassName) : "AmazonWebServiceRequest",
                 StructureType = StructureType.Request,
                 Operation = operation
             };

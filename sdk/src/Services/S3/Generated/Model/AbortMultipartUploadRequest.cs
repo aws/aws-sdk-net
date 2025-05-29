@@ -119,7 +119,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class AbortMultipartUploadRequest : AmazonS3Request
+    public partial class AbortMultipartUploadRequest : AmazonWebServiceRequest
     {
         private string _bucketName;
         private string _expectedBucketOwner;

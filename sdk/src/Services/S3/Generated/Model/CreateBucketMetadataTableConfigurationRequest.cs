@@ -85,7 +85,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class CreateBucketMetadataTableConfigurationRequest : AmazonS3Request
+    public partial class CreateBucketMetadataTableConfigurationRequest : AmazonWebServiceRequest
     {
         private string _bucketName;
         private ChecksumAlgorithm _checksumAlgorithm;
