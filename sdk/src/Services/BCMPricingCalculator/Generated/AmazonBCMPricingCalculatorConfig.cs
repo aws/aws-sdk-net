@@ -32,7 +32,7 @@ namespace Amazon.BCMPricingCalculator
     public partial class AmazonBCMPricingCalculatorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BCM Pricing Calculator", "3.7.404.35");
+            InternalSDKUtils.BuildUserAgentString("BCM Pricing Calculator", "3.7.405.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>

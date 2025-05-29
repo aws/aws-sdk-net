@@ -1,3 +1,29 @@
+### 3.7.1054.0 (2025-05-29 18:34 UTC)
+* Amplify (3.7.407.0)
+	* Add support for customizable build instance sizes. CreateApp and UpdateApp operations now accept a new JobConfig parameter composed of BuildComputeType.
+* AutoScaling (3.7.408.0)
+	* Add support for "apple" CpuManufacturer in ABIS
+* BCMPricingCalculator (3.7.405.0)
+	* Add AFTER_DISCOUNTS_AND_COMMITMENTS to Workload Estimate Rate Type. Set ListWorkLoadEstimateUsage maxResults range to minimum of 0 and maximum of 300.
+* CloudTrail (3.7.404.0)
+	* CloudTrail Feature Release: Support for Enriched Events with Configurable Context for Event Data Store
+* Connect (3.7.422.0)
+	* Amazon Connect Service Feature: Email Recipient Limit Increase
+* DataExchange (3.7.402.0)
+	* This release adds Tag support for Event Action resource, through which customers can create event actions with Tags and retrieve event actions with Tags.
+* DataSync (3.7.406.0)
+	* AgentArns field is made optional for Object Storage and Azure Blob location create requests. Location credentials are now managed via Secrets Manager, and may be encrypted with service managed or customer managed keys. Authentication is now optional for Azure Blob locations.
+* FSx (3.7.404.0)
+	* FSx API changes to support the public launch of new Intelligent Tiering storage class on Amazon FSx for Lustre
+* IVSRealTime (3.7.406.0)
+	* IVS Real-Time now offers customers the participant replication that allow customers to copy a participant from one stage to another.
+* MWAA (3.7.403.0)
+	* Amazon MWAA now lets you choose a worker replacement strategy when updating an environment. This release adds two worker replacement strategies: FORCED (default), which stops workers immediately, and GRACEFUL, which allows workers to finish current tasks before shutting down.
+* S3 (3.7.417.0)
+	* Adding checksum support for S3 PutBucketOwnershipControls API.
+* SageMaker (3.7.441.0)
+	* Add maintenance status field to DescribeMlflowTrackingServer API response
+
 ### 3.7.1053.0 (2025-05-28 18:22 UTC)
 * CostOptimizationHub (3.7.405.0)
 	* This release allows customers to modify their preferred commitment term and payment options.
