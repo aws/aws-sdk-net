@@ -180,6 +180,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.IamServiceRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobConfig", targetDepth))
+                {
+                    var unmarshaller = JobConfigUnmarshaller.Instance;
+                    unmarshalledObject.JobConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

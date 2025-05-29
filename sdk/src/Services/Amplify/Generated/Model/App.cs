@@ -54,6 +54,7 @@ namespace Amazon.Amplify.Model
         private bool? _enableBranchAutoDeletion;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _iamServiceRoleArn;
+        private JobConfig _jobConfig;
         private string _name;
         private Platform _platform;
         private ProductionBranch _productionBranch;
@@ -431,6 +432,24 @@ namespace Amazon.Amplify.Model
         internal bool IsSetIamServiceRoleArn()
         {
             return this._iamServiceRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobConfig. 
+        /// <para>
+        /// The configuration details that apply to the jobs for an Amplify app.
+        /// </para>
+        /// </summary>
+        public JobConfig JobConfig
+        {
+            get { return this._jobConfig; }
+            set { this._jobConfig = value; }
+        }
+
+        // Check to see if JobConfig property is set
+        internal bool IsSetJobConfig()
+        {
+            return this._jobConfig != null;
         }
 
         /// <summary>
