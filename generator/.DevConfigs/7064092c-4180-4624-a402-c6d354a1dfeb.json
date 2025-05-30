@@ -4,7 +4,7 @@
             "serviceName": "S3",
             "type": "patch",
             "changeLogMessages": [
-                "Generate AbortMultipartUpload, CreateBucketMetadataTableConfiguration, DeleteBucket from the model. Delete custom files."
+                "Generate DeleteBucketEncryption, DeleteBucketMetadataTableConfiguration, DeleteBucketPolicy, DeleteBucketReplication, DeleteBucketTagging, DeletePublicAccessBlock from the model. Delete custom files."
             ]
         }
     ]
