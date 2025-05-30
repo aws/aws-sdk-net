@@ -54,6 +54,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AcceleratorType);
             }
 
+            if(requestObject.IsSetCapacityReservationConfig())
+            {
+                context.Writer.WritePropertyName("CapacityReservationConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProductionVariantCapacityReservationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CapacityReservationConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetContainerStartupHealthCheckTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("ContainerStartupHealthCheckTimeoutInSeconds");

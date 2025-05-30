@@ -66,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CapacityReservationConfig", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantCapacityReservationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.CapacityReservationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CurrentInstanceCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

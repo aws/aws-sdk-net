@@ -72,6 +72,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AcceleratorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CapacityReservationConfig", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantCapacityReservationConfigUnmarshaller.Instance;
+                    unmarshalledObject.CapacityReservationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ContainerStartupHealthCheckTimeoutInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
