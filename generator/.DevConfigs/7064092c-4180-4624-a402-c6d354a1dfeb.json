@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Generate DeleteBucketEncryption, DeleteBucketMetadataTableConfiguration, DeleteBucketPolicy, DeleteBucketReplication, DeleteBucketTagging, DeletePublicAccessBlock from the model. Delete custom files."
+            ]
+        }
+    ]
+}
