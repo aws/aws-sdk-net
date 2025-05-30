@@ -1,9 +1,0 @@
-{
-  "services": [
-    {
-      "serviceName": "S3",
-      "type": "patch",
-      "changeLogMessages": [ "Fixed an issue where CancellationToken for async call was not passed along in underlying invocations while uploading unseekable steam using Multipart Upload." ]
-    }
-  ]
-}

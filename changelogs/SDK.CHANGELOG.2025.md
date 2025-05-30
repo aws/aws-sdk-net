@@ -1,3 +1,11 @@
+### 4.0.23.0 (2025-05-30 18:19 UTC)
+* EMRServerless (4.0.1.0)
+	* This release adds the capability for users to specify an optional Execution IAM policy in the StartJobRun action. The resulting permissions assumed by the job run is the intersection of the permissions in the Execution Role and the specified Execution IAM Policy.
+* S3 (4.0.1.1)
+	* Fixed an issue where CancellationToken for async call was not passed along in underlying invocations while uploading unseekable steam using Multipart Upload.
+* SageMaker (4.0.6.0)
+	* Release new parameter CapacityReservationConfig in ProductionVariant
+
 ### 4.0.22.0 (2025-05-29 18:31 UTC)
 * Amplify (4.0.1.0)
 	* Add support for customizable build instance sizes. CreateApp and UpdateApp operations now accept a new JobConfig parameter composed of BuildComputeType.
