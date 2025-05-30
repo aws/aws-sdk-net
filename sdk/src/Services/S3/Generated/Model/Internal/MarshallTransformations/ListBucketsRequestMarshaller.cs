@@ -13,17 +13,30 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListDirectoryBuckets Request Marshaller
+    /// ListBuckets Request Marshaller
     /// </summary>       
-    public class ListDirectoryBucketsRequestMarshaller : IMarshaller<IRequest, ListDirectoryBucketsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    public class ListBucketsRequestMarshaller : IMarshaller<IRequest, ListBucketsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -32,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListDirectoryBucketsRequest)input);
+            return this.Marshall((ListBucketsRequest)input);
         }
 
         /// <summary>
@@ -40,25 +53,31 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListDirectoryBucketsRequest publicRequest)
+        public IRequest Marshall(ListBucketsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             request.HttpMethod = "GET";
-
+            
+            if (publicRequest.IsSetBucketRegion())
+                request.Parameters.Add("bucket-region", StringUtils.FromString(publicRequest.BucketRegion));
+            
             if (publicRequest.IsSetContinuationToken())
                 request.Parameters.Add("continuation-token", StringUtils.FromString(publicRequest.ContinuationToken));
-
-            if (publicRequest.IsSetMaxDirectoryBuckets())
-                request.Parameters.Add("max-directory-buckets", StringUtils.FromInt(publicRequest.MaxDirectoryBuckets));
+            
+            if (publicRequest.IsSetMaxBuckets())
+                request.Parameters.Add("max-buckets", StringUtils.FromInt(publicRequest.MaxBuckets));
+            
+            if (publicRequest.IsSetPrefix())
+                request.Parameters.Add("prefix", StringUtils.FromString(publicRequest.Prefix));
             request.ResourcePath = "/";
 
-
             request.UseQueryString = true;
+
             return request;
         }
-        private static ListDirectoryBucketsRequestMarshaller _instance = new ListDirectoryBucketsRequestMarshaller();
+        private static ListBucketsRequestMarshaller _instance = new ListBucketsRequestMarshaller();        
 
-        internal static ListDirectoryBucketsRequestMarshaller GetInstance()
+        internal static ListBucketsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -66,16 +85,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListDirectoryBucketsRequestMarshaller Instance
+        public static ListBucketsRequestMarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new ListDirectoryBucketsRequestMarshaller();
-                }
                 return _instance;
             }
         }
-    }
+
+    }    
 }
