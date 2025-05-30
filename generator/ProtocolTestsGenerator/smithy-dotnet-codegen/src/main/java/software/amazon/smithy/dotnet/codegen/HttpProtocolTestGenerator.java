@@ -16,6 +16,7 @@
 package software.amazon.smithy.dotnet.codegen;
 
 import software.amazon.smithy.aws.traits.ServiceTrait;
+import software.amazon.smithy.model.traits.TitleTrait;
 import software.amazon.smithy.codegen.core.CodegenException;
 import software.amazon.smithy.dotnet.codegen.utils.ProtocolTestUtils;
 import software.amazon.smithy.model.Model;
@@ -51,7 +52,14 @@ public final class HttpProtocolTestGenerator implements Runnable {
         this.model = context.model();
         this.service = settings.getService(model);
         this.context = context;
-        this.serviceNamespace = service.getTrait(ServiceTrait.class).get().getSdkId().replace(" ", "");
+
+        String serviceNamespace = null;
+        if(service.getTrait(ServiceTrait.class).isPresent())
+                serviceNamespace = service.getTrait(ServiceTrait.class).get().getSdkId();
+        else if(service.getTrait(TitleTrait.class).isPresent())
+            serviceNamespace = service.getTrait(TitleTrait.class).get().getValue().replace("Service", "");
+
+        this.serviceNamespace = serviceNamespace.replace(" ", "");
     }
 
     @Override
@@ -60,6 +68,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
         OperationIndex operationIndex = OperationIndex.of(model);
         for (OperationShape operation : new TreeSet<>(topDownIndex.getContainedOperations(service))) {
             var operationName = operation.getId().getName();
+            if (ProtocolTestCustomizations.OperationsToSkip.contains(operationName))
+                continue;
             context.writerDelegator().useFileWriter(operationName + ".cs", serviceName, writer -> {
                 this.writer = writer;
                 addServiceProtocolSpecificImports();
@@ -343,6 +353,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
             this.marshallerType = "Json";
         } else if (protocol.toLowerCase().contains("xml") || protocol.toLowerCase().contains("query")) {
             this.marshallerType = "Xml";
+        } else {
+            // TODO while implementing CBOR
+            this.marshallerType = "Json";
         }
     }
 

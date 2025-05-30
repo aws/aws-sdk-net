@@ -321,6 +321,10 @@ namespace ServiceClientGenerator
                                 _preferredProtocol = supportedProtocol;
                                 break;
                             }
+                            // TODO while implementing CBOR
+                            if (serviceProtocols.Contains("smithy-rpc-v2-cbor"))
+                                _preferredProtocol = "json";
+
                         }
                     }
                     else
