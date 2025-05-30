@@ -1,3 +1,12 @@
+### 3.7.1055.0 (2025-05-30 18:21 UTC)
+* EMRServerless (3.7.404.0)
+	* This release adds the capability for users to specify an optional Execution IAM policy in the StartJobRun action. The resulting permissions assumed by the job run is the intersection of the permissions in the Execution Role and the specified Execution IAM Policy.
+* SageMaker (3.7.442.0)
+	* Release new parameter CapacityReservationConfig in ProductionVariant
+* Core 3.7.402.64
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1054.0 (2025-05-29 18:34 UTC)
 * Amplify (3.7.407.0)
 	* Add support for customizable build instance sizes. CreateApp and UpdateApp operations now accept a new JobConfig parameter composed of BuildComputeType.

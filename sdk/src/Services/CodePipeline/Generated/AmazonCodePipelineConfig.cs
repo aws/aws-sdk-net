@@ -32,7 +32,7 @@ namespace Amazon.CodePipeline
     public partial class AmazonCodePipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodePipeline", "3.7.409.5");
+            InternalSDKUtils.BuildUserAgentString("CodePipeline", "3.7.409.6");
 
         private string _userAgent = UserAgentString;
         ///<summary>
