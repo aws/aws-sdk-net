@@ -92,6 +92,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetExecutionIamPolicy())
+                {
+                    context.Writer.WritePropertyName("executionIamPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JobRunExecutionIamPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExecutionIamPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetExecutionRoleArn())
                 {
                     context.Writer.WritePropertyName("executionRoleArn");
