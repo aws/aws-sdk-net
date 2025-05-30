@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UnifiedStudioSettings Object
+    /// Response Unmarshaller for ProductionVariantCapacityReservationSummary Object
     /// </summary>  
-    public class UnifiedStudioSettingsUnmarshaller : IJsonUnmarshaller<UnifiedStudioSettings, JsonUnmarshallerContext>
+    public class ProductionVariantCapacityReservationSummaryUnmarshaller : IJsonUnmarshaller<ProductionVariantCapacityReservationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UnifiedStudioSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProductionVariantCapacityReservationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            UnifiedStudioSettings unmarshalledObject = new UnifiedStudioSettings();
+            ProductionVariantCapacityReservationSummary unmarshalledObject = new ProductionVariantCapacityReservationSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,52 +56,40 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainAccountId", targetDepth))
+                if (context.TestExpression("AvailableInstanceCount", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainAccountId = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.AvailableInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainId", targetDepth))
+                if (context.TestExpression("CapacityReservationPreference", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CapacityReservationPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainRegion", targetDepth))
+                if (context.TestExpression("Ec2CapacityReservations", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainRegion = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<Ec2CapacityReservation, Ec2CapacityReservationUnmarshaller>(Ec2CapacityReservationUnmarshaller.Instance);
+                    unmarshalledObject.Ec2CapacityReservations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnvironmentId", targetDepth))
+                if (context.TestExpression("MlReservationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MlReservationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProjectId", targetDepth))
+                if (context.TestExpression("TotalInstanceCount", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectId = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProjectS3Path", targetDepth))
+                if (context.TestExpression("UsedByCurrentEndpoint", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectS3Path = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SingleSignOnApplicationArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SingleSignOnApplicationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StudioWebPortalAccess", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StudioWebPortalAccess = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.UsedByCurrentEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -109,12 +97,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static UnifiedStudioSettingsUnmarshaller _instance = new UnifiedStudioSettingsUnmarshaller();        
+        private static ProductionVariantCapacityReservationSummaryUnmarshaller _instance = new ProductionVariantCapacityReservationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UnifiedStudioSettingsUnmarshaller Instance
+        public static ProductionVariantCapacityReservationSummaryUnmarshaller Instance
         {
             get
             {

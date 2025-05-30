@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ProjectS3Path);
             }
 
+            if(requestObject.IsSetSingleSignOnApplicationArn())
+            {
+                context.Writer.WritePropertyName("SingleSignOnApplicationArn");
+                context.Writer.WriteStringValue(requestObject.SingleSignOnApplicationArn);
+            }
+
             if(requestObject.IsSetStudioWebPortalAccess())
             {
                 context.Writer.WritePropertyName("StudioWebPortalAccess");

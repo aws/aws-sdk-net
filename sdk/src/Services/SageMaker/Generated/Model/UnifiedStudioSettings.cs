@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _environmentId;
         private string _projectId;
         private string _projectS3Path;
+        private string _singleSignOnApplicationArn;
         private FeatureStatus _studioWebPortalAccess;
 
         /// <summary>
@@ -158,6 +159,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProjectS3Path()
         {
             return this._projectS3Path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SingleSignOnApplicationArn. 
+        /// <para>
+        /// The ARN of the application managed by SageMaker AI and SageMaker Unified Studio in
+        /// the Amazon Web Services IAM Identity Center.
+        /// </para>
+        /// </summary>
+        public string SingleSignOnApplicationArn
+        {
+            get { return this._singleSignOnApplicationArn; }
+            set { this._singleSignOnApplicationArn = value; }
+        }
+
+        // Check to see if SingleSignOnApplicationArn property is set
+        internal bool IsSetSingleSignOnApplicationArn()
+        {
+            return this._singleSignOnApplicationArn != null;
         }
 
         /// <summary>
