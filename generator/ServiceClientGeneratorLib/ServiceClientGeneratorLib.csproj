@@ -229,11 +229,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Generators/Marshallers/BaseMarshaller.cs">
-      <DependentUpon>BaseMarshaller.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Update="Generators/SourceFiles/BaseRequest.cs">
       <DependentUpon>BaseRequest.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -294,11 +289,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Generators/Marshallers/RestXmlResponseUnmarshaller.cs">
-      <DependentUpon>RestXmlResponseUnmarshaller.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Update="Generators/Marshallers/RestXmlStructureUnmarshaller.cs">
       <DependentUpon>RestXmlStructureUnmarshaller.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -334,10 +324,25 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Generators\Marshallers\BaseMarshaller.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseMarshaller.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\Marshallers\EventStreamPublisherMarshaller.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EventStreamPublisherMarshaller.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Marshallers\RestXmlResponseUnmarshaller.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RestXmlResponseUnmarshaller.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\S3\DeleteBucketRequestCustomMarshallLogic.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DeleteBucketRequestCustomMarshallLogic.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\SourceFiles\EventCollectionAddImplementation.cs">
       <DesignTime>True</DesignTime>
@@ -622,6 +627,10 @@
     <None Update="Generators\Marshallers\EventStreamPublisherMarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EventStreamPublisherMarshaller.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\S3\DeleteBucketRequestCustomMarshallLogic.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DeleteBucketRequestCustomMarshallLogic.cs</LastGenOutput>
     </None>
     <None Update="Generators\SourceFiles\EventCollectionAddImplementation.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

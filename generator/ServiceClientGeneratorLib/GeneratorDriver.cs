@@ -195,10 +195,8 @@ namespace ServiceClientGenerator
 
             if (Configuration.Namespace == "Amazon.S3")
             {
-                ExecuteProjectFileGenerators();
                 // The AmazonS3RetryPolicy simply populates the static list of requests to retry for a status code of 200 which returns an exception.
                 ExecuteGenerator(new AmazonS3RetryPolicy(), "AmazonS3RetryPolicy.cs");
-                return;
             }
             // The top level request that all operation requests are children of
             ExecuteGenerator(new BaseRequest(), "Amazon" + Configuration.ClassName + "Request.cs", "Model");
@@ -207,10 +205,16 @@ namespace ServiceClientGenerator
                 string.Format("ServiceEnumerations.{0}.cs", Configuration.ClassName) : "ServiceEnumerations.cs";
 
             // Any enumerations for the service
-            this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
+            // skip s3 until we're at the end of s3 client generation
+            if (this.Configuration.ServiceId != "S3")
+            {
+                this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
+            }
+
           
             // Any paginators for the service
-            if (Configuration.ServiceModel.HasPaginators)
+            // skip paginators for s3 until we're at the end of s3 client generation
+            if (Configuration.ServiceModel.HasPaginators && Configuration.ServiceId != "S3")
             {
                 foreach (var operation in Configuration.ServiceModel.Operations)
                 {
@@ -227,23 +231,42 @@ namespace ServiceClientGenerator
       
             // Do not generate base exception if this is a child model.
             // We use the base exceptions generated for the parent model.
-            if (!this.Configuration.IsChildConfig)
+            if (!this.Configuration.IsChildConfig && this.Configuration.ServiceId != "S3")
             {
                 this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.ClassName + "Exception.cs");
             }
 
-            // Generates the Request, Response, Marshaller, Unmarshaller, and Exception objects for a given client operation
-            foreach (var operation in Configuration.ServiceModel.Operations)
+            if (Configuration.Namespace == "Amazon.S3")
             {
-                GenerateRequest(operation);
-                GenerateResponse(operation);
-                GenerateRequestMarshaller(operation);
-                GenerateResponseUnmarshaller(operation);
-                GenerateEndpointDiscoveryMarshaller(operation);
-                GenerateExceptions(operation);
-                GenerateStructures(operation);
-                GenerateEventStreamPublisher(operation);
+                foreach (var operation in Configuration.ServiceModel.S3AllowListOperations)
+                {
+                    GenerateRequest(operation);
+                    GenerateResponse(operation);
+                    GenerateRequestMarshaller(operation);
+                    GenerateResponseUnmarshaller(operation);
+                    GenerateEndpointDiscoveryMarshaller(operation);
+                    GenerateExceptions(operation);
+                    GenerateStructures(operation);
+                    GenerateEventStreamPublisher(operation);
+                }
             }
+
+            else
+            {
+                foreach (var operation in Configuration.ServiceModel.Operations)
+                {
+                    GenerateRequest(operation);
+                    GenerateResponse(operation);
+                    GenerateRequestMarshaller(operation);
+                    GenerateResponseUnmarshaller(operation);
+                    GenerateEndpointDiscoveryMarshaller(operation);
+                    GenerateExceptions(operation);
+                    GenerateStructures(operation);
+                    GenerateEventStreamPublisher(operation);
+                }
+            }
+                // Generates the Request, Response, Marshaller, Unmarshaller, and Exception objects for a given client operation
+
 
             if (Configuration.ServiceModel.Customizations.GenerateCustomUnmarshaller)
             {
@@ -259,16 +282,19 @@ namespace ServiceClientGenerator
                 var fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
                 ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName, "Marshalling");
             }
-
-            // Test that simple customizations were generated correctly
-            GenerateCustomizationTests();
             ExecuteProjectFileGenerators();
-            if (this.Configuration.ServiceModel.Customizations.HasExamples)
+            // Test that simple customizations were generated correctly
+            if (this.Configuration.ServiceId != "S3")
             {
-                var servicename = Configuration.Namespace.Split('.').Last();
-                ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
-                ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
+                GenerateCustomizationTests();
+                if (this.Configuration.ServiceModel.Customizations.HasExamples)
+                {
+                    var servicename = Configuration.Namespace.Split('.').Last();
+                    ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
+                    ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
+                }
             }
+
         }
 
         /// <summary>
@@ -280,7 +306,7 @@ namespace ServiceClientGenerator
             var requestGenerator = new StructureGenerator
             {
                 ClassName = operation.Name + "Request",
-                BaseClass = string.Format("Amazon{0}Request", Configuration.ClassName),
+                BaseClass = this.Configuration.ServiceId != "S3" ? string.Format("Amazon{0}Request", Configuration.ClassName) : "AmazonWebServiceRequest",
                 StructureType = StructureType.Request,
                 Operation = operation
             };
@@ -671,6 +697,8 @@ namespace ServiceClientGenerator
                     // instead we generated a layer over the structure. That layer is EventStreamGenerator.tt.
                     if (nestedStructure.IsEventStream)
                         continue;
+                    if (this.Configuration.ServiceId == "S3" && nestedStructure.IsEvent || nestedStructure.IsEventStream)
+                        continue;
                     // Skip already processed unmarshallers. This handles the case of structures being returned in mulitiple requests.
                     if (!this._processedUnmarshallers.Contains(nestedStructure.Name))
                     {
@@ -700,7 +728,14 @@ namespace ServiceClientGenerator
 
                 if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(nestedStructure.Name))
                     continue;
-
+                if (this.Configuration.ServiceId == "S3")
+                {
+                    if (shape.IsEvent || shape.IsEventStream)
+                    {
+                        this._processedUnmarshallers.Add(nestedStructure.Name);
+                        continue;
+                    }
+                }
                 // Document structure don't need a custom unmarshaller, they use 
                 // the 'simple' DocumentMarshaller in AWSSDK.
                 if (nestedStructure.IsDocument)
@@ -781,7 +816,6 @@ namespace ServiceClientGenerator
                 // Skip exceptions that have already been generated for the parent model
                 if (IsExceptionPresentInParentModel(this.Configuration, exceptionShape.Name) || this._processedStructures.Contains(exceptionShape.Name))
                     continue;
-
                 var generator = new StructureGenerator()
                 {
                     ClassName = exceptionShape.Name,
@@ -1002,6 +1036,14 @@ namespace ServiceClientGenerator
                 if (definition.IsEventStream && !Configuration.ServiceModel.Operations.Any(x => string.Equals(x.ResponseEventStreamingMember?.Shape.Name, definition.Name)))
                     continue;
 
+                if (this.Configuration.ServiceId == "S3")
+                {
+                    if (definition.IsEvent || definition.IsEventStream)
+                    {
+                        this._processedStructures.Add(definition.Name);
+                        continue;
+                    }
+                }
                 if (!this._processedStructures.Contains(definition.Name))
                 {
                     // if the shape had a substitution, we can skip generation

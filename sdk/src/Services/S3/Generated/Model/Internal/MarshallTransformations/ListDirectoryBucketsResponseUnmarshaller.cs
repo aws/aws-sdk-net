@@ -12,15 +12,25 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
+using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -36,18 +46,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ListDirectoryBucketsResponse response = new ListDirectoryBucketsResponse();
-            UnmarshallResult(context, response);
-
+            UnmarshallResult(context,response);
+            
             return response;
-        }
+        }        
 
         private static void UnmarshallResult(XmlUnmarshallerContext context, ListDirectoryBucketsResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            if (context.IsStartOfDocument)
-                targetDepth += 1;
-
+            if (context.IsStartOfDocument) 
+                   targetDepth += 1;
+            if (context.IsEmptyResponse)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
@@ -58,7 +71,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             response.Buckets = new List<S3Bucket>();
                         }
-                        var unmarshaller = BucketUnmarshaller.Instance;
+                        var unmarshaller = S3BucketUnmarshaller.Instance;
                         response.Buckets.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
@@ -74,10 +87,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-
+          
             return;
         }
-
+  
 
         /// <summary>
         /// Unmarshaller error response to exception.
@@ -88,7 +101,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -98,10 +111,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
             }
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
-        private static ListDirectoryBucketsResponseUnmarshaller _instance = new ListDirectoryBucketsResponseUnmarshaller();
+        private static ListDirectoryBucketsResponseUnmarshaller _instance = new ListDirectoryBucketsResponseUnmarshaller();        
 
         internal static ListDirectoryBucketsResponseUnmarshaller GetInstance()
         {
@@ -115,12 +128,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new ListDirectoryBucketsResponseUnmarshaller();
-                }
                 return _instance;
             }
         }
+
     }
 }
