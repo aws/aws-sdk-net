@@ -46,11 +46,11 @@ namespace AWSSDKDocSamples.S3
     ""Effect"":""Allow"", 
     ""Principal"": ""*"", 
     ""Action"":[""s3:PutObject"",""s3:GetObject""], 
-    ""Resource"":[""arn:aws:s3:::samplebucketname/*""] 
+    ""Resource"":[""arn:aws:s3:::amzn-s3-demo-bucketname/*""] 
 }]}";
                 PutBucketPolicyRequest putRequest = new PutBucketPolicyRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Policy = newPolicy
                 };
                 client.PutBucketPolicy(putRequest);
@@ -59,7 +59,7 @@ namespace AWSSDKDocSamples.S3
                 // Retrieve current policy
                 GetBucketPolicyRequest getRequest = new GetBucketPolicyRequest
                 {
-                    BucketName = "SampleBucket"
+                    BucketName = "amzn-s3-demo-bucket"
                 };
                 string policy = client.GetBucketPolicy(getRequest).Policy;
 
@@ -70,7 +70,7 @@ namespace AWSSDKDocSamples.S3
                 // Delete current policy
                 DeleteBucketPolicyRequest deleteRequest = new DeleteBucketPolicyRequest
                 {
-                    BucketName = "SampleBucket"
+                    BucketName = "amzn-s3-demo-bucket"
                 };
                 client.DeleteBucketPolicy(deleteRequest);
 
@@ -91,7 +91,7 @@ namespace AWSSDKDocSamples.S3
                 // Construct request
                 GetBucketLocationRequest request = new GetBucketLocationRequest
                 {
-                    BucketName = "SampleBucket"
+                    BucketName = "amzn-s3-demo-bucket"
                 };
 
                 // Issue call
@@ -112,7 +112,7 @@ namespace AWSSDKDocSamples.S3
                 // Construct request
                 PutBucketRequest request = new PutBucketRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     BucketRegion = S3Region.EU,         // set region to EU
                     CannedACL = S3CannedACL.PublicRead  // make bucket publicly readable
                 };
@@ -132,7 +132,7 @@ namespace AWSSDKDocSamples.S3
                 // Construct request
                 DeleteBucketRequest request = new DeleteBucketRequest
                 {
-                    BucketName = "SampleBucket"
+                    BucketName = "amzn-s3-demo-bucket"
                 };
 
                 // Issue call
@@ -150,7 +150,7 @@ namespace AWSSDKDocSamples.S3
                 // List and delete all objects
                 ListObjectsRequest listRequest = new ListObjectsRequest
                 {
-                    BucketName = "SampleBucket"
+                    BucketName = "amzn-s3-demo-bucket"
                 };
 
                 ListObjectsResponse listResponse;
@@ -163,7 +163,7 @@ namespace AWSSDKDocSamples.S3
                         // Delete each object
                         client.DeleteObject(new DeleteObjectRequest
                         {
-                            BucketName = "SampleBucket",
+                            BucketName = "amzn-s3-demo-bucket",
                             Key = obj.Key
                         });
                     }
@@ -175,7 +175,7 @@ namespace AWSSDKDocSamples.S3
                 // Construct DeleteBucket request
                 DeleteBucketRequest request = new DeleteBucketRequest
                 {
-                    BucketName = "SampleBucket"
+                    BucketName = "amzn-s3-demo-bucket"
                 };
 
                 // Issue call
@@ -213,7 +213,7 @@ namespace AWSSDKDocSamples.S3
                 };
                 PutLifecycleConfigurationRequest putRequest = new PutLifecycleConfigurationRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Configuration = newConfiguration
                 };
                 client.PutLifecycleConfiguration(putRequest);
@@ -222,7 +222,7 @@ namespace AWSSDKDocSamples.S3
                 // Retrieve current configuration
                 GetLifecycleConfigurationRequest getRequest = new GetLifecycleConfigurationRequest
                 {
-                    BucketName = "SampleBucket"
+                    BucketName = "amzn-s3-demo-bucket"
                 };
                 LifecycleConfiguration configuration = client.GetLifecycleConfiguration(getRequest).Configuration;
 
@@ -244,7 +244,7 @@ namespace AWSSDKDocSamples.S3
                 // Delete current configuration
                 DeleteLifecycleConfigurationRequest deleteRequest = new DeleteLifecycleConfigurationRequest
                 {
-                    BucketName = "SampleBucket"
+                    BucketName = "amzn-s3-demo-bucket"
                 };
                 client.DeleteLifecycleConfiguration(deleteRequest);
 
@@ -268,7 +268,7 @@ namespace AWSSDKDocSamples.S3
                 // List all objects
                 ListObjectsRequest listRequest = new ListObjectsRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                 };
 
                 ListObjectsResponse listResponse;
@@ -300,7 +300,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a GetObject request
                 GetObjectRequest request = new GetObjectRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1"
                 };
 
@@ -328,7 +328,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a GetObject request
                 GetObjectRequest request = new GetObjectRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1"
                 };
 
@@ -352,7 +352,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a GetObjectMetadata request
                 GetObjectMetadataRequest request = new GetObjectMetadataRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1"
                 };
 
@@ -378,7 +378,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a PutObject request
                 PutObjectRequest request = new PutObjectRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     ContentBody = "This is sample content..."
                 };
@@ -398,7 +398,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a PutObject request
                 PutObjectRequest request = new PutObjectRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     FilePath = "contents.txt"
                 };
@@ -418,7 +418,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a PutObject request
                 PutObjectRequest request = new PutObjectRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                 };
                 using (FileStream stream = new FileStream("contents.txt", FileMode.Open))
@@ -441,7 +441,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a DeleteObject request
                 DeleteObjectRequest request = new DeleteObjectRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1"
                 };
 
@@ -460,7 +460,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a DeleteObject request
                 DeleteObjectsRequest request = new DeleteObjectsRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Objects = new List<KeyVersion>
                     {
                         new KeyVersion() {Key = "Item1"},
@@ -505,7 +505,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a CopyObject request
                 CopyObjectRequest request = new CopyObjectRequest
                 {
-                    SourceBucket = "SampleBucket",
+                    SourceBucket = "amzn-s3-demo-bucket",
                     SourceKey = "Item1",
                     DestinationBucket = "AnotherBucket",
                     DestinationKey = "Copy1",
@@ -527,7 +527,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a CopyObject request
                 CopyObjectRequest request = new CopyObjectRequest
                 {
-                    SourceBucket = "SampleBucket",
+                    SourceBucket = "amzn-s3-demo-bucket",
                     SourceKey = "Item1",
                     DestinationBucket = "AnotherBucket",
                     DestinationKey = "Copy1",
@@ -549,17 +549,17 @@ namespace AWSSDKDocSamples.S3
                 // Turn versioning on for a bucket
                 client.PutBucketVersioning(new PutBucketVersioningRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     VersioningConfig = new S3BucketVersioningConfig { Status = "Enable" }
                 });
 
                 // Populate bucket with multiple items, each with multiple versions
-                PopulateBucket(client, "SampleBucket");
+                PopulateBucket(client, "amzn-s3-demo-bucket");
 
                 // Get versions
                 ListVersionsRequest request = new ListVersionsRequest
                 {
-                    BucketName = "SampleBucket"
+                    BucketName = "amzn-s3-demo-bucket"
                 };
 
                 // Make paged ListVersions calls
@@ -599,7 +599,7 @@ namespace AWSSDKDocSamples.S3
                 // Initiate multipart upload
                 InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1"
                 };
                 InitiateMultipartUploadResponse initResponse = client.InitiateMultipartUpload(initRequest);
@@ -607,7 +607,7 @@ namespace AWSSDKDocSamples.S3
                 // Upload part 1
                 UploadPartRequest uploadRequest = new UploadPartRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     UploadId = initResponse.UploadId,
                     PartNumber = 1,
@@ -619,7 +619,7 @@ namespace AWSSDKDocSamples.S3
                 // Upload part 2
                 uploadRequest = new UploadPartRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     UploadId = initResponse.UploadId,
                     PartNumber = 2,
@@ -631,7 +631,7 @@ namespace AWSSDKDocSamples.S3
                 // Upload part 3
                 uploadRequest = new UploadPartRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     UploadId = initResponse.UploadId,
                     PartNumber = 3,
@@ -642,7 +642,7 @@ namespace AWSSDKDocSamples.S3
                 // List parts for current upload
                 ListPartsRequest listPartRequest = new ListPartsRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     UploadId = initResponse.UploadId
                 };
@@ -652,7 +652,7 @@ namespace AWSSDKDocSamples.S3
                 // Complete the multipart upload
                 CompleteMultipartUploadRequest compRequest = new CompleteMultipartUploadRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     UploadId = initResponse.UploadId,
                     PartETags = new List<PartETag>
@@ -704,7 +704,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a CopyObject request
                 GetPreSignedUrlRequest request = new GetPreSignedUrlRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     Expires = DateTime.UtcNow.AddMinutes(5)
                 };
@@ -727,7 +727,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a CopyObject request
                 GetPreSignedUrlRequest request = new GetPreSignedUrlRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     Expires = DateTime.UtcNow.AddMinutes(5)
                 };
@@ -756,7 +756,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a CopyObject request
                 GetPreSignedUrlRequest request = new GetPreSignedUrlRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Expires = DateTime.UtcNow.AddMinutes(5)
                 };
 
@@ -799,7 +799,7 @@ namespace AWSSDKDocSamples.S3
                 // Create a CopyObject request
                 GetPreSignedUrlRequest request = new GetPreSignedUrlRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     Verb = HttpVerb.PUT,
                     Expires = DateTime.UtcNow.AddDays(10)
@@ -839,7 +839,7 @@ namespace AWSSDKDocSamples.S3
                 // Set Canned ACL (PublicRead) for an existing item
                 client.PutACL(new PutACLRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     CannedACL = S3CannedACL.PublicRead
                 });
@@ -848,7 +848,7 @@ namespace AWSSDKDocSamples.S3
                 // (This reverts ACL back to default for object)
                 client.PutACL(new PutACLRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     CannedACL = S3CannedACL.Private
                 });
@@ -865,7 +865,7 @@ namespace AWSSDKDocSamples.S3
                 // Retrieve ACL for object
                 S3AccessControlList acl = client.GetACL(new GetACLRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                 }).AccessControlList;
 
@@ -890,7 +890,7 @@ namespace AWSSDKDocSamples.S3
                 // Set new ACL
                 PutACLResponse response = client.PutACL(new PutACLRequest
                 {
-                    BucketName = "SampleBucket",
+                    BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
                     AccessControlList = acl
                 });
