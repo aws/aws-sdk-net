@@ -12,19 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Util;
+#if !NET
 using Org.BouncyCastle.OpenSsl;
-using System.Globalization;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Security;
+#endif
 
 #pragma warning disable 1591
 
@@ -266,8 +266,7 @@ namespace Amazon.CloudFront
         /// <returns>A signed URL that will permit access to distribution and S3 objects as specified in the policy document.</returns>
         public static string SignUrl(string resourceUrlOrPath, string keyPairId, TextReader privateKey, string policy)
         {
-            RSAParameters rsaParameters = ConvertPEMToRSAParameters(privateKey);
-            byte[] signatureBytes = SignWithSha1RSA(UTF8Encoding.UTF8.GetBytes(policy), rsaParameters);
+            byte[] signatureBytes = SignWithSha1RSA(Encoding.UTF8.GetBytes(policy), privateKey);
 
             string urlSafePolicy = MakeStringUrlSafe(policy);
             string urlSafeSignature = MakeBytesUrlSafe(signatureBytes);
@@ -330,11 +329,10 @@ namespace Amazon.CloudFront
                                            DateTime expiresOn)
         {
             string epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn);
-            RSAParameters rsaParameters = ConvertPEMToRSAParameters(privateKey);
             string cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath
                     + "\",\"Condition\":{\"DateLessThan\":{\"AWS:EpochTime\":" + epochSeconds
                     + "}}}]}";
-            byte[] signatureBytes = SignWithSha1RSA(UTF8Encoding.UTF8.GetBytes(cannedPolicy), rsaParameters);
+            byte[] signatureBytes = SignWithSha1RSA(Encoding.UTF8.GetBytes(cannedPolicy), privateKey);
 
             string urlSafeSignature = MakeBytesUrlSafe(signatureBytes);
 
@@ -503,20 +501,23 @@ namespace Amazon.CloudFront
         /// Signs the data given with the private key given, using the SHA1withRSA
         /// algorithm provided by bouncy castle.
         /// </summary>
-        internal static byte[] SignWithSha1RSA(byte[] dataToSign, RSAParameters rsaParameters)
+        internal static byte[] SignWithSha1RSA(byte[] dataToSign, TextReader privateKey)
         {
-            using (SHA1 cryptoSHA1 = GetSHA1Provider())
+            using (SHA1 cryptoSHA1 = SHA1.Create())
+            using (RSA rsa = RSA.Create())
             {
-                var providerRSA = RSA.Create();
-                providerRSA.ImportParameters(rsaParameters);
+                ImportRSAFromPem(rsa, privateKey);
 
                 byte[] hashedData = cryptoSHA1.ComputeHash(dataToSign);
-                return GetRSAPKCS1SignatureFromSHA1(hashedData, providerRSA);
+                return GetRSAPKCS1SignatureFromSHA1(hashedData, rsa);
             }
         }
 
-        internal static RSAParameters ConvertPEMToRSAParameters(TextReader privateKeyReader)
+        private static void ImportRSAFromPem(RSA rsa, TextReader privateKeyReader)
         {
+#if NET
+            rsa.ImportFromPem(privateKeyReader.ReadToEnd());
+#else
             RSAParameters rsaParams;
             try
             {
@@ -543,15 +544,7 @@ namespace Amazon.CloudFront
             {
                 throw new AmazonClientException("Invalid RSA Private Key", e);
             }
-            return rsaParams;
-        }
-
-        private static SHA1 GetSHA1Provider()
-        {
-#if NETSTANDARD
-            return SHA1.Create();
-#else
-            return new SHA1CryptoServiceProvider();
+            rsa.ImportParameters(rsaParams);
 #endif
         }
 
