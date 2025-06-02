@@ -289,6 +289,18 @@ namespace Amazon.Backup
         /// </summary>
         public static readonly BackupVaultEvent COPY_JOB_SUCCESSFUL = new BackupVaultEvent("COPY_JOB_SUCCESSFUL");
         /// <summary>
+        /// Constant RECOVERY_POINT_INDEX_COMPLETED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent RECOVERY_POINT_INDEX_COMPLETED = new BackupVaultEvent("RECOVERY_POINT_INDEX_COMPLETED");
+        /// <summary>
+        /// Constant RECOVERY_POINT_INDEX_DELETED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent RECOVERY_POINT_INDEX_DELETED = new BackupVaultEvent("RECOVERY_POINT_INDEX_DELETED");
+        /// <summary>
+        /// Constant RECOVERY_POINT_INDEXING_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent RECOVERY_POINT_INDEXING_FAILED = new BackupVaultEvent("RECOVERY_POINT_INDEXING_FAILED");
+        /// <summary>
         /// Constant RECOVERY_POINT_MODIFIED for BackupVaultEvent
         /// </summary>
         public static readonly BackupVaultEvent RECOVERY_POINT_MODIFIED = new BackupVaultEvent("RECOVERY_POINT_MODIFIED");
@@ -719,9 +731,17 @@ namespace Amazon.Backup
     {
 
         /// <summary>
+        /// Constant AVAILABLE for RecoveryPointStatus
+        /// </summary>
+        public static readonly RecoveryPointStatus AVAILABLE = new RecoveryPointStatus("AVAILABLE");
+        /// <summary>
         /// Constant COMPLETED for RecoveryPointStatus
         /// </summary>
         public static readonly RecoveryPointStatus COMPLETED = new RecoveryPointStatus("COMPLETED");
+        /// <summary>
+        /// Constant CREATING for RecoveryPointStatus
+        /// </summary>
+        public static readonly RecoveryPointStatus CREATING = new RecoveryPointStatus("CREATING");
         /// <summary>
         /// Constant DELETING for RecoveryPointStatus
         /// </summary>
@@ -734,6 +754,10 @@ namespace Amazon.Backup
         /// Constant PARTIAL for RecoveryPointStatus
         /// </summary>
         public static readonly RecoveryPointStatus PARTIAL = new RecoveryPointStatus("PARTIAL");
+        /// <summary>
+        /// Constant STOPPED for RecoveryPointStatus
+        /// </summary>
+        public static readonly RecoveryPointStatus STOPPED = new RecoveryPointStatus("STOPPED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
