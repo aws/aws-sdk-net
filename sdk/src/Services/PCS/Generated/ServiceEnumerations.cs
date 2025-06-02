@@ -101,6 +101,14 @@ namespace Amazon.PCS
         /// </summary>
         public static readonly ClusterStatus DELETING = new ClusterStatus("DELETING");
         /// <summary>
+        /// Constant SUSPENDED for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus SUSPENDED = new ClusterStatus("SUSPENDED");
+        /// <summary>
+        /// Constant SUSPENDING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus SUSPENDING = new ClusterStatus("SUSPENDING");
+        /// <summary>
         /// Constant UPDATE_FAILED for ClusterStatus
         /// </summary>
         public static readonly ClusterStatus UPDATE_FAILED = new ClusterStatus("UPDATE_FAILED");
@@ -174,6 +182,14 @@ namespace Amazon.PCS
         /// Constant DELETING for ComputeNodeGroupStatus
         /// </summary>
         public static readonly ComputeNodeGroupStatus DELETING = new ComputeNodeGroupStatus("DELETING");
+        /// <summary>
+        /// Constant SUSPENDED for ComputeNodeGroupStatus
+        /// </summary>
+        public static readonly ComputeNodeGroupStatus SUSPENDED = new ComputeNodeGroupStatus("SUSPENDED");
+        /// <summary>
+        /// Constant SUSPENDING for ComputeNodeGroupStatus
+        /// </summary>
+        public static readonly ComputeNodeGroupStatus SUSPENDING = new ComputeNodeGroupStatus("SUSPENDING");
         /// <summary>
         /// Constant UPDATE_FAILED for ComputeNodeGroupStatus
         /// </summary>
@@ -344,6 +360,14 @@ namespace Amazon.PCS
         /// Constant DELETING for QueueStatus
         /// </summary>
         public static readonly QueueStatus DELETING = new QueueStatus("DELETING");
+        /// <summary>
+        /// Constant SUSPENDED for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus SUSPENDED = new QueueStatus("SUSPENDED");
+        /// <summary>
+        /// Constant SUSPENDING for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus SUSPENDING = new QueueStatus("SUSPENDING");
         /// <summary>
         /// Constant UPDATE_FAILED for QueueStatus
         /// </summary>
