@@ -43,7 +43,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  The size of the RDS storage in gigabytes (GB). 
+        ///  The size of the DB storage in gigabytes (GB). 
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -61,7 +61,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        ///  The provisioned IOPs of the RDS storage. 
+        ///  The provisioned IOPs of the DB storage. 
         /// </para>
         /// </summary>
         public int Iops
@@ -80,7 +80,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property MaxAllocatedStorage. 
         /// <para>
         ///  The maximum limit in gibibytes (GiB) to which Amazon RDS can automatically scale
-        /// the storage of the RDS instance. 
+        /// the storage of the DB instance. 
         /// </para>
         /// </summary>
         public int MaxAllocatedStorage
@@ -98,7 +98,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property StorageThroughput. 
         /// <para>
-        ///  The storage throughput of the RDS storage. 
+        ///  The storage throughput of the DB storage. 
         /// </para>
         /// </summary>
         public int StorageThroughput
@@ -116,7 +116,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  The type of RDS storage. 
+        ///  The type of DB storage. 
         /// </para>
         /// </summary>
         public string StorageType

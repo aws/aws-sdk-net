@@ -31,12 +31,12 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRDSDatabaseRecommendations operation.
-    /// Returns Amazon RDS recommendations. 
+    /// Returns Amazon Aurora and RDS database recommendations. 
     /// 
     ///  
     /// <para>
-    /// Compute Optimizer generates recommendations for Amazon RDS that meet a specific set
-    /// of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+    /// Compute Optimizer generates recommendations for Amazon Aurora and RDS databases that
+    /// meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
     /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
     /// </para>
     /// </summary>
@@ -52,13 +52,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        ///  Return the Amazon RDS recommendations to the specified Amazon Web Services account
-        /// IDs. 
+        ///  Return the Amazon Aurora and RDS database recommendations to the specified Amazon
+        /// Web Services account IDs. 
         /// </para>
         ///  
         /// <para>
         /// If your account is the management account or the delegated administrator of an organization,
-        /// use this parameter to return the Amazon RDS recommendations to specific member accounts.
+        /// use this parameter to return the Amazon Aurora and RDS database recommendations to
+        /// specific member accounts.
         /// </para>
         ///  
         /// <para>
@@ -81,7 +82,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property Filters. 
         /// <para>
         ///  An array of objects to specify a filter that returns a more specific list of Amazon
-        /// RDS recommendations. 
+        /// Aurora and RDS database recommendations. 
         /// </para>
         /// </summary>
         public List<RDSDBRecommendationFilter> Filters
@@ -99,7 +100,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of Amazon RDS recommendations to return with a single request.
+        /// The maximum number of Amazon Aurora and RDS database recommendations to return with
+        /// a single request.
         /// </para>
         ///  
         /// <para>
@@ -123,7 +125,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token to advance to the next page of Amazon RDS recommendations. 
+        ///  The token to advance to the next page of Amazon Aurora and RDS database recommendations.
+        /// 
         /// </para>
         /// </summary>
         public string NextToken
@@ -156,7 +159,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        ///  The ARN that identifies the Amazon RDS. 
+        ///  The ARN that identifies the Amazon Aurora or RDS database. 
         /// </para>
         ///  
         /// <para>

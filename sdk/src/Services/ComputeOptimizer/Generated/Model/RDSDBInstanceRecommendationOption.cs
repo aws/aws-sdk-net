@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the recommendation options for an Amazon RDS instance.
+    /// Describes the recommendation options for a DB instance.
     /// </summary>
     public partial class RDSDBInstanceRecommendationOption
     {
@@ -44,8 +44,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property DbInstanceClass. 
         /// <para>
-        ///  Describes the DB instance class recommendation option for your Amazon RDS instance.
-        /// 
+        ///  Describes the DB instance class recommendation option for your Amazon Aurora or RDS
+        /// database. 
         /// </para>
         /// </summary>
         public string DbInstanceClass
@@ -63,7 +63,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property PerformanceRisk. 
         /// <para>
-        ///  The performance risk of the RDS instance recommendation option. 
+        ///  The performance risk of the DB instance recommendation option. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4)]
@@ -82,7 +82,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ProjectedUtilizationMetrics. 
         /// <para>
-        ///  An array of objects that describe the projected utilization metrics of the RDS instance
+        ///  An array of objects that describe the projected utilization metrics of the DB instance
         /// recommendation option. 
         /// </para>
         /// </summary>
@@ -101,7 +101,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Rank. 
         /// <para>
-        ///  The rank identifier of the RDS instance recommendation option. 
+        ///  The rank identifier of the DB instance recommendation option. 
         /// </para>
         /// </summary>
         public int Rank
@@ -134,8 +134,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property SavingsOpportunityAfterDiscounts. 
         /// <para>
-        ///  Describes the savings opportunity for Amazon RDS recommendations or for the recommendation
-        /// option. 
+        ///  Describes the savings opportunity for Amazon Aurora and RDS database recommendations
+        /// or for the recommendation option. 
         /// </para>
         ///  
         /// <para>

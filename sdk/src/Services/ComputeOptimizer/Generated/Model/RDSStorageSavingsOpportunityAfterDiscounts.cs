@@ -48,7 +48,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavings. 
         /// <para>
-        ///  The estimated monthly savings possible by adopting Compute Optimizer’s Amazon RDS
+        ///  The estimated monthly savings possible by adopting Compute Optimizer’s DB instance
         /// storage recommendations. This includes any applicable Savings Plans discounts. 
         /// </para>
         /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property SavingsOpportunityPercentage. 
         /// <para>
         ///  The estimated monthly savings possible as a percentage of monthly cost by adopting
-        /// Compute Optimizer’s Amazon RDS storage recommendations. This includes any applicable
+        /// Compute Optimizer’s DB instance storage recommendations. This includes any applicable
         /// Savings Plans discounts. 
         /// </para>
         /// </summary>

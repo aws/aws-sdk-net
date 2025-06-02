@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes an Amazon RDS recommendation.
+    /// Describes an Amazon Aurora and RDS database recommendation.
     /// </summary>
     public partial class RDSDBRecommendation
     {
@@ -38,6 +38,7 @@ namespace Amazon.ComputeOptimizer.Model
         private string _currentdbInstanceClass;
         private RDSCurrentInstancePerformanceRisk _currentInstancePerformanceRisk;
         private DBStorageConfiguration _currentStorageConfiguration;
+        private RDSEstimatedMonthlyVolumeIOPsCostVariation _currentStorageEstimatedMonthlyVolumeIOPsCostVariation;
         private string _dbClusterIdentifier;
         private RDSEffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private string _engine;
@@ -59,7 +60,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        ///  The Amazon Web Services account ID of the Amazon RDS. 
+        ///  The Amazon Web Services account ID of the Amazon Aurora or RDS database. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -77,7 +78,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property CurrentDBInstanceClass. 
         /// <para>
-        ///  The DB instance class of the current RDS instance. 
+        ///  The DB instance class of the current Aurora or RDS DB instance. 
         /// </para>
         /// </summary>
         public string CurrentDBInstanceClass
@@ -113,7 +114,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property CurrentStorageConfiguration. 
         /// <para>
-        ///  The configuration of the current RDS storage. 
+        ///  The configuration of the current DB storage. 
         /// </para>
         /// </summary>
         public DBStorageConfiguration CurrentStorageConfiguration
@@ -126,6 +127,26 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCurrentStorageConfiguration()
         {
             return this._currentStorageConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation.
+        /// 
+        /// <para>
+        ///  The level of variation in monthly I/O costs for the current DB storage configuration.
+        /// 
+        /// </para>
+        /// </summary>
+        public RDSEstimatedMonthlyVolumeIOPsCostVariation CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation
+        {
+            get { return this._currentStorageEstimatedMonthlyVolumeIOPsCostVariation; }
+            set { this._currentStorageEstimatedMonthlyVolumeIOPsCostVariation = value; }
+        }
+
+        // Check to see if CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation property is set
+        internal bool IsSetCurrentStorageEstimatedMonthlyVolumeIOPsCostVariation()
+        {
+            return this._currentStorageEstimatedMonthlyVolumeIOPsCostVariation != null;
         }
 
         /// <summary>
@@ -149,7 +170,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property EffectiveRecommendationPreferences. 
         /// <para>
-        ///  Describes the effective recommendation preferences for Amazon RDS. 
+        ///  Describes the effective recommendation preferences for DB instances. 
         /// </para>
         /// </summary>
         public RDSEffectiveRecommendationPreferences EffectiveRecommendationPreferences
@@ -167,7 +188,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  The engine of the RDS instance. 
+        ///  The engine of the DB instance. 
         /// </para>
         /// </summary>
         public string Engine
@@ -203,7 +224,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Idle. 
         /// <para>
-        ///  This indicates if the RDS instance is idle or not. 
+        ///  This indicates if the DB instance is idle or not. 
         /// </para>
         /// </summary>
         public Idle Idle
@@ -221,28 +242,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property InstanceFinding. 
         /// <para>
-        ///  The finding classification of an Amazon RDS instance. 
+        ///  The finding classification of an Amazon Aurora and RDS DB instance. 
         /// </para>
         ///  
         /// <para>
-        /// Findings for Amazon RDS instance include:
+        /// For more information about finding classifications, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-rds-recommendations.html#rds-recommendations-findings">
+        /// Finding classifications for Aurora and RDS databases</a> in the <i>Compute Optimizer
+        /// User Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b> <c>Underprovisioned</c> </b> — When Compute Optimizer detects that there’s not
-        /// enough resource specifications, an Amazon RDS is considered under-provisioned.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <c>Overprovisioned</c> </b> — When Compute Optimizer detects that there’s excessive
-        /// resource specifications, an Amazon RDS is considered over-provisioned.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <c>Optimized</c> </b> — When the specifications of your Amazon RDS instance meet
-        /// the performance requirements of your workload, the service is considered optimized.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public RDSInstanceFinding InstanceFinding
         {
@@ -259,7 +266,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property InstanceFindingReasonCodes. 
         /// <para>
-        ///  The reason for the finding classification of an Amazon RDS instance. 
+        ///  The reason for the finding classification of a DB instance. 
         /// </para>
         /// </summary>
         public List<string> InstanceFindingReasonCodes
@@ -277,7 +284,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property InstanceRecommendationOptions. 
         /// <para>
-        ///  An array of objects that describe the recommendation options for the Amazon RDS instance.
+        ///  An array of objects that describe the recommendation options for the RDS DB instance.
         /// 
         /// </para>
         /// </summary>
@@ -296,7 +303,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        ///  The timestamp of when the Amazon RDS recommendation was last generated. 
+        ///  The timestamp of when the DB instance recommendation was last generated. 
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp
@@ -314,7 +321,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
-        ///  The number of days the Amazon RDS utilization metrics were analyzed. 
+        ///  The number of days the DB instance utilization metrics were analyzed. 
         /// </para>
         /// </summary>
         public double LookbackPeriodInDays
@@ -350,7 +357,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The ARN of the current Amazon RDS. 
+        ///  The ARN of the current Amazon Aurora or RDS database. 
         /// </para>
         ///  
         /// <para>
@@ -376,28 +383,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property StorageFinding. 
         /// <para>
-        ///  The finding classification of Amazon RDS storage. 
+        ///  The finding classification of Amazon RDS DB instance storage. 
         /// </para>
         ///  
         /// <para>
-        /// Findings for Amazon RDS instance include:
+        /// For more information about finding classifications, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-rds-recommendations.html#rds-recommendations-findings">
+        /// Finding classifications for Aurora and RDS databases</a> in the <i>Compute Optimizer
+        /// User Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b> <c>Underprovisioned</c> </b> — When Compute Optimizer detects that there’s not
-        /// enough storage, an Amazon RDS is considered under-provisioned.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <c>Overprovisioned</c> </b> — When Compute Optimizer detects that there’s excessive
-        /// storage, an Amazon RDS is considered over-provisioned.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <c>Optimized</c> </b> — When the storage of your Amazon RDS meet the performance
-        /// requirements of your workload, the service is considered optimized.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public RDSStorageFinding StorageFinding
         {
@@ -414,7 +407,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property StorageFindingReasonCodes. 
         /// <para>
-        ///  The reason for the finding classification of Amazon RDS storage. 
+        ///  The reason for the finding classification of RDS DB instance storage. 
         /// </para>
         /// </summary>
         public List<string> StorageFindingReasonCodes
@@ -432,7 +425,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property StorageRecommendationOptions. 
         /// <para>
-        ///  An array of objects that describe the recommendation options for Amazon RDS storage.
+        ///  An array of objects that describe the recommendation options for DB instance storage.
         /// 
         /// </para>
         /// </summary>
@@ -451,7 +444,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  A list of tags assigned to your Amazon RDS recommendations. 
+        ///  A list of tags assigned to your DB instance recommendations. 
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -469,7 +462,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property UtilizationMetrics. 
         /// <para>
-        ///  An array of objects that describe the utilization metrics of the Amazon RDS. 
+        ///  An array of objects that describe the utilization metrics of the DB instance. 
         /// </para>
         /// </summary>
         public List<RDSDBUtilizationMetric> UtilizationMetrics

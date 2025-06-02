@@ -1097,8 +1097,8 @@ namespace Amazon.ComputeOptimizer
         #region  ExportRDSDatabaseRecommendations
 
         /// <summary>
-        /// Export optimization recommendations for your Amazon Relational Database Service (Amazon
-        /// RDS). 
+        /// Export optimization recommendations for your Amazon Aurora and Amazon Relational
+        /// Database Service (Amazon RDS) databases. 
         /// 
         ///  
         /// <para>
@@ -1109,7 +1109,8 @@ namespace Amazon.ComputeOptimizer
         /// </para>
         ///  
         /// <para>
-        /// You can have only one Amazon RDS export job in progress per Amazon Web Services Region.
+        /// You can have only one Amazon Aurora or RDS export job in progress per Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportRDSDatabaseRecommendations service method.</param>
@@ -2205,7 +2206,7 @@ namespace Amazon.ComputeOptimizer
         #region  GetRDSDatabaseRecommendationProjectedMetrics
 
         /// <summary>
-        /// Returns the projected metrics of Amazon RDS recommendations.
+        /// Returns the projected metrics of Aurora and RDS database recommendations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRDSDatabaseRecommendationProjectedMetrics service method.</param>
         /// 
@@ -2284,12 +2285,12 @@ namespace Amazon.ComputeOptimizer
         #region  GetRDSDatabaseRecommendations
 
         /// <summary>
-        /// Returns Amazon RDS recommendations. 
+        /// Returns Amazon Aurora and RDS database recommendations. 
         /// 
         ///  
         /// <para>
-        /// Compute Optimizer generates recommendations for Amazon RDS that meet a specific set
-        /// of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// Compute Optimizer generates recommendations for Amazon Aurora and RDS databases that
+        /// meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
         /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
@@ -2474,7 +2475,7 @@ namespace Amazon.ComputeOptimizer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
+        /// EC2Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2488,6 +2489,16 @@ namespace Amazon.ComputeOptimizer
         /// <para>
         /// Amazon ECS services in an account that are <c>Underprovisioned</c>, <c>Overprovisioned</c>,
         /// or <c>Optimized</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Commercial software licenses in an account that are <c>InsufficientMetrics</c>, <c>NotOptimized</c>
+        /// or <c>Optimized</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Aurora and Amazon RDS databases in an account that are <c>Underprovisioned</c>,
+        /// <c>Overprovisioned</c>, <c>Optimized</c>, or <c>NotOptimized</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
