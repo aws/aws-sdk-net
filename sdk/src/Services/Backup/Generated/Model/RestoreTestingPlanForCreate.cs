@@ -118,7 +118,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A CRON expression in specified timezone when a restore testing plan is executed.
+        /// A CRON expression in specified timezone when a restore testing plan is executed. When
+        /// no CRON expression is provided, Backup will use the default expression <c>cron(0 5
+        /// ? * * *)</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

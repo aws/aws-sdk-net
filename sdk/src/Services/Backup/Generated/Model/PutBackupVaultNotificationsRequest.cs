@@ -56,7 +56,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>BACKUP_JOB_STARTED</c> | <c>BACKUP_JOB_COMPLETED</c> 
+        ///  <c>BACKUP_JOB_STARTED</c> | <c>BACKUP_JOB_COMPLETED</c> | <c>BACKUP_JOB_FAILED</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -70,6 +71,11 @@ namespace Amazon.Backup.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>S3_BACKUP_OBJECT_FAILED</c> | <c>S3_RESTORE_OBJECT_FAILED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RECOVERY_POINT_INDEX_COMPLETED</c> | <c>RECOVERY_POINT_INDEX_DELETED</c> | <c>RECOVERY_POINT_INDEXING_FAILED</c>
+        /// 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

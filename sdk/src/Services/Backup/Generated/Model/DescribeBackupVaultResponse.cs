@@ -259,6 +259,12 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The number of recovery points that are stored in a backup vault.
         /// </para>
+        ///  
+        /// <para>
+        /// Recovery point count value displayed in the console can be an approximation. Use <a
+        /// href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByBackupVault.html">
+        /// <c>ListRecoveryPointsByBackupVault</c> </a> API to obtain the exact count.
+        /// </para>
         /// </summary>
         public long NumberOfRecoveryPoints
         {

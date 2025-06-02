@@ -119,8 +119,54 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupSizeInBytes. 
         /// <para>
-        /// The size, in bytes, of a backup.
+        /// The size, in bytes, of a backup (recovery point).
         /// </para>
+        ///  
+        /// <para>
+        /// This value can render differently depending on the resource type as Backup pulls in
+        /// data information from other Amazon Web Services services. For example, the value returned
+        /// may show a value of <c>0</c>, which may differ from the anticipated value.
+        /// </para>
+        ///  
+        /// <para>
+        /// The expected behavior for values by resource type are described as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Aurora, Amazon DocumentDB, and Amazon Neptune do not have this value populate
+        /// from the operation <c>GetBackupJobStatus</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon DynamoDB with advanced features, this value refers to the size of the recovery
+        /// point (backup).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon EC2 and Amazon EBS show volume size (provisioned storage) returned as part
+        /// of this value. Amazon EBS does not return backup size information; snapshot size will
+        /// have the same value as the original resource that was backed up.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon EFS, this value refers to the delta bytes transferred during a backup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx does not populate this value from the operation <c>GetBackupJobStatus</c>
+        /// for FSx file systems.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon RDS instance will show as <c>0</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For virtual machines running VMware, this value is passed to Backup through an asynchronous
+        /// workflow, which can mean this displayed value can under-represent the actual backup
+        /// size.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public long BackupSizeInBytes
         {

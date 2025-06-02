@@ -511,17 +511,28 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// A status code specifying the state of the recovery point.
+        /// A status code specifying the state of the recovery point. For more information, see
+        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/applicationstackbackups.html#cfnrecoverypointstatus">
+        /// Recovery point status</a> in the <i>Backup Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <c>PARTIAL</c> status indicates Backup could not create the recovery point before
-        /// the backup window closed. To increase your backup plan window using the API, see <a
-        /// href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>.
-        /// You can also increase your backup plan window using the Console by choosing and editing
-        /// your backup plan.
+        ///  <c>CREATING</c> status indicates that an Backup job has been initiated for a resource.
+        /// The backup process has started and is actively processing a backup job for the associated
+        /// recovery point.
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AVAILABLE</c> status indicates that the backup was successfully created for the
+        /// recovery point. The backup process has completed without any issues, and the recovery
+        /// point is now ready for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PARTIAL</c> status indicates a composite recovery point has one or more nested
+        /// recovery points that were not in the backup.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>EXPIRED</c> status indicates that the recovery point has exceeded its retention
         /// period, but Backup lacks permission or is otherwise unable to delete it. To manually
@@ -529,7 +540,7 @@ namespace Amazon.Backup.Model
         /// Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of
         /// <i>Getting started</i>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         ///  <c>STOPPED</c> status occurs on a continuous backup where a user has taken some action
         /// that causes the continuous backup to be disabled. This can be caused by the removal
@@ -551,6 +562,7 @@ namespace Amazon.Backup.Model
         /// misconfiguration, or backup failure. To ensure that future continuous backups succeed,
         /// refer to the recovery point status and check SAP HANA for details.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RecoveryPointStatus Status
         {
