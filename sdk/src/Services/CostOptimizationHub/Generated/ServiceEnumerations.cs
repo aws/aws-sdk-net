@@ -471,6 +471,10 @@ namespace Amazon.CostOptimizationHub
     {
 
         /// <summary>
+        /// Constant AuroraDbClusterStorage for ResourceType
+        /// </summary>
+        public static readonly ResourceType AuroraDbClusterStorage = new ResourceType("AuroraDbClusterStorage");
+        /// <summary>
         /// Constant ComputeSavingsPlans for ResourceType
         /// </summary>
         public static readonly ResourceType ComputeSavingsPlans = new ResourceType("ComputeSavingsPlans");
