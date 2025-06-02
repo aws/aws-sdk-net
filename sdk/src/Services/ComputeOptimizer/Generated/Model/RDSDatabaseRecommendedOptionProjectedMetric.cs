@@ -30,13 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the projected metrics of an Amazon RDS recommendation option. 
+    /// Describes the projected metrics of an Amazon Aurora and RDS database recommendation
+    /// option. 
     /// 
     ///  
     /// <para>
-    ///  To determine the performance difference between your current Amazon RDS and the recommended
-    /// option, compare the metric data of your service against its projected metric data.
-    /// 
+    ///  To determine the performance difference between your current Amazon Aurora and RDS
+    /// database and the recommended option, compare the metric data of your service against
+    /// its projected metric data. 
     /// </para>
     /// </summary>
     public partial class RDSDatabaseRecommendedOptionProjectedMetric
@@ -66,7 +67,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Rank. 
         /// <para>
-        ///  The rank identifier of the RDS instance recommendation option. 
+        ///  The rank identifier of the Amazon Aurora or RDS DB instance recommendation option.
+        /// 
         /// </para>
         /// </summary>
         public int? Rank
@@ -84,7 +86,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property RecommendedDBInstanceClass. 
         /// <para>
-        ///  The recommended DB instance class for the Amazon RDS. 
+        ///  The recommended DB instance class for the Amazon Aurora or RDS database. 
         /// </para>
         /// </summary>
         public string RecommendedDBInstanceClass

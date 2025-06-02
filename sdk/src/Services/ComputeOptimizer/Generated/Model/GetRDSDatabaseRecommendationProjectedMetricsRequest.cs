@@ -31,7 +31,7 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRDSDatabaseRecommendationProjectedMetrics operation.
-    /// Returns the projected metrics of Amazon RDS recommendations.
+    /// Returns the projected metrics of Aurora and RDS database recommendations.
     /// </summary>
     public partial class GetRDSDatabaseRecommendationProjectedMetricsRequest : AmazonComputeOptimizerRequest
     {
@@ -98,7 +98,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The ARN that identifies the Amazon RDS. 
+        ///  The ARN that identifies the Amazon Aurora or RDS database. 
         /// </para>
         ///  
         /// <para>
