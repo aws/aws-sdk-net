@@ -87,6 +87,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.QueryExecutionId);
                 }
 
+                if(publicRequest.IsSetQueryResultType())
+                {
+                    context.Writer.WritePropertyName("QueryResultType");
+                    context.Writer.Write(publicRequest.QueryResultType);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

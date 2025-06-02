@@ -46,6 +46,7 @@ namespace Amazon.Athena.Model
         private bool? _enforceWorkGroupConfiguration;
         private EngineVersion _engineVersion;
         private string _executionRole;
+        private ManagedQueryResultsConfigurationUpdates _managedQueryResultsConfigurationUpdates;
         private bool? _publishCloudWatchMetricsEnabled;
         private QueryResultsS3AccessGrantsConfiguration _queryResultsS3AccessGrantsConfiguration;
         private bool? _removeBytesScannedCutoffPerQuery;
@@ -194,6 +195,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetExecutionRole()
         {
             return this._executionRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedQueryResultsConfigurationUpdates. 
+        /// <para>
+        /// Updates configuration information for managed query results in the workgroup.
+        /// </para>
+        /// </summary>
+        public ManagedQueryResultsConfigurationUpdates ManagedQueryResultsConfigurationUpdates
+        {
+            get { return this._managedQueryResultsConfigurationUpdates; }
+            set { this._managedQueryResultsConfigurationUpdates = value; }
+        }
+
+        // Check to see if ManagedQueryResultsConfigurationUpdates property is set
+        internal bool IsSetManagedQueryResultsConfigurationUpdates()
+        {
+            return this._managedQueryResultsConfigurationUpdates != null;
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.Athena.Model
     {
         private EngineVersion _engineVersion;
         private List<string> _executionParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ManagedQueryResultsConfiguration _managedQueryResultsConfiguration;
         private string _query;
         private QueryExecutionContext _queryExecutionContext;
         private string _queryExecutionId;
@@ -85,6 +86,26 @@ namespace Amazon.Athena.Model
         internal bool IsSetExecutionParameters()
         {
             return this._executionParameters != null && (this._executionParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedQueryResultsConfiguration. 
+        /// <para>
+        ///  The configuration for storing results in Athena owned storage, which includes whether
+        /// this feature is enabled; whether encryption configuration, if any, is used for encrypting
+        /// query results. 
+        /// </para>
+        /// </summary>
+        public ManagedQueryResultsConfiguration ManagedQueryResultsConfiguration
+        {
+            get { return this._managedQueryResultsConfiguration; }
+            set { this._managedQueryResultsConfiguration = value; }
+        }
+
+        // Check to see if ManagedQueryResultsConfiguration property is set
+        internal bool IsSetManagedQueryResultsConfiguration()
+        {
+            return this._managedQueryResultsConfiguration != null;
         }
 
         /// <summary>
@@ -207,8 +228,7 @@ namespace Amazon.Athena.Model
         /// The type of query statement that was run. <c>DDL</c> indicates DDL query statements.
         /// <c>DML</c> indicates DML (Data Manipulation Language) query statements, such as <c>CREATE
         /// TABLE AS SELECT</c>. <c>UTILITY</c> indicates query statements other than DDL and
-        /// DML, such as <c>SHOW CREATE TABLE</c>, <c>EXPLAIN</c>, <c>DESCRIBE</c>, or <c>SHOW
-        /// TABLES</c>.
+        /// DML, such as <c>SHOW CREATE TABLE</c>, or <c>DESCRIBE TABLE</c>.
         /// </para>
         /// </summary>
         public StatementType StatementType

@@ -58,6 +58,7 @@ namespace Amazon.Athena.Model
         private int? _maxResults;
         private string _nextToken;
         private string _queryExecutionId;
+        private QueryResultType _queryResultType;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -116,6 +117,28 @@ namespace Amazon.Athena.Model
         internal bool IsSetQueryExecutionId()
         {
             return this._queryExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryResultType. 
+        /// <para>
+        ///  When you set this to <c>DATA_ROWS</c> or empty, <c>GetQueryResults</c> returns the
+        /// query results in rows. If set to <c>DATA_MANIFEST</c>, it returns the manifest file
+        /// in rows. Only the query types <c>CREATE TABLE AS SELECT</c>, <c>UNLOAD</c>, and <c>INSERT</c>
+        /// can generate a manifest file. If you use <c>DATA_MANIFEST</c> for other query types,
+        /// the query will fail. 
+        /// </para>
+        /// </summary>
+        public QueryResultType QueryResultType
+        {
+            get { return this._queryResultType; }
+            set { this._queryResultType = value; }
+        }
+
+        // Check to see if QueryResultType property is set
+        internal bool IsSetQueryResultType()
+        {
+            return this._queryResultType != null;
         }
 
     }
