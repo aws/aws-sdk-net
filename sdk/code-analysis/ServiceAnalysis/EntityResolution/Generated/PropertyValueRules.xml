@@ -218,6 +218,12 @@
     <pattern>[a-zA-Z_0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EntityResolution.Model.GenerateMatchIdRequest.WorkflowName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z_0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EntityResolution.Model.GetIdMappingJobRequest.JobId</property>
     <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
@@ -730,6 +736,15 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EntityResolution.Model.FailedRecord.ErrorMessage</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EntityResolution.Model.FailedRecord.InputSourceARN</property>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):entityresolution:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(idnamespace/[a-zA-Z_0-9-]{1,255})$|^arn:(aws|aws-us-gov|aws-cn):entityresolution:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(matchingworkflow/[a-zA-Z_0-9-]{1,255})$|^arn:(aws|aws-us-gov|aws-cn):glue:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(table/[a-zA-Z_0-9-]{1,255}/[a-zA-Z_0-9-]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EntityResolution.Model.IdMappingJobOutputSource.KMSArn</property>
     <pattern>arn:aws:kms:.*:[0-9]+:.*</pattern>
   </property-value-rule>
@@ -837,6 +852,10 @@
     <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EntityResolution.Model.MatchedRecord.InputSourceARN</property>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):entityresolution:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(idnamespace/[a-zA-Z_0-9-]{1,255})$|^arn:(aws|aws-us-gov|aws-cn):entityresolution:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(matchingworkflow/[a-zA-Z_0-9-]{1,255})$|^arn:(aws|aws-us-gov|aws-cn):glue:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(table/[a-zA-Z_0-9-]{1,255}/[a-zA-Z_0-9-]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EntityResolution.Model.MatchingWorkflowSummary.WorkflowArn</property>
     <pattern>arn:(aws|aws-us-gov|aws-cn):entityresolution:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(matchingworkflow/[a-zA-Z_0-9-]{1,255})</pattern>
   </property-value-rule>
@@ -908,6 +927,16 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z_0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EntityResolution.Model.Record.InputSourceARN</property>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):entityresolution:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(idnamespace/[a-zA-Z_0-9-]{1,255})$|^arn:(aws|aws-us-gov|aws-cn):entityresolution:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(matchingworkflow/[a-zA-Z_0-9-]{1,255})$|^arn:(aws|aws-us-gov|aws-cn):glue:[a-z]{2}-[a-z]{1,10}-[0-9]:[0-9]{12}:(table/[a-zA-Z_0-9-]{1,255}/[a-zA-Z_0-9-]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EntityResolution.Model.Record.UniqueId</property>
+    <min>1</min>
+    <max>38</max>
+    <pattern>[a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EntityResolution.Model.Rule.RuleName</property>

@@ -105,7 +105,7 @@ namespace Amazon.EntityResolution.Model
         /// <para>
         /// A list of <c>MappedInputFields</c>. Each <c>MappedInputField</c> corresponds to a
         /// column the source data table, and contains column name plus additional information
-        /// Venice uses for matching.
+        /// Entity Resolution uses for matching.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=35)]
