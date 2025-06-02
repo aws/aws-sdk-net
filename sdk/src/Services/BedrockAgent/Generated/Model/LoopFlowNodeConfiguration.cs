@@ -48,7 +48,10 @@ namespace Amazon.BedrockAgent.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Body nodes - These can be 
+    /// Body nodes - The processing nodes that execute within each loop iteration. These can
+    /// be nodes for handling data in your flow, such as a prompt or Lambda function nodes.
+    /// Some node types aren't supported inside a DoWhile loop body. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_LoopIncompatibleNodeTypeFlowValidationDetails.html">LoopIncompatibleNodeTypeFlowValidationDetails</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
