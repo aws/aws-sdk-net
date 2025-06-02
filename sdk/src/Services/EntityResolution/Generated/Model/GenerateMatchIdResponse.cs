@@ -30,51 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetIdMappingJob operation.
-    /// Returns the status, metrics, and errors (if there are any) that are associated with
-    /// a job.
+    /// This is the response object from the GenerateMatchId operation.
     /// </summary>
-    public partial class GetIdMappingJobRequest : AmazonEntityResolutionRequest
+    public partial class GenerateMatchIdResponse : AmazonWebServiceResponse
     {
-        private string _jobId;
-        private string _workflowName;
+        private List<FailedRecord> _failedRecords = AWSConfigs.InitializeCollections ? new List<FailedRecord>() : null;
+        private List<MatchGroup> _matchGroups = AWSConfigs.InitializeCollections ? new List<MatchGroup>() : null;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property FailedRecords. 
         /// <para>
-        /// The ID of the job.
+        ///  The records that didn't receive a generated Match ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string JobId
+        public List<FailedRecord> FailedRecords
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._failedRecords; }
+            set { this._failedRecords = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if FailedRecords property is set
+        internal bool IsSetFailedRecords()
         {
-            return this._jobId != null;
+            return this._failedRecords != null && (this._failedRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property WorkflowName. 
+        /// Gets and sets the property MatchGroups. 
         /// <para>
-        /// The name of the workflow.
+        ///  The match groups from the generated match ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string WorkflowName
+        public List<MatchGroup> MatchGroups
         {
-            get { return this._workflowName; }
-            set { this._workflowName = value; }
+            get { return this._matchGroups; }
+            set { this._matchGroups = value; }
         }
 
-        // Check to see if WorkflowName property is set
-        internal bool IsSetWorkflowName()
+        // Check to see if MatchGroups property is set
+        internal bool IsSetMatchGroups()
         {
-            return this._workflowName != null;
+            return this._matchGroups != null && (this._matchGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

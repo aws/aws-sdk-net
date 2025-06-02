@@ -123,8 +123,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ResolutionTechniques. 
         /// <para>
-        /// An object which defines the <c>resolutionType</c> and the <c>ruleBasedProperties</c>
-        /// 
+        /// An object which defines the <c>resolutionType</c> and the <c>ruleBasedProperties</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

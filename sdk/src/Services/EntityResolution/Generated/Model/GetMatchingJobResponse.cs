@@ -81,7 +81,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID of the job.
+        /// The unique identifier of the matching job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

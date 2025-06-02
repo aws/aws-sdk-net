@@ -30,51 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetMatchingJob operation.
-    /// Returns the status, metrics, and errors (if there are any) that are associated with
-    /// a job.
+    /// The matched record.
     /// </summary>
-    public partial class GetMatchingJobRequest : AmazonEntityResolutionRequest
+    public partial class MatchedRecord
     {
-        private string _jobId;
-        private string _workflowName;
+        private string _inputSourceARN;
+        private string _recordId;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property InputSourceARN. 
         /// <para>
-        /// The ID of the job.
+        ///  The input source ARN of the matched record.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string JobId
+        public string InputSourceARN
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._inputSourceARN; }
+            set { this._inputSourceARN = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if InputSourceARN property is set
+        internal bool IsSetInputSourceARN()
         {
-            return this._jobId != null;
+            return this._inputSourceARN != null;
         }
 
         /// <summary>
-        /// Gets and sets the property WorkflowName. 
+        /// Gets and sets the property RecordId. 
         /// <para>
-        /// The name of the workflow.
+        ///  The record ID of the matched record.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string WorkflowName
+        [AWSProperty(Required=true)]
+        public string RecordId
         {
-            get { return this._workflowName; }
-            set { this._workflowName = value; }
+            get { return this._recordId; }
+            set { this._recordId = value; }
         }
 
-        // Check to see if WorkflowName property is set
-        internal bool IsSetWorkflowName()
+        // Check to see if RecordId property is set
+        internal bool IsSetRecordId()
         {
-            return this._workflowName != null;
+            return this._recordId != null;
         }
 
     }

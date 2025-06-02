@@ -1090,11 +1090,92 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  GenerateMatchId
+
+        /// <summary>
+        /// Generates or retrieves Match IDs for records using a rule-based matching workflow.
+        /// When you call this operation, it processes your records against the workflow's matching
+        /// rules to identify potential matches. For existing records, it retrieves their Match
+        /// IDs and associated rules. For records without matches, it generates new Match IDs.
+        /// The operation saves results to Amazon S3. 
+        /// 
+        ///  
+        /// <para>
+        /// The processing type (<c>processingType</c>) you choose affects both the accuracy and
+        /// response time of the operation. Additional charges apply for each API call, whether
+        /// made through the Entity Resolution console or directly via the API. The rule-based
+        /// matching workflow must exist and be active before calling this operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMatchId service method.</param>
+        /// 
+        /// <returns>The response from the GenerateMatchId service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GenerateMatchId">REST API Reference for GenerateMatchId Operation</seealso>
+        public virtual GenerateMatchIdResponse GenerateMatchId(GenerateMatchIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateMatchIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateMatchIdResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateMatchIdResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateMatchId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMatchId operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateMatchId
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GenerateMatchId">REST API Reference for GenerateMatchId Operation</seealso>
+        public virtual IAsyncResult BeginGenerateMatchId(GenerateMatchIdRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateMatchIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateMatchIdResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GenerateMatchId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateMatchId.</param>
+        /// 
+        /// <returns>Returns a  GenerateMatchIdResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GenerateMatchId">REST API Reference for GenerateMatchId Operation</seealso>
+        public virtual GenerateMatchIdResponse EndGenerateMatchId(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GenerateMatchIdResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetIdMappingJob
 
         /// <summary>
-        /// Gets the status, metrics, and errors (if there are any) that are associated with a
-        /// job.
+        /// Returns the status, metrics, and errors (if there are any) that are associated with
+        /// a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIdMappingJob service method.</param>
         /// 
@@ -1377,8 +1458,8 @@ namespace Amazon.EntityResolution
         #region  GetMatchingJob
 
         /// <summary>
-        /// Gets the status, metrics, and errors (if there are any) that are associated with a
-        /// job.
+        /// Returns the status, metrics, and errors (if there are any) that are associated with
+        /// a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMatchingJob service method.</param>
         /// 
