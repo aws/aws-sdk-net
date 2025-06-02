@@ -68,6 +68,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ManagedQueryResultsConfiguration", targetDepth))
+                {
+                    var unmarshaller = ManagedQueryResultsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedQueryResultsConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Query", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
