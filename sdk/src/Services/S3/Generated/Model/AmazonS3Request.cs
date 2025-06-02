@@ -12,16 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+
 using Amazon.Runtime;
 
-namespace Amazon.S3.Model
+namespace Amazon.S3
 {
     /// <summary>
-    /// Returns information about the CreateBucketMetadataTableConfiguration response metadata.
+    /// Base class for S3 operation requests.
     /// </summary>
-    public partial class CreateBucketMetadataTableConfigurationResponse : AmazonWebServiceResponse
+    public partial class AmazonS3Request : AmazonWebServiceRequest
     {
-
     }
 }
-
