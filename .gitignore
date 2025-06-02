@@ -18,6 +18,7 @@
 
 **/*project.lock.json
 **/project.lock.json
+**/*.nuspec
 
 sdk/packages/**
 sdk/test/PCLTests/AndroidTests/packages/**
