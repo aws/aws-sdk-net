@@ -43,7 +43,7 @@ namespace Amazon.S3.Model
     /// <para>
     /// You set this configuration on a bucket so that the bucket can service cross-origin
     /// requests. For example, you might want to enable a request whose origin is <code>http://www.example.com</code>
-    /// to access your Amazon S3 bucket at <code>my.example.bucket.com</code> by using the
+    /// to access your Amazon S3 bucket at <code>amzn-s3-demo-bucket</code> by using the
     /// browser's <code>XMLHttpRequest</code> capability.
     /// </para>
     ///  

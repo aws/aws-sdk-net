@@ -49,7 +49,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// This value is a suffix that is appended to a request that is for a "directory" 
         /// on the website endpoint (e.g. if the suffix is index.html and
-        /// you make a request to samplebucket/images/ the data that
+        /// you make a request to amzn-s3-demo-bucket/images/ the data that
         /// is returned will be for the object with the key name
         /// images/index.html)
         /// </para>
