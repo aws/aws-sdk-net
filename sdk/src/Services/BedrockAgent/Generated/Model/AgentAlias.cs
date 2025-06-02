@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgent.Model
         private string _agentAliasName;
         private AgentAliasStatus _agentAliasStatus;
         private string _agentId;
+        private AliasInvocationState _aliasInvocationState;
         private string _clientToken;
         private DateTime? _createdAt;
         private string _description;
@@ -186,6 +187,26 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetAgentId()
         {
             return this._agentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AliasInvocationState. 
+        /// <para>
+        /// The invocation state for the agent alias. If the agent alias is running, the value
+        /// is <c>ACCEPT_INVOCATIONS</c>. If the agent alias is paused, the value is <c>REJECT_INVOCATIONS</c>.
+        /// Use the <c>UpdateAgentAlias</c> operation to change the invocation state.
+        /// </para>
+        /// </summary>
+        public AliasInvocationState AliasInvocationState
+        {
+            get { return this._aliasInvocationState; }
+            set { this._aliasInvocationState = value; }
+        }
+
+        // Check to see if AliasInvocationState property is set
+        internal bool IsSetAliasInvocationState()
+        {
+            return this._aliasInvocationState != null;
         }
 
         /// <summary>

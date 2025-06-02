@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgent.Model
         private string _agentAliasId;
         private string _agentAliasName;
         private string _agentId;
+        private AliasInvocationState _aliasInvocationState;
         private string _description;
         private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = AWSConfigs.InitializeCollections ? new List<AgentAliasRoutingConfigurationListItem>() : null;
 
@@ -96,6 +97,27 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetAgentId()
         {
             return this._agentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AliasInvocationState. 
+        /// <para>
+        /// The invocation state for the agent alias. To pause the agent alias, set the value
+        /// to <c>REJECT_INVOCATIONS</c>. To start the agent alias running again, set the value
+        /// to <c>ACCEPT_INVOCATIONS</c>. Use the <c>GetAgentAlias</c>, or <c>ListAgentAliases</c>,
+        /// operation to get the invocation state of an agent alias.
+        /// </para>
+        /// </summary>
+        public AliasInvocationState AliasInvocationState
+        {
+            get { return this._aliasInvocationState; }
+            set { this._aliasInvocationState = value; }
+        }
+
+        // Check to see if AliasInvocationState property is set
+        internal bool IsSetAliasInvocationState()
+        {
+            return this._aliasInvocationState != null;
         }
 
         /// <summary>
