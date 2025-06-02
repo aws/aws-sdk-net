@@ -2727,7 +2727,24 @@ namespace Amazon.EKS
         /// <summary>
         /// Returns a list of all insights checked for against the specified cluster. You can
         /// filter which insights are returned by category, associated Kubernetes version, and
-        /// status.
+        /// status. The default filter lists all categories and every status.
+        /// 
+        ///  
+        /// <para>
+        /// The following lists the available categories:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UPGRADE_READINESS</c>: Amazon EKS identifies issues that could impact your ability
+        /// to upgrade to new versions of Kubernetes. These are called upgrade insights.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MISCONFIGURATION</c>: Amazon EKS identifies misconfiguration in your EKS Hybrid
+        /// Nodes setup that could impair functionality of your cluster or workloads. These are
+        /// called configuration insights.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInsights service method.</param>
         /// <param name="cancellationToken">

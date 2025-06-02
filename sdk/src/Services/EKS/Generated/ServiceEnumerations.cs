@@ -463,6 +463,10 @@ namespace Amazon.EKS
     {
 
         /// <summary>
+        /// Constant MISCONFIGURATION for Category
+        /// </summary>
+        public static readonly Category MISCONFIGURATION = new Category("MISCONFIGURATION");
+        /// <summary>
         /// Constant UPGRADE_READINESS for Category
         /// </summary>
         public static readonly Category UPGRADE_READINESS = new Category("UPGRADE_READINESS");

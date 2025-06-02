@@ -41,8 +41,20 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Categories. 
         /// <para>
-        /// The categories to use to filter insights.
+        /// The categories to use to filter insights. The following lists the available categories:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UPGRADE_READINESS</c>: Amazon EKS identifies issues that could impact your ability
+        /// to upgrade to new versions of Kubernetes. These are called upgrade insights.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MISCONFIGURATION</c>: Amazon EKS identifies misconfiguration in your EKS Hybrid
+        /// Nodes setup that could impair functionality of your cluster or workloads. These are
+        /// called configuration insights.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> Categories
         {
