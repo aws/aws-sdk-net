@@ -1,3 +1,28 @@
+### 3.7.1056.0 (2025-06-02 18:32 UTC)
+* Athena (3.7.404.0)
+	* Add support for the managed query result in the workgroup APIs. The managed query result configuration enables users to store query results to Athena owned storage.
+* Backup (3.7.403.0)
+	* You can now subscribe to Amazon SNS notifications and Amazon EventBridge events for backup indexing. You can now receive notifications when a backup index is created, deleted, or fails to create, enhancing your ability to monitor and track your backup operations.
+* BedrockAgent (3.7.427.0)
+	* This release adds the Agent Lifecycle Paused State feature to Amazon Bedrock agents. By using an agent's alias, you can temporarily suspend agent operations during maintenance, updates, or other situations.
+* ComputeOptimizer (3.7.403.0)
+	* This release enables AWS Compute Optimizer to analyze Amazon Aurora database clusters and generate Aurora I/O-Optimized recommendations.
+* CostOptimizationHub (3.7.406.0)
+	* Support recommendations for Aurora instance and Aurora cluster storage.
+* ECS (3.7.411.8)
+	* Updates Amazon ECS documentation to include note for upcoming default log driver mode change.
+* EKS (3.7.416.0)
+	* Add support for filtering ListInsights API calls on MISCONFIGURATION insight category
+* EntityResolution (3.7.404.0)
+	* Add support for generating match IDs in near real-time.
+* PCS (3.7.404.0)
+	* Introduces SUSPENDING and SUSPENDED states for clusters, compute node groups, and queues.
+* Synthetics (3.7.407.0)
+	* Support for Java runtime handler pattern.
+* Core 3.7.402.65
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1055.0 (2025-05-30 18:21 UTC)
 * EMRServerless (3.7.404.0)
 	* This release adds the capability for users to specify an optional Execution IAM policy in the StartJobRun action. The resulting permissions assumed by the job run is the intersection of the permissions in the Execution Role and the specified Execution IAM Policy.
