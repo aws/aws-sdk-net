@@ -12,21 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.EC2;
+using System;
+using System.Security.Cryptography;
+using System.Text;
+#if !NET
 using Amazon.Runtime;
 using System.IO;
-using System.Security.Cryptography;
-using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
-using System.Runtime.CompilerServices;
-using System.Diagnostics;
+using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
+#endif
+
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -43,6 +41,10 @@ namespace Amazon.EC2.Model
         /// <returns>The decrypted password</returns>
         public static string GetDecryptedPassword(this GetPasswordDataResponse getPasswordDataResponse, string rsaPrivateKey)
         {
+            RSA rsa = RSA.Create();
+#if NET
+            rsa.ImportFromPem(rsaPrivateKey.AsSpan().Trim());
+#else
             RSAParameters rsaParams;
             try
             {
@@ -69,12 +71,11 @@ namespace Amazon.EC2.Model
             {
                 throw new AmazonEC2Exception("Invalid RSA Private Key", e);
             }
-
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
             rsa.ImportParameters(rsaParams);
+#endif
 
             byte[] encryptedBytes = Convert.FromBase64String(getPasswordDataResponse.PasswordData);
-            var decryptedBytes = rsa.Decrypt(encryptedBytes, false);
+            var decryptedBytes = rsa.Decrypt(encryptedBytes, RSAEncryptionPadding.Pkcs1);
 
             string decrypted = Encoding.UTF8.GetString(decryptedBytes);
             return decrypted;
