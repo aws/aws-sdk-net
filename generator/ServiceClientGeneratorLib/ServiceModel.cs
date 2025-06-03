@@ -549,27 +549,23 @@ namespace ServiceClientGenerator
         }
 
 
-        private List<string> _s3RequestMarshallerThrowAmazonS3ExceptionList;
-        
+        private List<string> _s3RequestMarshallerThrowGenericExceptionList;
         /// <summary>
         /// The names of s3 operations where we throw AmazonS3Exception instead of System.ArgumentException
-        /// when required parameters aren't set. This is here because we aren't consistent on which exception
-        /// we throw when a required parameter isn't set for S3, since S3 is hand-coded. Now that we are moving
-        /// towards S3 generation and need to maintain backwards compatibility, we maintain a list of those
-        /// operations where the generic AmazonS3Exception is thrown.
+        /// when required parameters aren't set.
         /// </summary>
         public List<string> S3RequestMarshallerThrowGenericExceptionList
         {
             get
             {
-                if (_s3RequestMarshallerThrowAmazonS3ExceptionList == null)
+                if (_s3RequestMarshallerThrowGenericExceptionList == null)
                 {
-                    _s3RequestMarshallerThrowAmazonS3ExceptionList = new List<string>()
+                    _s3RequestMarshallerThrowGenericExceptionList = new List<string>()
                     {
                         "CreateSession"
                     };
                 }
-                return _s3RequestMarshallerThrowAmazonS3ExceptionList;
+                return _s3RequestMarshallerThrowGenericExceptionList;
             }
         }
         public IDictionary<string, string> OperationsNameMapping

@@ -236,19 +236,37 @@ namespace ServiceClientGenerator
                 this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.ClassName + "Exception.cs");
             }
 
-            var operations = Configuration.Namespace == "Amazon.S3" ? Configuration.ServiceModel.S3AllowListOperations : Configuration.ServiceModel.Operations;
-            // Generates the Request, Response, Marshaller, Unmarshaller, and Exception objects for a given client operation
-            foreach (var operation in operations)
+            if (Configuration.Namespace == "Amazon.S3")
             {
-                GenerateRequest(operation);
-                GenerateResponse(operation);
-                GenerateRequestMarshaller(operation);
-                GenerateResponseUnmarshaller(operation);
-                GenerateEndpointDiscoveryMarshaller(operation);
-                GenerateExceptions(operation);
-                GenerateStructures(operation);
-                GenerateEventStreamPublisher(operation);
+                foreach (var operation in Configuration.ServiceModel.S3AllowListOperations)
+                {
+                    GenerateRequest(operation);
+                    GenerateResponse(operation);
+                    GenerateRequestMarshaller(operation);
+                    GenerateResponseUnmarshaller(operation);
+                    GenerateEndpointDiscoveryMarshaller(operation);
+                    GenerateExceptions(operation);
+                    GenerateStructures(operation);
+                    GenerateEventStreamPublisher(operation);
+                }
             }
+
+            else
+            {
+                foreach (var operation in Configuration.ServiceModel.Operations)
+                {
+                    GenerateRequest(operation);
+                    GenerateResponse(operation);
+                    GenerateRequestMarshaller(operation);
+                    GenerateResponseUnmarshaller(operation);
+                    GenerateEndpointDiscoveryMarshaller(operation);
+                    GenerateExceptions(operation);
+                    GenerateStructures(operation);
+                    GenerateEventStreamPublisher(operation);
+                }
+            }
+                // Generates the Request, Response, Marshaller, Unmarshaller, and Exception objects for a given client operation
+
 
             if (Configuration.ServiceModel.Customizations.GenerateCustomUnmarshaller)
             {
@@ -714,6 +732,7 @@ namespace ServiceClientGenerator
                 {
                     if (shape.IsEvent || shape.IsEventStream)
                     {
+                        this._processedUnmarshallers.Add(nestedStructure.Name);
                         continue;
                     }
                 }
@@ -1021,6 +1040,7 @@ namespace ServiceClientGenerator
                 {
                     if (definition.IsEvent || definition.IsEventStream)
                     {
+                        this._processedStructures.Add(definition.Name);
                         continue;
                     }
                 }

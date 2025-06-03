@@ -339,6 +339,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RestXmlResponseUnmarshaller.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\S3\DeleteBucketRequestCustomMarshallLogic.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DeleteBucketRequestCustomMarshallLogic.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\SourceFiles\EventCollectionAddImplementation.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -623,6 +628,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EventStreamPublisherMarshaller.cs</LastGenOutput>
     </None>
+    <None Update="Generators\S3\DeleteBucketRequestCustomMarshallLogic.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DeleteBucketRequestCustomMarshallLogic.cs</LastGenOutput>
+    </None>
     <None Update="Generators\SourceFiles\EventCollectionAddImplementation.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EventCollectionAddImplementation.cs</LastGenOutput>
@@ -735,11 +744,8 @@
       <LastGenOutput>AmazonS3RetryPolicy.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+  <ItemGroup>
 	<PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
-	<Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'net45'">
 	<PackageReference Include="System.CodeDom" Version="6.0.0" />
