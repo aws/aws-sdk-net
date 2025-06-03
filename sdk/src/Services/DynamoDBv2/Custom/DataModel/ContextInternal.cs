@@ -442,7 +442,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             using (flatConfig.State.Track(document))
             {
-                foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
+                foreach (PropertyStorage propertyStorage in storageConfig.Properties)
                 {
                     string attributeName = propertyStorage.AttributeName;
                     if (propertyStorage.ShouldFlattenChildProperties)
