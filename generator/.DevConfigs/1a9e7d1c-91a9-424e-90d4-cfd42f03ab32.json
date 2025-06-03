@@ -1,0 +1,18 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Changing S3 bucket names to preferred values in example documentation."
+            ]
+        },
+        {
+            "serviceName": "ElasticMapReduce",
+            "type": "patch",
+            "changeLogMessages": [
+                "Changing S3 bucket names to preferred values in example documentation."
+            ]
+        }        
+    ]
+}

@@ -67,7 +67,7 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Gets and sets the resource associated with the ARN (e.g.: 'mybucket/myobject').
+        /// Gets and sets the resource associated with the ARN (e.g.: 'amzn-s3-demo-bucket/myobject').
         /// </summary>
         public string Resource { get; set; }
 

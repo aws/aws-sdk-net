@@ -30,7 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
     ///
     /// HadoopJarStepConfig config = new StreamingStep {
     ///     Inputs = new List&lt;string> { "s3://elasticmapreduce/samples/wordcount/input" },
-    ///     Output = "s3://my-bucket/output/",
+    ///     Output = "s3://amzn-s3-demo-bucket/output/",
     ///     Mapper = "s3://elasticmapreduce/samples/wordcount/wordSplitter.py",
     ///     Reducer = "aggregate"
     /// }.ToHadoopJarStepConfig();

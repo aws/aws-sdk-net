@@ -43,8 +43,8 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <summary>
         /// Constructs a new object resource that represents the specified objects.
         /// The keyPattern argument may contain the '*' wildcard to match multiple
-        /// objects. For example, an object resource created for bucket 'mybucket'
-        /// and key pattern 'foo*' will match any object stored in 'mybucket' with a
+        /// objects. For example, an object resource created for bucket 'amzn-s3-demo-bucket'
+        /// and key pattern 'foo*' will match any object stored in 'amzn-s3-demo-bucket' with a
         /// key that starts with 'foo'.
         /// </summary>
         /// <param name="bucketName">The name of the bucket containing the object or objects
