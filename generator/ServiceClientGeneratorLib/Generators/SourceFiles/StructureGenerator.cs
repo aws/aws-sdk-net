@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+    #line 1 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class StructureGenerator : BaseGenerator
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         {
             this.Write("\r\n");
             
-            #line 7 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 7 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     AddLicenseHeader();
 
@@ -41,7 +41,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "\r\nusing System.Text;\r\nusing System.IO;\r\nusing System.Net;\r\n\r\nusing Amazon.Runtim" +
                     "e;\r\nusing Amazon.Runtime.Internal;\r\n");
             
-            #line 19 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 19 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
 bool structureIsNotEventStream = this.Structure != null && !this.Structure.IsEventStream;
 bool structureIsEventStream = this.Structure != null && this.Structure.IsEventStream;
@@ -52,7 +52,7 @@ bool structureIsEvent = this.Structure != null && this.Structure.IsEvent;
             #line default
             #line hidden
             
-            #line 25 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 25 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
 if(structureIsEvent || structureIsEventStream)
 {
@@ -63,7 +63,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("using Amazon.Runtime.EventStreams;\r\nusing Amazon.Runtime.EventStreams.Internal;\r\n" +
                     "using ");
             
-            #line 31 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 31 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -71,7 +71,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write(".Model.Internal.MarshallTransformations;\r\nusing Amazon.Runtime.EventStreams.Utils" +
                     ";\r\nusing Amazon.Runtime.Internal.Util;\r\n");
             
-            #line 34 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 34 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
 }
 
@@ -80,14 +80,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("\r\n#pragma warning disable CS0612,CS0618,CS1570\r\nnamespace ");
             
-            #line 39 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 39 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n");
             
-            #line 41 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 41 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
   
     if(this.StructureType == StructureType.Request)
         this.FormatOperationRequestDocumentation(this.Operation);
@@ -101,14 +101,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    /// <summary>\r\n    /// This is the response object from the ");
             
-            #line 50 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 50 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write(" operation.\r\n    /// </summary>\r\n");
             
-            #line 52 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 52 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     }
     else
@@ -118,7 +118,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 57 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 57 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
       
     if(this.Structure != null && this.Structure.IsDeprecated)
         {
@@ -128,14 +128,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    [Obsolete(\"");
             
-            #line 61 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 61 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 62 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 62 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
     if(this.Structure is ExceptionShape)
@@ -146,7 +146,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    #if !NETSTANDARD\r\n    [Serializable]\r\n    #endif\r\n");
             
-            #line 70 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 70 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
 
@@ -154,7 +154,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 73 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 73 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
 
     if(this.Structure != null && structureIsEventOutputStream)
@@ -171,14 +171,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    ");
             
-            #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 84 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(eventStreamContent));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 85 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 85 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     }
 
@@ -186,7 +186,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 88 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 88 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     bool structureContainsEventPayload = this.Structure?.Members.Any(member => member.IsEventPayload) ?? false;
     Member payloadMember = this.Structure?.GetExplicitEventPayloadMember();
@@ -203,20 +203,20 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    public partial class ");
             
-            #line 99 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 99 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassName));
             
             #line default
             #line hidden
             
-            #line 99 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 99 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseClassString));
             
             #line default
             #line hidden
             this.Write(", IDisposable\r\n    {\r\n");
             
-            #line 101 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 101 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     }
     else 
@@ -226,7 +226,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 106 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 106 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         // In the case of a bi-directional operation the response object will own the
         // EventInputStreamContext which is a handle to the HttpRequest. This allows the response
@@ -239,13 +239,13 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    public partial class ");
             
-            #line 113 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 113 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassName));
             
             #line default
             #line hidden
             
-            #line 113 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 113 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseClassString));
             
             #line default
@@ -253,7 +253,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write(", Amazon.Runtime.EventStreams.IEventInputStreamContextOwner, IDisposable\r\n    {\r\n" +
                     "");
             
-            #line 115 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 115 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
         else if( this.StructureType == StructureType.Response && this.Operation.IsEventStreamOutput)
@@ -264,20 +264,20 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    public partial class ");
             
-            #line 120 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 120 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassName));
             
             #line default
             #line hidden
             
-            #line 120 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 120 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseClassString));
             
             #line default
             #line hidden
             this.Write(", IDisposable\r\n    {\r\n");
             
-            #line 122 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 122 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
         else if( (this.Structure == null) || (structureIsNotEventStream))
@@ -288,20 +288,20 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    public partial class ");
             
-            #line 127 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 127 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassName));
             
             #line default
             #line hidden
             
-            #line 127 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 127 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseClassString));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 128 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 128 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
             if(structureIsEvent)
             {
@@ -311,7 +311,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        : IEventStreamEvent\r\n");
             
-            #line 133 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 133 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
             }
 
@@ -320,7 +320,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    {\r\n");
             
-            #line 137 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 137 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
 
@@ -328,7 +328,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 140 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 140 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     }
 
@@ -336,7 +336,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 143 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 143 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         if(structureIsNotEventStream)
         {
@@ -348,28 +348,28 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        private ");
             
-            #line 149 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 149 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" _response;\r\n\r\n        /// <summary>\r\n        /// Gets and sets the ");
             
-            #line 152 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 152 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" property.\r\n        /// </summary>\r\n        public ");
             
-            #line 154 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 154 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 154 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 154 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -377,7 +377,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("\r\n        {\r\n            get { return this._response; }\r\n            set { this._" +
                     "response = value; }\r\n        }\r\n");
             
-            #line 159 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 159 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
             }
             else
@@ -400,27 +400,27 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        private ");
             
-            #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 176 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 176 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             
-            #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 176 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 177 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 177 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 }
 
@@ -430,7 +430,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("\r\n");
             
-            #line 182 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 182 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 AddSimpleRequestConstructors(this.ClassName, this.Structure, this.Config.Namespace);
 
@@ -445,14 +445,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        private RetryableDetails _retryableDetails = new RetryableDetails(");
             
-            #line 191 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 191 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exceptionShape.Throttling.ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 192 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 192 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
 
             
@@ -460,7 +460,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("\r\n");
             
-            #line 195 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 195 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
 
@@ -469,7 +469,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        /// <summary>\r\n        /// Constructs a new ");
             
-            #line 2 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 2 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -478,7 +478,7 @@ if(structureIsEvent || structureIsEventStream)
                     "/// <param name=\"message\">\r\n        /// Describes the error encountered.\r\n      " +
                     "  /// </param>\r\n        public ");
             
-            #line 8 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 8 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -486,7 +486,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("(string message) \r\n            : base(message) {}\r\n\r\n        /// <summary>\r\n     " +
                     "   /// Construct instance of ");
             
-            #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 12 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -494,7 +494,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"message\"></param>\r\n        ///" +
                     " <param name=\"innerException\"></param>\r\n        public ");
             
-            #line 16 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 16 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -502,7 +502,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("(string message, Exception innerException) \r\n            : base(message, innerExc" +
                     "eption) {}\r\n\r\n        /// <summary>\r\n        /// Construct instance of ");
             
-            #line 20 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 20 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -510,7 +510,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"innerException\"></param>\r\n    " +
                     "    public ");
             
-            #line 23 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 23 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -518,7 +518,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("(Exception innerException) \r\n            : base(innerException) {}\r\n\r\n        ///" +
                     " <summary>\r\n        /// Construct instance of ");
             
-            #line 27 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 27 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -533,7 +533,7 @@ if(structureIsEvent || structureIsEventStream)
         /// <param name=""statusCode""></param>
         public ");
             
-            #line 35 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 35 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -544,7 +544,7 @@ if(structureIsEvent || structureIsEventStream)
         /// <summary>
         /// Construct instance of ");
             
-            #line 39 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 39 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -558,7 +558,7 @@ if(structureIsEvent || structureIsEventStream)
         /// <param name=""statusCode""></param>
         public ");
             
-            #line 46 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
+            #line 46 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionConstructors.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -570,7 +570,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("#if !NETSTANDARD\r\n        /// <summary>\r\n        /// Constructs a new instance of" +
                     " the ");
             
-            #line 3 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 3 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -583,7 +583,7 @@ if(structureIsEvent || structureIsEventStream)
         /// <exception cref=""T:System.Runtime.Serialization.SerializationException"">The class name is null or <see cref=""P:System.Exception.HResult"" /> is zero (0). </exception>
         protected ");
             
-            #line 9 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 9 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -591,7 +591,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serializatio" +
                     "n.StreamingContext context)\r\n            : base(info, context)\r\n        {\r\n");
             
-            #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 12 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
           
             foreach(var member in this.Structure.Members)
 			{
@@ -601,35 +601,35 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            this.");
             
-            #line 16 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 16 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = (");
             
-            #line 16 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 16 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(")info.GetValue(\"");
             
-            #line 16 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 16 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\", typeof(");
             
-            #line 16 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 16 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write("));\r\n");
             
-            #line 17 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 17 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
 
             }
 
@@ -653,7 +653,7 @@ if(structureIsEvent || structureIsEventStream)
             base.GetObjectData(info, context);
 ");
             
-            #line 35 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 35 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
 
             foreach(var member in this.Structure.Members)
 			{
@@ -663,21 +663,21 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            info.AddValue(\"");
             
-            #line 39 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 39 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\", this.");
             
-            #line 39 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 39 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 40 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
+            #line 40 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\.\Exceptions\ExceptionSerialization.t4"
 
             }
 
@@ -687,7 +687,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("        }\r\n#endif\r\n");
             this.Write("\r\n");
             
-            #line 200 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 200 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 }
 
@@ -720,7 +720,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 223 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 223 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
       
                     if(member.IsDeprecated)
                     {
@@ -730,14 +730,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        [Obsolete(\"");
             
-            #line 227 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 227 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 228 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 228 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
 
@@ -766,14 +766,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        [AWSProperty(");
             
-            #line 251 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 251 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(", ", propertyAttributes)));
             
             #line default
             #line hidden
             this.Write(")]\r\n");
             
-            #line 252 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 252 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
 
@@ -801,35 +801,35 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        ");
             
-            #line 274 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 274 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.AccessModifier));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 274 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 274 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(memberModifier));
             
             #line default
             #line hidden
             this.Write(" Func<System.Threading.Tasks.Task<I");
             
-            #line 274 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 274 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.Name));
             
             #line default
             #line hidden
             this.Write("Event>> ");
             
-            #line 274 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 274 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" { get; set; }\r\n\r\n");
             
-            #line 276 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 276 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         continue;
                     }
@@ -839,48 +839,48 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        ");
             
-            #line 280 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 280 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.AccessModifier));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 280 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 280 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(memberModifier));
             
             #line default
             #line hidden
             
-            #line 280 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 280 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 280 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 280 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\r\n        {\r\n            get { return this.");
             
-            #line 282 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 282 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write("; }\r\n            set { this.");
             
-            #line 283 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 283 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(" = value; }\r\n        }\r\n\r\n");
             
-            #line 286 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 286 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     if (member.EmitIsSetProperties)
                     {
@@ -891,7 +891,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("        /// <summary>\r\n        /// This property is set to true if the property <" +
                     "seealso cref=\"");
             
-            #line 291 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 291 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default

@@ -12,20 +12,33 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The owner of an S3 bucket.
+    /// Container for the owner's display name and ID.
     /// </summary>
-    public class Owner
+    public partial class Owner
     {
+        private string _displayName;
+        private string _id;
+
         /// <summary>
+        /// Gets and sets the property DisplayName. 
         /// <para>
         /// Container for the display name of the owner. This value is only supported in the following
         /// Amazon Web Services Regions:
@@ -68,23 +81,35 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public string DisplayName { set; get; }
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
 
         // Check to see if DisplayName property is set
         internal bool IsSetDisplayName()
         {
-            return this.DisplayName != null;
+            return this._displayName != null;
         }
 
         /// <summary>
-        /// The unique identifier of the owner.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// Container for the ID of the owner.
+        /// </para>
         /// </summary>
-        public string Id { get; set; }
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
 
-        // Check to see if ID property is set
+        // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.Id != null;
+            return this._id != null;
         }
+
     }
 }

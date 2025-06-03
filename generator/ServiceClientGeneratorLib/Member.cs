@@ -275,6 +275,7 @@ namespace ServiceClientGenerator
             }
         }
 
+        private string _locationName;
         /// <summary>
         /// The name of the location
         /// </summary>
@@ -282,22 +283,41 @@ namespace ServiceClientGenerator
         {
             get
             {
-                if (ModelShape != null && !string.IsNullOrEmpty(ModelShape.LocationName) && ModelShape.IsFlattened)
-                    return ModelShape.LocationName;
-
-                // if list, lookup member/metadata/xmlName
-                // otherwise, lookup metadata/xmlName
-                var source = data;
-                if (IsList)
+                if (_locationName != null)
                 {
-                    var member = data[MemberKey];
-                    if (member != null)
-                        source = member;
+                    return _locationName;
+                }
+                else
+                {
+                    if (ModelShape != null && !string.IsNullOrEmpty(ModelShape.LocationName) && ModelShape.IsFlattened)
+                    {
+                        _locationName = ModelShape.LocationName;
+                        return _locationName;
+                    }
+                    else
+                    {
+                        // if list, lookup member/metadata/xmlName
+                        // otherwise, lookup metadata/xmlName
+                        var source = this.OriginalMember != null ? this.OriginalMember : data;
+                        if (IsList)
+                        {
+                            var member = data[MemberKey];
+                            if (member != null)
+                                source = member;
+                        }
+
+                        var locationName = source[ServiceModel.LocationNameKey];
+                        if (locationName == null)
+                        {
+                            _locationName = null;
+                            return null;
+                        }
+                        _locationName = locationName.ToString();
+                        return _locationName;
+                    }
+
                 }
 
-                var locationName = source[ServiceModel.LocationNameKey];
-                if (locationName == null) return null;
-                return locationName.ToString();
             }
         }
 
@@ -972,10 +992,10 @@ namespace ServiceClientGenerator
             {
                 string message = this.model.Customizations.GetPropertyModifier(this.OwningShape.Name, this._name)?.DeprecationMessage ??
                                  this.data[DeprecatedMessageKey].CastToString();
-                if (message == null)
+                if (!this.model.ServiceId.Equals("S3") && message == null)
                     throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for member {0}.{1}.\nFor example: \"MemberName\":{{ ... \"deprecated\":true, \"deprecatedMessage\":\"This property is deprecated, use XXX instead.\"}}", this.OwningShape.Name, this._name));
 
-                return message;
+                return message ?? "";
             }
         }
 

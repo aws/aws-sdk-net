@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Owner Unmarshaller
-     /// </summary>
+    /// <summary>
+    /// Response Unmarshaller for Owner Object
+    /// </summary>  
     public class OwnerUnmarshaller : IXmlUnmarshaller<Owner, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Owner Unmarshall(XmlUnmarshallerContext context) 
+        public Owner Unmarshall(XmlUnmarshallerContext context)
         {
-            Owner owner = new Owner();
+            Owner unmarshalledObject = new Owner();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -44,44 +58,35 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("DisplayName", targetDepth))
                     {
-                        owner.DisplayName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ID", targetDepth))
                     {
-                        owner.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return owner;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return owner;
+            }          
+            return unmarshalledObject;
         }
-
-        private static OwnerUnmarshaller _instance;
+        private static OwnerUnmarshaller _instance = new OwnerUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static OwnerUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new OwnerUnmarshaller();
-                }
                 return _instance;
             }
         }
     }
 }
-    

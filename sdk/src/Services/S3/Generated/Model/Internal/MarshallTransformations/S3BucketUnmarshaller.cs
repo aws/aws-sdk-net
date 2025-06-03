@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Bucket Unmarshaller
-     /// </summary>
-    public class BucketUnmarshaller : IXmlUnmarshaller<S3Bucket, XmlUnmarshallerContext>
+    /// <summary>
+    /// Response Unmarshaller for S3Bucket Object
+    /// </summary>  
+    public class S3BucketUnmarshaller : IXmlUnmarshaller<S3Bucket, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3Bucket Unmarshall(XmlUnmarshallerContext context) 
+        public S3Bucket Unmarshall(XmlUnmarshallerContext context)
         {
-            S3Bucket bucket = new S3Bucket();
+            S3Bucket unmarshalledObject = new S3Bucket();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -42,53 +56,43 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("CreationDate", targetDepth))
-                    {
-                        bucket.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Name", targetDepth))
                     {
-                        bucket.BucketName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("BucketRegion", targetDepth))
                     {
-                        bucket.BucketRegion = StringUnmarshaller.GetInstance().Unmarshall(context);
-
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BucketRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CreationDate", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return bucket;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return bucket;
+            }          
+            return unmarshalledObject;
         }
-
-        private static BucketUnmarshaller _instance;
+        private static S3BucketUnmarshaller _instance = new S3BucketUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static BucketUnmarshaller Instance
+        /// Gets the singleton.
+        /// </summary>  
+        public static S3BucketUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new BucketUnmarshaller();
-                }
                 return _instance;
             }
         }
-
     }
 }
-    
