@@ -68,7 +68,11 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetJobRunId())
                 throw new AmazonEMRServerlessException("Request object does not have required field JobRunId set");
             request.AddPathResource("{jobRunId}", StringUtils.FromString(publicRequest.JobRunId));
+            
+            if (publicRequest.IsSetShutdownGracePeriodInSeconds())
+                request.Parameters.Add("shutdownGracePeriodInSeconds", StringUtils.FromInt(publicRequest.ShutdownGracePeriodInSeconds));
             request.ResourcePath = "/applications/{applicationId}/jobruns/{jobRunId}";
+            request.UseQueryString = true;
 
             return request;
         }

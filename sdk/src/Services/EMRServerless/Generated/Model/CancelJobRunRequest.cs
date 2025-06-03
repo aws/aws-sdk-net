@@ -37,6 +37,7 @@ namespace Amazon.EMRServerless.Model
     {
         private string _applicationId;
         private string _jobRunId;
+        private int? _shutdownGracePeriodInSeconds;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -74,6 +75,25 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetJobRunId()
         {
             return this._jobRunId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShutdownGracePeriodInSeconds. 
+        /// <para>
+        /// The duration (in seconds) to wait before forcefully terminating the job after cancellation
+        /// is requested.
+        /// </para>
+        /// </summary>
+        public int? ShutdownGracePeriodInSeconds
+        {
+            get { return this._shutdownGracePeriodInSeconds; }
+            set { this._shutdownGracePeriodInSeconds = value; }
+        }
+
+        // Check to see if ShutdownGracePeriodInSeconds property is set
+        internal bool IsSetShutdownGracePeriodInSeconds()
+        {
+            return this._shutdownGracePeriodInSeconds.HasValue; 
         }
 
     }
