@@ -149,6 +149,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RegionalCertificateName);
                 }
 
+                if(publicRequest.IsSetRoutingMode())
+                {
+                    context.Writer.WritePropertyName("routingMode");
+                    context.Writer.Write(publicRequest.RoutingMode);
+                }
+
                 if(publicRequest.IsSetSecurityPolicy())
                 {
                     context.Writer.WritePropertyName("securityPolicy");

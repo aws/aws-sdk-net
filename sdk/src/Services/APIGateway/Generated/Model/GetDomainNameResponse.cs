@@ -53,6 +53,7 @@ namespace Amazon.APIGateway.Model
         private string _regionalCertificateName;
         private string _regionalDomainName;
         private string _regionalHostedZoneId;
+        private RoutingMode _routingMode;
         private SecurityPolicy _securityPolicy;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -427,6 +428,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetRegionalHostedZoneId()
         {
             return this._regionalHostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingMode. 
+        /// <para>
+        /// The routing mode for this domain name. The routing mode determines how API Gateway
+        /// sends traffic from your custom domain name to your private APIs.
+        /// </para>
+        /// </summary>
+        public RoutingMode RoutingMode
+        {
+            get { return this._routingMode; }
+            set { this._routingMode = value; }
+        }
+
+        // Check to see if RoutingMode property is set
+        internal bool IsSetRoutingMode()
+        {
+            return this._routingMode != null;
         }
 
         /// <summary>

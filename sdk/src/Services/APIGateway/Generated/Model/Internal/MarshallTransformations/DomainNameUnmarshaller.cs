@@ -180,6 +180,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.RegionalHostedZoneId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("routingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoutingMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("securityPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
