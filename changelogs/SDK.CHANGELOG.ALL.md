@@ -1,3 +1,16 @@
+### 4.0.25.0 (2025-06-03 18:25 UTC)
+* APIGateway (4.0.1.0)
+	* Adds support to set the routing mode for a custom domain name.
+* ApiGatewayV2 (4.0.1.0)
+	* Adds support to create routing rules and set the routing mode for a custom domain name.
+* DynamoDBv2 (4.0.1.1)
+	* Exposed ScannedCount property on the Search class within the Document Model.
+	* Introduce support for the [DynamoDBAtomicCounter] attribute in the DynamoDB Object Persistence Model`
+* EMRServerless (4.0.2.0)
+	* AWS EMR Serverless: Adds a new option in the CancelJobRun API in EMR 7.9.0+, to cancel a job with grace period. This feature is enabled by default with a 120-second grace period for streaming jobs and is not enabled by default for batch jobs.
+* S3 (4.0.1.2)
+	* Changing S3 bucket names to preferred values in example documentation.
+
 ### 4.0.24.0 (2025-06-02 18:22 UTC)
 * Athena (4.0.1.0)
 	* Add support for the managed query result in the workgroup APIs. The managed query result configuration enables users to store query results to Athena owned storage.
