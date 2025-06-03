@@ -1,3 +1,15 @@
+### 3.7.1057.0 (2025-06-03 18:14 UTC)
+* APIGateway (3.7.403.0)
+	* Adds support to set the routing mode for a custom domain name.
+* ApiGatewayV2 (3.7.403.0)
+	* Adds support to create routing rules and set the routing mode for a custom domain name.
+* ElasticMapReduce (3.7.404.8)
+	* Changing S3 bucket names to preferred values in example documentation.
+* EMRServerless (3.7.405.0)
+	* AWS EMR Serverless: Adds a new option in the CancelJobRun API in EMR 7.9.0+, to cancel a job with grace period. This feature is enabled by default with a 120-second grace period for streaming jobs and is not enabled by default for batch jobs.
+* S3 (3.7.417.3)
+	* Changing S3 bucket names to preferred values in example documentation.
+
 ### 3.7.1056.0 (2025-06-02 18:32 UTC)
 * Athena (3.7.404.0)
 	* Add support for the managed query result in the workgroup APIs. The managed query result configuration enables users to store query results to Athena owned storage.
