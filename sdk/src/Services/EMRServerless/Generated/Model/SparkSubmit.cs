@@ -63,6 +63,7 @@ namespace Amazon.EMRServerless.Model
         /// The arguments for the Spark submit job run.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public List<string> EntryPointArguments
         {
             get { return this._entryPointArguments; }
