@@ -592,7 +592,7 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <summary>Converts a <see cref="Dictionary{String, Object}"/> to a <see cref="Document"/>.</summary>
     private static Document DictionaryToDocument(IDictionary<string, object?>? arguments)
     {
-        Document inputs = default;
+        Document inputs = new Document(new Dictionary<string, Document>());
         if (arguments is not null)
         {
             foreach (KeyValuePair<string, object?> argument in arguments)
@@ -704,6 +704,21 @@ internal sealed partial class BedrockChatClient : IChatClient
                 }
             }
 
+            var schemaDictionary = new Dictionary<string, Document>()
+            {
+                ["type"] = new Document("object"),
+            };
+
+            if (inputs != default)
+            {
+                schemaDictionary["properties"] = inputs;
+            }
+
+            if (required.Count > 0)
+            {
+                schemaDictionary["required"] = new Document(required);
+            }
+
             return new Tool()
             {
                 ToolSpec = new ToolSpecification()
@@ -712,12 +727,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                     Description = !string.IsNullOrEmpty(f.Description) ? f.Description : f.Name,
                     InputSchema = new()
                     {
-                        Json = new(new Dictionary<string, Document>()
-                        {
-                            ["type"] = new Document("object"),
-                            ["properties"] = inputs,
-                            ["required"] = new Document(required),
-                        })
+                        Json = new(schemaDictionary)
                     },
                 },
             };
