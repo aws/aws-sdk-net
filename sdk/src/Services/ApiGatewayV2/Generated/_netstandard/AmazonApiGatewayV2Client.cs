@@ -204,6 +204,24 @@ namespace Amazon.ApiGatewayV2
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IApiGatewayV2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IApiGatewayV2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ApiGatewayV2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 
@@ -749,6 +767,56 @@ namespace Amazon.ApiGatewayV2
             options.ResponseUnmarshaller = CreateRouteResponseResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRouteResponseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRoutingRule
+
+        internal virtual CreateRoutingRuleResponse CreateRoutingRule(CreateRoutingRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRoutingRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a RoutingRule
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoutingRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRoutingRule service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoutingRule">REST API Reference for CreateRoutingRule Operation</seealso>
+        public virtual Task<CreateRoutingRuleResponse> CreateRoutingRuleAsync(CreateRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoutingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRoutingRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1419,6 +1487,51 @@ namespace Amazon.ApiGatewayV2
             options.ResponseUnmarshaller = DeleteRouteSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRouteSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRoutingRule
+
+        internal virtual DeleteRoutingRuleResponse DeleteRoutingRule(DeleteRoutingRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRoutingRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a routing rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoutingRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRoutingRule service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoutingRule">REST API Reference for DeleteRoutingRule Operation</seealso>
+        public virtual Task<DeleteRoutingRuleResponse> DeleteRoutingRuleAsync(DeleteRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoutingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRoutingRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2455,6 +2568,51 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  GetRoutingRule
+
+        internal virtual GetRoutingRuleResponse GetRoutingRule(GetRoutingRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetRoutingRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a routing rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRoutingRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRoutingRule service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutingRule">REST API Reference for GetRoutingRule Operation</seealso>
+        public virtual Task<GetRoutingRuleResponse> GetRoutingRuleAsync(GetRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoutingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRoutingRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStage
 
         internal virtual GetStageResponse GetStage(GetStageRequest request)
@@ -2719,6 +2877,101 @@ namespace Amazon.ApiGatewayV2
             options.ResponseUnmarshaller = ImportApiResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportApiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRoutingRules
+
+        internal virtual ListRoutingRulesResponse ListRoutingRules(ListRoutingRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoutingRulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists routing rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutingRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRoutingRules service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListRoutingRules">REST API Reference for ListRoutingRules Operation</seealso>
+        public virtual Task<ListRoutingRulesResponse> ListRoutingRulesAsync(ListRoutingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRoutingRulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutRoutingRule
+
+        internal virtual PutRoutingRuleResponse PutRoutingRule(PutRoutingRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutRoutingRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a routing rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRoutingRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutRoutingRule service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutRoutingRule">REST API Reference for PutRoutingRule Operation</seealso>
+        public virtual Task<PutRoutingRuleResponse> PutRoutingRuleAsync(PutRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRoutingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutRoutingRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion

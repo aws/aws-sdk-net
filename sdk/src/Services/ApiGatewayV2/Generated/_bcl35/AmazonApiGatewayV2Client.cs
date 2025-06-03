@@ -42,6 +42,24 @@ namespace Amazon.ApiGatewayV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonApiGatewayV2Metadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IApiGatewayV2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IApiGatewayV2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ApiGatewayV2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>
@@ -945,6 +963,76 @@ namespace Amazon.ApiGatewayV2
         public virtual CreateRouteResponseResponse EndCreateRouteResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRouteResponseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateRoutingRule
+
+        /// <summary>
+        /// Creates a RoutingRule
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoutingRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateRoutingRule service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoutingRule">REST API Reference for CreateRoutingRule Operation</seealso>
+        public virtual CreateRoutingRuleResponse CreateRoutingRule(CreateRoutingRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRoutingRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRoutingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoutingRule operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRoutingRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoutingRule">REST API Reference for CreateRoutingRule Operation</seealso>
+        public virtual IAsyncResult BeginCreateRoutingRule(CreateRoutingRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRoutingRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRoutingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRoutingRule.</param>
+        /// 
+        /// <returns>Returns a  CreateRoutingRuleResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoutingRule">REST API Reference for CreateRoutingRule Operation</seealso>
+        public virtual CreateRoutingRuleResponse EndCreateRoutingRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRoutingRuleResponse>(asyncResult);
         }
 
         #endregion
@@ -1935,6 +2023,71 @@ namespace Amazon.ApiGatewayV2
         public virtual DeleteRouteSettingsResponse EndDeleteRouteSettings(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRouteSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRoutingRule
+
+        /// <summary>
+        /// Deletes a routing rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoutingRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRoutingRule service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoutingRule">REST API Reference for DeleteRoutingRule Operation</seealso>
+        public virtual DeleteRoutingRuleResponse DeleteRoutingRule(DeleteRoutingRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRoutingRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRoutingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoutingRule operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRoutingRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoutingRule">REST API Reference for DeleteRoutingRule Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRoutingRule(DeleteRoutingRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRoutingRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRoutingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRoutingRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteRoutingRuleResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoutingRule">REST API Reference for DeleteRoutingRule Operation</seealso>
+        public virtual DeleteRoutingRuleResponse EndDeleteRoutingRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRoutingRuleResponse>(asyncResult);
         }
 
         #endregion
@@ -3451,6 +3604,71 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  GetRoutingRule
+
+        /// <summary>
+        /// Gets a routing rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRoutingRule service method.</param>
+        /// 
+        /// <returns>The response from the GetRoutingRule service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutingRule">REST API Reference for GetRoutingRule Operation</seealso>
+        public virtual GetRoutingRuleResponse GetRoutingRule(GetRoutingRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetRoutingRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRoutingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRoutingRule operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRoutingRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutingRule">REST API Reference for GetRoutingRule Operation</seealso>
+        public virtual IAsyncResult BeginGetRoutingRule(GetRoutingRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoutingRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRoutingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRoutingRule.</param>
+        /// 
+        /// <returns>Returns a  GetRoutingRuleResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutingRule">REST API Reference for GetRoutingRule Operation</seealso>
+        public virtual GetRoutingRuleResponse EndGetRoutingRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRoutingRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetStage
 
         /// <summary>
@@ -3835,6 +4053,141 @@ namespace Amazon.ApiGatewayV2
         public virtual ImportApiResponse EndImportApi(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportApiResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRoutingRules
+
+        /// <summary>
+        /// Lists routing rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutingRules service method.</param>
+        /// 
+        /// <returns>The response from the ListRoutingRules service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListRoutingRules">REST API Reference for ListRoutingRules Operation</seealso>
+        public virtual ListRoutingRulesResponse ListRoutingRules(ListRoutingRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoutingRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRoutingRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutingRules operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRoutingRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListRoutingRules">REST API Reference for ListRoutingRules Operation</seealso>
+        public virtual IAsyncResult BeginListRoutingRules(ListRoutingRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRoutingRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRoutingRules.</param>
+        /// 
+        /// <returns>Returns a  ListRoutingRulesResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListRoutingRules">REST API Reference for ListRoutingRules Operation</seealso>
+        public virtual ListRoutingRulesResponse EndListRoutingRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRoutingRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutRoutingRule
+
+        /// <summary>
+        /// Updates a routing rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRoutingRule service method.</param>
+        /// 
+        /// <returns>The response from the PutRoutingRule service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutRoutingRule">REST API Reference for PutRoutingRule Operation</seealso>
+        public virtual PutRoutingRuleResponse PutRoutingRule(PutRoutingRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutRoutingRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRoutingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRoutingRule operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRoutingRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutRoutingRule">REST API Reference for PutRoutingRule Operation</seealso>
+        public virtual IAsyncResult BeginPutRoutingRule(PutRoutingRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRoutingRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRoutingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRoutingRule.</param>
+        /// 
+        /// <returns>Returns a  PutRoutingRuleResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutRoutingRule">REST API Reference for PutRoutingRule Operation</seealso>
+        public virtual PutRoutingRuleResponse EndPutRoutingRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutRoutingRuleResponse>(asyncResult);
         }
 
         #endregion

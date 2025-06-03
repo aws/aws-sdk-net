@@ -36,8 +36,10 @@ namespace Amazon.ApiGatewayV2.Model
     {
         private string _apiMappingSelectionExpression;
         private string _domainName;
+        private string _domainNameArn;
         private List<DomainNameConfiguration> _domainNameConfigurations = AWSConfigs.InitializeCollections ? new List<DomainNameConfiguration>() : null;
         private MutualTlsAuthentication _mutualTlsAuthentication;
+        private RoutingMode _routingMode;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -77,6 +79,21 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainNameArn.
+        /// </summary>
+        public string DomainNameArn
+        {
+            get { return this._domainNameArn; }
+            set { this._domainNameArn = value; }
+        }
+
+        // Check to see if DomainNameArn property is set
+        internal bool IsSetDomainNameArn()
+        {
+            return this._domainNameArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DomainNameConfigurations. 
         /// <para>
         /// The domain name configurations.
@@ -110,6 +127,24 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetMutualTlsAuthentication()
         {
             return this._mutualTlsAuthentication != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingMode. 
+        /// <para>
+        /// The routing mode.
+        /// </para>
+        /// </summary>
+        public RoutingMode RoutingMode
+        {
+            get { return this._routingMode; }
+            set { this._routingMode = value; }
+        }
+
+        // Check to see if RoutingMode property is set
+        internal bool IsSetRoutingMode()
+        {
+            return this._routingMode != null;
         }
 
         /// <summary>

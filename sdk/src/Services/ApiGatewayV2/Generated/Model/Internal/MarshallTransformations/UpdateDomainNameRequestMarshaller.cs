@@ -97,6 +97,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRoutingMode())
+                {
+                    context.Writer.WritePropertyName("routingMode");
+                    context.Writer.Write(publicRequest.RoutingMode);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

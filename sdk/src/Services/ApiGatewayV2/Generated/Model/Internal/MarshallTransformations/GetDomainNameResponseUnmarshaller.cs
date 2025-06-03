@@ -64,6 +64,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     response.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("domainNameArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainNameArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("domainNameConfigurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DomainNameConfiguration, DomainNameConfigurationUnmarshaller>(DomainNameConfigurationUnmarshaller.Instance);
@@ -74,6 +80,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MutualTlsAuthenticationUnmarshaller.Instance;
                     response.MutualTlsAuthentication = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("routingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RoutingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
