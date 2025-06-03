@@ -367,7 +367,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return await UpdateHelperAsync(doc, null, null, null, cancellationToken).ConfigureAwait(false);
+                return await UpdateHelperAsync(doc, null, null, null, null, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -377,7 +377,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return await UpdateHelperAsync(doc, null, null, config, cancellationToken).ConfigureAwait(false);
+                return await UpdateHelperAsync(doc, null, null, config, null,cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -387,7 +387,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return await UpdateHelperAsync(doc, MakeKey(key), null, cancellationToken).ConfigureAwait(false);
+                return await UpdateHelperAsync(doc, MakeKey(key), null, null, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -397,7 +397,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return await UpdateHelperAsync(doc, MakeKey(key), config, cancellationToken).ConfigureAwait(false);
+                return await UpdateHelperAsync(doc, MakeKey(key), config, null, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -407,7 +407,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return await UpdateHelperAsync(doc, hashKey, null, null, cancellationToken).ConfigureAwait(false);
+                return await UpdateHelperAsync(doc, hashKey, null, null, null, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -417,7 +417,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return await UpdateHelperAsync(doc, hashKey, null, config, cancellationToken).ConfigureAwait(false);
+                return await UpdateHelperAsync(doc, hashKey, null, config, null, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -427,7 +427,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return await UpdateHelperAsync(doc, hashKey, rangeKey, null, cancellationToken).ConfigureAwait(false);
+                return await UpdateHelperAsync(doc, hashKey, rangeKey, null, null, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -437,7 +437,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return await UpdateHelperAsync(doc, hashKey, rangeKey, config, cancellationToken).ConfigureAwait(false);
+                return await UpdateHelperAsync(doc, hashKey, rangeKey, config, null, cancellationToken).ConfigureAwait(false);
             }
         }
 

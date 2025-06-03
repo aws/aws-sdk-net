@@ -149,6 +149,12 @@ namespace Amazon.DynamoDBv2.DataModel
         // corresponding IndexNames, if applicable
         public List<string> IndexNames { get; set; }
 
+        public bool IsCounter { get; set; }
+
+        public long CounterDelta { get; set; }
+
+        public long CounterStartValue { get; set; }
+
         public void AddIndex(DynamoDBGlobalSecondaryIndexHashKeyAttribute gsiHashKey)
         {
             AddIndex(new GSI(true, gsiHashKey.AttributeName, gsiHashKey.IndexNames));
@@ -209,7 +215,10 @@ namespace Amazon.DynamoDBv2.DataModel
         public void Validate(DynamoDBContext context)
         {
             if (IsVersion)
-                Utils.ValidateVersionType(MemberType);    // no conversion is possible, so type must be a nullable primitive
+                Utils.ValidateNumericType(MemberType);    // no conversion is possible, so type must be a nullable primitive
+
+            if (IsCounter)
+                Utils.ValidateNumericType(MemberType);    // no conversion is possible, so type must be a nullable primitive
 
             if (IsHashKey && IsRangeKey)
                 throw new InvalidOperationException("Property " + PropertyName + " cannot be both hash and range key");
@@ -957,6 +966,14 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 if (attribute is DynamoDBVersionAttribute)
                     propertyStorage.IsVersion = true;
+
+                DynamoDBAtomicCounterAttribute counterAttribute = attribute as DynamoDBAtomicCounterAttribute;
+                if (counterAttribute != null)
+                {
+                    propertyStorage.IsCounter = true;
+                    propertyStorage.CounterDelta = counterAttribute.Delta;
+                    propertyStorage.CounterStartValue = counterAttribute.StartValue;
+                }
 
                 DynamoDBRenamableAttribute renamableAttribute = attribute as DynamoDBRenamableAttribute;
                 if (renamableAttribute != null && !string.IsNullOrEmpty(renamableAttribute.AttributeName))
