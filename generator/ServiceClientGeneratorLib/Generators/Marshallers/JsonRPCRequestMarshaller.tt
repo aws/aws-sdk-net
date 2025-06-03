@@ -102,6 +102,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             request.HttpMethod = "<#=this.Operation.HttpMethod #>";
 
 <#
+	if (this.Config.ServiceModel.IsAwsQueryCompatible)
+	{
+#>
+			request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+<#
+	}
 	var requestStructure = this.Operation.RequestStructure;
 	
     // Generates code to add members of the request to the request being created by the marshaller

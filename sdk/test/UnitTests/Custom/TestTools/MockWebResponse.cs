@@ -112,7 +112,7 @@ namespace AWSSDK.UnitTests
 
                     var index = currentLine.IndexOf(":");
                     var firstChar = currentLine[0];
-                    // start of body
+                    // start of body for json don't add to headers
                     if (firstChar.Equals('{'))
                     {
                         isJsonResponse = true;
