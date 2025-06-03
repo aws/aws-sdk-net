@@ -159,6 +159,8 @@ namespace ServiceClientGenerator
             var last = InputParameters.Last().Key;
             foreach (var param in InputParameters)
             {
+                if (Operation == null)
+                    continue;
                 var member = Operation.RequestStructure.Members.GetMemberByName(param.Key);
 
                 if (null == member)
@@ -186,6 +188,8 @@ namespace ServiceClientGenerator
 
             foreach (var param in OutputParameters)
             {
+                if (Operation == null)
+                    continue;
                 var member = Operation.ResponseStructure.Members.GetMemberByName(param.Key);
 
                 if (null == member)

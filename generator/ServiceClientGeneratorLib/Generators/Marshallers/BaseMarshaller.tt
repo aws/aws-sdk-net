@@ -130,10 +130,11 @@ using Amazon.Runtime.Internal.Util;
 		{
             bool isGreedy = false;
             var marshallLocationName = operation.GetUriResourcePathTarget(member, out isGreedy);
-
             if (member.model.Customizations.SkipUriPropertyValidations.Contains(member.PropertyName))
             {
-				if(isGreedy)
+            if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
+                continue;
+		    if(isGreedy && this.Config.ServiceId != "S3")
 				{
 #>
 			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
@@ -149,11 +150,23 @@ using Amazon.Runtime.Internal.Util;
             }
             else
             {
+                if (this.Config.ServiceId == "S3" && member.Shape.IsString && !this.Config.ServiceModel.S3RequestMarshallerThrowGenericExceptionList.Contains(operation.Name))
+                {
+#>
+            if (string.IsNullOrEmpty(<#=variableName#>.<#=member.PropertyName#>))
+                throw new System.ArgumentException("<#=member.PropertyName#> is a required property and must be set before making this call.", "<#=operation.RequestStructure.Name#>.<#=member.PropertyName#>");
+<#+
+                }
+                else
+                {
 #>
             if (!<#=variableName#>.IsSet<#=member.PropertyName#>())
                 throw new <#=this.Config.BaseException#>("Request object does not have required field <#=member.PropertyName#> set");
 <#+
-			if(isGreedy)
+                }
+            if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
+                continue;
+			if(isGreedy && this.Config.ServiceId != "S3")
 				{
 #>
 			request.AddPathResource("<#=marshallLocationName#>", <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
@@ -233,9 +246,18 @@ using Amazon.Runtime.Internal.Util;
 <#+
                 if (member.CustomMarshallerTransformation != null)
                 {
+                    if (this.Config.ServiceId == "S3")
+                    {
+#>
+                request.AddSubResource("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+
+                    }
+                    else
+                    {
 #>
 				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
-<#+        
+<#+
+                    }
                 }
                 else if (member.IsList)
                 {
@@ -261,17 +283,35 @@ using Amazon.Runtime.Internal.Util;
                 }
                 else
                 {
+                    if (this.Config.ServiceId != "S3" || this.Config.ServiceModel.S3AddParametersList.Contains(operation.Name))
+                    {
 #>
 				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
-<#+			
+<#+
+                    }
+                    else
+                    {
+#>
+                request.AddSubResource("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+			        }
 				}
                 if(member.IsIdempotent)
 	            {
+                    if (this.Config.ServiceId == "S3")
+                    {
+#>
+            else
+                request.AddSubResource("<#=member.MarshallLocationName#>", System.Guid.NewGuid().ToString());
+<#+
+                    }
+                    else
+                    {
 #>
             else            
                 request.Parameters.Add("<#=member.MarshallLocationName#>", System.Guid.NewGuid().ToString());
                 
 <#+ 
+                    }
 	            }
 			}
 		}
