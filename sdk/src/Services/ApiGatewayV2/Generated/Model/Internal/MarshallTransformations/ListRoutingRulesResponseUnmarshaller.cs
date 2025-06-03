@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateDomainName operation
+    /// Response Unmarshaller for ListRoutingRules operation
     /// </summary>  
-    public class CreateDomainNameResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListRoutingRulesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,52 +46,22 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateDomainNameResponse response = new CreateDomainNameResponse();
+            ListRoutingRulesResponse response = new ListRoutingRulesResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiMappingSelectionExpression", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApiMappingSelectionExpression = unmarshaller.Unmarshall(context, ref reader);
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainName", targetDepth))
+                if (context.TestExpression("routingRules", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("domainNameArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainNameArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("domainNameConfigurations", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<DomainNameConfiguration, DomainNameConfigurationUnmarshaller>(DomainNameConfigurationUnmarshaller.Instance);
-                    response.DomainNameConfigurations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("mutualTlsAuthentication", targetDepth))
-                {
-                    var unmarshaller = MutualTlsAuthenticationUnmarshaller.Instance;
-                    response.MutualTlsAuthentication = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("routingMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoutingMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<RoutingRule, RoutingRuleUnmarshaller>(RoutingRuleUnmarshaller.Instance);
+                    response.RoutingRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -119,17 +89,9 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
-                {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
                 {
@@ -143,9 +105,9 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             return new AmazonApiGatewayV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateDomainNameResponseUnmarshaller _instance = new CreateDomainNameResponseUnmarshaller();        
+        private static ListRoutingRulesResponseUnmarshaller _instance = new ListRoutingRulesResponseUnmarshaller();        
 
-        internal static CreateDomainNameResponseUnmarshaller GetInstance()
+        internal static ListRoutingRulesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -153,7 +115,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDomainNameResponseUnmarshaller Instance
+        public static ListRoutingRulesResponseUnmarshaller Instance
         {
             get
             {

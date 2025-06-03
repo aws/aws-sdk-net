@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateDomainName Request Marshaller
+    /// PutRoutingRule Request Marshaller
     /// </summary>       
-    public class UpdateDomainNameRequestMarshaller : IMarshaller<IRequest, UpdateDomainNameRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutRoutingRuleRequestMarshaller : IMarshaller<IRequest, PutRoutingRuleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateDomainNameRequest)input);
+            return this.Marshall((PutRoutingRuleRequest)input);
         }
 
         /// <summary>
@@ -56,17 +56,23 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateDomainNameRequest publicRequest)
+        public IRequest Marshall(PutRoutingRuleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApiGatewayV2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";
-            request.HttpMethod = "PATCH";
+            request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field DomainName set");
             request.AddPathResource("{domainName}", StringUtils.FromString(publicRequest.DomainName));
-            request.ResourcePath = "/v2/domainnames/{domainName}";
+            if (!publicRequest.IsSetRoutingRuleId())
+                throw new AmazonApiGatewayV2Exception("Request object does not have required field RoutingRuleId set");
+            request.AddPathResource("{routingRuleId}", StringUtils.FromString(publicRequest.RoutingRuleId));
+            
+            if (publicRequest.IsSetDomainNameId())
+                request.Parameters.Add("domainNameId", StringUtils.FromString(publicRequest.DomainNameId));
+            request.ResourcePath = "/v2/domainnames/{domainName}/routingrules/{routingRuleId}";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -76,37 +82,42 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDomainNameConfigurations())
+            if(publicRequest.IsSetActions())
             {
-                context.Writer.WritePropertyName("domainNameConfigurations");
+                context.Writer.WritePropertyName("actions");
                 context.Writer.WriteStartArray();
-                foreach(var publicRequestDomainNameConfigurationsListValue in publicRequest.DomainNameConfigurations)
+                foreach(var publicRequestActionsListValue in publicRequest.Actions)
                 {
                     context.Writer.WriteStartObject();
 
-                    var marshaller = DomainNameConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequestDomainNameConfigurationsListValue, context);
+                    var marshaller = RoutingRuleActionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestActionsListValue, context);
 
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
             }
 
-            if(publicRequest.IsSetMutualTlsAuthentication())
+            if(publicRequest.IsSetConditions())
             {
-                context.Writer.WritePropertyName("mutualTlsAuthentication");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("conditions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestConditionsListValue in publicRequest.Conditions)
+                {
+                    context.Writer.WriteStartObject();
 
-                var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
-                marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
+                    var marshaller = RoutingRuleConditionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestConditionsListValue, context);
 
-                context.Writer.WriteEndObject();
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(publicRequest.IsSetRoutingMode())
+            if(publicRequest.IsSetPriority())
             {
-                context.Writer.WritePropertyName("routingMode");
-                context.Writer.WriteStringValue(publicRequest.RoutingMode);
+                context.Writer.WritePropertyName("priority");
+                context.Writer.WriteNumberValue(publicRequest.Priority.Value);
             }
 
             writer.WriteEndObject();
@@ -119,12 +130,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 #endif
             
 
+            request.UseQueryString = true;
 
             return request;
         }
-        private static UpdateDomainNameRequestMarshaller _instance = new UpdateDomainNameRequestMarshaller();        
+        private static PutRoutingRuleRequestMarshaller _instance = new PutRoutingRuleRequestMarshaller();        
 
-        internal static UpdateDomainNameRequestMarshaller GetInstance()
+        internal static PutRoutingRuleRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +144,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateDomainNameRequestMarshaller Instance
+        public static PutRoutingRuleRequestMarshaller Instance
         {
             get
             {

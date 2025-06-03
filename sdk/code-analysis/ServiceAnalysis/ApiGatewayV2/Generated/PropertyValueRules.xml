@@ -21,6 +21,16 @@
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApiGatewayV2.Model.CreateRoutingRuleRequest.Priority</property>
+    <min>1</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApiGatewayV2.Model.CreateRoutingRuleResponse.Priority</property>
+    <min>1</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.GetAuthorizerResponse.AuthorizerResultTtlInSeconds</property>
     <min>0</min>
     <max>3600</max>
@@ -29,6 +39,26 @@
     <property>Amazon.ApiGatewayV2.Model.GetIntegrationResponse.TimeoutInMillis</property>
     <min>50</min>
     <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApiGatewayV2.Model.GetRoutingRuleResponse.Priority</property>
+    <min>1</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApiGatewayV2.Model.ListRoutingRulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApiGatewayV2.Model.PutRoutingRuleRequest.Priority</property>
+    <min>1</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApiGatewayV2.Model.PutRoutingRuleResponse.Priority</property>
+    <min>1</min>
+    <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.UpdateAuthorizerRequest.AuthorizerResultTtlInSeconds</property>
@@ -74,6 +104,16 @@
     <property>Amazon.ApiGatewayV2.Model.Integration.TimeoutInMillis</property>
     <min>50</min>
     <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApiGatewayV2.Model.RoutingRule.Priority</property>
+    <min>1</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApiGatewayV2.Model.RoutingRuleInput.Priority</property>
+    <min>1</min>
+    <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApiGatewayV2.Model.UpdateAuthorizerInput.AuthorizerResultTtlInSeconds</property>

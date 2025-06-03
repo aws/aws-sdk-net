@@ -30,15 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateDomainName operation.
-    /// Updates a domain name.
+    /// Container for the parameters to the ListRoutingRules operation.
+    /// Lists routing rules.
     /// </summary>
-    public partial class UpdateDomainNameRequest : AmazonApiGatewayV2Request
+    public partial class ListRoutingRulesRequest : AmazonApiGatewayV2Request
     {
         private string _domainName;
-        private List<DomainNameConfiguration> _domainNameConfigurations = AWSConfigs.InitializeCollections ? new List<DomainNameConfiguration>() : null;
-        private MutualTlsAuthenticationInput _mutualTlsAuthentication;
-        private RoutingMode _routingMode;
+        private string _domainNameId;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -60,57 +60,59 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainNameConfigurations. 
+        /// Gets and sets the property DomainNameId. 
         /// <para>
-        /// The domain name configurations.
+        /// The domain name ID.
         /// </para>
         /// </summary>
-        public List<DomainNameConfiguration> DomainNameConfigurations
+        public string DomainNameId
         {
-            get { return this._domainNameConfigurations; }
-            set { this._domainNameConfigurations = value; }
+            get { return this._domainNameId; }
+            set { this._domainNameId = value; }
         }
 
-        // Check to see if DomainNameConfigurations property is set
-        internal bool IsSetDomainNameConfigurations()
+        // Check to see if DomainNameId property is set
+        internal bool IsSetDomainNameId()
         {
-            return this._domainNameConfigurations != null && (this._domainNameConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._domainNameId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MutualTlsAuthentication. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The mutual TLS authentication configuration for a custom domain name.
+        /// The maximum number of elements to be returned for this resource.
         /// </para>
         /// </summary>
-        public MutualTlsAuthenticationInput MutualTlsAuthentication
+        [AWSProperty(Min=1, Max=100)]
+        public int? MaxResults
         {
-            get { return this._mutualTlsAuthentication; }
-            set { this._mutualTlsAuthentication = value; }
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if MutualTlsAuthentication property is set
-        internal bool IsSetMutualTlsAuthentication()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._mutualTlsAuthentication != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property RoutingMode. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The routing mode.
+        /// The next page of elements from this collection. Not valid for the last element of
+        /// the collection.
         /// </para>
         /// </summary>
-        public RoutingMode RoutingMode
+        public string NextToken
         {
-            get { return this._routingMode; }
-            set { this._routingMode = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if RoutingMode property is set
-        internal bool IsSetRoutingMode()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._routingMode != null;
+            return this._nextToken != null;
         }
 
     }
