@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.AddStorageSystemRequest.ClientToken</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.AddStorageSystemRequest.CloudWatchLogGroupArn</property>
-    <max>562</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]+:[0-9]{12}:log-group:([^:\*]*)(:\*)?$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.AddStorageSystemRequest.Name</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^[\p{L}\p{M}\p{N}\s+=._:@\/-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.AddStorageSystemResponse.StorageSystemArn</property>
-    <max>128</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DataSync.Model.CancelTaskExecutionRequest.TaskExecutionArn</property>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
@@ -380,26 +360,6 @@
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeDiscoveryJobRequest.DiscoveryJobArn</property>
-    <max>256</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeDiscoveryJobResponse.CollectionDurationMinutes</property>
-    <min>60</min>
-    <max>44640</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeDiscoveryJobResponse.DiscoveryJobArn</property>
-    <max>256</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeDiscoveryJobResponse.StorageSystemArn</property>
-    <max>128</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationAzureBlobRequest.LocationArn</property>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
@@ -654,81 +614,6 @@
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemRequest.StorageSystemArn</property>
-    <max>128</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResponse.CloudWatchLogGroupArn</property>
-    <max>562</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]+:[0-9]{12}:log-group:([^:\*]*)(:\*)?$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResponse.ErrorMessage</property>
-    <max>128</max>
-    <pattern>.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResponse.Name</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^[\p{L}\p{M}\p{N}\s+=._:@\/-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResponse.SecretsManagerArn</property>
-    <max>2048</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):secretsmanager:[a-z\-0-9]+:[0-9]{12}:secret:.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResponse.StorageSystemArn</property>
-    <max>128</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResourceMetricsRequest.DiscoveryJobArn</property>
-    <max>256</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResourceMetricsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResourceMetricsRequest.NextToken</property>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResourceMetricsRequest.ResourceId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResourceMetricsResponse.NextToken</property>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResourcesRequest.DiscoveryJobArn</property>
-    <max>256</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResourcesRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResourcesRequest.NextToken</property>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DescribeStorageSystemResourcesResponse.NextToken</property>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskRequest.TaskArn</property>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
@@ -775,11 +660,6 @@
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.GenerateRecommendationsRequest.DiscoveryJobArn</property>
-    <max>256</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DataSync.Model.ListAgentsRequest.MaxResults</property>
     <min>0</min>
     <max>100</max>
@@ -795,26 +675,6 @@
     <pattern>[a-zA-Z0-9=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.ListDiscoveryJobsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.ListDiscoveryJobsRequest.NextToken</property>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.ListDiscoveryJobsRequest.StorageSystemArn</property>
-    <max>128</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.ListDiscoveryJobsResponse.NextToken</property>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DataSync.Model.ListLocationsRequest.MaxResults</property>
     <min>0</min>
     <max>100</max>
@@ -826,21 +686,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.ListLocationsResponse.NextToken</property>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.ListStorageSystemsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.ListStorageSystemsRequest.NextToken</property>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.ListStorageSystemsResponse.NextToken</property>
     <max>65535</max>
     <pattern>[a-zA-Z0-9=_-]+</pattern>
   </property-value-rule>
@@ -900,30 +745,6 @@
     <pattern>[a-zA-Z0-9=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.RemoveStorageSystemRequest.StorageSystemArn</property>
-    <max>128</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.StartDiscoveryJobRequest.ClientToken</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.StartDiscoveryJobRequest.CollectionDurationMinutes</property>
-    <min>60</min>
-    <max>44640</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.StartDiscoveryJobRequest.StorageSystemArn</property>
-    <max>128</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.StartDiscoveryJobResponse.DiscoveryJobArn</property>
-    <max>256</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DataSync.Model.StartTaskExecutionRequest.TaskArn</property>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
@@ -932,11 +753,6 @@
     <property>Amazon.DataSync.Model.StartTaskExecutionResponse.TaskExecutionArn</property>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.StopDiscoveryJobRequest.DiscoveryJobArn</property>
-    <max>256</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TagResourceRequest.ResourceArn</property>
@@ -958,16 +774,6 @@
     <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.UpdateDiscoveryJobRequest.CollectionDurationMinutes</property>
-    <min>60</min>
-    <max>44640</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.UpdateDiscoveryJobRequest.DiscoveryJobArn</property>
-    <max>256</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationAzureBlobRequest.LocationArn</property>
@@ -1206,22 +1012,6 @@
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.UpdateStorageSystemRequest.CloudWatchLogGroupArn</property>
-    <max>562</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]+:[0-9]{12}:log-group:([^:\*]*)(:\*)?$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.UpdateStorageSystemRequest.Name</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^[\p{L}\p{M}\p{N}\s+=._:@\/-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.UpdateStorageSystemRequest.StorageSystemArn</property>
-    <max>128</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateTaskRequest.CloudWatchLogGroupArn</property>
     <max>562</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]+:[0-9]{12}:log-group:([^:\*]*)(:\*)?$</pattern>
@@ -1260,45 +1050,24 @@
     <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.Capacity.ClusterCloudStorageUsed</property>
-    <min>0</min>
+    <property>Amazon.DataSync.Model.CmkSecretConfig.KmsKeyArn</property>
+    <max>2048</max>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):kms:[a-z\-0-9]+:[0-9]{12}:key/.*|)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.Capacity.LogicalUsed</property>
-    <min>0</min>
+    <property>Amazon.DataSync.Model.CmkSecretConfig.SecretArn</property>
+    <max>2048</max>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):secretsmanager:[a-z\-0-9]+:[0-9]{12}:secret:.*|)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.Capacity.Provisioned</property>
-    <min>0</min>
+    <property>Amazon.DataSync.Model.CustomSecretConfig.SecretAccessRoleArn</property>
+    <max>2048</max>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@_-]+|)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.Capacity.Used</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Credentials.Password</property>
-    <max>1024</max>
-    <pattern>^(?!.*[:\"][^:"]*$).+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Credentials.Username</property>
-    <max>1024</max>
-    <pattern>^(?!.*[:\"][^:"]*$).+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DiscoveryJobListEntry.DiscoveryJobArn</property>
-    <max>256</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/job/discovery-job-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DiscoveryServerConfiguration.ServerHostname</property>
-    <max>255</max>
-    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.DiscoveryServerConfiguration.ServerPort</property>
-    <min>1</min>
-    <max>65535</max>
+    <property>Amazon.DataSync.Model.CustomSecretConfig.SecretArn</property>
+    <max>2048</max>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):secretsmanager:[a-z\-0-9]+:[0-9]{12}:secret:.*|)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.Ec2Config.SubnetArn</property>
@@ -1357,34 +1126,6 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.IOPS.Other</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.IOPS.Read</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.IOPS.Total</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.IOPS.Write</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Latency.Other</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Latency.Read</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Latency.Write</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DataSync.Model.LocationListEntry.LocationArn</property>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
@@ -1395,173 +1136,9 @@
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.IopsOther</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.IopsRead</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.IopsTotal</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.IopsWrite</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.LatencyOther</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.LatencyRead</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.LatencyWrite</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.ThroughputOther</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.ThroughputRead</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.ThroughputTotal</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.MaxP95Performance.ThroughputWrite</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPCluster.CifsShareCount</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPCluster.ClusterBlockStorageLogicalUsed</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPCluster.ClusterBlockStorageSize</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPCluster.ClusterBlockStorageUsed</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPCluster.ClusterCloudStorageUsed</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPCluster.ClusterName</property>
-    <max>1024</max>
-    <pattern>^.{0,1024}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPCluster.LunCount</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPCluster.NfsExportedVolumes</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPCluster.ResourceId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.CifsShareCount</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.ClusterUuid</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.LunCount</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.NfsExportedVolumes</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.ResourceId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.SvmName</property>
-    <max>1024</max>
-    <pattern>^.{0,1024}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.TotalCapacityProvisioned</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.TotalCapacityUsed</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.TotalLogicalCapacityUsed</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPSVM.TotalSnapshotCapacityUsed</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.CapacityProvisioned</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.CapacityUsed</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.CifsShareCount</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.LogicalCapacityUsed</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.LunCount</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.ResourceId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.SecurityStyle</property>
-    <max>1024</max>
-    <pattern>^.{0,1024}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.SnapshotCapacityUsed</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.SvmName</property>
-    <max>1024</max>
-    <pattern>^.{0,1024}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.SvmUuid</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.NetAppONTAPVolume.VolumeName</property>
-    <max>1024</max>
-    <pattern>^.{0,1024}$</pattern>
+    <property>Amazon.DataSync.Model.ManagedSecretConfig.SecretArn</property>
+    <max>2048</max>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):secretsmanager:[a-z\-0-9]+:[0-9]{12}:secret:.*|)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.Options.BytesPerSecond</property>
@@ -1584,16 +1161,6 @@
     <pattern>^vpce-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DataSync.Model.Recommendation.EstimatedMonthlyStorageCost</property>
-    <max>1024</max>
-    <pattern>^.{0,1024}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Recommendation.StorageType</property>
-    <max>1024</max>
-    <pattern>^.{0,1024}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DataSync.Model.ReportDestinationS3.BucketAccessRoleArn</property>
     <max>2048</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$</pattern>
@@ -1607,10 +1174,6 @@
     <property>Amazon.DataSync.Model.ReportDestinationS3.Subdirectory</property>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.ResourceMetrics.ResourceId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.S3Config.BucketAccessRoleArn</property>
@@ -1637,17 +1200,6 @@
     <property>Amazon.DataSync.Model.S3ManifestConfig.S3BucketArn</property>
     <max>268</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):s3:[a-z\-0-9]*:[0-9]{12}:accesspoint[/:][a-zA-Z0-9\-.]{1,63}$|^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):s3-outposts:[a-z\-0-9]+:[0-9]{12}:outpost[/:][a-zA-Z0-9\-]{1,63}[/:]accesspoint[/:][a-zA-Z0-9\-]{1,63}$|^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):s3:::[a-zA-Z0-9.\-_]{1,255}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.StorageSystemListEntry.Name</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^[\p{L}\p{M}\p{N}\s+=._:@\/-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.StorageSystemListEntry.StorageSystemArn</property>
-    <max>128</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:system/storage-system-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TagListEntry.Key</property>
@@ -1701,21 +1253,5 @@
     <property>Amazon.DataSync.Model.TaskScheduleDetails.DisabledReason</property>
     <max>8192</max>
     <pattern>^[\w\s.,'?!:;\/=|&lt;&gt;()-]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Throughput.Other</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Throughput.Read</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Throughput.Total</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DataSync.Model.Throughput.Write</property>
-    <min>0</min>
   </property-value-rule>
 </property-value-rules>

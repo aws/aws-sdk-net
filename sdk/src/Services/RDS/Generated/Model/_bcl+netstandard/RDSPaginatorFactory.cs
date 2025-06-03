@@ -141,6 +141,14 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDBMajorEngineVersions operation
+        ///</summary>
+        public IDescribeDBMajorEngineVersionsPaginator DescribeDBMajorEngineVersions(DescribeDBMajorEngineVersionsRequest request) 
+        {
+            return new DescribeDBMajorEngineVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDBParameterGroups operation
         ///</summary>
         public IDescribeDBParameterGroupsPaginator DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request) 

@@ -3771,6 +3771,69 @@ namespace Amazon.Neptune
         }
         #endregion
         
+        #region  SwitchoverGlobalCluster
+
+        internal virtual SwitchoverGlobalClusterResponse SwitchoverGlobalCluster(SwitchoverGlobalClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SwitchoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SwitchoverGlobalClusterResponseUnmarshaller.Instance;
+
+            return Invoke<SwitchoverGlobalClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Switches over the specified secondary DB cluster to be the new primary DB cluster
+        /// in the global database cluster. Switchover operations were previously called "managed
+        /// planned failovers."
+        /// 
+        ///  
+        /// <para>
+        /// Promotes the specified secondary cluster to assume full read/write capabilities and
+        /// demotes the current primary cluster to a secondary (read-only) cluster, maintaining
+        /// the original replication topology. All secondary clusters are synchronized with the
+        /// primary at the beginning of the process so the new primary continues operations for
+        /// the global database without losing any data. Your database is unavailable for a short
+        /// time while the primary and selected secondary clusters are assuming their new roles.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is intended for controlled environments, for operations such as "regional
+        /// rotation" or to fall back to the original primary after a global database failover.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SwitchoverGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
+        public virtual Task<SwitchoverGlobalClusterResponse> SwitchoverGlobalClusterAsync(SwitchoverGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SwitchoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SwitchoverGlobalClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SwitchoverGlobalClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region DetermineServiceOperationEndpoint
 
         /// <summary>

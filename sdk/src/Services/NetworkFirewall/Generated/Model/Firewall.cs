@@ -30,16 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// The firewall defines the configuration settings for an Network Firewall firewall.
-    /// These settings include the firewall policy, the subnets in your VPC to use for the
-    /// firewall endpoints, and any tags that are attached to the firewall Amazon Web Services
-    /// resource. 
+    /// A firewall defines the behavior of a firewall, the main VPC where the firewall is
+    /// used, the Availability Zones where the firewall can be used, and one subnet to use
+    /// for a firewall endpoint within each of the Availability Zones. The Availability Zones
+    /// are defined implicitly in the subnet specifications.
     /// 
     ///  
     /// <para>
+    /// In addition to the firewall endpoints that you define in this <c>Firewall</c> specification,
+    /// you can create firewall endpoints in <c>VpcEndpointAssociation</c> resources for any
+    /// VPC, in any Availability Zone where the firewall is already in use. 
+    /// </para>
+    ///  
+    /// <para>
     /// The status of the firewall, for example whether it's ready to filter network traffic,
-    /// is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both objects
-    /// by calling <a>DescribeFirewall</a>.
+    /// is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both the
+    /// firewall and firewall status by calling <a>DescribeFirewall</a>.
     /// </para>
     /// </summary>
     public partial class Firewall
@@ -53,6 +59,7 @@ namespace Amazon.NetworkFirewall.Model
         private string _firewallName;
         private string _firewallPolicyArn;
         private bool? _firewallPolicyChangeProtection;
+        private int? _numberOfAssociations;
         private bool? _subnetChangeProtection;
         private List<SubnetMapping> _subnetMappings = AWSConfigs.InitializeCollections ? new List<SubnetMapping>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -241,6 +248,24 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NumberOfAssociations. 
+        /// <para>
+        /// The number of <c>VpcEndpointAssociation</c> resources that use this firewall. 
+        /// </para>
+        /// </summary>
+        public int? NumberOfAssociations
+        {
+            get { return this._numberOfAssociations; }
+            set { this._numberOfAssociations = value; }
+        }
+
+        // Check to see if NumberOfAssociations property is set
+        internal bool IsSetNumberOfAssociations()
+        {
+            return this._numberOfAssociations.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetChangeProtection. 
         /// <para>
         /// A setting indicating whether the firewall is protected against changes to the subnet
@@ -264,8 +289,24 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property SubnetMappings. 
         /// <para>
-        /// The public subnets that Network Firewall is using for the firewall. Each subnet must
-        /// belong to a different Availability Zone. 
+        /// The primary public subnets that Network Firewall is using for the firewall. Network
+        /// Firewall creates a firewall endpoint in each subnet. Create a subnet mapping for each
+        /// Availability Zone where you want to use the firewall.
+        /// </para>
+        ///  
+        /// <para>
+        /// These subnets are all defined for a single, primary VPC, and each must belong to a
+        /// different Availability Zone. Each of these subnets establishes the availability of
+        /// the firewall in its Availability Zone. 
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition to these subnets, you can define other endpoints for the firewall in <c>VpcEndpointAssociation</c>
+        /// resources. You can define these additional endpoints for any VPC, and for any of the
+        /// Availability Zones where the firewall resource already has a subnet mapping. VPC endpoint
+        /// associations give you the ability to protect multiple VPCs using a single firewall,
+        /// and to define multiple firewall endpoints for a VPC in a single Availability Zone.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

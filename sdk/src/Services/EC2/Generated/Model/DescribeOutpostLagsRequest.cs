@@ -32,6 +32,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeOutpostLags operation.
     /// Describes the Outposts link aggregation groups (LAGs).
+    /// 
+    ///  <note> 
+    /// <para>
+    /// LAGs are only available for second-generation Outposts racks at this time.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeOutpostLagsRequest : AmazonEC2Request
     {

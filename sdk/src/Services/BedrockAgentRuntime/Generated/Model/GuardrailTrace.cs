@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private GuardrailAction _action;
         private List<GuardrailAssessment> _inputAssessments = AWSConfigs.InitializeCollections ? new List<GuardrailAssessment>() : null;
+        private Metadata _metadata;
         private List<GuardrailAssessment> _outputAssessments = AWSConfigs.InitializeCollections ? new List<GuardrailAssessment>() : null;
         private string _traceId;
 
@@ -73,6 +74,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetInputAssessments()
         {
             return this._inputAssessments != null && (this._inputAssessments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Contains information about the Guardrail output.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Metadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
         /// <summary>

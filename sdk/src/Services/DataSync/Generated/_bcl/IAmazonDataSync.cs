@@ -34,9 +34,9 @@ namespace Amazon.DataSync
     ///
     /// DataSync 
     /// <para>
-    /// DataSync is an online data movement and discovery service that simplifies data migration
-    /// and helps you quickly, easily, and securely transfer your file or object data to,
-    /// from, and between Amazon Web Services storage services.
+    /// DataSync is an online data movement service that simplifies data migration and helps
+    /// you quickly, easily, and securely transfer your file or object data to, from, and
+    /// between Amazon Web Services storage services.
     /// </para>
     ///  
     /// <para>
@@ -53,48 +53,6 @@ namespace Amazon.DataSync
         /// </summary>
         IDataSyncPaginatorFactory Paginators { get; }
 
-        
-        #region  AddStorageSystem
-
-
-        /// <summary>
-        /// Creates an Amazon Web Services resource for an on-premises storage system that you
-        /// want DataSync Discovery to collect information about.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the AddStorageSystem service method.</param>
-        /// 
-        /// <returns>The response from the AddStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/AddStorageSystem">REST API Reference for AddStorageSystem Operation</seealso>
-        AddStorageSystemResponse AddStorageSystem(AddStorageSystemRequest request);
-
-
-
-        /// <summary>
-        /// Creates an Amazon Web Services resource for an on-premises storage system that you
-        /// want DataSync Discovery to collect information about.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the AddStorageSystem service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the AddStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/AddStorageSystem">REST API Reference for AddStorageSystem Operation</seealso>
-        Task<AddStorageSystemResponse> AddStorageSystemAsync(AddStorageSystemRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
         
         #region  CancelTaskExecution
 
@@ -215,15 +173,16 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates a transfer <i>location</i> for a Microsoft Azure Blob Storage container. DataSync
-        /// can use this location as a transfer source or destination.
+        /// can use this location as a transfer source or destination. You can make transfers
+        /// with or without a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
+        /// agent</a> that connects to your container.
         /// 
         ///  
         /// <para>
         /// Before you begin, make sure you know <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
         /// DataSync accesses Azure Blob Storage</a> and works with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
         /// tiers</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
-        /// types</a>. You also need a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
-        /// agent</a> that can connect to your container.
+        /// types</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationAzureBlob service method.</param>
@@ -242,15 +201,16 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates a transfer <i>location</i> for a Microsoft Azure Blob Storage container. DataSync
-        /// can use this location as a transfer source or destination.
+        /// can use this location as a transfer source or destination. You can make transfers
+        /// with or without a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
+        /// agent</a> that connects to your container.
         /// 
         ///  
         /// <para>
         /// Before you begin, make sure you know <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
         /// DataSync accesses Azure Blob Storage</a> and works with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
         /// tiers</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
-        /// types</a>. You also need a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
-        /// agent</a> that can connect to your container.
+        /// types</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationAzureBlob service method.</param>
@@ -667,7 +627,9 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates a transfer <i>location</i> for an object storage system. DataSync can use
-        /// this location as a source or destination for transferring data.
+        /// this location as a source or destination for transferring data. You can make transfers
+        /// with or without a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#when-agent-required">DataSync
+        /// agent</a>.
         /// 
         ///  
         /// <para>
@@ -691,7 +653,9 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Creates a transfer <i>location</i> for an object storage system. DataSync can use
-        /// this location as a source or destination for transferring data.
+        /// this location as a source or destination for transferring data. You can make transfers
+        /// with or without a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#when-agent-required">DataSync
+        /// agent</a>.
         /// 
         ///  
         /// <para>
@@ -1097,46 +1061,6 @@ namespace Amazon.DataSync
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeAgent">REST API Reference for DescribeAgent Operation</seealso>
         Task<DescribeAgentResponse> DescribeAgentAsync(DescribeAgentRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  DescribeDiscoveryJob
-
-
-        /// <summary>
-        /// Returns information about a DataSync discovery job.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDiscoveryJob service method.</param>
-        /// 
-        /// <returns>The response from the DescribeDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeDiscoveryJob">REST API Reference for DescribeDiscoveryJob Operation</seealso>
-        DescribeDiscoveryJobResponse DescribeDiscoveryJob(DescribeDiscoveryJobRequest request);
-
-
-
-        /// <summary>
-        /// Returns information about a DataSync discovery job.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDiscoveryJob service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeDiscoveryJob">REST API Reference for DescribeDiscoveryJob Operation</seealso>
-        Task<DescribeDiscoveryJobResponse> DescribeDiscoveryJobAsync(DescribeDiscoveryJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1628,132 +1552,6 @@ namespace Amazon.DataSync
 
         #endregion
         
-        #region  DescribeStorageSystem
-
-
-        /// <summary>
-        /// Returns information about an on-premises storage system that you're using with DataSync
-        /// Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystem service method.</param>
-        /// 
-        /// <returns>The response from the DescribeStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystem">REST API Reference for DescribeStorageSystem Operation</seealso>
-        DescribeStorageSystemResponse DescribeStorageSystem(DescribeStorageSystemRequest request);
-
-
-
-        /// <summary>
-        /// Returns information about an on-premises storage system that you're using with DataSync
-        /// Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystem service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystem">REST API Reference for DescribeStorageSystem Operation</seealso>
-        Task<DescribeStorageSystemResponse> DescribeStorageSystemAsync(DescribeStorageSystemRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  DescribeStorageSystemResourceMetrics
-
-
-        /// <summary>
-        /// Returns information, including performance data and capacity usage, which DataSync
-        /// Discovery collects about a specific resource in your-premises storage system.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResourceMetrics service method.</param>
-        /// 
-        /// <returns>The response from the DescribeStorageSystemResourceMetrics service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResourceMetrics">REST API Reference for DescribeStorageSystemResourceMetrics Operation</seealso>
-        DescribeStorageSystemResourceMetricsResponse DescribeStorageSystemResourceMetrics(DescribeStorageSystemResourceMetricsRequest request);
-
-
-
-        /// <summary>
-        /// Returns information, including performance data and capacity usage, which DataSync
-        /// Discovery collects about a specific resource in your-premises storage system.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResourceMetrics service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeStorageSystemResourceMetrics service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResourceMetrics">REST API Reference for DescribeStorageSystemResourceMetrics Operation</seealso>
-        Task<DescribeStorageSystemResourceMetricsResponse> DescribeStorageSystemResourceMetricsAsync(DescribeStorageSystemResourceMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  DescribeStorageSystemResources
-
-
-        /// <summary>
-        /// Returns information that DataSync Discovery collects about resources in your on-premises
-        /// storage system.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResources service method.</param>
-        /// 
-        /// <returns>The response from the DescribeStorageSystemResources service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResources">REST API Reference for DescribeStorageSystemResources Operation</seealso>
-        DescribeStorageSystemResourcesResponse DescribeStorageSystemResources(DescribeStorageSystemResourcesRequest request);
-
-
-
-        /// <summary>
-        /// Returns information that DataSync Discovery collects about resources in your on-premises
-        /// storage system.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageSystemResources service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeStorageSystemResources service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeStorageSystemResources">REST API Reference for DescribeStorageSystemResources Operation</seealso>
-        Task<DescribeStorageSystemResourcesResponse> DescribeStorageSystemResourcesAsync(DescribeStorageSystemResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  DescribeTask
 
 
@@ -1858,64 +1656,6 @@ namespace Amazon.DataSync
 
         #endregion
         
-        #region  GenerateRecommendations
-
-
-        /// <summary>
-        /// Creates recommendations about where to migrate your data to in Amazon Web Services.
-        /// Recommendations are generated based on information that DataSync Discovery collects
-        /// about your on-premises storage system's resources. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations
-        /// provided by DataSync Discovery</a>.
-        /// 
-        ///  
-        /// <para>
-        /// Once generated, you can view your recommendations by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html">DescribeStorageSystemResources</a>
-        /// operation.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GenerateRecommendations service method.</param>
-        /// 
-        /// <returns>The response from the GenerateRecommendations service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/GenerateRecommendations">REST API Reference for GenerateRecommendations Operation</seealso>
-        GenerateRecommendationsResponse GenerateRecommendations(GenerateRecommendationsRequest request);
-
-
-
-        /// <summary>
-        /// Creates recommendations about where to migrate your data to in Amazon Web Services.
-        /// Recommendations are generated based on information that DataSync Discovery collects
-        /// about your on-premises storage system's resources. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations
-        /// provided by DataSync Discovery</a>.
-        /// 
-        ///  
-        /// <para>
-        /// Once generated, you can view your recommendations by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html">DescribeStorageSystemResources</a>
-        /// operation.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GenerateRecommendations service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GenerateRecommendations service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/GenerateRecommendations">REST API Reference for GenerateRecommendations Operation</seealso>
-        Task<GenerateRecommendationsResponse> GenerateRecommendationsAsync(GenerateRecommendationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  ListAgents
 
 
@@ -1990,48 +1730,6 @@ namespace Amazon.DataSync
 
         #endregion
         
-        #region  ListDiscoveryJobs
-
-
-        /// <summary>
-        /// Provides a list of the existing discovery jobs in the Amazon Web Services Region and
-        /// Amazon Web Services account where you're using DataSync Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveryJobs service method.</param>
-        /// 
-        /// <returns>The response from the ListDiscoveryJobs service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListDiscoveryJobs">REST API Reference for ListDiscoveryJobs Operation</seealso>
-        ListDiscoveryJobsResponse ListDiscoveryJobs(ListDiscoveryJobsRequest request);
-
-
-
-        /// <summary>
-        /// Provides a list of the existing discovery jobs in the Amazon Web Services Region and
-        /// Amazon Web Services account where you're using DataSync Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveryJobs service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListDiscoveryJobs service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListDiscoveryJobs">REST API Reference for ListDiscoveryJobs Operation</seealso>
-        Task<ListDiscoveryJobsResponse> ListDiscoveryJobsAsync(ListDiscoveryJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  ListLocations
 
 
@@ -2083,46 +1781,6 @@ namespace Amazon.DataSync
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListLocations">REST API Reference for ListLocations Operation</seealso>
         Task<ListLocationsResponse> ListLocationsAsync(ListLocationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  ListStorageSystems
-
-
-        /// <summary>
-        /// Lists the on-premises storage systems that you're using with DataSync Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListStorageSystems service method.</param>
-        /// 
-        /// <returns>The response from the ListStorageSystems service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListStorageSystems">REST API Reference for ListStorageSystems Operation</seealso>
-        ListStorageSystemsResponse ListStorageSystems(ListStorageSystemsRequest request);
-
-
-
-        /// <summary>
-        /// Lists the on-premises storage systems that you're using with DataSync Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListStorageSystems service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListStorageSystems service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListStorageSystems">REST API Reference for ListStorageSystems Operation</seealso>
-        Task<ListStorageSystemsResponse> ListStorageSystemsAsync(ListStorageSystemsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2246,92 +1904,6 @@ namespace Amazon.DataSync
 
         #endregion
         
-        #region  RemoveStorageSystem
-
-
-        /// <summary>
-        /// Permanently removes a storage system resource from DataSync Discovery, including the
-        /// associated discovery jobs, collected data, and recommendations.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the RemoveStorageSystem service method.</param>
-        /// 
-        /// <returns>The response from the RemoveStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/RemoveStorageSystem">REST API Reference for RemoveStorageSystem Operation</seealso>
-        RemoveStorageSystemResponse RemoveStorageSystem(RemoveStorageSystemRequest request);
-
-
-
-        /// <summary>
-        /// Permanently removes a storage system resource from DataSync Discovery, including the
-        /// associated discovery jobs, collected data, and recommendations.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the RemoveStorageSystem service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the RemoveStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/RemoveStorageSystem">REST API Reference for RemoveStorageSystem Operation</seealso>
-        Task<RemoveStorageSystemResponse> RemoveStorageSystemAsync(RemoveStorageSystemRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  StartDiscoveryJob
-
-
-        /// <summary>
-        /// Runs a DataSync discovery job on your on-premises storage system. If you haven't added
-        /// the storage system to DataSync Discovery yet, do this first by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html">AddStorageSystem</a>
-        /// operation.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StartDiscoveryJob service method.</param>
-        /// 
-        /// <returns>The response from the StartDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartDiscoveryJob">REST API Reference for StartDiscoveryJob Operation</seealso>
-        StartDiscoveryJobResponse StartDiscoveryJob(StartDiscoveryJobRequest request);
-
-
-
-        /// <summary>
-        /// Runs a DataSync discovery job on your on-premises storage system. If you haven't added
-        /// the storage system to DataSync Discovery yet, do this first by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html">AddStorageSystem</a>
-        /// operation.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StartDiscoveryJob service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StartDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartDiscoveryJob">REST API Reference for StartDiscoveryJob Operation</seealso>
-        Task<StartDiscoveryJobResponse> StartDiscoveryJobAsync(StartDiscoveryJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  StartTaskExecution
 
 
@@ -2397,62 +1969,6 @@ namespace Amazon.DataSync
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">REST API Reference for StartTaskExecution Operation</seealso>
         Task<StartTaskExecutionResponse> StartTaskExecutionAsync(StartTaskExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  StopDiscoveryJob
-
-
-        /// <summary>
-        /// Stops a running DataSync discovery job.
-        /// 
-        ///  
-        /// <para>
-        /// You can stop a discovery job anytime. A job that's stopped before it's scheduled to
-        /// end likely will provide you some information about your on-premises storage system
-        /// resources. To get recommendations for a stopped job, you must use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_GenerateRecommendations.html">GenerateRecommendations</a>
-        /// operation.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StopDiscoveryJob service method.</param>
-        /// 
-        /// <returns>The response from the StopDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StopDiscoveryJob">REST API Reference for StopDiscoveryJob Operation</seealso>
-        StopDiscoveryJobResponse StopDiscoveryJob(StopDiscoveryJobRequest request);
-
-
-
-        /// <summary>
-        /// Stops a running DataSync discovery job.
-        /// 
-        ///  
-        /// <para>
-        /// You can stop a discovery job anytime. A job that's stopped before it's scheduled to
-        /// end likely will provide you some information about your on-premises storage system
-        /// resources. To get recommendations for a stopped job, you must use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_GenerateRecommendations.html">GenerateRecommendations</a>
-        /// operation.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StopDiscoveryJob service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StopDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StopDiscoveryJob">REST API Reference for StopDiscoveryJob Operation</seealso>
-        Task<StopDiscoveryJobResponse> StopDiscoveryJobAsync(StopDiscoveryJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2585,46 +2101,6 @@ namespace Amazon.DataSync
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateAgent">REST API Reference for UpdateAgent Operation</seealso>
         Task<UpdateAgentResponse> UpdateAgentAsync(UpdateAgentRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  UpdateDiscoveryJob
-
-
-        /// <summary>
-        /// Edits a DataSync discovery job configuration.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDiscoveryJob service method.</param>
-        /// 
-        /// <returns>The response from the UpdateDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateDiscoveryJob">REST API Reference for UpdateDiscoveryJob Operation</seealso>
-        UpdateDiscoveryJobResponse UpdateDiscoveryJob(UpdateDiscoveryJobRequest request);
-
-
-
-        /// <summary>
-        /// Edits a DataSync discovery job configuration.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDiscoveryJob service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UpdateDiscoveryJob service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateDiscoveryJob">REST API Reference for UpdateDiscoveryJob Operation</seealso>
-        Task<UpdateDiscoveryJobResponse> UpdateDiscoveryJobAsync(UpdateDiscoveryJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3251,48 +2727,6 @@ namespace Amazon.DataSync
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">REST API Reference for UpdateLocationSmb Operation</seealso>
         Task<UpdateLocationSmbResponse> UpdateLocationSmbAsync(UpdateLocationSmbRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  UpdateStorageSystem
-
-
-        /// <summary>
-        /// Modifies some configurations of an on-premises storage system resource that you're
-        /// using with DataSync Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageSystem service method.</param>
-        /// 
-        /// <returns>The response from the UpdateStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateStorageSystem">REST API Reference for UpdateStorageSystem Operation</seealso>
-        UpdateStorageSystemResponse UpdateStorageSystem(UpdateStorageSystemRequest request);
-
-
-
-        /// <summary>
-        /// Modifies some configurations of an on-premises storage system resource that you're
-        /// using with DataSync Discovery.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageSystem service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UpdateStorageSystem service method, as returned by DataSync.</returns>
-        /// <exception cref="Amazon.DataSync.Model.InternalException">
-        /// This exception is thrown when an error occurs in the DataSync service.
-        /// </exception>
-        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
-        /// This exception is thrown when the client submits a malformed request.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateStorageSystem">REST API Reference for UpdateStorageSystem Operation</seealso>
-        Task<UpdateStorageSystemResponse> UpdateStorageSystemAsync(UpdateStorageSystemRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

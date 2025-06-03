@@ -89,7 +89,14 @@ namespace Amazon.OAM.Model
         ///  <c>$AccountEmailNoDomain</c> is the email address of the account without the domain
         /// name
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// In the Amazon Web Services GovCloud (US-East) and Amazon Web Services GovCloud (US-West)
+        /// Regions, the only supported option is to use custom labels, and the <c>$AccountName</c>,
+        /// <c>$AccountEmail</c>, and <c>$AccountEmailNoDomain</c> variables all resolve as <i>account-id</i>
+        /// instead of the specified variable.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string LabelTemplate

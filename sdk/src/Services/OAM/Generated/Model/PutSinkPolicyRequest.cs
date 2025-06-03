@@ -37,8 +37,9 @@ namespace Amazon.OAM.Model
     /// 
     ///  
     /// <para>
-    /// You can also use a sink policy to limit the types of data that is shared. The three
-    /// types that you can allow or deny are:
+    /// You can also use a sink policy to limit the types of data that is shared. The six
+    /// types of services with their respective resource types that you can allow or deny
+    /// are:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -56,6 +57,15 @@ namespace Amazon.OAM.Model
     /// <para>
     ///  <b>Application Insights - Applications</b> - Specify with <c>AWS::ApplicationInsights::Application</c>
     /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Internet Monitor</b> - Specify with <c>AWS::InternetMonitor::Monitor</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Application Signals</b> - Specify with <c>AWS::ApplicationSignals::Service</c>
+    /// and <c>AWS::ApplicationSignals::ServiceLevelObjective</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>

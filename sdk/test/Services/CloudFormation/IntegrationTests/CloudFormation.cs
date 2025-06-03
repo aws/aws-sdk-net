@@ -218,6 +218,86 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        [TestMethod]
+        [TestCategory("CloudFormation")]
+        public void TestUpdateStack()
+        {
+            string stackName = "test-stack-" + DateTime.UtcNow.Ticks;
+            try
+            {
+                CreateStackRequest createRequest = new CreateStackRequest
+                {
+                    StackName = stackName,
+                    TemplateBody = TEMPLATE_TEXT,
+                    Parameters = new List<Parameter>
+                    {
+                        new Parameter
+                        {
+                            ParameterKey = "TopicName",
+                            ParameterValue = "MyTopic" + DateTime.UtcNow.Ticks
+                        },
+                        new Parameter
+                        {
+                            ParameterKey = "QueueName",
+                            ParameterValue = "MyQueue" + DateTime.UtcNow.Ticks
+                        }
+                    }
+                };
+
+                Client.CreateStack(createRequest);
+                WaitTillStackNotInProcess(stackName);
+
+                UpdateStackRequest updateStackRequest = new UpdateStackRequest
+                {
+                    StackName = stackName,
+                    TemplateBody = TEMPLATE_TEXT,
+                    Parameters = new List<Parameter>
+                    {
+                        new Parameter
+                        {
+                            ParameterKey = "TopicName",
+                            ParameterValue = "MyTopic" + DateTime.UtcNow.Ticks
+                        },
+                        new Parameter
+                        {
+                            ParameterKey = "QueueName",
+                            ParameterValue = "MyQueue" + DateTime.UtcNow.Ticks
+                        }
+                    }
+                };
+
+                Client.UpdateStack(updateStackRequest);
+                WaitTillStackNotInProcess(stackName);
+
+                updateStackRequest = new UpdateStackRequest
+                {
+                    StackName = stackName,
+                    TemplateBody = TEMPLATE_TEXT,
+                    Parameters = new List<Parameter>
+                    {
+                        new Parameter
+                        {
+                            ParameterKey = "TopicName",
+                            ParameterValue = "MyTopic" + DateTime.UtcNow.Ticks
+                        },
+                        new Parameter
+                        {
+                            ParameterKey = "QueueName",
+                            ParameterValue = "MyQueue" + DateTime.UtcNow.Ticks
+                        }
+                    },
+                    NotificationARNs = new List<string>()
+                };
+                Client.UpdateStack(updateStackRequest);
+                WaitTillStackNotInProcess(stackName);
+            }
+            finally
+            {
+                WaitTillStackNotInProcess(stackName);
+                Client.DeleteStack(new DeleteStackRequest() { StackName = stackName });
+            }
+        }
+
         static void WaitTillStackNotInProcess(string stackname)
         {
             DescribeStacksResponse response = null;

@@ -1661,6 +1661,60 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type LustreReadCacheSizingMode.
+    /// </summary>
+    public class LustreReadCacheSizingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_CACHE for LustreReadCacheSizingMode
+        /// </summary>
+        public static readonly LustreReadCacheSizingMode NO_CACHE = new LustreReadCacheSizingMode("NO_CACHE");
+        /// <summary>
+        /// Constant PROPORTIONAL_TO_THROUGHPUT_CAPACITY for LustreReadCacheSizingMode
+        /// </summary>
+        public static readonly LustreReadCacheSizingMode PROPORTIONAL_TO_THROUGHPUT_CAPACITY = new LustreReadCacheSizingMode("PROPORTIONAL_TO_THROUGHPUT_CAPACITY");
+        /// <summary>
+        /// Constant USER_PROVISIONED for LustreReadCacheSizingMode
+        /// </summary>
+        public static readonly LustreReadCacheSizingMode USER_PROVISIONED = new LustreReadCacheSizingMode("USER_PROVISIONED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LustreReadCacheSizingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LustreReadCacheSizingMode FindValue(string value)
+        {
+            return FindValue<LustreReadCacheSizingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LustreReadCacheSizingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetadataConfigurationMode.
     /// </summary>
     public class MetadataConfigurationMode : ConstantClass

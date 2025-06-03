@@ -30,13 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DSQL.Model
 {
     /// <summary>
-    /// Output Mixin
+    /// The output from a deleted cluster.
     /// </summary>
     public partial class DeleteClusterResponse : AmazonWebServiceResponse
     {
         private string _arn;
         private DateTime? _creationTime;
-        private bool? _deletionProtectionEnabled;
         private string _identifier;
         private ClusterStatus _status;
 
@@ -76,25 +75,6 @@ namespace Amazon.DSQL.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property DeletionProtectionEnabled. 
-        /// <para>
-        /// Specifies whether deletion protection was enabled on the cluster.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public bool? DeletionProtectionEnabled
-        {
-            get { return this._deletionProtectionEnabled; }
-            set { this._deletionProtectionEnabled = value; }
-        }
-
-        // Check to see if DeletionProtectionEnabled property is set
-        internal bool IsSetDeletionProtectionEnabled()
-        {
-            return this._deletionProtectionEnabled.HasValue; 
         }
 
         /// <summary>

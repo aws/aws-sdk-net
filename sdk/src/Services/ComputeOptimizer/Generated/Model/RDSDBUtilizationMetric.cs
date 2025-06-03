@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the utilization metric of an Amazon RDS. 
+    /// Describes the utilization metric of an Amazon Aurora and RDS database. 
     /// 
     ///  
     /// <para>
-    ///  To determine the performance difference between your current Amazon RDS and the recommended
-    /// option, compare the utilization metric data of your service against its projected
-    /// utilization metric data. 
+    ///  To determine the performance difference between your current DB instance and the
+    /// recommended option, compare the utilization metric data of your service against its
+    /// projected utilization metric data. 
     /// </para>
     /// </summary>
     public partial class RDSDBUtilizationMetric

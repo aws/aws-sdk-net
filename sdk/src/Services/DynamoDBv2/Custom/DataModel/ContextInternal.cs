@@ -70,6 +70,7 @@ namespace Amazon.DynamoDBv2.DataModel
             else if (memberType.IsAssignableFrom(typeof(short))) version = version.AsShort() + 1;
             else if (memberType.IsAssignableFrom(typeof(ushort))) version = version.AsUShort() + 1;
         }
+
         private static Document CreateExpectedDocumentForVersion(ItemStorage storage)
         {
             Document document = new Document();
@@ -113,6 +114,57 @@ namespace Amazon.DynamoDBv2.DataModel
                 ExpressionAttributeNames = { [attributeReference] = versionAttributeName },
                 ExpressionAttributeValues = { [attributeValueReference] = storage.CurrentVersion }
             };
+        }
+
+        #endregion
+
+        #region Atomic counters
+
+        internal static Expression BuildCounterConditionExpression(ItemStorage storage)
+        {
+            var atomicCounters = GetCounterProperties(storage);
+            Expression counterConditionExpression = null;
+
+            if (atomicCounters.Length != 0)
+            {
+                counterConditionExpression = CreateUpdateExpressionForCounterProperties(atomicCounters);
+            }
+
+            return counterConditionExpression;
+        }
+
+        private static PropertyStorage[] GetCounterProperties(ItemStorage storage)
+        {
+            var counterProperties = storage.Config.BaseTypeStorageConfig.Properties.
+                Where(propertyStorage => propertyStorage.IsCounter).ToArray();
+
+            return counterProperties;
+        }
+
+        private static Expression CreateUpdateExpressionForCounterProperties(PropertyStorage[] counterPropertyStorages)
+        {
+            if (counterPropertyStorages.Length == 0) return null;
+
+            Expression updateExpression = new Expression();
+            var asserts = string.Empty;
+
+            foreach (var propertyStorage in counterPropertyStorages)
+            {
+                string startValueName = $":{propertyStorage.AttributeName}Start";
+                string deltaValueName = $":{propertyStorage.AttributeName}Delta";
+                string counterAttributeName = Common.GetAttributeReference(propertyStorage.AttributeName);
+                asserts += $"{counterAttributeName} = " +
+                           $"if_not_exists({counterAttributeName},{startValueName}) + {deltaValueName} ,";
+                updateExpression.ExpressionAttributeNames[counterAttributeName] = propertyStorage.AttributeName;
+                updateExpression.ExpressionAttributeValues[deltaValueName] = propertyStorage.CounterDelta;
+
+                //CounterDelta is being subtracted from CounterStartValue to compensate it being added back to the starting value
+                updateExpression.ExpressionAttributeValues[startValueName] =
+                    propertyStorage.CounterStartValue - propertyStorage.CounterDelta;
+            }
+            updateExpression.ExpressionStatement = $"SET {asserts.Substring(0, asserts.Length - 2)}";
+
+            return updateExpression;
         }
 
         #endregion
@@ -490,8 +542,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     // if only keys are being serialized, skip non-key properties
                     // still include version, however, to populate the storage.CurrentVersion field
+                    // and include counter, to populate the storage.CurrentCount field
                     if (keysOnly && !propertyStorage.IsHashKey && !propertyStorage.IsRangeKey &&
-                        !propertyStorage.IsVersion) continue;
+                        !propertyStorage.IsVersion && !propertyStorage.IsCounter) continue;
 
                     if (propertyStorage.IsFlattened) continue;
 

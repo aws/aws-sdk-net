@@ -2453,6 +2453,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableRDSDBField AccountId = new ExportableRDSDBField("AccountId");
         /// <summary>
+        /// Constant ClusterWriter for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField ClusterWriter = new ExportableRDSDBField("ClusterWriter");
+        /// <summary>
         /// Constant CurrentDBInstanceClass for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField CurrentDBInstanceClass = new ExportableRDSDBField("CurrentDBInstanceClass");
@@ -2484,6 +2488,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant CurrentStorageConfigurationStorageType for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField CurrentStorageConfigurationStorageType = new ExportableRDSDBField("CurrentStorageConfigurationStorageType");
+        /// <summary>
+        /// Constant CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost = new ExportableRDSDBField("CurrentStorageEstimatedClusterInstanceOnDemandMonthlyCost");
+        /// <summary>
+        /// Constant CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost = new ExportableRDSDBField("CurrentStorageEstimatedClusterStorageIOOnDemandMonthlyCost");
+        /// <summary>
+        /// Constant CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost = new ExportableRDSDBField("CurrentStorageEstimatedClusterStorageOnDemandMonthlyCost");
+        /// <summary>
+        /// Constant CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation = new ExportableRDSDBField("CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation");
         /// <summary>
         /// Constant CurrentStorageOnDemandMonthlyPrice for ExportableRDSDBField
         /// </summary>
@@ -2605,6 +2625,18 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableRDSDBField StorageRecommendationOptionsAllocatedStorage = new ExportableRDSDBField("StorageRecommendationOptionsAllocatedStorage");
         /// <summary>
+        /// Constant StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedClusterInstanceOnDemandMonthlyCost");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedClusterStorageIOOnDemandMonthlyCost");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedClusterStorageOnDemandMonthlyCost");
+        /// <summary>
         /// Constant StorageRecommendationOptionsEstimatedMonthlySavingsCurrency for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedMonthlySavingsCurrency");
@@ -2620,6 +2652,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedMonthlyVolumeIOPsCostVariation");
         /// <summary>
         /// Constant StorageRecommendationOptionsIOPS for ExportableRDSDBField
         /// </summary>
@@ -2724,6 +2760,18 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsStorageNetworkTransmitThroughputMaximum for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField UtilizationMetricsStorageNetworkTransmitThroughputMaximum = new ExportableRDSDBField("UtilizationMetricsStorageNetworkTransmitThroughputMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsVolumeBytesUsedAverage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsVolumeBytesUsedAverage = new ExportableRDSDBField("UtilizationMetricsVolumeBytesUsedAverage");
+        /// <summary>
+        /// Constant UtilizationMetricsVolumeReadIOPsAverage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsVolumeReadIOPsAverage = new ExportableRDSDBField("UtilizationMetricsVolumeReadIOPsAverage");
+        /// <summary>
+        /// Constant UtilizationMetricsVolumeWriteIOPsAverage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsVolumeWriteIOPsAverage = new ExportableRDSDBField("UtilizationMetricsVolumeWriteIOPsAverage");
         /// <summary>
         /// Constant UtilizationMetricsWriteIOPSEphemeralStorageMaximum for ExportableRDSDBField
         /// </summary>
@@ -5461,6 +5509,18 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly RDSDBMetricName StorageNetworkTransmitThroughput = new RDSDBMetricName("StorageNetworkTransmitThroughput");
         /// <summary>
+        /// Constant VolumeBytesUsed for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName VolumeBytesUsed = new RDSDBMetricName("VolumeBytesUsed");
+        /// <summary>
+        /// Constant VolumeReadIOPs for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName VolumeReadIOPs = new RDSDBMetricName("VolumeReadIOPs");
+        /// <summary>
+        /// Constant VolumeWriteIOPs for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName VolumeWriteIOPs = new RDSDBMetricName("VolumeWriteIOPs");
+        /// <summary>
         /// Constant WriteIOPSEphemeralStorage for RDSDBMetricName
         /// </summary>
         public static readonly RDSDBMetricName WriteIOPSEphemeralStorage = new RDSDBMetricName("WriteIOPSEphemeralStorage");
@@ -5610,6 +5670,64 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RDSDBRecommendationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RDSEstimatedMonthlyVolumeIOPsCostVariation.
+    /// </summary>
+    public class RDSEstimatedMonthlyVolumeIOPsCostVariation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for RDSEstimatedMonthlyVolumeIOPsCostVariation
+        /// </summary>
+        public static readonly RDSEstimatedMonthlyVolumeIOPsCostVariation High = new RDSEstimatedMonthlyVolumeIOPsCostVariation("High");
+        /// <summary>
+        /// Constant Low for RDSEstimatedMonthlyVolumeIOPsCostVariation
+        /// </summary>
+        public static readonly RDSEstimatedMonthlyVolumeIOPsCostVariation Low = new RDSEstimatedMonthlyVolumeIOPsCostVariation("Low");
+        /// <summary>
+        /// Constant Medium for RDSEstimatedMonthlyVolumeIOPsCostVariation
+        /// </summary>
+        public static readonly RDSEstimatedMonthlyVolumeIOPsCostVariation Medium = new RDSEstimatedMonthlyVolumeIOPsCostVariation("Medium");
+        /// <summary>
+        /// Constant None for RDSEstimatedMonthlyVolumeIOPsCostVariation
+        /// </summary>
+        public static readonly RDSEstimatedMonthlyVolumeIOPsCostVariation None = new RDSEstimatedMonthlyVolumeIOPsCostVariation("None");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSEstimatedMonthlyVolumeIOPsCostVariation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSEstimatedMonthlyVolumeIOPsCostVariation FindValue(string value)
+        {
+            return FindValue<RDSEstimatedMonthlyVolumeIOPsCostVariation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSEstimatedMonthlyVolumeIOPsCostVariation(string value)
         {
             return FindValue(value);
         }
@@ -5829,6 +5947,10 @@ namespace Amazon.ComputeOptimizer
     {
 
         /// <summary>
+        /// Constant NotOptimized for RDSStorageFinding
+        /// </summary>
+        public static readonly RDSStorageFinding NotOptimized = new RDSStorageFinding("NotOptimized");
+        /// <summary>
         /// Constant Optimized for RDSStorageFinding
         /// </summary>
         public static readonly RDSStorageFinding Optimized = new RDSStorageFinding("Optimized");
@@ -5882,6 +6004,14 @@ namespace Amazon.ComputeOptimizer
     public class RDSStorageFindingReasonCode : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DBClusterStorageOptionAvailable for RDSStorageFindingReasonCode
+        /// </summary>
+        public static readonly RDSStorageFindingReasonCode DBClusterStorageOptionAvailable = new RDSStorageFindingReasonCode("DBClusterStorageOptionAvailable");
+        /// <summary>
+        /// Constant DBClusterStorageSavingsAvailable for RDSStorageFindingReasonCode
+        /// </summary>
+        public static readonly RDSStorageFindingReasonCode DBClusterStorageSavingsAvailable = new RDSStorageFindingReasonCode("DBClusterStorageSavingsAvailable");
         /// <summary>
         /// Constant EBSVolumeAllocatedStorageUnderprovisioned for RDSStorageFindingReasonCode
         /// </summary>
@@ -6011,6 +6141,10 @@ namespace Amazon.ComputeOptimizer
     {
 
         /// <summary>
+        /// Constant AuroraDBClusterStorage for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType AuroraDBClusterStorage = new RecommendationSourceType("AuroraDBClusterStorage");
+        /// <summary>
         /// Constant AutoScalingGroup for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType AutoScalingGroup = new RecommendationSourceType("AutoScalingGroup");
@@ -6084,6 +6218,10 @@ namespace Amazon.ComputeOptimizer
     public class ResourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AuroraDBClusterStorage for ResourceType
+        /// </summary>
+        public static readonly ResourceType AuroraDBClusterStorage = new ResourceType("AuroraDBClusterStorage");
         /// <summary>
         /// Constant AutoScalingGroup for ResourceType
         /// </summary>

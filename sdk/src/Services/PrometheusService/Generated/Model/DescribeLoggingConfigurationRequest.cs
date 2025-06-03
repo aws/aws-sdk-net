@@ -31,7 +31,14 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoggingConfiguration operation.
-    /// Returns complete information about the current logging configuration of the workspace.
+    /// Returns complete information about the current rules and alerting logging configuration
+    /// of the workspace.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// These logging configurations are only for rules and alerting logs.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeLoggingConfigurationRequest : AmazonPrometheusServiceRequest
     {

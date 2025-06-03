@@ -742,7 +742,31 @@ namespace Amazon.Runtime
             }
         }
 
-#if AWS_ASYNC_API
+#if NET8_0_OR_GREATER
+        TimeSpan? _connectTimeout;
+
+        /// <summary>
+        /// Gets and sets the connection timeout that will be set on the HttpClient used by the service client to make requests.
+        /// The connection timeout is used control the wait time for the connection to be established to the service. The default
+        /// connection timeout for the HttpClient is infinite waiting period.
+        /// </summary>
+        public TimeSpan? ConnectTimeout
+        {
+            get
+            {
+                if (!this._connectTimeout.HasValue)
+                    return null;
+
+                return this._connectTimeout.Value;
+            }
+            set
+            {
+                ValidateTimeout(value);
+                this._connectTimeout = value;
+            }
+        }
+#endif
+
         /// <summary>
         /// Generates a <see cref="CancellationToken"/> based on the value
         /// for <see cref="DefaultConfiguration.TimeToFirstByteTimeout"/>.
@@ -758,7 +782,6 @@ namespace Amazon.Runtime
                 ? new CancellationTokenSource(cancelTimeout.Value).Token
                 : default(CancellationToken);
         }
-#endif
 
         /// <summary>
         /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint

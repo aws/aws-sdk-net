@@ -34,7 +34,26 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
     /// </summary>
     public partial class InputConfiguration
     {
+        private AssetProcessingConfiguration _assetProcessingConfiguration;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property AssetProcessingConfiguration. 
+        /// <para>
+        /// Asset processing configuration
+        /// </para>
+        /// </summary>
+        public AssetProcessingConfiguration AssetProcessingConfiguration
+        {
+            get { return this._assetProcessingConfiguration; }
+            set { this._assetProcessingConfiguration = value; }
+        }
+
+        // Check to see if AssetProcessingConfiguration property is set
+        internal bool IsSetAssetProcessingConfiguration()
+        {
+            return this._assetProcessingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Uri. 

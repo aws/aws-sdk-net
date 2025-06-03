@@ -348,8 +348,22 @@ namespace Amazon.S3.Transfer.Internal
             if (this._fileTransporterRequest.Metadata != null && this._fileTransporterRequest.Metadata.Count > 0)
                 initRequest.Metadata = this._fileTransporterRequest.Metadata;
             if (this._fileTransporterRequest.Headers != null && this._fileTransporterRequest.Headers.Count > 0)
-                initRequest.Headers = this._fileTransporterRequest.Headers;
-
+            {
+                foreach (var headerKey in this._fileTransporterRequest.Headers.Keys)
+                {
+                    // InitiateMultipartUploadRequest already has its content-type header set.
+                    // don't copy the Content-Type if it's set already as to not overwrite the original content-type
+                    if (string.Equals(headerKey, HeaderKeys.ContentTypeHeader) && this._fileTransporterRequest.IsSetContentType())
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        initRequest.Headers[headerKey] = this._fileTransporterRequest.Headers[headerKey];
+                    }
+                }
+            }
+                
             return initRequest;
         }
 

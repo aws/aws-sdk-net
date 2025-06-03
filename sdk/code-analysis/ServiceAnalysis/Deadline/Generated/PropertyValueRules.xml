@@ -2703,6 +2703,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.ServiceManagedEc2FleetConfiguration.StorageProfileId</property>
+    <pattern>sp-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.SessionActionSummary.ProgressPercent</property>
     <min>0</min>
     <max>100</max>

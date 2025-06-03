@@ -7,19 +7,18 @@
     <pattern>[!-~]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DSQL.Model.CreateClusterRequest.KmsEncryptionKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9:/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DSQL.Model.CreateClusterResponse.Arn</property>
+    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DSQL.Model.CreateClusterResponse.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DSQL.Model.CreateMultiRegionClustersRequest.ClientToken</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[!-~]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DSQL.Model.CreateMultiRegionClustersRequest.WitnessRegion</property>
-    <min>0</min>
-    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteClusterRequest.ClientToken</property>
@@ -32,27 +31,24 @@
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DSQL.Model.DeleteClusterResponse.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <property>Amazon.DSQL.Model.DeleteClusterResponse.Arn</property>
+    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DSQL.Model.DeleteMultiRegionClustersRequest.ClientToken</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[!-~]+</pattern>
+    <property>Amazon.DSQL.Model.DeleteClusterResponse.Identifier</property>
+    <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterRequest.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DSQL.Model.GetClusterResponse.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <property>Amazon.DSQL.Model.GetClusterResponse.Arn</property>
+    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DSQL.Model.GetClusterResponse.WitnessRegion</property>
-    <min>0</min>
-    <max>20</max>
+    <property>Amazon.DSQL.Model.GetClusterResponse.Identifier</property>
+    <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameRequest.Identifier</property>
@@ -98,16 +94,30 @@
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DSQL.Model.UpdateClusterRequest.KmsEncryptionKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9:/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DSQL.Model.UpdateClusterResponse.Arn</property>
+    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DSQL.Model.UpdateClusterResponse.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DSQL.Model.UpdateClusterResponse.WitnessRegion</property>
-    <min>0</min>
-    <max>20</max>
+    <property>Amazon.DSQL.Model.ClusterSummary.Arn</property>
+    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.ClusterSummary.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DSQL.Model.MultiRegionProperties.WitnessRegion</property>
+    <min>0</min>
+    <max>50</max>
   </property-value-rule>
 </property-value-rules>

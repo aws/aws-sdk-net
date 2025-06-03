@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InternetKeyExchangeVersion", StringUtils.FromString(publicRequest.InternetKeyExchangeVersion));
                 }
+                if(publicRequest.IsSetSampleType())
+                {
+                    request.Parameters.Add("SampleType", StringUtils.FromString(publicRequest.SampleType));
+                }
                 if(publicRequest.IsSetVpnConnectionDeviceTypeId())
                 {
                     request.Parameters.Add("VpnConnectionDeviceTypeId", StringUtils.FromString(publicRequest.VpnConnectionDeviceTypeId));

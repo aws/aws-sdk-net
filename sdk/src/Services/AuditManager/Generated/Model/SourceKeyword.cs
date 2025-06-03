@@ -244,7 +244,7 @@ namespace Amazon.AuditManager.Model
         /// <para>
         /// For CloudTrail: Make sure that the <c>keywordValue</c> is written as <c>serviceprefix_ActionName</c>.
         /// For example, <c>cloudtrail_StartLogging</c>. For accuracy, we recommend that you review
-        /// the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service
+        /// the Amazon Web Services service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service
         /// Authorization Reference</a>.
         /// </para>
         ///  </li> </ol> </important>

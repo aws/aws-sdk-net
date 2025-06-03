@@ -1576,9 +1576,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Removes your Amazon Web Services account from the launch permissions for the specified
-        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">
-        /// Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon
-        /// EC2 User Guide</i>.
+        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">Cancel
+        /// having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
         /// <param name="cancellationToken">
@@ -1762,7 +1762,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For information about the prerequisites when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
-        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -2103,6 +2103,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateDelegateMacVolumeOwnershipTask
+
+
+
+        /// <summary>
+        /// Delegates ownership of the Amazon EBS root volume for an Apple silicon Mac instance
+        /// to an administrative user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDelegateMacVolumeOwnershipTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDelegateMacVolumeOwnershipTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDelegateMacVolumeOwnershipTask">REST API Reference for CreateDelegateMacVolumeOwnershipTask Operation</seealso>
+        Task<CreateDelegateMacVolumeOwnershipTaskResponse> CreateDelegateMacVolumeOwnershipTaskAsync(CreateDelegateMacVolumeOwnershipTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDhcpOptions
 
 
@@ -2317,7 +2336,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
-        /// an Amazon EBS-backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
@@ -2837,6 +2856,74 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateMacSystemIntegrityProtectionModificationTask
+
+
+
+        /// <summary>
+        /// Creates a System Integrity Protection (SIP) modification task to configure the SIP
+        /// settings for an x86 Mac instance or Apple silicon Mac instance. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">
+        /// Configure SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When you configure the SIP settings for your instance, you can either enable or disable
+        /// all SIP settings, or you can specify a custom SIP configuration that selectively enables
+        /// or disables specific SIP settings.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you implement a custom configuration, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-check-settings">
+        /// connect to the instance and verify the settings</a> to ensure that your requirements
+        /// are properly implemented and functioning as intended.
+        /// </para>
+        ///  
+        /// <para>
+        /// SIP configurations might change with macOS updates. We recommend that you review custom
+        /// SIP settings after any macOS version upgrade to ensure continued compatibility and
+        /// proper functionality of your security configurations.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To enable or disable all SIP settings, use the <b>MacSystemIntegrityProtectionStatus</b>
+        /// parameter only. For example, to enable all SIP settings, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionStatus=enabled</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To specify a custom configuration that selectively enables or disables specific SIP
+        /// settings, use the <b>MacSystemIntegrityProtectionStatus</b> parameter to enable or
+        /// disable all SIP settings, and then use the <b>MacSystemIntegrityProtectionConfiguration</b>
+        /// parameter to specify exceptions. In this case, the exceptions you specify for <b>MacSystemIntegrityProtectionConfiguration</b>
+        /// override the value you specify for <b>MacSystemIntegrityProtectionStatus</b>. For
+        /// example, to enable all SIP settings, except <c>NvramProtections</c>, specify the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionStatus=enabled</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MacSystemIntegrityProtectionConfigurationRequest "NvramProtections=disabled"</c>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMacSystemIntegrityProtectionModificationTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMacSystemIntegrityProtectionModificationTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMacSystemIntegrityProtectionModificationTask">REST API Reference for CreateMacSystemIntegrityProtectionModificationTask Operation</seealso>
+        Task<CreateMacSystemIntegrityProtectionModificationTaskResponse> CreateMacSystemIntegrityProtectionModificationTaskAsync(CreateMacSystemIntegrityProtectionModificationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateManagedPrefixList
 
 
@@ -3219,13 +3306,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRestoreImageTask service method.</param>
@@ -3633,13 +3720,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStoreImageTask service method.</param>
@@ -6464,8 +6551,15 @@ namespace Amazon.EC2
         /// the Recycle Bin for the specified retention period. It can be restored before its
         /// retention period expires, after which it is permanently deleted. If the deregistered
         /// AMI doesn't match a retention rule, it is permanently deleted immediately. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the <i>Amazon EBS User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover
+        /// deleted Amazon EBS snapshots and EBS-backed AMIs with Recycle Bin</a> in the <i>Amazon
+        /// EBS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When deregistering an EBS-backed AMI, you can optionally delete its associated snapshots
+        /// at the same time. However, if a snapshot is associated with multiple AMIs, it won't
+        /// be deleted even if specified for deletion, although the AMI will still be deregistered.
         /// </para>
         ///  
         /// <para>
@@ -6478,8 +6572,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For EBS-backed AMIs: The snapshots that were created of the root and data volumes
-        /// of the instance during AMI creation. You'll continue to incur snapshot storage costs.
+        /// For EBS-backed AMIs: Snapshots that are associated with multiple AMIs. You'll continue
+        /// to incur snapshot storage costs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7894,6 +7988,14 @@ namespace Amazon.EC2
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
         /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
@@ -7940,6 +8042,14 @@ namespace Amazon.EC2
         /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
         /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon EC2 API follows an eventual consistency model. This means that the result
+        /// of an API command you run that creates or modifies resources might not be immediately
+        /// available to all subsequent commands you run. For guidance on how to manage eventual
+        /// consistency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -8459,6 +8569,10 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Returns 3 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         ///  <c>hpc6a.48xlarge</c> | <c>hpc6id.32xlarge</c> | <c>hpc7a.12xlarge</c> | <c>hpc7a.24xlarge</c>
         /// | <c>hpc7a.48xlarge</c> | <c>hpc7a.96xlarge</c> | <c>hpc7g.4xlarge</c> | <c>hpc7g.8xlarge</c>
         /// | <c>hpc7g.16xlarge</c> 
@@ -8473,7 +8587,15 @@ namespace Amazon.EC2
         ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
         /// | <c>trn2u.48xlarge</c> 
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Returns 4 network nodes in the response
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>p6-b200.48xlarge</c> 
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
         /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
@@ -8947,6 +9069,26 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeMacModificationTasks
+
+
+
+        /// <summary>
+        /// Describes a System Integrity Protection (SIP) modification task or volume ownership
+        /// delegation task for an Amazon EC2 Mac instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mac-sip-settings.html#mac-sip-configure">Configure
+        /// SIP for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMacModificationTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMacModificationTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacModificationTasks">REST API Reference for DescribeMacModificationTasks Operation</seealso>
+        Task<DescribeMacModificationTasksResponse> DescribeMacModificationTasksAsync(DescribeMacModificationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeManagedPrefixLists
 
 
@@ -9233,6 +9375,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Outposts link aggregation groups (LAGs).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// LAGs are only available for second-generation Outposts racks at this time.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOutpostLags service method.</param>
         /// <param name="cancellationToken">
@@ -10583,13 +10731,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStoreImageTasks service method.</param>
@@ -12117,7 +12265,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
         /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -12142,7 +12290,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
-        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImageDeprecation service method.</param>
@@ -12172,8 +12320,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
-        /// an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect
+        /// an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImageDeregistrationProtection service method.</param>
@@ -12434,6 +12582,23 @@ namespace Amazon.EC2
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
         /// EC2 doesn't return an error.
         /// </para>
+        ///  
+        /// <para>
+        /// An address cannot be disassociated if the all of the following conditions are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Network interface has a <c>publicDualStackDnsName</c> publicDnsName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Public IPv4 address is the primary public IPv4 address
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network interface only has one remaining public IPv4 address
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAddress service method.</param>
         /// <param name="cancellationToken">
@@ -13053,7 +13218,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
-        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImage service method.</param>
@@ -13085,7 +13250,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
         /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -13139,8 +13304,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
-        /// an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect
+        /// an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImageDeregistrationProtection service method.</param>
@@ -13512,6 +13677,25 @@ namespace Amazon.EC2
         /// <returns>The response from the ExportVerifiedAccessInstanceClientConfiguration service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportVerifiedAccessInstanceClientConfiguration">REST API Reference for ExportVerifiedAccessInstanceClientConfiguration Operation</seealso>
         Task<ExportVerifiedAccessInstanceClientConfigurationResponse> ExportVerifiedAccessInstanceClientConfigurationAsync(ExportVerifiedAccessInstanceClientConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetActiveVpnTunnelStatus
+
+
+
+        /// <summary>
+        /// Returns the currently negotiated security parameters for an active VPN tunnel, including
+        /// IKE version, DH groups, encryption algorithms, and integrity algorithms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetActiveVpnTunnelStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetActiveVpnTunnelStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
+        Task<GetActiveVpnTunnelStatusResponse> GetActiveVpnTunnelStatusAsync(GetActiveVpnTunnelStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -13907,7 +14091,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
         /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -15747,6 +15931,13 @@ namespace Amazon.EC2
         /// simplified automatic recovery for an unsupported instance type. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
         /// automatic recovery</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Modifies the reboot migration behavior during a user-initiated reboot of an instance
+        /// that has a pending <c>system-reboot</c> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+        /// or disable reboot migration</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMaintenanceOptions service method.</param>
         /// <param name="cancellationToken">
@@ -16089,6 +16280,26 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyPrivateDnsNameOptions service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPrivateDnsNameOptions">REST API Reference for ModifyPrivateDnsNameOptions Operation</seealso>
         Task<ModifyPrivateDnsNameOptionsResponse> ModifyPrivateDnsNameOptionsAsync(ModifyPrivateDnsNameOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyPublicIpDnsNameOptions
+
+
+
+        /// <summary>
+        /// Modify public hostname options for a network interface. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html">EC2
+        /// instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyPublicIpDnsNameOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyPublicIpDnsNameOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
+        Task<ModifyPublicIpDnsNameOptionsResponse> ModifyPublicIpDnsNameOptionsAsync(ModifyPublicIpDnsNameOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -17511,7 +17722,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
         /// an AMI from a snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
-        /// encryption with Amazon EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -18371,8 +18582,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover
+        /// deleted Amazon EBS snapshots and EBS-back AMIs with Recycle Bin</a> in the <i>Amazon
+        /// EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreImageFromRecycleBin service method.</param>
         /// <param name="cancellationToken">
@@ -19137,12 +19349,12 @@ namespace Amazon.EC2
         /// attached to the instance persist. When you terminate an instance, any attached EBS
         /// volumes with the <c>DeleteOnTermination</c> block device mapping parameter set to
         /// <c>true</c> are automatically deleted. For more information about the differences
-        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
-        /// EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
         /// terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>

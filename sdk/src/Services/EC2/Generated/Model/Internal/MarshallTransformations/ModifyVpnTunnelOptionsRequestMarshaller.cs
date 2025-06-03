@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
+                if(publicRequest.IsSetPreSharedKeyStorage())
+                {
+                    request.Parameters.Add("PreSharedKeyStorage", StringUtils.FromString(publicRequest.PreSharedKeyStorage));
+                }
                 if(publicRequest.IsSetSkipTunnelReplacement())
                 {
                     request.Parameters.Add("SkipTunnelReplacement", StringUtils.FromBool(publicRequest.SkipTunnelReplacement));

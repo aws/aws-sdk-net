@@ -30,14 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DSQL.Model
 {
     /// <summary>
-    /// Output Mixin
+    /// The output of a created cluster.
     /// </summary>
     public partial class CreateClusterResponse : AmazonWebServiceResponse
     {
         private string _arn;
         private DateTime? _creationTime;
         private bool? _deletionProtectionEnabled;
+        private EncryptionDetails _encryptionDetails;
         private string _identifier;
+        private MultiRegionProperties _multiRegionProperties;
         private ClusterStatus _status;
 
         /// <summary>
@@ -98,6 +100,25 @@ namespace Amazon.DSQL.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncryptionDetails. 
+        /// <para>
+        /// The encryption configuration for the cluster that was specified during the creation
+        /// process, including the KMS key identifier and encryption state.
+        /// </para>
+        /// </summary>
+        public EncryptionDetails EncryptionDetails
+        {
+            get { return this._encryptionDetails; }
+            set { this._encryptionDetails = value; }
+        }
+
+        // Check to see if EncryptionDetails property is set
+        internal bool IsSetEncryptionDetails()
+        {
+            return this._encryptionDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
         /// The ID of the created cluster.
@@ -114,6 +135,24 @@ namespace Amazon.DSQL.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionProperties. 
+        /// <para>
+        /// The multi-Region cluster configuration details that were set during cluster creation
+        /// </para>
+        /// </summary>
+        public MultiRegionProperties MultiRegionProperties
+        {
+            get { return this._multiRegionProperties; }
+            set { this._multiRegionProperties = value; }
+        }
+
+        // Check to see if MultiRegionProperties property is set
+        internal bool IsSetMultiRegionProperties()
+        {
+            return this._multiRegionProperties != null;
         }
 
         /// <summary>

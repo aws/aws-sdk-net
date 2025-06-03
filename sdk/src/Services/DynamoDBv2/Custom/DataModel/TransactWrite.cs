@@ -225,6 +225,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             ItemStorage storage = _context.ObjectToItemStorageHelper(item, _storageConfig, _config, keysOnly: false, _config.IgnoreNullValues ?? false);
             if (storage == null) return;
+
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
 
@@ -432,7 +433,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 DocumentTransaction.TargetTable.IsEmptyStringValueEnabled);
             return DynamoDBContext.CreateConditionExpressionForVersion(storage, conversionConfig);
         }
-        
 
         private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression)
         {
@@ -463,7 +463,6 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             else
             {
-
                 DocumentTransaction.AddDocumentToPut(storage.Document, new TransactWriteItemOperationConfig
                 {
                     ConditionalExpression = conditionExpression,

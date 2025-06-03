@@ -125,7 +125,7 @@ namespace Amazon.DSQL.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Hypothetical identifier of the resource which does not exist
+        /// The resource ID could not be found.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,7 +144,7 @@ namespace Amazon.DSQL.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Hypothetical type of the resource which does not exist
+        /// The resource type could not be found.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

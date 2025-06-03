@@ -372,6 +372,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeMacModificationTasksRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeManagedPrefixListsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>

@@ -2914,11 +2914,13 @@ namespace Amazon.PCS
         /// <important> 
         /// <para>
         /// This API action isn't intended for you to use.
-        /// </para>
+        /// 
         ///  </important> 
         /// <para>
         /// Amazon Web Services PCS uses this API action to register the compute nodes it launches
         /// in your account.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterComputeNodeGroupInstance service method.</param>
@@ -2961,11 +2963,13 @@ namespace Amazon.PCS
         /// <important> 
         /// <para>
         /// This API action isn't intended for you to use.
-        /// </para>
+        /// 
         ///  </important> 
         /// <para>
         /// Amazon Web Services PCS uses this API action to register the compute nodes it launches
         /// in your account.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterComputeNodeGroupInstance service method.</param>

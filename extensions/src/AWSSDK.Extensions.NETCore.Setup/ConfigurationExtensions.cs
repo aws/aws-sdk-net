@@ -313,6 +313,17 @@ namespace Microsoft.Extensions.Configuration
 
                     options.DefaultClientConfig.Timeout = TimeSpan.FromMilliseconds(timeout);
                 }
+#if NET8_0_OR_GREATER
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.ConnectTimeout), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var connectTimeout))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.ConnectTimeout)}.");
+                    }
+
+                    options.DefaultClientConfig.ConnectTimeout = TimeSpan.FromMilliseconds(connectTimeout);
+                }
+#endif
                 else if (string.Equals(element.Key, nameof(DefaultClientConfig.UseAlternateUserAgentHeader), StringComparison.OrdinalIgnoreCase))
                 {
                     if (!bool.TryParse(element.Value, out var useAlternateUserAgentHeader))

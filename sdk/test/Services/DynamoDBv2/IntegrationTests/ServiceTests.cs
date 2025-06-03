@@ -206,12 +206,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var emptyListAV = new AttributeValue();
             emptyListAV.L = null;
-            // call to IsLSet = true sets L to empty list
+            // call to IsLSet = true sets L to empty list. This is testing legacy behavior in V3 where
+            // Users would explicit set IsLSet to confirm an empty array is sent to the request.
             emptyListAV.IsLSet = true;
             Assert.AreEqual(0, emptyListAV.L.Count);
+
+            // Create a new AttributeValue to confirm that the empty collection will be sent even
+            // if IsLSet is not set.
+            emptyListAV = new AttributeValue();
             emptyListAV.L = new List<AttributeValue>();
-            // call to IsLSet = true sets L to empty list
-            emptyListAV.IsLSet = true;
             Assert.AreEqual(0, emptyListAV.L.Count);
 
             var boolAV = new AttributeValue();

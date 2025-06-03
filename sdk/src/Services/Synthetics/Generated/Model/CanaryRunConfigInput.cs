@@ -36,6 +36,7 @@ namespace Amazon.Synthetics.Model
     {
         private bool? _activeTracing;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private int? _ephemeralStorage;
         private int? _memoryInMB;
         private int? _timeoutInSeconds;
 
@@ -102,6 +103,29 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetEnvironmentVariables()
         {
             return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorage. 
+        /// <para>
+        /// Specifies the amount of ephemeral storage (in MB) to allocate for the canary run during
+        /// execution. This temporary storage is used for storing canary run artifacts (which
+        /// are uploaded to an Amazon S3 bucket at the end of the run), and any canary browser
+        /// operations. This temporary storage is cleared after the run is completed. Default
+        /// storage value is 1024 MB.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=5120)]
+        public int? EphemeralStorage
+        {
+            get { return this._ephemeralStorage; }
+            set { this._ephemeralStorage = value; }
+        }
+
+        // Check to see if EphemeralStorage property is set
+        internal bool IsSetEphemeralStorage()
+        {
+            return this._ephemeralStorage.HasValue; 
         }
 
         /// <summary>

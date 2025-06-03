@@ -60,7 +60,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map of the key-value pairs of the tag or tags to assign to the resource.
+        /// A map of the key-value pairs of the tag or tags to assign.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

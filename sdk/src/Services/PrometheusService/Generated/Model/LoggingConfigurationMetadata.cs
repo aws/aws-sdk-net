@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Contains information about the logging configuration for the workspace.
+    /// Contains information about the current rules and alerting logging configuration for
+    /// the workspace.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// These logging configurations are only for rules and alerting logs.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class LoggingConfigurationMetadata
     {

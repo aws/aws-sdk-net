@@ -331,6 +331,56 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type AliasInvocationState.
+    /// </summary>
+    public class AliasInvocationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPT_INVOCATIONS for AliasInvocationState
+        /// </summary>
+        public static readonly AliasInvocationState ACCEPT_INVOCATIONS = new AliasInvocationState("ACCEPT_INVOCATIONS");
+        /// <summary>
+        /// Constant REJECT_INVOCATIONS for AliasInvocationState
+        /// </summary>
+        public static readonly AliasInvocationState REJECT_INVOCATIONS = new AliasInvocationState("REJECT_INVOCATIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AliasInvocationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AliasInvocationState FindValue(string value)
+        {
+            return FindValue<AliasInvocationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AliasInvocationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CachePointType.
     /// </summary>
     public class CachePointType : ConstantClass
@@ -428,6 +478,56 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChunkingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConcurrencyType.
+    /// </summary>
+    public class ConcurrencyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Automatic for ConcurrencyType
+        /// </summary>
+        public static readonly ConcurrencyType Automatic = new ConcurrencyType("Automatic");
+        /// <summary>
+        /// Constant Manual for ConcurrencyType
+        /// </summary>
+        public static readonly ConcurrencyType Manual = new ConcurrencyType("Manual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConcurrencyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConcurrencyType FindValue(string value)
+        {
+            return FindValue<ConcurrencyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConcurrencyType(string value)
         {
             return FindValue(value);
         }
@@ -1279,6 +1379,60 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type FlowNodeInputCategory.
+    /// </summary>
+    public class FlowNodeInputCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ExitLoop for FlowNodeInputCategory
+        /// </summary>
+        public static readonly FlowNodeInputCategory ExitLoop = new FlowNodeInputCategory("ExitLoop");
+        /// <summary>
+        /// Constant LoopCondition for FlowNodeInputCategory
+        /// </summary>
+        public static readonly FlowNodeInputCategory LoopCondition = new FlowNodeInputCategory("LoopCondition");
+        /// <summary>
+        /// Constant ReturnValueToLoopStart for FlowNodeInputCategory
+        /// </summary>
+        public static readonly FlowNodeInputCategory ReturnValueToLoopStart = new FlowNodeInputCategory("ReturnValueToLoopStart");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowNodeInputCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowNodeInputCategory FindValue(string value)
+        {
+            return FindValue<FlowNodeInputCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowNodeInputCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FlowNodeIODataType.
     /// </summary>
     public class FlowNodeIODataType : ConstantClass
@@ -1382,6 +1536,18 @@ namespace Amazon.BedrockAgent
         /// Constant Lex for FlowNodeType
         /// </summary>
         public static readonly FlowNodeType Lex = new FlowNodeType("Lex");
+        /// <summary>
+        /// Constant Loop for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Loop = new FlowNodeType("Loop");
+        /// <summary>
+        /// Constant LoopController for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType LoopController = new FlowNodeType("LoopController");
+        /// <summary>
+        /// Constant LoopInput for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType LoopInput = new FlowNodeType("LoopInput");
         /// <summary>
         /// Constant Output for FlowNodeType
         /// </summary>
@@ -1565,6 +1731,14 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly FlowValidationType IncompatibleConnectionDataType = new FlowValidationType("IncompatibleConnectionDataType");
         /// <summary>
+        /// Constant InvalidLoopBoundary for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType InvalidLoopBoundary = new FlowValidationType("InvalidLoopBoundary");
+        /// <summary>
+        /// Constant LoopIncompatibleNodeType for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType LoopIncompatibleNodeType = new FlowValidationType("LoopIncompatibleNodeType");
+        /// <summary>
         /// Constant MalformedConditionExpression for FlowValidationType
         /// </summary>
         public static readonly FlowValidationType MalformedConditionExpression = new FlowValidationType("MalformedConditionExpression");
@@ -1593,6 +1767,14 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly FlowValidationType MissingEndingNodes = new FlowValidationType("MissingEndingNodes");
         /// <summary>
+        /// Constant MissingLoopControllerNode for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MissingLoopControllerNode = new FlowValidationType("MissingLoopControllerNode");
+        /// <summary>
+        /// Constant MissingLoopInputNode for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MissingLoopInputNode = new FlowValidationType("MissingLoopInputNode");
+        /// <summary>
         /// Constant MissingNodeConfiguration for FlowValidationType
         /// </summary>
         public static readonly FlowValidationType MissingNodeConfiguration = new FlowValidationType("MissingNodeConfiguration");
@@ -1608,6 +1790,14 @@ namespace Amazon.BedrockAgent
         /// Constant MissingStartingNodes for FlowValidationType
         /// </summary>
         public static readonly FlowValidationType MissingStartingNodes = new FlowValidationType("MissingStartingNodes");
+        /// <summary>
+        /// Constant MultipleLoopControllerNodes for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MultipleLoopControllerNodes = new FlowValidationType("MultipleLoopControllerNodes");
+        /// <summary>
+        /// Constant MultipleLoopInputNodes for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MultipleLoopInputNodes = new FlowValidationType("MultipleLoopInputNodes");
         /// <summary>
         /// Constant MultipleNodeInputConnections for FlowValidationType
         /// </summary>
@@ -1736,6 +1926,64 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IncludeExclude(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IncompatibleLoopNodeType.
+    /// </summary>
+    public class IncompatibleLoopNodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Collector for IncompatibleLoopNodeType
+        /// </summary>
+        public static readonly IncompatibleLoopNodeType Collector = new IncompatibleLoopNodeType("Collector");
+        /// <summary>
+        /// Constant Condition for IncompatibleLoopNodeType
+        /// </summary>
+        public static readonly IncompatibleLoopNodeType Condition = new IncompatibleLoopNodeType("Condition");
+        /// <summary>
+        /// Constant Input for IncompatibleLoopNodeType
+        /// </summary>
+        public static readonly IncompatibleLoopNodeType Input = new IncompatibleLoopNodeType("Input");
+        /// <summary>
+        /// Constant Iterator for IncompatibleLoopNodeType
+        /// </summary>
+        public static readonly IncompatibleLoopNodeType Iterator = new IncompatibleLoopNodeType("Iterator");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncompatibleLoopNodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncompatibleLoopNodeType FindValue(string value)
+        {
+            return FindValue<IncompatibleLoopNodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncompatibleLoopNodeType(string value)
         {
             return FindValue(value);
         }
@@ -2541,6 +2789,56 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type PerformanceConfigLatency.
+    /// </summary>
+    public class PerformanceConfigLatency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optimized for PerformanceConfigLatency
+        /// </summary>
+        public static readonly PerformanceConfigLatency Optimized = new PerformanceConfigLatency("optimized");
+        /// <summary>
+        /// Constant Standard for PerformanceConfigLatency
+        /// </summary>
+        public static readonly PerformanceConfigLatency Standard = new PerformanceConfigLatency("standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PerformanceConfigLatency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PerformanceConfigLatency FindValue(string value)
+        {
+            return FindValue<PerformanceConfigLatency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PerformanceConfigLatency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PromptState.
     /// </summary>
     public class PromptState : ConstantClass
@@ -3053,6 +3351,56 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type RerankingMetadataSelectionMode.
+    /// </summary>
+    public class RerankingMetadataSelectionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for RerankingMetadataSelectionMode
+        /// </summary>
+        public static readonly RerankingMetadataSelectionMode ALL = new RerankingMetadataSelectionMode("ALL");
+        /// <summary>
+        /// Constant SELECTIVE for RerankingMetadataSelectionMode
+        /// </summary>
+        public static readonly RerankingMetadataSelectionMode SELECTIVE = new RerankingMetadataSelectionMode("SELECTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RerankingMetadataSelectionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RerankingMetadataSelectionMode FindValue(string value)
+        {
+            return FindValue<RerankingMetadataSelectionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RerankingMetadataSelectionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SalesforceAuthType.
     /// </summary>
     public class SalesforceAuthType : ConstantClass
@@ -3438,6 +3786,52 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Type(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VectorSearchRerankingConfigurationType.
+    /// </summary>
+    public class VectorSearchRerankingConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEDROCK_RERANKING_MODEL for VectorSearchRerankingConfigurationType
+        /// </summary>
+        public static readonly VectorSearchRerankingConfigurationType BEDROCK_RERANKING_MODEL = new VectorSearchRerankingConfigurationType("BEDROCK_RERANKING_MODEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VectorSearchRerankingConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VectorSearchRerankingConfigurationType FindValue(string value)
+        {
+            return FindValue<VectorSearchRerankingConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VectorSearchRerankingConfigurationType(string value)
         {
             return FindValue(value);
         }

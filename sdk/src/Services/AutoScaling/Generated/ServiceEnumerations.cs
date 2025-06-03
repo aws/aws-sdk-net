@@ -437,6 +437,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         public static readonly CpuManufacturer Amd = new CpuManufacturer("amd");
         /// <summary>
+        /// Constant Apple for CpuManufacturer
+        /// </summary>
+        public static readonly CpuManufacturer Apple = new CpuManufacturer("apple");
+        /// <summary>
         /// Constant Intel for CpuManufacturer
         /// </summary>
         public static readonly CpuManufacturer Intel = new CpuManufacturer("intel");

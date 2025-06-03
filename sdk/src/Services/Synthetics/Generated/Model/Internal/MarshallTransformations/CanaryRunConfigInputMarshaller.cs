@@ -66,6 +66,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetEphemeralStorage())
+            {
+                context.Writer.WritePropertyName("EphemeralStorage");
+                context.Writer.WriteNumberValue(requestObject.EphemeralStorage.Value);
+            }
+
             if(requestObject.IsSetMemoryInMB())
             {
                 context.Writer.WritePropertyName("MemoryInMB");

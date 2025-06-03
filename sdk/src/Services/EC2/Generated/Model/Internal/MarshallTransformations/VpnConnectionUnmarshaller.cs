@@ -97,6 +97,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Options = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("preSharedKeyArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PreSharedKeyArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("routes/item", targetDepth))
                     {
                         var unmarshaller = VpnStaticRouteUnmarshaller.Instance;

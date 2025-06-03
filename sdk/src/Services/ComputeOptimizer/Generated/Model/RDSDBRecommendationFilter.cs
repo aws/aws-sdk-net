@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes a filter that returns a more specific list of Amazon RDS recommendations.
+    /// Describes a filter that returns a more specific list of DB instance recommendations.
     /// Use this filter with the <a>GetECSServiceRecommendations</a> action.
     /// </summary>
     public partial class RDSDBRecommendationFilter
@@ -50,24 +50,24 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// You can filter your Amazon RDS recommendations by <c>tag:key</c> and <c>tag-key</c>
+        /// You can filter your DB instance recommendations by <c>tag:key</c> and <c>tag-key</c>
         /// tags.
         /// </para>
         ///  
         /// <para>
-        /// A <c>tag:key</c> is a key and value combination of a tag assigned to your Amazon RDS
+        /// A <c>tag:key</c> is a key and value combination of a tag assigned to your DB instance
         /// recommendations. Use the tag key in the filter name and the tag value as the filter
-        /// value. For example, to find all Amazon RDS service recommendations that have a tag
-        /// with the key of <c>Owner</c> and the value of <c>TeamA</c>, specify <c>tag:Owner</c>
-        /// for the filter name and <c>TeamA</c> for the filter value.
+        /// value. For example, to find all DB instance recommendations that have a tag with the
+        /// key of <c>Owner</c> and the value of <c>TeamA</c>, specify <c>tag:Owner</c> for the
+        /// filter name and <c>TeamA</c> for the filter value.
         /// </para>
         ///  
         /// <para>
-        /// A <c>tag-key</c> is the key of a tag assigned to your Amazon RDS recommendations.
-        /// Use this filter to find all of your Amazon RDS recommendations that have a tag with
+        /// A <c>tag-key</c> is the key of a tag assigned to your DB instance recommendations.
+        /// Use this filter to find all of your DB instance recommendations that have a tag with
         /// a specific key. This doesn’t consider the tag value. For example, you can find your
-        /// Amazon RDS service recommendations with a tag key value of <c>Owner</c> or without
-        /// any tag keys assigned.
+        /// DB instance recommendations with a tag key value of <c>Owner</c> or without any tag
+        /// keys assigned.
         /// </para>
         /// </summary>
         public RDSDBRecommendationFilterName Name

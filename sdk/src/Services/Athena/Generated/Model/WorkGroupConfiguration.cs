@@ -48,6 +48,7 @@ namespace Amazon.Athena.Model
         private EngineVersion _engineVersion;
         private string _executionRole;
         private IdentityCenterConfiguration _identityCenterConfiguration;
+        private ManagedQueryResultsConfiguration _managedQueryResultsConfiguration;
         private bool? _publishCloudWatchMetricsEnabled;
         private QueryResultsS3AccessGrantsConfiguration _queryResultsS3AccessGrantsConfiguration;
         private bool? _requesterPaysEnabled;
@@ -214,6 +215,26 @@ namespace Amazon.Athena.Model
         internal bool IsSetIdentityCenterConfiguration()
         {
             return this._identityCenterConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedQueryResultsConfiguration. 
+        /// <para>
+        ///  The configuration for storing results in Athena owned storage, which includes whether
+        /// this feature is enabled; whether encryption configuration, if any, is used for encrypting
+        /// query results. 
+        /// </para>
+        /// </summary>
+        public ManagedQueryResultsConfiguration ManagedQueryResultsConfiguration
+        {
+            get { return this._managedQueryResultsConfiguration; }
+            set { this._managedQueryResultsConfiguration = value; }
+        }
+
+        // Check to see if ManagedQueryResultsConfiguration property is set
+        internal bool IsSetManagedQueryResultsConfiguration()
+        {
+            return this._managedQueryResultsConfiguration != null;
         }
 
         /// <summary>

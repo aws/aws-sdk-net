@@ -35,6 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class PostgreSQLSettings
     {
         private string _afterConnectScript;
+        private PostgreSQLAuthenticationMethod _authenticationMethod;
         private string _babelfishDatabaseName;
         private bool? _captureDdls;
         private DatabaseMode _databaseMode;
@@ -56,6 +57,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _secretsManagerAccessRoleArn;
         private string _secretsManagerSecretId;
         private string _serverName;
+        private string _serviceAccessRoleArn;
         private string _slotName;
         private bool? _trimSpaceInChar;
         private string _username;
@@ -81,6 +83,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetAfterConnectScript()
         {
             return this._afterConnectScript != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationMethod. 
+        /// <para>
+        /// This attribute allows you to specify the authentication method as "iam auth".
+        /// </para>
+        /// </summary>
+        public PostgreSQLAuthenticationMethod AuthenticationMethod
+        {
+            get { return this._authenticationMethod; }
+            set { this._authenticationMethod = value; }
+        }
+
+        // Check to see if AuthenticationMethod property is set
+        internal bool IsSetAuthenticationMethod()
+        {
+            return this._authenticationMethod != null;
         }
 
         /// <summary>
@@ -571,6 +591,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccessRoleArn. 
+        /// <para>
+        /// The IAM role arn you can use to authenticate the connection to your endpoint. Ensure
+        /// to include <c>iam:PassRole</c> and <c>rds-db:connect</c> actions in permission policy.
+        /// </para>
+        /// </summary>
+        public string ServiceAccessRoleArn
+        {
+            get { return this._serviceAccessRoleArn; }
+            set { this._serviceAccessRoleArn = value; }
+        }
+
+        // Check to see if ServiceAccessRoleArn property is set
+        internal bool IsSetServiceAccessRoleArn()
+        {
+            return this._serviceAccessRoleArn != null;
         }
 
         /// <summary>

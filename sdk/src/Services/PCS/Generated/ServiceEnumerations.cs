@@ -25,6 +25,56 @@ namespace Amazon.PCS
 {
 
     /// <summary>
+    /// Constants used for properties of type AccountingMode.
+    /// </summary>
+    public class AccountingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for AccountingMode
+        /// </summary>
+        public static readonly AccountingMode NONE = new AccountingMode("NONE");
+        /// <summary>
+        /// Constant STANDARD for AccountingMode
+        /// </summary>
+        public static readonly AccountingMode STANDARD = new AccountingMode("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountingMode FindValue(string value)
+        {
+            return FindValue<AccountingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterStatus.
     /// </summary>
     public class ClusterStatus : ConstantClass
@@ -50,6 +100,14 @@ namespace Amazon.PCS
         /// Constant DELETING for ClusterStatus
         /// </summary>
         public static readonly ClusterStatus DELETING = new ClusterStatus("DELETING");
+        /// <summary>
+        /// Constant SUSPENDED for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus SUSPENDED = new ClusterStatus("SUSPENDED");
+        /// <summary>
+        /// Constant SUSPENDING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus SUSPENDING = new ClusterStatus("SUSPENDING");
         /// <summary>
         /// Constant UPDATE_FAILED for ClusterStatus
         /// </summary>
@@ -124,6 +182,14 @@ namespace Amazon.PCS
         /// Constant DELETING for ComputeNodeGroupStatus
         /// </summary>
         public static readonly ComputeNodeGroupStatus DELETING = new ComputeNodeGroupStatus("DELETING");
+        /// <summary>
+        /// Constant SUSPENDED for ComputeNodeGroupStatus
+        /// </summary>
+        public static readonly ComputeNodeGroupStatus SUSPENDED = new ComputeNodeGroupStatus("SUSPENDED");
+        /// <summary>
+        /// Constant SUSPENDING for ComputeNodeGroupStatus
+        /// </summary>
+        public static readonly ComputeNodeGroupStatus SUSPENDING = new ComputeNodeGroupStatus("SUSPENDING");
         /// <summary>
         /// Constant UPDATE_FAILED for ComputeNodeGroupStatus
         /// </summary>
@@ -294,6 +360,14 @@ namespace Amazon.PCS
         /// Constant DELETING for QueueStatus
         /// </summary>
         public static readonly QueueStatus DELETING = new QueueStatus("DELETING");
+        /// <summary>
+        /// Constant SUSPENDED for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus SUSPENDED = new QueueStatus("SUSPENDED");
+        /// <summary>
+        /// Constant SUSPENDING for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus SUSPENDING = new QueueStatus("SUSPENDING");
         /// <summary>
         /// Constant UPDATE_FAILED for QueueStatus
         /// </summary>

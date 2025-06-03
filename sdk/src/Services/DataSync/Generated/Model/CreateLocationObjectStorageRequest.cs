@@ -32,7 +32,9 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Container for the parameters to the CreateLocationObjectStorage operation.
     /// Creates a transfer <i>location</i> for an object storage system. DataSync can use
-    /// this location as a source or destination for transferring data.
+    /// this location as a source or destination for transferring data. You can make transfers
+    /// with or without a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#when-agent-required">DataSync
+    /// agent</a>.
     /// 
     ///  
     /// <para>
@@ -45,6 +47,8 @@ namespace Amazon.DataSync.Model
         private string _accessKey;
         private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _bucketName;
+        private CmkSecretConfig _cmkSecretConfig;
+        private CustomSecretConfig _customSecretConfig;
         private string _secretKey;
         private MemoryStream _serverCertificate;
         private string _serverHostname;
@@ -76,11 +80,19 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect
-        /// with your object storage system.
+        /// (Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that
+        /// can connect with your object storage system. If you are setting up an agentless cross-cloud
+        /// transfer, you do not need to specify a value for this parameter.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Make sure you configure this parameter correctly when you first create your storage
+        /// location. You cannot add or remove agents from a storage location after you create
+        /// it.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4)]
+        [AWSProperty(Min=1, Max=4)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }
@@ -110,6 +122,72 @@ namespace Amazon.DataSync.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CmkSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a DataSync-managed secret, which includes
+        /// the <c>SecretKey</c> that DataSync uses to access a specific object storage location,
+        /// with a customer-managed KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you include this paramater as part of a <c>CreateLocationObjectStorage</c> request,
+        /// you provide only the KMS key ARN. DataSync uses this KMS key together with the value
+        /// you specify for the <c>SecretKey</c> parameter to create a DataSync-managed secret
+        /// to store the location access credentials.
+        /// </para>
+        ///  
+        /// <para>
+        /// Make sure the DataSync has permission to access the KMS key that you specify.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use either <c>CmkSecretConfig</c> (with <c>SecretKey</c>) or <c>CustomSecretConfig</c>
+        /// (without <c>SecretKey</c>) to provide credentials for a <c>CreateLocationObjectStorage</c>
+        /// request. Do not provide both parameters for the same request.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public CmkSecretConfig CmkSecretConfig
+        {
+            get { return this._cmkSecretConfig; }
+            set { this._cmkSecretConfig = value; }
+        }
+
+        // Check to see if CmkSecretConfig property is set
+        internal bool IsSetCmkSecretConfig()
+        {
+            return this._cmkSecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a customer-managed Secrets Manager secret
+        /// where the secret key for a specific object storage location is stored in plain text.
+        /// This configuration includes the secret ARN, and the ARN for an IAM role that provides
+        /// access to the secret.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use either <c>CmkSecretConfig</c> (with <c>SecretKey</c>) or <c>CustomSecretConfig</c>
+        /// (without <c>SecretKey</c>) to provide credentials for a <c>CreateLocationObjectStorage</c>
+        /// request. Do not provide both parameters for the same request.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public CustomSecretConfig CustomSecretConfig
+        {
+            get { return this._customSecretConfig; }
+            set { this._customSecretConfig = value; }
+        }
+
+        // Check to see if CustomSecretConfig property is set
+        internal bool IsSetCustomSecretConfig()
+        {
+            return this._customSecretConfig != null;
         }
 
         /// <summary>

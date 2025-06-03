@@ -31,7 +31,7 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// The status of the firewall endpoint and firewall policy configuration for a single
-    /// VPC subnet. 
+    /// VPC subnet. This is part of the <a>FirewallStatus</a>. 
     /// 
     ///  
     /// <para>
@@ -62,10 +62,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Attachment. 
         /// <para>
-        /// The attachment status of the firewall's association with a single VPC subnet. For
-        /// each configured subnet, Network Firewall creates the attachment by instantiating the
-        /// firewall endpoint in the subnet so that it's ready to take traffic. This is part of
-        /// the <a>FirewallStatus</a>.
+        /// The configuration and status for a single firewall subnet. For each configured subnet,
+        /// Network Firewall creates the attachment by instantiating the firewall endpoint in
+        /// the subnet so that it's ready to take traffic. 
         /// </para>
         /// </summary>
         public Attachment Attachment
@@ -87,7 +86,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Firewall provides each endpoint with the rules that are configured in the firewall
         /// policy. Each time you add a subnet or modify the associated firewall policy, Network
         /// Firewall synchronizes the rules in the endpoint, so it can properly filter network
-        /// traffic. This is part of the <a>FirewallStatus</a>.
+        /// traffic. 
         /// </para>
         /// </summary>
         public Dictionary<string, PerObjectStatus> Config

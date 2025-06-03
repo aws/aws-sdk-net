@@ -46,6 +46,17 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAssetProcessingConfiguration())
+            {
+                context.Writer.WritePropertyName("assetProcessingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AssetProcessingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AssetProcessingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("s3Uri");

@@ -40,12 +40,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroups. 
         /// <para>
-        /// The log groups.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the <c>retentionInDays</c> value is not included for a log group, then that log
-        /// group's events do not expire.
+        /// An array of structures, where each structure contains the information about one log
+        /// group.
         /// </para>
         /// </summary>
         public List<LogGroup> LogGroups

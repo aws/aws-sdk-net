@@ -40,8 +40,13 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The current status of the logging configuration.
+        /// The current status of the current rules and alerting logging configuration.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// These logging configurations are only for rules and alerting logs.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public LoggingConfigurationStatusCode StatusCode

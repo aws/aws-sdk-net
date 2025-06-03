@@ -68,13 +68,22 @@ namespace Amazon.CloudFormation.Internal
             if (updateStackRequest != null)
             {
                 var arns = updateStackRequest.NotificationARNs;
-                bool arnsAutoConstructed = arns is AutoConstructedList<string>;
 
-                // if there are no NotificationARNs and the list was created by user (type is NOT AutoConstructed)
-                // only then pass empty param
-                if (arns.Count == 0 && !arnsAutoConstructed)
+                if (arns != null)
                 {
-                    request.Parameters.Add("NotificationARNs", "");
+                    // if there are no NotificationARNs and the list was created by user (type is NOT AutoConstructed)
+                    // only then pass empty param
+                    if (arns.Count == 0 && !(arns is AutoConstructedList<string>))
+                    {
+                        if (request.Parameters.ContainsKey("NotificationARNs"))
+                        {
+                            request.Parameters["NotificationARNs"] = string.Empty;
+                        }
+                        else
+                        {
+                            request.Parameters.Add("NotificationARNs", string.Empty);
+                        }
+                    }
                 }
             }
         }

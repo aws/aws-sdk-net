@@ -5523,6 +5523,24 @@ namespace Amazon.Backup
         /// <summary>
         /// Returns the tags assigned to the resource, such as a target recovery point, backup
         /// plan, or backup vault.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns results depending on the resource type used in the value for
+        /// <c>resourceArn</c>. For example, recovery points of Amazon DynamoDB with Advanced
+        /// Settings have an ARN (Amazon Resource Name) that begins with <c>arn:aws:backup</c>.
+        /// Recovery points (backups) of DynamoDB without Advanced Settings enabled have an ARN
+        /// that begins with <c>arn:aws:dynamodb</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this operation is called and when you include values of <c>resourceArn</c> that
+        /// have an ARN other than <c>arn:aws:backup</c>, it may return one of the exceptions
+        /// listed below. To prevent this exception, include only values representing resource
+        /// types that are fully managed by Backup. These have an ARN that begins <c>arn:aws:backup</c>
+        /// and they are noted in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+        /// availability by resource</a> table.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -5554,6 +5572,24 @@ namespace Amazon.Backup
         /// <summary>
         /// Returns the tags assigned to the resource, such as a target recovery point, backup
         /// plan, or backup vault.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns results depending on the resource type used in the value for
+        /// <c>resourceArn</c>. For example, recovery points of Amazon DynamoDB with Advanced
+        /// Settings have an ARN (Amazon Resource Name) that begins with <c>arn:aws:backup</c>.
+        /// Recovery points (backups) of DynamoDB without Advanced Settings enabled have an ARN
+        /// that begins with <c>arn:aws:dynamodb</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this operation is called and when you include values of <c>resourceArn</c> that
+        /// have an ARN other than <c>arn:aws:backup</c>, it may return one of the exceptions
+        /// listed below. To prevent this exception, include only values representing resource
+        /// types that are fully managed by Backup. These have an ARN that begins <c>arn:aws:backup</c>
+        /// and they are noted in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+        /// availability by resource</a> table.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -6236,11 +6272,45 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// This action is not supported for the following services: Amazon FSx for Windows File
-        /// Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP, Amazon FSx for OpenZFS,
-        /// Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon
-        /// Neptune.
+        /// This action is not supported for the following services:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Aurora
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon DocumentDB (with MongoDB compatibility)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for Lustre
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for NetApp ONTAP
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for OpenZFS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for Windows File Server
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Neptune
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SAP HANA databases on Amazon EC2 instances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon RDS
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopBackupJob service method.</param>
         /// 
@@ -6278,11 +6348,45 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// This action is not supported for the following services: Amazon FSx for Windows File
-        /// Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP, Amazon FSx for OpenZFS,
-        /// Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon
-        /// Neptune.
+        /// This action is not supported for the following services:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Aurora
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon DocumentDB (with MongoDB compatibility)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for Lustre
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for NetApp ONTAP
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for OpenZFS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for Windows File Server
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Neptune
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SAP HANA databases on Amazon EC2 instances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon RDS
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopBackupJob service method.</param>
         /// <param name="cancellationToken">
@@ -6323,14 +6427,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault
-        /// identified by an Amazon Resource Name (ARN).
-        /// 
-        ///  
-        /// <para>
-        /// This API is supported for recovery points for resource types including Aurora, Amazon
-        /// DocumentDB. Amazon EBS, Amazon FSx, Neptune, and Amazon RDS.
-        /// </para>
+        /// Assigns a set of key-value pairs to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -6364,14 +6461,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault
-        /// identified by an Amazon Resource Name (ARN).
-        /// 
-        ///  
-        /// <para>
-        /// This API is supported for recovery points for resource types including Aurora, Amazon
-        /// DocumentDB. Amazon EBS, Amazon FSx, Neptune, and Amazon RDS.
-        /// </para>
+        /// Assigns a set of key-value pairs to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">

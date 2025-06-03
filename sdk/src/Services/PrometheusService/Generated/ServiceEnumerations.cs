@@ -157,6 +157,72 @@ namespace Amazon.PrometheusService
 
 
     /// <summary>
+    /// Constants used for properties of type QueryLoggingConfigurationStatusCode.
+    /// </summary>
+    public class QueryLoggingConfigurationStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for QueryLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly QueryLoggingConfigurationStatusCode ACTIVE = new QueryLoggingConfigurationStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for QueryLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly QueryLoggingConfigurationStatusCode CREATING = new QueryLoggingConfigurationStatusCode("CREATING");
+        /// <summary>
+        /// Constant CREATION_FAILED for QueryLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly QueryLoggingConfigurationStatusCode CREATION_FAILED = new QueryLoggingConfigurationStatusCode("CREATION_FAILED");
+        /// <summary>
+        /// Constant DELETING for QueryLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly QueryLoggingConfigurationStatusCode DELETING = new QueryLoggingConfigurationStatusCode("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for QueryLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly QueryLoggingConfigurationStatusCode UPDATE_FAILED = new QueryLoggingConfigurationStatusCode("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for QueryLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly QueryLoggingConfigurationStatusCode UPDATING = new QueryLoggingConfigurationStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryLoggingConfigurationStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryLoggingConfigurationStatusCode FindValue(string value)
+        {
+            return FindValue<QueryLoggingConfigurationStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryLoggingConfigurationStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RuleGroupsNamespaceStatusCode.
     /// </summary>
     public class RuleGroupsNamespaceStatusCode : ConstantClass

@@ -30,13 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Information about valid modifications that you can make to your DB instance.
-    /// 
-    ///  
-    /// <para>
-    /// Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a>
-    /// action.
-    /// </para>
+    /// Not applicable. In Neptune the storage type is managed at the DB Cluster level.
     /// </summary>
     public partial class ValidStorageOptions
     {
@@ -48,8 +42,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property IopsToStorageRatio. 
         /// <para>
-        /// The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example,
-        /// 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.
+        /// Not applicable. In Neptune the storage type is managed at the DB Cluster level.
         /// </para>
         /// </summary>
         public List<DoubleRange> IopsToStorageRatio
@@ -67,7 +60,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property ProvisionedIops. 
         /// <para>
-        /// The valid range of provisioned IOPS. For example, 1000-20000.
+        /// Not applicable. In Neptune the storage type is managed at the DB Cluster level.
         /// </para>
         /// </summary>
         public List<Range> ProvisionedIops
@@ -85,7 +78,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property StorageSize. 
         /// <para>
-        /// The valid range of storage in gibibytes. For example, 100 to 16384.
+        /// Not applicable. In Neptune the storage type is managed at the DB Cluster level.
         /// </para>
         /// </summary>
         public List<Range> StorageSize
@@ -103,7 +96,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The valid storage types for your DB instance. For example, gp2, io1.
+        /// Not applicable. In Neptune the storage type is managed at the DB Cluster level.
         /// </para>
         /// </summary>
         public string StorageType

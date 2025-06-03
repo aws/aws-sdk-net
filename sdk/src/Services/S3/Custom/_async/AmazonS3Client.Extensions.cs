@@ -145,11 +145,16 @@ namespace Amazon.S3
             return this.PutObjectAclAsync(request);
         }
 
-        Task ICoreAmazonS3.EnsureBucketExistsAsync(string bucketName)
+        async Task ICoreAmazonS3.EnsureBucketExistsAsync(string bucketName)
         {
-            return this.PutBucketAsync(bucketName);
+            try
+            {
+                await this.PutBucketAsync(bucketName).ConfigureAwait(false);
+            }
+            catch (BucketAlreadyOwnedByYouException)
+            {
+            }
         }
-
         #endregion
     }
 }

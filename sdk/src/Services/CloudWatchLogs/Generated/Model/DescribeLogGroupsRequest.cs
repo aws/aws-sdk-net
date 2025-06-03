@@ -31,8 +31,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLogGroups operation.
-    /// Lists the specified log groups. You can list all your log groups or filter the results
-    /// by prefix. The results are ASCII-sorted by log group name.
+    /// Returns information about log groups. You can return all your log groups or filter
+    /// the results by prefix. The results are ASCII-sorted by log group name.
     /// 
     ///  
     /// <para>
@@ -57,6 +57,7 @@ namespace Amazon.CloudWatchLogs.Model
         private bool? _includeLinkedAccounts;
         private int? _limit;
         private LogGroupClass _logGroupClass;
+        private List<string> _logGroupIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _logGroupNamePattern;
         private string _logGroupNamePrefix;
         private string _nextToken;
@@ -64,7 +65,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property AccountIdentifiers. 
         /// <para>
-        /// When <c>includeLinkedAccounts</c> is set to <c>True</c>, use this parameter to specify
+        /// When <c>includeLinkedAccounts</c> is set to <c>true</c>, use this parameter to specify
         /// the list of accounts to search. You can specify as many as 20 account IDs in the array.
         /// 
         /// </para>
@@ -85,7 +86,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property IncludeLinkedAccounts. 
         /// <para>
-        /// If you are using a monitoring account, set this to <c>True</c> to have the operation
+        /// If you are using a monitoring account, set this to <c>true</c> to have the operation
         /// return log groups in the accounts listed in <c>accountIdentifiers</c>.
         /// </para>
         ///  
@@ -93,6 +94,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// If this parameter is set to <c>true</c> and <c>accountIdentifiers</c> contains a null
         /// value, the operation returns all log groups in the monitoring account and all log
         /// groups in all source accounts that are linked to the monitoring account. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default for this parameter is <c>false</c>.
         /// </para>
         /// </summary>
         public bool? IncludeLinkedAccounts
@@ -130,6 +135,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupClass. 
         /// <para>
+        /// Use this parameter to limit the results to only those log groups in the specified
+        /// log group class. If you omit this parameter, log groups of all classes can be returned.
+        /// </para>
+        ///  
+        /// <para>
         /// Specifies the log group class for this log group. There are three classes:
         /// </para>
         ///  <ul> <li> 
@@ -164,6 +174,33 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetLogGroupClass()
         {
             return this._logGroupClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupIdentifiers. 
+        /// <para>
+        /// Use this array to filter the list of log groups returned. If you specify this parameter,
+        /// the only other filter that you can choose to specify is <c>includeLinkedAccounts</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using this operation in a monitoring account, you can specify the ARNs
+        /// of log groups in source accounts and in the monitoring account itself. If you are
+        /// using this operation in an account that is not a cross-account monitoring account,
+        /// you can specify only log group names in the same account as the operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<string> LogGroupIdentifiers
+        {
+            get { return this._logGroupIdentifiers; }
+            set { this._logGroupIdentifiers = value; }
+        }
+
+        // Check to see if LogGroupIdentifiers property is set
+        internal bool IsSetLogGroupIdentifiers()
+        {
+            return this._logGroupIdentifiers != null && (this._logGroupIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -281,6 +281,14 @@ namespace Amazon.IVSRealTime
         /// </summary>
         public static readonly EventName PUBLISH_STOPPED = new EventName("PUBLISH_STOPPED");
         /// <summary>
+        /// Constant REPLICATION_STARTED for EventName
+        /// </summary>
+        public static readonly EventName REPLICATION_STARTED = new EventName("REPLICATION_STARTED");
+        /// <summary>
+        /// Constant REPLICATION_STOPPED for EventName
+        /// </summary>
+        public static readonly EventName REPLICATION_STOPPED = new EventName("REPLICATION_STOPPED");
+        /// <summary>
         /// Constant SUBSCRIBE_ERROR for EventName
         /// </summary>
         public static readonly EventName SUBSCRIBE_ERROR = new EventName("SUBSCRIBE_ERROR");
@@ -916,6 +924,110 @@ namespace Amazon.IVSRealTime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecordingConfigurationFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationState.
+    /// </summary>
+    public class ReplicationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ReplicationState
+        /// </summary>
+        public static readonly ReplicationState ACTIVE = new ReplicationState("ACTIVE");
+        /// <summary>
+        /// Constant STOPPED for ReplicationState
+        /// </summary>
+        public static readonly ReplicationState STOPPED = new ReplicationState("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationState FindValue(string value)
+        {
+            return FindValue<ReplicationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationType.
+    /// </summary>
+    public class ReplicationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for ReplicationType
+        /// </summary>
+        public static readonly ReplicationType NONE = new ReplicationType("NONE");
+        /// <summary>
+        /// Constant REPLICA for ReplicationType
+        /// </summary>
+        public static readonly ReplicationType REPLICA = new ReplicationType("REPLICA");
+        /// <summary>
+        /// Constant SOURCE for ReplicationType
+        /// </summary>
+        public static readonly ReplicationType SOURCE = new ReplicationType("SOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationType FindValue(string value)
+        {
+            return FindValue<ReplicationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationType(string value)
         {
             return FindValue(value);
         }

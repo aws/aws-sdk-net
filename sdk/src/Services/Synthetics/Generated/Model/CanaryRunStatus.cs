@@ -37,6 +37,7 @@ namespace Amazon.Synthetics.Model
         private CanaryRunState _state;
         private string _stateReason;
         private CanaryRunStateReasonCode _stateReasonCode;
+        private CanaryRunTestResult _testResult;
 
         /// <summary>
         /// Gets and sets the property State. 
@@ -78,8 +79,21 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property StateReasonCode. 
         /// <para>
-        /// If this value is <c>CANARY_FAILURE</c>, an exception occurred in the canary code.
-        /// If this value is <c>EXECUTION_FAILURE</c>, an exception occurred in CloudWatch Synthetics.
+        /// If this value is <c>CANARY_FAILURE</c>, either the canary script failed or Synthetics
+        /// ran into a fatal error when running the canary. For example, a canary timeout misconfiguration
+        /// setting can cause the canary to timeout before Synthetics can evaluate its status.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If this value is <c>EXECUTION_FAILURE</c>, a non-critical failure occurred such as
+        /// failing to save generated debug artifacts (for example, screenshots or har files).
+        /// </para>
+        ///  
+        /// <para>
+        /// If both types of failures occurred, the <c>CANARY_FAILURE</c> takes precedence. To
+        /// understand the exact error, use the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">StateReason</a>
+        /// API.
         /// </para>
         /// </summary>
         public CanaryRunStateReasonCode StateReasonCode
@@ -92,6 +106,26 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetStateReasonCode()
         {
             return this._stateReasonCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestResult. 
+        /// <para>
+        /// Specifies the status of canary script for this run. When Synthetics tries to determine
+        /// the status but fails, the result is marked as <c>UNKNOWN</c>. For the overall status
+        /// of canary run, see <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRunStatus.html">State</a>.
+        /// </para>
+        /// </summary>
+        public CanaryRunTestResult TestResult
+        {
+            get { return this._testResult; }
+            set { this._testResult = value; }
+        }
+
+        // Check to see if TestResult property is set
+        internal bool IsSetTestResult()
+        {
+            return this._testResult != null;
         }
 
     }

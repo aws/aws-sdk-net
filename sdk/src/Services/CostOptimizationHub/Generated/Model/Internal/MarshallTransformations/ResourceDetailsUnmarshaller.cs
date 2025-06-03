@@ -56,6 +56,12 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("auroraDbClusterStorage", targetDepth))
+                {
+                    var unmarshaller = AuroraDbClusterStorageUnmarshaller.Instance;
+                    unmarshalledObject.AuroraDbClusterStorage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("computeSavingsPlans", targetDepth))
                 {
                     var unmarshaller = ComputeSavingsPlansUnmarshaller.Instance;

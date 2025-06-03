@@ -81,6 +81,29 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// For participant replication:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Source stage</b> — The stage where the participant originally joined, which is
+    /// used as the source for replication.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Destination stage</b> — The stage to which the participant is replicated. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Replicated participant</b> — A participant in a stage that is replicated to one
+    /// or more destination stages. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Replica participant</b> — A participant in a destination stage that is replicated
+    /// from another stage (the source stage).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// For more information about your IVS live stream, also see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting
     /// Started with Amazon IVS Real-Time Streaming</a>.
     /// </para>
@@ -1487,6 +1510,45 @@ namespace Amazon.IVSRealTime
         }
         #endregion
         
+        #region  ListParticipantReplicas
+
+        internal virtual ListParticipantReplicasResponse ListParticipantReplicas(ListParticipantReplicasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParticipantReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParticipantReplicasResponseUnmarshaller.Instance;
+
+            return Invoke<ListParticipantReplicasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the replicas for a participant from a source stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipantReplicas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListParticipantReplicas service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">REST API Reference for ListParticipantReplicas Operation</seealso>
+        public virtual Task<ListParticipantReplicasResponse> ListParticipantReplicasAsync(ListParticipantReplicasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParticipantReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParticipantReplicasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListParticipantReplicasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListParticipants
 
         internal virtual ListParticipantsResponse ListParticipants(ListParticipantsRequest request)
@@ -1821,6 +1883,60 @@ namespace Amazon.IVSRealTime
         }
         #endregion
         
+        #region  StartParticipantReplication
+
+        internal virtual StartParticipantReplicationResponse StartParticipantReplication(StartParticipantReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartParticipantReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartParticipantReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartParticipantReplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts replicating a publishing participant from a source stage to a destination stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartParticipantReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartParticipantReplication service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">REST API Reference for StartParticipantReplication Operation</seealso>
+        public virtual Task<StartParticipantReplicationResponse> StartParticipantReplicationAsync(StartParticipantReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartParticipantReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartParticipantReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartParticipantReplicationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StopComposition
 
         internal virtual StopCompositionResponse StopComposition(StopCompositionRequest request)
@@ -1870,6 +1986,51 @@ namespace Amazon.IVSRealTime
             options.ResponseUnmarshaller = StopCompositionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopCompositionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StopParticipantReplication
+
+        internal virtual StopParticipantReplicationResponse StopParticipantReplication(StopParticipantReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopParticipantReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopParticipantReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopParticipantReplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a replicated participant session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopParticipantReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopParticipantReplication service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">REST API Reference for StopParticipantReplication Operation</seealso>
+        public virtual Task<StopParticipantReplicationResponse> StopParticipantReplicationAsync(StopParticipantReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopParticipantReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopParticipantReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopParticipantReplicationResponse>(request, options, cancellationToken);
         }
         #endregion
         

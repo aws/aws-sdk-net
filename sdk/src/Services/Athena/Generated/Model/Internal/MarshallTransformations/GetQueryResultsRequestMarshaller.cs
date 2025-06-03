@@ -93,6 +93,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.QueryExecutionId);
             }
 
+            if(publicRequest.IsSetQueryResultType())
+            {
+                context.Writer.WritePropertyName("QueryResultType");
+                context.Writer.WriteStringValue(publicRequest.QueryResultType);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

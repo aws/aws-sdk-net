@@ -37,6 +37,8 @@ namespace Amazon.Inspector2.Model
         private List<StringFilter> _architectures = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _imageShas = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _imageTags = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<NumberFilter> _inUseCount = AWSConfigs.InitializeCollections ? new List<NumberFilter>() : null;
+        private List<DateFilter> _lastInUseAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
         private List<StringFilter> _repositories = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _resourceIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private AwsEcrContainerSortBy _sortBy;
@@ -97,6 +99,45 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetImageTags()
         {
             return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InUseCount. 
+        /// <para>
+        /// The number of Amazon ECS tasks or Amazon EKS pods where the Amazon ECR container image
+        /// is in use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<NumberFilter> InUseCount
+        {
+            get { return this._inUseCount; }
+            set { this._inUseCount = value; }
+        }
+
+        // Check to see if InUseCount property is set
+        internal bool IsSetInUseCount()
+        {
+            return this._inUseCount != null && (this._inUseCount.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastInUseAt. 
+        /// <para>
+        /// The last time an Amazon ECR image was used in an Amazon ECS task or Amazon EKS pod.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<DateFilter> LastInUseAt
+        {
+            get { return this._lastInUseAt; }
+            set { this._lastInUseAt = value; }
+        }
+
+        // Check to see if LastInUseAt property is set
+        internal bool IsSetLastInUseAt()
+        {
+            return this._lastInUseAt != null && (this._lastInUseAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

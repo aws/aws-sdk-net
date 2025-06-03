@@ -3,3 +3,4 @@ sdk/*.sln merge=overridegenerated
 sdk/*.FxCop merge=overridegenerated
 sdk/code-analysis/AWSCodeAnalysisTestExtension/* merge=overridegenerated
 sdk/test/UnitTests/*.csproj merge=overridegenerated
+generator/ServiceModels/*/*-????-??-??.*.json merge=excludemodels

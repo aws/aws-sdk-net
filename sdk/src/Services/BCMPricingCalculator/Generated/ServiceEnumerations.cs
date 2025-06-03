@@ -993,6 +993,10 @@ namespace Amazon.BCMPricingCalculator
         /// </summary>
         public static readonly RateType AFTER_DISCOUNTS = new RateType("AFTER_DISCOUNTS");
         /// <summary>
+        /// Constant AFTER_DISCOUNTS_AND_COMMITMENTS for RateType
+        /// </summary>
+        public static readonly RateType AFTER_DISCOUNTS_AND_COMMITMENTS = new RateType("AFTER_DISCOUNTS_AND_COMMITMENTS");
+        /// <summary>
         /// Constant BEFORE_DISCOUNTS for RateType
         /// </summary>
         public static readonly RateType BEFORE_DISCOUNTS = new RateType("BEFORE_DISCOUNTS");
@@ -1162,6 +1166,10 @@ namespace Amazon.BCMPricingCalculator
         /// Constant AFTER_DISCOUNTS for WorkloadEstimateRateType
         /// </summary>
         public static readonly WorkloadEstimateRateType AFTER_DISCOUNTS = new WorkloadEstimateRateType("AFTER_DISCOUNTS");
+        /// <summary>
+        /// Constant AFTER_DISCOUNTS_AND_COMMITMENTS for WorkloadEstimateRateType
+        /// </summary>
+        public static readonly WorkloadEstimateRateType AFTER_DISCOUNTS_AND_COMMITMENTS = new WorkloadEstimateRateType("AFTER_DISCOUNTS_AND_COMMITMENTS");
         /// <summary>
         /// Constant BEFORE_DISCOUNTS for WorkloadEstimateRateType
         /// </summary>

@@ -44,10 +44,46 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class PutInsightRuleRequest : AmazonCloudWatchRequest
     {
+        private bool? _applyOnTransformedLogs;
         private string _ruleDefinition;
         private string _ruleName;
         private string _ruleState;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ApplyOnTransformedLogs. 
+        /// <para>
+        /// Specify <c>true</c> to have this rule evalute log events after they have been transformed
+        /// by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log
+        /// transformation</a>. If you specify <c>true</c>, then the log events in log groups
+        /// that have transformers will be evaluated by Contributor Insights after being transformed.
+        /// Log groups that don't have transformers will still have their original log events
+        /// evaluated by Contributor Insights.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <c>false</c> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If a log group has a transformer, and transformation fails for some log events, those
+        /// log events won't be evaluated by Contributor Insights. For information about investigating
+        /// log transformation failures, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Transformation-Errors-Metrics.html">Transformation
+        /// metrics and errors</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? ApplyOnTransformedLogs
+        {
+            get { return this._applyOnTransformedLogs; }
+            set { this._applyOnTransformedLogs = value; }
+        }
+
+        // Check to see if ApplyOnTransformedLogs property is set
+        internal bool IsSetApplyOnTransformedLogs()
+        {
+            return this._applyOnTransformedLogs.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RuleDefinition. 

@@ -319,7 +319,7 @@
     <property>Amazon.KinesisFirehose.Model.CatalogConfiguration.CatalogARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:glue:.*:\d{12}:catalog</pattern>
+    <pattern>arn:.*:glue:.*:\d{12}:catalog(?:(/[a-z0-9_-]+){1,2})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.CatalogConfiguration.WarehouseLocation</property>
@@ -1090,7 +1090,7 @@
     <property>Amazon.KinesisFirehose.Model.SecretsManagerConfiguration.SecretARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:.*:secretsmanager:[a-zA-Z0-9\-]+:\d{12}:secret:[a-zA-Z0-9\-/_+=.@]+</pattern>
+    <pattern>arn:.*:secretsmanager:[a-zA-Z0-9\-]+:\d{12}:secret:[a-zA-Z0-9\-/_+=.@!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeBufferingHints.IntervalInSeconds</property>

@@ -82,6 +82,12 @@
     <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:storage-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.DisconnectParticipantRequest.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.DisconnectParticipantRequest.Reason</property>
     <min>0</min>
     <max>128</max>
@@ -273,6 +279,35 @@
     <pattern>[a-zA-Z0-9+/=_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListParticipantReplicasRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListParticipantReplicasRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9+/=_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListParticipantReplicasRequest.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListParticipantReplicasRequest.SourceStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListParticipantReplicasResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9+/=_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ListParticipantsRequest.FilterByUserId</property>
     <min>0</min>
     <max>128</max>
@@ -399,10 +434,51 @@
     <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StartParticipantReplicationRequest.DestinationStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StartParticipantReplicationRequest.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StartParticipantReplicationRequest.ReconnectWindowSeconds</property>
+    <min>0</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StartParticipantReplicationRequest.SourceStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.StopCompositionRequest.Arn</property>
     <min>1</min>
     <max>128</max>
     <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:composition/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StopParticipantReplicationRequest.DestinationStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StopParticipantReplicationRequest.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StopParticipantReplicationRequest.SourceStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.TagResourceRequest.ResourceArn</property>
@@ -526,6 +602,18 @@
     <min>0</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Event.DestinationSessionId</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>st-[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Event.DestinationStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Event.ParticipantId</property>
@@ -666,6 +754,18 @@
     <pattern>[a-zA-Z0-9-_.,:;\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.SourceSessionId</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>st-[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.SourceStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Participant.UserId</property>
     <min>0</min>
     <max>128</max>
@@ -676,10 +776,52 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantReplica.DestinationSessionId</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>st-[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantReplica.DestinationStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantReplica.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantReplica.SourceSessionId</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>st-[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantReplica.SourceStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ParticipantSummary.ParticipantId</property>
     <min>0</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantSummary.SourceSessionId</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>st-[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantSummary.SourceStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ParticipantSummary.UserId</property>
@@ -695,6 +837,12 @@
     <property>Amazon.IVSRealTime.Model.ParticipantToken.Duration</property>
     <min>1</min>
     <max>20160</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantToken.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ParticipantToken.UserId</property>

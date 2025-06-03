@@ -36,7 +36,7 @@ namespace Amazon.OAM
     /// source accounts and monitoring accounts by using <i>CloudWatch cross-account observability</i>.
     /// With CloudWatch cross-account observability, you can monitor and troubleshoot applications
     /// that span multiple accounts within a Region. Seamlessly search, visualize, and analyze
-    /// your metrics, logs, traces, Application Signals services, service level objectives
+    /// your metrics, logs, traces, Application Signals services and service level objectives
     /// (SLOs), Application Insights applications, and internet monitors in any of the linked
     /// accounts without account boundaries.
     /// 
@@ -49,7 +49,7 @@ namespace Amazon.OAM
     /// that generates observability data for the resources that reside in it. Source accounts
     /// share their observability data with the monitoring account. The shared observability
     /// data can include metrics in Amazon CloudWatch, logs in Amazon CloudWatch Logs, traces
-    /// in X-Ray, Application Signals services, service level objectives (SLOs), applications
+    /// in X-Ray, Application Signals services and service level objectives (SLOs), applications
     /// in Amazon CloudWatch Application Insights, and internet monitors in CloudWatch Internet
     /// Monitor.
     /// </para>
@@ -792,8 +792,9 @@ namespace Amazon.OAM
         /// 
         ///  
         /// <para>
-        /// You can also use a sink policy to limit the types of data that is shared. The three
-        /// types that you can allow or deny are:
+        /// You can also use a sink policy to limit the types of data that is shared. The six
+        /// types of services with their respective resource types that you can allow or deny
+        /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -811,6 +812,15 @@ namespace Amazon.OAM
         /// <para>
         ///  <b>Application Insights - Applications</b> - Specify with <c>AWS::ApplicationInsights::Application</c>
         /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Internet Monitor</b> - Specify with <c>AWS::InternetMonitor::Monitor</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Application Signals</b> - Specify with <c>AWS::ApplicationSignals::Service</c>
+        /// and <c>AWS::ApplicationSignals::ServiceLevelObjective</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -845,8 +855,9 @@ namespace Amazon.OAM
         /// 
         ///  
         /// <para>
-        /// You can also use a sink policy to limit the types of data that is shared. The three
-        /// types that you can allow or deny are:
+        /// You can also use a sink policy to limit the types of data that is shared. The six
+        /// types of services with their respective resource types that you can allow or deny
+        /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -864,6 +875,15 @@ namespace Amazon.OAM
         /// <para>
         ///  <b>Application Insights - Applications</b> - Specify with <c>AWS::ApplicationInsights::Application</c>
         /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Internet Monitor</b> - Specify with <c>AWS::InternetMonitor::Monitor</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Application Signals</b> - Specify with <c>AWS::ApplicationSignals::Service</c>
+        /// and <c>AWS::ApplicationSignals::ServiceLevelObjective</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -68,6 +68,16 @@ namespace Amazon.IVSRealTime.Model
         IListParticipantEventsPaginator ListParticipantEvents(ListParticipantEventsRequest request);
 
         /// <summary>
+        /// Paginator for ListParticipantReplicas operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListParticipantReplicasPaginator ListParticipantReplicas(ListParticipantReplicasRequest request);
+
+        /// <summary>
         /// Paginator for ListParticipants operation
         ///</summary>
         [AWSPaginator(

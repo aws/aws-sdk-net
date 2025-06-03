@@ -69,6 +69,14 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Paginator for ListParticipantReplicas operation
+        ///</summary>
+        public IListParticipantReplicasPaginator ListParticipantReplicas(ListParticipantReplicasRequest request) 
+        {
+            return new ListParticipantReplicasPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListParticipants operation
         ///</summary>
         public IListParticipantsPaginator ListParticipants(ListParticipantsRequest request) 

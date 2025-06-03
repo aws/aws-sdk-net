@@ -428,10 +428,22 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The type of storage the file system is using. If set to <c>SSD</c>, the file system
-        /// uses solid state drive storage. If set to <c>HDD</c>, the file system uses hard disk
-        /// drive storage. 
+        /// The type of storage the file system is using.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If set to <c>SSD</c>, the file system uses solid state drive storage.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If set to <c>HDD</c>, the file system uses hard disk drive storage.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If set to <c>INTELLIGENT_TIERING</c>, the file system uses fully elastic, intelligently-tiered
+        /// storage.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public StorageType StorageType
         {

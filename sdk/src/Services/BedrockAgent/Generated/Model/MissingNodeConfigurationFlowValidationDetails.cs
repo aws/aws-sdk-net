@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Details about a node missing required configuration.
+    /// Details about a node missing a required configuration.
     /// </summary>
     public partial class MissingNodeConfigurationFlowValidationDetails
     {
@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Node. 
         /// <para>
-        /// The name of the node missing configuration.
+        /// The name of the node missing a required configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

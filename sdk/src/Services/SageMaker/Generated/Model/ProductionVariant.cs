@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
     public partial class ProductionVariant
     {
         private ProductionVariantAcceleratorType _acceleratorType;
+        private ProductionVariantCapacityReservationConfig _capacityReservationConfig;
         private int? _containerStartupHealthCheckTimeoutInSeconds;
         private ProductionVariantCoreDumpConfig _coreDumpConfig;
         private bool? _enableSSMAccess;
@@ -75,6 +76,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAcceleratorType()
         {
             return this._acceleratorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationConfig. 
+        /// <para>
+        /// Settings for the capacity reservation for the compute instances that SageMaker AI
+        /// reserves for an endpoint. 
+        /// </para>
+        /// </summary>
+        public ProductionVariantCapacityReservationConfig CapacityReservationConfig
+        {
+            get { return this._capacityReservationConfig; }
+            set { this._capacityReservationConfig = value; }
+        }
+
+        // Check to see if CapacityReservationConfig property is set
+        internal bool IsSetCapacityReservationConfig()
+        {
+            return this._capacityReservationConfig != null;
         }
 
         /// <summary>

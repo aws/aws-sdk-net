@@ -655,6 +655,91 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         }
 
+        /// <summary>
+        /// Tests that the DynamoDB operations can read and write items.
+        /// </summary>
+        /// <returns></returns>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestContext_AtomicCounterAnnotation()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            // Initial save
+            CounterAnnotatedEmployee employee = new CounterAnnotatedEmployee
+            {
+                Name = "Mark",
+                Age = 31,
+                Score = 120,
+                ManagerName = "Harmony"
+            };
+
+            await Context.SaveAsync(employee);
+            var storedEmployee = await Context.LoadAsync<CounterAnnotatedEmployee>(employee.Name, 31);
+            Assert.IsNotNull(storedEmployee);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(0, storedEmployee.CountDefault);
+            Assert.AreEqual(10, storedEmployee.CountAtomic);
+
+            // Simulate external update: increment counters by saving again
+            storedEmployee.CountDefault = null; // Let the context increment
+            storedEmployee.CountAtomic = null;
+            await Context.SaveAsync(storedEmployee);
+
+            var externallyUpdated = await Context.LoadAsync<CounterAnnotatedEmployee>(employee.Name, 31);
+            Assert.AreEqual(1, externallyUpdated.CountDefault);
+            Assert.AreEqual(12, externallyUpdated.CountAtomic);
+
+            // Simulate a stale POCO (behind the table value)
+            var stalePoco = new CounterAnnotatedEmployee
+            {
+                Name = "Mark",
+                Age = 31,
+                Score = 120,
+                ManagerName = "Harmony",
+                CountDefault = 0, // behind
+                CountAtomic = 10  // behind
+            };
+
+            // Save the stale POCO, should increment from the current table value
+            await Context.SaveAsync(stalePoco);
+
+            // After save, the POCO should be updated to the latest value
+            Assert.AreEqual(2, stalePoco.CountDefault);
+            Assert.AreEqual(14, stalePoco.CountAtomic);
+
+            // Confirm with a fresh load
+            var latest = await Context.LoadAsync<CounterAnnotatedEmployee>(employee.Name, 31);
+            Assert.AreEqual(2, latest.CountDefault);
+            Assert.AreEqual(14, latest.CountAtomic);
+
+            VersionedAnnotatedEmployee versionedAnnotatedEmployee = new VersionedAnnotatedEmployee
+            {
+                Name = "MarkV1",
+                Age = 31,
+                Score = 120,
+                ManagerName = "Harmony"
+            };
+
+            await Context.SaveAsync(versionedAnnotatedEmployee);
+            var storedVersionEmployee = await Context.LoadAsync<VersionedAnnotatedEmployee>(versionedAnnotatedEmployee.Name, 31);
+            Assert.IsNotNull(storedVersionEmployee);
+            Assert.AreEqual(0, storedVersionEmployee.Version);
+            Assert.AreEqual(0, storedVersionEmployee.CountDefault);
+            Assert.AreEqual(10, storedVersionEmployee.CountAtomic);
+
+            // Update the employee
+            versionedAnnotatedEmployee.ManagerName = "Helena";
+            await Context.SaveAsync(versionedAnnotatedEmployee);
+            var storedUpdatedEmployee = await Context.LoadAsync<VersionedAnnotatedEmployee>(versionedAnnotatedEmployee.Name, 31);
+            Assert.IsNotNull(storedUpdatedEmployee);
+            Assert.AreEqual(1, storedUpdatedEmployee.Version);
+            Assert.AreEqual(1, storedUpdatedEmployee.CountDefault);
+            Assert.AreEqual(12, storedUpdatedEmployee.CountAtomic);
+
+        }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
@@ -895,7 +980,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Clear existing SDK-wide cache
                 TableCache.Clear();
-
+                
                 Context = new DynamoDBContextBuilder()
                     .ConfigureContext(x =>
                     {
@@ -3046,11 +3131,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public int? Version { get; set; }
         }
 
+        public class CounterAnnotatedEmployee : AnnotatedEmployee
+        {
+            [DynamoDBAtomicCounter] 
+            public int? CountDefault { get; set; }
+
+            [DynamoDBAtomicCounter(delta:2, startValue:10)] 
+            public int? CountAtomic { get; set; }
+        }
+
+
         /// <summary>
         /// Class representing items in the table [TableNamePrefix]HashTable
         /// This class uses optimistic locking via the Version field
         /// </summary>
-        public class VersionedAnnotatedEmployee : AnnotatedEmployee
+        public class VersionedAnnotatedEmployee : CounterAnnotatedEmployee
         {
             [DynamoDBVersion] public int? Version { get; set; }
         }

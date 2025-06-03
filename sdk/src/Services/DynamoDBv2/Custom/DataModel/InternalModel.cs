@@ -157,6 +157,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public List<PropertyStorage> FlattenProperties { get; set; }
 
+        public bool IsCounter { get; set; }
+
+        public long CounterDelta { get; set; }
+
+        public long CounterStartValue { get; set; }
+
         public void AddIndex(DynamoDBGlobalSecondaryIndexHashKeyAttribute gsiHashKey)
         {
             AddIndex(new GSI(true, gsiHashKey.AttributeName, gsiHashKey.IndexNames));
@@ -217,7 +223,10 @@ namespace Amazon.DynamoDBv2.DataModel
         public void Validate(DynamoDBContext context)
         {
             if (IsVersion)
-                Utils.ValidateVersionType(MemberType);    // no conversion is possible, so type must be a nullable primitive
+                Utils.ValidateNumericType(MemberType);    // no conversion is possible, so type must be a nullable primitive
+
+            if (IsCounter)
+                Utils.ValidateNumericType(MemberType);    // no conversion is possible, so type must be a nullable primitive
 
             if (IsHashKey && IsRangeKey)
                 throw new InvalidOperationException("Property " + PropertyName + " cannot be both hash and range key");
@@ -543,6 +552,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public void Denormalize(DynamoDBContext context, string derivedTypeAttributeName)
         {
+            // analyze all PropertyStorage configs and denormalize data into other properties
+            // all data must exist in PropertyStorage objects prior to denormalization
+
             foreach (var property in this.BaseTypeStorageConfig.Properties)
             {
                 ProcessProperty(property, this.BaseTypeStorageConfig, true);
@@ -1002,6 +1014,14 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 if (attribute is DynamoDBVersionAttribute)
                     propertyStorage.IsVersion = true;
+
+                DynamoDBAtomicCounterAttribute counterAttribute = attribute as DynamoDBAtomicCounterAttribute;
+                if (counterAttribute != null)
+                {
+                    propertyStorage.IsCounter = true;
+                    propertyStorage.CounterDelta = counterAttribute.Delta;
+                    propertyStorage.CounterStartValue = counterAttribute.StartValue;
+                }
 
                 DynamoDBRenamableAttribute renamableAttribute = attribute as DynamoDBRenamableAttribute;
                 if (renamableAttribute != null && !string.IsNullOrEmpty(renamableAttribute.AttributeName))

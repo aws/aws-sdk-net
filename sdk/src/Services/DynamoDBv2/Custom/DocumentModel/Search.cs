@@ -164,6 +164,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
         int Count { get; }
 
         /// <summary>
+        /// Gets the total number of items evaluated, before any ScanFilter is applied, for the current call.
+        /// <para>
+        /// The number of items evaluated, before any <c>ScanFilter</c> is applied. A high <c>ScannedCount</c>
+        /// value with few, or no, <c>Count</c> results indicates an inefficient <c>Scan</c> operation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
+        /// and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
+        /// <para>
+        /// This value is specific to each call of <c>GetNextSetAsync</c> or <c>GetRemainingAsync</c>.
+        /// It is not an accumulated value across multiple calls.
+        /// </para>
+        /// <para>
+        /// If you did not use a filter in the request, then <c>ScannedCount</c> is the same as
+        /// <c>Count</c>.
+        /// </para>
+        /// </summary>
+        int ScannedCount { get; }
+
+        /// <summary>
         /// Name of the index to query or scan against.
         /// </summary>
         string IndexName { get; }
@@ -258,7 +277,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public int Segment { get; set; }
 
         /// <inheritdoc/>
-        public int Count { get { return GetCount(); } }
+        public int Count => GetCount();
+
+        /// <inheritdoc/>
+        public int ScannedCount => scannedCount;
 
         /// <inheritdoc/>
         public string IndexName { get; internal set; }
@@ -331,16 +353,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: false);
 
                         var scanResult = internalClient.Scan(scanReq);
-                        foreach (var item in scanResult.Items)
+                        if (scanResult.Items != null)
                         {
-                            Document doc = SourceTable.FromAttributeMap(item);
-                            ret.Add(doc);
-                            if (CollectResults)
+                            foreach (var item in scanResult.Items)
                             {
-                                Matches.Add(doc);
+                                Document doc = SourceTable.FromAttributeMap(item);
+                                ret.Add(doc);
+                                if (CollectResults)
+                                {
+                                    Matches.Add(doc);
+                                }
                             }
                         }
+
                         NextKey = scanResult.LastEvaluatedKey;
+                        scannedCount = scanResult.ScannedCount.GetValueOrDefault();
                         if (NextKey == null || NextKey.Count == 0)
                         {
                             IsDone = true;
@@ -381,16 +408,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: false);
 
                         var queryResult = internalClient.Query(queryReq);
-                        foreach (var item in queryResult.Items)
+                        if (queryResult.Items != null)
                         {
-                            Document doc = SourceTable.FromAttributeMap(item);
-                            ret.Add(doc);
-                            if (CollectResults)
+                            foreach (var item in queryResult.Items)
                             {
-                                Matches.Add(doc);
+                                Document doc = SourceTable.FromAttributeMap(item);
+                                ret.Add(doc);
+                                if (CollectResults)
+                                {
+                                    Matches.Add(doc);
+                                }
                             }
                         }
+
                         NextKey = queryResult.LastEvaluatedKey;
+                        scannedCount = queryResult.ScannedCount.GetValueOrDefault();
                         if (NextKey == null || NextKey.Count == 0)
                         {
                             IsDone = true;
@@ -445,16 +477,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: true);
 
                         var scanResult = await SourceTable.DDBClient.ScanAsync(scanReq, cancellationToken).ConfigureAwait(false);
-                        foreach (var item in scanResult.Items)
+                        if (scanResult.Items != null)
                         {
-                            Document doc = SourceTable.FromAttributeMap(item);
-                            ret.Add(doc);
-                            if (CollectResults)
+                            foreach (var item in scanResult.Items)
                             {
-                                Matches.Add(doc);
+                                Document doc = SourceTable.FromAttributeMap(item);
+                                ret.Add(doc);
+                                if (CollectResults)
+                                {
+                                    Matches.Add(doc);
+                                }
                             }
                         }
+
                         NextKey = scanResult.LastEvaluatedKey;
+                        scannedCount = scanResult.ScannedCount.GetValueOrDefault();
+
                         if (NextKey == null || NextKey.Count == 0)
                         {
                             IsDone = true;
@@ -487,16 +525,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: true);
 
                         var queryResult = await SourceTable.DDBClient.QueryAsync(queryReq, cancellationToken).ConfigureAwait(false);
-                        foreach (var item in queryResult.Items)
+                        if (queryResult.Items != null)
                         {
-                            Document doc = SourceTable.FromAttributeMap(item);
-                            ret.Add(doc);
-                            if (CollectResults)
+                            foreach (var item in queryResult.Items)
                             {
-                                Matches.Add(doc);
+                                Document doc = SourceTable.FromAttributeMap(item);
+                                ret.Add(doc);
+                                if (CollectResults)
+                                {
+                                    Matches.Add(doc);
+                                }
                             }
                         }
                         NextKey = queryResult.LastEvaluatedKey;
+                        scannedCount = queryResult.ScannedCount.GetValueOrDefault();
+
                         if (NextKey == null || NextKey.Count == 0)
                         {
                             IsDone = true;
@@ -517,10 +560,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             while (!IsDone)
             {
+                var previousScannedCount = scannedCount;
                 foreach (Document doc in GetNextSetHelper())
                 {
                     ret.Add(doc);
                 }
+                scannedCount += previousScannedCount;
             }
 
             return ret;
@@ -533,10 +578,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             while (!IsDone)
             {
+                var previousScannedCount = scannedCount;
                 foreach (Document doc in await GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false))
                 {
                     ret.Add(doc);
                 }
+                scannedCount += previousScannedCount;
             }
 
             return ret;
@@ -544,6 +591,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 #endif
 
         private int count;
+
+        private int scannedCount;
 
         private SearchType SearchMethod { get; set; }
 
@@ -554,20 +603,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
             QueryFilter queryFilter = filter as QueryFilter;
             if (queryFilter == null) throw new InvalidOperationException("Filter is not of type QueryFilter");
 
-            keyConditions = new Dictionary<string, Condition>();
-            filterConditions = new Dictionary<string, Condition>();
-
             var conditions = filter.ToConditions(targetTable);
-            foreach (var kvp in conditions)
-            {
-                string attributeName = kvp.Key;
-                Condition condition = kvp.Value;
+            keyConditions = null;
+            filterConditions = null;
 
-                // depending on whether the attribute is key, place either in keyConditions or filterConditions
-                if (IsKeyAttribute(targetTable, indexName, attributeName))
-                    keyConditions[attributeName] = condition;
-                else
-                    filterConditions[attributeName] = condition;
+            if (conditions.Count > 0)
+            {
+                keyConditions = new Dictionary<string, Condition>();
+                filterConditions = new Dictionary<string, Condition>();
+                foreach (var kvp in conditions)
+                {
+                    string attributeName = kvp.Key;
+                    Condition condition = kvp.Value;
+
+                    // depending on whether the attribute is key, place either in keyConditions or filterConditions
+                    if (IsKeyAttribute(targetTable, indexName, attributeName))
+                        keyConditions[attributeName] = condition;
+                    else
+                        filterConditions[attributeName] = condition;
+                }
             }
         }
 
@@ -648,6 +702,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                             var scanResult = internalClient.Scan(scanReq);
                             count = Matches.Count + scanResult.Count.GetValueOrDefault();
+                            scannedCount = scanResult.ScannedCount.GetValueOrDefault();
+
                             return count;
                         case SearchType.Query:
                             QueryRequest queryReq = new QueryRequest
@@ -673,6 +729,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                             var queryResult = internalClient.Query(queryReq);
                             count = Matches.Count + queryResult.Count.GetValueOrDefault();
+                            scannedCount = queryResult.ScannedCount.GetValueOrDefault();
+
                             return count;
                         default:
                             throw new InvalidOperationException("Unknown Search Method");
@@ -687,6 +745,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal void Reset()
         {
             count = -1;
+            scannedCount = 0;
             IsDone = false;
             NextKey = null;
             Matches = new List<Document>();

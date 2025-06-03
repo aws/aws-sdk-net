@@ -56,6 +56,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("estimatedMonthlyVolumeIOPsCostVariation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EstimatedMonthlyVolumeIOPsCostVariation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("rank", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

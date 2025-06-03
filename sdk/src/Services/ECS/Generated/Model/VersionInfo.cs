@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property AgentHash. 
         /// <para>
-        /// The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+        /// The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent">amazon-ecs-agent
         /// </a> GitHub repository.
         /// </para>
         /// </summary>

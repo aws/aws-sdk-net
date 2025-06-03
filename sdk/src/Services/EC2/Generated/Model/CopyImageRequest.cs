@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For information about the prerequisites when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
-    /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+    /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CopyImageRequest : AmazonEC2Request
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
+        /// idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -292,7 +292,8 @@ namespace Amazon.EC2.Model
         /// Specify a completion duration, in 15 minute increments, to initiate a time-based AMI
         /// copy. The specified completion duration applies to each of the snapshots associated
         /// with the AMI. Each snapshot associated with the AMI will be completed within the specified
-        /// completion duration, regardless of their size.
+        /// completion duration, with copy throughput automatically adjusted for each snapshot
+        /// based on its size to meet the timing target.
         /// </para>
         ///  
         /// <para>
@@ -301,8 +302,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">
-        /// Time-based copies</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">Time-based
+        /// copies for Amazon EBS snapshots and EBS-backed AMIs</a>.
         /// </para>
         /// </summary>
         public long? SnapshotCopyCompletionDurationMinutes

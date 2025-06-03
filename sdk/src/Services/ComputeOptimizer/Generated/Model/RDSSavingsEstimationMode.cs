@@ -31,7 +31,7 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes the savings estimation mode used for calculating savings opportunity for
-    /// Amazon RDS.
+    /// DB instances.
     /// </summary>
     public partial class RDSSavingsEstimationMode
     {
@@ -40,7 +40,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        ///  Describes the source for calculating the savings opportunity for Amazon RDS. 
+        ///  Describes the source for calculating the savings opportunity for DB instances. 
         /// </para>
         /// </summary>
         public RDSSavingsEstimationModeSource Source

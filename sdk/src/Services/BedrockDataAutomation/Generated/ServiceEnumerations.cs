@@ -794,6 +794,10 @@ namespace Amazon.BedrockDataAutomation
         /// Constant IMAGE for Type
         /// </summary>
         public static readonly Type IMAGE = new Type("IMAGE");
+        /// <summary>
+        /// Constant VIDEO for Type
+        /// </summary>
+        public static readonly Type VIDEO = new Type("VIDEO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

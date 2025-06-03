@@ -80,6 +80,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("currentStorageEstimatedMonthlyVolumeIOPsCostVariation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("dbClusterIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

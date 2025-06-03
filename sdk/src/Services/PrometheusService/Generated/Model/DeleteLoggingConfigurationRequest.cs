@@ -31,7 +31,13 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoggingConfiguration operation.
-    /// Deletes the logging configuration for a workspace.
+    /// Deletes the rules and alerting logging configuration for a workspace.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// These logging configurations are only for rules and alerting logs.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteLoggingConfigurationRequest : AmazonPrometheusServiceRequest
     {

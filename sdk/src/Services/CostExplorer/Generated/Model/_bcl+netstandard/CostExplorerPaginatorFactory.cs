@@ -61,6 +61,22 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Paginator for GetCostAndUsageComparisons operation
+        ///</summary>
+        public IGetCostAndUsageComparisonsPaginator GetCostAndUsageComparisons(GetCostAndUsageComparisonsRequest request) 
+        {
+            return new GetCostAndUsageComparisonsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetCostComparisonDrivers operation
+        ///</summary>
+        public IGetCostComparisonDriversPaginator GetCostComparisonDrivers(GetCostComparisonDriversRequest request) 
+        {
+            return new GetCostComparisonDriversPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetSavingsPlansCoverage operation
         ///</summary>
         public IGetSavingsPlansCoveragePaginator GetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request) 

@@ -36,12 +36,20 @@ namespace Amazon.EC2.Model
     /// simplified automatic recovery for an unsupported instance type. For more information,
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
     /// automatic recovery</a>.
+    /// 
+    ///  
+    /// <para>
+    /// Modifies the reboot migration behavior during a user-initiated reboot of an instance
+    /// that has a pending <c>system-reboot</c> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+    /// or disable reboot migration</a>.
+    /// </para>
     /// </summary>
     public partial class ModifyInstanceMaintenanceOptionsRequest : AmazonEC2Request
     {
         private InstanceAutoRecoveryState _autoRecovery;
         private bool? _dryRun;
         private string _instanceId;
+        private InstanceRebootMigrationState _rebootMigration;
 
         /// <summary>
         /// Gets and sets the property AutoRecovery. 
@@ -98,6 +106,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RebootMigration. 
+        /// <para>
+        /// Specifies whether to attempt reboot migration during a user-initiated reboot of an
+        /// instance that has a scheduled <c>system-reboot</c> event:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>default</c> - Amazon EC2 attempts to migrate the instance to new hardware (reboot
+        /// migration). If successful, the <c>system-reboot</c> event is cleared. If unsuccessful,
+        /// an in-place reboot occurs and the event remains scheduled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>disabled</c> - Amazon EC2 keeps the instance on the same hardware (in-place reboot).
+        /// The <c>system-reboot</c> event remains scheduled.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This setting only applies to supported instances that have a scheduled reboot event.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable
+        /// or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public InstanceRebootMigrationState RebootMigration
+        {
+            get { return this._rebootMigration; }
+            set { this._rebootMigration = value; }
+        }
+
+        // Check to see if RebootMigration property is set
+        internal bool IsSetRebootMigration()
+        {
+            return this._rebootMigration != null;
         }
 
     }

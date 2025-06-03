@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
     public partial class ModifyVpnTunnelOptionsRequest : AmazonEC2Request
     {
         private bool? _dryRun;
+        private string _preSharedKeyStorage;
         private bool? _skipTunnelReplacement;
         private ModifyVpnTunnelOptionsSpecification _tunnelOptions;
         private string _vpnConnectionId;
@@ -63,6 +64,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreSharedKeyStorage. 
+        /// <para>
+        /// Specifies the storage mode for the pre-shared key (PSK). Valid values are <c>Standard</c>
+        /// (stored in Site-to-Site VPN service) or <c>SecretsManager</c> (stored in Amazon Web
+        /// Services Secrets Manager).
+        /// </para>
+        /// </summary>
+        public string PreSharedKeyStorage
+        {
+            get { return this._preSharedKeyStorage; }
+            set { this._preSharedKeyStorage = value; }
+        }
+
+        // Check to see if PreSharedKeyStorage property is set
+        internal bool IsSetPreSharedKeyStorage()
+        {
+            return this._preSharedKeyStorage != null;
         }
 
         /// <summary>

@@ -6775,7 +6775,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SearchTrainingPlanOfferingsRequest.InstanceCount</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -9315,6 +9315,18 @@
     <property>Amazon.SageMaker.Model.EbsStorageSettings.EbsVolumeSizeInGb</property>
     <min>5</min>
     <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Ec2CapacityReservation.AvailableInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Ec2CapacityReservation.TotalInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.Ec2CapacityReservation.UsedByCurrentEndpoint</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Edge.DestinationArn</property>
@@ -12308,6 +12320,30 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantCapacityReservationConfig.MlReservationArn</property>
+    <min>20</min>
+    <max>258</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:ml-reservation/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantCapacityReservationSummary.AvailableInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantCapacityReservationSummary.MlReservationArn</property>
+    <min>20</min>
+    <max>258</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:ml-reservation/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantCapacityReservationSummary.TotalInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantCapacityReservationSummary.UsedByCurrentEndpoint</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantCoreDumpConfig.DestinationS3Uri</property>
     <min>0</min>
     <max>512</max>
@@ -12702,7 +12738,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ReservedCapacityOffering.InstanceCount</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -13745,6 +13781,10 @@
     <min>0</min>
     <max>1024</max>
     <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UnifiedStudioSettings.SingleSignOnApplicationArn</property>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::[0-9]+:application\/[a-zA-Z0-9-_.]+\/apl-[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateClusterSoftwareInstanceGroupSpecification.InstanceGroupName</property>

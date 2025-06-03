@@ -73,7 +73,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The dimensions to filter against. Only the dimensions that match exactly will be returned.
+        /// The dimensions to filter against. Only the dimension with names that match exactly
+        /// will be returned. If you specify one dimension name and a metric has that dimension
+        /// and also other dimensions, it will be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

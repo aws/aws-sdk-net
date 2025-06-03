@@ -42,10 +42,18 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of Metadata IOPS provisioned for the file system. Valid values are <c>1500</c>,
-        /// <c>3000</c>, <c>6000</c>, <c>12000</c>, and multiples of <c>12000</c> up to a maximum
-        /// of <c>192000</c>.
+        /// The number of Metadata IOPS provisioned for the file system.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For SSD file systems, valid values are <c>1500</c>, <c>3000</c>, <c>6000</c>, <c>12000</c>,
+        /// and multiples of <c>12000</c> up to a maximum of <c>192000</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Intelligent-Tiering file systems, valid values are <c>6000</c> and <c>12000</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1500, Max=192000)]
         public int? Iops
@@ -67,8 +75,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// In AUTOMATIC mode, FSx for Lustre automatically provisions and scales the number of
-        /// Metadata IOPS on your file system based on your file system storage capacity.
+        /// In AUTOMATIC mode (supported only on SSD file systems), FSx for Lustre automatically
+        /// provisions and scales the number of Metadata IOPS on your file system based on your
+        /// file system storage capacity.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -214,7 +214,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A CRON expression in UTC specifying when Backup initiates a backup job.
+        /// A CRON expression in UTC specifying when Backup initiates a backup job. When no CRON
+        /// expression is provided, Backup will use the default expression <c>cron(0 5 ? * * *)</c>.
         /// </para>
         /// </summary>
         public string ScheduleExpression

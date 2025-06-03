@@ -4093,6 +4093,31 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ConnectionTypeBrief.DisplayName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ConnectionTypeBrief.Vendor</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ConnectionTypeVariant.ConnectionTypeVariantName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ConnectionTypeVariant.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ConnectionTypeVariant.DisplayName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ConnectorDataSource.ConnectionType</property>
   </property-value-rule>
   <property-value-rule>
@@ -4997,6 +5022,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.IntegrationFilter.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IntegrationPartition.ConversionSpec</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
@@ -5928,6 +5958,28 @@
     <pattern>arn:aws:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.S3ExcelSource.GroupFiles</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3ExcelSource.GroupSize</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3ExcelSource.MaxBand</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3ExcelSource.MaxFilesInBand</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3ExcelSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3ExcelSource.SkipFooter</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.S3GlueParquetTarget.Name</property>
     <pattern>([^\r\n])*</pattern>
   </property-value-rule>
@@ -5954,6 +6006,20 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.S3HudiSource.Name</property>
     <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3HyperDirectTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3HyperDirectTarget.Path</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3IcebergDirectTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3IcebergDirectTarget.Path</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3JsonSource.GroupFiles</property>

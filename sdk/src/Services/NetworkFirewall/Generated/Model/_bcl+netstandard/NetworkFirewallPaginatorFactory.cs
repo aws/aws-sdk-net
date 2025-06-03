@@ -107,5 +107,13 @@ namespace Amazon.NetworkFirewall.Model
         {
             return new ListTLSInspectionConfigurationsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListVpcEndpointAssociations operation
+        ///</summary>
+        public IListVpcEndpointAssociationsPaginator ListVpcEndpointAssociations(ListVpcEndpointAssociationsRequest request) 
+        {
+            return new ListVpcEndpointAssociationsPaginator(this.client, request);
+        }
     }
 }

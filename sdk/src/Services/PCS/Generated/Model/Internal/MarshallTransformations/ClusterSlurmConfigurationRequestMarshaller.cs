@@ -46,6 +46,17 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccounting())
+            {
+                context.Writer.WritePropertyName("accounting");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AccountingRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.Accounting, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetScaleDownIdleTimeInSeconds())
             {
                 context.Writer.WritePropertyName("scaleDownIdleTimeInSeconds");

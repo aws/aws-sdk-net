@@ -80,6 +80,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.IncompatibleConnectionDataType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("invalidLoopBoundary", targetDepth))
+                {
+                    var unmarshaller = InvalidLoopBoundaryFlowValidationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.InvalidLoopBoundary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("loopIncompatibleNodeType", targetDepth))
+                {
+                    var unmarshaller = LoopIncompatibleNodeTypeFlowValidationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.LoopIncompatibleNodeType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("malformedConditionExpression", targetDepth))
                 {
                     var unmarshaller = MalformedConditionExpressionFlowValidationDetailsUnmarshaller.Instance;
@@ -122,6 +134,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.MissingEndingNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("missingLoopControllerNode", targetDepth))
+                {
+                    var unmarshaller = MissingLoopControllerNodeFlowValidationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MissingLoopControllerNode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("missingLoopInputNode", targetDepth))
+                {
+                    var unmarshaller = MissingLoopInputNodeFlowValidationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MissingLoopInputNode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("missingNodeConfiguration", targetDepth))
                 {
                     var unmarshaller = MissingNodeConfigurationFlowValidationDetailsUnmarshaller.Instance;
@@ -144,6 +168,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MissingStartingNodesFlowValidationDetailsUnmarshaller.Instance;
                     unmarshalledObject.MissingStartingNodes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("multipleLoopControllerNodes", targetDepth))
+                {
+                    var unmarshaller = MultipleLoopControllerNodesFlowValidationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MultipleLoopControllerNodes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("multipleLoopInputNodes", targetDepth))
+                {
+                    var unmarshaller = MultipleLoopInputNodesFlowValidationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MultipleLoopInputNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("multipleNodeInputConnections", targetDepth))

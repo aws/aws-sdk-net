@@ -70,16 +70,22 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     response.DeletionProtectionEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("encryptionDetails", targetDepth))
+                {
+                    var unmarshaller = EncryptionDetailsUnmarshaller.Instance;
+                    response.EncryptionDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Identifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("linkedClusterArns", targetDepth))
+                if (context.TestExpression("multiRegionProperties", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.LinkedClusterArns = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = MultiRegionPropertiesUnmarshaller.Instance;
+                    response.MultiRegionProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -88,10 +94,10 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("witnessRegion", targetDepth))
+                if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.WitnessRegion = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
