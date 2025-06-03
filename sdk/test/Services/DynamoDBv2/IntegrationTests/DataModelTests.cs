@@ -1020,9 +1020,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var product = new ProductFlat
             {
                 Id = 1,
+                //Name = "TestProduct",
                 Details = new ProductDetails()
                 {
-                    Description = "Test"
+                    Description = "Test",
+                    Name = "TestProductDetails",
                 }
             };
 
@@ -3320,6 +3322,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBFlatten]
             public ProductDetails Details { get; set; }
+
+          //  public string Name { get; set; }
         }
 
         public class ProductDetails
@@ -3328,6 +3332,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public int? Version { get; set; }
 
             public string Description { get; set; }
+
+            [DynamoDBProperty("DetailsName")]
+            public string Name { get; set; }
         }
 
         /// <summary>

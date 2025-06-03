@@ -442,21 +442,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
             using (flatConfig.State.Track(document))
             {
-                foreach (PropertyStorage propertyStorage in storageConfig.Properties)
+                foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
                 {
                     string attributeName = propertyStorage.AttributeName;
-                    if (propertyStorage.FlattenProperty)
+                    if (propertyStorage.ShouldFlattenChildProperties)
                     {
                         //create instance of the flatten property
                         var targetType = propertyStorage.MemberType;
                         object flattenedPropertyInstance = Utils.InstantiateConverter(targetType, this);
 
                         //populate the flatten properties
-                        foreach (var propertyStorageFlattenProperty in propertyStorage.FlattenProperties)
+                        foreach (var flattenPropertyStorage in propertyStorage.FlattenProperties)
                         {
-                            string flattenedAttributeName = propertyStorageFlattenProperty.AttributeName;
+                            string flattenedAttributeName = flattenPropertyStorage.AttributeName;
 
-                            PopulateProperty(storage, flatConfig, document, flattenedAttributeName, propertyStorageFlattenProperty, flattenedPropertyInstance);
+                            PopulateProperty(storage, flatConfig, document, flattenedAttributeName, flattenPropertyStorage, flattenedPropertyInstance);
                         }
                         if (!TrySetValue(instance, propertyStorage.Member, flattenedPropertyInstance))
                         {
@@ -472,22 +472,22 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         private void PopulateProperty(ItemStorage storage, DynamoDBFlatConfig flatConfig, Document document,
-            string attributeName, PropertyStorage propertyStorageFlattenProperty, object instance)
+            string attributeName, PropertyStorage propertyStorage, object instance)
         {
             DynamoDBEntry entry;
             if (!document.TryGetValue(attributeName, out entry)) return;
 
             if (ShouldSave(entry, true))
             {
-                object value = FromDynamoDBEntry(propertyStorageFlattenProperty, entry, flatConfig);
+                object value = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
 
-                if (!TrySetValue(instance, propertyStorageFlattenProperty.Member, value))
+                if (!TrySetValue(instance, propertyStorage.Member, value))
                 {
                     throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
                 }
             }
 
-            if (propertyStorageFlattenProperty.IsVersion)
+            if (propertyStorage.IsVersion)
                 storage.CurrentVersion = entry as Primitive;
         }
 
@@ -554,12 +554,12 @@ namespace Amazon.DynamoDBv2.DataModel
                     object value;
                     if (TryGetValue(toStore, propertyStorage.Member, out value))
                     {
-                        DynamoDBEntry dbe = ToDynamoDBEntry(propertyStorage, value, flatConfig, propertyStorage.FlattenProperty);
+                        DynamoDBEntry dbe = ToDynamoDBEntry(propertyStorage, value, flatConfig, propertyStorage.ShouldFlattenChildProperties);
 
                         if (ShouldSave(dbe, ignoreNullValues))
                         {
 
-                            if (propertyStorage.FlattenProperty)
+                            if (propertyStorage.ShouldFlattenChildProperties)
                             {
                                 if (dbe == null) continue;
 

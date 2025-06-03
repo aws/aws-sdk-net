@@ -147,7 +147,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool PolymorphicProperty { get; set; }
 
         // whether to store child properties at the same level as the parent property
-        public bool FlattenProperty { get; set; }
+        public bool ShouldFlattenChildProperties { get; set; }
 
         // whether to store property at parent level
         public bool IsFlattened { get; set; }
@@ -236,7 +236,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (PolymorphicProperty)
                     throw new InvalidOperationException("Converter for " + PropertyName + " must not be set at the same time as derived types.");
 
-                if (FlattenProperty)
+                if (ShouldFlattenChildProperties)
                     throw new InvalidOperationException("Converter for " + PropertyName + " must not be set at the same time as flatten types.");
 
                 if (StoreAsEpoch || StoreAsEpochLong)
@@ -588,7 +588,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 SetPropertyConfig(property, storageConfig, setKeyProperties);
 
-                if (!property.FlattenProperty) return;
+                if (!property.ShouldFlattenChildProperties) return;
 
                 // flatten properties
                 foreach (var flattenProperty in property.FlattenProperties)
@@ -634,8 +634,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
             config.AddPropertyStorage(propertyName, value);
 
-                if (!AttributesToGet.Contains(attributeName))
-                    AttributesToGet.Add(attributeName);
+            if (!AttributesToGet.Contains(attributeName))
+                AttributesToGet.Add(attributeName);
             if (value.StoreAsEpoch)
                 AttributesToStoreAsEpoch.Add(attributeName);
             if (value.StoreAsEpochLong)
@@ -649,6 +649,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     indexes = new List<string>();
                     AttributeToIndexesNameMapping[attributeName] = indexes;
                 }
+
                 foreach (var index in value.IndexNames)
                 {
                     if (!indexes.Contains(index))
@@ -993,7 +994,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 // flatten properties
                 if (attribute is DynamoDBFlattenAttribute)
                 {
-                    propertyStorage.FlattenProperty = true;
+                    propertyStorage.ShouldFlattenChildProperties = true;
 
                     var type = Utils.GetType(member);
 
