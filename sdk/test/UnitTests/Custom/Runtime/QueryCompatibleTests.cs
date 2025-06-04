@@ -2,22 +2,22 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using Amazon.SQS.Model.Internal.MarshallTransformations;
+using Amazon.Util;
 using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Reflection;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
+
 namespace AWSSDK.UnitTests
 {
+    /// <summary>
+    /// Tests for the AwsQueryCompatibleTrait for services that want to migrate to AWSJSON away from the query protocol
+    /// If the service sets the AwsQueryCompatible trait then they will send an addiaional Http header x-amzn-query-error
+    /// containing a semicolon delimited pair, Code and Type. For example: **x-amzn-query-error: AWS.SimpleQueueService.NonExistentQueue;Sender**
+    /// If AwsQueryCompatibleTrait is set then the SDK will also send an additional header x-amzn-query-mode: 'true' to the service.
+    /// </summary>
     [TestClass]
     public class QueryCompatibleTests : RuntimePipelineTestBase<ErrorHandler>
     {
@@ -39,10 +39,8 @@ namespace AWSSDK.UnitTests
                 var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("QueryCompatibleTC1.txt");
                 throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
             };
-            var config = new AmazonSQSConfig();
-            config.RegionEndpoint = Amazon.RegionEndpoint.USEast1;
 
-            var context = CreateTestContext(null, GetQueueUrlResponseUnmarshaller.Instance, config);
+            var context = CreateTestContext(null, GetQueueUrlResponseUnmarshaller.Instance, null);
             var exception = Utils.AssertExceptionExpected(() =>
             {
                 RuntimePipeline.InvokeSync(context);
@@ -60,10 +58,8 @@ namespace AWSSDK.UnitTests
                 var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("QueryCompatibleTC2.txt");
                 throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
             };
-            var config = new AmazonSQSConfig();
-            config.RegionEndpoint = Amazon.RegionEndpoint.USEast1;
 
-            var context = CreateTestContext(null, GetQueueUrlResponseUnmarshaller.Instance, config);
+            var context = CreateTestContext(null, GetQueueUrlResponseUnmarshaller.Instance, null);
             var exception = Utils.AssertExceptionExpected(() =>
             {
                 RuntimePipeline.InvokeSync(context);
@@ -81,10 +77,8 @@ namespace AWSSDK.UnitTests
                 var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("QueryCompatibleTC3.txt");
                 throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
             };
-            var config = new AmazonSQSConfig();
-            config.RegionEndpoint = Amazon.RegionEndpoint.USEast1;
 
-            var context = CreateTestContext(null, GetQueueUrlResponseUnmarshaller.Instance, config);
+            var context = CreateTestContext(null, GetQueueUrlResponseUnmarshaller.Instance, null);
             var exception = Utils.AssertExceptionExpected(() =>
             {
                 RuntimePipeline.InvokeSync(context);
@@ -96,8 +90,32 @@ namespace AWSSDK.UnitTests
                 .ErrorType.ToString());
         }
 
+        [TestMethod]
+        public void ValidateSdkSendsXAmzQueryModeWhenServiceHasAwsQueryCompatibleTrait()
+        {
+            // even though TC4 is for a request, since we only care about the headers we cast it to a HttpWebResponse to make use
+            // of the helper method
+            var expectedRequest = (HttpWebResponse)MockWebResponse.CreateFromResource("QueryCompatibleTC4.txt");
+            var getQueueUrlRequest = new GetQueueUrlRequest
+            {
+                QueueName = "test-queue"
+            };
+
+            var actualRequest = GetQueueUrlRequestMarshaller.Instance.Marshall(getQueueUrlRequest);
+            Assert.IsNotNull(actualRequest.Headers[HeaderKeys.XAmzQueryMode]);
+            Assert.AreEqual<string>(actualRequest.Headers[HeaderKeys.XAmzQueryMode], expectedRequest.Headers[HeaderKeys.XAmzQueryMode]);      
+        }
+
         protected override IExecutionContext CreateTestContext(AbstractAWSSigner signer, ResponseUnmarshaller responseUnmarshaller, ClientConfig config)
         {
+            if (config == null)
+            {
+                config = new AmazonSQSConfig
+                {
+                    RegionEndpoint = Amazon.RegionEndpoint.USEast1
+                };
+            }
+
             var getQueueUrlRequest = new GetQueueUrlRequest
             {
                 QueueName = "test-queue"
