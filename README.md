@@ -404,6 +404,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Entity Resolution can effectively match a source record from a customer relationship management (CRM) system with a source record from a marketing system containing campaign information.
 * [AWSSDK.EventBridge](https://www.nuget.org/packages/AWSSDK.EventBridge/)
 	* Amazon EventBridge is a serverless event bus service that makes it easy to connect your applications with data from a variety of sources, including AWS services, partner applications, and your own applications.
+* [AWSSDK.Evs](https://www.nuget.org/packages/AWSSDK.Evs/)
+	* Amazon Elastic VMware Service (Amazon EVS) allows you to run VMware Cloud Foundation (VCF) directly within your Amazon VPC including simplified self-managed migration experience with guided workflow in AWS console or via AWS CLI, get full access to their VCF deployment and VCF license portability.
 * [AWSSDK.Finspace](https://www.nuget.org/packages/AWSSDK.Finspace/)
 	* This is the initial SDK release for the management APIs for Amazon FinSpace. Amazon FinSpace is a data management and analytics service for the financial services industry (FSI).
 * [AWSSDK.FinSpaceData](https://www.nuget.org/packages/AWSSDK.FinSpaceData/)
