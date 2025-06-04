@@ -30,49 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Invoicing.Model
 {
     /// <summary>
-    /// This is the response object from the ListInvoiceUnits operation.
+    /// The details of fees.
     /// </summary>
-    public partial class ListInvoiceUnitsResponse : AmazonWebServiceResponse
+    public partial class FeesBreakdown
     {
-        private List<InvoiceUnit> _invoiceUnits = AWSConfigs.InitializeCollections ? new List<InvoiceUnit>() : null;
-        private string _nextToken;
+        private List<FeesBreakdownAmount> _breakdown = AWSConfigs.InitializeCollections ? new List<FeesBreakdownAmount>() : null;
+        private string _totalAmount;
 
         /// <summary>
-        /// Gets and sets the property InvoiceUnits. 
+        /// Gets and sets the property Breakdown. 
         /// <para>
-        ///  An invoice unit is a set of mutually exclusive accounts that correspond to your business
-        /// entity. 
+        /// The list of fees information. 
         /// </para>
         /// </summary>
-        public List<InvoiceUnit> InvoiceUnits
+        public List<FeesBreakdownAmount> Breakdown
         {
-            get { return this._invoiceUnits; }
-            set { this._invoiceUnits = value; }
+            get { return this._breakdown; }
+            set { this._breakdown = value; }
         }
 
-        // Check to see if InvoiceUnits property is set
-        internal bool IsSetInvoiceUnits()
+        // Check to see if Breakdown property is set
+        internal bool IsSetBreakdown()
         {
-            return this._invoiceUnits != null && (this._invoiceUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._breakdown != null && (this._breakdown.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property TotalAmount. 
         /// <para>
-        /// The next token used to indicate where the returned list should start from. 
+        ///  The total amount of fees. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string NextToken
+        [AWSProperty(Min=0, Max=1024)]
+        public string TotalAmount
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._totalAmount; }
+            set { this._totalAmount = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if TotalAmount property is set
+        internal bool IsSetTotalAmount()
         {
-            return this._nextToken != null;
+            return this._totalAmount != null;
         }
 
     }

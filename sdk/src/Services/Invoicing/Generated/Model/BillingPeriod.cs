@@ -30,49 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Invoicing.Model
 {
     /// <summary>
-    /// This is the response object from the ListInvoiceUnits operation.
+    /// The billing period for which you want to retrieve invoice-related documents.
     /// </summary>
-    public partial class ListInvoiceUnitsResponse : AmazonWebServiceResponse
+    public partial class BillingPeriod
     {
-        private List<InvoiceUnit> _invoiceUnits = AWSConfigs.InitializeCollections ? new List<InvoiceUnit>() : null;
-        private string _nextToken;
+        private int? _month;
+        private int? _year;
 
         /// <summary>
-        /// Gets and sets the property InvoiceUnits. 
+        /// Gets and sets the property Month. 
         /// <para>
-        ///  An invoice unit is a set of mutually exclusive accounts that correspond to your business
-        /// entity. 
+        ///  The billing period month. 
         /// </para>
         /// </summary>
-        public List<InvoiceUnit> InvoiceUnits
+        [AWSProperty(Required=true, Min=1, Max=12)]
+        public int? Month
         {
-            get { return this._invoiceUnits; }
-            set { this._invoiceUnits = value; }
+            get { return this._month; }
+            set { this._month = value; }
         }
 
-        // Check to see if InvoiceUnits property is set
-        internal bool IsSetInvoiceUnits()
+        // Check to see if Month property is set
+        internal bool IsSetMonth()
         {
-            return this._invoiceUnits != null && (this._invoiceUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._month.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Year. 
         /// <para>
-        /// The next token used to indicate where the returned list should start from. 
+        ///  The billing period year. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string NextToken
+        [AWSProperty(Required=true, Min=2005, Max=2050)]
+        public int? Year
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._year; }
+            set { this._year = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Year property is set
+        internal bool IsSetYear()
         {
-            return this._nextToken != null;
+            return this._year.HasValue; 
         }
 
     }
