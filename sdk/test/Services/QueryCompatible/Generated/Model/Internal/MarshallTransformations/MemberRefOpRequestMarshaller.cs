@@ -63,6 +63,7 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
             request.HttpMethod = "POST";
 
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
             request.ResourcePath = "/path";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
