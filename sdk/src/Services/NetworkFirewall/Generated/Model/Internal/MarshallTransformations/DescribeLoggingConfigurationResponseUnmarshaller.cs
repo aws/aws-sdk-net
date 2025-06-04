@@ -52,6 +52,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EnableMonitoringDashboard", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.EnableMonitoringDashboard = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FirewallArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
