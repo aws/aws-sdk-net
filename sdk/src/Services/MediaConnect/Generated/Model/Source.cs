@@ -43,6 +43,7 @@ namespace Amazon.MediaConnect.Model
         private int? _ingestPort;
         private List<MediaStreamSourceConfiguration> _mediaStreamSourceConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamSourceConfiguration>() : null;
         private string _name;
+        private string _peerIpAddress;
         private int? _senderControlPort;
         private string _senderIpAddress;
         private string _sourceArn;
@@ -215,6 +216,45 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerIpAddress. 
+        /// <para>
+        /// The IP address of the device that is currently sending content to this source. 
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// For sources that use protocols where you specify the origin (such as SRT Caller),
+        /// this value matches the configured origin address. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For sources that use listener protocols (such as SRT Listener or RTP), this value
+        /// shows the address of the connected sender. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Peer IP addresses aren't available for entitlements and CDI/ST2110 sources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The peer IP address might not be visible for flows that haven't been started yet,
+        /// or flows that were started before May 2025. In these cases, restart your flow to see
+        /// the peer IP address.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public string PeerIpAddress
+        {
+            get { return this._peerIpAddress; }
+            set { this._peerIpAddress = value; }
+        }
+
+        // Check to see if PeerIpAddress property is set
+        internal bool IsSetPeerIpAddress()
+        {
+            return this._peerIpAddress != null;
         }
 
         /// <summary>

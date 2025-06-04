@@ -120,6 +120,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("peerIpAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PeerIpAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("senderControlPort", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
