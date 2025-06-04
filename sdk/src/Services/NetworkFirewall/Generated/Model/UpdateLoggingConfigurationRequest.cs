@@ -69,9 +69,41 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class UpdateLoggingConfigurationRequest : AmazonNetworkFirewallRequest
     {
+        private bool? _enableMonitoringDashboard;
         private string _firewallArn;
         private string _firewallName;
         private LoggingConfiguration _loggingConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property EnableMonitoringDashboard. 
+        /// <para>
+        /// A boolean that lets you enable or disable the detailed firewall monitoring dashboard
+        /// on the firewall. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The monitoring dashboard provides comprehensive visibility into your firewall's flow
+        /// logs and alert logs. After you enable detailed monitoring, you can access these dashboards
+        /// directly from the <b>Monitoring</b> page of the Network Firewall console.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Specify <c>TRUE</c> to enable the the detailed monitoring dashboard on the firewall.
+        /// Specify <c>FALSE</c> to disable the the detailed monitoring dashboard on the firewall.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool? EnableMonitoringDashboard
+        {
+            get { return this._enableMonitoringDashboard; }
+            set { this._enableMonitoringDashboard = value; }
+        }
+
+        // Check to see if EnableMonitoringDashboard property is set
+        internal bool IsSetEnableMonitoringDashboard()
+        {
+            return this._enableMonitoringDashboard.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property FirewallArn. 

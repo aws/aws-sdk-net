@@ -75,6 +75,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEnableMonitoringDashboard())
+            {
+                context.Writer.WritePropertyName("EnableMonitoringDashboard");
+                context.Writer.WriteBooleanValue(publicRequest.EnableMonitoringDashboard.Value);
+            }
+
             if(publicRequest.IsSetFirewallArn())
             {
                 context.Writer.WritePropertyName("FirewallArn");
