@@ -52,12 +52,12 @@ namespace Amazon.Amplify.Model
         /// <para>
         /// The <c>AMPLIFY_MANAGED</c> cache configuration automatically applies an optimized
         /// cache configuration for your app based on its platform, routing rules, and rewrite
-        /// rules. This is the default setting.
+        /// rules.
         /// </para>
         ///  
         /// <para>
         /// The <c>AMPLIFY_MANAGED_NO_COOKIES</c> cache configuration type is the same as <c>AMPLIFY_MANAGED</c>,
-        /// except that it excludes all cookies from the cache key.
+        /// except that it excludes all cookies from the cache key. This is the default setting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
