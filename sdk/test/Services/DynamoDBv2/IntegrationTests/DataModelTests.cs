@@ -1020,7 +1020,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var product = new ProductFlat
             {
                 Id = 1,
-                //Name = "TestProduct",
+                Name = "TestProduct",
                 Details = new ProductDetails()
                 {
                     Description = "Test",
@@ -1035,6 +1035,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(savedProductFlat.Details);
             Assert.AreEqual(product.Details.Description, savedProductFlat.Details.Description);
             Assert.AreEqual(0, savedProductFlat.Details.Version);
+            Assert.AreEqual("TestProduct",savedProductFlat.Name);
+            Assert.AreEqual("TestProductDetails", savedProductFlat.Details.Name);
 
             // flattened property, which itself contains another flattened property.
             var flatEmployee = new EmployeeNonFlat()
@@ -3323,7 +3325,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBFlatten]
             public ProductDetails Details { get; set; }
 
-          //  public string Name { get; set; }
+            public string Name { get; set; }
         }
 
         public class ProductDetails

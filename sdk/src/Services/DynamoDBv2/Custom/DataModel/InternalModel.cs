@@ -329,8 +329,19 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal void AddPropertyStorage(string propertyName, PropertyStorage propertyStorage)
         {
+            // Check for existing property with the same attribute name
+            foreach (var existing in PropertyToPropertyStorageMapping.Values)
+            {
+                if (string.Equals(existing.AttributeName, propertyStorage.AttributeName))
+                {
+                    throw new InvalidOperationException(
+                        $"A property with attribute name '{propertyStorage.AttributeName}' already exists (property: '{existing.PropertyName}'). " +
+                        $"Cannot add property '{propertyName}' with the same attribute name.");
+                }
+            }
             PropertyToPropertyStorageMapping[propertyName] = propertyStorage;
         }
+
         public PropertyStorage GetPropertyStorage(string propertyName)
         {
             PropertyStorage storage;
@@ -930,6 +941,11 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 var propertyStorage = MemberInfoToPropertyStorage(config, member);
 
+                if (!propertyStorage.IsIgnored)
+                {
+                    ValidateAttributeName(config, propertyStorage.AttributeName);
+                }
+
                 config.BaseTypeStorageConfig.Properties.Add(propertyStorage);
             }
 
@@ -1008,7 +1024,9 @@ namespace Amazon.DynamoDBv2.DataModel
                     foreach (var memberInfo in members)
                     {
                         var flattenPropertyStorage = MemberInfoToPropertyStorage(config, memberInfo);
+
                         flattenPropertyStorage.IsFlattened = true;
+
                         propertyStorage.FlattenProperties.Add(flattenPropertyStorage);
                     }
                 }
@@ -1227,6 +1245,18 @@ namespace Amazon.DynamoDBv2.DataModel
                 sb.AppendFormat(CultureInfo.InvariantCulture, "Error with property [{0}]: ", propertyName);
                 sb.AppendFormat(CultureInfo.InvariantCulture, messageFormat, args);
                 throw new InvalidOperationException(sb.ToString());
+            }
+        }
+
+        private static void ValidateAttributeName(ItemStorageConfig config, string attributeName)
+        {
+            foreach (var property in config.BaseTypeStorageConfig.Properties)
+            {
+                if (string.Equals(property.AttributeName, attributeName) && !property.IsIgnored)
+                {
+                    throw new InvalidOperationException(
+                        $"Attempt to add an attribute that is already defined.[Attribute name: {attributeName}]");
+                }
             }
         }
 
