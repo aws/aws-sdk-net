@@ -1,0 +1,9 @@
+HTTP/1.1 400
+x-amzn-RequestId: a918fbf2-457a-4fe1-99ba-5685ce220fc1
+x-amzn-query-error:AWS.SimpleQueueService.NonExistentQueue;Sender
+Date: Wed, 08 Sep 2021 23:46:52 GMT
+Content-Type: application/x-amz-json-1.0
+{    
+    "__type": "com.amazonaws.sqs#QueueDoesNotExist",
+    "message": "Some user-visible message"
+}

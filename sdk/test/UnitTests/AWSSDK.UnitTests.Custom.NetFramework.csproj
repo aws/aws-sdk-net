@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 This is a convenience .csproj file.  It is meant to be used in conjunction with AWSSDK.CoreAndCustomUnitTests.NetFramework.sln to 
 facilitate developing changes to AWSSDK.Core and AWSSDK.UnitTests.Custom without needing to load all Services projects.
 
@@ -12,7 +12,6 @@ This project file should not be used as part of a release pipeline.
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <AssemblyName>AWSSDK.UnitTests.NetFramework</AssemblyName>
         <PackageId>AWSSDK.UnitTests.NetFramework</PackageId>
-
         <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
         <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -52,6 +51,7 @@ This project file should not be used as part of a release pipeline.
         <ProjectReference Include="..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.NetFramework.csproj" />
+        <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\SSOOIDC\AWSSDK.SSOOIDC.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\SSO\AWSSDK.SSO.NetFramework.csproj" />
         <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
