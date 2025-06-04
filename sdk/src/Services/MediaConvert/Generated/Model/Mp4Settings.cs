@@ -36,11 +36,14 @@ namespace Amazon.MediaConvert.Model
     public partial class Mp4Settings
     {
         private CmfcAudioDuration _audioDuration;
+        private Mp4C2paManifest _c2paManifest;
+        private string _certificateSecret;
         private Mp4CslgAtom _cslgAtom;
         private int? _cttsVersion;
         private Mp4FreeSpaceBox _freeSpaceBox;
         private Mp4MoovPlacement _moovPlacement;
         private string _mp4MajorBrand;
+        private string _signingKmsKey;
 
         /// <summary>
         /// Gets and sets the property AudioDuration. Specify this setting only when your output
@@ -66,6 +69,44 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAudioDuration()
         {
             return this._audioDuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property C2paManifest. When enabled, a C2PA compliant manifest will
+        /// be generated, signed and embeded in the output. For more information on C2PA, see
+        /// https://c2pa.org/specifications/specifications/2.1/index.html
+        /// </summary>
+        public Mp4C2paManifest C2paManifest
+        {
+            get { return this._c2paManifest; }
+            set { this._c2paManifest = value; }
+        }
+
+        // Check to see if C2paManifest property is set
+        internal bool IsSetC2paManifest()
+        {
+            return this._c2paManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateSecret. Specify the name or ARN of the AWS Secrets
+        /// Manager secret that contains your C2PA public certificate chain in PEM format. Provide
+        /// a valid secret name or ARN. Note that your MediaConvert service role must allow access
+        /// to this secret. The public certificate chain is added to the COSE header (x5chain)
+        /// for signature validation. Include the signer's certificate and all intermediate certificates.
+        /// Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string CertificateSecret
+        {
+            get { return this._certificateSecret; }
+            set { this._certificateSecret = value; }
+        }
+
+        // Check to see if CertificateSecret property is set
+        internal bool IsSetCertificateSecret()
+        {
+            return this._certificateSecret != null;
         }
 
         /// <summary>
@@ -154,6 +195,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMp4MajorBrand()
         {
             return this._mp4MajorBrand != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningKmsKey. Specify the ID or ARN of the AWS KMS key
+        /// used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note
+        /// that your MediaConvert service role must allow access to this key.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string SigningKmsKey
+        {
+            get { return this._signingKmsKey; }
+            set { this._signingKmsKey = value; }
+        }
+
+        // Check to see if SigningKmsKey property is set
+        internal bool IsSetSigningKmsKey()
+        {
+            return this._signingKmsKey != null;
         }
 
     }

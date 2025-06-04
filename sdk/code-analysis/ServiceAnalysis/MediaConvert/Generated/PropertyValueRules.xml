@@ -1573,9 +1573,20 @@
     <max>9</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Mp4Settings.CertificateSecret</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:[a-z-]+:secretsmanager:[\w-]+:\d{12}:secret:)?[a-zA-Z0-9_\/_+=.@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.Mp4Settings.CttsVersion</property>
     <min>0</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Mp4Settings.SigningKmsKey</property>
+    <min>1</min>
+    <pattern>^(arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/)?[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|mrk-[a-fA-F0-9]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.MpdSettings.TimedMetadataSchemeIdUri</property>

@@ -17419,6 +17419,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type Mp4C2paManifest.
+    /// </summary>
+    public class Mp4C2paManifest : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for Mp4C2paManifest
+        /// </summary>
+        public static readonly Mp4C2paManifest EXCLUDE = new Mp4C2paManifest("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for Mp4C2paManifest
+        /// </summary>
+        public static readonly Mp4C2paManifest INCLUDE = new Mp4C2paManifest("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mp4C2paManifest(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mp4C2paManifest FindValue(string value)
+        {
+            return FindValue<Mp4C2paManifest>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mp4C2paManifest(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Mp4CslgAtom.
     /// </summary>
     public class Mp4CslgAtom : ConstantClass
