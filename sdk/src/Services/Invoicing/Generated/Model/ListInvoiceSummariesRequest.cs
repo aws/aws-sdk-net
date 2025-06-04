@@ -30,64 +30,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Invoicing.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListInvoiceUnits operation.
-    /// This fetches a list of all invoice unit definitions for a given account, as of the
-    /// provided <c>AsOf</c> date.
+    /// Container for the parameters to the ListInvoiceSummaries operation.
+    /// Retrieves your invoice details programmatically, without line item details.
     /// </summary>
-    public partial class ListInvoiceUnitsRequest : AmazonInvoicingRequest
+    public partial class ListInvoiceSummariesRequest : AmazonInvoicingRequest
     {
-        private DateTime? _asOf;
-        private Filters _filters;
+        private InvoiceSummariesFilter _filter;
         private int? _maxResults;
         private string _nextToken;
+        private InvoiceSummariesSelector _selector;
 
         /// <summary>
-        /// Gets and sets the property AsOf. 
+        /// Gets and sets the property Filter. 
         /// <para>
-        ///  The state of an invoice unit at a specified time. You can see legacy invoice units
-        /// that are currently deleted if the <c>AsOf</c> time is set to before it was deleted.
-        /// If an <c>AsOf</c> is not provided, the default value is the current time. 
+        /// Filters you can use to customize your invoice summary.
         /// </para>
         /// </summary>
-        public DateTime AsOf
+        public InvoiceSummariesFilter Filter
         {
-            get { return this._asOf.GetValueOrDefault(); }
-            set { this._asOf = value; }
+            get { return this._filter; }
+            set { this._filter = value; }
         }
 
-        // Check to see if AsOf property is set
-        internal bool IsSetAsOf()
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
         {
-            return this._asOf.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        ///  An optional input to the list API. If multiple filters are specified, the returned
-        /// list will be a configuration that match all of the provided filters. Supported filter
-        /// types are <c>InvoiceReceivers</c>, <c>Names</c>, and <c>Accounts</c>. 
-        /// </para>
-        /// </summary>
-        public Filters Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null;
+            return this._filter != null;
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of invoice units that can be returned. 
+        /// The maximum number of invoice summaries a paginated response can contain.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -103,7 +80,8 @@ namespace Amazon.Invoicing.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token used to indicate where the returned list should start from. 
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token
+        /// when the response from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -117,6 +95,27 @@ namespace Amazon.Invoicing.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Selector. 
+        /// <para>
+        /// The option to retrieve details for a specific invoice by providing its unique ID.
+        /// Alternatively, access information for all invoices linked to the account by providing
+        /// an account ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public InvoiceSummariesSelector Selector
+        {
+            get { return this._selector; }
+            set { this._selector = value; }
+        }
+
+        // Check to see if Selector property is set
+        internal bool IsSetSelector()
+        {
+            return this._selector != null;
         }
 
     }

@@ -16,35 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the invoicing-2024-12-01.normal.json service model.
  */
-using Amazon.Runtime.Internal;
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Invoicing.Model
 {
     /// <summary>
-    /// Paginators for the Invoicing service
+    /// Paginator for the ListInvoiceSummaries operation
     ///</summary>
-    public interface IInvoicingPaginatorFactory
+    public interface IListInvoiceSummariesPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListInvoiceSummariesResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListInvoiceSummaries operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListInvoiceSummariesPaginator ListInvoiceSummaries(ListInvoiceSummariesRequest request);
-
-        /// <summary>
-        /// Paginator for ListInvoiceUnits operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListInvoiceUnitsPaginator ListInvoiceUnits(ListInvoiceUnitsRequest request);
+        /// Enumerable containing all of the InvoiceSummaries
+        /// </summary>
+        IPaginatedEnumerable<InvoiceSummary> InvoiceSummaries { get; }
     }
 }

@@ -30,36 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Invoicing.Model
 {
     /// <summary>
-    /// This is the response object from the ListInvoiceUnits operation.
+    /// This is the response object from the ListInvoiceSummaries operation.
     /// </summary>
-    public partial class ListInvoiceUnitsResponse : AmazonWebServiceResponse
+    public partial class ListInvoiceSummariesResponse : AmazonWebServiceResponse
     {
-        private List<InvoiceUnit> _invoiceUnits = AWSConfigs.InitializeCollections ? new List<InvoiceUnit>() : null;
+        private List<InvoiceSummary> _invoiceSummaries = AWSConfigs.InitializeCollections ? new List<InvoiceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property InvoiceUnits. 
+        /// Gets and sets the property InvoiceSummaries. 
         /// <para>
-        ///  An invoice unit is a set of mutually exclusive accounts that correspond to your business
-        /// entity. 
+        /// List of key (summary level) invoice details without line item details.
         /// </para>
         /// </summary>
-        public List<InvoiceUnit> InvoiceUnits
+        [AWSProperty(Required=true)]
+        public List<InvoiceSummary> InvoiceSummaries
         {
-            get { return this._invoiceUnits; }
-            set { this._invoiceUnits = value; }
+            get { return this._invoiceSummaries; }
+            set { this._invoiceSummaries = value; }
         }
 
-        // Check to see if InvoiceUnits property is set
-        internal bool IsSetInvoiceUnits()
+        // Check to see if InvoiceSummaries property is set
+        internal bool IsSetInvoiceSummaries()
         {
-            return this._invoiceUnits != null && (this._invoiceUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._invoiceSummaries != null && (this._invoiceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token used to indicate where the returned list should start from. 
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token
+        /// when the response from a previous call has more results than the maximum page size.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

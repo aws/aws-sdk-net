@@ -571,6 +571,75 @@ namespace Amazon.Invoicing
 
         #endregion
         
+        #region  ListInvoiceSummaries
+
+        /// <summary>
+        /// Retrieves your invoice details programmatically, without line item details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvoiceSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListInvoiceSummaries service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">REST API Reference for ListInvoiceSummaries Operation</seealso>
+        public virtual ListInvoiceSummariesResponse ListInvoiceSummaries(ListInvoiceSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvoiceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvoiceSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInvoiceSummariesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInvoiceSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInvoiceSummaries operation on AmazonInvoicingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvoiceSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">REST API Reference for ListInvoiceSummaries Operation</seealso>
+        public virtual IAsyncResult BeginListInvoiceSummaries(ListInvoiceSummariesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvoiceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvoiceSummariesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInvoiceSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInvoiceSummaries.</param>
+        /// 
+        /// <returns>Returns a  ListInvoiceSummariesResult from Invoicing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">REST API Reference for ListInvoiceSummaries Operation</seealso>
+        public virtual ListInvoiceSummariesResponse EndListInvoiceSummaries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInvoiceSummariesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListInvoiceUnits
 
         /// <summary>

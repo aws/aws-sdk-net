@@ -113,6 +113,115 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             #endregion
         }
 
+        public void InvoicingListInvoiceSummaries()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            {
+                Selector = new InvoiceSummariesSelector {
+                    ResourceType = "INVOICE_ID",
+                    Value = "1111111111"
+                }
+            });
+
+            List<InvoiceSummary> invoiceSummaries = response.InvoiceSummaries;
+
+            #endregion
+        }
+
+        public void InvoicingListInvoiceSummaries()
+        {
+            #region example-2
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            {
+                Filter = new InvoiceSummariesFilter { BillingPeriod = new BillingPeriod {
+                    Month = 1,
+                    Year = 2025
+                } },
+                Selector = new InvoiceSummariesSelector {
+                    ResourceType = "ACCOUNT_ID",
+                    Value = "111111111111"
+                }
+            });
+
+            List<InvoiceSummary> invoiceSummaries = response.InvoiceSummaries;
+
+            #endregion
+        }
+
+        public void InvoicingListInvoiceSummaries()
+        {
+            #region example-3
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            {
+                Filter = new InvoiceSummariesFilter { TimeInterval = new DateInterval {
+                    EndDate = DateTime.UtcNow,
+                    StartDate = DateTime.UtcNow
+                } },
+                Selector = new InvoiceSummariesSelector {
+                    ResourceType = "ACCOUNT_ID",
+                    Value = "111111111111"
+                }
+            });
+
+            List<InvoiceSummary> invoiceSummaries = response.InvoiceSummaries;
+
+            #endregion
+        }
+
+        public void InvoicingListInvoiceSummaries()
+        {
+            #region example-4
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            {
+                Filter = new InvoiceSummariesFilter { BillingPeriod = new BillingPeriod {
+                    Month = 1,
+                    Year = 2025
+                } },
+                MaxResults = 1,
+                Selector = new InvoiceSummariesSelector {
+                    ResourceType = "ACCOUNT_ID",
+                    Value = "111111111111"
+                }
+            });
+
+            List<InvoiceSummary> invoiceSummaries = response.InvoiceSummaries;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void InvoicingListInvoiceSummaries()
+        {
+            #region example-5
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            {
+                Filter = new InvoiceSummariesFilter { BillingPeriod = new BillingPeriod {
+                    Month = 1,
+                    Year = 2025
+                } },
+                NextToken = "abcde12345",
+                Selector = new InvoiceSummariesSelector {
+                    ResourceType = "ACCOUNT_ID",
+                    Value = "111111111111"
+                }
+            });
+
+            List<InvoiceSummary> invoiceSummaries = response.InvoiceSummaries;
+
+            #endregion
+        }
+
         public void InvoicingListInvoiceUnits()
         {
             #region example-1

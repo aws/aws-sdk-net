@@ -30,49 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Invoicing.Model
 {
     /// <summary>
-    /// This is the response object from the ListInvoiceUnits operation.
+    /// Specifies the invoice summary.
     /// </summary>
-    public partial class ListInvoiceUnitsResponse : AmazonWebServiceResponse
+    public partial class InvoiceSummariesSelector
     {
-        private List<InvoiceUnit> _invoiceUnits = AWSConfigs.InitializeCollections ? new List<InvoiceUnit>() : null;
-        private string _nextToken;
+        private ListInvoiceSummariesResourceType _resourceType;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property InvoiceUnits. 
+        /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  An invoice unit is a set of mutually exclusive accounts that correspond to your business
-        /// entity. 
+        /// The query identifier type (<c>INVOICE_ID</c> or <c>ACCOUNT_ID</c>).
         /// </para>
         /// </summary>
-        public List<InvoiceUnit> InvoiceUnits
+        [AWSProperty(Required=true)]
+        public ListInvoiceSummariesResourceType ResourceType
         {
-            get { return this._invoiceUnits; }
-            set { this._invoiceUnits = value; }
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
         }
 
-        // Check to see if InvoiceUnits property is set
-        internal bool IsSetInvoiceUnits()
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
         {
-            return this._invoiceUnits != null && (this._invoiceUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._resourceType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The next token used to indicate where the returned list should start from. 
+        /// The value of the query identifier.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string NextToken
+        [AWSProperty(Required=true, Min=0, Max=1024)]
+        public string Value
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._nextToken != null;
+            return this._value != null;
         }
 
     }

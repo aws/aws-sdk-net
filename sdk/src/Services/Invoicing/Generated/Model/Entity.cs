@@ -16,40 +16,44 @@
 /*
  * Do not modify this file. This file is generated from the invoicing-2024-12-01.normal.json service model.
  */
-
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
-#pragma warning disable CS0612,CS0618
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Invoicing.Model
 {
     /// <summary>
-    /// Paginators for the Invoicing service
-    ///</summary>
-    public class InvoicingPaginatorFactory : IInvoicingPaginatorFactory
+    /// The organization name providing Amazon Web Services services.
+    /// </summary>
+    public partial class Entity
     {
-        private readonly IAmazonInvoicing client;
-
-        internal InvoicingPaginatorFactory(IAmazonInvoicing client) 
-        {
-            this.client = client;
-        }
+        private string _invoicingEntity;
 
         /// <summary>
-        /// Paginator for ListInvoiceSummaries operation
-        ///</summary>
-        public IListInvoiceSummariesPaginator ListInvoiceSummaries(ListInvoiceSummariesRequest request) 
+        /// Gets and sets the property InvoicingEntity. 
+        /// <para>
+        /// The name of the entity that issues the Amazon Web Services invoice.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string InvoicingEntity
         {
-            return new ListInvoiceSummariesPaginator(this.client, request);
+            get { return this._invoicingEntity; }
+            set { this._invoicingEntity = value; }
         }
 
-        /// <summary>
-        /// Paginator for ListInvoiceUnits operation
-        ///</summary>
-        public IListInvoiceUnitsPaginator ListInvoiceUnits(ListInvoiceUnitsRequest request) 
+        // Check to see if InvoicingEntity property is set
+        internal bool IsSetInvoicingEntity()
         {
-            return new ListInvoiceUnitsPaginator(this.client, request);
+            return this._invoicingEntity != null;
         }
+
     }
 }
