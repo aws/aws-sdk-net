@@ -72,6 +72,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("c2paManifest", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.C2paManifest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("certificateSecret", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CertificateSecret = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("cslgAtom", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,6 +112,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Mp4MajorBrand = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signingKmsKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SigningKmsKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

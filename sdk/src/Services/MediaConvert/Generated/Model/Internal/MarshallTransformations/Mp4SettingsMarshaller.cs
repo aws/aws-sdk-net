@@ -54,6 +54,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AudioDuration);
             }
 
+            if(requestObject.IsSetC2paManifest())
+            {
+                context.Writer.WritePropertyName("c2paManifest");
+                context.Writer.Write(requestObject.C2paManifest);
+            }
+
+            if(requestObject.IsSetCertificateSecret())
+            {
+                context.Writer.WritePropertyName("certificateSecret");
+                context.Writer.Write(requestObject.CertificateSecret);
+            }
+
             if(requestObject.IsSetCslgAtom())
             {
                 context.Writer.WritePropertyName("cslgAtom");
@@ -82,6 +94,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("mp4MajorBrand");
                 context.Writer.Write(requestObject.Mp4MajorBrand);
+            }
+
+            if(requestObject.IsSetSigningKmsKey())
+            {
+                context.Writer.WritePropertyName("signingKmsKey");
+                context.Writer.Write(requestObject.SigningKmsKey);
             }
 
         }
