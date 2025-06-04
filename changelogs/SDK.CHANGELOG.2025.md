@@ -1,3 +1,26 @@
+### 4.0.26.0 (2025-06-04 18:23 UTC)
+* Amplify (4.0.1.1)
+	* Update documentation for cacheConfig in CreateApp API
+* Evs (4.0.0.0)
+	* Amazon Elastic VMware Service (Amazon EVS) allows you to run VMware Cloud Foundation (VCF) directly within your Amazon VPC including simplified self-managed migration experience with guided workflow in AWS console or via AWS CLI, get full access to their VCF deployment and VCF license portability.
+* Invoicing (4.0.1.0)
+	* Added new Invoicing ListInvoiceSummaries API Operation
+* MediaConnect (4.0.1.0)
+	* This release updates the DescribeFlow API to show peer IP addresses. You can now identify the peer IP addresses of devices connected to your sources and outputs. This helps you to verify and troubleshoot your flow's active connections.
+* MediaConvert (4.0.3.0)
+	* This release includes support for embedding and signing C2PA content credentials in MP4 outputs.
+* NetworkFirewall (4.0.2.0)
+	* You can now monitor flow and alert log metrics from the Network Firewall console.
+* SageMaker (4.0.7.0)
+	* Added support for p6-b200 instance type in SageMaker Training Jobs and Training Plans.
+* TranscribeService (4.0.1.0)
+	* AWS Healthscribe now supports new templates for the clinical note summary: BIRP, SIRP, DAP, BEHAVIORAL_SOAP, and PHYSICAL_SOAP
+* TranscribeStreaming (4.0.1.0)
+	* AWS Healthscribe now supports new templates for the clinical note summary: BIRP, SIRP, DAP, BEHAVIORAL_SOAP, and PHYSICAL_SOAP
+* Core 4.0.0.7
+	* Add x-amzn-query-mode header and query compatible tests. The sdk will send a new header x-amzn-query-mode, if the service has the awsQueryCompatibleTrait applied to it. This is to inform the service that the client is running in query compatible mode.
+	* All services packages updated to require new Core
+
 ### 4.0.25.0 (2025-06-03 18:25 UTC)
 * APIGateway (4.0.1.0)
 	* Adds support to set the routing mode for a custom domain name.
