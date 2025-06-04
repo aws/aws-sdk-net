@@ -105,7 +105,8 @@ namespace Amazon.TranscribeStreaming.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time, in milliseconds, of the utterance that was identified as PII.
+        /// The end time of the utterance that was identified as PII in seconds, with millisecond
+        /// precision (e.g., 1.056)
         /// </para>
         /// </summary>
         public double? EndTime
@@ -123,7 +124,8 @@ namespace Amazon.TranscribeStreaming.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time, in milliseconds, of the utterance that was identified as PII.
+        /// The start time of the utterance that was identified as PII in seconds, with millisecond
+        /// precision (e.g., 1.056)
         /// </para>
         /// </summary>
         public double? StartTime

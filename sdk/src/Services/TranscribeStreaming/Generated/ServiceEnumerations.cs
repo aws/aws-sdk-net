@@ -813,6 +813,18 @@ namespace Amazon.TranscribeStreaming
     {
 
         /// <summary>
+        /// Constant BEHAVIORAL_SOAP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate BEHAVIORAL_SOAP = new MedicalScribeNoteTemplate("BEHAVIORAL_SOAP");
+        /// <summary>
+        /// Constant BIRP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate BIRP = new MedicalScribeNoteTemplate("BIRP");
+        /// <summary>
+        /// Constant DAP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate DAP = new MedicalScribeNoteTemplate("DAP");
+        /// <summary>
         /// Constant GIRPP for MedicalScribeNoteTemplate
         /// </summary>
         public static readonly MedicalScribeNoteTemplate GIRPP = new MedicalScribeNoteTemplate("GIRPP");
@@ -820,6 +832,14 @@ namespace Amazon.TranscribeStreaming
         /// Constant HISTORY_AND_PHYSICAL for MedicalScribeNoteTemplate
         /// </summary>
         public static readonly MedicalScribeNoteTemplate HISTORY_AND_PHYSICAL = new MedicalScribeNoteTemplate("HISTORY_AND_PHYSICAL");
+        /// <summary>
+        /// Constant PHYSICAL_SOAP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate PHYSICAL_SOAP = new MedicalScribeNoteTemplate("PHYSICAL_SOAP");
+        /// <summary>
+        /// Constant SIRP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate SIRP = new MedicalScribeNoteTemplate("SIRP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

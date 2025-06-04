@@ -89,7 +89,7 @@ namespace Amazon.TranscribeStreaming.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time, in milliseconds, of the <c>Result</c>.
+        /// The end time, in seconds, of the <c>Result</c>.
         /// </para>
         /// </summary>
         public double? EndTime
@@ -148,7 +148,7 @@ namespace Amazon.TranscribeStreaming.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time, in milliseconds, of the <c>Result</c>.
+        /// The start time, in seconds, of the <c>Result</c>.
         /// </para>
         /// </summary>
         public double? StartTime
