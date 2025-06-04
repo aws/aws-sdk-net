@@ -1,3 +1,24 @@
+### 3.7.1058.0 (2025-06-04 18:24 UTC)
+* Amplify (3.7.407.3)
+	* Update documentation for cacheConfig in CreateApp API
+* Evs (3.7.400.0)
+	* Amazon Elastic VMware Service (Amazon EVS) allows you to run VMware Cloud Foundation (VCF) directly within your Amazon VPC including simplified self-managed migration experience with guided workflow in AWS console or via AWS CLI, get full access to their VCF deployment and VCF license portability.
+* Invoicing (3.7.401.0)
+	* Added new Invoicing ListInvoiceSummaries API Operation
+* MediaConnect (3.7.405.0)
+	* This release updates the DescribeFlow API to show peer IP addresses. You can now identify the peer IP addresses of devices connected to your sources and outputs. This helps you to verify and troubleshoot your flow's active connections.
+* MediaConvert (3.7.414.0)
+	* This release includes support for embedding and signing C2PA content credentials in MP4 outputs.
+* NetworkFirewall (3.7.406.0)
+	* You can now monitor flow and alert log metrics from the Network Firewall console.
+* SageMaker (3.7.443.0)
+	* Added support for p6-b200 instance type in SageMaker Training Jobs and Training Plans.
+* TranscribeService (3.7.404.0)
+	* AWS Healthscribe now supports new templates for the clinical note summary: BIRP, SIRP, DAP, BEHAVIORAL_SOAP, and PHYSICAL_SOAP
+* Core 3.7.402.66
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1057.0 (2025-06-03 18:14 UTC)
 * APIGateway (3.7.403.0)
 	* Adds support to set the routing mode for a custom domain name.
