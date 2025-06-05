@@ -52,18 +52,15 @@ namespace Amazon.KeyManagementService.Model
     /// A <i>replica key</i> is a fully-functional KMS key that can be used independently
     /// of its primary and peer replica keys. A primary key and its replica keys share properties
     /// that make them interoperable. They have the same <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
-    /// ID</a> and key material. They also have the same <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-spec">key
-    /// spec</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-usage">key
-    /// usage</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-origin">key
-    /// material origin</a>, and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-    /// key rotation status</a>. KMS automatically synchronizes these shared properties among
-    /// related multi-Region keys. All other properties of a replica key can differ, including
-    /// its <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
+    /// ID</a> and key material. They also have the same key spec, key usage, key material
+    /// origin, and automatic key rotation status. KMS automatically synchronizes these shared
+    /// properties among related multi-Region keys. All other properties of a replica key
+    /// can differ, including its <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
     /// policy</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">tags</a>,
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">aliases</a>,
-    /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// states of KMS keys</a>. KMS pricing and quotas for KMS keys apply to each primary
-    /// key and replica key.
+    /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
+    /// state</a>. KMS pricing and quotas for KMS keys apply to each primary key and replica
+    /// key.
     /// </para>
     ///  
     /// <para>
@@ -96,9 +93,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// If you replicate a multi-Region primary key with imported key material, the replica
     /// key is created with no key material. You must import the same key material that you
-    /// imported into the primary key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-import.html">Importing
-    /// key material into multi-Region keys</a> in the <i>Key Management Service Developer
-    /// Guide</i>.
+    /// imported into the primary key.
     /// </para>
     ///  
     /// <para>
@@ -147,7 +142,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
@@ -270,7 +265,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Policy. 
         /// <para>
         /// The key policy to attach to the KMS key. This parameter is optional. If you do not
-        /// provide a key policy, KMS attaches the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">default
+        /// provide a key policy, KMS attaches the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html">default
         /// key policy</a> to the KMS key.
         /// </para>
         ///  
@@ -353,15 +348,7 @@ namespace Amazon.KeyManagementService.Model
         /// of Amazon Web Services Regions in which KMS is supported, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">KMS
         /// service endpoints</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// HMAC KMS keys are not supported in all Amazon Web Services Regions. If you try to
-        /// replicate an HMAC KMS key in an Amazon Web Services Region in which HMAC keys are
-        /// not supported, the <c>ReplicateKey</c> operation returns an <c>UnsupportedOperationException</c>.
-        /// For a list of Regions in which HMAC KMS keys are supported, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// The replica must be in a different Amazon Web Services Region than its primary key
         /// and other replicas of that primary key, but in the same Amazon Web Services partition.
@@ -427,8 +414,8 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// When you add tags to an Amazon Web Services resource, Amazon Web Services generates
         /// a cost allocation report with usage and costs aggregated by tags. Tags can also be
-        /// used to control access to a KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
-        /// Keys</a>.
+        /// used to control access to a KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tags
+        /// in KMS</a>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -75,6 +75,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIncludeKeyMaterial())
+            {
+                context.Writer.WritePropertyName("IncludeKeyMaterial");
+                context.Writer.WriteStringValue(publicRequest.IncludeKeyMaterial);
+            }
+
             if(publicRequest.IsSetKeyId())
             {
                 context.Writer.WritePropertyName("KeyId");

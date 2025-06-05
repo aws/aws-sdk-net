@@ -40,8 +40,9 @@ namespace Amazon.KeyManagementService.Model
     /// and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
     /// JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i>
     /// </i>. For examples of adding a key policy in multiple programming languages, see <a
-    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-key-policies.html#put-policy">Setting
-    /// a key policy</a> in the <i>Key Management Service Developer Guide</i>.
+    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_PutKeyPolicy_section.html">Use
+    /// PutKeyPolicy with an Amazon Web Services SDK or CLI</a> in the <i>Key Management Service
+    /// Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +61,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
@@ -172,7 +173,20 @@ namespace Amazon.KeyManagementService.Model
         /// that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity
         /// and Access Management User Guide</i>.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If either of the required <c>Resource</c> or <c>Action</c> elements are missing from
+        /// a key policy statement, the policy statement has no effect. When a key policy statement
+        /// is missing one of these elements, the KMS console correctly reports an error, but
+        /// the <c>PutKeyPolicy</c> API request succeeds, even though the policy statement is
+        /// ineffective.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on required key policy elements, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-overview.html#key-policy-elements">Elements
+        /// in a key policy</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A key policy document can include only the following characters:
         /// </para>
@@ -191,7 +205,11 @@ namespace Amazon.KeyManagementService.Model
         /// The tab (<c>\u0009</c>), line feed (<c>\u000A</c>), and carriage return (<c>\u000D</c>)
         /// special characters
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If the key policy exceeds the length constraint, KMS returns a <c>LimitExceededException</c>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
         /// policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help

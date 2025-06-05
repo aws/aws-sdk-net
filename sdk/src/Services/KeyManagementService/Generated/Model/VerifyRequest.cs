@@ -70,7 +70,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// To verify a signature outside of KMS with an SM2 public key (China Regions only),
     /// you must specify the distinguishing ID. By default, KMS uses <c>1234567812345678</c>
-    /// as the distinguishing ID. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+    /// as the distinguishing ID. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/offline-operations.html#key-spec-sm-offline-verification">Offline
     /// verification with SM2 key pairs</a>.
     /// </para>
     ///  
@@ -97,7 +97,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
@@ -118,8 +118,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
-        /// your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.
+        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing
+        /// your permissions</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool? DryRun
@@ -144,7 +144,7 @@ namespace Amazon.KeyManagementService.Model
         /// Use a grant token when your permission to call this operation comes from a new grant
         /// that has not yet achieved <i>eventual consistency</i>. For more information, see <a
         /// href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
-        /// token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+        /// token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using
         /// a grant token</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -290,7 +290,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+        /// SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/offline-operations.html#key-spec-sm-offline-verification">Offline
         /// verification with SM2 key pairs</a>.
         /// </para>
         ///  </li> </ul>

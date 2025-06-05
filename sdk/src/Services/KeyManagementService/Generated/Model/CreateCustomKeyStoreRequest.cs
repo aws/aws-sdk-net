@@ -31,7 +31,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCustomKeyStore operation.
-    /// Creates a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+    /// Creates a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
     /// key store</a> backed by a key store that you own and manage. When you use a KMS key
     /// in a custom key store for a cryptographic operation, the cryptographic operation is
     /// actually performed in your key store using your keys. KMS supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM
@@ -42,9 +42,9 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    ///  This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-    /// key stores</a> feature in KMS, which combines the convenience and extensive integration
-    /// of KMS with the isolation and control of a key store that you own and manage.
+    ///  This operation is part of the custom key stores feature in KMS, which combines the
+    /// convenience and extensive integration of KMS with the isolation and control of a key
+    /// store that you own and manage.
     /// </para>
     ///  
     /// <para>
@@ -107,11 +107,6 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// For help with failures, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
-    /// a custom key store</a> in the <i>Key Management Service Developer Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
     ///  <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store
     /// in a different Amazon Web Services account.
     /// </para>
@@ -147,7 +142,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
@@ -250,7 +245,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// Enter the password of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+        /// Enter the password of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html#concept-kmsuser">
         /// <c>kmsuser</c> crypto user (CU) account</a> in the specified CloudHSM cluster. KMS
         /// logs into the cluster as this user to manage key material on your behalf.
         /// </para>
@@ -314,7 +309,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The <c>XksProxyAuthenticationCredential</c> has two required elements: <c>RawSecretAccessKey</c>,
         /// a secret key, and <c>AccessKeyId</c>, a unique identifier for the <c>RawSecretAccessKey</c>.
-        /// For character requirements, see <a href="kms/latest/APIReference/API_XksProxyAuthenticationCredentialType.html">XksProxyAuthenticationCredentialType</a>.
+        /// For character requirements, see <a href="API_XksProxyAuthenticationCredentialType.html">XksProxyAuthenticationCredentialType</a>.
         /// </para>
         ///  
         /// <para>
@@ -353,7 +348,7 @@ namespace Amazon.KeyManagementService.Model
         /// If the external key store proxy uses a public endpoint, specify <c>PUBLIC_ENDPOINT</c>.
         /// If the external key store proxy uses a Amazon VPC endpoint service for communication
         /// with KMS, specify <c>VPC_ENDPOINT_SERVICE</c>. For help making this choice, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/plan-xks-keystore.html#choose-xks-connectivity">Choosing
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/choose-xks-connectivity.html">Choosing
         /// a connectivity option</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
