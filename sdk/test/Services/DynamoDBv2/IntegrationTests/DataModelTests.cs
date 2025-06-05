@@ -11,6 +11,7 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 using System.Threading.Tasks;
+using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
@@ -585,6 +586,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var storedModel = await Context.LoadAsync<ModelA>(id);
             Assert.AreEqual(model.Id, storedModel.Id);
             Assert.AreEqual(model.GetType(), storedModel.GetType());
+            Assert.IsNotNull(storedModel.FlatAddress);
 
             var myType = model as ModelA1;
             var myStoredModel = storedModel as ModelA1;
@@ -1006,6 +1008,105 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestStoreAsAnnotatedEpoch();
             }
         }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_FlattenAttribute_With_Annotations()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            // flatten with version
+            var product = new ProductFlat
+            {
+                Id = 1,
+                Name = "TestProduct",
+                Details = new ProductDetails()
+                {
+                    Description = "Test",
+                    Name = "TestProductDetails",
+                }
+            };
+
+            await Context.SaveAsync(product);
+            var savedProductFlat = await Context.LoadAsync<ProductFlat>(product.Id);
+            Assert.IsNotNull(savedProductFlat);
+            Assert.AreEqual(product.Id, savedProductFlat.Id);
+            Assert.IsNotNull(savedProductFlat.Details);
+            Assert.AreEqual(product.Details.Description, savedProductFlat.Details.Description);
+            Assert.AreEqual(0, savedProductFlat.Details.Version);
+            Assert.AreEqual("TestProduct",savedProductFlat.Name);
+            Assert.AreEqual("TestProductDetails", savedProductFlat.Details.Name);
+
+            // flattened property, which itself contains another flattened property.
+            var flatEmployee = new EmployeeNonFlat()
+            {
+                EmployeeId = 2,
+                Contact = new ContactInfo()
+                {
+                    Email = "test@email.com",
+                    Address = new Address()
+                    {
+                        City = "Seattle",
+                        Street = "N/A",
+                    }
+                }
+            };
+            await Context.SaveAsync(flatEmployee);
+            var savedFlatEmployee = await Context.LoadAsync<EmployeeFlatten>(flatEmployee.EmployeeId);
+            Assert.IsNotNull(savedFlatEmployee);
+            Assert.AreEqual(flatEmployee.EmployeeId, savedFlatEmployee.EmployeeId);
+            Assert.AreEqual(flatEmployee.Contact.Address.City, savedFlatEmployee.City);
+            Assert.AreEqual(flatEmployee.Contact.Address.Street, savedFlatEmployee.Street);
+            Assert.AreEqual(flatEmployee.Contact.Email, savedFlatEmployee.Email);
+
+            //flattened property contains a property with a custom converter.
+            var eventToSave = new Event()
+            {
+                Id = 5,
+                Details = new EventDetails()
+                {
+                    EventDate = DateTime.Today
+                }
+            };
+            await Context.SaveAsync(eventToSave);
+            var savedEvent = await Context.LoadAsync<Event>(eventToSave.Id);
+            Assert.IsNotNull(savedEvent);
+            Assert.AreEqual(eventToSave.Id, savedEvent.Id);
+            Assert.IsNotNull(savedEvent.Details);
+            Assert.AreEqual(eventToSave.Details.EventDate.ToUniversalTime(), savedEvent.Details.EventDate);
+
+            // Flattened Property with Global Secondary Index
+            var order = new Order()
+            {
+                Id = 6,
+                Payment = new PaymentInfo()
+                {
+                    CompanyName = "TestCompany",
+                    Price = 1000
+
+                }
+            };
+
+            await Context.SaveAsync(order);
+            var savedOrders = Context.Query<Order>(
+                order.Payment.CompanyName, // Hash-key for the index is Company
+                QueryOperator.Equal, // Range-key for the index is Price, so the
+                new object[] { 1000 }, // condition is against a numerical value
+                new QueryConfig // Configure the index to use
+                {
+                    IndexName = "GlobalIndex",
+                });
+            Assert.IsNotNull(savedOrders);
+            var savedOrder = savedOrders.FirstOrDefault();
+            Assert.IsNotNull(savedOrder);
+            Assert.AreEqual(order.Id, savedOrder.Id);
+            Assert.IsNotNull(savedOrder.Payment);
+            Assert.AreEqual(order.Payment.Price, savedOrder.Payment.Price);
+            Assert.AreEqual(order.Payment.CompanyName, savedOrder.Payment.CompanyName);
+
+        }
+
 
         private static void TestEmptyStringsWithFeatureEnabled()
         {
@@ -2752,7 +2853,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     S2 = 2,
                     S3 = 3
                 },
-                MyClasses = new List<A> { a1, b1 }
+                MyClasses = new List<A> { a1, b1 },
+                FlatAddress = new Address()
+                {
+                    City = "Seattle",
+                    Street = "Street"
+                }
             };
             return model;
         }
@@ -2903,7 +3009,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBProperty("Product")] public string Name { get; set; }
         }
-
 
         /// <summary>
         /// Class representing items in the table [TableNamePrefix]HashRangeTable
@@ -3092,14 +3197,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class AnnotatedEpochEmployee
         {
-            [DynamoDBRangeKey]
-            public string Name { get; set; }
+            [DynamoDBRangeKey] public string Name { get; set; }
 
             public int Age { get; set; }
 
             // Hash key
-            [DynamoDBHashKey(StoreAsEpoch = true)]
-            public virtual DateTime CreationTime { get; set; }
+            [DynamoDBHashKey(StoreAsEpoch = true)] public virtual DateTime CreationTime { get; set; }
 
             [DynamoDBProperty(StoreAsEpoch = true)]
             public DateTime EpochDate2 { get; set; }
@@ -3144,11 +3247,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class AnnotatedNumericEpochEmployee : EpochEmployee
         {
-            [DynamoDBHashKey(StoreAsEpoch = true)]
-            public override DateTime CreationTime { get; set; }
+            [DynamoDBHashKey(StoreAsEpoch = true)] public override DateTime CreationTime { get; set; }
 
-            [DynamoDBRangeKey]
-            public override string Name { get; set; }
+            [DynamoDBRangeKey] public override string Name { get; set; }
         }
 
         /// <summary>
@@ -3157,8 +3258,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class PropertyConverterEmployee
         {
-            [DynamoDBHashKey(StoreAsEpoch = true)]
-            public DateTime CreationTime { get; set; }
+            [DynamoDBHashKey(StoreAsEpoch = true)] public DateTime CreationTime { get; set; }
 
             [DynamoDBRangeKey]
             [DynamoDBProperty(Converter = typeof(EnumAsStringConverter<Status>))]
@@ -3169,19 +3269,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public class AnnotatedRangeTable
         {
             // Hash key
-            [DynamoDBHashKey]
-            public string Name { get; set; }
+            [DynamoDBHashKey] public string Name { get; set; }
 
             // Range key
-            [DynamoDBRangeKey]
-            internal int Age { get; set; }
+            [DynamoDBRangeKey] internal int Age { get; set; }
         }
 
         [DynamoDBTable("HashRangeTable")]
         public class IgnoreAnnotatedRangeTable : AnnotatedRangeTable
         {
-            [DynamoDBIgnore]
-            internal int IgnoreAttribute { get; set; }
+            [DynamoDBIgnore] internal int IgnoreAttribute { get; set; }
         }
 
 
@@ -3190,8 +3287,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             internal int NotAnnotatedAttribute { get; set; }
         }
-
-
 
         public class DateTimeUtcConverter : IPropertyConverter
         {
@@ -3217,6 +3312,112 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+        #region Flatten
+
+        /// <summary>
+        /// A class has a flattened property, and the version attribute is on the flattened child.
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class ProductFlat
+        {
+            [DynamoDBHashKey] public int Id { get; set; }
+
+            [DynamoDBFlatten]
+            public ProductDetails Details { get; set; }
+
+            public string Name { get; set; }
+        }
+
+        public class ProductDetails
+        {
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+
+            public string Description { get; set; }
+
+            [DynamoDBProperty("DetailsName")]
+            public string Name { get; set; }
+        }
+
+        /// <summary>
+        /// A class has a flattened property, which itself contains another flattened property.
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class EmployeeNonFlat
+        {
+            [DynamoDBHashKey("Id")]
+            public int EmployeeId { get; set; }
+
+            [DynamoDBFlatten]
+            public ContactInfo Contact { get; set; }
+        }
+
+        public class ContactInfo
+        {
+            public string Email { get; set; }
+
+            [DynamoDBFlatten]
+            public Address Address { get; set; }
+        }
+
+        /// <summary>
+        /// A class has a flattened structure
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class EmployeeFlatten
+        {
+            [DynamoDBHashKey("Id")]
+            public int EmployeeId { get; set; }
+
+            public string Email { get; set; }
+
+            public string Street { get; set; }
+
+            public string City { get; set; }
+        }
+
+        [DynamoDBTable("HashTable")]
+        public class Order
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            [DynamoDBFlatten]
+            public PaymentInfo Payment { get; set; }
+        }
+
+        public class PaymentInfo
+        {
+            [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
+            public string CompanyName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+            public int Price { get; set; }
+        }
+
+        /// <summary>
+        /// A flattened property contains a property with a custom converter.
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class Event
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            [DynamoDBFlatten]
+            public EventDetails Details { get; set; }
+        }
+
+        public class EventDetails
+        {
+            [DynamoDBProperty(typeof(DateTimeUtcConverter))]
+            public DateTime EventDate { get; set; }
+        }
+
+
+        #endregion
+
+        #region PolymorphicType
 
         [DynamoDBPolymorphicType("B1", typeof(B))]
         [DynamoDBPolymorphicType("C", typeof(C))]
@@ -3229,8 +3430,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public interface IInterface
         {
-             string S1 { get; set; }
-             int S2 { get; set; }
+            string S1 { get; set; }
+            int S2 { get; set; }
         }
 
         public class InterfaceA : IInterface
@@ -3266,7 +3467,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBHashKey] public Guid Id { get; set; }
 
             public A MyType { get; set; }
-            
+
             [DynamoDBPolymorphicType("I1", typeof(InterfaceA))]
             [DynamoDBPolymorphicType("I2", typeof(InterfaceB))]
             public IInterface MyInterface { get; set; }
@@ -3279,6 +3480,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBLocalSecondaryIndexRangeKey("LocalIndex", AttributeName = "Manager")]
             public string ManagerName { get; set; }
+
+            [DynamoDBFlatten] public Address FlatAddress { get; set; }
+        }
+
+        public class Address
+        {
+            public string Street { get; set; }
+            public string City { get; set; }
         }
 
         public class ModelA1 : ModelA
@@ -3296,6 +3505,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBPolymorphicType("B", typeof(B))]
             public Dictionary<string, A> DictionaryClasses { get; set; }
         }
+
+        #endregion
 
         #endregion
     }

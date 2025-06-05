@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Introduce support for the [DynamoDbFlatten] attribute in the DynamoDB Object Persistence Model`"
+            ]
+        }
+    ]
+}
