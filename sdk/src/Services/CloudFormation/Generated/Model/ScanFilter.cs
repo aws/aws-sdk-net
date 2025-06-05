@@ -48,7 +48,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// To scan all resource types within a service, you can use a wildcard, represented by
-        /// an asterisk (<c>*</c>). You can place a asterisk at only the end of the string, for
+        /// an asterisk (<c>*</c>). You can place an asterisk at only the end of the string, for
         /// example, <c>AWS::S3::*</c>.
         /// </para>
         /// </summary>
