@@ -12,14 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -45,18 +52,17 @@ namespace Amazon.S3.Model
         // Check to see if Buckets property is set
         internal bool IsSetBuckets()
         {
-            return this._buckets != null && (this._buckets.Count > 0 || !AWSConfigs.InitializeCollections);
+            return this._buckets != null && (this._buckets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
         /// <para>
-        /// If <code>ContinuationToken</code> was sent with the request, it is included in the
-        /// response. You can use the returned <code>ContinuationToken</code> for pagination of
-        /// the list response.
+        /// If <c>ContinuationToken</c> was sent with the request, it is included in the response.
+        /// You can use the returned <c>ContinuationToken</c> for pagination of the list response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 0, Max = 1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ContinuationToken
         {
             get { return this._continuationToken; }
