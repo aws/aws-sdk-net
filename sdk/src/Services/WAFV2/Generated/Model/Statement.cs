@@ -41,6 +41,7 @@ namespace Amazon.WAFV2.Model
     public partial class Statement
     {
         private AndStatement _andStatement;
+        private AsnMatchStatement _asnMatchStatement;
         private ByteMatchStatement _byteMatchStatement;
         private GeoMatchStatement _geoMatchStatement;
         private IPSetReferenceStatement _ipSetReferenceStatement;
@@ -73,6 +74,31 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetAndStatement()
         {
             return this._andStatement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AsnMatchStatement. 
+        /// <para>
+        /// A rule statement that inspects web traffic based on the Autonomous System Number (ASN)
+        /// associated with the request's IP address.
+        /// </para>
+        ///  
+        /// <para>
+        /// For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-asn-match.html">ASN
+        /// match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
+        /// </para>
+        /// </summary>
+        public AsnMatchStatement AsnMatchStatement
+        {
+            get { return this._asnMatchStatement; }
+            set { this._asnMatchStatement = value; }
+        }
+
+        // Check to see if AsnMatchStatement property is set
+        internal bool IsSetAsnMatchStatement()
+        {
+            return this._asnMatchStatement != null;
         }
 
         /// <summary>

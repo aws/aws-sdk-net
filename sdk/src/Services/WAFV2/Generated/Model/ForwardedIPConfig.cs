@@ -41,8 +41,9 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>.
-    /// For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. 
+    /// This configuration is used for <a>GeoMatchStatement</a>, <a>AsnMatchStatement</a>,
+    /// and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a>
+    /// instead. 
     /// </para>
     ///  
     /// <para>

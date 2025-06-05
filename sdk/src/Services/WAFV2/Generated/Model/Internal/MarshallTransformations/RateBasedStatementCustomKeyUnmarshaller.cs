@@ -66,6 +66,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ASN", targetDepth))
+                {
+                    var unmarshaller = RateLimitAsnUnmarshaller.Instance;
+                    unmarshalledObject.ASN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Cookie", targetDepth))
                 {
                     var unmarshaller = RateLimitCookieUnmarshaller.Instance;
