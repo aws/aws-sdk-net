@@ -75,6 +75,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KeyId);
                 }
 
+                if(publicRequest.IsSetKeyMaterialId())
+                {
+                    context.Writer.WritePropertyName("KeyMaterialId");
+                    context.Writer.Write(publicRequest.KeyMaterialId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -40,8 +40,9 @@ namespace Amazon.KeyManagementService.Model
     /// key in <c>us-east-1</c> and a replica key in <c>eu-west-2</c>. If you run <c>UpdatePrimaryRegion</c>
     /// with a <c>PrimaryRegion</c> value of <c>eu-west-2</c>, the primary key is now the
     /// key in <c>eu-west-2</c>, and the key in <c>us-east-1</c> becomes a replica key. For
-    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-update">Updating
-    /// the primary Region</a> in the <i>Key Management Service Developer Guide</i>.
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-update.html">Change
+    /// the primary key in a set of multi-Region keys</a> in the <i>Key Management Service
+    /// Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -129,7 +130,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>

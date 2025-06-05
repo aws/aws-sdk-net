@@ -61,7 +61,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Rotations. 
         /// <para>
-        /// A list of completed key material rotations.
+        /// A list of completed key material rotations. When the optional input parameter <c>IncludeKeyMaterial</c>
+        /// is specified with a value of <c>ALL_KEY_MATERIAL</c>, this list includes the first
+        /// key material and any imported key material pending rotation.
         /// </para>
         /// </summary>
         public List<RotationsListEntry> Rotations

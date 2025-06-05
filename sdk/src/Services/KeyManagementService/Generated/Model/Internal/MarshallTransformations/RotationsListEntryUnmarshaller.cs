@@ -66,10 +66,40 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ExpirationModel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExpirationModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImportState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImportState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyMaterialDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyMaterialDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyMaterialId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyMaterialId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyMaterialState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyMaterialState = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RotationDate", targetDepth))
@@ -82,6 +112,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RotationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ValidTo", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ValidTo = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

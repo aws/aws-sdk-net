@@ -42,7 +42,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </note> 
     /// <para>
     /// You can use an alias to identify a KMS key in the KMS console, in the <a>DescribeKey</a>
-    /// operation and in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// operation and in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
     /// operations</a>, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. You can also change
     /// the KMS key that's associated with the alias (<a>UpdateAlias</a>) or delete the alias
     /// (<a>DeleteAlias</a>) at any time. These operations don't affect the underlying KMS
@@ -59,8 +59,8 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The alias must be unique in the account and Region, but you can have aliases with
     /// the same name in different Regions. For detailed information about aliases, see <a
-    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">Using
-    /// aliases</a> in the <i>Key Management Service Developer Guide</i>.
+    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">Aliases
+    /// in KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -94,7 +94,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html#alias-access">Controlling
+    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-access.html">Controlling
     /// access to aliases</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
@@ -116,7 +116,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
@@ -171,8 +171,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
-        /// the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find
+        /// the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i>
+        /// </i>.
         /// </para>
         ///  
         /// <para>

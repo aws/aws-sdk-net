@@ -53,7 +53,7 @@ namespace Amazon.KeyManagementService.Model
     /// The response might also include aliases that have no <c>TargetKeyId</c> field. These
     /// are predefined aliases that Amazon Web Services has created but has not yet associated
     /// with a KMS key. Aliases that Amazon Web Services creates in your account, including
-    /// predefined aliases, do not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">KMS
+    /// predefined aliases, do not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html#aliases-per-key">KMS
     /// aliases quota</a>.
     /// </para>
     ///  
@@ -68,7 +68,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html#alias-access">Controlling
+    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-access.html">Controlling
     /// access to aliases</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
@@ -90,7 +90,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>

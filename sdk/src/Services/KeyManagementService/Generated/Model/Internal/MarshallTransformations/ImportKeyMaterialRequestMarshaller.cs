@@ -87,10 +87,28 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ImportToken));
                 }
 
+                if(publicRequest.IsSetImportType())
+                {
+                    context.Writer.WritePropertyName("ImportType");
+                    context.Writer.Write(publicRequest.ImportType);
+                }
+
                 if(publicRequest.IsSetKeyId())
                 {
                     context.Writer.WritePropertyName("KeyId");
                     context.Writer.Write(publicRequest.KeyId);
+                }
+
+                if(publicRequest.IsSetKeyMaterialDescription())
+                {
+                    context.Writer.WritePropertyName("KeyMaterialDescription");
+                    context.Writer.Write(publicRequest.KeyMaterialDescription);
+                }
+
+                if(publicRequest.IsSetKeyMaterialId())
+                {
+                    context.Writer.WritePropertyName("KeyMaterialId");
+                    context.Writer.Write(publicRequest.KeyMaterialId);
                 }
 
                 if(publicRequest.IsSetValidTo())

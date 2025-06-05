@@ -31,7 +31,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ConnectCustomKeyStore operation.
-    /// Connects or reconnects a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+    /// Connects or reconnects a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
     /// key store</a> to its backing key store. For an CloudHSM key store, <c>ConnectCustomKeyStore</c>
     /// connects the key store to its associated CloudHSM cluster. For an external key store,
     /// <c>ConnectCustomKeyStore</c> connects the key store to the external key store proxy
@@ -54,9 +54,9 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    ///  This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-    /// key stores</a> feature in KMS, which combines the convenience and extensive integration
-    /// of KMS with the isolation and control of a key store that you own and manage.
+    ///  This operation is part of the custom key stores feature in KMS, which combines the
+    /// convenience and extensive integration of KMS with the isolation and control of a key
+    /// store that you own and manage.
     /// </para>
     ///  
     /// <para>
@@ -86,7 +86,7 @@ namespace Amazon.KeyManagementService.Model
     /// To connect an CloudHSM key store, its associated CloudHSM cluster must have at least
     /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
     /// operation. To add HSMs to the cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-    /// operation. Also, the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+    /// operation. Also, the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html#concept-kmsuser">
     /// <c>kmsuser</c> crypto user</a> (CU) must not be logged into the cluster. This prevents
     /// KMS from using this account to log in.
     /// </para>
@@ -163,7 +163,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>

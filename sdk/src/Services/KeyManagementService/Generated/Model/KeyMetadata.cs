@@ -44,6 +44,7 @@ namespace Amazon.KeyManagementService.Model
         private string _awsAccountId;
         private string _cloudHsmClusterId;
         private DateTime? _creationDate;
+        private string _currentKeyMaterialId;
         private CustomerMasterKeySpec _customerMasterKeySpec;
         private string _customKeyStoreId;
         private DateTime? _deletionDate;
@@ -109,7 +110,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CloudHsmClusterId. 
         /// <para>
         /// The cluster ID of the CloudHSM cluster that contains the key material for the KMS
-        /// key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key. When you create a KMS key in an CloudHSM <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM
         /// cluster. This field is present only when the KMS key is created in an CloudHSM key
         /// store.
@@ -147,6 +148,30 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CurrentKeyMaterialId. 
+        /// <para>
+        /// Identifies the current key material. This value is present for symmetric encryption
+        /// keys with <c>AWS_KMS</c> origin and single-Region, symmetric encryption keys with
+        /// <c>EXTERNAL</c> origin. These KMS keys support automatic or on-demand key rotation
+        /// and can have multiple key materials associated with them. KMS uses the current key
+        /// material for both encryption and decryption, and the non-current key material for
+        /// decryption operations only.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=64, Max=64)]
+        public string CurrentKeyMaterialId
+        {
+            get { return this._currentKeyMaterialId; }
+            set { this._currentKeyMaterialId = value; }
+        }
+
+        // Check to see if CurrentKeyMaterialId property is set
+        internal bool IsSetCurrentKeyMaterialId()
+        {
+            return this._currentKeyMaterialId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomerMasterKeySpec. 
         /// <para>
         /// Instead, use the <c>KeySpec</c> field.
@@ -174,7 +199,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CustomKeyStoreId. 
         /// <para>
-        /// A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a> that contains the KMS key. This field is present only when the KMS key
         /// is created in a custom key store.
         /// </para>
@@ -399,7 +424,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
-        /// The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
         /// operations</a> for which you can use the KMS key.
         /// </para>
         /// </summary>
@@ -582,10 +607,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property ValidTo. 
         /// <para>
-        /// The time at which the imported key material expires. When the key material expires,
-        /// KMS deletes the key material and the KMS key becomes unusable. This value is present
-        /// only for KMS keys whose <c>Origin</c> is <c>EXTERNAL</c> and whose <c>ExpirationModel</c>
-        /// is <c>KEY_MATERIAL_EXPIRES</c>, otherwise this value is omitted.
+        /// The earliest time at which any imported key material permanently associated with this
+        /// KMS key expires. When a key material expires, KMS deletes the key material and the
+        /// KMS key becomes unusable. This value is present only for KMS keys whose <c>Origin</c>
+        /// is <c>EXTERNAL</c> and the <c>ExpirationModel</c> is <c>KEY_MATERIAL_EXPIRES</c>,
+        /// otherwise this value is omitted.
         /// </para>
         /// </summary>
         public DateTime ValidTo

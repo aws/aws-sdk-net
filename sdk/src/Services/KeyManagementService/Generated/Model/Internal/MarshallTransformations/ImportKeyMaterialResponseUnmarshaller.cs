@@ -48,6 +48,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         {
             ImportKeyMaterialResponse response = new ImportKeyMaterialResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("KeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyMaterialId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KeyMaterialId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

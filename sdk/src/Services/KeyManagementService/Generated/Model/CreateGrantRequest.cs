@@ -46,8 +46,8 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
     /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
-    /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
-    /// grants</a>. 
+    /// of creating grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_CreateGrant_section.html">Use
+    /// CreateGrant with an Amazon Web Services SDK or CLI</a>. 
     /// </para>
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// However, to use the permissions in the grant immediately, use the <c>GrantToken</c>
-    /// that <c>CreateGrant</c> returns. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+    /// that <c>CreateGrant</c> returns. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using
     /// a grant token</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// </para>
     ///  </li> <li> 
@@ -114,7 +114,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
@@ -191,8 +191,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
-        /// your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.
+        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing
+        /// your permissions</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -244,7 +244,7 @@ namespace Amazon.KeyManagementService.Model
         /// Use a grant token when your permission to call this operation comes from a new grant
         /// that has not yet achieved <i>eventual consistency</i>. For more information, see <a
         /// href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
-        /// token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+        /// token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using
         /// a grant token</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -388,7 +388,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The grant determines the retiring principal. Other principals might have permission
         /// to retire the grant or revoke the grant. For details, see <a>RevokeGrant</a> and <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-delete.html">Retiring
         /// and revoking grants</a> in the <i>Key Management Service Developer Guide</i>. 
         /// </para>
         /// </summary>

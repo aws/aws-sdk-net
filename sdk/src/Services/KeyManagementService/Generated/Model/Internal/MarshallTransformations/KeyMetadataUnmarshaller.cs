@@ -90,6 +90,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CurrentKeyMaterialId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentKeyMaterialId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomerMasterKeySpec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

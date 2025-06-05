@@ -36,9 +36,11 @@ namespace Amazon.KeyManagementService.Model
     {
         private MemoryStream _ciphertextBlob;
         private EncryptionAlgorithmSpec _destinationEncryptionAlgorithm;
+        private string _destinationKeyMaterialId;
         private string _keyId;
         private EncryptionAlgorithmSpec _sourceEncryptionAlgorithm;
         private string _sourceKeyId;
+        private string _sourceKeyMaterialId;
 
         /// <summary>
         /// Gets and sets the property CiphertextBlob. 
@@ -76,6 +78,26 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetDestinationEncryptionAlgorithm()
         {
             return this._destinationEncryptionAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationKeyMaterialId. 
+        /// <para>
+        /// The identifier of the key material used to reencrypt the data. This field is present
+        /// only when data is reencrypted using a symmetric encryption KMS key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=64, Max=64)]
+        public string DestinationKeyMaterialId
+        {
+            get { return this._destinationKeyMaterialId; }
+            set { this._destinationKeyMaterialId = value; }
+        }
+
+        // Check to see if DestinationKeyMaterialId property is set
+        internal bool IsSetDestinationKeyMaterialId()
+        {
+            return this._destinationKeyMaterialId != null;
         }
 
         /// <summary>
@@ -133,6 +155,26 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetSourceKeyId()
         {
             return this._sourceKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceKeyMaterialId. 
+        /// <para>
+        /// The identifier of the key material used to originally encrypt the data. This field
+        /// is present only when the original encryption used a symmetric encryption KMS key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=64, Max=64)]
+        public string SourceKeyMaterialId
+        {
+            get { return this._sourceKeyMaterialId; }
+            set { this._sourceKeyMaterialId = value; }
+        }
+
+        // Check to see if SourceKeyMaterialId property is set
+        internal bool IsSetSourceKeyMaterialId()
+        {
+            return this._sourceKeyMaterialId != null;
         }
 
     }

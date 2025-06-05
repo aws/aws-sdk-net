@@ -30,18 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+    /// Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
     /// operations</a> in the grant only when the operation request includes the specified
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html">encryption
     /// context</a>. 
     /// 
     ///  
     /// <para>
     /// KMS applies the grant constraints only to cryptographic operations that support an
-    /// encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
-    /// KMS key</a>. Grant constraints are not applied to operations that do not support an
-    /// encryption context, such as cryptographic operations with asymmetric KMS keys and
-    /// management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
+    /// encryption context, that is, all cryptographic operations with a symmetric KMS key.
+    /// Grant constraints are not applied to operations that do not support an encryption
+    /// context, such as cryptographic operations with asymmetric KMS keys and management
+    /// operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
     /// </para>
     ///  <important> 
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.KeyManagementService.Model
     /// To avoid confusion, do not use multiple encryption context pairs that differ only
     /// by case. To require a fully case-sensitive encryption context, use the <c>kms:EncryptionContext:</c>
     /// and <c>kms:EncryptionContextKeys</c> conditions in an IAM or key policy. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a>
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-encryption-context">kms:EncryptionContext:context-key</a>
     /// in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// </para>
     ///  </important>
@@ -72,7 +72,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionContextEquals. 
         /// <para>
-        /// A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
         /// operation</a> request. The grant allows the operation only when the encryption context
         /// in the request is the same as the encryption context specified in this constraint.
         /// </para>
@@ -93,7 +93,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property EncryptionContextSubset. 
         /// <para>
         /// A list of key-value pairs that must be included in the encryption context of the <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
         /// operation</a> request. The grant allows the cryptographic operation only when the
         /// encryption context in the request includes the key-value pairs specified in this constraint,
         /// although it can include additional key-value pairs.

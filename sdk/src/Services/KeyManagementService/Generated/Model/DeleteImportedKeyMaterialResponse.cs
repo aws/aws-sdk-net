@@ -34,6 +34,47 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class DeleteImportedKeyMaterialResponse : AmazonWebServiceResponse
     {
+        private string _keyId;
+        private string _keyMaterialId;
+
+        /// <summary>
+        /// Gets and sets the property KeyId. 
+        /// <para>
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a>) of the KMS key from which the key material was deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KeyId
+        {
+            get { return this._keyId; }
+            set { this._keyId = value; }
+        }
+
+        // Check to see if KeyId property is set
+        internal bool IsSetKeyId()
+        {
+            return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyMaterialId. 
+        /// <para>
+        /// Identifies the deleted key material.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string KeyMaterialId
+        {
+            get { return this._keyMaterialId; }
+            set { this._keyMaterialId = value; }
+        }
+
+        // Check to see if KeyMaterialId property is set
+        internal bool IsSetKeyMaterialId()
+        {
+            return this._keyMaterialId != null;
+        }
 
     }
 }

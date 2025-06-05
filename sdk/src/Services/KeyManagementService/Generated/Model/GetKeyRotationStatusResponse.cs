@@ -102,11 +102,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// The KMS API follows an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual
-        /// consistency</a> model due to the distributed nature of the system. As a result, there
-        /// might be a slight delay between initiating on-demand key rotation and the rotation's
-        /// completion. Once the on-demand rotation is complete, use <a>ListKeyRotations</a> to
-        /// view the details of the on-demand rotation.
+        /// KMS uses a background process to perform rotations. As a result, there might be a
+        /// slight delay between initiating on-demand key rotation and the rotation's completion.
+        /// Once the on-demand rotation is complete, KMS removes this field from the response.
+        /// You can use <a>ListKeyRotations</a> to view the details of the completed on-demand
+        /// rotation.
         /// </para>
         /// </summary>
         public DateTime OnDemandRotationStartDate

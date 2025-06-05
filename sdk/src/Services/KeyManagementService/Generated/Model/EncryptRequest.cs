@@ -48,7 +48,7 @@ namespace Amazon.KeyManagementService.Model
     /// additional security to your encryption operation. If you specify an <c>EncryptionContext</c>
     /// when encrypting data, you must specify the same encryption context (a case-sensitive
     /// exact match) when decrypting the data. Otherwise, the request to decrypt fails with
-    /// an <c>InvalidCiphertextException</c>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+    /// an <c>InvalidCiphertextException</c>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html">Encryption
     /// Context</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
@@ -160,7 +160,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
@@ -180,8 +180,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
-        /// your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.
+        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing
+        /// your permissions</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -229,7 +229,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property EncryptionContext. 
         /// <para>
         /// Specifies the encryption context that will be used to encrypt the data. An encryption
-        /// context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+        /// context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
         /// operations</a> with a symmetric encryption KMS key. The standard asymmetric encryption
         /// algorithms and HMAC algorithms that KMS uses do not support an encryption context.
         /// 
@@ -250,7 +250,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html">Encryption
         /// context</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -276,7 +276,7 @@ namespace Amazon.KeyManagementService.Model
         /// Use a grant token when your permission to call this operation comes from a new grant
         /// that has not yet achieved <i>eventual consistency</i>. For more information, see <a
         /// href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
-        /// token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+        /// token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/using-grant-token.html">Using
         /// a grant token</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>

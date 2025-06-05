@@ -31,8 +31,9 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListKeyRotations operation.
-    /// Returns information about all completed key material rotations for the specified KMS
-    /// key.
+    /// Returns information about the key materials associated with the specified KMS key.
+    /// You can use the optional <c>IncludeKeyMaterial</c> parameter to control which key
+    /// materials are included in the response.
     /// 
     ///  
     /// <para>
@@ -41,7 +42,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// For detailed information about automatic and on-demand key rotations, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Rotating
+    /// For detailed information about automatic and on-demand key rotations, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Rotate
     /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
@@ -64,6 +65,10 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>DeleteImportedKeyMaterial</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>DisableKeyRotation</a> 
     /// </para>
     ///  </li> <li> 
@@ -72,20 +77,49 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>ImportKeyMaterial</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>RotateKeyOnDemand</a> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
     public partial class ListKeyRotationsRequest : AmazonKeyManagementServiceRequest
     {
+        private IncludeKeyMaterial _includeKeyMaterial;
         private string _keyId;
         private int? _limit;
         private string _marker;
+
+        /// <summary>
+        /// Gets and sets the property IncludeKeyMaterial. 
+        /// <para>
+        /// Use this optional parameter to control which key materials associated with this key
+        /// are listed in the response. The default value of this parameter is <c>ROTATIONS_ONLY</c>.
+        /// If you omit this parameter, KMS returns information on the key materials created by
+        /// automatic or on-demand key rotation. When you specify a value of <c>ALL_KEY_MATERIAL</c>,
+        /// KMS adds the first key material and any imported key material pending rotation to
+        /// the response. This parameter can only be used with KMS keys that support automatic
+        /// or on-demand key rotation. 
+        /// </para>
+        /// </summary>
+        public IncludeKeyMaterial IncludeKeyMaterial
+        {
+            get { return this._includeKeyMaterial; }
+            set { this._includeKeyMaterial = value; }
+        }
+
+        // Check to see if IncludeKeyMaterial property is set
+        internal bool IsSetIncludeKeyMaterial()
+        {
+            return this._includeKeyMaterial != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KeyId. 

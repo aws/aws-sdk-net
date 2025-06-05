@@ -146,6 +146,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DecryptResponse.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DecryptResponse.Plaintext</property>
     <min>1</min>
     <max>4096</max>
@@ -165,6 +171,23 @@
     <property>Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialRequest.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialResponse.KeyMaterialId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DeriveSharedSecretRequest.KeyId</property>
@@ -274,6 +297,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.EncryptResponse.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -299,6 +328,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyResponse.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyResponse.Plaintext</property>
     <min>1</min>
     <max>4096</max>
@@ -317,6 +352,12 @@
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.PrivateKeyCiphertextBlob</property>
@@ -342,6 +383,12 @@
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairWithoutPlaintextResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairWithoutPlaintextResponse.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairWithoutPlaintextResponse.PrivateKeyCiphertextBlob</property>
@@ -372,6 +419,12 @@
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextResponse.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateMacRequest.KeyId</property>
@@ -500,6 +553,29 @@
     <property>Amazon.KeyManagementService.Model.ImportKeyMaterialRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ImportKeyMaterialRequest.KeyMaterialDescription</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9:/_\s.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ImportKeyMaterialRequest.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ImportKeyMaterialResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ImportKeyMaterialResponse.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListAliasesRequest.KeyId</property>
@@ -700,6 +776,12 @@
     <max>6144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ReEncryptResponse.DestinationKeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ReEncryptResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -708,6 +790,12 @@
     <property>Amazon.KeyManagementService.Model.ReEncryptResponse.SourceKeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ReEncryptResponse.SourceKeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ReplicateKeyRequest.Description</property>
@@ -1026,6 +1114,12 @@
     <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.KeyMetadata.CurrentKeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.KeyMetadata.CustomKeyStoreId</property>
     <min>1</min>
     <max>64</max>
@@ -1065,6 +1159,18 @@
     <property>Amazon.KeyManagementService.Model.RotationsListEntry.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.RotationsListEntry.KeyMaterialDescription</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9:/_\s.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.RotationsListEntry.KeyMaterialId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>^[a-f0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.Tag.TagKey</property>

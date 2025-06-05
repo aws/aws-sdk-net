@@ -32,7 +32,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the RevokeGrant operation.
     /// Deletes the specified grant. You revoke a grant to terminate the permissions that
-    /// the grant allows. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
+    /// the grant allows. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-delete.html">Retiring
     /// and revoking grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// 
     ///  
@@ -46,8 +46,8 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
     /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
-    /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
-    /// grants</a>. 
+    /// of creating grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_CreateGrant_section.html">Use
+    /// CreateGrant with an Amazon Web Services SDK or CLI</a>. 
     /// </para>
     ///  
     /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
@@ -100,8 +100,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
-        /// your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.
+        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing
+        /// your permissions</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool DryRun

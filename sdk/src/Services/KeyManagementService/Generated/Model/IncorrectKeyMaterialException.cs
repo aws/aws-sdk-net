@@ -31,7 +31,9 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// The request was rejected because the key material in the request is, expired, invalid,
-    /// or is not the same key material that was previously imported into this KMS key.
+    /// or does not meet expectations. For example, it is not the same key material that was
+    /// previously imported or KMS expected new key material but the key material being imported
+    /// is already associated with the KMS key.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
