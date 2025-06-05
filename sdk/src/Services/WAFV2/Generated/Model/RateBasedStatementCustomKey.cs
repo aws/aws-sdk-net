@@ -41,6 +41,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class RateBasedStatementCustomKey
     {
+        private RateLimitAsn _asn;
         private RateLimitCookie _cookie;
         private RateLimitForwardedIP _forwardedIP;
         private RateLimitHeader _header;
@@ -52,6 +53,26 @@ namespace Amazon.WAFV2.Model
         private RateLimitQueryArgument _queryArgument;
         private RateLimitQueryString _queryString;
         private RateLimitUriPath _uriPath;
+
+        /// <summary>
+        /// Gets and sets the property ASN. 
+        /// <para>
+        /// Use an Autonomous System Number (ASN) derived from the request's originating or forwarded
+        /// IP address as an aggregate key. Each distinct ASN contributes to the aggregation instance.
+        /// 
+        /// </para>
+        /// </summary>
+        public RateLimitAsn ASN
+        {
+            get { return this._asn; }
+            set { this._asn = value; }
+        }
+
+        // Check to see if ASN property is set
+        internal bool IsSetASN()
+        {
+            return this._asn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Cookie. 

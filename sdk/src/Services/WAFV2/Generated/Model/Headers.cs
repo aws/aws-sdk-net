@@ -116,10 +116,11 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property OversizeHandling. 
         /// <para>
-        /// What WAF should do if the headers of the request are more numerous or larger than
-        /// WAF can inspect. WAF does not support inspecting the entire contents of request headers
-        /// when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service
-        /// forwards a maximum of 200 headers and at most 8 KB of header contents to WAF. 
+        /// What WAF should do if the headers determined by your match scope are more numerous
+        /// or larger than WAF can inspect. WAF does not support inspecting the entire contents
+        /// of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying
+        /// host service forwards a maximum of 200 headers and at most 8 KB of header contents
+        /// to WAF. 
         /// </para>
         ///  
         /// <para>
