@@ -1,3 +1,17 @@
+### 3.7.1059.0 (2025-06-05 18:22 UTC)
+* BCMPricingCalculator (3.7.406.0)
+	* Updating the minimum for List APIs to be 1 (instead of 0)
+* CloudFormation (3.7.404.0)
+	* Add new warning type 'EXCLUDED_PROPERTIES'
+* KeyManagementService (3.7.401.0)
+	* AWS KMS announces the support for on-demand rotation of symmetric-encryption KMS keys with imported key material (EXTERNAL origin).
+* WAFV2 (3.7.407.0)
+	* AWS WAF adds support for ASN-based traffic filtering and support for ASN-based rate limiting.
+* Core 3.7.402.67
+	* Add x-amzn-query-mode header and query compatible tests. The sdk will send a new header x-amzn-query-mode, if the service has the awsQueryCompatibleTrait applied to it. This is to inform the service that the client is running in query compatible mode.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1058.0 (2025-06-04 18:24 UTC)
 * Amplify (3.7.407.3)
 	* Update documentation for cacheConfig in CreateApp API

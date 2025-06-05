@@ -32,7 +32,7 @@ namespace Amazon.NetworkManager
     public partial class AmazonNetworkManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("NetworkManager", "3.7.402.37");
+            InternalSDKUtils.BuildUserAgentString("NetworkManager", "3.7.402.38");
 
         private string _userAgent = UserAgentString;
         ///<summary>
