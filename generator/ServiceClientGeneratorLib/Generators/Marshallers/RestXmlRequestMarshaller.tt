@@ -116,20 +116,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		ProcessEndpointHostPrefixMembers(3, "publicRequest", this.Operation);
 	}
 #>
-<#
-	if (this.Config.ServiceId == "S3")
-	{
-		string customS3Content = "";
-		if (this.Operation.Name == "DeleteBucket")
-		{
-			customS3Content = new ServiceClientGenerator.Generators.S3.DeleteBucketRequestCustomMarshallLogic().TransformText();
-		}
-#>
-<#=customS3Content#>
-<#
-	}
 
-#>
 			return request;
 		}
 <#				

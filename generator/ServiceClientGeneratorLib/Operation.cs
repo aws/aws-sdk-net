@@ -111,7 +111,8 @@ namespace ServiceClientGenerator
             {
                 string message = this.model.Customizations.GetOperationModifiers(this.name)?.DeprecatedMessage ??
                                  data[ServiceModel.DeprecatedMessageKey].CastToString();
-                if (!string.Equals(this.model.ServiceId, "s3", StringComparison.OrdinalIgnoreCase) &&  message == null)
+                // TODO: Fill in missing deprecation messages
+                if (message == null)
                     throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for operation {0}.\nFor example: \"OperationName\":{{\"name\":\"OperationName\", ... \"deprecated\":true, \"deprecatedMessage\":\"This operation is deprecated\"}}", this.name));          
 
                 return message;
@@ -301,7 +302,9 @@ namespace ServiceClientGenerator
                 if (this.RequestStructure != null)
                 {
                     var payload = this.RequestStructure.PayloadMemberName;
-                    // check if PayloadMemberName was removed and something else was injected
+                    // check to see if the payload member has been overridden by another member defined in the service customizations
+                    // file. For example, the payload member could've been included in the "exclude" array and another member
+                    // could've been injected. 
                     if (this.model.Customizations.ShapeModifiers.ContainsKey(this.RequestStructure.Name))
                     {
                         var customization = this.model.Customizations.ShapeModifiers[this.RequestStructure.Name];
