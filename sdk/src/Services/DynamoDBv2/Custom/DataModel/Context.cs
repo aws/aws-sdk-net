@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq.Expressions;
 using System.Threading;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -56,6 +57,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region Public methods
+
         /// <inheritdoc/>
         public void RegisterTableDefinition(Table table)
         {
