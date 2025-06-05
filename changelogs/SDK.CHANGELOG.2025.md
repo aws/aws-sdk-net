@@ -1,3 +1,15 @@
+### 4.0.27.0 (2025-06-05 18:21 UTC)
+* BCMPricingCalculator (4.0.2.0)
+	* Updating the minimum for List APIs to be 1 (instead of 0)
+* CloudFormation (4.0.1.0)
+	* Add new warning type 'EXCLUDED_PROPERTIES'
+* DynamoDBv2 (4.0.1.3)
+	* Introduce support for the [DynamoDbFlatten] attribute in the DynamoDB Object Persistence Model`
+* KeyManagementService (4.0.1.0)
+	* AWS KMS announces the support for on-demand rotation of symmetric-encryption KMS keys with imported key material (EXTERNAL origin).
+* WAFV2 (4.0.1.0)
+	* AWS WAF adds support for ASN-based traffic filtering and support for ASN-based rate limiting.
+
 ### 4.0.26.0 (2025-06-04 18:23 UTC)
 * Amplify (4.0.1.1)
 	* Update documentation for cacheConfig in CreateApp API
