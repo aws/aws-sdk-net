@@ -1743,7 +1743,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private static DynamoDBEntry ToAttributeValue(object value)
         {
-            //todo - add support for other types
+            //todo - remove this later
             return value switch
             {
                 string s => s,
@@ -2067,6 +2067,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var valuesList = values?.ToList();
                 if (op == QueryOperator.Between && valuesList != null && valuesList.Count() == 2)
                 {
+                    //todo - use ToDynamoDBEntry to convert values to DynamoDBEntry
                     keyExpression.ExpressionAttributeValues.Add(":rangeKey0", ToAttributeValue(valuesList.ElementAt(0)));
                     keyExpression.ExpressionAttributeValues.Add(":rangeKey1", ToAttributeValue(valuesList.ElementAt(1)));
                 }
