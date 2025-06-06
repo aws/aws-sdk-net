@@ -1,3 +1,21 @@
+### 3.7.1060.0 (2025-06-06 18:29 UTC)
+* BedrockAgentRuntime (3.7.428.0)
+	* This release introduces the `PromptCreationConfigurations` input parameter, which includes fields to control prompt population for `InvokeAgent` or `InvokeInlineAgent` requests.
+* KeyManagementService (3.7.402.0)
+	* Remove unpopulated KeyMaterialId from Encrypt Response
+* RDS (3.7.413.0)
+	* Include Global Cluster Identifier in DBCluster if the DBCluster is a Global Cluster Member.
+* Rekognition (3.7.401.0)
+	* Adds support for defining an ordered preference list of different Rekognition Face Liveness challenge types when calling CreateFaceLivenessSession.
+* Route53 (3.7.408.0)
+	* Amazon Route 53 now supports the Asia Pacific (Taipei) Region (ap-east-2) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* S3Tables (3.7.403.0)
+	* S3 Tables now supports getting details about a table via its table ARN.
+* Core 3.7.402.68
+	* Fixed Document.cs serialization issue that caused WebAuthn operations to fail when response contained Dictionary structures
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1059.0 (2025-06-05 18:22 UTC)
 * BCMPricingCalculator (3.7.406.0)
 	* Updating the minimum for List APIs to be 1 (instead of 0)

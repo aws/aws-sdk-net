@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Fixed Document.cs serialization issue that caused WebAuthn operations to fail when response contained Dictionary structures"
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }
