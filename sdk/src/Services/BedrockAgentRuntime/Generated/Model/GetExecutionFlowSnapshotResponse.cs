@@ -64,7 +64,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The flow definition used for the async execution, including the nodes, connections,
+        /// The flow definition used for the flow execution, including the nodes, connections,
         /// and configuration at the time when the execution started.
         /// </para>
         ///  
@@ -89,7 +89,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM service role that's used by the async execution.
+        /// The Amazon Resource Name (ARN) of the IAM service role that's used by the flow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -108,7 +108,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property FlowAliasIdentifier. 
         /// <para>
-        /// The unique identifier of the flow alias used for the async execution.
+        /// The unique identifier of the flow alias used for the flow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -146,7 +146,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property FlowVersion. 
         /// <para>
-        /// The version of the flow used for the async execution.
+        /// The version of the flow used for the flow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

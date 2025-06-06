@@ -46,7 +46,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property EndedAt. 
         /// <para>
-        /// The timestamp when the async execution ended. This field is only populated when the
+        /// The timestamp when the flow execution ended. This field is only populated when the
         /// execution has completed, failed, timed out, or been aborted.
         /// </para>
         /// </summary>
@@ -65,8 +65,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A list of errors that occurred during the async execution. Each error includes an
-        /// error code, message, and the node where the error occurred, if applicable.
+        /// A list of errors that occurred during the flow execution. Each error includes an error
+        /// code, message, and the node where the error occurred, if applicable.
         /// </para>
         /// </summary>
         public List<FlowExecutionError> Errors
@@ -84,7 +84,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies the async execution.
+        /// The Amazon Resource Name (ARN) that uniquely identifies the flow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -160,7 +160,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The timestamp when the async execution started.
+        /// The timestamp when the flow execution started.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,11 +179,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the async execution.
+        /// The current status of the flow execution.
         /// </para>
         ///  
         /// <para>
-        /// Async executions time out after 24 hours.
+        /// Flow executions time out after 24 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

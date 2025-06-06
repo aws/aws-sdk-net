@@ -31,13 +31,13 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFlowExecutions operation.
-    /// Lists all asynchronous executions for a flow. Results can be paginated and include
-    /// summary information about each execution, such as status, start and end times, and
-    /// the execution's Amazon Resource Name (ARN).
+    /// Lists all executions of a flow. Results can be paginated and include summary information
+    /// about each execution, such as status, start and end times, and the execution's Amazon
+    /// Resource Name (ARN).
     /// 
     ///  <note> 
     /// <para>
-    /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+    /// Flow executions is in preview release for Amazon Bedrock and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>
@@ -89,9 +89,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of async executions to return in a single response. If more executions
-        /// exist than the specified maxResults value, a token is included in the response so
-        /// that the remaining results can be retrieved.
+        /// The maximum number of flow executions to return in a single response. If more executions
+        /// exist than the specified <c>maxResults</c> value, a token is included in the response
+        /// so that the remaining results can be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

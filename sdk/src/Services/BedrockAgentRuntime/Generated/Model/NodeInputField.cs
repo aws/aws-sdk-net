@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Represents an input field provided to a node during a flow's async execution.
+    /// Represents an input field provided to a node during a flow execution.
     /// </summary>
     public partial class NodeInputField
     {

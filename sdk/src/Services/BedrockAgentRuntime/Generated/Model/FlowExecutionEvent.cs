@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Represents an event that occurred during an async execution. This is a union type
-    /// that can contain one of several event types, such as node input and output events;
-    /// flow input and output events; condition node result events, or failure events.
+    /// Represents an event that occurred during an flow execution. This is a union type that
+    /// can contain one of several event types, such as node input and output events; flow
+    /// input and output events; condition node result events, or failure events.
     /// 
     ///  <note> 
     /// <para>
-    /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+    /// Flow executions is in preview release for Amazon Bedrock and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>
@@ -53,7 +53,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ConditionResultEvent. 
         /// <para>
-        /// Contains information about a condition evaluation result during the async execution.
+        /// Contains information about a condition evaluation result during the flow execution.
         /// This event is generated when a condition node in the flow evaluates its conditions.
         /// </para>
         /// </summary>

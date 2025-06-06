@@ -31,14 +31,14 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetExecutionFlowSnapshot operation.
-    /// Retrieves the flow definition snapshot used for an asynchronous execution. The snapshot
-    /// represents the flow metadata and definition as it existed at the time the asynchronous
-    /// execution was started. Note that even if the flow is edited after an execution starts,
-    /// the snapshot connected to the execution remains unchanged.
+    /// Retrieves the flow definition snapshot used for a flow execution. The snapshot represents
+    /// the flow metadata and definition as it existed at the time the execution was started.
+    /// Note that even if the flow is edited after an execution starts, the snapshot connected
+    /// to the execution remains unchanged.
     /// 
     ///  <note> 
     /// <para>
-    /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+    /// Flow executions is in preview release for Amazon Bedrock and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ExecutionIdentifier. 
         /// <para>
-        /// The unique identifier of the async execution.
+        /// The unique identifier of the flow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -70,7 +70,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property FlowAliasIdentifier. 
         /// <para>
-        /// The unique identifier of the flow alias used for the async execution.
+        /// The unique identifier of the flow alias used for the flow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
