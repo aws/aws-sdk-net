@@ -297,12 +297,6 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.KeyManagementService.Model.EncryptResponse.KeyMaterialId</property>
-    <min>64</min>
-    <max>64</max>
-    <pattern>^[a-f0-9]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
