@@ -45,6 +45,9 @@
         "ap-east-1": {
           "description": "Asia Pacific (Hong Kong)"
         },
+        "ap-east-2": {
+          "description": "Asia Pacific (Taipei)"
+        },
         "ap-northeast-1": {
           "description": "Asia Pacific (Tokyo)"
         },
@@ -159,6 +162,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -597,6 +601,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -734,6 +739,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -1365,6 +1371,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "credentialScope": {
                 "region": "ap-northeast-1"
@@ -2631,6 +2638,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -2777,6 +2785,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -2813,6 +2822,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -2939,6 +2949,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -4359,6 +4370,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -4907,6 +4919,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -5071,6 +5084,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -5142,6 +5156,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -6253,6 +6268,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -6692,6 +6708,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -7096,6 +7113,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -7461,6 +7479,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -8970,6 +8989,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -9801,6 +9821,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -10237,6 +10258,7 @@
             ]
           },
           "endpoints": {
+            "ap-east-2": {},
             "ap-northeast-1": {
               "hostname": "datazone.ap-northeast-1.api.aws"
             },
@@ -10488,6 +10510,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -10649,6 +10672,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -10997,6 +11021,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -11440,6 +11465,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -11581,6 +11607,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -11737,6 +11764,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -12016,6 +12044,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -12140,6 +12169,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -12256,6 +12286,7 @@
             "ap-east-1": {
               "hostname": "eks-auth.ap-east-1.api.aws"
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "hostname": "eks-auth.ap-northeast-1.api.aws"
             },
@@ -12352,6 +12383,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -12791,6 +12823,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -13326,6 +13359,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -13432,6 +13466,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -13948,6 +13983,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -14331,6 +14367,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -14789,6 +14826,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -15960,6 +15998,7 @@
             "ap-east-1": {
               "hostname": "gameliftstreams.ap-east-1.api.aws"
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "hostname": "gameliftstreams.ap-northeast-1.api.aws"
             },
@@ -17506,6 +17545,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "hostname": "internetmonitor.ap-northeast-1.api.aws",
               "variants": [
@@ -18910,6 +18950,7 @@
             "ap-east-1": {
               "hostname": "kendra-ranking.ap-east-1.api.aws"
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "hostname": "kendra-ranking.ap-northeast-1.api.aws"
             },
@@ -19032,6 +19073,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -19323,6 +19365,7 @@
               "deprecated": true,
               "hostname": "kms-fips.ap-east-1.amazonaws.com"
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -20261,6 +20304,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -20955,6 +20999,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -23111,6 +23156,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -23604,6 +23650,7 @@
             "ap-east-1": {
               "hostname": "notifications.ap-east-1.api.aws"
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "hostname": "notifications.ap-northeast-1.api.aws"
             },
@@ -23712,6 +23759,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -24265,6 +24313,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "protocols": [
                 "https"
@@ -25513,6 +25562,7 @@
             "ap-east-1": {
               "hostname": "qbusiness.ap-east-1.api.aws"
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "hostname": "qbusiness.ap-northeast-1.api.aws"
             },
@@ -25740,6 +25790,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -26154,6 +26205,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -26562,6 +26614,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -26903,6 +26956,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -27881,6 +27935,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -27992,6 +28047,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -28496,6 +28552,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -29180,6 +29237,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "hostname": "s3.ap-northeast-1.amazonaws.com",
               "signatureVersions": [
@@ -30734,6 +30792,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -31984,6 +32043,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -32415,6 +32475,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -33935,6 +33996,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -34331,6 +34393,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -34716,6 +34779,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -35714,6 +35778,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -35987,6 +36052,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -36032,6 +36098,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -36157,6 +36224,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -36307,6 +36375,7 @@
                 }
               ]
             },
+            "ap-east-2": {},
             "ap-northeast-1": {
               "variants": [
                 {
@@ -36733,6 +36802,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -39810,6 +39880,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
