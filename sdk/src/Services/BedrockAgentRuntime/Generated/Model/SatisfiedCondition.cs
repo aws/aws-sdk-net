@@ -31,11 +31,11 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Represents a condition that was satisfied during a condition node evaluation in a
-    /// flow's async execution.
+    /// flow execution.
     /// 
     ///  <note> 
     /// <para>
-    /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+    /// Flow executions is in preview release for Amazon Bedrock and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>

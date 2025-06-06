@@ -83,6 +83,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _instruction;
         private List<KnowledgeBase> _knowledgeBases = AWSConfigs.InitializeCollections ? new List<KnowledgeBase>() : null;
         private OrchestrationType _orchestrationType;
+        private PromptCreationConfigurations _promptCreationConfigurations;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
         private string _sessionId;
         private StreamingConfigurations _streamingConfigurations;
@@ -450,6 +451,28 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetOrchestrationType()
         {
             return this._orchestrationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromptCreationConfigurations. 
+        /// <para>
+        /// Specifies parameters that control how the service populates the agent prompt for an
+        /// <c>InvokeInlineAgent</c> request. You can control which aspects of previous invocations
+        /// in the same agent session the service uses to populate the agent prompt. This gives
+        /// you more granular control over the contextual history that is used to process the
+        /// current request.
+        /// </para>
+        /// </summary>
+        public PromptCreationConfigurations PromptCreationConfigurations
+        {
+            get { return this._promptCreationConfigurations; }
+            set { this._promptCreationConfigurations = value; }
+        }
+
+        // Check to see if PromptCreationConfigurations property is set
+        internal bool IsSetPromptCreationConfigurations()
+        {
+            return this._promptCreationConfigurations != null;
         }
 
         /// <summary>

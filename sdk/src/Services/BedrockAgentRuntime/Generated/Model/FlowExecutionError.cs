@@ -30,11 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an error that occurred during an async execution.
+    /// Contains information about an error that occurred during an flow execution.
     /// 
     ///  <note> 
     /// <para>
-    /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+    /// Flow executions is in preview release for Amazon Bedrock and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>

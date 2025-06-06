@@ -31,13 +31,13 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFlowExecutionEvents operation.
-    /// Lists events that occurred during an asynchronous execution of a flow. Events provide
-    /// detailed information about the execution progress, including node inputs and outputs,
-    /// flow inputs and outputs, condition results, and failure events.
+    /// Lists events that occurred during a flow execution. Events provide detailed information
+    /// about the execution progress, including node inputs and outputs, flow inputs and outputs,
+    /// condition results, and failure events.
     /// 
     ///  <note> 
     /// <para>
-    /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+    /// Flow executions is in preview release for Amazon Bedrock and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ExecutionIdentifier. 
         /// <para>
-        /// The unique identifier of the async execution.
+        /// The unique identifier of the flow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

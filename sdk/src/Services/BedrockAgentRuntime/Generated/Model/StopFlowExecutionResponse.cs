@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies the async execution that was
+        /// The Amazon Resource Name (ARN) that uniquely identifies the flow execution that was
         /// stopped.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The updated status of the async execution after the stop request. This will typically
+        /// The updated status of the flow execution after the stop request. This will typically
         /// be ABORTED if the execution was successfully stopped.
         /// </para>
         /// </summary>

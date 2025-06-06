@@ -98,6 +98,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private bool? _endSession;
         private string _inputText;
         private string _memoryId;
+        private PromptCreationConfigurations _promptCreationConfigurations;
         private string _sessionId;
         private SessionState _sessionState;
         private string _sourceArn;
@@ -239,6 +240,28 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetMemoryId()
         {
             return this._memoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromptCreationConfigurations. 
+        /// <para>
+        /// Specifies parameters that control how the service populates the agent prompt for an
+        /// <c>InvokeAgent</c> request. You can control which aspects of previous invocations
+        /// in the same agent session the service uses to populate the agent prompt. This gives
+        /// you more granular control over the contextual history that is used to process the
+        /// current request.
+        /// </para>
+        /// </summary>
+        public PromptCreationConfigurations PromptCreationConfigurations
+        {
+            get { return this._promptCreationConfigurations; }
+            set { this._promptCreationConfigurations = value; }
+        }
+
+        // Check to see if PromptCreationConfigurations property is set
+        internal bool IsSetPromptCreationConfigurations()
+        {
+            return this._promptCreationConfigurations != null;
         }
 
         /// <summary>

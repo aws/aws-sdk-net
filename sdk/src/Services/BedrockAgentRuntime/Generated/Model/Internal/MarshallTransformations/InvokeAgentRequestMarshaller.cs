@@ -111,6 +111,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MemoryId);
                 }
 
+                if(publicRequest.IsSetPromptCreationConfigurations())
+                {
+                    context.Writer.WritePropertyName("promptCreationConfigurations");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PromptCreationConfigurationsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PromptCreationConfigurations, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSessionState())
                 {
                     context.Writer.WritePropertyName("sessionState");
