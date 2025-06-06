@@ -58,6 +58,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.AuditImages = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Challenge", targetDepth))
+                {
+                    var unmarshaller = ChallengeUnmarshaller.Instance;
+                    response.Challenge = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Confidence", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;

@@ -35,6 +35,7 @@ namespace Amazon.Rekognition.Model
     public partial class GetFaceLivenessSessionResultsResponse : AmazonWebServiceResponse
     {
         private List<AuditImage> _auditImages = AWSConfigs.InitializeCollections ? new List<AuditImage>() : null;
+        private Challenge _challenge;
         private float? _confidence;
         private AuditImage _referenceImage;
         private string _sessionId;
@@ -60,6 +61,24 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetAuditImages()
         {
             return this._auditImages != null && (this._auditImages.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Challenge. 
+        /// <para>
+        /// Contains information regarding the challenge type used for the Face Liveness check.
+        /// </para>
+        /// </summary>
+        public Challenge Challenge
+        {
+            get { return this._challenge; }
+            set { this._challenge = value; }
+        }
+
+        // Check to see if Challenge property is set
+        internal bool IsSetChallenge()
+        {
+            return this._challenge != null;
         }
 
         /// <summary>

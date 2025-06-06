@@ -1264,6 +1264,12 @@
     <pattern>[0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.Challenge.Version</property>
+    <min>5</min>
+    <max>11</max>
+    <pattern>^(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.ComparedFace.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -1929,6 +1935,18 @@
     <property>Amazon.Rekognition.Model.UserMatch.Similarity</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.Versions.Maximum</property>
+    <min>5</min>
+    <max>11</max>
+    <pattern>^(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.Versions.Minimum</property>
+    <min>5</min>
+    <max>11</max>
+    <pattern>^(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})\.(0|[1-9]\d{0,2})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.VideoMetadata.DurationMillis</property>
