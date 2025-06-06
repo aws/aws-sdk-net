@@ -1,3 +1,19 @@
+### 4.0.28.0 (2025-06-06 18:28 UTC)
+* BedrockAgentRuntime (4.0.4.0)
+	* This release introduces the `PromptCreationConfigurations` input parameter, which includes fields to control prompt population for `InvokeAgent` or `InvokeInlineAgent` requests.
+* KeyManagementService (4.0.2.0)
+	* Remove unpopulated KeyMaterialId from Encrypt Response
+* RDS (4.0.2.0)
+	* Include Global Cluster Identifier in DBCluster if the DBCluster is a Global Cluster Member.
+* Rekognition (4.0.1.0)
+	* Adds support for defining an ordered preference list of different Rekognition Face Liveness challenge types when calling CreateFaceLivenessSession.
+* Route53 (4.0.1.0)
+	* Amazon Route 53 now supports the Asia Pacific (Taipei) Region (ap-east-2) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* S3Tables (4.0.1.0)
+	* S3 Tables now supports getting details about a table via its table ARN.
+* SQS (4.0.0.6)
+	* Fix `GetQueueAttributesResponse` to handle attributes potentially being null (https://github.com/aws/aws-sdk-net/pull/3852)
+
 ### 4.0.27.0 (2025-06-05 18:21 UTC)
 * BCMPricingCalculator (4.0.2.0)
 	* Updating the minimum for List APIs to be 1 (instead of 0)
