@@ -61,7 +61,7 @@ namespace SDKDocGenerator
 
         /// <summary>
         /// The platform subfolder considered to be hosting the primary source of
-        /// assemblies for doc generation. If not specified, we attempt to use 'net45'.
+        /// assemblies for doc generation. If not specified, we attempt to use 'net472'.
         /// If that subfolder platform does not exist, we'll use the first subfolder 
         /// under the SDKAssembliesRoot that we find.
         /// </summary>

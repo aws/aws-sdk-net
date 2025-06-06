@@ -20,10 +20,10 @@
         <!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
         <DocSamplesFolder>$(MSBuildProjectDirectory)\..\docgenerator</DocSamplesFolder>
         
-        <!-- use net45 platform as the primary determinant of assemblies to inspect, and generate 
+        <!-- use net472 platform as the primary determinant of assemblies to inspect, and generate 
              for all services 
         -->
-        <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
+        <SDKPlatform Condition="'$(SDKPlatform)'==''">net472</SDKPlatform>
         <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
         
         <DocBuildAssemblies>$(MSBuildProjectDirectory)\..\Deployment\assemblies</DocBuildAssemblies>
