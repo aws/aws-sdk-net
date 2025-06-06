@@ -44,6 +44,7 @@ namespace Amazon.S3Tables.Model
     {
         private string _name;
         private string _awsNamespace;
+        private string _tableArn;
         private string _tableBucketARN;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.S3Tables.Model
         /// The name of the table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -71,7 +72,7 @@ namespace Amazon.S3Tables.Model
         /// The name of the namespace the table is associated with.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -85,12 +86,30 @@ namespace Amazon.S3Tables.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TableArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string TableArn
+        {
+            get { return this._tableArn; }
+            set { this._tableArn = value; }
+        }
+
+        // Check to see if TableArn property is set
+        internal bool IsSetTableArn()
+        {
+            return this._tableArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TableBucketARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the table bucket associated with the table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string TableBucketARN
         {
             get { return this._tableBucketARN; }
