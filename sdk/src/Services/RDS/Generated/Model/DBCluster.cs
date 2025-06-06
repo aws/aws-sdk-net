@@ -104,6 +104,7 @@ namespace Amazon.RDS.Model
         private string _engineLifecycleSupport;
         private string _engineMode;
         private string _engineVersion;
+        private string _globalClusterIdentifier;
         private bool? _globalWriteForwardingRequested;
         private WriteForwardingStatus _globalWriteForwardingStatus;
         private string _hostedZoneId;
@@ -983,6 +984,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalClusterIdentifier. 
+        /// <para>
+        /// Contains a user-supplied global database cluster identifier. This identifier is the
+        /// unique key that identifies a global database cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlobalClusterIdentifier
+        {
+            get { return this._globalClusterIdentifier; }
+            set { this._globalClusterIdentifier = value; }
+        }
+
+        // Check to see if GlobalClusterIdentifier property is set
+        internal bool IsSetGlobalClusterIdentifier()
+        {
+            return this._globalClusterIdentifier != null;
         }
 
         /// <summary>
