@@ -30,11 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The emotions that appear to be expressed on the face, and the confidence level in
-    /// the determination. The API is only making a determination of the physical appearance
-    /// of a person's face. It is not a determination of the person’s internal emotional state
-    /// and should not be used in such a way. For example, a person pretending to have a sad
-    /// face might not be sad emotionally.
+    /// The API returns a prediction of an emotion based on a person's facial expressions,
+    /// along with the confidence level for the predicted emotion. It is not a determination
+    /// of the person’s internal emotional state and should not be used in such a way. For
+    /// example, a person pretending to have a sad face might not be sad emotionally. The
+    /// API is not intended to be used, and you may not use it, in a manner that violates
+    /// the EU Artificial Intelligence Act or any other applicable law.
     /// </summary>
     public partial class Emotion
     {

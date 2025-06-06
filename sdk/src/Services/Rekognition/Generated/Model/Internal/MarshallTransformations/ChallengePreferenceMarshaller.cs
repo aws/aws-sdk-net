@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateFaceLivenessSessionRequestSettings Marshaller
+    /// ChallengePreference Marshaller
     /// </summary>
-    public class CreateFaceLivenessSessionRequestSettingsMarshaller : IRequestMarshaller<CreateFaceLivenessSessionRequestSettings, JsonMarshallerContext> 
+    public class ChallengePreferenceMarshaller : IRequestMarshaller<ChallengePreference, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +42,23 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CreateFaceLivenessSessionRequestSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ChallengePreference requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAuditImagesLimit())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("AuditImagesLimit");
-                context.Writer.WriteNumberValue(requestObject.AuditImagesLimit.Value);
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
-            if(requestObject.IsSetChallengePreferences())
+            if(requestObject.IsSetVersions())
             {
-                context.Writer.WritePropertyName("ChallengePreferences");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectChallengePreferencesListValue in requestObject.ChallengePreferences)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ChallengePreferenceMarshaller.Instance;
-                    marshaller.Marshall(requestObjectChallengePreferencesListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetOutputConfig())
-            {
-                context.Writer.WritePropertyName("OutputConfig");
+                context.Writer.WritePropertyName("Versions");
                 context.Writer.WriteStartObject();
 
-                var marshaller = LivenessOutputConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.OutputConfig, context);
+                var marshaller = VersionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Versions, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -84,7 +68,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CreateFaceLivenessSessionRequestSettingsMarshaller Instance = new CreateFaceLivenessSessionRequestSettingsMarshaller();
+        public readonly static ChallengePreferenceMarshaller Instance = new ChallengePreferenceMarshaller();
 
     }
 }
