@@ -123,7 +123,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// Contains a list of <c>Subnet</c> elements.
+        /// Contains a list of <c>Subnet</c> elements. The list of subnets shown here might not
+        /// reflect the current state of your VPC. For the most up-to-date information, we recommend
+        /// checking your VPC configuration directly.
         /// </para>
         /// </summary>
         public List<Subnet> Subnets

@@ -6029,6 +6029,14 @@ namespace Amazon.RDS
         /// <para>
         /// This command doesn't apply to RDS Custom.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation uses resources on database instances. Because of this, we recommend
+        /// publishing database logs to CloudWatch and then using the GetLogEvents operation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+        /// in the <i>Amazon CloudWatch Logs API Reference</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DownloadDBLogFilePortion service method.</param>
         /// <param name="cancellationToken">
