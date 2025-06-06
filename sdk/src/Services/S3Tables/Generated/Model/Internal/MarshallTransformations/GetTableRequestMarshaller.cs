@@ -59,16 +59,20 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetName())
-                throw new AmazonS3TablesException("Request object does not have required field Name set");
-            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
-            if (!publicRequest.IsSetNamespace())
-                throw new AmazonS3TablesException("Request object does not have required field Namespace set");
-            request.AddPathResource("{namespace}", StringUtils.FromString(publicRequest.Namespace));
-            if (!publicRequest.IsSetTableBucketARN())
-                throw new AmazonS3TablesException("Request object does not have required field TableBucketARN set");
-            request.AddPathResource("{tableBucketARN}", StringUtils.FromString(publicRequest.TableBucketARN));
-            request.ResourcePath = "/tables/{tableBucketARN}/{namespace}/{name}";
+            
+            if (publicRequest.IsSetName())
+                request.Parameters.Add("name", StringUtils.FromString(publicRequest.Name));
+            
+            if (publicRequest.IsSetNamespace())
+                request.Parameters.Add("namespace", StringUtils.FromString(publicRequest.Namespace));
+            
+            if (publicRequest.IsSetTableArn())
+                request.Parameters.Add("tableArn", StringUtils.FromString(publicRequest.TableArn));
+            
+            if (publicRequest.IsSetTableBucketARN())
+                request.Parameters.Add("tableBucketARN", StringUtils.FromString(publicRequest.TableBucketARN));
+            request.ResourcePath = "/get-table";
+            request.UseQueryString = true;
 
             return request;
         }

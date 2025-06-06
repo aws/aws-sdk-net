@@ -69,7 +69,8 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The name of the namespace the table is associated with. <pre><c>&lt;/p&gt; </c></pre>
+        /// The name of the namespace the table is associated with. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Namespace
