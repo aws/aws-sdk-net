@@ -44,21 +44,21 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
-        private AWS4aSignerCRTWrapper _aws4aSignerCRTWrapper;
-        private AWS4aSignerCRTWrapper AWS4aSignerCRTWrapperInstance
+        private AWS4aSigner _aws4aSigner;
+        private AWS4aSigner AWS4aSignerInstance
         {
             get
             {
-                if (_aws4aSignerCRTWrapper == null)
+                if (_aws4aSigner == null)
                 {
                     lock (_lock)
                     {
-                        if (_aws4aSignerCRTWrapper == null)
-                            _aws4aSignerCRTWrapper = new AWS4aSignerCRTWrapper();
+                        if (_aws4aSigner == null)
+                            _aws4aSigner = new AWS4aSigner();
                     }
                 }
 
-                return _aws4aSignerCRTWrapper;
+                return _aws4aSigner;
             }
         }
 
@@ -171,7 +171,7 @@ namespace Amazon.Runtime.Internal.Auth
             IRequest request, IClientConfig config)
         {
             if (request.SignatureVersion == SignatureVersion.SigV4a)
-                return AWS4aSignerCRTWrapperInstance;
+                return AWS4aSignerInstance;
             else if (UseV4Signing(useSigV4Setting, request, config))
                 return AWS4SignerInstance;
             else

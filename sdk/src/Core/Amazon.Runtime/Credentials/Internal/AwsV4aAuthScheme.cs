@@ -39,7 +39,7 @@ namespace Amazon.Runtime.Credentials.Internal
         {
             if (_signer == null)
             {
-                Interlocked.Exchange(ref _signer, new AWS4aSignerCRTWrapper());
+                Interlocked.Exchange(ref _signer, new AWS4aSigner());
             }
 
             return _signer;

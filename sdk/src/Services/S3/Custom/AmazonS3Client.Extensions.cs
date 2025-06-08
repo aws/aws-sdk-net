@@ -382,9 +382,7 @@ namespace Amazon.S3
             switch (signatureVersionToUse)
             {
                 case SignatureVersion.SigV4a:
-                    var aws4aSigner = new AWS4aSignerCRTWrapper();
-
-                    var signingResult4a = aws4aSigner.Presign4a(iRequest,
+                    var signingResult4a = AWS4aPreSignedUrlSigner.SignRequest(iRequest,
                                                             config,
                                                             metrics,
                                                             immutableCredentials,
