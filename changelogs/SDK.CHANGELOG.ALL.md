@@ -1,3 +1,19 @@
+### 4.0.29.0 (2025-06-09 18:25 UTC)
+* AppSync (4.0.1.0)
+	* Deprecate `atRestEncryptionEnabled` and `transitEncryptionEnabled` attributes in `CreateApiCache` action. Encryption is always enabled for new caches.
+* CostExplorer (4.0.2.0)
+	* Support dual-stack endpoints for ce api
+* CustomerProfiles (4.0.1.0)
+	* This release introduces capability of Profile Explorer, using correct ingestion timestamp & using historical data for computing calculated attributes, and new standard objects for T&H as part of Amazon Connect Customer Profiles service.
+* EC2 (4.0.13.0)
+	* Release to support Elastic VMware Service (Amazon EVS) Subnet and Amazon EVS Network Interface Types.
+* ElasticFileSystem (4.0.1.0)
+	* Added support for Internet Protocol Version 6 (IPv6) on EFS Service APIs and mount targets.
+* MarketplaceCatalog (4.0.1.0)
+	* The ListEntities API now supports the EntityID, LastModifiedDate, ProductTitle, and Visibility filters for machine learning products. You can also sort using all of those filters.
+* WorkSpacesThinClient (4.0.1.0)
+	* Add ConflictException to UpdateEnvironment API
+
 ### 4.0.28.0 (2025-06-06 18:28 UTC)
 * BedrockAgentRuntime (4.0.4.0)
 	* This release introduces the `PromptCreationConfigurations` input parameter, which includes fields to control prompt population for `InvokeAgent` or `InvokeInlineAgent` requests.
