@@ -104,6 +104,12 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <para>
         /// The JSON value of the details specific to the change type of the requested change.
         /// </para>
+        ///  
+        /// <para>
+        /// To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a>
+        /// and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a>
+        /// shapes on GitHub.
+        /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document DetailsDocument
         {
