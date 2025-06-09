@@ -103,6 +103,7 @@ namespace Amazon.AppSync.Model
         /// At-rest encryption flag for cache. You cannot update this setting after creation.
         /// </para>
         /// </summary>
+        [Obsolete("atRestEncryptionEnabled attribute is deprecated. Encryption at rest is always enabled.")]
         public bool AtRestEncryptionEnabled
         {
             get { return this._atRestEncryptionEnabled.GetValueOrDefault(); }
@@ -156,6 +157,7 @@ namespace Amazon.AppSync.Model
         /// creation.
         /// </para>
         /// </summary>
+        [Obsolete("transitEncryptionEnabled attribute is deprecated. Encryption in transit is always enabled.")]
         public bool TransitEncryptionEnabled
         {
             get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
