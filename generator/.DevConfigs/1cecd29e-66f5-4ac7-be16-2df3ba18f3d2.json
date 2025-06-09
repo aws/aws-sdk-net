@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add DynamoDBRetryPolicy.WaitBeforeRetryAsync override method in order to use the updated retry logic for async retries."
+      ]
+    }
+  ]
+}
