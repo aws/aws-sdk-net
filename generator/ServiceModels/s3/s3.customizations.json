@@ -245,6 +245,9 @@
         "CreateMultipartUpload": {
             "name": "InitiateMultipartUpload"
         },
+        "DeleteBucket":{
+            "customizeMarshaller": true
+        },
         "DeleteBucketCors": {
             "name": "DeleteCORSConfiguration"
         },

@@ -10,6 +10,15 @@
 	AddCommonUsingStatements();
 #>
 using System.Xml;
+<#
+	var operationModifiers = this.Config.ServiceModel.Customizations.GetOperationModifiers(this.Operation.Name);
+	if(this.Config.ServiceId == "S3" && operationModifiers != null && operationModifiers.CustomizeMarshaller)
+	{
+#>
+using Amazon.S3.Internal;
+<#
+	}
+#>
 
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
@@ -38,6 +47,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		{
 			var request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
 <#
+
 	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && this.Operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
 	{
 #>
@@ -116,7 +126,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		ProcessEndpointHostPrefixMembers(3, "publicRequest", this.Operation);
 	}
 #>
-
+<#
+	if (operationModifiers != null && operationModifiers.CustomizeMarshaller)
+	{
+#>
+			request = CustomMarshallTransformations.Customize<#=this.Operation.Name#>Marshaller(request, publicRequest);
+<#
+	}
+#>
 			return request;
 		}
 <#				

@@ -4,7 +4,7 @@
             "serviceName": "S3",
             "type": "patch",
             "changeLogMessages": [
-                "Generate ListBuckets and ListDirectoryBuckets. Delete custom files."
+                "Generate DeleteBucket, DeleteBucketEncryption and related DeleteBucket operations. Delete relevant custom files."
             ]
         }
     ]
