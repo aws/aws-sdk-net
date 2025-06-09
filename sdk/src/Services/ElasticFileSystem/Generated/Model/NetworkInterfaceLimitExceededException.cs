@@ -32,7 +32,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// The calling account has reached the limit for elastic network interfaces for the specific
     /// Amazon Web Services Region. Either delete some network interfaces or request that
-    /// the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+    /// the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
     /// VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Network interfaces
     /// per Region</b> entry in the <b>Network interfaces</b> table).
     /// </summary>

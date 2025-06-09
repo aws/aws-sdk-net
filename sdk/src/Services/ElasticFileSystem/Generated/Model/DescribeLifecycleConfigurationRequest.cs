@@ -31,10 +31,10 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLifecycleConfiguration operation.
-    /// Returns the current <c>LifecycleConfiguration</c> object for the specified Amazon
-    /// EFS file system. Lifecycle management uses the <c>LifecycleConfiguration</c> object
-    /// to identify when to move files between storage classes. For a file system without
-    /// a <c>LifecycleConfiguration</c> object, the call returns an empty array in the response.
+    /// Returns the current <c>LifecycleConfiguration</c> object for the specified EFS file
+    /// system. Lifecycle management uses the <c>LifecycleConfiguration</c> object to identify
+    /// when to move files between storage classes. For a file system without a <c>LifecycleConfiguration</c>
+    /// object, the call returns an empty array in the response.
     /// 
     ///  
     /// <para>

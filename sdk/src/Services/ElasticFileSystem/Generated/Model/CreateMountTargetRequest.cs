@@ -166,11 +166,11 @@ namespace Amazon.ElasticFileSystem.Model
     /// <para>
     /// We recommend that you create a mount target in each of the Availability Zones. There
     /// are cost considerations for using a file system in an Availability Zone through a
-    /// mount target created in another Availability Zone. For more information, see <a href="http://aws.amazon.com/efs/">Amazon
-    /// EFS</a>. In addition, by always using a mount target local to the instance's Availability
-    /// Zone, you eliminate a partial failure scenario. If the Availability Zone in which
-    /// your mount target is created goes down, then you can't access your file system through
-    /// that mount target. 
+    /// mount target created in another Availability Zone. For more information, see <a href="http://aws.amazon.com/efs/pricing/">Amazon
+    /// EFS pricing</a>. In addition, by always using a mount target local to the instance's
+    /// Availability Zone, you eliminate a partial failure scenario. If the Availability Zone
+    /// in which your mount target is created goes down, then you can't access your file system
+    /// through that mount target. 
     /// </para>
     ///  
     /// <para>
@@ -202,6 +202,8 @@ namespace Amazon.ElasticFileSystem.Model
     {
         private string _fileSystemId;
         private string _ipAddress;
+        private IpAddressType _ipAddressType;
+        private string _ipv6Address;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
 
@@ -227,7 +229,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// Valid IPv4 address within the address range of the specified subnet.
+        /// If the IP address type for the mount target is IPv4, then specify the IPv4 address
+        /// within the address range of the specified subnet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=15)]
@@ -244,10 +247,69 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// Specify the type of IP address of the mount target you are creating. Options are IPv4,
+        /// dual stack, or IPv6. If you don’t specify an IpAddressType, then IPv4 is used.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// IPV4_ONLY – Create mount target with IPv4 only subnet or dual-stack subnet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DUAL_STACK – Create mount target with dual-stack subnet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IPV6_ONLY – Create mount target with IPv6 only subnet.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Creating IPv6 mount target only ENI in dual-stack subnet is not supported.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Address. 
+        /// <para>
+        /// If the IP address type for the mount target is IPv6, then specify the IPv6 address
+        /// within the address range of the specified subnet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=39)]
+        public string Ipv6Address
+        {
+            get { return this._ipv6Address; }
+            set { this._ipv6Address = value; }
+        }
+
+        // Check to see if Ipv6Address property is set
+        internal bool IsSetIpv6Address()
+        {
+            return this._ipv6Address != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// Up to five VPC security group IDs, of the form <c>sg-xxxxxxxx</c>. These must be for
-        /// the same VPC as subnet specified.
+        /// VPC security group IDs, of the form <c>sg-xxxxxxxx</c>. These must be for the same
+        /// VPC as the subnet specified. The maximum number of security groups depends on account
+        /// quota. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+        /// VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b>
+        /// table). 
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

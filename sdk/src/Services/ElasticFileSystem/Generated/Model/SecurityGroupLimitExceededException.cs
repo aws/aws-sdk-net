@@ -30,8 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the size of <c>SecurityGroups</c> specified in the request is greater
-    /// than five.
+    /// Returned if the number of <c>SecurityGroups</c> specified in the request is greater
+    /// than the limit, which is based on account quota. Either delete some security groups
+    /// or request that the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+    /// VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b>
+    /// table).
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

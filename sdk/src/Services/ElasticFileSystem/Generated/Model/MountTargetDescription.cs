@@ -38,6 +38,7 @@ namespace Amazon.ElasticFileSystem.Model
         private string _availabilityZoneName;
         private string _fileSystemId;
         private string _ipAddress;
+        private string _ipv6Address;
         private LifeCycleState _lifeCycleState;
         private string _mountTargetId;
         private string _networkInterfaceId;
@@ -124,6 +125,25 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetIpAddress()
         {
             return this._ipAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Address. 
+        /// <para>
+        /// The IPv6 address for the mount target.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=39)]
+        public string Ipv6Address
+        {
+            get { return this._ipv6Address; }
+            set { this._ipv6Address = value; }
+        }
+
+        // Check to see if Ipv6Address property is set
+        internal bool IsSetIpv6Address()
+        {
+            return this._ipv6Address != null;
         }
 
         /// <summary>

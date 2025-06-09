@@ -56,8 +56,8 @@ namespace Amazon.ElasticFileSystem.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>REPLICATING</c> – The file system is being used as the destination file system
-        /// in a replication configuration. The file system is read-only and is only modified
-        /// only by EFS replication.
+        /// in a replication configuration. The file system is read-only and is modified only
+        /// by EFS replication.
         /// </para>
         ///  </li> </ul> 
         /// <para>
