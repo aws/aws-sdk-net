@@ -21715,6 +21715,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly SubnetState Available = new SubnetState("available");
         /// <summary>
+        /// Constant Failed for SubnetState
+        /// </summary>
+        public static readonly SubnetState Failed = new SubnetState("failed");
+        /// <summary>
+        /// Constant FailedInsufficientCapacity for SubnetState
+        /// </summary>
+        public static readonly SubnetState FailedInsufficientCapacity = new SubnetState("failed-insufficient-capacity");
+        /// <summary>
         /// Constant Pending for SubnetState
         /// </summary>
         public static readonly SubnetState Pending = new SubnetState("pending");

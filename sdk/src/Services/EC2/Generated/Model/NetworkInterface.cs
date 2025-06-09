@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NetworkInterface
     {
+        private List<string> _associatedSubnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NetworkInterfaceAssociation _association;
         private NetworkInterfaceAttachment _attachment;
         private string _availabilityZone;
@@ -64,6 +65,24 @@ namespace Amazon.EC2.Model
         private string _subnetId;
         private List<Tag> _tagSet = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AssociatedSubnets. 
+        /// <para>
+        /// The subnets associated with this network interface.
+        /// </para>
+        /// </summary>
+        public List<string> AssociatedSubnets
+        {
+            get { return this._associatedSubnets; }
+            set { this._associatedSubnets = value; }
+        }
+
+        // Check to see if AssociatedSubnets property is set
+        internal bool IsSetAssociatedSubnets()
+        {
+            return this._associatedSubnets != null && (this._associatedSubnets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Association. 

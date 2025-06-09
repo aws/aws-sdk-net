@@ -179,10 +179,11 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>interface-type</c> - The type of network interface (<c>api_gateway_managed</c>
         /// | <c>aws_codestar_connections_managed</c> | <c>branch</c> | <c>ec2_instance_connect_endpoint</c>
-        /// | <c>efa</c> | <c>efa-only</c> | <c>efs</c> | <c>gateway_load_balancer</c> | <c>gateway_load_balancer_endpoint</c>
-        /// | <c>global_accelerator_managed</c> | <c>interface</c> | <c>iot_rules_managed</c>
-        /// | <c>lambda</c> | <c>load_balancer</c> | <c>nat_gateway</c> | <c>network_load_balancer</c>
-        /// | <c>quicksight</c> | <c>transit_gateway</c> | <c>trunk</c> | <c>vpc_endpoint</c>).
+        /// | <c>efa</c> | <c>efa-only</c> | <c>efs</c> | <c>evs</c> | <c>gateway_load_balancer</c>
+        /// | <c>gateway_load_balancer_endpoint</c> | <c>global_accelerator_managed</c> | <c>interface</c>
+        /// | <c>iot_rules_managed</c> | <c>lambda</c> | <c>load_balancer</c> | <c>nat_gateway</c>
+        /// | <c>network_load_balancer</c> | <c>quicksight</c> | <c>transit_gateway</c> | <c>trunk</c>
+        /// | <c>vpc_endpoint</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
