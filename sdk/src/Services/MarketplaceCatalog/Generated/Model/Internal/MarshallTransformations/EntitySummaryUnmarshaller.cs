@@ -98,6 +98,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MachineLearningProductSummary", targetDepth))
+                {
+                    var unmarshaller = MachineLearningProductSummaryUnmarshaller.Instance;
+                    unmarshalledObject.MachineLearningProductSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

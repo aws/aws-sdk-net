@@ -43,6 +43,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _entityId;
         private string _entityType;
         private string _lastModifiedDate;
+        private MachineLearningProductSummary _machineLearningProductSummary;
         private string _name;
         private OfferSummary _offerSummary;
         private ResaleAuthorizationSummary _resaleAuthorizationSummary;
@@ -177,6 +178,21 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetLastModifiedDate()
         {
             return this._lastModifiedDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MachineLearningProductSummary.
+        /// </summary>
+        public MachineLearningProductSummary MachineLearningProductSummary
+        {
+            get { return this._machineLearningProductSummary; }
+            set { this._machineLearningProductSummary = value; }
+        }
+
+        // Check to see if MachineLearningProductSummary property is set
+        internal bool IsSetMachineLearningProductSummary()
+        {
+            return this._machineLearningProductSummary != null;
         }
 
         /// <summary>

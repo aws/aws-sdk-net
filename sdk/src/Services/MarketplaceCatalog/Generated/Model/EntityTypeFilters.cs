@@ -37,6 +37,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private AmiProductFilters _amiProductFilters;
         private ContainerProductFilters _containerProductFilters;
         private DataProductFilters _dataProductFilters;
+        private MachineLearningProductFilters _machineLearningProductFilters;
         private OfferFilters _offerFilters;
         private ResaleAuthorizationFilters _resaleAuthorizationFilters;
         private SaaSProductFilters _saaSProductFilters;
@@ -93,6 +94,21 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetDataProductFilters()
         {
             return this._dataProductFilters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MachineLearningProductFilters.
+        /// </summary>
+        public MachineLearningProductFilters MachineLearningProductFilters
+        {
+            get { return this._machineLearningProductFilters; }
+            set { this._machineLearningProductFilters = value; }
+        }
+
+        // Check to see if MachineLearningProductFilters property is set
+        internal bool IsSetMachineLearningProductFilters()
+        {
+            return this._machineLearningProductFilters != null;
         }
 
         /// <summary>

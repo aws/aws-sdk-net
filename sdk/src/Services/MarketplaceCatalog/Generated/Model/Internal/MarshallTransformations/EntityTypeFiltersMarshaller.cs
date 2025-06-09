@@ -79,6 +79,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMachineLearningProductFilters())
+            {
+                context.Writer.WritePropertyName("MachineLearningProductFilters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MachineLearningProductFiltersMarshaller.Instance;
+                marshaller.Marshall(requestObject.MachineLearningProductFilters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOfferFilters())
             {
                 context.Writer.WritePropertyName("OfferFilters");

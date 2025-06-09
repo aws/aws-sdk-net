@@ -539,6 +539,122 @@ namespace Amazon.MarketplaceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type MachineLearningProductSortBy.
+    /// </summary>
+    public class MachineLearningProductSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EntityId for MachineLearningProductSortBy
+        /// </summary>
+        public static readonly MachineLearningProductSortBy EntityId = new MachineLearningProductSortBy("EntityId");
+        /// <summary>
+        /// Constant LastModifiedDate for MachineLearningProductSortBy
+        /// </summary>
+        public static readonly MachineLearningProductSortBy LastModifiedDate = new MachineLearningProductSortBy("LastModifiedDate");
+        /// <summary>
+        /// Constant ProductTitle for MachineLearningProductSortBy
+        /// </summary>
+        public static readonly MachineLearningProductSortBy ProductTitle = new MachineLearningProductSortBy("ProductTitle");
+        /// <summary>
+        /// Constant Visibility for MachineLearningProductSortBy
+        /// </summary>
+        public static readonly MachineLearningProductSortBy Visibility = new MachineLearningProductSortBy("Visibility");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MachineLearningProductSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MachineLearningProductSortBy FindValue(string value)
+        {
+            return FindValue<MachineLearningProductSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MachineLearningProductSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MachineLearningProductVisibilityString.
+    /// </summary>
+    public class MachineLearningProductVisibilityString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Draft for MachineLearningProductVisibilityString
+        /// </summary>
+        public static readonly MachineLearningProductVisibilityString Draft = new MachineLearningProductVisibilityString("Draft");
+        /// <summary>
+        /// Constant Limited for MachineLearningProductVisibilityString
+        /// </summary>
+        public static readonly MachineLearningProductVisibilityString Limited = new MachineLearningProductVisibilityString("Limited");
+        /// <summary>
+        /// Constant Public for MachineLearningProductVisibilityString
+        /// </summary>
+        public static readonly MachineLearningProductVisibilityString Public = new MachineLearningProductVisibilityString("Public");
+        /// <summary>
+        /// Constant Restricted for MachineLearningProductVisibilityString
+        /// </summary>
+        public static readonly MachineLearningProductVisibilityString Restricted = new MachineLearningProductVisibilityString("Restricted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MachineLearningProductVisibilityString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MachineLearningProductVisibilityString FindValue(string value)
+        {
+            return FindValue<MachineLearningProductVisibilityString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MachineLearningProductVisibilityString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OfferSortBy.
     /// </summary>
     public class OfferSortBy : ConstantClass
