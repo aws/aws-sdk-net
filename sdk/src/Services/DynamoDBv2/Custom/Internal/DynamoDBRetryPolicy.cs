@@ -14,7 +14,6 @@
  */
 
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -55,7 +54,7 @@ namespace Amazon.DynamoDBv2.Internal
         /// <param name="executionContext"></param>
         public override void WaitBeforeRetry(IExecutionContext executionContext)
         {
-            Thread.Sleep(CalculateRetryDelay(executionContext.RequestContext.Retries));
+            Amazon.Util.AWSSDKUtils.Sleep(CalculateRetryDelay(executionContext.RequestContext.Retries));
         }
 
         /// <summary>
