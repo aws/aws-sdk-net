@@ -995,6 +995,10 @@ namespace Amazon.WorkSpacesThinClient
         /// <exception cref="Amazon.WorkSpacesThinClient.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpacesThinClient.Model.InternalServerException">
         /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
