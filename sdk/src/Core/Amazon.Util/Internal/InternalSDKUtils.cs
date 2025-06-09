@@ -382,14 +382,14 @@ namespace Amazon.Util.Internal
             if (isSet)
                 field = new AlwaysSendList<T>(field);
             else
-                field = new List<T>();
+                field = AWSConfigs.InitializeCollections ? new List<T>() : null;
         }
         public static void SetIsSet<TKey, TValue>(bool isSet, ref Dictionary<TKey, TValue> field)
         {
             if (isSet)
                 field = new AlwaysSendDictionary<TKey, TValue>(field);
             else
-                field = new Dictionary<TKey, TValue>();
+                field = AWSConfigs.InitializeCollections ? new Dictionary<TKey, TValue>() : null;
         }
 
         public static bool GetIsSet<T>(Nullable<T> field)
