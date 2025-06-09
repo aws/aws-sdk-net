@@ -76,6 +76,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     response.IpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Ipv6Address", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Ipv6Address = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LifeCycleState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

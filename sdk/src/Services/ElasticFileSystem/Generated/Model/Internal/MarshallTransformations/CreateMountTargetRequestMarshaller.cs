@@ -79,6 +79,18 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IpAddress);
                 }
 
+                if(publicRequest.IsSetIpAddressType())
+                {
+                    context.Writer.WritePropertyName("IpAddressType");
+                    context.Writer.Write(publicRequest.IpAddressType);
+                }
+
+                if(publicRequest.IsSetIpv6Address())
+                {
+                    context.Writer.WritePropertyName("Ipv6Address");
+                    context.Writer.Write(publicRequest.Ipv6Address);
+                }
+
                 if(publicRequest.IsSetSecurityGroups())
                 {
                     context.Writer.WritePropertyName("SecurityGroups");

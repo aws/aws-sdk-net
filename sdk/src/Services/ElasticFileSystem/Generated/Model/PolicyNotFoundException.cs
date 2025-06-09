@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the default file system policy is in effect for the EFS file system specified.
+    /// Returned if <c>no backup</c> is specified for a One Zone EFS file system.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
