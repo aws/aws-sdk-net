@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private string _publicIp;
         private string _publicIpv4Pool;
         private ServiceManaged _serviceManaged;
+        private string _subnetId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -307,6 +308,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceManaged()
         {
             return this._serviceManaged != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The ID of the subnet where the IP address is allocated.
+        /// </para>
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this._subnetId != null;
         }
 
         /// <summary>

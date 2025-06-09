@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         private string _subnetArn;
         private string _subnetId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _type;
         private string _vpcId;
 
         /// <summary>
@@ -382,6 +383,17 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The current state of the subnet.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>failed</c>: The underlying infrastructure to support the subnet failed to provision
+        /// as expected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>failed-insufficient-capacity</c>: The underlying infrastructure to support the
+        /// subnet failed to provision due to a shortage of EC2 instance capacity.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SubnetState State
         {
@@ -447,6 +459,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Indicates if this is a subnet used with Amazon Elastic VMware Service (EVS). Possible
+        /// values are <c>Elastic VMware Service</c> or no value. For more information about Amazon
+        /// EVS, see <a href="https://docs.aws.amazon.com/evs/latest/APIReference/Welcome.html">
+        /// <i>Amazon Elastic VMware Service API Reference</i> </a>.
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>
