@@ -34,9 +34,9 @@ using System.Xml;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListBuckets Request Marshaller
+    /// AbortMultipartUpload Request Marshaller
     /// </summary>       
-    public class ListBucketsRequestMarshaller : IMarshaller<IRequest, ListBucketsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AbortMultipartUploadRequestMarshaller : IMarshaller<IRequest, AbortMultipartUploadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListBucketsRequest)input);
+            return this.Marshall((AbortMultipartUploadRequest)input);
         }
 
         /// <summary>
@@ -53,30 +53,41 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListBucketsRequest publicRequest)
+        public IRequest Marshall(AbortMultipartUploadRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
+        
+            if (publicRequest.IsSetExpectedBucketOwner()) 
+            {
+                request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
+            }
+        
+            if (publicRequest.IsSetIfMatchInitiatedTime()) 
+            {
+                request.Headers["x-amz-if-match-initiated-time"] = StringUtils.FromDateTimeToRFC822(publicRequest.IfMatchInitiatedTime);
+            }
+        
+            if (publicRequest.IsSetRequestPayer()) 
+            {
+                request.Headers["x-amz-request-payer"] = publicRequest.RequestPayer;
+            }
+            if (string.IsNullOrEmpty(publicRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "AbortMultipartUploadRequest.BucketName");
+            if (string.IsNullOrEmpty(publicRequest.Key))
+                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "AbortMultipartUploadRequest.Key");
+            request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
             
-            if (publicRequest.IsSetBucketRegion())
-                request.Parameters.Add("bucket-region", StringUtils.FromString(publicRequest.BucketRegion));
-            
-            if (publicRequest.IsSetContinuationToken())
-                request.Parameters.Add("continuation-token", StringUtils.FromString(publicRequest.ContinuationToken));
-            
-            if (publicRequest.IsSetMaxBuckets())
-                request.Parameters.Add("max-buckets", StringUtils.FromInt(publicRequest.MaxBuckets));
-            
-            if (publicRequest.IsSetPrefix())
-                request.Parameters.Add("prefix", StringUtils.FromString(publicRequest.Prefix));
-            request.ResourcePath = "/";
+            if (publicRequest.IsSetUploadId())
+                request.AddSubResource("uploadId", StringUtils.FromString(publicRequest.UploadId));
+            request.ResourcePath = "/{Key+}";
 
             request.UseQueryString = true;
             return request;
         }
-        private static ListBucketsRequestMarshaller _instance = new ListBucketsRequestMarshaller();        
+        private static AbortMultipartUploadRequestMarshaller _instance = new AbortMultipartUploadRequestMarshaller();        
 
-        internal static ListBucketsRequestMarshaller GetInstance()
+        internal static AbortMultipartUploadRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -84,7 +95,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListBucketsRequestMarshaller Instance
+        public static AbortMultipartUploadRequestMarshaller Instance
         {
             get
             {

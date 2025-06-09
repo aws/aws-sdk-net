@@ -29,14 +29,15 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
+using Amazon.S3.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListBuckets Request Marshaller
+    /// DeleteBucket Request Marshaller
     /// </summary>       
-    public class ListBucketsRequestMarshaller : IMarshaller<IRequest, ListBucketsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteBucketRequestMarshaller : IMarshaller<IRequest, DeleteBucketRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +46,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListBucketsRequest)input);
+            return this.Marshall((DeleteBucketRequest)input);
         }
 
         /// <summary>
@@ -53,30 +54,25 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListBucketsRequest publicRequest)
+        public IRequest Marshall(DeleteBucketRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
-            request.HttpMethod = "GET";
-            
-            if (publicRequest.IsSetBucketRegion())
-                request.Parameters.Add("bucket-region", StringUtils.FromString(publicRequest.BucketRegion));
-            
-            if (publicRequest.IsSetContinuationToken())
-                request.Parameters.Add("continuation-token", StringUtils.FromString(publicRequest.ContinuationToken));
-            
-            if (publicRequest.IsSetMaxBuckets())
-                request.Parameters.Add("max-buckets", StringUtils.FromInt(publicRequest.MaxBuckets));
-            
-            if (publicRequest.IsSetPrefix())
-                request.Parameters.Add("prefix", StringUtils.FromString(publicRequest.Prefix));
+            request.HttpMethod = "DELETE";
+        
+            if (publicRequest.IsSetExpectedBucketOwner()) 
+            {
+                request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
+            }
+            if (string.IsNullOrEmpty(publicRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketRequest.BucketName");
             request.ResourcePath = "/";
 
-            request.UseQueryString = true;
+            request = CustomMarshallTransformations.CustomizeDeleteBucketMarshaller(request, publicRequest);
             return request;
         }
-        private static ListBucketsRequestMarshaller _instance = new ListBucketsRequestMarshaller();        
+        private static DeleteBucketRequestMarshaller _instance = new DeleteBucketRequestMarshaller();        
 
-        internal static ListBucketsRequestMarshaller GetInstance()
+        internal static DeleteBucketRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -84,7 +80,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListBucketsRequestMarshaller Instance
+        public static DeleteBucketRequestMarshaller Instance
         {
             get
             {

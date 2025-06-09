@@ -1220,7 +1220,7 @@ namespace ServiceClientGenerator
             var data = _documentRoot[OperationModifiers.OperationModifiersKey];
             if (data == null)
                 return null;
-
+            
             var operation = data[operationName] as JsonData;
             if (operation == null)
                 return null;
@@ -1248,7 +1248,8 @@ namespace ServiceClientGenerator
                 modifiers.DeprecatedMessage = (string)operation[OperationModifiers.DeprecatedMessageKey];
             if (operation[OperationModifiers.StopPaginationOnSameTokenKey] != null && operation[OperationModifiers.StopPaginationOnSameTokenKey].IsBoolean)
                 modifiers.StopPaginationOnSameToken = (bool)operation[OperationModifiers.StopPaginationOnSameTokenKey];
-
+            if (operation[OperationModifiers.CustomizeMarshallerKey] != null && operation[OperationModifiers.CustomizeMarshallerKey].IsBoolean)
+                modifiers.CustomizeMarshaller = (bool)operation[OperationModifiers.CustomizeMarshallerKey];
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
             {
@@ -1315,12 +1316,29 @@ namespace ServiceClientGenerator
             public const string DeprecatedMessageKey = "deprecatedMessage";
             public const string DocumentationKey = "documentation";
             public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
+            public const string CustomizeMarshallerKey = "customizeMarshaller";
 
             // within a marshal override for a shape; one or both may be present
             public const string MarshallLocationName = "marshallLocationName";
             public const string MarshallName = "marshallName";
 
             private Dictionary<string, JsonData> _marshallNameOverrides = null;
+
+            /// <summary>
+            /// Indicates if the operation's marshaller should be customized.
+            /// If set to true, the operation's marshaller will call CustomizeMarshaller();
+            /// which will be custom code for that specific marshaller.
+            ///usage:
+            /// customizeMarshaller
+            /// "DeleteBucket":{
+            ///    "customizeMarshaller": true
+            /// },  
+            /// </summary>
+            public bool CustomizeMarshaller
+            {
+                get;
+                set;
+            }
 
             /// <summary>
             /// The name of the operation modified
