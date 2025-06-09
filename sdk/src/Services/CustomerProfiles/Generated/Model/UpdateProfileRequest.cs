@@ -72,7 +72,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property AccountNumber. 
         /// <para>
-        /// An account number that you have given to the customer.
+        /// An account number that you have assigned to the customer.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=255)]

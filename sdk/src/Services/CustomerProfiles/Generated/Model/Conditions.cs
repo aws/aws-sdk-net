@@ -44,7 +44,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The number of profile objects used for the calculated attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1)]
         public int ObjectCount
         {
             get { return this._objectCount.GetValueOrDefault(); }

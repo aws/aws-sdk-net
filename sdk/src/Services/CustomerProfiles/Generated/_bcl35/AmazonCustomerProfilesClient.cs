@@ -675,6 +675,76 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateDomainLayout
+
+        /// <summary>
+        /// Creates the layout to view data for a specific domain. This API can only be invoked
+        /// from the Amazon Connect admin website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainLayout service method.</param>
+        /// 
+        /// <returns>The response from the CreateDomainLayout service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomainLayout">REST API Reference for CreateDomainLayout Operation</seealso>
+        public virtual CreateDomainLayoutResponse CreateDomainLayout(CreateDomainLayoutRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainLayoutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainLayoutResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDomainLayoutResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDomainLayout operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainLayout operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomainLayout
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomainLayout">REST API Reference for CreateDomainLayout Operation</seealso>
+        public virtual IAsyncResult BeginCreateDomainLayout(CreateDomainLayoutRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDomainLayoutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDomainLayoutResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDomainLayout operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomainLayout.</param>
+        /// 
+        /// <returns>Returns a  CreateDomainLayoutResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomainLayout">REST API Reference for CreateDomainLayout Operation</seealso>
+        public virtual CreateDomainLayoutResponse EndCreateDomainLayout(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDomainLayoutResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEventStream
 
         /// <summary>
@@ -1318,6 +1388,76 @@ namespace Amazon.CustomerProfiles
         public virtual DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDomainLayout
+
+        /// <summary>
+        /// Deletes the layout used to view data for a specific domain. This API can only be invoked
+        /// from the Amazon Connect admin website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainLayout service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDomainLayout service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainLayout">REST API Reference for DeleteDomainLayout Operation</seealso>
+        public virtual DeleteDomainLayoutResponse DeleteDomainLayout(DeleteDomainLayoutRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainLayoutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainLayoutResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDomainLayoutResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDomainLayout operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainLayout operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomainLayout
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainLayout">REST API Reference for DeleteDomainLayout Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDomainLayout(DeleteDomainLayoutRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDomainLayoutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainLayoutResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDomainLayout operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomainLayout.</param>
+        /// 
+        /// <returns>Returns a  DeleteDomainLayoutResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainLayout">REST API Reference for DeleteDomainLayout Operation</seealso>
+        public virtual DeleteDomainLayoutResponse EndDeleteDomainLayout(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDomainLayoutResponse>(asyncResult);
         }
 
         #endregion
@@ -2313,6 +2453,76 @@ namespace Amazon.CustomerProfiles
         public virtual GetDomainResponse EndGetDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDomainLayout
+
+        /// <summary>
+        /// Gets the layout to view data for a specific domain. This API can only be invoked from
+        /// the Amazon Connect admin website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainLayout service method.</param>
+        /// 
+        /// <returns>The response from the GetDomainLayout service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainLayout">REST API Reference for GetDomainLayout Operation</seealso>
+        public virtual GetDomainLayoutResponse GetDomainLayout(GetDomainLayoutRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainLayoutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainLayoutResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainLayoutResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainLayout operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainLayout operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainLayout
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainLayout">REST API Reference for GetDomainLayout Operation</seealso>
+        public virtual IAsyncResult BeginGetDomainLayout(GetDomainLayoutRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainLayoutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainLayoutResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDomainLayout operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainLayout.</param>
+        /// 
+        /// <returns>Returns a  GetDomainLayoutResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainLayout">REST API Reference for GetDomainLayout Operation</seealso>
+        public virtual GetDomainLayoutResponse EndGetDomainLayout(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDomainLayoutResponse>(asyncResult);
         }
 
         #endregion
@@ -3568,6 +3778,76 @@ namespace Amazon.CustomerProfiles
         public virtual ListCalculatedAttributesForProfileResponse EndListCalculatedAttributesForProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCalculatedAttributesForProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDomainLayouts
+
+        /// <summary>
+        /// Lists the existing layouts that can be used to view data for a specific domain. This
+        /// API can only be invoked from the Amazon Connect admin website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainLayouts service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainLayouts service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainLayouts">REST API Reference for ListDomainLayouts Operation</seealso>
+        public virtual ListDomainLayoutsResponse ListDomainLayouts(ListDomainLayoutsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainLayoutsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainLayoutsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainLayoutsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomainLayouts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainLayouts operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainLayouts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainLayouts">REST API Reference for ListDomainLayouts Operation</seealso>
+        public virtual IAsyncResult BeginListDomainLayouts(ListDomainLayoutsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainLayoutsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainLayoutsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDomainLayouts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainLayouts.</param>
+        /// 
+        /// <returns>Returns a  ListDomainLayoutsResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainLayouts">REST API Reference for ListDomainLayouts Operation</seealso>
+        public virtual ListDomainLayoutsResponse EndListDomainLayouts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDomainLayoutsResponse>(asyncResult);
         }
 
         #endregion
@@ -5274,6 +5554,76 @@ namespace Amazon.CustomerProfiles
         public virtual UpdateDomainResponse EndUpdateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDomainLayout
+
+        /// <summary>
+        /// Updates the layout used to view data for a specific domain. This API can only be invoked
+        /// from the Amazon Connect admin website.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainLayout service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDomainLayout service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomainLayout">REST API Reference for UpdateDomainLayout Operation</seealso>
+        public virtual UpdateDomainLayoutResponse UpdateDomainLayout(UpdateDomainLayoutRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainLayoutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainLayoutResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainLayoutResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDomainLayout operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainLayout operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainLayout
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomainLayout">REST API Reference for UpdateDomainLayout Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDomainLayout(UpdateDomainLayoutRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainLayoutRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainLayoutResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDomainLayout operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainLayout.</param>
+        /// 
+        /// <returns>Returns a  UpdateDomainLayoutResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomainLayout">REST API Reference for UpdateDomainLayout Operation</seealso>
+        public virtual UpdateDomainLayoutResponse EndUpdateDomainLayout(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDomainLayoutResponse>(asyncResult);
         }
 
         #endregion

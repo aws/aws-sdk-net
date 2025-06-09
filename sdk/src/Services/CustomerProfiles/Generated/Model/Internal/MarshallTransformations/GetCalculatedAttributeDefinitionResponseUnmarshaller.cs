@@ -100,16 +100,34 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Readiness", targetDepth))
+                {
+                    var unmarshaller = ReadinessUnmarshaller.Instance;
+                    response.Readiness = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Statistic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Statistic = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseHistoricalData", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.UseHistoricalData = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

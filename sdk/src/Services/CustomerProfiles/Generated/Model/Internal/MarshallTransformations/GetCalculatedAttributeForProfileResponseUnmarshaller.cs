@@ -70,6 +70,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.IsDataPartial = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastObjectTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastObjectTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

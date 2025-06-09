@@ -42,8 +42,11 @@ namespace Amazon.CustomerProfiles.Model
         private string _displayName;
         private Filter _filter;
         private DateTime? _lastUpdatedAt;
+        private Readiness _readiness;
         private Statistic _statistic;
+        private ReadinessStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private bool? _useHistoricalData;
 
         /// <summary>
         /// Gets and sets the property AttributeDetails. 
@@ -195,6 +198,25 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Readiness. 
+        /// <para>
+        /// Information indicating if the Calculated Attribute is ready for use by confirming
+        /// all historical data has been processed and reflected.
+        /// </para>
+        /// </summary>
+        public Readiness Readiness
+        {
+            get { return this._readiness; }
+            set { this._readiness = value; }
+        }
+
+        // Check to see if Readiness property is set
+        internal bool IsSetReadiness()
+        {
+            return this._readiness != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
         /// The aggregation operation to perform for the calculated attribute.
@@ -214,6 +236,25 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Status of the Calculated Attribute creation (whether all historical data has been
+        /// indexed.)
+        /// </para>
+        /// </summary>
+        public ReadinessStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags used to organize, track, or control access for this resource.
@@ -230,6 +271,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseHistoricalData. 
+        /// <para>
+        /// Whether historical data ingested before the Calculated Attribute was created should
+        /// be included in calculations.
+        /// </para>
+        /// </summary>
+        public bool UseHistoricalData
+        {
+            get { return this._useHistoricalData.GetValueOrDefault(); }
+            set { this._useHistoricalData = value; }
+        }
+
+        // Check to see if UseHistoricalData property is set
+        internal bool IsSetUseHistoricalData()
+        {
+            return this._useHistoricalData.HasValue; 
         }
 
     }

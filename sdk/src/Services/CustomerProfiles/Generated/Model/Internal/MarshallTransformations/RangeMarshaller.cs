@@ -48,6 +48,18 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetTimestampFormat())
+            {
+                context.Writer.WritePropertyName("TimestampFormat");
+                context.Writer.Write(requestObject.TimestampFormat);
+            }
+
+            if(requestObject.IsSetTimestampSource())
+            {
+                context.Writer.WritePropertyName("TimestampSource");
+                context.Writer.Write(requestObject.TimestampSource);
+            }
+
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");
@@ -58,6 +70,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Value");
                 context.Writer.Write(requestObject.Value);
+            }
+
+            if(requestObject.IsSetValueRange())
+            {
+                context.Writer.WritePropertyName("ValueRange");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ValueRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.ValueRange, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

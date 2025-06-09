@@ -138,6 +138,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetUseHistoricalData())
+                {
+                    context.Writer.WritePropertyName("UseHistoricalData");
+                    context.Writer.Write(publicRequest.UseHistoricalData);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

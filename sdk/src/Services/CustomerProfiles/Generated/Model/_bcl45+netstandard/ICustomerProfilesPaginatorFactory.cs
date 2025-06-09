@@ -38,6 +38,16 @@ namespace Amazon.CustomerProfiles.Model
         IGetSimilarProfilesPaginator GetSimilarProfiles(GetSimilarProfilesRequest request);
 
         /// <summary>
+        /// Paginator for ListDomainLayouts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDomainLayoutsPaginator ListDomainLayouts(ListDomainLayoutsRequest request);
+
+        /// <summary>
         /// Paginator for ListEventStreams operation
         ///</summary>
         [AWSPaginator(
