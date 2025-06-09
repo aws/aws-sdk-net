@@ -49,6 +49,7 @@ namespace Amazon.CustomerProfiles.Model
         private Filter _filter;
         private Statistic _statistic;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private bool? _useHistoricalData;
 
         /// <summary>
         /// Gets and sets the property AttributeDetails. 
@@ -218,6 +219,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseHistoricalData. 
+        /// <para>
+        /// Whether historical data ingested before the Calculated Attribute was created should
+        /// be included in calculations.
+        /// </para>
+        /// </summary>
+        public bool? UseHistoricalData
+        {
+            get { return this._useHistoricalData; }
+            set { this._useHistoricalData = value; }
+        }
+
+        // Check to see if UseHistoricalData property is set
+        internal bool IsSetUseHistoricalData()
+        {
+            return this._useHistoricalData.HasValue; 
         }
 
     }

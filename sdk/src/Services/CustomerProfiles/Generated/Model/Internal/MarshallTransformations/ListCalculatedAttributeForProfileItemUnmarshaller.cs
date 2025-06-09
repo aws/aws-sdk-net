@@ -74,6 +74,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsDataPartial = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LastObjectTimestamp", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastObjectTimestamp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -43,7 +43,7 @@ namespace Amazon.CustomerProfiles.Model
         /// A list of attribute items specified in the mathematical expression.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<AttributeItem> Attributes
         {
             get { return this._attributes; }

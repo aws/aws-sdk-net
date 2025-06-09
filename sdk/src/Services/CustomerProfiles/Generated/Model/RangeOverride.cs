@@ -44,7 +44,6 @@ namespace Amazon.CustomerProfiles.Model
         /// The end time of when to include objects.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=366)]
         public int? End
         {
             get { return this._end; }
@@ -63,7 +62,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The start time of when to include objects.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=366)]
+        [AWSProperty(Required=true)]
         public int? Start
         {
             get { return this._start; }

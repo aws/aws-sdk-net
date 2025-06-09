@@ -144,6 +144,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetUseHistoricalData())
+            {
+                context.Writer.WritePropertyName("UseHistoricalData");
+                context.Writer.WriteBooleanValue(publicRequest.UseHistoricalData.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

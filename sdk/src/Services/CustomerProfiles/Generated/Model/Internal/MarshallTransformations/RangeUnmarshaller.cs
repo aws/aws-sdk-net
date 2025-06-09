@@ -56,6 +56,18 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("TimestampFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimestampFormat = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TimestampSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimestampSource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Unit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -66,6 +78,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ValueRange", targetDepth))
+                {
+                    var unmarshaller = ValueRangeUnmarshaller.Instance;
+                    unmarshalledObject.ValueRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

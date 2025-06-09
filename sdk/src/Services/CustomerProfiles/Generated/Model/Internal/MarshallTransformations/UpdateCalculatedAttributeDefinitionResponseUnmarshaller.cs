@@ -94,16 +94,34 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Readiness", targetDepth))
+                {
+                    var unmarshaller = ReadinessUnmarshaller.Instance;
+                    response.Readiness = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Statistic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Statistic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("UseHistoricalData", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.UseHistoricalData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

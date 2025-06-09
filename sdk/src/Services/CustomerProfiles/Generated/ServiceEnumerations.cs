@@ -1169,6 +1169,52 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type LayoutType.
+    /// </summary>
+    public class LayoutType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROFILE_EXPLORER for LayoutType
+        /// </summary>
+        public static readonly LayoutType PROFILE_EXPLORER = new LayoutType("PROFILE_EXPLORER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LayoutType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LayoutType FindValue(string value)
+        {
+            return FindValue<LayoutType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LayoutType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogicalOperator.
     /// </summary>
     public class LogicalOperator : ConstantClass
@@ -1739,6 +1785,64 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type ReadinessStatus.
+    /// </summary>
+    public class ReadinessStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ReadinessStatus
+        /// </summary>
+        public static readonly ReadinessStatus COMPLETED = new ReadinessStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ReadinessStatus
+        /// </summary>
+        public static readonly ReadinessStatus FAILED = new ReadinessStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ReadinessStatus
+        /// </summary>
+        public static readonly ReadinessStatus IN_PROGRESS = new ReadinessStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PREPARING for ReadinessStatus
+        /// </summary>
+        public static readonly ReadinessStatus PREPARING = new ReadinessStatus("PREPARING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReadinessStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReadinessStatus FindValue(string value)
+        {
+            return FindValue<ReadinessStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReadinessStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RuleBasedMatchingStatus.
     /// </summary>
     public class RuleBasedMatchingStatus : ConstantClass
@@ -2289,6 +2393,18 @@ namespace Amazon.CustomerProfiles
     {
 
         /// <summary>
+        /// Constant AIR_BOOKING for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier AIR_BOOKING = new StandardIdentifier("AIR_BOOKING");
+        /// <summary>
+        /// Constant AIR_PREFERENCE for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier AIR_PREFERENCE = new StandardIdentifier("AIR_PREFERENCE");
+        /// <summary>
+        /// Constant AIR_SEGMENT for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier AIR_SEGMENT = new StandardIdentifier("AIR_SEGMENT");
+        /// <summary>
         /// Constant ASSET for StandardIdentifier
         /// </summary>
         public static readonly StandardIdentifier ASSET = new StandardIdentifier("ASSET");
@@ -2301,9 +2417,33 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         public static readonly StandardIdentifier COMMUNICATION_RECORD = new StandardIdentifier("COMMUNICATION_RECORD");
         /// <summary>
+        /// Constant HOTEL_PREFERENCE for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier HOTEL_PREFERENCE = new StandardIdentifier("HOTEL_PREFERENCE");
+        /// <summary>
+        /// Constant HOTEL_RESERVATION for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier HOTEL_RESERVATION = new StandardIdentifier("HOTEL_RESERVATION");
+        /// <summary>
+        /// Constant HOTEL_STAY_REVENUE for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier HOTEL_STAY_REVENUE = new StandardIdentifier("HOTEL_STAY_REVENUE");
+        /// <summary>
         /// Constant LOOKUP_ONLY for StandardIdentifier
         /// </summary>
         public static readonly StandardIdentifier LOOKUP_ONLY = new StandardIdentifier("LOOKUP_ONLY");
+        /// <summary>
+        /// Constant LOYALTY for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier LOYALTY = new StandardIdentifier("LOYALTY");
+        /// <summary>
+        /// Constant LOYALTY_PROMOTION for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier LOYALTY_PROMOTION = new StandardIdentifier("LOYALTY_PROMOTION");
+        /// <summary>
+        /// Constant LOYALTY_TRANSACTION for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier LOYALTY_TRANSACTION = new StandardIdentifier("LOYALTY_TRANSACTION");
         /// <summary>
         /// Constant NEW_ONLY for StandardIdentifier
         /// </summary>
