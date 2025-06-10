@@ -735,8 +735,11 @@
       <LastGenOutput>AmazonS3RetryPolicy.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
 	<PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+	<Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'net45'">
 	<PackageReference Include="System.CodeDom" Version="6.0.0" />
