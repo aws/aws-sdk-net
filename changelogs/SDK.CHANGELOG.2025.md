@@ -1,3 +1,10 @@
+### 3.7.1061.1 (2025-06-10 18:13 UTC)
+* GameLiftStreams (3.7.401.44)
+	* Documentation updates for Amazon GameLift Streams to address formatting errors, correct resource ID examples, and update links to other guides
+* Core 3.7.402.70
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1061.0 (2025-06-09 18:23 UTC)
 * AppSync (3.7.409.0)
 	* Deprecate `atRestEncryptionEnabled` and `transitEncryptionEnabled` attributes in `CreateApiCache` action. Encryption is always enabled for new caches.
