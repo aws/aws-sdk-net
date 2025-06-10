@@ -78,6 +78,9 @@ namespace Amazon.DynamoDBv2.Model
         /// This property can be used to determine if the related property
         /// was returned by a service response or if the related property
         /// should be sent to the service during a service call.
+        /// <para>
+        /// If this property is set to false the property <seealso cref="Item"/> will be reset to null.
+        /// </para>
         /// </summary>
         /// <returns>
         /// True if the related property was set or will be sent to a service; false otherwise.
