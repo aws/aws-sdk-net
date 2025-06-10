@@ -45,9 +45,9 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property AlwaysOnCapacity. 
         /// <para>
-        ///  The streaming capacity that is allocated and ready to handle stream requests without
+        /// The streaming capacity that is allocated and ready to handle stream requests without
         /// delay. You pay for this capacity whether it's in use or not. Best for quickest time
-        /// from streaming request to streaming session. 
+        /// from streaming request to streaming session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -67,8 +67,9 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property LocationName. 
         /// <para>
         ///  A location's name. For example, <c>us-east-1</c>. For a complete list of locations
-        /// that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
-        /// and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. 
+        /// that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
+        /// quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -87,10 +88,9 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property OnDemandCapacity. 
         /// <para>
-        ///  The streaming capacity that Amazon GameLift Streams can allocate in response to stream
+        /// The streaming capacity that Amazon GameLift Streams can allocate in response to stream
         /// requests, and then de-allocate when the session has terminated. This offers a cost
         /// control measure at the expense of a greater startup time (typically under 5 minutes).
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

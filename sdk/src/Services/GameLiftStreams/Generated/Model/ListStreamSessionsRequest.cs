@@ -94,7 +94,8 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property Identifier. 
         /// <para>
         /// The unique identifier of a Amazon GameLift Streams stream group to retrieve the stream
-        /// session for. You can use either the stream group ID or the Amazon Resource Name (ARN).
+        /// session for. You can use either the stream group ID or the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+        /// Resource Name (ARN)</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

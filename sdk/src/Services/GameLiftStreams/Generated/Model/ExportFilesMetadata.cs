@@ -48,13 +48,13 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  
         /// <para>
-        ///  Example 1: If you provide an S3 URI called <c>s3://MyBucket/MyGame_Session1.zip</c>,
+        ///  Example 1: If you provide an S3 URI called <c>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</c>,
         /// then Amazon GameLift Streams will save the files at that location. 
         /// </para>
         ///  
         /// <para>
-        ///  Example 2: If you provide an S3 URI called <c>s3://MyBucket/MyGameSessions_ExportedFiles/</c>,
-        /// then Amazon GameLift Streams will save the files at <c>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</c>
+        ///  Example 2: If you provide an S3 URI called <c>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</c>,
+        /// then Amazon GameLift Streams will save the files at <c>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</c>
         /// or another similar name. 
         /// </para>
         /// </summary>

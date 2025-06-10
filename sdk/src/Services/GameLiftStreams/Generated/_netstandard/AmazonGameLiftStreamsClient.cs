@@ -49,8 +49,8 @@ namespace Amazon.GameLiftStreams
     ///  
     /// <para>
     /// This Reference Guide describes the Amazon GameLift Streams service API. You can use
-    /// the API through the Amazon Web Services SDK, the Command Line Interface (AWS CLI),
-    /// or by making direct REST calls through HTTPS.
+    /// the API through the Amazon Web Services SDK, the Command Line Interface (CLI), or
+    /// by making direct REST calls through HTTPS.
     /// </para>
     ///  
     /// <para>
@@ -442,8 +442,8 @@ namespace Amazon.GameLiftStreams
         ///  <important> 
         /// <para>
         ///  Make sure that your files in the Amazon S3 bucket are the correct version you want
-        /// to use. As soon as you create a Amazon GameLift Streams application, you cannot change
-        /// the files at a later time. 
+        /// to use. If you change the files at a later time, you will need to create a new Amazon
+        /// GameLift Streams application. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -522,26 +522,35 @@ namespace Amazon.GameLiftStreams
         /// <para>
         ///  Stream capacity represents the number of concurrent streams that can be active at
         /// a time. You set stream capacity per location, per stream group. There are two types
-        /// of capacity: always-on and on-demand: 
+        /// of capacity, always-on and on-demand: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b>Always-on</b>: The streaming capacity that is allocated and ready to handle stream
         /// requests without delay. You pay for this capacity whether it's in use or not. Best
-        /// for quickest time from streaming request to streaming session. <pre><c> &lt;/p&gt;
-        /// &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;b&gt;On-demand&lt;/b&gt;: The streaming capacity
-        /// that Amazon GameLift Streams can allocate in response to stream requests, and then
-        /// de-allocate when the session has terminated. This offers a cost control measure at
-        /// the expense of a greater startup time (typically under 5 minutes). &lt;/p&gt; &lt;/li&gt;
-        /// &lt;/ul&gt; &lt;p&gt; To adjust the capacity of any &lt;code&gt;ACTIVE&lt;/code&gt;
-        /// stream group, call &lt;a href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html&quot;&gt;UpdateStreamGroup&lt;/a&gt;.
-        /// &lt;/p&gt; &lt;p&gt; If the request is successful, Amazon GameLift Streams begins
-        /// creating the stream group. Amazon GameLift Streams assigns a unique ID to the stream
-        /// group resource and sets the status to &lt;code&gt;ACTIVATING&lt;/code&gt;. When the
-        /// stream group reaches &lt;code&gt;ACTIVE&lt;/code&gt; status, you can start stream
-        /// sessions by using &lt;a href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html&quot;&gt;StartStreamSession&lt;/a&gt;.
-        /// To check the stream group's status, call &lt;a href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html&quot;&gt;GetStreamGroup&lt;/a&gt;.
-        /// &lt;/p&gt; </c></pre>
+        /// for quickest time from streaming request to streaming session. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>On-demand</b>: The streaming capacity that Amazon GameLift Streams can allocate
+        /// in response to stream requests, and then de-allocate when the session has terminated.
+        /// This offers a cost control measure at the expense of a greater startup time (typically
+        /// under 5 minutes). 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  To adjust the capacity of any <c>ACTIVE</c> stream group, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If the request is successful, Amazon GameLift Streams begins creating the stream
+        /// group. Amazon GameLift Streams assigns a unique ID to the stream group resource and
+        /// sets the status to <c>ACTIVATING</c>. When the stream group reaches <c>ACTIVE</c>
+        /// status, you can start stream sessions by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html">StartStreamSession</a>.
+        /// To check the stream group's status, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html">GetStreamGroup</a>.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1526,8 +1535,7 @@ namespace Amazon.GameLiftStreams
         /// This action initiates a new stream session and outputs connection information that
         /// clients can use to access the stream. A stream session refers to an instance of a
         /// stream that Amazon GameLift Streams transmits from the server to the end-user. A stream
-        /// session runs on a compute resource, or stream capacity, that a stream group has allocated.
-        /// 
+        /// session runs on a compute resource that a stream group has allocated. 
         /// 
         ///  
         /// <para>
@@ -1539,9 +1547,9 @@ namespace Amazon.GameLiftStreams
         ///  
         /// <para>
         ///  For stream groups that have multiple locations, provide a set of locations ordered
-        /// by priority by setting <c>Locations</c>. Amazon GameLift Streams will start a single
-        /// stream session in the next available location. An application must be finished replicating
-        /// in a remote location before the remote location can host a stream. 
+        /// by priority using a <c>Locations</c> parameter. Amazon GameLift Streams will start
+        /// a single stream session in the next available location. An application must be finished
+        /// replicating in a remote location before the remote location can host a stream. 
         /// </para>
         ///  
         /// <para>
@@ -1549,7 +1557,7 @@ namespace Amazon.GameLiftStreams
         /// Amazon GameLift Streams assigns an Amazon Resource Name (ARN) value to the stream
         /// session resource and sets the status to <c>ACTIVATING</c>. During the stream preparation
         /// process, Amazon GameLift Streams queues the request and searches for available stream
-        /// capacity to run the stream. This can result to one of the following: 
+        /// capacity to run the stream. This results in one of the following: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1874,20 +1882,27 @@ namespace Amazon.GameLiftStreams
         /// <para>
         ///  Stream capacity represents the number of concurrent streams that can be active at
         /// a time. You set stream capacity per location, per stream group. There are two types
-        /// of capacity: always-on and on-demand: 
+        /// of capacity, always-on and on-demand: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b>Always-on</b>: The streaming capacity that is allocated and ready to handle stream
         /// requests without delay. You pay for this capacity whether it's in use or not. Best
-        /// for quickest time from streaming request to streaming session. <pre><c> &lt;/p&gt;
-        /// &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;b&gt;On-demand&lt;/b&gt;: The streaming capacity
-        /// that Amazon GameLift Streams can allocate in response to stream requests, and then
-        /// de-allocate when the session has terminated. This offers a cost control measure at
-        /// the expense of a greater startup time (typically under 5 minutes). &lt;/p&gt; &lt;/li&gt;
-        /// &lt;/ul&gt; &lt;p&gt;To update a stream group, specify the stream group's Amazon Resource
-        /// Name (ARN) and provide the new values. If the request is successful, Amazon GameLift
-        /// Streams returns the complete updated metadata for the stream group.&lt;/p&gt; </c></pre>
+        /// for quickest time from streaming request to streaming session. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>On-demand</b>: The streaming capacity that Amazon GameLift Streams can allocate
+        /// in response to stream requests, and then de-allocate when the session has terminated.
+        /// This offers a cost control measure at the expense of a greater startup time (typically
+        /// under 5 minutes). 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To update a stream group, specify the stream group's Amazon Resource Name (ARN) and
+        /// provide the new values. If the request is successful, Amazon GameLift Streams returns
+        /// the complete updated metadata for the stream group.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamGroup service method.</param>
         /// <param name="cancellationToken">
