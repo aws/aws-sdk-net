@@ -1,3 +1,11 @@
+### 4.0.29.1 (2025-06-10 18:11 UTC)
+* GameLiftStreams (4.0.0.6)
+	* Documentation updates for Amazon GameLift Streams to address formatting errors, correct resource ID examples, and update links to other guides
+* Core 4.0.0.8
+	* Fixed Document.cs serialization issue that caused WebAuthn operations to fail when response contained Dictionary structures [issue 3837](https://github.com/aws/aws-sdk-net/issues/3837)
+	* Fixed issue with public IsSet properties not working correctly for collection properties when set to false.
+	* All services packages updated to require new Core
+
 ### 4.0.29.0 (2025-06-09 18:25 UTC)
 * AppSync (4.0.1.0)
 	* Deprecate `atRestEncryptionEnabled` and `transitEncryptionEnabled` attributes in `CreateApiCache` action. Encryption is always enabled for new caches.

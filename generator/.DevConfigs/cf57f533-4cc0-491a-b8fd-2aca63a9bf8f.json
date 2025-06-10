@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Fixed Document.cs serialization issue that caused WebAuthn operations to fail when response contained Dictionary structures [issue 3837](https://github.com/aws/aws-sdk-net/issues/3837)"
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }

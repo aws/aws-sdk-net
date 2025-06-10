@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Fixed issue with public IsSet properties not working correctly for collection properties when set to false."
-    ]
-  }
-}
