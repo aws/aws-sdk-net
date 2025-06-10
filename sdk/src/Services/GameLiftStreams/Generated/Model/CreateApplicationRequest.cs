@@ -44,8 +44,8 @@ namespace Amazon.GameLiftStreams.Model
     ///  <important> 
     /// <para>
     ///  Make sure that your files in the Amazon S3 bucket are the correct version you want
-    /// to use. As soon as you create a Amazon GameLift Streams application, you cannot change
-    /// the files at a later time. 
+    /// to use. If you change the files at a later time, you will need to create a new Amazon
+    /// GameLift Streams application. 
     /// </para>
     ///  </important> 
     /// <para>
@@ -76,8 +76,8 @@ namespace Amazon.GameLiftStreams.Model
         ///  <note> 
         /// <para>
         /// The log bucket must have permissions that give Amazon GameLift Streams access to write
-        /// the log files. For more information, see <b>Getting Started</b> in the Amazon GameLift
-        /// Streams Developer Guide. 
+        /// the log files. For more information, see <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/applications.html#application-bucket-permission-template">Application
+        /// log bucket permission policy</a> in the <i>Amazon GameLift Streams Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

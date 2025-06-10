@@ -41,8 +41,8 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-        /// Resource Name (ARN)</a> that uniquely identifies the application resource. Format
-        /// example: <c>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</c>.
+        /// Resource Name (ARN)</a> that uniquely identifies the application resource. Example
+        /// ARN: <c>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</c>.
         /// 
         /// </para>
         /// </summary>
@@ -62,7 +62,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// An ID that uniquely identifies the application resource. For example: <c>a-9ZY8X7Wv6</c>.
+        /// An ID that uniquely identifies the application resource. Example ID: <c>a-9ZY8X7Wv6</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

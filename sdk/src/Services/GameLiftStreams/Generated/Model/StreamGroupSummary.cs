@@ -48,9 +48,9 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-        /// Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource.
-        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</c>
-        /// or ID-<c>sg-1AB2C3De4</c>. 
+        /// Resource Name (ARN)</a> that uniquely identifies the stream group resource. Example
+        /// ARN: <c>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -126,10 +126,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-        /// Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource.
-        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</c>
-        /// or ID-<c>sg-1AB2C3De4</c>. 
+        /// An ID that uniquely identifies the stream group resource. Example ID: <c>sg-1AB2C3De4</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
