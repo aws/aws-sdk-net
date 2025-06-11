@@ -94,7 +94,7 @@ namespace Amazon.LexModelsV2.Model
         /// A description of the slot. Use this to help identify the slot in lists.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Min=0, Max=2000)]
         public string Description
         {
             get { return this._description; }

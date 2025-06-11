@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuntimeSettings Object
+    /// Response Unmarshaller for NluImprovementSpecification Object
     /// </summary>  
-    public class RuntimeSettingsUnmarshaller : IUnmarshaller<RuntimeSettings, XmlUnmarshallerContext>, IUnmarshaller<RuntimeSettings, JsonUnmarshallerContext>
+    public class NluImprovementSpecificationUnmarshaller : IUnmarshaller<NluImprovementSpecification, XmlUnmarshallerContext>, IUnmarshaller<NluImprovementSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RuntimeSettings IUnmarshaller<RuntimeSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NluImprovementSpecification IUnmarshaller<NluImprovementSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuntimeSettings Unmarshall(JsonUnmarshallerContext context)
+        public NluImprovementSpecification Unmarshall(JsonUnmarshallerContext context)
         {
-            RuntimeSettings unmarshalledObject = new RuntimeSettings();
+            NluImprovementSpecification unmarshalledObject = new NluImprovementSpecification();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("nluImprovement", targetDepth))
+                if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = NluImprovementSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.NluImprovement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("slotResolutionImprovement", targetDepth))
-                {
-                    var unmarshaller = SlotResolutionImprovementSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.SlotResolutionImprovement = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuntimeSettingsUnmarshaller _instance = new RuntimeSettingsUnmarshaller();        
+        private static NluImprovementSpecificationUnmarshaller _instance = new NluImprovementSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuntimeSettingsUnmarshaller Instance
+        public static NluImprovementSpecificationUnmarshaller Instance
         {
             get
             {

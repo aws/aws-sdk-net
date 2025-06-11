@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RuntimeSettings Marshaller
+    /// NluImprovementSpecification Marshaller
     /// </summary>
-    public class RuntimeSettingsMarshaller : IRequestMarshaller<RuntimeSettings, JsonMarshallerContext> 
+    public class NluImprovementSpecificationMarshaller : IRequestMarshaller<NluImprovementSpecification, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,14 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuntimeSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(NluImprovementSpecification requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetNluImprovement())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("nluImprovement");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = NluImprovementSpecificationMarshaller.Instance;
-                marshaller.Marshall(requestObject.NluImprovement, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSlotResolutionImprovement())
-            {
-                context.Writer.WritePropertyName("slotResolutionImprovement");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SlotResolutionImprovementSpecificationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SlotResolutionImprovement, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.Write(requestObject.Enabled);
             }
 
         }
@@ -75,7 +59,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RuntimeSettingsMarshaller Instance = new RuntimeSettingsMarshaller();
+        public readonly static NluImprovementSpecificationMarshaller Instance = new NluImprovementSpecificationMarshaller();
 
     }
 }

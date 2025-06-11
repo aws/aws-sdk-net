@@ -35,7 +35,26 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class RuntimeSettings
     {
+        private NluImprovementSpecification _nluImprovement;
         private SlotResolutionImprovementSpecification _slotResolutionImprovement;
+
+        /// <summary>
+        /// Gets and sets the property NluImprovement. 
+        /// <para>
+        /// An object containing specifications for the assisted nlu feature.
+        /// </para>
+        /// </summary>
+        public NluImprovementSpecification NluImprovement
+        {
+            get { return this._nluImprovement; }
+            set { this._nluImprovement = value; }
+        }
+
+        // Check to see if NluImprovement property is set
+        internal bool IsSetNluImprovement()
+        {
+            return this._nluImprovement != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SlotResolutionImprovement. 

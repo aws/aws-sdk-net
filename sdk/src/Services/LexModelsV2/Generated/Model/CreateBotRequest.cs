@@ -149,7 +149,7 @@ namespace Amazon.LexModelsV2.Model
         /// A description of the bot. It appears in lists to help you identify a particular bot.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Min=0, Max=2000)]
         public string Description
         {
             get { return this._description; }

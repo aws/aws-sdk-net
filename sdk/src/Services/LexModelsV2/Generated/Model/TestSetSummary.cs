@@ -69,7 +69,7 @@ namespace Amazon.LexModelsV2.Model
         /// The description of the test set.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Min=0, Max=2000)]
         public string Description
         {
             get { return this._description; }
