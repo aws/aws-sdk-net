@@ -4,6 +4,7 @@
             "serviceName": "S3",
             "type": "patch",
             "changeLogMessages": [
+                "Breaking Change: Fixed MaxBuckets on ListBuckets to use int? instead of int to be consistent with other request properties.",
                 "Generate ListBuckets and ListDirectoryBuckets. Delete custom files."
             ]
         }
