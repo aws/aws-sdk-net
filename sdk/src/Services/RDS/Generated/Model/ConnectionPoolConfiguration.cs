@@ -92,6 +92,15 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Default: no initialization query
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Since you can access initialization query as part of target group configuration, it
+        /// is not protected by authentication or cryptographic methods. Anyone with access to
+        /// view or manage your proxy target group configuration can view the initialization query.
+        /// You should not add sensitive data, such as passwords or long-lived encryption keys,
+        /// to this option.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string InitQuery
         {
