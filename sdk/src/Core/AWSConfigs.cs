@@ -28,6 +28,7 @@ using Amazon.Util.Internal;
 using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Credentials;
 
 namespace Amazon
 {
@@ -72,32 +73,23 @@ namespace Amazon
     {
         #region Private static members
 
-        private static char[] validSeparators = new char[] { ' ', ',' };
-
         // Tests can override this DateTime source.
         internal static Func<DateTime> utcNowSource = GetUtcNow;
 
-        // Deprecated configs
         internal static string _awsRegion = GetConfig(AWSRegionKey);
         internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
         internal static bool _initializeCollections = GetConfigBool(InitializeCollectionsKey, defaultValue: false);
-        // for reading from awsconfigs.xml
-        private static object _lock = new object();
-        private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
         private static TelemetryProvider _telemetryProvider = new DefaultTelemetryProvider();
-
-#pragma warning disable 414
-        private static bool configPresent = true;
-#pragma warning restore 414
 
 #if NET8_0_OR_GREATER
         internal static bool _disableDangerousDisablePathAndQueryCanonicalization = GetConfigBool(DisableDangerousDisablePathAndQueryCanonicalizationKey, defaultValue: false);
 #endif
 
         // New config section
-        private static RootConfig _rootConfig = new RootConfig();
+        private static readonly RootConfig _rootConfig = new();
+        
         #endregion
 
         #region Clock Skew
@@ -226,12 +218,12 @@ namespace Amazon
 
         /// <summary>
         /// Key for the StreamingUtf8JsonReaderBufferSize property.
-        /// <seealso cref="Amazon.AWSConfigs.StreamingUtf8JsonReaderBufferSize"/>"/>
+        /// <seealso cref="StreamingUtf8JsonReaderBufferSize"/>
         /// </summary>
         public const string StreamingUtf8JsonReaderBufferSizeKey = "StreamingUtf8JsonReaderBufferSize";
 
         /// <summary>
-        /// Configures the default buffer size for the the StreamingUtf8JsonReader/>
+        /// Configures the default buffer size for the the StreamingUtf8JsonReader
         /// used for buffering data from the stream passed into its constructor. If this isn't set, the SDK will default to 4096 bytes.
         /// 
         /// Setting this property is not thread safe and should only be set at application startup.
@@ -324,7 +316,32 @@ namespace Amazon
             set { _rootConfig.DisableDangerousDisablePathAndQueryCanonicalization = value; }
         }
 #endif
-#endregion
+        #endregion
+
+        #region CredentialsGenerators
+
+        /// <summary>
+        /// Global configuration option to override the search order for credentials when creating SDK service clients without credentials.
+        /// <para />
+        /// This option is equivalent to the <see cref="FallbackCredentialsFactory.CredentialsGenerators"/>, but it should only be used 
+        /// if the <a href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/creds-assign.html">default order</a> does not meet your application needs.
+        /// <para />
+        /// When set, all service clients will use the specified providers so you must guarantee they return valid
+        /// credentials for the operations to succeed.
+        /// <para />
+        /// Setting this property is not thread safe and should only be set at application startup.
+        /// </summary>
+        /// <remarks>
+        /// This option is only used in the <see cref="DefaultAWSCredentialsIdentityResolver"/>, it's not considered by the 
+        /// deprecated <see cref="FallbackCredentialsFactory"/> when resolving credentials.
+        /// </remarks>
+        public static List<DefaultAWSCredentialsIdentityResolver.CredentialsGenerator> AWSCredentialsGenerators
+        {
+            get { return _rootConfig.AWSCredentialsGenerators; }
+            set { _rootConfig.AWSCredentialsGenerators = value; }
+        }
+        
+        #endregion
 
         #region AWS Config Sections
 
@@ -460,48 +477,6 @@ namespace Amazon
             if (bool.TryParse(value, out result))
                 return result;
             return defaultValue;
-        }
-
-        private static T GetConfigEnum<T>(string name)
-        {
-            var type = typeof(T);
-            if (!type.IsEnum) throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Type {0} must be enum", type.FullName));
-
-            string value = GetConfig(name);
-            if (string.IsNullOrEmpty(value))
-                return default(T);
-            T result = ParseEnum<T>(value);
-            return result;
-        }
-
-        private static T ParseEnum<T>(string value)
-        {
-            T t;
-            if (TryParseEnum<T>(value, out t))
-                return t;
-            Type type = typeof(T);
-            string messageFormat = "Unable to parse value {0} as enum of type {1}. Valid values are: {2}";
-            string enumNames = string.Join(", ", Enum.GetNames(type));
-            throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, messageFormat, value, type.FullName, enumNames));
-        }
-
-        private static bool TryParseEnum<T>(string value, out T result)
-        {
-            result = default(T);
-
-            if (string.IsNullOrEmpty(value))
-                return false;
-
-            try
-            {
-                T t = (T)Enum.Parse(typeof(T), value, true);
-                result = t;
-                return true;
-            }
-            catch (ArgumentException)
-            {
-                return false;
-            }
         }
 
         /// <summary>

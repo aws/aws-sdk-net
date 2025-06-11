@@ -27,28 +27,35 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Runtime.Credentials
 {
     /// <summary>
-    /// A resolver that provides an AWSCredentials identity. 
+    /// A resolver that provides an <see cref="AWSCredentials"/> identity.
+    /// <para />
+    /// The default search order used is described in the <a href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/creds-assign.html">
+    /// developer guide</a>, but it can be overwritten by setting the <see cref="AWSConfigs.AWSCredentialsGenerators"/> property.
     /// </summary>
     public class DefaultAWSCredentialsIdentityResolver : IIdentityResolver<AWSCredentials>
     {
         private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
         private const string DEFAULT_PROFILE_NAME = "default";
 
+        /// <summary>
+        /// A method that should either return valid <see cref="AWSCredentials"/> or throw an exception (so
+        /// that the SDK can move on and attempt the next generator in the credential chain).
+        /// </summary>
+        public delegate AWSCredentials CredentialsGenerator();
+
         private static readonly ReaderWriterLockSlim _cachedCredentialsLock = new();
-        private delegate AWSCredentials CredentialsGenerator();
         private AWSCredentials _cachedCredentials;
         private readonly List<CredentialsGenerator> _credentialsGenerators;
         private readonly CredentialProfileStoreChain _credentialProfileChain = new();
         private readonly EnvironmentState _lastKnownEnvironmentState = new();
-
-        private static readonly Lazy<DefaultAWSCredentialsIdentityResolver> _defaultInstance = new Lazy<DefaultAWSCredentialsIdentityResolver>();
+        private static readonly Lazy<DefaultAWSCredentialsIdentityResolver> _defaultInstance = new();
 
         public DefaultAWSCredentialsIdentityResolver()
         {
             _cachedCredentials = null;
             _credentialsGenerators = new List<CredentialsGenerator>
             {
-#if BCL
+#if NETFRAMEWORK
                 () => new AppConfigAWSCredentials(), // Test explicit keys/profile name first.
 #endif
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
@@ -144,8 +151,19 @@ namespace Amazon.Runtime.Credentials
                     return _cachedCredentials;
                 }
 
+                List<CredentialsGenerator> providersToUse;
+                if (AWSConfigs.AWSCredentialsGenerators != null)
+                {
+                    Logger.GetLogger(typeof(DefaultAWSCredentialsIdentityResolver)).DebugFormat("Using custom credential search order defined in {0}", nameof(AWSConfigs));
+                    providersToUse = AWSConfigs.AWSCredentialsGenerators;
+                }
+                else 
+                {
+                    providersToUse = _credentialsGenerators;
+                }
+
                 List<Exception> errors = new List<Exception>();
-                foreach (CredentialsGenerator generator in _credentialsGenerators)
+                foreach (CredentialsGenerator generator in providersToUse)
                 {
                     try
                     {

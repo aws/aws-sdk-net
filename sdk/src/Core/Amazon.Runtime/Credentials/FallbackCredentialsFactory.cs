@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Credentials;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,13 @@ namespace Amazon.Runtime
         }
 
         public delegate AWSCredentials CredentialsGenerator();
+
+        /// <summary>
+        /// When migrating to version 4 of the SDK the <see cref="DefaultAWSCredentialsIdentityResolver"/> will be the default identity resolver.
+        /// Changing this property will not affect global override for the default credential provider chain. 
+        /// <para />
+        /// To change the default credential provider chain use the the <see cref="AWSConfigs.AWSCredentialsGenerators"/> property.
+        /// </summary>
         public static List<CredentialsGenerator> CredentialsGenerators { get; set; }
 
         public static void Reset()

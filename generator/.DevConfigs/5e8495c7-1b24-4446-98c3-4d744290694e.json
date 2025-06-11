@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Add `AWSConfigs.AWSCredentialsGenerators` option so that a custom credential resolution order can be specified globally (matching the behavior from `FallbackCredentialsFactory.CredentialsGenerators`)"
+        ]
+    }
+}

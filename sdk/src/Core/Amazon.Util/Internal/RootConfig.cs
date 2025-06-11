@@ -1,9 +1,6 @@
-﻿using System;
+﻿using Amazon.Runtime.Credentials;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml.Linq;
-
 
 namespace Amazon.Util.Internal
 {
@@ -52,6 +49,8 @@ namespace Amazon.Util.Internal
 #if NET8_0_OR_GREATER
         public bool DisableDangerousDisablePathAndQueryCanonicalization { get; set; }
 #endif
+
+        public List<DefaultAWSCredentialsIdentityResolver.CredentialsGenerator> AWSCredentialsGenerators { get; set; }
 
         private const string _rootAwsSectionName = "aws";
         public RootConfig()
