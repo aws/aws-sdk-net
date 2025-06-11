@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// A single regular expression. This is used in a <a>RegexPatternSet</a>.
+    /// A single regular expression. This is used in a <a>RegexPatternSet</a> and also in
+    /// the configuration for the Amazon Web Services Managed Rules rule group <c>AWSManagedRulesAntiDDoSRuleSet</c>.
     /// </summary>
     public partial class Regex
     {

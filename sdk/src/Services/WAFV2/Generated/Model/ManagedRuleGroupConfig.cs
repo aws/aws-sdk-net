@@ -47,6 +47,14 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Use the <c>AWSManagedRulesAntiDDoSRuleSet</c> configuration object to configure the
+    /// anti-DDoS managed rule group. The configuration includes the sensitivity levels to
+    /// use in the rules that typically block and challenge requests that might be participating
+    /// in DDoS attacks and the specification to use to indicate whether a request can handle
+    /// a silent browser challenge. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Use the <c>AWSManagedRulesATPRuleSet</c> configuration object to configure the account
     /// takeover prevention managed rule group. The configuration includes the sign-in page
     /// of your application and the locations in the login request payload of data such as
@@ -65,6 +73,7 @@ namespace Amazon.WAFV2.Model
     public partial class ManagedRuleGroupConfig
     {
         private AWSManagedRulesACFPRuleSet _awsManagedRulesACFPRuleSet;
+        private AWSManagedRulesAntiDDoSRuleSet _awsManagedRulesAntiDDoSRuleSet;
         private AWSManagedRulesATPRuleSet _awsManagedRulesATPRuleSet;
         private AWSManagedRulesBotControlRuleSet _awsManagedRulesBotControlRuleSet;
         private string _loginPath;
@@ -99,6 +108,31 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetAWSManagedRulesACFPRuleSet()
         {
             return this._awsManagedRulesACFPRuleSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AWSManagedRulesAntiDDoSRuleSet. 
+        /// <para>
+        /// Additional configuration for using the anti-DDoS managed rule group, <c>AWSManagedRulesAntiDDoSRuleSet</c>.
+        /// Use this to configure anti-DDoS behavior for the rule group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about using the anti-DDoS managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-anti-ddos.html">WAF
+        /// Anti-DDoS rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-anti-ddos.html">Distributed
+        /// Denial of Service (DDoS) prevention</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public AWSManagedRulesAntiDDoSRuleSet AWSManagedRulesAntiDDoSRuleSet
+        {
+            get { return this._awsManagedRulesAntiDDoSRuleSet; }
+            set { this._awsManagedRulesAntiDDoSRuleSet = value; }
+        }
+
+        // Check to see if AWSManagedRulesAntiDDoSRuleSet property is set
+        internal bool IsSetAWSManagedRulesAntiDDoSRuleSet()
+        {
+            return this._awsManagedRulesAntiDDoSRuleSet != null;
         }
 
         /// <summary>

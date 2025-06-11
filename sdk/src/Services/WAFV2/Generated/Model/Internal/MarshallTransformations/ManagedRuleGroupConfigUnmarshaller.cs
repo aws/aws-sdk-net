@@ -62,6 +62,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AWSManagedRulesACFPRuleSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AWSManagedRulesAntiDDoSRuleSet", targetDepth))
+                {
+                    var unmarshaller = AWSManagedRulesAntiDDoSRuleSetUnmarshaller.Instance;
+                    unmarshalledObject.AWSManagedRulesAntiDDoSRuleSet = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AWSManagedRulesATPRuleSet", targetDepth))
                 {
                     var unmarshaller = AWSManagedRulesATPRuleSetUnmarshaller.Instance;

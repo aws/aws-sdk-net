@@ -134,6 +134,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("OnSourceDDoSProtectionConfig", targetDepth))
+                {
+                    var unmarshaller = OnSourceDDoSProtectionConfigUnmarshaller.Instance;
+                    unmarshalledObject.OnSourceDDoSProtectionConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PostProcessFirewallManagerRuleGroups", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FirewallManagerRuleGroup, FirewallManagerRuleGroupUnmarshaller>(FirewallManagerRuleGroupUnmarshaller.Instance);
