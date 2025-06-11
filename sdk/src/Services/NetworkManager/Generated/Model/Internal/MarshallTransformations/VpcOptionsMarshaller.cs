@@ -52,10 +52,22 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.ApplianceModeSupport.Value);
             }
 
+            if(requestObject.IsSetDnsSupport())
+            {
+                context.Writer.WritePropertyName("DnsSupport");
+                context.Writer.WriteBooleanValue(requestObject.DnsSupport.Value);
+            }
+
             if(requestObject.IsSetIpv6Support())
             {
                 context.Writer.WritePropertyName("Ipv6Support");
                 context.Writer.WriteBooleanValue(requestObject.Ipv6Support.Value);
+            }
+
+            if(requestObject.IsSetSecurityGroupReferencingSupport())
+            {
+                context.Writer.WritePropertyName("SecurityGroupReferencingSupport");
+                context.Writer.WriteBooleanValue(requestObject.SecurityGroupReferencingSupport.Value);
             }
 
         }

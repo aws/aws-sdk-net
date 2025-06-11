@@ -35,7 +35,9 @@ namespace Amazon.NetworkManager.Model
     public partial class VpcOptions
     {
         private bool? _applianceModeSupport;
+        private bool? _dnsSupport;
         private bool? _ipv6Support;
+        private bool? _securityGroupReferencingSupport;
 
         /// <summary>
         /// Gets and sets the property ApplianceModeSupport. 
@@ -58,6 +60,24 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DnsSupport. 
+        /// <para>
+        /// Indicates whether DNS is supported.
+        /// </para>
+        /// </summary>
+        public bool? DnsSupport
+        {
+            get { return this._dnsSupport; }
+            set { this._dnsSupport = value; }
+        }
+
+        // Check to see if DnsSupport property is set
+        internal bool IsSetDnsSupport()
+        {
+            return this._dnsSupport.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Ipv6Support. 
         /// <para>
         /// Indicates whether IPv6 is supported.
@@ -73,6 +93,26 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetIpv6Support()
         {
             return this._ipv6Support.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupReferencingSupport. 
+        /// <para>
+        /// Indicates whether security group referencing is enabled for this VPC attachment. The
+        /// default is <c>true</c>. However, at the core network policy-level the default is set
+        /// to <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? SecurityGroupReferencingSupport
+        {
+            get { return this._securityGroupReferencingSupport; }
+            set { this._securityGroupReferencingSupport = value; }
+        }
+
+        // Check to see if SecurityGroupReferencingSupport property is set
+        internal bool IsSetSecurityGroupReferencingSupport()
+        {
+            return this._securityGroupReferencingSupport.HasValue; 
         }
 
     }
