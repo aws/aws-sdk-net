@@ -213,13 +213,13 @@ namespace <#=this.Config.Namespace#>.Model
                     if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
                         continue;
 
-                    string evenPublisherDocumentation = null;
+                    string eventPublisherDocumentation = null;
                     if (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream)
                     {
-                        evenPublisherDocumentation = GenerateEventPublisherDocumentation(member);
+                        eventPublisherDocumentation = GenerateEventPublisherDocumentation(member);
                     }
 #>
-<# this.FormatPropertyDocumentation(member, null, evenPublisherDocumentation); #>
+<# this.FormatPropertyDocumentation(member, null, eventPublisherDocumentation, member.IsCollection); #>
 <#      
                     if(member.IsDeprecated)
                     {

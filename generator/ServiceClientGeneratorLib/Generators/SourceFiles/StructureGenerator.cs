@@ -704,10 +704,10 @@ if(structureIsEvent || structureIsEventStream)
                     if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
                         continue;
 
-                    string evenPublisherDocumentation = null;
+                    string eventPublisherDocumentation = null;
                     if (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream)
                     {
-                        evenPublisherDocumentation = GenerateEventPublisherDocumentation(member);
+                        eventPublisherDocumentation = GenerateEventPublisherDocumentation(member);
                     }
 
             
@@ -715,7 +715,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             
             #line 222 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
- this.FormatPropertyDocumentation(member, null, evenPublisherDocumentation); 
+ this.FormatPropertyDocumentation(member, null, eventPublisherDocumentation, member.IsCollection); 
             
             #line default
             #line hidden
