@@ -61,7 +61,7 @@ namespace Amazon.EKS.Model
         ///  <ul> <li> 
         /// <para>
         /// Each block must be within an <c>IPv4</c> RFC-1918 network range. Minimum allowed size
-        /// is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.
+        /// is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -128,7 +128,7 @@ namespace Amazon.EKS.Model
         ///  <ul> <li> 
         /// <para>
         /// Each block must be within an <c>IPv4</c> RFC-1918 network range. Minimum allowed size
-        /// is /24, maximum allowed size is /8. Publicly-routable addresses aren't supported.
+        /// is /32, maximum allowed size is /8. Publicly-routable addresses aren't supported.
         /// </para>
         ///  </li> <li> 
         /// <para>

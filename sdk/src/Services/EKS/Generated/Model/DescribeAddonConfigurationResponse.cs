@@ -99,8 +99,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PodIdentityConfiguration. 
         /// <para>
-        /// The Kubernetes service account name used by the addon, and any suggested IAM policies.
-        /// Use this information to create an IAM Role for the Addon.
+        /// The Kubernetes service account name used by the add-on, and any suggested IAM policies.
+        /// Use this information to create an IAM Role for the add-on.
         /// </para>
         /// </summary>
         public List<AddonPodIdentityConfiguration> PodIdentityConfiguration

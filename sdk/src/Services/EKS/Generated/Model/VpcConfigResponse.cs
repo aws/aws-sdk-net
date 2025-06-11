@@ -70,8 +70,8 @@ namespace Amazon.EKS.Model
         /// of traversing the internet. If this value is disabled and you have nodes or Fargate
         /// pods in the cluster, then ensure that <c>publicAccessCidrs</c> includes the necessary
         /// CIDR blocks for communication with the nodes or Fargate pods. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-        /// EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Cluster
+        /// API server endpoint</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>
         public bool EndpointPrivateAccess
@@ -108,7 +108,18 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property PublicAccessCidrs. 
         /// <para>
         /// The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
-        /// endpoint.
+        /// endpoint. Communication to the endpoint from addresses outside of the CIDR blocks
+        /// that you specify is denied. The default value is <c>0.0.0.0/0</c> and additionally
+        /// <c>::/0</c> for dual-stack `IPv6` clusters. If you've disabled private endpoint access,
+        /// make sure that you specify the necessary CIDR blocks for every node and Fargate <c>Pod</c>
+        /// in the cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Cluster
+        /// API server endpoint</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that the public endpoints are dual-stack for only <c>IPv6</c> clusters that are
+        /// made after October 2024. You can't add <c>IPv6</c> CIDR blocks to <c>IPv4</c> clusters
+        /// or <c>IPv6</c> clusters that were made before October 2024.
         /// </para>
         /// </summary>
         public List<string> PublicAccessCidrs

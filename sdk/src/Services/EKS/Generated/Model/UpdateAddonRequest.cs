@@ -144,16 +144,15 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PodIdentityAssociations. 
         /// <para>
-        /// An array of Pod Identity Assocations to be updated. Each EKS Pod Identity association
-        /// maps a Kubernetes service account to an IAM Role. If this value is left blank, no
-        /// change. If an empty array is provided, existing Pod Identity Assocations owned by
-        /// the Addon are deleted.
+        /// An array of EKS Pod Identity associations to be updated. Each association maps a Kubernetes
+        /// service account to an IAM role. If this value is left blank, no change. If an empty
+        /// array is provided, existing associations owned by the add-on are deleted.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
-        /// an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the <i>Amazon EKS User
-        /// Guide</i>.
+        /// an IAM Role to an Amazon EKS add-on using EKS Pod Identity</a> in the <i>Amazon EKS
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public List<AddonPodIdentityAssociations> PodIdentityAssociations

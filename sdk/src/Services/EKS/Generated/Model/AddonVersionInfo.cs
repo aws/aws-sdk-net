@@ -98,7 +98,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ComputeTypes. 
         /// <para>
-        /// Indicates the compute type of the addon version.
+        /// Indicates the compute type of the add-on version.
         /// </para>
         /// </summary>
         public List<string> ComputeTypes
@@ -134,7 +134,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property RequiresIamPermissions. 
         /// <para>
-        /// Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.
+        /// Indicates if the add-on requires IAM Permissions to operate, such as networking permissions.
         /// </para>
         /// </summary>
         public bool RequiresIamPermissions

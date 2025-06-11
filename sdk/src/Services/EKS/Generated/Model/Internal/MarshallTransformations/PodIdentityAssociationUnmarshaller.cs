@@ -90,6 +90,18 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("disableSessionTags", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DisableSessionTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("externalId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("modifiedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -124,6 +136,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

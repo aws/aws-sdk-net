@@ -39,7 +39,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Association. 
         /// <para>
-        /// The full description of the EKS Pod Identity association that was updated.
+        /// The full description of the association that was updated.
         /// </para>
         /// </summary>
         public PodIdentityAssociation Association
