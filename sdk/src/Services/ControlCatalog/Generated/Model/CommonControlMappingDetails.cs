@@ -30,33 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// An optional filter that narrows the list of objectives to a specific domain.
+    /// A structure that contains details about a common control mapping. In particular, it
+    /// returns the Amazon Resource Name (ARN) of the common control.
     /// </summary>
-    public partial class ObjectiveFilter
+    public partial class CommonControlMappingDetails
     {
-        private List<DomainResourceFilter> _domains = AWSConfigs.InitializeCollections ? new List<DomainResourceFilter>() : null;
+        private string _commonControlArn;
 
         /// <summary>
-        /// Gets and sets the property Domains. 
+        /// Gets and sets the property CommonControlArn. 
         /// <para>
-        /// The domain that's used as filter criteria.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs
-        /// in the <c>ObjectiveFilter</c> isn’t supported.
+        /// The Amazon Resource Name (ARN) that identifies the common control in the mapping.
         /// </para>
         /// </summary>
-        public List<DomainResourceFilter> Domains
+        [AWSProperty(Required=true, Min=41, Max=2048)]
+        public string CommonControlArn
         {
-            get { return this._domains; }
-            set { this._domains = value; }
+            get { return this._commonControlArn; }
+            set { this._commonControlArn = value; }
         }
 
-        // Check to see if Domains property is set
-        internal bool IsSetDomains()
+        // Check to see if CommonControlArn property is set
+        internal bool IsSetCommonControlArn()
         {
-            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._commonControlArn != null;
         }
 
     }

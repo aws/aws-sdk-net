@@ -30,27 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListControls operation.
-    /// Returns a paginated list of all available controls in the Control Catalog library.
-    /// Allows you to discover available controls. The list of controls is given as structures
-    /// of type <i>controlSummary</i>. The ARN is returned in the global <i>controlcatalog</i>
-    /// format, as shown in the examples.
+    /// Container for the parameters to the ListControlMappings operation.
+    /// Returns a paginated list of control mappings from the Control Catalog. Control mappings
+    /// show relationships between controls and other entities, such as common controls or
+    /// compliance frameworks.
     /// </summary>
-    public partial class ListControlsRequest : AmazonControlCatalogRequest
+    public partial class ListControlMappingsRequest : AmazonControlCatalogRequest
     {
-        private ControlFilter _filter;
+        private ControlMappingFilter _filter;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// An optional filter that narrows the results to controls with specific implementation
-        /// types or identifiers. If you don't provide a filter, the operation returns all available
-        /// controls.
+        /// An optional filter that narrows the results to specific control mappings based on
+        /// control ARNs, common control ARNs, or mapping types.
         /// </para>
         /// </summary>
-        public ControlFilter Filter
+        public ControlMappingFilter Filter
         {
             get { return this._filter; }
             set { this._filter = value; }
@@ -68,7 +66,7 @@ namespace Amazon.ControlCatalog.Model
         /// The maximum number of results on a page or for an API request call.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

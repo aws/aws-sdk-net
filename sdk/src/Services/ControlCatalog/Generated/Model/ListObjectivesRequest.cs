@@ -31,7 +31,7 @@ namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListObjectives operation.
-    /// Returns a paginated list of objectives from the Amazon Web Services Control Catalog.
+    /// Returns a paginated list of objectives from the Control Catalog.
     /// 
     ///  
     /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.ControlCatalog.Model
         ///  
         /// <para>
         /// This filter allows you to specify one domain ARN at a time. Passing multiple ARNs
-        /// in the <c>ObjectiveFilter</c> isn’t currently supported.
+        /// in the <c>ObjectiveFilter</c> isn’t supported.
         /// </para>
         /// </summary>
         public ObjectiveFilter ObjectiveFilter

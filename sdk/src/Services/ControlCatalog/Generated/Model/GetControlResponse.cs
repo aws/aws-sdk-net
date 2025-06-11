@@ -34,15 +34,37 @@ namespace Amazon.ControlCatalog.Model
     /// </summary>
     public partial class GetControlResponse : AmazonWebServiceResponse
     {
+        private List<string> _aliases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
         private ControlBehavior _behavior;
         private DateTime? _createTime;
         private string _description;
+        private List<string> _governedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ImplementationDetails _implementation;
         private string _name;
         private List<ControlParameter> _parameters = AWSConfigs.InitializeCollections ? new List<ControlParameter>() : null;
         private RegionConfiguration _regionConfiguration;
         private ControlSeverity _severity;
+
+        /// <summary>
+        /// Gets and sets the property Aliases. 
+        /// <para>
+        /// A list of alternative identifiers for the control. These are human-readable designators,
+        /// such as <c>SH.S3.1</c>. Several aliases can refer to the same control across different
+        /// Amazon Web Services services or compliance frameworks.
+        /// </para>
+        /// </summary>
+        public List<string> Aliases
+        {
+            get { return this._aliases; }
+            set { this._aliases = value; }
+        }
+
+        // Check to see if Aliases property is set
+        internal bool IsSetAliases()
+        {
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -119,6 +141,29 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GovernedResources. 
+        /// <para>
+        /// A list of Amazon Web Services resource types that are governed by this control. This
+        /// information helps you understand which controls can govern certain types of resources,
+        /// and conversely, which resources are affected when the control is implemented. The
+        /// resources are represented as Amazon Web Services CloudFormation resource types. If
+        /// <c>GovernedResources</c> cannot be represented by available CloudFormation resource
+        /// types, it’s returned as an empty list.
+        /// </para>
+        /// </summary>
+        public List<string> GovernedResources
+        {
+            get { return this._governedResources; }
+            set { this._governedResources = value; }
+        }
+
+        // Check to see if GovernedResources property is set
+        internal bool IsSetGovernedResources()
+        {
+            return this._governedResources != null && (this._governedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -53,7 +53,7 @@ namespace Amazon.ControlCatalog.Model
         ///  
         /// <para>
         /// This filter allows you to specify one objective ARN at a time. Passing multiple ARNs
-        /// in the <c>CommonControlFilter</c> isn’t currently supported.
+        /// in the <c>CommonControlFilter</c> isn’t supported.
         /// </para>
         /// </summary>
         public CommonControlFilter CommonControlFilter

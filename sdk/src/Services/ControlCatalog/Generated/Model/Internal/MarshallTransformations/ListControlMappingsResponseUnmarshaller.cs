@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetControl operation
+    /// Response Unmarshaller for ListControlMappings operation
     /// </summary>  
-    public class GetControlResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListControlMappingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,76 +46,22 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetControlResponse response = new GetControlResponse();
+            ListControlMappingsResponse response = new ListControlMappingsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Aliases", targetDepth))
+                if (context.TestExpression("ControlMappings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.Aliases = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ControlMapping, ControlMappingUnmarshaller>(ControlMappingUnmarshaller.Instance);
+                    response.ControlMappings = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Behavior", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Behavior = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GovernedResources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.GovernedResources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Implementation", targetDepth))
-                {
-                    var unmarshaller = ImplementationDetailsUnmarshaller.Instance;
-                    response.Implementation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Parameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ControlParameter, ControlParameterUnmarshaller>(ControlParameterUnmarshaller.Instance);
-                    response.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RegionConfiguration", targetDepth))
-                {
-                    var unmarshaller = RegionConfigurationUnmarshaller.Instance;
-                    response.RegionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Severity", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Severity = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -149,10 +95,6 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -165,9 +107,9 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             return new AmazonControlCatalogException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetControlResponseUnmarshaller _instance = new GetControlResponseUnmarshaller();        
+        private static ListControlMappingsResponseUnmarshaller _instance = new ListControlMappingsResponseUnmarshaller();        
 
-        internal static GetControlResponseUnmarshaller GetInstance()
+        internal static ListControlMappingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -175,7 +117,7 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetControlResponseUnmarshaller Instance
+        public static ListControlMappingsResponseUnmarshaller Instance
         {
             get
             {

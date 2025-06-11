@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListControls Request Marshaller
+    /// ListControlMappings Request Marshaller
     /// </summary>       
-    public class ListControlsRequestMarshaller : IMarshaller<IRequest, ListControlsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListControlMappingsRequestMarshaller : IMarshaller<IRequest, ListControlMappingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListControlsRequest)input);
+            return this.Marshall((ListControlMappingsRequest)input);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListControlsRequest publicRequest)
+        public IRequest Marshall(ListControlMappingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ControlCatalog");
             request.Headers["Content-Type"] = "application/json";
@@ -66,7 +66,7 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/list-controls";
+            request.ResourcePath = "/list-control-mappings";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -78,7 +78,7 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("Filter");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = ControlFilterMarshaller.Instance;
+                    var marshaller = ControlMappingFilterMarshaller.Instance;
                     marshaller.Marshall(publicRequest.Filter, context);
 
                     context.Writer.WriteObjectEnd();
@@ -93,9 +93,9 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListControlsRequestMarshaller _instance = new ListControlsRequestMarshaller();        
+        private static ListControlMappingsRequestMarshaller _instance = new ListControlMappingsRequestMarshaller();        
 
-        internal static ListControlsRequestMarshaller GetInstance()
+        internal static ListControlMappingsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +103,7 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListControlsRequestMarshaller Instance
+        public static ListControlMappingsRequestMarshaller Instance
         {
             get
             {

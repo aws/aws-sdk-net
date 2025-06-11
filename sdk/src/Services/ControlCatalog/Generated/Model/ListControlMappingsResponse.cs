@@ -30,55 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListControls operation.
-    /// Returns a paginated list of all available controls in the Control Catalog library.
-    /// Allows you to discover available controls. The list of controls is given as structures
-    /// of type <i>controlSummary</i>. The ARN is returned in the global <i>controlcatalog</i>
-    /// format, as shown in the examples.
+    /// This is the response object from the ListControlMappings operation.
     /// </summary>
-    public partial class ListControlsRequest : AmazonControlCatalogRequest
+    public partial class ListControlMappingsResponse : AmazonWebServiceResponse
     {
-        private ControlFilter _filter;
-        private int? _maxResults;
+        private List<ControlMapping> _controlMappings = AWSConfigs.InitializeCollections ? new List<ControlMapping>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filter. 
+        /// Gets and sets the property ControlMappings. 
         /// <para>
-        /// An optional filter that narrows the results to controls with specific implementation
-        /// types or identifiers. If you don't provide a filter, the operation returns all available
-        /// controls.
+        /// The list of control mappings that the ListControlMappings API returns.
         /// </para>
         /// </summary>
-        public ControlFilter Filter
+        [AWSProperty(Required=true)]
+        public List<ControlMapping> ControlMappings
         {
-            get { return this._filter; }
-            set { this._filter = value; }
+            get { return this._controlMappings; }
+            set { this._controlMappings = value; }
         }
 
-        // Check to see if Filter property is set
-        internal bool IsSetFilter()
+        // Check to see if ControlMappings property is set
+        internal bool IsSetControlMappings()
         {
-            return this._filter != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results on a page or for an API request call.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
+            return this._controlMappings != null && (this._controlMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

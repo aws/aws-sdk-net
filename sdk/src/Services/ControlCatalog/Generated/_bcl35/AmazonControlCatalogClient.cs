@@ -36,17 +36,15 @@ namespace Amazon.ControlCatalog
     /// <summary>
     /// <para>Implementation for accessing ControlCatalog</para>
     ///
-    /// Welcome to the Amazon Web Services Control Catalog API reference. This guide is for
-    /// developers who need detailed information about how to programmatically identify and
-    /// filter the common controls and related metadata that are available to Amazon Web Services
-    /// customers. This API reference provides descriptions, syntax, and usage examples for
-    /// each of the actions and data types that are supported by Amazon Web Services Control
-    /// Catalog. 
+    /// Welcome to the Control Catalog API reference. This guide is for developers who need
+    /// detailed information about how to programmatically identify and filter the common
+    /// controls and related metadata that are available to Amazon Web Services customers.
+    /// This API reference provides descriptions, syntax, and usage examples for each of the
+    /// actions and data types that are supported by Control Catalog. 
     /// 
     ///  
     /// <para>
-    /// Use the following links to get started with the Amazon Web Services Control Catalog
-    /// API:
+    /// Use the following links to get started with the Control Catalog API:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -450,13 +448,82 @@ namespace Amazon.ControlCatalog
 
         #endregion
         
+        #region  ListControlMappings
+
+        /// <summary>
+        /// Returns a paginated list of control mappings from the Control Catalog. Control mappings
+        /// show relationships between controls and other entities, such as common controls or
+        /// compliance frameworks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListControlMappings service method.</param>
+        /// 
+        /// <returns>The response from the ListControlMappings service method, as returned by ControlCatalog.</returns>
+        /// <exception cref="Amazon.ControlCatalog.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControlMappings">REST API Reference for ListControlMappings Operation</seealso>
+        public virtual ListControlMappingsResponse ListControlMappings(ListControlMappingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListControlMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListControlMappingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListControlMappingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListControlMappings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListControlMappings operation on AmazonControlCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListControlMappings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControlMappings">REST API Reference for ListControlMappings Operation</seealso>
+        public virtual IAsyncResult BeginListControlMappings(ListControlMappingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListControlMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListControlMappingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListControlMappings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListControlMappings.</param>
+        /// 
+        /// <returns>Returns a  ListControlMappingsResult from ControlCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControlMappings">REST API Reference for ListControlMappings Operation</seealso>
+        public virtual ListControlMappingsResponse EndListControlMappings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListControlMappingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListControls
 
         /// <summary>
-        /// Returns a paginated list of all available controls in the Amazon Web Services Control
-        /// Catalog library. Allows you to discover available controls. The list of controls is
-        /// given as structures of type <i>controlSummary</i>. The ARN is returned in the global
-        /// <i>controlcatalog</i> format, as shown in the examples.
+        /// Returns a paginated list of all available controls in the Control Catalog library.
+        /// Allows you to discover available controls. The list of controls is given as structures
+        /// of type <i>controlSummary</i>. The ARN is returned in the global <i>controlcatalog</i>
+        /// format, as shown in the examples.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListControls service method.</param>
         /// 
@@ -523,7 +590,7 @@ namespace Amazon.ControlCatalog
         #region  ListDomains
 
         /// <summary>
-        /// Returns a paginated list of domains from the Amazon Web Services Control Catalog.
+        /// Returns a paginated list of domains from the Control Catalog.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// 
@@ -590,7 +657,7 @@ namespace Amazon.ControlCatalog
         #region  ListObjectives
 
         /// <summary>
-        /// Returns a paginated list of objectives from the Amazon Web Services Control Catalog.
+        /// Returns a paginated list of objectives from the Control Catalog.
         /// 
         ///  
         /// <para>

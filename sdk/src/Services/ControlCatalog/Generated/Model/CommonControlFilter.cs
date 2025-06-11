@@ -44,7 +44,7 @@ namespace Amazon.ControlCatalog.Model
         ///  
         /// <para>
         /// You can use this parameter to specify one objective ARN at a time. Passing multiple
-        /// ARNs in the <c>CommonControlFilter</c> isn’t currently supported.
+        /// ARNs in the <c>CommonControlFilter</c> isn’t supported.
         /// </para>
         /// </summary>
         public List<ObjectiveResourceFilter> Objectives
