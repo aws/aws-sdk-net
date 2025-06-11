@@ -122,10 +122,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Atomic counters
 
-        internal static Expression BuildCounterConditionExpression(ItemStorage storage)
+        internal static DocumentModel.Expression BuildCounterConditionExpression(ItemStorage storage)
         {
             var atomicCounters = GetCounterProperties(storage);
-            Expression counterConditionExpression = null;
+            DocumentModel.Expression counterConditionExpression = null;
 
             if (atomicCounters.Length != 0)
             {
@@ -143,11 +143,11 @@ namespace Amazon.DynamoDBv2.DataModel
             return counterProperties;
         }
 
-        private static Expression CreateUpdateExpressionForCounterProperties(PropertyStorage[] counterPropertyStorages)
+        private static DocumentModel.Expression CreateUpdateExpressionForCounterProperties(PropertyStorage[] counterPropertyStorages)
         {
             if (counterPropertyStorages.Length == 0) return null;
 
-            Expression updateExpression = new Expression();
+            DocumentModel.Expression updateExpression = new DocumentModel.Expression();
             var asserts = string.Empty;
 
             foreach (var propertyStorage in counterPropertyStorages)
@@ -1397,13 +1397,13 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 
-        private ContextSearch ConvertScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextExpression filterExpression, DynamoDBOperationConfig operationConfig)
+        internal ContextSearch ConvertScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextExpression filterExpression, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
 
             DocumentModel.Expression expression = null;
-            if (filterExpression is { Filter: null })
+            if (filterExpression is not { Filter: null })
             {
                 expression = ComposeExpression(filterExpression.Filter, storageConfig, flatConfig);
             }
@@ -1483,7 +1483,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         }
 
-        private ContextSearch
+        internal ContextSearch
             ConvertQueryByValue<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(
                 object hashKeyValue, IEnumerable<QueryCondition> conditions, DynamoDBOperationConfig operationConfig,
                 ItemStorageConfig storageConfig = null)

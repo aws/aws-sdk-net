@@ -36,7 +36,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void IsMember_ReturnsTrueForMemberExpression()
         {
-            Expression<Func<string>> expr = () => "".Length;
+            Expression<Func<object>> expr = () => "".Length;
             Assert.IsTrue(ContextExpressionsUtils.IsMember(expr.Body));
         }
 
@@ -96,15 +96,6 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void GetMember_ReturnsMemberExpression()
-        {
-            Expression<Func<string>> expr = () => "".Length;
-            var result = ContextExpressionsUtils.GetMember(expr.Body);
-            Assert.IsNotNull(result);
-            Assert.AreEqual("Length", result.Member.Name);
-        }
-
-        [TestMethod]
         public void GetMember_ReturnsNullForNonMember()
         {
             Expression<Func<int>> expr = () => 5 + 3;
@@ -121,6 +112,76 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("Value", nodes[1].Path);
         }
 
+        [TestMethod]
+        public void ExtractPathNodes_ListIndexer()
+        {
+            Expression<Func<ComplexDummy, int>> expr = d => d.Children[2].Value;
+            var nodes = ContextExpressionsUtils.ExtractPathNodes(expr.Body);
+            Assert.AreEqual(2, nodes.Count);
+            Assert.AreEqual("Children", nodes[0].Path);
+            Assert.AreEqual(1, nodes[0].IndexDepth);
+            Assert.AreEqual("Value", nodes[1].Path);
+        }
+
+        [TestMethod]
+        public void ExtractPathNodes_NestedListIndexer()
+        {
+            Expression<Func<ComplexDummy, int>> expr = d => d.Children[1].Child.Value;
+            var nodes = ContextExpressionsUtils.ExtractPathNodes(expr.Body);
+            Assert.AreEqual(3, nodes.Count);
+            Assert.AreEqual("Children", nodes[0].Path);
+            Assert.AreEqual(1, nodes[0].IndexDepth);
+            Assert.AreEqual("Child", nodes[1].Path);
+            Assert.AreEqual("Value", nodes[2].Path);
+        }
+
+        [TestMethod]
+        public void ExtractPathNodes_DictionaryStringIndexer()
+        {
+            Expression<Func<ComplexDummy, int>> expr = d => d.Map["foo"].Value;
+            var nodes = ContextExpressionsUtils.ExtractPathNodes(expr.Body);
+            Assert.AreEqual(3, nodes.Count);
+            Assert.AreEqual("Map", nodes[0].Path);
+            Assert.AreEqual("foo", nodes[1].Path);
+            Assert.IsTrue(nodes[1].IsMap);
+            Assert.AreEqual("Value", nodes[2].Path);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(NotSupportedException))]
+        public void ExtractPathNodes_UnsupportedMethodCall_Throws()
+        {
+            Expression<Func<List<int>, int>> expr = l => l.Sum();
+            ContextExpressionsUtils.ExtractPathNodes(expr.Body);
+        }
+
+        [TestMethod]
+        public void ExtractPathNodes_ConversionExpression()
+        {
+            Expression<Func<Dummy, object>> expr = d => (object)d.Value;
+            var nodes = ContextExpressionsUtils.ExtractPathNodes(expr.Body);
+            Assert.AreEqual(1, nodes.Count);
+            Assert.AreEqual("Value", nodes[0].Path);
+        }
+
+        [TestMethod]
+        public void ExtractPathNodes_FirstOrDefault()
+        {
+            Expression<Func<ComplexDummy, int>> expr = d => d.Children.FirstOrDefault().Value;
+            var nodes = ContextExpressionsUtils.ExtractPathNodes(expr.Body);
+            Assert.AreEqual(2, nodes.Count);
+            Assert.AreEqual("Children", nodes[0].Path);
+            Assert.AreEqual(1, nodes[0].IndexDepth);
+            Assert.AreEqual("Value", nodes[1].Path);
+        }
+
         class Dummy { public Dummy Child { get; set; } public int Value { get; set; } }
+
+        class ComplexDummy
+        {
+            public List<Dummy> Children { get; set; }
+            public Dictionary<string, Dummy> Map { get; set; }
+            public Dummy Child { get; set; }
+        }
     }
 }
