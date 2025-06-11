@@ -30,42 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListCommonControls operation.
-    /// Returns a paginated list of common controls from the Amazon Web Services Control Catalog.
-    /// 
-    ///  
-    /// <para>
-    /// You can apply an optional filter to see common controls that have a specific objective.
-    /// If you don’t provide a filter, the operation returns all common controls. 
-    /// </para>
+    /// Container for the parameters to the ListControlMappings operation.
+    /// Returns a paginated list of control mappings from the Control Catalog. Control mappings
+    /// show relationships between controls and other entities, such as common controls or
+    /// compliance frameworks.
     /// </summary>
-    public partial class ListCommonControlsRequest : AmazonControlCatalogRequest
+    public partial class ListControlMappingsRequest : AmazonControlCatalogRequest
     {
-        private CommonControlFilter _commonControlFilter;
+        private ControlMappingFilter _filter;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CommonControlFilter. 
+        /// Gets and sets the property Filter. 
         /// <para>
-        /// An optional filter that narrows the results to a specific objective.
-        /// </para>
-        ///  
-        /// <para>
-        /// This filter allows you to specify one objective ARN at a time. Passing multiple ARNs
-        /// in the <c>CommonControlFilter</c> isn’t supported.
+        /// An optional filter that narrows the results to specific control mappings based on
+        /// control ARNs, common control ARNs, or mapping types.
         /// </para>
         /// </summary>
-        public CommonControlFilter CommonControlFilter
+        public ControlMappingFilter Filter
         {
-            get { return this._commonControlFilter; }
-            set { this._commonControlFilter = value; }
+            get { return this._filter; }
+            set { this._filter = value; }
         }
 
-        // Check to see if CommonControlFilter property is set
-        internal bool IsSetCommonControlFilter()
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
         {
-            return this._commonControlFilter != null;
+            return this._filter != null;
         }
 
         /// <summary>
@@ -74,7 +66,7 @@ namespace Amazon.ControlCatalog.Model
         /// The maximum number of results on a page or for an API request call.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=1000)]
         public int? MaxResults
         {
             get { return this._maxResults; }

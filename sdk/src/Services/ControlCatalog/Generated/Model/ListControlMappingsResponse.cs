@@ -30,38 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListObjectives operation.
-    /// Returns a paginated list of objectives from the Control Catalog.
-    /// 
-    ///  
-    /// <para>
-    /// You can apply an optional filter to see the objectives that belong to a specific domain.
-    /// If you don’t provide a filter, the operation returns all objectives. 
-    /// </para>
+    /// This is the response object from the ListControlMappings operation.
     /// </summary>
-    public partial class ListObjectivesRequest : AmazonControlCatalogRequest
+    public partial class ListControlMappingsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<ControlMapping> _controlMappings = AWSConfigs.InitializeCollections ? new List<ControlMapping>() : null;
         private string _nextToken;
-        private ObjectiveFilter _objectiveFilter;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property ControlMappings. 
         /// <para>
-        /// The maximum number of results on a page or for an API request call.
+        /// The list of control mappings that the ListControlMappings API returns.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int? MaxResults
+        [AWSProperty(Required=true)]
+        public List<ControlMapping> ControlMappings
         {
-            get { return this._maxResults; }
-            set { this._maxResults = value; }
+            get { return this._controlMappings; }
+            set { this._controlMappings = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ControlMappings property is set
+        internal bool IsSetControlMappings()
         {
-            return this._maxResults.HasValue; 
+            return this._controlMappings != null && (this._controlMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,29 +73,6 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectiveFilter. 
-        /// <para>
-        /// An optional filter that narrows the results to a specific domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// This filter allows you to specify one domain ARN at a time. Passing multiple ARNs
-        /// in the <c>ObjectiveFilter</c> isn’t supported.
-        /// </para>
-        /// </summary>
-        public ObjectiveFilter ObjectiveFilter
-        {
-            get { return this._objectiveFilter; }
-            set { this._objectiveFilter = value; }
-        }
-
-        // Check to see if ObjectiveFilter property is set
-        internal bool IsSetObjectiveFilter()
-        {
-            return this._objectiveFilter != null;
         }
 
     }

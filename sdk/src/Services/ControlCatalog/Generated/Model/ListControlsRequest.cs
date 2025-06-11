@@ -31,15 +31,36 @@ namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListControls operation.
-    /// Returns a paginated list of all available controls in the Amazon Web Services Control
-    /// Catalog library. Allows you to discover available controls. The list of controls is
-    /// given as structures of type <i>controlSummary</i>. The ARN is returned in the global
-    /// <i>controlcatalog</i> format, as shown in the examples.
+    /// Returns a paginated list of all available controls in the Control Catalog library.
+    /// Allows you to discover available controls. The list of controls is given as structures
+    /// of type <i>controlSummary</i>. The ARN is returned in the global <i>controlcatalog</i>
+    /// format, as shown in the examples.
     /// </summary>
     public partial class ListControlsRequest : AmazonControlCatalogRequest
     {
+        private ControlFilter _filter;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// An optional filter that narrows the results to controls with specific implementation
+        /// types or identifiers. If you don't provide a filter, the operation returns all available
+        /// controls.
+        /// </para>
+        /// </summary>
+        public ControlFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

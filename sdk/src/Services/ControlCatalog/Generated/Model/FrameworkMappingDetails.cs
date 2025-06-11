@@ -30,33 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// An optional filter that narrows the list of objectives to a specific domain.
+    /// A structure that contains details about a framework mapping, including the framework
+    /// name and specific item within the framework that the control maps to.
     /// </summary>
-    public partial class ObjectiveFilter
+    public partial class FrameworkMappingDetails
     {
-        private List<DomainResourceFilter> _domains = AWSConfigs.InitializeCollections ? new List<DomainResourceFilter>() : null;
+        private string _item;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property Domains. 
+        /// Gets and sets the property Item. 
         /// <para>
-        /// The domain that's used as filter criteria.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs
-        /// in the <c>ObjectiveFilter</c> isn’t supported.
+        /// The specific item or requirement within the framework that the control maps to.
         /// </para>
         /// </summary>
-        public List<DomainResourceFilter> Domains
+        [AWSProperty(Required=true, Min=3, Max=250)]
+        public string Item
         {
-            get { return this._domains; }
-            set { this._domains = value; }
+            get { return this._item; }
+            set { this._item = value; }
         }
 
-        // Check to see if Domains property is set
-        internal bool IsSetDomains()
+        // Check to see if Item property is set
+        internal bool IsSetItem()
         {
-            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._item != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the compliance framework that the control maps to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=250)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
     }

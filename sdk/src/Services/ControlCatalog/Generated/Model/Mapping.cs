@@ -30,50 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDomains operation.
-    /// Returns a paginated list of domains from the Control Catalog.
+    /// A structure that contains the details of a mapping relationship, which can be either
+    /// to a framework or to a common control.
     /// </summary>
-    public partial class ListDomainsRequest : AmazonControlCatalogRequest
+    public partial class Mapping
     {
-        private int? _maxResults;
-        private string _nextToken;
+        private CommonControlMappingDetails _commonControl;
+        private FrameworkMappingDetails _framework;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property CommonControl. 
         /// <para>
-        /// The maximum number of results on a page or for an API request call.
+        /// The common control mapping details when the mapping type relates to a common control.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int? MaxResults
+        public CommonControlMappingDetails CommonControl
         {
-            get { return this._maxResults; }
-            set { this._maxResults = value; }
+            get { return this._commonControl; }
+            set { this._commonControl = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if CommonControl property is set
+        internal bool IsSetCommonControl()
         {
-            return this._maxResults.HasValue; 
+            return this._commonControl != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Framework. 
         /// <para>
-        /// The pagination token that's used to fetch the next set of results.
+        /// The framework mapping details when the mapping type relates to a compliance framework.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string NextToken
+        public FrameworkMappingDetails Framework
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._framework; }
+            set { this._framework = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Framework property is set
+        internal bool IsSetFramework()
         {
-            return this._nextToken != null;
+            return this._framework != null;
         }
 
     }

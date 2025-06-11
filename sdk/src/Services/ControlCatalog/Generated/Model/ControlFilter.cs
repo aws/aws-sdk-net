@@ -30,33 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// An optional filter that narrows the list of objectives to a specific domain.
+    /// A structure that defines filtering criteria for the ListControls operation. You can
+    /// use this filter to narrow down the list of controls based on their implementation
+    /// details.
     /// </summary>
-    public partial class ObjectiveFilter
+    public partial class ControlFilter
     {
-        private List<DomainResourceFilter> _domains = AWSConfigs.InitializeCollections ? new List<DomainResourceFilter>() : null;
+        private ImplementationFilter _implementations;
 
         /// <summary>
-        /// Gets and sets the property Domains. 
+        /// Gets and sets the property Implementations. 
         /// <para>
-        /// The domain that's used as filter criteria.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use this parameter to specify one domain ARN at a time. Passing multiple ARNs
-        /// in the <c>ObjectiveFilter</c> isn’t supported.
+        /// A filter that narrows the results to controls with specific implementation types or
+        /// identifiers. This field allows you to find controls that are implemented by specific
+        /// Amazon Web Services services or with specific service identifiers.
         /// </para>
         /// </summary>
-        public List<DomainResourceFilter> Domains
+        public ImplementationFilter Implementations
         {
-            get { return this._domains; }
-            set { this._domains = value; }
+            get { return this._implementations; }
+            set { this._implementations = value; }
         }
 
-        // Check to see if Domains property is set
-        internal bool IsSetDomains()
+        // Check to see if Implementations property is set
+        internal bool IsSetImplementations()
         {
-            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._implementations != null;
         }
 
     }

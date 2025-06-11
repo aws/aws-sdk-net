@@ -38,6 +38,16 @@ namespace Amazon.ControlCatalog.Model
         IListCommonControlsPaginator ListCommonControls(ListCommonControlsRequest request);
 
         /// <summary>
+        /// Paginator for ListControlMappings operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListControlMappingsPaginator ListControlMappings(ListControlMappingsRequest request);
+
+        /// <summary>
         /// Paginator for ListControls operation
         ///</summary>
         [AWSPaginator(
