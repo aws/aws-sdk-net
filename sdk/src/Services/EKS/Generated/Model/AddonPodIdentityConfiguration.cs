@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// Information about how to configure IAM for an Addon.
+    /// Information about how to configure IAM for an add-on.
     /// </summary>
     public partial class AddonPodIdentityConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property RecommendedManagedPolicies. 
         /// <para>
-        /// A suggested IAM Policy for the addon.
+        /// A suggested IAM Policy for the add-on.
         /// </para>
         /// </summary>
         public List<string> RecommendedManagedPolicies
@@ -58,7 +58,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ServiceAccount. 
         /// <para>
-        /// The Kubernetes Service Account name used by the addon.
+        /// The Kubernetes Service Account name used by the add-on.
         /// </para>
         /// </summary>
         public string ServiceAccount

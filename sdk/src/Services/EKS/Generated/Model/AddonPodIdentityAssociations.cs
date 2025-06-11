@@ -30,18 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// A type of Pod Identity Association owned by an Amazon EKS Add-on.
+    /// A type of EKS Pod Identity association owned by an Amazon EKS add-on.
     /// 
     ///  
     /// <para>
-    /// Each EKS Pod Identity Association maps a role to a service account in a namespace
-    /// in the cluster.
+    /// Each association maps a role to a service account in a namespace in the cluster.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
-    /// an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the <i>Amazon EKS User
-    /// Guide</i>.
+    /// an IAM Role to an Amazon EKS add-on using EKS Pod Identity</a> in the <i>Amazon EKS
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AddonPodIdentityAssociations

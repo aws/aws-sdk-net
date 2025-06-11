@@ -643,8 +643,9 @@ namespace Amazon.EKS
         /// <para>
         /// You can use the <c>endpointPublicAccess</c> and <c>endpointPrivateAccess</c> parameters
         /// to enable or disable public and private access to your cluster's Kubernetes API server
-        /// endpoint. By default, public access is enabled, and private access is disabled. For
-        /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+        /// endpoint. By default, public access is enabled, and private access is disabled. The
+        /// endpoint domain name and IP address family depends on the value of the <c>ipFamily</c>
+        /// for the cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
         /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// 
         /// </para>
@@ -969,7 +970,7 @@ namespace Amazon.EKS
         /// <summary>
         /// Creates an EKS Pod Identity association between a service account in an Amazon EKS
         /// cluster and an IAM role with <i>EKS Pod Identity</i>. Use EKS Pod Identity to give
-        /// temporary IAM credentials to pods and the credentials are rotated automatically.
+        /// temporary IAM credentials to Pods and the credentials are rotated automatically.
         /// 
         ///  
         /// <para>
@@ -979,16 +980,34 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// If a pod uses a service account that has an association, Amazon EKS sets environment
-        /// variables in the containers of the pod. The environment variables configure the Amazon
+        /// If a Pod uses a service account that has an association, Amazon EKS sets environment
+        /// variables in the containers of the Pod. The environment variables configure the Amazon
         /// Web Services SDKs, including the Command Line Interface, to use the EKS Pod Identity
         /// credentials.
         /// </para>
         ///  
         /// <para>
-        /// Pod Identity is a simpler method than <i>IAM roles for service accounts</i>, as this
-        /// method doesn't use OIDC identity providers. Additionally, you can configure a role
-        /// for Pod Identity once, and reuse it across clusters.
+        /// EKS Pod Identity is a simpler method than <i>IAM roles for service accounts</i>, as
+        /// this method doesn't use OIDC identity providers. Additionally, you can configure a
+        /// role for EKS Pod Identity once, and reuse it across clusters.
+        /// </para>
+        ///  
+        /// <para>
+        /// Similar to Amazon Web Services IAM behavior, EKS Pod Identity associations are eventually
+        /// consistent, and may take several seconds to be effective after the initial API call
+        /// returns successfully. You must design your applications to account for these potential
+        /// delays. We recommend that you don’t include association create/updates in the critical,
+        /// high-availability code paths of your application. Instead, make changes in a separate
+        /// initialization or setup routine that you run less frequently.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can set a <i>target IAM role</i> in the same or a different account for advanced
+        /// scenarios. With a target role, EKS Pod Identity automatically performs two role assumptions
+        /// in sequence: first assuming the role in the association that is in this account, then
+        /// using those credentials to assume the target IAM role. This process provides your
+        /// Pod with temporary credentials that have the permissions defined in the target role,
+        /// allowing secure access to resources in another Amazon Web Services account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePodIdentityAssociation service method.</param>
@@ -3247,8 +3266,8 @@ namespace Amazon.EKS
         /// <para>
         /// You can also use this API operation to enable or disable public and private access
         /// to your cluster's Kubernetes API server endpoint. By default, public access is enabled,
-        /// and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-        /// EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">
+        /// Cluster API server endpoint</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3631,10 +3650,30 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Updates a EKS Pod Identity association. Only the IAM role can be changed; an association
-        /// can't be moved between clusters, namespaces, or service accounts. If you need to edit
-        /// the namespace or service account, you need to delete the association and then create
-        /// a new association with your desired settings.
+        /// Updates a EKS Pod Identity association. In an update, you can change the IAM role,
+        /// the target IAM role, or <c>disableSessionTags</c>. You must change at least one of
+        /// these in an update. An association can't be moved between clusters, namespaces, or
+        /// service accounts. If you need to edit the namespace or service account, you need to
+        /// delete the association and then create a new association with your desired settings.
+        /// 
+        ///  
+        /// <para>
+        /// Similar to Amazon Web Services IAM behavior, EKS Pod Identity associations are eventually
+        /// consistent, and may take several seconds to be effective after the initial API call
+        /// returns successfully. You must design your applications to account for these potential
+        /// delays. We recommend that you don’t include association create/updates in the critical,
+        /// high-availability code paths of your application. Instead, make changes in a separate
+        /// initialization or setup routine that you run less frequently.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can set a <i>target IAM role</i> in the same or a different account for advanced
+        /// scenarios. With a target role, EKS Pod Identity automatically performs two role assumptions
+        /// in sequence: first assuming the role in the association that is in this account, then
+        /// using those credentials to assume the target IAM role. This process provides your
+        /// Pod with temporary credentials that have the permissions defined in the target role,
+        /// allowing secure access to resources in another Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePodIdentityAssociation service method.</param>
         /// <param name="cancellationToken">

@@ -123,7 +123,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The name of the Kubernetes namespace inside the cluster to create the association
-        /// in. The service account and the pods that use the service account must be in this
+        /// in. The service account and the Pods that use the service account must be in this
         /// namespace.
         /// </para>
         /// </summary>
@@ -142,7 +142,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property OwnerArn. 
         /// <para>
-        /// If defined, the Pod Identity Association is owned by an Amazon EKS Addon.
+        /// If defined, the association is owned by an Amazon EKS add-on.
         /// </para>
         /// </summary>
         public string OwnerArn

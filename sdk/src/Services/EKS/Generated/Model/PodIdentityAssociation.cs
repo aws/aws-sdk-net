@@ -40,12 +40,15 @@ namespace Amazon.EKS.Model
         private string _associationId;
         private string _clusterName;
         private DateTime? _createdAt;
+        private bool? _disableSessionTags;
+        private string _externalId;
         private DateTime? _modifiedAt;
         private string _awsNamespace;
         private string _ownerArn;
         private string _roleArn;
         private string _serviceAccount;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _targetRoleArn;
 
         /// <summary>
         /// Gets and sets the property AssociationArn. 
@@ -120,9 +123,66 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DisableSessionTags. 
+        /// <para>
+        /// The state of the automatic sessions tags. The value of <i>true</i> disables these
+        /// tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// EKS Pod Identity adds a pre-defined set of session tags when it assumes the role.
+        /// You can use these tags to author a single role that can work across resources by allowing
+        /// access to Amazon Web Services resources based on matching tags. By default, EKS Pod
+        /// Identity attaches six tags, including tags for cluster name, namespace, and service
+        /// account name. For the list of tags added by EKS Pod Identity, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags">List
+        /// of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool? DisableSessionTags
+        {
+            get { return this._disableSessionTags; }
+            set { this._disableSessionTags = value; }
+        }
+
+        // Check to see if DisableSessionTags property is set
+        internal bool IsSetDisableSessionTags()
+        {
+            return this._disableSessionTags.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The unique identifier for this EKS Pod Identity association for a target IAM role.
+        /// You put this value in the trust policy of the target role, in a <c>Condition</c> to
+        /// match the <c>sts.ExternalId</c>. This ensures that the target role can only be assumed
+        /// by this association. This prevents the <i>confused deputy problem</i>. For more information
+        /// about the confused deputy problem, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The
+        /// confused deputy problem</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to use the same target role with multiple associations or other roles,
+        /// use independent statements in the trust policy to allow <c>sts:AssumeRole</c> access
+        /// from each role.
+        /// </para>
+        /// </summary>
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModifiedAt. 
         /// <para>
-        /// The most recent timestamp that the association was modified at
+        /// The most recent timestamp that the association was modified at.
         /// </para>
         /// </summary>
         public DateTime? ModifiedAt
@@ -141,7 +201,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The name of the Kubernetes namespace inside the cluster to create the association
-        /// in. The service account and the pods that use the service account must be in this
+        /// in. The service account and the Pods that use the service account must be in this
         /// namespace.
         /// </para>
         /// </summary>
@@ -160,7 +220,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property OwnerArn. 
         /// <para>
-        /// If defined, the Pod Identity Association is owned by an Amazon EKS Addon.
+        /// If defined, the EKS Pod Identity association is owned by an Amazon EKS add-on.
         /// </para>
         /// </summary>
         public string OwnerArn
@@ -180,7 +240,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to associate with the service account.
         /// The EKS Pod Identity agent manages credentials to assume this role for applications
-        /// in the containers in the pods that use this service account.
+        /// in the containers in the Pods that use this service account.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -273,6 +333,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the target IAM role to associate with the service
+        /// account. This role is assumed by using the EKS Pod Identity association role, then
+        /// the credentials for this role are injected into the Pod.
+        /// </para>
+        /// </summary>
+        public string TargetRoleArn
+        {
+            get { return this._targetRoleArn; }
+            set { this._targetRoleArn = value; }
+        }
+
+        // Check to see if TargetRoleArn property is set
+        internal bool IsSetTargetRoleArn()
+        {
+            return this._targetRoleArn != null;
         }
 
     }

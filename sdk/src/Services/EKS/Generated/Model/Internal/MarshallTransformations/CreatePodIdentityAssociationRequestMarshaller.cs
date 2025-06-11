@@ -87,6 +87,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientRequestToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetDisableSessionTags())
+            {
+                context.Writer.WritePropertyName("disableSessionTags");
+                context.Writer.WriteBooleanValue(publicRequest.DisableSessionTags.Value);
+            }
+
             if(publicRequest.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("namespace");
@@ -117,6 +123,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestTagsValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTargetRoleArn())
+            {
+                context.Writer.WritePropertyName("targetRoleArn");
+                context.Writer.WriteStringValue(publicRequest.TargetRoleArn);
             }
 
             writer.WriteEndObject();

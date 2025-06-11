@@ -59,8 +59,9 @@ namespace Amazon.EKS.Model
     /// <para>
     /// You can use the <c>endpointPublicAccess</c> and <c>endpointPrivateAccess</c> parameters
     /// to enable or disable public and private access to your cluster's Kubernetes API server
-    /// endpoint. By default, public access is enabled, and private access is disabled. For
-    /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+    /// endpoint. By default, public access is enabled, and private access is disabled. The
+    /// endpoint domain name and IP address family depends on the value of the <c>ipFamily</c>
+    /// for the cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
     /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
     /// 
     /// </para>
@@ -132,7 +133,7 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  
         /// <para>
-        /// The default networking addons include vpc-cni, coredns, and kube-proxy.
+        /// The default networking add-ons include <c>vpc-cni</c>, <c>coredns</c>, and <c>kube-proxy</c>.
         /// </para>
         ///  
         /// <para>
