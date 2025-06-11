@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-using System;   
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -148,7 +148,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return table;
         }
 
-// This is the call we want to avoid with disableFetchingTableMetadata = true, but as long as we still support false, we still need to call the discouraged sync-over-async 'Table.LoadTable(Client, emptyConfig)'
+        // This is the call we want to avoid with disableFetchingTableMetadata = true, but as long as we still support false, we still need to call the discouraged sync-over-async 'Table.LoadTable(Client, emptyConfig)'
 #pragma warning disable CS0618
 
         // Retrieves Config-less Table from cache or constructs it on cache-miss
@@ -157,7 +157,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal Table GetUnconfiguredTable(string tableName, bool disableFetchingTableMetadata = false)
         {
             Table table;
-            
+
             try
             {
                 _readerWriterLockSlim.EnterReadLock();
@@ -169,7 +169,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             finally
             {
-                if(_readerWriterLockSlim.IsReadLockHeld)
+                if (_readerWriterLockSlim.IsReadLockHeld)
                 {
                     _readerWriterLockSlim.ExitReadLock();
                 }
@@ -178,19 +178,19 @@ namespace Amazon.DynamoDBv2.DataModel
             try
             {
                 _readerWriterLockSlim.EnterWriteLock();
-                
+
                 // Check to see if another thread got the write lock before this thread and filled the cache.
                 if (tablesMap.TryGetValue(tableName, out table))
                 {
                     return table;
                 }
 
-                
+
                 if (disableFetchingTableMetadata)
                 {
                     return null;
                 }
-                
+
                 var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
                     storeAsEpoch: null, storeAsEpochLong: null, isEmptyStringValueEnabled: false, metadataCachingMode: Config.MetadataCachingMode);
                 table = Table.LoadTable(Client, emptyConfig) as Table;
@@ -200,7 +200,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             finally
             {
-                if(_readerWriterLockSlim.IsWriteLockHeld)
+                if (_readerWriterLockSlim.IsWriteLockHeld)
                 {
                     _readerWriterLockSlim.ExitWriteLock();
                 }
@@ -281,14 +281,14 @@ namespace Amazon.DynamoDBv2.DataModel
         private static void CompareKeys(ItemStorageConfig config, Table table, List<string> attributes, List<string> properties, string keyType)
         {
             if (attributes.Count != properties.Count)
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Number of {0} keys on table {1} does not match number of hash keys on type {2}",
                     keyType, table.TableName, config.BaseTypeStorageConfig.TargetType.FullName));
             foreach (string hashProperty in properties)
             {
                 PropertyStorage property = config.BaseTypeStorageConfig.GetPropertyStorage(hashProperty);
                 if (!attributes.Contains(property.AttributeName))
-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
+                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                         "Key property {0} on type {1} does not correspond to a {2} key on table {3}",
                         hashProperty, config.BaseTypeStorageConfig.TargetType.FullName, keyType, table.TableName));
             }
@@ -512,7 +512,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var conversion = flatConfig.Conversion;
             var targetType = propertyStorage.MemberType;
-            
+
             if (conversion.HasConverter(targetType))
             {
                 var output = conversion.ConvertFromEntry(targetType, entry);
@@ -622,14 +622,14 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             var elementType = Utils.GetElementType(targetType);
-            var array = (Array)Utils.InstantiateArray(targetType,list.Entries.Count);
+            var array = (Array)Utils.InstantiateArray(targetType, list.Entries.Count);
             var propertyStorage = new SimplePropertyStorage(elementType, parentPropertyStorage);
 
             for (int i = 0; i < list.Entries.Count; i++)
             {
                 var entry = list.Entries[i];
                 var item = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
-                array.SetValue(item,i);
+                array.SetValue(item, i);
             }
 
             output = array;
@@ -915,7 +915,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             FieldInfo fieldInfo = member as FieldInfo;
             PropertyInfo propertyInfo = member as PropertyInfo;
-            
+
             if (fieldInfo != null)
             {
                 value = fieldInfo.GetValue(instance);
@@ -978,7 +978,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return ComposeQueryFilterHelper(currentConfig, hashKey, conditions, storageConfig, out indexNames);
         }
 
-        private (string,DynamoDBEntry) HashKeyValueToDynamoDBEntry(DynamoDBFlatConfig currentConfig, object hashKeyValue,
+        private (string, DynamoDBEntry) HashKeyValueToDynamoDBEntry(DynamoDBFlatConfig currentConfig, object hashKeyValue,
             ItemStorageConfig storageConfig)
         {
             // Set hash key property name
@@ -992,7 +992,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue, currentConfig);
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyProperty);
 
-            return (hashAttributeName,hashKeyEntry);
+            return (hashAttributeName, hashKeyEntry);
         }
 
         private static void ValidateHashKey(object hashKeyValue, ItemStorageConfig storageConfig)
@@ -1039,7 +1039,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 throw new ArgumentNullException("hashKey");
 
             ValidateQueryKeyConfiguration(storageConfig, currentConfig);
-            
+
             QueryFilter filter = new QueryFilter();
 
             // Configure hash-key equality condition
@@ -1301,7 +1301,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 
-        private ContextSearch ConvertScan<T>(ContextExpression filterExpression, DynamoDBOperationConfig operationConfig)
+        private ContextSearch ConvertScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextExpression filterExpression, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
@@ -1351,7 +1351,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private ContextSearch ConvertQueryByValue<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
         {
-            if (operationConfig!=null)
+            if (operationConfig != null)
             {
                 operationConfig.ValidateFilter();
             }
@@ -1372,7 +1372,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return query;
         }
 
-        private ContextSearch ConvertQueryByValueWithExpression<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, 
+        private ContextSearch ConvertQueryByValueWithExpression<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values,
             Expression filterExpression, DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
@@ -1392,14 +1392,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 object hashKeyValue, IEnumerable<QueryCondition> conditions, DynamoDBOperationConfig operationConfig,
                 ItemStorageConfig storageConfig = null)
         {
-            //    DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
-            //    if (storageConfig == null)
-            //        storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-
-            //    List<string> indexNames;
-            //    QueryFilter filter = ComposeQueryFilter(flatConfig, hashKeyValue, conditions, storageConfig, out indexNames);
-            //    return ConvertQueryHelper<T>(flatConfig, storageConfig, filter, indexNames);
-
             if (operationConfig != null)
             {
                 operationConfig.ValidateFilter();
@@ -1407,13 +1399,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
 
-            if (storageConfig == null)
-                storageConfig = StorageConfigCache.GetConfig<T>(flatConfig); 
-        
+            storageConfig ??= StorageConfigCache.GetConfig<T>(flatConfig);
+
             ContextSearch query;
             if (operationConfig is { ExpressionFilter: { Filter: not null } })
             {
-                query = ConvertQueryByValueWithExpression<T>(hashKeyValue, QueryOperator.Equal, null, 
+                query = ConvertQueryByValueWithExpression<T>(hashKeyValue, QueryOperator.Equal, null,
                     operationConfig.ExpressionFilter.Filter, operationConfig, storageConfig);
             }
             else
@@ -1457,7 +1448,7 @@ namespace Amazon.DynamoDBv2.DataModel
             else
                 rangeKeyPropertyName = storageConfig.GetRangeKeyByIndex(indexName);
 
-            if (!string.IsNullOrEmpty(rangeKeyPropertyName) && values!=null)
+            if (!string.IsNullOrEmpty(rangeKeyPropertyName) && values != null)
             {
                 //todo implement QueryOperator to expression mapping
                 keyExpression.ExpressionStatement += ContextExpressionsUtils.GetRangeKeyConditionExpression($"#rangeKey", op);
@@ -1500,7 +1491,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             //TODO string indexName = GetQueryIndexName(currentConfig, indexNames);
             queryConfig.FilterExpression = expression;
-            
+
             if (string.IsNullOrEmpty(indexName))
             {
                 queryConfig.Select = SelectValues.SpecificAttributes;
@@ -1905,9 +1896,9 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             else if (expr.Arguments.Count == 2 && expr.Object == null)
             {
-                var memberObj = ContextExpressionsUtils.GetMember(expr.Arguments[0]) 
+                var memberObj = ContextExpressionsUtils.GetMember(expr.Arguments[0])
                                 ?? ContextExpressionsUtils.GetMember(expr.Arguments[1]);
-                var argConst = ContextExpressionsUtils.GetConstant(expr.Arguments[1]) 
+                var argConst = ContextExpressionsUtils.GetConstant(expr.Arguments[1])
                                ?? ContextExpressionsUtils.GetConstant(expr.Arguments[0]);
                 if (memberObj != null && argConst != null)
                 {

@@ -127,7 +127,6 @@ namespace Amazon.DynamoDBv2.DataModel
             };
         }
 
-
         internal static ConstantExpression GetConstant(Expression expr)
         {
             return expr switch
