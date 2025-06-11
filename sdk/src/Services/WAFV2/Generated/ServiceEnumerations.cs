@@ -1989,6 +1989,56 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type LowReputationMode.
+    /// </summary>
+    public class LowReputationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE_UNDER_DDOS for LowReputationMode
+        /// </summary>
+        public static readonly LowReputationMode ACTIVE_UNDER_DDOS = new LowReputationMode("ACTIVE_UNDER_DDOS");
+        /// <summary>
+        /// Constant ALWAYS_ON for LowReputationMode
+        /// </summary>
+        public static readonly LowReputationMode ALWAYS_ON = new LowReputationMode("ALWAYS_ON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LowReputationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LowReputationMode FindValue(string value)
+        {
+            return FindValue<LowReputationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LowReputationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MapMatchScope.
     /// </summary>
     public class MapMatchScope : ConstantClass
@@ -2250,6 +2300,10 @@ namespace Amazon.WAFV2
         /// Constant LOGGING_FILTER for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField LOGGING_FILTER = new ParameterExceptionField("LOGGING_FILTER");
+        /// <summary>
+        /// Constant LOW_REPUTATION_MODE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField LOW_REPUTATION_MODE = new ParameterExceptionField("LOW_REPUTATION_MODE");
         /// <summary>
         /// Constant MANAGED_RULE_GROUP_CONFIG for ParameterExceptionField
         /// </summary>
@@ -2867,6 +2921,60 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type SensitivityToAct.
+    /// </summary>
+    public class SensitivityToAct : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for SensitivityToAct
+        /// </summary>
+        public static readonly SensitivityToAct HIGH = new SensitivityToAct("HIGH");
+        /// <summary>
+        /// Constant LOW for SensitivityToAct
+        /// </summary>
+        public static readonly SensitivityToAct LOW = new SensitivityToAct("LOW");
+        /// <summary>
+        /// Constant MEDIUM for SensitivityToAct
+        /// </summary>
+        public static readonly SensitivityToAct MEDIUM = new SensitivityToAct("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SensitivityToAct(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SensitivityToAct FindValue(string value)
+        {
+            return FindValue<SensitivityToAct>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SensitivityToAct(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SizeInspectionLimit.
     /// </summary>
     public class SizeInspectionLimit : ConstantClass
@@ -3044,6 +3152,56 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TextTransformationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UsageOfAction.
+    /// </summary>
+    public class UsageOfAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for UsageOfAction
+        /// </summary>
+        public static readonly UsageOfAction DISABLED = new UsageOfAction("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for UsageOfAction
+        /// </summary>
+        public static readonly UsageOfAction ENABLED = new UsageOfAction("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageOfAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageOfAction FindValue(string value)
+        {
+            return FindValue<UsageOfAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageOfAction(string value)
         {
             return FindValue(value);
         }

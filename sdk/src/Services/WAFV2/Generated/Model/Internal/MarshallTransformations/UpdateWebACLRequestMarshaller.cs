@@ -167,6 +167,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOnSourceDDoSProtectionConfig())
+                {
+                    context.Writer.WritePropertyName("OnSourceDDoSProtectionConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OnSourceDDoSProtectionConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OnSourceDDoSProtectionConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRules())
                 {
                     context.Writer.WritePropertyName("Rules");

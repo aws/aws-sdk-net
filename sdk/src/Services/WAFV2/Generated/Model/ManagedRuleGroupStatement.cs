@@ -106,6 +106,14 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Use the <c>AWSManagedRulesAntiDDoSRuleSet</c> configuration object to configure the
+        /// anti-DDoS managed rule group. The configuration includes the sensitivity levels to
+        /// use in the rules that typically block and challenge requests that might be participating
+        /// in DDoS attacks and the specification to use to indicate whether a request can handle
+        /// a silent browser challenge. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Use the <c>AWSManagedRulesATPRuleSet</c> configuration object to configure the account
         /// takeover prevention managed rule group. The configuration includes the sign-in page
         /// of your application and the locations in the login request payload of data such as
@@ -159,9 +167,11 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Take care to verify the rule names in your overrides. If you provide a rule name that
-        /// doesn't match the name of any rule in the rule group, WAF doesn't return an error
-        /// and doesn't apply the override setting.
+        /// Verify the rule names in your overrides carefully. With managed rule groups, WAF silently
+        /// ignores any override that uses an invalid rule name. With customer-owned rule groups,
+        /// invalid rule names in your overrides will cause web ACL updates to fail. An invalid
+        /// rule name is any name that doesn't exactly match the case-sensitive name of an existing
+        /// rule in the rule group.
         /// </para>
         ///  </note> 
         /// <para>

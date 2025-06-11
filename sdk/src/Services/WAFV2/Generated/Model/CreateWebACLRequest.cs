@@ -57,6 +57,7 @@ namespace Amazon.WAFV2.Model
         private DefaultAction _defaultAction;
         private string _description;
         private string _name;
+        private OnSourceDDoSProtectionConfig _onSourceDDoSProtectionConfig;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
         private Scope _scope;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -256,6 +257,28 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnSourceDDoSProtectionConfig. 
+        /// <para>
+        /// Specifies the type of DDoS protection to apply to web request data for a web ACL.
+        /// For most scenarios, it is recommended to use the default protection level, <c>ACTIVE_UNDER_DDOS</c>.
+        /// If a web ACL is associated with multiple Application Load Balancers, the changes you
+        /// make to DDoS protection in that web ACL will apply to all associated Application Load
+        /// Balancers.
+        /// </para>
+        /// </summary>
+        public OnSourceDDoSProtectionConfig OnSourceDDoSProtectionConfig
+        {
+            get { return this._onSourceDDoSProtectionConfig; }
+            set { this._onSourceDDoSProtectionConfig = value; }
+        }
+
+        // Check to see if OnSourceDDoSProtectionConfig property is set
+        internal bool IsSetOnSourceDDoSProtectionConfig()
+        {
+            return this._onSourceDDoSProtectionConfig != null;
         }
 
         /// <summary>

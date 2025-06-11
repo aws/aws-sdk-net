@@ -56,6 +56,7 @@ namespace Amazon.WAFV2.Model
         private string _labelNamespace;
         private bool? _managedByFirewallManager;
         private string _name;
+        private OnSourceDDoSProtectionConfig _onSourceDDoSProtectionConfig;
         private List<FirewallManagerRuleGroup> _postProcessFirewallManagerRuleGroups = AWSConfigs.InitializeCollections ? new List<FirewallManagerRuleGroup>() : null;
         private List<FirewallManagerRuleGroup> _preProcessFirewallManagerRuleGroups = AWSConfigs.InitializeCollections ? new List<FirewallManagerRuleGroup>() : null;
         private bool? _retrofittedByFirewallManager;
@@ -388,6 +389,25 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnSourceDDoSProtectionConfig. 
+        /// <para>
+        /// Configures the level of DDoS protection that applies to web ACLs associated with Application
+        /// Load Balancers.
+        /// </para>
+        /// </summary>
+        public OnSourceDDoSProtectionConfig OnSourceDDoSProtectionConfig
+        {
+            get { return this._onSourceDDoSProtectionConfig; }
+            set { this._onSourceDDoSProtectionConfig = value; }
+        }
+
+        // Check to see if OnSourceDDoSProtectionConfig property is set
+        internal bool IsSetOnSourceDDoSProtectionConfig()
+        {
+            return this._onSourceDDoSProtectionConfig != null;
         }
 
         /// <summary>
