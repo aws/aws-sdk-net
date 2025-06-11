@@ -141,7 +141,7 @@ namespace Amazon.LexModelsV2.Model
         /// A description of the intent. Use the description to help identify the intent in lists.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Min=0, Max=2000)]
         public string Description
         {
             get { return this._description; }

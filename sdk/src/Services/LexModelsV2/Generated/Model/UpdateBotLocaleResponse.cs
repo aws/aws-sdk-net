@@ -129,7 +129,7 @@ namespace Amazon.LexModelsV2.Model
         /// The updated description of the locale.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Min=0, Max=2000)]
         public string Description
         {
             get { return this._description; }

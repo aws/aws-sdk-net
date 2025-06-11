@@ -105,7 +105,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotRequest.IdleSessionTTLInSeconds</property>
@@ -133,7 +133,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotResponse.IdleSessionTTLInSeconds</property>
@@ -167,7 +167,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotAliasRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotAliasResponse.BotAliasId</property>
@@ -196,7 +196,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotAliasResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotLocaleRequest.BotId</property>
@@ -213,7 +213,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotLocaleRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotLocaleRequest.NluIntentConfidenceThreshold</property>
@@ -235,7 +235,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotLocaleResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotLocaleResponse.NluIntentConfidenceThreshold</property>
@@ -278,7 +278,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotVersionRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotVersionResponse.BotId</property>
@@ -295,7 +295,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotVersionResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateExportRequest.FilePassword</property>
@@ -323,7 +323,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateIntentRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateIntentRequest.IntentName</property>
@@ -346,7 +346,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateIntentResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateIntentResponse.IntentId</property>
@@ -423,7 +423,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateSlotRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateSlotRequest.IntentId</property>
@@ -458,7 +458,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateSlotResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateSlotResponse.IntentId</property>
@@ -499,7 +499,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateSlotTypeRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateSlotTypeRequest.SlotTypeName</property>
@@ -522,7 +522,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateSlotTypeResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateSlotTypeResponse.SlotTypeId</property>
@@ -868,7 +868,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeBotResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeBotResponse.IdleSessionTTLInSeconds</property>
@@ -920,7 +920,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeBotAliasResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeBotLocaleRequest.BotId</property>
@@ -949,7 +949,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeBotLocaleResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeBotLocaleResponse.NluIntentConfidenceThreshold</property>
@@ -1102,7 +1102,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeBotVersionResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeBotVersionResponse.IdleSessionTTLInSeconds</property>
@@ -1213,7 +1213,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeIntentResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeIntentResponse.IntentId</property>
@@ -1286,7 +1286,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeSlotResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeSlotResponse.IntentId</property>
@@ -1345,7 +1345,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeSlotTypeResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeSlotTypeResponse.SlotTypeId</property>
@@ -1392,7 +1392,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeTestSetResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeTestSetResponse.RoleArn</property>
@@ -1444,7 +1444,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeTestSetGenerationResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeTestSetGenerationResponse.RoleArn</property>
@@ -2322,7 +2322,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.StartTestSetGenerationRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.StartTestSetGenerationRequest.RoleArn</property>
@@ -2339,7 +2339,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.StartTestSetGenerationResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.StartTestSetGenerationResponse.RoleArn</property>
@@ -2420,7 +2420,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotRequest.IdleSessionTTLInSeconds</property>
@@ -2448,7 +2448,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotResponse.IdleSessionTTLInSeconds</property>
@@ -2488,7 +2488,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotAliasRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotAliasResponse.BotAliasId</property>
@@ -2517,7 +2517,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotAliasResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotLocaleRequest.BotId</property>
@@ -2534,7 +2534,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotLocaleRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotLocaleRequest.NluIntentConfidenceThreshold</property>
@@ -2556,7 +2556,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotLocaleResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateBotLocaleResponse.NluIntentConfidenceThreshold</property>
@@ -2631,7 +2631,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateIntentRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateIntentRequest.IntentId</property>
@@ -2660,7 +2660,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateIntentResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateIntentResponse.IntentId</property>
@@ -2715,7 +2715,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateSlotRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateSlotRequest.IntentId</property>
@@ -2756,7 +2756,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateSlotResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateSlotResponse.IntentId</property>
@@ -2797,7 +2797,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateSlotTypeRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateSlotTypeRequest.SlotTypeId</property>
@@ -2826,7 +2826,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateSlotTypeResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateSlotTypeResponse.SlotTypeId</property>
@@ -2843,7 +2843,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateTestSetRequest.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateTestSetRequest.TestSetId</property>
@@ -2860,7 +2860,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateTestSetResponse.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.UpdateTestSetResponse.RoleArn</property>
@@ -3017,7 +3017,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotAliasSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotAliasTestExecutionTarget.BotAliasId</property>
@@ -3092,7 +3092,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotLocaleSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotMember.BotMemberAliasId</property>
@@ -3160,7 +3160,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotSummary.LatestBotVersion</property>
@@ -3195,17 +3195,17 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotVersionSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BuiltInIntentSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BuiltInSlotTypeSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.Button.Text</property>
@@ -3496,7 +3496,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.IntentSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.IntentSummary.IntentId</property>
@@ -3729,7 +3729,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SlotSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SlotSummary.SlotId</property>
@@ -3752,7 +3752,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SlotTypeSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SlotTypeSummary.SlotTypeId</property>
@@ -3864,7 +3864,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.TestSetImportResourceSpecification.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.TestSetImportResourceSpecification.RoleArn</property>
@@ -3916,7 +3916,7 @@
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.TestSetSummary.Description</property>
     <min>0</min>
-    <max>200</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.TestSetSummary.RoleArn</property>
