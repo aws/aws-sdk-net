@@ -64,6 +64,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     response.KeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("KeyMaterialId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KeyMaterialId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

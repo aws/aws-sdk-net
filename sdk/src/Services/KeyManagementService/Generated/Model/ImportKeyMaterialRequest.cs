@@ -32,64 +32,58 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the ImportKeyMaterial operation.
     /// Imports or reimports key material into an existing KMS key that was created without
-    /// key material. <c>ImportKeyMaterial</c> also sets the expiration model and expiration
-    /// date of the imported key material.
+    /// key material. You can also use this operation to set or update the expiration model
+    /// and expiration date of the imported key material.
     /// 
     ///  
     /// <para>
-    /// By default, KMS keys are created with key material that KMS generates. This operation
-    /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-    /// key material</a>, an advanced feature that lets you generate and import the cryptographic
-    /// key material for a KMS key. For more information about importing key material into
-    /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-    /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+    /// By default, KMS creates KMS keys with key material that it generates. You can also
+    /// generate and import your own key material. For more information about importing key
+    /// material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+    /// key material</a>.
     /// </para>
     ///  
     /// <para>
-    /// After you successfully import key material into a KMS key, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
-    /// the same key material</a> into that KMS key, but you cannot import different key material.
+    /// For asymmetric, HMAC and multi-Region keys, you cannot change the key material after
+    /// the initial import. You can import multiple key materials into single-Region, symmetric
+    /// encryption keys and rotate the key material on demand using <c>RotateKeyOnDemand</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// After you import key material, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#reimport-key-material">reimport
+    /// the same key material</a> into that KMS key or, if the key supports on-demand rotation,
+    /// import new key material. You can use the <c>ImportType</c> parameter to indicate whether
+    /// you are importing new key material or re-importing previously imported key material.
     /// You might reimport key material to replace key material that expired or key material
     /// that you deleted. You might also reimport key material to change the expiration model
-    /// or expiration date of the key material. 
+    /// or expiration date of the key material.
     /// </para>
     ///  
     /// <para>
     /// Each time you import key material into KMS, you can determine whether (<c>ExpirationModel</c>)
     /// and when (<c>ValidTo</c>) the key material expires. To change the expiration of your
     /// key material, you must import it again, either by calling <c>ImportKeyMaterial</c>
-    /// or using the <a href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import
+    /// or using the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import
     /// features</a> of the KMS console.
     /// </para>
     ///  
     /// <para>
-    /// Before calling <c>ImportKeyMaterial</c>:
+    /// Before you call <c>ImportKeyMaterial</c>, complete these steps:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Create or identify a KMS key with no key material. The KMS key must have an <c>Origin</c>
-    /// value of <c>EXTERNAL</c>, which indicates that the KMS key is designed for imported
-    /// key material. 
+    /// Create or identify a KMS key with <c>EXTERNAL</c> origin, which indicates that the
+    /// KMS key is designed for imported key material. 
     /// </para>
     ///  
     /// <para>
-    /// To create an new KMS key for imported key material, call the <a>CreateKey</a> operation
+    /// To create a new KMS key for imported key material, call the <a>CreateKey</a> operation
     /// with an <c>Origin</c> value of <c>EXTERNAL</c>. You can create a symmetric encryption
-    /// KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key.
-    /// You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+    /// KMS key, HMAC KMS key, asymmetric encryption KMS key, asymmetric key agreement key,
+    /// or asymmetric signing KMS key. You can also import key material into a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
     /// key</a> of any supported type. However, you can't import key material into a KMS key
-    /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
-    /// store</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Use the <a>DescribeKey</a> operation to verify that the <c>KeyState</c> of the KMS
-    /// key is <c>PendingImport</c>, which indicates that the KMS key has no key material.
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// If you are reimporting the same key material into an existing KMS key, you might need
-    /// to call the <a>DeleteImportedKeyMaterial</a> to delete its existing key material.
+    /// in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+    /// key store</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -110,7 +104,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The key ID or key ARN of the KMS key to associate with the imported key material.
     /// Its <c>Origin</c> must be <c>EXTERNAL</c> and its <c>KeyState</c> must be <c>PendingImport</c>.
-    /// You cannot perform this operation on a KMS key in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom
+    /// You cannot perform this operation on a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
     /// key store</a>, or on a KMS key in a different Amazon Web Services account. To get
     /// the <c>Origin</c> and <c>KeyState</c> of a KMS key, call <a>DescribeKey</a>.
     /// </para>
@@ -126,7 +120,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> <li> 
     /// <para>
     /// Whether the key material expires (<c>ExpirationModel</c>) and, if so, when (<c>ValidTo</c>).
-    /// For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting
+    /// For help with this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-expiration">Setting
     /// an expiration time</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
@@ -140,15 +134,20 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ul> 
     /// <para>
     /// When this operation is successful, the key state of the KMS key changes from <c>PendingImport</c>
-    /// to <c>Enabled</c>, and you can use the KMS key in cryptographic operations.
+    /// to <c>Enabled</c>, and you can use the KMS key in cryptographic operations. For single-Region,
+    /// symmetric encryption keys, you will need to import all of the key materials associated
+    /// with the KMS key to change its state to <c>Enabled</c>. Use the <c>ListKeyRotations</c>
+    /// operation to list the ID and import state of each key material associated with a KMS
+    /// key.
     /// </para>
     ///  
     /// <para>
     /// If this operation fails, use the exception to help determine the problem. If the error
     /// is related to the key material, the import token, or wrapping key, use <a>GetParametersForImport</a>
     /// to get a new public key and import token for the KMS key and repeat the import procedure.
-    /// For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#importing-keys-overview">How
-    /// To Import Key Material</a> in the <i>Key Management Service Developer Guide</i>.
+    /// For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-conceptual.html">Create
+    /// a KMS key with imported key material</a> in the <i>Key Management Service Developer
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -178,10 +177,18 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <a>GetParametersForImport</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListKeyRotations</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RotateKeyOnDemand</a> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
@@ -190,7 +197,10 @@ namespace Amazon.KeyManagementService.Model
         private MemoryStream _encryptedKeyMaterial;
         private ExpirationModelType _expirationModel;
         private MemoryStream _importToken;
+        private ImportType _importType;
         private string _keyId;
+        private string _keyMaterialDescription;
+        private string _keyMaterialId;
         private DateTime? _validTo;
 
         /// <summary>
@@ -218,7 +228,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property ExpirationModel. 
         /// <para>
         /// Specifies whether the key material expires. The default is <c>KEY_MATERIAL_EXPIRES</c>.
-        /// For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting
+        /// For help with this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-expiration">Setting
         /// an expiration time</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
@@ -268,6 +278,28 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImportType. 
+        /// <para>
+        /// Indicates whether the key material being imported is previously associated with this
+        /// KMS key or not. This parameter is optional and only usable with symmetric encryption
+        /// keys. The default is <c>EXISTING_KEY_MATERIAL</c>. If no key material has ever been
+        /// imported into the KMS key, and this parameter is omitted, the parameter defaults to
+        /// <c>NEW_KEY_MATERIAL</c>.
+        /// </para>
+        /// </summary>
+        public ImportType ImportType
+        {
+            get { return this._importType; }
+            set { this._importType = value; }
+        }
+
+        // Check to see if ImportType property is set
+        internal bool IsSetImportType()
+        {
+            return this._importType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The identifier of the KMS key that will be associated with the imported key material.
@@ -278,7 +310,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption
-        /// KMS key, or asymmetric signing KMS key, including a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// KMS key, or asymmetric signing KMS key, including a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
         /// key</a> of any supported type. You cannot perform this operation on a KMS key in a
         /// custom key store, or on a KMS key in a different Amazon Web Services account.
         /// </para>
@@ -315,6 +347,68 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetKeyId()
         {
             return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyMaterialDescription. 
+        /// <para>
+        /// Description for the key material being imported. This parameter is optional and only
+        /// usable with symmetric encryption keys. If you do not specify a key material description,
+        /// KMS retains the value you specified when you last imported the same key material into
+        /// this KMS key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string KeyMaterialDescription
+        {
+            get { return this._keyMaterialDescription; }
+            set { this._keyMaterialDescription = value; }
+        }
+
+        // Check to see if KeyMaterialDescription property is set
+        internal bool IsSetKeyMaterialDescription()
+        {
+            return this._keyMaterialDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyMaterialId. 
+        /// <para>
+        /// Identifies the key material being imported. This parameter is optional and only usable
+        /// with symmetric encryption keys. You cannot specify a key material ID with <c>ImportType</c>
+        /// set to <c>NEW_KEY_MATERIAL</c>. Whenever you import key material into a symmetric
+        /// encryption key, KMS assigns a unique identifier to the key material based on the KMS
+        /// key ID and the imported key material. When you re-import key material with a specified
+        /// key material ID, KMS:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Computes the identifier for the key material
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Matches the computed identifier against the specified key material ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Verifies that the key material ID is already associated with the KMS key
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get the list of key material IDs associated with a KMS key, use <a>ListKeyRotations</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=64, Max=64)]
+        public string KeyMaterialId
+        {
+            get { return this._keyMaterialId; }
+            set { this._keyMaterialId = value; }
+        }
+
+        // Check to see if KeyMaterialId property is set
+        internal bool IsSetKeyMaterialId()
+        {
+            return this._keyMaterialId != null;
         }
 
         /// <summary>

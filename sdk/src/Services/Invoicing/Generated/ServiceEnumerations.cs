@@ -25,6 +25,106 @@ namespace Amazon.Invoicing
 {
 
     /// <summary>
+    /// Constants used for properties of type InvoiceType.
+    /// </summary>
+    public class InvoiceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREDIT_MEMO for InvoiceType
+        /// </summary>
+        public static readonly InvoiceType CREDIT_MEMO = new InvoiceType("CREDIT_MEMO");
+        /// <summary>
+        /// Constant INVOICE for InvoiceType
+        /// </summary>
+        public static readonly InvoiceType INVOICE = new InvoiceType("INVOICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InvoiceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvoiceType FindValue(string value)
+        {
+            return FindValue<InvoiceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvoiceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListInvoiceSummariesResourceType.
+    /// </summary>
+    public class ListInvoiceSummariesResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for ListInvoiceSummariesResourceType
+        /// </summary>
+        public static readonly ListInvoiceSummariesResourceType ACCOUNT_ID = new ListInvoiceSummariesResourceType("ACCOUNT_ID");
+        /// <summary>
+        /// Constant INVOICE_ID for ListInvoiceSummariesResourceType
+        /// </summary>
+        public static readonly ListInvoiceSummariesResourceType INVOICE_ID = new ListInvoiceSummariesResourceType("INVOICE_ID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListInvoiceSummariesResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListInvoiceSummariesResourceType FindValue(string value)
+        {
+            return FindValue<ListInvoiceSummariesResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListInvoiceSummariesResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass

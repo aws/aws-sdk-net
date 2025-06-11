@@ -109,6 +109,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetManagedQueryResultsConfiguration())
+            {
+                context.Writer.WritePropertyName("ManagedQueryResultsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManagedQueryResultsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedQueryResultsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPublishCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("PublishCloudWatchMetricsEnabled");

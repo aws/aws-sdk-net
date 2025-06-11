@@ -53,6 +53,31 @@ namespace Amazon.TranscribeService.Model
         /// GIRPP: Provides summaries based on the patients progress toward goals. Examples of
         /// sections include Goal, Intervention, Response, Progress, and Plan.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BIRP: Focuses on the patient's behavioral patterns and responses. Examples of sections
+        /// include Behavior, Intervention, Response, and Plan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SIRP: Emphasizes the situational context of therapy. Examples of sections include
+        /// Situation, Intervention, Response, and Plan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DAP: Provides a simplified format for clinical documentation. Examples of sections
+        /// include Data, Assessment, and Plan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BEHAVIORAL_SOAP: Behavioral health focused documentation format. Examples of sections
+        /// include Subjective, Objective, Assessment, and Plan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PHYSICAL_SOAP: Physical health focused documentation format. Examples of sections
+        /// include Subjective, Objective, Assessment, and Plan.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public MedicalScribeNoteTemplate NoteTemplate

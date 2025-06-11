@@ -57,6 +57,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetAsnMatchStatement())
+            {
+                context.Writer.WritePropertyName("AsnMatchStatement");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AsnMatchStatementMarshaller.Instance;
+                marshaller.Marshall(requestObject.AsnMatchStatement, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetByteMatchStatement())
             {
                 context.Writer.WritePropertyName("ByteMatchStatement");

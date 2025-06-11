@@ -49,8 +49,9 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// An Amazon Resource Name (ARN) that is assigned to the stream group resource and that
-        /// uniquely identifies the group across all Amazon Web Services Regions. Format is <c>arn:aws:gameliftstreams:[AWS
+        /// The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+        /// Resource Name (ARN)</a> that is assigned to the stream group resource and that uniquely
+        /// identifies the group across all Amazon Web Services Regions. Format is <c>arn:aws:gameliftstreams:[AWS
         /// Region]:[AWS account]:streamgroup/[resource ID]</c>.
         /// </para>
         /// </summary>
@@ -76,8 +77,8 @@ namespace Amazon.GameLiftStreams.Model
         ///  
         /// <para>
         /// This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-        /// Resource Names (ARNs)</a> that uniquely identify application resources. Format example:
-        /// <c>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</c>. 
+        /// Resource Names (ARNs)</a> that uniquely identify application resources. Example ARN:
+        /// <c>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</c>. 
         /// </para>
         /// </summary>
         public List<string> AssociatedApplications

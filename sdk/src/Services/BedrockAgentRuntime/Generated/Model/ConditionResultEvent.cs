@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about a condition evaluation result during an async execution.
+    /// Contains information about a condition evaluation result during a flow execution.
     /// This event is generated when a condition node in the flow evaluates its conditions.
     /// 
     ///  <note> 
     /// <para>
-    /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+    /// Flow executions is in preview release for Amazon Bedrock and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>

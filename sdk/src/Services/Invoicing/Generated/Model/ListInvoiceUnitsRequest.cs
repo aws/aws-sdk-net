@@ -106,7 +106,7 @@ namespace Amazon.Invoicing.Model
         /// The next token used to indicate where the returned list should start from. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -36,6 +36,7 @@ namespace Amazon.Deadline.Model
     {
         private ServiceManagedEc2InstanceCapabilities _instanceCapabilities;
         private ServiceManagedEc2InstanceMarketOptions _instanceMarketOptions;
+        private string _storageProfileId;
 
         /// <summary>
         /// Gets and sets the property InstanceCapabilities. 
@@ -73,6 +74,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetInstanceMarketOptions()
         {
             return this._instanceMarketOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageProfileId. 
+        /// <para>
+        /// The storage profile ID.
+        /// </para>
+        /// </summary>
+        public string StorageProfileId
+        {
+            get { return this._storageProfileId; }
+            set { this._storageProfileId = value; }
+        }
+
+        // Check to see if StorageProfileId property is set
+        internal bool IsSetStorageProfileId()
+        {
+            return this._storageProfileId != null;
         }
 
     }

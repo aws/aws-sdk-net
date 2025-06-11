@@ -36,6 +36,7 @@ namespace Amazon.Rekognition.Model
     public partial class CreateFaceLivenessSessionRequestSettings
     {
         private int? _auditImagesLimit;
+        private List<ChallengePreference> _challengePreferences = AWSConfigs.InitializeCollections ? new List<ChallengePreference>() : null;
         private LivenessOutputConfig _outputConfig;
 
         /// <summary>
@@ -58,6 +59,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetAuditImagesLimit()
         {
             return this._auditImagesLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChallengePreferences. 
+        /// <para>
+        /// Indicates preferred challenge types and versions for the Face Liveness session to
+        /// be created.
+        /// </para>
+        /// </summary>
+        public List<ChallengePreference> ChallengePreferences
+        {
+            get { return this._challengePreferences; }
+            set { this._challengePreferences = value; }
+        }
+
+        // Check to see if ChallengePreferences property is set
+        internal bool IsSetChallengePreferences()
+        {
+            return this._challengePreferences != null && (this._challengePreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

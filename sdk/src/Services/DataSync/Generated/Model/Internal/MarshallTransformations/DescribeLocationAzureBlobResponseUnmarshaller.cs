@@ -76,10 +76,22 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.BlobType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("CmkSecretConfig", targetDepth))
+                {
+                    var unmarshaller = CmkSecretConfigUnmarshaller.Instance;
+                    response.CmkSecretConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CustomSecretConfig", targetDepth))
+                {
+                    var unmarshaller = CustomSecretConfigUnmarshaller.Instance;
+                    response.CustomSecretConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LocationArn", targetDepth))
@@ -92,6 +104,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocationUri = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ManagedSecretConfig", targetDepth))
+                {
+                    var unmarshaller = ManagedSecretConfigUnmarshaller.Instance;
+                    response.ManagedSecretConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

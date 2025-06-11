@@ -104,7 +104,7 @@ namespace Amazon.AutoScaling.Model
         /// The instance type, such as <c>m3.xlarge</c>. You must specify an instance type that
         /// is supported in your requested Region and Availability Zones. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>

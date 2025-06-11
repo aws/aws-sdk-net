@@ -37,6 +37,7 @@ namespace Amazon.KeyManagementService.Model
         private MemoryStream _ciphertextBlob;
         private MemoryStream _ciphertextForRecipient;
         private string _keyId;
+        private string _keyMaterialId;
         private MemoryStream _plaintext;
 
         /// <summary>
@@ -106,6 +107,26 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetKeyId()
         {
             return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyMaterialId. 
+        /// <para>
+        /// The identifier of the key material used to encrypt the data key. This field is omitted
+        /// if the request includes the <c>Recipient</c> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=64, Max=64)]
+        public string KeyMaterialId
+        {
+            get { return this._keyMaterialId; }
+            set { this._keyMaterialId = value; }
+        }
+
+        // Check to see if KeyMaterialId property is set
+        internal bool IsSetKeyMaterialId()
+        {
+            return this._keyMaterialId != null;
         }
 
         /// <summary>

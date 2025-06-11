@@ -164,6 +164,23 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateVpcEndpointAssociationRequest.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateVpcEndpointAssociationRequest.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateVpcEndpointAssociationRequest.VpcId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^vpc-[0-9a-f]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DeleteFirewallRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -218,6 +235,12 @@
     <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteVpcEndpointAssociationRequest.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DescribeFirewallRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -234,6 +257,29 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFirewallMetadataRequest.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFirewallMetadataResponse.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFirewallMetadataResponse.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFirewallMetadataResponse.FirewallPolicyArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DescribeFirewallPolicyRequest.FirewallPolicyArn</property>
@@ -266,6 +312,18 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFlowOperationRequest.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFlowOperationRequest.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^vpce-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DescribeFlowOperationResponse.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -282,6 +340,18 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9- ]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFlowOperationResponse.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFlowOperationResponse.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^vpce-[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DescribeLoggingConfigurationRequest.FirewallArn</property>
@@ -377,6 +447,12 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeVpcEndpointAssociationRequest.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DisassociateSubnetsRequest.FirewallArn</property>
@@ -534,6 +610,18 @@
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListFlowOperationResultsRequest.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListFlowOperationResultsRequest.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^vpce-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFlowOperationResultsResponse.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -558,6 +646,18 @@
     <pattern>^[a-zA-Z0-9- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListFlowOperationResultsResponse.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListFlowOperationResultsResponse.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^vpce-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFlowOperationsRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -573,6 +673,18 @@
     <min>1</min>
     <max>4096</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListFlowOperationsRequest.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListFlowOperationsRequest.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^vpce-[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFlowOperationsResponse.NextToken</property>
@@ -638,6 +750,29 @@
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListVpcEndpointAssociationsRequest.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListVpcEndpointAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListVpcEndpointAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListVpcEndpointAssociationsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.PutResourcePolicyRequest.Policy</property>
     <min>1</min>
     <max>395000</max>
@@ -674,6 +809,18 @@
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.StartFlowCaptureRequest.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.StartFlowCaptureRequest.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^vpce-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.StartFlowCaptureResponse.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -690,6 +837,18 @@
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.StartFlowFlushRequest.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.StartFlowFlushRequest.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^vpce-[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.StartFlowFlushResponse.FirewallArn</property>
@@ -1445,5 +1604,40 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.VpcEndpointAssociation.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.VpcEndpointAssociation.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.VpcEndpointAssociation.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.VpcEndpointAssociation.VpcEndpointAssociationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.VpcEndpointAssociation.VpcId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^vpc-[0-9a-f]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.VpcEndpointAssociationMetadata.VpcEndpointAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
   </property-value-rule>
 </property-value-rules>

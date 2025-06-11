@@ -52,6 +52,22 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.AuditImagesLimit.Value);
             }
 
+            if(requestObject.IsSetChallengePreferences())
+            {
+                context.Writer.WritePropertyName("ChallengePreferences");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectChallengePreferencesListValue in requestObject.ChallengePreferences)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ChallengePreferenceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectChallengePreferencesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetOutputConfig())
             {
                 context.Writer.WritePropertyName("OutputConfig");

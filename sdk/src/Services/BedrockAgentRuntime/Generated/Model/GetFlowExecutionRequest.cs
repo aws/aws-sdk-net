@@ -31,8 +31,8 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFlowExecution operation.
-    /// Retrieves details about a specific asynchronous execution of a flow, including its
-    /// status, start and end times, and any errors that occurred during execution.
+    /// Retrieves details about a specific flow execution, including its status, start and
+    /// end times, and any errors that occurred during execution.
     /// </summary>
     public partial class GetFlowExecutionRequest : AmazonBedrockAgentRuntimeRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ExecutionIdentifier. 
         /// <para>
-        /// The unique identifier of the async execution to retrieve.
+        /// The unique identifier of the flow execution to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

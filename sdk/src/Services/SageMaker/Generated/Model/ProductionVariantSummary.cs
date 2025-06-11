@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ProductionVariantSummary
     {
+        private ProductionVariantCapacityReservationSummary _capacityReservationConfig;
         private int? _currentInstanceCount;
         private ProductionVariantServerlessConfig _currentServerlessConfig;
         private float? _currentWeight;
@@ -47,6 +48,25 @@ namespace Amazon.SageMaker.Model
         private ProductionVariantRoutingConfig _routingConfig;
         private string _variantName;
         private List<ProductionVariantStatus> _variantStatus = AWSConfigs.InitializeCollections ? new List<ProductionVariantStatus>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationConfig. 
+        /// <para>
+        /// Settings for the capacity reservation for the compute instances that SageMaker AI
+        /// reserves for an endpoint. 
+        /// </para>
+        /// </summary>
+        public ProductionVariantCapacityReservationSummary CapacityReservationConfig
+        {
+            get { return this._capacityReservationConfig; }
+            set { this._capacityReservationConfig = value; }
+        }
+
+        // Check to see if CapacityReservationConfig property is set
+        internal bool IsSetCapacityReservationConfig()
+        {
+            return this._capacityReservationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CurrentInstanceCount. 

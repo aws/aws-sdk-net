@@ -69,18 +69,23 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>ListKeyRotations</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>ImportKeyMaterial</a> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
-    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+    /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
     public partial class DeleteImportedKeyMaterialRequest : AmazonKeyManagementServiceRequest
     {
         private string _keyId;
+        private string _keyMaterialId;
 
         /// <summary>
         /// Gets and sets the property KeyId. 
@@ -121,6 +126,33 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetKeyId()
         {
             return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyMaterialId. 
+        /// <para>
+        /// Identifies the imported key material you are deleting. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If no KeyMaterialId is specified, KMS deletes the current key material.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// To get the list of key material IDs associated with a KMS key, use <a>ListKeyRotations</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=64, Max=64)]
+        public string KeyMaterialId
+        {
+            get { return this._keyMaterialId; }
+            set { this._keyMaterialId = value; }
+        }
+
+        // Check to see if KeyMaterialId property is set
+        internal bool IsSetKeyMaterialId()
+        {
+            return this._keyMaterialId != null;
         }
 
     }

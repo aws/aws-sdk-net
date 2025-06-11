@@ -34,8 +34,34 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class DescribeLoggingConfigurationResponse : AmazonWebServiceResponse
     {
+        private bool? _enableMonitoringDashboard;
         private string _firewallArn;
         private LoggingConfiguration _loggingConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property EnableMonitoringDashboard. 
+        /// <para>
+        /// A boolean that reflects whether or not the firewall monitoring dashboard is enabled
+        /// on a firewall.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Returns <c>TRUE</c> when the firewall monitoring dashboard is enabled on the firewall.
+        /// Returns <c>FALSE</c> when the firewall monitoring dashboard is not enabled on the
+        /// firewall. 
+        /// </para>
+        /// </summary>
+        public bool? EnableMonitoringDashboard
+        {
+            get { return this._enableMonitoringDashboard; }
+            set { this._enableMonitoringDashboard = value; }
+        }
+
+        // Check to see if EnableMonitoringDashboard property is set
+        internal bool IsSetEnableMonitoringDashboard()
+        {
+            return this._enableMonitoringDashboard.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property FirewallArn. 

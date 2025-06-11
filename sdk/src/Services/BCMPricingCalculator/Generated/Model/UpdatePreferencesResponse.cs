@@ -44,7 +44,7 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The updated preferred rate types for the management account. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> ManagementAccountRateTypeSelections
         {
             get { return this._managementAccountRateTypeSelections; }
@@ -63,7 +63,7 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The updated preferred rate types for member accounts. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> MemberAccountRateTypeSelections
         {
             get { return this._memberAccountRateTypeSelections; }
@@ -82,7 +82,7 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The updated preferred rate types for a standalone account. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> StandaloneAccountRateTypeSelections
         {
             get { return this._standaloneAccountRateTypeSelections; }

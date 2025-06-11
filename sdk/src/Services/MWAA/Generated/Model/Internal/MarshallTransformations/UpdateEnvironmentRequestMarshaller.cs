@@ -220,6 +220,12 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.WeeklyMaintenanceWindowStart);
             }
 
+            if(publicRequest.IsSetWorkerReplacementStrategy())
+            {
+                context.Writer.WritePropertyName("WorkerReplacementStrategy");
+                context.Writer.WriteStringValue(publicRequest.WorkerReplacementStrategy);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

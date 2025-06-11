@@ -3217,6 +3217,52 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityReservationPreference.
+    /// </summary>
+    public class CapacityReservationPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CapacityReservationsOnly for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference CapacityReservationsOnly = new CapacityReservationPreference("capacity-reservations-only");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationPreference FindValue(string value)
+        {
+            return FindValue<CapacityReservationPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacitySizeType.
     /// </summary>
     public class CapacitySizeType : ConstantClass
@@ -15831,6 +15877,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP5en48xlarge = new ReservedCapacityInstanceType("ml.p5en.48xlarge");
         /// <summary>
+        /// Constant MlP6B20048xlarge for ReservedCapacityInstanceType
+        /// </summary>
+        public static readonly ReservedCapacityInstanceType MlP6B20048xlarge = new ReservedCapacityInstanceType("ml.p6-b200.48xlarge");
+        /// <summary>
         /// Constant MlTrn132xlarge for ReservedCapacityInstanceType
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlTrn132xlarge = new ReservedCapacityInstanceType("ml.trn1.32xlarge");
@@ -19159,6 +19209,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type TrackingServerMaintenanceStatus.
+    /// </summary>
+    public class TrackingServerMaintenanceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MaintenanceComplete for TrackingServerMaintenanceStatus
+        /// </summary>
+        public static readonly TrackingServerMaintenanceStatus MaintenanceComplete = new TrackingServerMaintenanceStatus("MaintenanceComplete");
+        /// <summary>
+        /// Constant MaintenanceFailed for TrackingServerMaintenanceStatus
+        /// </summary>
+        public static readonly TrackingServerMaintenanceStatus MaintenanceFailed = new TrackingServerMaintenanceStatus("MaintenanceFailed");
+        /// <summary>
+        /// Constant MaintenanceInProgress for TrackingServerMaintenanceStatus
+        /// </summary>
+        public static readonly TrackingServerMaintenanceStatus MaintenanceInProgress = new TrackingServerMaintenanceStatus("MaintenanceInProgress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrackingServerMaintenanceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrackingServerMaintenanceStatus FindValue(string value)
+        {
+            return FindValue<TrackingServerMaintenanceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrackingServerMaintenanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TrackingServerSize.
     /// </summary>
     public class TrackingServerSize : ConstantClass
@@ -19822,6 +19926,10 @@ namespace Amazon.SageMaker
         /// Constant MlP5en48xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlP5en48xlarge = new TrainingInstanceType("ml.p5en.48xlarge");
+        /// <summary>
+        /// Constant MlP6B20048xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlP6B20048xlarge = new TrainingInstanceType("ml.p6-b200.48xlarge");
         /// <summary>
         /// Constant MlR512xlarge for TrainingInstanceType
         /// </summary>

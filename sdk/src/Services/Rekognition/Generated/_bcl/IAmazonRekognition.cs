@@ -422,9 +422,16 @@ namespace Amazon.Rekognition
         /// <summary>
         /// Associates one or more faces with an existing UserID. Takes an array of <c>FaceIds</c>.
         /// Each <c>FaceId</c> that are present in the <c>FaceIds</c> list is associated with
-        /// the provided UserID. The maximum number of total <c>FaceIds</c> per UserID is 100.
+        /// the provided UserID. The number of FaceIds that can be used as input in a single request
+        /// is limited to 100.
         /// 
-        /// 
+        ///  
+        /// <para>
+        /// Note that the total number of faces that can be associated with a single <c>UserID</c>
+        /// is also limited to 100. Once a <c>UserID</c> has 100 faces associated with it, no
+        /// additional faces can be added. If more API calls are made after the limit is reached,
+        /// a <c>ServiceQuotaExceededException</c> will result.
+        /// </para>
         ///  
         /// <para>
         /// The <c>UserMatchThreshold</c> parameter specifies the minimum user match confidence
@@ -505,9 +512,16 @@ namespace Amazon.Rekognition
         /// <summary>
         /// Associates one or more faces with an existing UserID. Takes an array of <c>FaceIds</c>.
         /// Each <c>FaceId</c> that are present in the <c>FaceIds</c> list is associated with
-        /// the provided UserID. The maximum number of total <c>FaceIds</c> per UserID is 100.
+        /// the provided UserID. The number of FaceIds that can be used as input in a single request
+        /// is limited to 100.
         /// 
-        /// 
+        ///  
+        /// <para>
+        /// Note that the total number of faces that can be associated with a single <c>UserID</c>
+        /// is also limited to 100. Once a <c>UserID</c> has 100 faces associated with it, no
+        /// additional faces can be added. If more API calls are made after the limit is reached,
+        /// a <c>ServiceQuotaExceededException</c> will result.
+        /// </para>
         ///  
         /// <para>
         /// The <c>UserMatchThreshold</c> parameter specifies the minimum user match confidence
@@ -3205,9 +3219,7 @@ namespace Amazon.Rekognition
         /// object in an array (<c>CustomLabels</c>). Each <c>CustomLabel</c> object provides
         /// the label name (<c>Name</c>), the level of confidence that the image contains the
         /// object (<c>Confidence</c>), and object location information, if it exists, for the
-        /// label on the image (<c>Geometry</c>). Note that for the <c>DetectCustomLabelsLabels</c>
-        /// operation, <c>Polygons</c> are not returned in the <c>Geometry</c> section of the
-        /// response.
+        /// label on the image (<c>Geometry</c>). 
         /// </para>
         ///  
         /// <para>
@@ -3319,9 +3331,7 @@ namespace Amazon.Rekognition
         /// object in an array (<c>CustomLabels</c>). Each <c>CustomLabel</c> object provides
         /// the label name (<c>Name</c>), the level of confidence that the image contains the
         /// object (<c>Confidence</c>), and object location information, if it exists, for the
-        /// label on the image (<c>Geometry</c>). Note that for the <c>DetectCustomLabelsLabels</c>
-        /// operation, <c>Polygons</c> are not returned in the <c>Geometry</c> section of the
-        /// response.
+        /// label on the image (<c>Geometry</c>). 
         /// </para>
         ///  
         /// <para>
@@ -5920,8 +5930,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  <i>End of support notice:</i> On October 31, 2025, AWS will discontinue support for
+        /// Amazon Rekognition People Pathing. After October 31, 2025, you will no longer be able
+        /// to use the Rekognition People Pathing capability. For more information, visit this
+        /// <a href="https://aws.amazon.com/blogs/machine-learning/transitioning-from-amazon-rekognition-people-pathing-exploring-other-alternatives/">blog
+        /// post</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets the path tracking results of a Amazon Rekognition Video analysis started by <a>StartPersonTracking</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The person path tracking operation is started by a call to <c>StartPersonTracking</c>
@@ -5999,8 +6019,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  <i>End of support notice:</i> On October 31, 2025, AWS will discontinue support for
+        /// Amazon Rekognition People Pathing. After October 31, 2025, you will no longer be able
+        /// to use the Rekognition People Pathing capability. For more information, visit this
+        /// <a href="https://aws.amazon.com/blogs/machine-learning/transitioning-from-amazon-rekognition-people-pathing-exploring-other-alternatives/">blog
+        /// post</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets the path tracking results of a Amazon Rekognition Video analysis started by <a>StartPersonTracking</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The person path tracking operation is started by a call to <c>StartPersonTracking</c>
@@ -9330,8 +9360,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  <i>End of support notice:</i> On October 31, 2025, AWS will discontinue support for
+        /// Amazon Rekognition People Pathing. After October 31, 2025, you will no longer be able
+        /// to use the Rekognition People Pathing capability. For more information, visit this
+        /// <a href="https://aws.amazon.com/blogs/machine-learning/transitioning-from-amazon-rekognition-people-pathing-exploring-other-alternatives/">blog
+        /// post</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Starts the asynchronous tracking of a person's path in a stored video.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Amazon Rekognition Video can track the path of people in a video stored in an Amazon
@@ -9391,8 +9431,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  <i>End of support notice:</i> On October 31, 2025, AWS will discontinue support for
+        /// Amazon Rekognition People Pathing. After October 31, 2025, you will no longer be able
+        /// to use the Rekognition People Pathing capability. For more information, visit this
+        /// <a href="https://aws.amazon.com/blogs/machine-learning/transitioning-from-amazon-rekognition-people-pathing-exploring-other-alternatives/">blog
+        /// post</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Starts the asynchronous tracking of a person's path in a stored video.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Amazon Rekognition Video can track the path of people in a video stored in an Amazon

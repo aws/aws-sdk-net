@@ -44,7 +44,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The device name assigned to the volume (for example, <c>/dev/sdh</c> or <c>xvdh</c>).
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
-        /// naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// naming on Linux instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

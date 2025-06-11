@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property FlowExecutionSummaries. 
         /// <para>
-        /// A list of async execution summaries. Each summary includes the execution ARN, flow
+        /// A list of flow execution summaries. Each summary includes the execution ARN, flow
         /// identifier, flow alias identifier, flow version, status, and timestamps.
         /// </para>
         /// </summary>

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because a quota was exceeded. For more information, see <a
-    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
+    /// The request was rejected because a length constraint or quota was exceeded. For more
+    /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
     /// in the <i>Key Management Service Developer Guide</i>.
     /// </summary>
     #if !NETSTANDARD

@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
     /// an AMI from a snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
-    /// encryption with Amazon EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+    /// encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates RegisterImageRequest with the parameterized properties
         /// </summary>
-        /// <param name="imageLocation">The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <c>aws-exec-read</c> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</param>
+        /// <param name="imageLocation">The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <c>aws-exec-read</c> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 Service Developer Guide</i>.</param>
         public RegisterImageRequest(string imageLocation)
         {
             _imageLocation = imageLocation;
@@ -171,8 +171,9 @@ namespace Amazon.EC2.Model
         /// AMIs that include billable software and list them on the Amazon Web Services Marketplace.
         /// You must first register as a seller on the Amazon Web Services Marketplace. For more
         /// information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
-        /// started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
-        /// products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.
+        /// started as an Amazon Web Services Marketplace seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+        /// products in Amazon Web Services Marketplace</a> in the <i>Amazon Web Services Marketplace
+        /// Seller Guide</i>.
         /// </para>
         /// </summary>
         public List<string> BillingProducts
@@ -202,8 +203,8 @@ namespace Amazon.EC2.Model
         /// If you create an AMI on an Outpost, then all backing snapshots must be on the same
         /// Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots
         /// can be used to launch instances on the same Outpost only. For more information, <a
-        /// href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
-        /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
+        /// href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Create
+        /// AMIs from local snapshots</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -231,8 +232,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-        /// modes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Instance
+        /// launch behavior with Amazon EC2 boot modes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public BootModeValues BootMode
@@ -315,7 +316,7 @@ namespace Amazon.EC2.Model
         /// The full path to your AMI manifest in Amazon S3 storage. The specified bucket must
         /// have the <c>aws-exec-read</c> canned access control list (ACL) to ensure that it can
         /// be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
-        /// ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.
+        /// ACL</a> in the <i>Amazon S3 Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ImageLocation
@@ -520,7 +521,7 @@ namespace Amazon.EC2.Model
         /// data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
         /// command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars
         /// tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-        /// Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Secure Boot for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64000)]

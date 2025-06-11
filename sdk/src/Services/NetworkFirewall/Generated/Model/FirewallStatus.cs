@@ -33,6 +33,14 @@ namespace Amazon.NetworkFirewall.Model
     /// Detailed information about the current status of a <a>Firewall</a>. You can retrieve
     /// this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall
     /// name and ARN.
+    /// 
+    ///  
+    /// <para>
+    /// The firewall status indicates a combined status. It indicates whether all subnets
+    /// are up-to-date with the latest firewall configurations, which is based on the sync
+    /// states config values, and also whether all subnets have their endpoints fully enabled,
+    /// based on their sync states attachment values. 
+    /// </para>
     /// </summary>
     public partial class FirewallStatus
     {
@@ -45,7 +53,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property CapacityUsageSummary. 
         /// <para>
         /// Describes the capacity usage of the resources contained in a firewall's reference
-        /// sets. Network Firewall calclulates the capacity usage by taking an aggregated count
+        /// sets. Network Firewall calculates the capacity usage by taking an aggregated count
         /// of all of the resources used by all of the reference sets in a firewall.
         /// </para>
         /// </summary>
@@ -64,22 +72,22 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSyncStateSummary. 
         /// <para>
-        /// The configuration sync state for the firewall. This summarizes the sync states reported
-        /// in the <c>Config</c> settings for all of the Availability Zones where you have configured
-        /// the firewall. 
+        /// The configuration sync state for the firewall. This summarizes the <c>Config</c> settings
+        /// in the <c>SyncStates</c> for this firewall status object. 
         /// </para>
         ///  
         /// <para>
         /// When you create a firewall or update its configuration, for example by adding a rule
         /// group to its firewall policy, Network Firewall distributes the configuration changes
-        /// to all zones where the firewall is in use. This summary indicates whether the configuration
-        /// changes have been applied everywhere. 
+        /// to all Availability Zones that have subnets defined for the firewall. This summary
+        /// indicates whether the configuration changes have been applied everywhere. 
         /// </para>
         ///  
         /// <para>
         /// This status must be <c>IN_SYNC</c> for the firewall to be ready for use, but it doesn't
         /// indicate that the firewall is ready. The <c>Status</c> setting indicates firewall
-        /// readiness.
+        /// readiness. It's based on this setting and the readiness of the firewall endpoints
+        /// to take traffic. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,8 +107,8 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The readiness of the configured firewall to handle network traffic across all of the
-        /// Availability Zones where you've configured it. This setting is <c>READY</c> only when
-        /// the <c>ConfigurationSyncStateSummary</c> value is <c>IN_SYNC</c> and the <c>Attachment</c>
+        /// Availability Zones where you have it configured. This setting is <c>READY</c> only
+        /// when the <c>ConfigurationSyncStateSummary</c> value is <c>IN_SYNC</c> and the <c>Attachment</c>
         /// <c>Status</c> values for all of the configured subnets are <c>READY</c>. 
         /// </para>
         /// </summary>
@@ -120,10 +128,13 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property SyncStates. 
         /// <para>
-        /// The subnets that you've configured for use by the Network Firewall firewall. This
-        /// contains one array element per Availability Zone where you've configured a subnet.
-        /// These objects provide details of the information that is summarized in the <c>ConfigurationSyncStateSummary</c>
-        /// and <c>Status</c>, broken down by zone and configuration object. 
+        /// Status for the subnets that you've configured in the firewall. This contains one array
+        /// element per Availability Zone where you've configured a subnet in the firewall. 
+        /// </para>
+        ///  
+        /// <para>
+        /// These objects provide detailed information for the settings <c>ConfigurationSyncStateSummary</c>
+        /// and <c>Status</c>. 
         /// </para>
         /// </summary>
         public Dictionary<string, SyncState> SyncStates

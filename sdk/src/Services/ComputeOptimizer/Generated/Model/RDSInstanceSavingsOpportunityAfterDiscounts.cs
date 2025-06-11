@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the savings opportunity for Amazon RDS instance recommendations after applying
+    /// Describes the savings opportunity for DB instance recommendations after applying
     /// Savings Plans discounts. 
     /// 
     ///  
@@ -48,8 +48,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavings. 
         /// <para>
-        ///  The estimated monthly savings possible by adopting Compute Optimizer’s Amazon RDS
-        /// instance recommendations. This includes any applicable Savings Plans discounts. 
+        ///  The estimated monthly savings possible by adopting Compute Optimizer’s DB instance
+        /// recommendations. This includes any applicable Savings Plans discounts. 
         /// </para>
         /// </summary>
         public RDSInstanceEstimatedMonthlySavings EstimatedMonthlySavings
@@ -68,8 +68,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property SavingsOpportunityPercentage. 
         /// <para>
         ///  The estimated monthly savings possible as a percentage of monthly cost by adopting
-        /// Compute Optimizer’s Amazon RDS instance recommendations. This includes any applicable
-        /// Savings Plans discounts. 
+        /// Compute Optimizer’s DB instance recommendations. This includes any applicable Savings
+        /// Plans discounts. 
         /// </para>
         /// </summary>
         public double? SavingsOpportunityPercentage

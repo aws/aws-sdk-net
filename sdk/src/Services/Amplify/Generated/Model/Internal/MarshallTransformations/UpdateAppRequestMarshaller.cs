@@ -205,6 +205,17 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.IamServiceRoleArn);
             }
 
+            if(publicRequest.IsSetJobConfig())
+            {
+                context.Writer.WritePropertyName("jobConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

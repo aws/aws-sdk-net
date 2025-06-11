@@ -155,7 +155,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>interface</c> | <c>efa</c> | <c>efa-only</c> | <c>trunk</c> 
+        /// Valid values: <c>interface</c> | <c>efa</c> | <c>efa-only</c> | <c>evs</c> | <c>trunk</c>
+        /// 
         /// </para>
         /// </summary>
         public string InterfaceType

@@ -79,6 +79,10 @@ namespace Amazon.SecurityIR
         /// </summary>
         public static readonly AwsRegion ApSoutheast5 = new AwsRegion("ap-southeast-5");
         /// <summary>
+        /// Constant ApSoutheast7 for AwsRegion
+        /// </summary>
+        public static readonly AwsRegion ApSoutheast7 = new AwsRegion("ap-southeast-7");
+        /// <summary>
         /// Constant CaCentral1 for AwsRegion
         /// </summary>
         public static readonly AwsRegion CaCentral1 = new AwsRegion("ca-central-1");
@@ -138,6 +142,10 @@ namespace Amazon.SecurityIR
         /// Constant MeSouth1 for AwsRegion
         /// </summary>
         public static readonly AwsRegion MeSouth1 = new AwsRegion("me-south-1");
+        /// <summary>
+        /// Constant MxCentral1 for AwsRegion
+        /// </summary>
+        public static readonly AwsRegion MxCentral1 = new AwsRegion("mx-central-1");
         /// <summary>
         /// Constant SaEast1 for AwsRegion
         /// </summary>

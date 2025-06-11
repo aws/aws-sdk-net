@@ -2694,18 +2694,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Attaches an EBS volume to a running or stopped instance and exposes it to the instance
-        /// with the specified device name.
+        /// Attaches an Amazon EBS volume to a <c>running</c> or <c>stopped</c> instance, and
+        /// exposes it to the instance with the specified device name.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Encrypted EBS volumes must be attached to instances that support Amazon EBS encryption.
-        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
+        /// The maximum number of Amazon EBS volumes that you can attach to an instance depends
+        /// on the instance type. If you exceed the volume attachment limit for an instance type,
+        /// the attachment request fails with the <c>AttachmentLimitExceeded</c> error. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Instance
+        /// volume limits</a>.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
-        /// After you attach an EBS volume, you must make it available. For more information,
+        /// After you attach an EBS volume, you must make it available for use. For more information,
         /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html">Make
         /// an EBS volume available for use</a>.
         /// </para>
@@ -2752,18 +2754,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Attaches an EBS volume to a running or stopped instance and exposes it to the instance
-        /// with the specified device name.
+        /// Attaches an Amazon EBS volume to a <c>running</c> or <c>stopped</c> instance, and
+        /// exposes it to the instance with the specified device name.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// Encrypted EBS volumes must be attached to instances that support Amazon EBS encryption.
-        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
+        /// The maximum number of Amazon EBS volumes that you can attach to an instance depends
+        /// on the instance type. If you exceed the volume attachment limit for an instance type,
+        /// the attachment request fails with the <c>AttachmentLimitExceeded</c> error. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Instance
+        /// volume limits</a>.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
-        /// After you attach an EBS volume, you must make it available. For more information,
+        /// After you attach an EBS volume, you must make it available for use. For more information,
         /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html">Make
         /// an EBS volume available for use</a>.
         /// </para>
@@ -3581,9 +3585,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Removes your Amazon Web Services account from the launch permissions for the specified
-        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">
-        /// Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon
-        /// EC2 User Guide</i>.
+        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">Cancel
+        /// having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
         /// 
@@ -3601,9 +3605,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Removes your Amazon Web Services account from the launch permissions for the specified
-        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">
-        /// Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon
-        /// EC2 User Guide</i>.
+        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">Cancel
+        /// having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
         /// <param name="cancellationToken">
@@ -3969,7 +3973,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For information about the prerequisites when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
-        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -4007,7 +4011,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For information about the prerequisites when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
-        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -5219,7 +5223,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
-        /// an Amazon EBS-backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
@@ -5250,7 +5254,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
-        /// an Amazon EBS-backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
@@ -7328,13 +7332,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRestoreImageTask service method.</param>
@@ -7358,13 +7362,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRestoreImageTask service method.</param>
@@ -8207,13 +8211,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStoreImageTask service method.</param>
@@ -8236,13 +8240,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStoreImageTask service method.</param>
@@ -14458,8 +14462,15 @@ namespace Amazon.EC2
         /// the Recycle Bin for the specified retention period. It can be restored before its
         /// retention period expires, after which it is permanently deleted. If the deregistered
         /// AMI doesn't match a retention rule, it is permanently deleted immediately. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the <i>Amazon EBS User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover
+        /// deleted Amazon EBS snapshots and EBS-backed AMIs with Recycle Bin</a> in the <i>Amazon
+        /// EBS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When deregistering an EBS-backed AMI, you can optionally delete its associated snapshots
+        /// at the same time. However, if a snapshot is associated with multiple AMIs, it won't
+        /// be deleted even if specified for deletion, although the AMI will still be deregistered.
         /// </para>
         ///  
         /// <para>
@@ -14472,8 +14483,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For EBS-backed AMIs: The snapshots that were created of the root and data volumes
-        /// of the instance during AMI creation. You'll continue to incur snapshot storage costs.
+        /// For EBS-backed AMIs: Snapshots that are associated with multiple AMIs. You'll continue
+        /// to incur snapshot storage costs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14509,8 +14520,15 @@ namespace Amazon.EC2
         /// the Recycle Bin for the specified retention period. It can be restored before its
         /// retention period expires, after which it is permanently deleted. If the deregistered
         /// AMI doesn't match a retention rule, it is permanently deleted immediately. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the <i>Amazon EBS User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover
+        /// deleted Amazon EBS snapshots and EBS-backed AMIs with Recycle Bin</a> in the <i>Amazon
+        /// EBS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When deregistering an EBS-backed AMI, you can optionally delete its associated snapshots
+        /// at the same time. However, if a snapshot is associated with multiple AMIs, it won't
+        /// be deleted even if specified for deletion, although the AMI will still be deregistered.
         /// </para>
         ///  
         /// <para>
@@ -14523,8 +14541,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For EBS-backed AMIs: The snapshots that were created of the root and data volumes
-        /// of the instance during AMI creation. You'll continue to incur snapshot storage costs.
+        /// For EBS-backed AMIs: Snapshots that are associated with multiple AMIs. You'll continue
+        /// to incur snapshot storage costs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23488,13 +23506,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStoreImageTasks service method.</param>
@@ -23530,13 +23548,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To use this API, you must have the required permissions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-        /// for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-ami-store-restore.html#ami-s3-permissions">Permissions
+        /// for storing and restoring AMIs using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-        /// and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and restore an AMI using S3</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStoreImageTasks service method.</param>
@@ -26856,7 +26874,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
         /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -26889,7 +26907,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
         /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -26920,7 +26938,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
-        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImageDeprecation service method.</param>
@@ -26943,7 +26961,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
-        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImageDeprecation service method.</param>
@@ -26979,8 +26997,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
-        /// an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect
+        /// an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImageDeregistrationProtection service method.</param>
@@ -27009,8 +27027,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
-        /// an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect
+        /// an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImageDeregistrationProtection service method.</param>
@@ -28938,7 +28956,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
-        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImage service method.</param>
@@ -28969,7 +28987,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
-        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImage service method.</param>
@@ -29007,7 +29025,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
         /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -29039,7 +29057,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
         /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -29128,8 +29146,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
-        /// an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect
+        /// an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImageDeregistrationProtection service method.</param>
@@ -29157,8 +29175,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
-        /// an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect
+        /// an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImageDeregistrationProtection service method.</param>
@@ -29972,6 +29990,49 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ExportVerifiedAccessInstanceClientConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<ExportVerifiedAccessInstanceClientConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetActiveVpnTunnelStatus
+
+
+        /// <summary>
+        /// Returns the currently negotiated security parameters for an active VPN tunnel, including
+        /// IKE version, DH groups, encryption algorithms, and integrity algorithms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetActiveVpnTunnelStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetActiveVpnTunnelStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
+        public virtual GetActiveVpnTunnelStatusResponse GetActiveVpnTunnelStatus(GetActiveVpnTunnelStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetActiveVpnTunnelStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetActiveVpnTunnelStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetActiveVpnTunnelStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the currently negotiated security parameters for an active VPN tunnel, including
+        /// IKE version, DH groups, encryption algorithms, and integrity algorithms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetActiveVpnTunnelStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetActiveVpnTunnelStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
+        public virtual Task<GetActiveVpnTunnelStatusResponse> GetActiveVpnTunnelStatusAsync(GetActiveVpnTunnelStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetActiveVpnTunnelStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetActiveVpnTunnelStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetActiveVpnTunnelStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -30824,7 +30885,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
         /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -30848,7 +30909,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
         /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -38727,7 +38788,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
         /// an AMI from a snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
-        /// encryption with Amazon EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -38812,7 +38873,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
         /// an AMI from a snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
-        /// encryption with Amazon EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -40641,8 +40702,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover
+        /// deleted Amazon EBS snapshots and EBS-back AMIs with Recycle Bin</a> in the <i>Amazon
+        /// EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreImageFromRecycleBin service method.</param>
         /// 
@@ -40659,8 +40721,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-        /// Bin</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recover
+        /// deleted Amazon EBS snapshots and EBS-back AMIs with Recycle Bin</a> in the <i>Amazon
+        /// EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreImageFromRecycleBin service method.</param>
         /// <param name="cancellationToken">

@@ -97,7 +97,7 @@ namespace AWSSDK.UnitTests
             response.StatusLine = responseLines[0];
             var currentLine = responseLines[0];
             var statusCode = ParseStatusCode(currentLine);
-            
+            bool isJsonResponse = false;
             var lineIndex = 0;
             if (responseLines.Count() > 1)
             {
@@ -111,6 +111,13 @@ namespace AWSSDK.UnitTests
                     }
 
                     var index = currentLine.IndexOf(":");
+                    var firstChar = currentLine[0];
+                    // start of body for json don't add to headers
+                    if (firstChar.Equals('{'))
+                    {
+                        isJsonResponse = true;
+                        break;
+                    }
                     if (index != -1)
                     {
                         var headerKey = currentLine.Substring(0, index);
@@ -119,8 +126,7 @@ namespace AWSSDK.UnitTests
                     }
                 }
             }
-
-            var startOfBody = rawResponse.IndexOf(currentLine) + currentLine.Length;
+            var startOfBody = isJsonResponse ? rawResponse.IndexOf(currentLine) : rawResponse.IndexOf(currentLine) + currentLine.Length;
             response.Body = rawResponse.Substring(startOfBody).Trim();
             return response;
         }

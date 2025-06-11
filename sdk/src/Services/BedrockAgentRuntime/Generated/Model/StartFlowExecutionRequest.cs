@@ -31,19 +31,19 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the StartFlowExecution operation.
-    /// Starts an asynchronous execution of an Amazon Bedrock flow. Unlike synchronous flows
-    /// that run until completion or time out after five minutes, you can run asynchronous
-    /// flows for longer durations. Asynchronous flows also yield control so that your application
-    /// can perform other tasks.
+    /// Starts an execution of an Amazon Bedrock flow. Unlike flows that run until completion
+    /// or time out after five minutes, flow executions let you run flows asynchronously for
+    /// longer durations. Flow executions also yield control so that your application can
+    /// perform other tasks.
     /// 
     ///  
     /// <para>
     /// This operation returns an Amazon Resource Name (ARN) that you can use to track and
-    /// manage your flow's async execution.
+    /// manage your flow execution.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Asynchronous flows is in preview release for Amazon Bedrock and is subject to change.
+    /// Flow executions is in preview release for Amazon Bedrock and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property FlowAliasIdentifier. 
         /// <para>
-        /// The unique identifier of the flow alias to use for the async execution.
+        /// The unique identifier of the flow alias to use for the flow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -77,7 +77,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property FlowExecutionName. 
         /// <para>
-        /// The unique name for the async execution. If you don't provide one, a system-generated
+        /// The unique name for the flow execution. If you don't provide one, a system-generated
         /// name is used.
         /// </para>
         /// </summary>
@@ -116,8 +116,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Inputs. 
         /// <para>
-        /// The input data required for the async execution. This must match the input schema
-        /// defined in the flow.
+        /// The input data required for the flow execution. This must match the input schema defined
+        /// in the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -136,7 +136,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ModelPerformanceConfiguration. 
         /// <para>
-        /// The performance settings for the foundation model used in the async execution.
+        /// The performance settings for the foundation model used in the flow execution.
         /// </para>
         /// </summary>
         public ModelPerformanceConfiguration ModelPerformanceConfiguration

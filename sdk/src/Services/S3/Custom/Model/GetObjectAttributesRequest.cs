@@ -328,7 +328,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property MaxParts. 
         /// <para>
-        /// Sets the maximum number of parts to return.
+        /// Sets the maximum number of parts to return. For more information, see 
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">
+        /// Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.
         /// </para>
         /// </summary>
         public int? MaxParts
@@ -365,8 +367,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property PartNumberMarker. 
         /// <para>
-        /// Specifies the part after which listing should begin. Only parts with higher part numbers
-        /// will be listed.
+        /// Specifies the part after which listing should begin. Only parts with higher part numbers will be listed. For more information, 
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">
+        /// Uploading and copying objects using multipart upload in Amazon S3 </a> in the <i>Amazon Simple Storage Service user guide</i>.
         /// </para>
         /// </summary>
         public int? PartNumberMarker

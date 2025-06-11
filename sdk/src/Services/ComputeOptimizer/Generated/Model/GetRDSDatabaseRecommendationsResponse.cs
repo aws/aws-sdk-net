@@ -59,7 +59,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token to advance to the next page of Amazon RDS recommendations. 
+        ///  The token to advance to the next page of Amazon Aurora and RDS database recommendations.
+        /// 
         /// </para>
         /// </summary>
         public string NextToken
@@ -77,7 +78,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property RdsDBRecommendations. 
         /// <para>
-        ///  An array of objects that describe the Amazon RDS recommendations. 
+        ///  An array of objects that describe the Amazon Aurora and RDS database recommendations.
+        /// 
         /// </para>
         /// </summary>
         public List<RDSDBRecommendation> RdsDBRecommendations

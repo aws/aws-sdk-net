@@ -38,6 +38,7 @@ namespace Amazon.EMRServerless.Model
         private string _applicationId;
         private string _clientToken;
         private ConfigurationOverrides _configurationOverrides;
+        private JobRunExecutionIamPolicy _executionIamPolicy;
         private string _executionRoleArn;
         private long? _executionTimeoutMinutes;
         private JobDriver _jobDriver;
@@ -101,6 +102,25 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetConfigurationOverrides()
         {
             return this._configurationOverrides != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionIamPolicy. 
+        /// <para>
+        /// You can pass an optional IAM policy. The resulting job IAM role permissions will be
+        /// an intersection of this policy and the policy associated with your job execution role.
+        /// </para>
+        /// </summary>
+        public JobRunExecutionIamPolicy ExecutionIamPolicy
+        {
+            get { return this._executionIamPolicy; }
+            set { this._executionIamPolicy = value; }
+        }
+
+        // Check to see if ExecutionIamPolicy property is set
+        internal bool IsSetExecutionIamPolicy()
+        {
+            return this._executionIamPolicy != null;
         }
 
         /// <summary>

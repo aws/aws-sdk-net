@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyNetworkInterfaceAttributeRequest : AmazonEC2Request
     {
+        private List<string> _associatedSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _associatePublicIpAddress;
         private NetworkInterfaceAttachmentChanges _attachment;
         private ConnectionTrackingSpecificationRequest _connectionTrackingSpecification;
@@ -47,6 +48,24 @@ namespace Amazon.EC2.Model
         private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkInterfaceId;
         private bool? _sourceDestCheck;
+
+        /// <summary>
+        /// Gets and sets the property AssociatedSubnetIds. 
+        /// <para>
+        /// A list of subnet IDs to associate with the network interface.
+        /// </para>
+        /// </summary>
+        public List<string> AssociatedSubnetIds
+        {
+            get { return this._associatedSubnetIds; }
+            set { this._associatedSubnetIds = value; }
+        }
+
+        // Check to see if AssociatedSubnetIds property is set
+        internal bool IsSetAssociatedSubnetIds()
+        {
+            return this._associatedSubnetIds != null && (this._associatedSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 

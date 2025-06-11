@@ -45,11 +45,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property ChannelOrder. 
         /// <para>
-        ///  
-        /// <para>
-        /// The format of the audio channel.
-        /// </para>
-        ///  
+        ///  The format of the audio channel. 
         /// </para>
         /// </summary>
         public string ChannelOrder

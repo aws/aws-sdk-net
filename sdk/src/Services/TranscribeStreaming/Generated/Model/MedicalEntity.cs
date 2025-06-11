@@ -104,7 +104,7 @@ namespace Amazon.TranscribeStreaming.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time, in milliseconds, of the utterance that was identified as PHI.
+        /// The end time, in seconds, of the utterance that was identified as PHI.
         /// </para>
         /// </summary>
         public double? EndTime
@@ -122,7 +122,7 @@ namespace Amazon.TranscribeStreaming.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time, in milliseconds, of the utterance that was identified as PHI.
+        /// The start time, in seconds, of the utterance that was identified as PHI.
         /// </para>
         /// </summary>
         public double? StartTime

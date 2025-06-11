@@ -753,6 +753,156 @@ namespace Amazon.KeyManagementService
 
 
     /// <summary>
+    /// Constants used for properties of type ImportState.
+    /// </summary>
+    public class ImportState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPORTED for ImportState
+        /// </summary>
+        public static readonly ImportState IMPORTED = new ImportState("IMPORTED");
+        /// <summary>
+        /// Constant PENDING_IMPORT for ImportState
+        /// </summary>
+        public static readonly ImportState PENDING_IMPORT = new ImportState("PENDING_IMPORT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportState FindValue(string value)
+        {
+            return FindValue<ImportState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportType.
+    /// </summary>
+    public class ImportType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXISTING_KEY_MATERIAL for ImportType
+        /// </summary>
+        public static readonly ImportType EXISTING_KEY_MATERIAL = new ImportType("EXISTING_KEY_MATERIAL");
+        /// <summary>
+        /// Constant NEW_KEY_MATERIAL for ImportType
+        /// </summary>
+        public static readonly ImportType NEW_KEY_MATERIAL = new ImportType("NEW_KEY_MATERIAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportType FindValue(string value)
+        {
+            return FindValue<ImportType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IncludeKeyMaterial.
+    /// </summary>
+    public class IncludeKeyMaterial : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_KEY_MATERIAL for IncludeKeyMaterial
+        /// </summary>
+        public static readonly IncludeKeyMaterial ALL_KEY_MATERIAL = new IncludeKeyMaterial("ALL_KEY_MATERIAL");
+        /// <summary>
+        /// Constant ROTATIONS_ONLY for IncludeKeyMaterial
+        /// </summary>
+        public static readonly IncludeKeyMaterial ROTATIONS_ONLY = new IncludeKeyMaterial("ROTATIONS_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncludeKeyMaterial(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncludeKeyMaterial FindValue(string value)
+        {
+            return FindValue<IncludeKeyMaterial>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncludeKeyMaterial(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KeyAgreementAlgorithmSpec.
     /// </summary>
     public class KeyAgreementAlgorithmSpec : ConstantClass
@@ -888,6 +1038,60 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyManagerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KeyMaterialState.
+    /// </summary>
+    public class KeyMaterialState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CURRENT for KeyMaterialState
+        /// </summary>
+        public static readonly KeyMaterialState CURRENT = new KeyMaterialState("CURRENT");
+        /// <summary>
+        /// Constant NON_CURRENT for KeyMaterialState
+        /// </summary>
+        public static readonly KeyMaterialState NON_CURRENT = new KeyMaterialState("NON_CURRENT");
+        /// <summary>
+        /// Constant PENDING_ROTATION for KeyMaterialState
+        /// </summary>
+        public static readonly KeyMaterialState PENDING_ROTATION = new KeyMaterialState("PENDING_ROTATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyMaterialState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyMaterialState FindValue(string value)
+        {
+            return FindValue<KeyMaterialState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyMaterialState(string value)
         {
             return FindValue(value);
         }

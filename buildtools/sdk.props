@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <PropertyGroup>
+	<!-- Contains the properties specific to this version of the AWS SDK for .NET to be used by the build system -->
+	<ProtocolsSupported>ec2, json, query, rest-json, rest-xml</ProtocolsSupported>
+	<H2RequiredSupported>true</H2RequiredSupported>	
+    </PropertyGroup>
+</Project>

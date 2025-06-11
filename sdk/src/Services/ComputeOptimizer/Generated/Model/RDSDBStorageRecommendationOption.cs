@@ -30,19 +30,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the recommendation options for Amazon RDS storage.
+    /// Describes the recommendation options for DB storage.
     /// </summary>
     public partial class RDSDBStorageRecommendationOption
     {
+        private RDSEstimatedMonthlyVolumeIOPsCostVariation _estimatedMonthlyVolumeIOPsCostVariation;
         private int? _rank;
         private SavingsOpportunity _savingsOpportunity;
         private RDSStorageSavingsOpportunityAfterDiscounts _savingsOpportunityAfterDiscounts;
         private DBStorageConfiguration _storageConfiguration;
 
         /// <summary>
+        /// Gets and sets the property EstimatedMonthlyVolumeIOPsCostVariation. 
+        /// <para>
+        ///  The projected level of variation in monthly I/O costs for the DB storage recommendation
+        /// option. 
+        /// </para>
+        /// </summary>
+        public RDSEstimatedMonthlyVolumeIOPsCostVariation EstimatedMonthlyVolumeIOPsCostVariation
+        {
+            get { return this._estimatedMonthlyVolumeIOPsCostVariation; }
+            set { this._estimatedMonthlyVolumeIOPsCostVariation = value; }
+        }
+
+        // Check to see if EstimatedMonthlyVolumeIOPsCostVariation property is set
+        internal bool IsSetEstimatedMonthlyVolumeIOPsCostVariation()
+        {
+            return this._estimatedMonthlyVolumeIOPsCostVariation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Rank. 
         /// <para>
-        ///  The rank identifier of the RDS storage recommendation option. 
+        ///  The rank identifier of the DB storage recommendation option. 
         /// </para>
         /// </summary>
         public int? Rank
@@ -75,8 +95,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property SavingsOpportunityAfterDiscounts. 
         /// <para>
-        ///  Describes the savings opportunity for Amazon RDS storage recommendations or for the
-        /// recommendation option. 
+        ///  Describes the savings opportunity for DB storage recommendations or for the recommendation
+        /// option. 
         /// </para>
         ///  
         /// <para>

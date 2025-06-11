@@ -62,6 +62,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AndStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AsnMatchStatement", targetDepth))
+                {
+                    var unmarshaller = AsnMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.AsnMatchStatement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ByteMatchStatement", targetDepth))
                 {
                     var unmarshaller = ByteMatchStatementUnmarshaller.Instance;

@@ -112,6 +112,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.TrackingServerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TrackingServerMaintenanceStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TrackingServerMaintenanceStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TrackingServerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

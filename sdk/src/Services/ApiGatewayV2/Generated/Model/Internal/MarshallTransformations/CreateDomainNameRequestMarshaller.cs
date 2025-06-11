@@ -106,6 +106,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetRoutingMode())
+            {
+                context.Writer.WritePropertyName("routingMode");
+                context.Writer.WriteStringValue(publicRequest.RoutingMode);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

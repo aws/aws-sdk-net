@@ -30,8 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// The configuration and status for a single subnet that you've specified for use by
-    /// the Network Firewall firewall. This is part of the <a>FirewallStatus</a>.
+    /// The definition and status of the firewall endpoint for a single subnet. In each configured
+    /// subnet, Network Firewall instantiates a firewall endpoint to handle network traffic.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used for any firewall endpoint type: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For <c>Firewall.SubnetMappings</c>, this <c>Attachment</c> is part of the <c>FirewallStatus</c>
+    /// sync states information. You define firewall subnets using <c>CreateFirewall</c> and
+    /// <c>AssociateSubnets</c>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <c>VpcEndpointAssociation</c>, this <c>Attachment</c> is part of the <c>VpcEndpointAssociationStatus</c>
+    /// sync states information. You define these subnets using <c>CreateVpcEndpointAssociation</c>.
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Attachment
     {
@@ -63,11 +82,12 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the firewall endpoint in the subnet. This value reflects both
-        /// the instantiation of the endpoint in the VPC subnet and the sync states that are reported
-        /// in the <c>Config</c> settings. When this value is <c>READY</c>, the endpoint is available
-        /// and configured properly to handle network traffic. When the endpoint isn't available
-        /// for traffic, this value will reflect its state, for example <c>CREATING</c> or <c>DELETING</c>.
+        /// The current status of the firewall endpoint instantiation in the subnet. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When this value is <c>READY</c>, the endpoint is available to handle network traffic.
+        /// Otherwise, this value reflects its state, for example <c>CREATING</c> or <c>DELETING</c>.
         /// </para>
         /// </summary>
         public AttachmentStatus Status

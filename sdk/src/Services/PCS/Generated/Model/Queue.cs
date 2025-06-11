@@ -205,7 +205,16 @@ namespace Amazon.PCS.Model
         /// <para>
         /// The provisioning status doesn't indicate the overall health of the queue.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// The resource enters the <c>SUSPENDING</c> and <c>SUSPENDED</c> states when the scheduler
+        /// is beyond end of life and we have suspended the cluster. When in these states, you
+        /// can't use the cluster. The cluster controller is down and all compute instances are
+        /// terminated. The resources still count toward your service quotas. You can delete a
+        /// resource if its status is <c>SUSPENDED</c>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions_faq.html">Frequently
+        /// asked questions about Slurm versions in PCS</a> in the <i>PCS User Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public QueueStatus Status

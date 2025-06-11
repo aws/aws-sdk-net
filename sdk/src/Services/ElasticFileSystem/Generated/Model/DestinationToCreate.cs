@@ -100,6 +100,15 @@ namespace Amazon.ElasticFileSystem.Model
         /// this must be an ARN. The file system's replication overwrite replication must be disabled.
         /// If no ID or ARN is specified, then a new file system is created. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you initially configure replication to an existing file system, Amazon EFS writes
+        /// data to or removes existing data from the destination file system to match data in
+        /// the source file system. If you don't want to change data in the destination file system,
+        /// then you should replicate to a new file system instead. For more information, see
+        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/create-replication.html">https://docs.aws.amazon.com/efs/latest/ug/create-replication.html</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=128)]
         public string FileSystemId

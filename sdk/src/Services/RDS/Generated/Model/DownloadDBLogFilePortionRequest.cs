@@ -37,6 +37,14 @@ namespace Amazon.RDS.Model
     /// <para>
     /// This command doesn't apply to RDS Custom.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This operation uses resources on database instances. Because of this, we recommend
+    /// publishing database logs to CloudWatch and then using the GetLogEvents operation.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+    /// in the <i>Amazon CloudWatch Logs API Reference</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DownloadDBLogFilePortionRequest : AmazonRDSRequest
     {

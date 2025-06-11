@@ -38,7 +38,7 @@ namespace Amazon.S3.Model
     /// requests are supported. For a virtual hosted-style request example, if you have the
     /// object <c>photos/2006/February/sample.jpg</c>, specify the object key name as <c>/photos/2006/February/sample.jpg</c>.
     /// For a path-style request example, if you have the object <c>photos/2006/February/sample.jpg</c>
-    /// in the bucket named <c>examplebucket</c>, specify the object key name as <c>/examplebucket/photos/2006/February/sample.jpg</c>.
+    /// in the bucket named <c>amzn-s3-demo-bucket</c>, specify the object key name as <c>/amzn-s3-demo-bucket/photos/2006/February/sample.jpg</c>.
     /// For more information about request types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP
     /// Host Header Bucket Specification</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
@@ -46,7 +46,7 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets</b> - Only virtual-hosted-style requests are supported. For
     /// a virtual hosted-style request example, if you have the object <c>photos/2006/February/sample.jpg</c>
-    /// in the bucket named <c>examplebucket--use1-az5--x-s3</c>, specify the object key name
+    /// in the bucket named <c>amzn-s3-demo-bucket--use1-az5--x-s3</c>, specify the object key name
     /// as <c>/photos/2006/February/sample.jpg</c>. Also, when you make requests to this API
     /// operation, your requests are sent to the Zonal endpoint. These endpoints support virtual-hosted-style
     /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>

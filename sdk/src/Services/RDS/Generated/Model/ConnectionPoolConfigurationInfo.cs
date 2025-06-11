@@ -65,10 +65,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property InitQuery. 
         /// <para>
         /// One or more SQL statements for the proxy to run when opening each new database connection.
-        /// Typically used with <c>SET</c> statements to make sure that each connection has identical
-        /// settings such as time zone and character set. This setting is empty by default. For
-        /// multiple statements, use semicolons as the separator. You can also include multiple
-        /// variables in a single <c>SET</c> statement, such as <c>SET x=1, y=2</c>.
+        /// The setting is typically used with <c>SET</c> statements to make sure that each connection
+        /// has identical settings. The query added here must be valid. For including multiple
+        /// variables in a single SET statement, use a comma separator. This is an optional field.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example: <c>SET variable1=value1, variable2=value2</c> 
         /// </para>
         /// </summary>
         public string InitQuery

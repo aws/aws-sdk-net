@@ -115,6 +115,12 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Alternative field that accepts a JSON value instead of a string for <c>ChangeType</c>
         /// details. You can use either <c>Details</c> or <c>DetailsDocument</c>, but not both.
         /// </para>
+        ///  
+        /// <para>
+        /// To download the "DetailsDocument" shapes, see the <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python">Python</a>
+        /// and <a href="https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main">Java</a>
+        /// shapes on GitHub.
+        /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document DetailsDocument
         {

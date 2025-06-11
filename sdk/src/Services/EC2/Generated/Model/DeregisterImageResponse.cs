@@ -34,6 +34,45 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeregisterImageResponse : AmazonWebServiceResponse
     {
+        private List<DeleteSnapshotReturnCode> _deleteSnapshotResults = AWSConfigs.InitializeCollections ? new List<DeleteSnapshotReturnCode>() : null;
+        private bool? _return;
+
+        /// <summary>
+        /// Gets and sets the property DeleteSnapshotResults. 
+        /// <para>
+        /// The deletion result for each snapshot associated with the AMI, including the snapshot
+        /// ID and its success or error code.
+        /// </para>
+        /// </summary>
+        public List<DeleteSnapshotReturnCode> DeleteSnapshotResults
+        {
+            get { return this._deleteSnapshotResults; }
+            set { this._deleteSnapshotResults = value; }
+        }
+
+        // Check to see if DeleteSnapshotResults property is set
+        internal bool IsSetDeleteSnapshotResults()
+        {
+            return this._deleteSnapshotResults != null && (this._deleteSnapshotResults.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Return. 
+        /// <para>
+        /// Returns <c>true</c> if the request succeeds; otherwise, it returns an error.
+        /// </para>
+        /// </summary>
+        public bool? Return
+        {
+            get { return this._return; }
+            set { this._return = value; }
+        }
+
+        // Check to see if Return property is set
+        internal bool IsSetReturn()
+        {
+            return this._return.HasValue; 
+        }
 
     }
 }

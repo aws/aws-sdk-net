@@ -4321,6 +4321,10 @@ namespace Amazon.CloudFormation
     {
 
         /// <summary>
+        /// Constant EXCLUDED_PROPERTIES for WarningType
+        /// </summary>
+        public static readonly WarningType EXCLUDED_PROPERTIES = new WarningType("EXCLUDED_PROPERTIES");
+        /// <summary>
         /// Constant MUTUALLY_EXCLUSIVE_PROPERTIES for WarningType
         /// </summary>
         public static readonly WarningType MUTUALLY_EXCLUSIVE_PROPERTIES = new WarningType("MUTUALLY_EXCLUSIVE_PROPERTIES");

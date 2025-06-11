@@ -33,7 +33,7 @@ namespace Amazon.LookoutEquipment
     public partial class AmazonLookoutEquipmentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("LookoutEquipment", "4.0.0.4");
+            InternalSDKUtils.BuildUserAgentString("LookoutEquipment", "4.0.0.6");
 
         private static readonly AmazonLookoutEquipmentEndpointResolver EndpointResolver =
             new AmazonLookoutEquipmentEndpointResolver();

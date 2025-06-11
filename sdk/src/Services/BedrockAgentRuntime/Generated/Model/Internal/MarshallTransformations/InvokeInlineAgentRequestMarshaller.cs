@@ -244,6 +244,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.OrchestrationType);
             }
 
+            if(publicRequest.IsSetPromptCreationConfigurations())
+            {
+                context.Writer.WritePropertyName("promptCreationConfigurations");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PromptCreationConfigurationsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PromptCreationConfigurations, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPromptOverrideConfiguration())
             {
                 context.Writer.WritePropertyName("promptOverrideConfiguration");

@@ -34,6 +34,7 @@ namespace Amazon.CostOptimizationHub.Model
     /// </summary>
     public partial class ResourceDetails
     {
+        private AuroraDbClusterStorage _auroraDbClusterStorage;
         private ComputeSavingsPlans _computeSavingsPlans;
         private DynamoDbReservedCapacity _dynamoDbReservedCapacity;
         private EbsVolume _ebsVolume;
@@ -51,6 +52,24 @@ namespace Amazon.CostOptimizationHub.Model
         private RdsReservedInstances _rdsReservedInstances;
         private RedshiftReservedInstances _redshiftReservedInstances;
         private SageMakerSavingsPlans _sageMakerSavingsPlans;
+
+        /// <summary>
+        /// Gets and sets the property AuroraDbClusterStorage. 
+        /// <para>
+        /// The Aurora DB cluster storage recommendation details.
+        /// </para>
+        /// </summary>
+        public AuroraDbClusterStorage AuroraDbClusterStorage
+        {
+            get { return this._auroraDbClusterStorage; }
+            set { this._auroraDbClusterStorage = value; }
+        }
+
+        // Check to see if AuroraDbClusterStorage property is set
+        internal bool IsSetAuroraDbClusterStorage()
+        {
+            return this._auroraDbClusterStorage != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ComputeSavingsPlans. 

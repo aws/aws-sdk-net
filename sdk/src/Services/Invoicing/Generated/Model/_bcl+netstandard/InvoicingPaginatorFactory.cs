@@ -37,6 +37,14 @@ namespace Amazon.Invoicing.Model
         }
 
         /// <summary>
+        /// Paginator for ListInvoiceSummaries operation
+        ///</summary>
+        public IListInvoiceSummariesPaginator ListInvoiceSummaries(ListInvoiceSummariesRequest request) 
+        {
+            return new ListInvoiceSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInvoiceUnits operation
         ///</summary>
         public IListInvoiceUnitsPaginator ListInvoiceUnits(ListInvoiceUnitsRequest request) 

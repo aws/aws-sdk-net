@@ -97,6 +97,101 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListInvoiceSummaries with InvoiceId as selector"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListInvoiceSummaries with AccountId as selector and billing period"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListInvoiceSummaries with AccountId as selector and time interval"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListInvoiceSummaries with AccountId as selector and a billing period and max results"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceSummaries(Amazon.Invoicing.Model.ListInvoiceSummariesRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceSummariesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListInvoiceSummaries with AccountId as selector and a billing period and next token"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
             <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
             <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />

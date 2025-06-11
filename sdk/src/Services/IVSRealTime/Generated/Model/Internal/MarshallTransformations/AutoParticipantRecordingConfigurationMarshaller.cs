@@ -74,6 +74,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.RecordingReconnectWindowSeconds.Value);
             }
 
+            if(requestObject.IsSetRecordParticipantReplicas())
+            {
+                context.Writer.WritePropertyName("recordParticipantReplicas");
+                context.Writer.WriteBooleanValue(requestObject.RecordParticipantReplicas.Value);
+            }
+
             if(requestObject.IsSetStorageConfigurationArn())
             {
                 context.Writer.WritePropertyName("storageConfigurationArn");

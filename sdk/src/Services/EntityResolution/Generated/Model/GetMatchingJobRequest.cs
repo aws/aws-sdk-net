@@ -31,8 +31,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMatchingJob operation.
-    /// Gets the status, metrics, and errors (if there are any) that are associated with a
-    /// job.
+    /// Returns the status, metrics, and errors (if there are any) that are associated with
+    /// a job.
     /// </summary>
     public partial class GetMatchingJobRequest : AmazonEntityResolutionRequest
     {

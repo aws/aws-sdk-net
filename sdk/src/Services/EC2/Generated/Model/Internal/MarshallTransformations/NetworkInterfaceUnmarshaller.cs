@@ -55,6 +55,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("associatedSubnetSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AssociatedSubnets == null)
+                        {
+                            unmarshalledObject.AssociatedSubnets = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AssociatedSubnets.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("association", targetDepth))
                     {
                         var unmarshaller = NetworkInterfaceAssociationUnmarshaller.Instance;

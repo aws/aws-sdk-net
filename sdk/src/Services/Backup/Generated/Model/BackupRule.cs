@@ -224,13 +224,23 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A cron expression in UTC specifying when Backup initiates a backup job. For more information
-        /// about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
-        /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two
-        /// examples of Amazon Web Services cron expressions are <c> 15 * ? * * *</c> (take a
-        /// backup every hour at 15 minutes past the hour) and <c>0 12 * * ? *</c> (take a backup
-        /// every day at 12 noon UTC). For a table of examples, click the preceding link and scroll
-        /// down the page.
+        /// A cron expression in UTC specifying when Backup initiates a backup job. When no CRON
+        /// expression is provided, Backup will use the default expression <c>cron(0 5 ? * * *)</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+        /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Two examples of Amazon Web Services cron expressions are <c> 15 * ? * * *</c> (take
+        /// a backup every hour at 15 minutes past the hour) and <c>0 12 * * ? *</c> (take a backup
+        /// every day at 12 noon UTC).
+        /// </para>
+        ///  
+        /// <para>
+        /// For a table of examples, click the preceding link and scroll down the page.
         /// </para>
         /// </summary>
         public string ScheduleExpression

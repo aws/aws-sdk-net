@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration for the optional provisioned SSD read cache on file systems that
-    /// use the Intelligent-Tiering storage class.
+    /// The configuration for the optional provisioned SSD read cache on Amazon FSx for OpenZFS
+    /// file systems that use the Intelligent-Tiering storage class.
     /// </summary>
     public partial class OpenZFSReadCacheConfiguration
     {

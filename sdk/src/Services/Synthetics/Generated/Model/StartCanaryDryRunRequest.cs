@@ -123,8 +123,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property FailureRetentionPeriodInDays. 
         /// <para>
-        /// The number of days to retain data on the failed runs for this canary. The valid range
-        /// is 1 to 455 days.
+        /// The number of days to retain data about failed runs of this canary. If you omit this
+        /// field, the default of 31 days is used. The valid range is 1 to 455 days.
         /// </para>
         ///  
         /// <para>
@@ -168,8 +168,9 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property ProvisionedResourceCleanup. 
         /// <para>
         /// Specifies whether to also delete the Lambda functions and layers used by this canary
-        /// when the canary is deleted. If the value of this parameter is <c>AUTOMATIC</c>, it
-        /// means that the Lambda functions and layers will be deleted when the canary is deleted.
+        /// when the canary is deleted. If you omit this parameter, the default of <c>AUTOMATIC</c>
+        /// is used, which means that the Lambda functions and layers will be deleted when the
+        /// canary is deleted.
         /// </para>
         ///  
         /// <para>
@@ -229,8 +230,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property SuccessRetentionPeriodInDays. 
         /// <para>
-        /// The number of days to retain data on the failed runs for this canary. The valid range
-        /// is 1 to 455 days.
+        /// The number of days to retain data about successful runs of this canary. If you omit
+        /// this field, the default of 31 days is used. The valid range is 1 to 455 days.
         /// </para>
         ///  
         /// <para>

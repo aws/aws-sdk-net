@@ -182,6 +182,35 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
+    /// Indicates that the properties of the decorated field or property type should be "flattened"
+    /// into the parent object's attribute structure in DynamoDB. When applied, all public properties
+    /// of the referenced type are serialized as individual top-level attributes of the parent item,
+    /// rather than as a nested object or map.
+    /// <para>
+    /// Example:
+    /// <code>
+    /// public class Address
+    /// {
+    ///     public string Street { get; set; }
+    ///     public string City { get; set; }
+    /// }
+    ///
+    /// public class Person
+    /// {
+    ///     public string Name { get; set; }
+    ///     [DynamoDBFlatten]
+    ///     public Address Address { get; set; }
+    /// }
+    /// </code>
+    /// In this example, the <c>Person</c> table will have top-level attributes for <c>Name</c>, <c>Street</c>, and <c>City</c>.
+    /// </para>
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+    public sealed class DynamoDBFlattenAttribute : DynamoDBAttribute
+    {
+    }
+
+    /// <summary>
     /// DynamoDB attribute that directs the specified attribute not to
     /// be included when saving or loading objects.
     /// </summary>
@@ -251,6 +280,85 @@ namespace Amazon.DynamoDBv2.DataModel
         public DynamoDBVersionAttribute(string attributeName)
             : base(attributeName)
         {
+        }
+    }
+
+    /// <summary>
+    /// Marks a property or field as an atomic counter in DynamoDB.
+    /// 
+    /// This attribute indicates that the associated property or field should be treated as an atomic counter,
+    /// which can be incremented or decremented directly in DynamoDB during update operations.
+    /// It is useful for scenarios where you need to maintain a counter that is updated concurrently by multiple clients
+    /// without conflicts.
+    /// 
+    /// The attribute also allows specifying an alternate attribute name in DynamoDB using the `AttributeName` property,
+    /// as well as configuring the increment or decrement value (`Delta`) and the starting value (`StartValue`).
+    /// </summary>
+    /// <example>
+    /// Example usage:
+    /// <code>
+    /// public class Example
+    /// {
+    ///     [DynamoDBAtomicCounter]
+    ///     public long Counter { get; set; }
+    /// 
+    ///     [DynamoDBAtomicCounter("CustomCounterName", delta: 5, startValue: 100)]
+    ///     public long CustomCounter { get; set; }
+    /// }
+    /// </code>
+    /// In this example:
+    /// - `Counter` will be treated as an atomic counter with the same name in DynamoDB.
+    /// - `CustomCounter` will be treated as an atomic counter with the attribute name "CustomCounterName" in DynamoDB,
+    ///   incremented by 5 for each update, and starting with an initial value of 100.
+    /// </example>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+    public sealed class DynamoDBAtomicCounterAttribute : DynamoDBRenamableAttribute
+    {
+        /// <summary>
+        /// The value to increment (positive) or decrement (negative) the counter with for each update.
+        /// </summary>
+        public long Delta { get; }
+
+        /// <summary>
+        /// The starting value of the counter.
+        /// </summary>
+        public long StartValue { get; }
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public DynamoDBAtomicCounterAttribute()
+            : base()
+        {
+            Delta = 1;
+            StartValue = 0;
+        }
+
+        /// <summary>
+        /// Constructor that specifies an alternate attribute name
+        /// </summary>  
+        /// <param name="attributeName">
+        /// Name of attribute to be associated with property or field.
+        /// </param>
+        /// <param name="delta">The value to increment (positive) or decrement (negative) the counter with for each update.</param>
+        /// <param name="startValue">The starting value of the counter.</param>
+        public DynamoDBAtomicCounterAttribute(string attributeName, long delta, long startValue)
+            : base(attributeName)
+        {
+            Delta = delta;
+            StartValue = startValue;
+        }
+
+        /// <summary>
+        /// Constructor that specifies an alternate attribute name
+        /// </summary>  
+        /// <param name="delta">The value to increment (positive) or decrement (negative) the counter with for each update.</param>
+        /// <param name="startValue">The starting value of the counter.</param>
+        public DynamoDBAtomicCounterAttribute(long delta, long startValue)
+            : base()
+        {
+            Delta = delta;
+            StartValue = startValue;
         }
     }
 

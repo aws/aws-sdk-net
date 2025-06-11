@@ -31,8 +31,8 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the StopFlowExecution operation.
-    /// Stops an Amazon Bedrock flow's asynchronous execution. This operation prevents further
-    /// processing of the flow and changes the execution status to <c>Aborted</c>.
+    /// Stops an Amazon Bedrock flow's execution. This operation prevents further processing
+    /// of the flow and changes the execution status to <c>Aborted</c>.
     /// </summary>
     public partial class StopFlowExecutionRequest : AmazonBedrockAgentRuntimeRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ExecutionIdentifier. 
         /// <para>
-        /// The unique identifier of the async execution to stop.
+        /// The unique identifier of the flow execution to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

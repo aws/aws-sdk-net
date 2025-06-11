@@ -37,6 +37,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _calculatedAttributeName;
         private string _displayName;
         private string _isDataPartial;
+        private DateTime? _lastObjectTimestamp;
         private string _value;
 
         /// <summary>
@@ -95,6 +96,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetIsDataPartial()
         {
             return this._isDataPartial != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastObjectTimestamp. 
+        /// <para>
+        /// The timestamp of the newest object included in the calculated attribute calculation.
+        /// </para>
+        /// </summary>
+        public DateTime? LastObjectTimestamp
+        {
+            get { return this._lastObjectTimestamp; }
+            set { this._lastObjectTimestamp = value; }
+        }
+
+        // Check to see if LastObjectTimestamp property is set
+        internal bool IsSetLastObjectTimestamp()
+        {
+            return this._lastObjectTimestamp.HasValue; 
         }
 
         /// <summary>

@@ -41,8 +41,9 @@ namespace Amazon.S3Tables.Model
     ///  <note> 
     /// <para>
     /// If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal
-    /// access to your KMS key. For more information, see <a href="AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
-    /// requirements for S3 Tables SSE-KMS encryption</a> 
+    /// access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+    /// requirements for S3 Tables SSE-KMS encryption</a> in the <i>Amazon Simple Storage
+    /// Service User Guide</i>.
     /// </para>
     ///  </note> </dd> </dl>
     /// </summary>

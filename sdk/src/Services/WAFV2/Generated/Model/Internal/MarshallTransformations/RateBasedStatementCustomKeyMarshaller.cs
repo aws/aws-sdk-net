@@ -46,6 +46,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetASN())
+            {
+                context.Writer.WritePropertyName("ASN");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RateLimitAsnMarshaller.Instance;
+                marshaller.Marshall(requestObject.ASN, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCookie())
             {
                 context.Writer.WritePropertyName("Cookie");

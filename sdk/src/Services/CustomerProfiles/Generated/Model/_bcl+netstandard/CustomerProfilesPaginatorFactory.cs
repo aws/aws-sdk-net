@@ -45,6 +45,14 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Paginator for ListDomainLayouts operation
+        ///</summary>
+        public IListDomainLayoutsPaginator ListDomainLayouts(ListDomainLayoutsRequest request) 
+        {
+            return new ListDomainLayoutsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEventStreams operation
         ///</summary>
         public IListEventStreamsPaginator ListEventStreams(ListEventStreamsRequest request) 

@@ -63,15 +63,16 @@ namespace Amazon.ElasticFileSystem
         /// user and group override any identity information provided by the NFS client. The file
         /// system path is exposed as the access point's root directory. Applications using the
         /// access point can only access data in the application's own directory and any subdirectories.
+        /// A file system can have a maximum of 10,000 access points unless you request an increase.
         /// To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
         /// a file system using EFS access points</a>.
         /// 
         ///  <note> 
         /// <para>
         /// If multiple requests to create access points on the same file system are sent in quick
-        /// succession, and the file system is near the limit of 1,000 access points, you may
-        /// experience a throttling response for these requests. This is to ensure that the file
-        /// system does not exceed the stated access point limit.
+        /// succession, and the file system is near the limit of access points, you may experience
+        /// a throttling response for these requests. This is to ensure that the file system does
+        /// not exceed the stated access point limit.
         /// </para>
         ///  </note> 
         /// <para>
@@ -532,11 +533,11 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         /// We recommend that you create a mount target in each of the Availability Zones. There
         /// are cost considerations for using a file system in an Availability Zone through a
-        /// mount target created in another Availability Zone. For more information, see <a href="http://aws.amazon.com/efs/">Amazon
-        /// EFS</a>. In addition, by always using a mount target local to the instance's Availability
-        /// Zone, you eliminate a partial failure scenario. If the Availability Zone in which
-        /// your mount target is created goes down, then you can't access your file system through
-        /// that mount target. 
+        /// mount target created in another Availability Zone. For more information, see <a href="http://aws.amazon.com/efs/pricing/">Amazon
+        /// EFS pricing</a>. In addition, by always using a mount target local to the instance's
+        /// Availability Zone, you eliminate a partial failure scenario. If the Availability Zone
+        /// in which your mount target is created goes down, then you can't access your file system
+        /// through that mount target. 
         /// </para>
         ///  
         /// <para>
@@ -601,7 +602,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.NetworkInterfaceLimitExceededException">
         /// The calling account has reached the limit for elastic network interfaces for the specific
         /// Amazon Web Services Region. Either delete some network interfaces or request that
-        /// the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+        /// the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
         /// VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Network interfaces
         /// per Region</b> entry in the <b>Network interfaces</b> table).
         /// </exception>
@@ -610,8 +611,11 @@ namespace Amazon.ElasticFileSystem
         /// IP addresses in the subnet.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupLimitExceededException">
-        /// Returned if the size of <c>SecurityGroups</c> specified in the request is greater
-        /// than five.
+        /// Returned if the number of <c>SecurityGroups</c> specified in the request is greater
+        /// than the limit, which is based on account quota. Either delete some security groups
+        /// or request that the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+        /// VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b>
+        /// table).
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupNotFoundException">
         /// Returned if one of the specified security groups doesn't exist in the subnet's virtual
@@ -1279,7 +1283,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.PolicyNotFoundException">
-        /// Returned if the default file system policy is in effect for the EFS file system specified.
+        /// Returned if <c>no backup</c> is specified for a One Zone EFS file system.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
         /// Returned if the Backup service is not available in the Amazon Web Services Region
@@ -1321,7 +1325,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.PolicyNotFoundException">
-        /// Returned if the default file system policy is in effect for the EFS file system specified.
+        /// Returned if <c>no backup</c> is specified for a One Zone EFS file system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystemPolicy">REST API Reference for DescribeFileSystemPolicy Operation</seealso>
         Task<DescribeFileSystemPolicyResponse> DescribeFileSystemPolicyAsync(DescribeFileSystemPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1393,10 +1397,10 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Returns the current <c>LifecycleConfiguration</c> object for the specified Amazon
-        /// EFS file system. Lifecycle management uses the <c>LifecycleConfiguration</c> object
-        /// to identify when to move files between storage classes. For a file system without
-        /// a <c>LifecycleConfiguration</c> object, the call returns an empty array in the response.
+        /// Returns the current <c>LifecycleConfiguration</c> object for the specified EFS file
+        /// system. Lifecycle management uses the <c>LifecycleConfiguration</c> object to identify
+        /// when to move files between storage classes. For a file system without a <c>LifecycleConfiguration</c>
+        /// object, the call returns an empty array in the response.
         /// 
         ///  
         /// <para>
@@ -1821,8 +1825,11 @@ namespace Amazon.ElasticFileSystem
         /// Web Services account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupLimitExceededException">
-        /// Returned if the size of <c>SecurityGroups</c> specified in the request is greater
-        /// than five.
+        /// Returned if the number of <c>SecurityGroups</c> specified in the request is greater
+        /// than the limit, which is based on account quota. Either delete some security groups
+        /// or request that the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+        /// VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Security Groups</b>
+        /// table).
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupNotFoundException">
         /// Returned if one of the specified security groups doesn't exist in the subnet's virtual

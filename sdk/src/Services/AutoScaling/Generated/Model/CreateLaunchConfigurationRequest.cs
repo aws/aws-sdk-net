@@ -119,7 +119,7 @@ namespace Amazon.AutoScaling.Model
         /// The block device mapping entries that define the block devices to attach to the instances
         /// at launch. By default, the block devices specified in the block device mapping for
         /// the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-        /// device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// device mappings</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -180,7 +180,7 @@ namespace Amazon.AutoScaling.Model
         /// is not available with all instance types. Additional fees are incurred when you enable
         /// EBS optimization for an instance type that is not EBS-optimized by default. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-        /// EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// EBS-optimized instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -227,7 +227,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The ID of the Amazon Machine Image (AMI) that was assigned during registration. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
-        /// a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// a Linux AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -313,7 +313,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Specifies the instance type of the EC2 instance. For information about available instance
         /// types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-        /// instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// instance types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -342,7 +342,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User
-        /// provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// provided kernels</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -363,8 +363,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property KeyName. 
         /// <para>
         /// The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-        /// EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide for Linux
-        /// Instances</i>.
+        /// EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -459,7 +458,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User
-        /// provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// provided kernels</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

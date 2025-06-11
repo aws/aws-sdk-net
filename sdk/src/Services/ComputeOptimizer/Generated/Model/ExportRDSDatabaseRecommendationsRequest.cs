@@ -31,8 +31,8 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Container for the parameters to the ExportRDSDatabaseRecommendations operation.
-    /// Export optimization recommendations for your Amazon Relational Database Service (Amazon
-    /// RDS). 
+    /// Export optimization recommendations for your Amazon Aurora and Amazon Relational
+    /// Database Service (Amazon RDS) databases. 
     /// 
     ///  
     /// <para>
@@ -43,7 +43,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// </para>
     ///  
     /// <para>
-    /// You can have only one Amazon RDS export job in progress per Amazon Web Services Region.
+    /// You can have only one Amazon Aurora or RDS export job in progress per Amazon Web Services
+    /// Region.
     /// </para>
     /// </summary>
     public partial class ExportRDSDatabaseRecommendationsRequest : AmazonComputeOptimizerRequest
@@ -59,7 +60,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        ///  The Amazon Web Services account IDs for the export Amazon RDS recommendations. 
+        ///  The Amazon Web Services account IDs for the export Amazon Aurora and RDS database
+        /// recommendations. 
         /// </para>
         ///  
         /// <para>
@@ -140,7 +142,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property Filters. 
         /// <para>
         ///  An array of objects to specify a filter that exports a more specific set of Amazon
-        /// RDS recommendations. 
+        /// Aurora and RDS recommendations. 
         /// </para>
         /// </summary>
         public List<RDSDBRecommendationFilter> Filters

@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// The additional CC email address recipients information.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=50)]
         public List<EmailAddressInfo> CcEmailAddresses
         {
             get { return this._ccEmailAddresses; }

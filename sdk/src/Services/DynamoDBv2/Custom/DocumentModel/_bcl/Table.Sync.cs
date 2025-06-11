@@ -319,7 +319,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItem));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return UpdateHelper(doc, MakeKey(doc), config);
+                return UpdateHelper(doc, MakeKey(doc), config, null);
             }
         }
 
@@ -331,7 +331,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 try
                 {
-                    UpdateHelper(doc, MakeKey(doc), config);
+                    UpdateHelper(doc, MakeKey(doc), config, null);
                     return true;
                 }
                 catch (ConditionalCheckFailedException)
@@ -347,7 +347,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItem));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return UpdateHelper(doc, MakeKey(key), config);
+                return UpdateHelper(doc, MakeKey(key), config, null);
             }
         }
 
@@ -359,7 +359,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 try
                 {
-                    UpdateHelper(doc, MakeKey(key), config);
+                    UpdateHelper(doc, MakeKey(key), config, null);
                     return true;
                 }
                 catch (ConditionalCheckFailedException)
@@ -375,7 +375,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItem));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return UpdateHelper(doc, MakeKey(hashKey, null), config);
+                return UpdateHelper(doc, MakeKey(hashKey, null), config, null);
             }
         }
 
@@ -387,7 +387,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 try
                 {
-                    UpdateHelper(doc, MakeKey(hashKey, null), config);
+                    UpdateHelper(doc, MakeKey(hashKey, null), config, null);
                     return true;
                 }
                 catch (ConditionalCheckFailedException)
@@ -403,7 +403,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItem));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config);
+                return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, null);
             }
         }
 
@@ -415,7 +415,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 try
                 {
-                    UpdateHelper(doc, MakeKey(hashKey, rangeKey), config);
+                    UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, null);
                     return true;
                 }
                 catch (ConditionalCheckFailedException)

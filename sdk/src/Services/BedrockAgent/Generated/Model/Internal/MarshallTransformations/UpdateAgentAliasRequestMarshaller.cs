@@ -85,6 +85,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AgentAliasName);
             }
 
+            if(publicRequest.IsSetAliasInvocationState())
+            {
+                context.Writer.WritePropertyName("aliasInvocationState");
+                context.Writer.WriteStringValue(publicRequest.AliasInvocationState);
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

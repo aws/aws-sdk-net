@@ -46,6 +46,8 @@ namespace Amazon.DataSync.Model
         private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AzureBlobAuthenticationType _authenticationType;
         private AzureBlobType _blobType;
+        private CmkSecretConfig _cmkSecretConfig;
+        private CustomSecretConfig _customSecretConfig;
         private string _locationArn;
         private AzureBlobSasConfiguration _sasConfiguration;
         private string _subdirectory;
@@ -74,14 +76,21 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with
-        /// your Azure Blob Storage container.
+        /// (Optional) Specifies the Amazon Resource Name (ARN) of the DataSync agent that can
+        /// connect with your Azure Blob Storage container. If you are setting up an agentless
+        /// cross-cloud transfer, you do not need to specify a value for this parameter.
         /// </para>
         ///  
         /// <para>
         /// You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
         /// multiple agents for your transfer</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot add or remove agents from a storage location after you initially create
+        /// it.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
         public List<string> AgentArns
@@ -134,6 +143,46 @@ namespace Amazon.DataSync.Model
         internal bool IsSetBlobType()
         {
             return this._blobType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CmkSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a DataSync-managed secret, such as an authentication
+        /// token or set of credentials that DataSync uses to access a specific transfer location,
+        /// and a customer-managed KMS key.
+        /// </para>
+        /// </summary>
+        public CmkSecretConfig CmkSecretConfig
+        {
+            get { return this._cmkSecretConfig; }
+            set { this._cmkSecretConfig = value; }
+        }
+
+        // Check to see if CmkSecretConfig property is set
+        internal bool IsSetCmkSecretConfig()
+        {
+            return this._cmkSecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a customer-managed secret, such as an authentication
+        /// token or set of credentials that DataSync uses to access a specific transfer location,
+        /// and a customer-managed KMS key.
+        /// </para>
+        /// </summary>
+        public CustomSecretConfig CustomSecretConfig
+        {
+            get { return this._customSecretConfig; }
+            set { this._customSecretConfig = value; }
+        }
+
+        // Check to see if CustomSecretConfig property is set
+        internal bool IsSetCustomSecretConfig()
+        {
+            return this._customSecretConfig != null;
         }
 
         /// <summary>

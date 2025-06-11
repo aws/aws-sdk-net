@@ -131,6 +131,7 @@ namespace Amazon.IVSRealTime.Model
         /// Unique identifier for this participant token, assigned by IVS.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ParticipantId
         {
             get { return this._participantId; }

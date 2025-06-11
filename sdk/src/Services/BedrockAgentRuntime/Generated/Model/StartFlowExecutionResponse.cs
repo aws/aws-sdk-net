@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies the async execution.
+        /// The Amazon Resource Name (ARN) that uniquely identifies the flow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

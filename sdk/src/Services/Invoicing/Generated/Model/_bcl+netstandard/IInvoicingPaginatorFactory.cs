@@ -28,6 +28,16 @@ namespace Amazon.Invoicing.Model
     {
 
         /// <summary>
+        /// Paginator for ListInvoiceSummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListInvoiceSummariesPaginator ListInvoiceSummaries(ListInvoiceSummariesRequest request);
+
+        /// <summary>
         /// Paginator for ListInvoiceUnits operation
         ///</summary>
         [AWSPaginator(

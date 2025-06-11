@@ -411,11 +411,69 @@ namespace Amazon.CostOptimizationHub
 
 
     /// <summary>
+    /// Constants used for properties of type PaymentOption.
+    /// </summary>
+    public class PaymentOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllUpfront for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption AllUpfront = new PaymentOption("AllUpfront");
+        /// <summary>
+        /// Constant NoUpfront for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption NoUpfront = new PaymentOption("NoUpfront");
+        /// <summary>
+        /// Constant PartialUpfront for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption PartialUpfront = new PaymentOption("PartialUpfront");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentOption FindValue(string value)
+        {
+            return FindValue<PaymentOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AuroraDbClusterStorage for ResourceType
+        /// </summary>
+        public static readonly ResourceType AuroraDbClusterStorage = new ResourceType("AuroraDbClusterStorage");
         /// <summary>
         /// Constant ComputeSavingsPlans for ResourceType
         /// </summary>
@@ -660,6 +718,56 @@ namespace Amazon.CostOptimizationHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SummaryMetrics(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Term.
+    /// </summary>
+    public class Term : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OneYear for Term
+        /// </summary>
+        public static readonly Term OneYear = new Term("OneYear");
+        /// <summary>
+        /// Constant ThreeYears for Term
+        /// </summary>
+        public static readonly Term ThreeYears = new Term("ThreeYears");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Term(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Term FindValue(string value)
+        {
+            return FindValue<Term>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Term(string value)
         {
             return FindValue(value);
         }

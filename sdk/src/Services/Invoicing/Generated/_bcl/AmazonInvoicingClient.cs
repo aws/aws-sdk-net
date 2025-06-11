@@ -572,6 +572,77 @@ namespace Amazon.Invoicing
 
         #endregion
         
+        #region  ListInvoiceSummaries
+
+
+        /// <summary>
+        /// Retrieves your invoice details programmatically, without line item details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvoiceSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListInvoiceSummaries service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">REST API Reference for ListInvoiceSummaries Operation</seealso>
+        public virtual ListInvoiceSummariesResponse ListInvoiceSummaries(ListInvoiceSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvoiceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvoiceSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInvoiceSummariesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves your invoice details programmatically, without line item details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvoiceSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInvoiceSummaries service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">REST API Reference for ListInvoiceSummaries Operation</seealso>
+        public virtual Task<ListInvoiceSummariesResponse> ListInvoiceSummariesAsync(ListInvoiceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvoiceSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvoiceSummariesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInvoiceSummariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListInvoiceUnits
 
 

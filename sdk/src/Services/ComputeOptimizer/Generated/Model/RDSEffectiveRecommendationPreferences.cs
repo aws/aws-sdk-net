@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the effective recommendation preferences for Amazon RDS.
+    /// Describes the effective recommendation preferences for Amazon Aurora and RDS databases.
     /// </summary>
     public partial class RDSEffectiveRecommendationPreferences
     {
@@ -42,7 +42,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property CpuVendorArchitectures. 
         /// <para>
-        ///  Describes the CPU vendor and architecture for Amazon RDS recommendations. 
+        ///  Describes the CPU vendor and architecture for DB instance recommendations. 
         /// </para>
         /// </summary>
         public List<string> CpuVendorArchitectures
@@ -90,7 +90,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LookBackPeriod. 
         /// <para>
-        ///  The number of days the utilization metrics of the Amazon RDS are analyzed. 
+        ///  The number of days the utilization metrics of the DB instance are analyzed. 
         /// </para>
         /// </summary>
         public LookBackPeriodPreference LookBackPeriod
@@ -109,7 +109,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property SavingsEstimationMode. 
         /// <para>
         ///  Describes the savings estimation mode preference applied for calculating savings
-        /// opportunity for Amazon RDS. 
+        /// opportunity for DB instances. 
         /// </para>
         /// </summary>
         public RDSSavingsEstimationMode SavingsEstimationMode

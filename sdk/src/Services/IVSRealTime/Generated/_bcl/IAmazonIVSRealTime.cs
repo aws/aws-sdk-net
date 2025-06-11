@@ -73,6 +73,29 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// For participant replication:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Source stage</b> — The stage where the participant originally joined, which is
+    /// used as the source for replication.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Destination stage</b> — The stage to which the participant is replicated. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Replicated participant</b> — A participant in a stage that is replicated to one
+    /// or more destination stages. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Replica participant</b> — A participant in a destination stage that is replicated
+    /// from another stage (the source stage).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// For more information about your IVS live stream, also see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting
     /// Started with Amazon IVS Real-Time Streaming</a>.
     /// </para>
@@ -1506,6 +1529,46 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  ListParticipantReplicas
+
+
+        /// <summary>
+        /// Lists all the replicas for a participant from a source stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipantReplicas service method.</param>
+        /// 
+        /// <returns>The response from the ListParticipantReplicas service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">REST API Reference for ListParticipantReplicas Operation</seealso>
+        ListParticipantReplicasResponse ListParticipantReplicas(ListParticipantReplicasRequest request);
+
+
+
+        /// <summary>
+        /// Lists all the replicas for a participant from a source stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipantReplicas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListParticipantReplicas service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">REST API Reference for ListParticipantReplicas Operation</seealso>
+        Task<ListParticipantReplicasResponse> ListParticipantReplicasAsync(ListParticipantReplicasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListParticipants
 
 
@@ -1908,6 +1971,76 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  StartParticipantReplication
+
+
+        /// <summary>
+        /// Starts replicating a publishing participant from a source stage to a destination stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartParticipantReplication service method.</param>
+        /// 
+        /// <returns>The response from the StartParticipantReplication service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">REST API Reference for StartParticipantReplication Operation</seealso>
+        StartParticipantReplicationResponse StartParticipantReplication(StartParticipantReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Starts replicating a publishing participant from a source stage to a destination stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartParticipantReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartParticipantReplication service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">REST API Reference for StartParticipantReplication Operation</seealso>
+        Task<StartParticipantReplicationResponse> StartParticipantReplicationAsync(StartParticipantReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopComposition
 
 
@@ -1971,6 +2104,58 @@ namespace Amazon.IVSRealTime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition">REST API Reference for StopComposition Operation</seealso>
         Task<StopCompositionResponse> StopCompositionAsync(StopCompositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopParticipantReplication
+
+
+        /// <summary>
+        /// Stops a replicated participant session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopParticipantReplication service method.</param>
+        /// 
+        /// <returns>The response from the StopParticipantReplication service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">REST API Reference for StopParticipantReplication Operation</seealso>
+        StopParticipantReplicationResponse StopParticipantReplication(StopParticipantReplicationRequest request);
+
+
+
+        /// <summary>
+        /// Stops a replicated participant session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopParticipantReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopParticipantReplication service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">REST API Reference for StopParticipantReplication Operation</seealso>
+        Task<StopParticipantReplicationResponse> StopParticipantReplicationAsync(StopParticipantReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
