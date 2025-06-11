@@ -32,7 +32,7 @@ namespace Amazon.WorkMail
     public partial class AmazonWorkMailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkMail", "3.7.401.121");
+            InternalSDKUtils.BuildUserAgentString("WorkMail", "3.7.401.122");
 
         private string _userAgent = UserAgentString;
         ///<summary>
