@@ -1,0 +1,14 @@
+
+{
+    "services" : null,
+    "core"     : {
+        "updateMinimum" : true,
+        "backwardIncompatibilitiesToIgnore" : [
+        ],
+        "type"                              : "Patch",
+        "changeLogMessages"                 : [
+            "Updating partitions.json file."
+        ]
+    },
+    "overrideVersion" : null
+}
