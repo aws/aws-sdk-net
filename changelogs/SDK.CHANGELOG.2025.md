@@ -1,3 +1,21 @@
+### 4.0.30.0 (2025-06-11 18:19 UTC)
+* ControlCatalog (4.0.1.0)
+	* Introduced ListControlMappings API that retrieves control mappings. Added control aliases and governed resources fields in GetControl and ListControls APIs. New filtering capability in ListControls API, with implementation identifiers and implementation types.
+* EKS (4.0.2.0)
+	* Release for EKS Pod Identity Cross Account feature and disableSessionTags flag.
+* LexModelsV2 (4.0.1.0)
+	* Add support for the Assisted NLU feature to improve bot performance
+* NetworkManager (4.0.1.0)
+	* Add support for public DNS hostname resolution to private IP addresses across Cloud WAN-managed VPCs. Add support for security group referencing across Cloud WAN-managed VPCs.
+* RDS (4.0.2.2)
+	* Updates Amazon RDS documentation for Amazon RDS for Db2 cross-Region replicas in standby mode.
+* WAFV2 (4.0.2.0)
+	* WAF now provides two DDoS protection options: resource-level monitoring for Application Load Balancers and the AWSManagedRulesAntiDDoSRuleSet managed rule group for CloudFront distributions.
+* Core 4.0.0.9
+	* Add `AWSConfigs.AWSCredentialsGenerators` option so that a custom credential resolution order can be specified globally (matching the behavior from `FallbackCredentialsFactory.CredentialsGenerators`)
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 4.0.29.1 (2025-06-10 18:11 UTC)
 * GameLiftStreams (4.0.0.6)
 	* Documentation updates for Amazon GameLift Streams to address formatting errors, correct resource ID examples, and update links to other guides
