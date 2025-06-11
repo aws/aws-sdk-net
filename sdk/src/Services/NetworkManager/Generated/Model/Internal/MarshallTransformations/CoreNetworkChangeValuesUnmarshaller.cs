@@ -84,6 +84,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DnsSupport", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DnsSupport = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EdgeLocations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -102,6 +108,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecurityGroupReferencingSupport", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SecurityGroupReferencingSupport = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SegmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -118,6 +130,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SharedSegments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpnEcmpSupport", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.VpnEcmpSupport = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

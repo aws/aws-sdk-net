@@ -37,12 +37,15 @@ namespace Amazon.NetworkManager.Model
         private long? _asn;
         private string _cidr;
         private string _destinationIdentifier;
+        private bool? _dnsSupport;
         private List<string> _edgeLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _insideCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkFunctionGroupName;
+        private bool? _securityGroupReferencingSupport;
         private string _segmentName;
         private List<ServiceInsertionAction> _serviceInsertionActions = AWSConfigs.InitializeCollections ? new List<ServiceInsertionAction>() : null;
         private List<string> _sharedSegments = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _vpnEcmpSupport;
 
         /// <summary>
         /// Gets and sets the property Asn. 
@@ -98,6 +101,24 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetDestinationIdentifier()
         {
             return this._destinationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsSupport. 
+        /// <para>
+        /// Indicates whether public DNS support is supported. The default is <c>true</c>. 
+        /// </para>
+        /// </summary>
+        public bool DnsSupport
+        {
+            get { return this._dnsSupport.GetValueOrDefault(); }
+            set { this._dnsSupport = value; }
+        }
+
+        // Check to see if DnsSupport property is set
+        internal bool IsSetDnsSupport()
+        {
+            return this._dnsSupport.HasValue; 
         }
 
         /// <summary>
@@ -157,6 +178,24 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityGroupReferencingSupport. 
+        /// <para>
+        /// Indicates whether security group referencing is enabled for the core network.
+        /// </para>
+        /// </summary>
+        public bool SecurityGroupReferencingSupport
+        {
+            get { return this._securityGroupReferencingSupport.GetValueOrDefault(); }
+            set { this._securityGroupReferencingSupport = value; }
+        }
+
+        // Check to see if SecurityGroupReferencingSupport property is set
+        internal bool IsSetSecurityGroupReferencingSupport()
+        {
+            return this._securityGroupReferencingSupport.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SegmentName. 
         /// <para>
         /// The names of the segments in a core network.
@@ -209,6 +248,24 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetSharedSegments()
         {
             return this._sharedSegments != null && (this._sharedSegments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnEcmpSupport. 
+        /// <para>
+        /// Indicates whether Equal Cost Multipath (ECMP) is enabled for the core network.
+        /// </para>
+        /// </summary>
+        public bool VpnEcmpSupport
+        {
+            get { return this._vpnEcmpSupport.GetValueOrDefault(); }
+            set { this._vpnEcmpSupport = value; }
+        }
+
+        // Check to see if VpnEcmpSupport property is set
+        internal bool IsSetVpnEcmpSupport()
+        {
+            return this._vpnEcmpSupport.HasValue; 
         }
 
     }

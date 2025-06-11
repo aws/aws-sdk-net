@@ -72,10 +72,22 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplianceModeSupport = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DnsSupport", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DnsSupport = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Ipv6Support", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.Ipv6Support = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecurityGroupReferencingSupport", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SecurityGroupReferencingSupport = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
