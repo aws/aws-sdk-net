@@ -38,6 +38,11 @@ namespace Amazon
         public static readonly RegionEndpoint APEast1 = GetRegionEndpoint("ap-east-1", "Asia Pacific (Hong Kong)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
+        /// The Asia Pacific (Taipei) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APEast2 = GetRegionEndpoint("ap-east-2", "Asia Pacific (Taipei)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
         /// The Asia Pacific (Tokyo) endpoint.
         /// </summary>
         public static readonly RegionEndpoint APNortheast1 = GetRegionEndpoint("ap-northeast-1", "Asia Pacific (Tokyo)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");

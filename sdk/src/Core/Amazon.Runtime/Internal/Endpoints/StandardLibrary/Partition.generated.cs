@@ -40,6 +40,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegex.Add(@"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", aws);
             _partitionsByRegionName.Add("af-south-1", aws);
             _partitionsByRegionName.Add("ap-east-1", aws);
+            _partitionsByRegionName.Add("ap-east-2", aws);
             _partitionsByRegionName.Add("ap-northeast-1", aws);
             _partitionsByRegionName.Add("ap-northeast-2", aws);
             _partitionsByRegionName.Add("ap-northeast-3", aws);
