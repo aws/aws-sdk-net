@@ -1967,6 +1967,10 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         public static readonly VehicleState READY = new VehicleState("READY");
         /// <summary>
+        /// Constant READY_FOR_CHECKIN for VehicleState
+        /// </summary>
+        public static readonly VehicleState READY_FOR_CHECKIN = new VehicleState("READY_FOR_CHECKIN");
+        /// <summary>
         /// Constant SUSPENDED for VehicleState
         /// </summary>
         public static readonly VehicleState SUSPENDED = new VehicleState("SUSPENDED");

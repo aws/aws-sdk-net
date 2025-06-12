@@ -64,25 +64,29 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>CREATED</c> - The campaign has been created successfully but has not been approved.
-        /// 
+        ///  <c>CREATED</c> - The campaign exists but is not yet approved.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>READY</c> - The campaign has been approved but has not been deployed to the vehicle.
+        ///  <c>READY</c> - The campaign is approved but has not been deployed to the vehicle.
+        /// Data has not arrived at the vehicle yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>HEALTHY</c> - The campaign has been deployed to the vehicle. 
+        ///  <c>HEALTHY</c> - The campaign is deployed to the vehicle.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SUSPENDED</c> - The campaign has been suspended and data collection is paused.
-        /// 
+        ///  <c>SUSPENDED</c> - The campaign is suspended and data collection is paused.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>DELETING</c> - The campaign is being removed from the vehicle.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>READY_FOR_CHECKIN</c> - The campaign is approved and waiting for vehicle check-in
+        /// before deployment.
         /// </para>
         ///  </li> </ul>
         /// </summary>
