@@ -33,7 +33,7 @@ namespace Amazon.DSQL
     public partial class AmazonDSQLConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DSQL", "4.0.3.3");
+            InternalSDKUtils.BuildUserAgentString("DSQL", "4.0.3.4");
 
         private static readonly AmazonDSQLEndpointResolver EndpointResolver =
             new AmazonDSQLEndpointResolver();

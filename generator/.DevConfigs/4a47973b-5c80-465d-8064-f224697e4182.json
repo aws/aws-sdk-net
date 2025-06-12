@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Fix issue with url encoding for request properties with values that have a majority of characters that need to be percent encoded"
-    ]
-  }
-}

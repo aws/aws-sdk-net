@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Generator change to add a comment on collection properties about the V4 change for nullability."
-    ]
-  }
-}

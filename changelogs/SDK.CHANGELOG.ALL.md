@@ -1,3 +1,28 @@
+### 4.0.31.0 (2025-06-12 18:24 UTC)
+* APIGateway (4.0.1.4)
+	* Documentation updates for Amazon API Gateway
+* ApiGatewayV2 (4.0.1.4)
+	* Documentation updates for Amazon API Gateway
+* ConnectCampaignsV2 (4.0.1.0)
+	* Added PutInstanceCommunicationLimits and GetInstanceCommunicationLimits APIs
+* ECS (4.0.1.7)
+	* This Amazon ECS  release supports updating the capacityProviderStrategy parameter in update-service.
+* EMRServerless (4.0.3.0)
+	* This release adds support for retrieval of the optional executionIamPolicy field in the GetJobRun API response.
+* IoTFleetWise (4.0.1.0)
+	* Add new status READY_FOR_CHECKIN used for vehicle synchronisation
+* KeyManagementService (4.0.3.0)
+	* AWS KMS announces the support of ML-DSA key pairs that creates post-quantum safe digital signatures.
+* PCS (4.0.3.0)
+	* Fixed regex patterns for ARN fields.
+* S3 (4.0.1.6)
+	* Breaking Change: Fixed MaxBuckets on ListBuckets to use int? instead of int to be consistent with other request properties.
+	* Generate ListBuckets and ListDirectoryBuckets. Delete custom files.
+* Core 4.0.0.10
+	* Fix issue with url encoding for request properties with values that have a majority of characters that need to be percent encoded
+	* Generator change to add a comment on collection properties about the V4 change for nullability.
+	* All services packages updated to require new Core
+
 ### 4.0.30.0 (2025-06-11 18:19 UTC)
 * ControlCatalog (4.0.1.0)
 	* Introduced ListControlMappings API that retrieves control mappings. Added control aliases and governed resources fields in GetControl and ListControls APIs. New filtering capability in ListControls API, with implementation identifiers and implementation types.
