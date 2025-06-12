@@ -1462,7 +1462,8 @@ namespace Amazon.DynamoDBv2.DataModel
             ContextSearch query;
             if (operationConfig is { Expression: { Filter: not null } })
             {
-                query = ConvertQueryByValueWithExpression<T>(hashKeyValue, op, values, operationConfig.Expression.Filter, operationConfig, storageConfig);
+                query = ConvertQueryByValueWithExpression<T>(hashKeyValue, op, values, operationConfig.Expression.Filter,
+                    operationConfig, storageConfig);
             }
             else
             {
@@ -1504,6 +1505,10 @@ namespace Amazon.DynamoDBv2.DataModel
             ContextSearch query;
             if (operationConfig is { Expression: { Filter: not null } })
             {
+                if(conditions!=null && conditions.Any())
+                {
+                    throw new InvalidOperationException("Query conditions are not supported with filter expression. Use either Query conditions or filter expression, but not both.");
+                }
                 query = ConvertQueryByValueWithExpression<T>(hashKeyValue, QueryOperator.Equal, null,
                     operationConfig.Expression.Filter, operationConfig, storageConfig);
             }
@@ -1540,17 +1545,13 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
             };
 
-            string rangeKeyPropertyName;
-
             string indexName = flatConfig.IndexName;
-            if (string.IsNullOrEmpty(indexName))
-                rangeKeyPropertyName = storageConfig.RangeKeyPropertyNames.FirstOrDefault();
-            else
-                rangeKeyPropertyName = storageConfig.GetRangeKeyByIndex(indexName);
+
+            var rangeKeyPropertyName = string.IsNullOrEmpty(indexName) ?
+                storageConfig.RangeKeyPropertyNames.FirstOrDefault() : storageConfig.GetRangeKeyByIndex(indexName);
 
             if (!string.IsNullOrEmpty(rangeKeyPropertyName) && values != null)
             {
-                //todo implement QueryOperator to expression mapping
                 keyExpression.ExpressionStatement += ContextExpressionsUtils.GetRangeKeyConditionExpression($"#rangeKey", op);
                 keyExpression.ExpressionAttributeNames.Add("#rangeKey", rangeKeyPropertyName);
                 var valuesList = values?.ToList();
@@ -1589,7 +1590,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var expression = ComposeExpression(filterExpression, storageConfig, flatConfig);
 
-            //TODO string indexName = GetQueryIndexName(currentConfig, indexNames);
             queryConfig.FilterExpression = expression;
 
             if (string.IsNullOrEmpty(indexName))

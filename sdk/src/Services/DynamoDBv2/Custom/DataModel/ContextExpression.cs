@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using ThirdParty.RuntimeBackports;
 using Expression = System.Linq.Expressions.Expression;
 
 namespace Amazon.DynamoDBv2.DataModel
@@ -25,7 +26,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">The type of the object being filtered.</typeparam>
         /// <param name="filterExpression">A LINQ expression representing the filter condition.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="filterExpression"/> is null.</exception>
-        public void SetFilter<T>(Expression<Func<T, bool>> filterExpression)
+        public void SetFilter<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Expression<Func<T, bool>> filterExpression)
         {
             if (filterExpression == null)
             {
@@ -51,7 +52,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="lower">The inclusive lower bound.</param>
         /// <param name="upper">The inclusive upper bound.</param>
         /// <returns>True if the value is between the bounds; otherwise, false.</returns>
-        public static bool Between<T>(this T value, T lower, T upper) => throw null!;
+        public static bool Between<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(this T value, T lower, T upper) => throw null!;
 
         /// <summary>
         /// Indicates that the attribute exists in the DynamoDB item.
