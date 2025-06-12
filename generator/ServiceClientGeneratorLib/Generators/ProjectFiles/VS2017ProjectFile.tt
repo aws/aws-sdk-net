@@ -58,6 +58,12 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
 <#
+    if (this.Project.TargetFrameworks.Contains("netcoreapp3.1") && this.ServiceConfiguration.ServiceModel.Type == ServiceType.Cbor) 
+    {
+#>
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+<#
+    }
     if (!string.IsNullOrEmpty(this.Project.FrameworkPathOverride))
     {
 #>
