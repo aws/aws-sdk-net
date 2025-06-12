@@ -364,6 +364,15 @@ namespace ServiceClientGenerator
                         ProjectGuid = projectGuidDictionary.ContainsKey(projectName) ? projectGuidDictionary[projectName] : Guid.NewGuid().ToString("B").ToUpper(),
                     });
                 }
+
+                // Add CborProtocol extension to core projects since it is required by some services.
+                var cborExtensionProjectName = string.Format("AWSSDK.Extensions.CborProtocol.{0}", configuration.Name);
+                coreProjects.Add(new Project
+                {
+                    Name = cborExtensionProjectName,
+                    ProjectPath = Utils.PathCombineAlt("..", "extensions", "src", "AWSSDK.Extensions.CborProtocol", $"{ cborExtensionProjectName}.csproj"),
+                    ProjectGuid = projectGuidDictionary.ContainsKey(cborExtensionProjectName) ? projectGuidDictionary[cborExtensionProjectName] : Guid.NewGuid().ToString("B").ToUpper()
+                });
             }
 
             IList<Project> testProjects = new List<Project>();
@@ -444,10 +453,11 @@ namespace ServiceClientGenerator
                 var session = new Dictionary<string, object>();
                 var serviceSolutionFolders = new List<ServiceSolutionFolder>();
                 var serviceDirectory = new DirectoryInfo(servicePath);
-                var folder = ServiceSolutionFolderFromPath(serviceDirectory.Name);
+                var serviceFolder = ServiceSolutionFolderFromPath(serviceDirectory.Name);
                 var solutionFileName = serviceDirectory.Name + ".sln";
                 var serviceProjectDependencies = new List<string>();
                 var testProjects = new List<Project>();
+                var coreDependenciesProjects = new List<Project>(CoreProjects);
                 var dependentProjects = new List<string>();
                 var dependentProjectList = new List<Project>();
                 var solutionPath = Utils.PathCombineAlt(serviceDirectory.ToString(), solutionFileName);
@@ -459,7 +469,7 @@ namespace ServiceClientGenerator
                 // To prevent all solution files from being modified, we re-use the GUID for the current service (if there's one available).
                 if (projectGuidDictionary.ContainsKey(serviceDirectory.Name))
                 {
-                    folder.ProjectGuid = projectGuidDictionary[serviceDirectory.Name];
+                    serviceFolder.ProjectGuid = projectGuidDictionary[serviceDirectory.Name];
                 }
 
                 // Include only the service csproj files in the service specific solution.
@@ -492,24 +502,33 @@ namespace ServiceClientGenerator
                     {
                         filePath = Path.GetFileName(serviceProjectDependency);
                     }
-                    folder.Projects.Add(new Project
+                    var project = new Project
                     {
                         Name = projectName,
                         ProjectPath = filePath,
                         ProjectGuid = projectGuidDictionary.ContainsKey(projectName) ? projectGuidDictionary[projectName] : Guid.NewGuid().ToString("B").ToUpper()
-                    });
+                    };
+
+                    if (filePath.Contains("AWSSDK.Extensions.")) // Extensions dependencies are added to the core folder not the service.
+                    {
+                        coreDependenciesProjects.Add(project);
+                    }
+                    else
+                    {
+                        serviceFolder.Projects.Add(project);
+                    }
                 }
 
-                if (folder.Projects.Count == 0)
+                if (serviceFolder.Projects.Count == 0)
                 {
                     continue;
                 }
 
                 ConvertToSlnRelativePath(testProjects, solutionPath);
 
-                serviceSolutionFolders.Add(folder);
+                serviceSolutionFolders.Add(serviceFolder);
                 // Adding core projects to service solution
-                session["CoreProjects"] = CoreProjects;
+                session["CoreProjects"] = coreDependenciesProjects;
                 // Adding service projects and its dependencies to the service solution
                 session["ServiceSolutionFolders"] = serviceSolutionFolders;
                 // Adding test projects to the service solution
@@ -626,12 +645,12 @@ namespace ServiceClientGenerator
                     {
                         var split = fileName.Split(Path.AltDirectorySeparatorChar);
 
-                        // This is in a different folder in than the usual service dependencies.
-                        // Also skipping the recursion since this does not currently have any ProjectReferences beyond Core
-                        if (fileName.Contains("AWSSDK.Extensions.CrtIntegration"))
+                        // Extensions are in a different folder in than the usual service dependencies.
+                        // Also skipping the recursion since these does not currently have any ProjectReferences beyond Core
+                        if (fileName.Contains("AWSSDK.Extensions."))
                         {
                         
-                            // Build the relative path to /extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.<target framework>.csproj
+                            // Build the relative path to /extensions/src/AWSSDK.Extensions.{ExtensionName}/AWSSDK.Extensions.{ExtensionName}.<target framework>.csproj
                             var deps = Utils.PathCombineAlt("..", "..", "..", "..", split[split.Length - 4], split[split.Length - 3], split[split.Length - 2], split[split.Length - 1]);
                             depsProjects.Add(deps);
                         }
