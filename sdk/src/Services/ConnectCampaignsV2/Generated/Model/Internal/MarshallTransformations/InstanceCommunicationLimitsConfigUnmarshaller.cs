@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CommunicationLimitsConfig Object
+    /// Response Unmarshaller for InstanceCommunicationLimitsConfig Object
     /// </summary>  
-    public class CommunicationLimitsConfigUnmarshaller : IUnmarshaller<CommunicationLimitsConfig, XmlUnmarshallerContext>, IUnmarshaller<CommunicationLimitsConfig, JsonUnmarshallerContext>
+    public class InstanceCommunicationLimitsConfigUnmarshaller : IUnmarshaller<InstanceCommunicationLimitsConfig, XmlUnmarshallerContext>, IUnmarshaller<InstanceCommunicationLimitsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CommunicationLimitsConfig IUnmarshaller<CommunicationLimitsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InstanceCommunicationLimitsConfig IUnmarshaller<InstanceCommunicationLimitsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CommunicationLimitsConfig Unmarshall(JsonUnmarshallerContext context)
+        public InstanceCommunicationLimitsConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            CommunicationLimitsConfig unmarshalledObject = new CommunicationLimitsConfig();
+            InstanceCommunicationLimitsConfig unmarshalledObject = new InstanceCommunicationLimitsConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,23 +72,17 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllChannelSubtypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("instanceLimitsHandling", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceLimitsHandling = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static CommunicationLimitsConfigUnmarshaller _instance = new CommunicationLimitsConfigUnmarshaller();        
+        private static InstanceCommunicationLimitsConfigUnmarshaller _instance = new InstanceCommunicationLimitsConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CommunicationLimitsConfigUnmarshaller Instance
+        public static InstanceCommunicationLimitsConfigUnmarshaller Instance
         {
             get
             {

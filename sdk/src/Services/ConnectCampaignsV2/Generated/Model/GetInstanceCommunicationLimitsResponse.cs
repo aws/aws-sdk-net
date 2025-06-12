@@ -30,41 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCampaignsV2.Model
 {
     /// <summary>
-    /// Communication limits config
+    /// The response for GetInstanceCommunicationLimits API.
     /// </summary>
-    public partial class CommunicationLimitsConfig
+    public partial class GetInstanceCommunicationLimitsResponse : AmazonWebServiceResponse
     {
-        private CommunicationLimits _allChannelSubtypes;
-        private InstanceLimitsHandling _instanceLimitsHandling;
+        private InstanceCommunicationLimitsConfig _communicationLimitsConfig;
 
         /// <summary>
-        /// Gets and sets the property AllChannelSubtypes.
+        /// Gets and sets the property CommunicationLimitsConfig.
         /// </summary>
-        public CommunicationLimits AllChannelSubtypes
+        public InstanceCommunicationLimitsConfig CommunicationLimitsConfig
         {
-            get { return this._allChannelSubtypes; }
-            set { this._allChannelSubtypes = value; }
+            get { return this._communicationLimitsConfig; }
+            set { this._communicationLimitsConfig = value; }
         }
 
-        // Check to see if AllChannelSubtypes property is set
-        internal bool IsSetAllChannelSubtypes()
+        // Check to see if CommunicationLimitsConfig property is set
+        internal bool IsSetCommunicationLimitsConfig()
         {
-            return this._allChannelSubtypes != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceLimitsHandling.
-        /// </summary>
-        public InstanceLimitsHandling InstanceLimitsHandling
-        {
-            get { return this._instanceLimitsHandling; }
-            set { this._instanceLimitsHandling = value; }
-        }
-
-        // Check to see if InstanceLimitsHandling property is set
-        internal bool IsSetInstanceLimitsHandling()
-        {
-            return this._instanceLimitsHandling != null;
+            return this._communicationLimitsConfig != null;
         }
 
     }

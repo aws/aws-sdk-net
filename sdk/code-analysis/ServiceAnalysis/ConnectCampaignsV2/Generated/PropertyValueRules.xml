@@ -89,6 +89,12 @@
     <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.GetInstanceCommunicationLimitsRequest.ConnectInstanceId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.GetInstanceOnboardingJobStatusRequest.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
@@ -144,6 +150,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.PutConnectInstanceIntegrationRequest.ConnectInstanceId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.PutInstanceCommunicationLimitsRequest.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_\-.]*</pattern>

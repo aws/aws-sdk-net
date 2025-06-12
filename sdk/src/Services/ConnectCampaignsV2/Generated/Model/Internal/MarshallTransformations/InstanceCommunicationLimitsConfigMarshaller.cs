@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CommunicationLimitsConfig Marshaller
+    /// InstanceCommunicationLimitsConfig Marshaller
     /// </summary>
-    public class CommunicationLimitsConfigMarshaller : IRequestMarshaller<CommunicationLimitsConfig, JsonMarshallerContext> 
+    public class InstanceCommunicationLimitsConfigMarshaller : IRequestMarshaller<InstanceCommunicationLimitsConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CommunicationLimitsConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(InstanceCommunicationLimitsConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -59,18 +59,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetInstanceLimitsHandling())
-            {
-                context.Writer.WritePropertyName("instanceLimitsHandling");
-                context.Writer.Write(requestObject.InstanceLimitsHandling);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CommunicationLimitsConfigMarshaller Instance = new CommunicationLimitsConfigMarshaller();
+        public readonly static InstanceCommunicationLimitsConfigMarshaller Instance = new InstanceCommunicationLimitsConfigMarshaller();
 
     }
 }

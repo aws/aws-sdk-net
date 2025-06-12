@@ -30,12 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCampaignsV2.Model
 {
     /// <summary>
-    /// Communication limits config
+    /// Instance Communication limits config
     /// </summary>
-    public partial class CommunicationLimitsConfig
+    public partial class InstanceCommunicationLimitsConfig
     {
         private CommunicationLimits _allChannelSubtypes;
-        private InstanceLimitsHandling _instanceLimitsHandling;
 
         /// <summary>
         /// Gets and sets the property AllChannelSubtypes.
@@ -50,21 +49,6 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetAllChannelSubtypes()
         {
             return this._allChannelSubtypes != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceLimitsHandling.
-        /// </summary>
-        public InstanceLimitsHandling InstanceLimitsHandling
-        {
-            get { return this._instanceLimitsHandling; }
-            set { this._instanceLimitsHandling = value; }
-        }
-
-        // Check to see if InstanceLimitsHandling property is set
-        internal bool IsSetInstanceLimitsHandling()
-        {
-            return this._instanceLimitsHandling != null;
         }
 
     }
