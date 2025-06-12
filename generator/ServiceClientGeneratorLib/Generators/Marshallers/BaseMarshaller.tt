@@ -130,10 +130,17 @@ using Amazon.Runtime.Internal.Util;
 		{
             bool isGreedy = false;
             var marshallLocationName = operation.GetUriResourcePathTarget(member, out isGreedy);
-
             if (member.model.Customizations.SkipUriPropertyValidations.Contains(member.PropertyName))
             {
-				if(isGreedy)
+            if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
+                continue;
+            // Not doing trim start for S3 even if the uri specifies greedy path matching because then we cannot retrieve an object with a leading slash.
+            // We don't need the TrimStart anymore  b/c we correctly split the resource path into segments based on the code
+            // here: https://github.com/aws/aws-sdk-net/blob/d4ac138db3288771c57dacdbdb96d800fc344fbd/sdk/src/Core/Amazon.Util/AWSSDKUtils.cs#L424-L428 , if it is greedy for signing, 
+            // and then join it back together as to not encode the /. Most likely, TrimStart was added before the path splitting was fixed up.
+
+            // TODO: Remove the TrimStart for all service
+		    if(isGreedy && this.Config.ServiceId != "S3")
 				{
 #>
 			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
@@ -149,11 +156,29 @@ using Amazon.Runtime.Internal.Util;
             }
             else
             {
+                if (this.Config.ServiceId == "S3" && member.Shape.IsString && !this.Config.ServiceModel.S3RequestMarshallerThrowGenericExceptionList.Contains(operation.Name))
+                {
+#>
+            if (string.IsNullOrEmpty(<#=variableName#>.<#=member.PropertyName#>))
+                throw new System.ArgumentException("<#=member.PropertyName#> is a required property and must be set before making this call.", "<#=operation.RequestStructure.Name#>.<#=member.PropertyName#>");
+<#+
+                }
+                else
+                {
 #>
             if (!<#=variableName#>.IsSet<#=member.PropertyName#>())
                 throw new <#=this.Config.BaseException#>("Request object does not have required field <#=member.PropertyName#> set");
 <#+
-			if(isGreedy)
+                }
+            if (this.Config.ServiceId == "S3" && marshallLocationName == "{Bucket}")
+                continue;
+            // Not doing trim start for S3 even if the uri specifies greedy path matching because then we cannot retrieve an object with a leading slash.
+            // We don't need the TrimStart anymore  b/c we correctly split the resource path into segments based on the code
+            // here: https://github.com/aws/aws-sdk-net/blob/d4ac138db3288771c57dacdbdb96d800fc344fbd/sdk/src/Core/Amazon.Util/AWSSDKUtils.cs#L424-L428 , if it is greedy for signing, 
+            // and then join it back together as to not encode the /. Most likely, TrimStart was added before the path splitting was fixed up.
+
+            // TODO: Remove the TrimStart for all service
+			if(isGreedy && this.Config.ServiceId != "S3")
 				{
 #>
 			request.AddPathResource("<#=marshallLocationName#>", <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
@@ -233,9 +258,21 @@ using Amazon.Runtime.Internal.Util;
 <#+
                 if (member.CustomMarshallerTransformation != null)
                 {
+                // S3 uses the subresources collection instead of the parameters collection because object keys can contain 
+                // '?' making string-splitting of a resource path potentially hazardous
+                // see https://github.com/aws/aws-sdk-net/blob/d4ac138db3288771c57dacdbdb96d800fc344fbd/sdk/src/Core/Amazon.Runtime/Internal/DefaultRequest.cs#L188-L194 
+                    if (this.Config.ServiceId == "S3")
+                    {
+#>
+                request.AddSubResource("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+
+                    }
+                    else
+                    {
 #>
 				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
-<#+        
+<#+
+                    }
                 }
                 else if (member.IsList)
                 {
@@ -261,17 +298,38 @@ using Amazon.Runtime.Internal.Util;
                 }
                 else
                 {
+                // S3 uses the subresources collection instead of the parameters collection because object keys can contain 
+                // '?' making string-splitting of a resource path potentially hazardous
+                // see https://github.com/aws/aws-sdk-net/blob/d4ac138db3288771c57dacdbdb96d800fc344fbd/sdk/src/Core/Amazon.Runtime/Internal/DefaultRequest.cs#L188-L194 
+                    if (this.Config.ServiceId == "S3" && !this.Config.ServiceModel.S3AddParametersList.Contains(operation.Name))
+                    {
 #>
-				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
-<#+			
+				request.AddSubResource("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+
+                    }
+                    else
+                    {
+#>
+                request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+			        }
 				}
                 if(member.IsIdempotent)
 	            {
+                    if (this.Config.ServiceId == "S3")
+                    {
+#>
+            else
+                request.AddSubResource("<#=member.MarshallLocationName#>", System.Guid.NewGuid().ToString());
+<#+
+                    }
+                    else
+                    {
 #>
             else            
                 request.Parameters.Add("<#=member.MarshallLocationName#>", System.Guid.NewGuid().ToString());
                 
 <#+ 
+                    }
 	            }
 			}
 		}

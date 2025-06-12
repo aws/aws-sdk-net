@@ -120,6 +120,13 @@
                 }
             ]
         },
+        "Owner":{
+            "modify":[
+                {
+                    "ID": {"emitPropertyName": "Id"}
+                }
+            ]
+        },
         "PutBucketTaggingRequest": {
             "exclude": [ "Tagging" ],
             "inject": [
@@ -183,6 +190,37 @@
                 }
             ]
         },
+        "S3Bucket":{
+            "modify":[
+                {
+                    "Name" : {"emitPropertyName": "BucketName"}
+                }
+            ]
+        },
+        "ServerSideEncryptionRule":{
+            "modify":[
+                {
+                    "ApplyServerSideEncryptionByDefault": { "emitPropertyName": "ServerSideEncryptionByDefault"}
+                }
+            ]
+        },
+        "ServerSideEncryptionConfiguration":{
+            "modify":[
+                {
+                    "Rules" : { "emitPropertyName": "ServerSideEncryptionRules" }
+                }
+            ]
+        },
+        "ServerSideEncryptionByDefault":{
+            "modify": [
+                {
+                    "KMSMasterKeyID": {"emitPropertyName": "KMSMasterKeyID"}
+                },
+                {
+                    "SSEAlgorithm": {"emitPropertyName": "SSEAlgorithm"}
+                }
+            ]
+        },
         "UploadPartCopyRequest": {
             "modify": [
                 {
@@ -231,6 +269,9 @@
         "CreateMultipartUpload": {
             "name": "InitiateMultipartUpload"
         },
+        "DeleteBucket":{
+            "customizeMarshaller": true
+        },
         "DeleteBucketCors": {
             "name": "DeleteCORSConfiguration"
         },
@@ -239,6 +280,9 @@
         },
         "GetBucketCors": {
             "name": "GetCORSConfiguration"
+        },
+        "GetBucketEncryption":{
+            "customizeMarshaller" : true
         },
         "HeadObject": {
             "name": "GetObjectMetadata"
@@ -278,6 +322,14 @@
         },
         "GetBucketReplication": {
             "documentation": "Retrieves the replication configuration for the given Amazon S3 bucket."
+        }
+    },
+    "shapeSubstitutions":{
+        "Bucket":{
+            "renameShape":"S3Bucket"
+        },
+        "ServerSideEncryption":{
+            "renameShape":"ServerSideEncryptionMethod"
         }
     }
 }

@@ -70,44 +70,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         // For every member, generate code to add the unmarshalled member to the response object
         foreach (var member in this.Structure.Members)
         {
-			if(member.Shape.IsList)
-			{
-				var listMarshallName = member.Shape.ListMarshallName ?? "member";
+            ProcessResponseBodyOrStructureMembers(member, true);
 #>
-					if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>", targetDepth))
-					{
-                        if (unmarshalledObject.<#=member.PropertyName#> == null)
-                        {
-                            unmarshalledObject.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
-                        }
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						unmarshalledObject.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-						continue;
-					}
 <#
-			}
-			else
-			{
-            if(!member.IsXmlAttribute)
-            {
-#>
-					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
-<#
-            }
-            else
-            {
-#>
-                    if (context.TestExpression("@<#=DetermineXmlMarshallName(member, false)#>", targetDepth - 1))
-<#
-            }
-#>
-					{
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
-						continue;
-					}
-<#
-			}
         }
     }
 #>

@@ -15,7 +15,20 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> operation
     /// </summary>  
+<#
+     if (this.Config.ServiceId == "S3")
+     {
+#>
+    public class <#=this.UnmarshallerBaseName#>ResponseUnmarshaller : S3ReponseUnmarshaller
+<#
+     }
+     else
+     {
+#>
     public class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : XmlResponseUnmarshaller
+<#
+     }
+#>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -122,106 +135,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#    
         foreach (var member in this.Operation.ResponseBodyMembers)
         {
-			if (member.Shape.IsList)
-			{
-				var listMarshallName = member.Shape.ListMarshallName ?? "member";
-
-                if (member.IsFlattened || member.Shape.IsFlattened)
-                {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
-					{
-                        if (response.<#=member.PropertyName#> == null)
-                        {
-                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
-                        }
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-						continue;
-					}
-<#              
-                }
-
-
-                else
-                {
-#>
-				    if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>/<#=listMarshallName#>", targetDepth))
-				    {
-                        if (response.<#=member.PropertyName#> == null)
-                        {
-                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
-                        }
-					    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-					    response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-					    continue;
-				    }
-<#
-			    }
-            }
-            else if(member.Shape.IsMap)
-			{
-                if(member.IsFlattened)
-                {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
-					{
-                        if (response.<#=member.PropertyName#> == null)
-                        {
-                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
-                        }
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-						continue;
-					}
-<#
-                }
-                else
-                {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
-					{
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
-						continue;
-					}
-<#
-                }                  
-			}
-			else
-			{
-                if (!member.IsXmlAttribute)
-                {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
-<#
-                }
-                else
-                {
-#>
-                    if (context.TestExpression("@<#=DetermineXmlMarshallName(member, false)#>", targetDepth - 1))
-<#
-                }
-#>
-					{
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
-						continue;
-					}
-<#
-			}
+            ProcessResponseBodyOrStructureMembers(member, false);
         }
 
         if (shouldMarshallPayload)
         {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(payload)#>", targetDepth))
-					{
-						var unmarshaller = <#=payload.DetermineTypeUnmarshallerInstantiate()#>;
-						response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
-						continue;
-					}
-<#
+            ProcessResponseBodyOrStructureMembers(payload, false);
         }
 #>
 				}
@@ -246,7 +165,20 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
+<#
+    if (this.Config.ServiceId == "S3")
+    {
+#>
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+<#
+    }
+    else
+    {
+#>
             ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+<#
+    }
+#>
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -267,7 +199,20 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
             }
+<#
+    if (this.Config.ServiceId == "S3")
+    {
+#>
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
+<#
+    }
+    else
+    {
+#>
             return new <#=this.BaseException#>(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+<#
+    }
+#>
         }
 
 <#

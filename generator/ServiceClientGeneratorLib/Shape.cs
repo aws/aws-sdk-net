@@ -764,10 +764,11 @@ namespace ServiceClientGenerator
             {
                 string message = this.model.Customizations.GetShapeModifier(this._name)?.DeprecationMessage ??
                                  data[DeprecatedMessageKey].CastToString();
+                // TODO: Fill in missing deprecated messages for S3
                 if (message == null)
                     throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for shape {0}.\nFor example: \"ShapeName\":{{ ... \"members\":{{ ... }}, \"deprecated\":true, \"deprecatedMessage\":\"This type is deprecated\"}}", this._name));
 
-                return message;
+                return message ?? "";
             }
         }
 

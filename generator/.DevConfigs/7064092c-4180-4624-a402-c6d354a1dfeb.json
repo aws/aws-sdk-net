@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Generate DeleteBucket, DeleteBucketEncryption and related DeleteBucket operations. Generated AbortMultipartUpload and CreateBucketMetadataTableConfiguration. Delete relevant custom files."
+            ]
+        }
+    ]
+}
