@@ -30,41 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCampaignsV2.Model
 {
     /// <summary>
-    /// Communication limits config
+    /// Container for the parameters to the GetInstanceCommunicationLimits operation.
+    /// Get the instance communication limits.
     /// </summary>
-    public partial class CommunicationLimitsConfig
+    public partial class GetInstanceCommunicationLimitsRequest : AmazonConnectCampaignsV2Request
     {
-        private CommunicationLimits _allChannelSubtypes;
-        private InstanceLimitsHandling _instanceLimitsHandling;
+        private string _connectInstanceId;
 
         /// <summary>
-        /// Gets and sets the property AllChannelSubtypes.
+        /// Gets and sets the property ConnectInstanceId.
         /// </summary>
-        public CommunicationLimits AllChannelSubtypes
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string ConnectInstanceId
         {
-            get { return this._allChannelSubtypes; }
-            set { this._allChannelSubtypes = value; }
+            get { return this._connectInstanceId; }
+            set { this._connectInstanceId = value; }
         }
 
-        // Check to see if AllChannelSubtypes property is set
-        internal bool IsSetAllChannelSubtypes()
+        // Check to see if ConnectInstanceId property is set
+        internal bool IsSetConnectInstanceId()
         {
-            return this._allChannelSubtypes != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceLimitsHandling.
-        /// </summary>
-        public InstanceLimitsHandling InstanceLimitsHandling
-        {
-            get { return this._instanceLimitsHandling; }
-            set { this._instanceLimitsHandling = value; }
-        }
-
-        // Check to see if InstanceLimitsHandling property is set
-        internal bool IsSetInstanceLimitsHandling()
-        {
-            return this._instanceLimitsHandling != null;
+            return this._connectInstanceId != null;
         }
 
     }

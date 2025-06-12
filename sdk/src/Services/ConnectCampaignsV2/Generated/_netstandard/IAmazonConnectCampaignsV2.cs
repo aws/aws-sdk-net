@@ -448,6 +448,36 @@ namespace Amazon.ConnectCampaignsV2
 
         #endregion
                 
+        #region  GetInstanceCommunicationLimits
+
+
+
+        /// <summary>
+        /// Get the instance communication limits.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceCommunicationLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstanceCommunicationLimits service method, as returned by ConnectCampaignsV2.</returns>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/GetInstanceCommunicationLimits">REST API Reference for GetInstanceCommunicationLimits Operation</seealso>
+        Task<GetInstanceCommunicationLimitsResponse> GetInstanceCommunicationLimitsAsync(GetInstanceCommunicationLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetInstanceOnboardingJobStatus
 
 
@@ -647,6 +677,40 @@ namespace Amazon.ConnectCampaignsV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutConnectInstanceIntegration">REST API Reference for PutConnectInstanceIntegration Operation</seealso>
         Task<PutConnectInstanceIntegrationResponse> PutConnectInstanceIntegrationAsync(PutConnectInstanceIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutInstanceCommunicationLimits
+
+
+
+        /// <summary>
+        /// Put the instance communication limits. This API is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInstanceCommunicationLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutInstanceCommunicationLimits service method, as returned by ConnectCampaignsV2.</returns>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutInstanceCommunicationLimits">REST API Reference for PutInstanceCommunicationLimits Operation</seealso>
+        Task<PutInstanceCommunicationLimitsResponse> PutInstanceCommunicationLimitsAsync(PutInstanceCommunicationLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

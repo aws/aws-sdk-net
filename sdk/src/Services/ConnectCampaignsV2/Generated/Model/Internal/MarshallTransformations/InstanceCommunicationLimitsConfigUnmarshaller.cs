@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CommunicationLimitsConfig Object
+    /// Response Unmarshaller for InstanceCommunicationLimitsConfig Object
     /// </summary>  
-    public class CommunicationLimitsConfigUnmarshaller : IJsonUnmarshaller<CommunicationLimitsConfig, JsonUnmarshallerContext>
+    public class InstanceCommunicationLimitsConfigUnmarshaller : IJsonUnmarshaller<InstanceCommunicationLimitsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CommunicationLimitsConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InstanceCommunicationLimitsConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CommunicationLimitsConfig unmarshalledObject = new CommunicationLimitsConfig();
+            InstanceCommunicationLimitsConfig unmarshalledObject = new InstanceCommunicationLimitsConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -62,23 +62,17 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllChannelSubtypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceLimitsHandling", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceLimitsHandling = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static CommunicationLimitsConfigUnmarshaller _instance = new CommunicationLimitsConfigUnmarshaller();        
+        private static InstanceCommunicationLimitsConfigUnmarshaller _instance = new InstanceCommunicationLimitsConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CommunicationLimitsConfigUnmarshaller Instance
+        public static InstanceCommunicationLimitsConfigUnmarshaller Instance
         {
             get
             {
