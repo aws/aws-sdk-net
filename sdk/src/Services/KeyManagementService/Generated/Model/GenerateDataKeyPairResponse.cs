@@ -95,8 +95,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyMaterialId. 
         /// <para>
-        /// The identifier of the key material used to encrypt the private key. This field is
-        /// omitted if the request includes the <c>Recipient</c> parameter.
+        /// The identifier of the key material used to encrypt the private key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=64, Max=64)]

@@ -2826,14 +2826,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an
-        /// SM2 key pair (China Regions only). The private key in an asymmetric KMS key never
-        /// leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a> operation to
-        /// download the public key so it can be used outside of KMS. Each KMS key can have only
-        /// one key usage. KMS keys with RSA key pairs can be used to encrypt and decrypt data
-        /// or sign and verify messages (but not both). KMS keys with NIST-recommended ECC key
-        /// pairs can be used to sign and verify messages or derive shared secrets (but not both).
-        /// KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify messages.
+        /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, ML-DSA
+        /// key pair or an SM2 key pair (China Regions only). The private key in an asymmetric
+        /// KMS key never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
+        /// operation to download the public key so it can be used outside of KMS. Each KMS key
+        /// can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and
+        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended
+        /// ECC key pairs can be used to sign and verify messages or derive shared secrets (but
+        /// not both). KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify
+        /// messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages.
         /// KMS keys with SM2 key pairs (China Regions only) can be used to either encrypt and
         /// decrypt data, sign and verify messages, or derive shared secrets (you must choose
         /// one key usage type). For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
@@ -3234,14 +3235,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an
-        /// SM2 key pair (China Regions only). The private key in an asymmetric KMS key never
-        /// leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a> operation to
-        /// download the public key so it can be used outside of KMS. Each KMS key can have only
-        /// one key usage. KMS keys with RSA key pairs can be used to encrypt and decrypt data
-        /// or sign and verify messages (but not both). KMS keys with NIST-recommended ECC key
-        /// pairs can be used to sign and verify messages or derive shared secrets (but not both).
-        /// KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify messages.
+        /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, ML-DSA
+        /// key pair or an SM2 key pair (China Regions only). The private key in an asymmetric
+        /// KMS key never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
+        /// operation to download the public key so it can be used outside of KMS. Each KMS key
+        /// can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and
+        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended
+        /// ECC key pairs can be used to sign and verify messages or derive shared secrets (but
+        /// not both). KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify
+        /// messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages.
         /// KMS keys with SM2 key pairs (China Regions only) can be used to either encrypt and
         /// decrypt data, sign and verify messages, or derive shared secrets (you must choose
         /// one key usage type). For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
@@ -18790,10 +18792,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Digital signatures are generated and verified by using asymmetric key pair, such as
-        /// an RSA or ECC pair that is represented by an asymmetric KMS key. The key owner (or
-        /// an authorized user) uses their private key to sign a message. Anyone with the public
-        /// key can verify that the message was signed with that particular private key and that
-        /// the message hasn't changed since it was signed. 
+        /// an RSA, ECC, or ML-DSA pair that is represented by an asymmetric KMS key. The key
+        /// owner (or an authorized user) uses their private key to sign a message. Anyone with
+        /// the public key can verify that the message was signed with that particular private
+        /// key and that the message hasn't changed since it was signed. 
         /// </para>
         ///  
         /// <para>
@@ -18811,8 +18813,8 @@ namespace Amazon.KeyManagementService
         /// Use the <c>Message</c> parameter to specify the message or message digest to sign.
         /// You can submit messages of up to 4096 bytes. To sign a larger message, generate a
         /// hash digest of the message, and then provide the hash digest in the <c>Message</c>
-        /// parameter. To indicate whether the message is a full message or a digest, use the
-        /// <c>MessageType</c> parameter.
+        /// parameter. To indicate whether the message is a full message, a digest, or an ML-DSA
+        /// EXTERNAL_MU, use the <c>MessageType</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18966,10 +18968,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Digital signatures are generated and verified by using asymmetric key pair, such as
-        /// an RSA or ECC pair that is represented by an asymmetric KMS key. The key owner (or
-        /// an authorized user) uses their private key to sign a message. Anyone with the public
-        /// key can verify that the message was signed with that particular private key and that
-        /// the message hasn't changed since it was signed. 
+        /// an RSA, ECC, or ML-DSA pair that is represented by an asymmetric KMS key. The key
+        /// owner (or an authorized user) uses their private key to sign a message. Anyone with
+        /// the public key can verify that the message was signed with that particular private
+        /// key and that the message hasn't changed since it was signed. 
         /// </para>
         ///  
         /// <para>
@@ -18987,8 +18989,8 @@ namespace Amazon.KeyManagementService
         /// Use the <c>Message</c> parameter to specify the message or message digest to sign.
         /// You can submit messages of up to 4096 bytes. To sign a larger message, generate a
         /// hash digest of the message, and then provide the hash digest in the <c>Message</c>
-        /// parameter. To indicate whether the message is a full message or a digest, use the
-        /// <c>MessageType</c> parameter.
+        /// parameter. To indicate whether the message is a full message, a digest, or an ML-DSA
+        /// EXTERNAL_MU, use the <c>MessageType</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>

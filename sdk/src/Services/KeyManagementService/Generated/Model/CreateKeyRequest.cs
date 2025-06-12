@@ -92,14 +92,15 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an
-    /// SM2 key pair (China Regions only). The private key in an asymmetric KMS key never
-    /// leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a> operation to
-    /// download the public key so it can be used outside of KMS. Each KMS key can have only
-    /// one key usage. KMS keys with RSA key pairs can be used to encrypt and decrypt data
-    /// or sign and verify messages (but not both). KMS keys with NIST-recommended ECC key
-    /// pairs can be used to sign and verify messages or derive shared secrets (but not both).
-    /// KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify messages.
+    /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, ML-DSA
+    /// key pair or an SM2 key pair (China Regions only). The private key in an asymmetric
+    /// KMS key never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
+    /// operation to download the public key so it can be used outside of KMS. Each KMS key
+    /// can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and
+    /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended
+    /// ECC key pairs can be used to sign and verify messages or derive shared secrets (but
+    /// not both). KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify
+    /// messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages.
     /// KMS keys with SM2 key pairs (China Regions only) can be used to either encrypt and
     /// decrypt data, sign and verify messages, or derive shared secrets (you must choose
     /// one key usage type). For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
@@ -517,6 +518,22 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        /// Asymmetric ML-DSA key pairs (signing and verification)
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ML_DSA_44</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ML_DSA_65</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ML_DSA_87</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
         /// SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving
         /// shared secrets)
         /// </para>
@@ -569,7 +586,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For asymmetric KMS keys with <c>ECC_SECG_P256K1</c> key pairs specify <c>SIGN_VERIFY</c>.
+        /// For asymmetric KMS keys with <c>ECC_SECG_P256K1</c> key pairs, specify <c>SIGN_VERIFY</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For asymmetric KMS keys with ML-DSA key pairs, specify <c>SIGN_VERIFY</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

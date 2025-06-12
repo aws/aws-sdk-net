@@ -205,6 +205,22 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceCreateKey()
         {
+            #region to-create-an-asymmetric-mldsa-kms-key-for-signing-and-verfication
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.CreateKey(new CreateKeyRequest 
+            {
+                KeySpec = "ML_DSA_65", // Describes the type of key material in the KMS key.
+                KeyUsage = "SIGN_VERIFY" // The cryptographic operations for which you can use the KMS key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceCreateKey()
+        {
             #region to-create-a-multi-region-primary-kms-key-4
 
             var client = new AmazonKeyManagementServiceClient();
@@ -279,6 +295,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             string encryptionAlgorithm = response.EncryptionAlgorithm; // The encryption algorithm that was used to decrypt the ciphertext. SYMMETRIC_DEFAULT is the only valid value for symmetric encryption in AWS KMS.
             string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the KMS key that was used to decrypt the data.
+            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to decrypt the ciphertext.
             MemoryStream plaintext = response.Plaintext; // The decrypted (plaintext) data.
 
             #endregion
@@ -360,7 +377,8 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var client = new AmazonKeyManagementServiceClient();
             var response = client.DeleteImportedKeyMaterial(new DeleteImportedKeyMaterialRequest 
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose imported key material you are deleting. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key whose imported key material you are deleting. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyMaterialId = "0b7fd7ddbac6eef27907413567cad8c810e2883dc8a7534067a82ee1142fc1e6" // Identifies the deleted key material.
             });
 
 
@@ -657,6 +675,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
             string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data key.
+            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the data key.
             MemoryStream plaintext = response.Plaintext; // The unencrypted (plaintext) data key.
 
             #endregion
@@ -697,6 +716,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             });
 
             string keyId = response.KeyId; // The key ARN of the symmetric encryption KMS key that was used to encrypt the private key.
+            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the private key.
             string keyPairSpec = response.KeyPairSpec; // The actual key spec of the RSA data key pair.
             MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The encrypted private key of the RSA data key pair.
             MemoryStream privateKeyPlaintext = response.PrivateKeyPlaintext; // The plaintext private key of the RSA data key pair.
@@ -722,6 +742,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The private key of the RSA data key pair encrypted by the public key from the attestation document
             string keyId = response.KeyId; // The key ARN of the symmetric encryption KMS key that was used to encrypt the PrivateKeyCiphertextBlob.
+            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the private key.
             string keyPairSpec = response.KeyPairSpec; // The actual key spec of the RSA data key pair.
             MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The private key of the RSA data key pair encrypted by the KMS key.
             MemoryStream privateKeyPlaintext = response.PrivateKeyPlaintext; // This field is null or empty
@@ -742,6 +763,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             });
 
             string keyId = response.KeyId; // The key ARN of the symmetric encryption KMS key that encrypted the private key in the ECC asymmetric data key pair.
+            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the private key.
             string keyPairSpec = response.KeyPairSpec; // The actual key spec of the ECC asymmetric data key pair.
             MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The encrypted private key of the asymmetric ECC data key pair.
             MemoryStream publicKey = response.PublicKey; // The public key (plaintext).
@@ -762,6 +784,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
             string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data key.
+            string keyMaterialId = response.KeyMaterialId; // The identifier of the key material used to encrypt the data key.
 
             #endregion
         }
@@ -967,6 +990,8 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key to import the key material into. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
             });
 
+            string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the KMS key into which key material was imported.
+            string keyMaterialId = response.KeyMaterialId; // Identifies the imported key material.
 
             #endregion
         }
@@ -985,6 +1010,8 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 ValidTo = new DateTime(2023, 9, 30, 12, 0, 0, DateTimeKind.Utc) // Specifies the date and time when the imported key material expires.
             });
 
+            string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the KMS key into which key material was imported.
+            string keyMaterialId = response.KeyMaterialId; // Identifies the imported key material.
 
             #endregion
         }
@@ -1200,8 +1227,12 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             });
 
             MemoryStream ciphertextBlob = response.CiphertextBlob; // The reencrypted data.
+            string destinationEncryptionAlgorithm = response.DestinationEncryptionAlgorithm; // The encryption algorithm that was used to reencrypt the data.
+            string destinationKeyMaterialId = response.DestinationKeyMaterialId; // The identifier of the key material used to reencrypt the data.
             string keyId = response.KeyId; // The ARN of the KMS key that was used to reencrypt the data.
+            string sourceEncryptionAlgorithm = response.SourceEncryptionAlgorithm; // The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.
             string sourceKeyId = response.SourceKeyId; // The ARN of the KMS key that was originally used to encrypt the data.
+            string sourceKeyMaterialId = response.SourceKeyMaterialId; // The identifier of the key material used to originally encrypt the data.
 
             #endregion
         }
