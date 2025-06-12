@@ -5225,25 +5225,7 @@ namespace Amazon.ECS
         /// previous steps), favoring container instances with the largest number of running tasks
         /// for this service.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// You must have a service-linked role when you update any of the following service properties:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>loadBalancers</c>,
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>serviceRegistries</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about the role see the <c>CreateService</c> request parameter
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
-        /// <c>role</c> </a>. 
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateService service method.</param>
         /// 

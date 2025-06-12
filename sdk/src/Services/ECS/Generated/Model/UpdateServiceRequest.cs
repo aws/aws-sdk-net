@@ -186,25 +186,7 @@ namespace Amazon.ECS.Model
     /// previous steps), favoring container instances with the largest number of running tasks
     /// for this service.
     /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// You must have a service-linked role when you update any of the following service properties:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>loadBalancers</c>,
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>serviceRegistries</c> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information about the role see the <c>CreateService</c> request parameter
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
-    /// <c>role</c> </a>. 
-    /// </para>
-    ///  </note>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateServiceRequest : AmazonECSRequest
     {
@@ -257,41 +239,53 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
         /// <para>
-        /// The capacity provider strategy to update the service to use.
+        /// The details of a capacity provider strategy. You can set a capacity provider when
+        /// you create a cluster, run a task, or update a service.
         /// </para>
         ///  
         /// <para>
-        /// if the service uses the default capacity provider strategy for the cluster, the service
-        /// can be updated to use one or more capacity providers as opposed to the default capacity
-        /// provider strategy. However, when a service is using a capacity provider strategy that's
-        /// not the default capacity provider strategy, the service can't be updated to use the
-        /// cluster's default capacity provider strategy.
+        /// When you use Fargate, the capacity providers are <c>FARGATE</c> or <c>FARGATE_SPOT</c>.
         /// </para>
         ///  
         /// <para>
-        /// A capacity provider strategy consists of one or more capacity providers along with
-        /// the <c>base</c> and <c>weight</c> to assign to them. A capacity provider must be associated
-        /// with the cluster to be used in a capacity provider strategy. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
-        /// API is used to associate a capacity provider with a cluster. Only capacity providers
-        /// with an <c>ACTIVE</c> or <c>UPDATING</c> status can be used.
+        /// When you use Amazon EC2, the capacity providers are Auto Scaling groups.
         /// </para>
         ///  
         /// <para>
-        /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created. New capacity providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateClusterCapacityProvider.html">CreateClusterCapacityProvider</a>
-        /// API operation.
+        /// You can change capacity providers for rolling deployments and blue/green deployments.
         /// </para>
         ///  
         /// <para>
-        /// To use a Fargate capacity provider, specify either the <c>FARGATE</c> or <c>FARGATE_SPOT</c>
-        /// capacity providers. The Fargate capacity providers are available to all accounts and
-        /// only need to be associated with a cluster to be used.
+        /// The following list provides the valid transitions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Update the Fargate launch type to an EC2 capacity provider.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the Amazon EC2 launch type to a Fargate capacity provider.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the Fargate capacity provider to an EC2 capacity provider.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the Amazon EC2 capacity provider to a Fargate capacity provider. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the EC2 or Fargate capacity provider back to the launch type.
         /// </para>
         ///  
         /// <para>
-        /// The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>API
-        /// operation is used to update the list of available capacity providers for a cluster
-        /// after the cluster is created.
+        /// Pass an empty list in the <c>capacityProvider</c> parameter.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For information about Amazon Web Services CDK considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html">Amazon
+        /// Web Services CDK considerations</a>.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -311,6 +305,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that your service
         /// runs on. If you do not specify a cluster, the default cluster is assumed.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't change the cluster name.
         /// </para>
         /// </summary>
         public string Cluster
@@ -465,7 +463,11 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoadBalancers. 
+        /// Gets and sets the property LoadBalancers. <note> 
+        /// <para>
+        /// You must have a service-linked role when you update this property
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A list of Elastic Load Balancing load balancer objects. It contains the load balancer
         /// name, the container name, and the container port to access from the load balancer.
@@ -683,7 +685,17 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceRegistries. 
+        /// Gets and sets the property ServiceRegistries. <note> 
+        /// <para>
+        /// You must have a service-linked role when you update this property.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the role see the <c>CreateService</c> request parameter
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
+        /// <c>role</c> </a>. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The details for the service discovery registries to assign to this service. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service

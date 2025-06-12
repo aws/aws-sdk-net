@@ -163,6 +163,67 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
+    /// When a container health check fails for a task that is part of a service, the following
+    /// process occurs:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// The task is marked as <c>UNHEALTHY</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The unhealthy task will be stopped, and during the stopping process, it will go through
+    /// the following states:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>DEACTIVATING</c> - In this state, Amazon ECS performs additional steps before
+    /// stopping the task. For example, for tasks that are part of services configured to
+    /// use Elastic Load Balancing target groups, target groups will be deregistered in this
+    /// state.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>STOPPING</c> - The task is in the process of being stopped.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>DEPROVISIONING</c> - Resources associated with the task are being cleaned up.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>STOPPED</c> - The task has been completely stopped.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// After the old task stops, a new task will be launched to ensure service operation,
+    /// and the new task will go through the following lifecycle:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>PROVISIONING</c> - Resources required for the task are being provisioned.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PENDING</c> - The task is waiting to be placed on a container instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ACTIVATING</c> - In this state, Amazon ECS pulls container images, creates containers,
+    /// configures task networking, registers load balancer target groups, and configures
+    /// service discovery status.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>RUNNING</c> - The task is running and performing its work.
+    /// </para>
+    ///  </li> </ul> </li> </ol> 
+    /// <para>
+    /// For more detailed information about task lifecycle states, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle-explanation.html">Task
+    /// lifecycle</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// The following are notes about container health check support:
     /// </para>
     ///  <ul> <li> 
