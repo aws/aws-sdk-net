@@ -45,6 +45,7 @@ namespace Amazon.EMRServerless.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private DateTime? _endedAt;
+        private JobRunExecutionIamPolicy _executionIamPolicy;
         private string _executionRole;
         private long? _executionTimeoutMinutes;
         private JobDriver _jobDriver;
@@ -249,6 +250,21 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetEndedAt()
         {
             return this._endedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionIamPolicy.
+        /// </summary>
+        public JobRunExecutionIamPolicy ExecutionIamPolicy
+        {
+            get { return this._executionIamPolicy; }
+            set { this._executionIamPolicy = value; }
+        }
+
+        // Check to see if ExecutionIamPolicy property is set
+        internal bool IsSetExecutionIamPolicy()
+        {
+            return this._executionIamPolicy != null;
         }
 
         /// <summary>

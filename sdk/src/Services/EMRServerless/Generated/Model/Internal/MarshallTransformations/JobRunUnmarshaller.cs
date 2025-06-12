@@ -126,6 +126,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("executionIamPolicy", targetDepth))
+                {
+                    var unmarshaller = JobRunExecutionIamPolicyUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionIamPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
