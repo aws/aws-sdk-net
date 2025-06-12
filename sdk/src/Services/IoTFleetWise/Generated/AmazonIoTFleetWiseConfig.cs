@@ -32,7 +32,7 @@ namespace Amazon.IoTFleetWise
     public partial class AmazonIoTFleetWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTFleetWise", "3.7.407.29");
+            InternalSDKUtils.BuildUserAgentString("IoTFleetWise", "3.7.408.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>

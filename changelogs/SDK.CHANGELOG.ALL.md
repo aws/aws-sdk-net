@@ -1,3 +1,21 @@
+### 3.7.1063.0 (2025-06-12 18:21 UTC)
+* APIGateway (3.7.403.7)
+	* Documentation updates for Amazon API Gateway
+* ApiGatewayV2 (3.7.403.7)
+	* Documentation updates for Amazon API Gateway
+* ConnectCampaignsV2 (3.7.402.0)
+	* Added PutInstanceCommunicationLimits and GetInstanceCommunicationLimits APIs
+* ECS (3.7.411.15)
+	* This Amazon ECS  release supports updating the capacityProviderStrategy parameter in update-service.
+* EMRServerless (3.7.406.0)
+	* This release adds support for retrieval of the optional executionIamPolicy field in the GetJobRun API response.
+* IoTFleetWise (3.7.408.0)
+	* Add new status READY_FOR_CHECKIN used for vehicle synchronisation
+* KeyManagementService (3.7.403.0)
+	* AWS KMS announces the support of ML-DSA key pairs that creates post-quantum safe digital signatures.
+* PCS (3.7.405.0)
+	* Fixed regex patterns for ARN fields.
+
 ### 3.7.1062.0 (2025-06-11 18:22 UTC)
 * ControlCatalog (3.7.404.0)
 	* Introduced ListControlMappings API that retrieves control mappings. Added control aliases and governed resources fields in GetControl and ListControls APIs. New filtering capability in ListControls API, with implementation identifiers and implementation types.
