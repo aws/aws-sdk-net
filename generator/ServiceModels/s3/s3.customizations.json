@@ -120,6 +120,13 @@
                 }
             ]
         },
+        "Owner":{
+            "modify":[
+                {
+                    "ID": {"emitPropertyName": "Id"}
+                }
+            ]
+        },
         "PutBucketTaggingRequest": {
             "exclude": [ "Tagging" ],
             "inject": [
@@ -180,6 +187,13 @@
             "modify": [
                 {
                     "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
+                }
+            ]
+        },
+        "S3Bucket":{
+            "modify":[
+                {
+                    "Name" : {"emitPropertyName": "BucketName"}
                 }
             ]
         },
@@ -278,6 +292,11 @@
         },
         "GetBucketReplication": {
             "documentation": "Retrieves the replication configuration for the given Amazon S3 bucket."
+        }
+    },
+    "shapeSubstitutions":{
+        "Bucket":{
+            "renameShape":"S3Bucket"
         }
     }
 }

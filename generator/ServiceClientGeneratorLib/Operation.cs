@@ -111,6 +111,7 @@ namespace ServiceClientGenerator
             {
                 string message = this.model.Customizations.GetOperationModifiers(this.name)?.DeprecatedMessage ??
                                  data[ServiceModel.DeprecatedMessageKey].CastToString();
+                // TODO: Fill in missing deprecation messages
                 if (message == null)
                     throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for operation {0}.\nFor example: \"OperationName\":{{\"name\":\"OperationName\", ... \"deprecated\":true, \"deprecatedMessage\":\"This operation is deprecated\"}}", this.name));          
 
@@ -303,7 +304,7 @@ namespace ServiceClientGenerator
                     var payload = this.RequestStructure.PayloadMemberName;
                     if (!string.IsNullOrWhiteSpace(payload))
                     {
-                        return this.RequestStructure.Members.Single(m => 
+                        return this.RequestStructure.Members.Single(m =>
                             (m.HasModifier && m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase))
                             || (!m.HasModifier && m.ModeledName.Equals(payload, StringComparison.InvariantCultureIgnoreCase)));
                     }
