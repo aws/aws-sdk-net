@@ -80,7 +80,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ShutdownGracePeriodInSeconds. 
         /// <para>
-        /// The duration (in seconds) to wait before forcefully terminating the job after cancellation
+        /// The duration in seconds to wait before forcefully terminating the job after cancellation
         /// is requested.
         /// </para>
         /// </summary>
