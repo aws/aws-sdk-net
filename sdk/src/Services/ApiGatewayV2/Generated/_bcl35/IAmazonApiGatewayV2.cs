@@ -612,7 +612,7 @@ namespace Amazon.ApiGatewayV2
 
 
         /// <summary>
-        /// Creates a RoutingRule
+        /// Creates a RoutingRule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoutingRule service method.</param>
         /// 

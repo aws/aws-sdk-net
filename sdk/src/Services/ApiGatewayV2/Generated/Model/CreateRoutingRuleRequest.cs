@@ -31,7 +31,7 @@ namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRoutingRule operation.
-    /// Creates a RoutingRule
+    /// Creates a RoutingRule.
     /// </summary>
     public partial class CreateRoutingRuleRequest : AmazonApiGatewayV2Request
     {
