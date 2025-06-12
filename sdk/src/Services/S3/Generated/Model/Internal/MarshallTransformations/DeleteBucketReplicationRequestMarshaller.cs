@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteBucketReplication Request Marshaller
     /// </summary>       
-    public class DeleteBucketReplicationRequestMarshaller : IMarshaller<IRequest, DeleteBucketReplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteBucketReplicationRequestMarshaller : IMarshaller<IRequest, DeleteBucketReplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -67,6 +67,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketReplicationRequest.BucketName");
             request.ResourcePath = "/";
 
+            CustomizeMarshaller(request, publicRequest);
             return request;
         }
         private static DeleteBucketReplicationRequestMarshaller _instance = new DeleteBucketReplicationRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, DeleteBucketReplicationRequest publicRequest );
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeletePublicAccessBlock Request Marshaller
     /// </summary>       
-    public class DeletePublicAccessBlockRequestMarshaller : IMarshaller<IRequest, DeletePublicAccessBlockRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeletePublicAccessBlockRequestMarshaller : IMarshaller<IRequest, DeletePublicAccessBlockRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -67,6 +67,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeletePublicAccessBlockRequest.BucketName");
             request.ResourcePath = "/";
 
+            CustomizeMarshaller(request, publicRequest);
             return request;
         }
         private static DeletePublicAccessBlockRequestMarshaller _instance = new DeletePublicAccessBlockRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, DeletePublicAccessBlockRequest publicRequest );
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListDirectoryBuckets Request Marshaller
     /// </summary>       
-    public class ListDirectoryBucketsRequestMarshaller : IMarshaller<IRequest, ListDirectoryBucketsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListDirectoryBucketsRequestMarshaller : IMarshaller<IRequest, ListDirectoryBucketsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
 
             request.UseQueryString = true;
+            CustomizeMarshaller(request, publicRequest);
             return request;
         }
         private static ListDirectoryBucketsRequestMarshaller _instance = new ListDirectoryBucketsRequestMarshaller();        
@@ -86,5 +87,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, ListDirectoryBucketsRequest publicRequest );
     }    
 }

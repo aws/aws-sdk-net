@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateBucketMetadataTableConfiguration Request Marshaller
     /// </summary>       
-    public class CreateBucketMetadataTableConfigurationRequestMarshaller : IMarshaller<IRequest, CreateBucketMetadataTableConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class CreateBucketMetadataTableConfigurationRequestMarshaller : IMarshaller<IRequest, CreateBucketMetadataTableConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -116,6 +116,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
+            CustomizeMarshaller(request, publicRequest);
             return request;
         }
         private static CreateBucketMetadataTableConfigurationRequestMarshaller _instance = new CreateBucketMetadataTableConfigurationRequestMarshaller();        
@@ -136,5 +137,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, CreateBucketMetadataTableConfigurationRequest publicRequest );
     }    
 }

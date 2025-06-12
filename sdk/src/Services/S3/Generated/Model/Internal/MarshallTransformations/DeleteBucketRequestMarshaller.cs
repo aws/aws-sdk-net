@@ -29,7 +29,6 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
-using Amazon.S3.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
@@ -37,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteBucket Request Marshaller
     /// </summary>       
-    public class DeleteBucketRequestMarshaller : IMarshaller<IRequest, DeleteBucketRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteBucketRequestMarshaller : IMarshaller<IRequest, DeleteBucketRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -67,7 +66,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketRequest.BucketName");
             request.ResourcePath = "/";
 
-            request = CustomMarshallTransformations.CustomizeDeleteBucketMarshaller(request, publicRequest);
+            CustomizeMarshaller(request, publicRequest);
             return request;
         }
         private static DeleteBucketRequestMarshaller _instance = new DeleteBucketRequestMarshaller();        
@@ -88,5 +87,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, DeleteBucketRequest publicRequest );
     }    
 }
