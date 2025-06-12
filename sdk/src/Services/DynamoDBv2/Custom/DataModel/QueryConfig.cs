@@ -70,7 +70,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <remarks>
         /// Note: Expression filters must be against non-key properties.
         /// </remarks>
-        public ContextExpression ExpressionFilter { get; set; }
+        public ContextExpression Expression { get; set; }
 
         /// <summary>
         /// Property that directs <see cref="DynamoDBContext" /> to use consistent reads.
@@ -99,7 +99,7 @@ namespace Amazon.DynamoDBv2.DataModel
             config.IndexName = IndexName;
             config.ConditionalOperator = ConditionalOperator;
             config.QueryFilter = QueryFilter;
-            config.ExpressionFilter = ExpressionFilter;
+            config.Expression = Expression;
             config.ConsistentRead = ConsistentRead;
             config.RetrieveDateTimeInUtc = RetrieveDateTimeInUtc;
 

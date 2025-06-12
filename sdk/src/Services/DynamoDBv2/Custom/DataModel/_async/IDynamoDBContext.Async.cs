@@ -506,7 +506,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="filterExpression">
-        /// A LINQ expression used to filter the results. The expression is translated to a DynamoDB filter expression and applied server-side.
+        /// A <see cref="ContextExpression"/> representing a LINQ expression tree used to filter the results.
+        /// The expression is translated to a DynamoDB filter expression and applied server-side.
         /// </param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextExpression filterExpression);
@@ -543,7 +544,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="filterExpression">
-        /// A LINQ expression used to filter the results. The expression is translated to a DynamoDB filter expression and applied server-side.
+        /// A <see cref="ContextExpression"/> representing a LINQ expression tree used to filter the results.
+        /// The expression is translated to a DynamoDB filter expression and applied server-side.
         /// </param>
         /// <param name="scanConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>

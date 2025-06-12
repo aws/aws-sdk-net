@@ -275,7 +275,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <remarks>
         /// Note: Conditions must be against non-key properties.
         /// </remarks>
-        public ContextExpression ExpressionFilter { get; set; }
+        public ContextExpression Expression { get; set; }
 
         /// <summary>
         /// Default constructor
@@ -292,7 +292,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal void ValidateFilter()
         {
-            if (QueryFilter is { Count: > 0 } && ExpressionFilter is { Filter: not null } )
+            if (QueryFilter is { Count: > 0 } && Expression is { Filter: not null } )
             {
                 throw new InvalidOperationException("Cannot specify both QueryFilter and ExpressionFilter in the same operation configuration. Please use one or the other.");
             }

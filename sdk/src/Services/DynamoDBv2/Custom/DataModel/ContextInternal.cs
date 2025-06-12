@@ -1405,6 +1405,10 @@ namespace Amazon.DynamoDBv2.DataModel
             DocumentModel.Expression expression = null;
             if (filterExpression is not { Filter: null })
             {
+                if (flatConfig.QueryFilter != null && flatConfig.QueryFilter.Count != 0)
+                {
+                    throw new InvalidOperationException("QueryFilter is not supported with filter expression. Use either QueryFilter or filter expression, but not both.");
+                }
                 expression = ComposeExpression(filterExpression.Filter, storageConfig, flatConfig);
             }
 
@@ -1454,11 +1458,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-            //todo - add support for expression
+            
             ContextSearch query;
-            if (operationConfig is { ExpressionFilter: { Filter: not null } })
+            if (operationConfig is { Expression: { Filter: not null } })
             {
-                query = ConvertQueryByValueWithExpression<T>(hashKeyValue, op, values, operationConfig.ExpressionFilter.Filter, operationConfig, storageConfig);
+                query = ConvertQueryByValueWithExpression<T>(hashKeyValue, op, values, operationConfig.Expression.Filter, operationConfig, storageConfig);
             }
             else
             {
@@ -1498,10 +1502,10 @@ namespace Amazon.DynamoDBv2.DataModel
             storageConfig ??= StorageConfigCache.GetConfig<T>(flatConfig);
 
             ContextSearch query;
-            if (operationConfig is { ExpressionFilter: { Filter: not null } })
+            if (operationConfig is { Expression: { Filter: not null } })
             {
                 query = ConvertQueryByValueWithExpression<T>(hashKeyValue, QueryOperator.Equal, null,
-                    operationConfig.ExpressionFilter.Filter, operationConfig, storageConfig);
+                    operationConfig.Expression.Filter, operationConfig, storageConfig);
             }
             else
             {

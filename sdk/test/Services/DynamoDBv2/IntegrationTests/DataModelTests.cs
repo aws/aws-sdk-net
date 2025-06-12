@@ -897,7 +897,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 "Alice", 
                 new QueryConfig
                 {
-                    ExpressionFilter = contextExpression
+                    Expression = contextExpression
                 }).ToList();
 
             Assert.AreEqual(1, employees.Count);
@@ -907,7 +907,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 "Charlie",
                 new QueryConfig
                 {
-                    ExpressionFilter = contextExpression
+                    Expression = contextExpression
                 }).ToList();
 
             Assert.AreEqual(1, employees.Count);
@@ -917,7 +917,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 "Bob",
                 new QueryConfig
                 {
-                    ExpressionFilter = contextExpression
+                    Expression = contextExpression
                 }).ToList();
 
             Assert.AreEqual(0, employees.Count);
@@ -978,7 +978,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             contextExpression.SetFilter<Employee>(e => e.ManagerName == "Eva");
             var resultExpressionFilter = Context.Query<Employee>("Diane", new QueryConfig
             {
-                ExpressionFilter = contextExpression
+                Expression = contextExpression
             }).ToList();
 
             // Assert both results are equivalent
@@ -1006,7 +1006,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }).ToList();
             var resultBarbara = Context.Query<Employee>("Diane", new QueryConfig
             {
-                ExpressionFilter = contextExpressionBarbara
+                Expression = contextExpressionBarbara
             }).ToList();
 
             Assert.AreEqual(resultActive.Count, resultBarbara.Count, "Result counts should match between QueryFilter and ExpressionFilter.");
@@ -1032,7 +1032,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var resultOrExpressionFilter = Context.Query<Employee>("Diane", new QueryConfig
             {
-                ExpressionFilter = contextExpressionOr
+                Expression = contextExpressionOr
             }).ToList();
 
             // Assert both results are equivalent
@@ -1047,7 +1047,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var resultIndex = Context.Query<Employee>("Big River", new QueryConfig
             {
                 IndexName = "GlobalIndex",
-                ExpressionFilter = contextExpression
+                Expression = contextExpression
             }).ToList();
             Assert.AreEqual(2, resultIndex.Count);
             Assert.IsTrue(resultIndex.All(e => e.ManagerName == "Eva"));

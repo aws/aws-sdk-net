@@ -185,7 +185,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var operationConfig = new DynamoDBOperationConfig
             {
-                ExpressionFilter = filterExpr
+                Expression = filterExpr
             };
 
             // Act

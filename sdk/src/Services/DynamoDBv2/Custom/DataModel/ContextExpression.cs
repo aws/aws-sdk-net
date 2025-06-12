@@ -8,20 +8,23 @@ namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
     /// Represents a context expression for DynamoDB operations in the object-persistence programming model.
+    /// Used to encapsulate filter expressions for query and scan operations.
     /// </summary>
     public class ContextExpression
     {
         /// <summary>
-        /// Represents a filter expression that can be used to filter results in DynamoDB operations.
+        /// Gets the filter expression used to filter results in DynamoDB operations.
+        /// This expression is typically constructed from a LINQ expression tree.
         /// </summary>
         public Expression Filter { get; private set; }
 
         /// <summary>
         /// Sets the filter expression for DynamoDB operations.
+        /// Converts the provided LINQ expression into an internal expression tree for use in DynamoDB queries or scans.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="filterExpression"></param>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <typeparam name="T">The type of the object being filtered.</typeparam>
+        /// <param name="filterExpression">A LINQ expression representing the filter condition.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="filterExpression"/> is null.</exception>
         public void SetFilter<T>(Expression<Func<T, bool>> filterExpression)
         {
             if (filterExpression == null)
@@ -33,48 +36,49 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
-    /// Extensions for LINQ operations in DynamoDB.
+    /// Provides extension methods for use in LINQ-to-DynamoDB expression trees.
+    /// These methods are intended for query translation and should not be called directly at runtime.
     /// </summary>
     public static class LinqDdbExtensions
     {
         /// <summary>
-        /// Checks if a value is between two other values, inclusive.
-        /// 
-        /// This method is only used inside expression trees; it should never be called at runtime.
+        /// Indicates that the value should be compared to see if it falls inclusively between the specified lower and upper bounds.
+        /// Intended for use in LINQ expressions to generate DynamoDB BETWEEN conditions.
+        /// This method is only used inside expression trees and should not be called at runtime.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="value"></param>
-        /// <param name="lower"></param>
-        /// <param name="upper"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">The type of the value being compared.</typeparam>
+        /// <param name="value">The value to test.</param>
+        /// <param name="lower">The inclusive lower bound.</param>
+        /// <param name="upper">The inclusive upper bound.</param>
+        /// <returns>True if the value is between the bounds; otherwise, false.</returns>
         public static bool Between<T>(this T value, T lower, T upper) => throw null!;
 
         /// <summary>
-        /// Checks if a value is not between two other values, inclusive.
-        /// 
-        /// This method is only used inside expression trees; it should never be called at runtime.
+        /// Indicates that the attribute exists in the DynamoDB item.
+        /// Intended for use in LINQ expressions to generate DynamoDB attribute_exists conditions.
+        /// This method is only used inside expression trees and should not be called at runtime.
         /// </summary>
-        /// <param name="_"></param>
-        /// <returns></returns>
+        /// <param name="_">The object representing the attribute to check.</param>
+        /// <returns>True if the attribute exists; otherwise, false.</returns>
         public static bool AttributeExists(this object _) => throw null!;
 
         /// <summary>
-        /// Checks if a value does not have a specific attribute.
-        /// 
-        /// This method is only used inside expression trees; it should never be called at runtime.
+        /// Indicates that the attribute does not exist in the DynamoDB item.
+        /// Intended for use in LINQ expressions to generate DynamoDB attribute_not_exists conditions.
+        /// This method is only used inside expression trees and should not be called at runtime.
         /// </summary>
-        /// <param name="_"></param>
-        /// <returns></returns>
+        /// <param name="_">The object representing the attribute to check.</param>
+        /// <returns>True if the attribute does not exist; otherwise, false.</returns>
         public static bool AttributeNotExists(this object _) => throw null!;
 
         /// <summary>
-        /// Checks if a value has a specific attribute type.
-        /// 
-        /// This method is only used inside expression trees; it should never be called at runtime.
+        /// Indicates that the attribute is of the specified DynamoDB type.
+        /// Intended for use in LINQ expressions to generate DynamoDB attribute_type conditions.
+        /// This method is only used inside expression trees and should not be called at runtime.
         /// </summary>
-        /// <param name="_"></param>
-        /// <param name="dynamoDbType"></param>
-        /// <returns></returns>
+        /// <param name="_">The object representing the attribute to check.</param>
+        /// <param name="dynamoDbType">The DynamoDB attribute type to compare against.</param>
+        /// <returns>True if the attribute is of the specified type; otherwise, false.</returns>
         public static bool AttributeType(this object _, DynamoDBAttributeType dynamoDbType) => throw null!;
     }
 
