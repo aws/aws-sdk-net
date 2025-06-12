@@ -10,12 +10,13 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Threading.Tasks;
 using System.IO;
+using Amazon.DynamoDBv2.DocumentModel;
 
 namespace AWSSDKDocSamples.DynamoDBv2
 {
     public class LowLevelSamples : ISample
     {
-        public void DataPlaneSamples()
+        public async Task DataPlaneSamples()
         {
             {
                 #region CreateTable Sample
@@ -69,7 +70,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 };
 
                 // View new table properties
-                TableDescription tableDescription = client.CreateTable(request).TableDescription;
+                TableDescription tableDescription = (await client.CreateTableAsync(request)).TableDescription;
                 Console.WriteLine("Table name: {0}", tableDescription.TableName);
                 Console.WriteLine("Creation time: {0}", tableDescription.CreationDateTime);
                 Console.WriteLine("Item count: {0}", tableDescription.ItemCount);
@@ -114,7 +115,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 };
 
                 // Issue DescribeTable request and retrieve the table description
-                TableDescription tableDescription = client.DescribeTable(request).Table;
+                TableDescription tableDescription = (await client.DescribeTableAsync(request)).Table;
 
                 // View new table properties
                 Console.WriteLine("Table name: {0}", tableDescription.TableName);
@@ -162,15 +163,18 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     };
 
                     // Issue call
-                    ListTablesResult result = client.ListTables(request);
+                    ListTablesResponse response = await client.ListTablesAsync(request);
 
-                    // List retrieved tables
-                    List<string> tables = result.TableNames;
-                    Console.WriteLine("Retrieved tables: {0}",
-                        string.Join(", ", tables));
+                    if (response.TableNames != null)
+                    {
+                        // List retrieved tables
+                        List<string> tables = response.TableNames;
+                        Console.WriteLine("Retrieved tables: {0}",
+                            string.Join(", ", tables));
+                    }
 
                     // Update marker value from the result
-                    startTableName = result.LastEvaluatedTableName;
+                    startTableName = response.LastEvaluatedTableName;
 
                 } while (!string.IsNullOrEmpty(startTableName)); // Test marker value
 
@@ -184,12 +188,15 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 AmazonDynamoDBClient client = new AmazonDynamoDBClient();
 
                 // Issue call
-                ListTablesResult result = client.ListTables();
+                ListTablesResponse response = await client.ListTablesAsync();
 
-                // List retrieved tables
-                List<string> tables = result.TableNames;
-                Console.WriteLine("Retrieved tables: {0}",
-                    string.Join(", ", tables));
+                if (response.TableNames != null)
+                {
+                    // List retrieved tables
+                    List<string> tables = response.TableNames;
+                    Console.WriteLine("Retrieved tables: {0}",
+                        string.Join(", ", tables));
+                }
 
                 #endregion
             }
@@ -218,7 +225,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 };
 
                 // View new table properties
-                TableDescription tableDescription = client.UpdateTable(request).TableDescription;
+                TableDescription tableDescription = (await client.UpdateTableAsync(request)).TableDescription;
                 Console.WriteLine("Table name: {0}", tableDescription.TableName);
                 Console.WriteLine("Throughput: Reads = {0}, Writes = {1}",
                     tableDescription.ProvisionedThroughput.ReadCapacityUnits,
@@ -242,7 +249,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 };
 
                 // Issue DeleteTable request and retrieve the table description
-                TableDescription tableDescription = client.DeleteTable(request).TableDescription;
+                TableDescription tableDescription = (await client.DeleteTableAsync(request)).TableDescription;
                 Console.WriteLine("Table name: {0}", tableDescription.TableName);
                 Console.WriteLine("Table status: {0}", tableDescription.TableStatus);
 
@@ -251,7 +258,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
 
         }
 
-        private void CreateLSITable()
+        private async Task CreateLSITable()
         {
             #region CreateTable LSI Sample
 
@@ -356,7 +363,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
             };
 
             // View new table properties
-            TableDescription tableDescription = client.CreateTable(request).TableDescription;
+            TableDescription tableDescription = (await client.CreateTableAsync(request)).TableDescription;
             Console.WriteLine("Table name: {0}", tableDescription.TableName);
             Console.WriteLine("Creation time: {0}", tableDescription.CreationDateTime);
             Console.WriteLine("Item count: {0}", tableDescription.ItemCount);
@@ -388,7 +395,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
             #endregion
         }
 
-        private void PutSample()
+        private async Task PutSample()
         {
             {
                 #region PutItem Sample 1
@@ -419,16 +426,16 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 };
 
                 // Issue PutItem request
-                client.PutItem(request);
+                await client.PutItemAsync(request);
 
                 #endregion
             }
         }
-        public void CRUDSamples()
+        public async Task CRUDSamples()
         {
-            EnsureTables();
+            await EnsureTables();
 
-            PutSample();
+            await PutSample();
 
             {
                 #region GetItem Sample
@@ -453,7 +460,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 };
 
                 // Issue request
-                var result = client.GetItem(request);
+                var result = await client.GetItemAsync(request);
 
                 // View response
                 Console.WriteLine("Item:");
@@ -518,7 +525,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 };
 
                 // Issue request
-                client.UpdateItem(request);
+                await client.UpdateItemAsync(request);
 
                 #endregion
             }
@@ -546,16 +553,16 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 };
 
                 // Issue request
-                client.DeleteItem(request);
+                await client.DeleteItemAsync(request);
 
                 #endregion
             }
         }
 
-        public void SearchSamples()
+        public async Task SearchSamples()
         {
-            RemoveTables();
-            CreateLSITable();
+            await RemoveTables();
+            await CreateLSITable();
             TableUtils.WaitUntilTableActive("SampleTable", TestClient);
 
             {
@@ -581,7 +588,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     PutRequest = new PutRequest { Item = item2 }
                 });
                 AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-                client.BatchWriteItem(new BatchWriteItemRequest
+                await client.BatchWriteItemAsync(new BatchWriteItemRequest
                 {
                     RequestItems = new Dictionary<string, List<WriteRequest>>
                     {
@@ -589,7 +596,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     }
                 });
 
-                PutSample();
+                await PutSample();
             }
 
 
@@ -645,7 +652,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     };
 
                     // Issue request
-                    var result = client.Query(request);
+                    var result = await client.QueryAsync(request);
 
                     // View all returned items
                     List<Dictionary<string, AttributeValue>> items = result.Items;
@@ -723,26 +730,29 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     };
 
                     // Issue request
-                    var result = client.Query(request);
+                    QueryResponse response = await client.QueryAsync(request);
 
-                    // View all returned items
-                    List<Dictionary<string, AttributeValue>> items = result.Items;
-                    foreach (Dictionary<string, AttributeValue> item in items)
+                    if (response.Items != null)
                     {
-                        Console.WriteLine("Item:");
-                        foreach (var keyValuePair in item)
+                        // View all returned items
+                        List<Dictionary<string, AttributeValue>> items = response.Items;
+                        foreach (Dictionary<string, AttributeValue> item in items)
                         {
-                            Console.WriteLine("{0} : S={1}, N={2}, SS=[{3}], NS=[{4}]",
-                                keyValuePair.Key,
-                                keyValuePair.Value.S,
-                                keyValuePair.Value.N,
-                                string.Join(", ", keyValuePair.Value.SS ?? new List<string>()),
-                                string.Join(", ", keyValuePair.Value.NS ?? new List<string>()));
+                            Console.WriteLine("Item:");
+                            foreach (var keyValuePair in item)
+                            {
+                                Console.WriteLine("{0} : S={1}, N={2}, SS=[{3}], NS=[{4}]",
+                                    keyValuePair.Key,
+                                    keyValuePair.Value.S,
+                                    keyValuePair.Value.N,
+                                    string.Join(", ", keyValuePair.Value.SS ?? new List<string>()),
+                                    string.Join(", ", keyValuePair.Value.NS ?? new List<string>()));
+                            }
                         }
                     }
 
                     // Set marker variable
-                    startKey = result.LastEvaluatedKey;
+                    startKey = response.LastEvaluatedKey;
                 } while (startKey != null && startKey.Count > 0);
 
                 #endregion
@@ -784,26 +794,29 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     };
 
                     // Issue request
-                    ScanResult result = client.Scan(request);
+                    ScanResponse response = await client.ScanAsync(request);
 
-                    // View all returned items
-                    List<Dictionary<string, AttributeValue>> items = result.Items;
-                    foreach (Dictionary<string, AttributeValue> item in items)
+                    if (response.Items != null)
                     {
-                        Console.WriteLine("Item:");
-                        foreach (var keyValuePair in item)
+                        // View all returned items
+                        List<Dictionary<string, AttributeValue>> items = response.Items;
+                        foreach (Dictionary<string, AttributeValue> item in items)
                         {
-                            Console.WriteLine("{0} : S={1}, N={2}, SS=[{3}], NS=[{4}]",
-                                keyValuePair.Key,
-                                keyValuePair.Value.S,
-                                keyValuePair.Value.N,
-                                string.Join(", ", keyValuePair.Value.SS ?? new List<string>()),
-                                string.Join(", ", keyValuePair.Value.NS ?? new List<string>()));
+                            Console.WriteLine("Item:");
+                            foreach (var keyValuePair in item)
+                            {
+                                Console.WriteLine("{0} : S={1}, N={2}, SS=[{3}], NS=[{4}]",
+                                    keyValuePair.Key,
+                                    keyValuePair.Value.S,
+                                    keyValuePair.Value.N,
+                                    string.Join(", ", keyValuePair.Value.SS ?? new List<string>()),
+                                    string.Join(", ", keyValuePair.Value.NS ?? new List<string>()));
+                            }
                         }
                     }
 
                     // Set marker variable
-                    startKey = result.LastEvaluatedKey;
+                    startKey = response.LastEvaluatedKey;
                 } while (startKey != null && startKey.Count > 0);
 
                 #endregion
@@ -811,7 +824,13 @@ namespace AWSSDKDocSamples.DynamoDBv2
 
             {
                 // Create lots of items to put into first table
-                var table = Amazon.DynamoDBv2.DocumentModel.Table.LoadTable(TestClient, "SampleTable");
+                var table = new TableBuilder(TestClient, "SampleTable")
+                                    .AddHashKey("Author", DynamoDBEntryType.String)
+                                    .AddRangeKey("Title", DynamoDBEntryType.String)
+                                    .AddLocalSecondaryIndex("YearsIndex", "Year", DynamoDBEntryType.Numeric)
+                                    .AddLocalSecondaryIndex("SettingsIndex", "Setting", DynamoDBEntryType.String)
+                                    .Build();
+
                 var batchWrite = table.CreateBatchWrite();
                 for (int i = 0; i < 100; i++)
                 {
@@ -822,7 +841,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     document["Year"] = 1900 + i;
                     batchWrite.AddDocumentToPut(document);
                 }
-                batchWrite.Execute();
+                await batchWrite.ExecuteAsync();
             }
 
 
@@ -844,7 +863,7 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 // Setup 10 simultaneous threads, each thread calling Scan operation
                 // with its own segment value.
                 int totalSegments = 10;
-                Parallel.For(0, totalSegments, segment =>
+                await Parallel.ForAsync(0, totalSegments, async (segment, token) =>
                 {
                     // Define marker variable
                     Dictionary<string, AttributeValue> startKey = null;
@@ -864,31 +883,33 @@ namespace AWSSDKDocSamples.DynamoDBv2
                         };
 
                         // Issue request
-                        var result = client.Scan(request);
+                        ScanResponse response = await client.ScanAsync(request);
 
                         // Write returned items to file
                         string path = string.Format("ParallelScan-{0}-of-{1}.txt", totalSegments, segment);
-                        List<Dictionary<string, AttributeValue>> items = result.Items;
                         using (Stream stream = File.OpenWrite(path))
                         using (StreamWriter writer = new StreamWriter(stream))
                         {
-                            foreach (Dictionary<string, AttributeValue> item in items)
+                            if (response.Items != null)
                             {
-                                writer.WriteLine("Item:");
-                                foreach (var keyValuePair in item)
+                                foreach (Dictionary<string, AttributeValue> item in response.Items)
                                 {
-                                    writer.WriteLine("{0} : S={1}, N={2}, SS=[{3}], NS=[{4}]",
-                                        keyValuePair.Key,
-                                        keyValuePair.Value.S,
-                                        keyValuePair.Value.N,
-                                        string.Join(", ", keyValuePair.Value.SS ?? new List<string>()),
-                                        string.Join(", ", keyValuePair.Value.NS ?? new List<string>()));
+                                    writer.WriteLine("Item:");
+                                    foreach (var keyValuePair in item)
+                                    {
+                                        writer.WriteLine("{0} : S={1}, N={2}, SS=[{3}], NS=[{4}]",
+                                            keyValuePair.Key,
+                                            keyValuePair.Value.S,
+                                            keyValuePair.Value.N,
+                                            string.Join(", ", keyValuePair.Value.SS ?? new List<string>()),
+                                            string.Join(", ", keyValuePair.Value.NS ?? new List<string>()));
+                                    }
                                 }
                             }
                         }
 
                         // Set marker variable
-                        startKey = result.LastEvaluatedKey;
+                        startKey = response.LastEvaluatedKey;
                     } while (startKey != null && startKey.Count > 0);
                 });
 
@@ -897,9 +918,9 @@ namespace AWSSDKDocSamples.DynamoDBv2
 
         }
 
-        public void BatchSamples()
+        public async Task BatchSamples()
         {
-            EnsureTables();
+            await EnsureTables();
 
             {
                 #region BatchGet Sample 1
@@ -969,40 +990,43 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     RequestItems = requestItems
                 };
 
-                BatchGetItemResult result;
+                BatchGetItemResponse response;
                 do
                 {
                     // Issue request and retrieve items
-                    result = client.BatchGetItem(request);
+                    response = await client.BatchGetItemAsync(request);
 
                     // Iterate through responses
-                    Dictionary<string, List<Dictionary<string, AttributeValue>>> responses = result.Responses;
-                    foreach (string tableName in responses.Keys)
+                    if (response.Responses != null)
                     {
-                        // Get items for each table
-                        List<Dictionary<string, AttributeValue>> tableItems = responses[tableName];
-
-                        // View items
-                        foreach (Dictionary<string, AttributeValue> item in tableItems)
+                        foreach (string tableName in response.Responses.Keys)
                         {
-                            Console.WriteLine("Item:");
-                            foreach (var keyValuePair in item)
+                            // Get items for each table
+                            List<Dictionary<string, AttributeValue>> tableItems = response.Responses[tableName];
+
+                            // View items
+                            foreach (Dictionary<string, AttributeValue> item in tableItems)
                             {
-                                Console.WriteLine("{0} : S={1}, N={2}, SS=[{3}], NS=[{4}]",
-                                    keyValuePair.Key,
-                                    keyValuePair.Value.S,
-                                    keyValuePair.Value.N,
-                                    string.Join(", ", keyValuePair.Value.SS ?? new List<string>()),
-                                    string.Join(", ", keyValuePair.Value.NS ?? new List<string>()));
+                                Console.WriteLine("Item:");
+                                foreach (var keyValuePair in item)
+                                {
+                                    Console.WriteLine("{0} : S={1}, N={2}, SS=[{3}], NS=[{4}]",
+                                        keyValuePair.Key,
+                                        keyValuePair.Value.S,
+                                        keyValuePair.Value.N,
+                                        string.Join(", ", keyValuePair.Value.SS ?? new List<string>()),
+                                        string.Join(", ", keyValuePair.Value.NS ?? new List<string>()));
+                                }
                             }
                         }
+
                     }
 
                     // Some items may not have been retrieved!
                     //  Set RequestItems to the result's UnprocessedKeys and reissue request
-                    request.RequestItems = result.UnprocessedKeys;
+                    request.RequestItems = response.UnprocessedKeys;
 
-                } while (result.UnprocessedKeys.Count > 0);
+                } while (response.UnprocessedKeys?.Count > 0);
 
                 #endregion
             }
@@ -1077,23 +1101,23 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 requestItems["AuthorsTable"] = authorsTableItems;
 
                 BatchWriteItemRequest request = new BatchWriteItemRequest { RequestItems = requestItems };
-                BatchWriteItemResult result;
+                BatchWriteItemResponse response;
                 do
                 {
                     // Issue request and retrieve items
-                    result = client.BatchWriteItem(request);
+                    response = await client.BatchWriteItemAsync(request);
 
                     // Some items may not have been processed!
                     //  Set RequestItems to the result's UnprocessedItems and reissue request
-                    request.RequestItems = result.UnprocessedItems;
+                    request.RequestItems = response.UnprocessedItems;
 
-                } while (result.UnprocessedItems.Count > 0);
+                } while (response.UnprocessedItems?.Count > 0);
 
                 #endregion
             }
         }
 
-        private static void EnsureTables()
+        private static async Task EnsureTables()
         {
             List<KeySchemaElement> schema = new List<KeySchemaElement>
             {
@@ -1117,33 +1141,33 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     AttributeName = "Title", AttributeType = "S"
                 }
             };
-            TableUtils.ConfirmTableExistence("SampleTable", TestClient, schema, definitions, 5, 5);
+            await TableUtils.ConfirmTableExistence("SampleTable", TestClient, schema, definitions, 5, 5);
 
             schema.RemoveAt(1);
             definitions.RemoveAt(1);
-            TableUtils.ConfirmTableExistence("AuthorsTable", TestClient, schema, definitions, 5, 5);
+            await TableUtils.ConfirmTableExistence("AuthorsTable", TestClient, schema, definitions, 5, 5);
         }
-        private static void RemoveTables()
+        private static async Task RemoveTables()
         {
-            TableUtils.DeleteTables(TestClient, "SampleTable", "AuthorsTable");
+            await TableUtils.DeleteTables(TestClient, "SampleTable", "AuthorsTable");
         }
 
         private static IAmazonDynamoDB TestClient;
 
         #region ISample Members
 
-        public void Run()
+        public async Task Run()
         {
             using (TestClient = new AmazonDynamoDBClient())
             {
-                RemoveTables();
+                await RemoveTables();
 
-                DataPlaneSamples();
-                CRUDSamples();
-                SearchSamples();
-                BatchSamples();
+                await DataPlaneSamples();
+                await CRUDSamples();
+                await SearchSamples();
+                await BatchSamples();
 
-                RemoveTables();
+                await RemoveTables();
             }
         }
 

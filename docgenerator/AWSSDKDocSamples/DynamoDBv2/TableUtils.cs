@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.DynamoDBv2
 {
     public static class TableUtils
     {
-        public static void ConfirmTableExistence(string tableName, IAmazonDynamoDB client, List<KeySchemaElement> tableSchema, List<AttributeDefinition> attributeDefinitions)
+        public static async Task ConfirmTableExistence(string tableName, IAmazonDynamoDB client, List<KeySchemaElement> tableSchema, List<AttributeDefinition> attributeDefinitions)
         {
-            ConfirmTableExistence(tableName, client, tableSchema, attributeDefinitions, 10, 10);
+            await ConfirmTableExistence(tableName, client, tableSchema, attributeDefinitions, 10, 10);
         }
-        public static void ConfirmTableExistence(string tableName, IAmazonDynamoDB client, List<KeySchemaElement> tableSchema, List<AttributeDefinition> attributeDefinitions, int reads, int writes)
+        public static async Task ConfirmTableExistence(string tableName, IAmazonDynamoDB client, List<KeySchemaElement> tableSchema, List<AttributeDefinition> attributeDefinitions, int reads, int writes)
         {
             Console.WriteLine("Confirming table " + tableName + " existence");
             string tableStatus = null;
@@ -24,13 +24,13 @@ namespace AWSSDKDocSamples.DynamoDBv2
             if (string.IsNullOrEmpty(tableStatus))
             {
                 Console.WriteLine("Creating table " + tableName);
-                var tableDescription = client.CreateTable(new CreateTableRequest
+                var tableDescription = (await client.CreateTableAsync(new CreateTableRequest
                 {
                     TableName = tableName,
                     ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = reads, WriteCapacityUnits = writes },
                     KeySchema = tableSchema,
                     AttributeDefinitions = attributeDefinitions
-                }).TableDescription;
+                })).TableDescription;
                 WaitUntilTableCreated(tableName, client);
             }
             else
@@ -70,44 +70,51 @@ namespace AWSSDKDocSamples.DynamoDBv2
             return tableStatus;
         }
 
-        public static void DeleteTables(IAmazonDynamoDB client, string partialName)
+        public static async Task DeleteTables(IAmazonDynamoDB client, string partialName)
         {
-            DeleteTables(client, tableName => tableName.IndexOf(partialName, StringComparison.OrdinalIgnoreCase) >= 0);
+            await DeleteTables(client, tableName => tableName.IndexOf(partialName, StringComparison.OrdinalIgnoreCase) >= 0);
         }
-        public static void DeleteTable(IAmazonDynamoDB client, string tableName)
+        public static async Task DeleteTable(IAmazonDynamoDB client, string tableName)
         {
-            DeleteTables(client, name => string.Equals(name, tableName, StringComparison.Ordinal));
+            await DeleteTables(client, name => string.Equals(name, tableName, StringComparison.Ordinal));
         }
-        public static void DeleteTables(IAmazonDynamoDB client, Predicate<string> tableNameMatch)
+        public static async Task DeleteTables(IAmazonDynamoDB client, Predicate<string> tableNameMatch)
         {
             try
             {
-                var tableNames = client.ListTables().TableNames;
-                foreach (var tableName in tableNames)
+                var tableNames = (await client.ListTablesAsync()).TableNames;
+                if (tableNames != null)
                 {
-                    DescribeTableResponse descResponse = client.DescribeTable(new DescribeTableRequest { TableName = tableName });
-                    if (descResponse.Table == null)
-                        continue;
-
-                    TableDescription table = descResponse.Table;
-
-                    if (table.TableStatus == TableStatus.ACTIVE && tableNameMatch(table.TableName))
+                    foreach (var tableName in tableNames)
                     {
-                        Console.WriteLine("Table: {0}, {1}, {2}, {3}", table.TableName, table.TableStatus, table.ProvisionedThroughput.ReadCapacityUnits, table.ProvisionedThroughput.WriteCapacityUnits);
-                        Console.WriteLine("Deleting table " + table.TableName + "...");
-                        try
+                        DescribeTableResponse descResponse = await client.DescribeTableAsync(new DescribeTableRequest { TableName = tableName });
+                        if (descResponse.Table == null)
+                            continue;
+
+                        TableDescription table = descResponse.Table;
+
+                        if (table.TableStatus == TableStatus.ACTIVE && tableNameMatch(table.TableName))
                         {
-                            client.DeleteTable(new DeleteTableRequest { TableName = table.TableName });
-                            WaitUntilTableDeleted(table.TableName, client);
-                            Console.WriteLine("Succeeded!");
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Failed!");
+                            Console.WriteLine("Table: {0}, {1}, {2}, {3}", table.TableName, table.TableStatus, table.ProvisionedThroughput.ReadCapacityUnits, table.ProvisionedThroughput.WriteCapacityUnits);
+                            Console.WriteLine("Deleting table " + table.TableName + "...");
+                            try
+                            {
+                                await client.DeleteTableAsync(new DeleteTableRequest { TableName = table.TableName });
+                                WaitUntilTableDeleted(table.TableName, client);
+                                Console.WriteLine("Succeeded!");
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Failed!");
+                            }
                         }
                     }
+                    Console.WriteLine(tableNames.Count);
                 }
-                Console.WriteLine(tableNames.Count);
+                else
+                {
+                    Console.WriteLine("No tables to delete");
+                }
             }
             catch (Exception e)
             {
@@ -115,19 +122,19 @@ namespace AWSSDKDocSamples.DynamoDBv2
                 throw;
             }
         }
-        public static void DeleteTables(IAmazonDynamoDB client, params string[] tableNames)
+        public static async Task DeleteTables(IAmazonDynamoDB client, params string[] tableNames)
         {
-            DeleteTables(client, tableName => tableNames.Contains(tableName, StringComparer.Ordinal));
+            await DeleteTables(client, tableName => tableNames.Contains(tableName, StringComparer.Ordinal));
         }
 
         public static TableStatus GetTableStatus(string tableName, IAmazonDynamoDB client)
         {
             try
             {
-                var table = client.DescribeTable(new DescribeTableRequest
+                var table = client.DescribeTableAsync(new DescribeTableRequest
                 {
                     TableName = tableName
-                }).Table;
+                }).GetAwaiter().GetResult().Table;
 
                 return table.TableStatus;
             }

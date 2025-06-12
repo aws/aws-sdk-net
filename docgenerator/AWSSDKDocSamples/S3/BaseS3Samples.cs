@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Amazon.S3;
 using Amazon.S3.Model;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Threading;
+using System.Net.Http;
 
 namespace AWSSDKDocSamples.S3
 {
     public class BaseS3Samples : ISample
     {
-        public void BucketSamples()
+        public async Task BucketSamples()
         {
             {
                 #region ListBuckets Sample
@@ -21,7 +24,7 @@ namespace AWSSDKDocSamples.S3
                 AmazonS3Client client = new AmazonS3Client();
 
                 // Issue call
-                ListBucketsResponse response = client.ListBuckets();
+                ListBucketsResponse response = await client.ListBucketsAsync();
 
                 // View response data
                 Console.WriteLine("Buckets owner - {0}", response.Owner.DisplayName);
@@ -53,7 +56,7 @@ namespace AWSSDKDocSamples.S3
                     BucketName = "amzn-s3-demo-bucket",
                     Policy = newPolicy
                 };
-                client.PutBucketPolicy(putRequest);
+                await client.PutBucketPolicyAsync(putRequest);
 
 
                 // Retrieve current policy
@@ -61,7 +64,7 @@ namespace AWSSDKDocSamples.S3
                 {
                     BucketName = "amzn-s3-demo-bucket"
                 };
-                string policy = client.GetBucketPolicy(getRequest).Policy;
+                string policy = (await client.GetBucketPolicyAsync(getRequest)).Policy;
 
                 Console.WriteLine(policy);
                 Debug.Assert(policy.Contains("BasicPerms"));
@@ -72,11 +75,11 @@ namespace AWSSDKDocSamples.S3
                 {
                     BucketName = "amzn-s3-demo-bucket"
                 };
-                client.DeleteBucketPolicy(deleteRequest);
+                await client.DeleteBucketPolicyAsync(deleteRequest);
 
 
                 // Retrieve current policy and verify that it is null
-                policy = client.GetBucketPolicy(getRequest).Policy;
+                policy = (await client.GetBucketPolicyAsync(getRequest)).Policy;
                 Debug.Assert(policy == null);
 
                 #endregion
@@ -95,7 +98,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Issue call
-                GetBucketLocationResponse response = client.GetBucketLocation(request);
+                GetBucketLocationResponse response = await client.GetBucketLocationAsync(request);
 
                 // View response data
                 Console.WriteLine("Bucket location - {0}", response.Location);
@@ -113,12 +116,11 @@ namespace AWSSDKDocSamples.S3
                 PutBucketRequest request = new PutBucketRequest
                 {
                     BucketName = "amzn-s3-demo-bucket",
-                    BucketRegion = S3Region.EU,         // set region to EU
-                    CannedACL = S3CannedACL.PublicRead  // make bucket publicly readable
+                    BucketRegion = S3Region.EUWest1         // set region to eu-west-1
                 };
 
                 // Issue call
-                PutBucketResponse response = client.PutBucket(request);
+                PutBucketResponse response = await client.PutBucketAsync(request);
 
                 #endregion
             }
@@ -136,7 +138,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Issue call
-                DeleteBucketResponse response = client.DeleteBucket(request);
+                DeleteBucketResponse response = await client.DeleteBucketAsync(request);
 
                 #endregion
             }
@@ -157,20 +159,24 @@ namespace AWSSDKDocSamples.S3
                 do
                 {
                     // Get a list of objects
-                    listResponse = client.ListObjects(listRequest);
-                    foreach (S3Object obj in listResponse.S3Objects)
+                    listResponse = await client.ListObjectsAsync(listRequest);
+
+                    if (listResponse.S3Objects != null)
                     {
-                        // Delete each object
-                        client.DeleteObject(new DeleteObjectRequest
+                        foreach (S3Object obj in listResponse.S3Objects)
                         {
-                            BucketName = "amzn-s3-demo-bucket",
-                            Key = obj.Key
-                        });
+                            // Delete each object
+                            await client.DeleteObjectAsync(new DeleteObjectRequest
+                            {
+                                BucketName = "amzn-s3-demo-bucket",
+                                Key = obj.Key
+                            });
+                        }
                     }
 
                     // Set the marker property
                     listRequest.Marker = listResponse.NextMarker;
-                } while (listResponse.IsTruncated);
+                } while (listResponse.IsTruncated.GetValueOrDefault());
 
                 // Construct DeleteBucket request
                 DeleteBucketRequest request = new DeleteBucketRequest
@@ -179,7 +185,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Issue call
-                DeleteBucketResponse response = client.DeleteBucket(request);
+                DeleteBucketResponse response = await client.DeleteBucketAsync(request);
 
                 #endregion
             }
@@ -199,13 +205,25 @@ namespace AWSSDKDocSamples.S3
                         // Rule to delete keys with prefix "Test-" after 5 days
                         new LifecycleRule
                         {
-                            Prefix = "Test-",
+                            Filter = new LifecycleFilter
+                            {
+                                LifecycleFilterPredicate = new LifecyclePrefixPredicate
+                                {
+                                    Prefix = "Test-"
+                                }
+                            },
                             Expiration = new LifecycleRuleExpiration { Days = 5 }
                         },
                         // Rule to delete keys in subdirectory "Logs" after 2 days
                         new LifecycleRule
                         {
-                            Prefix = "Logs/",
+                            Filter = new LifecycleFilter
+                            {
+                                LifecycleFilterPredicate = new LifecyclePrefixPredicate
+                                {
+                                    Prefix = "Logs/",
+                                }
+                            },
                             Expiration = new LifecycleRuleExpiration  { Days = 2 },
                             Id = "log-file-removal"
                         }
@@ -216,7 +234,7 @@ namespace AWSSDKDocSamples.S3
                     BucketName = "amzn-s3-demo-bucket",
                     Configuration = newConfiguration
                 };
-                client.PutLifecycleConfiguration(putRequest);
+                await client.PutLifecycleConfigurationAsync(putRequest);
 
 
                 // Retrieve current configuration
@@ -224,40 +242,45 @@ namespace AWSSDKDocSamples.S3
                 {
                     BucketName = "amzn-s3-demo-bucket"
                 };
-                LifecycleConfiguration configuration = client.GetLifecycleConfiguration(getRequest).Configuration;
+                LifecycleConfiguration configuration = (await client.GetLifecycleConfigurationAsync(getRequest)).Configuration;
 
-                Console.WriteLine("Configuration contains {0} rules", configuration.Rules.Count);
-                foreach (LifecycleRule rule in configuration.Rules)
+                Console.WriteLine("Configuration contains {0} rules", configuration.Rules?.Count);
+
+                if(configuration.Rules != null)
                 {
-                    Console.WriteLine("Rule");
-                    Console.WriteLine(" Prefix = " + rule.Prefix);
-                    Console.WriteLine(" Expiration (days) = " + rule.Expiration.Days);
-                    Console.WriteLine(" Id = " + rule.Id);
-                    Console.WriteLine(" Status = " + rule.Status);
-                }
+                    foreach (LifecycleRule rule in configuration.Rules)
+                    {
+                        Console.WriteLine("Rule");
+                        if (rule.Filter.LifecycleFilterPredicate is LifecyclePrefixPredicate prefixFilter)
+                            Console.WriteLine(" Prefix = " + prefixFilter.Prefix);
 
+                        Console.WriteLine(" Expiration (days) = " + rule.Expiration.Days);
+                        Console.WriteLine(" Id = " + rule.Id);
+                        Console.WriteLine(" Status = " + rule.Status);
+                    }
+                }
 
                 // Put a new configuration and overwrite the existing configuration
                 configuration.Rules.RemoveAt(0);    // remove first rule
-                client.PutLifecycleConfiguration(putRequest);
+                await client.PutLifecycleConfigurationAsync(putRequest);
 
                 // Delete current configuration
                 DeleteLifecycleConfigurationRequest deleteRequest = new DeleteLifecycleConfigurationRequest
                 {
                     BucketName = "amzn-s3-demo-bucket"
                 };
-                client.DeleteLifecycleConfiguration(deleteRequest);
+                await client.DeleteLifecycleConfigurationAsync(deleteRequest);
 
 
                 // Retrieve current configuration and verify that it is null
-                configuration = client.GetLifecycleConfiguration(getRequest).Configuration;
+                configuration = (await client.GetLifecycleConfigurationAsync(getRequest)).Configuration;
                 Debug.Assert(configuration == null);
 
                 #endregion
             }
         }
 
-        public void ObjectSamples()
+        public async Task ObjectSamples()
         {
             {
                 #region ListObjects Sample
@@ -275,18 +298,22 @@ namespace AWSSDKDocSamples.S3
                 do
                 {
                     // Get a list of objects
-                    listResponse = client.ListObjects(listRequest);
-                    foreach (S3Object obj in listResponse.S3Objects)
+                    listResponse = await client.ListObjectsAsync(listRequest);
+
+                    if (listResponse.S3Objects != null)
                     {
-                        Console.WriteLine("Object - " + obj.Key);
-                        Console.WriteLine(" Size - " + obj.Size);
-                        Console.WriteLine(" LastModified - " + obj.LastModified);
-                        Console.WriteLine(" Storage class - " + obj.StorageClass);
+                        foreach (S3Object obj in listResponse.S3Objects)
+                        {
+                            Console.WriteLine("Object - " + obj.Key);
+                            Console.WriteLine(" Size - " + obj.Size);
+                            Console.WriteLine(" LastModified - " + obj.LastModified);
+                            Console.WriteLine(" Storage class - " + obj.StorageClass);
+                        }
                     }
 
                     // Set the marker property
                     listRequest.Marker = listResponse.NextMarker;
-                } while (listResponse.IsTruncated);
+                } while (listResponse.IsTruncated.GetValueOrDefault());
 
                 #endregion
             }
@@ -305,7 +332,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Issue request and remember to dispose of the response
-                using (GetObjectResponse response = client.GetObject(request))
+                using (GetObjectResponse response = await client.GetObjectAsync(request))
                 {
                     using (StreamReader reader = new StreamReader(response.ResponseStream))
                     {
@@ -320,6 +347,8 @@ namespace AWSSDKDocSamples.S3
             }
 
             {
+                CancellationTokenSource tokenSource = new CancellationTokenSource();
+                var cancellationToken = tokenSource.Token;
                 #region GetObject WriteResponseStreamToFile Sample
 
                 // Create a client
@@ -333,10 +362,10 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Issue request and remember to dispose of the response
-                using (GetObjectResponse response = client.GetObject(request))
+                using (GetObjectResponse response = await client.GetObjectAsync(request))
                 {
                     // Save object to local file
-                    response.WriteResponseStreamToFile("Item1.txt");
+                    await response.WriteResponseStreamToFileAsync("Item1.txt", false, cancellationToken);
                 }
 
                 #endregion
@@ -357,7 +386,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Issue request and view the response
-                GetObjectMetadataResponse response = client.GetObjectMetadata(request);
+                GetObjectMetadataResponse response = await client.GetObjectMetadataAsync(request);
                 Console.WriteLine("Content Length - " + response.ContentLength);
                 Console.WriteLine("Content Type - " + response.Headers.ContentType);
                 if (response.Expiration != null)
@@ -384,7 +413,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Put object
-                PutObjectResponse response = client.PutObject(request);
+                PutObjectResponse response = await client.PutObjectAsync(request);
 
                 #endregion
             }
@@ -404,7 +433,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Put object
-                PutObjectResponse response = client.PutObject(request);
+                PutObjectResponse response = await client.PutObjectAsync(request);
 
                 #endregion
             }
@@ -426,7 +455,7 @@ namespace AWSSDKDocSamples.S3
                     request.InputStream = stream;
 
                     // Put object
-                    PutObjectResponse response = client.PutObject(request);
+                    PutObjectResponse response = await client.PutObjectAsync(request);
                 }
 
                 #endregion
@@ -446,7 +475,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Issue request
-                client.DeleteObject(request);
+                await client.DeleteObjectAsync(request);
 
                 #endregion
             }
@@ -474,22 +503,29 @@ namespace AWSSDKDocSamples.S3
                 try
                 {
                     // Issue request
-                    DeleteObjectsResponse response = client.DeleteObjects(request);
+                    DeleteObjectsResponse response = await client.DeleteObjectsAsync(request);
                 }
                 catch (DeleteObjectsException doe)
                 {
                     // Catch error and list error details
                     DeleteObjectsResponse errorResponse = doe.Response;
 
-                    foreach (DeletedObject deletedObject in errorResponse.DeletedObjects)
+                    if (errorResponse.DeletedObjects != null)
                     {
-                        Console.WriteLine("Deleted item " + deletedObject.Key);
+                        foreach (DeletedObject deletedObject in errorResponse.DeletedObjects)
+                        {
+                            Console.WriteLine("Deleted item " + deletedObject.Key);
+                        }
                     }
-                    foreach (DeleteError deleteError in errorResponse.DeleteErrors)
+
+                    if (errorResponse.DeleteErrors != null)
                     {
-                        Console.WriteLine("Error deleting item " + deleteError.Key);
-                        Console.WriteLine(" Code - " + deleteError.Code);
-                        Console.WriteLine(" Message - " + deleteError.Message);
+                        foreach (DeleteError deleteError in errorResponse.DeleteErrors)
+                        {
+                            Console.WriteLine("Error deleting item " + deleteError.Key);
+                            Console.WriteLine(" Code - " + deleteError.Code);
+                            Console.WriteLine(" Message - " + deleteError.Message);
+                        }
                     }
                 }
 
@@ -513,7 +549,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Issue request
-                client.CopyObject(request);
+                await client.CopyObjectAsync(request);
 
                 #endregion
             }
@@ -535,7 +571,7 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Issue request
-                client.CopyObject(request);
+                await client.CopyObjectAsync(request);
 
                 #endregion
             }
@@ -547,14 +583,14 @@ namespace AWSSDKDocSamples.S3
                 AmazonS3Client client = new AmazonS3Client();
 
                 // Turn versioning on for a bucket
-                client.PutBucketVersioning(new PutBucketVersioningRequest
+                await client.PutBucketVersioningAsync(new PutBucketVersioningRequest
                 {
                     BucketName = "amzn-s3-demo-bucket",
                     VersioningConfig = new S3BucketVersioningConfig { Status = "Enable" }
                 });
 
                 // Populate bucket with multiple items, each with multiple versions
-                PopulateBucket(client, "amzn-s3-demo-bucket");
+                await PopulateBucket(client, "amzn-s3-demo-bucket");
 
                 // Get versions
                 ListVersionsRequest request = new ListVersionsRequest
@@ -566,21 +602,24 @@ namespace AWSSDKDocSamples.S3
                 ListVersionsResponse response;
                 do
                 {
-                    response = client.ListVersions(request);
+                    response = await client.ListVersionsAsync(request);
                     // View information about versions
-                    foreach (var version in response.Versions)
+                    if (response.Versions != null)
                     {
-                        Console.WriteLine("Key = {0}, Version = {1}, IsLatest = {2}, LastModified = {3}, Size = {4}",
-                            version.Key,
-                            version.VersionId,
-                            version.IsLatest,
-                            version.LastModified,
-                            version.Size);
+                        foreach (var version in response.Versions)
+                        {
+                            Console.WriteLine("Key = {0}, Version = {1}, IsLatest = {2}, LastModified = {3}, Size = {4}",
+                                version.Key,
+                                version.VersionId,
+                                version.IsLatest,
+                                version.LastModified,
+                                version.Size);
+                        }
                     }
 
                     request.KeyMarker = response.NextKeyMarker;
                     request.VersionIdMarker = response.NextVersionIdMarker;
-                } while (response.IsTruncated);
+                } while (response.IsTruncated.GetValueOrDefault());
 
                 #endregion
             }
@@ -602,7 +641,7 @@ namespace AWSSDKDocSamples.S3
                     BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1"
                 };
-                InitiateMultipartUploadResponse initResponse = client.InitiateMultipartUpload(initRequest);
+                InitiateMultipartUploadResponse initResponse = await client.InitiateMultipartUploadAsync(initRequest);
 
                 // Upload part 1
                 UploadPartRequest uploadRequest = new UploadPartRequest
@@ -614,7 +653,7 @@ namespace AWSSDKDocSamples.S3
                     PartSize = 5 * MB,
                     InputStream = inputStream
                 };
-                UploadPartResponse up1Response = client.UploadPart(uploadRequest);
+                UploadPartResponse up1Response = await client.UploadPartAsync(uploadRequest);
 
                 // Upload part 2
                 uploadRequest = new UploadPartRequest
@@ -626,7 +665,7 @@ namespace AWSSDKDocSamples.S3
                     PartSize = 5 * MB,
                     InputStream = inputStream
                 };
-                UploadPartResponse up2Response = client.UploadPart(uploadRequest);
+                UploadPartResponse up2Response = await client.UploadPartAsync(uploadRequest);
 
                 // Upload part 3
                 uploadRequest = new UploadPartRequest
@@ -637,7 +676,7 @@ namespace AWSSDKDocSamples.S3
                     PartNumber = 3,
                     InputStream = inputStream
                 };
-                UploadPartResponse up3Response = client.UploadPart(uploadRequest);
+                UploadPartResponse up3Response = await client.UploadPartAsync(uploadRequest);
 
                 // List parts for current upload
                 ListPartsRequest listPartRequest = new ListPartsRequest
@@ -646,7 +685,7 @@ namespace AWSSDKDocSamples.S3
                     Key = "Item1",
                     UploadId = initResponse.UploadId
                 };
-                ListPartsResponse listPartResponse = client.ListParts(listPartRequest);
+                ListPartsResponse listPartResponse = await client.ListPartsAsync(listPartRequest);
                 Debug.Assert(listPartResponse.Parts.Count == 3);
 
                 // Complete the multipart upload
@@ -662,7 +701,7 @@ namespace AWSSDKDocSamples.S3
                         new PartETag { ETag = up3Response.ETag, PartNumber = 3 }
                     }
                 };
-                CompleteMultipartUploadResponse compResponse = client.CompleteMultipartUpload(compRequest);
+                CompleteMultipartUploadResponse compResponse = await client.CompleteMultipartUploadAsync(compRequest);
 
                 #endregion
             }
@@ -673,9 +712,9 @@ namespace AWSSDKDocSamples.S3
             return null;
         }
 
-        private void PopulateBucket(IAmazonS3 client, string bucketName)
+        private async Task PopulateBucket(IAmazonS3 client, string bucketName)
         {
-            client.PutObject(new PutObjectRequest()
+            await client.PutObjectAsync(new PutObjectRequest()
             {
                 BucketName = bucketName,
                 Key = "Item",
@@ -684,7 +723,7 @@ namespace AWSSDKDocSamples.S3
 
             for (int i = 0; i < 20; i++)
             {
-                client.PutObject(new PutObjectRequest()
+                await client.PutObjectAsync(new PutObjectRequest()
                 {
                     BucketName = bucketName,
                     Key = "Item",
@@ -693,7 +732,7 @@ namespace AWSSDKDocSamples.S3
             }
         }
 
-        public void PresignedURLSamples()
+        public async Task PresignedURLSamples()
         {
             {
                 #region GetPreSignedURL Sample 1
@@ -710,10 +749,10 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Get path for request
-                string path = client.GetPreSignedURL(request);
+                string path = await client.GetPreSignedURLAsync(request);
 
                 // Test by getting contents
-                string contents = GetContents(path);
+                string contents = await GetContents(path);
 
                 #endregion
             }
@@ -739,10 +778,10 @@ namespace AWSSDKDocSamples.S3
                 request.ResponseHeaderOverrides.ContentEncoding = "x-gzip";
 
                 // Get path for request
-                string path = client.GetPreSignedURL(request);
+                string path = await client.GetPreSignedURLAsync(request);
 
                 // Test by getting contents
-                string contents = GetContents(path);
+                string contents = await GetContents(path);
 
                 #endregion
             }
@@ -761,10 +800,10 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Get path for request
-                string path = client.GetPreSignedURL(request);
+                string path = await client.GetPreSignedURLAsync(request);
 
                 // Retrieve objects
-                string allObjects = GetContents(path);
+                string allObjects = await GetContents(path);
 
                 #endregion
             }
@@ -782,10 +821,10 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Get path for request
-                string path = client.GetPreSignedURL(request);
+                string path = await client.GetPreSignedURLAsync(request);
 
                 // Retrieve buckets
-                string allBuckets = GetContents(path);
+                string allBuckets = await GetContents(path);
 
                 #endregion
             }
@@ -806,29 +845,24 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Get path for request
-                string path = client.GetPreSignedURL(request);
+                string path = await client.GetPreSignedURLAsync(request);
 
                 // Prepare data
                 byte[] data = UTF8Encoding.UTF8.GetBytes("Sample text.");
 
-                // Configure request
-                HttpWebRequest httpRequest = WebRequest.Create(path) as HttpWebRequest;
-                httpRequest.Method = "PUT";
-                httpRequest.ContentLength = data.Length;
+                using var httpClient = new HttpClient();
+                using var httpRequest = new HttpRequestMessage(HttpMethod.Put, path)
+                {
+                    Content = new ByteArrayContent(data)
+                };
 
-                // Write data to stream
-                Stream requestStream = httpRequest.GetRequestStream();
-                requestStream.Write(data, 0, data.Length);
-                requestStream.Close();
-
-                // Issue request
-                HttpWebResponse response = httpRequest.GetResponse() as HttpWebResponse;
+                using var httpResponse = await httpClient.SendAsync(httpRequest);
 
                 #endregion
             }
         }
 
-        public void AclSamples()
+        public async Task AclSamples()
         {
             {
                 #region PutACL Sample 1
@@ -837,20 +871,20 @@ namespace AWSSDKDocSamples.S3
                 AmazonS3Client client = new AmazonS3Client();
 
                 // Set Canned ACL (PublicRead) for an existing item
-                client.PutACL(new PutACLRequest
+                await client.PutObjectAclAsync(new PutObjectAclRequest
                 {
                     BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
-                    CannedACL = S3CannedACL.PublicRead
+                    ACL = S3CannedACL.PublicRead
                 });
 
                 // Set Canned ACL (PublicRead) for an existing item
                 // (This reverts ACL back to default for object)
-                client.PutACL(new PutACLRequest
+                await client.PutObjectAclAsync(new PutObjectAclRequest
                 {
                     BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
-                    CannedACL = S3CannedACL.Private
+                    ACL = S3CannedACL.Private
                 });
 
                 #endregion
@@ -863,14 +897,14 @@ namespace AWSSDKDocSamples.S3
                 AmazonS3Client client = new AmazonS3Client();
 
                 // Retrieve ACL for object
-                S3AccessControlList acl = client.GetACL(new GetACLRequest
+                var getResponse = (await client.GetObjectAclAsync(new GetObjectAclRequest
                 {
                     BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
-                }).AccessControlList;
+                }));
 
                 // Retrieve owner
-                Owner owner = acl.Owner;
+                Owner owner = getResponse.Owner;
 
 
                 // Describe grant
@@ -888,11 +922,11 @@ namespace AWSSDKDocSamples.S3
                 };
 
                 // Set new ACL
-                PutACLResponse response = client.PutACL(new PutACLRequest
+                var putResponse = await client.PutObjectAclAsync(new PutObjectAclRequest
                 {
                     BucketName = "amzn-s3-demo-bucket",
                     Key = "Item1",
-                    AccessControlList = acl
+                    AccessControlPolicy = newAcl
                 });
 
                 #endregion
@@ -901,24 +935,19 @@ namespace AWSSDKDocSamples.S3
 
         #region GetContents function
 
-        public static string GetContents(string path)
+        public static async Task<string> GetContents(string path)
         {
-            HttpWebRequest request = HttpWebRequest.Create(path) as HttpWebRequest;
-            HttpWebResponse response = request.GetResponse() as HttpWebResponse; 
-
-            using (Stream stream = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                return reader.ReadToEnd();
-            }
+            using var httpClient = new HttpClient();
+            return await httpClient.GetStringAsync(path);
         }
         
         #endregion
 
         #region ISample Members
 
-        public void Run()
+        public Task Run()
         {
+            return Task.CompletedTask;
         }
 
         #endregion

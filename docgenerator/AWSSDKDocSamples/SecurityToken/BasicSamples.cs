@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Amazon.SecurityToken;
 using AWSSDKDocSamples.Util;
 using Amazon.SecurityToken.Model;
@@ -25,8 +26,9 @@ namespace AWSSDKDocSamples.SecurityToken
 
         #region ISample Members
 
-        public virtual void Run()
+        public virtual Task Run()
         {
+            return Task.CompletedTask;
         }
 
         #endregion
@@ -34,17 +36,17 @@ namespace AWSSDKDocSamples.SecurityToken
 
     public class BasicSamples : StsSamplesBase
     {
-        public override void Run()
+        public override async Task Run()
         {
-            BasicStsSample();
+            await BasicStsSample();
         }
 
-        private void BasicStsSample()
+        private async Task BasicStsSample()
         {
             {
                 #region Sample 1
 
-                GetSessionTokenResponse response = Client.GetSessionToken();
+                GetSessionTokenResponse response = await Client.GetSessionTokenAsync();
                 Credentials credentials = response.Credentials;
                 Console.WriteLine("Access Key = {0}", credentials.AccessKeyId);
                 Console.WriteLine("Secret Key = {0}", credentials.SecretAccessKey);
@@ -56,7 +58,7 @@ namespace AWSSDKDocSamples.SecurityToken
             {
                 #region Sample 2
 
-                GetSessionTokenResponse response = Client.GetSessionToken(new GetSessionTokenRequest
+                GetSessionTokenResponse response = await Client.GetSessionTokenAsync(new GetSessionTokenRequest
                 {
                     DurationSeconds = (int)TimeSpan.FromHours(8).TotalSeconds
                 });
