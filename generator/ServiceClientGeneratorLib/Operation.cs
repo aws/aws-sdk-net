@@ -302,30 +302,9 @@ namespace ServiceClientGenerator
                 if (this.RequestStructure != null)
                 {
                     var payload = this.RequestStructure.PayloadMemberName;
-                    // check to see if the payload member has been overridden by another member defined in the service customizations
-                    // file. For example, the payload member could've been included in the "exclude" array and another member
-                    // could've been injected. 
-                    if (this.model.Customizations.ShapeModifiers.ContainsKey(this.RequestStructure.Name))
-                    {
-                        var customization = this.model.Customizations.ShapeModifiers[this.RequestStructure.Name];
-                        if (customization.IsExcludedProperty(payload))
-                        {
-                            foreach (var injectedProperty in customization.InjectedPropertyNames)
-                            {
-                                var propertyInjector = customization.InjectedPropertyData(injectedProperty);
-                                if (string.Equals(propertyInjector.Data[CustomizationsModel.OriginalMemberKey].ToString(), payload, StringComparison.OrdinalIgnoreCase))
-                                {
-                                    payload = injectedProperty;
-                                    break;
-                                }
-                                    
-                            }
-                        }
-                        
-                    }
                     if (!string.IsNullOrWhiteSpace(payload))
                     {
-                        return this.RequestStructure.Members.Single(m => 
+                        return this.RequestStructure.Members.Single(m =>
                             (m.HasModifier && m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase))
                             || (!m.HasModifier && m.ModeledName.Equals(payload, StringComparison.InvariantCultureIgnoreCase)));
                     }

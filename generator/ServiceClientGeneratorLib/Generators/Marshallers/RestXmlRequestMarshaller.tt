@@ -65,26 +65,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	ProcessHeaderMembers("publicRequest", this.Operation.RequestHeaderMembers);		
 	ProcessUriMembers("publicRequest", this.Operation);	
 	ProcessQueryStringMembers("publicRequest", this.Operation);
-	if (this.Config.ServiceId == "S3")
-	{
-		// even though RequestUri contains the bucket name in s3. In reality, the bucket Name
-		// is part of the endpoint so we remove it.
-		string resourcePath = string.Empty;
-		if (this.Operation.RequestUri.StartsWith("/{Bucket}"))
-			resourcePath = this.Operation.RequestUri.Substring(9).Length == 0 ? "/" :  this.Operation.RequestUri.Substring(9);
-		else
-			resourcePath = this.Operation.RequestUri;
-#>
-			request.ResourcePath = "<#=resourcePath#>";
-<#
-	}
-	else
-	{
 #>
 			request.ResourcePath = "<#=this.Operation.RequestUri #>";
-
 <#   
-	}
 	// Process any members which are marshalled as part of the request body
 	if(this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
