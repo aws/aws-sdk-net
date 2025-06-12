@@ -87,9 +87,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>WAITING_FOR_APPROVAL</c> - After a campaign is created, it enters the <c>WAITING_FOR_APPROVAL</c>
-        /// state. To allow Amazon Web Services IoT FleetWise to deploy the campaign to the target
-        /// vehicle or fleet, use the API operation to approve the campaign. 
+        ///  <c>WAITING_FOR_APPROVAL</c> - After you create a campaign, it enters this state.
+        /// Use the API operation to approve the campaign for deployment to the target vehicle
+        /// or fleet. 
         /// </para>
         ///  </li> <li> 
         /// <para>
