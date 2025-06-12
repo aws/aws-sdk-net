@@ -1044,16 +1044,23 @@ namespace Amazon.Util
                 var encoding = Encoding.UTF8;
 
                 var dataByteLength = encoding.GetMaxByteCount(dataAsSpan.Length);
-                var encodedByteLength = 2 * dataByteLength;
+
+                // The dataBuffer byte span will be used to store utf8 bytes of the data be encoded at the end and
+                // url encoded at the start of dataBuffer. As the utf8 bytes are iterated and percent encoded at the 
+                // beginning dataBuffer the utf8 bytes at the end will be overwritten by the percent encoding.
+                // The size of the dataBuffer needs to be 3 times the size utf8 max encoding to handle the worst
+                // case scenario of every character needing to be percent encoding taking 3 bytes. 
+                var encodedByteLength = 3 * dataByteLength;
                 var dataBuffer = encodedByteLength <= MaxStackLimit
                     ? stackalloc byte[MaxStackLimit]
                     : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
+
                 // Instead of stack allocating or renting two buffers we use one buffer with at least twice the capacity of the
                 // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer 
                 // for the encoded representation.
                 var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
                 var bytesWritten = encoding.GetBytes(dataAsSpan, encodingBuffer);
-            
+
                 var index = 0;
                 foreach (var symbol in encodingBuffer.Slice(0, bytesWritten))
                 {
