@@ -9,7 +9,7 @@ namespace ServiceClientGenerator
     /// <summary>
     /// The set of data protocols used by AWS services
     /// </summary>
-    public enum ServiceType { Json, Query, Rest_Xml, Rest_Json };
+    public enum ServiceType { Json, Query, Rest_Xml, Rest_Json, Cbor };
 
     /// <summary>
     /// Where the properties of the request should be placed
