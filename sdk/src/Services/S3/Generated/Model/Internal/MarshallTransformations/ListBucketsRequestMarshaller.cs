@@ -93,6 +93,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, ListBucketsRequest publicRequest );
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, ListBucketsRequest publicRequest);
     }    
 }

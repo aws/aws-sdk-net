@@ -104,6 +104,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, AbortMultipartUploadRequest publicRequest );
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, AbortMultipartUploadRequest publicRequest);
     }    
 }

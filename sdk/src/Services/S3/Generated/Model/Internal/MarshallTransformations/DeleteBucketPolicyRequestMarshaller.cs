@@ -88,6 +88,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, DeleteBucketPolicyRequest publicRequest );
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, DeleteBucketPolicyRequest publicRequest);
     }    
 }

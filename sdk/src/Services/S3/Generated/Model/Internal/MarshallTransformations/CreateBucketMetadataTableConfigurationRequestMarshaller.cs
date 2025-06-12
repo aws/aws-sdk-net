@@ -137,6 +137,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, CreateBucketMetadataTableConfigurationRequest publicRequest );
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, CreateBucketMetadataTableConfigurationRequest publicRequest);
     }    
 }
