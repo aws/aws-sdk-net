@@ -120,7 +120,7 @@ namespace ServiceClientGenerator
                             IncludePath = Utils.PathCombineAlt("..", "..", "Services", dependency, $"AWSSDK.{dependency}.{projectType}.csproj")
                         });
                     }
-                                        
+
                     projectReferenceList.Add(new ProjectReference
                     {
                         IncludePath = serviceConfiguration.IsTestService
@@ -128,9 +128,18 @@ namespace ServiceClientGenerator
                             : Utils.PathCombineAlt("..", "..", "Core", $"AWSSDK.Core.{projectType}.csproj")
                     });
 
+                    if (serviceConfiguration.ServiceModel.Type == ServiceType.Cbor)
+                    {
+                        projectReferenceList.Add(new ProjectReference
+                        {
+                            IncludePath =
+                                Utils.PathCombineAlt("..", "..", "..", "..", "extensions", "src", "AWSSDK.Extensions.CborProtocol", $"AWSSDK.Extensions.CborProtocol.{projectType}.csproj")
+                        });
+                    }
+
                     GenerateVS2017ProjectFile(serviceFilesRoot, serviceConfiguration, projectFileConfiguration, projectReferenceList);
                     continue;
-                }   
+                }
 
                 var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");
                 bool newProject = false;
