@@ -269,6 +269,10 @@ namespace ServiceClientGenerator
                 {
                     serviceType = "query";
                 }
+                else if (serviceType.Equals("smithy-rpc-v2-cbor", StringComparison.InvariantCulture))
+                {
+                    serviceType = "cbor";
+                }
 
                 if (!Enum.TryParse(serviceType, true, out ServiceType value))
                 {
@@ -288,6 +292,7 @@ namespace ServiceClientGenerator
         /// </summary>
         private readonly List<string> _supportedProtocols = new List<string>
         {
+            "smithy-rpc-v2-cbor",
             "json",
             "rest-json",
             "rest-xml",
