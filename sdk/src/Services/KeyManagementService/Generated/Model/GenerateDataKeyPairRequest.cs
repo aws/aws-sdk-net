@@ -311,9 +311,10 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt
-        /// and decrypt or to sign and verify (but not both), and the rule that permits you to
-        /// use ECC KMS keys only to sign and verify, are not effective on data key pairs, which
-        /// are used outside of KMS. The SM2 key spec is only available in China Regions.
+        /// and decrypt or to sign and verify (but not both), the rule that permits you to use
+        /// ECC KMS keys only to sign and verify, and the rule that permits you to use ML-DSA
+        /// key pairs to sign and verify only are not effective on data key pairs, which are used
+        /// outside of KMS. The SM2 key spec is only available in China Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

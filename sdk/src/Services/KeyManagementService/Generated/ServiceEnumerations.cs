@@ -1137,6 +1137,18 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly KeySpec HMAC_512 = new KeySpec("HMAC_512");
         /// <summary>
+        /// Constant ML_DSA_44 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ML_DSA_44 = new KeySpec("ML_DSA_44");
+        /// <summary>
+        /// Constant ML_DSA_65 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ML_DSA_65 = new KeySpec("ML_DSA_65");
+        /// <summary>
+        /// Constant ML_DSA_87 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ML_DSA_87 = new KeySpec("ML_DSA_87");
+        /// <summary>
         /// Constant RSA_2048 for KeySpec
         /// </summary>
         public static readonly KeySpec RSA_2048 = new KeySpec("RSA_2048");
@@ -1393,6 +1405,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly MessageType DIGEST = new MessageType("DIGEST");
         /// <summary>
+        /// Constant EXTERNAL_MU for MessageType
+        /// </summary>
+        public static readonly MessageType EXTERNAL_MU = new MessageType("EXTERNAL_MU");
+        /// <summary>
         /// Constant RAW for MessageType
         /// </summary>
         public static readonly MessageType RAW = new MessageType("RAW");
@@ -1608,6 +1624,10 @@ namespace Amazon.KeyManagementService
         /// Constant ECDSA_SHA_512 for SigningAlgorithmSpec
         /// </summary>
         public static readonly SigningAlgorithmSpec ECDSA_SHA_512 = new SigningAlgorithmSpec("ECDSA_SHA_512");
+        /// <summary>
+        /// Constant ML_DSA_SHAKE_256 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ML_DSA_SHAKE_256 = new SigningAlgorithmSpec("ML_DSA_SHAKE_256");
         /// <summary>
         /// Constant RSASSA_PKCS1_V1_5_SHA_256 for SigningAlgorithmSpec
         /// </summary>
