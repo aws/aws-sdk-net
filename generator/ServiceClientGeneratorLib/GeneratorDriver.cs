@@ -237,7 +237,7 @@ namespace ServiceClientGenerator
             }
 
             var operations = Configuration.Namespace == "Amazon.S3" ? Configuration.ServiceModel.S3AllowListOperations : Configuration.ServiceModel.Operations;
-
+            // Generates the Request, Response, Marshaller, Unmarshaller, and Exception objects for a given client operation
             foreach (var operation in operations)
             {
                 GenerateRequest(operation);
@@ -249,8 +249,6 @@ namespace ServiceClientGenerator
                 GenerateStructures(operation);
                 GenerateEventStreamPublisher(operation);
             }
-                // Generates the Request, Response, Marshaller, Unmarshaller, and Exception objects for a given client operation
-
 
             if (Configuration.ServiceModel.Customizations.GenerateCustomUnmarshaller)
             {
