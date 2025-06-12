@@ -43,6 +43,11 @@ namespace Amazon.EntityResolution.Model
         /// The Amazon Web Services account that provider can use to read or write data into the
         /// customer's intermediate S3 bucket.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AwsAccountIds
         {
@@ -61,6 +66,11 @@ namespace Amazon.EntityResolution.Model
         /// <para>
         /// The S3 bucket actions that the provider requires permission for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RequiredBucketActions
         {

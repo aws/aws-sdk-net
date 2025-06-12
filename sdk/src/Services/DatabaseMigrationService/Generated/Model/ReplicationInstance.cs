@@ -432,6 +432,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// One or more IPv6 addresses for the replication instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReplicationInstanceIpv6Addresses
         {
@@ -469,6 +474,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// One or more private IP addresses for the replication instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReplicationInstancePrivateIpAddresses
         {
@@ -506,6 +516,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// One or more public IP addresses for the replication instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReplicationInstancePublicIpAddresses
         {
@@ -631,6 +646,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The VPC security group for the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups
         {

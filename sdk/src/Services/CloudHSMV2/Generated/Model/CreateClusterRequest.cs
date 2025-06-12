@@ -162,6 +162,11 @@ namespace Amazon.CloudHSMV2.Model
         /// You can specify only one subnet per Availability Zone.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> SubnetIds
@@ -181,6 +186,11 @@ namespace Amazon.CloudHSMV2.Model
         /// <para>
         /// Tags to apply to the CloudHSM cluster during creation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> TagList

@@ -284,6 +284,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be <c>Default</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CacheSecurityGroupNames
         {
@@ -390,6 +395,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Specifies the destination, format and type of the logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LogDeliveryConfigurationRequest> LogDeliveryConfigurations
         {
@@ -629,6 +639,11 @@ namespace Amazon.ElastiCache.Model
         /// This parameter can be used only with replication group containing clusters running
         /// in an Amazon Virtual Private Cloud (Amazon VPC).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -773,6 +788,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The ID of the user group you are associating with the replication group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> UserGroupIdsToAdd
         {
@@ -792,6 +812,11 @@ namespace Amazon.ElastiCache.Model
         /// The ID of the user group to disassociate from the replication group, meaning the users
         /// in the group no longer can access the replication group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> UserGroupIdsToRemove
         {

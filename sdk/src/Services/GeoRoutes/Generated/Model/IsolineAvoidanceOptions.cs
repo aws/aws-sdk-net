@@ -54,6 +54,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Areas to be avoided.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IsolineAvoidanceArea> Areas
         {
@@ -204,6 +209,11 @@ namespace Amazon.GeoRoutes.Model
         /// There are currently no other supported values as of 26th April 2024.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=12)]
         public List<string> TruckRoadTypes
@@ -259,6 +269,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Zone categories to be avoided.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<IsolineAvoidanceZoneCategory> ZoneCategories

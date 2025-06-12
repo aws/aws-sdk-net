@@ -56,6 +56,11 @@ namespace Amazon.ComprehendMedical.Model
         /// that is an attribute of an entity, or otherwise related to an entity, such as the
         /// nature of a medical condition.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ICD10CMAttribute> Attributes
         {
@@ -132,6 +137,11 @@ namespace Amazon.ComprehendMedical.Model
         /// The ICD-10-CM concepts that the entity could refer to, along with a score indicating
         /// the likelihood of the match.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ICD10CMConcept> ICD10CMConcepts
         {
@@ -208,6 +218,11 @@ namespace Amazon.ComprehendMedical.Model
         /// Provides Contextual information for the entity. The traits recognized by InferICD10CM
         /// are <c>DIAGNOSIS</c>, <c>SIGN</c>, <c>SYMPTOM</c>, and <c>NEGATION.</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ICD10CMTrait> Traits
         {

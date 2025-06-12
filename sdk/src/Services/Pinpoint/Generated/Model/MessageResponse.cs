@@ -65,6 +65,11 @@ namespace Amazon.Pinpoint.Model
         /// A map that contains a multipart response for each address that the message was sent
         /// to. In the map, the endpoint ID is the key and the result is the value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, EndpointMessageResult> EndpointResult
         {
@@ -103,6 +108,11 @@ namespace Amazon.Pinpoint.Model
         /// or push notification token) that the message was sent to. In the map, the address
         /// is the key and the result is the value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, MessageResult> Result
         {

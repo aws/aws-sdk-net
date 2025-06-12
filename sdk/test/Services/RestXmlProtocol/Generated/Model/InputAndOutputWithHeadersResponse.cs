@@ -53,6 +53,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property HeaderBooleanList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<bool> HeaderBooleanList
         {
@@ -113,6 +118,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property HeaderEnumList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HeaderEnumList
         {
@@ -173,6 +183,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property HeaderIntegerList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> HeaderIntegerList
         {
@@ -233,6 +248,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property HeaderStringList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HeaderStringList
         {
@@ -248,6 +268,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property HeaderStringSet.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HeaderStringSet
         {
@@ -263,6 +288,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property HeaderTimestampList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateTime> HeaderTimestampList
         {

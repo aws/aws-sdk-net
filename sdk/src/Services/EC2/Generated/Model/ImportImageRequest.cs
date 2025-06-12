@@ -182,6 +182,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Information about the disk containers.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ImageDiskContainer> DiskContainers
         {
@@ -323,6 +328,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ARNs of the license configurations.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ImportImageLicenseConfigurationRequest> LicenseSpecifications
         {
@@ -416,6 +426,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tags to apply to the import image task during creation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TagSpecification> TagSpecifications
         {

@@ -117,6 +117,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// users can enter as an alternative username. Possible values: <b>phone_number</b>,
         /// <b>email</b>, or <b>preferred_username</b>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AliasAttributes
         {
@@ -154,6 +159,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The attributes that are auto-verified in a user pool.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AutoVerifiedAttributes
         {
@@ -522,6 +532,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// all app clients. You can create and update developer-only attributes only with IAM-authenticated
         /// API operations. Use app client read/write permissions instead.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<SchemaAttributeType> SchemaAttributes
@@ -680,6 +695,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Specifies whether a user can use an email address or phone number as a username when
         /// they sign up.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> UsernameAttributes
         {
@@ -753,6 +773,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// user pools to categorize and manage them in different ways, such as by purpose, owner,
         /// environment, or other criteria.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> UserPoolTags
         {

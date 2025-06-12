@@ -67,8 +67,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v20180820/storagelensgroup";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListStorageLensGroupsRequestMarshaller _instance = new ListStorageLensGroupsRequestMarshaller();        

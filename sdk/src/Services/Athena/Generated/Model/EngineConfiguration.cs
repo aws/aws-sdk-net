@@ -50,6 +50,11 @@ namespace Amazon.Athena.Model
         /// field, and then add a key named <c>NotebookId</c> to <c>AdditionalConfigs</c> that
         /// has the value of the Athena notebook ID.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> AdditionalConfigs
         {
@@ -129,6 +134,11 @@ namespace Amazon.Athena.Model
         /// Specifies custom jar files and Spark properties for use cases like cluster encryption,
         /// table formats, and general Spark tuning.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> SparkProperties
         {

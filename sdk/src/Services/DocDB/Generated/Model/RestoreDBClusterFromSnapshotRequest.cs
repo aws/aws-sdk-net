@@ -68,6 +68,11 @@ namespace Amazon.DocDB.Model
         /// Provides the list of Amazon EC2 Availability Zones that instances in the restored
         /// DB cluster can be created in.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AvailabilityZones
         {
@@ -201,6 +206,11 @@ namespace Amazon.DocDB.Model
         /// <para>
         /// A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
         {
@@ -397,6 +407,11 @@ namespace Amazon.DocDB.Model
         /// <para>
         /// The tags to be assigned to the restored cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {
@@ -416,6 +431,11 @@ namespace Amazon.DocDB.Model
         /// A list of virtual private cloud (VPC) security groups that the new cluster will belong
         /// to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> VpcSecurityGroupIds
         {

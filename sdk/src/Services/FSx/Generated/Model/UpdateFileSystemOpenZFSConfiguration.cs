@@ -51,6 +51,11 @@ namespace Amazon.FSx.Model
         /// (Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate
         /// (add) with your Amazon FSx for OpenZFS file system.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> AddRouteTableIds
@@ -185,6 +190,11 @@ namespace Amazon.FSx.Model
         /// to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use
         /// the API operation to retrieve the list of VPC route table IDs for a file system.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> RemoveRouteTableIds

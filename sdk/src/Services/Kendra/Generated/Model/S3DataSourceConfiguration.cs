@@ -166,6 +166,11 @@ namespace Amazon.Kendra.Model
         /// For more examples, see <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use
         /// of Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> ExclusionPatterns
@@ -228,6 +233,11 @@ namespace Amazon.Kendra.Model
         /// For more examples, see <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use
         /// of Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPatterns
@@ -247,6 +257,11 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// A list of S3 prefixes for the documents that should be included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPrefixes

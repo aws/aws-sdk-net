@@ -66,6 +66,11 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ChannelPlacementGroups. An array of IDs. Each ID is one
         /// ChannelPlacementGroup that is associated with this Node. Empty if the Node is not
         /// yet associated with any groups.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ChannelPlacementGroups
         {
@@ -158,6 +163,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property NodeInterfaceMappings. Documentation update needed
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NodeInterfaceMapping> NodeInterfaceMappings
         {
@@ -192,6 +202,11 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SdiSourceMappings. An array of SDI source mappings. Each
         /// mapping connects one logical SdiSource to the physical SDI card and port that the
         /// physical SDI source uses.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SdiSourceMapping> SdiSourceMappings
         {

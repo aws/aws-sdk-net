@@ -188,6 +188,11 @@ namespace Amazon.GameLift.Model
         /// requests in the queue. Destinations are identified by either a fleet ARN or a fleet
         /// alias ARN, and are listed in order of placement preference.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GameSessionQueueDestination> Destinations
         {
@@ -270,6 +275,11 @@ namespace Amazon.GameLift.Model
         /// time if Amazon GameLift can't make a placement. Policies are evaluated in order starting
         /// with the lowest maximum latency value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PlayerLatencyPolicy> PlayerLatencyPolicies
         {
@@ -312,6 +322,11 @@ namespace Amazon.GameLift.Model
         /// access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
         /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

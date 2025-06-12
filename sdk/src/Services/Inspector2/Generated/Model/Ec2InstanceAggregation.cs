@@ -46,6 +46,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<StringFilter> Amis
@@ -65,6 +70,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The Amazon EC2 instance IDs to aggregate findings for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<StringFilter> InstanceIds
@@ -84,6 +94,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The Amazon EC2 instance tags to aggregate findings for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<MapFilter> InstanceTags
@@ -104,6 +119,11 @@ namespace Amazon.Inspector2.Model
         /// The operating system types to aggregate findings for. Valid values must be uppercase
         /// and underscore separated, examples are <c>ORACLE_LINUX_7</c> and <c>ALPINE_LINUX_3_8</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<StringFilter> OperatingSystems

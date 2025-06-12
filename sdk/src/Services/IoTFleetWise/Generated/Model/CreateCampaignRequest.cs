@@ -141,6 +141,11 @@ namespace Amazon.IoTFleetWise.Model
         /// You can use Amazon Timestream to access and analyze time series data, and Timestream
         /// to query vehicle data so that you can identify trends and patterns.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
         public List<DataDestinationConfig> DataDestinationConfigs
@@ -171,6 +176,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         /// Default: An empty array
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=5)]
         public List<string> DataExtraDimensions
@@ -190,6 +200,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         /// The data partitions associated with the signals collected from the vehicle.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<DataPartition> DataPartitions
@@ -370,6 +385,11 @@ namespace Amazon.IoTFleetWise.Model
         /// same signals must be included in <c>signalsToCollect</c>.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1000)]
         public List<SignalInformation> SignalsToCollect
@@ -389,6 +409,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         /// A list of information about signals to fetch.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=2)]
         public List<SignalFetchInformation> SignalsToFetch
@@ -457,6 +482,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         /// Metadata that can be used to manage the campaign.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

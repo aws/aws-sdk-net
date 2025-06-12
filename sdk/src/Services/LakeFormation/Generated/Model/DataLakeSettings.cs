@@ -108,6 +108,11 @@ namespace Amazon.LakeFormation.Model
         /// = "TRUE" and the third party integrator must properly tag the temporary security credentials
         /// that will be used to call Lake Formation's administrative APIs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AuthorizedSessionTagValueList
         {
@@ -144,6 +149,11 @@ namespace Amazon.LakeFormation.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
         /// the Default Security Settings for Your Data Lake</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PrincipalPermissions> CreateDatabaseDefaultPermissions
         {
@@ -180,6 +190,11 @@ namespace Amazon.LakeFormation.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
         /// the Default Security Settings for Your Data Lake</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PrincipalPermissions> CreateTableDefaultPermissions
         {
@@ -198,6 +213,11 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// A list of Lake Formation principals. Supported principals are IAM users or IAM roles.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public List<DataLakePrincipal> DataLakeAdmins
@@ -218,6 +238,11 @@ namespace Amazon.LakeFormation.Model
         /// A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters
         /// that are to perform data filtering.&gt;
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public List<DataLakePrincipal> ExternalDataFilteringAllowList
@@ -239,6 +264,11 @@ namespace Amazon.LakeFormation.Model
         /// is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion
         /// key are 1, 2, 3, and 4.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Parameters
         {
@@ -258,6 +288,11 @@ namespace Amazon.LakeFormation.Model
         /// A list of Lake Formation principals with only view access to the resources, without
         /// the ability to make changes. Supported principals are IAM users or IAM roles.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public List<DataLakePrincipal> ReadOnlyAdmins
@@ -284,6 +319,11 @@ namespace Amazon.LakeFormation.Model
         /// You may want to specify this property when you are in a high-trust boundary, such
         /// as the same team or company. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> TrustedResourceOwners
         {

@@ -214,6 +214,11 @@ namespace Amazon.SageMaker.Model
         /// Configuration information for Amazon SageMaker Debugger rules for debugging output
         /// tensors.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<DebugRuleConfiguration> DebugRuleConfigurations
@@ -315,6 +320,11 @@ namespace Amazon.SageMaker.Model
         /// environment variable or plain text fields.
         /// </para>
         ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Environment
@@ -367,6 +377,11 @@ namespace Amazon.SageMaker.Model
         /// the request hyperparameter variable or plain text fields.
         /// </para>
         ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> HyperParameters
@@ -425,6 +440,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Your input must be in the same Amazon Web Services region as your training job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<Channel> InputDataConfig
@@ -480,6 +500,11 @@ namespace Amazon.SageMaker.Model
         /// Configuration information for Amazon SageMaker Debugger rules for profiling system
         /// and framework metrics.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<ProfilerRuleConfiguration> ProfilerRuleConfigurations
@@ -659,6 +684,11 @@ namespace Amazon.SageMaker.Model
         /// or plain text fields.
         /// </para>
         ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

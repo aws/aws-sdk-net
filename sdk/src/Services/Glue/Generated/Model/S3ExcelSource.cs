@@ -89,6 +89,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Patterns to exclude specific files or paths from processing.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Exclusions
         {
@@ -218,6 +223,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The AWS Glue schemas to apply to the processed data.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GlueSchema> OutputSchemas
         {
@@ -236,6 +246,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The S3 paths where the Excel files are located.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Paths

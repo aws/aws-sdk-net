@@ -120,6 +120,11 @@ namespace Amazon.CleanRoomsML.Model
         /// <para>
         /// The data channels that were used for the trained model.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
         public List<ModelTrainingDataChannel> DataChannels
@@ -158,6 +163,11 @@ namespace Amazon.CleanRoomsML.Model
         /// <para>
         /// The EC2 environment that was used to create the trained model.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Environment
@@ -177,6 +187,11 @@ namespace Amazon.CleanRoomsML.Model
         /// <para>
         /// The hyperparameters that were used to create the trained model.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Hyperparameters
@@ -440,6 +455,11 @@ namespace Amazon.CleanRoomsML.Model
         /// per resource limit.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public Dictionary<string, string> Tags

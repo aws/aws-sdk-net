@@ -163,6 +163,11 @@ namespace Amazon.EKS.Model
         /// <para>
         /// Amazon Web Services License Manager ARN associated with the subscription.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> LicenseArns
         {
@@ -201,6 +206,11 @@ namespace Amazon.EKS.Model
         /// Includes all of the claims in the license token necessary to validate the license
         /// for extended support.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<License> Licenses
         {
@@ -258,6 +268,11 @@ namespace Amazon.EKS.Model
         /// tag consists of a key and an optional value. Subscription tags do not propagate to
         /// any other resources associated with the subscription.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

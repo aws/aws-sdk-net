@@ -108,6 +108,11 @@ namespace Amazon.VPCLattice.Model
         /// The IDs of the security groups to apply to the resource gateway. The security groups
         /// must be in the same VPC.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<string> SecurityGroupIds
@@ -127,6 +132,11 @@ namespace Amazon.VPCLattice.Model
         /// <para>
         /// The IDs of the VPC subnets in which to create the resource gateway.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SubnetIds
@@ -146,6 +156,11 @@ namespace Amazon.VPCLattice.Model
         /// <para>
         /// The tags for the resource gateway.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public Dictionary<string, string> Tags

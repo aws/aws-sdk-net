@@ -123,6 +123,11 @@ namespace Amazon.DLM.Model
         /// can be copied to up to three Regions or Outposts.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<CrossRegionCopyRule> CrossRegionCopyRules
@@ -216,6 +221,11 @@ namespace Amazon.DLM.Model
         ///  <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other
         /// Amazon Web Services accounts.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<ShareRule> ShareRules
@@ -236,6 +246,11 @@ namespace Amazon.DLM.Model
         /// The tags to apply to policy-created resources. These user-defined tags are in addition
         /// to the Amazon Web Services-added lifecycle tags.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=45)]
         public List<Tag> TagsToAdd
@@ -259,6 +274,11 @@ namespace Amazon.DLM.Model
         /// formats: <c>$(instance-id)</c> or <c>$(timestamp)</c>. Variable tags are only valid
         /// for EBS Snapshot Management – Instance policies.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=45)]
         public List<Tag> VariableTags

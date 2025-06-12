@@ -54,6 +54,11 @@ namespace Amazon.LexModelsV2.Model
         /// A list of events that affect a bot alias. For example, an event is recorded when the
         /// version that the alias points to changes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BotAliasHistoryEvent> BotAliasHistoryEvents
         {
@@ -91,6 +96,11 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// The locale settings that are unique to the alias.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public Dictionary<string, BotAliasLocaleSettings> BotAliasLocaleSettings
@@ -260,6 +270,11 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// A list of the networks to which the bot alias you described belongs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public List<ParentBotNetwork> ParentBotNetworks

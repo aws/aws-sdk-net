@@ -162,6 +162,11 @@ namespace Amazon.Neptune.Model
         /// The types of logs that the database engine has available for export to CloudWatch
         /// Logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ExportableLogTypes
         {
@@ -180,6 +185,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  <i>(Not supported by Neptune)</i> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CharacterSet> SupportedCharacterSets
         {
@@ -199,6 +209,11 @@ namespace Amazon.Neptune.Model
         /// A list of the time zones supported by this engine for the <c>Timezone</c> parameter
         /// of the <c>CreateDBInstance</c> action.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Timezone> SupportedTimezones
         {
@@ -273,6 +288,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// A list of engine versions that this database engine version can be upgraded to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UpgradeTarget> ValidUpgradeTarget
         {

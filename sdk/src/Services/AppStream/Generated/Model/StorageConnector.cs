@@ -63,6 +63,11 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The names of the domains for the account.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> Domains
@@ -84,6 +89,11 @@ namespace Amazon.AppStream.Model
         /// link their OneDrive account to AppStream 2.0. The attribute can only be specified
         /// when ConnectorType=ONE_DRIVE.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> DomainsRequireAdminConsent

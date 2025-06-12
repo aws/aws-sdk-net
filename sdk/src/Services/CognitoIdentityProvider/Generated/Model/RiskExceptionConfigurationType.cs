@@ -44,6 +44,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// An always-block IP address list. Overrides the risk decision and always blocks authentication
         /// requests. This parameter is displayed and set in CIDR notation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<string> BlockedIPRangeList
@@ -64,6 +69,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// An always-allow IP address list. Risk detection isn't performed on the IP addresses
         /// in this range list. This parameter is displayed and set in CIDR notation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<string> SkippedIPRangeList

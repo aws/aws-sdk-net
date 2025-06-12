@@ -69,6 +69,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// authentication</a>. For example, they might be able to choose between passkey authentication,
         /// a one-time password from an SMS message, and a traditional password.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AvailableChallenges
         {
@@ -219,6 +224,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// All challenges require <c>USERNAME</c>. They also require <c>SECRET_HASH</c> if your
         /// app client has a client secret.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> ChallengeParameters
         {

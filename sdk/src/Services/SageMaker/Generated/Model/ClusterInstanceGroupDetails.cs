@@ -113,6 +113,11 @@ namespace Amazon.SageMaker.Model
         /// The additional storage configurations for the instances in the SageMaker HyperPod
         /// cluster instance group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<ClusterInstanceStorageConfig> InstanceStorageConfigs
@@ -169,6 +174,11 @@ namespace Amazon.SageMaker.Model
         /// A flag indicating whether deep health checks should be performed when the cluster
         /// instance group is created or updated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
         public List<string> OnStartDeepHealthChecks

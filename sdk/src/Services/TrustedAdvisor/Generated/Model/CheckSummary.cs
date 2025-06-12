@@ -67,6 +67,11 @@ namespace Amazon.TrustedAdvisor.Model
         /// <para>
         /// The AWS Services that the Check applies to
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> AwsServices
@@ -124,6 +129,11 @@ namespace Amazon.TrustedAdvisor.Model
         /// <para>
         /// The column headings for the metadata returned in the resource
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> Metadata
@@ -162,6 +172,11 @@ namespace Amazon.TrustedAdvisor.Model
         /// <para>
         /// The Recommendation pillars that the AWS Trusted Advisor Check falls under
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Pillars

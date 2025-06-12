@@ -51,6 +51,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The lower bound values for the projected metric. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> LowerBoundValues
         {
@@ -101,6 +106,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The timestamps of the projected metric. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateTime> Timestamps
         {
@@ -119,6 +129,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The upper bound values for the projected metric. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> UpperBoundValues
         {

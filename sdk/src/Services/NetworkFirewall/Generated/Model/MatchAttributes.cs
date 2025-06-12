@@ -54,6 +54,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// This setting is only used for protocols 6 (TCP) and 17 (UDP). 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PortRange> DestinationPorts
         {
@@ -73,6 +78,11 @@ namespace Amazon.NetworkFirewall.Model
         /// The destination IP addresses and address ranges to inspect for, in CIDR notation.
         /// If not specified, this matches with any destination address. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Address> Destinations
         {
@@ -92,6 +102,11 @@ namespace Amazon.NetworkFirewall.Model
         /// The protocols to inspect for, specified using the assigned internet protocol number
         /// (IANA) for each protocol. If not specified, this matches with any protocol.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> Protocols
         {
@@ -120,6 +135,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// This setting is only used for protocols 6 (TCP) and 17 (UDP).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PortRange> SourcePorts
         {
@@ -139,6 +159,11 @@ namespace Amazon.NetworkFirewall.Model
         /// The source IP addresses and address ranges to inspect for, in CIDR notation. If not
         /// specified, this matches with any source address. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Address> Sources
         {
@@ -158,6 +183,11 @@ namespace Amazon.NetworkFirewall.Model
         /// The TCP flags and masks to inspect for. If not specified, this matches with any settings.
         /// This setting is only used for protocol 6 (TCP).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TCPFlagField> TCPFlags
         {

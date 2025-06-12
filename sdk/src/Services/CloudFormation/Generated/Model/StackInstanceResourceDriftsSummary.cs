@@ -89,6 +89,11 @@ namespace Amazon.CloudFormation.Model
         /// aren't enough to uniquely identify that resource. Each context key-value pair specifies
         /// a unique resource that contains the targeted resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=5)]
         public List<PhysicalResourceIdContextKeyValuePair> PhysicalResourceIdContext
@@ -110,6 +115,11 @@ namespace Amazon.CloudFormation.Model
         /// These will be present only for resources whose <c>StackInstanceResourceDriftStatus</c>
         /// is <c>MODIFIED</c>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PropertyDifference> PropertyDifferences
         {

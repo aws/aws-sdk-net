@@ -94,6 +94,11 @@ namespace Amazon.IdentityManagement.Model
         /// A list of managed policies attached to the role. These policies are the role's access
         /// (permissions) policies.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AttachedPolicyType> AttachedManagedPolicies
         {
@@ -131,6 +136,11 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A list of instance profiles that contain this role.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InstanceProfile> InstanceProfileList
         {
@@ -256,6 +266,11 @@ namespace Amazon.IdentityManagement.Model
         /// A list of inline policies embedded in the role. These policies are the role's access
         /// (permissions) policies.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PolicyDetail> RolePolicyList
         {
@@ -276,6 +291,11 @@ namespace Amazon.IdentityManagement.Model
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
         /// IAM resources</a> in the <i>IAM User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<Tag> Tags

@@ -136,6 +136,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The input artifacts of the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
         public Dictionary<string, TrialComponentArtifact> InputArtifacts
@@ -222,6 +227,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The metrics for the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TrialComponentMetricSummary> Metrics
         {
@@ -240,6 +250,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The output artifacts of the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
         public Dictionary<string, TrialComponentArtifact> OutputArtifacts
@@ -259,6 +274,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The hyperparameters of the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
         public Dictionary<string, TrialComponentParameterValue> Parameters
@@ -279,6 +299,11 @@ namespace Amazon.SageMaker.Model
         /// An array of the parents of the component. A parent is a trial the component is associated
         /// with and the experiment the trial is part of. A component might not have any parents.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Parent> Parents
         {
@@ -386,6 +411,11 @@ namespace Amazon.SageMaker.Model
         /// The list of tags that are associated with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
         /// API to search on the tags.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

@@ -50,6 +50,11 @@ namespace Amazon.Proton.Model
         /// version. A service instance based on this service template version can run in environments
         /// based on compatible templates.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CompatibleEnvironmentTemplateInput> CompatibleEnvironmentTemplates
@@ -155,6 +160,11 @@ namespace Amazon.Proton.Model
         /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
         /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedComponentSources
         {

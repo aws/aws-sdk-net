@@ -59,6 +59,11 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NetworkRoutes. If the push input has an input location
         /// of ON-PREM it's a requirement to specify what the route of the inputis going to be
         /// on the customer local network.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputRequestDestinationRoute> NetworkRoutes
         {

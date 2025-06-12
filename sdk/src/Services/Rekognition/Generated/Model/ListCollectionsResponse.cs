@@ -43,6 +43,11 @@ namespace Amazon.Rekognition.Model
         /// <para>
         /// An array of collection IDs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CollectionIds
         {
@@ -63,6 +68,11 @@ namespace Amazon.Rekognition.Model
         /// array <c>CollectionIds</c>. For example, the value of <c>FaceModelVersions[2]</c>
         /// is the version number for the face detection model used by the collection in <c>CollectionId[2]</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> FaceModelVersions
         {

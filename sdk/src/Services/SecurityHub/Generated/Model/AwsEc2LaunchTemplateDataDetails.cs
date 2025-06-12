@@ -71,6 +71,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Information about a block device mapping for an Amazon EC2 launch template. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails> BlockDeviceMappingSet
         {
@@ -203,6 +208,11 @@ namespace Amazon.SecurityHub.Model
         ///  Provides details about Elastic Graphics accelerators to associate with the instance.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails> ElasticGpuSpecificationSet
         {
@@ -221,6 +231,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The Amazon Elastic Inference accelerator for the instance. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails> ElasticInferenceAcceleratorSet
         {
@@ -424,6 +439,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Specifies a license configuration for an instance. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2LaunchTemplateDataLicenseSetDetails> LicenseSet
         {
@@ -498,6 +518,11 @@ namespace Amazon.SecurityHub.Model
         ///  Specifies the parameters for a network interface that is attached to the instance.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails> NetworkInterfaceSet
         {
@@ -570,6 +595,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  One or more security group IDs. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIdSet
         {
@@ -590,6 +620,11 @@ namespace Amazon.SecurityHub.Model
         /// IDs instead. You cannot specify both a security group ID and security name in the
         /// same request. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupSet
         {

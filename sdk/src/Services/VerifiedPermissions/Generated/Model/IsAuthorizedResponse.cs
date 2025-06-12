@@ -67,6 +67,11 @@ namespace Amazon.VerifiedPermissions.Model
         /// permit policies then there would be multiple determining policies. In the case that
         /// no policies match, and hence the response is DENY, there would be no determining policies.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<DeterminingPolicyItem> DeterminingPolicies
@@ -87,6 +92,11 @@ namespace Amazon.VerifiedPermissions.Model
         /// Errors that occurred while making an authorization decision, for example, a policy
         /// references an Entity or entity Attribute that does not exist in the slice.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<EvaluationErrorItem> Errors

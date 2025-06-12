@@ -85,6 +85,11 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// A list of messages with additional information about the data returned.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MessageData> Messages
         {
@@ -128,6 +133,11 @@ namespace Amazon.CloudWatch.Model
         /// of timestamps always matches the number of values and the value for Timestamps[x]
         /// is Values[x].
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateTime> Timestamps
         {
@@ -147,6 +157,11 @@ namespace Amazon.CloudWatch.Model
         /// The data points for the metric corresponding to <c>Timestamps</c>. The number of values
         /// always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> Values
         {

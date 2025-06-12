@@ -79,6 +79,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// An array of the names and ARNs of the log groups included in this Live Tail session.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> LogGroupIdentifiers
@@ -100,6 +105,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// that filtered the session to only include log streams that have names that start with
         /// certain prefixes, these prefixes are listed here.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> LogStreamNamePrefixes
@@ -121,6 +131,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// that filtered the session to only include certain log streams, these streams are listed
         /// here.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> LogStreamNames

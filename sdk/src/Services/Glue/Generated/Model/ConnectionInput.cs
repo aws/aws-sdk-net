@@ -52,6 +52,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Connection properties specific to the Athena compute environment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> AthenaProperties
         {
@@ -88,6 +93,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// These key-value pairs define parameters for the connection.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
         public Dictionary<string, string> ConnectionProperties
@@ -376,6 +386,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// A list of criteria that can be used in selecting this connection.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<string> MatchCriteria
@@ -433,6 +448,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Connection properties specific to the Python compute environment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> PythonProperties
         {
@@ -451,6 +471,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Connection properties specific to the Spark compute environment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> SparkProperties
         {
@@ -487,6 +512,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The compute environments that the specified connection properties are validated against.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ValidateForComputeEnvironments
         {

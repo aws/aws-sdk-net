@@ -88,6 +88,11 @@ namespace Amazon.Glue.Model
         /// on the database(s) for principals. Used by Amazon Web Services Lake Formation. Typically
         /// should be explicitly set as an empty list.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PrincipalPermissions> CreateDatabaseDefaultPermissions
         {
@@ -108,6 +113,11 @@ namespace Amazon.Glue.Model
         /// on the table(s) for principals. Used by Amazon Web Services Lake Formation. Typically
         /// should be explicitly set as an empty list.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PrincipalPermissions> CreateTableDefaultPermissions
         {
@@ -165,6 +175,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// A map array of key-value pairs that define the parameters and properties of the catalog.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Parameters
         {

@@ -110,6 +110,11 @@ namespace Amazon.GameLiftStreams.Model
         /// purposes. <c>AdditionalEnvironmentVariables</c> passes data using environment variables;
         /// while <c>AdditionalLaunchArgs</c> passes data using command-line arguments.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> AdditionalEnvironmentVariables
@@ -138,6 +143,11 @@ namespace Amazon.GameLiftStreams.Model
         /// purposes. <c>AdditionalEnvironmentVariables</c> passes data using environment variables;
         /// while <c>AdditionalLaunchArgs</c> passes data using command-line arguments.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> AdditionalLaunchArgs
@@ -277,6 +287,11 @@ namespace Amazon.GameLiftStreams.Model
         /// quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> Locations

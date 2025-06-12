@@ -58,9 +58,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
             request.HttpMethod = "POST";
             request.ResourcePath = "/StringPayload";
-
             request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Payload));
             request.Headers["Content-Type"] = "text/plain";
+
 
             return request;
         }

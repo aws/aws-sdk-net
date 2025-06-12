@@ -68,6 +68,11 @@ namespace Amazon.SageMaker.Model
         /// A list of <c>MetricDefinition</c> objects, which are used for parsing metrics generated
         /// by the algorithm.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=40)]
         public List<MetricDefinition> MetricDefinitions
@@ -88,6 +93,11 @@ namespace Amazon.SageMaker.Model
         /// A list of the <c>HyperParameterSpecification</c> objects, that define the supported
         /// hyperparameters. This is required if the algorithm supports automatic model tuning.&gt;
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<HyperParameterSpecification> SupportedHyperParameters
@@ -107,6 +117,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A list of the instance types that this algorithm can use for training.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SupportedTrainingInstanceTypes
@@ -127,6 +142,11 @@ namespace Amazon.SageMaker.Model
         /// A list of the metrics that the algorithm emits that can be used as the objective metric
         /// in a hyperparameter tuning job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HyperParameterTuningJobObjective> SupportedTuningJobObjectiveMetrics
         {
@@ -165,6 +185,11 @@ namespace Amazon.SageMaker.Model
         /// A list of <c>ChannelSpecification</c> objects, which specify the input sources to
         /// be used by the algorithm.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8)]
         public List<ChannelSpecification> TrainingChannels

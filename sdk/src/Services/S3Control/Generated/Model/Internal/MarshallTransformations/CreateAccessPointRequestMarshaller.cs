@@ -66,7 +66,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonS3ControlException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/v20180820/accesspoint/{name}";
-
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -140,6 +139,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
+
 
             return request;
         }

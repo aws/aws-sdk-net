@@ -71,8 +71,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/trafficpolicyinstances/hostedzone";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListTrafficPolicyInstancesByHostedZoneRequestMarshaller _instance = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();        

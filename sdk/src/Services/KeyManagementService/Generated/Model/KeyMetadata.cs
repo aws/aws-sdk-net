@@ -290,6 +290,11 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// This value is present only when the <c>KeyUsage</c> of the KMS key is <c>ENCRYPT_DECRYPT</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EncryptionAlgorithms
         {
@@ -327,6 +332,11 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The key agreement algorithm used to derive a shared secret.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> KeyAgreementAlgorithms
         {
@@ -449,6 +459,11 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// This value is present only when the <c>KeyUsage</c> of the KMS key is <c>GENERATE_VERIFY_MAC</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> MacAlgorithms
         {
@@ -591,6 +606,11 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// This field appears only when the <c>KeyUsage</c> of the KMS key is <c>SIGN_VERIFY</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SigningAlgorithms
         {

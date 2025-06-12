@@ -89,6 +89,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Details about the document attachments, including names, locations, sizes, and so
         /// on.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AttachmentInformation> AttachmentsInformation
         {
@@ -125,6 +130,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The classification of a document to help you identify and categorize its use.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<string> Category
@@ -144,6 +154,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The value that identifies a document's category.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<string> CategoryEnum
@@ -392,6 +407,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A description of the parameters for a document.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DocumentParameter> Parameters
         {
@@ -428,6 +448,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The list of operating system (OS) platforms compatible with this SSM document. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PlatformTypes
         {
@@ -447,6 +472,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of SSM documents required by a document. For example, an <c>ApplicationConfiguration</c>
         /// document requires an <c>ApplicationConfigurationSchema</c> document.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<DocumentRequires> Requires
@@ -466,6 +496,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Details about the review of a document.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ReviewInformation> ReviewInformation
@@ -578,6 +613,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The tags, or metadata, that have been applied to the document.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1000)]
         public List<Tag> Tags

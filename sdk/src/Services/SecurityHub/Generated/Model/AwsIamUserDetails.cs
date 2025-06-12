@@ -48,6 +48,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of the managed policies that are attached to the user.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsIamAttachedManagedPolicy> AttachedManagedPolicies
         {
@@ -89,6 +94,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of IAM groups that the user belongs to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> GroupList
         {
@@ -179,6 +189,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The list of inline policies that are embedded in the user.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsIamUserPolicy> UserPolicyList
         {

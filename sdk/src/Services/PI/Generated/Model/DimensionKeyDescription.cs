@@ -45,6 +45,11 @@ namespace Amazon.PI.Model
         /// <para>
         /// A map that contains the value for each additional metric.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, double> AdditionalMetrics
         {
@@ -63,6 +68,11 @@ namespace Amazon.PI.Model
         /// <para>
         /// A map of name-value pairs for the dimensions in the group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Dimensions
         {
@@ -82,6 +92,11 @@ namespace Amazon.PI.Model
         /// If <c>PartitionBy</c> was specified, <c>PartitionKeys</c> contains the dimensions
         /// that were.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> Partitions
         {

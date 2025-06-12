@@ -90,6 +90,11 @@ namespace Amazon.Pinpoint.Model
         /// For a push notification, this payload is added to the data.pinpoint object. For an
         /// email or text message, this payload is added to email/SMS delivery receipt event attributes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Context
         {
@@ -129,6 +134,11 @@ namespace Amazon.Pinpoint.Model
         /// of the DefaultMessage object. The variables specified in this map take precedence
         /// over all other variables.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<string>> Substitutions
         {

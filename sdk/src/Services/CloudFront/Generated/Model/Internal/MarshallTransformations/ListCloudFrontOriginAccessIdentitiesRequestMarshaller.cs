@@ -65,8 +65,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/origin-access-identity/cloudfront";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListCloudFrontOriginAccessIdentitiesRequestMarshaller _instance = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();        

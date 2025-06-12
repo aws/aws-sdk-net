@@ -70,8 +70,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("priority", StringUtils.FromInt(publicRequest.Priority));
             request.ResourcePath = "/v20180820/jobs/{id}/priority";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static UpdateJobPriorityRequestMarshaller _instance = new UpdateJobPriorityRequestMarshaller();        

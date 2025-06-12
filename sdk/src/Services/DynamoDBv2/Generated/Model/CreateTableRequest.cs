@@ -108,6 +108,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// An array of attributes that describe the key schema for the table and indexes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AttributeDefinition> AttributeDefinitions
@@ -229,6 +234,11 @@ namespace Amazon.DynamoDBv2.Model
         /// secondary index, consisting of read and write capacity units.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GlobalSecondaryIndex> GlobalSecondaryIndexes
         {
@@ -298,6 +308,11 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
         /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]
         public List<KeySchemaElement> KeySchema
@@ -368,6 +383,11 @@ namespace Amazon.DynamoDBv2.Model
         /// all attributes from the source table, even if the table has more than 100 attributes.
         /// </para>
         ///  </li> </ul> </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LocalSecondaryIndex> LocalSecondaryIndexes
         {
@@ -579,6 +599,11 @@ namespace Amazon.DynamoDBv2.Model
         /// A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
         /// for DynamoDB</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

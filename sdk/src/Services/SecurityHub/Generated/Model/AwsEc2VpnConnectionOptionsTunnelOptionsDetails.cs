@@ -74,6 +74,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The Internet Key Exchange (IKE) versions that are permitted for the VPN tunnel.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> IkeVersions
         {
@@ -110,6 +115,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> Phase1DhGroupNumbers
         {
@@ -128,6 +138,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Phase1EncryptionAlgorithms
         {
@@ -146,6 +161,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Phase1IntegrityAlgorithms
         {
@@ -182,6 +202,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> Phase2DhGroupNumbers
         {
@@ -200,6 +225,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Phase2EncryptionAlgorithms
         {
@@ -218,6 +248,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Phase2IntegrityAlgorithms
         {

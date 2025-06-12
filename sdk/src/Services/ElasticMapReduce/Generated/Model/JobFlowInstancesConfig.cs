@@ -66,6 +66,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of additional Amazon EC2 security group IDs for the master node.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AdditionalMasterSecurityGroups
         {
@@ -84,6 +89,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of additional Amazon EC2 security group IDs for the core and task nodes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AdditionalSlaveSecurityGroups
         {
@@ -152,6 +162,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// later, excluding 5.0.x versions.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Ec2SubnetIds
         {
@@ -258,6 +273,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// Describes the Amazon EC2 instances and instance configurations for clusters that use
         /// the instance fleet configuration.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InstanceFleetConfig> InstanceFleets
         {
@@ -276,6 +296,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// Configuration for the instance groups in a cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InstanceGroupConfig> InstanceGroups
         {

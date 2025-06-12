@@ -46,6 +46,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of port ranges to specify the destination ports to inspect for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts> DestinationPorts
         {
@@ -64,6 +69,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The destination IP addresses and address ranges to inspect for, in CIDR notation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RuleGroupSourceStatelessRuleMatchAttributesDestinations> Destinations
         {
@@ -82,6 +92,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The protocols to inspect for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> Protocols
         {
@@ -100,6 +115,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of port ranges to specify the source ports to inspect for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts> SourcePorts
         {
@@ -118,6 +138,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The source IP addresses and address ranges to inspect for, in CIDR notation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RuleGroupSourceStatelessRuleMatchAttributesSources> Sources
         {
@@ -136,6 +161,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The TCP flags and masks to inspect for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags> TcpFlags
         {

@@ -50,6 +50,11 @@ namespace Amazon.FSx.Model
         /// A list of administrative actions for the file system that are in process or waiting
         /// to be processed. Administrative actions describe changes to the Amazon FSx system.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<AdministrativeAction> AdministrativeActions
@@ -185,6 +190,11 @@ namespace Amazon.FSx.Model
 
         /// <summary>
         /// Gets and sets the property Tags.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags

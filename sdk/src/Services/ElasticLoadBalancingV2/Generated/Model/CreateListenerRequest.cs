@@ -102,6 +102,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
         /// policies</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AlpnPolicy
         {
@@ -122,6 +127,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// exactly one certificate. Set <c>CertificateArn</c> to the certificate ARN but do not
         /// set <c>IsDefault</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Certificate> Certificates
         {
@@ -140,6 +150,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The actions for the default rule.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Action> DefaultActions
@@ -263,6 +278,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The tags to assign to the listener.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<Tag> Tags

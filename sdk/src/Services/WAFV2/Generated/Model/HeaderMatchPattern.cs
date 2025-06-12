@@ -73,6 +73,11 @@ namespace Amazon.WAFV2.Model
         /// Inspect only the headers whose keys don't match any of the strings specified here.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=199)]
         public List<string> ExcludedHeaders
@@ -93,6 +98,11 @@ namespace Amazon.WAFV2.Model
         /// Inspect only the headers that have a key that matches one of the strings specified
         /// here. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=199)]
         public List<string> IncludedHeaders

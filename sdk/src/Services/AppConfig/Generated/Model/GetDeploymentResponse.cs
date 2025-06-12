@@ -82,6 +82,11 @@ namespace Amazon.AppConfig.Model
         /// that were previously associated to the configuration profile, environment, or the
         /// application when <c>StartDeployment</c> was called.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AppliedExtension> AppliedExtensions
         {
@@ -286,6 +291,11 @@ namespace Amazon.AppConfig.Model
         /// A list containing all events related to a deployment. The most recent events are displayed
         /// first.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DeploymentEvent> EventLog
         {

@@ -67,6 +67,11 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The elements in the request, such as a processor for Amazon Transcribe or a sink for
         /// a Kinesis Data Stream.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<MediaInsightsPipelineConfigurationElement> Elements
@@ -143,6 +148,11 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <para>
         /// The tags assigned to the media insights pipeline configuration.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags

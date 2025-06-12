@@ -65,8 +65,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Stage", StringUtils.FromString(publicRequest.Stage));
             request.ResourcePath = "/2020-05-31/function/{Name}/describe";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static DescribeFunctionRequestMarshaller _instance = new DescribeFunctionRequestMarshaller();        

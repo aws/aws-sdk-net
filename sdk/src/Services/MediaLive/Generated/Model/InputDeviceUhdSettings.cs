@@ -70,6 +70,11 @@ namespace Amazon.MediaLive.Model
         /// one for each audio pair in the source. Each audio configuration specifies either to
         /// exclude the pair, or to format it and include it in the output from the UHD device.
         /// Applies only when the device is configured as the source for a MediaConnect flow.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputDeviceUhdAudioChannelPairConfig> AudioChannelPairs
         {

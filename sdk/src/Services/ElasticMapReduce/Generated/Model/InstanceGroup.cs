@@ -105,6 +105,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// The list of configurations supplied for an Amazon EMR cluster instance group. You
         /// can specify a separate configuration for each instance group (master, core, and task).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Configuration> Configurations
         {
@@ -161,6 +166,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The EBS block devices that are mapped to this instance group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EbsBlockDevice> EbsBlockDevices
         {
@@ -254,6 +264,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// A list of configurations that were successfully applied for an instance group last
         /// time.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Configuration> LastSuccessfullyAppliedConfigurations
         {

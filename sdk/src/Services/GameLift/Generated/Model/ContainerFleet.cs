@@ -301,6 +301,11 @@ namespace Amazon.GameLift.Model
         /// The IP address ranges and port settings that allow inbound traffic to access game
         /// server processes and other processes on this fleet. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<IpPermission> InstanceInboundPermissions
@@ -343,6 +348,11 @@ namespace Amazon.GameLift.Model
         /// Information about the container fleet's remote locations where fleet instances are
         /// deployed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ContainerFleetLocationAttributes> LocationAttributes
         {
@@ -416,6 +426,11 @@ namespace Amazon.GameLift.Model
         /// The name of an Amazon Web Services CloudWatch metric group to add this fleet to. Metric
         /// groups aggregate metrics for multiple fleets. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1)]
         public List<string> MetricGroups

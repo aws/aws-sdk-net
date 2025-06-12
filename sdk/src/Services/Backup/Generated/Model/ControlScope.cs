@@ -55,6 +55,11 @@ namespace Amazon.Backup.Model
         /// The ID of the only Amazon Web Services resource that you want your control scope to
         /// contain.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> ComplianceResourceIds
@@ -75,6 +80,11 @@ namespace Amazon.Backup.Model
         /// Describes whether the control scope includes one or more types of resources, such
         /// as <c>EFS</c> or <c>RDS</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ComplianceResourceTypes
         {
@@ -101,6 +111,11 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The structure to assign a tag is: <c>[{"Key":"string","Value":"string"}]</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

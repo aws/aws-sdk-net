@@ -53,6 +53,11 @@ namespace Amazon.GeoPlaces.Model
         /// A list of optional additional parameters, such as time zone, that can be requested
         /// for each result.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
         public List<string> AdditionalFeatures
@@ -80,6 +85,11 @@ namespace Amazon.GeoPlaces.Model
         /// are mutually exclusive.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=2)]
         public List<double> BiasPosition

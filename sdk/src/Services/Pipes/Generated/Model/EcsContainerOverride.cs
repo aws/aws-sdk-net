@@ -52,6 +52,11 @@ namespace Amazon.Pipes.Model
         /// The command to send to the container that overrides the default command from the Docker
         /// image or the task definition. You must also specify a container name.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Command
         {
@@ -92,6 +97,11 @@ namespace Amazon.Pipes.Model
         /// variables from the Docker image or the task definition. You must also specify a container
         /// name.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EcsEnvironmentVariable> Environment
         {
@@ -111,6 +121,11 @@ namespace Amazon.Pipes.Model
         /// A list of files containing the environment variables to pass to a container, instead
         /// of the value from the container definition.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EcsEnvironmentFile> EnvironmentFiles
         {
@@ -188,6 +203,11 @@ namespace Amazon.Pipes.Model
         /// The type and amount of a resource to assign to a container, instead of the default
         /// value from the task definition. The only supported resource is a GPU.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EcsResourceRequirement> ResourceRequirements
         {

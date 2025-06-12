@@ -148,6 +148,11 @@ namespace Amazon.FraudDetector.Model
         ///  External (Amazon SageMaker) models that were evaluated for generating predictions.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EvaluatedExternalModel> EvaluatedExternalModels
         {
@@ -166,6 +171,11 @@ namespace Amazon.FraudDetector.Model
         /// <para>
         ///  Model versions that were evaluated for generating predictions. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EvaluatedModelVersion> EvaluatedModelVersions
         {
@@ -242,6 +252,11 @@ namespace Amazon.FraudDetector.Model
         /// <para>
         ///  A list of event variables that influenced the prediction scores. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EventVariableSummary> EventVariables
         {
@@ -260,6 +275,11 @@ namespace Amazon.FraudDetector.Model
         /// <para>
         ///  The outcomes of the matched rule, based on the rule execution mode. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Outcomes
         {
@@ -316,6 +336,11 @@ namespace Amazon.FraudDetector.Model
         ///  List of rules associated with the detector version that were used for evaluating
         /// variable values. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EvaluatedRule> Rules
         {

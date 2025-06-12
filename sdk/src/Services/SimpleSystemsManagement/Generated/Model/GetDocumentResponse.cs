@@ -54,6 +54,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A description of the document attachments, including names, locations, sizes, and
         /// so on.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AttachmentContent> AttachmentsContent
         {
@@ -202,6 +207,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of SSM documents required by a document. For example, an <c>ApplicationConfiguration</c>
         /// document requires an <c>ApplicationConfigurationSchema</c> document.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<DocumentRequires> Requires

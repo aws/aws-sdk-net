@@ -72,6 +72,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <para>
         /// Contains information about the files used by code interpreter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputFile> Files
         {
@@ -113,6 +118,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// An array of configurations, each of which applies to a knowledge base attached to
         /// the agent.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<KnowledgeBaseConfiguration> KnowledgeBaseConfigurations
@@ -146,6 +156,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// agent when $prompt_session_attributes$ is present in prompt template. 
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> PromptSessionAttributes
         {
@@ -172,6 +187,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// If you include this field, the <c>inputText</c> field will be ignored.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<InvocationResultMember> ReturnControlInvocationResults
@@ -193,6 +213,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// If <c>sessionAttributes</c> are passed to a supervisor agent in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent
         /// collaboration</a>, it will be forwarded to all agent collaborators.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> SessionAttributes
         {

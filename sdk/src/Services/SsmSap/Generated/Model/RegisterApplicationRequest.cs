@@ -110,6 +110,11 @@ namespace Amazon.SsmSap.Model
         /// <para>
         /// This is an array of ApplicationComponent objects. You may input 0 to 5 items.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<ComponentInfo> ComponentsInfo
@@ -129,6 +134,11 @@ namespace Amazon.SsmSap.Model
         /// <para>
         /// The credentials of the SAP application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<ApplicationCredential> Credentials
@@ -166,6 +176,11 @@ namespace Amazon.SsmSap.Model
         /// <para>
         /// The Amazon EC2 instances on which your SAP application is running.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> Instances
@@ -221,6 +236,11 @@ namespace Amazon.SsmSap.Model
         /// <para>
         /// The tags to be attached to the SAP application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

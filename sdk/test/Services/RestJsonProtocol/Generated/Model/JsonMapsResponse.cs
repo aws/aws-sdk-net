@@ -42,6 +42,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property DenseBooleanMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, bool> DenseBooleanMap
         {
@@ -57,6 +62,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property DenseNumberMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, int> DenseNumberMap
         {
@@ -72,6 +82,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property DenseSetMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<string>> DenseSetMap
         {
@@ -87,6 +102,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property DenseStringMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> DenseStringMap
         {
@@ -102,6 +122,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property DenseStructMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, GreetingStruct> DenseStructMap
         {

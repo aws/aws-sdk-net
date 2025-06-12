@@ -56,6 +56,11 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// A list of the distinct edge labels in the graph.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EdgeLabels
         {
@@ -75,6 +80,11 @@ namespace Amazon.Neptunedata.Model
         /// A list of the distinct edge properties in the graph, along with the count of edges
         /// where each property is used.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Dictionary<string, long>> EdgeProperties
         {
@@ -94,6 +104,11 @@ namespace Amazon.Neptunedata.Model
         /// This field is only present when the requested mode is <c>DETAILED</c>. It contains
         /// a list of edge structures.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EdgeStructure> EdgeStructures
         {
@@ -112,6 +127,11 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// A list of the distinct node labels in the graph.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NodeLabels
         {
@@ -130,6 +150,11 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// The number of distinct node properties in the graph.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Dictionary<string, long>> NodeProperties
         {
@@ -149,6 +174,11 @@ namespace Amazon.Neptunedata.Model
         /// This field is only present when the requested mode is <c>DETAILED</c>. It contains
         /// a list of node structures.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NodeStructure> NodeStructures
         {

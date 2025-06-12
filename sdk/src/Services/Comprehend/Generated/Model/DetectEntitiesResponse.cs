@@ -56,6 +56,11 @@ namespace Amazon.Comprehend.Model
         /// <para>
         /// The <c>Block</c> field is not present in the response for plain-text inputs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Block> Blocks
         {
@@ -94,6 +99,11 @@ namespace Amazon.Comprehend.Model
         /// The document type for each page in the input document. This field is present in the
         /// response only if your request used the <c>Byte</c> parameter. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DocumentTypeListItem> DocumentType
         {
@@ -121,6 +131,11 @@ namespace Amazon.Comprehend.Model
         /// entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
         /// in the Comprehend Developer Guide. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Entity> Entities
         {
@@ -140,6 +155,11 @@ namespace Amazon.Comprehend.Model
         /// Page-level errors that the system detected while processing the input document. The
         /// field is empty if the system encountered no errors.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ErrorsListItem> Errors
         {

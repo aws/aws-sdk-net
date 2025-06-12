@@ -53,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         ///  The <c>AutoScalingGroups</c> used by this environment. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AutoScalingGroup> AutoScalingGroups
         {
@@ -90,6 +95,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The Amazon EC2 instances used by this environment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Instance> Instances
         {
@@ -108,6 +118,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The Auto Scaling launch configurations in use by this environment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LaunchConfiguration> LaunchConfigurations
         {
@@ -126,6 +141,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The Amazon EC2 launch templates in use by this environment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LaunchTemplate> LaunchTemplates
         {
@@ -144,6 +164,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The LoadBalancers in use by this environment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LoadBalancer> LoadBalancers
         {
@@ -162,6 +187,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The queues used by this environment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Queue> Queues
         {
@@ -180,6 +210,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The <c>AutoScaling</c> triggers in use by this environment. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Trigger> Triggers
         {

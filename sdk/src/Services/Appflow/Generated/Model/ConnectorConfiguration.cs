@@ -198,6 +198,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// The connection modes that the connector supports.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ConnectorModes
         {
@@ -290,6 +295,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// The required connector runtime settings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConnectorRuntimeSetting> ConnectorRuntimeSettings
         {
@@ -437,6 +447,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// A list of API versions that are supported by the connector.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedApiVersions
         {
@@ -456,6 +471,11 @@ namespace Amazon.Appflow.Model
         /// The APIs of the connector application that Amazon AppFlow can use to transfer your
         /// data.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DataTransferApi> SupportedDataTransferApis
         {
@@ -483,6 +503,11 @@ namespace Amazon.Appflow.Model
         /// Files or binary data.
         /// </para>
         ///  </dd> </dl>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedDataTransferTypes
         {
@@ -501,6 +526,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         ///  Lists the connectors that are available for use as destinations. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> SupportedDestinationConnectors
@@ -520,6 +550,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// A list of operators supported by the connector.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedOperators
         {
@@ -538,6 +573,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         ///  Specifies the supported flow frequency for that connector. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedSchedulingFrequencies
         {
@@ -556,6 +596,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         ///  Specifies the supported trigger types for the flow. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedTriggerTypes
         {
@@ -574,6 +619,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// A list of write operations supported by the connector.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedWriteOperations
         {

@@ -272,6 +272,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
         /// can't be specified together.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
         public List<Dictionary<string, List<string>>> TargetMaps
@@ -293,6 +298,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// all managed nodes in an Amazon Web Services account by specifying the <c>InstanceIds</c>
         /// key with a value of <c>*</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets

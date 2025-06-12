@@ -49,6 +49,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Provides information about the actors involved in the attack sequence. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<Actor> Actors
@@ -69,6 +74,11 @@ namespace Amazon.SecurityHub.Model
         ///  Contains information about the network endpoints that were used in the attack sequence.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<NetworkEndpoint> Endpoints
@@ -91,6 +101,11 @@ namespace Amazon.SecurityHub.Model
         /// are a subset of the values for <c>SequenceIndicators</c>, but the values for these
         /// fields don't always match 1:1.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<Indicator> SequenceIndicators
@@ -110,6 +125,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Contains information about the signals involved in the attack sequence. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<Signal> Signals

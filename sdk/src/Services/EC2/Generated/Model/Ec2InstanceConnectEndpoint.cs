@@ -162,6 +162,11 @@ namespace Amazon.EC2.Model
         /// The ID of the elastic network interface that Amazon EC2 automatically created when
         /// creating the EC2 Instance Connect Endpoint.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NetworkInterfaceIds
         {
@@ -231,6 +236,11 @@ namespace Amazon.EC2.Model
         /// The security groups associated with the endpoint. If you didn't specify a security
         /// group, the default security group for your VPC is associated with the endpoint.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -304,6 +314,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tags assigned to the EC2 Instance Connect Endpoint.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

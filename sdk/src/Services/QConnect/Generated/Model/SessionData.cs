@@ -50,6 +50,11 @@ namespace Amazon.QConnect.Model
         /// The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that
         /// should be used by Amazon Q in Connect for this Session.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, AIAgentConfigurationData> AiAgentConfiguration
         {
@@ -200,6 +205,11 @@ namespace Amazon.QConnect.Model
         /// <para>
         /// The tags used to organize, track, or control access for this resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

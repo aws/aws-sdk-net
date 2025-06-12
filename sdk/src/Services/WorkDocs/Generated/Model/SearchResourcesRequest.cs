@@ -51,6 +51,11 @@ namespace Amazon.WorkDocs.Model
         /// A list of attributes to include in the response. Used to request fields that are not
         /// normally returned in a standard response.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AdditionalResponseFields
         {
@@ -145,6 +150,11 @@ namespace Amazon.WorkDocs.Model
         /// <para>
         /// Order by results in one or more categories.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1)]
         public List<SearchSortResult> OrderBy
@@ -185,6 +195,11 @@ namespace Amazon.WorkDocs.Model
         /// Filter based on the text field type. A Folder has only a name and no content. A Comment
         /// has only content and no name. A Document or Document Version has a name and content
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=2)]
         public List<string> QueryScopes

@@ -62,7 +62,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResource())
                 request.Parameters.Add("Resource", StringUtils.FromString(publicRequest.Resource));
             request.ResourcePath = "/2020-05-31/tagging";
-
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -104,6 +103,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
 
             request.UseQueryString = true;
+
             return request;
         }
         private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        

@@ -47,6 +47,11 @@ namespace Amazon.RDSDataService.Model
         /// Metadata for the columns included in the results. This field is blank if the <c>formatRecordsAs</c>
         /// parameter is set to <c>JSON</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ColumnMetadata> ColumnMetadata
         {
@@ -98,6 +103,11 @@ namespace Amazon.RDSDataService.Model
         /// Rows</a> in the PostgreSQL documentation.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Field> GeneratedFields
         {
@@ -135,6 +145,11 @@ namespace Amazon.RDSDataService.Model
         /// The records returned by the SQL statement. This field is blank if the <c>formatRecordsAs</c>
         /// parameter is set to <c>JSON</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<List<Field>> Records
         {

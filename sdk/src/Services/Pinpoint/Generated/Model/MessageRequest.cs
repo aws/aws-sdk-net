@@ -50,6 +50,11 @@ namespace Amazon.Pinpoint.Model
         /// object to tailor the message for an address by specifying settings such as content
         /// overrides and message variables.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, AddressConfiguration> Addresses
         {
@@ -70,6 +75,11 @@ namespace Amazon.Pinpoint.Model
         /// payload is added to the data.pinpoint object. For an email or text message, this payload
         /// is added to email/SMS delivery receipt event attributes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Context
         {
@@ -92,6 +102,11 @@ namespace Amazon.Pinpoint.Model
         /// object to tailor the message for an endpoint by specifying settings such as content
         /// overrides and message variables.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, EndpointSendConfiguration> Endpoints
         {

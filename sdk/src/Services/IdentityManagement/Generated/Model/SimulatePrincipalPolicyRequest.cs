@@ -105,6 +105,11 @@ namespace Amazon.IdentityManagement.Model
         /// evaluated for each resource. Each operation must include the service identifier, such
         /// as <c>iam:CreateUser</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> ActionNames
@@ -167,6 +172,11 @@ namespace Amazon.IdentityManagement.Model
         /// a context key is evaluated in one of the simulated IAM permissions policies, the corresponding
         /// value is supplied.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ContextEntry> ContextEntries
         {
@@ -272,6 +282,11 @@ namespace Amazon.IdentityManagement.Model
         /// return (<c>\u000D</c>)
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PermissionsBoundaryPolicyInputList
         {
@@ -313,6 +328,11 @@ namespace Amazon.IdentityManagement.Model
         /// return (<c>\u000D</c>)
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PolicyInputList
         {
@@ -386,6 +406,11 @@ namespace Amazon.IdentityManagement.Model
         /// Simulation of resource-based policies isn't supported for IAM roles.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ResourceArns
         {

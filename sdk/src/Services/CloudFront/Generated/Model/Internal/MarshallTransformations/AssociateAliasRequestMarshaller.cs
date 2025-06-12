@@ -65,8 +65,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Alias", StringUtils.FromString(publicRequest.Alias));
             request.ResourcePath = "/2020-05-31/distribution/{TargetDistributionId}/associate-alias";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static AssociateAliasRequestMarshaller _instance = new AssociateAliasRequestMarshaller();        

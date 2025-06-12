@@ -105,6 +105,11 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A list of the VPC <a>Subnet</a> elements. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Subnet> Subnets
         {
@@ -124,6 +129,11 @@ namespace Amazon.Redshift.Model
         /// The IP address types supported by this cluster subnet group. Possible values are <c>ipv4</c>
         /// and <c>dualstack</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedClusterIpAddressTypes
         {
@@ -142,6 +152,11 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The list of tags for the cluster subnet group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

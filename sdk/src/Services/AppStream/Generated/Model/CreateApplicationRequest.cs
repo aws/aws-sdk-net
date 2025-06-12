@@ -143,6 +143,11 @@ namespace Amazon.AppStream.Model
         /// The instance families the application supports. Valid values are GENERAL_PURPOSE and
         /// GRAPHICS_G4.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> InstanceFamilies
@@ -221,6 +226,11 @@ namespace Amazon.AppStream.Model
         /// The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are
         /// supported for Elastic fleets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Max=4)]
         public List<string> Platforms
@@ -240,6 +250,11 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The tags assigned to the application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

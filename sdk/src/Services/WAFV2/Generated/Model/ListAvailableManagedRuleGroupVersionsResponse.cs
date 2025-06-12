@@ -85,6 +85,11 @@ namespace Amazon.WAFV2.Model
         /// The versions that are currently available for the specified managed rule group. If
         /// you specified a <c>Limit</c> in your request, this might not be the full list. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ManagedRuleGroupVersion> Versions
         {

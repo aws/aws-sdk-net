@@ -228,6 +228,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// of your OpenAPI definition which are ignored during import. Supported only for HTTP
         /// APIs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ImportInfo
         {
@@ -320,6 +325,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// A collection of tags associated with the API.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -356,6 +366,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// The warning messages reported when failonwarnings is turned on during API import.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Warnings
         {

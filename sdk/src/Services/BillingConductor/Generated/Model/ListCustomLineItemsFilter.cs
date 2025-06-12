@@ -45,6 +45,11 @@ namespace Amazon.BillingConductor.Model
         /// <para>
         /// The Amazon Web Services accounts in which this custom line item will be applied to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=30)]
         public List<string> AccountIds
@@ -64,6 +69,11 @@ namespace Amazon.BillingConductor.Model
         /// <para>
         /// A list of custom line item ARNs to retrieve information.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> Arns
@@ -83,6 +93,11 @@ namespace Amazon.BillingConductor.Model
         /// <para>
         /// The billing group Amazon Resource Names (ARNs) to retrieve information.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> BillingGroups
@@ -102,6 +117,11 @@ namespace Amazon.BillingConductor.Model
         /// <para>
         /// A list of custom line items to retrieve information.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> Names

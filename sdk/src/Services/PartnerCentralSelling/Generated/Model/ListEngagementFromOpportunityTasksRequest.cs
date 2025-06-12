@@ -80,6 +80,11 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  Filters tasks by the identifiers of the engagements they created or are associated
         /// with. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> EngagementIdentifier
@@ -141,6 +146,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <para>
         ///  The identifier of the original opportunity associated with this task. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> OpportunityIdentifier
@@ -180,6 +190,11 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  Filters tasks by their unique identifiers. Use this when you want to retrieve information
         /// about specific tasks. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> TaskIdentifier
@@ -200,6 +215,11 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  Filters the tasks based on their current status. This allows you to focus on tasks
         /// in specific states. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
         public List<string> TaskStatus

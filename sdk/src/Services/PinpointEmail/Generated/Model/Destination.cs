@@ -44,6 +44,11 @@ namespace Amazon.PinpointEmail.Model
         /// An array that contains the email addresses of the "BCC" (blind carbon copy) recipients
         /// for the email.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> BccAddresses
         {
@@ -63,6 +68,11 @@ namespace Amazon.PinpointEmail.Model
         /// An array that contains the email addresses of the "CC" (carbon copy) recipients for
         /// the email.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CcAddresses
         {
@@ -81,6 +91,11 @@ namespace Amazon.PinpointEmail.Model
         /// <para>
         /// An array that contains the email addresses of the "To" recipients for the email.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ToAddresses
         {

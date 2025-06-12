@@ -61,6 +61,11 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// If the action fails for one or more of the memberships in the request, a list of the
         /// memberships is returned, along with error codes and error messages.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BatchCreateChannelMembershipError> Errors
         {

@@ -116,6 +116,11 @@ namespace Amazon.WAFV2.Model
         /// For example, <c>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</c>
         /// or <c>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</c>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Label> Labels
         {
@@ -175,6 +180,11 @@ namespace Amazon.WAFV2.Model
         /// Custom request headers inserted by WAF into the request, according to the custom request
         /// configuration for the matching rule action.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HTTPHeader> RequestHeadersInserted
         {

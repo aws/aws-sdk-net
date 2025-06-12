@@ -87,6 +87,11 @@ namespace Amazon.Kendra.Model
         /// and attachments in the space are not indexed. If a space is in both the <c>ExcludeSpaces</c>
         /// and the <c>IncludeSpaces</c> list, the space is excluded.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> ExcludeSpaces
@@ -110,6 +115,11 @@ namespace Amazon.Kendra.Model
         /// source is synchronized. If a space is in both the <c>IncludeSpaces</c> and the <c>ExcludeSpaces</c>
         /// list, the space is excluded.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> IncludeSpaces
@@ -138,6 +148,11 @@ namespace Amazon.Kendra.Model
         /// If you specify the <c>SpaceFieldMappings</c> parameter, you must specify at least
         /// one field mapping.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
         public List<ConfluenceSpaceToIndexFieldMapping> SpaceFieldMappings

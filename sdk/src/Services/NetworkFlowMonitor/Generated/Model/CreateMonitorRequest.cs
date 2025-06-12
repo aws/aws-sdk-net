@@ -76,6 +76,11 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// Database Service (RDS)), the EC2 instance hosting the web service, which also runs
         /// the agent, is the local resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<MonitorLocalResource> LocalResources
@@ -116,6 +121,11 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// flow of a workload, with a local resource. For example, Amazon Relational Database
         /// Service (RDS) can be a remote resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MonitorRemoteResource> RemoteResources
         {
@@ -153,6 +163,11 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <para>
         /// The tags for a monitor. You can add a maximum of 200 tags.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public Dictionary<string, string> Tags

@@ -60,6 +60,11 @@ namespace Amazon.Rekognition.Model
         /// An array of IDs for persons where it was not possible to determine if they are wearing
         /// personal protective equipment. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> PersonsIndeterminate
         {
@@ -80,6 +85,11 @@ namespace Amazon.Rekognition.Model
         /// in the <c>RequiredEquipmentTypes</c> field of the detected personal protective equipment.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> PersonsWithoutRequiredEquipment
         {
@@ -99,6 +109,11 @@ namespace Amazon.Rekognition.Model
         /// An array of IDs for persons who are wearing detected personal protective equipment.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> PersonsWithRequiredEquipment
         {

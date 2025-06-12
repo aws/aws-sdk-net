@@ -55,6 +55,11 @@ namespace Amazon.Comprehend.Model
         /// and UNSAFE_PROMPT), along with a confidence score for each class. The value range
         /// of the score is zero to one, where one is the highest confidence.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DocumentClass> Classes
         {
@@ -93,6 +98,11 @@ namespace Amazon.Comprehend.Model
         /// The document type for each page in the input document. This field is present in the
         /// response only if your request includes the <c>Byte</c> parameter. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DocumentTypeListItem> DocumentType
         {
@@ -112,6 +122,11 @@ namespace Amazon.Comprehend.Model
         /// Page-level errors that the system detected while processing the input document. The
         /// field is empty if the system encountered no errors.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ErrorsListItem> Errors
         {
@@ -134,6 +149,11 @@ namespace Amazon.Comprehend.Model
         /// movie, or it can be an action movie, a science fiction movie, and a comedy, all at
         /// the same time. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DocumentLabel> Labels
         {
@@ -159,6 +179,11 @@ namespace Amazon.Comprehend.Model
         /// <para>
         /// The field is empty if the system generated no warnings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<WarningsListItem> Warnings
         {

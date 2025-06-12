@@ -45,6 +45,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon ECR registry path of the Docker image that contains the inference code.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=15)]
         public List<ModelPackageContainerDefinition> Containers
@@ -64,6 +69,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The supported MIME types for the input data.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedContentTypes
         {
@@ -86,6 +96,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// This parameter is required for unversioned models, and optional for versioned models.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedRealtimeInferenceInstanceTypes
         {
@@ -104,6 +119,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The supported MIME types for the output data.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedResponseMIMETypes
         {
@@ -127,6 +147,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// This parameter is required for unversioned models, and optional for versioned models.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> SupportedTransformInstanceTypes

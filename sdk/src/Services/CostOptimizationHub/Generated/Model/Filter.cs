@@ -52,6 +52,11 @@ namespace Amazon.CostOptimizationHub.Model
         /// <para>
         /// The account to which the recommendation applies.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> AccountIds
@@ -71,6 +76,11 @@ namespace Amazon.CostOptimizationHub.Model
         /// <para>
         /// The type of action you can take by adopting the recommendation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> ActionTypes
@@ -90,6 +100,11 @@ namespace Amazon.CostOptimizationHub.Model
         /// <para>
         /// The effort required to implement the recommendation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> ImplementationEfforts
@@ -109,6 +124,11 @@ namespace Amazon.CostOptimizationHub.Model
         /// <para>
         /// The IDs for the recommendations.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> RecommendationIds
@@ -128,6 +148,11 @@ namespace Amazon.CostOptimizationHub.Model
         /// <para>
         /// The Amazon Web Services Region of the resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> Regions
@@ -147,6 +172,11 @@ namespace Amazon.CostOptimizationHub.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the recommendation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> ResourceArns
@@ -166,6 +196,11 @@ namespace Amazon.CostOptimizationHub.Model
         /// <para>
         /// The resource ID of the recommendation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> ResourceIds
@@ -185,6 +220,11 @@ namespace Amazon.CostOptimizationHub.Model
         /// <para>
         /// The resource type of the recommendation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> ResourceTypes
@@ -240,6 +280,11 @@ namespace Amazon.CostOptimizationHub.Model
         /// <para>
         /// A list of tags assigned to the recommendation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<Tag> Tags

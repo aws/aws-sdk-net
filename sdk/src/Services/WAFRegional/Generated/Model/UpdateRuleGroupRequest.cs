@@ -149,6 +149,11 @@ namespace Amazon.WAFRegional.Model
         /// to a <c>WebACL</c>. In this case you do not use <c>ActivatedRule|Action</c>. For all
         /// other update requests, <c>ActivatedRule|Action</c> is used instead of <c>ActivatedRule|OverrideAction</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<RuleGroupUpdate> Updates

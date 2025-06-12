@@ -48,6 +48,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// One or more compliance filters. Use a filter to return a more specific list of results.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ComplianceStringFilter> Filters
         {
@@ -105,6 +110,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID for the resources from which to get compliance information. Currently, you
         /// can only specify one resource ID.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> ResourceIds
@@ -125,6 +135,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of resource from which to get compliance information. Currently, the only
         /// supported resource type is <c>ManagedInstance</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> ResourceTypes

@@ -66,6 +66,11 @@ namespace Amazon.MediaConvert.Model
         /// you want signaled in the DASH manifest that MediaConvert creates as part of this CMAF
         /// package. The DASH manifest can currently signal up to three system IDs. For more information,
         /// see https://dashif.org/identifiers/content_protection/.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DashSignaledSystemIds
         {
@@ -102,6 +107,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property HlsSignaledSystemIds. Specify up to 3 DRM system IDs that
         /// you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF
         /// package. For more information, see https://dashif.org/identifiers/content_protection/.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HlsSignaledSystemIds
         {

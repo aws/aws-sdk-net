@@ -43,6 +43,11 @@ namespace Amazon.GeoRoutes.Model
         /// A list of Isoline Polygons, for each isoline polygon, it contains polygons of the
         /// first linear ring (the outer ring) and from 2nd item to the last item (the inner rings).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<List<List<double>>> Polygon
@@ -64,6 +69,11 @@ namespace Amazon.GeoRoutes.Model
         /// of the first linear ring (the outer ring) and from 2nd item to the last item (the
         /// inner rings). For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> PolylinePolygon

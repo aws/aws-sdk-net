@@ -70,6 +70,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The Availability Zones where the service is available.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AvailabilityZones
         {
@@ -88,6 +93,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The DNS names for the service.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> BaseEndpointDnsNames
         {
@@ -106,6 +116,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The ARNs of the Gateway Load Balancers for the service.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> GatewayLoadBalancerArns
         {
@@ -142,6 +157,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The ARNs of the Network Load Balancers for the service.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NetworkLoadBalancerArns
         {
@@ -253,6 +273,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The types for the service.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2VpcEndpointServiceServiceTypeDetails> ServiceType
         {

@@ -72,6 +72,11 @@ namespace Amazon.WAFV2.Model
         /// setting, including <c>Count</c>.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=100)]
         public List<ExcludedRule> ExcludedRules
@@ -125,6 +130,11 @@ namespace Amazon.WAFV2.Model
         /// the protection level that you want the Bot Control rule group to use. 
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ManagedRuleGroupConfig> ManagedRuleGroupConfigs
         {
@@ -180,6 +190,11 @@ namespace Amazon.WAFV2.Model
         /// rule group would handle your web traffic. You can also permanently override some or
         /// all actions, to modify how the rule group manages your web traffic.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=100)]
         public List<RuleActionOverride> RuleActionOverrides

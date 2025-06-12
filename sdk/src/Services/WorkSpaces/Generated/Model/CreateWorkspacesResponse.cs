@@ -42,6 +42,11 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// Information about the WorkSpaces that could not be created.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FailedCreateWorkspaceRequest> FailedRequests
         {
@@ -66,6 +71,11 @@ namespace Amazon.WorkSpaces.Model
         /// available for use with other operations. For example, if you call <a>DescribeWorkspaces</a>
         /// before the WorkSpace is created, the information returned can be incomplete.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Workspace> PendingRequests
         {

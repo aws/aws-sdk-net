@@ -42,6 +42,11 @@ namespace Amazon.OpenSearchServerless.Model
         /// <para>
         /// A list of lifecycle policies matched to the input policy name and policy type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LifecyclePolicyDetail> LifecyclePolicyDetails
         {
@@ -60,6 +65,11 @@ namespace Amazon.OpenSearchServerless.Model
         /// <para>
         /// A list of lifecycle policy names and policy types for which retrieval failed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LifecyclePolicyErrorDetail> LifecyclePolicyErrorDetails
         {

@@ -123,6 +123,11 @@ namespace Amazon.SSOOIDC.Model
         /// <para>
         /// * Refresh Token - <c>refresh_token</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> GrantTypes
         {
@@ -162,6 +167,11 @@ namespace Amazon.SSOOIDC.Model
         /// this list is used to restrict what locations the user agent can be redirected back
         /// to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RedirectUris
         {
@@ -181,6 +191,11 @@ namespace Amazon.SSOOIDC.Model
         /// The list of scopes that are defined by the client. Upon authorization, this list is
         /// used to restrict permissions when granting an access token.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Scopes
         {

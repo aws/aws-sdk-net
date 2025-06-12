@@ -74,6 +74,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// List of S3 presigned URLs of email attachments and their file name. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=10)]
         public List<EmailAttachment> Attachments
@@ -99,6 +104,11 @@ namespace Amazon.Connect.Model
         /// There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute
         /// keys can include only alphanumeric, dash, and underscore characters.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Attributes
         {
@@ -285,6 +295,11 @@ namespace Amazon.Connect.Model
         /// | <c>STRING</c> | <c>DATE</c>. <c>EMAIL</c> | <c>EMAIL_MESSAGE</c> |<c>ATTACHMENT</c>
         /// are not a supported reference type during email creation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, Reference> References
         {
@@ -343,6 +358,11 @@ namespace Amazon.Connect.Model
         /// like { <c> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger":135}}}}</c>.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, SegmentAttributeValue> SegmentAttributes
         {

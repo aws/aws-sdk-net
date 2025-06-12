@@ -63,6 +63,11 @@ namespace Amazon.DataSync.Model
         /// Specifies the DataSync agent (or agents) that can connect to your SMB file server.
         /// You specify an agent by using its Amazon Resource Name (ARN).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]
         public List<string> AgentArns
@@ -112,6 +117,11 @@ namespace Amazon.DataSync.Model
         /// If you have multiple domains in your environment, configuring this parameter makes
         /// sure that DataSync connects to the right SMB file server.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=2)]
         public List<string> DnsIpAddresses
@@ -339,6 +349,11 @@ namespace Amazon.DataSync.Model
         /// Specifies labels that help you categorize, filter, and search for your Amazon Web
         /// Services resources. We recommend creating at least a name tag for your location.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags

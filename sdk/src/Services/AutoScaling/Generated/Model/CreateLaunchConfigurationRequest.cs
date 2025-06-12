@@ -121,6 +121,11 @@ namespace Amazon.AutoScaling.Model
         /// the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
         /// device mappings</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
         {
@@ -158,6 +163,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Available for backward compatibility.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ClassicLinkVPCSecurityGroups
         {
@@ -483,6 +493,11 @@ namespace Amazon.AutoScaling.Model
         /// traffic to your Amazon Web Services resources using security groups</a> in the <i>Amazon
         /// Virtual Private Cloud User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroups
         {

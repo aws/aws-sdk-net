@@ -115,6 +115,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The IAM roles associated with the DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRdsDbInstanceAssociatedRole> AssociatedRoles
         {
@@ -391,6 +396,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of the DB parameter groups to assign to the DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRdsDbParameterGroup> DbParameterGroups
         {
@@ -409,6 +419,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of the DB security groups to assign to the DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DbSecurityGroups
         {
@@ -467,6 +482,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The Active Directory domain membership records associated with the DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRdsDbDomainMembership> DomainMemberships
         {
@@ -485,6 +505,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of log types that this DB instance is configured to export to CloudWatch Logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EnabledCloudWatchLogsExports
         {
@@ -819,6 +844,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The list of option group memberships for this DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRdsDbOptionGroupMembership> OptionGroupMemberships
         {
@@ -964,6 +994,11 @@ namespace Amazon.SecurityHub.Model
         /// The number of CPU cores and the number of threads per core for the DB instance class
         /// of the DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRdsDbProcessorFeature> ProcessorFeatures
         {
@@ -1030,6 +1065,11 @@ namespace Amazon.SecurityHub.Model
         /// List of identifiers of Aurora DB clusters to which the RDS DB instance is replicated
         /// as a read replica.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReadReplicaDBClusterIdentifiers
         {
@@ -1048,6 +1088,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// List of identifiers of the read replicas associated with this DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReadReplicaDBInstanceIdentifiers
         {
@@ -1103,6 +1148,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The status of a read replica. If the instance isn't a read replica, this is empty.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRdsDbStatusInfo> StatusInfos
         {
@@ -1193,6 +1243,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of VPC security groups that the DB instance belongs to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRdsDbInstanceVpcSecurityGroup> VpcSecurityGroups
         {

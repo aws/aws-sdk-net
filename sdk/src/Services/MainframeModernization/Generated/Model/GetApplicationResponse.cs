@@ -249,6 +249,11 @@ namespace Amazon.MainframeModernization.Model
         /// Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this
         /// listener for you the first time you deploy an application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> ListenerArns
@@ -269,6 +274,11 @@ namespace Amazon.MainframeModernization.Model
         /// The port associated with the network load balancer listener created in your Amazon
         /// Web Services account.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<int> ListenerPorts
@@ -308,6 +318,11 @@ namespace Amazon.MainframeModernization.Model
         /// group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization
         /// pushes the application log to CloudWatch under the customer's account.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LogGroupSummary> LogGroups
         {
@@ -400,6 +415,11 @@ namespace Amazon.MainframeModernization.Model
         /// <para>
         /// A list of tags associated with the application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public Dictionary<string, string> Tags
@@ -420,6 +440,11 @@ namespace Amazon.MainframeModernization.Model
         /// Returns the Amazon Resource Names (ARNs) of the target groups that are attached to
         /// the network load balancer.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> TargetGroupArns

@@ -70,6 +70,11 @@ namespace Amazon.CodeGuruProfiler.Model
         /// then there are 288 <c>endTimes</c> in the list that are each five minutes appart.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<TimestampStructure> EndTimes
@@ -91,6 +96,11 @@ namespace Amazon.CodeGuruProfiler.Model
         /// name of the frame, the aggregation type to calculate the metric value for the frame,
         /// and the thread states to use to get the count for the metric value of the frame.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<FrameMetricDatum> FrameMetricData
@@ -166,6 +176,11 @@ namespace Amazon.CodeGuruProfiler.Model
         /// List of instances which remained unprocessed. This will create a missing time step
         /// in the list of end times.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, List<TimestampStructure>> UnprocessedEndTimes

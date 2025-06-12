@@ -115,6 +115,11 @@ namespace Amazon.RAM.Model
         /// with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Principals
         {
@@ -136,6 +141,11 @@ namespace Amazon.RAM.Model
         /// resource share. After the operation runs, these resources are no longer shared with
         /// principals associated with the resource share.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ResourceArns
         {
@@ -176,6 +186,11 @@ namespace Amazon.RAM.Model
         /// Specifies from which source accounts the service principal no longer has access to
         /// the resources in this resource share.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Sources
         {

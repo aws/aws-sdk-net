@@ -277,6 +277,11 @@ namespace Amazon.ElastiCache.Model
         /// of cache nodes in this <c>ModifyCacheCluster</c> call is 5, you must list 2 (7 - 5)
         /// cache node IDs to remove.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CacheNodeIdsToRemove
         {
@@ -343,6 +348,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CacheSecurityGroupNames
         {
@@ -425,6 +435,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Specifies the destination, format and type of the logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LogDeliveryConfigurationRequest> LogDeliveryConfigurations
         {
@@ -563,6 +578,11 @@ namespace Amazon.ElastiCache.Model
         /// - No</b>, all creates are pending.
         /// </para>
         ///  </important> </li> </ul> </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NewAvailabilityZones
         {
@@ -763,6 +783,11 @@ namespace Amazon.ElastiCache.Model
         /// This parameter can be used only with clusters that are created in an Amazon Virtual
         /// Private Cloud (Amazon VPC).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {

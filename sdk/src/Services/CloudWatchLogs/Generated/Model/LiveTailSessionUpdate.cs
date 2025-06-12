@@ -73,6 +73,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// of log events matching the request exceeds 500 per second, the log events are sampled
         /// down to 500 log events to be included in each <c>sessionUpdate</c> structure.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LiveTailSessionLogEvent> SessionResults
         {

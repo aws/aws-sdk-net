@@ -231,6 +231,11 @@ namespace Amazon.TranscribeService.Model
         /// encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric
         /// keys in KMS</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public Dictionary<string, string> KMSEncryptionContext
@@ -325,6 +330,11 @@ namespace Amazon.TranscribeService.Model
         /// use automatic language identification, use instead the <code/> parameter with the
         /// <c>VocabularyName</c> or <c>VocabularyFilterName</c> (or both) sub-parameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public Dictionary<string, LanguageIdSettings> LanguageIdSettings
@@ -362,6 +372,11 @@ namespace Amazon.TranscribeService.Model
         /// us-gov-east-1), in Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your
         /// media file must be encoded at a sample rate of 16,000 Hz or higher.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> LanguageOptions
@@ -694,6 +709,11 @@ namespace Amazon.TranscribeService.Model
         /// To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
         /// resources</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags
@@ -720,6 +740,11 @@ namespace Amazon.TranscribeService.Model
         /// href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
         /// toxic speech</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<ToxicityDetectionSettings> ToxicityDetection

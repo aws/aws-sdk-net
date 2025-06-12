@@ -78,6 +78,11 @@ namespace Amazon.QuickSight.Model
         /// Groupings of columns that work together in certain Amazon QuickSight features. Currently,
         /// only geospatial hierarchy is supported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=8)]
         public List<ColumnGroup> ColumnGroups
@@ -98,6 +103,11 @@ namespace Amazon.QuickSight.Model
         /// A set of one or more definitions of a <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
         /// </c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ColumnLevelPermissionRule> ColumnLevelPermissionRules
@@ -172,6 +182,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The parameters that are declared in a dataset.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
         public List<DatasetParameter> DatasetParameters
@@ -210,6 +225,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The folder that contains fields and nested subfolders for your dataset.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, FieldFolder> FieldFolders
         {
@@ -264,6 +284,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// Configures the combination and transformation of the data from the physical tables.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public Dictionary<string, LogicalTable> LogicalTableMap
@@ -303,6 +328,11 @@ namespace Amazon.QuickSight.Model
         /// The list of columns after all transforms. These columns are available in templates,
         /// analyses, and dashboards.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OutputColumn> OutputColumns
         {
@@ -339,6 +369,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// Declares the physical tables that are available in the underlying data sources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=32)]
         public Dictionary<string, PhysicalTable> PhysicalTableMap

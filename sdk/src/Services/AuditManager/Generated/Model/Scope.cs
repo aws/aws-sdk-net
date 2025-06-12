@@ -60,6 +60,11 @@ namespace Amazon.AuditManager.Model
         ///  The Amazon Web Services accounts that are included in the scope of the assessment.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
         public List<AWSAccount> AwsAccounts
@@ -87,6 +92,11 @@ namespace Amazon.AuditManager.Model
         /// value for <c>awsServices</c> will show as empty.
         /// </para>
         ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("You can't specify services in scope when creating/updating an assessment. If you use the parameter to specify one or more AWS services, Audit Manager ignores the input. Instead the value of the parameter will show as empty indicating that the services are defined and managed by Audit Manager.")]
         public List<AWSService> AwsServices

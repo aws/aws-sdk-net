@@ -123,6 +123,11 @@ namespace Amazon.IoTFleetWise.Model
         ///  A list of information about the network interfaces to add to the decoder manifest.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public List<NetworkInterface> NetworkInterfacesToAdd
@@ -142,6 +147,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         ///  A list of network interfaces to remove from the decoder manifest.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public List<string> NetworkInterfacesToRemove
@@ -162,6 +172,11 @@ namespace Amazon.IoTFleetWise.Model
         ///  A list of information about the network interfaces to update in the decoder manifest.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public List<NetworkInterface> NetworkInterfacesToUpdate
@@ -182,6 +197,11 @@ namespace Amazon.IoTFleetWise.Model
         ///  A list of information about decoding additional signals to add to the decoder manifest.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public List<SignalDecoder> SignalDecodersToAdd
@@ -201,6 +221,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         ///  A list of signal decoders to remove from the decoder manifest. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public List<string> SignalDecodersToRemove
@@ -221,6 +246,11 @@ namespace Amazon.IoTFleetWise.Model
         ///  A list of updated information about decoding signals to update in the decoder manifest.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public List<SignalDecoder> SignalDecodersToUpdate

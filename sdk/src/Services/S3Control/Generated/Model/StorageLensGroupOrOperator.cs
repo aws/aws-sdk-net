@@ -48,6 +48,11 @@ namespace Amazon.S3Control.Model
         /// <para>
         ///  Filters objects that match any of the specified prefixes. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> MatchAnyPrefix
         {
@@ -66,6 +71,11 @@ namespace Amazon.S3Control.Model
         /// <para>
         ///  Filters objects that match any of the specified suffixes. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> MatchAnySuffix
         {
@@ -84,6 +94,11 @@ namespace Amazon.S3Control.Model
         /// <para>
         ///  Filters objects that match any of the specified S3 object tags. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<S3Tag> MatchAnyTag
         {

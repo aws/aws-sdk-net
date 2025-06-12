@@ -93,6 +93,11 @@ namespace Amazon.QBusiness.Model
         /// A list of files uploaded directly during chat. You can upload a maximum of 5 files
         /// of upto 10 MB each.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<AttachmentInput> Attachments
@@ -277,6 +282,11 @@ namespace Amazon.QBusiness.Model
         /// <para>
         /// The group names that a user associated with the chat input belongs to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> UserGroups
         {

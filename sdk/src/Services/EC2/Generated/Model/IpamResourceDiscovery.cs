@@ -145,6 +145,11 @@ namespace Amazon.EC2.Model
         /// and monitors resources in the Amazon Web Services Regions you select as operating
         /// Regions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IpamOperatingRegion> OperatingRegions
         {
@@ -165,6 +170,11 @@ namespace Amazon.EC2.Model
         /// unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU
         /// exclusion.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IpamOrganizationalUnitExclusion> OrganizationalUnitExclusions
         {
@@ -272,6 +282,11 @@ namespace Amazon.EC2.Model
         /// of a key and an optional value. You can use tags to search and filter your resources
         /// or track your Amazon Web Services costs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

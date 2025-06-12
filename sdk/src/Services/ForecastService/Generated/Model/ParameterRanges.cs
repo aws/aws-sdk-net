@@ -46,6 +46,11 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// Specifies the tunable range for each categorical hyperparameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<CategoricalParameterRange> CategoricalParameterRanges
@@ -65,6 +70,11 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// Specifies the tunable range for each continuous hyperparameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<ContinuousParameterRange> ContinuousParameterRanges
@@ -84,6 +94,11 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// Specifies the tunable range for each integer hyperparameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<IntegerParameterRange> IntegerParameterRanges

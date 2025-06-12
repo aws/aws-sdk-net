@@ -46,6 +46,11 @@ namespace Amazon.SageMaker.Model
         /// The <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-updated-apps.html">Applications
         /// supported in Studio</a> that are hidden from the Studio left navigation pane.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HiddenAppTypes
         {
@@ -64,6 +69,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  The instance types you are hiding from the Studio user interface. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HiddenInstanceTypes
         {
@@ -82,6 +92,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The machine learning tools that are hidden from the Studio left navigation pane.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HiddenMlTools
         {
@@ -100,6 +115,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  The version aliases you are hiding from the Studio user interface. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<HiddenSageMakerImage> HiddenSageMakerImageVersionAliases

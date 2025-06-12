@@ -50,6 +50,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A map of question identifiers to answer value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Max=100)]
         public Dictionary<string, EvaluationAnswerOutput> Answers
@@ -164,6 +169,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A map of question identifiers to note value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Max=100)]
         public Dictionary<string, EvaluationNote> Notes
@@ -183,6 +193,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A map of item (section or question) identifiers to score value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=100)]
         public Dictionary<string, EvaluationScore> Scores
@@ -222,6 +237,11 @@ namespace Amazon.Connect.Model
         /// The tags used to organize, track, or control access for this resource. For example,
         /// { "Tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

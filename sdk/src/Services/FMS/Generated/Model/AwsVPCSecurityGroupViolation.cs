@@ -46,6 +46,11 @@ namespace Amazon.FMS.Model
         /// List of rules specified in the security group of the Firewall Manager policy that
         /// partially match the <c>ViolationTarget</c> rule.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PartialMatch> PartialMatches
         {
@@ -64,6 +69,11 @@ namespace Amazon.FMS.Model
         /// <para>
         /// Remediation options for the rule specified in the <c>ViolationTarget</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SecurityGroupRemediationAction> PossibleSecurityGroupRemediationActions
         {

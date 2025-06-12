@@ -44,6 +44,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The category (y-axis) field well of a bar chart.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<DimensionField> Category
@@ -63,6 +68,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The color (group/color) field well of a bar chart.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<DimensionField> Colors
@@ -82,6 +92,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The small multiples field well of a bar chart.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1)]
         public List<DimensionField> SmallMultiples
@@ -101,6 +116,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The value field wells of a bar chart. Values are aggregated by category.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<MeasureField> Values

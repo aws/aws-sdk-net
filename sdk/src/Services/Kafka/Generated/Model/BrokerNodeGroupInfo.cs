@@ -75,6 +75,11 @@ namespace Amazon.Kafka.Model
         /// interfaces to produce and consume data. Client subnets can't occupy the Availability
         /// Zone with ID use use1-az3.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> ClientSubnets
@@ -136,6 +141,11 @@ namespace Amazon.Kafka.Model
         /// don't specify a security group, Amazon MSK uses the default security group associated
         /// with the VPC.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroups
         {
@@ -172,6 +182,11 @@ namespace Amazon.Kafka.Model
         /// <para>
         /// The list of zoneIds for the cluster in the virtual private cloud (VPC).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ZoneIds
         {

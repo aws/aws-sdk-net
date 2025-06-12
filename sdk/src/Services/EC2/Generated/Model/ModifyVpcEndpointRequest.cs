@@ -58,6 +58,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// (Gateway endpoint) The IDs of the route tables to associate with the endpoint.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AddRouteTableIds
         {
@@ -77,6 +82,11 @@ namespace Amazon.EC2.Model
         /// (Interface endpoint) The IDs of the security groups to associate with the endpoint
         /// network interfaces.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AddSecurityGroupIds
         {
@@ -97,6 +107,11 @@ namespace Amazon.EC2.Model
         /// serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one
         /// subnet.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AddSubnetIds
         {
@@ -209,6 +224,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// (Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RemoveRouteTableIds
         {
@@ -228,6 +248,11 @@ namespace Amazon.EC2.Model
         /// (Interface endpoint) The IDs of the security groups to disassociate from the endpoint
         /// network interfaces.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RemoveSecurityGroupIds
         {
@@ -246,6 +271,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// (Interface endpoint) The IDs of the subnets from which to remove the endpoint.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RemoveSubnetIds
         {
@@ -283,6 +313,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The subnet configurations for the endpoint.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SubnetConfiguration> SubnetConfigurations
         {

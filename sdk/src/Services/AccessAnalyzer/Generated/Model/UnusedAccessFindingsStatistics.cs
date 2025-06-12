@@ -46,6 +46,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// A list of one to ten Amazon Web Services accounts that have the most active findings
         /// for the unused access analyzer.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<FindingAggregationAccountDetails> TopAccounts
@@ -120,6 +125,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// A list of details about the total number of findings for each type of unused access
         /// for the analyzer. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UnusedAccessTypeStatistics> UnusedAccessTypeStatistics
         {

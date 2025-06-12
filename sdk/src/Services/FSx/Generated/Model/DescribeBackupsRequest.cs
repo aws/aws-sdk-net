@@ -81,6 +81,11 @@ namespace Amazon.FSx.Model
         /// The IDs of the backups that you want to retrieve. This parameter value overrides any
         /// filters. If any IDs aren't found, a <c>BackupNotFound</c> error occurs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> BackupIds
@@ -101,6 +106,11 @@ namespace Amazon.FSx.Model
         /// The filters structure. The supported names are <c>file-system-id</c>, <c>backup-type</c>,
         /// <c>file-system-type</c>, and <c>volume-id</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=10)]
         public List<Filter> Filters

@@ -68,8 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/distributionsByKeyGroupId/{KeyGroupId}";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListDistributionsByKeyGroupRequestMarshaller _instance = new ListDistributionsByKeyGroupRequestMarshaller();        

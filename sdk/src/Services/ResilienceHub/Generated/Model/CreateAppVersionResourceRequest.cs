@@ -70,6 +70,11 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// Currently, there is no supported additional information for resources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<string>> AdditionalInfo
         {
@@ -112,6 +117,11 @@ namespace Amazon.ResilienceHub.Model
         /// List of Application Components that this resource belongs to. If an Application Component
         /// is not part of the Resilience Hub application, it will be added.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> AppComponents

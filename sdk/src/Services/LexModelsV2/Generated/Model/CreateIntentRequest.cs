@@ -254,6 +254,11 @@ namespace Amazon.LexModelsV2.Model
         /// An intent may have up to 5 input contexts. If an intent has multiple input contexts,
         /// all of the contexts must be active to consider the intent.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<InputContext> InputContexts
@@ -385,6 +390,11 @@ namespace Amazon.LexModelsV2.Model
         /// contexts. You can also set the number of conversation turns that the context should
         /// be active, or the length of time that the context should be active.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<OutputContext> OutputContexts
@@ -466,6 +476,11 @@ namespace Amazon.LexModelsV2.Model
         /// In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where
         /// they should be displayed in the utterance shown to the user.. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SampleUtterance> SampleUtterances
         {

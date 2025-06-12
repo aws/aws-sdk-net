@@ -168,6 +168,11 @@ namespace Amazon.SimpleEmail.Model
         /// The reply-to email address(es) for the message. If the recipient replies to the message,
         /// each reply-to address receives the reply.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReplyToAddresses
         {
@@ -318,6 +323,11 @@ namespace Amazon.SimpleEmail.Model
         /// using <c>SendEmail</c>. Tags correspond to characteristics of the email that you define,
         /// so that you can publish email sending events.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MessageTag> Tags
         {

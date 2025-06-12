@@ -167,6 +167,11 @@ namespace Amazon.AutoScaling.Model
         /// using the <c>VPCZoneIdentifier</c> property, or for attaching a network interface
         /// when an existing network interface ID is specified in a launch template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AvailabilityZones
         {
@@ -529,6 +534,11 @@ namespace Amazon.AutoScaling.Model
         /// One or more lifecycle hooks to add to the Auto Scaling group before instances are
         /// launched.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LifecycleHookSpecification> LifecycleHookSpecificationList
         {
@@ -549,6 +559,11 @@ namespace Amazon.AutoScaling.Model
         /// Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify the <c>TargetGroupARNs</c>
         /// property instead.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> LoadBalancerNames
         {
@@ -756,6 +771,11 @@ namespace Amazon.AutoScaling.Model
         /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag
         /// Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {
@@ -779,6 +799,11 @@ namespace Amazon.AutoScaling.Model
         /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
         /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> TargetGroupARNs
         {
@@ -808,6 +833,11 @@ namespace Amazon.AutoScaling.Model
         /// | <c>OldestLaunchTemplate</c> | <c>arn:aws:lambda:region:account-id:function:my-function:my-alias</c>
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> TerminationPolicies
         {
@@ -828,6 +858,11 @@ namespace Amazon.AutoScaling.Model
         /// of the following as traffic sources for an Auto Scaling group: Classic Load Balancer,
         /// Application Load Balancer, Gateway Load Balancer, Network Load Balancer, and VPC Lattice.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TrafficSourceIdentifier> TrafficSources
         {

@@ -68,8 +68,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxresults", StringUtils.FromString(publicRequest.MaxResults));
             request.ResourcePath = "/2013-04-01/queryloggingconfig";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListQueryLoggingConfigsRequestMarshaller _instance = new ListQueryLoggingConfigsRequestMarshaller();        

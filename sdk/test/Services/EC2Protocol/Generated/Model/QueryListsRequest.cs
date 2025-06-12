@@ -43,6 +43,11 @@ namespace Amazon.EC2Protocol.Model
 
         /// <summary>
         /// Gets and sets the property ComplexListArg.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GreetingStruct> ComplexListArg
         {
@@ -58,6 +63,11 @@ namespace Amazon.EC2Protocol.Model
 
         /// <summary>
         /// Gets and sets the property ListArg.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ListArg
         {
@@ -73,6 +83,11 @@ namespace Amazon.EC2Protocol.Model
 
         /// <summary>
         /// Gets and sets the property ListArgWithXmlName.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ListArgWithXmlName
         {
@@ -88,6 +103,11 @@ namespace Amazon.EC2Protocol.Model
 
         /// <summary>
         /// Gets and sets the property ListArgWithXmlNameMember.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ListArgWithXmlNameMember
         {

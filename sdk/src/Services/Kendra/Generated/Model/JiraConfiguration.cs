@@ -60,6 +60,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The Jira data source field names must exist in your Jira custom
         /// metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> AttachmentFieldMappings
@@ -84,6 +89,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The Jira data source field names must exist in your Jira custom
         /// metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> CommentFieldMappings
@@ -107,6 +117,11 @@ namespace Amazon.Kendra.Model
         /// matches both an inclusion pattern and an exclusion pattern, the exclusion pattern
         /// takes precedence and the file isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> ExclusionPatterns
@@ -130,6 +145,11 @@ namespace Amazon.Kendra.Model
         /// matches both an inclusion pattern and an exclusion pattern, the exclusion pattern
         /// takes precedence and the file isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPatterns
@@ -154,6 +174,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The Jira data source field names must exist in your Jira custom
         /// metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> IssueFieldMappings
@@ -174,6 +199,11 @@ namespace Amazon.Kendra.Model
         /// Specify whether to crawl comments, attachments, and work logs. You can specify one
         /// or more of these options.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<string> IssueSubEntityFilter
@@ -194,6 +224,11 @@ namespace Amazon.Kendra.Model
         /// Specify which issue types to crawl in your Jira data source. You can specify one or
         /// more of these options to crawl.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> IssueType
         {
@@ -232,6 +267,11 @@ namespace Amazon.Kendra.Model
         /// Specify which projects to crawl in your Jira data source. You can specify one or more
         /// Jira project IDs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Project
         {
@@ -255,6 +295,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The Jira data source field names must exist in your Jira custom
         /// metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> ProjectFieldMappings
@@ -306,6 +351,11 @@ namespace Amazon.Kendra.Model
         /// Specify which statuses to crawl in your Jira data source. You can specify one or more
         /// of these options to crawl.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Status
         {
@@ -369,6 +419,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The Jira data source field names must exist in your Jira custom
         /// metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> WorkLogFieldMappings

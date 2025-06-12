@@ -61,6 +61,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property InputClippings. Specify one or more clips to use from your
         /// video overlay. When you include an input clip, you must also specify its start timecode,
         /// end timecode, or both start and end timecode.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VideoOverlayInputClipping> InputClippings
         {

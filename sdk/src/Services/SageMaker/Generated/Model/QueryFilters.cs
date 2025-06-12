@@ -85,6 +85,11 @@ namespace Amazon.SageMaker.Model
         /// Filter the lineage entities connected to the <c>StartArn</c>(s) by the type of the
         /// lineage entity.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=4)]
         public List<string> LineageTypes
@@ -144,6 +149,11 @@ namespace Amazon.SageMaker.Model
         /// key value pairs. If multiple pairs are provided, an entity is included in the results
         /// if it matches any of the provided pairs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public Dictionary<string, string> Properties
@@ -164,6 +174,11 @@ namespace Amazon.SageMaker.Model
         /// Filter the lineage entities connected to the <c>StartArn</c> by type. For example:
         /// <c>DataSet</c>, <c>Model</c>, <c>Endpoint</c>, or <c>ModelDeployment</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<string> Types

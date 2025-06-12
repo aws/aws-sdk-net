@@ -217,6 +217,11 @@ namespace Amazon.LexModelsV2.Model
         /// can take. Each value can have a list of synonyms, additional values that help train
         /// the machine learning model about the values that it resolves for a slot.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
         public List<SlotTypeValue> SlotTypeValues

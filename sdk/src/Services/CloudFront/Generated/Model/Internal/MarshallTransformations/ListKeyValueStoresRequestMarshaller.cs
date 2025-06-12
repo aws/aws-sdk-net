@@ -68,8 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/2020-05-31/key-value-store";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListKeyValueStoresRequestMarshaller _instance = new ListKeyValueStoresRequestMarshaller();        

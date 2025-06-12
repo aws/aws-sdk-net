@@ -339,6 +339,11 @@ namespace Amazon.Textract.Model
         /// <para>
         ///  <c>EntityTypes</c> isn't returned by <c>DetectDocumentText</c> and <c>GetDocumentTextDetection</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EntityTypes
         {
@@ -438,6 +443,11 @@ namespace Amazon.Textract.Model
         /// blocks that make up the line of text. There aren't Relationship objects in the list
         /// for relationships that don't exist, such as when the current block has no child blocks.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Relationship> Relationships
         {

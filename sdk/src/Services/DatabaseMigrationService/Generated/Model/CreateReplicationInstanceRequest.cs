@@ -437,6 +437,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// One or more tags to be assigned to the replication instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {
@@ -456,6 +461,11 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  Specifies the VPC security group to be used with the replication instance. The VPC
         /// security group must work with the VPC containing the replication instance. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> VpcSecurityGroupIds
         {

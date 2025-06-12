@@ -109,6 +109,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Information about the candidate's steps.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AutoMLCandidateStep> CandidateSteps
@@ -202,6 +207,11 @@ namespace Amazon.SageMaker.Model
         /// example, for jobs created by calling <c>CreateAutoMLJobV2</c>) related to image or
         /// text classification problem types only.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
         public Dictionary<string, List<AutoMLContainerDefinition>> InferenceContainerDefinitions
@@ -221,6 +231,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Information about the recommended inference container definitions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<AutoMLContainerDefinition> InferenceContainers

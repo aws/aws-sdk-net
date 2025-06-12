@@ -216,6 +216,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A key-value map of execution parameters, which match the declared parameters in the
         /// Automation runbook.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Parameters
@@ -255,6 +260,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// action to add up to a total of 50 tags to an existing automation configuration.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1000)]
         public List<Tag> Tags
@@ -279,6 +289,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon
         /// Web Services Systems Manager User Guide</i>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<TargetLocation> TargetLocations
@@ -318,6 +333,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
         /// can't be specified together.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
         public List<Dictionary<string, List<string>>> TargetMaps
@@ -362,6 +382,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// If both this parameter and the <c>TargetLocation:Targets</c> parameter are supplied,
         /// <c>TargetLocation:Targets</c> takes precedence.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets

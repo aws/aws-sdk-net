@@ -103,6 +103,11 @@ namespace Amazon.NetworkFirewall.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict
         /// evaluation order</a> in the <i>Network Firewall Developer Guide</i>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StatefulDefaultActions
         {
@@ -142,6 +147,11 @@ namespace Amazon.NetworkFirewall.Model
         /// References to the stateful rule groups that are used in the policy. These define the
         /// inspection criteria in stateful rules. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StatefulRuleGroupReference> StatefulRuleGroupReferences
         {
@@ -162,6 +172,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <c>StatelessDefaultActions</c> setting. You name each custom action that you define,
         /// and then you can use it by name in your default actions specifications.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CustomAction> StatelessCustomActions
         {
@@ -194,6 +209,11 @@ namespace Amazon.NetworkFirewall.Model
         /// “customActionName”]</c>. For information about compatibility, see the custom action
         /// descriptions under <a>CustomAction</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> StatelessDefaultActions
@@ -229,6 +249,11 @@ namespace Amazon.NetworkFirewall.Model
         /// “customActionName”]</c>. For information about compatibility, see the custom action
         /// descriptions under <a>CustomAction</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> StatelessFragmentDefaultActions
@@ -249,6 +274,11 @@ namespace Amazon.NetworkFirewall.Model
         /// References to the stateless rule groups that are used in the policy. These define
         /// the matching criteria in stateless rules. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StatelessRuleGroupReference> StatelessRuleGroupReferences
         {

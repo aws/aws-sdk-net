@@ -65,8 +65,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/streaming-distribution";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListStreamingDistributionsRequestMarshaller _instance = new ListStreamingDistributionsRequestMarshaller();        

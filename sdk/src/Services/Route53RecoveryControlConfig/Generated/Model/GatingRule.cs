@@ -82,6 +82,11 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// by the rule configuration that you specify to determine if the target routing control
         /// states can be changed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> GatingControls
@@ -202,6 +207,11 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// it acts as an overall "on/off" switch for a set of target routing controls. You can
         /// use this to manually override automated failover, for example.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TargetControls

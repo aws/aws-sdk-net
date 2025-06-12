@@ -202,6 +202,11 @@ namespace Amazon.SageMaker.Model
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
         /// SageMaker Model Monitor</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MonitoringSchedule> MonitoringSchedules
         {
@@ -221,6 +226,11 @@ namespace Amazon.SageMaker.Model
         /// A list of the production variants hosted on the endpoint. Each production variant
         /// is a model.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ProductionVariantSummary> ProductionVariants
@@ -241,6 +251,11 @@ namespace Amazon.SageMaker.Model
         /// A list of the shadow variants hosted on the endpoint. Each shadow variant is a model
         /// in shadow mode with production traffic replicated from the production variant.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ProductionVariantSummary> ShadowProductionVariants
@@ -262,6 +277,11 @@ namespace Amazon.SageMaker.Model
         /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference
         /// Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

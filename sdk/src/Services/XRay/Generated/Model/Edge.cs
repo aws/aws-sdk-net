@@ -50,6 +50,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// Aliases for the edge.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Alias> Aliases
         {
@@ -105,6 +110,11 @@ namespace Amazon.XRay.Model
         /// A histogram that maps the spread of event age when received by consumers. Age is calculated
         /// each time an event is received. Only populated when <i>EdgeType</i> is <c>link</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HistogramEntry> ReceivedEventAgeHistogram
         {
@@ -142,6 +152,11 @@ namespace Amazon.XRay.Model
         /// A histogram that maps the spread of client response times on an edge. Only populated
         /// for synchronous edges.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HistogramEntry> ResponseTimeHistogram
         {

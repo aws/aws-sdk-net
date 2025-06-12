@@ -62,6 +62,11 @@ namespace Amazon.LexModelBuildingService.Model
         /// An array of <c>BuiltinIntentSlot</c> objects, one entry for each slot type in the
         /// intent.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BuiltinIntentSlot> Slots
         {
@@ -80,6 +85,11 @@ namespace Amazon.LexModelBuildingService.Model
         /// <para>
         /// A list of locales that the intent supports.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedLocales
         {

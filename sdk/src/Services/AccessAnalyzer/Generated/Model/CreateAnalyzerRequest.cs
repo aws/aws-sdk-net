@@ -67,6 +67,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// Specifies the archive rules to add for the analyzer. Archive rules automatically archive
         /// findings that meet the criteria you define for the rule.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InlineArchiveRule> ArchiveRules
         {
@@ -133,6 +138,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// <para>
         /// For the tag value, you can specify a value that is 0 to 256 characters in length.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

@@ -61,6 +61,11 @@ namespace Amazon.RDS.Model
         /// One or more data structures specifying the authorization mechanism to connect to the
         /// associated RDS DB instance or Aurora DB cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UserAuthConfigInfo> Auth
         {
@@ -320,6 +325,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Provides a list of VPC security groups that the proxy belongs to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> VpcSecurityGroupIds
         {
@@ -338,6 +348,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The EC2 subnet IDs for the proxy.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> VpcSubnetIds
         {

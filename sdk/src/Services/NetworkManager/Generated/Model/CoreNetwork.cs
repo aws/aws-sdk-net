@@ -125,6 +125,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The edges within a core network.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CoreNetworkEdge> Edges
         {
@@ -162,6 +167,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The network function groups associated with a core network.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CoreNetworkNetworkFunctionGroup> NetworkFunctionGroups
         {
@@ -180,6 +190,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The segments within a core network.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CoreNetworkSegment> Segments
         {
@@ -216,6 +231,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The list of key-value tags associated with a core network.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

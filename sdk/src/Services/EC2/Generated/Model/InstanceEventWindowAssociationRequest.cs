@@ -45,6 +45,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IDs of the Dedicated Hosts to associate with the event window.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DedicatedHostIds
         {
@@ -65,6 +70,11 @@ namespace Amazon.EC2.Model
         /// a Dedicated Host, you can't specify the Instance ID parameter; you must use the Dedicated
         /// Host ID parameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InstanceIds
         {
@@ -90,6 +100,11 @@ namespace Amazon.EC2.Model
         /// existing Amazon Web Services managed tag keys (with the <c>aws:</c> prefix) when specifying
         /// them as targets to associate with the event window.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> InstanceTags
         {

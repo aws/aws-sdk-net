@@ -44,6 +44,11 @@ namespace Amazon.S3Control.Model
         /// that grant the caller access to the S3 data of the Amazon Web Services account ID
         /// that was specified in the request. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ListCallerAccessGrantsEntry> CallerAccessGrantsList
         {

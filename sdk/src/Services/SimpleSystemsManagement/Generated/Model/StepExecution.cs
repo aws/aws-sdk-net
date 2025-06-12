@@ -156,6 +156,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Fully-resolved values passed into the step before execution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Inputs
         {
@@ -266,6 +271,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Returned values from the execution of the step.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Outputs
@@ -285,6 +295,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A user-specified list of parameters to override when running a step.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> OverriddenParameters
@@ -431,6 +446,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The targets for the step execution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
@@ -468,6 +488,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The CloudWatch alarms that were invoked by the automation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<AlarmStateInformation> TriggeredAlarms
@@ -490,6 +515,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// allow automation to run the next step. With conditional branching, we add step:stepName
         /// to support the automation to go to another specific step.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ValidNextSteps
         {

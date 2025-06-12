@@ -139,6 +139,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// parameter.
         /// </para>
         ///  </li> </ul> </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> ClientMetadata
         {
@@ -179,6 +184,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// value for an <c>email</c> or <c>phone_number</c> attribute that requires verification
         /// to <c>true</c>, Amazon Cognito doesn’t send a verification message to your user.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AttributeType> UserAttributes

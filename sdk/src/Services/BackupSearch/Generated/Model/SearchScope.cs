@@ -45,6 +45,11 @@ namespace Amazon.BackupSearch.Model
         /// <para>
         /// The Amazon Resource Name (ARN) that uniquely identifies the backup resources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<string> BackupResourceArns
@@ -82,6 +87,11 @@ namespace Amazon.BackupSearch.Model
         /// <para>
         /// These are one or more tags on the backup (recovery point).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> BackupResourceTags
         {
@@ -104,6 +114,11 @@ namespace Amazon.BackupSearch.Model
         /// <para>
         /// Eligible resource types include S3 and EBS.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> BackupResourceTypes
@@ -123,6 +138,11 @@ namespace Amazon.BackupSearch.Model
         /// <para>
         /// The Amazon Resource Name (ARN) that uniquely identifies the source resources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<string> SourceResourceArns

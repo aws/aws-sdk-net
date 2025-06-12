@@ -81,6 +81,11 @@ namespace Amazon.ECS.Model
         /// A list of container definitions in JSON format that describe the different containers
         /// that make up your task.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ContainerDefinition> ContainerDefinitions
@@ -235,6 +240,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The Elastic Inference accelerators to use for the containers in the task.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InferenceAccelerator> InferenceAccelerators
         {
@@ -499,6 +509,11 @@ namespace Amazon.ECS.Model
         /// of 10 constraints for each task. This limit includes constraints in the task definition
         /// and those specified at runtime.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TaskDefinitionPlacementConstraint> PlacementConstraints
         {
@@ -548,6 +563,11 @@ namespace Amazon.ECS.Model
         /// exception is returned if the task definition doesn't validate against the compatibilities
         /// specified. If no value is specified, the parameter is omitted from the response.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RequiresCompatibilities
         {
@@ -626,6 +646,11 @@ namespace Amazon.ECS.Model
         /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
@@ -666,6 +691,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A list of volume definitions in JSON format that containers in your task might use.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Volume> Volumes
         {

@@ -118,6 +118,11 @@ namespace Amazon.Backup.Model
         /// If you specify multiple conditions, the resources much match any of the conditions
         /// (OR logic).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Condition> ListOfTags
         {
@@ -143,6 +148,11 @@ namespace Amazon.Backup.Model
         /// selection strategy, such as assigning only one or a few resource types or refining
         /// your resource selection using tags.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NotResources
         {
@@ -172,6 +182,11 @@ namespace Amazon.Backup.Model
         /// <para>
         /// If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Resources
         {

@@ -43,6 +43,11 @@ namespace Amazon.CostExplorer.Model
         /// The forecasts for your query, in order. For <c>DAILY</c> forecasts, this is a list
         /// of days. For <c>MONTHLY</c> forecasts, this is a list of months.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ForecastResult> ForecastResultsByTime
         {

@@ -153,6 +153,11 @@ namespace Amazon.CertificateManager.Model
         /// as a result of the <a>RequestCertificate</a> request. This field exists only when
         /// the certificate type is <c>AMAZON_ISSUED</c>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public List<DomainValidation> DomainValidationOptions
@@ -174,6 +179,11 @@ namespace Amazon.CertificateManager.Model
         /// a purpose for which the certificate public key can be used and consists of a name
         /// and an object identifier (OID). 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ExtendedKeyUsage> ExtendedKeyUsages
         {
@@ -232,6 +242,11 @@ namespace Amazon.CertificateManager.Model
         /// A list of ARNs for the Amazon Web Services resources that are using the certificate.
         /// A certificate can be used by multiple Amazon Web Services resources. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InUseBy
         {
@@ -307,6 +322,11 @@ namespace Amazon.CertificateManager.Model
         /// identifies the purpose of the public key contained in the certificate. Possible extension
         /// values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<KeyUsage> KeyUsages
         {
@@ -565,6 +585,11 @@ namespace Amazon.CertificateManager.Model
         /// (CN) of the certificate and additional domain names that can be used to connect to
         /// the website. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> SubjectAlternativeNames

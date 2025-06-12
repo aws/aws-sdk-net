@@ -49,6 +49,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// An object that maps strings to the component updates in the request. Each string in
         /// the mapping must be unique to this object.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ComponentUpdateRequest> ComponentUpdates
         {
@@ -68,6 +73,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// This is an object that maps strings to <c>compositeComponent</c> updates in the request.
         /// Each key of the map represents the <c>componentPath</c> of the <c>compositeComponent</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, CompositeComponentUpdateRequest> CompositeComponentUpdates
         {

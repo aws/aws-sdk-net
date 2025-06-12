@@ -169,6 +169,11 @@ namespace Amazon.ForecastService.Model
         /// and your dataset contains a <c>store_id</c> field, you would specify <c>store_id</c>
         /// as a dimension to group sales forecasts for each store.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> ForecastDimensions
@@ -288,6 +293,11 @@ namespace Amazon.ForecastService.Model
         /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
         /// higher. You can also specify the mean forecast with <c>mean</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<string> ForecastTypes
@@ -433,6 +443,11 @@ namespace Amazon.ForecastService.Model
         /// tags per resource limit. You cannot edit or delete tag keys with this prefix.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

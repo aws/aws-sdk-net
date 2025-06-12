@@ -86,6 +86,11 @@ namespace Amazon.LexModelsV2.Model
         /// A list of objects, each of which contains specifications for organizing the results
         /// by time.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<AnalyticsBinBySpecification> BinBy
@@ -145,6 +150,11 @@ namespace Amazon.LexModelsV2.Model
         /// A list of objects, each of which describes a condition by which you want to filter
         /// the results.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=9)]
         public List<AnalyticsIntentFilter> Filters
@@ -176,6 +186,11 @@ namespace Amazon.LexModelsV2.Model
         /// definitions</a> in the user guide.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
         public List<AnalyticsIntentGroupBySpecification> GroupBy
@@ -216,6 +231,11 @@ namespace Amazon.LexModelsV2.Model
         /// A list of objects, each of which contains a metric you want to list, the statistic
         /// for the metric you want to return, and the order by which to organize the results.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public List<AnalyticsIntentMetric> Metrics

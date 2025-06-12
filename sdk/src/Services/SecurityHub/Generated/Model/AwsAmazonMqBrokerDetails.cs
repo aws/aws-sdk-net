@@ -319,6 +319,11 @@ namespace Amazon.SecurityHub.Model
         ///  The list of rules (one minimum, 125 maximum) that authorize connections to brokers.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroups
         {
@@ -356,6 +361,11 @@ namespace Amazon.SecurityHub.Model
         ///  The list of groups that define which subnets and IP ranges the broker can use from
         /// different Availability Zones. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SubnetIds
         {
@@ -375,6 +385,11 @@ namespace Amazon.SecurityHub.Model
         ///  The list of all broker usernames for the specified broker. Doesn't apply to RabbitMQ
         /// brokers. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsAmazonMqBrokerUsersDetails> Users
         {

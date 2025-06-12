@@ -62,6 +62,11 @@ namespace Amazon.Macie2.Model
         /// An array of unique identifiers, one for each allow list that the job is configured
         /// to use when it analyzes data.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AllowListIds
         {
@@ -119,6 +124,11 @@ namespace Amazon.Macie2.Model
         /// configured to use when it analyzes data. This value is null if the job is configured
         /// to use only managed data identifiers to analyze data.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CustomDataIdentifierIds
         {
@@ -341,6 +351,11 @@ namespace Amazon.Macie2.Model
         /// This value is null if the job's managed data identifier selection type is ALL, NONE,
         /// or RECOMMENDED.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ManagedDataIdentifierIds
         {
@@ -512,6 +527,11 @@ namespace Amazon.Macie2.Model
         /// A map of key-value pairs that specifies which tags (keys and values) are associated
         /// with the job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

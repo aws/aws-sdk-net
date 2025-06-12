@@ -81,6 +81,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property AdMarkers. Choose one or more ad marker types to pass SCTE35
         /// signals through to this group of Apple HLS outputs.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AdMarkers
         {
@@ -167,6 +172,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property CaptionLanguageMappings. Mapping of up to 4 caption channels
         /// to caption languages.  Is only meaningful if captionLanguageSetting is set to "insert".
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CaptionLanguageMapping> CaptionLanguageMappings
         {

@@ -183,6 +183,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, Reference> References
         {
@@ -216,6 +221,11 @@ namespace Amazon.Connect.Model
         /// Currently Contact Expiry is the only segment attribute which can be updated by using
         /// the UpdateContact API.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, SegmentAttributeValue> SegmentAttributes
         {

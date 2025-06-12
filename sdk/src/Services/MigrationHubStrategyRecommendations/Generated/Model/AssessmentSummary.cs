@@ -124,6 +124,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <para>
         ///  List of AntipatternSeveritySummary. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AntipatternSeveritySummary> ListAntipatternSeveritySummary
         {
@@ -142,6 +147,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <para>
         /// List of status summaries of the analyzed application components.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ApplicationComponentStatusSummary> ListApplicationComponentStatusSummary
         {
@@ -160,6 +170,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <para>
         ///  List of ApplicationComponentStrategySummary. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StrategySummary> ListApplicationComponentStrategySummary
         {
@@ -178,6 +193,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <para>
         ///  List of ApplicationComponentSummary. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ApplicationComponentSummary> ListApplicationComponentSummary
         {
@@ -196,6 +216,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <para>
         /// List of status summaries of the analyzed servers.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ServerStatusSummary> ListServerStatusSummary
         {
@@ -214,6 +239,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <para>
         ///  List of ServerStrategySummary. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StrategySummary> ListServerStrategySummary
         {
@@ -232,6 +262,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <para>
         ///  List of ServerSummary. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ServerSummary> ListServerSummary
         {

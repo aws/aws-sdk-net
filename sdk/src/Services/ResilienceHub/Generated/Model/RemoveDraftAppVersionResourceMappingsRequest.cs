@@ -71,6 +71,11 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// The names of the registered applications you want to remove from the resource mappings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AppRegistryAppNames
         {
@@ -95,6 +100,11 @@ namespace Amazon.ResilienceHub.Model
         /// This parameter accepts values in "eks-cluster/namespace" format.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EksSourceNames
         {
@@ -113,6 +123,11 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// The names of the CloudFormation stacks you want to remove from the resource mappings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> LogicalStackNames
         {
@@ -131,6 +146,11 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// The names of the resource groups you want to remove from the resource mappings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ResourceGroupNames
         {
@@ -149,6 +169,11 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// The names of the resources you want to remove from the resource mappings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ResourceNames
         {
@@ -167,6 +192,11 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// The names of the Terraform sources you want to remove from the resource mappings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> TerraformSourceNames
         {

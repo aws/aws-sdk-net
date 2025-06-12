@@ -137,6 +137,11 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Destinations. A list of destinations of the channel. For
         /// UDP outputs, there is onedestination per output. For other types (HLS, for example),
         /// there isone destination per packager.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OutputDestination> Destinations
         {
@@ -153,6 +158,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property EgressEndpoints. The endpoints where outgoing connections
         /// initiate from
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ChannelEgressEndpoint> EgressEndpoints
         {
@@ -198,6 +208,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property InputAttachments. List of input attachments for channel.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputAttachment> InputAttachments
         {
@@ -275,6 +290,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property PipelineDetails. Runtime details for the pipelines of a
         /// running channel.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PipelineDetail> PipelineDetails
         {
@@ -337,6 +357,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Tags. A collection of key-value pairs.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

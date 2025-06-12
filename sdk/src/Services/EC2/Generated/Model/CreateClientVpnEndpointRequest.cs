@@ -63,6 +63,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Information about the authentication method to be used to authenticate clients.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ClientVpnAuthenticationRequest> AuthenticationOptions
@@ -272,6 +277,11 @@ namespace Amazon.EC2.Model
         /// can have up to two DNS servers. If no DNS server is specified, the DNS address configured
         /// on the device is used for the DNS server.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DnsServers
         {
@@ -311,6 +321,11 @@ namespace Amazon.EC2.Model
         /// The IDs of one or more security groups to apply to the target network. You must also
         /// specify the ID of the VPC that contains the security groups.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -424,6 +439,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tags to apply to the Client VPN endpoint during creation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TagSpecification> TagSpecifications
         {

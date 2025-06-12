@@ -65,6 +65,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// This field indicates how the project's solution will be delivered or implemented for
         /// the customer. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DeliveryModels
         {
@@ -85,6 +90,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// This may include details such as amount, frequency, and currency of expected expenditure.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<ExpectedCustomerSpend> ExpectedCustomerSpend
@@ -127,6 +137,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// for Co-Sell and helps drive assignment priority on the AWS side. It provides insight
         /// into the engagement level with the customer. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SalesActivities
         {

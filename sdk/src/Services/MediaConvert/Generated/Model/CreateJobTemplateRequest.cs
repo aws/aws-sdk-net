@@ -102,6 +102,11 @@ namespace Amazon.MediaConvert.Model
         /// long waits in the backlog of the queue that you submit your job to. Specify an alternate
         /// queue and the maximum time that your job will wait in the initial queue before hopping.
         /// For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HopDestination> HopDestinations
         {
@@ -206,6 +211,11 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Tags. The tags that you want to add to the resource. You
         /// can tag resources with a key-value pair or with only a key.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

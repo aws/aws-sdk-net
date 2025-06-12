@@ -79,6 +79,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The block device mapping.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LaunchTemplateBlockDeviceMappingRequest> BlockDeviceMappings
         {
@@ -222,6 +227,11 @@ namespace Amazon.EC2.Model
         /// Amazon Elastic Graphics reached end of life on January 8, 2024.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ElasticGpuSpecification> ElasticGpuSpecifications
         {
@@ -250,6 +260,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// You cannot specify accelerators from different generations in the same request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LaunchTemplateElasticInferenceAccelerator> ElasticInferenceAccelerators
         {
@@ -591,6 +606,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The license configurations.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LaunchTemplateLicenseConfigurationRequest> LicenseSpecifications
         {
@@ -664,6 +684,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The network interfaces for the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> NetworkInterfaces
         {
@@ -785,6 +810,11 @@ namespace Amazon.EC2.Model
         /// If you specify a network interface, you must specify any security groups as part of
         /// the network interface instead of using this parameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -809,6 +839,11 @@ namespace Amazon.EC2.Model
         /// If you specify a network interface, you must specify any security groups as part of
         /// the network interface instead of using this parameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroups
         {
@@ -828,6 +863,11 @@ namespace Amazon.EC2.Model
         /// The tags to apply to the resources that are created during instance launch. These
         /// tags are not applied to the launch template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LaunchTemplateTagSpecificationRequest> TagSpecifications
         {

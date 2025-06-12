@@ -117,6 +117,11 @@ namespace Amazon.EC2.Model
         /// One or more IPv4 prefixes assigned to the network interface. You can't use this option
         /// if you use the <c>Ipv4PrefixCount</c> option.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Ipv4Prefixes
         {
@@ -160,6 +165,11 @@ namespace Amazon.EC2.Model
         /// If you don't specify an IP address, Amazon EC2 automatically selects an IP address
         /// within the subnet range.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PrivateIpAddresses
         {

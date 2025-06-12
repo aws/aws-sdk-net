@@ -70,6 +70,11 @@ namespace Amazon.RecycleBin.Model
         /// [Region-level retention rules only] Information about the exclusion tags used to identify
         /// resources that are to be excluded, or ignored, by the retention rule.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<ResourceTag> ExcludeResourceTags
@@ -166,6 +171,11 @@ namespace Amazon.RecycleBin.Model
         /// [Tag-level retention rules only] Information about the resource tags used to identify
         /// resources that are retained by the retention rule.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<ResourceTag> ResourceTags
@@ -256,6 +266,11 @@ namespace Amazon.RecycleBin.Model
         /// <para>
         /// Information about the tags assigned to the retention rule.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

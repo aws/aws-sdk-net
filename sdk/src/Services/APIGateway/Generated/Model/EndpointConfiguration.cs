@@ -68,6 +68,11 @@ namespace Amazon.APIGateway.Model
         /// For a regional API and its custom domain name, the endpoint type is <c>REGIONAL</c>.
         /// For a private API, the endpoint type is <c>PRIVATE</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Types
         {
@@ -87,6 +92,11 @@ namespace Amazon.APIGateway.Model
         /// A list of VpcEndpointIds of an API (RestApi) against which to create Route53 ALIASes.
         /// It is only supported for <c>PRIVATE</c> endpoint type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> VpcEndpointIds
         {

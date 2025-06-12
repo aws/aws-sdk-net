@@ -66,6 +66,11 @@ namespace Amazon.Pinpoint.Model
         /// An array of responses, one for each treatment that you defined for the campaign, in
         /// addition to the default treatment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TreatmentResource> AdditionalTreatments
         {
@@ -439,6 +444,11 @@ namespace Amazon.Pinpoint.Model
         /// A string-to-string map of key-value pairs that identifies the tags that are associated
         /// with the campaign. Each tag consists of a required tag key and an associated tag value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

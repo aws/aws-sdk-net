@@ -208,6 +208,11 @@ namespace Amazon.EC2.Model
         ///  <c>volume-size</c> - The size of the volume, in GiB.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Filter> Filters
         {
@@ -266,6 +271,11 @@ namespace Amazon.EC2.Model
         /// Scopes the results to snapshots with the specified owners. You can specify a combination
         /// of Amazon Web Services account IDs, <c>self</c>, and <c>amazon</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> OwnerIds
         {
@@ -284,6 +294,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RestorableByUserIds
         {
@@ -306,6 +321,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Default: Describes the snapshots for which you have create volume permissions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SnapshotIds
         {

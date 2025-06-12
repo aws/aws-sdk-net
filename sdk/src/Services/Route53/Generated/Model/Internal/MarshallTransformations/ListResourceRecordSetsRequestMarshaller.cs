@@ -74,8 +74,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}/rrset";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListResourceRecordSetsRequestMarshaller _instance = new ListResourceRecordSetsRequestMarshaller();        

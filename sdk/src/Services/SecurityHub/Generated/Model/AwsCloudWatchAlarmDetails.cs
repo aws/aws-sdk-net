@@ -82,6 +82,11 @@ namespace Amazon.SecurityHub.Model
         /// The list of actions, specified as Amazon Resource Names (ARNs) to execute when this
         /// alarm transitions into an <c>ALARM</c> state from any other state. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AlarmActions
         {
@@ -210,6 +215,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The dimensions for the metric associated with the alarm. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsCloudWatchAlarmDimensionsDetails> Dimensions
         {
@@ -286,6 +296,11 @@ namespace Amazon.SecurityHub.Model
         /// The actions to execute when this alarm transitions to the <c>INSUFFICIENT_DATA</c>
         /// state from any other state. Each action is specified as an ARN. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InsufficientDataActions
         {
@@ -345,6 +360,11 @@ namespace Amazon.SecurityHub.Model
         /// The actions to execute when this alarm transitions to the <c>OK</c> state from any
         /// other state. Each action is specified as an ARN. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> OkActions
         {

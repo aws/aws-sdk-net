@@ -70,6 +70,11 @@ namespace Amazon.Backup.Model
         /// <para>
         /// An array of <c>CopyAction</c> objects, which contains the details of the copy operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CopyAction> CopyActions
         {
@@ -123,6 +128,11 @@ namespace Amazon.Backup.Model
         ///  <c>S3</c> for Amazon Simple Storage Service (Amazon S3)
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IndexAction> IndexActions
         {
@@ -178,6 +188,11 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The tags to assign to the resources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> RecoveryPointTags

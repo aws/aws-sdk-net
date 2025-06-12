@@ -63,6 +63,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// These are keys defined in the effective policy that are on the resource with either
         /// incorrect case treatment or noncompliant values. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> KeysWithNoncompliantValues
         {
@@ -81,6 +86,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <para>
         /// These tag keys on the resource are noncompliant with the effective tag policy.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NoncompliantKeys
         {

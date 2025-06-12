@@ -45,6 +45,11 @@ namespace Amazon.DynamoDBv2.Model
         /// The partition key value of the item collection. This value is the same as the partition
         /// key value of the item.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, AttributeValue> ItemCollectionKey
         {
@@ -72,6 +77,11 @@ namespace Amazon.DynamoDBv2.Model
         /// The estimate is subject to change over time; therefore, do not rely on the precision
         /// or accuracy of the estimate.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> SizeEstimateRangeGB
         {

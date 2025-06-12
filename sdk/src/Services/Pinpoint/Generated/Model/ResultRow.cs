@@ -45,6 +45,11 @@ namespace Amazon.Pinpoint.Model
         /// data in a result set that contains multiple results. This value is null if the data
         /// in a result set isn’t grouped.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ResultRowValue> GroupedBys
@@ -65,6 +70,11 @@ namespace Amazon.Pinpoint.Model
         /// An array of objects that provides pre-aggregated values for a standard metric that
         /// applies to an application, campaign, or journey.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ResultRowValue> Values

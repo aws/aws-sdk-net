@@ -48,6 +48,11 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// A list of the classes in the graph.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Classes
         {
@@ -138,6 +143,11 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// "A list of predicates in the graph, along with the predicate counts.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Dictionary<string, long>> Predicates
         {
@@ -157,6 +167,11 @@ namespace Amazon.Neptunedata.Model
         /// This field is only present when the request mode is <c>DETAILED</c>. It contains a
         /// list of subject structures.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SubjectStructure> SubjectStructures
         {

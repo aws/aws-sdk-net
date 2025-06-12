@@ -77,8 +77,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/trafficpolicyinstances/trafficpolicy";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListTrafficPolicyInstancesByPolicyRequestMarshaller _instance = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();        

@@ -50,6 +50,11 @@ namespace Amazon.RDS.Model
         /// The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example,
         /// 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DoubleRange> IopsToStorageRatio
         {
@@ -68,6 +73,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The valid range of provisioned IOPS. For example, 1000-256,000.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Range> ProvisionedIops
         {
@@ -87,6 +97,11 @@ namespace Amazon.RDS.Model
         /// The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes
         /// per second (MiBps).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Range> ProvisionedStorageThroughput
         {
@@ -105,6 +120,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Range> StorageSize
         {
@@ -123,6 +143,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DoubleRange> StorageThroughputToIopsRatio
         {

@@ -45,6 +45,11 @@ namespace Amazon.AWSHealth.Model
         /// example, <c>EC2</c>, <c>RDS</c>, <c>DATAPIPELINE</c>, <c>BILLING</c>), and a code
         /// (in the format <c>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </c>; for example, <c>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</c>).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EventType> EventTypes
         {

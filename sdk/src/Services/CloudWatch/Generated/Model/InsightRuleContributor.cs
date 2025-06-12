@@ -75,6 +75,11 @@ namespace Amazon.CloudWatch.Model
         /// An array of the data points where this contributor is present. Only the data points
         /// when this contributor appeared are included in the array.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<InsightRuleContributorDatapoint> Datapoints
@@ -94,6 +99,11 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// One of the log entry field keywords that is used to define contributors for this rule.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Keys

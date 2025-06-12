@@ -110,6 +110,11 @@ namespace Amazon.MediaConvert.Model
         /// multiple sidecar audio inputs so that you can assign them to a single output audio
         /// tab. Note that, if you're working with embedded audio, it's simpler to assign multiple
         /// input tracks into a single audio selector rather than use an audio selector group.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, AudioSelectorGroup> AudioSelectorGroups
         {
@@ -127,6 +132,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AudioSelectors. Use Audio selectors to specify a track
         /// or set of tracks from the input that you will use in your outputs. You can use multiple
         /// Audio selectors per input.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, AudioSelector> AudioSelectors
         {
@@ -144,6 +154,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property CaptionSelectors. Use captions selectors to specify the
         /// captions data from your input that you use in your outputs. You can use up to 100
         /// captions selectors per input.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, CaptionSelector> CaptionSelectors
         {
@@ -257,6 +272,11 @@ namespace Amazon.MediaConvert.Model
         /// audio track for each dynamically selected track. Note that when you include a Dynamic
         /// audio selector for two or more inputs, each input must have the same number of audio
         /// tracks and audio channels.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, DynamicAudioSelector> DynamicAudioSelectors
         {
@@ -355,6 +375,11 @@ namespace Amazon.MediaConvert.Model
         /// you provide only an end time, it will be the entire input up to that point. When you
         /// specify more than one input clip, the transcoding service creates the job outputs
         /// by stringing the clips together in the order you specify them.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputClipping> InputClippings
         {
@@ -452,6 +477,11 @@ namespace Amazon.MediaConvert.Model
         /// slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"].
         /// You don't need to specify the IMP that contains your input CPL, because the service
         /// automatically detects it.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupplementalImps
         {
@@ -528,6 +558,11 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property VideoOverlays. Contains an array of video overlays.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VideoOverlay> VideoOverlays
         {

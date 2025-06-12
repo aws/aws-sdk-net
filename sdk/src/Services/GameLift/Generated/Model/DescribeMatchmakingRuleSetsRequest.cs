@@ -80,6 +80,11 @@ namespace Amazon.GameLift.Model
         /// rule set name is different from the optional "name" field in the rule set body.) You
         /// can use either the rule set name or ARN value. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> Names

@@ -268,6 +268,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The reason for the finding classification of a DB instance. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InstanceFindingReasonCodes
         {
@@ -287,6 +292,11 @@ namespace Amazon.ComputeOptimizer.Model
         ///  An array of objects that describe the recommendation options for the RDS DB instance.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RDSDBInstanceRecommendationOption> InstanceRecommendationOptions
         {
@@ -409,6 +419,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The reason for the finding classification of RDS DB instance storage. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StorageFindingReasonCodes
         {
@@ -428,6 +443,11 @@ namespace Amazon.ComputeOptimizer.Model
         ///  An array of objects that describe the recommendation options for DB instance storage.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RDSDBStorageRecommendationOption> StorageRecommendationOptions
         {
@@ -446,6 +466,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  A list of tags assigned to your DB instance recommendations. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {
@@ -464,6 +489,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  An array of objects that describe the utilization metrics of the DB instance. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RDSDBUtilizationMetric> UtilizationMetrics
         {

@@ -228,6 +228,11 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// present, only HTTP requests using that method are forwarded to this route’s service.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Methods
         {
@@ -265,6 +270,11 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <para>
         /// A mapping of Amazon API Gateway path resources to resource IDs. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> PathResourceToId
         {
@@ -390,6 +400,11 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// The tags assigned to the route. A tag is a label that you assign to an Amazon Web
         /// Services resource. Each tag consists of a key-value pair. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags

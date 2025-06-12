@@ -105,6 +105,11 @@ namespace Amazon.SecurityHub.Model
         /// The list of accounts to associate with the Security Hub administrator account. For
         /// each account, the list includes the account ID and optionally the email address.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<AccountDetails> AccountDetails

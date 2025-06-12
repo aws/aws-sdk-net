@@ -71,8 +71,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxresults", StringUtils.FromString(publicRequest.MaxResults));
             request.ResourcePath = "/2013-04-01/cidrcollection/{CidrCollectionId}/cidrblocks";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListCidrBlocksRequestMarshaller _instance = new ListCidrBlocksRequestMarshaller();        

@@ -138,6 +138,11 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// The default topic preferences applied to the contact.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TopicPreference> TopicDefaultPreferences
         {
@@ -156,6 +161,11 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// The contact's preference for being opted-in to or opted-out of a topic.&gt;
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TopicPreference> TopicPreferences
         {

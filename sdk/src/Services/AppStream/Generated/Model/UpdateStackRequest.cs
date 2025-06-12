@@ -55,6 +55,11 @@ namespace Amazon.AppStream.Model
         /// The list of interface VPC endpoint (interface endpoint) objects. Users of the stack
         /// can connect to AppStream 2.0 only through the specified endpoints.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
         public List<AccessEndpoint> AccessEndpoints
@@ -94,6 +99,11 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The stack attributes to delete.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AttributesToDelete
         {
@@ -171,6 +181,11 @@ namespace Amazon.AppStream.Model
         /// must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<string> EmbedHostDomains
@@ -248,6 +263,11 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The storage connectors to enable.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StorageConnector> StorageConnectors
         {
@@ -286,6 +306,11 @@ namespace Amazon.AppStream.Model
         /// The actions that are enabled or disabled for users during their streaming sessions.
         /// By default, these actions are enabled.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<UserSetting> UserSettings

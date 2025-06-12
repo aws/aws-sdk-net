@@ -42,6 +42,11 @@ namespace Amazon.Detective.Model
         /// <para>
         /// Details on the status of data source packages for members of the behavior graph.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MembershipDatasources> MemberDatasources
         {
@@ -60,6 +65,11 @@ namespace Amazon.Detective.Model
         /// <para>
         /// Accounts that data source package information could not be retrieved for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UnprocessedAccount> UnprocessedAccounts
         {

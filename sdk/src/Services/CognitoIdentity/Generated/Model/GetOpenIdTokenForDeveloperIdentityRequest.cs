@@ -109,6 +109,11 @@ namespace Amazon.CognitoIdentity.Model
         /// from your backend that uniquely identifies a user. When you create an identity pool,
         /// you can specify the supported logins.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Max=10)]
         public Dictionary<string, string> Logins
@@ -128,6 +133,11 @@ namespace Amazon.CognitoIdentity.Model
         /// <para>
         /// Use this operation to configure attribute mappings for custom providers. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public Dictionary<string, string> PrincipalTags

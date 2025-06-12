@@ -111,6 +111,11 @@ namespace Amazon.Neptune.Model
         /// associated with the DB cluster. IAM roles that are associated with a DB cluster grant
         /// permission for the DB cluster to access other Amazon services on your behalf.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DBClusterRole> AssociatedRoles
         {
@@ -148,6 +153,11 @@ namespace Amazon.Neptune.Model
         /// Provides the list of EC2 Availability Zones that instances in the DB cluster can be
         /// created in.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AvailabilityZones
         {
@@ -333,6 +343,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// Provides the list of instances that make up the DB cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DBClusterMember> DBClusterMembers
         {
@@ -351,6 +366,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// Not supported by Neptune.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DBClusterOptionGroupStatus> DBClusterOptionGroupMemberships
         {
@@ -467,6 +487,11 @@ namespace Amazon.Neptune.Model
         /// slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
         /// Neptune logs to Amazon CloudWatch logs</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EnabledCloudwatchLogsExports
         {
@@ -809,6 +834,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// Contains one or more identifiers of the Read Replicas associated with this DB cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReadReplicaIdentifiers
         {
@@ -942,6 +972,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// Provides a list of VPC security groups that the DB cluster belongs to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups
         {

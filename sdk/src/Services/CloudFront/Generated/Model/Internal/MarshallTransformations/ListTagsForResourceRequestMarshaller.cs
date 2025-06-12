@@ -62,8 +62,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Resource", StringUtils.FromString(publicRequest.Resource));
             request.ResourcePath = "/2020-05-31/tagging";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        

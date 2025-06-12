@@ -88,6 +88,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ColorConversion3DLUTSettings. Use 3D LUTs to specify custom
         /// color mapping behavior when you convert from one color space into another. You can
         /// include up to 8 different 3D LUTs. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ColorConversion3DLUTSetting> ColorConversion3DLUTSettings
         {
@@ -163,6 +168,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Inputs. Use Inputs to define the source file used in the
         /// transcode job. There can only be one input in a job template. Using the API, you can
         /// include multiple inputs when referencing a job template.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputTemplate> Inputs
         {
@@ -260,6 +270,11 @@ namespace Amazon.MediaConvert.Model
         /// * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings *
         /// DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
         /// * CMAF_GROUP_SETTINGS, CmafGroupSettings
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OutputGroup> OutputGroups
         {

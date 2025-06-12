@@ -45,6 +45,11 @@ namespace Amazon.DynamoDBv2.Model
         /// parameter. These <c>ConsumedCapacity</c> objects report the read-capacity units consumed
         /// by the <c>TransactGetItems</c> call in that table.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConsumedCapacity> ConsumedCapacity
         {
@@ -72,6 +77,11 @@ namespace Amazon.DynamoDBv2.Model
         /// object is Null, or if the requested item has no projected attributes, the corresponding
         /// <c>ItemResponse</c> object is an empty Map. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<ItemResponse> Responses

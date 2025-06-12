@@ -117,6 +117,11 @@ namespace Amazon.Kendra.Model
         /// and exclusion pattern, the exclusion pattern takes precedence and the file isn't included
         /// in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> ExclusionPatterns
@@ -141,6 +146,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The Slack data source field names must exist in your Slack
         /// custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> FieldMappings
@@ -164,6 +174,11 @@ namespace Amazon.Kendra.Model
         /// and exclusion pattern, the exclusion pattern takes precedence and the file isn't included
         /// in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPatterns
@@ -212,6 +227,11 @@ namespace Amazon.Kendra.Model
         /// you want to index specific private channels, not all private channels. You can also
         /// use regular expression patterns to filter private channels.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PrivateChannelFilter
         {
@@ -232,6 +252,11 @@ namespace Amazon.Kendra.Model
         /// this if you want to index specific public channels, not all public channels. You can
         /// also use regular expression patterns to filter public channels.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PublicChannelFilter
         {
@@ -299,6 +324,11 @@ namespace Amazon.Kendra.Model
         /// Specify whether to index public channels, private channels, group messages, and direct
         /// messages. You can specify one or more of these options.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]
         public List<string> SlackEntityList

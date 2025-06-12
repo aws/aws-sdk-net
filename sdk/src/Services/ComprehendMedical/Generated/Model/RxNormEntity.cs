@@ -56,6 +56,11 @@ namespace Amazon.ComprehendMedical.Model
         /// are <c>DOSAGE</c>, <c>DURATION</c>, <c>FORM</c>, <c>FREQUENCY</c>, <c>RATE</c>, <c>ROUTE_OR_MODE</c>,
         /// and <c>STRENGTH</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RxNormAttribute> Attributes
         {
@@ -150,6 +155,11 @@ namespace Amazon.ComprehendMedical.Model
         /// The RxNorm concepts that the entity could refer to, along with a score indicating
         /// the likelihood of the match.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RxNormConcept> RxNormConcepts
         {
@@ -206,6 +216,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <para>
         /// Contextual information for the entity.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RxNormTrait> Traits
         {

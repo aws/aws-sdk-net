@@ -66,6 +66,11 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// The list of files in the specified folder, if any.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<File> Files
         {
@@ -103,6 +108,11 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// The list of folders that exist under the specified folder, if any.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Folder> SubFolders
         {
@@ -121,6 +131,11 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// The list of submodules in the specified folder, if any.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SubModule> SubModules
         {
@@ -140,6 +155,11 @@ namespace Amazon.CodeCommit.Model
         /// The list of symbolic links to other files and folders in the specified folder, if
         /// any.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SymbolicLink> SymbolicLinks
         {

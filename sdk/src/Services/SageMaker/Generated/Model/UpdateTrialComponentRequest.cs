@@ -92,6 +92,11 @@ namespace Amazon.SageMaker.Model
         /// new input artifacts. Existing input artifacts are replaced if the trial component
         /// is updated with an identical input artifact key.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
         public Dictionary<string, TrialComponentArtifact> InputArtifacts
@@ -111,6 +116,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The input artifacts to remove from the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InputArtifactsToRemove
         {
@@ -131,6 +141,11 @@ namespace Amazon.SageMaker.Model
         /// new output artifacts. Existing output artifacts are replaced if the trial component
         /// is updated with an identical output artifact key.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
         public Dictionary<string, TrialComponentArtifact> OutputArtifacts
@@ -150,6 +165,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The output artifacts to remove from the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> OutputArtifactsToRemove
         {
@@ -170,6 +190,11 @@ namespace Amazon.SageMaker.Model
         /// or add new hyperparameters. Existing hyperparameters are replaced if the trial component
         /// is updated with an identical hyperparameter key.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
         public Dictionary<string, TrialComponentParameterValue> Parameters
@@ -189,6 +214,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The hyperparameters to remove from the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ParametersToRemove
         {

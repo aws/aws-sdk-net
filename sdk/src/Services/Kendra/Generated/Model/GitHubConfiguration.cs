@@ -89,6 +89,11 @@ namespace Amazon.Kendra.Model
         /// matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence
         /// and the file isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ExclusionFileNamePatterns
         {
@@ -111,6 +116,11 @@ namespace Amazon.Kendra.Model
         /// matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence
         /// and the file isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ExclusionFileTypePatterns
         {
@@ -133,6 +143,11 @@ namespace Amazon.Kendra.Model
         /// a folder matches both an exclusion and inclusion pattern, the exclusion pattern takes
         /// precedence and the folder isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ExclusionFolderNamePatterns
         {
@@ -156,6 +171,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> GitHubCommitConfigurationFieldMappings
@@ -200,6 +220,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> GitHubIssueAttachmentConfigurationFieldMappings
@@ -224,6 +249,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> GitHubIssueCommentConfigurationFieldMappings
@@ -248,6 +278,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> GitHubIssueDocumentConfigurationFieldMappings
@@ -272,6 +307,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> GitHubPullRequestCommentConfigurationFieldMappings
@@ -297,6 +337,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> GitHubPullRequestDocumentAttachmentConfigurationFieldMappings
@@ -321,6 +366,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> GitHubPullRequestDocumentConfigurationFieldMappings
@@ -345,6 +395,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> GitHubRepositoryConfigurationFieldMappings
@@ -368,6 +423,11 @@ namespace Amazon.Kendra.Model
         /// file matches both an inclusion and exclusion pattern, the exclusion pattern takes
         /// precedence and the file isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InclusionFileNamePatterns
         {
@@ -390,6 +450,11 @@ namespace Amazon.Kendra.Model
         /// file matches both an inclusion and exclusion pattern, the exclusion pattern takes
         /// precedence and the file isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InclusionFileTypePatterns
         {
@@ -412,6 +477,11 @@ namespace Amazon.Kendra.Model
         /// a folder matches both an inclusion and exclusion pattern, the exclusion pattern takes
         /// precedence and the folder isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InclusionFolderNamePatterns
         {
@@ -448,6 +518,11 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// A list of names of the specific repositories you want to index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RepositoryFilter
         {

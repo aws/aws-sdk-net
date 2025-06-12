@@ -46,6 +46,11 @@ namespace Amazon.Rekognition.Model
         /// A list of predicted results for the type of content an image contains. For example,
         /// the image content might be from animation, sports, or a video game.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<ContentType> ContentTypes
@@ -84,6 +89,11 @@ namespace Amazon.Rekognition.Model
         /// Array of detected Moderation labels. For video operations, this includes the time,
         /// in milliseconds from the start of the video, they were detected.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ModerationLabel> ModerationLabels
         {

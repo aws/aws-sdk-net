@@ -961,6 +961,11 @@ namespace Amazon.RDS.Model
         /// This setting applies to the legacy EC2-Classic platform, which is no longer used to
         /// create new DB instances. Use the <c>VpcSecurityGroupIds</c> setting instead.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DBSecurityGroups
         {
@@ -1152,6 +1157,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Example: <c>123.124.125.126,234.235.236.237</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DomainDnsIps
         {
@@ -1309,6 +1319,11 @@ namespace Amazon.RDS.Model
         /// RDS for PostgreSQL - <c>postgresql | upgrade | iam-db-auth-error</c> 
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
         {
@@ -2511,6 +2526,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ProcessorFeature> ProcessorFeatures
         {
@@ -2719,6 +2739,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Tags to assign to the DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {
@@ -2811,6 +2836,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Default: The default EC2 VPC security group for the DB subnet group's VPC.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> VpcSecurityGroupIds
         {

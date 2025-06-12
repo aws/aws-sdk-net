@@ -44,6 +44,11 @@ namespace Amazon.Appflow.Model
         /// The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers
         /// data to or from Salesforce.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DataTransferApis
         {
@@ -82,6 +87,11 @@ namespace Amazon.Appflow.Model
         /// The CLIENT_CREDENTIALS value is not supported for Salesforce.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Oauth2GrantTypesSupported
         {
@@ -100,6 +110,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         ///  The desired authorization scope for the Salesforce account. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> OAuthScopes
         {

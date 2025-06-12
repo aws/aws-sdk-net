@@ -46,6 +46,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// only be applied to the analysis rule criteria for organization-level analyzers. The
         /// list cannot include more than 2,000 account IDs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AccountIds
         {
@@ -77,6 +82,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// If the specified tag value is 0 characters, the rule is applied to all principals
         /// with the specified tag key.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Dictionary<string, string>> ResourceTags
         {

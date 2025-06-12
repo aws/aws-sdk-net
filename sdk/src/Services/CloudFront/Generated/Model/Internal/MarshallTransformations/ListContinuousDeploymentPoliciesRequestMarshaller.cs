@@ -65,8 +65,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/continuous-deployment-policy";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListContinuousDeploymentPoliciesRequestMarshaller _instance = new ListContinuousDeploymentPoliciesRequestMarshaller();        

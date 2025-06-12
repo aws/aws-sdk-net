@@ -134,6 +134,11 @@ namespace Amazon.Connect.Model
         /// RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching
         /// to GetMetricDataV2 for more up-to-date features.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=2)]
         public List<string> Groupings
@@ -371,6 +376,11 @@ namespace Amazon.Connect.Model
         /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
         /// </para>
         ///  </dd> </dl>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<HistoricalMetric> HistoricalMetrics

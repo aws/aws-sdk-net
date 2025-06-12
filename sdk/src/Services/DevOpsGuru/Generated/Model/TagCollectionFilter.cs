@@ -85,6 +85,11 @@ namespace Amazon.DevOpsGuru.Model
         /// is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are
         /// case-sensitive. You can specify a maximum of 256 characters for a tag value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TagValues

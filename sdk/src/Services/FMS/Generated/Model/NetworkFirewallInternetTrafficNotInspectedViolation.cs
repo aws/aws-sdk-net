@@ -55,6 +55,11 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The actual firewall subnet routes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Route> ActualFirewallSubnetRoutes
         {
@@ -73,6 +78,11 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The actual internet gateway routes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Route> ActualInternetGatewayRoutes
         {
@@ -148,6 +158,11 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The firewall subnet routes that are expected.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ExpectedRoute> ExpectedFirewallSubnetRoutes
         {
@@ -166,6 +181,11 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The internet gateway routes that are expected.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ExpectedRoute> ExpectedInternetGatewayRoutes
         {
@@ -297,6 +317,11 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The route or routes that are in violation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Route> ViolatingRoutes
         {

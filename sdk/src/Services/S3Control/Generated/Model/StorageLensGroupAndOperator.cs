@@ -47,6 +47,11 @@ namespace Amazon.S3Control.Model
         ///  Contains a list of prefixes. At least one prefix must be specified. Up to 10 prefixes
         /// are allowed. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> MatchAnyPrefix
         {
@@ -66,6 +71,11 @@ namespace Amazon.S3Control.Model
         ///  Contains a list of suffixes. At least one suffix must be specified. Up to 10 suffixes
         /// are allowed. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> MatchAnySuffix
         {
@@ -85,6 +95,11 @@ namespace Amazon.S3Control.Model
         ///  Contains the list of object tags. At least one object tag must be specified. Up to
         /// 10 object tags are allowed. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<S3Tag> MatchAnyTag
         {

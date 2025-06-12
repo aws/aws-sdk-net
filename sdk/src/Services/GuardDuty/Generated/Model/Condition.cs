@@ -53,6 +53,11 @@ namespace Amazon.GuardDuty.Model
         /// Represents the <i>equal</i> condition to be applied to a single field when querying
         /// for findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This property is deprecated and the Equals property should be used instead.")]
         public List<string> Eq
@@ -73,6 +78,11 @@ namespace Amazon.GuardDuty.Model
         /// Represents an <i>equal</i> <b/> condition to be applied to a single field when querying
         /// for findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public new List<string> Equals
         {
@@ -248,6 +258,11 @@ namespace Amazon.GuardDuty.Model
         /// Represents the <i>not equal</i> condition to be applied to a single field when querying
         /// for findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This property is deprecated and the NotEquals property should be used instead.")]
         public List<string> Neq
@@ -268,6 +283,11 @@ namespace Amazon.GuardDuty.Model
         /// Represents a <i>not equal</i> <b/> condition to be applied to a single field when
         /// querying for findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NotEquals
         {

@@ -65,8 +65,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/delegationset";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListReusableDelegationSetsRequestMarshaller _instance = new ListReusableDelegationSetsRequestMarshaller();        

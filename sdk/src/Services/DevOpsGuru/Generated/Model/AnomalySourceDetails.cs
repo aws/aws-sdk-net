@@ -43,6 +43,11 @@ namespace Amazon.DevOpsGuru.Model
         /// An array of <c>CloudWatchMetricsDetail</c> objects that contain information about
         /// analyzed CloudWatch metrics that show anomalous behavior. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CloudWatchMetricsDetail> CloudWatchMetrics
         {
@@ -62,6 +67,11 @@ namespace Amazon.DevOpsGuru.Model
         /// An array of <c>PerformanceInsightsMetricsDetail</c> objects that contain information
         /// about analyzed Performance Insights metrics that show anomalous behavior.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PerformanceInsightsMetricsDetail> PerformanceInsightsMetrics
         {

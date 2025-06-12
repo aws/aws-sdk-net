@@ -175,6 +175,11 @@ namespace Amazon.KafkaConnect.Model
         /// <para>
         /// The array of operation steps taken.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConnectorOperationStep> OperationSteps
         {
@@ -193,6 +198,11 @@ namespace Amazon.KafkaConnect.Model
         /// <para>
         /// The origin connector configuration.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> OriginConnectorConfiguration
@@ -230,6 +240,11 @@ namespace Amazon.KafkaConnect.Model
         /// <para>
         /// The target connector configuration.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> TargetConnectorConfiguration

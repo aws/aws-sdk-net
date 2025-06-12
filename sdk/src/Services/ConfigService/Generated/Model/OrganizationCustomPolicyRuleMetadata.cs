@@ -56,6 +56,11 @@ namespace Amazon.ConfigService.Model
         /// A list of accounts that you can enable debug logging for your organization Config
         /// Custom Policy rule. List is null when debug logging is enabled for all accounts.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
         public List<string> DebugLogDeliveryAccounts
@@ -148,6 +153,11 @@ namespace Amazon.ConfigService.Model
         /// by Amazon SNS.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> OrganizationConfigRuleTriggerTypes
         {
@@ -227,6 +237,11 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The type of the Amazon Web Services resource that was evaluated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> ResourceTypesScope

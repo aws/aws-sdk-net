@@ -403,6 +403,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The list of execution outputs as defined in the Automation runbook.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Outputs
@@ -422,6 +427,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The key-value map of execution parameters, which were supplied when calling <a>StartAutomationExecution</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Parameters
@@ -503,6 +513,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// approvals for the change request have been received.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<Runbook> Runbooks
@@ -541,6 +556,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of details about the current state of all steps that comprise an execution.
         /// An Automation runbook contains a list of steps that are run in order.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StepExecution> StepExecutions
         {
@@ -598,6 +618,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The combination of Amazon Web Services Regions and/or Amazon Web Services accounts
         /// where you want to run the Automation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<TargetLocation> TargetLocations
@@ -636,6 +661,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The specified key-value mapping of document parameters to target resources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
         public List<Dictionary<string, List<string>>> TargetMaps
@@ -674,6 +704,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The specified targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
@@ -693,6 +728,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The CloudWatch alarm that was invoked by the automation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<AlarmStateInformation> TriggeredAlarms
@@ -712,6 +752,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Variables defined for the automation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Variables

@@ -61,7 +61,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
             request.AddPathResource("{DistributionId}", StringUtils.FromString(publicRequest.DistributionId));
             request.ResourcePath = "/2020-05-31/distributions/{DistributionId}/monitoring-subscription";
-
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -90,6 +89,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
+
 
             return request;
         }

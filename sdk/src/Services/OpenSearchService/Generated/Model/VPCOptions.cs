@@ -46,6 +46,11 @@ namespace Amazon.OpenSearchService.Model
         /// you do not provide a security group ID, OpenSearch Service uses the default security
         /// group for the VPC.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -66,6 +71,11 @@ namespace Amazon.OpenSearchService.Model
         /// uses multiple Availability Zones, you need to provide two subnet IDs, one per zone.
         /// Otherwise, provide only one.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SubnetIds
         {

@@ -46,6 +46,11 @@ namespace Amazon.InternetMonitor.Model
         /// Monitor information for your application. Then, you can filter the information in
         /// the repository by using <c>FilterParameters</c> that you define.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<List<string>> Data
@@ -66,6 +71,11 @@ namespace Amazon.InternetMonitor.Model
         /// The fields that the query returns data for. Fields are name-data type pairs, such
         /// as <c>availability_score</c>-<c>float</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<QueryField> Fields

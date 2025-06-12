@@ -469,6 +469,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Array Members: Maximum number of 5 items.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Malware> Malware
         {
@@ -506,6 +511,11 @@ namespace Amazon.SecurityHub.Model
         /// Provides information about a network path that is relevant to a finding. Each entry
         /// under <c>NetworkPath</c> represents a component of that path.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NetworkPathComponent> NetworkPath
         {
@@ -634,6 +644,11 @@ namespace Amazon.SecurityHub.Model
         /// Can contain up to 50 key-value pairs. For each key-value pair, the key can contain
         /// up to 128 characters, and the value can contain up to 2048 characters.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> ProductFields
         {
@@ -734,6 +749,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Array Members: Minimum number of 1 item. Maximum number of 10 items.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RelatedFinding> RelatedFindings
         {
@@ -774,6 +794,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Array Members: Minimum number of 1 item. Maximum number of 32 items.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Resource> Resources
@@ -871,6 +896,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Array Members: Minimum number of 1 item. Maximum number of 5 items.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ThreatIntelIndicator> ThreatIntelIndicators
         {
@@ -894,6 +924,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Array Members: Minimum number of 1 item. Maximum number of 32 items.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Threat> Threats
         {
@@ -945,6 +980,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Array Members: Maximum number of 50 items.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Types
         {
@@ -993,6 +1033,11 @@ namespace Amazon.SecurityHub.Model
         /// Can contain up to 50 key-value pairs. For each key-value pair, the key can contain
         /// up to 128 characters, and the value can contain up to 1024 characters.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> UserDefinedFields
         {
@@ -1029,6 +1074,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Provides a list of vulnerabilities associated with the findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Vulnerability> Vulnerabilities
         {

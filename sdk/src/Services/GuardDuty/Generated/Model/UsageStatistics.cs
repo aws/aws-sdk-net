@@ -47,6 +47,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// The usage statistic sum organized by account ID.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UsageAccountResult> SumByAccount
         {
@@ -65,6 +70,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// The usage statistic sum organized by on data source.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UsageDataSourceResult> SumByDataSource
         {
@@ -83,6 +93,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// The usage statistic sum organized by feature.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UsageFeatureResult> SumByFeature
         {
@@ -101,6 +116,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// The usage statistic sum organized by resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UsageResourceResult> SumByResource
         {
@@ -124,6 +144,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Currently, this doesn't support <c>RDS_LOGIN_EVENTS</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UsageTopAccountsResult> TopAccountsByFeature
         {
@@ -143,6 +168,11 @@ namespace Amazon.GuardDuty.Model
         /// Lists the top 50 resources that have generated the most GuardDuty usage, in order
         /// from most to least expensive.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UsageResourceResult> TopResources
         {

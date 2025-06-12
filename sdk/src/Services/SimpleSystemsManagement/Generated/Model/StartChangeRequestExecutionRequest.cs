@@ -184,6 +184,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A key-value map of parameters that match the declared parameters in the change template
         /// document.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Parameters
@@ -209,6 +214,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// approvals for the change request have been received.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<Runbook> Runbooks
@@ -291,6 +301,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// action to add up to a total of 50 tags to an existing change request configuration.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1000)]
         public List<Tag> Tags

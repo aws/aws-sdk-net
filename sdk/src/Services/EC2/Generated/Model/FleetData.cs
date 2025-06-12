@@ -144,6 +144,11 @@ namespace Amazon.EC2.Model
         /// Information about the instances that could not be launched by the fleet. Valid only
         /// when <b>Type</b> is set to <c>instant</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DescribeFleetError> Errors
         {
@@ -259,6 +264,11 @@ namespace Amazon.EC2.Model
         /// Information about the instances that were launched by the fleet. Valid only when <b>Type</b>
         /// is set to <c>instant</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DescribeFleetsInstances> Instances
         {
@@ -277,6 +287,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The launch template and overrides.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FleetLaunchTemplateConfig> LaunchTemplateConfigs
         {
@@ -351,6 +366,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tags for an EC2 Fleet resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

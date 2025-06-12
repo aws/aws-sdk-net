@@ -65,6 +65,11 @@ namespace Amazon.MemoryDB.Model
         /// A list of tags to be added to this resource. A tag is a key-value pair. A tag key
         /// must be accompanied by a tag value, although null is accepted.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<Tag> Tags
@@ -84,6 +89,11 @@ namespace Amazon.MemoryDB.Model
         /// <para>
         /// The list of users that belong to the Access Control List.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> UserNames

@@ -49,6 +49,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property OutputChannels. In your JSON job specification, include
         /// one child of OutputChannels for each audio channel that you want in your output. Each
         /// child should contain one instance of InputChannels or InputChannelsFineTune.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OutputChannelMapping> OutputChannels
         {

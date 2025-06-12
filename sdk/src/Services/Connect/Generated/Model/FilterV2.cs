@@ -66,6 +66,11 @@ namespace Amazon.Connect.Model
         /// The identifiers to use for filtering data. For example, if you have a filter key of
         /// <c>QUEUE</c>, you would add queue IDs or ARNs in <c>FilterValues</c>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> FilterValues

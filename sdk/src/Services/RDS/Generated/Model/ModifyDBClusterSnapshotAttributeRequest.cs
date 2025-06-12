@@ -132,6 +132,11 @@ namespace Amazon.RDS.Model
         /// contain private information that you don't want available to all Amazon Web Services
         /// accounts.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ValuesToAdd
         {
@@ -160,6 +165,11 @@ namespace Amazon.RDS.Model
         /// Amazon Web Services account whose account ID is explicitly added to the <c>restore</c>
         /// attribute can still copy or restore a manual DB cluster snapshot.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ValuesToRemove
         {

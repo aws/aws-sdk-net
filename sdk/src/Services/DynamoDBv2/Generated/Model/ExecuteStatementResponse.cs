@@ -61,6 +61,11 @@ namespace Amazon.DynamoDBv2.Model
         /// a map of attribute names and their values. For the write operations this value will
         /// be empty.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Dictionary<string, AttributeValue>> Items
         {
@@ -85,6 +90,11 @@ namespace Amazon.DynamoDBv2.Model
         /// The only way to know when you have reached the end of the result set is when <c>LastEvaluatedKey</c>
         /// is empty. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, AttributeValue> LastEvaluatedKey
         {

@@ -47,6 +47,11 @@ namespace Amazon.Budgets.Model
         /// A list of amounts of cost or usage that you created budgets for, which are compared
         /// to your actual costs or usage.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BudgetedAndActualAmounts> BudgetedAndActualAmountsList
         {
@@ -96,6 +101,11 @@ namespace Amazon.Budgets.Model
         /// <para>
         /// The history of the cost filters for a budget during the specified time period.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<string>> CostFilters
         {

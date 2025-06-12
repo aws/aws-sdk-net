@@ -71,8 +71,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("hostedzonetype", StringUtils.FromString(publicRequest.HostedZoneType));
             request.ResourcePath = "/2013-04-01/hostedzone";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListHostedZonesRequestMarshaller _instance = new ListHostedZonesRequestMarshaller();        

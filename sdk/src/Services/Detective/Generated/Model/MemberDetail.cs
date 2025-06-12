@@ -95,6 +95,11 @@ namespace Amazon.Detective.Model
         /// <para>
         /// The state of a data source package for the behavior graph.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> DatasourcePackageIngestStates
         {
@@ -385,6 +390,11 @@ namespace Amazon.Detective.Model
         /// <para>
         /// Details on the volume of usage for each data source package in a behavior graph.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, DatasourcePackageUsageInfo> VolumeUsageByDatasourcePackage
         {

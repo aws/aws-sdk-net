@@ -44,6 +44,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of backup options for each resource type. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsBackupBackupPlanAdvancedBackupSettingsDetails> AdvancedBackupSettings
         {
@@ -81,6 +86,11 @@ namespace Amazon.SecurityHub.Model
         /// An array of <c>BackupRule</c> objects, each of which specifies a scheduled task that
         /// is used to back up a selection of resources. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsBackupBackupPlanRuleDetails> BackupPlanRule
         {

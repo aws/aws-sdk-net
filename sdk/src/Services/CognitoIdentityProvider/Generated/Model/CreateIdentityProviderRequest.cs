@@ -75,6 +75,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// user pool attribute as the key of the key-value pair, and the IdP attribute claim
         /// name as the value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> AttributeMapping
         {
@@ -98,6 +103,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// in a domain format also enable the use of <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html">email-address
         /// matching with SAML providers</a>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<string> IdpIdentifiers
@@ -227,6 +237,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</c> 
         /// </para>
         ///  </dd> </dl>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> ProviderDetails

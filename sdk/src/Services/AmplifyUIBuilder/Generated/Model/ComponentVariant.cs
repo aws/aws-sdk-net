@@ -43,6 +43,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The properties of the component variant that can be overriden when customizing an
         /// instance of the component. You can't specify <c>tags</c> as a valid property for <c>overrides</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, Dictionary<string, string>> Overrides
         {
@@ -62,6 +67,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The combination of variants that comprise this variant. You can't specify <c>tags</c>
         /// as a valid property for <c>variantValues</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> VariantValues
         {

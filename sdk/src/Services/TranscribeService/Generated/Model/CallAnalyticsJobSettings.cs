@@ -98,6 +98,11 @@ namespace Amazon.TranscribeService.Model
         /// For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
         /// languages and language-specific features</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public Dictionary<string, LanguageIdSettings> LanguageIdSettings
@@ -162,6 +167,11 @@ namespace Amazon.TranscribeService.Model
         /// us-gov-east-1), Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your
         /// media file must be encoded at a sample rate of 16,000 Hz or higher.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> LanguageOptions

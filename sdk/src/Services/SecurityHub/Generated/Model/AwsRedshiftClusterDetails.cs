@@ -221,6 +221,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The nodes in the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRedshiftClusterClusterNode> ClusterNodes
         {
@@ -239,6 +244,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The list of cluster parameter groups that are associated with this cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRedshiftClusterClusterParameterGroup> ClusterParameterGroups
         {
@@ -293,6 +303,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of cluster security groups that are associated with the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRedshiftClusterClusterSecurityGroup> ClusterSecurityGroups
         {
@@ -421,6 +436,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// List of time windows during which maintenance was deferred.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRedshiftClusterDeferredMaintenanceWindow> DeferredMaintenanceWindows
         {
@@ -596,6 +616,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of IAM roles that the cluster can use to access other Amazon Web Services services.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRedshiftClusterIamRole> IamRoles
         {
@@ -776,6 +801,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of cluster operations that are waiting to start.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PendingActions
         {
@@ -958,6 +988,11 @@ namespace Amazon.SecurityHub.Model
         /// The list of VPC security groups that the cluster belongs to, if the cluster is in
         /// a VPC.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsRedshiftClusterVpcSecurityGroup> VpcSecurityGroups
         {

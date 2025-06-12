@@ -292,6 +292,11 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The nodes in the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ClusterNode> ClusterNodes
         {
@@ -311,6 +316,11 @@ namespace Amazon.Redshift.Model
         /// The list of cluster parameter groups that are associated with this cluster. Each parameter
         /// group in the list is returned with its status.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ClusterParameterGroupStatus> ClusterParameterGroups
         {
@@ -375,6 +385,11 @@ namespace Amazon.Redshift.Model
         /// Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which
         /// are listed by the <b>VpcSecurityGroups</b> parameter. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ClusterSecurityGroupMembership> ClusterSecurityGroups
         {
@@ -662,6 +677,11 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// Describes a group of <c>DeferredMaintenanceWindow</c> objects.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DeferredMaintenanceWindow> DeferredMaintenanceWindows
         {
@@ -856,6 +876,11 @@ namespace Amazon.Redshift.Model
         /// A list of Identity and Access Management (IAM) roles that can be used by the cluster
         /// to access other Amazon Web Services services.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ClusterIamRole> IamRoles
         {
@@ -1127,6 +1152,11 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// Cluster operations that are waiting to be started.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PendingActions
         {
@@ -1309,6 +1339,11 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The list of tags for the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {
@@ -1365,6 +1400,11 @@ namespace Amazon.Redshift.Model
         /// A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are associated
         /// with the cluster. This parameter is returned only if the cluster is in a VPC.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups
         {

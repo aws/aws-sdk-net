@@ -43,6 +43,11 @@ namespace Amazon.LocationService.Model
         /// Contains additional error details for each geofence that failed to be stored in a
         /// geofence collection.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<BatchPutGeofenceError> Errors
@@ -62,6 +67,11 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// Contains each geofence that was successfully stored in a geofence collection.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<BatchPutGeofenceSuccess> Successes

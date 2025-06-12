@@ -121,6 +121,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// A list of replication groups that the user group can access.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReplicationGroups
         {
@@ -140,6 +145,11 @@ namespace Amazon.ElastiCache.Model
         /// Indicates which serverless caches the specified user group is associated with. Available
         /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ServerlessCaches
         {
@@ -194,6 +204,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The list of user IDs that belong to the user group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> UserIds
         {

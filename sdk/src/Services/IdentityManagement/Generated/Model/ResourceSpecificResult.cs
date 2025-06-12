@@ -53,6 +53,11 @@ namespace Amazon.IdentityManagement.Model
         /// This parameter is returned only for cross-account simulations. This parameter explains
         /// how each policy type contributes to the resource-specific evaluation decision.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> EvalDecisionDetails
         {
@@ -114,6 +119,11 @@ namespace Amazon.IdentityManagement.Model
         /// deny overrides any allow. In addition, the deny statement is the only entry included
         /// in the result.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Statement> MatchedStatements
         {
@@ -138,6 +148,11 @@ namespace Amazon.IdentityManagement.Model
         /// under the <c>EvaluationResults</c> section. To discover the context keys used by a
         /// set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> MissingContextValues
         {

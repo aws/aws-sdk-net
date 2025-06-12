@@ -323,6 +323,11 @@ namespace Amazon.BedrockAgent.Model
         /// <para>
         /// Contains reasons that the agent-related API that you invoked failed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public List<string> FailureReasons
@@ -501,6 +506,11 @@ namespace Amazon.BedrockAgent.Model
         /// Contains recommended actions to take for the agent-related API that you invoked to
         /// succeed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public List<string> RecommendedActions

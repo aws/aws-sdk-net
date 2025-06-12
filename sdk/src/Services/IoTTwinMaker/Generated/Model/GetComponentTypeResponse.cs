@@ -115,6 +115,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// This is an object that maps strings to <c>compositeComponentTypes</c> of the <c>componentType</c>.
         /// <c>CompositeComponentType</c> is referenced by <c>componentTypeId</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, CompositeComponentTypeResponse> CompositeComponentTypes
         {
@@ -171,6 +176,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// <para>
         /// The name of the parent component type that this component type extends.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ExtendsFrom
         {
@@ -190,6 +200,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// An object that maps strings to the functions in the component type. Each string in
         /// the mapping must be unique to this object.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, FunctionResponse> Functions
         {
@@ -265,6 +280,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// An object that maps strings to the property definitions in the component type. Each
         /// string in the mapping must be unique to this object.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, PropertyDefinitionResponse> PropertyDefinitions
         {
@@ -287,6 +307,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// <para>
         /// Valid Range: Minimum value of 1. Maximum value of 250.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, PropertyGroupResponse> PropertyGroups
         {

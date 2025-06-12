@@ -47,6 +47,11 @@ namespace Amazon.LocationService.Model
         /// Each entry in the row corresponds to the route from that entry in <c>DeparturePositions</c>
         /// to an entry in <c>DestinationPositions</c>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<List<RouteMatrixEntry>> RouteMatrix
@@ -68,6 +73,11 @@ namespace Amazon.LocationService.Model
         /// are snapped to the closest road. For Esri route calculator resources, this returns
         /// the list of departure/origin positions used for calculation of the <c>RouteMatrix</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=350)]
         public List<List<double>> SnappedDeparturePositions
@@ -88,6 +98,11 @@ namespace Amazon.LocationService.Model
         /// The list of destination positions for the route matrix used for calculation of the
         /// <c>RouteMatrix</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=350)]
         public List<List<double>> SnappedDestinationPositions

@@ -43,6 +43,11 @@ namespace Amazon.QuickSight.Model
         /// A list of analysis IDs that you want to apply overrides to. You can use <c>*</c> to
         /// override all analyses in this asset bundle.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> AnalysisIds
@@ -62,6 +67,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A list of tags for the analyses that you want to apply overrides to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public List<Tag> Tags

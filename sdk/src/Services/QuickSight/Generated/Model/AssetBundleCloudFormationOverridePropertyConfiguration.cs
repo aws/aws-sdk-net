@@ -51,6 +51,11 @@ namespace Amazon.QuickSight.Model
         /// An optional list of structures that control how <c>Analysis</c> resources are parameterized
         /// in the returned CloudFormation template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleExportJobAnalysisOverrideProperties> Analyses
@@ -71,6 +76,11 @@ namespace Amazon.QuickSight.Model
         /// An optional list of structures that control how <c>Dashboard</c> resources are parameterized
         /// in the returned CloudFormation template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleExportJobDashboardOverrideProperties> Dashboards
@@ -91,6 +101,11 @@ namespace Amazon.QuickSight.Model
         /// An optional list of structures that control how <c>DataSet</c> resources are parameterized
         /// in the returned CloudFormation template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleExportJobDataSetOverrideProperties> DataSets
@@ -111,6 +126,11 @@ namespace Amazon.QuickSight.Model
         /// An optional list of structures that control how <c>DataSource</c> resources are parameterized
         /// in the returned CloudFormation template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleExportJobDataSourceOverrideProperties> DataSources
@@ -131,6 +151,11 @@ namespace Amazon.QuickSight.Model
         /// An optional list of structures that controls how <c>Folder</c> resources are parameterized
         /// in the returned CloudFormation template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleExportJobFolderOverrideProperties> Folders
@@ -151,6 +176,11 @@ namespace Amazon.QuickSight.Model
         /// An optional list of structures that control how <c>RefreshSchedule</c> resources are
         /// parameterized in the returned CloudFormation template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleExportJobRefreshScheduleOverrideProperties> RefreshSchedules
@@ -190,6 +220,11 @@ namespace Amazon.QuickSight.Model
         /// An optional list of structures that control how <c>Theme</c> resources are parameterized
         /// in the returned CloudFormation template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleExportJobThemeOverrideProperties> Themes
@@ -210,6 +245,11 @@ namespace Amazon.QuickSight.Model
         /// An optional list of structures that control how <c>VPCConnection</c> resources are
         /// parameterized in the returned CloudFormation template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleExportJobVPCConnectionOverrideProperties> VPCConnections

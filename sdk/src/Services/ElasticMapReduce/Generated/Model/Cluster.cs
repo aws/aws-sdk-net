@@ -74,6 +74,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The applications installed on this cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Application> Applications
         {
@@ -151,6 +156,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// Applies only to Amazon EMR releases 4.x and later. The list of configurations that
         /// are supplied to the Amazon EMR cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Configuration> Configurations
         {
@@ -464,6 +474,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// Placement group configured for an Amazon EMR cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PlacementGroupConfig> PlacementGroups
         {
@@ -663,6 +678,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of tags associated with a cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

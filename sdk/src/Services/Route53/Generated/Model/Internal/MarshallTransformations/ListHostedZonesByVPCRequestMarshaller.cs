@@ -71,8 +71,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nexttoken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/2013-04-01/hostedzonesbyvpc";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListHostedZonesByVPCRequestMarshaller _instance = new ListHostedZonesByVPCRequestMarshaller();        

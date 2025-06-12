@@ -44,6 +44,11 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SecurityGroupIds. A list of up to 5 EC2 VPC security group
         /// IDs to attach to the Input VPC network interfaces.Requires subnetIds. If none are
         /// specified then the VPC default security group will be used.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -60,6 +65,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. A list of 2 VPC subnet IDs from the same VPC.Subnet
         /// IDs must be mapped to two unique availability zones (AZ).
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SubnetIds

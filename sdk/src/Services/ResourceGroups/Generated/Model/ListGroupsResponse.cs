@@ -44,6 +44,11 @@ namespace Amazon.ResourceGroups.Model
         /// A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains
         /// both the <c>Name</c> and the <c>GroupArn</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GroupIdentifier> GroupIdentifiers
         {
@@ -64,6 +69,11 @@ namespace Amazon.ResourceGroups.Model
         /// field instead.</b> </i> 
         /// </para>
         ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This field is deprecated, use GroupIdentifiers instead.")]
         public List<Group> Groups

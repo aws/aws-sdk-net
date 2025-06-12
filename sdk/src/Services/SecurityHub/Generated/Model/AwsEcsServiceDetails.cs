@@ -62,6 +62,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The capacity provider strategy that the service uses.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsServiceCapacityProviderStrategyDetails> CapacityProviderStrategy
         {
@@ -230,6 +235,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Information about the load balancers that the service uses.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsServiceLoadBalancersDetails> LoadBalancers
         {
@@ -285,6 +295,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The placement constraints for the tasks in the service.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsServicePlacementConstraintsDetails> PlacementConstraints
         {
@@ -303,6 +318,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Information about how tasks for the service are placed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsServicePlacementStrategiesDetails> PlacementStrategies
         {
@@ -461,6 +481,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Information about the service discovery registries to assign to the service.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsServiceServiceRegistriesDetails> ServiceRegistries
         {

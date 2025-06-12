@@ -48,6 +48,11 @@ namespace Amazon.SSMQuickSetup.Model
         /// <para>
         /// The configuration definitions association with the configuration manager.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConfigurationDefinition> ConfigurationDefinitions
         {
@@ -158,6 +163,11 @@ namespace Amazon.SSMQuickSetup.Model
         /// A summary of the state of the configuration manager. This includes deployment statuses,
         /// association statuses, drift statuses, health checks, and more.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StatusSummary> StatusSummaries
         {
@@ -176,6 +186,11 @@ namespace Amazon.SSMQuickSetup.Model
         /// <para>
         /// Key-value pairs of metadata to assign to the configuration manager.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags

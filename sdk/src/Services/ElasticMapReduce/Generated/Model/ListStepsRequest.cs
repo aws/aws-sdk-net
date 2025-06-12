@@ -91,6 +91,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// a maximum of ten Step IDs. The character constraint applies to the overall length
         /// of the array.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StepIds
         {
@@ -109,6 +114,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The filter to limit the step list based on certain states.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StepStates
         {

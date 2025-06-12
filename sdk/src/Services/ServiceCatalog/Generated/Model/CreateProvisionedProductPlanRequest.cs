@@ -116,6 +116,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> NotificationArns
@@ -252,6 +257,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Parameters specified by the administrator that are required for provisioning the product.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UpdateProvisioningParameter> ProvisioningParameters
         {
@@ -276,6 +286,11 @@ namespace Amazon.ServiceCatalog.Model
         /// constraint with <c>TagUpdatesOnProvisionedProduct</c> set to <c>ALLOWED</c> to allow
         /// tag updates.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<Tag> Tags

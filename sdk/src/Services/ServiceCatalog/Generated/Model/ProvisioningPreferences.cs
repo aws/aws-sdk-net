@@ -83,6 +83,11 @@ namespace Amazon.ServiceCatalog.Model
         /// If no values are specified, the default value is all acounts from the <c>STACKSET</c>
         /// constraint.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StackSetAccounts
         {
@@ -262,6 +267,11 @@ namespace Amazon.ServiceCatalog.Model
         /// If no values are specified, the default value is all Regions from the <c>STACKSET</c>
         /// constraint.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StackSetRegions
         {

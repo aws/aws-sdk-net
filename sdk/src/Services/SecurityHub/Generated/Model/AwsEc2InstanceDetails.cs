@@ -89,6 +89,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The IPv4 addresses associated with the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> IpV4Addresses
         {
@@ -107,6 +112,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The IPv6 addresses associated with the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> IpV6Addresses
         {
@@ -203,6 +213,11 @@ namespace Amazon.SecurityHub.Model
         /// The identifiers of the network interfaces for the EC2 instance. The details for each
         /// network interface are in a corresponding <c>AwsEc2NetworkInterfacesDetails</c> object.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2InstanceNetworkInterfacesDetails> NetworkInterfaces
         {

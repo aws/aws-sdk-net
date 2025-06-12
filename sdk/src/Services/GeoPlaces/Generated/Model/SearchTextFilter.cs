@@ -50,6 +50,11 @@ namespace Amazon.GeoPlaces.Model
         /// The bounding box formed is defined as a set 4 coordinates: <c>[{westward lng}, {southern
         /// lat}, {eastward lng}, {northern lat}]</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=4, Max=4)]
         public List<double> BoundingBox
@@ -86,6 +91,11 @@ namespace Amazon.GeoPlaces.Model
         ///  A list of countries that all results must be in. Countries are represented by either
         /// their alpha-2 or alpha-3 character codes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> IncludeCountries

@@ -275,6 +275,11 @@ namespace Amazon.Synthetics.Model
         /// If you specify this parameter and don't specify any tags in the <c>Tags</c> parameter,
         /// the canary creation fails.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<string> ResourcesToReplicateTags
@@ -398,6 +403,11 @@ namespace Amazon.Synthetics.Model
         /// To have the tags that you apply to this canary also be applied to the Lambda function
         /// that the canary uses, specify this parameter with the value <c>lambda-function</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

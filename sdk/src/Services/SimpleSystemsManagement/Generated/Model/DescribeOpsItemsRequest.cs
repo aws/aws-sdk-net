@@ -216,6 +216,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// **If you filter the response by using the OperationalData operator, specify a key-value
         /// pair by using the following JSON format: {"key":"key_name","value":"a_value"}
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OpsItemFilter> OpsItemFilters
         {

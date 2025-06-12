@@ -102,6 +102,11 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// Use <c>PutRecord</c> to update feature values.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<FeatureValue> Record
@@ -122,6 +127,11 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// A list of stores to which you're adding the record. By default, Feature Store adds
         /// the record to all of the stores that you're using for the <c>FeatureGroup</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
         public List<string> TargetStores

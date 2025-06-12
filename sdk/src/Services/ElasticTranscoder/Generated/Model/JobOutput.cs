@@ -196,6 +196,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// release, you can only specify settings for a single clip per output file. The Composition
         /// object cannot be null.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This property is deprecated")]
         public List<Clip> Composition
@@ -616,6 +621,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// the second watermark that you add covers the first one, the third one covers the second,
         /// and the fourth one covers the third.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<JobWatermark> Watermarks
         {

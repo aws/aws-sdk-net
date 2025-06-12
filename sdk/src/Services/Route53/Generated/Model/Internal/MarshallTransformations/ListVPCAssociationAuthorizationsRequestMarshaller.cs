@@ -68,8 +68,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxresults", StringUtils.FromString(publicRequest.MaxResults));
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}/authorizevpcassociation";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListVPCAssociationAuthorizationsRequestMarshaller _instance = new ListVPCAssociationAuthorizationsRequestMarshaller();        

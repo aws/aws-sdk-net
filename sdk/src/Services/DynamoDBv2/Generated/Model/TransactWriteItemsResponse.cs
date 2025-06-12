@@ -44,6 +44,11 @@ namespace Amazon.DynamoDBv2.Model
         /// values of the list are ordered according to the ordering of the <c>TransactItems</c>
         /// request parameter. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConsumedCapacity> ConsumedCapacity
         {
@@ -64,6 +69,11 @@ namespace Amazon.DynamoDBv2.Model
         /// information about any item collections that were affected by individual <c>UpdateItem</c>,
         /// <c>PutItem</c>, or <c>DeleteItem</c> operations. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<ItemCollectionMetrics>> ItemCollectionMetrics
         {

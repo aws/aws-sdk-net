@@ -48,6 +48,11 @@ namespace Amazon.DynamoDBv2.Model
         /// the IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the
         /// table at the time of backup. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GlobalSecondaryIndexInfo> GlobalSecondaryIndexes
         {
@@ -68,6 +73,11 @@ namespace Amazon.DynamoDBv2.Model
         /// the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LocalSecondaryIndexInfo> LocalSecondaryIndexes
         {

@@ -126,6 +126,11 @@ namespace Amazon.S3Control.Model
         /// If provided, the generated manifest includes only source bucket objects that are stored
         /// with the specified storage class.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> MatchAnyStorageClass
         {
@@ -145,6 +150,11 @@ namespace Amazon.S3Control.Model
         /// If provided, the generated manifest includes only source bucket objects that have
         /// one of the specified Replication statuses.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ObjectReplicationStatuses
         {

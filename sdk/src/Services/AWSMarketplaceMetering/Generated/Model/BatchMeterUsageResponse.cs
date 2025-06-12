@@ -45,6 +45,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// were either honored by Amazon Web Services Marketplace Metering Service or were invalid.
         /// Invalid records should be fixed before being resubmitted.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UsageRecordResult> Results
         {
@@ -65,6 +70,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// This is a list of <c>UsageRecords</c>. You can retry the failed request by making
         /// another <c>BatchMeterUsage</c> call with this list as input in the <c>BatchMeterUsageRequest</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
         public List<UsageRecord> UnprocessedRecords

@@ -165,6 +165,11 @@ namespace Amazon.Glue.Model
         /// <c>Column</c> is the name of a column, and <c>Type</c> is the type of the data such
         /// as an integer or string. Has an upper bound of 100 columns.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=100)]
         public List<SchemaColumn> Schema

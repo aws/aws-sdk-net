@@ -69,6 +69,11 @@ namespace Amazon.ResourceGroups.Model
         /// <c>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</c> and <c>RESOURCE_TYPE_NOT_SUPPORTED</c>.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<QueryError> QueryErrors
         {
@@ -89,6 +94,11 @@ namespace Amazon.ResourceGroups.Model
         /// instead.</i> </b> 
         /// </para>
         ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This field is deprecated, use Resources instead.")]
         public List<ResourceIdentifier> ResourceIdentifiers
@@ -109,6 +119,11 @@ namespace Amazon.ResourceGroups.Model
         /// An array of resources from which you can determine each resource's identity, type,
         /// and group membership status.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ListGroupResourcesItem> Resources
         {

@@ -123,6 +123,11 @@ namespace Amazon.AppIntegrationsService.Model
         /// <para>
         /// The configuration of events or requests that the application has access to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=150)]
         public List<string> Permissions
@@ -142,6 +147,11 @@ namespace Amazon.AppIntegrationsService.Model
         /// <para>
         /// The events that the application publishes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("Publications has been replaced with Permissions")]
         [AWSProperty(Min=0, Max=50)]
@@ -162,6 +172,11 @@ namespace Amazon.AppIntegrationsService.Model
         /// <para>
         /// The events that the application subscribes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("Subscriptions has been replaced with Permissions")]
         [AWSProperty(Min=0, Max=50)]

@@ -151,6 +151,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The Amazon Web Services account ID in which a finding is generated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> AwsAccountId
         {
@@ -169,6 +174,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the Amazon Web Services account in which a finding is generated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> AwsAccountName
         {
@@ -188,6 +198,11 @@ namespace Amazon.SecurityHub.Model
         /// The name of the findings provider (company) that owns the solution (product) that
         /// generates findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> CompanyName
         {
@@ -209,6 +224,11 @@ namespace Amazon.SecurityHub.Model
         /// in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
         /// API response. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ComplianceAssociatedStandardsId
         {
@@ -228,6 +248,11 @@ namespace Amazon.SecurityHub.Model
         ///  The unique identifier of a control across standards. Values for this field typically
         /// consist of an Amazon Web Services service and a number, such as APIGateway.5. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ComplianceSecurityControlId
         {
@@ -246,6 +271,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The name of a security control parameter. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ComplianceSecurityControlParametersName
         {
@@ -264,6 +294,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The current value of a security control parameter. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ComplianceSecurityControlParametersValue
         {
@@ -284,6 +319,11 @@ namespace Amazon.SecurityHub.Model
         /// rule in a supported standard, such as CIS Amazon Web Services Foundations. Contains
         /// security standard-related finding details.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ComplianceStatus
         {
@@ -308,6 +348,11 @@ namespace Amazon.SecurityHub.Model
         /// Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
         /// confidence and 100 means 100 percent confidence.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> Confidence
         {
@@ -332,6 +377,11 @@ namespace Amazon.SecurityHub.Model
         /// For more information about the validation and formatting of timestamp fields in Security
         /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> CreatedAt
         {
@@ -355,6 +405,11 @@ namespace Amazon.SecurityHub.Model
         /// A score of 0 means that the underlying resources have no criticality, and a score
         /// of 100 is reserved for the most critical resources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> Criticality
         {
@@ -373,6 +428,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A finding's description.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> Description
         {
@@ -398,6 +458,11 @@ namespace Amazon.SecurityHub.Model
         /// Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
         /// confidence and 100 means 100 percent confidence.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> FindingProviderFieldsConfidence
         {
@@ -422,6 +487,11 @@ namespace Amazon.SecurityHub.Model
         /// A score of 0 means that the underlying resources have no criticality, and a score
         /// of 100 is reserved for the most critical resources. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> FindingProviderFieldsCriticality
         {
@@ -440,6 +510,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The finding identifier of a related finding that is identified by the finding provider.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> FindingProviderFieldsRelatedFindingsId
         {
@@ -459,6 +534,11 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of the solution that generated a related finding that is identified by the
         /// finding provider.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> FindingProviderFieldsRelatedFindingsProductArn
         {
@@ -477,6 +557,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The finding provider value for the severity label.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> FindingProviderFieldsSeverityLabel
         {
@@ -495,6 +580,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The finding provider's original value for the severity.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> FindingProviderFieldsSeverityOriginal
         {
@@ -519,6 +609,11 @@ namespace Amazon.SecurityHub.Model
         /// Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual
         /// Behaviors | Sensitive Data Identifications
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> FindingProviderFieldsTypes
         {
@@ -543,6 +638,11 @@ namespace Amazon.SecurityHub.Model
         /// For more information about the validation and formatting of timestamp fields in Security
         /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> FirstObservedAt
         {
@@ -563,6 +663,11 @@ namespace Amazon.SecurityHub.Model
         /// generated a finding. In various security findings providers' solutions, this generator
         /// can be called a rule, a check, a detector, a plugin, etc.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> GeneratorId
         {
@@ -581,6 +686,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The security findings provider-specific identifier for a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> Id
         {
@@ -599,6 +709,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A keyword for a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("The Keyword property is deprecated.")]
         public List<KeywordFilter> Keyword
@@ -624,6 +739,11 @@ namespace Amazon.SecurityHub.Model
         /// For more information about the validation and formatting of timestamp fields in Security
         /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> LastObservedAt
         {
@@ -642,6 +762,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the malware that was observed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> MalwareName
         {
@@ -660,6 +785,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The filesystem path of the malware that was observed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> MalwarePath
         {
@@ -678,6 +808,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The state of the malware that was observed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> MalwareState
         {
@@ -696,6 +831,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The type of the malware that was observed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> MalwareType
         {
@@ -714,6 +854,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The destination domain of network-related information about a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> NetworkDestinationDomain
         {
@@ -732,6 +877,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The destination IPv4 address of network-related information about a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IpFilter> NetworkDestinationIpV4
         {
@@ -750,6 +900,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The destination IPv6 address of network-related information about a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IpFilter> NetworkDestinationIpV6
         {
@@ -768,6 +923,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The destination port of network-related information about a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> NetworkDestinationPort
         {
@@ -786,6 +946,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Indicates the direction of network traffic associated with a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> NetworkDirection
         {
@@ -804,6 +969,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The protocol of network-related information about a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> NetworkProtocol
         {
@@ -822,6 +992,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The source domain of network-related information about a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> NetworkSourceDomain
         {
@@ -840,6 +1015,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The source IPv4 address of network-related information about a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IpFilter> NetworkSourceIpV4
         {
@@ -858,6 +1038,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The source IPv6 address of network-related information about a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IpFilter> NetworkSourceIpV6
         {
@@ -877,6 +1062,11 @@ namespace Amazon.SecurityHub.Model
         /// The source media access control (MAC) address of network-related information about
         /// a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> NetworkSourceMac
         {
@@ -895,6 +1085,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The source port of network-related information about a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> NetworkSourcePort
         {
@@ -913,6 +1108,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The text of a note.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> NoteText
         {
@@ -931,6 +1131,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The timestamp of when the note was updated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> NoteUpdatedAt
         {
@@ -949,6 +1154,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The principal that created a note.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> NoteUpdatedBy
         {
@@ -972,6 +1182,11 @@ namespace Amazon.SecurityHub.Model
         /// For more information about the validation and formatting of timestamp fields in Security
         /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> ProcessLaunchedAt
         {
@@ -990,6 +1205,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the process.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ProcessName
         {
@@ -1008,6 +1228,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The parent process ID. This field accepts positive integers between <c>O</c> and <c>2147483647</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> ProcessParentPid
         {
@@ -1026,6 +1251,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The path to the process executable.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ProcessPath
         {
@@ -1044,6 +1274,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The process ID.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> ProcessPid
         {
@@ -1067,6 +1302,11 @@ namespace Amazon.SecurityHub.Model
         /// For more information about the validation and formatting of timestamp fields in Security
         /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> ProcessTerminatedAt
         {
@@ -1087,6 +1327,11 @@ namespace Amazon.SecurityHub.Model
         /// findings provider) after this provider's product (solution that generates findings)
         /// is registered with Security Hub.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ProductArn
         {
@@ -1106,6 +1351,11 @@ namespace Amazon.SecurityHub.Model
         /// A data type where security findings providers can include additional solution-specific
         /// details that aren't part of the defined <c>AwsSecurityFinding</c> format.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MapFilter> ProductFields
         {
@@ -1124,6 +1374,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the solution (product) that generates findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ProductName
         {
@@ -1142,6 +1397,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The recommendation of what to do about the issue described in a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> RecommendationText
         {
@@ -1160,6 +1420,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The updated record state for the finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> RecordState
         {
@@ -1178,6 +1443,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The Region from which the finding was generated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> Region
         {
@@ -1196,6 +1466,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The solution-generated identifier for a related finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> RelatedFindingsId
         {
@@ -1214,6 +1489,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The ARN of the solution that generated a related finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> RelatedFindingsProductArn
         {
@@ -1232,6 +1512,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The ARN of the application that is related to a finding. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceApplicationArn
         {
@@ -1250,6 +1535,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The name of the application that is related to a finding. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceApplicationName
         {
@@ -1268,6 +1558,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The IAM profile ARN of the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsEc2InstanceIamInstanceProfileArn
         {
@@ -1286,6 +1581,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The Amazon Machine Image (AMI) ID of the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsEc2InstanceImageId
         {
@@ -1304,6 +1604,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The IPv4 addresses associated with the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IpFilter> ResourceAwsEc2InstanceIpV4Addresses
         {
@@ -1322,6 +1627,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The IPv6 addresses associated with the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IpFilter> ResourceAwsEc2InstanceIpV6Addresses
         {
@@ -1340,6 +1650,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The key name associated with the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsEc2InstanceKeyName
         {
@@ -1358,6 +1673,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The date and time the instance was launched.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> ResourceAwsEc2InstanceLaunchedAt
         {
@@ -1376,6 +1696,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The identifier of the subnet that the instance was launched in.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsEc2InstanceSubnetId
         {
@@ -1394,6 +1719,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The instance type of the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsEc2InstanceType
         {
@@ -1412,6 +1742,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The identifier of the VPC that the instance was launched in.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsEc2InstanceVpcId
         {
@@ -1430,6 +1765,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The creation date/time of the IAM access key related to a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> ResourceAwsIamAccessKeyCreatedAt
         {
@@ -1448,6 +1788,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the principal that is associated with an IAM access key.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsIamAccessKeyPrincipalName
         {
@@ -1466,6 +1811,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The status of the IAM access key related to a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsIamAccessKeyStatus
         {
@@ -1484,6 +1834,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The user associated with the IAM access key related to a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName.")]
         public List<StringFilter> ResourceAwsIamAccessKeyUserName
@@ -1503,6 +1858,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of an IAM user.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsIamUserUserName
         {
@@ -1521,6 +1881,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The canonical user ID of the owner of the S3 bucket.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsS3BucketOwnerId
         {
@@ -1539,6 +1904,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The display name of the owner of the S3 bucket.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceAwsS3BucketOwnerName
         {
@@ -1557,6 +1927,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The identifier of the image related to a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceContainerImageId
         {
@@ -1575,6 +1950,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the image related to a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceContainerImageName
         {
@@ -1598,6 +1978,11 @@ namespace Amazon.SecurityHub.Model
         /// For more information about the validation and formatting of timestamp fields in Security
         /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> ResourceContainerLaunchedAt
         {
@@ -1616,6 +2001,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the container related to a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceContainerName
         {
@@ -1635,6 +2025,11 @@ namespace Amazon.SecurityHub.Model
         /// The details of a resource that doesn't have a specific subfield for the resource type
         /// defined.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MapFilter> ResourceDetailsOther
         {
@@ -1653,6 +2048,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The canonical identifier for the given resource type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceId
         {
@@ -1671,6 +2071,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The canonical Amazon Web Services partition name that the Region is assigned to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourcePartition
         {
@@ -1689,6 +2094,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The canonical Amazon Web Services external Region name where this resource is located.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceRegion
         {
@@ -1708,6 +2118,11 @@ namespace Amazon.SecurityHub.Model
         /// A list of Amazon Web Services tags associated with a resource at the time the finding
         /// was processed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MapFilter> ResourceTags
         {
@@ -1726,6 +2141,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Specifies the type of the resource that details are provided for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceType
         {
@@ -1744,6 +2164,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Indicates whether or not sample findings are included in the filter results.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BooleanFilter> Sample
         {
@@ -1762,6 +2187,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The label of a finding's severity.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> SeverityLabel
         {
@@ -1780,6 +2210,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The normalized severity of a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.")]
         public List<NumberFilter> SeverityNormalized
@@ -1800,6 +2235,11 @@ namespace Amazon.SecurityHub.Model
         /// The native severity as defined by the security findings provider's solution that generated
         /// the finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This filter is deprecated. Instead, use FindingProviderSeverityOriginal.")]
         public List<NumberFilter> SeverityProduct
@@ -1820,6 +2260,11 @@ namespace Amazon.SecurityHub.Model
         /// A URL that links to a page about the current finding in the security findings provider's
         /// solution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> SourceUrl
         {
@@ -1838,6 +2283,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The category of a threat intelligence indicator.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorCategory
         {
@@ -1861,6 +2311,11 @@ namespace Amazon.SecurityHub.Model
         /// For more information about the validation and formatting of timestamp fields in Security
         /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> ThreatIntelIndicatorLastObservedAt
         {
@@ -1879,6 +2334,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The source of the threat intelligence.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorSource
         {
@@ -1897,6 +2357,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The URL for more details from the source of the threat intelligence.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorSourceUrl
         {
@@ -1915,6 +2380,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The type of a threat intelligence indicator.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorType
         {
@@ -1933,6 +2403,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The value of a threat intelligence indicator.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ThreatIntelIndicatorValue
         {
@@ -1951,6 +2426,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A finding's title.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> Title
         {
@@ -1970,6 +2450,11 @@ namespace Amazon.SecurityHub.Model
         /// A finding type in the format of <c>namespace/category/classifier</c> that classifies
         /// a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> Type
         {
@@ -1994,6 +2479,11 @@ namespace Amazon.SecurityHub.Model
         /// For more information about the validation and formatting of timestamp fields in Security
         /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> UpdatedAt
         {
@@ -2013,6 +2503,11 @@ namespace Amazon.SecurityHub.Model
         /// A list of name/value string pairs associated with the finding. These are custom, user-defined
         /// fields added to a finding. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MapFilter> UserDefinedFields
         {
@@ -2031,6 +2526,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The veracity of a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> VerificationState
         {
@@ -2051,6 +2551,11 @@ namespace Amazon.SecurityHub.Model
         /// You can filter findings by this field only if you use Security Hub and Amazon Inspector.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> VulnerabilitiesExploitAvailable
         {
@@ -2071,6 +2576,11 @@ namespace Amazon.SecurityHub.Model
         /// packages. You can filter findings by this field only if you use Security Hub and Amazon
         /// Inspector. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> VulnerabilitiesFixAvailable
         {
@@ -2094,6 +2604,11 @@ namespace Amazon.SecurityHub.Model
         /// Note that this field is deprecated. To search for a finding based on its workflow
         /// status, use <c>WorkflowStatus</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> WorkflowState
         {
@@ -2188,6 +2703,11 @@ namespace Amazon.SecurityHub.Model
         /// Hub automatically sets the workflow status to <c>RESOLVED</c>.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> WorkflowStatus
         {

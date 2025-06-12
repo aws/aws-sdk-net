@@ -149,6 +149,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AudioPids. Specify the packet identifiers (PIDs) for any
         /// elementary audio streams you include in this output. Specify multiple PIDs as a JSON
         /// array. Default is the range 482-492.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> AudioPids
         {
@@ -271,6 +276,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property DvbSubPids. Specify the packet identifiers (PIDs) for DVB
         /// subtitle data included in this output. Specify multiple PIDs as a JSON array. Default
         /// is the range 460-479.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> DvbSubPids
         {

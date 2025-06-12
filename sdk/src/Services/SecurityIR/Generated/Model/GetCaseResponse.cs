@@ -97,6 +97,11 @@ namespace Amazon.SecurityIR.Model
         /// <para>
         /// Response element for GetCase that provides a list of current case attachments.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<CaseAttachmentAttributes> CaseAttachments
@@ -228,6 +233,11 @@ namespace Amazon.SecurityIR.Model
         /// <para>
         /// Response element for GetCase that provides a list of impacted accounts.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<string> ImpactedAccounts
@@ -247,6 +257,11 @@ namespace Amazon.SecurityIR.Model
         /// <para>
         /// Response element for GetCase that provides the impacted regions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<ImpactedAwsRegion> ImpactedAwsRegions
@@ -266,6 +281,11 @@ namespace Amazon.SecurityIR.Model
         /// <para>
         /// Response element for GetCase that provides a list of impacted services.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=600)]
         public List<string> ImpactedServices
@@ -360,6 +380,11 @@ namespace Amazon.SecurityIR.Model
         /// Response element for GetCase that provides a list of suspicious IP addresses associated
         /// with unauthorized activity. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<ThreatActorIp> ThreatActorIpAddresses
@@ -398,6 +423,11 @@ namespace Amazon.SecurityIR.Model
         /// <para>
         /// Response element for GetCase that provides a list of Watchers added to the case.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public List<Watcher> Watchers

@@ -114,6 +114,11 @@ namespace Amazon.MemoryDB.Model
         /// <para>
         /// A list of subnets associated with the subnet group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Subnet> Subnets
         {
@@ -134,6 +139,11 @@ namespace Amazon.MemoryDB.Model
         /// can include 'ipv4', 'ipv6', or both, indicating the IP address types that can be used
         /// for clusters deployed in this subnet group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedNetworkTypes
         {

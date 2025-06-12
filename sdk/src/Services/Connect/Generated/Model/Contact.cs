@@ -155,6 +155,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The attributes of the contact.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Attributes
         {
@@ -264,6 +269,11 @@ namespace Amazon.Connect.Model
         /// Information about the contact evaluations where the key is the FormId, which is a
         /// unique identifier for the form.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ContactEvaluation> ContactEvaluations
         {
@@ -685,6 +695,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// If recording was enabled, this is information about the recordings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RecordingInfo> Recordings
         {
@@ -764,6 +779,11 @@ namespace Amazon.Connect.Model
         /// This field can be used to show channel subtype. For example, <c>connect:Guide</c>
         /// or <c>connect:SMS</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, SegmentAttributeValue> SegmentAttributes
         {
@@ -805,6 +825,11 @@ namespace Amazon.Connect.Model
         /// Tags associated with the contact. This contains both Amazon Web Services generated
         /// and user-defined tags.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=6)]
         public Dictionary<string, string> Tags

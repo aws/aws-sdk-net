@@ -153,6 +153,11 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// List of timestamps at intervals corresponding to the specified time period.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateTime> Timestamps
         {
@@ -172,6 +177,11 @@ namespace Amazon.CloudTrail.Model
         /// List of values representing the API call rate or error rate at each timestamp. The
         /// number of values is equal to the number of timestamps.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> Values
         {

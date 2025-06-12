@@ -73,8 +73,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v20180820/accesspointfordirectory";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListAccessPointsForDirectoryBucketsRequestMarshaller _instance = new ListAccessPointsForDirectoryBucketsRequestMarshaller();        

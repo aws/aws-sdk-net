@@ -47,6 +47,11 @@ namespace Amazon.ControlTower.Model
         /// <para>
         /// Identifiers for the <c>Baseline</c> objects returned as part of the filter operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<string> BaselineIdentifiers
@@ -66,6 +71,11 @@ namespace Amazon.ControlTower.Model
         /// <para>
         /// A list of <c>EnabledBaselineDriftStatus</c> items for enabled baselines.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<string> InheritanceDriftStatuses
@@ -86,6 +96,11 @@ namespace Amazon.ControlTower.Model
         /// An optional filter that sets up a list of <c>parentIdentifiers</c> to filter the results
         /// of the <c>ListEnabledBaseline</c> output.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<string> ParentIdentifiers
@@ -105,6 +120,11 @@ namespace Amazon.ControlTower.Model
         /// <para>
         /// A list of <c>EnablementStatus</c> items.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<string> Statuses
@@ -124,6 +144,11 @@ namespace Amazon.ControlTower.Model
         /// <para>
         /// Identifiers for the targets of the <c>Baseline</c> filter operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<string> TargetIdentifiers

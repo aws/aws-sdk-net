@@ -43,6 +43,11 @@ namespace Amazon.CustomerProfiles.Model
         /// <para>
         /// The reference for the key name of the fields map.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> FieldNames
         {
@@ -69,6 +74,11 @@ namespace Amazon.CustomerProfiles.Model
         /// does not already exist before the object is ingested, otherwise it is only used for
         /// matching objects to profiles.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StandardIdentifiers
         {

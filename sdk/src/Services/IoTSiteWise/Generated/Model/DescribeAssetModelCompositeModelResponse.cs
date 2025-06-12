@@ -51,6 +51,11 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The available actions for a composite model on this asset model.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ActionDefinition> ActionDefinitions
         {
@@ -145,6 +150,11 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The path to the composite model listing the parent composite models.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AssetModelCompositeModelPathSegment> AssetModelCompositeModelPath
@@ -164,6 +174,11 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The property definitions of the composite model.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AssetModelProperty> AssetModelCompositeModelProperties
@@ -183,6 +198,11 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The list of composite model summaries for the composite model.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AssetModelCompositeModelSummary> AssetModelCompositeModelSummaries

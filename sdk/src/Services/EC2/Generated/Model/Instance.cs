@@ -135,6 +135,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Any block device mapping entries for the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InstanceBlockDeviceMapping> BlockDeviceMappings
         {
@@ -301,6 +306,11 @@ namespace Amazon.EC2.Model
         /// Amazon Elastic Graphics reached end of life on January 8, 2024.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ElasticGpuAssociation> ElasticGpuAssociations
         {
@@ -324,6 +334,11 @@ namespace Amazon.EC2.Model
         /// Amazon Elastic Inference is no longer available.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ElasticInferenceAcceleratorAssociation> ElasticInferenceAcceleratorAssociations
         {
@@ -578,6 +593,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The license configurations for the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LicenseConfiguration> Licenses
         {
@@ -650,6 +670,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The network interfaces for the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InstanceNetworkInterface> NetworkInterfaces
         {
@@ -841,6 +866,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The product codes attached to this instance, if applicable.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ProductCode> ProductCodes
         {
@@ -957,6 +987,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The security groups for the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GroupIdentifier> SecurityGroups
         {
@@ -1102,6 +1137,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Any tags assigned to the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

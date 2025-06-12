@@ -49,6 +49,11 @@ namespace Amazon.ARCZonalShift.Model
         /// Zones or not. The key name is the Availability Zone where the resource is deployed.
         /// The value is 1 or 0.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, float> AppliedWeights
@@ -87,6 +92,11 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// An array of the autoshifts that are active for the resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AutoshiftInResource> Autoshifts
         {
@@ -163,6 +173,11 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// The zonal shifts that are currently active for a resource. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ZonalShiftInResource> ZonalShifts

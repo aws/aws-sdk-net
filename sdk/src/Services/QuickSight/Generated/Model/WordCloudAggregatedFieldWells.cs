@@ -42,6 +42,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The group by field well of a word cloud. Values are grouped by group by fields.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=10)]
         public List<DimensionField> GroupBy
@@ -61,6 +66,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The size field well of a word cloud. Values are aggregated based on group by fields.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1)]
         public List<MeasureField> Size

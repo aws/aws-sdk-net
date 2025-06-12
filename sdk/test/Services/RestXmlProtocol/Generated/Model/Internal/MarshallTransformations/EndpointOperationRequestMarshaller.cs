@@ -59,9 +59,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
             request.ResourcePath = "/EndpointOperation";
 
-
             
             request.HostPrefix = $"foo.";
+
             return request;
         }
         private static EndpointOperationRequestMarshaller _instance = new EndpointOperationRequestMarshaller();        

@@ -132,6 +132,11 @@ namespace Amazon.CloudFormation.Model
         /// For the <c>Modify</c> action, a list of <c>ResourceChangeDetail</c> structures that
         /// describes the changes that CloudFormation will make to the resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ResourceChangeDetail> Details
         {
@@ -302,6 +307,11 @@ namespace Amazon.CloudFormation.Model
         /// update, such as a change in the resource attribute's <c>Metadata</c>, <c>Properties</c>,
         /// or <c>Tags</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Scope
         {

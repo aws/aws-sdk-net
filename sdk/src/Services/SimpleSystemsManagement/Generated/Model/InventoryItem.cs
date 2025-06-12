@@ -65,6 +65,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The inventory data of the inventory type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
         public List<Dictionary<string, string>> Content
@@ -107,6 +112,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// attribute, you can specify the <c>ExecutionId</c>, <c>ExecutionType</c>, <c>ComplianceType</c>
         /// properties of the <c>AWS:ComplianceItem</c> type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Context

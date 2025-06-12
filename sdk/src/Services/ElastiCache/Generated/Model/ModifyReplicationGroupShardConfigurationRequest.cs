@@ -99,6 +99,11 @@ namespace Amazon.ElastiCache.Model
         /// ElastiCache will attempt to remove all node groups listed by <c>NodeGroupsToRemove</c>
         /// from the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NodeGroupsToRemove
         {
@@ -124,6 +129,11 @@ namespace Amazon.ElastiCache.Model
         /// ElastiCache will attempt to remove all node groups except those listed by <c>NodeGroupsToRetain</c>
         /// from the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NodeGroupsToRetain
         {
@@ -171,6 +181,11 @@ namespace Amazon.ElastiCache.Model
         /// You can specify this parameter only if the value of <c>NodeGroupCount</c> is greater
         /// than the current number of node groups (shards).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ReshardingConfiguration> ReshardingConfiguration
         {

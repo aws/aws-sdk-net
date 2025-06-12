@@ -69,6 +69,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The Common Weakness Enumerations (CWEs) associated with the vulnerability.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0)]
         public List<string> Cwes
@@ -106,6 +111,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// Information on the evidence of the vulnerability.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Evidence> Evidences
         {
@@ -161,6 +171,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The reference URLs for the vulnerability data.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> ReferenceUrls
@@ -198,6 +213,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The known malware tools or kits that can exploit the vulnerability.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Tools
         {
@@ -217,6 +237,11 @@ namespace Amazon.Inspector2.Model
         /// The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the
         /// vulnerability.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0)]
         public List<string> Ttps

@@ -306,6 +306,11 @@ namespace Amazon.RDS.Model
         /// The types of logs that the database engine has available for export to CloudWatch
         /// Logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ExportableLogTypes
         {
@@ -427,6 +432,11 @@ namespace Amazon.RDS.Model
         /// Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora
         /// User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedCACertificateIdentifiers
         {
@@ -446,6 +456,11 @@ namespace Amazon.RDS.Model
         /// A list of the character sets supported by this engine for the <c>CharacterSetName</c>
         /// parameter of the <c>CreateDBInstance</c> operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CharacterSet> SupportedCharacterSets
         {
@@ -464,6 +479,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of the supported DB engine modes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedEngineModes
         {
@@ -510,6 +530,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The supported features are listed under <c>SupportedFeatureNames</c> in the output.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedFeatureNames
         {
@@ -529,6 +554,11 @@ namespace Amazon.RDS.Model
         /// A list of the character sets supported by the Oracle DB engine for the <c>NcharCharacterSetName</c>
         /// parameter of the <c>CreateDBInstance</c> operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CharacterSet> SupportedNcharCharacterSets
         {
@@ -548,6 +578,11 @@ namespace Amazon.RDS.Model
         /// A list of the time zones supported by this engine for the <c>Timezone</c> parameter
         /// of the <c>CreateDBInstance</c> action.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Timezone> SupportedTimezones
         {
@@ -734,6 +769,11 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Gets and sets the property TagList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> TagList
         {
@@ -752,6 +792,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of engine versions that this database engine version can be upgraded to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UpgradeTarget> ValidUpgradeTarget
         {

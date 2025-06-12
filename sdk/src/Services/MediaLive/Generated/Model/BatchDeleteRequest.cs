@@ -42,6 +42,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property ChannelIds. List of channel IDs
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ChannelIds
         {
@@ -57,6 +62,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property InputIds. List of input IDs
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InputIds
         {
@@ -72,6 +82,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property InputSecurityGroupIds. List of input security group IDs
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InputSecurityGroupIds
         {
@@ -87,6 +102,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property MultiplexIds. List of multiplex IDs
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> MultiplexIds
         {

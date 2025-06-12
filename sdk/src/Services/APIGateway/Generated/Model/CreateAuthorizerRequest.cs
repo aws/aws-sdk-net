@@ -214,6 +214,11 @@ namespace Amazon.APIGateway.Model
         /// Each element is of this format: <c>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</c>.
         /// For a <c>TOKEN</c> or <c>REQUEST</c> authorizer, this is not defined. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ProviderARNs
         {

@@ -118,6 +118,11 @@ namespace Amazon.SimpleEmail.Model
         /// A list of tags, in the form of name/value pairs, to apply to an email that you send
         /// to a destination using <c>SendBulkTemplatedEmail</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MessageTag> DefaultTags
         {
@@ -164,6 +169,11 @@ namespace Amazon.SimpleEmail.Model
         /// receive the same version of the email. You can specify up to 50 <c>Destination</c>
         /// objects within a <c>Destinations</c> array.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<BulkEmailDestination> Destinations
@@ -184,6 +194,11 @@ namespace Amazon.SimpleEmail.Model
         /// The reply-to email address(es) for the message. If the recipient replies to the message,
         /// each reply-to address receives the reply.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReplyToAddresses
         {

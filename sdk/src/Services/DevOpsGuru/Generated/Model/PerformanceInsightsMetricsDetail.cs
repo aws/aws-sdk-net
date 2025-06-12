@@ -108,6 +108,11 @@ namespace Amazon.DevOpsGuru.Model
         ///  For more information, see <c> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceData.html">PerformanceInsightsReferenceData</a>
         /// </c>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PerformanceInsightsReferenceData> ReferenceData
         {
@@ -126,6 +131,11 @@ namespace Amazon.DevOpsGuru.Model
         /// <para>
         /// The metric statistics during the anomalous period detected by DevOps Guru;
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PerformanceInsightsStat> StatsAtAnomaly
         {
@@ -146,6 +156,11 @@ namespace Amazon.DevOpsGuru.Model
         /// metrics, it compares them to <c>StatsAtBaseline</c> to help determine if they are
         /// anomalous.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PerformanceInsightsStat> StatsAtBaseline
         {

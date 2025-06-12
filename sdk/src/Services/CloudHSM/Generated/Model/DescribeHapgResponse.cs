@@ -82,6 +82,11 @@ namespace Amazon.CloudHSM.Model
 
         /// <summary>
         /// Gets and sets the property HsmsLastActionFailed.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HsmsLastActionFailed
         {
@@ -97,6 +102,11 @@ namespace Amazon.CloudHSM.Model
 
         /// <summary>
         /// Gets and sets the property HsmsPendingDeletion.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HsmsPendingDeletion
         {
@@ -112,6 +122,11 @@ namespace Amazon.CloudHSM.Model
 
         /// <summary>
         /// Gets and sets the property HsmsPendingRegistration.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HsmsPendingRegistration
         {
@@ -167,6 +182,11 @@ namespace Amazon.CloudHSM.Model
         /// The list of partition serial numbers that belong to the high-availability partition
         /// group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PartitionSerialList
         {

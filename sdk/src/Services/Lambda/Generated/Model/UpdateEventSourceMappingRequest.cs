@@ -375,6 +375,11 @@ namespace Amazon.Lambda.Model
         /// (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums
         /// applied to the event source mapping.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<string> FunctionResponseTypes
@@ -572,6 +577,11 @@ namespace Amazon.Lambda.Model
         /// An array of authentication protocols or VPC components required to secure your event
         /// source.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=22)]
         public List<SourceAccessConfiguration> SourceAccessConfigurations

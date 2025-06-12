@@ -52,6 +52,11 @@ namespace Amazon.NetworkManager.Model
         /// Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID,
         /// RESOURCE_ID, or RESOURCE_TYPE.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<string>> DestinationFilters
         {
@@ -70,6 +75,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// An exact CIDR block.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ExactCidrMatches
         {
@@ -107,6 +117,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The most specific route that matches the traffic (longest prefix match).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> LongestPrefixMatches
         {
@@ -125,6 +140,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The IDs of the prefix lists.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PrefixListIds
         {
@@ -162,6 +182,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The route states.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> States
         {
@@ -180,6 +205,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The routes with a subnet that match the specified CIDR filter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SubnetOfMatches
         {
@@ -199,6 +229,11 @@ namespace Amazon.NetworkManager.Model
         /// The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30,
         /// then the result returns 10.0.1.0/29.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupernetOfMatches
         {
@@ -217,6 +252,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The route types.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Types
         {

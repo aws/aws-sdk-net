@@ -52,6 +52,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property BooleanList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<bool> BooleanList
         {
@@ -67,6 +72,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property EnumList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EnumList
         {
@@ -82,6 +92,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property FlattenedList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> FlattenedList
         {
@@ -97,6 +112,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property FlattenedList2.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> FlattenedList2
         {
@@ -112,6 +132,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property FlattenedListWithMemberNamespace.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> FlattenedListWithMemberNamespace
         {
@@ -127,6 +152,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property FlattenedListWithNamespace.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> FlattenedListWithNamespace
         {
@@ -142,6 +172,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property FlattenedStructureList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StructureListMember> FlattenedStructureList
         {
@@ -157,6 +192,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property IntegerList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> IntegerList
         {
@@ -172,6 +212,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property IntEnumList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> IntEnumList
         {
@@ -187,6 +232,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property NestedStringList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<List<string>> NestedStringList
         {
@@ -202,6 +252,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property RenamedListMembers.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RenamedListMembers
         {
@@ -217,6 +272,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property StringList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StringList
         {
@@ -232,6 +292,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property StringSet.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StringSet
         {
@@ -247,6 +312,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property StructureList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StructureListMember> StructureList
         {
@@ -262,6 +332,11 @@ namespace Amazon.RestXmlProtocol.Model
 
         /// <summary>
         /// Gets and sets the property TimestampList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateTime> TimestampList
         {

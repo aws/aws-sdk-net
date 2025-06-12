@@ -54,6 +54,11 @@ namespace Amazon.ACMPCA.Model
         /// was issued and the purposes for which it may be used. In a CA certificate, these terms
         /// limit the set of policies for certification paths that include this certificate.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<PolicyInformation> CertificatePolicies
@@ -75,6 +80,11 @@ namespace Amazon.ACMPCA.Model
         /// object identifier (OID), a base64-encoded value, and the critical flag. For more information,
         /// see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=150)]
         public List<CustomExtension> CustomExtensions
@@ -95,6 +105,11 @@ namespace Amazon.ACMPCA.Model
         /// Specifies additional purposes for which the certified public key may be used other
         /// than basic purposes indicated in the <c>KeyUsage</c> extension.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<ExtendedKeyUsage> ExtendedKeyUsage
@@ -131,6 +146,11 @@ namespace Amazon.ACMPCA.Model
         /// of the certificate. These identities may be included in addition to or in place of
         /// the identity in the subject field of the certificate.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=150)]
         public List<GeneralName> SubjectAlternativeNames

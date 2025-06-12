@@ -65,6 +65,11 @@ namespace Amazon.QuickSight.Model
         /// this structure must have all tag values assigned to it to apply Row-level security
         /// (RLS) to the dataset.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<List<string>> TagRuleConfigurations
@@ -85,6 +90,11 @@ namespace Amazon.QuickSight.Model
         /// A set of rules associated with row-level security, such as the tag names and columns
         /// that they are assigned to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<RowLevelPermissionTagRule> TagRules

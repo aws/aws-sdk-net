@@ -43,6 +43,11 @@ namespace Amazon.CodeCommit.Model
         /// An array of commit data type objects, each of which contains information about a specified
         /// commit.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Commit> Commits
         {
@@ -63,6 +68,11 @@ namespace Amazon.CodeCommit.Model
         /// of the commit IDs was a shortened SHA ID or that commit was not found in the specified
         /// repository, the ID returns an error object with more information.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BatchGetCommitsError> Errors
         {

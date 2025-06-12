@@ -66,6 +66,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// Represents a collection of allowed headers. Supported only for HTTP APIs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AllowHeaders
         {
@@ -84,6 +89,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AllowMethods
         {
@@ -102,6 +112,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// Represents a collection of allowed origins. Supported only for HTTP APIs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AllowOrigins
         {
@@ -120,6 +135,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// Represents a collection of exposed headers. Supported only for HTTP APIs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ExposeHeaders
         {

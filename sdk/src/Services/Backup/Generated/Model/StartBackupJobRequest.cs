@@ -58,6 +58,11 @@ namespace Amazon.Backup.Model
         /// backup option and create a Windows VSS backup. Set to <c>"WindowsVSS""disabled"</c>
         /// to create a regular backup. The <c>WindowsVSS</c> option is not enabled by default.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> BackupOptions
         {
@@ -244,6 +249,11 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The tags to assign to the resources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> RecoveryPointTags

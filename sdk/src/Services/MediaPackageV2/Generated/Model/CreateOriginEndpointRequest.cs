@@ -138,6 +138,11 @@ namespace Amazon.MediaPackageV2.Model
         /// <para>
         /// A DASH manifest configuration.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CreateDashManifestConfiguration> DashManifests
         {
@@ -193,6 +198,11 @@ namespace Amazon.MediaPackageV2.Model
         /// <para>
         /// An HTTP live streaming (HLS) manifest configuration.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CreateHlsManifestConfiguration> HlsManifests
         {
@@ -211,6 +221,11 @@ namespace Amazon.MediaPackageV2.Model
         /// <para>
         /// A low-latency HLS manifest configuration.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CreateLowLatencyHlsManifestConfiguration> LowLatencyHlsManifests
         {
@@ -298,6 +313,11 @@ namespace Amazon.MediaPackageV2.Model
         /// <para>
         ///  <c>"Key2": "Value2"</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

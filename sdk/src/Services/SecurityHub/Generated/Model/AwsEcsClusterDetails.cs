@@ -70,6 +70,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The short name of one or more capacity providers to associate with the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CapacityProviders
         {
@@ -125,6 +130,11 @@ namespace Amazon.SecurityHub.Model
         /// The setting to use to create the cluster. Specifically used to configure whether to
         /// enable CloudWatch Container Insights for the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsClusterClusterSettingsDetails> ClusterSettings
         {
@@ -163,6 +173,11 @@ namespace Amazon.SecurityHub.Model
         /// strategy is used when services or tasks are run without a specified launch type or
         /// capacity provider strategy.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsClusterDefaultCapacityProviderStrategyDetails> DefaultCapacityProviderStrategy
         {

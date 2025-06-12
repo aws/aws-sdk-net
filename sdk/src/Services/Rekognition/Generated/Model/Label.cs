@@ -52,6 +52,11 @@ namespace Amazon.Rekognition.Model
         /// <para>
         /// A list of potential aliases for a given label.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LabelAlias> Aliases
         {
@@ -70,6 +75,11 @@ namespace Amazon.Rekognition.Model
         /// <para>
         /// A list of the categories associated with a given label.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LabelCategory> Categories
         {
@@ -109,6 +119,11 @@ namespace Amazon.Rekognition.Model
         /// for each instance of the detected object. Bounding boxes are returned for common object
         /// labels such as people, cars, furniture, apparel or pets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Instance> Instances
         {
@@ -145,6 +160,11 @@ namespace Amazon.Rekognition.Model
         /// <para>
         /// The parent labels for a label. The response includes all ancestor labels.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Parent> Parents
         {

@@ -51,6 +51,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The properties of the container that's used on the Amazon EKS pod.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EksContainerDetail> Containers
         {
@@ -127,6 +132,11 @@ namespace Amazon.Batch.Model
         /// Displays the reference pointer to the Kubernetes secret resource. These secrets help
         /// to gain access to pull an images from a private registry.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ImagePullSecret> ImagePullSecrets
         {
@@ -146,6 +156,11 @@ namespace Amazon.Batch.Model
         /// The container registered with the Amazon EKS Connector agent and persists the registration
         /// information in the Kubernetes backend data store.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EksContainerDetail> InitContainers
         {
@@ -264,6 +279,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Specifies the volumes for a job definition using Amazon EKS resources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EksVolume> Volumes
         {

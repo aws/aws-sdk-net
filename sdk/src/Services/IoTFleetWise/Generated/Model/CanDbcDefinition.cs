@@ -45,6 +45,11 @@ namespace Amazon.IoTFleetWise.Model
         /// specify up to five (inclusive) files in the list. The DBC file can be a maximum size
         /// of 200 MB.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public List<MemoryStream> CanDbcFiles
@@ -83,6 +88,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         /// Pairs every signal specified in your vehicle model with a signal decoder.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> SignalsMap
         {

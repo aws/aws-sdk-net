@@ -52,6 +52,11 @@ namespace Amazon.SageMaker.Model
         /// (clusters or serverless applications) are located in a different Amazon Web Services
         /// account than the SageMaker domain.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<string> AssumableRoleArns
@@ -75,6 +80,11 @@ namespace Amazon.SageMaker.Model
         /// workloads, such as Amazon S3 for data access, Amazon CloudWatch for logging, or other
         /// Amazon Web Services services based on the particular workload requirements.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<string> ExecutionRoleArns

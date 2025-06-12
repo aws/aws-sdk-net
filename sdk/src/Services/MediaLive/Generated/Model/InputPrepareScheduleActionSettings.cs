@@ -76,6 +76,11 @@ namespace Amazon.MediaLive.Model
         /// for the dynamic input, for this instance of the input. Each time you use the same
         /// dynamic input in an input switch action, you can provide a different value, in order
         /// to connect the input to a different content source.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> UrlPath
         {

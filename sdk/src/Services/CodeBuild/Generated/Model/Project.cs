@@ -294,6 +294,11 @@ namespace Amazon.CodeBuild.Model
         /// <c>mountOptions</c>, <c>mountPoint</c>, and <c>type</c> of a file system created using
         /// Amazon Elastic File System. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ProjectFileSystemLocation> FileSystemLocations
         {
@@ -441,6 +446,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// An array of <c>ProjectArtifacts</c> objects. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectArtifacts> SecondaryArtifacts
@@ -460,6 +470,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// An array of <c>ProjectSource</c> objects. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectSource> SecondarySources
@@ -481,6 +496,11 @@ namespace Amazon.CodeBuild.Model
         /// is specified at the build level, then they take over these <c>secondarySourceVersions</c>
         /// (at the project level). 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectSourceVersion> SecondarySourceVersions
@@ -599,6 +619,11 @@ namespace Amazon.CodeBuild.Model
         /// These tags are available for use by Amazon Web Services services that support CodeBuild
         /// build project tags.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

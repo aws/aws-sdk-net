@@ -169,6 +169,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Information about the instance types for which to reserve the capacity.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ReservationFleetInstanceSpecification> InstanceTypeSpecifications
@@ -189,6 +194,11 @@ namespace Amazon.EC2.Model
         /// The tags to assign to the Capacity Reservation Fleet. The tags are automatically assigned
         /// to the Capacity Reservations in the Fleet.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TagSpecification> TagSpecifications
         {

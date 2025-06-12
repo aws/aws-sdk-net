@@ -68,6 +68,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// An array of strings that you can provide to match against a specific name, status,
         /// or import task ID to filter the results for your import task queries.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> Values

@@ -71,6 +71,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The subnets associated with this network interface.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AssociatedSubnets
         {
@@ -205,6 +210,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Any security groups for the network interface.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GroupIdentifier> Groups
         {
@@ -241,6 +251,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IPv4 prefixes that are assigned to the network interface.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Ipv4PrefixSpecification> Ipv4Prefixes
         {
@@ -277,6 +292,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IPv6 addresses associated with the network interface.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NetworkInterfaceIpv6Address> Ipv6Addresses
         {
@@ -313,6 +333,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IPv6 prefixes that are assigned to the network interface.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Ipv6PrefixSpecification> Ipv6Prefixes
         {
@@ -458,6 +483,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The private IPv4 addresses associated with the network interface.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NetworkInterfacePrivateIpAddress> PrivateIpAddresses
         {
@@ -605,6 +635,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Any tags assigned to the network interface.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> TagSet
         {

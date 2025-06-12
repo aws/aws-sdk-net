@@ -112,6 +112,11 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The regex is applied to the file name of the attachment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> ExcludeAttachmentFilePatterns
@@ -135,6 +140,11 @@ namespace Amazon.Kendra.Model
         /// data source fields</a>. The ServiceNow data source field names must exist in your
         /// ServiceNow custom metadata.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<DataSourceToIndexFieldMapping> FieldMappings
@@ -162,6 +172,11 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The regex is applied to the file name of the attachment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> IncludeAttachmentFilePatterns

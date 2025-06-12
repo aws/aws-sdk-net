@@ -51,6 +51,11 @@ namespace Amazon.PI.Model
         /// <para>
         ///  Metric names and values from the timeframe used as baseline to generate the insight.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Data> BaselineData
         {
@@ -127,6 +132,11 @@ namespace Amazon.PI.Model
         /// List of data objects containing metrics and references from the time range while generating
         /// the insight.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Data> InsightData
         {
@@ -184,6 +194,11 @@ namespace Amazon.PI.Model
         /// List of recommendations for the insight. For example, <c>Investigate the following
         /// SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Recommendation> Recommendations
         {
@@ -238,6 +253,11 @@ namespace Amazon.PI.Model
         /// <para>
         /// List of supporting insights that provide additional factors for the insight.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Insight> SupportingInsights
         {

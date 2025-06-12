@@ -58,6 +58,11 @@ namespace Amazon.SageMaker.Model
         /// A list containing hyperparameter names and example values to be used by Autotune to
         /// determine optimal ranges for your tuning job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<AutoParameter> AutoParameters
@@ -79,6 +84,11 @@ namespace Amazon.SageMaker.Model
         /// objects that specify ranges of categorical hyperparameters that a hyperparameter tuning
         /// job searches.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public List<CategoricalParameterRange> CategoricalParameterRanges
@@ -100,6 +110,11 @@ namespace Amazon.SageMaker.Model
         /// objects that specify ranges of continuous hyperparameters that a hyperparameter tuning
         /// job searches.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public List<ContinuousParameterRange> ContinuousParameterRanges
@@ -121,6 +136,11 @@ namespace Amazon.SageMaker.Model
         /// objects that specify ranges of integer hyperparameters that a hyperparameter tuning
         /// job searches.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public List<IntegerParameterRange> IntegerParameterRanges

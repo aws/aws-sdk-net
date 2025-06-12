@@ -156,6 +156,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
         /// Web Services General Reference</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> ResourceARNList
@@ -217,6 +222,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <para>
         ///  <c>ec2:instance,s3:bucket,auditmanager</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ResourceTypeFilters
         {
@@ -288,6 +298,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<TagFilter> TagFilters

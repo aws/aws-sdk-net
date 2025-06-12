@@ -135,6 +135,11 @@ namespace Amazon.StorageGateway.Model
         /// report. You must specify at least one value for <c>InclusionFilters</c> or <c>ExclusionFilters</c>
         /// in a <c>StartCacheReport</c> request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CacheReportFilter> ExclusionFilters
         {
@@ -171,6 +176,11 @@ namespace Amazon.StorageGateway.Model
         /// report. You must specify at least one value for <c>InclusionFilters</c> or <c>ExclusionFilters</c>
         /// in a <c>StartCacheReport</c> request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CacheReportFilter> InclusionFilters
         {
@@ -238,6 +248,11 @@ namespace Amazon.StorageGateway.Model
         /// A list of up to 50 key/value tags that you can assign to the cache report. Using tags
         /// can help you categorize your reports and more easily locate them in search results.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

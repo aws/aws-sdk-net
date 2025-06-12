@@ -343,6 +343,11 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <para>
         /// A list of key-value pairs to associate with the DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, string> Tags
@@ -385,6 +390,11 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <para>
         /// A list of VPC security group IDs to associate with the DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> VpcSecurityGroupIds
@@ -405,6 +415,11 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// A list of VPC subnet IDs to associate with the DB instance. Provide at least two VPC
         /// subnet IDs in different availability zones when deploying with a Multi-AZ standby.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]
         public List<string> VpcSubnetIds

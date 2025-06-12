@@ -81,6 +81,11 @@ namespace Amazon.Glue.Model
         /// Specifies additional options passed to the Snowflake connector. If options are specified
         /// elsewhere in this node, this will take precedence.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> AdditionalOptions
         {
@@ -323,6 +328,11 @@ namespace Amazon.Glue.Model
         /// and upserts. A list of structures with <c>value</c>, <c>label</c> and <c> description</c>
         /// keys. Each structure describes a column.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Option> SelectedColumns
         {
@@ -398,6 +408,11 @@ namespace Amazon.Glue.Model
         /// Manually defines the target schema for the node. A list of structures with <c>value</c>
         /// , <c>label</c> and <c>description</c> keys. Each structure defines a column.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Option> TableSchema
         {

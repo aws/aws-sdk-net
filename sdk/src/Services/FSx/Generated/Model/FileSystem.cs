@@ -63,6 +63,11 @@ namespace Amazon.FSx.Model
         /// to be processed. Administrative actions describe changes to the Amazon FSx system
         /// that you have initiated using the <c>UpdateFileSystem</c> operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<AdministrativeAction> AdministrativeActions
@@ -311,6 +316,11 @@ namespace Amazon.FSx.Model
         /// For an Amazon FSx for Windows File Server file system, you can have one network interface
         /// ID. For an Amazon FSx for Lustre file system, you can have more than one.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> NetworkInterfaceIds
@@ -472,6 +482,11 @@ namespace Amazon.FSx.Model
         /// of the subnet that contains the file system's endpoint. For <c>MULTI_AZ_1</c> Windows
         /// and ONTAP file systems, the file system endpoint is available in the <c>PreferredSubnetID</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> SubnetIds
@@ -492,6 +507,11 @@ namespace Amazon.FSx.Model
         /// The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging
         /// your Amazon FSx resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags

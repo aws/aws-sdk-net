@@ -52,6 +52,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The Amazon Web Services accounts targeted by the current Automation execution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<string> Accounts
@@ -71,6 +76,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Amazon Web Services accounts or organizational units to exclude as expanded targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
         public List<string> ExcludeAccounts
@@ -129,6 +139,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The Amazon Web Services Regions targeted by the current Automation execution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<string> Regions
@@ -209,6 +224,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// This <c>Targets</c> parameter takes precedence over the <c>StartAutomationExecution:Targets</c>
         /// parameter if both are supplied.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets

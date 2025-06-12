@@ -234,6 +234,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CalendarNames
         {
@@ -467,6 +472,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Parameter Store, a tool in Amazon Web Services Systems Manager, you can reference
         /// the parameter using <c>{{ssm:parameter-name}}</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
@@ -571,6 +581,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// accounts where you want to run the association. Use this action to update an association
         /// in multiple Regions and multiple accounts.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<TargetLocation> TargetLocations
@@ -591,6 +606,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
         /// can't be specified together.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
         public List<Dictionary<string, List<string>>> TargetMaps
@@ -610,6 +630,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The targets of the association.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets

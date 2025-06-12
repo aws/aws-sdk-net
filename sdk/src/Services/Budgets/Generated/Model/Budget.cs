@@ -194,6 +194,11 @@ namespace Amazon.Budgets.Model
         /// Amazon OpenSearch Service
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("CostFilters lack support for newer dimensions and filtering options. Please consider using the new 'FilterExpression' field.")]
         public Dictionary<string, List<string>> CostFilters
@@ -273,6 +278,11 @@ namespace Amazon.Budgets.Model
         /// <para>
         /// The definition for how the budget data is aggregated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1)]
         public List<string> Metrics
@@ -334,6 +344,11 @@ namespace Amazon.Budgets.Model
         /// <c>PlannedBudgetLimits</c>. Budgets that are created without <c>PlannedBudgetLimits</c>
         /// only contain <c>BudgetLimit</c>. They don't contain <c>PlannedBudgetLimits</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, Spend> PlannedBudgetLimits
         {

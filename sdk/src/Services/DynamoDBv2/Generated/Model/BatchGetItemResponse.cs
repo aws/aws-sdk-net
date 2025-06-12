@@ -56,6 +56,11 @@ namespace Amazon.DynamoDBv2.Model
         ///  <c>CapacityUnits</c> - The total number of capacity units consumed.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConsumedCapacity> ConsumedCapacity
         {
@@ -76,6 +81,11 @@ namespace Amazon.DynamoDBv2.Model
         /// consists of a table name or ARN, along with a map of attribute data consisting of
         /// the data type and attribute value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<Dictionary<string, AttributeValue>>> Responses
         {
@@ -123,6 +133,11 @@ namespace Amazon.DynamoDBv2.Model
         /// If there are no unprocessed keys remaining, the response contains an empty <c>UnprocessedKeys</c>
         /// map.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public Dictionary<string, KeysAndAttributes> UnprocessedKeys

@@ -235,6 +235,11 @@ namespace Amazon.StorageGateway.Model
         /// A <a>NetworkInterface</a> array that contains descriptions of the gateway network
         /// interfaces.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NetworkInterface> GatewayNetworkInterfaces
         {
@@ -443,6 +448,11 @@ namespace Amazon.StorageGateway.Model
         /// A list of the metadata cache sizes that the gateway can support based on its current
         /// hardware specifications.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedGatewayCapacities
         {
@@ -463,6 +473,11 @@ namespace Amazon.StorageGateway.Model
         /// Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can
         /// view all tags using the <c>ListTagsForResource</c> API operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

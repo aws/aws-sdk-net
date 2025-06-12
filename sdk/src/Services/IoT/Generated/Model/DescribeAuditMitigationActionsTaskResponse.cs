@@ -48,6 +48,11 @@ namespace Amazon.IoT.Model
         /// Specifies the mitigation actions and their parameters that are applied as part of
         /// this task.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MitigationAction> ActionsDefinition
         {
@@ -66,6 +71,11 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Specifies the mitigation actions that should be applied to specific audit checks.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<string>> AuditCheckToActionsMapping
         {
@@ -140,6 +150,11 @@ namespace Amazon.IoT.Model
         /// Aggregate counts of the results when the mitigation tasks were applied to the findings
         /// for this audit mitigation actions task.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, TaskStatisticsForAuditCheck> TaskStatistics
         {

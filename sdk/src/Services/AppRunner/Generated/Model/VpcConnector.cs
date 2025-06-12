@@ -99,6 +99,11 @@ namespace Amazon.AppRunner.Model
         /// resources under the specified subnets. If not specified, App Runner uses the default
         /// security group of the Amazon VPC. The default security group allows all outbound traffic.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroups
         {
@@ -138,6 +143,11 @@ namespace Amazon.AppRunner.Model
         /// A list of IDs of subnets that App Runner uses for your service. All IDs are of subnets
         /// of a single Amazon VPC.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Subnets
         {

@@ -69,6 +69,11 @@ namespace Amazon.ResilienceHub.Model
         /// The current compliance against the resiliency policy before applying the configuration
         /// change.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, DisruptionCompliance> Compliance
         {
@@ -181,6 +186,11 @@ namespace Amazon.ResilienceHub.Model
         /// The expected compliance against the resiliency policy after applying the configuration
         /// change.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, RecommendationDisruptionCompliance> RecommendationCompliance
         {
@@ -218,6 +228,11 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// List of the suggested configuration changes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SuggestedChanges
         {

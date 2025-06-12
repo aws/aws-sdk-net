@@ -52,6 +52,11 @@ namespace Amazon.NetworkFirewall.Model
         /// You can specify individual ports, for example <c>1994</c>, and you can specify port
         /// ranges, such as <c>1990:1994</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PortRange> DestinationPorts
         {
@@ -71,6 +76,11 @@ namespace Amazon.NetworkFirewall.Model
         /// The destination IP addresses and address ranges to decrypt for inspection, in CIDR
         /// notation. If not specified, this matches with any destination address.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Address> Destinations
         {
@@ -94,6 +104,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// Network Firewall currently supports only TCP.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> Protocols
         {
@@ -118,6 +133,11 @@ namespace Amazon.NetworkFirewall.Model
         /// You can specify individual ports, for example <c>1994</c>, and you can specify port
         /// ranges, such as <c>1990:1994</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PortRange> SourcePorts
         {
@@ -137,6 +157,11 @@ namespace Amazon.NetworkFirewall.Model
         /// The source IP addresses and address ranges to decrypt for inspection, in CIDR notation.
         /// If not specified, this matches with any source address.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Address> Sources
         {

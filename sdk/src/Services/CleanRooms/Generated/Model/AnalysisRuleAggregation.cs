@@ -73,6 +73,11 @@ namespace Amazon.CleanRooms.Model
         /// <para>
         /// The columns that query runners are allowed to use in aggregation queries.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<AggregateColumn> AggregateColumns
@@ -93,6 +98,11 @@ namespace Amazon.CleanRooms.Model
         /// Which logical operators (if any) are to be used in an INNER JOIN match condition.
         /// Default is <c>AND</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
         public List<string> AllowedJoinOperators
@@ -112,6 +122,11 @@ namespace Amazon.CleanRooms.Model
         /// <para>
         /// The columns that query runners are allowed to select, group by, or filter by.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> DimensionColumns
@@ -132,6 +147,11 @@ namespace Amazon.CleanRooms.Model
         /// Columns in configured table that can be used in join statements and/or as aggregate
         /// columns. They can never be outputted directly.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> JoinColumns
@@ -171,6 +191,11 @@ namespace Amazon.CleanRooms.Model
         /// Columns that must meet a specific threshold value (after an aggregation function is
         /// applied to it) for each output row to be returned.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<AggregationConstraint> OutputConstraints
@@ -191,6 +216,11 @@ namespace Amazon.CleanRooms.Model
         /// Set of scalar functions that are allowed to be used on dimension columns and the output
         /// of aggregation of metrics.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> ScalarFunctions

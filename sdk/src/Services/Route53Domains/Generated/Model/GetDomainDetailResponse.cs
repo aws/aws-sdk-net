@@ -239,6 +239,11 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// A complex type that contains information about the DNSSEC configuration.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DnssecKey> DnssecKeys
         {
@@ -295,6 +300,11 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The name servers of the domain.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Nameserver> Nameservers
         {
@@ -443,6 +453,11 @@ namespace Amazon.Route53Domains.Model
         /// <c>epp status codes</c>. (Search on the ICANN website; web searches sometimes return
         /// an old version of the document.)
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StatusList
         {

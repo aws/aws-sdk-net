@@ -244,6 +244,11 @@ namespace Amazon.Lightsail.Model
         /// This parameter only applies to Lightsail for Research resources.
         /// </para>
         ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedAppCategories
         {
@@ -265,6 +270,11 @@ namespace Amazon.Lightsail.Model
         /// the <c>WINDOWS</c> platform. <c>LINUX_UNIX</c> blueprints require a <c>LINUX_UNIX</c>
         /// bundle.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedPlatforms
         {

@@ -64,6 +64,11 @@ namespace Amazon.LexModelBuildingService.Model
         /// a maximum of 100 <c>UtteranceData</c> objects for each version. Amazon Lex returns
         /// the most frequent utterances received by the bot in the last 15 days.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UtteranceList> Utterances
         {

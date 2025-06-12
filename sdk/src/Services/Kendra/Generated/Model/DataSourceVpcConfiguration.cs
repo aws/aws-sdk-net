@@ -43,6 +43,11 @@ namespace Amazon.Kendra.Model
         /// A list of identifiers of security groups within your Amazon VPC. The security groups
         /// should enable Amazon Kendra to connect to the data source.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> SecurityGroupIds
@@ -64,6 +69,11 @@ namespace Amazon.Kendra.Model
         /// to connect to each other in the VPC, and they should have outgoing access to the Internet
         /// through a NAT device.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=6)]
         public List<string> SubnetIds

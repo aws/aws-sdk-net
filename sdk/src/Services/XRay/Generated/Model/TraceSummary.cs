@@ -61,6 +61,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// Annotations from the trace's segment documents.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<ValueWithServiceIds>> Annotations
         {
@@ -79,6 +84,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// A list of Availability Zones for any zone corresponding to the trace segments.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AvailabilityZoneDetail> AvailabilityZones
         {
@@ -134,6 +144,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// A collection of ErrorRootCause structures corresponding to the trace segments.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ErrorRootCause> ErrorRootCauses
         {
@@ -152,6 +167,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// A collection of FaultRootCause structures corresponding to the trace segments.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FaultRootCause> FaultRootCauses
         {
@@ -261,6 +281,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// A list of EC2 instance IDs for any instance corresponding to the trace segments.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InstanceIdDetail> InstanceIds
         {
@@ -315,6 +340,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// A list of resource ARNs for any resource corresponding to the trace segments.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ResourceARNDetail> ResourceARNs
         {
@@ -354,6 +384,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// A collection of ResponseTimeRootCause structures corresponding to the trace segments.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ResponseTimeRootCause> ResponseTimeRootCauses
         {
@@ -390,6 +425,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// Service IDs from the trace's segment documents.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ServiceId> ServiceIds
         {
@@ -426,6 +466,11 @@ namespace Amazon.XRay.Model
         /// <para>
         /// Users from the trace's segment documents.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TraceUser> Users
         {

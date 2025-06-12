@@ -197,6 +197,11 @@ namespace Amazon.PCS.Model
         /// A list of EC2 instance configurations that Amazon Web Services PCS can provision in
         /// the compute node group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<InstanceConfig> InstanceConfigs
@@ -290,6 +295,11 @@ namespace Amazon.PCS.Model
         /// The list of subnet IDs where the compute node group launches instances. Subnets must
         /// be in the same VPC as the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SubnetIds
@@ -310,6 +320,11 @@ namespace Amazon.PCS.Model
         /// 1 or more tags added to the resource. Each tag consists of a tag key and tag value.
         /// The tag value is optional and can be an empty string.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, string> Tags

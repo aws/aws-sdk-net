@@ -46,6 +46,11 @@ namespace Amazon.QueryProtocol.Model
 
         /// <summary>
         /// Gets and sets the property ComplexMapArg.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, GreetingStruct> ComplexMapArg
         {
@@ -61,6 +66,11 @@ namespace Amazon.QueryProtocol.Model
 
         /// <summary>
         /// Gets and sets the property FlattenedMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> FlattenedMap
         {
@@ -76,6 +86,11 @@ namespace Amazon.QueryProtocol.Model
 
         /// <summary>
         /// Gets and sets the property FlattenedMapWithXmlName.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> FlattenedMapWithXmlName
         {
@@ -91,6 +106,11 @@ namespace Amazon.QueryProtocol.Model
 
         /// <summary>
         /// Gets and sets the property MapArg.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> MapArg
         {
@@ -106,6 +126,11 @@ namespace Amazon.QueryProtocol.Model
 
         /// <summary>
         /// Gets and sets the property MapOfLists.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<string>> MapOfLists
         {
@@ -121,6 +146,11 @@ namespace Amazon.QueryProtocol.Model
 
         /// <summary>
         /// Gets and sets the property MapWithXmlMemberName.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> MapWithXmlMemberName
         {
@@ -151,6 +181,11 @@ namespace Amazon.QueryProtocol.Model
 
         /// <summary>
         /// Gets and sets the property RenamedMapArg.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> RenamedMapArg
         {

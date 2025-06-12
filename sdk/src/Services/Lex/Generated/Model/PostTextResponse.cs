@@ -61,6 +61,11 @@ namespace Amazon.Lex.Model
         /// You can use a context to control the intents that can follow up an intent, or to modify
         /// the operation of your application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=20)]
         public List<ActiveContext> ActiveContexts
@@ -85,6 +90,11 @@ namespace Amazon.Lex.Model
         /// Each alternative includes a score that indicates how confident Amazon Lex is that
         /// the intent matches the user's intent. The intents are sorted by the confidence score.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=4)]
         public List<PredictedIntent> AlternativeIntents
@@ -364,6 +374,11 @@ namespace Amazon.Lex.Model
         /// <para>
         /// A map of key-value pairs representing the session-specific context information.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> SessionAttributes
@@ -412,6 +427,11 @@ namespace Amazon.Lex.Model
         /// returns the first value in the resolution list or, if there is no resolution list,
         /// null. If you don't specify a <c>valueSelectionStrategy</c>, the default is <c>ORIGINAL_VALUE</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Slots

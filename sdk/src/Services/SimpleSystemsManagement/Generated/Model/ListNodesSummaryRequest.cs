@@ -48,6 +48,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Specify one or more aggregators to return a count of managed nodes that match that
         /// expression. For example, a count of managed nodes by operating system.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]
         public List<NodeAggregator> Aggregators
@@ -68,6 +73,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// One or more filters. Use a filter to generate a summary that matches your specified
         /// filter criteria.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<NodeFilter> Filters

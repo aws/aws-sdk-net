@@ -100,6 +100,11 @@ namespace Amazon.MediaConvert.Model
         /// identifiers. DASH output groups support a max of two system ids. HLS output groups
         /// support a max of 3 system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/
         /// for more details.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SystemIds
         {

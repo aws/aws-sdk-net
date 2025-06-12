@@ -44,6 +44,11 @@ namespace Amazon.EC2.Model
         /// The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
         /// that were assigned to the network interface before the request are not included.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AssignedIpv6Addresses
         {
@@ -62,6 +67,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IPv6 prefixes that are assigned to the network interface.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AssignedIpv6Prefixes
         {

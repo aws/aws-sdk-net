@@ -45,6 +45,11 @@ namespace Amazon.ECR.Model
         /// <para>
         /// Details about the enhanced scan findings from Amazon Inspector.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EnhancedImageScanFinding> EnhancedFindings
         {
@@ -63,6 +68,11 @@ namespace Amazon.ECR.Model
         /// <para>
         /// The findings from the image scan.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ImageScanFinding> Findings
         {
@@ -81,6 +91,11 @@ namespace Amazon.ECR.Model
         /// <para>
         /// The image vulnerability counts, sorted by severity.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, int> FindingSeverityCounts
         {

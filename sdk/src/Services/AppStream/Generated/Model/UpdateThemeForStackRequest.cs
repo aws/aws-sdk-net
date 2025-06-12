@@ -50,6 +50,11 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The attributes to delete.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AttributesToDelete
         {
@@ -90,6 +95,11 @@ namespace Amazon.AppStream.Model
         /// These links are helpful resources for users, such as the organization's IT support
         /// and product marketing sites.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ThemeFooterLink> FooterLinks
         {

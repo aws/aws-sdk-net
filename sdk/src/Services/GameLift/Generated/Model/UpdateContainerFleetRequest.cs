@@ -274,6 +274,11 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A set of ports to add to the container fleet's inbound permissions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<IpPermission> InstanceInboundPermissionAuthorizations
@@ -293,6 +298,11 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A set of ports to remove from the container fleet's inbound permissions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<IpPermission> InstanceInboundPermissionRevocations
@@ -330,6 +340,11 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The name of an Amazon Web Services CloudWatch metric group to add this fleet to. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1)]
         public List<string> MetricGroups
@@ -403,6 +418,11 @@ namespace Amazon.GameLift.Model
         /// If set, this update removes a fleet's per-instance container group definition. You
         /// can't remove a fleet's game server container group definition.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<string> RemoveAttributes

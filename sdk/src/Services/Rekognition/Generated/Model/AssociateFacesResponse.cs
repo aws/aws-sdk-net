@@ -44,6 +44,11 @@ namespace Amazon.Rekognition.Model
         /// An array of AssociatedFace objects containing FaceIDs that have been successfully
         /// associated with the UserID. Returned if the AssociateFaces action is successful.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<AssociatedFace> AssociatedFaces
@@ -64,6 +69,11 @@ namespace Amazon.Rekognition.Model
         /// An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully
         /// associated along with the reasons. Returned if the AssociateFaces action is successful.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
         public List<UnsuccessfulFaceAssociation> UnsuccessfulFaceAssociations

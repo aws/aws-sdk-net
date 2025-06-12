@@ -70,6 +70,11 @@ namespace Amazon.FMS.Model
         /// aws:alert_established
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StatefulDefaultActions
         {
@@ -108,6 +113,11 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The stateful rule groups that are used in the Network Firewall firewall policy. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StatefulRuleGroup> StatefulRuleGroups
         {
@@ -127,6 +137,11 @@ namespace Amazon.FMS.Model
         /// Names of custom actions that are available for use in the stateless default actions
         /// settings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StatelessCustomActions
         {
@@ -146,6 +161,11 @@ namespace Amazon.FMS.Model
         /// The actions to take on packets that don't match any of the stateless rule groups.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StatelessDefaultActions
         {
@@ -165,6 +185,11 @@ namespace Amazon.FMS.Model
         /// The actions to take on packet fragments that don't match any of the stateless rule
         /// groups. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> StatelessFragmentDefaultActions
         {
@@ -183,6 +208,11 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The stateless rule groups that are used in the Network Firewall firewall policy. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StatelessRuleGroup> StatelessRuleGroups
         {

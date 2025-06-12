@@ -82,6 +82,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 100 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> AwsAccountId
         {
@@ -104,6 +109,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> AwsAccountName
         {
@@ -127,6 +137,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> CompanyName
         {
@@ -152,6 +167,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ComplianceAssociatedStandardsId
         {
@@ -175,6 +195,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ComplianceSecurityControlId
         {
@@ -198,6 +223,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ComplianceStatus
         {
@@ -226,6 +256,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> Confidence
         {
@@ -253,6 +288,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> CreatedAt
         {
@@ -280,6 +320,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<NumberFilter> Criticality
         {
@@ -302,6 +347,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> Description
         {
@@ -330,6 +380,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> FirstObservedAt
         {
@@ -352,6 +407,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 100 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> GeneratorId
         {
@@ -374,6 +434,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> Id
         {
@@ -402,6 +467,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> LastObservedAt
         {
@@ -424,6 +494,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> NoteText
         {
@@ -451,6 +526,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> NoteUpdatedAt
         {
@@ -473,6 +553,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> NoteUpdatedBy
         {
@@ -496,6 +581,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ProductArn
         {
@@ -519,6 +609,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ProductName
         {
@@ -541,6 +636,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> RecordState
         {
@@ -563,6 +663,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> RelatedFindingsId
         {
@@ -585,6 +690,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> RelatedFindingsProductArn
         {
@@ -607,6 +717,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceApplicationArn
         {
@@ -629,6 +744,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceApplicationName
         {
@@ -651,6 +771,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MapFilter> ResourceDetailsOther
         {
@@ -677,6 +802,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 100 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceId
         {
@@ -701,6 +831,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourcePartition
         {
@@ -724,6 +859,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceRegion
         {
@@ -747,6 +887,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MapFilter> ResourceTags
         {
@@ -769,6 +914,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> ResourceType
         {
@@ -791,6 +941,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> SeverityLabel
         {
@@ -814,6 +969,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> SourceUrl
         {
@@ -836,6 +996,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 100 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> Title
         {
@@ -860,6 +1025,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> Type
         {
@@ -887,6 +1057,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateFilter> UpdatedAt
         {
@@ -909,6 +1084,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MapFilter> UserDefinedFields
         {
@@ -931,6 +1111,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> VerificationState
         {
@@ -953,6 +1138,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StringFilter> WorkflowStatus
         {

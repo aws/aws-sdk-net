@@ -48,6 +48,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Specifies Glue Data Catalog targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CatalogTarget> CatalogTargets
         {
@@ -66,6 +71,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Specifies Delta data store targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DeltaTarget> DeltaTargets
         {
@@ -84,6 +94,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Specifies Amazon DynamoDB targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DynamoDBTarget> DynamoDBTargets
         {
@@ -102,6 +117,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Specifies Apache Hudi data store targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HudiTarget> HudiTargets
         {
@@ -120,6 +140,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Specifies Apache Iceberg data store targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IcebergTarget> IcebergTargets
         {
@@ -138,6 +163,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Specifies JDBC targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<JdbcTarget> JdbcTargets
         {
@@ -156,6 +186,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Specifies Amazon DocumentDB or MongoDB targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MongoDBTarget> MongoDBTargets
         {
@@ -174,6 +209,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Specifies Amazon Simple Storage Service (Amazon S3) targets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<S3Target> S3Targets
         {

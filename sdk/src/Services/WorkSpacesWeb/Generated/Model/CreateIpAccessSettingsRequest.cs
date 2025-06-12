@@ -48,6 +48,11 @@ namespace Amazon.WorkSpacesWeb.Model
         /// <para>
         /// Additional encryption context of the IP access settings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> AdditionalEncryptionContext
         {
@@ -151,6 +156,11 @@ namespace Amazon.WorkSpacesWeb.Model
         /// <para>
         /// The IP rules of the IP access settings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public List<IpRule> IpRules
@@ -170,6 +180,11 @@ namespace Amazon.WorkSpacesWeb.Model
         /// <para>
         /// The tags to add to the IP access settings resource. A tag is a key-value pair.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

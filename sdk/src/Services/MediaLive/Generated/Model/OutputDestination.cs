@@ -60,6 +60,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property LogicalInterfaceNames. Optional assignment of an output
         /// to a logical interface on the Node. Only applies to on premises channels.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> LogicalInterfaceNames
         {
@@ -76,6 +81,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property MediaPackageSettings. Destination settings for a MediaPackage
         /// output; one destination for both encoders.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MediaPackageOutputDestinationSettings> MediaPackageSettings
         {
@@ -108,6 +118,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Settings. Destination settings for a standard output; one
         /// destination for each redundant encoder.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OutputDestinationSettings> Settings
         {
@@ -124,6 +139,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SrtSettings. SRT settings for an SRT output; one destination
         /// for each redundant encoder.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SrtOutputDestinationSettings> SrtSettings
         {

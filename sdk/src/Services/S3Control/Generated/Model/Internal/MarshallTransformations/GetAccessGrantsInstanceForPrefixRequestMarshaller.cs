@@ -67,8 +67,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("s3prefix", StringUtils.FromString(publicRequest.S3Prefix));
             request.ResourcePath = "/v20180820/accessgrantsinstance/prefix";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static GetAccessGrantsInstanceForPrefixRequestMarshaller _instance = new GetAccessGrantsInstanceForPrefixRequestMarshaller();        

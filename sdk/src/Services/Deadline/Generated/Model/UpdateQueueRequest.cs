@@ -54,6 +54,11 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The storage profile IDs to add.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<string> AllowedStorageProfileIdsToAdd
@@ -73,6 +78,11 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The storage profile ID to remove.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<string> AllowedStorageProfileIdsToRemove
@@ -253,6 +263,11 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The required file system location names to add to the queue.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<string> RequiredFileSystemLocationNamesToAdd
@@ -272,6 +287,11 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The required file system location names to remove from the queue.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<string> RequiredFileSystemLocationNamesToRemove

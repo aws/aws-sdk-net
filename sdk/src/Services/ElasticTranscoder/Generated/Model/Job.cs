@@ -109,6 +109,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// Information about the files that you're transcoding. If you specified multiple files
         /// for this job, Elastic Transcoder stitches the files together to make one output.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<JobInput> Inputs
@@ -187,6 +192,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// If you specify more than one output for a job, Elastic Transcoder creates the files
         /// for each output in the order in which you specify them in the job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<JobOutput> Outputs
         {
@@ -236,6 +246,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// The maximum number of master playlists in a job is 30.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Playlist> Playlists
         {
@@ -315,6 +330,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// The following symbols: <c>_.:/=+-%@</c> 
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> UserMetadata
         {

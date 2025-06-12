@@ -46,6 +46,11 @@ namespace Amazon.NetworkFirewall.Model
         /// You name each custom action that you define, and then you can use it by name in your
         /// <a>StatelessRule</a> <a>RuleDefinition</a> <c>Actions</c> specification.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CustomAction> CustomActions
         {
@@ -64,6 +69,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// Defines the set of stateless rules for use in a stateless rule group. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<StatelessRule> StatelessRules

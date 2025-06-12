@@ -84,6 +84,11 @@ namespace Amazon.LexModelsV2.Model
         /// A list of custom vocabulary items that failed to update during the operation. The
         /// reason for the error is contained within each error object.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FailedCustomVocabularyItem> Errors
         {
@@ -122,6 +127,11 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// A list of custom vocabulary items that were successfully updated during the operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CustomVocabularyItem> Resources
         {

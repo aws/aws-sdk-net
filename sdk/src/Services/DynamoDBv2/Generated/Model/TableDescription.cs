@@ -103,6 +103,11 @@ namespace Amazon.DynamoDBv2.Model
         ///  <c>AttributeType</c> - The data type for the attribute.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AttributeDefinition> AttributeDefinitions
         {
@@ -281,6 +286,11 @@ namespace Amazon.DynamoDBv2.Model
         /// If the table is in the <c>DELETING</c> state, no information about indexes will be
         /// returned.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GlobalSecondaryIndexDescription> GlobalSecondaryIndexes
         {
@@ -370,6 +380,11 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
         /// Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
         public List<KeySchemaElement> KeySchema
@@ -510,6 +525,11 @@ namespace Amazon.DynamoDBv2.Model
         /// If the table is in the <c>DELETING</c> state, no information about indexes will be
         /// returned.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LocalSecondaryIndexDescription> LocalSecondaryIndexes
         {
@@ -605,6 +625,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// Represents replicas of the table.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ReplicaDescription> Replicas
         {

@@ -48,6 +48,11 @@ namespace Amazon.LexRuntimeV2.Model
         /// a context is active, Amazon Lex V2 considers intents with the matching context as
         /// a trigger as the next intent in a session.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<ActiveContext> ActiveContexts
@@ -142,6 +147,11 @@ namespace Amazon.LexRuntimeV2.Model
         /// Map of key/value pairs representing session-specific context information. It contains
         /// application information passed between Amazon Lex V2 and a client application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> SessionAttributes
         {

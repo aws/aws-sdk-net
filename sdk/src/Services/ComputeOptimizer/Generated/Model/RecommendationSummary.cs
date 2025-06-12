@@ -115,6 +115,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  Describes the findings summary of the idle resources. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IdleSummary> IdleSummaries
         {
@@ -135,6 +140,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// running on the specified <c>inferredWorkloadTypes</c>. The array contains the top
         /// five savings opportunites for the instances that run inferred workload types. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InferredWorkloadSaving> InferredWorkloadSavings
         {
@@ -190,6 +200,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// An array of objects that describe a recommendation summary.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Summary> Summaries
         {

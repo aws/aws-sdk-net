@@ -195,6 +195,11 @@ namespace Amazon.CloudWatch.Model
         /// The actions to execute when this alarm transitions to the ALARM state from any other
         /// state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> AlarmActions
@@ -309,6 +314,11 @@ namespace Amazon.CloudWatch.Model
         /// The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state
         /// from any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> InsufficientDataActions
@@ -329,6 +339,11 @@ namespace Amazon.CloudWatch.Model
         /// The actions to execute when this alarm transitions to the OK state from any other
         /// state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> OKActions

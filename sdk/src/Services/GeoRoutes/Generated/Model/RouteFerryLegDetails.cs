@@ -51,6 +51,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Steps of a leg that must be performed after the travel portion of the leg.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<RouteFerryAfterTravelStep> AfterTravelSteps
@@ -89,6 +94,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Steps of a leg that must be performed before the travel portion of the leg.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<RouteFerryBeforeTravelStep> BeforeTravelSteps
@@ -128,6 +138,11 @@ namespace Amazon.GeoRoutes.Model
         /// Notices are additional information returned that indicate issues that occurred during
         /// route calculation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<RouteFerryNotice> Notices
@@ -148,6 +163,11 @@ namespace Amazon.GeoRoutes.Model
         /// Waypoints that were passed through during the leg. This includes the waypoints that
         /// were configured with the PassThrough option.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<RoutePassThroughWaypoint> PassThroughWaypoints
@@ -185,6 +205,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Spans that were computed for the requested SpanAdditionalFeatures.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<RouteFerrySpan> Spans
@@ -222,6 +247,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Steps of a leg that must be performed before the travel portion of the leg.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<RouteFerryTravelStep> TravelSteps

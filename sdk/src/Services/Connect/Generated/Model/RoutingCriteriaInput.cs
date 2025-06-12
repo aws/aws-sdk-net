@@ -44,6 +44,11 @@ namespace Amazon.Connect.Model
         /// step sequentially until a&#x2028; join is completed with an agent. When all steps
         /// are exhausted, the contact will be offered to any agent in the queue.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RoutingCriteriaInputStep> Steps
         {

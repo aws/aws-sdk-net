@@ -293,6 +293,11 @@ namespace Amazon.ECS.Model
         /// operation is used to update the list of available capacity providers for a cluster
         /// after the cluster is created.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
         {
@@ -505,6 +510,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// You can remove existing <c>loadBalancers</c> by passing an empty list.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LoadBalancer> LoadBalancers
         {
@@ -550,6 +560,11 @@ namespace Amazon.ECS.Model
         /// You can specify a maximum of 10 constraints for each task. This limit includes constraints
         /// in the task definition and those specified at runtime.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PlacementConstraint> PlacementConstraints
         {
@@ -575,6 +590,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// You can specify a maximum of five strategy rules for each service.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PlacementStrategy> PlacementStrategy
         {
@@ -699,6 +719,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// You can remove existing <c>serviceRegistries</c> by passing an empty list.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ServiceRegistry> ServiceRegistries
         {
@@ -743,6 +768,11 @@ namespace Amazon.ECS.Model
         /// If set to null, no new deployment is triggered. Otherwise, if this configuration differs
         /// from the existing one, it triggers a new deployment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ServiceVolumeConfiguration> VolumeConfigurations
         {
@@ -761,6 +791,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// An object representing the VPC Lattice configuration for the service being updated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VpcLatticeConfiguration> VpcLatticeConfigurations
         {

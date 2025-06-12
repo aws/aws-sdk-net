@@ -44,6 +44,11 @@ namespace Amazon.LexRuntimeV2.Model
         /// One or more strings that Amazon Lex V2 should look for in the input to the bot. Each
         /// phrase is given preference when deciding on slot values.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<RuntimeHintValue> RuntimeHintValues
@@ -67,6 +72,11 @@ namespace Amazon.LexRuntimeV2.Model
         /// hints are supported for composite slots. The intent name, composite slot name and
         /// the constituent sub slot names must exist.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, RuntimeHintDetails> SubSlotHints
         {

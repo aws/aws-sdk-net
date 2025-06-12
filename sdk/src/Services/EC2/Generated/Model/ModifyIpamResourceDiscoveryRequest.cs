@@ -52,6 +52,11 @@ namespace Amazon.EC2.Model
         /// and monitors resources in the Amazon Web Services Regions you select as operating
         /// Regions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<AddIpamOperatingRegion> AddOperatingRegions
@@ -83,6 +88,11 @@ namespace Amazon.EC2.Model
         /// or remove OU exclusions </a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<AddIpamOrganizationalUnitExclusion> AddOrganizationalUnitExclusions
@@ -159,6 +169,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Remove operating Regions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<RemoveIpamOperatingRegion> RemoveOperatingRegions
@@ -190,6 +205,11 @@ namespace Amazon.EC2.Model
         /// or remove OU exclusions </a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<RemoveIpamOrganizationalUnitExclusion> RemoveOrganizationalUnitExclusions

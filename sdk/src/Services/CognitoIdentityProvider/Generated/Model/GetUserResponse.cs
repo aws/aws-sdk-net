@@ -49,6 +49,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// password (TOTP) software token MFA configurations. To look up information about either
         /// type of MFA configuration, use UserMFASettingList instead.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MFAOptionType> MFAOptions
         {
@@ -90,6 +95,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Custom attributes are prepended with the <c>custom:</c> prefix.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AttributeType> UserAttributes
@@ -110,6 +120,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The MFA options that are activated for the user. The possible values in this list
         /// are <c>SMS_MFA</c>, <c>EMAIL_OTP</c>, and <c>SOFTWARE_TOKEN_MFA</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> UserMFASettingList
         {

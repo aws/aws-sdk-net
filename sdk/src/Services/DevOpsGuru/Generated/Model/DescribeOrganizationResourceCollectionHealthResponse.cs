@@ -45,6 +45,11 @@ namespace Amazon.DevOpsGuru.Model
         /// <para>
         /// The name of the organization's account.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AccountHealth> Account
         {
@@ -64,6 +69,11 @@ namespace Amazon.DevOpsGuru.Model
         /// The returned <c>CloudFormationHealthOverview</c> object that contains an <c>InsightHealthOverview</c>
         /// object with the requested system health information.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CloudFormationHealth> CloudFormation
         {
@@ -103,6 +113,11 @@ namespace Amazon.DevOpsGuru.Model
         /// An array of <c>ServiceHealth</c> objects that describes the health of the Amazon Web
         /// Services services associated with the resources in the collection.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ServiceHealth> Service
         {
@@ -157,6 +172,11 @@ namespace Amazon.DevOpsGuru.Model
         /// or <c>Devops-Guru-production-application/containers</c>.
         /// </para>
         ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TagHealth> Tags
         {

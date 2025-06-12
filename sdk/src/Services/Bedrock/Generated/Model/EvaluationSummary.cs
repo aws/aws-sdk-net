@@ -91,6 +91,11 @@ namespace Amazon.Bedrock.Model
         /// The Amazon Resource Names (ARNs) of the models used to compute custom metrics in an
         /// Amazon Bedrock evaluation job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<string> CustomMetricsEvaluatorModelIdentifiers
@@ -110,6 +115,11 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// The type of task for model evaluation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> EvaluationTaskTypes
@@ -130,6 +140,11 @@ namespace Amazon.Bedrock.Model
         /// The Amazon Resource Names (ARNs) of the models used to compute the metrics for a knowledge
         /// base evaluation job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<string> EvaluatorModelIdentifiers
@@ -225,6 +240,11 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// The Amazon Resource Names (ARNs) of the model(s) used for the evaluation job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("Inference identifiers should be retrieved from the inferenceConfigSummary")]
         [AWSProperty(Min=0, Max=2)]
@@ -246,6 +266,11 @@ namespace Amazon.Bedrock.Model
         /// The Amazon Resource Names (ARNs) of the knowledge base resources used for a knowledge
         /// base evaluation job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("Inference identifiers should be retrieved from the inferenceConfigSummary")]
         [AWSProperty(Min=0, Max=1)]

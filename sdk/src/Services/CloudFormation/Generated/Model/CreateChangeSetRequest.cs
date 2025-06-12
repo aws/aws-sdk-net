@@ -207,6 +207,11 @@ namespace Amazon.CloudFormation.Model
         /// Only one of the <c>Capabilities</c> and <c>ResourceType</c> parameters can be specified.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Capabilities
         {
@@ -373,6 +378,11 @@ namespace Amazon.CloudFormation.Model
         /// The Amazon Resource Names (ARNs) of Amazon SNS topics that CloudFormation associates
         /// with the stack. To remove all associated notification topics, specify an empty list.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> NotificationARNs
@@ -437,6 +447,11 @@ namespace Amazon.CloudFormation.Model
         /// A list of <c>Parameter</c> structures that specify input parameters for the change
         /// set. For more information, see the <a>Parameter</a> data type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Parameter> Parameters
         {
@@ -455,6 +470,11 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The resources to import into your stack.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<ResourceToImport> ResourcesToImport
@@ -488,6 +508,11 @@ namespace Amazon.CloudFormation.Model
         /// Only one of the <c>Capabilities</c> and <c>ResourceType</c> parameters can be specified.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ResourceTypes
         {
@@ -576,6 +601,11 @@ namespace Amazon.CloudFormation.Model
         /// Key-value pairs to associate with this stack. CloudFormation also propagates these
         /// tags to resources in the stack. You can specify a maximum of 50 tags.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<Tag> Tags

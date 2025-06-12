@@ -162,6 +162,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// An array of <c>BuildGroup</c> objects that define the build groups for the batch build.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BuildGroup> BuildGroups
         {
@@ -337,6 +342,11 @@ namespace Amazon.CodeBuild.Model
         /// <c>mountOptions</c>, <c>mountPoint</c>, and <c>type</c> of a file system created using
         /// Amazon Elastic File System. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ProjectFileSystemLocation> FileSystemLocations
         {
@@ -420,6 +430,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// An array of <c>BuildBatchPhase</c> objects the specify the phases of the batch build.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BuildBatchPhase> Phases
         {
@@ -477,6 +492,11 @@ namespace Amazon.CodeBuild.Model
         /// An array that contains the ARNs of reports created by merging reports from builds
         /// associated with this batch build.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReportArns
         {
@@ -528,6 +548,11 @@ namespace Amazon.CodeBuild.Model
         /// An array of <c>BuildArtifacts</c> objects the define the build artifacts for this
         /// batch build.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<BuildArtifacts> SecondaryArtifacts
@@ -547,6 +572,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// An array of <c>ProjectSource</c> objects that define the sources for the batch build.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectSource> SecondarySources
@@ -591,6 +621,11 @@ namespace Amazon.CodeBuild.Model
         /// to use.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectSourceVersion> SecondarySourceVersions

@@ -43,6 +43,11 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <para>
         /// A list of errors that have occurred when retrieving a batch of Records.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
         public List<BatchGetRecordError> Errors
@@ -62,6 +67,11 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <para>
         /// A list of Records you requested to be retrieved in batch.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
         public List<BatchGetRecordResultDetail> Records
@@ -82,6 +92,11 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// A unprocessed list of <c>FeatureGroup</c> names, with their corresponding <c>RecordIdentifier</c>
         /// value, and Feature name.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
         public List<BatchGetRecordIdentifier> UnprocessedIdentifiers

@@ -46,6 +46,11 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Include results where all of the based filters match.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
         public List<RequestMetadataBaseFilters> AndAll
@@ -65,6 +70,11 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Include results where the key equals the value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1)]
         public new Dictionary<string, string> Equals
@@ -84,6 +94,11 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Include results where the key does not equal the value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1)]
         public Dictionary<string, string> NotEquals
@@ -103,6 +118,11 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Include results where any of the base filters match.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
         public List<RequestMetadataBaseFilters> OrAll

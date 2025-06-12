@@ -128,6 +128,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Only provided if the certificate type is <c>AMAZON_ISSUED</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsCertificateManagerCertificateDomainValidationOption> DomainValidationOptions
         {
@@ -148,6 +153,11 @@ namespace Amazon.SecurityHub.Model
         /// a purpose for which the certificate public key can be used and consists of a name
         /// and an object identifier (OID).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsCertificateManagerCertificateExtendedKeyUsage> ExtendedKeyUsages
         {
@@ -216,6 +226,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The list of ARNs for the Amazon Web Services resources that use the certificate.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InUseBy
         {
@@ -298,6 +313,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of key usage X.509 v3 extension objects.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsCertificateManagerCertificateKeyUsage> KeyUsages
         {
@@ -505,6 +525,11 @@ namespace Amazon.SecurityHub.Model
         /// The subject alternative names include the canonical domain name (CN) of the certificate
         /// and additional domain names that can be used to connect to the website.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SubjectAlternativeNames
         {

@@ -75,6 +75,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// to search for solutions within specific categories, such as <c>Software</c>, <c>Consulting</c>,
         /// or <c>Managed Services</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<string> Category
@@ -95,6 +100,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Filters the solutions based on their unique identifier. Use this filter to retrieve
         /// specific solutions by providing the solution's identifier for accurate results.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<string> Identifier
@@ -177,6 +187,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Filters solutions based on their status. This filter helps partners manage their solution
         /// portfolios effectively.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<string> Status

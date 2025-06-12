@@ -167,6 +167,11 @@ namespace Amazon.DataZone.Model
         /// Specifies the error message that is returned if the operation cannot be successfully
         /// completed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ProjectDeletionError> FailureReasons
         {
@@ -185,6 +190,11 @@ namespace Amazon.DataZone.Model
         /// <para>
         /// The glossary terms that can be used in the project.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<string> GlossaryTerms
@@ -296,6 +306,11 @@ namespace Amazon.DataZone.Model
         /// <para>
         /// The user parameters of the project.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EnvironmentConfigurationUserParameter> UserParameters
         {

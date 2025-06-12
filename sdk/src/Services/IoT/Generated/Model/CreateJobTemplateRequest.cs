@@ -102,6 +102,11 @@ namespace Amazon.IoT.Model
         ///  <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package
         /// version ARNs are allowed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DestinationPackageVersions
         {
@@ -241,6 +246,11 @@ namespace Amazon.IoT.Model
         /// Allows you to configure an optional maintenance window for the rollout of a job document
         /// to all devices in the target group for a job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MaintenanceWindow> MaintenanceWindows
         {
@@ -274,6 +284,11 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Metadata that can be used to manage the job template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

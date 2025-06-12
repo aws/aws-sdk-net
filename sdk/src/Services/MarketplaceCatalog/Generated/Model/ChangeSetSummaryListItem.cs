@@ -127,6 +127,11 @@ namespace Amazon.MarketplaceCatalog.Model
         /// This object is a list of entity IDs (string) that are a part of a change set. The
         /// entity ID list is a maximum of 20 entities. It must contain at least one entity.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EntityIdList
         {

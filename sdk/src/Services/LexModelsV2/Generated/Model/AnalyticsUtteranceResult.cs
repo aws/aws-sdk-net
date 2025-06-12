@@ -46,6 +46,11 @@ namespace Amazon.LexModelsV2.Model
         /// A list of objects containing information about the last used intent at the time of
         /// an utterance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AnalyticsUtteranceAttributeResult> AttributeResults
         {
@@ -65,6 +70,11 @@ namespace Amazon.LexModelsV2.Model
         /// A list of objects containing the criteria you requested for binning results and the
         /// values of the bins.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<AnalyticsBinKey> BinKeys
@@ -85,6 +95,11 @@ namespace Amazon.LexModelsV2.Model
         /// A list of objects containing the criteria you requested for grouping results and the
         /// values of the bins.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AnalyticsUtteranceGroupByKey> GroupByKeys
         {
@@ -104,6 +119,11 @@ namespace Amazon.LexModelsV2.Model
         /// A list of objects, each of which contains a metric you want to list, the statistic
         /// for the metric you want to return, and the method by which to organize the results.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AnalyticsUtteranceMetricResult> MetricsResults
         {

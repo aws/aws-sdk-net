@@ -58,7 +58,6 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXMLTest");
             request.HttpMethod = "POST";
             request.ResourcePath = "/path";
-
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -83,6 +82,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
 
             
             request.HostPrefix = $"data-";
+
             return request;
         }
         private static StaticOpRequestMarshaller _instance = new StaticOpRequestMarshaller();        

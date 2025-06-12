@@ -73,6 +73,11 @@ namespace Amazon.MediaConvert.Model
         /// references every output in the output group. To create additional top-level manifests
         /// that reference a subset of the outputs in the output group, specify a list of them
         /// here.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HlsAdditionalManifest> AdditionalManifests
         {
@@ -90,6 +95,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AdMarkers. Choose one or more ad marker types to decorate
         /// your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear
         /// in the outputs themselves.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AdMarkers
         {
@@ -141,6 +151,11 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property CaptionLanguageMappings. Language to be used on Caption
         /// outputs
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HlsCaptionLanguageMapping> CaptionLanguageMappings
         {

@@ -44,6 +44,11 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// Files to be deleted as part of the merge conflict resolution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DeleteFileEntry> DeleteFiles
         {
@@ -62,6 +67,11 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// Files to have content replaced as part of the merge conflict resolution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ReplaceContentEntry> ReplaceContents
         {
@@ -80,6 +90,11 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// File modes that are set as part of the merge conflict resolution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SetFileModeEntry> SetFileModes
         {

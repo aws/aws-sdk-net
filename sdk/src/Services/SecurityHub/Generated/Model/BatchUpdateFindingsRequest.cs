@@ -165,6 +165,11 @@ namespace Amazon.SecurityHub.Model
         /// For each finding, the list provides the finding identifier and the ARN of the finding
         /// provider.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AwsSecurityFindingIdentifier> FindingIdentifiers
@@ -199,6 +204,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of findings that are related to the updated findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RelatedFinding> RelatedFindings
         {
@@ -261,6 +271,11 @@ namespace Amazon.SecurityHub.Model
         /// Sensitive Data Identifications 
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Types
         {
@@ -280,6 +295,11 @@ namespace Amazon.SecurityHub.Model
         /// A list of name/value string pairs associated with the finding. These are custom, user-defined
         /// fields added to a finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> UserDefinedFields
         {

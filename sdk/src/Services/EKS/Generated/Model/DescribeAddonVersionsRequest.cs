@@ -141,6 +141,11 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The owner of the add-on. For valid <c>owners</c>, don't specify a value for this property.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Owners
         {
@@ -160,6 +165,11 @@ namespace Amazon.EKS.Model
         /// The publisher of the add-on. For valid <c>publishers</c>, don't specify a value for
         /// this property.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Publishers
         {
@@ -178,6 +188,11 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The type of the add-on. For valid <c>types</c>, don't specify a value for this property.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Types
         {

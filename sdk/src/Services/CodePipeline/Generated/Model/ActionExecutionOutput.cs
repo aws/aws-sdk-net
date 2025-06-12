@@ -61,6 +61,11 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// Details of output artifacts of the action that correspond to the action execution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ArtifactDetail> OutputArtifacts
         {
@@ -80,6 +85,11 @@ namespace Amazon.CodePipeline.Model
         /// The outputVariables field shows the key-value pairs that were output as part of that
         /// execution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> OutputVariables
         {

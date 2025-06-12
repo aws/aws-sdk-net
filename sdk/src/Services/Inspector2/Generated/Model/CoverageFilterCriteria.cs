@@ -57,6 +57,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// An array of Amazon Web Services account IDs to return coverage statistics for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> AccountId
@@ -76,6 +81,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The Amazon EC2 instance tags to filter on.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageMapFilter> Ec2InstanceTags
@@ -95,6 +105,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The number of Amazon ECR images in use.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageNumberFilter> EcrImageInUseCount
@@ -114,6 +129,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The Amazon ECR image that was last in use.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageDateFilter> EcrImageLastInUseAt
@@ -133,6 +153,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The Amazon ECR image tags to filter on.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> EcrImageTags
@@ -152,6 +177,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The Amazon ECR repository name to filter on.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> EcrRepositoryName
@@ -171,6 +201,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The date an image was last pulled at.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageDateFilter> ImagePulledAt
@@ -191,6 +226,11 @@ namespace Amazon.Inspector2.Model
         /// Returns coverage statistics for Amazon Web Services Lambda functions filtered by function
         /// names.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> LambdaFunctionName
@@ -210,6 +250,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> LambdaFunctionRuntime
@@ -229,6 +274,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// Returns coverage statistics for Amazon Web Services Lambda functions filtered by tag.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageMapFilter> LambdaFunctionTags
@@ -249,6 +299,11 @@ namespace Amazon.Inspector2.Model
         /// Filters Amazon Web Services resources based on whether Amazon Inspector has checked
         /// them for vulnerabilities within the specified time range.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageDateFilter> LastScannedAt
@@ -268,6 +323,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// An array of Amazon Web Services resource IDs to return coverage statistics for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> ResourceId
@@ -289,6 +349,11 @@ namespace Amazon.Inspector2.Model
         /// The values can be <c>AWS_EC2_INSTANCE</c>, <c>AWS_LAMBDA_FUNCTION</c>, <c>AWS_ECR_CONTAINER_IMAGE</c>,
         /// <c>AWS_ECR_REPOSITORY</c> or <c>AWS_ACCOUNT</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> ResourceType
@@ -309,6 +374,11 @@ namespace Amazon.Inspector2.Model
         /// The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
         /// <c>EC2_SSM_AGENT_BASED</c> and <c>EC2_AGENTLESS</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> ScanMode
@@ -329,6 +399,11 @@ namespace Amazon.Inspector2.Model
         /// The scan status code to filter on. Valid values are: <c>ValidationException</c>, <c>InternalServerException</c>,
         /// <c>ResourceNotFoundException</c>, <c>BadRequestException</c>, and <c>ThrottlingException</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> ScanStatusCode
@@ -348,6 +423,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The scan status reason to filter on.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> ScanStatusReason
@@ -367,6 +447,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// An array of Amazon Inspector scan types to return coverage statistics for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<CoverageStringFilter> ScanType

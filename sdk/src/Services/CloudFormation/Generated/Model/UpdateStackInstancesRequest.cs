@@ -80,6 +80,11 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// You can specify <c>Accounts</c> or <c>DeploymentTargets</c>, but not both.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Accounts
         {
@@ -256,6 +261,11 @@ namespace Amazon.CloudFormation.Model
         /// in the stack set. Once a stack instance has been updated with the new parameter, you
         /// can then override the parameter value using <c>UpdateStackInstances</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Parameter> ParameterOverrides
         {
@@ -276,6 +286,11 @@ namespace Amazon.CloudFormation.Model
         /// values for stack instances. The overridden parameter values will be applied to all
         /// stack instances in the specified accounts and Amazon Web Services Regions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Regions

@@ -53,6 +53,11 @@ namespace Amazon.SSMContacts.Model
         /// The order that you list the contacts in is their shift order in the rotation schedule.
         /// To change the order of the contact's shifts, use the <a>UpdateRotation</a> operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]
         public List<string> ContactIds
@@ -150,6 +155,11 @@ namespace Amazon.SSMContacts.Model
         /// see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html">Tagging
         /// Incident Manager resources</a> in the <i>Incident Manager User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

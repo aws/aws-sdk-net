@@ -184,6 +184,11 @@ namespace Amazon.RDS.Model
         /// The option settings that are available (and the default value) for each option in
         /// an option group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OptionGroupOptionSetting> OptionGroupOptionSettings
         {
@@ -202,6 +207,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The versions that are available for the option.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OptionVersion> OptionGroupOptionVersions
         {
@@ -220,6 +230,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The options that conflict with this option.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> OptionsConflictsWith
         {
@@ -238,6 +253,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The options that are prerequisites for this option.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> OptionsDependedOn
         {

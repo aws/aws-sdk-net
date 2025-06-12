@@ -45,6 +45,11 @@ namespace Amazon.SecurityIR.Model
         /// <para>
         /// Optional element for UpdateMembership to update the membership name.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
         public List<IncidentResponder> IncidentResponseTeam
@@ -103,6 +108,11 @@ namespace Amazon.SecurityIR.Model
         /// Optional element for UpdateMembership to enable or disable opt-in features for the
         /// service.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
         public List<OptInFeature> OptInFeatures

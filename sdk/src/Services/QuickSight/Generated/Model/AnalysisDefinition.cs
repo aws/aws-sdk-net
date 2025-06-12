@@ -65,6 +65,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// An array of calculated field definitions for the analysis.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=500)]
         public List<CalculatedField> CalculatedFields
@@ -85,6 +90,11 @@ namespace Amazon.QuickSight.Model
         ///  An array of analysis-level column configurations. Column configurations can be used
         /// to set default formatting for a column to be used throughout an analysis. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=2000)]
         public List<ColumnConfiguration> ColumnConfigurations
@@ -105,6 +115,11 @@ namespace Amazon.QuickSight.Model
         /// An array of dataset identifier declarations. This mapping allows the usage of dataset
         /// identifiers instead of dataset ARNs throughout analysis sub-structures.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<DataSetIdentifierDeclaration> DataSetIdentifierDeclarations
@@ -129,6 +144,11 @@ namespace Amazon.QuickSight.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering
         /// Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=2000)]
         public List<FilterGroup> FilterGroups
@@ -176,6 +196,11 @@ namespace Amazon.QuickSight.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
         /// in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<ParameterDeclaration> ParameterDeclarations
@@ -211,6 +236,11 @@ namespace Amazon.QuickSight.Model
         /// An array of sheet definitions for an analysis. Each <c>SheetDefinition</c> provides
         /// detailed information about a sheet within this analysis.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=20)]
         public List<SheetDefinition> Sheets
@@ -230,6 +260,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The static files for the definition.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<StaticFile> StaticFiles

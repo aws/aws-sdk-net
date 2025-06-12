@@ -84,6 +84,11 @@ namespace Amazon.CodePipeline.Model
         /// must use <c>artifactStores</c>.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ArtifactStore> ArtifactStores
         {
@@ -205,6 +210,11 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The stage in which to perform the action.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<StageDeclaration> Stages
@@ -231,6 +241,11 @@ namespace Amazon.CodePipeline.Model
         /// and branch commits is disabled.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<PipelineTriggerDeclaration> Triggers
@@ -251,6 +266,11 @@ namespace Amazon.CodePipeline.Model
         /// A list that defines the pipeline variables for a pipeline resource. Variable names
         /// can have alphanumeric and underscore characters, and the values must match <c>[A-Za-z0-9@\-_]+</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<PipelineVariableDeclaration> Variables

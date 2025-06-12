@@ -47,6 +47,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// The action in the analyzed policy statement that an external principal has permission
         /// to use.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Action
         {
@@ -66,6 +71,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// The condition in the analyzed policy statement that resulted in an external access
         /// finding.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> Condition
@@ -103,6 +113,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// <para>
         /// The external principal that has access to a resource within the zone of trust.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Principal
         {
@@ -141,6 +156,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// The sources of the external access finding. This indicates how the access that generated
         /// the finding is granted. It is populated for Amazon S3 bucket findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FindingSource> Sources
         {

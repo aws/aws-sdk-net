@@ -62,8 +62,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
             request.ResourcePath = "/2020-05-31/distribution-tenant";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static GetDistributionTenantByDomainRequestMarshaller _instance = new GetDistributionTenantByDomainRequestMarshaller();        

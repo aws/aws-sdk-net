@@ -46,6 +46,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property QueryBooleanList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<bool> QueryBooleanList
         {
@@ -61,6 +66,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property QueryDoubleList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> QueryDoubleList
         {
@@ -76,6 +86,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property QueryEnumList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> QueryEnumList
         {
@@ -91,6 +106,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property QueryIntegerEnumList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> QueryIntegerEnumList
         {
@@ -106,6 +126,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property QueryIntegerList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> QueryIntegerList
         {
@@ -121,6 +146,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property QueryStringList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> QueryStringList
         {
@@ -136,6 +166,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property QueryTimestampList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateTime> QueryTimestampList
         {

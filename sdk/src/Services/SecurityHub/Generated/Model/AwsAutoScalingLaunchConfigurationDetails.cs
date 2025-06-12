@@ -78,6 +78,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Specifies the block devices for the instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails> BlockDeviceMappings
         {
@@ -115,6 +120,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The identifiers of one or more security groups for the VPC that is specified in <c>ClassicLinkVPCId</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ClassicLinkVpcSecurityGroups
         {
@@ -356,6 +366,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The security groups to assign to the instances in the Auto Scaling group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroups
         {

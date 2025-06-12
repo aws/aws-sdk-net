@@ -44,6 +44,11 @@ namespace Amazon.Kendra.Model
         /// is in the process of indexing, has completed indexing, or failed indexing. If a document
         /// failed indexing, the status provides the reason why.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Status> DocumentStatusList
         {
@@ -63,6 +68,11 @@ namespace Amazon.Kendra.Model
         /// A list of documents that Amazon Kendra couldn't get the status for. The list includes
         /// the ID of the document and the reason that the status couldn't be found.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BatchGetDocumentStatusResponseError> Errors
         {

@@ -93,6 +93,11 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// Contains status information about the features enabled on your DB cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, Amazon.Runtime.Documents.Document> Features
         {
@@ -131,6 +136,11 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// Contains Lab Mode settings being used by the engine.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> LabMode
         {
@@ -227,6 +237,11 @@ namespace Amazon.Neptunedata.Model
         /// Contains information about the current settings on your DB cluster. For example, contains
         /// the current cluster query timeout setting (<c>clusterQueryTimeoutInMs</c>).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Settings
         {

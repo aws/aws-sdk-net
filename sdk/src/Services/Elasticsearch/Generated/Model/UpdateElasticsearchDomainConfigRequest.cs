@@ -78,6 +78,11 @@ namespace Amazon.Elasticsearch.Model
         /// the value is <c>true</c>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
         /// target="_blank">Configuration Advanced Options</a> for more information.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> AdvancedOptions
         {
@@ -266,6 +271,11 @@ namespace Amazon.Elasticsearch.Model
         /// Map of <c>LogType</c> and <c>LogPublishingOption</c>, each containing options to publish
         /// a given type of Elasticsearch log.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, LogPublishingOption> LogPublishingOptions
         {

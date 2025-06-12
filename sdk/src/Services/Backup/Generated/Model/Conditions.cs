@@ -46,6 +46,11 @@ namespace Amazon.Backup.Model
         /// Filters the values of your tagged resources for only those resources that you tagged
         /// with the same value. Also called "exact matching."
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConditionParameter> StringEquals
         {
@@ -66,6 +71,11 @@ namespace Amazon.Backup.Model
         /// a wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches
         /// the tag value "production".
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConditionParameter> StringLike
         {
@@ -85,6 +95,11 @@ namespace Amazon.Backup.Model
         /// Filters the values of your tagged resources for only those resources that you tagged
         /// that do not have the same value. Also called "negated matching."
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConditionParameter> StringNotEquals
         {
@@ -104,6 +119,11 @@ namespace Amazon.Backup.Model
         /// Filters the values of your tagged resources for non-matching tag values with the use
         /// of a wildcard character (*) anywhere in the string.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConditionParameter> StringNotLike
         {

@@ -101,6 +101,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The subnets that are in the subnet group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Subnet> Subnets
         {
@@ -121,6 +126,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6
         /// addressing. IPv6 only is not yet supported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedNetworkTypes
         {

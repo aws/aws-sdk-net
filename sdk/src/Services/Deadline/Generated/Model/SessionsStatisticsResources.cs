@@ -44,6 +44,11 @@ namespace Amazon.Deadline.Model
         /// One to 10 fleet IDs that specify the fleets to return statistics for. If you specify
         /// the <c>fleetIds</c> field, you can't specify the <c>queueIds</c> field.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> FleetIds
@@ -64,6 +69,11 @@ namespace Amazon.Deadline.Model
         /// One to 10 queue IDs that specify the queues to return statistics for. If you specify
         /// the <c>queueIds</c> field, you can't specify the <c>fleetIds</c> field.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> QueueIds

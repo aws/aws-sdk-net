@@ -210,6 +210,11 @@ namespace Amazon.Drs.Model
         /// <para>
         /// The Point in time (PIT) policy to manage snapshots taken during replication.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
         public List<PITPolicyRule> PitPolicy
@@ -248,6 +253,11 @@ namespace Amazon.Drs.Model
         /// <para>
         /// The security group IDs that will be used by the replication server.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=32)]
         public List<string> ReplicationServersSecurityGroupsIDs
@@ -287,6 +297,11 @@ namespace Amazon.Drs.Model
         /// A set of tags to be associated with all resources created in the replication staging
         /// area: EC2 replication server, EBS volumes, EBS snapshots, etc.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, string> StagingAreaTags
@@ -306,6 +321,11 @@ namespace Amazon.Drs.Model
         /// <para>
         /// A set of tags to be associated with the Replication Configuration Template resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags

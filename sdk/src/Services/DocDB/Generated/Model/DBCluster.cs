@@ -76,6 +76,11 @@ namespace Amazon.DocDB.Model
         /// with the cluster. (IAM) roles that are associated with a cluster grant permission
         /// for the cluster to access other Amazon Web Services services on your behalf.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DBClusterRole> AssociatedRoles
         {
@@ -95,6 +100,11 @@ namespace Amazon.DocDB.Model
         /// Provides the list of Amazon EC2 Availability Zones that instances in the cluster can
         /// be created in.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AvailabilityZones
         {
@@ -204,6 +214,11 @@ namespace Amazon.DocDB.Model
         /// <para>
         /// Provides the list of instances that make up the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DBClusterMember> DBClusterMembers
         {
@@ -318,6 +333,11 @@ namespace Amazon.DocDB.Model
         /// A list of log types that this cluster is configured to export to Amazon CloudWatch
         /// Logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EnabledCloudwatchLogsExports
         {
@@ -605,6 +625,11 @@ namespace Amazon.DocDB.Model
         /// Contains one or more identifiers of the secondary clusters that are associated with
         /// this cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReadReplicaIdentifiers
         {
@@ -713,6 +738,11 @@ namespace Amazon.DocDB.Model
         /// Provides a list of virtual private cloud (VPC) security groups that the cluster belongs
         /// to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups
         {

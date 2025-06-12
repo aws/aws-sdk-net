@@ -46,6 +46,11 @@ namespace Amazon.AppRunner.Model
         /// A list of descriptions of custom domain names that are associated with the service.
         /// In a paginated request, the request returns up to <c>MaxResults</c> records per call.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<CustomDomain> CustomDomains
@@ -125,6 +130,11 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// DNS Target records for the custom domains of this Amazon VPC. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<VpcDNSTarget> VpcDNSTargets

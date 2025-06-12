@@ -55,6 +55,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// The configuration of Amazon S3 access points or multi-region access points for the
         /// bucket. You can propose up to 10 new access points per bucket.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, S3AccessPointConfiguration> AccessPoints
         {
@@ -76,6 +81,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// the access preview uses the proposed list of grant configurations in place of the
         /// existing grants. Otherwise, the access preview uses the existing grants for the bucket.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<S3BucketAclGrantConfiguration> BucketAclGrants
         {

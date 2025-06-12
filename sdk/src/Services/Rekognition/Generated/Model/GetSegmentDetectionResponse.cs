@@ -54,6 +54,11 @@ namespace Amazon.Rekognition.Model
         /// audio stream, and the sample rate. Audio metadata is returned in each page of information
         /// returned by <c>GetSegmentDetection</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AudioMetadata> AudioMetadata
         {
@@ -153,6 +158,11 @@ namespace Amazon.Rekognition.Model
         /// (TECHNICAL_CUE or SHOT) specified in the <c>SegmentTypes</c> input parameter of <c>StartSegmentDetection</c>.
         /// Within each segment type the array is sorted by timestamp values.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SegmentDetection> Segments
         {
@@ -172,6 +182,11 @@ namespace Amazon.Rekognition.Model
         /// An array containing the segment types requested in the call to <c>StartSegmentDetection</c>.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SegmentTypeInfo> SelectedSegmentTypes
         {
@@ -227,6 +242,11 @@ namespace Amazon.Rekognition.Model
         /// the video codec, video format and other information. Video metadata is returned in
         /// each page of information returned by <c>GetSegmentDetection</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VideoMetadata> VideoMetadata
         {

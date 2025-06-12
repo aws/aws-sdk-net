@@ -43,6 +43,11 @@ namespace Amazon.StepFunctions.Model
         /// An array that lists information related to a Map Run, such as the Amazon Resource
         /// Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<MapRunListItem> MapRuns

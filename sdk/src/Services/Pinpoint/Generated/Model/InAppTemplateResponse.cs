@@ -70,6 +70,11 @@ namespace Amazon.Pinpoint.Model
         /// The content of the message, can include up to 5 modals. Each modal must contain a
         /// message, a header, and background color. ImageUrl and buttons are optional.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InAppMessageContent> Content
         {
@@ -107,6 +112,11 @@ namespace Amazon.Pinpoint.Model
         /// <para>
         /// Custom config to be sent to client.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> CustomConfig
         {
@@ -164,6 +174,11 @@ namespace Amazon.Pinpoint.Model
         /// the message template. Each tag consists of a required tag key and an associated tag
         /// value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

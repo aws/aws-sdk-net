@@ -307,6 +307,11 @@ namespace Amazon.CodeBuild.Model
         /// A set of environment variables that overrides, for this build only, the latest ones
         /// already defined in the build project.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EnvironmentVariable> EnvironmentVariablesOverride
         {
@@ -607,6 +612,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  An array of <c>ProjectArtifacts</c> objects. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectArtifacts> SecondaryArtifactsOverride
@@ -626,6 +636,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  An array of <c>ProjectSource</c> objects. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectSource> SecondarySourcesOverride
@@ -646,6 +661,11 @@ namespace Amazon.CodeBuild.Model
         ///  An array of <c>ProjectSourceVersion</c> objects that specify one or more versions
         /// of the project's secondary sources to be used for this build only. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectSourceVersion> SecondarySourcesVersionOverride

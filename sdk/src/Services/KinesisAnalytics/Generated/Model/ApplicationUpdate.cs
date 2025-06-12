@@ -64,6 +64,11 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// Describes application CloudWatch logging option updates.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CloudWatchLoggingOptionUpdate> CloudWatchLoggingOptionUpdates
         {
@@ -82,6 +87,11 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// Describes application input configuration updates.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputUpdate> InputUpdates
         {
@@ -100,6 +110,11 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// Describes application output configuration updates.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OutputUpdate> OutputUpdates
         {
@@ -118,6 +133,11 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// Describes application reference data source updates.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ReferenceDataSourceUpdate> ReferenceDataSourceUpdates
         {

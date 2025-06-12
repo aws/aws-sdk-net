@@ -65,6 +65,11 @@ namespace Amazon.CleanRooms.Model
         /// <para>
         /// The ARN of the analysis templates that are allowed by the custom analysis rule.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
         public List<string> AllowedAnalyses
@@ -85,6 +90,11 @@ namespace Amazon.CleanRooms.Model
         /// The IDs of the Amazon Web Services accounts that are allowed to query by the custom
         /// analysis rule. Required when <c>allowedAnalyses</c> is <c>ANY_QUERY</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0)]
         public List<string> AllowedAnalysisProviders
@@ -122,6 +132,11 @@ namespace Amazon.CleanRooms.Model
         /// <para>
         ///  A list of columns that aren't allowed to be shown in the query output.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DisallowedOutputColumns
         {

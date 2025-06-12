@@ -64,6 +64,11 @@ namespace Amazon.IoT.Model
         /// action. You can add a thing to a maximum of 10 groups, but you can't add a thing to
         /// more than one group in the same hierarchy.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> ThingGroupNames

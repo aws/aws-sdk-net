@@ -45,6 +45,11 @@ namespace Amazon.Kinesis.Model
         /// The list of the current shard's child shards, returned in the <c>GetRecords</c> API's
         /// response only when the end of the current shard is reached.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ChildShard> ChildShards
         {
@@ -106,6 +111,11 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The data records retrieved from the shard.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Record> Records

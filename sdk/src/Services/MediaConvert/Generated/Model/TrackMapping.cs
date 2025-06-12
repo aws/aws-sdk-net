@@ -41,6 +41,11 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property AudioTrackIndexes. The index numbers of the audio tracks
         /// in your media file.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> AudioTrackIndexes
         {
@@ -57,6 +62,11 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property DataTrackIndexes. The index numbers of the data tracks
         /// in your media file.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> DataTrackIndexes
         {
@@ -73,6 +83,11 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property VideoTrackIndexes. The index numbers of the video tracks
         /// in your media file.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> VideoTrackIndexes
         {

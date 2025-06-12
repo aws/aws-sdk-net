@@ -43,6 +43,11 @@ namespace Amazon.TranscribeService.Model
         ///  If you include <c>ToxicityDetection</c> in your transcription request, you must also
         /// include <c>ToxicityCategories</c>. The only accepted value for this parameter is <c>ALL</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> ToxicityCategories

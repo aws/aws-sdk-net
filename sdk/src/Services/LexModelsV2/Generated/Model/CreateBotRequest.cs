@@ -51,6 +51,11 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// The list of bot members in a network to be created.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<BotMember> BotMembers
@@ -91,6 +96,11 @@ namespace Amazon.LexModelsV2.Model
         /// can't use the <c>UpdateBot</c> operation to update tags. To update tags, use the <c>TagResource</c>
         /// operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public Dictionary<string, string> BotTags
@@ -236,6 +246,11 @@ namespace Amazon.LexModelsV2.Model
         /// create a bot. You can't use the <c>UpdateAlias</c> operation to update tags. To update
         /// tags on the test alias, use the <c>TagResource</c> operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public Dictionary<string, string> TestBotAliasTags

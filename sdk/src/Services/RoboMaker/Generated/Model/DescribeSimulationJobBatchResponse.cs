@@ -127,6 +127,11 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// A list of created simulation job summaries.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<SimulationJobSummary> CreatedRequests
@@ -147,6 +152,11 @@ namespace Amazon.RoboMaker.Model
         /// A list of failed create simulation job requests. The request failed to be created
         /// into a simulation job. Failed requests do not have a simulation job ID. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FailedCreateSimulationJobRequest> FailedRequests
         {
@@ -222,6 +232,11 @@ namespace Amazon.RoboMaker.Model
         /// A list of pending simulation job requests. These requests have not yet been created
         /// into simulation jobs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public List<SimulationJobRequest> PendingRequests
@@ -308,6 +323,11 @@ namespace Amazon.RoboMaker.Model
         /// A map that contains tag keys and tag values that are attached to the simulation job
         /// batch.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags

@@ -74,6 +74,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property AttachedChannels. A list of channel IDs that that input
         /// is attached to (currently an input can only be attached to one channel).
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AttachedChannels
         {
@@ -89,6 +94,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Destinations. A list of the destinations of the input (PUSH-type).
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputDestination> Destinations
         {
@@ -141,6 +151,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property InputDevices. Settings for the input devices.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputDeviceSettings> InputDevices
         {
@@ -173,6 +188,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property InputPartnerIds. A list of IDs for all Inputs which are
         /// partners of this one.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InputPartnerIds
         {
@@ -206,6 +226,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property MediaConnectFlows. A list of MediaConnect Flows for this
         /// input.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MediaConnectFlow> MediaConnectFlows
         {
@@ -267,6 +292,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property SdiSources.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SdiSources
         {
@@ -283,6 +313,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. A list of IDs for all the Input Security
         /// Groups attached to the input.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroups
         {
@@ -314,6 +349,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Sources. A list of the sources of the input (PULL-type).
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputSource> Sources
         {
@@ -359,6 +399,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Tags. A collection of key-value pairs.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

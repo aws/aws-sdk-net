@@ -81,6 +81,11 @@ namespace Amazon.GlueDataBrew.Model
         /// List of column selectors. Selectors can be used to select columns using a name or
         /// regular expression from the dataset. Rule will be applied to selected columns.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ColumnSelector> ColumnSelectors
@@ -141,6 +146,11 @@ namespace Amazon.GlueDataBrew.Model
         /// values or column names. To differentiate between the two, column names should be enclosed
         /// in backticks, for example, <c>":col1": "`Column A`".</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> SubstitutionMap
         {

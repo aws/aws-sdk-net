@@ -47,6 +47,11 @@ namespace Amazon.Kendra.Model
         /// access to. This is useful for user context filtering, where search results are filtered
         /// based on the user or their group access to documents.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Principal> AccessControlList
         {
@@ -105,6 +110,11 @@ namespace Amazon.Kendra.Model
         /// The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a>
         /// lists that define the hierarchy for which documents users should have access to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=30)]
         public List<HierarchicalPrincipal> HierarchicalAccessControlList

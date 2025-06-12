@@ -56,6 +56,11 @@ namespace Amazon.OpsWorks.Model
         /// An array of layer IDs that specify the layers to be described. If you omit this parameter,
         /// <c>DescribeLayers</c> returns a description of every layer in the specified stack.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> LayerIds
         {

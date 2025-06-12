@@ -192,6 +192,11 @@ namespace Amazon.GeoRoutes.Model
         /// The final position for the route. In the World Geodetic System (WGS 84) format: <c>[longitude,
         /// latitude]</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> Destination
@@ -308,6 +313,11 @@ namespace Amazon.GeoRoutes.Model
         /// Instructions in the requested language are returned only if they are available.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<string> Languages
@@ -367,6 +377,11 @@ namespace Amazon.GeoRoutes.Model
         ///  <c>Zones</c>: Specifies the time zone information for each waypoint.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=9)]
         public List<string> LegAdditionalFeatures
@@ -457,6 +472,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// The start position for the route.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public List<double> Origin
@@ -495,6 +515,11 @@ namespace Amazon.GeoRoutes.Model
         /// A list of optional features such as SpeedLimit that can be requested for a Span. A
         /// span is a section of a Leg for which the requested features have the same values.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=24)]
         public List<string> SpanAdditionalFeatures
@@ -611,6 +636,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// List of waypoints between the Origin and Destination.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RouteWaypoint> Waypoints
         {

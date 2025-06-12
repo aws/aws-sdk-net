@@ -65,8 +65,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Null", StringUtils.FromString(publicRequest.NullValue));
             request.ResourcePath = "/OmitsNullSerializesEmptyString";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static OmitsNullSerializesEmptyStringRequestMarshaller _instance = new OmitsNullSerializesEmptyStringRequestMarshaller();        

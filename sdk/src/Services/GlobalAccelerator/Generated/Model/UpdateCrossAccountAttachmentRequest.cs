@@ -64,6 +64,11 @@ namespace Amazon.GlobalAccelerator.Model
         /// To add more than one principal, separate the account numbers or accelerator ARNs,
         /// or both, with commas.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AddPrincipals
         {
@@ -88,6 +93,11 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// To add more than one resource, separate the resource ARNs with commas.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Resource> AddResources
         {
@@ -152,6 +162,11 @@ namespace Amazon.GlobalAccelerator.Model
         /// To remove more than one principal, separate the account numbers or accelerator ARNs,
         /// or both, with commas.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RemovePrincipals
         {
@@ -176,6 +191,11 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// To remove more than one resource, separate the resource ARNs with commas.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Resource> RemoveResources
         {

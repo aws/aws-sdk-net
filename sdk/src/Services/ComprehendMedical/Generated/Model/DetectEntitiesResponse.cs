@@ -48,6 +48,11 @@ namespace Amazon.ComprehendMedical.Model
         /// Medical has in the detection and analysis. Attributes and traits of the entity are
         /// also returned.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Entity> Entities
@@ -108,6 +113,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <para>
         /// Attributes extracted from the input text that we were unable to relate to an entity.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UnmappedAttribute> UnmappedAttributes
         {

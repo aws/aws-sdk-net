@@ -106,6 +106,11 @@ namespace Amazon.DeviceFarm.Model
         /// is expressed as an <c>offering-id:number</c> pair, where the <c>offering-id</c> represents
         /// one of the IDs returned by the <c>ListOfferings</c> command.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, int> MaxSlots
         {
@@ -166,6 +171,11 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Returns the unmetered devices you have purchased or want to purchase.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, int> UnmeteredDevices
         {
@@ -184,6 +194,11 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Returns the unmetered remote access devices you have purchased or want to purchase.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, int> UnmeteredRemoteAccessDevices
         {

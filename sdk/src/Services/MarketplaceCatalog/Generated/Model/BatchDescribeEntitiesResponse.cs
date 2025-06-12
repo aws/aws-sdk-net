@@ -42,6 +42,11 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <para>
         /// Details about each entity.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, EntityDetail> EntityDetails
         {
@@ -61,6 +66,11 @@ namespace Amazon.MarketplaceCatalog.Model
         /// A map of errors returned, with <c>EntityId</c> as the key and <c>errorDetail</c> as
         /// the value.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, BatchDescribeErrorDetail> Errors
         {

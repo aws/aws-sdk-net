@@ -193,6 +193,11 @@ namespace Amazon.QuickSight.Model
         /// Error records accumulate while the job runs. The complete set of error records is
         /// available after the job has completed and failed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AssetBundleExportJobError> Errors
         {
@@ -363,6 +368,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A list of resource ARNs that exported with the job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> ResourceArns
@@ -424,6 +434,11 @@ namespace Amazon.QuickSight.Model
         /// This property only appears if <c>StrictModeForAllResources</c> in <c>ValidationStrategy</c>
         /// is set to <c>FALSE</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AssetBundleExportJobWarning> Warnings
         {

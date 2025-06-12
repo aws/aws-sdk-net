@@ -50,6 +50,11 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// A key-value map of additional context variables.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> AdditionalContext
         {
@@ -106,6 +111,11 @@ namespace Amazon.APIGateway.Model
         /// A key-value map of headers to simulate an incoming invocation request. This is where
         /// the incoming authorization token, or identity source, should be specified.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Headers
         {
@@ -126,6 +136,11 @@ namespace Amazon.APIGateway.Model
         /// request. This is where the incoming authorization token, or identity source, may be
         /// specified.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<string>> MultiValueHeaders
         {
@@ -182,6 +197,11 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// A key-value map of stage variables to simulate an invocation on a deployed Stage.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> StageVariables
         {

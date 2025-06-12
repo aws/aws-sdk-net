@@ -373,6 +373,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// Provides the list of DB parameter groups applied to this DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DBParameterGroupStatus> DBParameterGroups
         {
@@ -392,6 +397,11 @@ namespace Amazon.Neptune.Model
         ///  Provides List of DB security group elements containing only <c>DBSecurityGroup.Name</c>
         /// and <c>DBSecurityGroup.Status</c> subelements.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroups
         {
@@ -449,6 +459,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// Not supported
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DomainMembership> DomainMemberships
         {
@@ -467,6 +482,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// A list of log types that this DB instance is configured to export to CloudWatch Logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EnabledCloudwatchLogsExports
         {
@@ -741,6 +761,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  <i>(Not supported by Neptune)</i> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OptionGroupMembership> OptionGroupMemberships
         {
@@ -891,6 +916,11 @@ namespace Amazon.Neptune.Model
         /// Contains one or more identifiers of DB clusters that are Read Replicas of this DB
         /// instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReadReplicaDBClusterIdentifiers
         {
@@ -909,6 +939,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// Contains one or more identifiers of the Read Replicas associated with this DB instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReadReplicaDBInstanceIdentifiers
         {
@@ -964,6 +999,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// The status of a Read Replica. If the instance is not a Read Replica, this is blank.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DBInstanceStatusInfo> StatusInfos
         {
@@ -1054,6 +1094,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// Provides a list of VPC security group elements that the DB instance belongs to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups
         {

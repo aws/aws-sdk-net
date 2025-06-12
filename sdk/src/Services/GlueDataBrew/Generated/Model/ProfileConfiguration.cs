@@ -49,6 +49,11 @@ namespace Amazon.GlueDataBrew.Model
         /// When ColumnStatisticsConfigurations is undefined, the profile job will profile all
         /// supported columns and run all supported evaluations. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ColumnStatisticsConfiguration> ColumnStatisticsConfigurations
@@ -109,6 +114,11 @@ namespace Amazon.GlueDataBrew.Model
         /// When ProfileColumns is undefined, the profile job will profile all supported columns.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ColumnSelector> ProfileColumns

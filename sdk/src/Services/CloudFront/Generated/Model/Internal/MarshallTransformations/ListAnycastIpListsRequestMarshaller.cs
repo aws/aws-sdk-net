@@ -65,8 +65,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/anycast-ip-list";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListAnycastIpListsRequestMarshaller _instance = new ListAnycastIpListsRequestMarshaller();        

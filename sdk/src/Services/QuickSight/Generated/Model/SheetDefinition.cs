@@ -124,6 +124,11 @@ namespace Amazon.QuickSight.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding
         /// filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<FilterControl> FilterControls
@@ -143,6 +148,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A list of images on a sheet.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<SheetImage> Images
@@ -167,6 +177,11 @@ namespace Amazon.QuickSight.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types
         /// of layout</a> in the <i>Amazon QuickSight User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<Layout> Layouts
@@ -212,6 +227,11 @@ namespace Amazon.QuickSight.Model
         /// a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User
         /// Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<ParameterControl> ParameterControls
@@ -231,6 +251,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The control layouts of the sheet.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<SheetControlLayout> SheetControlLayouts
@@ -269,6 +294,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The text boxes that are on a sheet.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=100)]
         public List<SheetTextBox> TextBoxes
@@ -308,6 +338,11 @@ namespace Amazon.QuickSight.Model
         /// A list of the visuals that are on a sheet. Visual placement is determined by the layout
         /// of the sheet.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<Visual> Visuals

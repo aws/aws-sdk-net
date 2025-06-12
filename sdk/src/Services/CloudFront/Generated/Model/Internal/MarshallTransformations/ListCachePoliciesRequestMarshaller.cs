@@ -68,8 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/2020-05-31/cache-policy";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListCachePoliciesRequestMarshaller _instance = new ListCachePoliciesRequestMarshaller();        

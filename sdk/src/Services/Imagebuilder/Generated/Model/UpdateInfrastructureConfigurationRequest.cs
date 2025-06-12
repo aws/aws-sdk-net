@@ -171,6 +171,11 @@ namespace Amazon.Imagebuilder.Model
         /// instance types to use for this build. The service will pick one of these instance
         /// types based on availability.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InstanceTypes
         {
@@ -246,6 +251,11 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The tags attached to the resource created by Image Builder.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=30)]
         public Dictionary<string, string> ResourceTags
@@ -266,6 +276,11 @@ namespace Amazon.Imagebuilder.Model
         /// The security group IDs to associate with the instance used to customize your Amazon
         /// EC2 AMI.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {

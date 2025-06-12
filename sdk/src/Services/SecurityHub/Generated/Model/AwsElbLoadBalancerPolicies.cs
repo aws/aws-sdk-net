@@ -43,6 +43,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The stickiness policies that are created using <c>CreateAppCookieStickinessPolicy</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsElbAppCookieStickinessPolicy> AppCookieStickinessPolicies
         {
@@ -61,6 +66,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The stickiness policies that are created using <c>CreateLBCookieStickinessPolicy</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsElbLbCookieStickinessPolicy> LbCookieStickinessPolicies
         {
@@ -79,6 +89,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The policies other than the stickiness policies.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> OtherPolicies
         {

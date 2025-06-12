@@ -55,6 +55,11 @@ namespace Amazon.Glue.Model
         /// A list of <c>DataQualityAnalyzerResult</c> objects representing the results for each
         /// analyzer. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]
         public List<DataQualityAnalyzerResult> AnalyzerResults
@@ -169,6 +174,11 @@ namespace Amazon.Glue.Model
         /// A list of <c>DataQualityObservation</c> objects representing the observations generated
         /// after evaluating the rules and analyzers. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<DataQualityObservation> Observations
@@ -227,6 +237,11 @@ namespace Amazon.Glue.Model
         /// A list of <c>DataQualityRuleResult</c> objects representing the results for each rule.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]
         public List<DataQualityRuleResult> RuleResults

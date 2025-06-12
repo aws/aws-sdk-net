@@ -116,6 +116,11 @@ namespace Amazon.SsmSap.Model
         /// The child components of a highly available environment. For example, in a highly available
         /// SAP on AWS workload, the child component consists of the primary and secondar instances.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ChildComponents
         {
@@ -189,6 +194,11 @@ namespace Amazon.SsmSap.Model
         /// <para>
         /// The SAP HANA databases of the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Databases
         {
@@ -225,6 +235,11 @@ namespace Amazon.SsmSap.Model
         /// <para>
         /// The hosts of the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This shape is no longer used. Please use AssociatedHost.")]
         public List<Host> Hosts

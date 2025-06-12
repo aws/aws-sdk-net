@@ -84,6 +84,11 @@ namespace Amazon.CloudTrail.Model
         /// A JSON string that contains the Insights event types that you want to log on a trail
         /// or event data store. The valid Insights types are <c>ApiErrorRateInsight</c> and <c>ApiCallRateInsight</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InsightSelector> InsightSelectors
         {

@@ -44,6 +44,11 @@ namespace Amazon.MediaPackageVod.Model
 
         /// <summary>
         /// Gets and sets the property DashManifests. A list of DASH manifest configurations.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<DashManifest> DashManifests
@@ -114,6 +119,11 @@ namespace Amazon.MediaPackageVod.Model
         /// (MPD) will be partitioned into multiple periods. If empty, the content will notbe
         /// partitioned into more than one period. If the list contains "ADS", new periods will
         /// be created wherethe Asset contains SCTE-35 ad markers.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PeriodTriggers
         {

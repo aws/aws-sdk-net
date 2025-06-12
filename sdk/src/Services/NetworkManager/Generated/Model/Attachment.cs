@@ -190,6 +190,11 @@ namespace Amazon.NetworkManager.Model
         /// The edge locations that the Direct Connect gateway is associated with. This is returned
         /// only for Direct Connect gateway attachments. All other attachment types retrun <c>EdgeLocation</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EdgeLocations
         {
@@ -208,6 +213,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// Describes the error associated with the attachment request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<AttachmentError> LastModificationErrors
@@ -356,6 +366,11 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// The tags associated with the attachment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

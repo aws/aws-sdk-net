@@ -51,6 +51,11 @@ namespace Amazon.QuickSight.Model
         /// A list of overrides for any <c>Analysis</c> resources that are present in the asset
         /// bundle that is imported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleImportJobAnalysisOverrideParameters> Analyses
@@ -71,6 +76,11 @@ namespace Amazon.QuickSight.Model
         /// A list of overrides for any <c>Dashboard</c> resources that are present in the asset
         /// bundle that is imported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleImportJobDashboardOverrideParameters> Dashboards
@@ -91,6 +101,11 @@ namespace Amazon.QuickSight.Model
         /// A list of overrides for any <c>DataSet</c> resources that are present in the asset
         /// bundle that is imported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleImportJobDataSetOverrideParameters> DataSets
@@ -111,6 +126,11 @@ namespace Amazon.QuickSight.Model
         ///  A list of overrides for any <c>DataSource</c> resources that are present in the asset
         /// bundle that is imported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleImportJobDataSourceOverrideParameters> DataSources
@@ -131,6 +151,11 @@ namespace Amazon.QuickSight.Model
         /// A list of overrides for any <c>Folder</c> resources that are present in the asset
         /// bundle that is imported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleImportJobFolderOverrideParameters> Folders
@@ -151,6 +176,11 @@ namespace Amazon.QuickSight.Model
         /// A list of overrides for any <c>RefreshSchedule</c> resources that are present in the
         /// asset bundle that is imported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleImportJobRefreshScheduleOverrideParameters> RefreshSchedules
@@ -190,6 +220,11 @@ namespace Amazon.QuickSight.Model
         /// A list of overrides for any <c>Theme</c> resources that are present in the asset bundle
         /// that is imported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleImportJobThemeOverrideParameters> Themes
@@ -210,6 +245,11 @@ namespace Amazon.QuickSight.Model
         /// A list of overrides for any <c>VPCConnection</c> resources that are present in the
         /// asset bundle that is imported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<AssetBundleImportJobVPCConnectionOverrideParameters> VPCConnections

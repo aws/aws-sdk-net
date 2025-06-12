@@ -68,6 +68,11 @@ namespace Amazon.WellArchitected.Model
         /// <para>
         /// A list of selected choices to a question in the review template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ChoiceAnswerSummary> ChoiceAnswerSummaries
         {
@@ -83,6 +88,11 @@ namespace Amazon.WellArchitected.Model
 
         /// <summary>
         /// Gets and sets the property Choices.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Choice> Choices
         {
@@ -197,6 +207,11 @@ namespace Amazon.WellArchitected.Model
 
         /// <summary>
         /// Gets and sets the property SelectedChoices.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SelectedChoices
         {

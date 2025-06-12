@@ -242,6 +242,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// A list of cache nodes that are members of the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CacheNode> CacheNodes
         {
@@ -459,6 +464,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// A list of cache security group elements, composed of name and status sub-elements.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CacheSecurityGroupMembership> CacheSecurityGroups
         {
@@ -595,6 +605,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Returns the destination, format and type of the logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LogDeliveryConfiguration> LogDeliveryConfigurations
         {
@@ -822,6 +837,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// A list of VPC Security Groups associated with the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SecurityGroupMembership> SecurityGroups
         {

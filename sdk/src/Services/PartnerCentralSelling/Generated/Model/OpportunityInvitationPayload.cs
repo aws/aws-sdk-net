@@ -86,6 +86,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Outlines the responsibilities or expectations of the receiver in the context of the
         /// invitation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> ReceiverResponsibilities
@@ -106,6 +111,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Represents the contact details of the AWS representatives involved in sending the
         /// Engagement Invitation. These contacts are opportunity stakeholders.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
         public List<SenderContact> SenderContacts

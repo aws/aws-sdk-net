@@ -108,6 +108,11 @@ namespace Amazon.ResourceExplorer2.Model
         /// A list of the Amazon Web Services Regions that replicate their content to the index
         /// in this Region.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReplicatingFrom
         {
@@ -132,6 +137,11 @@ namespace Amazon.ResourceExplorer2.Model
         /// If an aggregator index does exist then the Region in which you called this operation
         /// replicates its index information to the Region specified in this response value. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ReplicatingTo
         {
@@ -168,6 +178,11 @@ namespace Amazon.ResourceExplorer2.Model
         /// <para>
         /// Tag key and value pairs that are attached to the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags

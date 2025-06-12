@@ -52,6 +52,11 @@ namespace Amazon.Rekognition.Model
         /// Specifies the type of customization to filter projects by. If no value is specified,
         /// CUSTOM_LABELS is used as a default.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
         public List<string> Features
@@ -114,6 +119,11 @@ namespace Amazon.Rekognition.Model
         /// A list of the projects that you want Rekognition to describe. If you don't specify
         /// a value, the response includes descriptions for all the projects in your AWS account.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> ProjectNames

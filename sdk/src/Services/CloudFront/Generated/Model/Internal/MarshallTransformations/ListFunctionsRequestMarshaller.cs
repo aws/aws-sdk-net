@@ -68,8 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Stage", StringUtils.FromString(publicRequest.Stage));
             request.ResourcePath = "/2020-05-31/function";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static ListFunctionsRequestMarshaller _instance = new ListFunctionsRequestMarshaller();        

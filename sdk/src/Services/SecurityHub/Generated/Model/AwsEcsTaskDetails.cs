@@ -67,6 +67,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The containers that are associated with the task. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsContainerDetails> Containers
         {
@@ -197,6 +202,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Details about the data volume that is used in a task definition. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskVolumeDetails> Volumes
         {

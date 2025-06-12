@@ -49,6 +49,11 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// You can include one or more API operations as permissions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Permissions
         {
@@ -68,6 +73,11 @@ namespace Amazon.S3Control.Model
         /// You can specify any amount of prefixes, but the total length of characters of all
         /// prefixes must be less than 256 bytes in size.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Prefixes
         {

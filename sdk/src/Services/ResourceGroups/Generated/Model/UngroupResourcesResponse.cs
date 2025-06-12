@@ -43,6 +43,11 @@ namespace Amazon.ResourceGroups.Model
         /// <para>
         /// A list of any resources that failed to be removed from the group by this operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FailedResource> Failed
         {
@@ -64,6 +69,11 @@ namespace Amazon.ResourceGroups.Model
         /// status of pending removals by using the <c> <a>ListGroupResources</a> </c> operation.
         /// After the resource is successfully removed, it no longer appears in the response.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PendingResource> Pending
         {
@@ -82,6 +92,11 @@ namespace Amazon.ResourceGroups.Model
         /// <para>
         /// A list of resources that were successfully removed from the group by this operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> Succeeded

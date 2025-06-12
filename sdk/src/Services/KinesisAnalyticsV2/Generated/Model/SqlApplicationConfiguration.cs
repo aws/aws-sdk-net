@@ -44,6 +44,11 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// The array of <a>Input</a> objects describing the input streams used by the application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Input> Inputs
         {
@@ -63,6 +68,11 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The array of <a>Output</a> objects describing the destination streams used by the
         /// application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Output> Outputs
         {
@@ -82,6 +92,11 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The array of <a>ReferenceDataSource</a> objects describing the reference data sources
         /// used by the application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ReferenceDataSource> ReferenceDataSources
         {

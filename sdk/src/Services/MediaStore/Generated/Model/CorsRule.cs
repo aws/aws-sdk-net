@@ -53,6 +53,11 @@ namespace Amazon.MediaStore.Model
         /// <para>
         /// This element can contain only one wildcard character (*).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
         public List<string> AllowedHeaders
@@ -78,6 +83,11 @@ namespace Amazon.MediaStore.Model
         /// Each CORS rule must contain at least one <c>AllowedMethods</c> and one <c>AllowedOrigins</c>
         /// element.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
         public List<string> AllowedMethods
@@ -104,6 +114,11 @@ namespace Amazon.MediaStore.Model
         /// can include only one wildcard character (*), for example, http://*.example.com. Additionally,
         /// you can specify only one wildcard character to allow cross-origin access for all origins.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> AllowedOrigins
@@ -128,6 +143,11 @@ namespace Amazon.MediaStore.Model
         /// <para>
         /// This element is optional for each rule.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> ExposeHeaders

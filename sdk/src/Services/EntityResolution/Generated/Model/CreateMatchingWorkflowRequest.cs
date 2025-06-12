@@ -91,6 +91,11 @@ namespace Amazon.EntityResolution.Model
         /// A list of <c>InputSource</c> objects, which have the fields <c>InputSourceARN</c>
         /// and <c>SchemaName</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
         public List<InputSource> InputSourceConfig
@@ -111,6 +116,11 @@ namespace Amazon.EntityResolution.Model
         /// A list of <c>OutputSource</c> objects, each of which contains fields <c>OutputS3Path</c>,
         /// <c>ApplyNormalization</c>, and <c>Output</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<OutputSource> OutputSourceConfig
@@ -169,6 +179,11 @@ namespace Amazon.EntityResolution.Model
         /// <para>
         /// The tags used to organize, track, or control access for this resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public Dictionary<string, string> Tags

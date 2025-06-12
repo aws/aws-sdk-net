@@ -225,6 +225,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The list of primary and secondary clusters within the global database cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GlobalClusterMember> GlobalClusterMembers
         {
@@ -296,6 +301,11 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Gets and sets the property TagList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> TagList
         {

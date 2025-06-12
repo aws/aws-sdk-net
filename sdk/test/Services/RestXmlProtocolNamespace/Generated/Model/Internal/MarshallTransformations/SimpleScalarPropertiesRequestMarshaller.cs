@@ -63,7 +63,6 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                 request.Headers["X-Foo"] = publicRequest.Foo;
             }
             request.ResourcePath = "/SimpleScalarProperties";
-
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -116,6 +115,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
+
 
             return request;
         }

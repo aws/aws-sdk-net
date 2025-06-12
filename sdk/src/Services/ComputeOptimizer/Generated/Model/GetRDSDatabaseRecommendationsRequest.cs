@@ -65,6 +65,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// You can only specify one account ID per request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AccountIds
         {
@@ -84,6 +89,11 @@ namespace Amazon.ComputeOptimizer.Model
         ///  An array of objects to specify a filter that returns a more specific list of Amazon
         /// Aurora and RDS database recommendations. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RDSDBRecommendationFilter> Filters
         {
@@ -177,6 +187,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  <c>arn:aws:rds:{region}:{accountId}:cluster:{resourceName}</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ResourceArns
         {

@@ -50,6 +50,11 @@ namespace Amazon.Inspector.Model
         /// type property must be the exact match of the value of the <b>agentId</b> property
         /// of the <a>Finding</a> data type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=99)]
         public List<string> AgentIds
@@ -71,6 +76,11 @@ namespace Amazon.Inspector.Model
         /// type property must be contained in the list of values of the <b>attributes</b> property
         /// of the <a>Finding</a> data type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Attribute> Attributes
@@ -92,6 +102,11 @@ namespace Amazon.Inspector.Model
         /// type property must be the exact match of the value of the <b>autoScalingGroup</b>
         /// property of the <a>Finding</a> data type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
         public List<string> AutoScalingGroups
@@ -131,6 +146,11 @@ namespace Amazon.Inspector.Model
         /// type property must be the exact match of the value of the <b>ruleName</b> property
         /// of the <a>Finding</a> data type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<string> RuleNames
@@ -152,6 +172,11 @@ namespace Amazon.Inspector.Model
         /// type property must be the exact match of the value of the <b>rulesPackageArn</b> property
         /// of the <a>Finding</a> data type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<string> RulesPackageArns
@@ -173,6 +198,11 @@ namespace Amazon.Inspector.Model
         /// type property must be the exact match of the value of the <b>severity</b> property
         /// of the <a>Finding</a> data type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<string> Severities
@@ -194,6 +224,11 @@ namespace Amazon.Inspector.Model
         /// must be contained in the list of values of the <b>userAttributes</b> property of the
         /// <a>Finding</a> data type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Attribute> UserAttributes

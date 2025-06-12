@@ -102,6 +102,11 @@ namespace Amazon.Drs.Model
         /// <para>
         /// A mapping between the volumes being converted and the converted snapshot ids
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, Dictionary<string, string>> VolumeToConversionMap
         {
@@ -121,6 +126,11 @@ namespace Amazon.Drs.Model
         /// A mapping between the volumes being converted and the product codes associated with
         /// them
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<ProductCode>> VolumeToProductCodes
         {
@@ -139,6 +149,11 @@ namespace Amazon.Drs.Model
         /// <para>
         /// A mapping between the volumes and their sizes
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, long> VolumeToVolumeSize
         {

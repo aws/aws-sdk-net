@@ -75,8 +75,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             request.ResourcePath = "/StringListMap";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static QueryParamsAsStringListMapRequestMarshaller _instance = new QueryParamsAsStringListMapRequestMarshaller();        

@@ -65,6 +65,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// with other filter types. Use this <c>Filters</c> data type instead of <c>InstanceInformationFilterList</c>,
         /// which is deprecated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0)]
         public List<InstanceInformationStringFilter> Filters
@@ -92,6 +97,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// an exception error. 
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0)]
         public List<InstanceInformationFilter> InstanceInformationFilterList

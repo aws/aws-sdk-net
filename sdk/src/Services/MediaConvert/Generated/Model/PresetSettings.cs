@@ -43,6 +43,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AudioDescriptions. Contains groups of audio encoding settings
         /// organized by audio codec. Include one instance of per output. Can contain multiple
         /// groups of encoding settings.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AudioDescription> AudioDescriptions
         {
@@ -60,6 +65,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property CaptionDescriptions. This object holds groups of settings
         /// related to captions for one output. For each output that has captions, include one
         /// instance of CaptionDescriptions.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CaptionDescriptionPreset> CaptionDescriptions
         {

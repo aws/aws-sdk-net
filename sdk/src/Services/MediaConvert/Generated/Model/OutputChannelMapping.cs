@@ -40,6 +40,11 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property InputChannels. Use this setting to specify your remix values
         /// when they are integers, such as -10, 0, or 4.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> InputChannels
         {
@@ -57,6 +62,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property InputChannelsFineTune. Use this setting to specify your
         /// remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert
         /// rounds your remixing values to the nearest thousandth.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> InputChannelsFineTune
         {

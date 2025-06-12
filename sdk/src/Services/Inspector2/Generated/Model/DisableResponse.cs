@@ -43,6 +43,11 @@ namespace Amazon.Inspector2.Model
         /// Information on the accounts that have had Amazon Inspector scans successfully disabled.
         /// Details are provided for each account.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Account> Accounts
@@ -63,6 +68,11 @@ namespace Amazon.Inspector2.Model
         /// Information on any accounts for which Amazon Inspector scans could not be disabled.
         /// Details are provided for each account.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<FailedAccount> FailedAccounts

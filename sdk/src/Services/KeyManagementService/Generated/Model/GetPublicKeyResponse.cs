@@ -83,6 +83,11 @@ namespace Amazon.KeyManagementService.Model
         /// This field appears in the response only when the <c>KeyUsage</c> of the public key
         /// is <c>ENCRYPT_DECRYPT</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EncryptionAlgorithms
         {
@@ -102,6 +107,11 @@ namespace Amazon.KeyManagementService.Model
         /// The key agreement algorithm used to derive a shared secret. This field is present
         /// only when the KMS key has a <c>KeyUsage</c> value of <c>KEY_AGREEMENT</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> KeyAgreementAlgorithms
         {
@@ -213,6 +223,11 @@ namespace Amazon.KeyManagementService.Model
         /// This field appears in the response only when the <c>KeyUsage</c> of the public key
         /// is <c>SIGN_VERIFY</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SigningAlgorithms
         {

@@ -50,6 +50,11 @@ namespace Amazon.SecurityHub.Model
         /// Typically provides an array of enabled security standards in which a security control
         /// is currently enabled. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AssociatedStandard> AssociatedStandards
         {
@@ -73,6 +78,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Array Members: Maximum number of 32 items.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RelatedRequirements
         {
@@ -111,6 +121,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Typically an object that includes security control parameter names and values. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SecurityControlParameter> SecurityControlParameters
         {
@@ -172,6 +187,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Typically used to provide a list of reasons for the value of <c>Status</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StatusReason> StatusReasons
         {

@@ -46,6 +46,11 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// Configuration data for a rule execution, such as the resolved values for that run.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public Dictionary<string, string> Configuration
@@ -65,6 +70,11 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// Details of input artifacts of the rule that correspond to the rule execution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ArtifactDetail> InputArtifacts
         {
@@ -103,6 +113,11 @@ namespace Amazon.CodePipeline.Model
         /// Configuration data for a rule execution with all variable references replaced with
         /// their real values for the execution.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> ResolvedConfiguration
         {

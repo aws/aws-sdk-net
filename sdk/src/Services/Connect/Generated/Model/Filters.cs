@@ -44,6 +44,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The channel to use to filter the metrics.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=4)]
         public List<string> Channels
@@ -65,6 +70,11 @@ namespace Amazon.Connect.Model
         /// can specify up to 100 queues per request. The <c>GetCurrentMetricsData</c> API in
         /// particular requires a queue when you include a <c>Filter</c> in your request. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> Queues
@@ -84,6 +94,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A list of up to 100 routing profile IDs or ARNs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<string> RoutingProfiles
@@ -104,6 +119,11 @@ namespace Amazon.Connect.Model
         /// A list of expressions as a filter, in which an expression is an object of a step in
         /// a routing criteria.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> RoutingStepExpressions

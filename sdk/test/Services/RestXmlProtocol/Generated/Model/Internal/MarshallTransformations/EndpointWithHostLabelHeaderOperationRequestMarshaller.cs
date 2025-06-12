@@ -65,7 +65,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/EndpointWithHostLabelHeaderOperation";
 
 
-
             var hostPrefixLabels = new
             {
                 accountId = StringUtils.FromString(publicRequest.AccountId),
@@ -75,6 +74,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 throw new AmazonRestXmlProtocolException("accountId can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
             
             request.HostPrefix = $"{hostPrefixLabels.accountId}.";
+
             return request;
         }
         private static EndpointWithHostLabelHeaderOperationRequestMarshaller _instance = new EndpointWithHostLabelHeaderOperationRequestMarshaller();        

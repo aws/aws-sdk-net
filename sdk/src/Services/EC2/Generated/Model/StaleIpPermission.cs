@@ -85,6 +85,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IP ranges. Not applicable for stale security group rules.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> IpRanges
         {
@@ -103,6 +108,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The prefix list IDs. Not applicable for stale security group rules.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PrefixListIds
         {
@@ -141,6 +151,11 @@ namespace Amazon.EC2.Model
         /// The security group pairs. Returns the ID of the referenced security group and VPC,
         /// and the ID and status of the VPC peering connection.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UserIdGroupPair> UserIdGroupPairs
         {

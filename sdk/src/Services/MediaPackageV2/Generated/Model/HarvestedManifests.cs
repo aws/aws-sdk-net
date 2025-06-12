@@ -43,6 +43,11 @@ namespace Amazon.MediaPackageV2.Model
         /// <para>
         /// A list of harvested DASH manifests.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HarvestedDashManifest> DashManifests
         {
@@ -61,6 +66,11 @@ namespace Amazon.MediaPackageV2.Model
         /// <para>
         /// A list of harvested HLS manifests.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HarvestedHlsManifest> HlsManifests
         {
@@ -79,6 +89,11 @@ namespace Amazon.MediaPackageV2.Model
         /// <para>
         /// A list of harvested Low-Latency HLS manifests.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HarvestedLowLatencyHlsManifest> LowLatencyHlsManifests
         {

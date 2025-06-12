@@ -114,6 +114,11 @@ namespace Amazon.SecurityIR.Model
         /// Required element used in combination with CreateCase to provide a list of impacted
         /// accounts.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
         public List<string> ImpactedAccounts
@@ -134,6 +139,11 @@ namespace Amazon.SecurityIR.Model
         /// An optional element used in combination with CreateCase to provide a list of impacted
         /// regions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<ImpactedAwsRegion> ImpactedAwsRegions
@@ -154,6 +164,11 @@ namespace Amazon.SecurityIR.Model
         /// An optional element used in combination with CreateCase to provide a list of services
         /// impacted.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=600)]
         public List<string> ImpactedServices
@@ -214,6 +229,11 @@ namespace Amazon.SecurityIR.Model
         /// An optional element used in combination with CreateCase to add customer specified
         /// tags to a case.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public Dictionary<string, string> Tags
@@ -234,6 +254,11 @@ namespace Amazon.SecurityIR.Model
         /// An optional element used in combination with CreateCase to provide a list of suspicious
         /// internet protocol addresses associated with unauthorized activity. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<ThreatActorIp> ThreatActorIpAddresses
@@ -274,6 +299,11 @@ namespace Amazon.SecurityIR.Model
         /// Required element used in combination with CreateCase to provide a list of entities
         /// to receive notifications for case updates. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=30)]
         public List<Watcher> Watchers

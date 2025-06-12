@@ -51,6 +51,11 @@ namespace Amazon.Neptune.Model
         /// Log types that are in the process of being enabled. After they are enabled, these
         /// log types are exported to CloudWatch Logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> LogTypesToDisable
         {
@@ -70,6 +75,11 @@ namespace Amazon.Neptune.Model
         /// Log types that are in the process of being deactivated. After they are deactivated,
         /// these log types aren't exported to CloudWatch Logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> LogTypesToEnable
         {

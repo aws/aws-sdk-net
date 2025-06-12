@@ -160,6 +160,11 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Set of information on each player to create a player session for.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DesiredPlayerSession> DesiredPlayerSessions
         {
@@ -179,6 +184,11 @@ namespace Amazon.GameLift.Model
         /// A set of key-value pairs that can store custom data in a game session. For example:
         /// <c>{"Key": "difficulty", "Value": "novice"}</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=16)]
         public List<GameProperty> GameProperties
@@ -302,6 +312,11 @@ namespace Amazon.GameLift.Model
         /// is used to try to place the new game session where it can offer the best possible
         /// gameplay experience for the players. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PlayerLatency> PlayerLatencies
         {

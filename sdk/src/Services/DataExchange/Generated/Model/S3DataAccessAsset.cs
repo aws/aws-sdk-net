@@ -65,6 +65,11 @@ namespace Amazon.DataExchange.Model
         /// <para>
         /// The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> KeyPrefixes
         {
@@ -83,6 +88,11 @@ namespace Amazon.DataExchange.Model
         /// <para>
         /// S3 keys made available using this asset.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Keys
         {
@@ -103,6 +113,11 @@ namespace Amazon.DataExchange.Model
         /// to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include
         /// all AWS KMS keys used to encrypt these shared S3 objects.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<KmsKeyToGrant> KmsKeysToGrant

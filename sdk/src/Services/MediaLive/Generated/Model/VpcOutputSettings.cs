@@ -43,6 +43,11 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property PublicAddressAllocationIds. List of public address allocation
         /// ids to associate with ENIs that will be created in Output VPC.Must specify one for
         /// SINGLE_PIPELINE, two for STANDARD channels
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PublicAddressAllocationIds
         {
@@ -60,6 +65,11 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SecurityGroupIds. A list of up to 5 EC2 VPC security group
         /// IDs to attach to the Output VPC network interfaces.If none are specified then the
         /// VPC default security group will be used
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -76,6 +86,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. A list of VPC subnet IDs from the same VPC.If
         /// STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SubnetIds

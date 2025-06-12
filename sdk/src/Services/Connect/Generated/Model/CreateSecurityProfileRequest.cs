@@ -79,6 +79,11 @@ namespace Amazon.Connect.Model
         /// The list of tags that a security profile uses to restrict access to resources in Amazon
         /// Connect.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=4)]
         public Dictionary<string, string> AllowedAccessControlTags
@@ -98,6 +103,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A list of third-party applications that the security profile will give access to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=10)]
         public List<Application> Applications
@@ -137,6 +147,11 @@ namespace Amazon.Connect.Model
         /// The list of resources that a security profile applies hierarchy restrictions to in
         /// Amazon Connect. Following are acceptable ResourceNames: <c>User</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> HierarchyRestrictedResources
         {
@@ -177,6 +192,11 @@ namespace Amazon.Connect.Model
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=500)]
         public List<string> Permissions
@@ -218,6 +238,11 @@ namespace Amazon.Connect.Model
         /// tags to resources in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=10)]
         public List<string> TagRestrictedResources
@@ -238,6 +263,11 @@ namespace Amazon.Connect.Model
         /// The tags used to organize, track, or control access for this resource. For example,
         /// { "Tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

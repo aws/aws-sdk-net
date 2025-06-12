@@ -74,6 +74,11 @@ namespace Amazon.WAFV2.Model
         /// The labels that one or more rules in this rule group add to matching web requests.
         /// These labels are defined in the <c>RuleLabels</c> for a <a>Rule</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LabelSummary> AvailableLabels
         {
@@ -129,6 +134,11 @@ namespace Amazon.WAFV2.Model
         /// statements. These labels are defined in a <c>LabelMatchStatement</c> specification,
         /// in the <a>Statement</a> definition of a rule. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LabelSummary> ConsumedLabels
         {
@@ -160,6 +170,11 @@ namespace Amazon.WAFV2.Model
         /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
         /// quotas</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public Dictionary<string, CustomResponseBody> CustomResponseBodies
@@ -280,6 +295,11 @@ namespace Amazon.WAFV2.Model
         /// Each rule includes one top-level statement that WAF uses to identify matching web
         /// requests, and parameters that govern how WAF handles them. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Rule> Rules
         {

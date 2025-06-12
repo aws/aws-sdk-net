@@ -153,6 +153,11 @@ namespace Amazon.CodeBuild.Model
         /// <c>mountOptions</c>, <c>mountPoint</c>, and <c>type</c> of a file system created using
         /// Amazon Elastic File System. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ProjectFileSystemLocation> FileSystemLocations
         {
@@ -260,6 +265,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  An array of <c>ProjectSource</c> objects. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectSource> SecondarySources
@@ -279,6 +289,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  An array of <c>ProjectSourceVersion</c> objects.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public List<ProjectSourceVersion> SecondarySourceVersions

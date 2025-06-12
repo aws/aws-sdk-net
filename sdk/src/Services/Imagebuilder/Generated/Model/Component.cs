@@ -246,6 +246,11 @@ namespace Amazon.Imagebuilder.Model
         /// Contains parameter details for each of the parameters that the component document
         /// defined for the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ComponentParameterDetail> Parameters
         {
@@ -283,6 +288,11 @@ namespace Amazon.Imagebuilder.Model
         /// Contains product codes that are used for billing purposes for Amazon Web Services
         /// Marketplace components.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ProductCodeListItem> ProductCodes
         {
@@ -341,6 +351,11 @@ namespace Amazon.Imagebuilder.Model
         /// is available, Image Builder performs a prefix match against the base image OS version
         /// during image recipe creation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
         public List<string> SupportedOsVersions
@@ -360,6 +375,11 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The tags that apply to the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

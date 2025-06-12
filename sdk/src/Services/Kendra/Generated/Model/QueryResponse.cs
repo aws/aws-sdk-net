@@ -48,6 +48,11 @@ namespace Amazon.Kendra.Model
         /// Contains the facet results. A <c>FacetResult</c> contains the counts for each field/attribute
         /// key that was specified in the <c>Facets</c> input parameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FacetResult> FacetResults
         {
@@ -68,6 +73,11 @@ namespace Amazon.Kendra.Model
         /// search results page, placed above all other results for certain queries. If there's
         /// an exact match of a query, then certain documents are featured in the search results.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FeaturedResultsItem> FeaturedResultsItems
         {
@@ -107,6 +117,11 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The results of the search.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<QueryResultItem> ResultItems
         {
@@ -125,6 +140,11 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// A list of information related to suggested spell corrections for a query.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SpellCorrectedQuery> SpellCorrectedQueries
         {
@@ -169,6 +189,11 @@ namespace Amazon.Kendra.Model
         /// syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
         /// with advanced query syntax</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<Warning> Warnings

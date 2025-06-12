@@ -77,8 +77,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("edns0clientsubnetmask", StringUtils.FromString(publicRequest.EDNS0ClientSubnetMask));
             request.ResourcePath = "/2013-04-01/testdnsanswer";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static TestDNSAnswerRequestMarshaller _instance = new TestDNSAnswerRequestMarshaller();        

@@ -70,6 +70,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// types only.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CpuVendorArchitectures
         {
@@ -183,6 +188,11 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The resource type values that are considered as candidates when generating rightsizing
         /// recommendations. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EffectivePreferredResource> PreferredResources
         {
@@ -226,6 +236,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// This preference is only available for the Amazon EC2 instance resource type.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UtilizationPreference> UtilizationPreferences
         {

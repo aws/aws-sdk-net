@@ -58,7 +58,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
             request.HttpMethod = "POST";
             request.ResourcePath = "/EndpointWithHostLabelOperation";
-
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -91,6 +90,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 throw new AmazonRestXmlProtocolException("label can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
             
             request.HostPrefix = $"foo.{hostPrefixLabels.label}.";
+
             return request;
         }
         private static EndpointWithHostLabelOperationRequestMarshaller _instance = new EndpointWithHostLabelOperationRequestMarshaller();        

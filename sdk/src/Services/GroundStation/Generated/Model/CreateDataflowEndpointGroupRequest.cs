@@ -105,6 +105,11 @@ namespace Amazon.GroundStation.Model
         /// AWS Ground Station Agent endpoints&lt;/a&gt; with &lt;a href=&quot;https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html&quot;&gt;Dataflow
         /// endpoints&lt;/a&gt; in the same group. If your use case requires both types of endpoints,
         /// you must create separate dataflow endpoint groups for each type. &lt;/p&gt; </c></pre>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=500)]
         public List<EndpointDetails> EndpointDetails
@@ -124,6 +129,11 @@ namespace Amazon.GroundStation.Model
         /// <para>
         /// Tags of a dataflow endpoint group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

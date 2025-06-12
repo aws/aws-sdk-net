@@ -45,6 +45,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// An array of the raw log events that you want to use to test this transformer.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> LogEventMessages
@@ -66,6 +71,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// test. A log transformer is an array of processors, where each processor applies one
         /// type of transformation to the log events that are ingested.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
         public List<Processor> TransformerConfig

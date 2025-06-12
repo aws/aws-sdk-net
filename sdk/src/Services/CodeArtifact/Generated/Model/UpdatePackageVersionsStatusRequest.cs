@@ -231,6 +231,11 @@ namespace Amazon.CodeArtifact.Model
         /// package version (for example, <c>3.5.2</c>), and the map <c>value</c> is the package
         /// version revision. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> VersionRevisions
         {
@@ -250,6 +255,11 @@ namespace Amazon.CodeArtifact.Model
         ///  An array of strings that specify the versions of the package with the statuses to
         /// update. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Max=100)]
         public List<string> Versions

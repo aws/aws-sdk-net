@@ -150,6 +150,11 @@ namespace Amazon.PCS.Model
         /// <para>
         /// The list of errors that occurred during compute node group provisioning.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ErrorInfo> ErrorInfo
         {
@@ -223,6 +228,11 @@ namespace Amazon.PCS.Model
         /// A list of EC2 instance configurations that Amazon Web Services PCS can provision in
         /// the compute node group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<InstanceConfig> InstanceConfigs
@@ -381,6 +391,11 @@ namespace Amazon.PCS.Model
         /// The list of subnet IDs where instances are provisioned by the compute node group.
         /// The subnets must be in the same VPC as the cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<string> SubnetIds

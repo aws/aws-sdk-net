@@ -51,6 +51,11 @@ namespace Amazon.Macie2.Model
         /// The value for the property matches (equals) the specified value. If you specify multiple
         /// values, Macie uses OR logic to join the values.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Eq
         {
@@ -78,6 +83,11 @@ namespace Amazon.Macie2.Model
         /// resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category,
         /// and sensitiveData.detections.type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EqExactMatch
         {
@@ -169,6 +179,11 @@ namespace Amazon.Macie2.Model
         /// The value for the property doesn't match (doesn't equal) the specified value. If you
         /// specify multiple values, Macie uses OR logic to join the values.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Neq
         {

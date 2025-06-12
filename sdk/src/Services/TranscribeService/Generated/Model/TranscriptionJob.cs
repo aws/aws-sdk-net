@@ -326,6 +326,11 @@ namespace Amazon.TranscribeService.Model
         /// multi-language identification. For single-language identification requests, refer
         /// to the singular version of this parameter, <c>LanguageCode</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LanguageCodeItem> LanguageCodes
         {
@@ -345,6 +350,11 @@ namespace Amazon.TranscribeService.Model
         /// Provides the name and language of all custom language models, custom vocabularies,
         /// and custom vocabulary filters that you included in your request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public Dictionary<string, LanguageIdSettings> LanguageIdSettings
@@ -364,6 +374,11 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// Provides the language codes you specified in your request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> LanguageOptions
@@ -519,6 +534,11 @@ namespace Amazon.TranscribeService.Model
         /// The tags, each in the form of a key:value pair, assigned to the specified transcription
         /// job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags
@@ -538,6 +558,11 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// Provides information about the toxicity detection settings applied to your transcription.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<ToxicityDetectionSettings> ToxicityDetection

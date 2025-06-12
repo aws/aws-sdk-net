@@ -47,6 +47,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Information about the constraints used to provision the product.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConstraintSummary> ConstraintSummaries
         {
@@ -66,6 +71,11 @@ namespace Amazon.ServiceCatalog.Model
         /// A list of the keys and descriptions of the outputs. These outputs can be referenced
         /// from a provisioned product launched from this provisioning artifact.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=60)]
         public List<ProvisioningArtifactOutput> ProvisioningArtifactOutputKeys
@@ -85,6 +95,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// The output of the provisioning artifact.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs.")]
         [AWSProperty(Max=60)]
@@ -105,6 +120,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Information about the parameters used to provision the product.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ProvisioningArtifactParameter> ProvisioningArtifactParameters
         {
@@ -142,6 +162,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Information about the TagOptions associated with the resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TagOptionSummary> TagOptions
         {
@@ -161,6 +186,11 @@ namespace Amazon.ServiceCatalog.Model
         /// Any additional metadata specifically related to the provisioning of the product. For
         /// example, see the <c>Version</c> field of the CloudFormation template.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UsageInstruction> UsageInstructions
         {

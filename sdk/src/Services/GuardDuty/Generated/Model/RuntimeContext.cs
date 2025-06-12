@@ -121,6 +121,11 @@ namespace Amazon.GuardDuty.Model
         /// Represents options that control the behavior of a runtime operation or action. For
         /// example, a filesystem mount operation may contain a read-only flag.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Flags
         {
@@ -195,6 +200,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Specifies the Region of a process's address space such as stack and heap.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> MemoryRegions
         {

@@ -61,6 +61,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Details about the revoked security group rules.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<RevokedSecurityGroupRule> RevokedSecurityGroupRules
         {
@@ -80,6 +85,11 @@ namespace Amazon.EC2.Model
         /// The outbound rules that were unknown to the service. In some cases, <c>unknownIpPermissionSet</c>
         /// might be in a different format from the request parameter. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IpPermission> UnknownIpPermissions
         {

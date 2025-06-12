@@ -45,6 +45,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AllowedRenditions. When customer adds the allowed renditions
         /// rule for auto ABR ladder, they are required to add at leat one rendition to allowedRenditions
         /// list
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AllowedRenditionSize> AllowedRenditions
         {
@@ -62,6 +67,11 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ForceIncludeRenditions. When customer adds the force include
         /// renditions rule for auto ABR ladder, they are required to add at leat one rendition
         /// to forceIncludeRenditions list
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ForceIncludeRenditionSize> ForceIncludeRenditions
         {

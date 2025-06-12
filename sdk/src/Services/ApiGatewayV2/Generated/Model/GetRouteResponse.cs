@@ -98,6 +98,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// is configured, the client must provide an access token instead of an identity token
         /// for authorization purposes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AuthorizationScopes
         {
@@ -192,6 +197,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// The request models for the route. Supported only for WebSocket APIs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> RequestModels
         {
@@ -210,6 +220,11 @@ namespace Amazon.ApiGatewayV2.Model
         /// <para>
         /// The request parameters for the route. Supported only for WebSocket APIs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ParameterConstraints> RequestParameters
         {

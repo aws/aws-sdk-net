@@ -88,6 +88,11 @@ namespace Amazon.CloudWatch.Model
         /// The actions to execute when this alarm transitions to the <c>ALARM</c> state from
         /// any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> AlarmActions
@@ -220,6 +225,11 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The dimensions for the metric associated with the alarm.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
@@ -321,6 +331,11 @@ namespace Amazon.CloudWatch.Model
         /// The actions to execute when this alarm transitions to the <c>INSUFFICIENT_DATA</c>
         /// state from any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> InsufficientDataActions
@@ -363,6 +378,11 @@ namespace Amazon.CloudWatch.Model
         /// the Metrics array is the math expression that the alarm watches. This expression by
         /// designated by having <c>ReturnData</c> set to true.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MetricDataQuery> Metrics
         {
@@ -401,6 +421,11 @@ namespace Amazon.CloudWatch.Model
         /// The actions to execute when this alarm transitions to the <c>OK</c> state from any
         /// other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> OKActions

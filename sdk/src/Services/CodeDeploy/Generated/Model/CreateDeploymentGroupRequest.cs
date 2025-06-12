@@ -117,6 +117,11 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// A list of associated Amazon EC2 Auto Scaling groups.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AutoScalingGroups
         {
@@ -224,6 +229,11 @@ namespace Amazon.CodeDeploy.Model
         /// The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances
         /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EC2TagFilter> Ec2TagFilters
         {
@@ -265,6 +275,11 @@ namespace Amazon.CodeDeploy.Model
         /// as an Amazon ECS cluster and service name pair using the format <c>&lt;clustername&gt;:&lt;servicename&gt;</c>.
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ECSService> EcsServices
         {
@@ -302,6 +317,11 @@ namespace Amazon.CodeDeploy.Model
         /// The on-premises instance tags on which to filter. The deployment group includes on-premises
         /// instances with any of the specified tags. Cannot be used in the same call as <c>OnPremisesTagSet</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TagFilter> OnPremisesInstanceTagFilters
         {
@@ -393,6 +413,11 @@ namespace Amazon.CodeDeploy.Model
         /// and categorize them. Each tag consists of a key and an optional value, both of which
         /// you define. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {
@@ -450,6 +475,11 @@ namespace Amazon.CodeDeploy.Model
         /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
         /// a Trigger for an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TriggerConfig> TriggerConfigurations
         {

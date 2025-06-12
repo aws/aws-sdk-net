@@ -44,6 +44,11 @@ namespace Amazon.AWSHealth.Model
         /// A JSON set of elements including the <c>awsAccountId</c> and its <c>entityArn</c>,
         /// <c>entityValue</c> and its <c>entityArn</c>, <c>lastUpdatedTime</c>, and <c>statusCode</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AffectedEntity> Entities
         {
@@ -63,6 +68,11 @@ namespace Amazon.AWSHealth.Model
         /// A JSON set of elements of the failed response, including the <c>awsAccountId</c>,
         /// <c>errorMessage</c>, <c>errorName</c>, and <c>eventArn</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OrganizationAffectedEntitiesErrorItem> FailedSet
         {

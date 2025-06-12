@@ -64,6 +64,11 @@ namespace Amazon.Rekognition.Model
         /// An array of faces detected and added to the collection. For more information, see
         /// Searching Faces in a Collection in the Amazon Rekognition Developer Guide. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FaceRecord> FaceRecords
         {
@@ -131,6 +136,11 @@ namespace Amazon.Rekognition.Model
         /// request parameter filtered them out. To use the quality filter, you specify the <c>QualityFilter</c>
         /// request parameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UnindexedFace> UnindexedFaces
         {

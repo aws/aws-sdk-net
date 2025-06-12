@@ -68,6 +68,11 @@ namespace Amazon.Ivschat.Model
         /// Map keys and values can contain UTF-8 encoded text. The maximum length of this field
         /// is 1 KB total.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Attributes
@@ -88,6 +93,11 @@ namespace Amazon.Ivschat.Model
         /// Set of capabilities that the user is allowed to perform in the room. Default: None
         /// (the capability to view messages is implicitly included in all requests).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Capabilities
         {

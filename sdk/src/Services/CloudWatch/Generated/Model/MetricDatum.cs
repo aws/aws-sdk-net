@@ -58,6 +58,11 @@ namespace Amazon.CloudWatch.Model
         /// count. If you include a <c>Counts</c> array, it must include the same amount of values
         /// as the <c>Values</c> array.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> Counts
         {
@@ -76,6 +81,11 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The dimensions associated with the metric. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
@@ -238,6 +248,11 @@ namespace Amazon.CloudWatch.Model
         /// of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
         /// are not supported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<double> Values
         {

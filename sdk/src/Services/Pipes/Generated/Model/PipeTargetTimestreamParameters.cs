@@ -53,6 +53,11 @@ namespace Amazon.Pipes.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/concepts.html">Amazon
         /// Timestream for LiveAnalytics concepts</a> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public List<DimensionMapping> DimensionMappings
@@ -95,6 +100,11 @@ namespace Amazon.Pipes.Model
         /// Maps multiple measures from the source event to the same record in the specified Timestream
         /// for LiveAnalytics table.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
         public List<MultiMeasureMapping> MultiMeasureMappings
@@ -115,6 +125,11 @@ namespace Amazon.Pipes.Model
         /// Mappings of single source data fields to individual records in the specified Timestream
         /// for LiveAnalytics table.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]
         public List<SingleMeasureMapping> SingleMeasureMappings

@@ -160,6 +160,11 @@ namespace Amazon.BedrockRuntime.Model
         /// structured JSON Pointer with a <c>400</c> error code. if the JSON Pointer is valid,
         /// but the requested field is not in the model response, it is ignored by <c>Converse</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<string> AdditionalModelResponseFieldPaths
@@ -221,6 +226,11 @@ namespace Amazon.BedrockRuntime.Model
         /// <para>
         /// The messages that you want to send to the model.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Message> Messages
         {
@@ -313,6 +323,11 @@ namespace Amazon.BedrockRuntime.Model
         /// the values to fill in for them when running model invocation. This field is ignored
         /// if you don't specify a prompt resource in the <c>modelId</c> field.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, PromptVariableValues> PromptVariables
@@ -332,6 +347,11 @@ namespace Amazon.BedrockRuntime.Model
         /// <para>
         /// Key-value pairs that you can use to filter invocation logs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=16)]
         public Dictionary<string, string> RequestMetadata
@@ -352,6 +372,11 @@ namespace Amazon.BedrockRuntime.Model
         /// A prompt that provides instructions or context to the model about the task it should
         /// perform, or the persona it should adopt during the conversation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SystemContentBlock> System
         {

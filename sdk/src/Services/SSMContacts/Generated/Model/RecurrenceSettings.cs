@@ -47,6 +47,11 @@ namespace Amazon.SSMContacts.Model
         /// <para>
         /// Information about on-call rotations that recur daily.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<HandOffTime> DailySettings
         {
@@ -65,6 +70,11 @@ namespace Amazon.SSMContacts.Model
         /// <para>
         /// Information about on-call rotations that recur monthly.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MonthlySetting> MonthlySettings
         {
@@ -123,6 +133,11 @@ namespace Amazon.SSMContacts.Model
         /// <para>
         /// Information about the days of the week included in on-call rotation coverage.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<CoverageTime>> ShiftCoverages
         {
@@ -141,6 +156,11 @@ namespace Amazon.SSMContacts.Model
         /// <para>
         /// Information about on-call rotations that recur weekly.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<WeeklySetting> WeeklySettings
         {

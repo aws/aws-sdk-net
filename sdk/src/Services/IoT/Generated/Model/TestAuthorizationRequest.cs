@@ -56,6 +56,11 @@ namespace Amazon.IoT.Model
         /// A list of authorization info objects. Simulating authorization will create a response
         /// for each <c>authInfo</c> object in the list.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
         public List<AuthInfo> AuthInfos
@@ -112,6 +117,11 @@ namespace Amazon.IoT.Model
         /// When testing custom authorization, the policies specified here are treated as if they
         /// are attached to the principal being authorized.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PolicyNamesToAdd
         {
@@ -131,6 +141,11 @@ namespace Amazon.IoT.Model
         /// When testing custom authorization, the policies specified here are treated as if they
         /// are not attached to the principal being authorized.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PolicyNamesToSkip
         {

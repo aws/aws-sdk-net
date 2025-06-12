@@ -103,6 +103,11 @@ namespace Amazon.DynamoDBv2.Model
         /// you are adding a new global secondary index to the table, <c>AttributeDefinitions</c>
         /// must include the key element(s) of the new index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AttributeDefinition> AttributeDefinitions
         {
@@ -199,6 +204,11 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
         /// Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GlobalSecondaryIndexUpdate> GlobalSecondaryIndexUpdates
         {
@@ -307,6 +317,11 @@ namespace Amazon.DynamoDBv2.Model
         /// (Current version). 
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ReplicationGroupUpdate> ReplicaUpdates

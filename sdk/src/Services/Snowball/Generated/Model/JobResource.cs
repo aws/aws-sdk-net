@@ -45,6 +45,11 @@ namespace Amazon.Snowball.Model
         /// <para>
         /// The Amazon Machine Images (AMIs) associated with this job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Ec2AmiResource> Ec2AmiResources
         {
@@ -63,6 +68,11 @@ namespace Amazon.Snowball.Model
         /// <para>
         /// The Python-language Lambda functions for this job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LambdaResource> LambdaResources
         {
@@ -81,6 +91,11 @@ namespace Amazon.Snowball.Model
         /// <para>
         /// An array of <c>S3Resource</c> objects.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<S3Resource> S3Resources
         {

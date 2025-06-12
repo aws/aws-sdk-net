@@ -108,6 +108,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The IPv4 ranges.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2SecurityGroupIpRange> IpRanges
         {
@@ -126,6 +131,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The IPv6 ranges.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2SecurityGroupIpv6Range> Ipv6Ranges
         {
@@ -146,6 +156,11 @@ namespace Amazon.SecurityHub.Model
         /// this is the Amazon Web Services service to access through a VPC endpoint from instances
         /// associated with the security group.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2SecurityGroupPrefixListId> PrefixListIds
         {
@@ -187,6 +202,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The security group and Amazon Web Services account ID pairs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEc2SecurityGroupUserIdGroupPair> UserIdGroupPairs
         {

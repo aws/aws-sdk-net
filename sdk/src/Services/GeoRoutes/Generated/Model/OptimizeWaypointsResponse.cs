@@ -47,6 +47,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Details about the connection from one waypoint to the next, within the optimized sequence.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<WaypointOptimizationConnection> Connections
@@ -109,6 +114,11 @@ namespace Amazon.GeoRoutes.Model
         /// Returns waypoints that caused the optimization problem to fail, and the constraints
         /// that were unsatisfied leading to the failure.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<WaypointOptimizationImpedingWaypoint> ImpedingWaypoints
@@ -128,6 +138,11 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Waypoints in the order of the optimized sequence.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<WaypointOptimizationOptimizedWaypoint> OptimizedWaypoints

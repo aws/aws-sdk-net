@@ -57,6 +57,11 @@ namespace Amazon.DLM.Model
         ///  <b>[Event-based policies only]</b> The actions to be performed when the event-based
         /// policy is activated. You can specify only one action per policy.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<Action> Actions
@@ -127,6 +132,11 @@ namespace Amazon.DLM.Model
         /// copies. You can specify up to 3 destination Regions. If you do not want to create
         /// cross-Region copies, omit this parameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<CrossRegionCopyTarget> CrossRegionCopyTargets
@@ -334,6 +344,11 @@ namespace Amazon.DLM.Model
         /// target tags across all of the Outposts in your account.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<string> ResourceLocations
@@ -384,6 +399,11 @@ namespace Amazon.DLM.Model
         /// AMI lifecycle policies. Use <c>VOLUME </c>to create snapshots of individual volumes
         /// or use <c>INSTANCE</c> to create multi-volume snapshots from the volumes for an instance.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<string> ResourceTypes
@@ -432,6 +452,11 @@ namespace Amazon.DLM.Model
         /// for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one
         /// mandatory schedule and up to three optional schedules.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
         public List<Schedule> Schedules
@@ -452,6 +477,11 @@ namespace Amazon.DLM.Model
         ///  <b>[Custom snapshot and AMI policies only]</b> The single tag that identifies targeted
         /// resources for this policy.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> TargetTags

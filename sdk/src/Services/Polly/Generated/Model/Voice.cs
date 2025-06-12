@@ -54,6 +54,11 @@ namespace Amazon.Polly.Model
         /// first used for that language. Since Aditi is bilingual and fluent in both Indian English
         /// and Hindi, this parameter would show the code <c>hi-IN</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AdditionalLanguageCodes
         {
@@ -165,6 +170,11 @@ namespace Amazon.Polly.Model
         /// Specifies which engines (<c>standard</c>, <c>neural</c>, <c>long-form</c> or <c>generative</c>)
         /// are supported by a given voice.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedEngines
         {

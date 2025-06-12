@@ -133,6 +133,11 @@ namespace Amazon.ManagedGrafana.Model
         /// This list is only used when the workspace was created through the Amazon Web Services
         /// console, and the <c>permissionType</c> is <c>SERVICE_MANAGED</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> DataSources
@@ -399,6 +404,11 @@ namespace Amazon.ManagedGrafana.Model
         /// create IAM roles and permissions for, to allow Amazon Managed Grafana to use these
         /// channels.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NotificationDestinations
         {
@@ -418,6 +428,11 @@ namespace Amazon.ManagedGrafana.Model
         /// Specifies the organizational units that this workspace is allowed to use data sources
         /// from, if this workspace is in an account that is part of an organization.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public List<string> OrganizationalUnits
@@ -536,6 +551,11 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// The list of tags associated with the workspace.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags

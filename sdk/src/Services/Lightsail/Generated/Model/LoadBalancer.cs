@@ -78,6 +78,11 @@ namespace Amazon.Lightsail.Model
         /// A string to string map of the configuration options for your load balancer. Valid
         /// values are listed below.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> ConfigurationOptions
         {
@@ -169,6 +174,11 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// An array of InstanceHealthSummary objects describing the health of the load balancer.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InstanceHealthSummary> InstanceHealthSummary
         {
@@ -289,6 +299,11 @@ namespace Amazon.Lightsail.Model
         /// An array of public port settings for your load balancer. For HTTP, use port 80. For
         /// HTTPS, use port 443.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> PublicPorts
         {
@@ -365,6 +380,11 @@ namespace Amazon.Lightsail.Model
         /// in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {
@@ -385,6 +405,11 @@ namespace Amazon.Lightsail.Model
         /// about the SSL/TLS certificates. For example, if <c>true</c>, the certificate is attached
         /// to the load balancer.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<LoadBalancerTlsCertificateSummary> TlsCertificateSummaries
         {

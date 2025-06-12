@@ -54,6 +54,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Destinations. Destination settings for PUSH type inputs.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputDestinationRequest> Destinations
         {
@@ -69,6 +74,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property InputDevices. Settings for the devices.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputDeviceSettings> InputDevices
         {
@@ -101,6 +111,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property InputSecurityGroups. A list of security groups referenced
         /// by IDs to attach to the input.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InputSecurityGroups
         {
@@ -120,6 +135,11 @@ namespace Amazon.MediaLive.Model
         /// many as two. The only requirement is when you have more than one is that each Flow
         /// is in aseparate Availability Zone as this ensures your EML input is redundant to AZ
         /// issues.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MediaConnectFlowRequest> MediaConnectFlows
         {
@@ -197,6 +217,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property SdiSources.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SdiSources
         {
@@ -230,6 +255,11 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Sources. The source URLs for a PULL-type input. Every PULL
         /// type input needsexactly two source URLs for redundancy.Only specify sources for PULL
         /// type Inputs. Leave Destinations empty.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputSourceRequest> Sources
         {
@@ -260,6 +290,11 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Tags. A collection of key-value pairs.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

@@ -43,6 +43,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IDs of the Dedicated Hosts to disassociate from the event window.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DedicatedHostIds
         {
@@ -61,6 +66,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IDs of the instances to disassociate from the event window.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> InstanceIds
         {
@@ -80,6 +90,11 @@ namespace Amazon.EC2.Model
         /// The instance tags to disassociate from the event window. Any instances associated
         /// with the tags will be disassociated from the event window.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> InstanceTags
         {

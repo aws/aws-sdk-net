@@ -52,6 +52,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         ///  List of action groups with each action group defining tasks the inline collaborator
         /// agent needs to carry out. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AgentActionGroup> ActionGroups
         {
@@ -109,6 +114,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <para>
         ///  Settings of the collaborator agent. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CollaboratorConfiguration> CollaboratorConfigurations
         {
@@ -230,6 +240,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <para>
         ///  Knowledge base associated with the inline collaborator agent. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<KnowledgeBase> KnowledgeBases
         {

@@ -192,6 +192,11 @@ namespace Amazon.LexModelsV2.Model
         /// The updated list of contexts that must be active for the intent to be considered by
         /// Amazon Lex.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<InputContext> InputContexts
@@ -341,6 +346,11 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// The updated list of contexts that Amazon Lex activates when the intent is fulfilled.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<OutputContext> OutputContexts
@@ -414,6 +424,11 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// The updated list of sample utterances for the intent.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SampleUtterance> SampleUtterances
         {
@@ -433,6 +448,11 @@ namespace Amazon.LexModelsV2.Model
         /// The updated list of slots and their priorities that are elicited from the user for
         /// the intent.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SlotPriority> SlotPriorities
         {

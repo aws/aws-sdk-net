@@ -43,6 +43,11 @@ namespace Amazon.Connect.Model
         /// A list of user IDs. Supports variable injection of <c>$.ContactLens.ContactEvaluation.Agent.AgentId</c>
         /// for <c>OnContactEvaluationSubmit</c> event source. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> UserIds
         {
@@ -63,6 +68,11 @@ namespace Amazon.Connect.Model
         /// { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified
         /// tags will be notified.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> UserTags
         {

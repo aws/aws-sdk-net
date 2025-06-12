@@ -97,6 +97,11 @@ namespace Amazon.TranscribeStreaming.Model
         /// Contains entities identified as personally identifiable information (PII) in your
         /// transcription output.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CallAnalyticsEntity> Entities
         {
@@ -134,6 +139,11 @@ namespace Amazon.TranscribeStreaming.Model
         /// <para>
         /// Provides the issue that was detected in the specified segment.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<IssueDetected> IssuesDetected
         {
@@ -153,6 +163,11 @@ namespace Amazon.TranscribeStreaming.Model
         /// Contains words, phrases, or punctuation marks that are associated with the specified
         /// <c>UtteranceEvent</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CallAnalyticsItem> Items
         {

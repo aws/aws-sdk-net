@@ -135,6 +135,11 @@ namespace Amazon.EC2.Model
         /// the block device mapping when launching an instance</a> in the <i>Amazon EC2 User
         /// Guide</i>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InstanceBlockDeviceMappingSpecification> BlockDeviceMappings
         {
@@ -259,6 +264,11 @@ namespace Amazon.EC2.Model
         /// must specify the ID of at least one security group, even if it's just the default
         /// security group for the VPC.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Groups
         {

@@ -46,6 +46,11 @@ namespace Amazon.SecurityHub.Model
         /// Occurrences of sensitive data detected in Microsoft Excel workbooks, comma-separated
         /// value (CSV) files, or tab-separated value (TSV) files.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Cell> Cells
         {
@@ -65,6 +70,11 @@ namespace Amazon.SecurityHub.Model
         /// Occurrences of sensitive data detected in a non-binary text file or a Microsoft Word
         /// file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Range> LineRanges
         {
@@ -83,6 +93,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Occurrences of sensitive data detected in a binary text file.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Range> OffsetRanges
         {
@@ -101,6 +116,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Occurrences of sensitive data in an Adobe Portable Document Format (PDF) file.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Page> Pages
         {
@@ -120,6 +140,11 @@ namespace Amazon.SecurityHub.Model
         /// Occurrences of sensitive data in an Apache Avro object container or an Apache Parquet
         /// file.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Record> Records
         {

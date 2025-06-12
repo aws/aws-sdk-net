@@ -76,6 +76,11 @@ namespace Amazon.CloudTrail.Model
         /// field.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DataResource> DataResources
         {
@@ -99,6 +104,11 @@ namespace Amazon.CloudTrail.Model
         /// is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can
         /// exclude management event sources only in Regions that support the event source.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> ExcludeManagementEventSources
         {

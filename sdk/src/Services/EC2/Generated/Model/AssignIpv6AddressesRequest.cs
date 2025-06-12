@@ -86,6 +86,11 @@ namespace Amazon.EC2.Model
         /// The IPv6 addresses to be assigned to the network interface. You can't use this option
         /// if you're specifying a number of IPv6 addresses.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Ipv6Addresses
         {
@@ -124,6 +129,11 @@ namespace Amazon.EC2.Model
         /// One or more IPv6 prefixes assigned to the network interface. You can't use this option
         /// if you use the <c>Ipv6PrefixCount</c> option.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Ipv6Prefixes
         {

@@ -60,6 +60,11 @@ namespace Amazon.Lightsail.Model
         /// Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative
         /// names (in addition to the 1 primary domain). We do not support wildcards (<c>*.example.com</c>).
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CertificateAlternativeNames
         {
@@ -146,6 +151,11 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// Use the <c>TagResource</c> action to tag a resource after it's created.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

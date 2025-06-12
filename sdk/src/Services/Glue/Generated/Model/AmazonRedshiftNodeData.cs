@@ -103,6 +103,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Optional values when connecting to the Redshift cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AmazonRedshiftAdvancedOption> AdvancedOptions
         {
@@ -395,6 +400,11 @@ namespace Amazon.Glue.Model
         /// The list of column names used to determine a matching record when doing a MERGE or
         /// APPEND with upsert.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Option> SelectedColumns
         {
@@ -486,6 +496,11 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The array of schema output for a given node.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Option> TableSchema
         {

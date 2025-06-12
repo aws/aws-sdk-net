@@ -59,6 +59,11 @@ namespace Amazon.Batch.Model
         /// in a single job queue.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ComputeEnvironmentOrder> ComputeEnvironmentOrder
         {
@@ -99,6 +104,11 @@ namespace Amazon.Batch.Model
         /// after <c>maxTimeSeconds</c> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds
         /// is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<JobStateTimeLimitAction> JobStateTimeLimitActions
         {

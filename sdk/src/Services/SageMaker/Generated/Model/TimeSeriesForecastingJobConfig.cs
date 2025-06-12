@@ -210,6 +210,11 @@ namespace Amazon.SageMaker.Model
         /// or higher. Up to five forecast quantiles can be specified. When <c>ForecastQuantiles</c>
         /// is not provided, the AutoML job uses the quantiles p10, p50, and p90 as default.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<string> ForecastQuantiles
@@ -230,6 +235,11 @@ namespace Amazon.SageMaker.Model
         /// The collection of holiday featurization attributes used to incorporate national holiday
         /// information into your forecasting model.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<HolidayConfigAttributes> HolidayConfig

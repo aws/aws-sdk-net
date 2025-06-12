@@ -98,6 +98,11 @@ namespace Amazon.DataSync.Model
         /// The ARNs of the security groups that are used to configure the FSx for OpenZFS file
         /// system.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> SecurityGroupArns
@@ -140,6 +145,11 @@ namespace Amazon.DataSync.Model
         /// value can be an empty string. This value helps you manage, filter, and search for
         /// your resources. We recommend that you create a name tag for your location.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<TagListEntry> Tags

@@ -430,6 +430,11 @@ namespace Amazon.MemoryDB.Model
         /// <para>
         /// A list of security group names to associate with this cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -450,6 +455,11 @@ namespace Amazon.MemoryDB.Model
         /// stored in Amazon S3. The snapshot files are used to populate the new cluster. The
         /// Amazon S3 object name in the ARN cannot contain any commas.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SnapshotArns
         {
@@ -574,6 +584,11 @@ namespace Amazon.MemoryDB.Model
         /// (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following:
         /// Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=200)]
         public List<Tag> Tags

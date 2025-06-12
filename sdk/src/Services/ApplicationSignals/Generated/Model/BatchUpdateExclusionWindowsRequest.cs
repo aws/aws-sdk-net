@@ -45,6 +45,11 @@ namespace Amazon.ApplicationSignals.Model
         /// A list of exclusion windows to add to the specified SLOs. You can add up to 10 exclusion
         /// windows per SLO.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<ExclusionWindow> AddExclusionWindows
@@ -65,6 +70,11 @@ namespace Amazon.ApplicationSignals.Model
         /// A list of exclusion windows to remove from the specified SLOs. The window configuration
         /// must match an existing exclusion window.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<ExclusionWindow> RemoveExclusionWindows
@@ -84,6 +94,11 @@ namespace Amazon.ApplicationSignals.Model
         /// <para>
         /// The list of SLO IDs to add or remove exclusion windows from.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> SloIds

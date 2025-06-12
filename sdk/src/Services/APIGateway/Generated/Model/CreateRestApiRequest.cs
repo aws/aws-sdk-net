@@ -74,6 +74,11 @@ namespace Amazon.APIGateway.Model
         /// The list of binary media types supported by the RestApi. By default, the RestApi supports
         /// only UTF-8-encoded text payloads.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> BinaryMediaTypes
         {
@@ -230,6 +235,11 @@ namespace Amazon.APIGateway.Model
         /// key can be up to 128 characters and must not start with <c>aws:</c>. The tag value
         /// can be up to 256 characters.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {

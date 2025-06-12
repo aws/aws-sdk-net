@@ -46,6 +46,11 @@ namespace Amazon.DataPipeline.Model
         /// <para>
         /// The parameter objects used with the pipeline.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ParameterObject> ParameterObjects
         {
@@ -64,6 +69,11 @@ namespace Amazon.DataPipeline.Model
         /// <para>
         /// The parameter values used with the pipeline.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ParameterValue> ParameterValues
         {
@@ -101,6 +111,11 @@ namespace Amazon.DataPipeline.Model
         /// <para>
         /// The objects that define the pipeline changes to validate against the pipeline.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<PipelineObject> PipelineObjects

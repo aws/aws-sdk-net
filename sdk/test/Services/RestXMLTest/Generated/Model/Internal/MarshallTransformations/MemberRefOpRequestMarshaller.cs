@@ -58,7 +58,6 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXMLTest");
             request.HttpMethod = "POST";
             request.ResourcePath = "/path";
-
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -91,6 +90,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
                 throw new AmazonRestXMLTestException("Name can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
             
             request.HostPrefix = $"foo-{hostPrefixLabels.Name}.";
+
             return request;
         }
         private static MemberRefOpRequestMarshaller _instance = new MemberRefOpRequestMarshaller();        

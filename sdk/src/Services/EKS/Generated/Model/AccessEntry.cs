@@ -107,6 +107,11 @@ namespace Amazon.EKS.Model
         /// A <c>name</c> that you've specified in a Kubernetes <c>RoleBinding</c> or <c>ClusterRoleBinding</c>
         /// object so that Kubernetes authorizes the <c>principalARN</c> access to cluster objects.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> KubernetesGroups
         {
@@ -172,6 +177,11 @@ namespace Amazon.EKS.Model
         /// key and an optional value. You define both. Tags don't propagate to any other cluster
         /// or Amazon Web Services resources.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

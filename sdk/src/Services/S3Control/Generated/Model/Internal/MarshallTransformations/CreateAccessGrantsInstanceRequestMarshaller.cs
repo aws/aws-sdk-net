@@ -63,7 +63,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
             }
             request.ResourcePath = "/v20180820/accessgrantsinstance";
-
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -104,6 +103,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
+
 
             return request;
         }

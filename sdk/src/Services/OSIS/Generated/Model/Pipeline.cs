@@ -91,6 +91,11 @@ namespace Amazon.OSIS.Model
         /// <para>
         /// Destinations to which the pipeline writes data.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PipelineDestination> Destinations
         {
@@ -124,6 +129,11 @@ namespace Amazon.OSIS.Model
         /// <para>
         /// The ingestion endpoints for the pipeline, which you can send data to.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> IngestEndpointUrls
         {
@@ -269,6 +279,11 @@ namespace Amazon.OSIS.Model
         /// A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon Web
         /// Services services.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ServiceVpcEndpoint> ServiceVpcEndpoints
         {
@@ -323,6 +338,11 @@ namespace Amazon.OSIS.Model
         /// <para>
         /// A list of tags associated with the given pipeline.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {
@@ -341,6 +361,11 @@ namespace Amazon.OSIS.Model
         /// <para>
         /// The VPC interface endpoints that have access to the pipeline.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VpcEndpoint> VpcEndpoints
         {

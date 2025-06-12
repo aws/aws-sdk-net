@@ -68,6 +68,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification
         /// topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Warning> Warnings
         {

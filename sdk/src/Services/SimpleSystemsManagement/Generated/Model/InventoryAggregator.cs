@@ -43,6 +43,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Nested aggregators to further refine aggregation for an inventory type.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<InventoryAggregator> Aggregators
@@ -82,6 +87,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A user-defined set of one or more filters on which to aggregate inventory data. Groups
         /// return a count of resources that match and don't match the specified criteria.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
         public List<InventoryGroup> Groups

@@ -46,6 +46,11 @@ namespace Amazon.SimpleEmailV2.Model
         /// An object that contains a mapping between a <c>MetricDimensionName</c> and <c>MetricDimensionValue</c>
         /// to filter metrics by. Must contain a least 1 dimension but no more than 3 unique ones.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]
         public Dictionary<string, List<string>> Dimensions
@@ -84,6 +89,11 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// A list of <c>ExportMetric</c> objects to export.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
         public List<ExportMetric> Metrics

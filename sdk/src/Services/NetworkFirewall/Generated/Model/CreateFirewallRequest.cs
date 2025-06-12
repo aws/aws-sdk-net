@@ -126,6 +126,11 @@ namespace Amazon.NetworkFirewall.Model
         /// An optional setting indicating the specific traffic analysis types to enable on the
         /// firewall. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EnabledAnalysisTypes
         {
@@ -246,6 +251,11 @@ namespace Amazon.NetworkFirewall.Model
         /// to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint
         /// in each subnet. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SubnetMapping> SubnetMappings
         {
@@ -264,6 +274,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// The key:value pairs to associate with the resource.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags

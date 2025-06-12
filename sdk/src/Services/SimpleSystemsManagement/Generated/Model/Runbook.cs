@@ -135,6 +135,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The key-value map of execution parameters, which were supplied when calling <c>StartChangeRequestExecution</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Parameters
@@ -155,6 +160,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Information about the Amazon Web Services Regions and Amazon Web Services accounts
         /// targeted by the current Runbook operation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<TargetLocation> TargetLocations
@@ -175,6 +185,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps
         /// can't be specified together.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
         public List<Dictionary<string, List<string>>> TargetMaps
@@ -215,6 +230,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A key-value mapping to target resources that the runbook operation performs tasks
         /// on. Required if you specify <c>TargetParameterName</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets

@@ -102,6 +102,11 @@ namespace Amazon.CloudWatch.Model
         /// rule contains multiple keys, each combination of values for the keys counts as a unique
         /// contributor.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InsightRuleContributor> Contributors
         {
@@ -122,6 +127,11 @@ namespace Amazon.CloudWatch.Model
         /// used to classify contributors. If the rule contains more than one key, then each unique
         /// combination of values for the keys is counted as a unique contributor.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> KeyLabels
         {
@@ -140,6 +150,11 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// A time series of metric data points that matches the time period in the rule request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InsightRuleMetricDatapoint> MetricDatapoints
         {

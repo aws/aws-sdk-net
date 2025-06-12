@@ -43,6 +43,11 @@ namespace Amazon.Detective.Model
         /// The list of Amazon Web Services account identifiers for the member accounts that Detective
         /// successfully removed from the behavior graph.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<string> AccountIds
@@ -64,6 +69,11 @@ namespace Amazon.Detective.Model
         /// graph. For each member account, provides the reason that the deletion could not be
         /// processed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<UnprocessedAccount> UnprocessedAccounts
         {

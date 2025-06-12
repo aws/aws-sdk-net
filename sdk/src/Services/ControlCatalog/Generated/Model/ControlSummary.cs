@@ -51,6 +51,11 @@ namespace Amazon.ControlCatalog.Model
         /// such as <c>SH.S3.1</c>. Several aliases can refer to the same control across different
         /// Amazon Web Services services or compliance frameworks.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Aliases
         {
@@ -150,6 +155,11 @@ namespace Amazon.ControlCatalog.Model
         /// <c>GovernedResources</c> cannot be represented by available CloudFormation resource
         /// types, it’s returned as an empty list.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> GovernedResources
         {

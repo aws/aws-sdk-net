@@ -64,6 +64,11 @@ namespace Amazon.Macie2.Model
         /// that detected a type of sensitive data to exclude from the bucket's score. To include
         /// all sensitive data types in the score, don't specify any values for this array.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SuppressDataIdentifier> SuppressDataIdentifiers
         {

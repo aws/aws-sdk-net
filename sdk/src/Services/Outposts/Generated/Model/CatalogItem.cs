@@ -66,6 +66,11 @@ namespace Amazon.Outposts.Model
         /// <para>
         ///  Information about the EC2 capacity of an item. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EC2Capacity> EC2Capacities
         {
@@ -120,6 +125,11 @@ namespace Amazon.Outposts.Model
         /// <para>
         ///  The supported storage options for the catalog item. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedStorage
         {
@@ -138,6 +148,11 @@ namespace Amazon.Outposts.Model
         /// <para>
         ///  The uplink speed this catalog item requires for the connection to the Region. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<int> SupportedUplinkGbps
         {

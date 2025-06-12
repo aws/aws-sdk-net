@@ -61,6 +61,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The default configuration of a line chart's contribution analysis.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public List<ContributionAnalysisDefault> ContributionAnalysisDefaults
@@ -134,6 +139,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The forecast configuration of a line chart.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=10)]
         public List<ForecastConfiguration> ForecastConfigurations
@@ -225,6 +235,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The reference lines configuration of a line chart.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=20)]
         public List<ReferenceLine> ReferenceLines
@@ -280,6 +295,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The series item configuration of a line chart.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=2000)]
         public List<SeriesItem> Series

@@ -52,6 +52,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of additional Amazon EC2 security group IDs for the master node.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AdditionalMasterSecurityGroups
         {
@@ -70,6 +75,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of additional Amazon EC2 security group IDs for the core and task nodes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AdditionalSlaveSecurityGroups
         {
@@ -206,6 +216,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// this value, Amazon EMR chooses the Availability Zone for you. <c>RequestedEc2SubnetIDs</c>
         /// and <c>RequestedEc2AvailabilityZones</c> cannot be specified together.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RequestedEc2AvailabilityZones
         {
@@ -233,6 +248,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// EMR chooses the subnet for you. <c>RequestedEc2SubnetIDs</c> and <c>RequestedEc2AvailabilityZones</c>
         /// cannot be specified together.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RequestedEc2SubnetIds
         {

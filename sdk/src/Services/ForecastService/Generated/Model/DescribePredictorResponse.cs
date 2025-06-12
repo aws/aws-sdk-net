@@ -83,6 +83,11 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// When <c>PerformAutoML</c> is specified, the ARN of the chosen algorithm.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AutoMLAlgorithmArns
         {
@@ -149,6 +154,11 @@ namespace Amazon.ForecastService.Model
         /// An array of the ARNs of the dataset import jobs used to import training data for the
         /// predictor.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DatasetImportJobArns
         {
@@ -263,6 +273,11 @@ namespace Amazon.ForecastService.Model
         /// The forecast types used during predictor training. Default value is <c>["0.1","0.5","0.9"]</c>
         /// 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<string> ForecastTypes
@@ -549,6 +564,11 @@ namespace Amazon.ForecastService.Model
         /// running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the
         /// chosen hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> TrainingParameters

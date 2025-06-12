@@ -54,6 +54,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Information about the IDs of the threat actors involved in the signal.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=400)]
         public List<string> ActorIds
@@ -130,6 +135,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Information about the endpoint IDs associated with this signal.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=400)]
         public List<string> EndpointIds
@@ -207,6 +217,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Information about the unique identifiers of the resources involved in the signal.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=400)]
         public List<string> ResourceUids
@@ -246,6 +261,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Contains information about the indicators associated with the signals.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=400)]
         public List<Indicator> SignalIndicators

@@ -56,6 +56,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The container definitions that describe the containers that make up the task.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsDetails> ContainerDefinitions
         {
@@ -150,6 +155,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The Elastic Inference accelerators to use for the containers in the task.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionInferenceAcceleratorsDetails> InferenceAccelerators
         {
@@ -282,6 +292,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The placement constraint objects to use for tasks.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionPlacementConstraintsDetails> PlacementConstraints
         {
@@ -318,6 +333,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The task launch types that the task definition was validated against.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RequiresCompatibilities
         {
@@ -373,6 +393,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The data volume definitions for the task.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionVolumesDetails> Volumes
         {

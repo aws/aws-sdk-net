@@ -79,6 +79,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The command that is passed to the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Command
         {
@@ -115,6 +120,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The dependencies that are defined for container startup and shutdown.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails> DependsOn
         {
@@ -151,6 +161,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of DNS search domains that are presented to the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DnsSearchDomains
         {
@@ -169,6 +184,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of DNS servers that are presented to the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DnsServers
         {
@@ -187,6 +207,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A key-value map of labels to add to the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> DockerLabels
         {
@@ -206,6 +231,11 @@ namespace Amazon.SecurityHub.Model
         /// A list of strings to provide custom labels for SELinux and AppArmor multi-level security
         /// systems.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> DockerSecurityOptions
         {
@@ -224,6 +254,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The entry point that is passed to the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> EntryPoint
         {
@@ -242,6 +277,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The environment variables to pass to a container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails> Environment
         {
@@ -260,6 +300,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of files containing the environment variables to pass to a container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails> EnvironmentFiles
         {
@@ -297,6 +342,11 @@ namespace Amazon.SecurityHub.Model
         /// A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file
         /// on the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails> ExtraHosts
         {
@@ -409,6 +459,11 @@ namespace Amazon.SecurityHub.Model
         /// A list of links for the container in the form <c> <i>container_name</i>:<i>alias</i>
         /// </c>. Allows containers to communicate with each other without the need for port mappings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Links
         {
@@ -503,6 +558,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The mount points for the data volumes in the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails> MountPoints
         {
@@ -539,6 +599,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The list of port mappings for the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails> PortMappings
         {
@@ -631,6 +696,11 @@ namespace Amazon.SecurityHub.Model
         /// The type and amount of a resource to assign to a container. The only supported resource
         /// is a GPU.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails> ResourceRequirements
         {
@@ -649,6 +719,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The secrets to pass to the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails> Secrets
         {
@@ -705,6 +780,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of namespaced kernel parameters to set in the container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails> SystemControls
         {
@@ -723,6 +803,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of ulimits to set in the container. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails> Ulimits
         {
@@ -788,6 +873,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Data volumes to mount from another container.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails> VolumesFrom
         {

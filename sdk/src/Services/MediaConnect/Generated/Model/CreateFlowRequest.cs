@@ -74,6 +74,11 @@ namespace Amazon.MediaConnect.Model
         /// <para>
         ///  The entitlements that you want to grant on a flow.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GrantEntitlementRequest> Entitlements
         {
@@ -130,6 +135,11 @@ namespace Amazon.MediaConnect.Model
         ///  The media streams that you want to add to the flow. You can associate these media
         /// streams with sources and outputs on the flow.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AddMediaStreamRequest> MediaStreams
         {
@@ -186,6 +196,11 @@ namespace Amazon.MediaConnect.Model
         /// <para>
         ///  The outputs that you want to add to this flow.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AddOutputRequest> Outputs
         {
@@ -258,6 +273,11 @@ namespace Amazon.MediaConnect.Model
         /// <para>
         /// The sources that are assigned to the flow. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SetSourceRequest> Sources
         {
@@ -276,6 +296,11 @@ namespace Amazon.MediaConnect.Model
         /// <para>
         ///  The VPC interfaces you want on the flow.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<VpcInterfaceRequest> VpcInterfaces
         {

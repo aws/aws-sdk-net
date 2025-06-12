@@ -88,6 +88,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// A list of job attempts that are associated with this job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AttemptDetail> Attempts
         {
@@ -165,6 +170,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// A list of job IDs that this job depends on.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<JobDependency> DependsOn
         {
@@ -201,6 +211,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// A list of job attempts that are associated with this job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<EksAttemptDetail> EksAttempts
         {
@@ -410,6 +425,11 @@ namespace Amazon.Batch.Model
         /// Additional parameters that are passed to the job that replace parameter substitution
         /// placeholders or override any corresponding parameter defaults from the job definition.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Parameters
         {
@@ -429,6 +449,11 @@ namespace Amazon.Batch.Model
         /// The platform capabilities required by the job definition. If no value is specified,
         /// it defaults to <c>EC2</c>. Jobs run on Fargate resources specify <c>FARGATE</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PlatformCapabilities
         {
@@ -632,6 +657,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The tags that are applied to the job.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

@@ -60,6 +60,11 @@ namespace Amazon.Evs.Model
         /// <para>
         /// A check on the environment to identify instance health and VMware VCF licensing issues.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Check> Checks
         {
@@ -122,6 +127,11 @@ namespace Amazon.Evs.Model
         /// Amazon EVS stores credentials that are needed to install vCenter Server, NSX, and
         /// SDDC Manager.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Secret> Credentials
         {
@@ -259,6 +269,11 @@ namespace Amazon.Evs.Model
         ///  The license information that Amazon EVS requires to create an environment. Amazon
         /// EVS requires two license keys: a VCF solution key and a vSAN license key.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<LicenseInfo> LicenseInfo

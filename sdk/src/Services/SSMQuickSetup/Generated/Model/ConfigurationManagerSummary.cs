@@ -45,6 +45,11 @@ namespace Amazon.SSMQuickSetup.Model
         /// <para>
         /// A summary of the Quick Setup configuration definition.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ConfigurationDefinitionSummary> ConfigurationDefinitionSummaries
         {
@@ -121,6 +126,11 @@ namespace Amazon.SSMQuickSetup.Model
         /// manager. This includes deployment statuses, association statuses, drift statuses,
         /// health checks, and more.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StatusSummary> StatusSummaries
         {

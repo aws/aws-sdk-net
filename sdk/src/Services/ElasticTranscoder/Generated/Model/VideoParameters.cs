@@ -426,6 +426,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// The number of times you want the output gif to loop. Valid values include <c>Infinite</c>
         /// and integers between <c>0</c> and <c>100</c>, inclusive.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=30)]
         public Dictionary<string, string> CodecOptions
@@ -927,6 +932,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// fewer graphics in the job than you specify watermark settings in the preset, which
         /// allows you to use the same preset for up to four watermarks that have different dimensions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PresetWatermark> Watermarks
         {

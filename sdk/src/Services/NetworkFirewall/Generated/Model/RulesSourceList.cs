@@ -91,6 +91,11 @@ namespace Amazon.NetworkFirewall.Model
         /// 
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Targets
@@ -111,6 +116,11 @@ namespace Amazon.NetworkFirewall.Model
         /// The protocols you want to inspect. Specify <c>TLS_SNI</c> for <c>HTTPS</c>. Specify
         /// <c>HTTP_HOST</c> for <c>HTTP</c>. You can specify either or both. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TargetTypes

@@ -164,6 +164,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
         /// EMRRelease Guide</a>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Application> Applications
         {
@@ -218,6 +223,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BootstrapActionConfig> BootstrapActions
         {
@@ -237,6 +247,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// For Amazon EMR releases 4.0 and later. The list of configurations supplied for the
         /// Amazon EMR cluster that you are creating.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Configuration> Configurations
         {
@@ -525,6 +540,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// "ganglia" - launch the cluster with the Ganglia Monitoring System installed.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SupportedProductConfig> NewSupportedProducts
         {
@@ -564,6 +584,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The specified placement group configuration for an Amazon EMR cluster.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PlacementGroupConfig> PlacementGroupConfigs
         {
@@ -716,6 +741,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of steps to run.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<StepConfig> Steps
         {
@@ -749,6 +779,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// "mapr-m5" - launch the job flow using MapR M5 Edition.
         /// </para>
         ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SupportedProducts
         {
@@ -767,6 +802,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of tags to associate with a cluster and propagate to Amazon EC2 instances.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

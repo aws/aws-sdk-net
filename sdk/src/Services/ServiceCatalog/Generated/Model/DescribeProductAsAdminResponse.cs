@@ -45,6 +45,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Information about the associated budgets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BudgetDetail> Budgets
         {
@@ -82,6 +87,11 @@ namespace Amazon.ServiceCatalog.Model
         /// Information about the provisioning artifacts (also known as versions) for the specified
         /// product.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ProvisioningArtifactSummary> ProvisioningArtifactSummaries
         {
@@ -100,6 +110,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Information about the TagOptions associated with the product.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<TagOptionDetail> TagOptions
         {
@@ -118,6 +133,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Information about the tags associated with the product.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=50)]
         public List<Tag> Tags

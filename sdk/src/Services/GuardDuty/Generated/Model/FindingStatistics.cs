@@ -46,6 +46,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Represents a list of map of severity to count statistics for a set of findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("This parameter is deprecated. Please set GroupBy to 'SEVERITY' to return GroupedBySeverity instead.")]
         public Dictionary<string, int> CountBySeverity
@@ -65,6 +70,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Represents a list of map of accounts with a findings count associated with each account.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<AccountStatistics> GroupedByAccount
         {
@@ -84,6 +94,11 @@ namespace Amazon.GuardDuty.Model
         /// Represents a list of map of dates with a count of total findings generated on each
         /// date per severity level.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DateStatistics> GroupedByDate
         {
@@ -111,6 +126,11 @@ namespace Amazon.GuardDuty.Model
         /// otherwise, this will represent the most occurring finding types. The default value
         /// of <c>orderBy</c> is <c>DESC</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<FindingTypeStatistics> GroupedByFindingType
         {
@@ -129,6 +149,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Represents a list of map of top resources with a count of total findings.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ResourceStatistics> GroupedByResource
         {
@@ -147,6 +172,11 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Represents a list of map of total findings for each severity level.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SeverityStatistics> GroupedBySeverity
         {

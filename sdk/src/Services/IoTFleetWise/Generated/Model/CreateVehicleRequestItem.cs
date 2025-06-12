@@ -67,6 +67,11 @@ namespace Amazon.IoTFleetWise.Model
         /// Static information about a vehicle in a key-value pair. For example: <c>"engine Type"</c>
         /// : <c>"v6"</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Attributes
         {
@@ -125,6 +130,11 @@ namespace Amazon.IoTFleetWise.Model
         /// Associate state templates to track the state of the vehicle. State templates determine
         /// which signal updates the vehicle sends to the cloud.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<StateTemplateAssociation> StateTemplates
@@ -144,6 +154,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         /// Metadata which can be used to manage the vehicle.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

@@ -87,6 +87,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// The type of message. Valid values are TRANSACTIONAL for messages that are critical
         /// or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2)]
         public List<string> MessageTypes

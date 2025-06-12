@@ -43,6 +43,11 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property AvailabilityZones. The Availability Zones where the vpc
         /// subnets are located.The first Availability Zone applies to the first subnet in the
         /// list of subnets.The second Availability Zone applies to the second subnet.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AvailabilityZones
         {
@@ -59,6 +64,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceIds. A list of Elastic Network Interfaces
         /// created by MediaLive in the customer's VPC
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> NetworkInterfaceIds
         {
@@ -75,6 +85,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. A list of up EC2 VPC security group IDs
         /// attached to the Output VPC network interfaces.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SecurityGroupIds
         {
@@ -91,6 +106,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. A list of VPC subnet IDs from the same VPC.If
         /// STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> SubnetIds
         {

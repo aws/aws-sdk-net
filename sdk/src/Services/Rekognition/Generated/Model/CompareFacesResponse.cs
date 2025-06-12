@@ -48,6 +48,11 @@ namespace Amazon.Rekognition.Model
         /// a face, and the similarity score for the face in the bounding box and the face in
         /// the source image.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CompareFacesMatch> FaceMatches
         {
@@ -152,6 +157,11 @@ namespace Amazon.Rekognition.Model
         /// <para>
         /// An array of faces in the target image that did not match the source image face.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ComparedFace> UnmatchedFaces
         {

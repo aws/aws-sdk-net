@@ -95,6 +95,11 @@ namespace Amazon.ECS.Model
         /// A map of Docker driver-specific options passed through. This parameter maps to <c>DriverOpts</c>
         /// in the docker create-volume command and the <c>xxopt</c> option to docker volume create.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> DriverOpts
         {
@@ -115,6 +120,11 @@ namespace Amazon.ECS.Model
         /// in the docker container create command and the <c>xxlabel</c> option to docker volume
         /// create.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Labels
         {

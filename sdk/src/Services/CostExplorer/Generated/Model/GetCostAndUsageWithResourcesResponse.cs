@@ -45,6 +45,11 @@ namespace Amazon.CostExplorer.Model
         /// The attributes that apply to a specific dimension value. For example, if the value
         /// is a linked account, the attribute is that account name.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<DimensionValuesWithAttributes> DimensionValueAttributes
         {
@@ -64,6 +69,11 @@ namespace Amazon.CostExplorer.Model
         /// The groups that are specified by the <c>Filter</c> or <c>GroupBy</c> parameters in
         /// the request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GroupDefinition> GroupDefinitions
         {
@@ -103,6 +113,11 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// The time period that's covered by the results in the response.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ResultByTime> ResultsByTime
         {

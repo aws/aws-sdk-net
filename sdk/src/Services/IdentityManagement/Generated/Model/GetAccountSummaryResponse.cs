@@ -41,6 +41,11 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A set of key–value pairs containing information about IAM entity usage and IAM quotas.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, int> SummaryMap
         {

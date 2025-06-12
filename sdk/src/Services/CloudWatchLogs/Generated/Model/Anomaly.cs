@@ -164,6 +164,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// this anomaly that were detected at each of those runs. The times are specified in
         /// epoch time, which is the number of seconds since <c>January 1, 1970, 00:00:00 UTC</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, long> Histogram
@@ -224,6 +229,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// An array of ARNS of the log groups that contained log events considered to be part
         /// of this anomaly.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> LogGroupArnList
@@ -243,6 +253,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// An array of sample log event messages that are considered to be part of this anomaly.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<LogEvent> LogSamples
@@ -320,6 +335,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// An array of structures where each structure contains information about one token that
         /// makes up the pattern.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<PatternToken> PatternTokens

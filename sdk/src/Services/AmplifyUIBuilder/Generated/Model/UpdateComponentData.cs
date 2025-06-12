@@ -52,6 +52,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <para>
         /// The data binding information for the component's properties.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ComponentBindingPropertiesValue> BindingProperties
         {
@@ -70,6 +75,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <para>
         /// The components that are instances of the main component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ComponentChild> Children
         {
@@ -89,6 +99,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The configuration for binding a component's properties to a data model. Use this for
         /// a collection component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ComponentDataConfiguration> CollectionProperties
         {
@@ -128,6 +143,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The event configuration for the component. Use for the workflow feature in Amplify
         /// Studio that allows you to bind events and actions to components.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ComponentEvent> Events
         {
@@ -183,6 +203,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <para>
         /// Describes the properties that can be overriden to customize the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, Dictionary<string, string>> Overrides
         {
@@ -201,6 +226,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <para>
         /// Describes the component's properties.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ComponentProperty> Properties
         {
@@ -255,6 +285,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <para>
         /// A list of the unique variants of the main component being updated.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ComponentVariant> Variants
         {

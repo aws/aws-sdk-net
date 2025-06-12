@@ -280,6 +280,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// maximum of 5 subnets. The subnets must belong to the VPC specified by <c>VpcId</c>.
         /// Studio users can create a Workspace in any of the specified subnets.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SubnetIds
@@ -301,6 +306,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// pairs that consist of a required key string with a maximum of 128 characters, and
         /// an optional value string with a maximum of 256 characters.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<Tag> Tags
         {

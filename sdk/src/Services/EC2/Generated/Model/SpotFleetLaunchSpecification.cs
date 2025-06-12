@@ -82,6 +82,11 @@ namespace Amazon.EC2.Model
         /// be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
         /// and its encryption status is used for the volume encryption status.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
         {
@@ -264,6 +269,11 @@ namespace Amazon.EC2.Model
         /// instead.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
         {
@@ -326,6 +336,11 @@ namespace Amazon.EC2.Model
         /// If you specify a network interface, you must specify any security groups as part of
         /// the network interface instead of using this parameter.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<GroupIdentifier> SecurityGroups
         {
@@ -394,6 +409,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tags to apply during creation.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<SpotFleetTagSpecification> TagSpecifications
         {

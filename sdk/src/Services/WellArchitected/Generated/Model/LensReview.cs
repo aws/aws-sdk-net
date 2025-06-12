@@ -186,6 +186,11 @@ namespace Amazon.WellArchitected.Model
 
         /// <summary>
         /// Gets and sets the property PillarReviewSummaries.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<PillarReviewSummary> PillarReviewSummaries
         {
@@ -201,6 +206,11 @@ namespace Amazon.WellArchitected.Model
 
         /// <summary>
         /// Gets and sets the property PrioritizedRiskCounts.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, int> PrioritizedRiskCounts
         {
@@ -219,6 +229,11 @@ namespace Amazon.WellArchitected.Model
         /// <para>
         /// The profiles associated with the workload.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1)]
         public List<WorkloadProfile> Profiles
@@ -235,6 +250,11 @@ namespace Amazon.WellArchitected.Model
 
         /// <summary>
         /// Gets and sets the property RiskCounts.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, int> RiskCounts
         {

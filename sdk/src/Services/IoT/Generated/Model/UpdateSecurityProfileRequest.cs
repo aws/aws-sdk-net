@@ -66,6 +66,11 @@ namespace Amazon.IoT.Model
         /// any metric used in the profile's <c>behaviors</c>, but it is also retained for any
         /// metric specified here. Can be used with custom metrics; cannot be used with dimensions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [Obsolete("Use additionalMetricsToRetainV2.")]
         public List<string> AdditionalMetricsToRetain
@@ -87,6 +92,11 @@ namespace Amazon.IoT.Model
         /// any metric used in the profile's behaviors, but it is also retained for any metric
         /// specified here. Can be used with custom metrics; cannot be used with dimensions.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<MetricToRetain> AdditionalMetricsToRetainV2
         {
@@ -105,6 +115,11 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Where the alerts are sent. (Alerts are always sent to the console.)
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, AlertTarget> AlertTargets
         {
@@ -123,6 +138,11 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Specifies the behaviors that, when violated by a device (thing), cause an alert.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=100)]
         public List<Behavior> Behaviors

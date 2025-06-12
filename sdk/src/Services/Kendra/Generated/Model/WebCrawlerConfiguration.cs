@@ -218,6 +218,11 @@ namespace Amazon.Kendra.Model
         /// are included in the index. If a URL matches both an inclusion and exclusion pattern,
         /// the exclusion pattern takes precedence and the URL file isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> UrlExclusionPatterns
@@ -240,6 +245,11 @@ namespace Amazon.Kendra.Model
         /// excluded from the index. If a URL matches both an inclusion and exclusion pattern,
         /// the exclusion pattern takes precedence and the URL file isn't included in the index.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> UrlInclusionPatterns

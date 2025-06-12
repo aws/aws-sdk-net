@@ -79,6 +79,11 @@ namespace Amazon.CodePipeline.Model
         /// Using compute time for this action will incur separate charges in CodeBuild.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<string> Commands
@@ -118,6 +123,11 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         ///  <c>"Configuration" : { Key : Value },</c> 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Configuration
         {
@@ -136,6 +146,11 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The environment variables for the action.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<EnvironmentVariable> EnvironmentVariables
@@ -155,6 +170,11 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The name or ID of the artifact consumed by the action, such as a test or build artifact.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<InputArtifact> InputArtifacts
         {
@@ -212,6 +232,11 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The name or ID of the result of the action declaration, such as a test or build artifact.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OutputArtifact> OutputArtifacts
         {
@@ -231,6 +256,11 @@ namespace Amazon.CodePipeline.Model
         /// The list of variables that are to be exported from the compute action. This is specifically
         /// CodeBuild environment variables as used for that action.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
         public List<string> OutputVariables

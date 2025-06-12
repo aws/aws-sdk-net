@@ -139,6 +139,11 @@ namespace Amazon.Amplify.Model
         /// <para>
         /// Describes the automated branch creation glob patterns for an Amplify app. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AutoBranchCreationPatterns
         {
@@ -256,6 +261,11 @@ namespace Amazon.Amplify.Model
         /// <para>
         /// The custom redirect and rewrite rules for an Amplify app. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<CustomRule> CustomRules
         {
@@ -366,6 +376,11 @@ namespace Amazon.Amplify.Model
         /// <para>
         /// The environment variables for an Amplify app. 
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> EnvironmentVariables
         {

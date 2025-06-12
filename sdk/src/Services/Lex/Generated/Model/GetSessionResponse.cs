@@ -52,6 +52,11 @@ namespace Amazon.Lex.Model
         /// You can use a context to control the intents that can follow up an intent, or to modify
         /// the operation of your application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=20)]
         public List<ActiveContext> ActiveContexts
@@ -97,6 +102,11 @@ namespace Amazon.Lex.Model
         /// If you set the <c>checkpointLabelFilter</c> parameter in the request, the array contains
         /// only the intents with the specified label.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<IntentSummary> RecentIntentSummaryView
@@ -117,6 +127,11 @@ namespace Amazon.Lex.Model
         /// Map of key/value pairs representing the session-specific context information. It contains
         /// application information passed between Amazon Lex and a client application.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> SessionAttributes

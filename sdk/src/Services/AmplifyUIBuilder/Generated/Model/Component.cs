@@ -80,6 +80,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The information to connect a component's properties to data at runtime. You can't
         /// specify <c>tags</c> as a valid property for <c>bindingProperties</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, ComponentBindingPropertiesValue> BindingProperties
@@ -99,6 +104,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <para>
         /// A list of the component's <c>ComponentChild</c> instances.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ComponentChild> Children
         {
@@ -118,6 +128,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The data binding configuration for the component's properties. Use this for a collection
         /// component. You can't specify <c>tags</c> as a valid property for <c>collectionProperties</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ComponentDataConfiguration> CollectionProperties
         {
@@ -195,6 +210,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Describes the events that can be raised on the component. Use for the workflow feature
         /// in Amplify Studio that allows you to bind events and actions to components.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, ComponentEvent> Events
         {
@@ -270,6 +290,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Describes the component's properties that can be overriden in a customized instance
         /// of the component. You can't specify <c>tags</c> as a valid property for <c>overrides</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, Dictionary<string, string>> Overrides
@@ -290,6 +315,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Describes the component's properties. You can't specify <c>tags</c> as a valid property
         /// for <c>properties</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, ComponentProperty> Properties
@@ -345,6 +375,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <para>
         /// One or more key-value pairs to use when tagging the component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -364,6 +399,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// A list of the component's variants. A variant is a unique style configuration of a
         /// main component.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ComponentVariant> Variants

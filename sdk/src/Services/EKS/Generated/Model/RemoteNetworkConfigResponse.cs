@@ -43,6 +43,11 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The list of network CIDRs that can contain hybrid nodes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1)]
         public List<RemoteNodeNetwork> RemoteNodeNetworks
@@ -63,6 +68,11 @@ namespace Amazon.EKS.Model
         /// The list of network CIDRs that can contain pods that run Kubernetes webhooks on hybrid
         /// nodes.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Max=1)]
         public List<RemotePodNetwork> RemotePodNetworks

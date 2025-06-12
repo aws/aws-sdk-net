@@ -63,6 +63,11 @@ namespace Amazon.SecurityHub.Model
         /// domain names, or use the '.' prefix as a wildcard. For example, <c>.example.com</c>
         /// matches all domains that end with <c>example.com</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Targets
         {
@@ -82,6 +87,11 @@ namespace Amazon.SecurityHub.Model
         /// The protocols that you want to inspect. Specify <c>LS_SNI</c> for HTTPS. Specify <c>HTTP_HOST</c>
         /// for HTTP. You can specify either or both.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> TargetTypes
         {

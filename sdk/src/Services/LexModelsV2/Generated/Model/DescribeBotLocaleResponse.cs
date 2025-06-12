@@ -77,6 +77,11 @@ namespace Amazon.LexModelsV2.Model
         /// History of changes, such as when a locale is used in an alias, that have taken place
         /// for the locale.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<BotLocaleHistoryEvent> BotLocaleHistoryEvents
         {
@@ -171,6 +176,11 @@ namespace Amazon.LexModelsV2.Model
         /// if <c>botLocaleStatus</c> is <c>Failed</c>, Amazon Lex explains why it failed to build
         /// the bot.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> FailureReasons
         {
@@ -318,6 +328,11 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// Recommended actions to take to resolve an error in the <c>failureReasons</c> field.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> RecommendedActions
         {

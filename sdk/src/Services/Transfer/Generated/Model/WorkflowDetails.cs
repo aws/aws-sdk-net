@@ -53,6 +53,11 @@ namespace Amazon.Transfer.Model
         ///  <c>OnPartialUpload</c> can contain a maximum of one <c>WorkflowDetail</c> object.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<WorkflowDetail> OnPartialUpload
@@ -87,6 +92,11 @@ namespace Amazon.Transfer.Model
         ///  <c>OnUpload</c> can contain a maximum of one <c>WorkflowDetail</c> object.
         /// </para>
         ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<WorkflowDetail> OnUpload

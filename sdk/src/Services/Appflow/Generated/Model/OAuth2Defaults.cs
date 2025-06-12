@@ -45,6 +45,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// Auth code URLs that can be used for OAuth 2.0 authentication.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> AuthCodeUrls
         {
@@ -63,6 +68,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// List of custom parameters required for OAuth 2.0 authentication.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<OAuth2CustomParameter> Oauth2CustomProperties
         {
@@ -81,6 +91,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// OAuth 2.0 grant types supported by the connector.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> Oauth2GrantTypesSupported
         {
@@ -99,6 +114,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// OAuth 2.0 scopes that the connector supports.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> OauthScopes
         {
@@ -117,6 +137,11 @@ namespace Amazon.Appflow.Model
         /// <para>
         /// Token URLs that can be used for OAuth 2.0 authentication.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> TokenUrls
         {

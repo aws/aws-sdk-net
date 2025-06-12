@@ -69,6 +69,11 @@ namespace Amazon.Elasticsearch.Model
         /// The specific stages that the domain is going through to perform the configuration
         /// change.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<ChangeProgressStage> ChangeProgressStages
         {
@@ -87,6 +92,11 @@ namespace Amazon.Elasticsearch.Model
         /// <para>
         /// The list of properties involved in the domain configuration change that are completed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> CompletedProperties
         {
@@ -160,6 +170,11 @@ namespace Amazon.Elasticsearch.Model
         /// The list of properties involved in the domain configuration change that are still
         /// in pending.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<string> PendingProperties
         {

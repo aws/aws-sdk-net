@@ -62,8 +62,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("RoutingEndpoint", StringUtils.FromString(publicRequest.RoutingEndpoint));
             request.ResourcePath = "/2020-05-31/connection-group";
 
-
             request.UseQueryString = true;
+
             return request;
         }
         private static GetConnectionGroupByRoutingEndpointRequestMarshaller _instance = new GetConnectionGroupByRoutingEndpointRequestMarshaller();        

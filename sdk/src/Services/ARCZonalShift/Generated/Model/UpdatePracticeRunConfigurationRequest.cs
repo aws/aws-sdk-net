@@ -60,6 +60,11 @@ namespace Amazon.ARCZonalShift.Model
         /// and you don't want practice runs to shift traffic away at that time, you could set
         /// a blocked date for <c>2024-05-01</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
         public List<string> BlockedDates
@@ -93,6 +98,11 @@ namespace Amazon.ARCZonalShift.Model
         /// you might set the following recurring days and times as blocked windows, for example:
         /// <c>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
         public List<string> BlockedWindows
@@ -113,6 +123,11 @@ namespace Amazon.ARCZonalShift.Model
         /// Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as
         /// the blocking alarm for practice runs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<ControlCondition> BlockingAlarms
@@ -132,6 +147,11 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<ControlCondition> OutcomeAlarms
