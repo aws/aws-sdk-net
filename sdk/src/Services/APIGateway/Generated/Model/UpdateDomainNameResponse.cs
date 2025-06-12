@@ -160,7 +160,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainNameArn. 
         /// <para>
-        /// The ARN of the domain name. Supported only for private custom domain names. 
+        /// The ARN of the domain name. 
         /// </para>
         /// </summary>
         public string DomainNameArn

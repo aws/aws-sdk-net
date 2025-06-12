@@ -319,7 +319,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property TimeoutInMillis. 
         /// <para>
         /// Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds
-        /// or 29 seconds.
+        /// or 29 seconds. You can increase the default value to longer than 29 seconds for Regional
+        /// or private APIs only.
         /// </para>
         /// </summary>
         public int TimeoutInMillis
