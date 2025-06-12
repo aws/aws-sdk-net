@@ -30,17 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// This is the response object from the ListDirectoryBuckets operation.
+    /// Specifies the default server-side-encryption configuration.
     /// </summary>
-    public partial class ListDirectoryBucketsResponse : AmazonWebServiceResponse
+    public partial class ServerSideEncryptionConfiguration
     {
-        private List<S3Bucket> _buckets = AWSConfigs.InitializeCollections ? new List<S3Bucket>() : null;
-        private string _continuationToken;
+        private List<ServerSideEncryptionRule> _serverSideEncryptionRules = AWSConfigs.InitializeCollections ? new List<ServerSideEncryptionRule>() : null;
 
         /// <summary>
-        /// Gets and sets the property Buckets. 
+        /// Gets and sets the property ServerSideEncryptionRules. 
         /// <para>
-        /// The list of buckets owned by the requester. 
+        /// Container for information about a particular server-side encryption configuration
+        /// rule.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -48,36 +48,16 @@ namespace Amazon.S3.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<S3Bucket> Buckets
+        public List<ServerSideEncryptionRule> ServerSideEncryptionRules
         {
-            get { return this._buckets; }
-            set { this._buckets = value; }
+            get { return this._serverSideEncryptionRules; }
+            set { this._serverSideEncryptionRules = value; }
         }
 
-        // Check to see if Buckets property is set
-        internal bool IsSetBuckets()
+        // Check to see if ServerSideEncryptionRules property is set
+        internal bool IsSetServerSideEncryptionRules()
         {
-            return this._buckets != null && (this._buckets.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ContinuationToken. 
-        /// <para>
-        /// If <c>ContinuationToken</c> was sent with the request, it is included in the response.
-        /// You can use the returned <c>ContinuationToken</c> for pagination of the list response.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string ContinuationToken
-        {
-            get { return this._continuationToken; }
-            set { this._continuationToken = value; }
-        }
-
-        // Check to see if ContinuationToken property is set
-        internal bool IsSetContinuationToken()
-        {
-            return this._continuationToken != null;
+            return this._serverSideEncryptionRules != null && (this._serverSideEncryptionRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

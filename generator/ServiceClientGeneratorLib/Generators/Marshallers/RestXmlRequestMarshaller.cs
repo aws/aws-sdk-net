@@ -1913,7 +1913,7 @@ this.Write("\t\t\t\t}\r\n");
 
 			// Use shape's ListMarshallName if the structure is a list.
 			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName ?? "member" : member.MarshallName;
-			if(member.IsFlattened)
+			if(member.Shape.IsFlattened || member.IsFlattened)
 				marshallName =  member.LocationName ?? member.ModeledName;
 
         
@@ -2159,7 +2159,7 @@ this.Write("\t\t\t\t{\r\n");
         
         #line 442 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
-				if (!member.IsFlattened)
+				if (!member.IsFlattened && !member.Shape.IsFlattened)
 				{
 					if (string.IsNullOrEmpty(member.XmlNamespace))
 					{
@@ -2781,7 +2781,7 @@ this.Write("\t\t\t\t\t}\t\t\t\r\n");
         
         #line 545 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 
-			if (!member.IsFlattened)
+			if (!member.IsFlattened && !member.Shape.IsFlattened)
 			{
 
         
