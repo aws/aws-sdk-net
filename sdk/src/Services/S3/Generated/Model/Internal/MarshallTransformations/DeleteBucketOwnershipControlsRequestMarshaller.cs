@@ -67,7 +67,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketOwnershipControlsRequest.BucketName");
             request.ResourcePath = "/";
 
-            CustomizeMarshaller(request, publicRequest);
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteBucketOwnershipControlsRequestMarshaller _instance = new DeleteBucketOwnershipControlsRequestMarshaller();        
@@ -88,6 +88,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, DeleteBucketOwnershipControlsRequest publicRequest );
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketOwnershipControlsRequest publicRequest);
     }    
 }

@@ -117,13 +117,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		ProcessEndpointHostPrefixMembers(3, "publicRequest", this.Operation);
 	}
 #>
-			CustomizeMarshaller(request, publicRequest);
+			PostMarshallCustomization(request, publicRequest);
 			return request;
 		}
 <#				
 	this.AddRequestSingletonMethod();
 #>
-		partial void CustomizeMarshaller(DefaultRequest defaultRequest, <#=this.Operation.Name#>Request publicRequest);
+		partial void PostMarshallCustomization(DefaultRequest defaultRequest, <#=this.Operation.Name#>Request publicRequest);
 	}	
 }
 

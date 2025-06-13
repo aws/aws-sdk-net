@@ -66,7 +66,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
 
             request.UseQueryString = true;
-            CustomizeMarshaller(request, publicRequest);
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListDirectoryBucketsRequestMarshaller _instance = new ListDirectoryBucketsRequestMarshaller();        
@@ -87,6 +87,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, ListDirectoryBucketsRequest publicRequest );
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDirectoryBucketsRequest publicRequest);
     }    
 }

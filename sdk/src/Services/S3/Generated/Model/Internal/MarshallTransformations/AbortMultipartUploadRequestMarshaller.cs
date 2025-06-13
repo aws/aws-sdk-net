@@ -83,7 +83,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.ResourcePath = "/{Key+}";
 
             request.UseQueryString = true;
-            CustomizeMarshaller(request, publicRequest);
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static AbortMultipartUploadRequestMarshaller _instance = new AbortMultipartUploadRequestMarshaller();        
@@ -104,6 +104,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, AbortMultipartUploadRequest publicRequest );
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, AbortMultipartUploadRequest publicRequest);
     }    
 }

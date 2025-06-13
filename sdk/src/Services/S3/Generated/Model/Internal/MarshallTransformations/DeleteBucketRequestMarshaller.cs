@@ -66,7 +66,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketRequest.BucketName");
             request.ResourcePath = "/";
 
-            CustomizeMarshaller(request, publicRequest);
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteBucketRequestMarshaller _instance = new DeleteBucketRequestMarshaller();        
@@ -87,6 +87,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, DeleteBucketRequest publicRequest );
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketRequest publicRequest);
     }    
 }

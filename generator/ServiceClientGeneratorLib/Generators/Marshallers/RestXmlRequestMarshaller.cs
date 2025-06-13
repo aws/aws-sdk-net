@@ -241,7 +241,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\t\t\tCustomizeMarshaller(request, publicRequest);\r\n\t\t\treturn request;\r\n\t\t}\r\n");
+            this.Write("\t\t\tPostMarshallCustomization(request, publicRequest);\r\n\t\t\treturn request;\r\n\t\t}\r\n");
             
             #line 123 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 				
@@ -250,7 +250,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\t\tpartial void CustomizeMarshaller(DefaultRequest defaultRequest, ");
+            this.Write("\t\tpartial void PostMarshallCustomization(DefaultRequest defaultRequest, ");
             
             #line 126 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));

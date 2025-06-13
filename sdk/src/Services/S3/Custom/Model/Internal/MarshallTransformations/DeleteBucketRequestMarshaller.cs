@@ -27,7 +27,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	/// </summary>       
 	public partial class DeleteBucketRequestMarshaller : IMarshaller<IRequest, DeleteBucketRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
 	{
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, DeleteBucketRequest publicRequest)
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketRequest publicRequest)
         {
 			if (publicRequest.BucketRegion != null)
 			{
