@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,35 +12,44 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// GetBucketEncryptionResponse Response
+    /// This is the response object from the GetBucketEncryption operation.
     /// </summary>
-    public partial class GetBucketEncryptionResponse: AmazonWebServiceResponse
+    public partial class GetBucketEncryptionResponse : AmazonWebServiceResponse
     {
-        private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
+        private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
 
         /// <summary>
-        /// Container for server-side encryption configuration rules. Currently S3 supports one rule only.
+        /// Gets and sets the property ServerSideEncryptionConfiguration.
         /// </summary>
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration
         {
-            get { return this.serverSideEncryptionConfiguration; }
-            set { this.serverSideEncryptionConfiguration = value; }
+            get { return this._serverSideEncryptionConfiguration; }
+            set { this._serverSideEncryptionConfiguration = value; }
         }
 
         // Check to see if ServerSideEncryptionConfiguration property is set
         internal bool IsSetServerSideEncryptionConfiguration()
         {
-            return this.serverSideEncryptionConfiguration != null;
+            return this._serverSideEncryptionConfiguration != null;
         }
+
     }
 }

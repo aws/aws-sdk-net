@@ -197,6 +197,30 @@
                 }
             ]
         },
+        "ServerSideEncryptionRule":{
+            "modify":[
+                {
+                    "ApplyServerSideEncryptionByDefault": { "emitPropertyName": "ServerSideEncryptionByDefault"}
+                }
+            ]
+        },
+        "ServerSideEncryptionConfiguration":{
+            "modify":[
+                {
+                    "Rules" : { "emitPropertyName": "ServerSideEncryptionRules" }
+                }
+            ]
+        },
+        "ServerSideEncryptionByDefault":{
+            "modify": [
+                {
+                    "KMSMasterKeyID": {"emitPropertyName": "KMSMasterKeyID"}
+                },
+                {
+                    "SSEAlgorithm": {"emitPropertyName": "SSEAlgorithm"}
+                }
+            ]
+        },
         "UploadPartCopyRequest": {
             "modify": [
                 {
@@ -254,6 +278,9 @@
         "GetBucketCors": {
             "name": "GetCORSConfiguration"
         },
+        "GetBucketEncryption":{
+            "customizeMarshaller" : true
+        },
         "HeadObject": {
             "name": "GetObjectMetadata"
         },
@@ -297,6 +324,9 @@
     "shapeSubstitutions":{
         "Bucket":{
             "renameShape":"S3Bucket"
+        },
+        "ServerSideEncryption":{
+            "renameShape":"ServerSideEncryptionMethod"
         }
     }
 }
