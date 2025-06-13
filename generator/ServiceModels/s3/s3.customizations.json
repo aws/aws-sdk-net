@@ -278,6 +278,9 @@
         "GetBucketCors": {
             "name": "GetCORSConfiguration"
         },
+        "GetBucketEncryption":{
+            "customizeMarshaller" : true
+        },
         "HeadObject": {
             "name": "GetObjectMetadata"
         },
