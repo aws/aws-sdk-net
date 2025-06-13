@@ -34,9 +34,9 @@ using System.Xml;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListDirectoryBuckets Request Marshaller
+    /// DeleteBucket Request Marshaller
     /// </summary>       
-    public partial class ListDirectoryBucketsRequestMarshaller : IMarshaller<IRequest, ListDirectoryBucketsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteBucketRequestMarshaller : IMarshaller<IRequest, DeleteBucketRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListDirectoryBucketsRequest)input);
+            return this.Marshall((DeleteBucketRequest)input);
         }
 
         /// <summary>
@@ -53,25 +53,25 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListDirectoryBucketsRequest publicRequest)
+        public IRequest Marshall(DeleteBucketRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
-            request.HttpMethod = "GET";
-            
-            if (publicRequest.IsSetContinuationToken())
-                request.Parameters.Add("continuation-token", StringUtils.FromString(publicRequest.ContinuationToken));
-            
-            if (publicRequest.IsSetMaxDirectoryBuckets())
-                request.Parameters.Add("max-directory-buckets", StringUtils.FromInt(publicRequest.MaxDirectoryBuckets));
+            request.HttpMethod = "DELETE";
+        
+            if (publicRequest.IsSetExpectedBucketOwner()) 
+            {
+                request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
+            }
+            if (string.IsNullOrEmpty(publicRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketRequest.BucketName");
             request.ResourcePath = "/";
 
-            request.UseQueryString = true;
             CustomizeMarshaller(request, publicRequest);
             return request;
         }
-        private static ListDirectoryBucketsRequestMarshaller _instance = new ListDirectoryBucketsRequestMarshaller();        
+        private static DeleteBucketRequestMarshaller _instance = new DeleteBucketRequestMarshaller();        
 
-        internal static ListDirectoryBucketsRequestMarshaller GetInstance()
+        internal static DeleteBucketRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -79,7 +79,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListDirectoryBucketsRequestMarshaller Instance
+        public static DeleteBucketRequestMarshaller Instance
         {
             get
             {
@@ -87,6 +87,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void CustomizeMarshaller(DefaultRequest defaultRequest, ListDirectoryBucketsRequest publicRequest );
+        partial void CustomizeMarshaller(DefaultRequest defaultRequest, DeleteBucketRequest publicRequest );
     }    
 }

@@ -469,17 +469,17 @@ namespace ServiceClientGenerator
                 {
                     _s3AllowListOperations = new List<Operation>()
                     {
-                        //new Operation(this,"AbortMultipartUpload", DocumentRoot[OperationsKey]["AbortMultipartUpload"]),
-                        //new Operation(this,"CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
+                        new Operation(this,"AbortMultipartUpload", DocumentRoot[OperationsKey]["AbortMultipartUpload"]),
+                        new Operation(this,"CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
                         //new Operation(this, "CreateSession", DocumentRoot[OperationsKey]["CreateSession"]),
-                        //new Operation(this, "DeleteBucket", DocumentRoot[OperationsKey]["DeleteBucket"]),
-                        //new Operation(this, "DeleteBucketEncryption", DocumentRoot[OperationsKey]["DeleteBucketEncryption"]),
-                        //new Operation(this, "DeleteBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetadataTableConfiguration"]),
-                        //new Operation(this, "DeleteBucketOwnershipControls", DocumentRoot[OperationsKey]["DeleteBucketOwnershipControls"]),
-                        //new Operation(this, "DeleteBucketPolicy", DocumentRoot[OperationsKey]["DeleteBucketPolicy"]),
-                        //new Operation(this, "DeleteBucketReplication", DocumentRoot[OperationsKey]["DeleteBucketReplication"]),
-                        //new Operation(this, "DeleteBucketTagging", DocumentRoot[OperationsKey]["DeleteBucketTagging"]),
-                        //new Operation(this, "DeletePublicAccessBlock", DocumentRoot[OperationsKey]["DeletePublicAccessBlock"]),
+                        new Operation(this, "DeleteBucket", DocumentRoot[OperationsKey]["DeleteBucket"]),
+                        new Operation(this, "DeleteBucketEncryption", DocumentRoot[OperationsKey]["DeleteBucketEncryption"]),
+                        new Operation(this, "DeleteBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetadataTableConfiguration"]),
+                        new Operation(this, "DeleteBucketOwnershipControls", DocumentRoot[OperationsKey]["DeleteBucketOwnershipControls"]),
+                        new Operation(this, "DeleteBucketPolicy", DocumentRoot[OperationsKey]["DeleteBucketPolicy"]),
+                        new Operation(this, "DeleteBucketReplication", DocumentRoot[OperationsKey]["DeleteBucketReplication"]),
+                        new Operation(this, "DeleteBucketTagging", DocumentRoot[OperationsKey]["DeleteBucketTagging"]),
+                        new Operation(this, "DeletePublicAccessBlock", DocumentRoot[OperationsKey]["DeletePublicAccessBlock"]),
                         //new Operation(this, "GetBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["GetBucketAccelerateConfiguration"]),
                         //new Operation(this, "GetBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["GetBucketAnalyticsConfiguration"]),
                         //new Operation(this, "GetBucketEncryption", DocumentRoot[OperationsKey]["GetBucketEncryption"]),
@@ -549,23 +549,27 @@ namespace ServiceClientGenerator
         }
 
 
-        private List<string> _s3RequestMarshallerThrowGenericExceptionList;
+        private List<string> _s3RequestMarshallerThrowAmazonS3ExceptionList;
+        
         /// <summary>
         /// The names of s3 operations where we throw AmazonS3Exception instead of System.ArgumentException
-        /// when required parameters aren't set.
+        /// when required parameters aren't set. This is here because we aren't consistent on which exception
+        /// we throw when a required parameter isn't set for S3, since S3 is hand-coded. Now that we are moving
+        /// towards S3 generation and need to maintain backwards compatibility, we maintain a list of those
+        /// operations where the generic AmazonS3Exception is thrown.
         /// </summary>
         public List<string> S3RequestMarshallerThrowGenericExceptionList
         {
             get
             {
-                if (_s3RequestMarshallerThrowGenericExceptionList == null)
+                if (_s3RequestMarshallerThrowAmazonS3ExceptionList == null)
                 {
-                    _s3RequestMarshallerThrowGenericExceptionList = new List<string>()
+                    _s3RequestMarshallerThrowAmazonS3ExceptionList = new List<string>()
                     {
                         "CreateSession"
                     };
                 }
-                return _s3RequestMarshallerThrowGenericExceptionList;
+                return _s3RequestMarshallerThrowAmazonS3ExceptionList;
             }
         }
         public IDictionary<string, string> OperationsNameMapping
