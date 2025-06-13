@@ -1220,7 +1220,7 @@ namespace ServiceClientGenerator
             var data = _documentRoot[OperationModifiers.OperationModifiersKey];
             if (data == null)
                 return null;
-
+            
             var operation = data[operationName] as JsonData;
             if (operation == null)
                 return null;
@@ -1248,7 +1248,6 @@ namespace ServiceClientGenerator
                 modifiers.DeprecatedMessage = (string)operation[OperationModifiers.DeprecatedMessageKey];
             if (operation[OperationModifiers.StopPaginationOnSameTokenKey] != null && operation[OperationModifiers.StopPaginationOnSameTokenKey].IsBoolean)
                 modifiers.StopPaginationOnSameToken = (bool)operation[OperationModifiers.StopPaginationOnSameTokenKey];
-
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
             {
