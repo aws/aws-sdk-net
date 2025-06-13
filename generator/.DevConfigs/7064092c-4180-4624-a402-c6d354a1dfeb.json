@@ -1,7 +1,7 @@
 {  
   "core": {
     "changeLogMessages": [
-      "Generate CustomizeMarshaller partial method and make marshallers partial classes for rest-xml protocol services"
+      "Generate PostMarshallCustomization partial method and make marshallers partial classes for rest-xml protocol services"
     ],
     "type": "patch",
     "updateMinimum": true
