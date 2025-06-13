@@ -21,6 +21,7 @@ using ThirdParty.RuntimeBackports;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
+using System.Linq.Expressions;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -344,6 +345,16 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+        public IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextExpression filterExpression)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(ScanAsync)))
+            {
+                var scan = ConvertScan<T>(filterExpression, null);
+                return FromSearchAsync<T>(scan);
+            }
+        }
+
+        /// <inheritdoc/>
         [Obsolete("Use the ScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ScanAsync.")]
         public IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
         {
@@ -363,6 +374,17 @@ namespace Amazon.DynamoDBv2.DataModel
                 return FromSearchAsync<T>(scan);
             }
         }
+
+        /// <inheritdoc/>
+        public IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextExpression filterExpression, ScanConfig scanConfig)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(ScanAsync)))
+            {
+                var scan = ConvertScan<T>(filterExpression, scanConfig?.ToDynamoDBOperationConfig());
+                return FromSearchAsync<T>(scan);
+            }
+        }
+
 
         /// <inheritdoc/>
         public IAsyncSearch<T> FromScanAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ScanOperationConfig scanConfig)
