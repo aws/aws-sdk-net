@@ -17,7 +17,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	/// <summary>
 	/// <#=this.Operation.Name #> Request Marshaller
 	/// </summary>       
-	public class <#=this.Operation.Name#>RequestMarshaller : IMarshaller<IRequest, <#=this.Operation.Name#>Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
+	public partial class <#=this.Operation.Name#>RequestMarshaller : IMarshaller<IRequest, <#=this.Operation.Name#>Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
 	{
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -38,6 +38,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		{
 			var request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
 <#
+
 	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && this.Operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
 	{
 #>
@@ -65,9 +66,26 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	ProcessHeaderMembers("publicRequest", this.Operation.RequestHeaderMembers);		
 	ProcessUriMembers("publicRequest", this.Operation);	
 	ProcessQueryStringMembers("publicRequest", this.Operation);
+	if (this.Config.ServiceId == "S3")
+	{
+		// even though RequestUri contains the bucket name in s3. In reality, the bucket Name
+		// is part of the endpoint so we remove it.
+		string resourcePath = string.Empty;
+		if (this.Operation.RequestUri.StartsWith("/{Bucket}"))
+			resourcePath = this.Operation.RequestUri.Substring(9).Length == 0 ? "/" :  this.Operation.RequestUri.Substring(9);
+		else
+			resourcePath = this.Operation.RequestUri;
+#>
+			request.ResourcePath = "<#=resourcePath#>";
+<#
+	}
+	else
+	{
 #>
 			request.ResourcePath = "<#=this.Operation.RequestUri #>";
+
 <#   
+	}
 	// Process any members which are marshalled as part of the request body
 	if(this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
@@ -99,12 +117,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		ProcessEndpointHostPrefixMembers(3, "publicRequest", this.Operation);
 	}
 #>
-
+			PostMarshallCustomization(request, publicRequest);
 			return request;
 		}
 <#				
 	this.AddRequestSingletonMethod();
 #>
+		partial void PostMarshallCustomization(DefaultRequest defaultRequest, <#=this.Operation.Name#>Request publicRequest);
 	}	
 }
 
