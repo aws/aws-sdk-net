@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,77 +13,80 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.S3.Util;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ServerSideEncryptionRule unmarshaller
-    /// </summary>
+    /// Response Unmarshaller for ServerSideEncryptionRule Object
+    /// </summary>  
     public class ServerSideEncryptionRuleUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
         public ServerSideEncryptionRule Unmarshall(XmlUnmarshallerContext context)
         {
-            ServerSideEncryptionRule rule = new ServerSideEncryptionRule();
+            ServerSideEncryptionRule unmarshalledObject = new ServerSideEncryptionRule();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
-            if (context.IsStartOfDocument)
-                targetDepth += 2;
-
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ApplyServerSideEncryptionByDefault", targetDepth))
-                    {
-                        rule.ServerSideEncryptionByDefault = ServerSideEncryptionByDefaultUnmarshaller.Instance.Unmarshall(context);
-
-                        continue;
-                    }
-
                     if (context.TestExpression("BucketKeyEnabled", targetDepth))
                     {
-                        rule.BucketKeyEnabled = BoolUnmarshaller.Instance.Unmarshall(context);
-
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.BucketKeyEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ApplyServerSideEncryptionByDefault", targetDepth))
+                    {
+                        var unmarshaller = ServerSideEncryptionByDefaultUnmarshaller.Instance;
+                        unmarshalledObject.ServerSideEncryptionByDefault = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return rule;
+                    return unmarshalledObject;
                 }
-            }
-
-            return rule;
-
+            }          
+            return unmarshalledObject;
         }
-
-        private static ServerSideEncryptionRuleUnmarshaller _instance;
+        private static ServerSideEncryptionRuleUnmarshaller _instance = new ServerSideEncryptionRuleUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static ServerSideEncryptionRuleUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new ServerSideEncryptionRuleUnmarshaller();
-                }
                 return _instance;
             }
         }
-
     }
 }

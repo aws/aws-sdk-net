@@ -387,7 +387,8 @@ using Amazon.Runtime.Internal.Util;
     protected string DetermineXmlMarshallName(Member member, bool withPrefix = true)
     {
         var locationName = member.data[ServiceModel.LocationNameKey];
-        if (locationName == null)
+		// operation can be null if we're determining the xml marshall name for a structure
+        if (locationName == null && this.Operation != null)
         {
             var payload = this.Operation.ResponsePayloadMember;
             var shouldMarshallPayload = (payload != null && payload.IsStructure);
@@ -402,12 +403,119 @@ using Amazon.Runtime.Internal.Util;
 			return colonIndex != -1 ? locationNameString.Substring(colonIndex + 1) : locationNameString;
 		}
         // the locationName and modeled name must only be different for those members which are marshalled on the body.
-        if (!string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal) || member.MarshallLocation != MarshallLocation.Body)
-        {
-            return locationName.ToString();
-        }
+		// S3 / S3 Control don't seem to follow this rule where the location name is used only if it doesn't match the member's name.
+		if (locationName != null)
+		{
+			if (this.Config.ServiceId == "S3" || this.Config.ServiceId == "S3 Control" || !string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal) || member.MarshallLocation != MarshallLocation.Body)
+			{
+				return locationName.ToString();
+			}
+		}
+
+		// some structure members do not have a locationName.
+		// so if we get to this point, it is gauranteed that the marshall name we are determining is for a 
+		// member of a structure. For a member of a structure the marshall name is straightforward.
+		if (locationName == null)
+		{
+			return member.MarshallName;
+		}
         var memberTarget = member.Shape.data[ServiceModel.LocationNameKey];
 
         return memberTarget != null ? memberTarget.ToString() : member.Shape.Name;
     }
+#>
+
+<#+
+/// Only to be used by rest-xml response unmarshallers
+	protected void ProcessResponseBodyOrStructureMembers(Member member, bool isStructure)
+	{
+		string unmarshalledVariable = isStructure ? "unmarshalledObject" : "response";
+		if (member.Shape.IsList)
+		{
+			var listMarshallName = member.Shape.ListMarshallName ?? "member";
+
+			if (member.IsFlattened || member.Shape.IsFlattened)
+			{
+#>
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
+					{
+                        if (<#=unmarshalledVariable#>.<#=member.PropertyName#> == null)
+                        {
+                            <#=unmarshalledVariable#>.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
+                        }
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						<#=unmarshalledVariable#>.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+						continue;
+					}
+<#+
+			}
+			else
+            {
+#>
+				    if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>/<#=listMarshallName#>", targetDepth))
+				    {
+                        if (<#=unmarshalledVariable#>.<#=member.PropertyName#> == null)
+                        {
+                            <#=unmarshalledVariable#>.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
+                        }
+					    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+					    <#=unmarshalledVariable#>.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+					    continue;
+				    }
+<#+
+			}
+		}
+		else if(member.Shape.IsMap)
+		{
+			if(member.IsFlattened)
+            {
+#>
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
+					{
+                        if (response.<#=member.PropertyName#> == null)
+                        {
+                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
+                        }
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						<#=unmarshalledVariable#>.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+						continue;
+					}
+<#+
+			}
+			else
+			{
+#>
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
+					{
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						<#=unmarshalledVariable#>.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+						continue;
+					}
+<#+
+			}
+		}
+		else
+		{
+			if (!member.IsXmlAttribute)
+			{
+#>
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
+<#+		
+			}
+			else
+			{
+#>
+                    if (context.TestExpression("@<#=DetermineXmlMarshallName(member, false)#>", targetDepth - 1))
+
+<#+
+			}
+#>
+					{
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						<#=unmarshalledVariable#>.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+						continue;
+					}
+<#+
+		}
+	}
 #>

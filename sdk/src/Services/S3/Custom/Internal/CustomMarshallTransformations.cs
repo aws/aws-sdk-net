@@ -43,5 +43,17 @@ namespace Amazon.S3.Internal
             }
             return defaultRequest;
         }
+
+        /// <summary>
+        /// Custom Marshall transofmration for GetBucketEncryption operation. Meant for internal usage only.
+        /// </summary>
+        /// <param name="defaultRequest"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public static DefaultRequest CustomizeGetBucketEncryptionMarshaller(DefaultRequest defaultRequest, GetBucketEncryptionRequest request)
+        {
+            defaultRequest.Suppress404Exceptions = true;
+            return defaultRequest;
+        }
     }
 }
