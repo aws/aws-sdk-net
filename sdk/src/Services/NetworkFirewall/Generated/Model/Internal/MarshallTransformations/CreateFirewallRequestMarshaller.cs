@@ -69,6 +69,28 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAvailabilityZoneChangeProtection())
+                {
+                    context.Writer.WritePropertyName("AvailabilityZoneChangeProtection");
+                    context.Writer.Write(publicRequest.AvailabilityZoneChangeProtection);
+                }
+
+                if(publicRequest.IsSetAvailabilityZoneMappings())
+                {
+                    context.Writer.WritePropertyName("AvailabilityZoneMappings");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAvailabilityZoneMappingsListValue in publicRequest.AvailabilityZoneMappings)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AvailabilityZoneMappingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAvailabilityZoneMappingsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDeleteProtection())
                 {
                     context.Writer.WritePropertyName("DeleteProtection");
@@ -157,6 +179,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTransitGatewayId())
+                {
+                    context.Writer.WritePropertyName("TransitGatewayId");
+                    context.Writer.Write(publicRequest.TransitGatewayId);
                 }
 
                 if(publicRequest.IsSetVpcId())

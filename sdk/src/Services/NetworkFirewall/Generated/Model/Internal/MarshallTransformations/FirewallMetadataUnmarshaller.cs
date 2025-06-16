@@ -78,6 +78,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirewallName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TransitGatewayAttachmentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

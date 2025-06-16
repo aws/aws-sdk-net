@@ -31,7 +31,7 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Settings that are available for use in the rules in the <a>RuleGroup</a> where this
-    /// is defined.
+    /// is defined. See <a>CreateRuleGroup</a> or <a>UpdateRuleGroup</a> for usage.
     /// </summary>
     public partial class RuleVariables
     {

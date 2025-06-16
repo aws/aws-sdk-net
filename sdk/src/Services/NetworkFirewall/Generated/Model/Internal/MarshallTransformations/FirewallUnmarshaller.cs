@@ -66,6 +66,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AvailabilityZoneChangeProtection", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityZoneChangeProtection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AvailabilityZoneMappings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AvailabilityZoneMapping, AvailabilityZoneMappingUnmarshaller>(AvailabilityZoneMappingUnmarshaller.Instance);
+                    unmarshalledObject.AvailabilityZoneMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeleteProtection", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -142,6 +154,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TransitGatewayId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransitGatewayId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TransitGatewayOwnerAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransitGatewayOwnerAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VpcId", targetDepth))

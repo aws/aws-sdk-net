@@ -50,6 +50,8 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class Firewall
     {
+        private bool? _availabilityZoneChangeProtection;
+        private List<AvailabilityZoneMapping> _availabilityZoneMappings = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneMapping>() : null;
         private bool? _deleteProtection;
         private string _description;
         private List<string> _enabledAnalysisTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -63,7 +65,49 @@ namespace Amazon.NetworkFirewall.Model
         private bool? _subnetChangeProtection;
         private List<SubnetMapping> _subnetMappings = AWSConfigs.InitializeCollections ? new List<SubnetMapping>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _transitGatewayId;
+        private string _transitGatewayOwnerAccountId;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneChangeProtection. 
+        /// <para>
+        /// A setting indicating whether the firewall is protected against changes to its Availability
+        /// Zone configuration. When set to <c>TRUE</c>, you must first disable this protection
+        /// before adding or removing Availability Zones.
+        /// </para>
+        /// </summary>
+        public bool AvailabilityZoneChangeProtection
+        {
+            get { return this._availabilityZoneChangeProtection.GetValueOrDefault(); }
+            set { this._availabilityZoneChangeProtection = value; }
+        }
+
+        // Check to see if AvailabilityZoneChangeProtection property is set
+        internal bool IsSetAvailabilityZoneChangeProtection()
+        {
+            return this._availabilityZoneChangeProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneMappings. 
+        /// <para>
+        /// The Availability Zones where the firewall endpoints are created for a transit gateway-attached
+        /// firewall. Each mapping specifies an Availability Zone where the firewall processes
+        /// traffic.
+        /// </para>
+        /// </summary>
+        public List<AvailabilityZoneMapping> AvailabilityZoneMappings
+        {
+            get { return this._availabilityZoneMappings; }
+            set { this._availabilityZoneMappings = value; }
+        }
+
+        // Check to see if AvailabilityZoneMappings property is set
+        internal bool IsSetAvailabilityZoneMappings()
+        {
+            return this._availabilityZoneMappings != null && (this._availabilityZoneMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property DeleteProtection. 
@@ -336,6 +380,46 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayId. 
+        /// <para>
+        /// The unique identifier of the transit gateway associated with this firewall. This field
+        /// is only present for transit gateway-attached firewalls.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string TransitGatewayId
+        {
+            get { return this._transitGatewayId; }
+            set { this._transitGatewayId = value; }
+        }
+
+        // Check to see if TransitGatewayId property is set
+        internal bool IsSetTransitGatewayId()
+        {
+            return this._transitGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayOwnerAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID that owns the transit gateway. This may be different
+        /// from the firewall owner's account ID when using a shared transit gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string TransitGatewayOwnerAccountId
+        {
+            get { return this._transitGatewayOwnerAccountId; }
+            set { this._transitGatewayOwnerAccountId = value; }
+        }
+
+        // Check to see if TransitGatewayOwnerAccountId property is set
+        internal bool IsSetTransitGatewayOwnerAccountId()
+        {
+            return this._transitGatewayOwnerAccountId != null;
         }
 
         /// <summary>

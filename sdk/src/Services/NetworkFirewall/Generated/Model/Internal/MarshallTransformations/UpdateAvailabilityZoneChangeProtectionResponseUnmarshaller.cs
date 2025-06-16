@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeFirewallMetadata operation
+    /// Response Unmarshaller for UpdateAvailabilityZoneChangeProtection operation
     /// </summary>  
-    public class DescribeFirewallMetadataResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,16 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeFirewallMetadataResponse response = new DescribeFirewallMetadataResponse();
+            UpdateAvailabilityZoneChangeProtectionResponse response = new UpdateAvailabilityZoneChangeProtectionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("AvailabilityZoneChangeProtection", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AvailabilityZoneChangeProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FirewallArn", targetDepth))
@@ -64,28 +64,16 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     response.FirewallArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FirewallPolicyArn", targetDepth))
+                if (context.TestExpression("FirewallName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FirewallPolicyArn = unmarshaller.Unmarshall(context);
+                    response.FirewallName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("UpdateToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SupportedAvailabilityZones", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, AvailabilityZoneMetadata, StringUnmarshaller, AvailabilityZoneMetadataUnmarshaller>(StringUnmarshaller.Instance, AvailabilityZoneMetadataUnmarshaller.Instance);
-                    response.SupportedAvailabilityZones = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TransitGatewayAttachmentId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
+                    response.UpdateToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -119,9 +107,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTokenException"))
+                {
+                    return InvalidTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceOwnerCheckException"))
+                {
+                    return ResourceOwnerCheckExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -131,9 +127,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             return new AmazonNetworkFirewallException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeFirewallMetadataResponseUnmarshaller _instance = new DescribeFirewallMetadataResponseUnmarshaller();        
+        private static UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller _instance = new UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller();        
 
-        internal static DescribeFirewallMetadataResponseUnmarshaller GetInstance()
+        internal static UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +137,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeFirewallMetadataResponseUnmarshaller Instance
+        public static UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller Instance
         {
             get
             {

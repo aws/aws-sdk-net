@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FirewallStatus Object
+    /// Response Unmarshaller for AvailabilityZoneMapping Object
     /// </summary>  
-    public class FirewallStatusUnmarshaller : IUnmarshaller<FirewallStatus, XmlUnmarshallerContext>, IUnmarshaller<FirewallStatus, JsonUnmarshallerContext>
+    public class AvailabilityZoneMappingUnmarshaller : IUnmarshaller<AvailabilityZoneMapping, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityZoneMapping, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FirewallStatus IUnmarshaller<FirewallStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AvailabilityZoneMapping IUnmarshaller<AvailabilityZoneMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FirewallStatus Unmarshall(JsonUnmarshallerContext context)
+        public AvailabilityZoneMapping Unmarshall(JsonUnmarshallerContext context)
         {
-            FirewallStatus unmarshalledObject = new FirewallStatus();
+            AvailabilityZoneMapping unmarshalledObject = new AvailabilityZoneMapping();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CapacityUsageSummary", targetDepth))
-                {
-                    var unmarshaller = CapacityUsageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.CapacityUsageSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConfigurationSyncStateSummary", targetDepth))
+                if (context.TestExpression("AvailabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationSyncStateSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SyncStates", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, SyncState, StringUnmarshaller, SyncStateUnmarshaller>(StringUnmarshaller.Instance, SyncStateUnmarshaller.Instance);
-                    unmarshalledObject.SyncStates = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TransitGatewayAttachmentSyncState", targetDepth))
-                {
-                    var unmarshaller = TransitGatewayAttachmentSyncStateUnmarshaller.Instance;
-                    unmarshalledObject.TransitGatewayAttachmentSyncState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         }
 
 
-        private static FirewallStatusUnmarshaller _instance = new FirewallStatusUnmarshaller();        
+        private static AvailabilityZoneMappingUnmarshaller _instance = new AvailabilityZoneMappingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FirewallStatusUnmarshaller Instance
+        public static AvailabilityZoneMappingUnmarshaller Instance
         {
             get
             {

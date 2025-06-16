@@ -91,7 +91,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The last time that the rule group was changed.
+        /// A timestamp indicating when the rule group was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime

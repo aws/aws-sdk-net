@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeFirewallMetadata operation
+    /// Response Unmarshaller for DeleteNetworkFirewallTransitGatewayAttachment operation
     /// </summary>  
-    public class DescribeFirewallMetadataResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,46 +46,22 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeFirewallMetadataResponse response = new DescribeFirewallMetadataResponse();
+            DeleteNetworkFirewallTransitGatewayAttachmentResponse response = new DeleteNetworkFirewallTransitGatewayAttachmentResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FirewallArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FirewallArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FirewallPolicyArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FirewallPolicyArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SupportedAvailabilityZones", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, AvailabilityZoneMetadata, StringUnmarshaller, AvailabilityZoneMetadataUnmarshaller>(StringUnmarshaller.Instance, AvailabilityZoneMetadataUnmarshaller.Instance);
-                    response.SupportedAvailabilityZones = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("TransitGatewayAttachmentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TransitGatewayAttachmentStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TransitGatewayAttachmentStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -131,9 +107,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             return new AmazonNetworkFirewallException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeFirewallMetadataResponseUnmarshaller _instance = new DescribeFirewallMetadataResponseUnmarshaller();        
+        private static DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller _instance = new DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller();        
 
-        internal static DescribeFirewallMetadataResponseUnmarshaller GetInstance()
+        internal static DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +117,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeFirewallMetadataResponseUnmarshaller Instance
+        public static DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller Instance
         {
             get
             {
