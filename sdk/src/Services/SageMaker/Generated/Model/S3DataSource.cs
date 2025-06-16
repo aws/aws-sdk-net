@@ -181,6 +181,13 @@ namespace Amazon.SageMaker.Model
         /// want to use for model training. <c>AugmentedManifestFile</c> can only be used if the
         /// Channel's input mode is <c>Pipe</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you choose <c>Converse</c>, <c>S3Uri</c> identifies an Amazon S3 location that
+        /// contains data formatted according to Converse format. This format structures conversational
+        /// messages with specific roles and content types used for training and fine-tuning foundational
+        /// models.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public S3DataType S3DataType
