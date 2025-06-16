@@ -42,6 +42,12 @@ namespace Amazon.ECR.Model
         /// A list of authorization token data objects that correspond to the <c>registryIds</c>
         /// values in the request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The size of the authorization token returned by Amazon ECR is not fixed. We recommend
+        /// that you don't make assumptions about the maximum size.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<AuthorizationData> AuthorizationData
         {
