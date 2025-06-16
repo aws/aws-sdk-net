@@ -1,3 +1,20 @@
+### 4.0.32.0 (2025-06-16 18:18 UTC)
+* Bedrock (4.0.3.0)
+	* This release of the SDK has the API and documentation for the createcustommodel API. This feature lets you copy a Amazon SageMaker trained Amazon Nova model into Amazon Bedrock for inference.
+* DynamoDBv2 (4.0.1.7)
+	* Add DynamoDBRetryPolicy.WaitBeforeRetryAsync override method in order to use the updated retry logic for async retries.
+* ECR (4.0.2.0)
+	* The `DescribeImageScanning` API now includes `lastInUseAt` and `InUseCount` fields that can be used to prioritize vulnerability remediation for images that are actively being used.
+* NetworkFirewall (4.0.3.0)
+	* You can now create firewalls using a Transit Gateway instead of a VPC, resulting in a TGW attachment.
+* S3 (4.0.1.7)
+	* Generate DeleteBucket, DeleteBucketEncryption and related DeleteBucket operations. Generated AbortMultipartUpload and CreateBucketMetadataTableConfiguration. Delete relevant custom files.
+* SageMaker (4.0.8.0)
+	* This release 1) adds a new S3DataType Converse for SageMaker training 2)adds C8g R7gd M8g C6in P6 P6e instance type for SageMaker endpoint 3) adds m7i, r7i, c7i instance type for SageMaker Training and Processing.
+* Core 4.0.0.11
+	* Generate PostMarshallCustomization partial method and make marshallers partial classes for rest-xml protocol services
+	* All services packages updated to require new Core
+
 ### 4.0.31.0 (2025-06-12 18:24 UTC)
 * APIGateway (4.0.1.4)
 	* Documentation updates for Amazon API Gateway
