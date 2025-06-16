@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeFirewallMetadata operation
+    /// Response Unmarshaller for AssociateAvailabilityZones operation
     /// </summary>  
-    public class DescribeFirewallMetadataResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateAvailabilityZonesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,16 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeFirewallMetadataResponse response = new DescribeFirewallMetadataResponse();
+            AssociateAvailabilityZonesResponse response = new AssociateAvailabilityZonesResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("AvailabilityZoneMappings", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<AvailabilityZoneMapping, AvailabilityZoneMappingUnmarshaller>(AvailabilityZoneMappingUnmarshaller.Instance);
+                    response.AvailabilityZoneMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirewallArn", targetDepth))
@@ -64,28 +64,16 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     response.FirewallArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallPolicyArn", targetDepth))
+                if (context.TestExpression("FirewallName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FirewallPolicyArn = unmarshaller.Unmarshall(context, ref reader);
+                    response.FirewallName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("UpdateToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SupportedAvailabilityZones", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AvailabilityZoneMetadata, StringUnmarshaller, AvailabilityZoneMetadataUnmarshaller>(StringUnmarshaller.Instance, AvailabilityZoneMetadataUnmarshaller.Instance);
-                    response.SupportedAvailabilityZones = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TransitGatewayAttachmentId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context, ref reader);
+                    response.UpdateToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -113,13 +101,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientCapacityException"))
+                {
+                    return InsufficientCapacityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOperationException"))
+                {
+                    return InvalidOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTokenException"))
+                {
+                    return InvalidTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -133,9 +133,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             return new AmazonNetworkFirewallException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeFirewallMetadataResponseUnmarshaller _instance = new DescribeFirewallMetadataResponseUnmarshaller();        
+        private static AssociateAvailabilityZonesResponseUnmarshaller _instance = new AssociateAvailabilityZonesResponseUnmarshaller();        
 
-        internal static DescribeFirewallMetadataResponseUnmarshaller GetInstance()
+        internal static AssociateAvailabilityZonesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -143,7 +143,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeFirewallMetadataResponseUnmarshaller Instance
+        public static AssociateAvailabilityZonesResponseUnmarshaller Instance
         {
             get
             {

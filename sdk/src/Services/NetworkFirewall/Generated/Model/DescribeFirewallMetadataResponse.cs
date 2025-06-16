@@ -39,6 +39,7 @@ namespace Amazon.NetworkFirewall.Model
         private string _firewallPolicyArn;
         private FirewallStatusValue _status;
         private Dictionary<string, AvailabilityZoneMetadata> _supportedAvailabilityZones = AWSConfigs.InitializeCollections ? new Dictionary<string, AvailabilityZoneMetadata>() : null;
+        private string _transitGatewayAttachmentId;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -140,6 +141,26 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetSupportedAvailabilityZones()
         {
             return this._supportedAvailabilityZones != null && (this._supportedAvailabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayAttachmentId. 
+        /// <para>
+        /// The unique identifier of the transit gateway attachment associated with this firewall.
+        /// This field is only present for transit gateway-attached firewalls.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string TransitGatewayAttachmentId
+        {
+            get { return this._transitGatewayAttachmentId; }
+            set { this._transitGatewayAttachmentId = value; }
+        }
+
+        // Check to see if TransitGatewayAttachmentId property is set
+        internal bool IsSetTransitGatewayAttachmentId()
+        {
+            return this._transitGatewayAttachmentId != null;
         }
 
     }

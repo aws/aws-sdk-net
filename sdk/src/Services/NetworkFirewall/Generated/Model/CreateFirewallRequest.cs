@@ -68,6 +68,8 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class CreateFirewallRequest : AmazonNetworkFirewallRequest
     {
+        private bool? _availabilityZoneChangeProtection;
+        private List<AvailabilityZoneMapping> _availabilityZoneMappings = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneMapping>() : null;
         private bool? _deleteProtection;
         private string _description;
         private List<string> _enabledAnalysisTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -78,7 +80,64 @@ namespace Amazon.NetworkFirewall.Model
         private bool? _subnetChangeProtection;
         private List<SubnetMapping> _subnetMappings = AWSConfigs.InitializeCollections ? new List<SubnetMapping>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _transitGatewayId;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneChangeProtection. 
+        /// <para>
+        /// Optional. A setting indicating whether the firewall is protected against changes to
+        /// its Availability Zone configuration. When set to <c>TRUE</c>, you cannot add or remove
+        /// Availability Zones without first disabling this protection using <a>UpdateAvailabilityZoneChangeProtection</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>FALSE</c> 
+        /// </para>
+        /// </summary>
+        public bool? AvailabilityZoneChangeProtection
+        {
+            get { return this._availabilityZoneChangeProtection; }
+            set { this._availabilityZoneChangeProtection = value; }
+        }
+
+        // Check to see if AvailabilityZoneChangeProtection property is set
+        internal bool IsSetAvailabilityZoneChangeProtection()
+        {
+            return this._availabilityZoneChangeProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneMappings. 
+        /// <para>
+        /// Required. The Availability Zones where you want to create firewall endpoints for a
+        /// transit gateway-attached firewall. You must specify at least one Availability Zone.
+        /// Consider enabling the firewall in every Availability Zone where you have workloads
+        /// to maintain Availability Zone independence.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can modify Availability Zones later using <a>AssociateAvailabilityZones</a> or
+        /// <a>DisassociateAvailabilityZones</a>, but this may briefly disrupt traffic. The <c>AvailabilityZoneChangeProtection</c>
+        /// setting controls whether you can make these modifications.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AvailabilityZoneMapping> AvailabilityZoneMappings
+        {
+            get { return this._availabilityZoneMappings; }
+            set { this._availabilityZoneMappings = value; }
+        }
+
+        // Check to see if AvailabilityZoneMappings property is set
+        internal bool IsSetAvailabilityZoneMappings()
+        {
+            return this._availabilityZoneMappings != null && (this._availabilityZoneMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property DeleteProtection. 
@@ -291,6 +350,39 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayId. 
+        /// <para>
+        /// Required when creating a transit gateway-attached firewall. The unique identifier
+        /// of the transit gateway to attach to this firewall. You can provide either a transit
+        /// gateway from your account or one that has been shared with you through Resource Access
+        /// Manager.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// After creating the firewall, you cannot change the transit gateway association. To
+        /// use a different transit gateway, you must create a new firewall.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For information about creating firewalls, see <a>CreateFirewall</a>. For specific
+        /// guidance about transit gateway-attached firewalls, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tgw-firewall-considerations.html">Considerations
+        /// for transit gateway-attached firewalls</a> in the <i>Network Firewall Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string TransitGatewayId
+        {
+            get { return this._transitGatewayId; }
+            set { this._transitGatewayId = value; }
+        }
+
+        // Check to see if TransitGatewayId property is set
+        internal bool IsSetTransitGatewayId()
+        {
+            return this._transitGatewayId != null;
         }
 
         /// <summary>

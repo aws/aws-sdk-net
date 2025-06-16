@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.AcceptNetworkFirewallTransitGatewayAttachmentRequest.TransitGatewayAttachmentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-attach-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.AcceptNetworkFirewallTransitGatewayAttachmentResponse.TransitGatewayAttachmentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-attach-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.AssociateAvailabilityZonesRequest.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.AssociateAvailabilityZonesRequest.FirewallName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.AssociateAvailabilityZonesRequest.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.AssociateAvailabilityZonesResponse.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.AssociateAvailabilityZonesResponse.FirewallName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.AssociateAvailabilityZonesResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.AssociateFirewallPolicyRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -100,6 +148,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateFirewallRequest.TransitGatewayId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.CreateFirewallRequest.VpcId</property>
@@ -205,6 +259,18 @@
     <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteNetworkFirewallTransitGatewayAttachmentRequest.TransitGatewayAttachmentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-attach-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteNetworkFirewallTransitGatewayAttachmentResponse.TransitGatewayAttachmentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-attach-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DeleteResourcePolicyRequest.ResourceArn</property>
     <min>1</min>
     <max>256</max>
@@ -280,6 +346,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFirewallMetadataResponse.TransitGatewayAttachmentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-attach-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DescribeFirewallPolicyRequest.FirewallPolicyArn</property>
@@ -453,6 +525,42 @@
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DisassociateAvailabilityZonesRequest.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DisassociateAvailabilityZonesRequest.FirewallName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DisassociateAvailabilityZonesRequest.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DisassociateAvailabilityZonesResponse.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DisassociateAvailabilityZonesResponse.FirewallName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DisassociateAvailabilityZonesResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DisassociateSubnetsRequest.FirewallArn</property>
@@ -785,6 +893,18 @@
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.RejectNetworkFirewallTransitGatewayAttachmentRequest.TransitGatewayAttachmentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-attach-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.RejectNetworkFirewallTransitGatewayAttachmentResponse.TransitGatewayAttachmentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-attach-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.StartAnalysisReportRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -873,6 +993,42 @@
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateAvailabilityZoneChangeProtectionRequest.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateAvailabilityZoneChangeProtectionRequest.FirewallName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateAvailabilityZoneChangeProtectionRequest.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateAvailabilityZoneChangeProtectionResponse.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateAvailabilityZoneChangeProtectionResponse.FirewallName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateAvailabilityZoneChangeProtectionResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.UpdateFirewallAnalysisSettingsRequest.FirewallArn</property>
@@ -1235,6 +1391,12 @@
     <pattern>^subnet-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.AvailabilityZoneMapping.AvailabilityZone</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.CIDRSummary.AvailableCIDRCount</property>
     <min>0</min>
     <max>1000000</max>
@@ -1292,6 +1454,18 @@
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.Firewall.TransitGatewayId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.Firewall.TransitGatewayOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.Firewall.VpcId</property>
     <min>1</min>
     <max>128</max>
@@ -1308,6 +1482,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallMetadata.TransitGatewayAttachmentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^tgw-attach-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.FirewallPolicy.TLSInspectionConfigurationArn</property>

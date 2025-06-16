@@ -48,6 +48,7 @@ namespace Amazon.NetworkFirewall.Model
         private ConfigurationSyncState _configurationSyncStateSummary;
         private FirewallStatusValue _status;
         private Dictionary<string, SyncState> _syncStates = AWSConfigs.InitializeCollections ? new Dictionary<string, SyncState>() : null;
+        private TransitGatewayAttachmentSyncState _transitGatewayAttachmentSyncState;
 
         /// <summary>
         /// Gets and sets the property CapacityUsageSummary. 
@@ -152,6 +153,26 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetSyncStates()
         {
             return this._syncStates != null && (this._syncStates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayAttachmentSyncState. 
+        /// <para>
+        /// The synchronization state of the transit gateway attachment. This indicates whether
+        /// the firewall's transit gateway configuration is properly synchronized and operational.
+        /// Use this to verify that your transit gateway configuration changes have been applied.
+        /// </para>
+        /// </summary>
+        public TransitGatewayAttachmentSyncState TransitGatewayAttachmentSyncState
+        {
+            get { return this._transitGatewayAttachmentSyncState; }
+            set { this._transitGatewayAttachmentSyncState = value; }
+        }
+
+        // Check to see if TransitGatewayAttachmentSyncState property is set
+        internal bool IsSetTransitGatewayAttachmentSyncState()
+        {
+            return this._transitGatewayAttachmentSyncState != null;
         }
 
     }

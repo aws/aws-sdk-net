@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FirewallStatus Object
+    /// Response Unmarshaller for TransitGatewayAttachmentSyncState Object
     /// </summary>  
-    public class FirewallStatusUnmarshaller : IJsonUnmarshaller<FirewallStatus, JsonUnmarshallerContext>
+    public class TransitGatewayAttachmentSyncStateUnmarshaller : IJsonUnmarshaller<TransitGatewayAttachmentSyncState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FirewallStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TransitGatewayAttachmentSyncState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            FirewallStatus unmarshalledObject = new FirewallStatus();
+            TransitGatewayAttachmentSyncState unmarshalledObject = new TransitGatewayAttachmentSyncState();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,22 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityUsageSummary", targetDepth))
-                {
-                    var unmarshaller = CapacityUsageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.CapacityUsageSummary = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ConfigurationSyncStateSummary", targetDepth))
+                if (context.TestExpression("AttachmentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationSyncStateSummary = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AttachmentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SyncStates", targetDepth))
+                if (context.TestExpression("TransitGatewayAttachmentStatus", targetDepth))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, SyncState, StringUnmarshaller, SyncStateUnmarshaller>(StringUnmarshaller.Instance, SyncStateUnmarshaller.Instance);
-                    unmarshalledObject.SyncStates = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TransitGatewayAttachmentSyncState", targetDepth))
-                {
-                    var unmarshaller = TransitGatewayAttachmentSyncStateUnmarshaller.Instance;
-                    unmarshalledObject.TransitGatewayAttachmentSyncState = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransitGatewayAttachmentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +79,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         }
 
 
-        private static FirewallStatusUnmarshaller _instance = new FirewallStatusUnmarshaller();        
+        private static TransitGatewayAttachmentSyncStateUnmarshaller _instance = new TransitGatewayAttachmentSyncStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FirewallStatusUnmarshaller Instance
+        public static TransitGatewayAttachmentSyncStateUnmarshaller Instance
         {
             get
             {
