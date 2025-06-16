@@ -29,7 +29,6 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
-using Amazon.S3.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
@@ -37,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetBucketEncryption Request Marshaller
     /// </summary>       
-    public class GetBucketEncryptionRequestMarshaller : IMarshaller<IRequest, GetBucketEncryptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetBucketEncryptionRequestMarshaller : IMarshaller<IRequest, GetBucketEncryptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,7 +67,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketEncryptionRequest.BucketName");
             request.ResourcePath = "/";
 
-            request = CustomMarshallTransformations.CustomizeGetBucketEncryptionMarshaller(request, publicRequest);
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetBucketEncryptionRequestMarshaller _instance = new GetBucketEncryptionRequestMarshaller();        
@@ -89,5 +88,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketEncryptionRequest publicRequest);
     }    
 }

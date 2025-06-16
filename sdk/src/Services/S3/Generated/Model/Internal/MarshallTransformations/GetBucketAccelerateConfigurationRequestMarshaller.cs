@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetBucketAccelerateConfiguration Request Marshaller
     /// </summary>       
-    public class GetBucketAccelerateConfigurationRequestMarshaller : IMarshaller<IRequest, GetBucketAccelerateConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetBucketAccelerateConfigurationRequestMarshaller : IMarshaller<IRequest, GetBucketAccelerateConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -72,6 +72,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketAccelerateConfigurationRequest.BucketName");
             request.ResourcePath = "/";
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetBucketAccelerateConfigurationRequestMarshaller _instance = new GetBucketAccelerateConfigurationRequestMarshaller();        
@@ -92,5 +93,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketAccelerateConfigurationRequest publicRequest);
     }    
 }

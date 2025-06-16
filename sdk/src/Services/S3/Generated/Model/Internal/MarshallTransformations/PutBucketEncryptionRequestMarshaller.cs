@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// PutBucketEncryption Request Marshaller
     /// </summary>       
-    public class PutBucketEncryptionRequestMarshaller : IMarshaller<IRequest, PutBucketEncryptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class PutBucketEncryptionRequestMarshaller : IMarshaller<IRequest, PutBucketEncryptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -130,6 +130,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutBucketEncryptionRequestMarshaller _instance = new PutBucketEncryptionRequestMarshaller();        
@@ -150,5 +151,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketEncryptionRequest publicRequest);
     }    
 }
