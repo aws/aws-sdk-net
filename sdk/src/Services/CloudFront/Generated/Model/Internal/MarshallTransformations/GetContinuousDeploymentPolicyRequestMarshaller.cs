@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetContinuousDeploymentPolicy Request Marshaller
     /// </summary>       
-    public class GetContinuousDeploymentPolicyRequestMarshaller : IMarshaller<IRequest, GetContinuousDeploymentPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetContinuousDeploymentPolicyRequestMarshaller : IMarshaller<IRequest, GetContinuousDeploymentPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/continuous-deployment-policy/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetContinuousDeploymentPolicyRequestMarshaller _instance = new GetContinuousDeploymentPolicyRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetContinuousDeploymentPolicyRequest publicRequest);
     }    
 }

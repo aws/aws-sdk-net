@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ChangeTagsForResource Request Marshaller
     /// </summary>       
-    public class ChangeTagsForResourceRequestMarshaller : IMarshaller<IRequest, ChangeTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ChangeTagsForResourceRequestMarshaller : IMarshaller<IRequest, ChangeTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -64,6 +64,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field ResourceId set");
             request.AddPathResource("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
             request.ResourcePath = "/2013-04-01/tags/{ResourceType}/{ResourceId}";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -113,7 +114,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ChangeTagsForResourceRequestMarshaller _instance = new ChangeTagsForResourceRequestMarshaller();        
@@ -134,5 +135,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ChangeTagsForResourceRequest publicRequest);
     }    
 }

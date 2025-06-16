@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetHostedZoneCount Request Marshaller
     /// </summary>       
-    public class GetHostedZoneCountRequestMarshaller : IMarshaller<IRequest, GetHostedZoneCountRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetHostedZoneCountRequestMarshaller : IMarshaller<IRequest, GetHostedZoneCountRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/hostedzonecount";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetHostedZoneCountRequestMarshaller _instance = new GetHostedZoneCountRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetHostedZoneCountRequest publicRequest);
     }    
 }

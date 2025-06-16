@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListHealthChecks Request Marshaller
     /// </summary>       
-    public class ListHealthChecksRequestMarshaller : IMarshaller<IRequest, ListHealthChecksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListHealthChecksRequestMarshaller : IMarshaller<IRequest, ListHealthChecksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/healthcheck";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListHealthChecksRequestMarshaller _instance = new ListHealthChecksRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListHealthChecksRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetJobTagging Request Marshaller
     /// </summary>       
-    public class GetJobTaggingRequestMarshaller : IMarshaller<IRequest, GetJobTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetJobTaggingRequestMarshaller : IMarshaller<IRequest, GetJobTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/jobs/{id}/tagging";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetJobTaggingRequestMarshaller _instance = new GetJobTaggingRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetJobTaggingRequest publicRequest);
     }    
 }

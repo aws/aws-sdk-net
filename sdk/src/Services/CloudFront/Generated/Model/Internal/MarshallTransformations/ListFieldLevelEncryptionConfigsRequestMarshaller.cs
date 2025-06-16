@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListFieldLevelEncryptionConfigs Request Marshaller
     /// </summary>       
-    public class ListFieldLevelEncryptionConfigsRequestMarshaller : IMarshaller<IRequest, ListFieldLevelEncryptionConfigsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListFieldLevelEncryptionConfigsRequestMarshaller : IMarshaller<IRequest, ListFieldLevelEncryptionConfigsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/field-level-encryption";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListFieldLevelEncryptionConfigsRequestMarshaller _instance = new ListFieldLevelEncryptionConfigsRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListFieldLevelEncryptionConfigsRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetAccessGrantsInstanceForPrefix Request Marshaller
     /// </summary>       
-    public class GetAccessGrantsInstanceForPrefixRequestMarshaller : IMarshaller<IRequest, GetAccessGrantsInstanceForPrefixRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetAccessGrantsInstanceForPrefixRequestMarshaller : IMarshaller<IRequest, GetAccessGrantsInstanceForPrefixRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -67,8 +67,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("s3prefix", StringUtils.FromString(publicRequest.S3Prefix));
             request.ResourcePath = "/v20180820/accessgrantsinstance/prefix";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetAccessGrantsInstanceForPrefixRequestMarshaller _instance = new GetAccessGrantsInstanceForPrefixRequestMarshaller();        
@@ -89,5 +90,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetAccessGrantsInstanceForPrefixRequest publicRequest);
     }    
 }

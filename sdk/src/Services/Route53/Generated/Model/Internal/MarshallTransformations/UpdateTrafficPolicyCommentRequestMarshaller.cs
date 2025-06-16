@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateTrafficPolicyComment Request Marshaller
     /// </summary>       
-    public class UpdateTrafficPolicyCommentRequestMarshaller : IMarshaller<IRequest, UpdateTrafficPolicyCommentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class UpdateTrafficPolicyCommentRequestMarshaller : IMarshaller<IRequest, UpdateTrafficPolicyCommentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -64,6 +64,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field Version set");
             request.AddPathResource("{Version}", StringUtils.FromInt(publicRequest.Version));
             request.ResourcePath = "/2013-04-01/trafficpolicy/{Id}/{Version}";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -86,7 +87,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateTrafficPolicyCommentRequestMarshaller _instance = new UpdateTrafficPolicyCommentRequestMarshaller();        
@@ -107,5 +108,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateTrafficPolicyCommentRequest publicRequest);
     }    
 }

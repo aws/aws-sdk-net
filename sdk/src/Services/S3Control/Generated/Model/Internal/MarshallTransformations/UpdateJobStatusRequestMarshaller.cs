@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateJobStatus Request Marshaller
     /// </summary>       
-    public class UpdateJobStatusRequestMarshaller : IMarshaller<IRequest, UpdateJobStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class UpdateJobStatusRequestMarshaller : IMarshaller<IRequest, UpdateJobStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -73,8 +73,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("statusUpdateReason", StringUtils.FromString(publicRequest.StatusUpdateReason));
             request.ResourcePath = "/v20180820/jobs/{id}/status";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateJobStatusRequestMarshaller _instance = new UpdateJobStatusRequestMarshaller();        
@@ -95,5 +96,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateJobStatusRequest publicRequest);
     }    
 }

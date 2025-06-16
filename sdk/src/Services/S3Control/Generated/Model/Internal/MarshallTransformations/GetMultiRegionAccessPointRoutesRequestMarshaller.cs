@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetMultiRegionAccessPointRoutes Request Marshaller
     /// </summary>       
-    public class GetMultiRegionAccessPointRoutesRequestMarshaller : IMarshaller<IRequest, GetMultiRegionAccessPointRoutesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetMultiRegionAccessPointRoutesRequestMarshaller : IMarshaller<IRequest, GetMultiRegionAccessPointRoutesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/mrap/instances/{mrap+}/routes";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetMultiRegionAccessPointRoutesRequestMarshaller _instance = new GetMultiRegionAccessPointRoutesRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetMultiRegionAccessPointRoutesRequest publicRequest);
     }    
 }

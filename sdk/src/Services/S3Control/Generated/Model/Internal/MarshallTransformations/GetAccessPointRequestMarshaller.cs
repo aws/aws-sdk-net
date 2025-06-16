@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetAccessPoint Request Marshaller
     /// </summary>       
-    public class GetAccessPointRequestMarshaller : IMarshaller<IRequest, GetAccessPointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetAccessPointRequestMarshaller : IMarshaller<IRequest, GetAccessPointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accesspoint/{name}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetAccessPointRequestMarshaller _instance = new GetAccessPointRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetAccessPointRequest publicRequest);
     }    
 }

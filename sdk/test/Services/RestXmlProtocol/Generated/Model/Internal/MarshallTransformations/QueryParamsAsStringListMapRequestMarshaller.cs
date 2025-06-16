@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// QueryParamsAsStringListMap Request Marshaller
     /// </summary>       
-    public class QueryParamsAsStringListMapRequestMarshaller : IMarshaller<IRequest, QueryParamsAsStringListMapRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class QueryParamsAsStringListMapRequestMarshaller : IMarshaller<IRequest, QueryParamsAsStringListMapRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -75,8 +75,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             request.ResourcePath = "/StringListMap";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static QueryParamsAsStringListMapRequestMarshaller _instance = new QueryParamsAsStringListMapRequestMarshaller();        
@@ -97,5 +98,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, QueryParamsAsStringListMapRequest publicRequest);
     }    
 }

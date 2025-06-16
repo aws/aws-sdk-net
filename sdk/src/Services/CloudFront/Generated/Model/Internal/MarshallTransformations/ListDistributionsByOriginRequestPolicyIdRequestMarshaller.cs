@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListDistributionsByOriginRequestPolicyId Request Marshaller
     /// </summary>       
-    public class ListDistributionsByOriginRequestPolicyIdRequestMarshaller : IMarshaller<IRequest, ListDistributionsByOriginRequestPolicyIdRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListDistributionsByOriginRequestPolicyIdRequestMarshaller : IMarshaller<IRequest, ListDistributionsByOriginRequestPolicyIdRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,8 +68,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/distributionsByOriginRequestPolicyId/{OriginRequestPolicyId}";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListDistributionsByOriginRequestPolicyIdRequestMarshaller _instance = new ListDistributionsByOriginRequestPolicyIdRequestMarshaller();        
@@ -90,5 +91,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByOriginRequestPolicyIdRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
     /// <summary>
     /// StaticOp Request Marshaller
     /// </summary>       
-    public class StaticOpRequestMarshaller : IMarshaller<IRequest, StaticOpRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class StaticOpRequestMarshaller : IMarshaller<IRequest, StaticOpRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,6 +58,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXMLTest");
             request.HttpMethod = "POST";
             request.ResourcePath = "/path";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -82,7 +83,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
 
             
             request.HostPrefix = $"data-";
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static StaticOpRequestMarshaller _instance = new StaticOpRequestMarshaller();        
@@ -103,5 +104,6 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, StaticOpRequest publicRequest);
     }    
 }

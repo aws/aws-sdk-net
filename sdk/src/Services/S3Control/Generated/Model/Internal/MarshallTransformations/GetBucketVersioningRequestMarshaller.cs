@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetBucketVersioning Request Marshaller
     /// </summary>       
-    public class GetBucketVersioningRequestMarshaller : IMarshaller<IRequest, GetBucketVersioningRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetBucketVersioningRequestMarshaller : IMarshaller<IRequest, GetBucketVersioningRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/bucket/{name}/versioning";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetBucketVersioningRequestMarshaller _instance = new GetBucketVersioningRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketVersioningRequest publicRequest);
     }    
 }

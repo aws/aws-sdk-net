@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// DatetimeOffsets Request Marshaller
     /// </summary>       
-    public class DatetimeOffsetsRequestMarshaller : IMarshaller<IRequest, DatetimeOffsetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DatetimeOffsetsRequestMarshaller : IMarshaller<IRequest, DatetimeOffsetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/DatetimeOffsets";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DatetimeOffsetsRequestMarshaller _instance = new DatetimeOffsetsRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DatetimeOffsetsRequest publicRequest);
     }    
 }

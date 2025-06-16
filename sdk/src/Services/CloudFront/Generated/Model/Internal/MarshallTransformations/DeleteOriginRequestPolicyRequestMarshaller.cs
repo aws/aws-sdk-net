@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteOriginRequestPolicy Request Marshaller
     /// </summary>       
-    public class DeleteOriginRequestPolicyRequestMarshaller : IMarshaller<IRequest, DeleteOriginRequestPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteOriginRequestPolicyRequestMarshaller : IMarshaller<IRequest, DeleteOriginRequestPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/origin-request-policy/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteOriginRequestPolicyRequestMarshaller _instance = new DeleteOriginRequestPolicyRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteOriginRequestPolicyRequest publicRequest);
     }    
 }

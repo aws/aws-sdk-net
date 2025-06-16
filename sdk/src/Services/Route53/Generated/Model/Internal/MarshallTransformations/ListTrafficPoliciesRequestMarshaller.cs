@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListTrafficPolicies Request Marshaller
     /// </summary>       
-    public class ListTrafficPoliciesRequestMarshaller : IMarshaller<IRequest, ListTrafficPoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListTrafficPoliciesRequestMarshaller : IMarshaller<IRequest, ListTrafficPoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/trafficpolicies";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListTrafficPoliciesRequestMarshaller _instance = new ListTrafficPoliciesRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPoliciesRequest publicRequest);
     }    
 }

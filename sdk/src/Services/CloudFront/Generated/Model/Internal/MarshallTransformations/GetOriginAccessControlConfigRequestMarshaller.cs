@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetOriginAccessControlConfig Request Marshaller
     /// </summary>       
-    public class GetOriginAccessControlConfigRequestMarshaller : IMarshaller<IRequest, GetOriginAccessControlConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetOriginAccessControlConfigRequestMarshaller : IMarshaller<IRequest, GetOriginAccessControlConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/origin-access-control/{Id}/config";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetOriginAccessControlConfigRequestMarshaller _instance = new GetOriginAccessControlConfigRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetOriginAccessControlConfigRequest publicRequest);
     }    
 }

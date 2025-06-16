@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListDistributionsByKeyGroup Request Marshaller
     /// </summary>       
-    public class ListDistributionsByKeyGroupRequestMarshaller : IMarshaller<IRequest, ListDistributionsByKeyGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListDistributionsByKeyGroupRequestMarshaller : IMarshaller<IRequest, ListDistributionsByKeyGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,8 +68,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/distributionsByKeyGroupId/{KeyGroupId}";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListDistributionsByKeyGroupRequestMarshaller _instance = new ListDistributionsByKeyGroupRequestMarshaller();        
@@ -90,5 +91,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByKeyGroupRequest publicRequest);
     }    
 }

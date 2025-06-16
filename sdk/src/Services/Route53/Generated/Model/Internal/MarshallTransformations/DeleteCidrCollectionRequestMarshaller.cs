@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteCidrCollection Request Marshaller
     /// </summary>       
-    public class DeleteCidrCollectionRequestMarshaller : IMarshaller<IRequest, DeleteCidrCollectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteCidrCollectionRequestMarshaller : IMarshaller<IRequest, DeleteCidrCollectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/cidrcollection/{CidrCollectionId}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteCidrCollectionRequestMarshaller _instance = new DeleteCidrCollectionRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteCidrCollectionRequest publicRequest);
     }    
 }

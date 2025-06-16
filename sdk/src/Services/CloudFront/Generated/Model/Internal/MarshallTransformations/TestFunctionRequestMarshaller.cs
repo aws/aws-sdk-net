@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// TestFunction Request Marshaller
     /// </summary>       
-    public class TestFunctionRequestMarshaller : IMarshaller<IRequest, TestFunctionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class TestFunctionRequestMarshaller : IMarshaller<IRequest, TestFunctionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonCloudFrontException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/2020-05-31/function/{Name}/test";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -91,7 +92,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static TestFunctionRequestMarshaller _instance = new TestFunctionRequestMarshaller();        
@@ -112,5 +113,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, TestFunctionRequest publicRequest);
     }    
 }

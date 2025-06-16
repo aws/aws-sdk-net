@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// HttpPayloadTraits Request Marshaller
     /// </summary>       
-    public class HttpPayloadTraitsRequestMarshaller : IMarshaller<IRequest, HttpPayloadTraitsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class HttpPayloadTraitsRequestMarshaller : IMarshaller<IRequest, HttpPayloadTraitsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,10 +63,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 request.Headers["X-Foo"] = publicRequest.Foo;
             }
             request.ResourcePath = "/HttpPayloadTraits";
+
             request.ContentStream = publicRequest.Blob;
             request.Headers["Content-Type"] = "application/octet-stream";
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpPayloadTraitsRequestMarshaller _instance = new HttpPayloadTraitsRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpPayloadTraitsRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetDataAccess Request Marshaller
     /// </summary>       
-    public class GetDataAccessRequestMarshaller : IMarshaller<IRequest, GetDataAccessRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetDataAccessRequestMarshaller : IMarshaller<IRequest, GetDataAccessRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -79,8 +79,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("targetType", StringUtils.FromString(publicRequest.TargetType));
             request.ResourcePath = "/v20180820/accessgrantsinstance/dataaccess";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetDataAccessRequestMarshaller _instance = new GetDataAccessRequestMarshaller();        
@@ -101,5 +102,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetDataAccessRequest publicRequest);
     }    
 }

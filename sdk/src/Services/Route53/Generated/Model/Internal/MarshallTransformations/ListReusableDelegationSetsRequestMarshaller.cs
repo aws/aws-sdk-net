@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListReusableDelegationSets Request Marshaller
     /// </summary>       
-    public class ListReusableDelegationSetsRequestMarshaller : IMarshaller<IRequest, ListReusableDelegationSetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListReusableDelegationSetsRequestMarshaller : IMarshaller<IRequest, ListReusableDelegationSetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/delegationset";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListReusableDelegationSetsRequestMarshaller _instance = new ListReusableDelegationSetsRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListReusableDelegationSetsRequest publicRequest);
     }    
 }

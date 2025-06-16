@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// TimestampFormatHeaders Request Marshaller
     /// </summary>       
-    public class TimestampFormatHeadersRequestMarshaller : IMarshaller<IRequest, TimestampFormatHeadersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class TimestampFormatHeadersRequestMarshaller : IMarshaller<IRequest, TimestampFormatHeadersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -95,6 +95,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/TimestampFormatHeaders";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static TimestampFormatHeadersRequestMarshaller _instance = new TimestampFormatHeadersRequestMarshaller();        
@@ -115,5 +116,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, TimestampFormatHeadersRequest publicRequest);
     }    
 }

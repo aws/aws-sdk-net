@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// HttpRequestWithLabelsAndTimestampFormat Request Marshaller
     /// </summary>       
-    public class HttpRequestWithLabelsAndTimestampFormatRequestMarshaller : IMarshaller<IRequest, HttpRequestWithLabelsAndTimestampFormatRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class HttpRequestWithLabelsAndTimestampFormatRequestMarshaller : IMarshaller<IRequest, HttpRequestWithLabelsAndTimestampFormatRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -81,6 +81,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/HttpRequestWithLabelsAndTimestampFormat/{memberEpochSeconds}/{memberHttpDate}/{memberDateTime}/{defaultFormat}/{targetEpochSeconds}/{targetHttpDate}/{targetDateTime}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpRequestWithLabelsAndTimestampFormatRequestMarshaller _instance = new HttpRequestWithLabelsAndTimestampFormatRequestMarshaller();        
@@ -101,5 +102,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithLabelsAndTimestampFormatRequest publicRequest);
     }    
 }

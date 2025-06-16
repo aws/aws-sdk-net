@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteAccessGrantsInstance Request Marshaller
     /// </summary>       
-    public class DeleteAccessGrantsInstanceRequestMarshaller : IMarshaller<IRequest, DeleteAccessGrantsInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteAccessGrantsInstanceRequestMarshaller : IMarshaller<IRequest, DeleteAccessGrantsInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,6 +65,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accessgrantsinstance";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteAccessGrantsInstanceRequestMarshaller _instance = new DeleteAccessGrantsInstanceRequestMarshaller();        
@@ -85,5 +86,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteAccessGrantsInstanceRequest publicRequest);
     }    
 }

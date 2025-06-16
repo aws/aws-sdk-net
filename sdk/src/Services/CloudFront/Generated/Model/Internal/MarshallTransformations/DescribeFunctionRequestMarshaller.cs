@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DescribeFunction Request Marshaller
     /// </summary>       
-    public class DescribeFunctionRequestMarshaller : IMarshaller<IRequest, DescribeFunctionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DescribeFunctionRequestMarshaller : IMarshaller<IRequest, DescribeFunctionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Stage", StringUtils.FromString(publicRequest.Stage));
             request.ResourcePath = "/2020-05-31/function/{Name}/describe";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DescribeFunctionRequestMarshaller _instance = new DescribeFunctionRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DescribeFunctionRequest publicRequest);
     }    
 }

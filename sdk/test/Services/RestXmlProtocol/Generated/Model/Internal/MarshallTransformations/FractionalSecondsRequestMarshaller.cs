@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// FractionalSeconds Request Marshaller
     /// </summary>       
-    public class FractionalSecondsRequestMarshaller : IMarshaller<IRequest, FractionalSecondsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class FractionalSecondsRequestMarshaller : IMarshaller<IRequest, FractionalSecondsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/FractionalSeconds";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static FractionalSecondsRequestMarshaller _instance = new FractionalSecondsRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, FractionalSecondsRequest publicRequest);
     }    
 }

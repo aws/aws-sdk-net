@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// NoInputAndNoOutput Request Marshaller
     /// </summary>       
-    public class NoInputAndNoOutputRequestMarshaller : IMarshaller<IRequest, NoInputAndNoOutputRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class NoInputAndNoOutputRequestMarshaller : IMarshaller<IRequest, NoInputAndNoOutputRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/NoInputAndNoOutput";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static NoInputAndNoOutputRequestMarshaller _instance = new NoInputAndNoOutputRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, NoInputAndNoOutputRequest publicRequest);
     }    
 }

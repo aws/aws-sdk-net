@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// GreetingWithErrors Request Marshaller
     /// </summary>       
-    public class GreetingWithErrorsRequestMarshaller : IMarshaller<IRequest, GreetingWithErrorsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GreetingWithErrorsRequestMarshaller : IMarshaller<IRequest, GreetingWithErrorsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/GreetingWithErrors";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GreetingWithErrorsRequestMarshaller _instance = new GreetingWithErrorsRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GreetingWithErrorsRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteFieldLevelEncryptionProfile Request Marshaller
     /// </summary>       
-    public class DeleteFieldLevelEncryptionProfileRequestMarshaller : IMarshaller<IRequest, DeleteFieldLevelEncryptionProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteFieldLevelEncryptionProfileRequestMarshaller : IMarshaller<IRequest, DeleteFieldLevelEncryptionProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/field-level-encryption-profile/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteFieldLevelEncryptionProfileRequestMarshaller _instance = new DeleteFieldLevelEncryptionProfileRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteFieldLevelEncryptionProfileRequest publicRequest);
     }    
 }

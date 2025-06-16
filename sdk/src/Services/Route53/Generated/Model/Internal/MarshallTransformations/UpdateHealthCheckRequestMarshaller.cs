@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateHealthCheck Request Marshaller
     /// </summary>       
-    public class UpdateHealthCheckRequestMarshaller : IMarshaller<IRequest, UpdateHealthCheckRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class UpdateHealthCheckRequestMarshaller : IMarshaller<IRequest, UpdateHealthCheckRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -61,6 +61,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field HealthCheckId set");
             request.AddPathResource("{HealthCheckId}", StringUtils.FromString(publicRequest.HealthCheckId));
             request.ResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -161,7 +162,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateHealthCheckRequestMarshaller _instance = new UpdateHealthCheckRequestMarshaller();        
@@ -182,5 +183,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateHealthCheckRequest publicRequest);
     }    
 }

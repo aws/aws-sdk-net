@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateDistributionWithStagingConfig Request Marshaller
     /// </summary>       
-    public class UpdateDistributionWithStagingConfigRequestMarshaller : IMarshaller<IRequest, UpdateDistributionWithStagingConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class UpdateDistributionWithStagingConfigRequestMarshaller : IMarshaller<IRequest, UpdateDistributionWithStagingConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -70,8 +70,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("StagingDistributionId", StringUtils.FromString(publicRequest.StagingDistributionId));
             request.ResourcePath = "/2020-05-31/distribution/{Id}/promote-staging-config";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateDistributionWithStagingConfigRequestMarshaller _instance = new UpdateDistributionWithStagingConfigRequestMarshaller();        
@@ -92,5 +93,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateDistributionWithStagingConfigRequest publicRequest);
     }    
 }

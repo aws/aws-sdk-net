@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetVpcOrigin Request Marshaller
     /// </summary>       
-    public class GetVpcOriginRequestMarshaller : IMarshaller<IRequest, GetVpcOriginRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetVpcOriginRequestMarshaller : IMarshaller<IRequest, GetVpcOriginRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/vpc-origin/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetVpcOriginRequestMarshaller _instance = new GetVpcOriginRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetVpcOriginRequest publicRequest);
     }    
 }

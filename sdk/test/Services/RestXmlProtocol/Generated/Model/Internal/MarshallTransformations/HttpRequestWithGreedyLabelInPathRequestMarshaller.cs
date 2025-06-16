@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// HttpRequestWithGreedyLabelInPath Request Marshaller
     /// </summary>       
-    public class HttpRequestWithGreedyLabelInPathRequestMarshaller : IMarshaller<IRequest, HttpRequestWithGreedyLabelInPathRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class HttpRequestWithGreedyLabelInPathRequestMarshaller : IMarshaller<IRequest, HttpRequestWithGreedyLabelInPathRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/HttpRequestWithGreedyLabelInPath/foo/{foo}/baz/{baz+}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpRequestWithGreedyLabelInPathRequestMarshaller _instance = new HttpRequestWithGreedyLabelInPathRequestMarshaller();        
@@ -86,5 +87,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithGreedyLabelInPathRequest publicRequest);
     }    
 }

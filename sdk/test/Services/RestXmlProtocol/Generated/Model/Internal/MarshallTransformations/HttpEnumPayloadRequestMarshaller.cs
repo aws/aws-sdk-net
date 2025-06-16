@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// HttpEnumPayload Request Marshaller
     /// </summary>       
-    public class HttpEnumPayloadRequestMarshaller : IMarshaller<IRequest, HttpEnumPayloadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class HttpEnumPayloadRequestMarshaller : IMarshaller<IRequest, HttpEnumPayloadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,10 +58,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
             request.HttpMethod = "POST";
             request.ResourcePath = "/EnumPayload";
+
             request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Payload));
             request.Headers["Content-Type"] = "text/plain";
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpEnumPayloadRequestMarshaller _instance = new HttpEnumPayloadRequestMarshaller();        
@@ -82,5 +83,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpEnumPayloadRequest publicRequest);
     }    
 }

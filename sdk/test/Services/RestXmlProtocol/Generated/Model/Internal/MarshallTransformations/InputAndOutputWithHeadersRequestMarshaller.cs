@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// InputAndOutputWithHeaders Request Marshaller
     /// </summary>       
-    public class InputAndOutputWithHeadersRequestMarshaller : IMarshaller<IRequest, InputAndOutputWithHeadersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class InputAndOutputWithHeadersRequestMarshaller : IMarshaller<IRequest, InputAndOutputWithHeadersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -140,6 +140,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/InputAndOutputWithHeaders";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static InputAndOutputWithHeadersRequestMarshaller _instance = new InputAndOutputWithHeadersRequestMarshaller();        
@@ -160,5 +161,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, InputAndOutputWithHeadersRequest publicRequest);
     }    
 }

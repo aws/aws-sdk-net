@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListDistributionsByConnectionMode Request Marshaller
     /// </summary>       
-    public class ListDistributionsByConnectionModeRequestMarshaller : IMarshaller<IRequest, ListDistributionsByConnectionModeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListDistributionsByConnectionModeRequestMarshaller : IMarshaller<IRequest, ListDistributionsByConnectionModeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,8 +68,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/distributionsByConnectionMode/{ConnectionMode}";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListDistributionsByConnectionModeRequestMarshaller _instance = new ListDistributionsByConnectionModeRequestMarshaller();        
@@ -90,5 +91,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByConnectionModeRequest publicRequest);
     }    
 }

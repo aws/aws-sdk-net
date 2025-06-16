@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// DissociateAccessGrantsIdentityCenter Request Marshaller
     /// </summary>       
-    public class DissociateAccessGrantsIdentityCenterRequestMarshaller : IMarshaller<IRequest, DissociateAccessGrantsIdentityCenterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DissociateAccessGrantsIdentityCenterRequestMarshaller : IMarshaller<IRequest, DissociateAccessGrantsIdentityCenterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,6 +65,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accessgrantsinstance/identitycenter";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DissociateAccessGrantsIdentityCenterRequestMarshaller _instance = new DissociateAccessGrantsIdentityCenterRequestMarshaller();        
@@ -85,5 +86,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DissociateAccessGrantsIdentityCenterRequest publicRequest);
     }    
 }

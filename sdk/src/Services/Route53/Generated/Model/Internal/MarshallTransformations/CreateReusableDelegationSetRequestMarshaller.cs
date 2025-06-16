@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateReusableDelegationSet Request Marshaller
     /// </summary>       
-    public class CreateReusableDelegationSetRequestMarshaller : IMarshaller<IRequest, CreateReusableDelegationSetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class CreateReusableDelegationSetRequestMarshaller : IMarshaller<IRequest, CreateReusableDelegationSetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,6 +58,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "POST";
             request.ResourcePath = "/2013-04-01/delegationset";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -83,7 +84,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateReusableDelegationSetRequestMarshaller _instance = new CreateReusableDelegationSetRequestMarshaller();        
@@ -104,5 +105,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateReusableDelegationSetRequest publicRequest);
     }    
 }

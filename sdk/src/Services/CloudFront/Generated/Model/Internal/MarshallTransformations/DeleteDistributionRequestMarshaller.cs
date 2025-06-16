@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteDistribution Request Marshaller
     /// </summary>       
-    public class DeleteDistributionRequestMarshaller : IMarshaller<IRequest, DeleteDistributionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteDistributionRequestMarshaller : IMarshaller<IRequest, DeleteDistributionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/distribution/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteDistributionRequestMarshaller _instance = new DeleteDistributionRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteDistributionRequest publicRequest);
     }    
 }

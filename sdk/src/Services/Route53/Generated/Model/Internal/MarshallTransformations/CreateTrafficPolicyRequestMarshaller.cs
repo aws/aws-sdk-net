@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateTrafficPolicy Request Marshaller
     /// </summary>       
-    public class CreateTrafficPolicyRequestMarshaller : IMarshaller<IRequest, CreateTrafficPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class CreateTrafficPolicyRequestMarshaller : IMarshaller<IRequest, CreateTrafficPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,6 +58,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "POST";
             request.ResourcePath = "/2013-04-01/trafficpolicy";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -86,7 +87,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateTrafficPolicyRequestMarshaller _instance = new CreateTrafficPolicyRequestMarshaller();        
@@ -107,5 +108,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateTrafficPolicyRequest publicRequest);
     }    
 }

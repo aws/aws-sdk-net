@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateContinuousDeploymentPolicy Request Marshaller
     /// </summary>       
-    public class CreateContinuousDeploymentPolicyRequestMarshaller : IMarshaller<IRequest, CreateContinuousDeploymentPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class CreateContinuousDeploymentPolicyRequestMarshaller : IMarshaller<IRequest, CreateContinuousDeploymentPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,6 +58,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/continuous-deployment-policy";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -134,7 +135,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateContinuousDeploymentPolicyRequestMarshaller _instance = new CreateContinuousDeploymentPolicyRequestMarshaller();        
@@ -155,5 +156,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateContinuousDeploymentPolicyRequest publicRequest);
     }    
 }

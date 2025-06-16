@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// HttpPrefixHeaders Request Marshaller
     /// </summary>       
-    public class HttpPrefixHeadersRequestMarshaller : IMarshaller<IRequest, HttpPrefixHeadersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class HttpPrefixHeadersRequestMarshaller : IMarshaller<IRequest, HttpPrefixHeadersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -74,6 +74,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/HttpPrefixHeaders";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpPrefixHeadersRequestMarshaller _instance = new HttpPrefixHeadersRequestMarshaller();        
@@ -94,5 +95,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpPrefixHeadersRequest publicRequest);
     }    
 }

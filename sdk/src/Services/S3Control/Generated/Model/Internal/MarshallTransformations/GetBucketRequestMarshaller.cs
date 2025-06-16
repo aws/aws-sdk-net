@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetBucket Request Marshaller
     /// </summary>       
-    public class GetBucketRequestMarshaller : IMarshaller<IRequest, GetBucketRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetBucketRequestMarshaller : IMarshaller<IRequest, GetBucketRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/bucket/{name}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetBucketRequestMarshaller _instance = new GetBucketRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketRequest publicRequest);
     }    
 }

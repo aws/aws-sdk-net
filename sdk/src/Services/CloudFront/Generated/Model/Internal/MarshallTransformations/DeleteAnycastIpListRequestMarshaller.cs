@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteAnycastIpList Request Marshaller
     /// </summary>       
-    public class DeleteAnycastIpListRequestMarshaller : IMarshaller<IRequest, DeleteAnycastIpListRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteAnycastIpListRequestMarshaller : IMarshaller<IRequest, DeleteAnycastIpListRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/anycast-ip-list/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteAnycastIpListRequestMarshaller _instance = new DeleteAnycastIpListRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteAnycastIpListRequest publicRequest);
     }    
 }

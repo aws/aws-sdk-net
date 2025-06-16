@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListDomainConflicts Request Marshaller
     /// </summary>       
-    public class ListDomainConflictsRequestMarshaller : IMarshaller<IRequest, ListDomainConflictsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListDomainConflictsRequestMarshaller : IMarshaller<IRequest, ListDomainConflictsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,6 +58,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/domain-conflicts";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -95,7 +96,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListDomainConflictsRequestMarshaller _instance = new ListDomainConflictsRequestMarshaller();        
@@ -116,5 +117,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDomainConflictsRequest publicRequest);
     }    
 }

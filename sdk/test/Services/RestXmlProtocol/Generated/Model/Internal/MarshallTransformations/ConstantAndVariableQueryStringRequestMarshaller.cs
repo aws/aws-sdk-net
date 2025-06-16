@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// ConstantAndVariableQueryString Request Marshaller
     /// </summary>       
-    public class ConstantAndVariableQueryStringRequestMarshaller : IMarshaller<IRequest, ConstantAndVariableQueryStringRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ConstantAndVariableQueryStringRequestMarshaller : IMarshaller<IRequest, ConstantAndVariableQueryStringRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,8 +66,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maybeSet", StringUtils.FromString(publicRequest.MaybeSet));
             request.ResourcePath = "/ConstantAndVariableQueryString";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ConstantAndVariableQueryStringRequestMarshaller _instance = new ConstantAndVariableQueryStringRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ConstantAndVariableQueryStringRequest publicRequest);
     }    
 }

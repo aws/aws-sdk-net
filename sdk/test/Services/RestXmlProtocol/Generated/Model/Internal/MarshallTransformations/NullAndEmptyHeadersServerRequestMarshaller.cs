@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// NullAndEmptyHeadersServer Request Marshaller
     /// </summary>       
-    public class NullAndEmptyHeadersServerRequestMarshaller : IMarshaller<IRequest, NullAndEmptyHeadersServerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class NullAndEmptyHeadersServerRequestMarshaller : IMarshaller<IRequest, NullAndEmptyHeadersServerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -75,6 +75,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/NullAndEmptyHeadersServer";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static NullAndEmptyHeadersServerRequestMarshaller _instance = new NullAndEmptyHeadersServerRequestMarshaller();        
@@ -95,5 +96,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, NullAndEmptyHeadersServerRequest publicRequest);
     }    
 }

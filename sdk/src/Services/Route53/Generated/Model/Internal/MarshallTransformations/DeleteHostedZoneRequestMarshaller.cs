@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteHostedZone Request Marshaller
     /// </summary>       
-    public class DeleteHostedZoneRequestMarshaller : IMarshaller<IRequest, DeleteHostedZoneRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteHostedZoneRequestMarshaller : IMarshaller<IRequest, DeleteHostedZoneRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteHostedZoneRequestMarshaller _instance = new DeleteHostedZoneRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteHostedZoneRequest publicRequest);
     }    
 }

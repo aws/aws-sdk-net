@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetReusableDelegationSetLimit Request Marshaller
     /// </summary>       
-    public class GetReusableDelegationSetLimitRequestMarshaller : IMarshaller<IRequest, GetReusableDelegationSetLimitRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetReusableDelegationSetLimitRequestMarshaller : IMarshaller<IRequest, GetReusableDelegationSetLimitRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/reusabledelegationsetlimit/{Id}/{Type}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetReusableDelegationSetLimitRequestMarshaller _instance = new GetReusableDelegationSetLimitRequestMarshaller();        
@@ -86,5 +87,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetReusableDelegationSetLimitRequest publicRequest);
     }    
 }

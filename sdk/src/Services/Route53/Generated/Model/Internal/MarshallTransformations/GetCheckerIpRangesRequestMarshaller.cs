@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetCheckerIpRanges Request Marshaller
     /// </summary>       
-    public class GetCheckerIpRangesRequestMarshaller : IMarshaller<IRequest, GetCheckerIpRangesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetCheckerIpRangesRequestMarshaller : IMarshaller<IRequest, GetCheckerIpRangesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/checkeripranges";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetCheckerIpRangesRequestMarshaller _instance = new GetCheckerIpRangesRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetCheckerIpRangesRequest publicRequest);
     }    
 }

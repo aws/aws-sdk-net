@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteHealthCheck Request Marshaller
     /// </summary>       
-    public class DeleteHealthCheckRequestMarshaller : IMarshaller<IRequest, DeleteHealthCheckRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteHealthCheckRequestMarshaller : IMarshaller<IRequest, DeleteHealthCheckRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteHealthCheckRequestMarshaller _instance = new DeleteHealthCheckRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteHealthCheckRequest publicRequest);
     }    
 }

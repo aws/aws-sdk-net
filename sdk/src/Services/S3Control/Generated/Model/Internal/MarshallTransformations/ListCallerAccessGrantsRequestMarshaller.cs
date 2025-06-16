@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListCallerAccessGrants Request Marshaller
     /// </summary>       
-    public class ListCallerAccessGrantsRequestMarshaller : IMarshaller<IRequest, ListCallerAccessGrantsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListCallerAccessGrantsRequestMarshaller : IMarshaller<IRequest, ListCallerAccessGrantsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -76,8 +76,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v20180820/accessgrantsinstance/caller/grants";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListCallerAccessGrantsRequestMarshaller _instance = new ListCallerAccessGrantsRequestMarshaller();        
@@ -98,5 +99,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListCallerAccessGrantsRequest publicRequest);
     }    
 }

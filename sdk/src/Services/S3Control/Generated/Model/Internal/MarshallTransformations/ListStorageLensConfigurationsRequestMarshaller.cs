@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListStorageLensConfigurations Request Marshaller
     /// </summary>       
-    public class ListStorageLensConfigurationsRequestMarshaller : IMarshaller<IRequest, ListStorageLensConfigurationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListStorageLensConfigurationsRequestMarshaller : IMarshaller<IRequest, ListStorageLensConfigurationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -67,8 +67,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v20180820/storagelens";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListStorageLensConfigurationsRequestMarshaller _instance = new ListStorageLensConfigurationsRequestMarshaller();        
@@ -89,5 +90,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListStorageLensConfigurationsRequest publicRequest);
     }    
 }

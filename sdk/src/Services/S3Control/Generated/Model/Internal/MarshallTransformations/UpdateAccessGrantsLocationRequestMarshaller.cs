@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateAccessGrantsLocation Request Marshaller
     /// </summary>       
-    public class UpdateAccessGrantsLocationRequestMarshaller : IMarshaller<IRequest, UpdateAccessGrantsLocationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class UpdateAccessGrantsLocationRequestMarshaller : IMarshaller<IRequest, UpdateAccessGrantsLocationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonS3ControlException("Request object does not have required field AccessGrantsLocationId set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.AccessGrantsLocationId));
             request.ResourcePath = "/v20180820/accessgrantsinstance/location/{id}";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -89,7 +90,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateAccessGrantsLocationRequestMarshaller _instance = new UpdateAccessGrantsLocationRequestMarshaller();        
@@ -110,5 +111,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateAccessGrantsLocationRequest publicRequest);
     }    
 }

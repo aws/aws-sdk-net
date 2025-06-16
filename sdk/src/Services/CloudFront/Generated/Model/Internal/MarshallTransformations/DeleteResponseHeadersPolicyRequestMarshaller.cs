@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteResponseHeadersPolicy Request Marshaller
     /// </summary>       
-    public class DeleteResponseHeadersPolicyRequestMarshaller : IMarshaller<IRequest, DeleteResponseHeadersPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteResponseHeadersPolicyRequestMarshaller : IMarshaller<IRequest, DeleteResponseHeadersPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/response-headers-policy/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteResponseHeadersPolicyRequestMarshaller _instance = new DeleteResponseHeadersPolicyRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteResponseHeadersPolicyRequest publicRequest);
     }    
 }

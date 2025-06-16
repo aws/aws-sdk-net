@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetGeoLocation Request Marshaller
     /// </summary>       
-    public class GetGeoLocationRequestMarshaller : IMarshaller<IRequest, GetGeoLocationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetGeoLocationRequestMarshaller : IMarshaller<IRequest, GetGeoLocationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,8 +68,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("subdivisioncode", StringUtils.FromString(publicRequest.SubdivisionCode));
             request.ResourcePath = "/2013-04-01/geolocation";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetGeoLocationRequestMarshaller _instance = new GetGeoLocationRequestMarshaller();        
@@ -90,5 +91,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetGeoLocationRequest publicRequest);
     }    
 }

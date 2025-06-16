@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteStorageLensConfiguration Request Marshaller
     /// </summary>       
-    public class DeleteStorageLensConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteStorageLensConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteStorageLensConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteStorageLensConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/storagelens/{storagelensid}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteStorageLensConfigurationRequestMarshaller _instance = new DeleteStorageLensConfigurationRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteStorageLensConfigurationRequest publicRequest);
     }    
 }

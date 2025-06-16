@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// HttpRequestWithFloatLabels Request Marshaller
     /// </summary>       
-    public class HttpRequestWithFloatLabelsRequestMarshaller : IMarshaller<IRequest, HttpRequestWithFloatLabelsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class HttpRequestWithFloatLabelsRequestMarshaller : IMarshaller<IRequest, HttpRequestWithFloatLabelsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/FloatHttpLabels/{float}/{double}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpRequestWithFloatLabelsRequestMarshaller _instance = new HttpRequestWithFloatLabelsRequestMarshaller();        
@@ -86,5 +87,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithFloatLabelsRequest publicRequest);
     }    
 }

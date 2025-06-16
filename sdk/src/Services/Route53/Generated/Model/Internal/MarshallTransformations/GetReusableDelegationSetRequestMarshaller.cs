@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetReusableDelegationSet Request Marshaller
     /// </summary>       
-    public class GetReusableDelegationSetRequestMarshaller : IMarshaller<IRequest, GetReusableDelegationSetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetReusableDelegationSetRequestMarshaller : IMarshaller<IRequest, GetReusableDelegationSetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/delegationset/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetReusableDelegationSetRequestMarshaller _instance = new GetReusableDelegationSetRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetReusableDelegationSetRequest publicRequest);
     }    
 }

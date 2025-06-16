@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListKeyGroups Request Marshaller
     /// </summary>       
-    public class ListKeyGroupsRequestMarshaller : IMarshaller<IRequest, ListKeyGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListKeyGroupsRequestMarshaller : IMarshaller<IRequest, ListKeyGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/key-group";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListKeyGroupsRequestMarshaller _instance = new ListKeyGroupsRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListKeyGroupsRequest publicRequest);
     }    
 }

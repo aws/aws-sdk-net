@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetHealthCheckCount Request Marshaller
     /// </summary>       
-    public class GetHealthCheckCountRequestMarshaller : IMarshaller<IRequest, GetHealthCheckCountRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetHealthCheckCountRequestMarshaller : IMarshaller<IRequest, GetHealthCheckCountRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/healthcheckcount";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetHealthCheckCountRequestMarshaller _instance = new GetHealthCheckCountRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetHealthCheckCountRequest publicRequest);
     }    
 }

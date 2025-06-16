@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListHostedZones Request Marshaller
     /// </summary>       
-    public class ListHostedZonesRequestMarshaller : IMarshaller<IRequest, ListHostedZonesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListHostedZonesRequestMarshaller : IMarshaller<IRequest, ListHostedZonesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -71,8 +71,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("hostedzonetype", StringUtils.FromString(publicRequest.HostedZoneType));
             request.ResourcePath = "/2013-04-01/hostedzone";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListHostedZonesRequestMarshaller _instance = new ListHostedZonesRequestMarshaller();        
@@ -93,5 +94,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListHostedZonesRequest publicRequest);
     }    
 }

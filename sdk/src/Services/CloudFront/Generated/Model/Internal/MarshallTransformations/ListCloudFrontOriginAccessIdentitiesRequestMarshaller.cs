@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListCloudFrontOriginAccessIdentities Request Marshaller
     /// </summary>       
-    public class ListCloudFrontOriginAccessIdentitiesRequestMarshaller : IMarshaller<IRequest, ListCloudFrontOriginAccessIdentitiesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListCloudFrontOriginAccessIdentitiesRequestMarshaller : IMarshaller<IRequest, ListCloudFrontOriginAccessIdentitiesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/origin-access-identity/cloudfront";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListCloudFrontOriginAccessIdentitiesRequestMarshaller _instance = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListCloudFrontOriginAccessIdentitiesRequest publicRequest);
     }    
 }

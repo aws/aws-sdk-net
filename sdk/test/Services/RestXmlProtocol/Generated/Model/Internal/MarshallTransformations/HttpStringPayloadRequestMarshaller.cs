@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// HttpStringPayload Request Marshaller
     /// </summary>       
-    public class HttpStringPayloadRequestMarshaller : IMarshaller<IRequest, HttpStringPayloadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class HttpStringPayloadRequestMarshaller : IMarshaller<IRequest, HttpStringPayloadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,10 +58,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
             request.HttpMethod = "POST";
             request.ResourcePath = "/StringPayload";
+
             request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Payload));
             request.Headers["Content-Type"] = "text/plain";
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpStringPayloadRequestMarshaller _instance = new HttpStringPayloadRequestMarshaller();        
@@ -82,5 +83,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpStringPayloadRequest publicRequest);
     }    
 }

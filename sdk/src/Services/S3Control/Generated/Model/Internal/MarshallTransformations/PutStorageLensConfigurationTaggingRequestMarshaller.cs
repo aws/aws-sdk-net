@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// PutStorageLensConfigurationTagging Request Marshaller
     /// </summary>       
-    public class PutStorageLensConfigurationTaggingRequestMarshaller : IMarshaller<IRequest, PutStorageLensConfigurationTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class PutStorageLensConfigurationTaggingRequestMarshaller : IMarshaller<IRequest, PutStorageLensConfigurationTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonS3ControlException("Request object does not have required field ConfigId set");
             request.AddPathResource("{storagelensid}", StringUtils.FromString(publicRequest.ConfigId));
             request.ResourcePath = "/v20180820/storagelens/{storagelensid}/tagging";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -103,7 +104,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutStorageLensConfigurationTaggingRequestMarshaller _instance = new PutStorageLensConfigurationTaggingRequestMarshaller();        
@@ -124,5 +125,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutStorageLensConfigurationTaggingRequest publicRequest);
     }    
 }

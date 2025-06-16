@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListConflictingAliases Request Marshaller
     /// </summary>       
-    public class ListConflictingAliasesRequestMarshaller : IMarshaller<IRequest, ListConflictingAliasesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListConflictingAliasesRequestMarshaller : IMarshaller<IRequest, ListConflictingAliasesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -71,8 +71,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/conflicting-alias";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListConflictingAliasesRequestMarshaller _instance = new ListConflictingAliasesRequestMarshaller();        
@@ -93,5 +94,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListConflictingAliasesRequest publicRequest);
     }    
 }
