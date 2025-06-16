@@ -107,6 +107,133 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreateCustomModel
+
+
+        /// <summary>
+        /// Creates a new custom model in Amazon Bedrock from an existing SageMaker AI-trained
+        /// Amazon Nova model stored in an Amazon-managed Amazon S3 bucket. After the model is
+        /// active, you can use it for inference.
+        /// 
+        ///  
+        /// <para>
+        /// To use the model for inference, you must purchase Provisioned Throughput for it. You
+        /// can't use On-demand inference with these custom models. For more information about
+        /// Provisioned Throughput, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The model appears in <c>ListCustomModels</c> with a <c>customizationType</c> of <c>imported</c>.
+        /// To track the status of the new model, you use the <c>GetCustomModel</c> API operation.
+        /// The model can be in the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Creating</c> - Initial state during validation and registration
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Active</c> - Model is ready for use in inference
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Failed</c> - Creation process encountered an error
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about creating custom models, including specific model requirements,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/create-custom-model-from-existing.html">Import
+        /// a SageMaker AI-trained Amazon Nova model</a> in the Amazon Bedrock User Guide. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You use the <c>CreateCustomModel</c> API to import only SageMaker AI-trained Amazon
+        /// Nova models. To import open-source models, you use the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html">CreateModelImportJob</a>.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Related APIs</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModel.html">GetCustomModel</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModels.html">ListCustomModels</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModel.html">DeleteCustomModel</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomModel service method.</param>
+        /// 
+        /// <returns>The response from the CreateCustomModel service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateCustomModel">REST API Reference for CreateCustomModel Operation</seealso>
+        CreateCustomModelResponse CreateCustomModel(CreateCustomModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomModel operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateCustomModel">REST API Reference for CreateCustomModel Operation</seealso>
+        IAsyncResult BeginCreateCustomModel(CreateCustomModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCustomModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomModel.</param>
+        /// 
+        /// <returns>Returns a  CreateCustomModelResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateCustomModel">REST API Reference for CreateCustomModel Operation</seealso>
+        CreateCustomModelResponse EndCreateCustomModel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateEvaluationJob
 
 
@@ -1447,8 +1574,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Get the properties associated with a Amazon Bedrock custom model that you have created.For
-        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
+        /// Get the properties associated with a Amazon Bedrock custom model that you have created.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
         /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </summary>

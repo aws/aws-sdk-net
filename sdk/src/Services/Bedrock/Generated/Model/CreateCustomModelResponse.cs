@@ -30,33 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetCustomModel operation.
-    /// Get the properties associated with a Amazon Bedrock custom model that you have created.
-    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-    /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
-    /// Bedrock User Guide</a>.
+    /// This is the response object from the CreateCustomModel operation.
     /// </summary>
-    public partial class GetCustomModelRequest : AmazonBedrockRequest
+    public partial class CreateCustomModelResponse : AmazonWebServiceResponse
     {
-        private string _modelIdentifier;
+        private string _modelArn;
 
         /// <summary>
-        /// Gets and sets the property ModelIdentifier. 
+        /// Gets and sets the property ModelArn. 
         /// <para>
-        /// Name or Amazon Resource Name (ARN) of the custom model.
+        /// The Amazon Resource Name (ARN) of the new custom model.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string ModelIdentifier
+        [AWSProperty(Required=true, Min=20, Max=1011)]
+        public string ModelArn
         {
-            get { return this._modelIdentifier; }
-            set { this._modelIdentifier = value; }
+            get { return this._modelArn; }
+            set { this._modelArn = value; }
         }
 
-        // Check to see if ModelIdentifier property is set
-        internal bool IsSetModelIdentifier()
+        // Check to see if ModelArn property is set
+        internal bool IsSetModelArn()
         {
-            return this._modelIdentifier != null;
+            return this._modelArn != null;
         }
 
     }

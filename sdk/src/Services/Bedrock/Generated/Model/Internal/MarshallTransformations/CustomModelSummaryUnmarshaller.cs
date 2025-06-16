@@ -102,6 +102,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("modelStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ownerAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

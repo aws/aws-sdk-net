@@ -19,4 +19,23 @@
             </example>
         </value>
     </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Bedrock.IAmazonBedrock.CreateCustomModel(Amazon.Bedrock.Model.CreateCustomModelRequest)" />
+            <member name="M:Amazon.Bedrock.AmazonBedrockClient.CreateCustomModel(Amazon.Bedrock.Model.CreateCustomModelRequest)" />
+            <member name="T:Amazon.Bedrock.Model.CreateCustomModelRequest" />
+            <member name="T:Amazon.Bedrock.Model.CreateCustomModelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful CreateCustomModel API call"
+                    source=".\AWSSDKDocSamples\Bedrock\Bedrock.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
 </docs>

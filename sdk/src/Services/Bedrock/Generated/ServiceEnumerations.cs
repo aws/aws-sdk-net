@@ -142,6 +142,10 @@ namespace Amazon.Bedrock
         /// Constant FINE_TUNING for CustomizationType
         /// </summary>
         public static readonly CustomizationType FINE_TUNING = new CustomizationType("FINE_TUNING");
+        /// <summary>
+        /// Constant IMPORTED for CustomizationType
+        /// </summary>
+        public static readonly CustomizationType IMPORTED = new CustomizationType("IMPORTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1886,6 +1890,60 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ModelModality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelStatus.
+    /// </summary>
+    public class ModelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus Active = new ModelStatus("Active");
+        /// <summary>
+        /// Constant Creating for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus Creating = new ModelStatus("Creating");
+        /// <summary>
+        /// Constant Failed for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus Failed = new ModelStatus("Failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelStatus FindValue(string value)
+        {
+            return FindValue<ModelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelStatus(string value)
         {
             return FindValue(value);
         }

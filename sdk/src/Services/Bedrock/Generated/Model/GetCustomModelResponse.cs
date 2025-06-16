@@ -38,12 +38,14 @@ namespace Amazon.Bedrock.Model
         private DateTime? _creationTime;
         private CustomizationConfig _customizationConfig;
         private CustomizationType _customizationType;
+        private string _failureMessage;
         private Dictionary<string, string> _hyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _jobArn;
         private string _jobName;
         private string _modelArn;
         private string _modelKmsKeyArn;
         private string _modelName;
+        private ModelStatus _modelStatus;
         private OutputDataConfig _outputDataConfig;
         private TrainingDataConfig _trainingDataConfig;
         private TrainingMetrics _trainingMetrics;
@@ -56,7 +58,7 @@ namespace Amazon.Bedrock.Model
         /// Amazon Resource Name (ARN) of the base model.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=1011)]
+        [AWSProperty(Min=20, Max=1011)]
         public string BaseModelArn
         {
             get { return this._baseModelArn; }
@@ -125,6 +127,26 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailureMessage. 
+        /// <para>
+        /// A failure message for any issues that occurred when creating the custom model. This
+        /// is included for only a failed CreateCustomModel operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string FailureMessage
+        {
+            get { return this._failureMessage; }
+            set { this._failureMessage = value; }
+        }
+
+        // Check to see if FailureMessage property is set
+        internal bool IsSetFailureMessage()
+        {
+            return this._failureMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HyperParameters. 
         /// <para>
         /// Hyperparameter values associated with this model. For details on the format for different
@@ -147,10 +169,12 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// Job Amazon Resource Name (ARN) associated with this model.
+        /// Job Amazon Resource Name (ARN) associated with this model. For models that you create
+        /// with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html">CreateCustomModel</a>
+        /// API operation, this is <c>NULL</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1011)]
+        [AWSProperty(Min=0, Max=1011)]
         public string JobArn
         {
             get { return this._jobArn; }
@@ -240,12 +264,43 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelStatus. 
+        /// <para>
+        /// The current status of the custom model. Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Creating</c> - The model is being created and validated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Active</c> - The model has been successfully created and is ready for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Failed</c> - The model creation process failed. Check the <c>failureMessage</c>
+        /// field for details.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ModelStatus ModelStatus
+        {
+            get { return this._modelStatus; }
+            set { this._modelStatus = value; }
+        }
+
+        // Check to see if ModelStatus property is set
+        internal bool IsSetModelStatus()
+        {
+            return this._modelStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// Output data configuration associated with this custom model.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public OutputDataConfig OutputDataConfig
         {
             get { return this._outputDataConfig; }
@@ -264,7 +319,6 @@ namespace Amazon.Bedrock.Model
         /// Contains information about the training dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TrainingDataConfig TrainingDataConfig
         {
             get { return this._trainingDataConfig; }

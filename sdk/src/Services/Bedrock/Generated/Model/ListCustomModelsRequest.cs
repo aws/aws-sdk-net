@@ -49,6 +49,7 @@ namespace Amazon.Bedrock.Model
         private string _foundationModelArnEquals;
         private bool? _isOwned;
         private int? _maxResults;
+        private ModelStatus _modelStatus;
         private string _nameContains;
         private string _nextToken;
         private SortModelsBy _sortBy;
@@ -167,6 +168,41 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelStatus. 
+        /// <para>
+        /// The status of them model to filter results by. Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Creating</c> - Include only models that are currently being created and validated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Active</c> - Include only models that have been successfully created and are ready
+        /// for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Failed</c> - Include only models where the creation process failed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a status, the API returns models in all states.
+        /// </para>
+        /// </summary>
+        public ModelStatus ModelStatus
+        {
+            get { return this._modelStatus; }
+            set { this._modelStatus = value; }
+        }
+
+        // Check to see if ModelStatus property is set
+        internal bool IsSetModelStatus()
+        {
+            return this._modelStatus != null;
         }
 
         /// <summary>

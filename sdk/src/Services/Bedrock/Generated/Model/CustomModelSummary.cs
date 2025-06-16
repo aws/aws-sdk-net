@@ -40,6 +40,7 @@ namespace Amazon.Bedrock.Model
         private CustomizationType _customizationType;
         private string _modelArn;
         private string _modelName;
+        private ModelStatus _modelStatus;
         private string _ownerAccountId;
 
         /// <summary>
@@ -155,6 +156,37 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetModelName()
         {
             return this._modelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelStatus. 
+        /// <para>
+        /// The current status of the custom model. Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Creating</c> - The model is being created and validated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Active</c> - The model has been successfully created and is ready for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Failed</c> - The model creation process failed.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ModelStatus ModelStatus
+        {
+            get { return this._modelStatus; }
+            set { this._modelStatus = value; }
+        }
+
+        // Check to see if ModelStatus property is set
+        internal bool IsSetModelStatus()
+        {
+            return this._modelStatus != null;
         }
 
         /// <summary>
