@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Data source for the imported model.
+    /// The data source of the model to import.
     /// </summary>
     public partial class ModelDataSource
     {
@@ -39,7 +39,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property S3DataSource. 
         /// <para>
-        /// The Amazon S3 data source of the imported model.
+        /// The Amazon S3 data source of the model to import.
         /// </para>
         /// </summary>
         public S3DataSource S3DataSource
