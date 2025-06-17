@@ -615,13 +615,13 @@ namespace Amazon.DatabaseMigrationService.Model
         /// When creating an S3 target endpoint, set <c>DatePartitionTimezone</c> to convert the
         /// current UTC time into a specified time zone. The conversion occurs when a date partition
         /// folder is created and a CDC filename is generated. The time zone format is Area/Location.
-        /// Use this parameter when <c>DatePartitionedEnabled</c> is set to <c>true</c>, as shown
-        /// in the following example.
+        /// Use this parameter when <c>DatePartitionedEnabled</c> is set to true, as shown in
+        /// the following example:
         /// </para>
         ///  
         /// <para>
         ///  <c>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH",
-        /// "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+        /// "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"Asia/Seoul", "BucketName":
         /// "dms-nattarat-test"}'</c> 
         /// </para>
         /// </summary>

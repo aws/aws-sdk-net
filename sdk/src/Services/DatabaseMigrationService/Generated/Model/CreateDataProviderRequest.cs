@@ -41,6 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _engine;
         private DataProviderSettings _settings;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private bool? _virtual;
 
         /// <summary>
         /// Gets and sets the property DataProviderName. 
@@ -140,6 +141,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Virtual. 
+        /// <para>
+        /// Indicates whether the data provider is virtual.
+        /// </para>
+        /// </summary>
+        public bool? Virtual
+        {
+            get { return this._virtual; }
+            set { this._virtual = value; }
+        }
+
+        // Check to see if Virtual property is set
+        internal bool IsSetVirtual()
+        {
+            return this._virtual.HasValue; 
         }
 
     }
