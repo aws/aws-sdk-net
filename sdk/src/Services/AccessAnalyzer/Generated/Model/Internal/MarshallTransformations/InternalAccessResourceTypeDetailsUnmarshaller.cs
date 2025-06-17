@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AnalyzerConfiguration Object
+    /// Response Unmarshaller for InternalAccessResourceTypeDetails Object
     /// </summary>  
-    public class AnalyzerConfigurationUnmarshaller : IUnmarshaller<AnalyzerConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AnalyzerConfiguration, JsonUnmarshallerContext>
+    public class InternalAccessResourceTypeDetailsUnmarshaller : IUnmarshaller<InternalAccessResourceTypeDetails, XmlUnmarshallerContext>, IUnmarshaller<InternalAccessResourceTypeDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AnalyzerConfiguration IUnmarshaller<AnalyzerConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InternalAccessResourceTypeDetails IUnmarshaller<InternalAccessResourceTypeDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnalyzerConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public InternalAccessResourceTypeDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            AnalyzerConfiguration unmarshalledObject = new AnalyzerConfiguration();
+            InternalAccessResourceTypeDetails unmarshalledObject = new InternalAccessResourceTypeDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,22 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("internalAccess", targetDepth))
+                if (context.TestExpression("totalActiveFindings", targetDepth))
                 {
-                    var unmarshaller = InternalAccessConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.InternalAccess = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalActiveFindings = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("unusedAccess", targetDepth))
+                if (context.TestExpression("totalArchivedFindings", targetDepth))
                 {
-                    var unmarshaller = UnusedAccessConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.UnusedAccess = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalArchivedFindings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalResolvedFindings", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalResolvedFindings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +89,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         }
 
 
-        private static AnalyzerConfigurationUnmarshaller _instance = new AnalyzerConfigurationUnmarshaller();        
+        private static InternalAccessResourceTypeDetailsUnmarshaller _instance = new InternalAccessResourceTypeDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AnalyzerConfigurationUnmarshaller Instance
+        public static InternalAccessResourceTypeDetailsUnmarshaller Instance
         {
             get
             {

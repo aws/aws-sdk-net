@@ -67,7 +67,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Specifies whether the analyzer is an external access or unused access analyzer.
+        /// Specifies if the analyzer is an external access, unused access, or internal access
+        /// analyzer.
         /// </para>
         /// </summary>
         public AnalyzerConfiguration Configuration

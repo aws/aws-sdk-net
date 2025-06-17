@@ -36,6 +36,7 @@ namespace Amazon.AccessAnalyzer.Model
     public partial class FindingsStatistics
     {
         private ExternalAccessFindingsStatistics _externalAccessFindingsStatistics;
+        private InternalAccessFindingsStatistics _internalAccessFindingsStatistics;
         private UnusedAccessFindingsStatistics _unusedAccessFindingsStatistics;
 
         /// <summary>
@@ -54,6 +55,26 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetExternalAccessFindingsStatistics()
         {
             return this._externalAccessFindingsStatistics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InternalAccessFindingsStatistics. 
+        /// <para>
+        /// The aggregate statistics for an internal access analyzer. This includes information
+        /// about active, archived, and resolved findings related to internal access within your
+        /// Amazon Web Services organization or account.
+        /// </para>
+        /// </summary>
+        public InternalAccessFindingsStatistics InternalAccessFindingsStatistics
+        {
+            get { return this._internalAccessFindingsStatistics; }
+            set { this._internalAccessFindingsStatistics = value; }
+        }
+
+        // Check to see if InternalAccessFindingsStatistics property is set
+        internal bool IsSetInternalAccessFindingsStatistics()
+        {
+            return this._internalAccessFindingsStatistics != null;
         }
 
         /// <summary>

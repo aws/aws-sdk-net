@@ -122,6 +122,30 @@ namespace Amazon.AccessAnalyzer.Model
         /// The type of restriction applied to the finding by the resource owner with an Organizations
         /// resource control policy (RCP).
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>APPLICABLE</c>: There is an RCP present in the organization but IAM Access Analyzer
+        /// does not include it in the evaluation of effective permissions. For example, if <c>s3:DeleteObject</c>
+        /// is blocked by the RCP and the restriction is <c>APPLICABLE</c>, then <c>s3:DeleteObject</c>
+        /// would still be included in the list of actions for the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FAILED_TO_EVALUATE_RCP</c>: There was an error evaluating the RCP.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOT_APPLICABLE</c>: There was no RCP present in the organization, or there was
+        /// no RCP applicable to the resource. For example, the resource being analyzed is an
+        /// Amazon RDS snapshot and there is an RCP in the organization, but the RCP only impacts
+        /// Amazon S3 buckets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>APPLIED</c>: This restriction is not currently available for external access findings.
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResourceControlPolicyRestriction ResourceControlPolicyRestriction
         {

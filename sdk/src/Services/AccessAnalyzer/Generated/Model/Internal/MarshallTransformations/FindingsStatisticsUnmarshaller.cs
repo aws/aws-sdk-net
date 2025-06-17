@@ -72,6 +72,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExternalAccessFindingsStatistics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("internalAccessFindingsStatistics", targetDepth))
+                {
+                    var unmarshaller = InternalAccessFindingsStatisticsUnmarshaller.Instance;
+                    unmarshalledObject.InternalAccessFindingsStatistics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("unusedAccessFindingsStatistics", targetDepth))
                 {
                     var unmarshaller = UnusedAccessFindingsStatisticsUnmarshaller.Instance;

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AnalyzerConfiguration Object
+    /// Response Unmarshaller for InternalAccessConfiguration Object
     /// </summary>  
-    public class AnalyzerConfigurationUnmarshaller : IUnmarshaller<AnalyzerConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AnalyzerConfiguration, JsonUnmarshallerContext>
+    public class InternalAccessConfigurationUnmarshaller : IUnmarshaller<InternalAccessConfiguration, XmlUnmarshallerContext>, IUnmarshaller<InternalAccessConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AnalyzerConfiguration IUnmarshaller<AnalyzerConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InternalAccessConfiguration IUnmarshaller<InternalAccessConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnalyzerConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public InternalAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            AnalyzerConfiguration unmarshalledObject = new AnalyzerConfiguration();
+            InternalAccessConfiguration unmarshalledObject = new InternalAccessConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("internalAccess", targetDepth))
+                if (context.TestExpression("analysisRule", targetDepth))
                 {
-                    var unmarshaller = InternalAccessConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.InternalAccess = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("unusedAccess", targetDepth))
-                {
-                    var unmarshaller = UnusedAccessConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.UnusedAccess = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InternalAccessAnalysisRuleUnmarshaller.Instance;
+                    unmarshalledObject.AnalysisRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         }
 
 
-        private static AnalyzerConfigurationUnmarshaller _instance = new AnalyzerConfigurationUnmarshaller();        
+        private static InternalAccessConfigurationUnmarshaller _instance = new InternalAccessConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AnalyzerConfigurationUnmarshaller Instance
+        public static InternalAccessConfigurationUnmarshaller Instance
         {
             get
             {

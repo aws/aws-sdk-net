@@ -102,7 +102,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer,
-        /// the specified scope of unused access is used for the configuration.
+        /// the specified scope of unused access is used for the configuration. If the analyzer
+        /// is an internal access analyzer, the specified internal access analysis rules are used
+        /// for the configuration.
         /// </para>
         /// </summary>
         public AnalyzerConfiguration Configuration
@@ -149,10 +151,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of analyzer to create. Only <c>ACCOUNT</c>, <c>ORGANIZATION</c>, <c>ACCOUNT_UNUSED_ACCESS</c>,
-        /// and <c>ORGANIZATION_UNUSED_ACCESS</c> analyzers are supported. You can create only
-        /// one analyzer per account per Region. You can create up to 5 analyzers per organization
-        /// per Region.
+        /// The type of analyzer to create. You can create only one analyzer per account per Region.
+        /// You can create up to 5 analyzers per organization per Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -36,6 +36,7 @@ namespace Amazon.AccessAnalyzer.Model
     public partial class FindingDetails
     {
         private ExternalAccessDetails _externalAccessDetails;
+        private InternalAccessDetails _internalAccessDetails;
         private UnusedIamRoleDetails _unusedIamRoleDetails;
         private UnusedIamUserAccessKeyDetails _unusedIamUserAccessKeyDetails;
         private UnusedIamUserPasswordDetails _unusedIamUserPasswordDetails;
@@ -57,6 +58,25 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetExternalAccessDetails()
         {
             return this._externalAccessDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InternalAccessDetails. 
+        /// <para>
+        /// The details for an internal access analyzer finding. This contains information about
+        /// access patterns identified within your Amazon Web Services organization or account.
+        /// </para>
+        /// </summary>
+        public InternalAccessDetails InternalAccessDetails
+        {
+            get { return this._internalAccessDetails; }
+            set { this._internalAccessDetails = value; }
+        }
+
+        // Check to see if InternalAccessDetails property is set
+        internal bool IsSetInternalAccessDetails()
+        {
+            return this._internalAccessDetails != null;
         }
 
         /// <summary>

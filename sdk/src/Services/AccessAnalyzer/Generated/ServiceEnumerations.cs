@@ -821,6 +821,10 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         public static readonly FindingType ExternalAccess = new FindingType("ExternalAccess");
         /// <summary>
+        /// Constant InternalAccess for FindingType
+        /// </summary>
+        public static readonly FindingType InternalAccess = new FindingType("InternalAccess");
+        /// <summary>
         /// Constant UnusedIAMRole for FindingType
         /// </summary>
         public static readonly FindingType UnusedIAMRole = new FindingType("UnusedIAMRole");
@@ -866,6 +870,56 @@ namespace Amazon.AccessAnalyzer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FindingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InternalAccessType.
+    /// </summary>
+    public class InternalAccessType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTRA_ACCOUNT for InternalAccessType
+        /// </summary>
+        public static readonly InternalAccessType INTRA_ACCOUNT = new InternalAccessType("INTRA_ACCOUNT");
+        /// <summary>
+        /// Constant INTRA_ORG for InternalAccessType
+        /// </summary>
+        public static readonly InternalAccessType INTRA_ORG = new InternalAccessType("INTRA_ORG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InternalAccessType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InternalAccessType FindValue(string value)
+        {
+            return FindValue<InternalAccessType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InternalAccessType(string value)
         {
             return FindValue(value);
         }
@@ -1277,6 +1331,56 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type PrincipalType.
+    /// </summary>
+    public class PrincipalType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IAM_ROLE for PrincipalType
+        /// </summary>
+        public static readonly PrincipalType IAM_ROLE = new PrincipalType("IAM_ROLE");
+        /// <summary>
+        /// Constant IAM_USER for PrincipalType
+        /// </summary>
+        public static readonly PrincipalType IAM_USER = new PrincipalType("IAM_USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrincipalType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrincipalType FindValue(string value)
+        {
+            return FindValue<PrincipalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrincipalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReasonCode.
     /// </summary>
     public class ReasonCode : ConstantClass
@@ -1441,6 +1545,10 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         public static readonly ResourceControlPolicyRestriction APPLICABLE = new ResourceControlPolicyRestriction("APPLICABLE");
         /// <summary>
+        /// Constant APPLIED for ResourceControlPolicyRestriction
+        /// </summary>
+        public static readonly ResourceControlPolicyRestriction APPLIED = new ResourceControlPolicyRestriction("APPLIED");
+        /// <summary>
         /// Constant FAILED_TO_EVALUATE_RCP for ResourceControlPolicyRestriction
         /// </summary>
         public static readonly ResourceControlPolicyRestriction FAILED_TO_EVALUATE_RCP = new ResourceControlPolicyRestriction("FAILED_TO_EVALUATE_RCP");
@@ -1595,6 +1703,64 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type ServiceControlPolicyRestriction.
+    /// </summary>
+    public class ServiceControlPolicyRestriction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLICABLE for ServiceControlPolicyRestriction
+        /// </summary>
+        public static readonly ServiceControlPolicyRestriction APPLICABLE = new ServiceControlPolicyRestriction("APPLICABLE");
+        /// <summary>
+        /// Constant APPLIED for ServiceControlPolicyRestriction
+        /// </summary>
+        public static readonly ServiceControlPolicyRestriction APPLIED = new ServiceControlPolicyRestriction("APPLIED");
+        /// <summary>
+        /// Constant FAILED_TO_EVALUATE_SCP for ServiceControlPolicyRestriction
+        /// </summary>
+        public static readonly ServiceControlPolicyRestriction FAILED_TO_EVALUATE_SCP = new ServiceControlPolicyRestriction("FAILED_TO_EVALUATE_SCP");
+        /// <summary>
+        /// Constant NOT_APPLICABLE for ServiceControlPolicyRestriction
+        /// </summary>
+        public static readonly ServiceControlPolicyRestriction NOT_APPLICABLE = new ServiceControlPolicyRestriction("NOT_APPLICABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceControlPolicyRestriction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceControlPolicyRestriction FindValue(string value)
+        {
+            return FindValue<ServiceControlPolicyRestriction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceControlPolicyRestriction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Status.
     /// </summary>
     public class Status : ConstantClass
@@ -1659,6 +1825,10 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         public static readonly Type ACCOUNT = new Type("ACCOUNT");
         /// <summary>
+        /// Constant ACCOUNT_INTERNAL_ACCESS for Type
+        /// </summary>
+        public static readonly Type ACCOUNT_INTERNAL_ACCESS = new Type("ACCOUNT_INTERNAL_ACCESS");
+        /// <summary>
         /// Constant ACCOUNT_UNUSED_ACCESS for Type
         /// </summary>
         public static readonly Type ACCOUNT_UNUSED_ACCESS = new Type("ACCOUNT_UNUSED_ACCESS");
@@ -1666,6 +1836,10 @@ namespace Amazon.AccessAnalyzer
         /// Constant ORGANIZATION for Type
         /// </summary>
         public static readonly Type ORGANIZATION = new Type("ORGANIZATION");
+        /// <summary>
+        /// Constant ORGANIZATION_INTERNAL_ACCESS for Type
+        /// </summary>
+        public static readonly Type ORGANIZATION_INTERNAL_ACCESS = new Type("ORGANIZATION_INTERNAL_ACCESS");
         /// <summary>
         /// Constant ORGANIZATION_UNUSED_ACCESS for Type
         /// </summary>
