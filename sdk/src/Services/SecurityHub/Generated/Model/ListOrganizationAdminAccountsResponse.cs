@@ -35,6 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class ListOrganizationAdminAccountsResponse : AmazonWebServiceResponse
     {
         private List<AdminAccount> _adminAccounts = AWSConfigs.InitializeCollections ? new List<AdminAccount>() : null;
+        private SecurityHubFeature _feature;
         private string _nextToken;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAdminAccounts()
         {
             return this._adminAccounts != null && (this._adminAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Feature. 
+        /// <para>
+        /// The feature where the delegated administrator account is listed. Defaults to Security
+        /// Hub CSPM if not specified.
+        /// </para>
+        /// </summary>
+        public SecurityHubFeature Feature
+        {
+            get { return this._feature; }
+            set { this._feature = value; }
+        }
+
+        // Check to see if Feature property is set
+        internal bool IsSetFeature()
+        {
+            return this._feature != null;
         }
 
         /// <summary>

@@ -48,6 +48,16 @@ namespace Amazon.SecurityHub.Model
         IDescribeProductsPaginator DescribeProducts(DescribeProductsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeProductsV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeProductsV2Paginator DescribeProductsV2(DescribeProductsV2Request request);
+
+        /// <summary>
         /// Paginator for DescribeStandards operation
         ///</summary>
         [AWSPaginator(
@@ -98,6 +108,16 @@ namespace Amazon.SecurityHub.Model
         IGetFindingsPaginator GetFindings(GetFindingsRequest request);
 
         /// <summary>
+        /// Paginator for GetFindingsV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetFindingsV2Paginator GetFindingsV2(GetFindingsV2Request request);
+
+        /// <summary>
         /// Paginator for GetInsights operation
         ///</summary>
         [AWSPaginator(
@@ -106,6 +126,26 @@ namespace Amazon.SecurityHub.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetInsightsPaginator GetInsights(GetInsightsRequest request);
+
+        /// <summary>
+        /// Paginator for GetResourcesV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetResourcesV2Paginator GetResourcesV2(GetResourcesV2Request request);
+
+        /// <summary>
+        /// Paginator for ListAggregatorsV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAggregatorsV2Paginator ListAggregatorsV2(ListAggregatorsV2Request request);
 
         /// <summary>
         /// Paginator for ListConfigurationPolicies operation

@@ -48,6 +48,23 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         {
             EnableOrganizationAdminAccountResponse response = new EnableOrganizationAdminAccountResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("AdminAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AdminAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Feature", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Feature = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

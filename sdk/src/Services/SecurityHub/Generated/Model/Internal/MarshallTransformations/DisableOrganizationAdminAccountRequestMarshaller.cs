@@ -73,6 +73,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AdminAccountId);
                 }
 
+                if(publicRequest.IsSetFeature())
+                {
+                    context.Writer.WritePropertyName("Feature");
+                    context.Writer.Write(publicRequest.Feature);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

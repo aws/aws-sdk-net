@@ -1314,20 +1314,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Used by Security Hub customers to update information about their investigation into
-        /// a finding. Requested by administrator accounts or member accounts. Administrator accounts
-        /// can update findings for their account and their member accounts. Member accounts can
-        /// update findings for their account.
+        /// one or more findings. Requested by administrator accounts or member accounts. Administrator
+        /// accounts can update findings for their account and their member accounts. A member
+        /// account can update findings only for their own account. Administrator and member accounts
+        /// can use this operation to update the following fields and objects for one or more
+        /// findings: 
         /// 
-        ///  
-        /// <para>
-        /// Updates from <c>BatchUpdateFindings</c> don't affect the value of <c>UpdatedAt</c>
-        /// for a finding.
-        /// </para>
-        ///  
-        /// <para>
-        /// Administrator and member accounts can use <c>BatchUpdateFindings</c> to update the
-        /// following finding fields and objects.
-        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>Confidence</c> 
@@ -1366,10 +1358,17 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can configure IAM policies to restrict access to fields and field values. For
+        ///  If you use this operation to update a finding, your updates don’t affect the value
+        /// for the <c>UpdatedAt</c> field of the finding. Also note that it can take several
+        /// minutes for Security Hub to process your request and update each finding specified
+        /// in the request. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can configure IAM policies to restrict access to fields and field values. For
         /// example, you might not want member accounts to be able to suppress findings or change
-        /// the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-        /// access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>.
+        /// the finding severity. For more information see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
+        /// access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings service method.</param>
@@ -1432,6 +1431,84 @@ namespace Amazon.SecurityHub
         public virtual BatchUpdateFindingsResponse EndBatchUpdateFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchUpdateFindingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateFindingsV2
+
+        /// <summary>
+        /// Used by customers to update information about their investigation into a finding.
+        /// Requested by delegated administrator accounts or member accounts. Delegated administrator
+        /// accounts can update findings for their account and their member accounts. Member accounts
+        /// can update findings for their account. <c>BatchUpdateFindings</c> and <c>BatchUpdateFindingV2</c>
+        /// both use <c>securityhub:BatchUpdateFindings</c> in the <c>Action</c> element of an
+        /// IAM policy statement. You must have permission to perform the <c>securityhub:BatchUpdateFindings</c>
+        /// action. Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of f<c>inding_info.modified_time</c>,
+        /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>. This
+        /// API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindingsV2 service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateFindingsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsV2">REST API Reference for BatchUpdateFindingsV2 Operation</seealso>
+        public virtual BatchUpdateFindingsV2Response BatchUpdateFindingsV2(BatchUpdateFindingsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateFindingsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateFindingsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateFindingsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateFindingsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindingsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateFindingsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsV2">REST API Reference for BatchUpdateFindingsV2 Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateFindingsV2(BatchUpdateFindingsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateFindingsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateFindingsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateFindingsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateFindingsV2.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateFindingsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsV2">REST API Reference for BatchUpdateFindingsV2 Operation</seealso>
+        public virtual BatchUpdateFindingsV2Response EndBatchUpdateFindingsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateFindingsV2Response>(asyncResult);
         }
 
         #endregion
@@ -1505,6 +1582,80 @@ namespace Amazon.SecurityHub
         public virtual BatchUpdateStandardsControlAssociationsResponse EndBatchUpdateStandardsControlAssociations(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchUpdateStandardsControlAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ConnectorRegistrationsV2
+
+        /// <summary>
+        /// Grants permission to complete the authorization based on input parameters. This API
+        /// is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConnectorRegistrationsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ConnectorRegistrationsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">REST API Reference for ConnectorRegistrationsV2 Operation</seealso>
+        public virtual ConnectorRegistrationsV2Response ConnectorRegistrationsV2(ConnectorRegistrationsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConnectorRegistrationsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConnectorRegistrationsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ConnectorRegistrationsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConnectorRegistrationsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConnectorRegistrationsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConnectorRegistrationsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">REST API Reference for ConnectorRegistrationsV2 Operation</seealso>
+        public virtual IAsyncResult BeginConnectorRegistrationsV2(ConnectorRegistrationsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConnectorRegistrationsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConnectorRegistrationsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ConnectorRegistrationsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConnectorRegistrationsV2.</param>
+        /// 
+        /// <returns>Returns a  ConnectorRegistrationsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">REST API Reference for ConnectorRegistrationsV2 Operation</seealso>
+        public virtual ConnectorRegistrationsV2Response EndConnectorRegistrationsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ConnectorRegistrationsV2Response>(asyncResult);
         }
 
         #endregion
@@ -1587,6 +1738,80 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  CreateAggregatorV2
+
+        /// <summary>
+        /// Enables aggregation across Amazon Web Services Regions. This API is in private preview
+        /// and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAggregatorV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAggregatorV2">REST API Reference for CreateAggregatorV2 Operation</seealso>
+        public virtual CreateAggregatorV2Response CreateAggregatorV2(CreateAggregatorV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAggregatorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAggregatorV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAggregatorV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAggregatorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAggregatorV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAggregatorV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAggregatorV2">REST API Reference for CreateAggregatorV2 Operation</seealso>
+        public virtual IAsyncResult BeginCreateAggregatorV2(CreateAggregatorV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAggregatorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAggregatorV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAggregatorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAggregatorV2.</param>
+        /// 
+        /// <returns>Returns a  CreateAggregatorV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAggregatorV2">REST API Reference for CreateAggregatorV2 Operation</seealso>
+        public virtual CreateAggregatorV2Response EndCreateAggregatorV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAggregatorV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAutomationRule
 
         /// <summary>
@@ -1655,6 +1880,76 @@ namespace Amazon.SecurityHub
         public virtual CreateAutomationRuleResponse EndCreateAutomationRule(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAutomationRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAutomationRuleV2
+
+        /// <summary>
+        /// Creates a V2 automation rule. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRuleV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRuleV2">REST API Reference for CreateAutomationRuleV2 Operation</seealso>
+        public virtual CreateAutomationRuleV2Response CreateAutomationRuleV2(CreateAutomationRuleV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutomationRuleV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomationRuleV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutomationRuleV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAutomationRuleV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRuleV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutomationRuleV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRuleV2">REST API Reference for CreateAutomationRuleV2 Operation</seealso>
+        public virtual IAsyncResult BeginCreateAutomationRuleV2(CreateAutomationRuleV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutomationRuleV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomationRuleV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAutomationRuleV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutomationRuleV2.</param>
+        /// 
+        /// <returns>Returns a  CreateAutomationRuleV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRuleV2">REST API Reference for CreateAutomationRuleV2 Operation</seealso>
+        public virtual CreateAutomationRuleV2Response EndCreateAutomationRuleV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAutomationRuleV2Response>(asyncResult);
         }
 
         #endregion
@@ -1731,6 +2026,80 @@ namespace Amazon.SecurityHub
         public virtual CreateConfigurationPolicyResponse EndCreateConfigurationPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateConfigurationPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateConnectorV2
+
+        /// <summary>
+        /// Grants permission to create a connectorV2 based on input parameters. This API is in
+        /// preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnectorV2">REST API Reference for CreateConnectorV2 Operation</seealso>
+        public virtual CreateConnectorV2Response CreateConnectorV2(CreateConnectorV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectorV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectorV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnectorV2">REST API Reference for CreateConnectorV2 Operation</seealso>
+        public virtual IAsyncResult BeginCreateConnectorV2(CreateConnectorV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectorV2.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectorV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnectorV2">REST API Reference for CreateConnectorV2 Operation</seealso>
+        public virtual CreateConnectorV2Response EndCreateConnectorV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateConnectorV2Response>(asyncResult);
         }
 
         #endregion
@@ -2036,6 +2405,81 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  CreateTicketV2
+
+        /// <summary>
+        /// Grants permission to create a ticket in the chosen ITSM based on finding information
+        /// for the provided finding metadata UID. This API is in preview release and subject
+        /// to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTicketV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateTicketV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateTicketV2">REST API Reference for CreateTicketV2 Operation</seealso>
+        public virtual CreateTicketV2Response CreateTicketV2(CreateTicketV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTicketV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTicketV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTicketV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTicketV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTicketV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTicketV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateTicketV2">REST API Reference for CreateTicketV2 Operation</seealso>
+        public virtual IAsyncResult BeginCreateTicketV2(CreateTicketV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTicketV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTicketV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTicketV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTicketV2.</param>
+        /// 
+        /// <returns>Returns a  CreateTicketV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateTicketV2">REST API Reference for CreateTicketV2 Operation</seealso>
+        public virtual CreateTicketV2Response EndCreateTicketV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTicketV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeclineInvitations
 
         /// <summary>
@@ -2196,6 +2640,152 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  DeleteAggregatorV2
+
+        /// <summary>
+        /// Deletes the Aggregator V2. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAggregatorV2 service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAggregatorV2">REST API Reference for DeleteAggregatorV2 Operation</seealso>
+        public virtual DeleteAggregatorV2Response DeleteAggregatorV2(DeleteAggregatorV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAggregatorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAggregatorV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAggregatorV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAggregatorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAggregatorV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAggregatorV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAggregatorV2">REST API Reference for DeleteAggregatorV2 Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAggregatorV2(DeleteAggregatorV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAggregatorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAggregatorV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAggregatorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAggregatorV2.</param>
+        /// 
+        /// <returns>Returns a  DeleteAggregatorV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAggregatorV2">REST API Reference for DeleteAggregatorV2 Operation</seealso>
+        public virtual DeleteAggregatorV2Response EndDeleteAggregatorV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAggregatorV2Response>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAutomationRuleV2
+
+        /// <summary>
+        /// Deletes a V2 automation rule. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomationRuleV2 service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAutomationRuleV2">REST API Reference for DeleteAutomationRuleV2 Operation</seealso>
+        public virtual DeleteAutomationRuleV2Response DeleteAutomationRuleV2(DeleteAutomationRuleV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAutomationRuleV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomationRuleV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAutomationRuleV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAutomationRuleV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomationRuleV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAutomationRuleV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAutomationRuleV2">REST API Reference for DeleteAutomationRuleV2 Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAutomationRuleV2(DeleteAutomationRuleV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAutomationRuleV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomationRuleV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAutomationRuleV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAutomationRuleV2.</param>
+        /// 
+        /// <returns>Returns a  DeleteAutomationRuleV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAutomationRuleV2">REST API Reference for DeleteAutomationRuleV2 Operation</seealso>
+        public virtual DeleteAutomationRuleV2Response EndDeleteAutomationRuleV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAutomationRuleV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteConfigurationPolicy
 
         /// <summary>
@@ -2273,6 +2863,80 @@ namespace Amazon.SecurityHub
         public virtual DeleteConfigurationPolicyResponse EndDeleteConfigurationPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConfigurationPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteConnectorV2
+
+        /// <summary>
+        /// Grants permission to delete a connectorV2. This API is in preview release and subject
+        /// to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorV2 service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnectorV2">REST API Reference for DeleteConnectorV2 Operation</seealso>
+        public virtual DeleteConnectorV2Response DeleteConnectorV2(DeleteConnectorV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectorV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnectorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnectorV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnectorV2">REST API Reference for DeleteConnectorV2 Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConnectorV2(DeleteConnectorV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnectorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnectorV2.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectorV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnectorV2">REST API Reference for DeleteConnectorV2 Operation</seealso>
+        public virtual DeleteConnectorV2Response EndDeleteConnectorV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConnectorV2Response>(asyncResult);
         }
 
         #endregion
@@ -2900,6 +3564,145 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  DescribeProductsV2
+
+        /// <summary>
+        /// Gets information about the product integration. This API is in private preview and
+        /// subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProductsV2 service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProductsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProductsV2">REST API Reference for DescribeProductsV2 Operation</seealso>
+        public virtual DescribeProductsV2Response DescribeProductsV2(DescribeProductsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProductsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProductsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProductsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProductsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProductsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProductsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProductsV2">REST API Reference for DescribeProductsV2 Operation</seealso>
+        public virtual IAsyncResult BeginDescribeProductsV2(DescribeProductsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProductsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProductsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProductsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProductsV2.</param>
+        /// 
+        /// <returns>Returns a  DescribeProductsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProductsV2">REST API Reference for DescribeProductsV2 Operation</seealso>
+        public virtual DescribeProductsV2Response EndDescribeProductsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeProductsV2Response>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSecurityHubV2
+
+        /// <summary>
+        /// Returns details about the service resource in your account. This API is in private
+        /// preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityHubV2 service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecurityHubV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeSecurityHubV2">REST API Reference for DescribeSecurityHubV2 Operation</seealso>
+        public virtual DescribeSecurityHubV2Response DescribeSecurityHubV2(DescribeSecurityHubV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityHubV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityHubV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityHubV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityHubV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityHubV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecurityHubV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeSecurityHubV2">REST API Reference for DescribeSecurityHubV2 Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSecurityHubV2(DescribeSecurityHubV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityHubV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityHubV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSecurityHubV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecurityHubV2.</param>
+        /// 
+        /// <returns>Returns a  DescribeSecurityHubV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeSecurityHubV2">REST API Reference for DescribeSecurityHubV2 Operation</seealso>
+        public virtual DescribeSecurityHubV2Response EndDescribeSecurityHubV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSecurityHubV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeStandards
 
         /// <summary>
@@ -3280,6 +4083,74 @@ namespace Amazon.SecurityHub
         public virtual DisableSecurityHubResponse EndDisableSecurityHub(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableSecurityHubResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisableSecurityHubV2
+
+        /// <summary>
+        /// Disable the service for the current Amazon Web Services Region or specified Amazon
+        /// Web Services Region. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHubV2 service method.</param>
+        /// 
+        /// <returns>The response from the DisableSecurityHubV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubV2">REST API Reference for DisableSecurityHubV2 Operation</seealso>
+        public virtual DisableSecurityHubV2Response DisableSecurityHubV2(DisableSecurityHubV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSecurityHubV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSecurityHubV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DisableSecurityHubV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableSecurityHubV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHubV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableSecurityHubV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubV2">REST API Reference for DisableSecurityHubV2 Operation</seealso>
+        public virtual IAsyncResult BeginDisableSecurityHubV2(DisableSecurityHubV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSecurityHubV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSecurityHubV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableSecurityHubV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableSecurityHubV2.</param>
+        /// 
+        /// <returns>Returns a  DisableSecurityHubV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubV2">REST API Reference for DisableSecurityHubV2 Operation</seealso>
+        public virtual DisableSecurityHubV2Response EndDisableSecurityHubV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableSecurityHubV2Response>(asyncResult);
         }
 
         #endregion
@@ -3800,6 +4671,74 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  EnableSecurityHubV2
+
+        /// <summary>
+        /// Enables the service in account for the current Amazon Web Services Region or specified
+        /// Amazon Web Services Region. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHubV2 service method.</param>
+        /// 
+        /// <returns>The response from the EnableSecurityHubV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubV2">REST API Reference for EnableSecurityHubV2 Operation</seealso>
+        public virtual EnableSecurityHubV2Response EnableSecurityHubV2(EnableSecurityHubV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSecurityHubV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSecurityHubV2ResponseUnmarshaller.Instance;
+
+            return Invoke<EnableSecurityHubV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableSecurityHubV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHubV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableSecurityHubV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubV2">REST API Reference for EnableSecurityHubV2 Operation</seealso>
+        public virtual IAsyncResult BeginEnableSecurityHubV2(EnableSecurityHubV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSecurityHubV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSecurityHubV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableSecurityHubV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableSecurityHubV2.</param>
+        /// 
+        /// <returns>Returns a  EnableSecurityHubV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubV2">REST API Reference for EnableSecurityHubV2 Operation</seealso>
+        public virtual EnableSecurityHubV2Response EndEnableSecurityHubV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableSecurityHubV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAdministratorAccount
 
         /// <summary>
@@ -3875,6 +4814,154 @@ namespace Amazon.SecurityHub
         public virtual GetAdministratorAccountResponse EndGetAdministratorAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAdministratorAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAggregatorV2
+
+        /// <summary>
+        /// Returns the configuration of the specified Aggregator V2. This API is in private preview
+        /// and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregatorV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAggregatorV2">REST API Reference for GetAggregatorV2 Operation</seealso>
+        public virtual GetAggregatorV2Response GetAggregatorV2(GetAggregatorV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregatorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregatorV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetAggregatorV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAggregatorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregatorV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAggregatorV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAggregatorV2">REST API Reference for GetAggregatorV2 Operation</seealso>
+        public virtual IAsyncResult BeginGetAggregatorV2(GetAggregatorV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAggregatorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAggregatorV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAggregatorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAggregatorV2.</param>
+        /// 
+        /// <returns>Returns a  GetAggregatorV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAggregatorV2">REST API Reference for GetAggregatorV2 Operation</seealso>
+        public virtual GetAggregatorV2Response EndGetAggregatorV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAggregatorV2Response>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAutomationRuleV2
+
+        /// <summary>
+        /// Returns an automation rule for the V2 service. This API is in private preview and
+        /// subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomationRuleV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAutomationRuleV2">REST API Reference for GetAutomationRuleV2 Operation</seealso>
+        public virtual GetAutomationRuleV2Response GetAutomationRuleV2(GetAutomationRuleV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomationRuleV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomationRuleV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomationRuleV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomationRuleV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomationRuleV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomationRuleV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAutomationRuleV2">REST API Reference for GetAutomationRuleV2 Operation</seealso>
+        public virtual IAsyncResult BeginGetAutomationRuleV2(GetAutomationRuleV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAutomationRuleV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomationRuleV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutomationRuleV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomationRuleV2.</param>
+        /// 
+        /// <returns>Returns a  GetAutomationRuleV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAutomationRuleV2">REST API Reference for GetAutomationRuleV2 Operation</seealso>
+        public virtual GetAutomationRuleV2Response EndGetAutomationRuleV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAutomationRuleV2Response>(asyncResult);
         }
 
         #endregion
@@ -4029,6 +5116,80 @@ namespace Amazon.SecurityHub
         public virtual GetConfigurationPolicyAssociationResponse EndGetConfigurationPolicyAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConfigurationPolicyAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetConnectorV2
+
+        /// <summary>
+        /// Grants permission to retrieve details for a connectorV2 based on connector id. This
+        /// API is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnectorV2">REST API Reference for GetConnectorV2 Operation</seealso>
+        public virtual GetConnectorV2Response GetConnectorV2(GetConnectorV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectorV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectorV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectorV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnectorV2">REST API Reference for GetConnectorV2 Operation</seealso>
+        public virtual IAsyncResult BeginGetConnectorV2(GetConnectorV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectorV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectorV2.</param>
+        /// 
+        /// <returns>Returns a  GetConnectorV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnectorV2">REST API Reference for GetConnectorV2 Operation</seealso>
+        public virtual GetConnectorV2Response EndGetConnectorV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetConnectorV2Response>(asyncResult);
         }
 
         #endregion
@@ -4189,8 +5350,21 @@ namespace Amazon.SecurityHub
         #region  GetFindingHistory
 
         /// <summary>
-        /// Returns history for a Security Hub finding in the last 90 days. The history includes
-        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF).
+        /// Returns the history of a Security Hub finding for the past 90 days. The history includes
+        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF)
+        /// except top-level timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c>
+        /// fields. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation might return fewer results than the maximum number of results (<c>MaxResults</c>)
+        /// specified in a request, even when more results are available. If this occurs, the
+        /// response includes a <c>NextToken</c> value, which you should use to retrieve the next
+        /// set of results in the response. The presence of a <c>NextToken</c> value in a response
+        /// doesn't necessarily indicate that the results are incomplete. However, you should
+        /// continue to specify a <c>NextToken</c> value until you receive a response that doesn't
+        /// include this value.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingHistory service method.</param>
         /// 
@@ -4328,6 +5502,152 @@ namespace Amazon.SecurityHub
         public virtual GetFindingsResponse EndGetFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFindingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFindingStatisticsV2
+
+        /// <summary>
+        /// Returns aggregated statistical data about findings. <c>GetFindingStatisticsV2</c>
+        /// use <c>securityhub:GetAdhocInsightResults</c> in the <c>Action</c> element of an IAM
+        /// policy statement. You must have permission to perform the <c>s</c> action. This API
+        /// is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingStatisticsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingStatisticsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">REST API Reference for GetFindingStatisticsV2 Operation</seealso>
+        public virtual GetFindingStatisticsV2Response GetFindingStatisticsV2(GetFindingStatisticsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingStatisticsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingStatisticsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetFindingStatisticsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFindingStatisticsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingStatisticsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingStatisticsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">REST API Reference for GetFindingStatisticsV2 Operation</seealso>
+        public virtual IAsyncResult BeginGetFindingStatisticsV2(GetFindingStatisticsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingStatisticsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingStatisticsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFindingStatisticsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingStatisticsV2.</param>
+        /// 
+        /// <returns>Returns a  GetFindingStatisticsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">REST API Reference for GetFindingStatisticsV2 Operation</seealso>
+        public virtual GetFindingStatisticsV2Response EndGetFindingStatisticsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFindingStatisticsV2Response>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFindingsV2
+
+        /// <summary>
+        /// Return a list of findings that match the specified criteria. <c>GetFindings</c> and
+        /// <c>GetFindingsV2</c> both use <c>securityhub:GetFindings</c> in the <c>Action</c>
+        /// element of an IAM policy statement. You must have permission to perform the <c>securityhub:GetFindings</c>
+        /// action. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsV2">REST API Reference for GetFindingsV2 Operation</seealso>
+        public virtual GetFindingsV2Response GetFindingsV2(GetFindingsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetFindingsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFindingsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsV2">REST API Reference for GetFindingsV2 Operation</seealso>
+        public virtual IAsyncResult BeginGetFindingsV2(GetFindingsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFindingsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingsV2.</param>
+        /// 
+        /// <returns>Returns a  GetFindingsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsV2">REST API Reference for GetFindingsV2 Operation</seealso>
+        public virtual GetFindingsV2Response EndGetFindingsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFindingsV2Response>(asyncResult);
         }
 
         #endregion
@@ -4734,6 +6054,153 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  GetResourcesStatisticsV2
+
+        /// <summary>
+        /// Retrieves statistical information about Amazon Web Services resources and their associated
+        /// security findings. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcesStatisticsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">REST API Reference for GetResourcesStatisticsV2 Operation</seealso>
+        public virtual GetResourcesStatisticsV2Response GetResourcesStatisticsV2(GetResourcesStatisticsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcesStatisticsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcesStatisticsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcesStatisticsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcesStatisticsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcesStatisticsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">REST API Reference for GetResourcesStatisticsV2 Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcesStatisticsV2(GetResourcesStatisticsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcesStatisticsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcesStatisticsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcesStatisticsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcesStatisticsV2.</param>
+        /// 
+        /// <returns>Returns a  GetResourcesStatisticsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">REST API Reference for GetResourcesStatisticsV2 Operation</seealso>
+        public virtual GetResourcesStatisticsV2Response EndGetResourcesStatisticsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcesStatisticsV2Response>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResourcesV2
+
+        /// <summary>
+        /// Returns a list of resources. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">REST API Reference for GetResourcesV2 Operation</seealso>
+        public virtual GetResourcesV2Response GetResourcesV2(GetResourcesV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcesV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcesV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcesV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcesV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcesV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">REST API Reference for GetResourcesV2 Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcesV2(GetResourcesV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcesV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcesV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcesV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcesV2.</param>
+        /// 
+        /// <returns>Returns a  GetResourcesV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">REST API Reference for GetResourcesV2 Operation</seealso>
+        public virtual GetResourcesV2Response EndGetResourcesV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcesV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSecurityControlDefinition
 
         /// <summary>
@@ -4906,6 +6373,80 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  ListAggregatorsV2
+
+        /// <summary>
+        /// Retrieves a list of V2 aggregators. This API is in private preview and subject to
+        /// change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregatorsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListAggregatorsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAggregatorsV2">REST API Reference for ListAggregatorsV2 Operation</seealso>
+        public virtual ListAggregatorsV2Response ListAggregatorsV2(ListAggregatorsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAggregatorsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAggregatorsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListAggregatorsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAggregatorsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregatorsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAggregatorsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAggregatorsV2">REST API Reference for ListAggregatorsV2 Operation</seealso>
+        public virtual IAsyncResult BeginListAggregatorsV2(ListAggregatorsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAggregatorsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAggregatorsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAggregatorsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAggregatorsV2.</param>
+        /// 
+        /// <returns>Returns a  ListAggregatorsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAggregatorsV2">REST API Reference for ListAggregatorsV2 Operation</seealso>
+        public virtual ListAggregatorsV2Response EndListAggregatorsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAggregatorsV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAutomationRules
 
         /// <summary>
@@ -4974,6 +6515,77 @@ namespace Amazon.SecurityHub
         public virtual ListAutomationRulesResponse EndListAutomationRules(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAutomationRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAutomationRulesV2
+
+        /// <summary>
+        /// Returns a list of automation rules and metadata for the calling account. This API
+        /// is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRulesV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomationRulesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRulesV2">REST API Reference for ListAutomationRulesV2 Operation</seealso>
+        public virtual ListAutomationRulesV2Response ListAutomationRulesV2(ListAutomationRulesV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomationRulesV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomationRulesV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListAutomationRulesV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAutomationRulesV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRulesV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAutomationRulesV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRulesV2">REST API Reference for ListAutomationRulesV2 Operation</seealso>
+        public virtual IAsyncResult BeginListAutomationRulesV2(ListAutomationRulesV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomationRulesV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomationRulesV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAutomationRulesV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAutomationRulesV2.</param>
+        /// 
+        /// <returns>Returns a  ListAutomationRulesV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRulesV2">REST API Reference for ListAutomationRulesV2 Operation</seealso>
+        public virtual ListAutomationRulesV2Response EndListAutomationRulesV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAutomationRulesV2Response>(asyncResult);
         }
 
         #endregion
@@ -5122,6 +6734,80 @@ namespace Amazon.SecurityHub
         public virtual ListConfigurationPolicyAssociationsResponse EndListConfigurationPolicyAssociations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListConfigurationPolicyAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListConnectorsV2
+
+        /// <summary>
+        /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
+        /// account. This API is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectorsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectorsV2">REST API Reference for ListConnectorsV2 Operation</seealso>
+        public virtual ListConnectorsV2Response ListConnectorsV2(ListConnectorsV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectorsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorsV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectorsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorsV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectorsV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectorsV2">REST API Reference for ListConnectorsV2 Operation</seealso>
+        public virtual IAsyncResult BeginListConnectorsV2(ListConnectorsV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectorsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectorsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectorsV2.</param>
+        /// 
+        /// <returns>Returns a  ListConnectorsV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectorsV2">REST API Reference for ListConnectorsV2 Operation</seealso>
+        public virtual ListConnectorsV2Response EndListConnectorsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConnectorsV2Response>(asyncResult);
         }
 
         #endregion
@@ -6058,6 +7744,153 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  UpdateAggregatorV2
+
+        /// <summary>
+        /// Udpates the configuration for the Aggregator V2. This API is in private preview and
+        /// subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAggregatorV2 service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAggregatorV2">REST API Reference for UpdateAggregatorV2 Operation</seealso>
+        public virtual UpdateAggregatorV2Response UpdateAggregatorV2(UpdateAggregatorV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAggregatorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAggregatorV2ResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAggregatorV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAggregatorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAggregatorV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAggregatorV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAggregatorV2">REST API Reference for UpdateAggregatorV2 Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAggregatorV2(UpdateAggregatorV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAggregatorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAggregatorV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAggregatorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAggregatorV2.</param>
+        /// 
+        /// <returns>Returns a  UpdateAggregatorV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAggregatorV2">REST API Reference for UpdateAggregatorV2 Operation</seealso>
+        public virtual UpdateAggregatorV2Response EndUpdateAggregatorV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAggregatorV2Response>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAutomationRuleV2
+
+        /// <summary>
+        /// Updates a V2 automation rule. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomationRuleV2 service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAutomationRuleV2">REST API Reference for UpdateAutomationRuleV2 Operation</seealso>
+        public virtual UpdateAutomationRuleV2Response UpdateAutomationRuleV2(UpdateAutomationRuleV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutomationRuleV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomationRuleV2ResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAutomationRuleV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAutomationRuleV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomationRuleV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAutomationRuleV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAutomationRuleV2">REST API Reference for UpdateAutomationRuleV2 Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAutomationRuleV2(UpdateAutomationRuleV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAutomationRuleV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomationRuleV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAutomationRuleV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAutomationRuleV2.</param>
+        /// 
+        /// <returns>Returns a  UpdateAutomationRuleV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAutomationRuleV2">REST API Reference for UpdateAutomationRuleV2 Operation</seealso>
+        public virtual UpdateAutomationRuleV2Response EndUpdateAutomationRuleV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAutomationRuleV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateConfigurationPolicy
 
         /// <summary>
@@ -6133,6 +7966,80 @@ namespace Amazon.SecurityHub
         public virtual UpdateConfigurationPolicyResponse EndUpdateConfigurationPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConfigurationPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConnectorV2
+
+        /// <summary>
+        /// Grants permission to update a connectorV2 based on its id and input parameters. This
+        /// API is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorV2 service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnectorV2">REST API Reference for UpdateConnectorV2 Operation</seealso>
+        public virtual UpdateConnectorV2Response UpdateConnectorV2(UpdateConnectorV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorV2ResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectorV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorV2 operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectorV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnectorV2">REST API Reference for UpdateConnectorV2 Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConnectorV2(UpdateConnectorV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnectorV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnectorV2.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectorV2Result from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnectorV2">REST API Reference for UpdateConnectorV2 Operation</seealso>
+        public virtual UpdateConnectorV2Response EndUpdateConnectorV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConnectorV2Response>(asyncResult);
         }
 
         #endregion
