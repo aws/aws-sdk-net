@@ -30,35 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Container for the parameters to the RenewCertificate operation.
-    /// Renews an <a href="https://docs.aws.amazon.com/acm/latest/userguide/managed-renewal.html">eligible
-    /// ACM certificate</a>. In order to renew your Amazon Web Services Private CA certificates
-    /// with ACM, you must first <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant
-    /// the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
-    /// Managed Renewal</a> in the ACM User Guide.
+    /// This is the response object from the RevokeCertificate operation.
     /// </summary>
-    public partial class RenewCertificateRequest : AmazonCertificateManagerRequest
+    public partial class RevokeCertificateResponse : AmazonWebServiceResponse
     {
         private string _certificateArn;
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// String that contains the ARN of the ACM certificate to be renewed. This must be of
-        /// the form:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</c>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a>.
+        /// The Amazon Resource Name (ARN) of the public or private certificate that was revoked.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }

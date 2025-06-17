@@ -30,32 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Container for the parameters to the RenewCertificate operation.
-    /// Renews an <a href="https://docs.aws.amazon.com/acm/latest/userguide/managed-renewal.html">eligible
-    /// ACM certificate</a>. In order to renew your Amazon Web Services Private CA certificates
-    /// with ACM, you must first <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant
-    /// the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
-    /// Managed Renewal</a> in the ACM User Guide.
+    /// Container for the parameters to the RevokeCertificate operation.
+    /// Revokes a public ACM certificate. You can only revoke certificates that have been
+    /// previously exported.
     /// </summary>
-    public partial class RenewCertificateRequest : AmazonCertificateManagerRequest
+    public partial class RevokeCertificateRequest : AmazonCertificateManagerRequest
     {
         private string _certificateArn;
+        private RevocationReason _revocationReason;
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// String that contains the ARN of the ACM certificate to be renewed. This must be of
-        /// the form:
+        /// The Amazon Resource Name (ARN) of the public or private certificate that will be revoked.
+        /// The ARN must have the following form: 
         /// </para>
         ///  
         /// <para>
-        ///  <c>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</c>
+        ///  <c>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</c>
         /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -69,6 +62,25 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetCertificateArn()
         {
             return this._certificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevocationReason. 
+        /// <para>
+        /// Specifies why you revoked the certificate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public RevocationReason RevocationReason
+        {
+            get { return this._revocationReason; }
+            set { this._revocationReason = value; }
+        }
+
+        // Check to see if RevocationReason property is set
+        internal bool IsSetRevocationReason()
+        {
+            return this._revocationReason != null;
         }
 
     }

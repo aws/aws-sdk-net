@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// One or more of of request parameters specified is not valid.
+    /// One or more of request parameters specified is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -38,6 +38,7 @@ namespace Amazon.CertificateManager.Model
         private DateTime? _createdAt;
         private string _domainName;
         private bool? _exported;
+        private CertificateExport _exportOption;
         private List<string> _extendedKeyUsages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _hasAdditionalSubjectAlternativeNames;
         private DateTime? _importedAt;
@@ -138,6 +139,24 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetExported()
         {
             return this._exported.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportOption. 
+        /// <para>
+        /// Indicates if export is enabled for the certificate.
+        /// </para>
+        /// </summary>
+        public CertificateExport ExportOption
+        {
+            get { return this._exportOption; }
+            set { this._exportOption = value; }
+        }
+
+        // Check to see if ExportOption property is set
+        internal bool IsSetExportOption()
+        {
+            return this._exportOption != null;
         }
 
         /// <summary>
