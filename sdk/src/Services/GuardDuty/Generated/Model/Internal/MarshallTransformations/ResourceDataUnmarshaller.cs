@@ -72,6 +72,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("container", targetDepth))
+                {
+                    var unmarshaller = ContainerFindingResourceUnmarshaller.Instance;
+                    unmarshalledObject.Container = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ec2Instance", targetDepth))
                 {
                     var unmarshaller = Ec2InstanceUnmarshaller.Instance;
@@ -82,6 +88,18 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = Ec2NetworkInterfaceUnmarshaller.Instance;
                     unmarshalledObject.Ec2NetworkInterface = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eksCluster", targetDepth))
+                {
+                    var unmarshaller = EksClusterUnmarshaller.Instance;
+                    unmarshalledObject.EksCluster = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kubernetesWorkload", targetDepth))
+                {
+                    var unmarshaller = KubernetesWorkloadUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesWorkload = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("s3Bucket", targetDepth))

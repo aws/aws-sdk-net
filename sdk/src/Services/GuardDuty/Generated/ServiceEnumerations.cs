@@ -129,6 +129,72 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterStatus.
+    /// </summary>
+    public class ClusterStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus ACTIVE = new ClusterStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus CREATING = new ClusterStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus DELETING = new ClusterStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus FAILED = new ClusterStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus PENDING = new ClusterStatus("PENDING");
+        /// <summary>
+        /// Constant UPDATING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus UPDATING = new ClusterStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterStatus FindValue(string value)
+        {
+            return FindValue<ClusterStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CoverageFilterCriterionKey.
     /// </summary>
     public class CoverageFilterCriterionKey : ConstantClass
@@ -1145,6 +1211,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly FindingResourceType ACCESS_KEY = new FindingResourceType("ACCESS_KEY");
         /// <summary>
+        /// Constant CONTAINER for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType CONTAINER = new FindingResourceType("CONTAINER");
+        /// <summary>
         /// Constant EC2_INSTANCE for FindingResourceType
         /// </summary>
         public static readonly FindingResourceType EC2_INSTANCE = new FindingResourceType("EC2_INSTANCE");
@@ -1152,6 +1222,14 @@ namespace Amazon.GuardDuty
         /// Constant EC2_NETWORK_INTERFACE for FindingResourceType
         /// </summary>
         public static readonly FindingResourceType EC2_NETWORK_INTERFACE = new FindingResourceType("EC2_NETWORK_INTERFACE");
+        /// <summary>
+        /// Constant EKS_CLUSTER for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType EKS_CLUSTER = new FindingResourceType("EKS_CLUSTER");
+        /// <summary>
+        /// Constant KUBERNETES_WORKLOAD for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType KUBERNETES_WORKLOAD = new FindingResourceType("KUBERNETES_WORKLOAD");
         /// <summary>
         /// Constant S3_BUCKET for FindingResourceType
         /// </summary>
@@ -1405,17 +1483,41 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly IndicatorType ATTACK_TECHNIQUE = new IndicatorType("ATTACK_TECHNIQUE");
         /// <summary>
+        /// Constant CRYPTOMINING_DOMAIN for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType CRYPTOMINING_DOMAIN = new IndicatorType("CRYPTOMINING_DOMAIN");
+        /// <summary>
+        /// Constant CRYPTOMINING_IP for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType CRYPTOMINING_IP = new IndicatorType("CRYPTOMINING_IP");
+        /// <summary>
+        /// Constant CRYPTOMINING_PROCESS for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType CRYPTOMINING_PROCESS = new IndicatorType("CRYPTOMINING_PROCESS");
+        /// <summary>
         /// Constant HIGH_RISK_API for IndicatorType
         /// </summary>
         public static readonly IndicatorType HIGH_RISK_API = new IndicatorType("HIGH_RISK_API");
+        /// <summary>
+        /// Constant MALICIOUS_DOMAIN for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType MALICIOUS_DOMAIN = new IndicatorType("MALICIOUS_DOMAIN");
         /// <summary>
         /// Constant MALICIOUS_IP for IndicatorType
         /// </summary>
         public static readonly IndicatorType MALICIOUS_IP = new IndicatorType("MALICIOUS_IP");
         /// <summary>
+        /// Constant MALICIOUS_PROCESS for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType MALICIOUS_PROCESS = new IndicatorType("MALICIOUS_PROCESS");
+        /// <summary>
         /// Constant SUSPICIOUS_NETWORK for IndicatorType
         /// </summary>
         public static readonly IndicatorType SUSPICIOUS_NETWORK = new IndicatorType("SUSPICIOUS_NETWORK");
+        /// <summary>
+        /// Constant SUSPICIOUS_PROCESS for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType SUSPICIOUS_PROCESS = new IndicatorType("SUSPICIOUS_PROCESS");
         /// <summary>
         /// Constant SUSPICIOUS_USER_AGENT for IndicatorType
         /// </summary>
@@ -1602,6 +1704,80 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpSetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KubernetesResourcesTypes.
+    /// </summary>
+    public class KubernetesResourcesTypes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRONJOBS for KubernetesResourcesTypes
+        /// </summary>
+        public static readonly KubernetesResourcesTypes CRONJOBS = new KubernetesResourcesTypes("CRONJOBS");
+        /// <summary>
+        /// Constant DAEMONSETS for KubernetesResourcesTypes
+        /// </summary>
+        public static readonly KubernetesResourcesTypes DAEMONSETS = new KubernetesResourcesTypes("DAEMONSETS");
+        /// <summary>
+        /// Constant DEPLOYMENTS for KubernetesResourcesTypes
+        /// </summary>
+        public static readonly KubernetesResourcesTypes DEPLOYMENTS = new KubernetesResourcesTypes("DEPLOYMENTS");
+        /// <summary>
+        /// Constant JOBS for KubernetesResourcesTypes
+        /// </summary>
+        public static readonly KubernetesResourcesTypes JOBS = new KubernetesResourcesTypes("JOBS");
+        /// <summary>
+        /// Constant PODS for KubernetesResourcesTypes
+        /// </summary>
+        public static readonly KubernetesResourcesTypes PODS = new KubernetesResourcesTypes("PODS");
+        /// <summary>
+        /// Constant REPLICASETS for KubernetesResourcesTypes
+        /// </summary>
+        public static readonly KubernetesResourcesTypes REPLICASETS = new KubernetesResourcesTypes("REPLICASETS");
+        /// <summary>
+        /// Constant REPLICATIONCONTROLLERS for KubernetesResourcesTypes
+        /// </summary>
+        public static readonly KubernetesResourcesTypes REPLICATIONCONTROLLERS = new KubernetesResourcesTypes("REPLICATIONCONTROLLERS");
+        /// <summary>
+        /// Constant STATEFULSETS for KubernetesResourcesTypes
+        /// </summary>
+        public static readonly KubernetesResourcesTypes STATEFULSETS = new KubernetesResourcesTypes("STATEFULSETS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KubernetesResourcesTypes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KubernetesResourcesTypes FindValue(string value)
+        {
+            return FindValue<KubernetesResourcesTypes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KubernetesResourcesTypes(string value)
         {
             return FindValue(value);
         }
@@ -2675,9 +2851,25 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly SignalType CLOUD_TRAIL = new SignalType("CLOUD_TRAIL");
         /// <summary>
+        /// Constant DNS_LOGS for SignalType
+        /// </summary>
+        public static readonly SignalType DNS_LOGS = new SignalType("DNS_LOGS");
+        /// <summary>
+        /// Constant EKS_AUDIT_LOGS for SignalType
+        /// </summary>
+        public static readonly SignalType EKS_AUDIT_LOGS = new SignalType("EKS_AUDIT_LOGS");
+        /// <summary>
         /// Constant FINDING for SignalType
         /// </summary>
         public static readonly SignalType FINDING = new SignalType("FINDING");
+        /// <summary>
+        /// Constant FLOW_LOGS for SignalType
+        /// </summary>
+        public static readonly SignalType FLOW_LOGS = new SignalType("FLOW_LOGS");
+        /// <summary>
+        /// Constant RUNTIME_MONITORING for SignalType
+        /// </summary>
+        public static readonly SignalType RUNTIME_MONITORING = new SignalType("RUNTIME_MONITORING");
         /// <summary>
         /// Constant S3_DATA_EVENTS for SignalType
         /// </summary>

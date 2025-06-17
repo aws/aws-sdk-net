@@ -36,8 +36,11 @@ namespace Amazon.GuardDuty.Model
     public partial class ResourceData
     {
         private AccessKey _accessKey;
+        private ContainerFindingResource _container;
         private Ec2Instance _ec2Instance;
         private Ec2NetworkInterface _ec2NetworkInterface;
+        private EksCluster _eksCluster;
+        private KubernetesWorkload _kubernetesWorkload;
         private S3Bucket _s3Bucket;
         private S3Object _s3Object;
 
@@ -58,6 +61,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAccessKey()
         {
             return this._accessKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Container. 
+        /// <para>
+        /// Contains detailed information about the container associated with the activity that
+        /// prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public ContainerFindingResource Container
+        {
+            get { return this._container; }
+            set { this._container = value; }
+        }
+
+        // Check to see if Container property is set
+        internal bool IsSetContainer()
+        {
+            return this._container != null;
         }
 
         /// <summary>
@@ -94,6 +116,44 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEc2NetworkInterface()
         {
             return this._ec2NetworkInterface != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksCluster. 
+        /// <para>
+        /// Contains detailed information about the Amazon EKS cluster associated with the activity
+        /// that prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public EksCluster EksCluster
+        {
+            get { return this._eksCluster; }
+            set { this._eksCluster = value; }
+        }
+
+        // Check to see if EksCluster property is set
+        internal bool IsSetEksCluster()
+        {
+            return this._eksCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesWorkload. 
+        /// <para>
+        /// Contains detailed information about the Kubernetes workload associated with the activity
+        /// that prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public KubernetesWorkload KubernetesWorkload
+        {
+            get { return this._kubernetesWorkload; }
+            set { this._kubernetesWorkload = value; }
+        }
+
+        // Check to see if KubernetesWorkload property is set
+        internal bool IsSetKubernetesWorkload()
+        {
+            return this._kubernetesWorkload != null;
         }
 
         /// <summary>

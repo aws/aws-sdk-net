@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Actor Object
+    /// Response Unmarshaller for ActorProcess Object
     /// </summary>  
-    public class ActorUnmarshaller : IUnmarshaller<Actor, XmlUnmarshallerContext>, IUnmarshaller<Actor, JsonUnmarshallerContext>
+    public class ActorProcessUnmarshaller : IUnmarshaller<ActorProcess, XmlUnmarshallerContext>, IUnmarshaller<ActorProcess, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Actor IUnmarshaller<Actor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ActorProcess IUnmarshaller<ActorProcess, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Actor Unmarshall(JsonUnmarshallerContext context)
+        public ActorProcess Unmarshall(JsonUnmarshallerContext context)
         {
-            Actor unmarshalledObject = new Actor();
+            ActorProcess unmarshalledObject = new ActorProcess();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("process", targetDepth))
+                if (context.TestExpression("path", targetDepth))
                 {
-                    var unmarshaller = ActorProcessUnmarshaller.Instance;
-                    unmarshalledObject.Process = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("session", targetDepth))
+                if (context.TestExpression("sha256", targetDepth))
                 {
-                    var unmarshaller = SessionUnmarshaller.Instance;
-                    unmarshalledObject.Session = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("user", targetDepth))
-                {
-                    var unmarshaller = UserUnmarshaller.Instance;
-                    unmarshalledObject.User = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Sha256 = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActorUnmarshaller _instance = new ActorUnmarshaller();        
+        private static ActorProcessUnmarshaller _instance = new ActorProcessUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActorUnmarshaller Instance
+        public static ActorProcessUnmarshaller Instance
         {
             get
             {

@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     public partial class Sequence
     {
         private List<Actor> _actors = AWSConfigs.InitializeCollections ? new List<Actor>() : null;
+        private List<string> _additionalSequenceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private List<NetworkEndpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<NetworkEndpoint>() : null;
         private List<ResourceV2> _resources = AWSConfigs.InitializeCollections ? new List<ResourceV2>() : null;
@@ -59,6 +60,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetActors()
         {
             return this._actors != null && (this._actors.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalSequenceTypes. 
+        /// <para>
+        /// Additional types of sequences that may be associated with the attack sequence finding,
+        /// providing further context about the nature of the detected threat.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalSequenceTypes
+        {
+            get { return this._additionalSequenceTypes; }
+            set { this._additionalSequenceTypes = value; }
+        }
+
+        // Check to see if AdditionalSequenceTypes property is set
+        internal bool IsSetAdditionalSequenceTypes()
+        {
+            return this._additionalSequenceTypes != null && (this._additionalSequenceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
