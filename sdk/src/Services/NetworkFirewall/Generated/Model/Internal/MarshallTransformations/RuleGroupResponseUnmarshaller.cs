@@ -144,6 +144,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SummaryConfiguration", targetDepth))
+                {
+                    var unmarshaller = SummaryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SummaryConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

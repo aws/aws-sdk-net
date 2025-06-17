@@ -1312,7 +1312,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  <important> 
         /// <para>
-        /// After you delete a transit gateway attachment, traffic will no longer flow through
+        /// After you delete a transit gateway attachment, raffic will no longer flow through
         /// the firewall endpoints.
         /// </para>
         ///  </important> 
@@ -2139,6 +2139,81 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = DescribeRuleGroupMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeRuleGroupMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeRuleGroupSummary
+
+        internal virtual DescribeRuleGroupSummaryResponse DescribeRuleGroupSummary(DescribeRuleGroupSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRuleGroupSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns detailed information for a stateful rule group.
+        /// 
+        ///  
+        /// <para>
+        /// For active threat defense Amazon Web Services managed rule groups, this operation
+        /// provides insight into the protections enabled by the rule group, based on Suricata
+        /// rule metadata fields. Summaries are available for rule groups you manage and for active
+        /// threat defense Amazon Web Services managed rule groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// To modify how threat information appears in summaries, use the <c>SummaryConfiguration</c>
+        /// parameter in <a>UpdateRuleGroup</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRuleGroupSummary service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupSummary">REST API Reference for DescribeRuleGroupSummary Operation</seealso>
+        public virtual Task<DescribeRuleGroupSummaryResponse> DescribeRuleGroupSummaryAsync(DescribeRuleGroupSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeRuleGroupSummaryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3208,8 +3283,8 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// Only the transit gateway owner can reject the attachment. After rejection, no traffic
-        /// will flow through the firewall endpoints for this attachment.
+        /// Only the firewall owner can reject the attachment. After rejection, no traffic will
+        /// flow through the firewall endpoints for this attachment.
         /// </para>
         ///  
         /// <para>

@@ -825,6 +825,10 @@ namespace Amazon.NetworkFirewall
     {
 
         /// <summary>
+        /// Constant ACTIVE_THREAT_DEFENSE for ResourceManagedType
+        /// </summary>
+        public static readonly ResourceManagedType ACTIVE_THREAT_DEFENSE = new ResourceManagedType("ACTIVE_THREAT_DEFENSE");
+        /// <summary>
         /// Constant AWS_MANAGED_DOMAIN_LISTS for ResourceManagedType
         /// </summary>
         public static readonly ResourceManagedType AWS_MANAGED_DOMAIN_LISTS = new ResourceManagedType("AWS_MANAGED_DOMAIN_LISTS");
@@ -1358,6 +1362,60 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StreamExceptionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SummaryRuleOption.
+    /// </summary>
+    public class SummaryRuleOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant METADATA for SummaryRuleOption
+        /// </summary>
+        public static readonly SummaryRuleOption METADATA = new SummaryRuleOption("METADATA");
+        /// <summary>
+        /// Constant MSG for SummaryRuleOption
+        /// </summary>
+        public static readonly SummaryRuleOption MSG = new SummaryRuleOption("MSG");
+        /// <summary>
+        /// Constant SID for SummaryRuleOption
+        /// </summary>
+        public static readonly SummaryRuleOption SID = new SummaryRuleOption("SID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SummaryRuleOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SummaryRuleOption FindValue(string value)
+        {
+            return FindValue<SummaryRuleOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SummaryRuleOption(string value)
         {
             return FindValue(value);
         }

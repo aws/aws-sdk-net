@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StatefulRuleGroupReference Object
+    /// Response Unmarshaller for Summary Object
     /// </summary>  
-    public class StatefulRuleGroupReferenceUnmarshaller : IUnmarshaller<StatefulRuleGroupReference, XmlUnmarshallerContext>, IUnmarshaller<StatefulRuleGroupReference, JsonUnmarshallerContext>
+    public class SummaryUnmarshaller : IUnmarshaller<Summary, XmlUnmarshallerContext>, IUnmarshaller<Summary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StatefulRuleGroupReference IUnmarshaller<StatefulRuleGroupReference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Summary IUnmarshaller<Summary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StatefulRuleGroupReference Unmarshall(JsonUnmarshallerContext context)
+        public Summary Unmarshall(JsonUnmarshallerContext context)
         {
-            StatefulRuleGroupReference unmarshalledObject = new StatefulRuleGroupReference();
+            Summary unmarshalledObject = new Summary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DeepThreatInspection", targetDepth))
+                if (context.TestExpression("RuleSummaries", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.DeepThreatInspection = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Override", targetDepth))
-                {
-                    var unmarshaller = StatefulRuleGroupOverrideUnmarshaller.Instance;
-                    unmarshalledObject.Override = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Priority", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<RuleSummary, RuleSummaryUnmarshaller>(RuleSummaryUnmarshaller.Instance);
+                    unmarshalledObject.RuleSummaries = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         }
 
 
-        private static StatefulRuleGroupReferenceUnmarshaller _instance = new StatefulRuleGroupReferenceUnmarshaller();        
+        private static SummaryUnmarshaller _instance = new SummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StatefulRuleGroupReferenceUnmarshaller Instance
+        public static SummaryUnmarshaller Instance
         {
             get
             {
