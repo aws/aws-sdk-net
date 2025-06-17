@@ -81,6 +81,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCodeRepositoryAggregation())
+            {
+                context.Writer.WritePropertyName("codeRepositoryAggregation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CodeRepositoryAggregationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CodeRepositoryAggregation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEc2InstanceAggregation())
             {
                 context.Writer.WritePropertyName("ec2InstanceAggregation");

@@ -35,6 +35,8 @@ namespace Amazon.Inspector2.Model
     public partial class FilterCriteria
     {
         private List<StringFilter> _awsAccountId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _codeRepositoryProjectName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _codeRepositoryProviderType = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _codeVulnerabilityDetectorName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _codeVulnerabilityDetectorTags = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _codeVulnerabilityFilePath = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
@@ -96,6 +98,45 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null && (this._awsAccountId.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeRepositoryProjectName. 
+        /// <para>
+        /// Filter criteria for findings based on the project name in a code repository.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CodeRepositoryProjectName
+        {
+            get { return this._codeRepositoryProjectName; }
+            set { this._codeRepositoryProjectName = value; }
+        }
+
+        // Check to see if CodeRepositoryProjectName property is set
+        internal bool IsSetCodeRepositoryProjectName()
+        {
+            return this._codeRepositoryProjectName != null && (this._codeRepositoryProjectName.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeRepositoryProviderType. 
+        /// <para>
+        /// Filter criteria for findings based on the repository provider type (such as GitHub,
+        /// GitLab, etc.).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CodeRepositoryProviderType
+        {
+            get { return this._codeRepositoryProviderType; }
+            set { this._codeRepositoryProviderType = value; }
+        }
+
+        // Check to see if CodeRepositoryProviderType property is set
+        internal bool IsSetCodeRepositoryProviderType()
+        {
+            return this._codeRepositoryProviderType != null && (this._codeRepositoryProviderType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

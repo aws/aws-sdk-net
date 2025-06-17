@@ -66,6 +66,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("codeRepository", targetDepth))
+                {
+                    var unmarshaller = CodeRepositoryMetadataUnmarshaller.Instance;
+                    unmarshalledObject.CodeRepository = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ec2", targetDepth))
                 {
                     var unmarshaller = Ec2MetadataUnmarshaller.Instance;
