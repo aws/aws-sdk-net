@@ -69,6 +69,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationConfig())
+                {
+                    context.Writer.WritePropertyName("ApplicationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ApplicationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ApplicationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAssociationConfig())
                 {
                     context.Writer.WritePropertyName("AssociationConfig");

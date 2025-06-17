@@ -49,6 +49,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class CreateWebACLRequest : AmazonWAFV2Request
     {
+        private ApplicationConfig _applicationConfig;
         private AssociationConfig _associationConfig;
         private CaptchaConfig _captchaConfig;
         private ChallengeConfig _challengeConfig;
@@ -63,6 +64,26 @@ namespace Amazon.WAFV2.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private List<string> _tokenDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VisibilityConfig _visibilityConfig;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationConfig. 
+        /// <para>
+        /// Configures the ability for the WAF console to store and retrieve application attributes
+        /// during the web ACL creation process. Application attributes help WAF give recommendations
+        /// for protection packs.
+        /// </para>
+        /// </summary>
+        public ApplicationConfig ApplicationConfig
+        {
+            get { return this._applicationConfig; }
+            set { this._applicationConfig = value; }
+        }
+
+        // Check to see if ApplicationConfig property is set
+        internal bool IsSetApplicationConfig()
+        {
+            return this._applicationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AssociationConfig. 
