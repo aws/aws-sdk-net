@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
     public partial class EnableOrganizationAdminAccountRequest : AmazonSecurityHubRequest
     {
         private string _adminAccountId;
+        private SecurityHubFeature _feature;
 
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
@@ -56,6 +57,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAdminAccountId()
         {
             return this._adminAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Feature. 
+        /// <para>
+        /// The feature for which the delegated admin account is enabled. Defaults to Security
+        /// Hub if not specified.
+        /// </para>
+        /// </summary>
+        public SecurityHubFeature Feature
+        {
+            get { return this._feature; }
+            set { this._feature = value; }
+        }
+
+        // Check to see if Feature property is set
+        internal bool IsSetFeature()
+        {
+            return this._feature != null;
         }
 
     }

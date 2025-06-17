@@ -79,6 +79,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AdminAccountId);
             }
 
+            if(publicRequest.IsSetFeature())
+            {
+                context.Writer.WritePropertyName("Feature");
+                context.Writer.WriteStringValue(publicRequest.Feature);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

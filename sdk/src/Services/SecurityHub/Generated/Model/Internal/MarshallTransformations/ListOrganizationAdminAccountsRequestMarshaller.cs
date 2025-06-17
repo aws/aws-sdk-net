@@ -63,6 +63,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetFeature())
+                request.Parameters.Add("Feature", StringUtils.FromString(publicRequest.Feature));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

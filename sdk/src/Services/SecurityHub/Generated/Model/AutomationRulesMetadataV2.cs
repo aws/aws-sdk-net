@@ -1,0 +1,216 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the securityhub-2018-10-26.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.SecurityHub.Model
+{
+    /// <summary>
+    /// Includes essential metadata information about automation rules.
+    /// </summary>
+    public partial class AutomationRulesMetadataV2
+    {
+        private List<AutomationRulesActionTypeObjectV2> _actions = AWSConfigs.InitializeCollections ? new List<AutomationRulesActionTypeObjectV2>() : null;
+        private DateTime? _createdAt;
+        private string _description;
+        private string _ruleArn;
+        private string _ruleId;
+        private string _ruleName;
+        private float? _ruleOrder;
+        private RuleStatusV2 _ruleStatus;
+        private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property Actions. 
+        /// <para>
+        /// The list of action to be performed when the rule criteria is met.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AutomationRulesActionTypeObjectV2> Actions
+        {
+            get { return this._actions; }
+            set { this._actions = value; }
+        }
+
+        // Check to see if Actions property is set
+        internal bool IsSetActions()
+        {
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp for when the automation rule was created.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// An explanation for the purpose and funcitonality of the automation rule.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleArn. 
+        /// <para>
+        /// The ARN of the automation rule.
+        /// </para>
+        /// </summary>
+        public string RuleArn
+        {
+            get { return this._ruleArn; }
+            set { this._ruleArn = value; }
+        }
+
+        // Check to see if RuleArn property is set
+        internal bool IsSetRuleArn()
+        {
+            return this._ruleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleId. 
+        /// <para>
+        /// The ID of the automation rule.
+        /// </para>
+        /// </summary>
+        public string RuleId
+        {
+            get { return this._ruleId; }
+            set { this._ruleId = value; }
+        }
+
+        // Check to see if RuleId property is set
+        internal bool IsSetRuleId()
+        {
+            return this._ruleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleName. 
+        /// <para>
+        /// The name of the automation rule.
+        /// </para>
+        /// </summary>
+        public string RuleName
+        {
+            get { return this._ruleName; }
+            set { this._ruleName = value; }
+        }
+
+        // Check to see if RuleName property is set
+        internal bool IsSetRuleName()
+        {
+            return this._ruleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleOrder. 
+        /// <para>
+        /// The value for the rule priority.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public float? RuleOrder
+        {
+            get { return this._ruleOrder; }
+            set { this._ruleOrder = value; }
+        }
+
+        // Check to see if RuleOrder property is set
+        internal bool IsSetRuleOrder()
+        {
+            return this._ruleOrder.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleStatus. 
+        /// <para>
+        /// The status of the automation rule.
+        /// </para>
+        /// </summary>
+        public RuleStatusV2 RuleStatus
+        {
+            get { return this._ruleStatus; }
+            set { this._ruleStatus = value; }
+        }
+
+        // Check to see if RuleStatus property is set
+        internal bool IsSetRuleStatus()
+        {
+            return this._ruleStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The timestamp for the most recent modification to the automation rule.
+        /// </para>
+        /// </summary>
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
+        }
+
+    }
+}

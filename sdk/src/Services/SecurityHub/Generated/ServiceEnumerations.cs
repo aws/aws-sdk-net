@@ -125,6 +125,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type AllowedOperators.
+    /// </summary>
+    public class AllowedOperators : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AND for AllowedOperators
+        /// </summary>
+        public static readonly AllowedOperators AND = new AllowedOperators("AND");
+        /// <summary>
+        /// Constant OR for AllowedOperators
+        /// </summary>
+        public static readonly AllowedOperators OR = new AllowedOperators("OR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllowedOperators(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowedOperators FindValue(string value)
+        {
+            return FindValue<AllowedOperators>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowedOperators(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssociationStatus.
     /// </summary>
     public class AssociationStatus : ConstantClass
@@ -321,6 +371,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type AutomationRulesActionTypeV2.
+    /// </summary>
+    public class AutomationRulesActionTypeV2 : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTERNAL_INTEGRATION for AutomationRulesActionTypeV2
+        /// </summary>
+        public static readonly AutomationRulesActionTypeV2 EXTERNAL_INTEGRATION = new AutomationRulesActionTypeV2("EXTERNAL_INTEGRATION");
+        /// <summary>
+        /// Constant FINDING_FIELDS_UPDATE for AutomationRulesActionTypeV2
+        /// </summary>
+        public static readonly AutomationRulesActionTypeV2 FINDING_FIELDS_UPDATE = new AutomationRulesActionTypeV2("FINDING_FIELDS_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomationRulesActionTypeV2(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomationRulesActionTypeV2 FindValue(string value)
+        {
+            return FindValue<AutomationRulesActionTypeV2>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomationRulesActionTypeV2(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AwsIamAccessKeyStatus.
     /// </summary>
     public class AwsIamAccessKeyStatus : ConstantClass
@@ -414,6 +514,64 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AwsS3BucketNotificationConfigurationS3KeyFilterRuleName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchUpdateFindingsV2UnprocessedFindingErrorCode.
+    /// </summary>
+    public class BatchUpdateFindingsV2UnprocessedFindingErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConflictException for BatchUpdateFindingsV2UnprocessedFindingErrorCode
+        /// </summary>
+        public static readonly BatchUpdateFindingsV2UnprocessedFindingErrorCode ConflictException = new BatchUpdateFindingsV2UnprocessedFindingErrorCode("ConflictException");
+        /// <summary>
+        /// Constant InternalServerException for BatchUpdateFindingsV2UnprocessedFindingErrorCode
+        /// </summary>
+        public static readonly BatchUpdateFindingsV2UnprocessedFindingErrorCode InternalServerException = new BatchUpdateFindingsV2UnprocessedFindingErrorCode("InternalServerException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchUpdateFindingsV2UnprocessedFindingErrorCode
+        /// </summary>
+        public static readonly BatchUpdateFindingsV2UnprocessedFindingErrorCode ResourceNotFoundException = new BatchUpdateFindingsV2UnprocessedFindingErrorCode("ResourceNotFoundException");
+        /// <summary>
+        /// Constant ValidationException for BatchUpdateFindingsV2UnprocessedFindingErrorCode
+        /// </summary>
+        public static readonly BatchUpdateFindingsV2UnprocessedFindingErrorCode ValidationException = new BatchUpdateFindingsV2UnprocessedFindingErrorCode("ValidationException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchUpdateFindingsV2UnprocessedFindingErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchUpdateFindingsV2UnprocessedFindingErrorCode FindValue(string value)
+        {
+            return FindValue<BatchUpdateFindingsV2UnprocessedFindingErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchUpdateFindingsV2UnprocessedFindingErrorCode(string value)
         {
             return FindValue(value);
         }
@@ -576,6 +734,164 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectionDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorAuthStatus.
+    /// </summary>
+    public class ConnectorAuthStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConnectorAuthStatus
+        /// </summary>
+        public static readonly ConnectorAuthStatus ACTIVE = new ConnectorAuthStatus("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for ConnectorAuthStatus
+        /// </summary>
+        public static readonly ConnectorAuthStatus FAILED = new ConnectorAuthStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorAuthStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorAuthStatus FindValue(string value)
+        {
+            return FindValue<ConnectorAuthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorAuthStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorProviderName.
+    /// </summary>
+    public class ConnectorProviderName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JIRA_CLOUD for ConnectorProviderName
+        /// </summary>
+        public static readonly ConnectorProviderName JIRA_CLOUD = new ConnectorProviderName("JIRA_CLOUD");
+        /// <summary>
+        /// Constant SERVICENOW for ConnectorProviderName
+        /// </summary>
+        public static readonly ConnectorProviderName SERVICENOW = new ConnectorProviderName("SERVICENOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorProviderName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorProviderName FindValue(string value)
+        {
+            return FindValue<ConnectorProviderName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorProviderName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorStatus.
+    /// </summary>
+    public class ConnectorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus CONNECTED = new ConnectorStatus("CONNECTED");
+        /// <summary>
+        /// Constant FAILED_TO_CONNECT for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus FAILED_TO_CONNECT = new ConnectorStatus("FAILED_TO_CONNECT");
+        /// <summary>
+        /// Constant PENDING_AUTHORIZATION for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus PENDING_AUTHORIZATION = new ConnectorStatus("PENDING_AUTHORIZATION");
+        /// <summary>
+        /// Constant PENDING_CONFIGURATION for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus PENDING_CONFIGURATION = new ConnectorStatus("PENDING_CONFIGURATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorStatus FindValue(string value)
+        {
+            return FindValue<ConnectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorStatus(string value)
         {
             return FindValue(value);
         }
@@ -779,6 +1095,116 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type GroupByField.
+    /// </summary>
+    public class GroupByField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Activity_name for GroupByField
+        /// </summary>
+        public static readonly GroupByField Activity_name = new GroupByField("activity_name");
+        /// <summary>
+        /// Constant Class_name for GroupByField
+        /// </summary>
+        public static readonly GroupByField Class_name = new GroupByField("class_name");
+        /// <summary>
+        /// Constant CloudAccountUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField CloudAccountUid = new GroupByField("cloud.account.uid");
+        /// <summary>
+        /// Constant CloudProvider for GroupByField
+        /// </summary>
+        public static readonly GroupByField CloudProvider = new GroupByField("cloud.provider");
+        /// <summary>
+        /// Constant CloudRegion for GroupByField
+        /// </summary>
+        public static readonly GroupByField CloudRegion = new GroupByField("cloud.region");
+        /// <summary>
+        /// Constant ComplianceAssessmentsName for GroupByField
+        /// </summary>
+        public static readonly GroupByField ComplianceAssessmentsName = new GroupByField("compliance.assessments.name");
+        /// <summary>
+        /// Constant ComplianceControl for GroupByField
+        /// </summary>
+        public static readonly GroupByField ComplianceControl = new GroupByField("compliance.control");
+        /// <summary>
+        /// Constant ComplianceStatus for GroupByField
+        /// </summary>
+        public static readonly GroupByField ComplianceStatus = new GroupByField("compliance.status");
+        /// <summary>
+        /// Constant Finding_infoTitle for GroupByField
+        /// </summary>
+        public static readonly GroupByField Finding_infoTitle = new GroupByField("finding_info.title");
+        /// <summary>
+        /// Constant Finding_infoTypes for GroupByField
+        /// </summary>
+        public static readonly GroupByField Finding_infoTypes = new GroupByField("finding_info.types");
+        /// <summary>
+        /// Constant MetadataProductName for GroupByField
+        /// </summary>
+        public static readonly GroupByField MetadataProductName = new GroupByField("metadata.product.name");
+        /// <summary>
+        /// Constant MetadataProductUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField MetadataProductUid = new GroupByField("metadata.product.uid");
+        /// <summary>
+        /// Constant ResourcesType for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesType = new GroupByField("resources.type");
+        /// <summary>
+        /// Constant ResourcesUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesUid = new GroupByField("resources.uid");
+        /// <summary>
+        /// Constant Severity for GroupByField
+        /// </summary>
+        public static readonly GroupByField Severity = new GroupByField("severity");
+        /// <summary>
+        /// Constant Status for GroupByField
+        /// </summary>
+        public static readonly GroupByField Status = new GroupByField("status");
+        /// <summary>
+        /// Constant VulnerabilitiesFix_coverage for GroupByField
+        /// </summary>
+        public static readonly GroupByField VulnerabilitiesFix_coverage = new GroupByField("vulnerabilities.fix_coverage");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupByField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupByField FindValue(string value)
+        {
+            return FindValue<GroupByField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupByField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IntegrationType.
     /// </summary>
     public class IntegrationType : ConstantClass
@@ -826,6 +1252,60 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IntegrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationV2Type.
+    /// </summary>
+    public class IntegrationV2Type : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RECEIVE_FINDINGS_FROM_SECURITY_HUB for IntegrationV2Type
+        /// </summary>
+        public static readonly IntegrationV2Type RECEIVE_FINDINGS_FROM_SECURITY_HUB = new IntegrationV2Type("RECEIVE_FINDINGS_FROM_SECURITY_HUB");
+        /// <summary>
+        /// Constant SEND_FINDINGS_TO_SECURITY_HUB for IntegrationV2Type
+        /// </summary>
+        public static readonly IntegrationV2Type SEND_FINDINGS_TO_SECURITY_HUB = new IntegrationV2Type("SEND_FINDINGS_TO_SECURITY_HUB");
+        /// <summary>
+        /// Constant UPDATE_FINDINGS_IN_SECURITY_HUB for IntegrationV2Type
+        /// </summary>
+        public static readonly IntegrationV2Type UPDATE_FINDINGS_IN_SECURITY_HUB = new IntegrationV2Type("UPDATE_FINDINGS_IN_SECURITY_HUB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegrationV2Type(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationV2Type FindValue(string value)
+        {
+            return FindValue<IntegrationV2Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationV2Type(string value)
         {
             return FindValue(value);
         }
@@ -1090,6 +1570,400 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OcsfBooleanField.
+    /// </summary>
+    public class OcsfBooleanField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ComplianceAssessmentsMeets_criteria for OcsfBooleanField
+        /// </summary>
+        public static readonly OcsfBooleanField ComplianceAssessmentsMeets_criteria = new OcsfBooleanField("compliance.assessments.meets_criteria");
+        /// <summary>
+        /// Constant VulnerabilitiesIs_exploit_available for OcsfBooleanField
+        /// </summary>
+        public static readonly OcsfBooleanField VulnerabilitiesIs_exploit_available = new OcsfBooleanField("vulnerabilities.is_exploit_available");
+        /// <summary>
+        /// Constant VulnerabilitiesIs_fix_available for OcsfBooleanField
+        /// </summary>
+        public static readonly OcsfBooleanField VulnerabilitiesIs_fix_available = new OcsfBooleanField("vulnerabilities.is_fix_available");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OcsfBooleanField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfBooleanField FindValue(string value)
+        {
+            return FindValue<OcsfBooleanField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfBooleanField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OcsfDateField.
+    /// </summary>
+    public class OcsfDateField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Finding_infoCreated_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField Finding_infoCreated_time_dt = new OcsfDateField("finding_info.created_time_dt");
+        /// <summary>
+        /// Constant Finding_infoFirst_seen_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField Finding_infoFirst_seen_time_dt = new OcsfDateField("finding_info.first_seen_time_dt");
+        /// <summary>
+        /// Constant Finding_infoLast_seen_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField Finding_infoLast_seen_time_dt = new OcsfDateField("finding_info.last_seen_time_dt");
+        /// <summary>
+        /// Constant Finding_infoModified_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField Finding_infoModified_time_dt = new OcsfDateField("finding_info.modified_time_dt");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OcsfDateField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfDateField FindValue(string value)
+        {
+            return FindValue<OcsfDateField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfDateField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OcsfMapField.
+    /// </summary>
+    public class OcsfMapField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ResourcesTags for OcsfMapField
+        /// </summary>
+        public static readonly OcsfMapField ResourcesTags = new OcsfMapField("resources.tags");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OcsfMapField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfMapField FindValue(string value)
+        {
+            return FindValue<OcsfMapField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfMapField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OcsfNumberField.
+    /// </summary>
+    public class OcsfNumberField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Activity_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Activity_id = new OcsfNumberField("activity_id");
+        /// <summary>
+        /// Constant ComplianceStatus_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField ComplianceStatus_id = new OcsfNumberField("compliance.status_id");
+        /// <summary>
+        /// Constant Confidence_score for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Confidence_score = new OcsfNumberField("confidence_score");
+        /// <summary>
+        /// Constant Finding_infoRelated_events_count for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Finding_infoRelated_events_count = new OcsfNumberField("finding_info.related_events_count");
+        /// <summary>
+        /// Constant Severity_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Severity_id = new OcsfNumberField("severity_id");
+        /// <summary>
+        /// Constant Status_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Status_id = new OcsfNumberField("status_id");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OcsfNumberField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfNumberField FindValue(string value)
+        {
+            return FindValue<OcsfNumberField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfNumberField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OcsfStringField.
+    /// </summary>
+    public class OcsfStringField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Activity_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Activity_name = new OcsfStringField("activity_name");
+        /// <summary>
+        /// Constant Class_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Class_name = new OcsfStringField("class_name");
+        /// <summary>
+        /// Constant CloudAccountUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField CloudAccountUid = new OcsfStringField("cloud.account.uid");
+        /// <summary>
+        /// Constant CloudProvider for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField CloudProvider = new OcsfStringField("cloud.provider");
+        /// <summary>
+        /// Constant CloudRegion for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField CloudRegion = new OcsfStringField("cloud.region");
+        /// <summary>
+        /// Constant Comment for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Comment = new OcsfStringField("comment");
+        /// <summary>
+        /// Constant ComplianceAssessmentsCategory for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceAssessmentsCategory = new OcsfStringField("compliance.assessments.category");
+        /// <summary>
+        /// Constant ComplianceAssessmentsName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceAssessmentsName = new OcsfStringField("compliance.assessments.name");
+        /// <summary>
+        /// Constant ComplianceControl for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceControl = new OcsfStringField("compliance.control");
+        /// <summary>
+        /// Constant ComplianceStandards for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceStandards = new OcsfStringField("compliance.standards");
+        /// <summary>
+        /// Constant ComplianceStatus for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceStatus = new OcsfStringField("compliance.status");
+        /// <summary>
+        /// Constant Finding_infoDesc for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoDesc = new OcsfStringField("finding_info.desc");
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsProductUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoRelated_eventsProductUid = new OcsfStringField("finding_info.related_events.product.uid");
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsTitle for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoRelated_eventsTitle = new OcsfStringField("finding_info.related_events.title");
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoRelated_eventsUid = new OcsfStringField("finding_info.related_events.uid");
+        /// <summary>
+        /// Constant Finding_infoSrc_url for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoSrc_url = new OcsfStringField("finding_info.src_url");
+        /// <summary>
+        /// Constant Finding_infoTitle for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoTitle = new OcsfStringField("finding_info.title");
+        /// <summary>
+        /// Constant Finding_infoTypes for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoTypes = new OcsfStringField("finding_info.types");
+        /// <summary>
+        /// Constant Finding_infoUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoUid = new OcsfStringField("finding_info.uid");
+        /// <summary>
+        /// Constant MetadataProductName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MetadataProductName = new OcsfStringField("metadata.product.name");
+        /// <summary>
+        /// Constant MetadataProductUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MetadataProductUid = new OcsfStringField("metadata.product.uid");
+        /// <summary>
+        /// Constant MetadataProductVendor_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MetadataProductVendor_name = new OcsfStringField("metadata.product.vendor_name");
+        /// <summary>
+        /// Constant MetadataUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MetadataUid = new OcsfStringField("metadata.uid");
+        /// <summary>
+        /// Constant RemediationDesc for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField RemediationDesc = new OcsfStringField("remediation.desc");
+        /// <summary>
+        /// Constant RemediationReferences for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField RemediationReferences = new OcsfStringField("remediation.references");
+        /// <summary>
+        /// Constant ResourcesCloud_partition for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCloud_partition = new OcsfStringField("resources.cloud_partition");
+        /// <summary>
+        /// Constant ResourcesRegion for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesRegion = new OcsfStringField("resources.region");
+        /// <summary>
+        /// Constant ResourcesType for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesType = new OcsfStringField("resources.type");
+        /// <summary>
+        /// Constant ResourcesUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesUid = new OcsfStringField("resources.uid");
+        /// <summary>
+        /// Constant Severity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Severity = new OcsfStringField("severity");
+        /// <summary>
+        /// Constant Status for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Status = new OcsfStringField("status");
+        /// <summary>
+        /// Constant VulnerabilitiesFix_coverage for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesFix_coverage = new OcsfStringField("vulnerabilities.fix_coverage");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OcsfStringField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfStringField FindValue(string value)
+        {
+            return FindValue<OcsfStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfStringField(string value)
         {
             return FindValue(value);
         }
@@ -1405,6 +2279,398 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceCategory.
+    /// </summary>
+    public class ResourceCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AIML for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory AIML = new ResourceCategory("AI/ML");
+        /// <summary>
+        /// Constant Code for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Code = new ResourceCategory("Code");
+        /// <summary>
+        /// Constant Compute for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Compute = new ResourceCategory("Compute");
+        /// <summary>
+        /// Constant Database for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Database = new ResourceCategory("Database");
+        /// <summary>
+        /// Constant Identity for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Identity = new ResourceCategory("Identity");
+        /// <summary>
+        /// Constant Network for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Network = new ResourceCategory("Network");
+        /// <summary>
+        /// Constant Other for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Other = new ResourceCategory("Other");
+        /// <summary>
+        /// Constant Storage for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Storage = new ResourceCategory("Storage");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceCategory FindValue(string value)
+        {
+            return FindValue<ResourceCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceGroupByField.
+    /// </summary>
+    public class ResourceGroupByField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Account_id for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField Account_id = new ResourceGroupByField("account_id");
+        /// <summary>
+        /// Constant Findings_summaryFinding_type for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField Findings_summaryFinding_type = new ResourceGroupByField("findings_summary.finding_type");
+        /// <summary>
+        /// Constant Region for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField Region = new ResourceGroupByField("region");
+        /// <summary>
+        /// Constant Resource_category for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField Resource_category = new ResourceGroupByField("resource_category");
+        /// <summary>
+        /// Constant Resource_name for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField Resource_name = new ResourceGroupByField("resource_name");
+        /// <summary>
+        /// Constant Resource_type for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField Resource_type = new ResourceGroupByField("resource_type");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceGroupByField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceGroupByField FindValue(string value)
+        {
+            return FindValue<ResourceGroupByField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceGroupByField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesDateField.
+    /// </summary>
+    public class ResourcesDateField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Resource_creation_time_dt for ResourcesDateField
+        /// </summary>
+        public static readonly ResourcesDateField Resource_creation_time_dt = new ResourcesDateField("resource_creation_time_dt");
+        /// <summary>
+        /// Constant Resource_detail_capture_time_dt for ResourcesDateField
+        /// </summary>
+        public static readonly ResourcesDateField Resource_detail_capture_time_dt = new ResourcesDateField("resource_detail_capture_time_dt");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourcesDateField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesDateField FindValue(string value)
+        {
+            return FindValue<ResourcesDateField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesDateField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesMapField.
+    /// </summary>
+    public class ResourcesMapField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Tags for ResourcesMapField
+        /// </summary>
+        public static readonly ResourcesMapField Tags = new ResourcesMapField("tags");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourcesMapField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesMapField FindValue(string value)
+        {
+            return FindValue<ResourcesMapField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesMapField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesNumberField.
+    /// </summary>
+    public class ResourcesNumberField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Findings_summarySeveritiesCritical for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField Findings_summarySeveritiesCritical = new ResourcesNumberField("findings_summary.severities.critical");
+        /// <summary>
+        /// Constant Findings_summarySeveritiesFatal for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField Findings_summarySeveritiesFatal = new ResourcesNumberField("findings_summary.severities.fatal");
+        /// <summary>
+        /// Constant Findings_summarySeveritiesHigh for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField Findings_summarySeveritiesHigh = new ResourcesNumberField("findings_summary.severities.high");
+        /// <summary>
+        /// Constant Findings_summarySeveritiesInformational for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField Findings_summarySeveritiesInformational = new ResourcesNumberField("findings_summary.severities.informational");
+        /// <summary>
+        /// Constant Findings_summarySeveritiesLow for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField Findings_summarySeveritiesLow = new ResourcesNumberField("findings_summary.severities.low");
+        /// <summary>
+        /// Constant Findings_summarySeveritiesMedium for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField Findings_summarySeveritiesMedium = new ResourcesNumberField("findings_summary.severities.medium");
+        /// <summary>
+        /// Constant Findings_summarySeveritiesOther for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField Findings_summarySeveritiesOther = new ResourcesNumberField("findings_summary.severities.other");
+        /// <summary>
+        /// Constant Findings_summarySeveritiesUnknown for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField Findings_summarySeveritiesUnknown = new ResourcesNumberField("findings_summary.severities.unknown");
+        /// <summary>
+        /// Constant Findings_summaryTotal_findings for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField Findings_summaryTotal_findings = new ResourcesNumberField("findings_summary.total_findings");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourcesNumberField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesNumberField FindValue(string value)
+        {
+            return FindValue<ResourcesNumberField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesNumberField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesStringField.
+    /// </summary>
+    public class ResourcesStringField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Account_id for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Account_id = new ResourcesStringField("account_id");
+        /// <summary>
+        /// Constant Findings_summaryFinding_type for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Findings_summaryFinding_type = new ResourcesStringField("findings_summary.finding_type");
+        /// <summary>
+        /// Constant Findings_summaryProduct_name for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Findings_summaryProduct_name = new ResourcesStringField("findings_summary.product_name");
+        /// <summary>
+        /// Constant Region for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Region = new ResourcesStringField("region");
+        /// <summary>
+        /// Constant Resource_arn for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Resource_arn = new ResourcesStringField("resource_arn");
+        /// <summary>
+        /// Constant Resource_category for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Resource_category = new ResourcesStringField("resource_category");
+        /// <summary>
+        /// Constant Resource_id for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Resource_id = new ResourcesStringField("resource_id");
+        /// <summary>
+        /// Constant Resource_name for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Resource_name = new ResourcesStringField("resource_name");
+        /// <summary>
+        /// Constant Resource_type for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Resource_type = new ResourcesStringField("resource_type");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourcesStringField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesStringField FindValue(string value)
+        {
+            return FindValue<ResourcesStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RuleStatus.
     /// </summary>
     public class RuleStatus : ConstantClass
@@ -1455,6 +2721,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type RuleStatusV2.
+    /// </summary>
+    public class RuleStatusV2 : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for RuleStatusV2
+        /// </summary>
+        public static readonly RuleStatusV2 DISABLED = new RuleStatusV2("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for RuleStatusV2
+        /// </summary>
+        public static readonly RuleStatusV2 ENABLED = new RuleStatusV2("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleStatusV2(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleStatusV2 FindValue(string value)
+        {
+            return FindValue<RuleStatusV2>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleStatusV2(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SecurityControlProperty.
     /// </summary>
     public class SecurityControlProperty : ConstantClass
@@ -1494,6 +2810,56 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecurityControlProperty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecurityHubFeature.
+    /// </summary>
+    public class SecurityHubFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SecurityHub for SecurityHubFeature
+        /// </summary>
+        public static readonly SecurityHubFeature SecurityHub = new SecurityHubFeature("SecurityHub");
+        /// <summary>
+        /// Constant SecurityHubV2 for SecurityHubFeature
+        /// </summary>
+        public static readonly SecurityHubFeature SecurityHubV2 = new SecurityHubFeature("SecurityHubV2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityHubFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityHubFeature FindValue(string value)
+        {
+            return FindValue<SecurityHubFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityHubFeature(string value)
         {
             return FindValue(value);
         }
@@ -1846,6 +3212,10 @@ namespace Amazon.SecurityHub
         /// Constant CONTAINS for StringFilterComparison
         /// </summary>
         public static readonly StringFilterComparison CONTAINS = new StringFilterComparison("CONTAINS");
+        /// <summary>
+        /// Constant CONTAINS_WORD for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison CONTAINS_WORD = new StringFilterComparison("CONTAINS_WORD");
         /// <summary>
         /// Constant EQUALS for StringFilterComparison
         /// </summary>

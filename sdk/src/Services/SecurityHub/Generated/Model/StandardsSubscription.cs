@@ -63,23 +63,16 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsControlsUpdatable. 
         /// <para>
-        /// Indicates whether the controls associated with this standards subscription can be
-        /// viewed and updated.
-        /// </para>
-        ///  
-        /// <para>
-        /// The values are as follows:
+        /// Specifies whether you can retrieve information about and configure individual controls
+        /// that apply to the standard. Possible values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>READY_FOR_UPDATES</c> - Controls associated with this standards subscription can
-        /// be viewed and updated.
+        ///  <c>READY_FOR_UPDATES</c> - Controls in the standard can be retrieved and configured.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NOT_READY_FOR_UPDATES</c> - Controls associated with this standards subscription
-        /// cannot be retrieved or updated yet. Security Hub is still processing a request to
-        /// create the controls.
+        ///  <c>NOT_READY_FOR_UPDATES</c> - Controls in the standard cannot be retrieved or configured.
         /// </para>
         ///  </li> </ul>
         /// </summary>
