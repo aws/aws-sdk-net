@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StatefulRuleGroupReference Object
+    /// Response Unmarshaller for RuleSummary Object
     /// </summary>  
-    public class StatefulRuleGroupReferenceUnmarshaller : IJsonUnmarshaller<StatefulRuleGroupReference, JsonUnmarshallerContext>
+    public class RuleSummaryUnmarshaller : IJsonUnmarshaller<RuleSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StatefulRuleGroupReference Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RuleSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            StatefulRuleGroupReference unmarshalledObject = new StatefulRuleGroupReference();
+            RuleSummary unmarshalledObject = new RuleSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeepThreatInspection", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DeepThreatInspection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Override", targetDepth))
-                {
-                    var unmarshaller = StatefulRuleGroupOverrideUnmarshaller.Instance;
-                    unmarshalledObject.Override = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Priority", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("Metadata", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Msg", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Msg = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         }
 
 
-        private static StatefulRuleGroupReferenceUnmarshaller _instance = new StatefulRuleGroupReferenceUnmarshaller();        
+        private static RuleSummaryUnmarshaller _instance = new RuleSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StatefulRuleGroupReferenceUnmarshaller Instance
+        public static RuleSummaryUnmarshaller Instance
         {
             get
             {

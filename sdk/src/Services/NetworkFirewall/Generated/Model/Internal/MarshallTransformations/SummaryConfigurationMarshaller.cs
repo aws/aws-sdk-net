@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StatefulRuleGroupReference Marshaller
+    /// SummaryConfiguration Marshaller
     /// </summary>
-    public class StatefulRuleGroupReferenceMarshaller : IRequestMarshaller<StatefulRuleGroupReference, JsonMarshallerContext> 
+    public class SummaryConfigurationMarshaller : IRequestMarshaller<SummaryConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StatefulRuleGroupReference requestObject, JsonMarshallerContext context)
+        public void Marshall(SummaryConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDeepThreatInspection())
+            if(requestObject.IsSetRuleOptions())
             {
-                context.Writer.WritePropertyName("DeepThreatInspection");
-                context.Writer.WriteBooleanValue(requestObject.DeepThreatInspection.Value);
-            }
-
-            if(requestObject.IsSetOverride())
-            {
-                context.Writer.WritePropertyName("Override");
-                context.Writer.WriteStartObject();
-
-                var marshaller = StatefulRuleGroupOverrideMarshaller.Instance;
-                marshaller.Marshall(requestObject.Override, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetPriority())
-            {
-                context.Writer.WritePropertyName("Priority");
-                context.Writer.WriteNumberValue(requestObject.Priority.Value);
-            }
-
-            if(requestObject.IsSetResourceArn())
-            {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.WriteStringValue(requestObject.ResourceArn);
+                context.Writer.WritePropertyName("RuleOptions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectRuleOptionsListValue in requestObject.RuleOptions)
+                {
+                        context.Writer.WriteStringValue(requestObjectRuleOptionsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -80,7 +62,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static StatefulRuleGroupReferenceMarshaller Instance = new StatefulRuleGroupReferenceMarshaller();
+        public readonly static SummaryConfigurationMarshaller Instance = new SummaryConfigurationMarshaller();
 
     }
 }

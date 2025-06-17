@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateRuleGroup Request Marshaller
+    /// DescribeRuleGroupSummary Request Marshaller
     /// </summary>       
-    public class UpdateRuleGroupRequestMarshaller : IMarshaller<IRequest, UpdateRuleGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeRuleGroupSummaryRequestMarshaller : IMarshaller<IRequest, DescribeRuleGroupSummaryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateRuleGroupRequest)input);
+            return this.Marshall((DescribeRuleGroupSummaryRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateRuleGroupRequest publicRequest)
+        public IRequest Marshall(DescribeRuleGroupSummaryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkFirewall");
-            string target = "NetworkFirewall_20201112.UpdateRuleGroup";
+            string target = "NetworkFirewall_20201112.DescribeRuleGroupSummary";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
@@ -75,46 +75,6 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAnalyzeRuleGroup())
-            {
-                context.Writer.WritePropertyName("AnalyzeRuleGroup");
-                context.Writer.WriteBooleanValue(publicRequest.AnalyzeRuleGroup.Value);
-            }
-
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetDryRun())
-            {
-                context.Writer.WritePropertyName("DryRun");
-                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
-            }
-
-            if(publicRequest.IsSetEncryptionConfiguration())
-            {
-                context.Writer.WritePropertyName("EncryptionConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EncryptionConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetRuleGroup())
-            {
-                context.Writer.WritePropertyName("RuleGroup");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RuleGroupMarshaller.Instance;
-                marshaller.Marshall(publicRequest.RuleGroup, context);
-
-                context.Writer.WriteEndObject();
-            }
-
             if(publicRequest.IsSetRuleGroupArn())
             {
                 context.Writer.WritePropertyName("RuleGroupArn");
@@ -127,44 +87,10 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RuleGroupName);
             }
 
-            if(publicRequest.IsSetRules())
-            {
-                context.Writer.WritePropertyName("Rules");
-                context.Writer.WriteStringValue(publicRequest.Rules);
-            }
-
-            if(publicRequest.IsSetSourceMetadata())
-            {
-                context.Writer.WritePropertyName("SourceMetadata");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SourceMetadataMarshaller.Instance;
-                marshaller.Marshall(publicRequest.SourceMetadata, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetSummaryConfiguration())
-            {
-                context.Writer.WritePropertyName("SummaryConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SummaryConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.SummaryConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
             if(publicRequest.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
                 context.Writer.WriteStringValue(publicRequest.Type);
-            }
-
-            if(publicRequest.IsSetUpdateToken())
-            {
-                context.Writer.WritePropertyName("UpdateToken");
-                context.Writer.WriteStringValue(publicRequest.UpdateToken);
             }
 
             writer.WriteEndObject();
@@ -180,9 +106,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateRuleGroupRequestMarshaller _instance = new UpdateRuleGroupRequestMarshaller();        
+        private static DescribeRuleGroupSummaryRequestMarshaller _instance = new DescribeRuleGroupSummaryRequestMarshaller();        
 
-        internal static UpdateRuleGroupRequestMarshaller GetInstance()
+        internal static DescribeRuleGroupSummaryRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -190,7 +116,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateRuleGroupRequestMarshaller Instance
+        public static DescribeRuleGroupSummaryRequestMarshaller Instance
         {
             get
             {

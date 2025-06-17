@@ -35,9 +35,41 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class StatefulRuleGroupReference
     {
+        private bool? _deepThreatInspection;
         private StatefulRuleGroupOverride _override;
         private int? _priority;
         private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property DeepThreatInspection. 
+        /// <para>
+        /// Network Firewall plans to augment the active threat defense managed rule group with
+        /// an additional deep threat inspection capability. When this capability is released,
+        /// Amazon Web Services will analyze service logs of network traffic processed by these
+        /// rule groups to identify threat indicators across customers. Amazon Web Services will
+        /// use these threat indicators to improve the active threat defense managed rule groups
+        /// and protect the security of Amazon Web Services customers and services.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Customers can opt-out of deep threat inspection at any time through the Network Firewall
+        /// console or API. When customers opt out, Network Firewall will not use the network
+        /// traffic processed by those customers' active threat defense rule groups for rule group
+        /// improvement.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? DeepThreatInspection
+        {
+            get { return this._deepThreatInspection; }
+            set { this._deepThreatInspection = value; }
+        }
+
+        // Check to see if DeepThreatInspection property is set
+        internal bool IsSetDeepThreatInspection()
+        {
+            return this._deepThreatInspection.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Override. 
