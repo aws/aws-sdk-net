@@ -30,10 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// The Amazon S3 data source of the model to import. For the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html">CreateCustomModel</a>
-    /// API operation, you must specify the Amazon S3 URI for the Amazon-managed Amazon S3
-    /// bucket containing your model artifacts. SageMaker AI creates this bucket when you
-    /// run your first SageMaker AI training job.
+    /// The Amazon S3 data source of the model to import.
     /// </summary>
     public partial class S3DataSource
     {

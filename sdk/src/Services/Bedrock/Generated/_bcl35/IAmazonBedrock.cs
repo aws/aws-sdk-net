@@ -111,9 +111,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates a new custom model in Amazon Bedrock from an existing SageMaker AI-trained
-        /// Amazon Nova model stored in an Amazon-managed Amazon S3 bucket. After the model is
-        /// active, you can use it for inference.
+        /// Creates a new custom model in Amazon Bedrock. After the model is active, you can use
+        /// it for inference.
         /// 
         ///  
         /// <para>
@@ -141,18 +140,6 @@ namespace Amazon.Bedrock
         ///  <c>Failed</c> - Creation process encountered an error
         /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// For more information about creating custom models, including specific model requirements,
-        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/create-custom-model-from-existing.html">Import
-        /// a SageMaker AI-trained Amazon Nova model</a> in the Amazon Bedrock User Guide. 
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You use the <c>CreateCustomModel</c> API to import only SageMaker AI-trained Amazon
-        /// Nova models. To import open-source models, you use the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html">CreateModelImportJob</a>.
-        /// 
-        /// </para>
-        ///  </note> 
         /// <para>
         ///  <b>Related APIs</b> 
         /// </para>
