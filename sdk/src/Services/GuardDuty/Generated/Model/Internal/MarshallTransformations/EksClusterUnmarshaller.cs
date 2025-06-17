@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Actor Object
+    /// Response Unmarshaller for EksCluster Object
     /// </summary>  
-    public class ActorUnmarshaller : IJsonUnmarshaller<Actor, JsonUnmarshallerContext>
+    public class EksClusterUnmarshaller : IJsonUnmarshaller<EksCluster, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Actor Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EksCluster Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Actor unmarshalledObject = new Actor();
+            EksCluster unmarshalledObject = new EksCluster();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,34 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("process", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = ActorProcessUnmarshaller.Instance;
-                    unmarshalledObject.Process = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("session", targetDepth))
+                if (context.TestExpression("ec2InstanceUids", targetDepth))
                 {
-                    var unmarshaller = SessionUnmarshaller.Instance;
-                    unmarshalledObject.Session = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Ec2InstanceUids = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("user", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
-                    var unmarshaller = UserUnmarshaller.Instance;
-                    unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("vpcId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +91,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActorUnmarshaller _instance = new ActorUnmarshaller();        
+        private static EksClusterUnmarshaller _instance = new EksClusterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActorUnmarshaller Instance
+        public static EksClusterUnmarshaller Instance
         {
             get
             {

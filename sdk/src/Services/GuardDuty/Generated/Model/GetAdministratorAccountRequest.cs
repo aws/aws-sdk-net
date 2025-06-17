@@ -34,12 +34,27 @@ namespace Amazon.GuardDuty.Model
     /// Provides the details of the GuardDuty administrator account associated with the current
     /// GuardDuty member account.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// If the organization's management account or a delegated administrator runs this API,
-    /// it will return success (<c>HTTP 200</c>) but no content.
+    /// Based on the type of account that runs this API, the following list shows how the
+    /// API behavior varies:
     /// </para>
-    ///  </note>
+    ///  <ul> <li> 
+    /// <para>
+    /// When the GuardDuty administrator account runs this API, it will return success (<c>HTTP
+    /// 200</c>) but no content.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When a member account runs this API, it will return the details of the GuardDuty administrator
+    /// account that is associated with this calling member account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When an individual account (not associated with an organization) runs this API, it
+    /// will return success (<c>HTTP 200</c>) but no content.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetAdministratorAccountRequest : AmazonGuardDutyRequest
     {

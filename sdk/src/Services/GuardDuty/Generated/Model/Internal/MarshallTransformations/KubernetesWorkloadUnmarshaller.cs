@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Actor Object
+    /// Response Unmarshaller for KubernetesWorkload Object
     /// </summary>  
-    public class ActorUnmarshaller : IJsonUnmarshaller<Actor, JsonUnmarshallerContext>
+    public class KubernetesWorkloadUnmarshaller : IJsonUnmarshaller<KubernetesWorkload, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Actor Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public KubernetesWorkload Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Actor unmarshalledObject = new Actor();
+            KubernetesWorkload unmarshalledObject = new KubernetesWorkload();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("containerUids", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ContainerUids = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("kubernetesResourcesTypes", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.KubernetesResourcesTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("process", targetDepth))
+                if (context.TestExpression("namespace", targetDepth))
                 {
-                    var unmarshaller = ActorProcessUnmarshaller.Instance;
-                    unmarshalledObject.Process = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("session", targetDepth))
-                {
-                    var unmarshaller = SessionUnmarshaller.Instance;
-                    unmarshalledObject.Session = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("user", targetDepth))
-                {
-                    var unmarshaller = UserUnmarshaller.Instance;
-                    unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActorUnmarshaller _instance = new ActorUnmarshaller();        
+        private static KubernetesWorkloadUnmarshaller _instance = new KubernetesWorkloadUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActorUnmarshaller Instance
+        public static KubernetesWorkloadUnmarshaller Instance
         {
             get
             {

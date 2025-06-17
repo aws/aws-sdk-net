@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Actor Object
+    /// Response Unmarshaller for ContainerFindingResource Object
     /// </summary>  
-    public class ActorUnmarshaller : IJsonUnmarshaller<Actor, JsonUnmarshallerContext>
+    public class ContainerFindingResourceUnmarshaller : IJsonUnmarshaller<ContainerFindingResource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Actor Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ContainerFindingResource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Actor unmarshalledObject = new Actor();
+            ContainerFindingResource unmarshalledObject = new ContainerFindingResource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("process", targetDepth))
+                if (context.TestExpression("imageUid", targetDepth))
                 {
-                    var unmarshaller = ActorProcessUnmarshaller.Instance;
-                    unmarshalledObject.Process = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("session", targetDepth))
-                {
-                    var unmarshaller = SessionUnmarshaller.Instance;
-                    unmarshalledObject.Session = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("user", targetDepth))
-                {
-                    var unmarshaller = UserUnmarshaller.Instance;
-                    unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageUid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActorUnmarshaller _instance = new ActorUnmarshaller();        
+        private static ContainerFindingResourceUnmarshaller _instance = new ContainerFindingResourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActorUnmarshaller Instance
+        public static ContainerFindingResourceUnmarshaller Instance
         {
             get
             {

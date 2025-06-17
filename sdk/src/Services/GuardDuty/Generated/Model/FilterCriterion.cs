@@ -45,12 +45,6 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// An enum value representing possible scan properties to match with given scan entries.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Replace the enum value <c>CLUSTER_NAME</c> with <c>EKS_CLUSTER_NAME</c>. <c>CLUSTER_NAME</c>
-        /// has been deprecated.
-        /// </para>
-        ///  </note>
         /// </summary>
         public CriterionKey CriterionKey
         {

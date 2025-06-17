@@ -61,8 +61,51 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// The email address of the member account.
         /// </para>
+        ///  
+        /// <para>
+        /// The rules for a valid email address:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The email address must be a minimum of 6 and a maximum of 64 characters long.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All characters must be 7-bit ASCII characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There must be one and only one @ symbol, which separates the local name from the domain
+        /// name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The local name can't contain any of the following characters:
+        /// </para>
+        ///  
+        /// <para>
+        /// whitespace, " ' ( ) &lt; &gt; [ ] : ' , \ | % &amp;
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The local name can't begin with a dot (.).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain name can consist of only the characters [a-z], [A-Z], [0-9], hyphen (-),
+        /// or dot (.).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain name can't begin or end with a dot (.) or hyphen (-).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain name must contain at least one dot. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=6, Max=64)]
         public string Email
         {
             get { return this._email; }
