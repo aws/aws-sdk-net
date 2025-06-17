@@ -95,10 +95,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault != null)
                             {
                                 xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault");
-                                if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.IsSetKMSMasterKeyID())
-                                    xmlWriter.WriteElementString("KMSMasterKeyID", StringUtils.FromString(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.KMSMasterKeyID));
-                                if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.IsSetSSEAlgorithm())
-                                    xmlWriter.WriteElementString("SSEAlgorithm", StringUtils.FromString(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.SSEAlgorithm));
+                                if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.IsSetServerSideEncryptionAlgorithm())
+                                    xmlWriter.WriteElementString("SSEAlgorithm", StringUtils.FromString(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.ServerSideEncryptionAlgorithm));
+                                if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.IsSetServerSideEncryptionKeyManagementServiceKeyId())
+                                    xmlWriter.WriteElementString("KMSMasterKeyID", StringUtils.FromString(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.ServerSideEncryptionKeyManagementServiceKeyId));
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();

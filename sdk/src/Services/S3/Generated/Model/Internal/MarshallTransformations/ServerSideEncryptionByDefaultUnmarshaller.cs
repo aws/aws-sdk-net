@@ -56,16 +56,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("KMSMasterKeyID", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.KMSMasterKeyID = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("SSEAlgorithm", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SSEAlgorithm = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ServerSideEncryptionAlgorithm = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("KMSMasterKeyID", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServerSideEncryptionKeyManagementServiceKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

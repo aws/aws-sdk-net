@@ -214,10 +214,10 @@
         "ServerSideEncryptionByDefault":{
             "modify": [
                 {
-                    "KMSMasterKeyID": {"emitPropertyName": "KMSMasterKeyID"}
+                    "KMSMasterKeyID": {"emitPropertyName": "ServerSideEncryptionKeyManagementServiceKeyId"}
                 },
                 {
-                    "SSEAlgorithm": {"emitPropertyName": "SSEAlgorithm"}
+                    "SSEAlgorithm": {"emitPropertyName": "ServerSideEncryptionAlgorithm"}
                 }
             ]
         },

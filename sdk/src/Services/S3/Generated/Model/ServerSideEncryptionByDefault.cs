@@ -56,11 +56,35 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class ServerSideEncryptionByDefault
     {
-        private string _kmsMasterKeyID;
-        private ServerSideEncryptionMethod _sseAlgorithm;
+        private ServerSideEncryptionMethod _serverSideEncryptionAlgorithm;
+        private string _serverSideEncryptionKeyManagementServiceKeyId;
 
         /// <summary>
-        /// Gets and sets the property KMSMasterKeyID. 
+        /// Gets and sets the property ServerSideEncryptionAlgorithm. 
+        /// <para>
+        /// Server-side encryption algorithm to use for the default encryption.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, there are only two supported values for server-side encryption:
+        /// <c>AES256</c> and <c>aws:kms</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryptionAlgorithm
+        {
+            get { return this._serverSideEncryptionAlgorithm; }
+            set { this._serverSideEncryptionAlgorithm = value; }
+        }
+
+        // Check to see if ServerSideEncryptionAlgorithm property is set
+        internal bool IsSetServerSideEncryptionAlgorithm()
+        {
+            return this._serverSideEncryptionAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerSideEncryptionKeyManagementServiceKeyId. 
         /// <para>
         /// Amazon Web Services Key Management Service (KMS) customer managed key ID to use for
         /// the default encryption. 
@@ -124,41 +148,16 @@ namespace Amazon.S3.Model
         ///  </important>
         /// </summary>
         [AWSProperty(Sensitive=true)]
-        public string KMSMasterKeyID
+        public string ServerSideEncryptionKeyManagementServiceKeyId
         {
-            get { return this._kmsMasterKeyID; }
-            set { this._kmsMasterKeyID = value; }
+            get { return this._serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this._serverSideEncryptionKeyManagementServiceKeyId = value; }
         }
 
-        // Check to see if KMSMasterKeyID property is set
-        internal bool IsSetKMSMasterKeyID()
+        // Check to see if ServerSideEncryptionKeyManagementServiceKeyId property is set
+        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
-            return this._kmsMasterKeyID != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SSEAlgorithm. 
-        /// <para>
-        /// Server-side encryption algorithm to use for the default encryption.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// For directory buckets, there are only two supported values for server-side encryption:
-        /// <c>AES256</c> and <c>aws:kms</c>.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ServerSideEncryptionMethod SSEAlgorithm
-        {
-            get { return this._sseAlgorithm; }
-            set { this._sseAlgorithm = value; }
-        }
-
-        // Check to see if SSEAlgorithm property is set
-        internal bool IsSetSSEAlgorithm()
-        {
-            return this._sseAlgorithm != null;
+            return this._serverSideEncryptionKeyManagementServiceKeyId != null;
         }
 
     }
