@@ -35,7 +35,28 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class AnalyzerConfiguration
     {
+        private InternalAccessConfiguration _internalAccess;
         private UnusedAccessConfiguration _unusedAccess;
+
+        /// <summary>
+        /// Gets and sets the property InternalAccess. 
+        /// <para>
+        /// Specifies the configuration of an internal access analyzer for an Amazon Web Services
+        /// organization or account. This configuration determines how the analyzer evaluates
+        /// access within your Amazon Web Services environment.
+        /// </para>
+        /// </summary>
+        public InternalAccessConfiguration InternalAccess
+        {
+            get { return this._internalAccess; }
+            set { this._internalAccess = value; }
+        }
+
+        // Check to see if InternalAccess property is set
+        internal bool IsSetInternalAccess()
+        {
+            return this._internalAccess != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UnusedAccess. 

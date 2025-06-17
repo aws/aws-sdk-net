@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AnalyzerConfiguration Marshaller
+    /// InternalAccessConfiguration Marshaller
     /// </summary>
-    public class AnalyzerConfigurationMarshaller : IRequestMarshaller<AnalyzerConfiguration, JsonMarshallerContext> 
+    public class InternalAccessConfigurationMarshaller : IRequestMarshaller<InternalAccessConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +42,17 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AnalyzerConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(InternalAccessConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInternalAccess())
+            if(requestObject.IsSetAnalysisRule())
             {
-                context.Writer.WritePropertyName("internalAccess");
+                context.Writer.WritePropertyName("analysisRule");
                 context.Writer.WriteStartObject();
 
-                var marshaller = InternalAccessConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.InternalAccess, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetUnusedAccess())
-            {
-                context.Writer.WritePropertyName("unusedAccess");
-                context.Writer.WriteStartObject();
-
-                var marshaller = UnusedAccessConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.UnusedAccess, context);
+                var marshaller = InternalAccessAnalysisRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.AnalysisRule, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -73,7 +62,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AnalyzerConfigurationMarshaller Instance = new AnalyzerConfigurationMarshaller();
+        public readonly static InternalAccessConfigurationMarshaller Instance = new InternalAccessConfigurationMarshaller();
 
     }
 }

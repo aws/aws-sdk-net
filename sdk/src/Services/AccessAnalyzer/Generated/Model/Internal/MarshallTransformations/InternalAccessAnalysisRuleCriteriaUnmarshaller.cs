@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FindingsStatistics Object
+    /// Response Unmarshaller for InternalAccessAnalysisRuleCriteria Object
     /// </summary>  
-    public class FindingsStatisticsUnmarshaller : IJsonUnmarshaller<FindingsStatistics, JsonUnmarshallerContext>
+    public class InternalAccessAnalysisRuleCriteriaUnmarshaller : IJsonUnmarshaller<InternalAccessAnalysisRuleCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FindingsStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InternalAccessAnalysisRuleCriteria Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            FindingsStatistics unmarshalledObject = new FindingsStatistics();
+            InternalAccessAnalysisRuleCriteria unmarshalledObject = new InternalAccessAnalysisRuleCriteria();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,22 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("externalAccessFindingsStatistics", targetDepth))
+                if (context.TestExpression("accountIds", targetDepth))
                 {
-                    var unmarshaller = ExternalAccessFindingsStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.ExternalAccessFindingsStatistics = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AccountIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("internalAccessFindingsStatistics", targetDepth))
+                if (context.TestExpression("resourceArns", targetDepth))
                 {
-                    var unmarshaller = InternalAccessFindingsStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.InternalAccessFindingsStatistics = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ResourceArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedAccessFindingsStatistics", targetDepth))
+                if (context.TestExpression("resourceTypes", targetDepth))
                 {
-                    var unmarshaller = UnusedAccessFindingsStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.UnusedAccessFindingsStatistics = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ResourceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +79,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         }
 
 
-        private static FindingsStatisticsUnmarshaller _instance = new FindingsStatisticsUnmarshaller();        
+        private static InternalAccessAnalysisRuleCriteriaUnmarshaller _instance = new InternalAccessAnalysisRuleCriteriaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FindingsStatisticsUnmarshaller Instance
+        public static InternalAccessAnalysisRuleCriteriaUnmarshaller Instance
         {
             get
             {

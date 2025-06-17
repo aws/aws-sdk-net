@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FindingsStatistics Object
+    /// Response Unmarshaller for InternalAccessConfiguration Object
     /// </summary>  
-    public class FindingsStatisticsUnmarshaller : IJsonUnmarshaller<FindingsStatistics, JsonUnmarshallerContext>
+    public class InternalAccessConfigurationUnmarshaller : IJsonUnmarshaller<InternalAccessConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FindingsStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InternalAccessConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            FindingsStatistics unmarshalledObject = new FindingsStatistics();
+            InternalAccessConfiguration unmarshalledObject = new InternalAccessConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("externalAccessFindingsStatistics", targetDepth))
+                if (context.TestExpression("analysisRule", targetDepth))
                 {
-                    var unmarshaller = ExternalAccessFindingsStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.ExternalAccessFindingsStatistics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("internalAccessFindingsStatistics", targetDepth))
-                {
-                    var unmarshaller = InternalAccessFindingsStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.InternalAccessFindingsStatistics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("unusedAccessFindingsStatistics", targetDepth))
-                {
-                    var unmarshaller = UnusedAccessFindingsStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.UnusedAccessFindingsStatistics = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = InternalAccessAnalysisRuleUnmarshaller.Instance;
+                    unmarshalledObject.AnalysisRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         }
 
 
-        private static FindingsStatisticsUnmarshaller _instance = new FindingsStatisticsUnmarshaller();        
+        private static InternalAccessConfigurationUnmarshaller _instance = new InternalAccessConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FindingsStatisticsUnmarshaller Instance
+        public static InternalAccessConfigurationUnmarshaller Instance
         {
             get
             {

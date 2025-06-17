@@ -62,6 +62,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExternalAccessDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("internalAccessDetails", targetDepth))
+                {
+                    var unmarshaller = InternalAccessDetailsUnmarshaller.Instance;
+                    unmarshalledObject.InternalAccessDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("unusedIamRoleDetails", targetDepth))
                 {
                     var unmarshaller = UnusedIamRoleDetailsUnmarshaller.Instance;
