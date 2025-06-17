@@ -12,15 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -31,10 +37,12 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
     /// API operation to the Regional endpoint. These endpoints support path-style requests
-    /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-    /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-    /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+    /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+    /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+    /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+    /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+    /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+    /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </note> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
@@ -89,7 +97,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -104,38 +112,55 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetBucketPolicyRequest : AmazonWebServiceRequest
     {
+        private string _bucketName;
+        private string _expectedBucketOwner;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
         /// The bucket name to get the bucket policy for.
-        /// </para> 
-        /// <para> 
-        /// <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style 
-        /// requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style 
-        /// requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket 
-        /// names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For 
-        /// information about bucket naming restrictions, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in 
-        /// the <i>Amazon S3 User Guide</i> </para> <para> <b>Access points</b> - When you use this API operation with an access point, provide the 
-        /// alias of the access point in place of the bucket name.</para> <para> <b>Object Lambda access points</b> - When you use this API operation 
-        /// with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda 
-        /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.
-        /// </para> 
-        /// <note> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Directory buckets </b> - When you use this operation with a directory bucket,
+        /// you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must
+        /// be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must
+        /// also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for
+        /// example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information
+        /// about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access points</b> - When you use this API operation with an access point, provide
+        /// the alias of the access point in place of the bucket name.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Object Lambda access points</b> - When you use this API operation with an Object
+        /// Lambda access point, provide the alias of the Object Lambda access point in place
+        /// of the bucket name. If the Object Lambda access point alias in a request is not valid,
+        /// the error code <c>InvalidAccessPointAliasError</c> is returned. For more information
+        /// about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+        /// of Error Codes</a>.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Object Lambda access points are not supported by directory buckets.
-        /// </para> 
-        /// </note>
+        /// </para>
+        ///  </note>
         /// </summary>
-        public string BucketName { get; set; }
-        private string expectedBucketOwner;
+        public string BucketName
+        {
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
+        }
 
         // Check to see if BucketName property is set
-        internal bool IsSetBucket()
+        internal bool IsSetBucketName()
         {
-            return this.BucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -154,18 +179,15 @@ namespace Amazon.S3.Model
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return this._expectedBucketOwner != null;
         }
+
     }
 }
-    

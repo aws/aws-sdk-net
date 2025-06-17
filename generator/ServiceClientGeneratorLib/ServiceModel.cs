@@ -490,7 +490,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "GetBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["GetBucketMetadataTableConfiguration"]),
                         //new Operation(this, "GetBucketMetricsConfiguration", DocumentRoot[OperationsKey]["GetBucketMetricsConfiguration"]),
                         new Operation(this, "GetBucketOwnershipControls", DocumentRoot[OperationsKey]["GetBucketOwnershipControls"]),
-                        //new Operation(this, "GetBucketPolicy", DocumentRoot[OperationsKey]["GetBucketPolicy"]),
+                        new Operation(this, "GetBucketPolicy", DocumentRoot[OperationsKey]["GetBucketPolicy"]),
                         //new Operation(this, "GetBucketPolicyStatus", DocumentRoot[OperationsKey]["GetBucketPolicyStatus"]),
                         //new Operation(this, "GetBucketReplication", DocumentRoot[OperationsKey]["GetBucketReplication"]),
                         //new Operation(this, "GetBucketRequestPayment", DocumentRoot[OperationsKey]["GetBucketRequestPayment"]),

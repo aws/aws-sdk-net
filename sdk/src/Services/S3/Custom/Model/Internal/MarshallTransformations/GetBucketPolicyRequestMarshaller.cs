@@ -24,9 +24,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get BucketName Policy Request Marshaller
     /// </summary>       
-    public class GetBucketPolicyRequestMarshaller : IMarshaller<IRequest, GetBucketPolicyRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
-	{   
-        public partial void PostMarshallCustomization()
+    public partial class GetBucketPolicyRequestMarshaller : IMarshaller<IRequest, GetBucketPolicyRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	{
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketPolicyRequest publicRequest)
+        {
+            defaultRequest.Suppress404Exceptions = true;
+        }
     }
 }
     
