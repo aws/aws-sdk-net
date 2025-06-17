@@ -71,7 +71,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MetadataTableStatus = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

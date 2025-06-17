@@ -116,9 +116,6 @@
         "GetBucketMetadataTableConfigurationResult":{
             "modify":[
                 {
-                    "Status":{"emitPropertyName":"MetadataTableStatus"}
-                },
-                {
                     "Error":{"emitPropertyName":"ErrorDetails"}
                 }
             ]

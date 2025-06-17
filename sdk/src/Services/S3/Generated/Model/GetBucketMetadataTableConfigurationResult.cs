@@ -36,7 +36,7 @@ namespace Amazon.S3.Model
     {
         private ErrorDetails _errorDetails;
         private MetadataTableConfigurationResult _metadataTableConfigurationResult;
-        private string _metadataTableStatus;
+        private string _status;
 
         /// <summary>
         /// Gets and sets the property ErrorDetails. 
@@ -78,7 +78,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetadataTableStatus. 
+        /// Gets and sets the property Status. 
         /// <para>
         ///  The status of the metadata table. The status values are: 
         /// </para>
@@ -99,16 +99,17 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public string MetadataTableStatus
+        [AWSProperty(Required=true)]
+        public string Status
         {
-            get { return this._metadataTableStatus; }
-            set { this._metadataTableStatus = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if MetadataTableStatus property is set
-        internal bool IsSetMetadataTableStatus()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._metadataTableStatus != null;
+            return this._status != null;
         }
 
     }
