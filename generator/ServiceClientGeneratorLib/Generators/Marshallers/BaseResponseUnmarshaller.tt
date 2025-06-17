@@ -413,7 +413,7 @@ using Amazon.Runtime.Internal.Util;
 		}
 
 		// some structure members do not have a locationName.
-		// so if we get to this point, it is gauranteed that the marshall name we are determining is for a 
+		// so if we get to this point, it is guaranteed that the marshall name we are determining is for a 
 		// member of a structure. For a member of a structure the marshall name is straightforward.
 		if (locationName == null)
 		{
