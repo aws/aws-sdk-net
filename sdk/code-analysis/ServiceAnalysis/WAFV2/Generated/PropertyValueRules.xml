@@ -863,6 +863,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApplicationAttribute.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.AWSManagedRulesACFPRuleSet.CreationPath</property>
     <min>1</min>
     <max>256</max>
