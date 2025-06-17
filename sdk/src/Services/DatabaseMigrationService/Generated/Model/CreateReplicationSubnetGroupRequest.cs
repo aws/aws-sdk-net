@@ -58,7 +58,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationSubnetGroupDescription. 
         /// <para>
-        /// The description for the subnet group.
+        /// The description for the subnet group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: This parameter Must not contain non-printable control characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -84,6 +84,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3AccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3AccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3Path", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3Path = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

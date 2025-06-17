@@ -31,7 +31,18 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetAdvisorSchemaObjectSummary operation.
+    /// <important> 
+    /// <para>
+    ///  End of support notice: On May 20, 2026, Amazon Web Services will end support for
+    /// Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you will no longer be
+    /// able to access the Amazon Web Services DMS Fleet Advisor; console or Amazon Web Services
+    /// DMS Fleet Advisor; resources. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+    /// Web Services DMS Fleet Advisor end of support</a>. 
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+    /// </para>
     /// </summary>
     public partial class DescribeFleetAdvisorSchemaObjectSummaryRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -68,7 +79,15 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxRecords. 
+        /// Gets and sets the property MaxRecords. <important> 
+        /// <para>
+        ///  End of support notice: On May 20, 2026, Amazon Web Services will end support for
+        /// Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you will no longer be
+        /// able to access the Amazon Web Services DMS Fleet Advisor; console or Amazon Web Services
+        /// DMS Fleet Advisor; resources. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+        /// Web Services DMS Fleet Advisor end of support</a>. 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Sets the maximum number of records returned in the response.
         /// </para>

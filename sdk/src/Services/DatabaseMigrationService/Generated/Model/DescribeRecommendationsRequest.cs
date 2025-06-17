@@ -31,7 +31,18 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRecommendations operation.
+    /// <important> 
+    /// <para>
+    ///  End of support notice: On May 20, 2026, Amazon Web Services will end support for
+    /// Amazon Web Services DMS Fleet Advisor;. After May 20, 2026, you will no longer be
+    /// able to access the Amazon Web Services DMS Fleet Advisor; console or Amazon Web Services
+    /// DMS Fleet Advisor; resources. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/dms_fleet.advisor-end-of-support.html">Amazon
+    /// Web Services DMS Fleet Advisor end of support</a>. 
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Returns a paginated list of target engine recommendations for your source databases.
+    /// </para>
     /// </summary>
     public partial class DescribeRecommendationsRequest : AmazonDatabaseMigrationServiceRequest
     {

@@ -169,9 +169,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// When the migration type is <c>full-load</c> or <c>full-load-and-cdc</c>, the only
-        /// valid value for the first run of the task is <c>start-replication</c>. This option
-        /// will start the migration.
+        ///  <c>start-replication</c> is the only valid action that can be used for the first
+        /// time a task with the migration type of <c>full-load</c>full-load, <c>full-load-and-cdc</c>
+        /// or <c>cdc</c> is run. Any other action used for the first time on a given task, such
+        /// as <c>resume-processing</c> and reload-target will result in data errors.
         /// </para>
         ///  
         /// <para>
@@ -180,8 +181,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// The <c>resume-processing</c> option isn't applicable for a full-load task, because
-        /// you can't resume partially loaded tables during the full load phase.
+        /// For a <c>full-load</c> task, the resume-processing option will reload any tables that
+        /// were partially loaded or not yet loaded during the full load phase.
         /// </para>
         ///  
         /// <para>
@@ -190,6 +191,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// source changes, use <c>reload-target</c>. Otherwise use <c>resume-processing</c>,
         /// to replicate the changes from the last stop position.
         /// </para>
+        ///  
+        /// <para>
+        /// For a <c>cdc</c> only task, to start from a specific position, you must use start-replication
+        /// and also specify the start position. Check the source endpoint DMS documentation for
+        /// any limitations. For example, not all sources support starting from a time.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>resume-processing</c> is only available for previously executed tasks.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public StartReplicationTaskTypeValue StartReplicationTaskType
