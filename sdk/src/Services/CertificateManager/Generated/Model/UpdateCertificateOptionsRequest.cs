@@ -31,10 +31,11 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCertificateOptions operation.
-    /// Updates a certificate. Currently, you can use this function to specify whether to
-    /// opt in to or out of recording your certificate in a certificate transparency log.
+    /// Updates a certificate. You can use this function to specify whether to opt in to or
+    /// out of recording your certificate in a certificate transparency log and exporting.
     /// For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
-    /// Opting Out of Certificate Transparency Logging</a>.
+    /// Opting Out of Certificate Transparency Logging</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
+    /// Manager Exportable Managed Certificates</a>.
     /// </summary>
     public partial class UpdateCertificateOptionsRequest : AmazonCertificateManagerRequest
     {
@@ -69,9 +70,10 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property Options. 
         /// <para>
         /// Use to update the options for your certificate. Currently, you can specify whether
-        /// to add your certificate to a transparency log. Certificate transparency makes it possible
-        /// to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates
-        /// that have not been logged typically produce an error message in a browser. 
+        /// to add your certificate to a transparency log or export your certificate. Certificate
+        /// transparency makes it possible to detect SSL/TLS certificates that have been mistakenly
+        /// or maliciously issued. Certificates that have not been logged typically produce an
+        /// error message in a browser. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

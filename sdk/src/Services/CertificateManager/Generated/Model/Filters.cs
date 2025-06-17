@@ -35,10 +35,29 @@ namespace Amazon.CertificateManager.Model
     /// </summary>
     public partial class Filters
     {
+        private CertificateExport _exportOption;
         private List<string> _extendedKeyUsage = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _keyTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _keyUsage = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CertificateManagedBy _managedBy;
+
+        /// <summary>
+        /// Gets and sets the property ExportOption. 
+        /// <para>
+        /// Specify <c>ENABLED</c> or <c>DISABLED</c> to identify certificates that can be exported.
+        /// </para>
+        /// </summary>
+        public CertificateExport ExportOption
+        {
+            get { return this._exportOption; }
+            set { this._exportOption = value; }
+        }
+
+        // Check to see if ExportOption property is set
+        internal bool IsSetExportOption()
+        {
+            return this._exportOption != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExtendedKeyUsage. 

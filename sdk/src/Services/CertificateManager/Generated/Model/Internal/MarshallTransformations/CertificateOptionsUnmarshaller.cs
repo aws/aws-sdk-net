@@ -72,6 +72,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateTransparencyLoggingPreference = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Export", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Export = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

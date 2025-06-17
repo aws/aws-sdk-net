@@ -30,17 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Structure that contains options for your certificate. Currently, you can use this
-    /// only to specify whether to opt in to or out of certificate transparency logging. Some
-    /// browsers require that public certificates issued for your domain be recorded in a
-    /// log. Certificates that are not logged typically generate a browser error. Transparency
+    /// Structure that contains options for your certificate. You can use this structure to
+    /// specify whether to opt in to or out of certificate transparency logging and export
+    /// your certificate. 
+    /// 
+    ///  
+    /// <para>
+    /// Some browsers require that public certificates issued for your domain be recorded
+    /// in a log. Certificates that are not logged typically generate a browser error. Transparency
     /// makes it possible for you to detect SSL/TLS certificates that have been mistakenly
     /// or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
     /// Transparency Logging</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can export public ACM certificates to use with Amazon Web Services services as
+    /// well as outside Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
+    /// Manager exportable public certificate</a>.
+    /// </para>
     /// </summary>
     public partial class CertificateOptions
     {
         private CertificateTransparencyLoggingPreference _certificateTransparencyLoggingPreference;
+        private CertificateExport _export;
 
         /// <summary>
         /// Gets and sets the property CertificateTransparencyLoggingPreference. 
@@ -59,6 +71,24 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetCertificateTransparencyLoggingPreference()
         {
             return this._certificateTransparencyLoggingPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Export. 
+        /// <para>
+        /// You can opt in to allow the export of your certificates by specifying <c>ENABLED</c>.
+        /// </para>
+        /// </summary>
+        public CertificateExport Export
+        {
+            get { return this._export; }
+            set { this._export = value; }
+        }
+
+        // Check to see if Export property is set
+        internal bool IsSetExport()
+        {
+            return this._export != null;
         }
 
     }

@@ -90,6 +90,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Exported = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExportOption", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExportOption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExtendedKeyUsages", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

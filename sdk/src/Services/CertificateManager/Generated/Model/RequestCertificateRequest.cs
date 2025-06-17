@@ -42,8 +42,7 @@ namespace Amazon.CertificateManager.Model
     /// you are requesting a public certificate, each domain name that you specify must be
     /// validated to verify that you own or control the domain. You can use <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
     /// validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
-    /// validation</a>. We recommend that you use DNS validation. ACM issues public certificates
-    /// after receiving approval from the domain owner. 
+    /// validation</a>. We recommend that you use DNS validation.
     /// </para>
     ///  <note> 
     /// <para>
@@ -251,12 +250,21 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// Currently, you can use this parameter to specify whether to add the certificate to
-        /// a certificate transparency log. Certificate transparency makes it possible to detect
-        /// SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates
-        /// that have not been logged typically produce an error message in a browser. For more
-        /// information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+        /// You can use this parameter to specify whether to add the certificate to a certificate
+        /// transparency log and export your certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// Certificate transparency makes it possible to detect SSL/TLS certificates that have
+        /// been mistakenly or maliciously issued. Certificates that have not been logged typically
+        /// produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
         /// Out of Certificate Transparency Logging</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can export public ACM certificates to use with Amazon Web Services services as
+        /// well as outside the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
+        /// Manager exportable public certificate</a>.
         /// </para>
         /// </summary>
         public CertificateOptions Options

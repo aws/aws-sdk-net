@@ -54,6 +54,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CertificateTransparencyLoggingPreference);
             }
 
+            if(requestObject.IsSetExport())
+            {
+                context.Writer.WritePropertyName("Export");
+                context.Writer.Write(requestObject.Export);
+            }
+
         }
 
         /// <summary>
