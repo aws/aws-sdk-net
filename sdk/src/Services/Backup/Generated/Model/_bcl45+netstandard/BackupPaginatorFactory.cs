@@ -189,6 +189,14 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Paginator for ListRestoreAccessBackupVaults operation
+        ///</summary>
+        public IListRestoreAccessBackupVaultsPaginator ListRestoreAccessBackupVaults(ListRestoreAccessBackupVaultsRequest request) 
+        {
+            return new ListRestoreAccessBackupVaultsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRestoreJobs operation
         ///</summary>
         public IListRestoreJobsPaginator ListRestoreJobs(ListRestoreJobsRequest request) 

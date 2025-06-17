@@ -218,6 +218,16 @@ namespace Amazon.Backup.Model
         IListReportPlansPaginator ListReportPlans(ListReportPlansRequest request);
 
         /// <summary>
+        /// Paginator for ListRestoreAccessBackupVaults operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRestoreAccessBackupVaultsPaginator ListRestoreAccessBackupVaults(ListRestoreAccessBackupVaultsRequest request);
+
+        /// <summary>
         /// Paginator for ListRestoreJobs operation
         ///</summary>
         [AWSPaginator(

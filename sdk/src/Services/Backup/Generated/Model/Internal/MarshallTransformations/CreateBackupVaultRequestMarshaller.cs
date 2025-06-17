@@ -90,6 +90,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreatorRequestId);
                 }
 
+                else if(!(publicRequest.IsSetCreatorRequestId()))
+                {
+                    context.Writer.WritePropertyName("CreatorRequestId");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetEncryptionKeyArn())
                 {
                     context.Writer.WritePropertyName("EncryptionKeyArn");

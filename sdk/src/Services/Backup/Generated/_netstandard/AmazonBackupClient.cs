@@ -273,6 +273,57 @@ namespace Amazon.Backup
         #endregion
 
 
+        #region  AssociateBackupVaultMpaApprovalTeam
+
+        internal virtual AssociateBackupVaultMpaApprovalTeamResponse AssociateBackupVaultMpaApprovalTeam(AssociateBackupVaultMpaApprovalTeamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateBackupVaultMpaApprovalTeamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates an MPA approval team with a backup vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateBackupVaultMpaApprovalTeam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateBackupVaultMpaApprovalTeam service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AssociateBackupVaultMpaApprovalTeam">REST API Reference for AssociateBackupVaultMpaApprovalTeam Operation</seealso>
+        public virtual Task<AssociateBackupVaultMpaApprovalTeamResponse> AssociateBackupVaultMpaApprovalTeamAsync(AssociateBackupVaultMpaApprovalTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateBackupVaultMpaApprovalTeamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelLegalHold
 
         internal virtual CancelLegalHoldResponse CancelLegalHold(CancelLegalHoldRequest request)
@@ -722,6 +773,65 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = CreateReportPlanResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateReportPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRestoreAccessBackupVault
+
+        internal virtual CreateRestoreAccessBackupVaultResponse CreateRestoreAccessBackupVault(CreateRestoreAccessBackupVaultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRestoreAccessBackupVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRestoreAccessBackupVaultResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRestoreAccessBackupVaultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a restore access backup vault that provides temporary access to recovery points
+        /// in a logically air-gapped backup vault, subject to MPA approval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreAccessBackupVault service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRestoreAccessBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreAccessBackupVault">REST API Reference for CreateRestoreAccessBackupVault Operation</seealso>
+        public virtual Task<CreateRestoreAccessBackupVaultResponse> CreateRestoreAccessBackupVaultAsync(CreateRestoreAccessBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRestoreAccessBackupVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRestoreAccessBackupVaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRestoreAccessBackupVaultResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1962,6 +2072,58 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = DescribeRestoreJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeRestoreJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateBackupVaultMpaApprovalTeam
+
+        internal virtual DisassociateBackupVaultMpaApprovalTeamResponse DisassociateBackupVaultMpaApprovalTeam(DisassociateBackupVaultMpaApprovalTeamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateBackupVaultMpaApprovalTeamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association between an MPA approval team and a backup vault, disabling
+        /// the MPA approval workflow for restore operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateBackupVaultMpaApprovalTeam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateBackupVaultMpaApprovalTeam service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateBackupVaultMpaApprovalTeam">REST API Reference for DisassociateBackupVaultMpaApprovalTeam Operation</seealso>
+        public virtual Task<DisassociateBackupVaultMpaApprovalTeamResponse> DisassociateBackupVaultMpaApprovalTeamAsync(DisassociateBackupVaultMpaApprovalTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateBackupVaultMpaApprovalTeamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3648,6 +3810,54 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListRestoreAccessBackupVaults
+
+        internal virtual ListRestoreAccessBackupVaultsResponse ListRestoreAccessBackupVaults(ListRestoreAccessBackupVaultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreAccessBackupVaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreAccessBackupVaultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRestoreAccessBackupVaultsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of restore access backup vaults associated with a specified backup
+        /// vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreAccessBackupVaults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRestoreAccessBackupVaults service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreAccessBackupVaults">REST API Reference for ListRestoreAccessBackupVaults Operation</seealso>
+        public virtual Task<ListRestoreAccessBackupVaultsResponse> ListRestoreAccessBackupVaultsAsync(ListRestoreAccessBackupVaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreAccessBackupVaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreAccessBackupVaultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRestoreAccessBackupVaultsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRestoreJobs
 
         internal virtual ListRestoreJobsResponse ListRestoreJobs(ListRestoreJobsRequest request)
@@ -4163,6 +4373,58 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = PutRestoreValidationResultResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRestoreValidationResultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RevokeRestoreAccessBackupVault
+
+        internal virtual RevokeRestoreAccessBackupVaultResponse RevokeRestoreAccessBackupVault(RevokeRestoreAccessBackupVaultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeRestoreAccessBackupVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeRestoreAccessBackupVaultResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeRestoreAccessBackupVaultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Revokes access to a restore access backup vault, removing the ability to restore from
+        /// its recovery points and permanently deleting the vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeRestoreAccessBackupVault service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeRestoreAccessBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RevokeRestoreAccessBackupVault">REST API Reference for RevokeRestoreAccessBackupVault Operation</seealso>
+        public virtual Task<RevokeRestoreAccessBackupVaultResponse> RevokeRestoreAccessBackupVaultAsync(RevokeRestoreAccessBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeRestoreAccessBackupVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeRestoreAccessBackupVaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RevokeRestoreAccessBackupVaultResponse>(request, options, cancellationToken);
         }
 
         #endregion

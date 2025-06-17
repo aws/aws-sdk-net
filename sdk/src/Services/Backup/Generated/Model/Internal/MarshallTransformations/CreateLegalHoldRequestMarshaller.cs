@@ -79,6 +79,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdempotencyToken);
                 }
 
+                else if(!(publicRequest.IsSetIdempotencyToken()))
+                {
+                    context.Writer.WritePropertyName("IdempotencyToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetRecoveryPointSelection())
                 {
                     context.Writer.WritePropertyName("RecoveryPointSelection");

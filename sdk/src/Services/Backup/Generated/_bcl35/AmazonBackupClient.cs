@@ -269,6 +269,77 @@ namespace Amazon.Backup
         #endregion
 
 
+        #region  AssociateBackupVaultMpaApprovalTeam
+
+        /// <summary>
+        /// Associates an MPA approval team with a backup vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateBackupVaultMpaApprovalTeam service method.</param>
+        /// 
+        /// <returns>The response from the AssociateBackupVaultMpaApprovalTeam service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AssociateBackupVaultMpaApprovalTeam">REST API Reference for AssociateBackupVaultMpaApprovalTeam Operation</seealso>
+        public virtual AssociateBackupVaultMpaApprovalTeamResponse AssociateBackupVaultMpaApprovalTeam(AssociateBackupVaultMpaApprovalTeamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateBackupVaultMpaApprovalTeamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateBackupVaultMpaApprovalTeam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateBackupVaultMpaApprovalTeam operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateBackupVaultMpaApprovalTeam
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AssociateBackupVaultMpaApprovalTeam">REST API Reference for AssociateBackupVaultMpaApprovalTeam Operation</seealso>
+        public virtual IAsyncResult BeginAssociateBackupVaultMpaApprovalTeam(AssociateBackupVaultMpaApprovalTeamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateBackupVaultMpaApprovalTeam operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateBackupVaultMpaApprovalTeam.</param>
+        /// 
+        /// <returns>Returns a  AssociateBackupVaultMpaApprovalTeamResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AssociateBackupVaultMpaApprovalTeam">REST API Reference for AssociateBackupVaultMpaApprovalTeam Operation</seealso>
+        public virtual AssociateBackupVaultMpaApprovalTeamResponse EndAssociateBackupVaultMpaApprovalTeam(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateBackupVaultMpaApprovalTeamResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelLegalHold
 
         /// <summary>
@@ -878,6 +949,85 @@ namespace Amazon.Backup
         public virtual CreateReportPlanResponse EndCreateReportPlan(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReportPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateRestoreAccessBackupVault
+
+        /// <summary>
+        /// Creates a restore access backup vault that provides temporary access to recovery points
+        /// in a logically air-gapped backup vault, subject to MPA approval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreAccessBackupVault service method.</param>
+        /// 
+        /// <returns>The response from the CreateRestoreAccessBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreAccessBackupVault">REST API Reference for CreateRestoreAccessBackupVault Operation</seealso>
+        public virtual CreateRestoreAccessBackupVaultResponse CreateRestoreAccessBackupVault(CreateRestoreAccessBackupVaultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRestoreAccessBackupVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRestoreAccessBackupVaultResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRestoreAccessBackupVaultResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRestoreAccessBackupVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreAccessBackupVault operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRestoreAccessBackupVault
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreAccessBackupVault">REST API Reference for CreateRestoreAccessBackupVault Operation</seealso>
+        public virtual IAsyncResult BeginCreateRestoreAccessBackupVault(CreateRestoreAccessBackupVaultRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRestoreAccessBackupVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRestoreAccessBackupVaultResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRestoreAccessBackupVault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRestoreAccessBackupVault.</param>
+        /// 
+        /// <returns>Returns a  CreateRestoreAccessBackupVaultResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreAccessBackupVault">REST API Reference for CreateRestoreAccessBackupVault Operation</seealso>
+        public virtual CreateRestoreAccessBackupVaultResponse EndCreateRestoreAccessBackupVault(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRestoreAccessBackupVaultResponse>(asyncResult);
         }
 
         #endregion
@@ -2598,6 +2748,78 @@ namespace Amazon.Backup
         public virtual DescribeRestoreJobResponse EndDescribeRestoreJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRestoreJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateBackupVaultMpaApprovalTeam
+
+        /// <summary>
+        /// Removes the association between an MPA approval team and a backup vault, disabling
+        /// the MPA approval workflow for restore operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateBackupVaultMpaApprovalTeam service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateBackupVaultMpaApprovalTeam service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateBackupVaultMpaApprovalTeam">REST API Reference for DisassociateBackupVaultMpaApprovalTeam Operation</seealso>
+        public virtual DisassociateBackupVaultMpaApprovalTeamResponse DisassociateBackupVaultMpaApprovalTeam(DisassociateBackupVaultMpaApprovalTeamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateBackupVaultMpaApprovalTeamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateBackupVaultMpaApprovalTeam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateBackupVaultMpaApprovalTeam operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateBackupVaultMpaApprovalTeam
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateBackupVaultMpaApprovalTeam">REST API Reference for DisassociateBackupVaultMpaApprovalTeam Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateBackupVaultMpaApprovalTeam(DisassociateBackupVaultMpaApprovalTeamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateBackupVaultMpaApprovalTeam operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateBackupVaultMpaApprovalTeam.</param>
+        /// 
+        /// <returns>Returns a  DisassociateBackupVaultMpaApprovalTeamResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateBackupVaultMpaApprovalTeam">REST API Reference for DisassociateBackupVaultMpaApprovalTeam Operation</seealso>
+        public virtual DisassociateBackupVaultMpaApprovalTeamResponse EndDisassociateBackupVaultMpaApprovalTeam(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateBackupVaultMpaApprovalTeamResponse>(asyncResult);
         }
 
         #endregion
@@ -5004,6 +5226,74 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListRestoreAccessBackupVaults
+
+        /// <summary>
+        /// Returns a list of restore access backup vaults associated with a specified backup
+        /// vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreAccessBackupVaults service method.</param>
+        /// 
+        /// <returns>The response from the ListRestoreAccessBackupVaults service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreAccessBackupVaults">REST API Reference for ListRestoreAccessBackupVaults Operation</seealso>
+        public virtual ListRestoreAccessBackupVaultsResponse ListRestoreAccessBackupVaults(ListRestoreAccessBackupVaultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreAccessBackupVaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreAccessBackupVaultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRestoreAccessBackupVaultsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRestoreAccessBackupVaults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreAccessBackupVaults operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRestoreAccessBackupVaults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreAccessBackupVaults">REST API Reference for ListRestoreAccessBackupVaults Operation</seealso>
+        public virtual IAsyncResult BeginListRestoreAccessBackupVaults(ListRestoreAccessBackupVaultsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreAccessBackupVaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreAccessBackupVaultsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRestoreAccessBackupVaults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRestoreAccessBackupVaults.</param>
+        /// 
+        /// <returns>Returns a  ListRestoreAccessBackupVaultsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreAccessBackupVaults">REST API Reference for ListRestoreAccessBackupVaults Operation</seealso>
+        public virtual ListRestoreAccessBackupVaultsResponse EndListRestoreAccessBackupVaults(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRestoreAccessBackupVaultsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRestoreJobs
 
         /// <summary>
@@ -5719,6 +6009,78 @@ namespace Amazon.Backup
         public virtual PutRestoreValidationResultResponse EndPutRestoreValidationResult(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRestoreValidationResultResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RevokeRestoreAccessBackupVault
+
+        /// <summary>
+        /// Revokes access to a restore access backup vault, removing the ability to restore from
+        /// its recovery points and permanently deleting the vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeRestoreAccessBackupVault service method.</param>
+        /// 
+        /// <returns>The response from the RevokeRestoreAccessBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RevokeRestoreAccessBackupVault">REST API Reference for RevokeRestoreAccessBackupVault Operation</seealso>
+        public virtual RevokeRestoreAccessBackupVaultResponse RevokeRestoreAccessBackupVault(RevokeRestoreAccessBackupVaultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeRestoreAccessBackupVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeRestoreAccessBackupVaultResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeRestoreAccessBackupVaultResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeRestoreAccessBackupVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeRestoreAccessBackupVault operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeRestoreAccessBackupVault
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RevokeRestoreAccessBackupVault">REST API Reference for RevokeRestoreAccessBackupVault Operation</seealso>
+        public virtual IAsyncResult BeginRevokeRestoreAccessBackupVault(RevokeRestoreAccessBackupVaultRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeRestoreAccessBackupVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeRestoreAccessBackupVaultResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RevokeRestoreAccessBackupVault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeRestoreAccessBackupVault.</param>
+        /// 
+        /// <returns>Returns a  RevokeRestoreAccessBackupVaultResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RevokeRestoreAccessBackupVault">REST API Reference for RevokeRestoreAccessBackupVault Operation</seealso>
+        public virtual RevokeRestoreAccessBackupVaultResponse EndRevokeRestoreAccessBackupVault(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RevokeRestoreAccessBackupVaultResponse>(asyncResult);
         }
 
         #endregion

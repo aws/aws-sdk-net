@@ -98,6 +98,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreatorRequestId);
                 }
 
+                else if(!(publicRequest.IsSetCreatorRequestId()))
+                {
+                    context.Writer.WritePropertyName("CreatorRequestId");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

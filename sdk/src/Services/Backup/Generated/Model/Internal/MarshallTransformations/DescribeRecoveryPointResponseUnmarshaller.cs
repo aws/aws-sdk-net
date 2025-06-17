@@ -124,6 +124,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.IndexStatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InitiationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.InitiationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsEncrypted", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

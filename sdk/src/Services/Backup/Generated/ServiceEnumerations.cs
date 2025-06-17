@@ -277,6 +277,10 @@ namespace Amazon.Backup
         /// </summary>
         public static readonly BackupVaultEvent BACKUP_PLAN_MODIFIED = new BackupVaultEvent("BACKUP_PLAN_MODIFIED");
         /// <summary>
+        /// Constant CONTINUOUS_BACKUP_INTERRUPTED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent CONTINUOUS_BACKUP_INTERRUPTED = new BackupVaultEvent("CONTINUOUS_BACKUP_INTERRUPTED");
+        /// <summary>
         /// Constant COPY_JOB_FAILED for BackupVaultEvent
         /// </summary>
         public static readonly BackupVaultEvent COPY_JOB_FAILED = new BackupVaultEvent("COPY_JOB_FAILED");
@@ -718,6 +722,110 @@ namespace Amazon.Backup
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LegalHoldStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MpaRevokeSessionStatus.
+    /// </summary>
+    public class MpaRevokeSessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for MpaRevokeSessionStatus
+        /// </summary>
+        public static readonly MpaRevokeSessionStatus FAILED = new MpaRevokeSessionStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for MpaRevokeSessionStatus
+        /// </summary>
+        public static readonly MpaRevokeSessionStatus PENDING = new MpaRevokeSessionStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpaRevokeSessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpaRevokeSessionStatus FindValue(string value)
+        {
+            return FindValue<MpaRevokeSessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpaRevokeSessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MpaSessionStatus.
+    /// </summary>
+    public class MpaSessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for MpaSessionStatus
+        /// </summary>
+        public static readonly MpaSessionStatus APPROVED = new MpaSessionStatus("APPROVED");
+        /// <summary>
+        /// Constant FAILED for MpaSessionStatus
+        /// </summary>
+        public static readonly MpaSessionStatus FAILED = new MpaSessionStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for MpaSessionStatus
+        /// </summary>
+        public static readonly MpaSessionStatus PENDING = new MpaSessionStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpaSessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpaSessionStatus FindValue(string value)
+        {
+            return FindValue<MpaSessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpaSessionStatus(string value)
         {
             return FindValue(value);
         }
@@ -1264,6 +1372,10 @@ namespace Amazon.Backup
         /// Constant LOGICALLY_AIR_GAPPED_BACKUP_VAULT for VaultType
         /// </summary>
         public static readonly VaultType LOGICALLY_AIR_GAPPED_BACKUP_VAULT = new VaultType("LOGICALLY_AIR_GAPPED_BACKUP_VAULT");
+        /// <summary>
+        /// Constant RESTORE_ACCESS_BACKUP_VAULT for VaultType
+        /// </summary>
+        public static readonly VaultType RESTORE_ACCESS_BACKUP_VAULT = new VaultType("RESTORE_ACCESS_BACKUP_VAULT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

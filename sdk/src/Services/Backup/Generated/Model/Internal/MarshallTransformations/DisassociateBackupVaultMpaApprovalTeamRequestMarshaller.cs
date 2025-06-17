@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateBackupSelection Request Marshaller
+    /// DisassociateBackupVaultMpaApprovalTeam Request Marshaller
     /// </summary>       
-    public class CreateBackupSelectionRequestMarshaller : IMarshaller<IRequest, CreateBackupSelectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DisassociateBackupVaultMpaApprovalTeamRequestMarshaller : IMarshaller<IRequest, DisassociateBackupVaultMpaApprovalTeamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateBackupSelectionRequest)input);
+            return this.Marshall((DisassociateBackupVaultMpaApprovalTeamRequest)input);
         }
 
         /// <summary>
@@ -53,45 +53,30 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateBackupSelectionRequest publicRequest)
+        public IRequest Marshall(DisassociateBackupVaultMpaApprovalTeamRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetBackupPlanId())
-                throw new AmazonBackupException("Request object does not have required field BackupPlanId set");
-            request.AddPathResource("{backupPlanId}", StringUtils.FromString(publicRequest.BackupPlanId));
-            request.ResourcePath = "/backup/plans/{backupPlanId}/selections/";
+            request.AddSubResource("delete");
+            if (!publicRequest.IsSetBackupVaultName())
+                throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
+            request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
+            request.ResourcePath = "/backup-vaults/{backupVaultName}/mpaApprovalTeam";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBackupSelection())
+                if(publicRequest.IsSetRequesterComment())
                 {
-                    context.Writer.WritePropertyName("BackupSelection");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BackupSelectionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BackupSelection, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("RequesterComment");
+                    context.Writer.Write(publicRequest.RequesterComment);
                 }
 
-                if(publicRequest.IsSetCreatorRequestId())
-                {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(publicRequest.CreatorRequestId);
-                }
-
-                else if(!(publicRequest.IsSetCreatorRequestId()))
-                {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -100,9 +85,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateBackupSelectionRequestMarshaller _instance = new CreateBackupSelectionRequestMarshaller();        
+        private static DisassociateBackupVaultMpaApprovalTeamRequestMarshaller _instance = new DisassociateBackupVaultMpaApprovalTeamRequestMarshaller();        
 
-        internal static CreateBackupSelectionRequestMarshaller GetInstance()
+        internal static DisassociateBackupVaultMpaApprovalTeamRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +95,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateBackupSelectionRequestMarshaller Instance
+        public static DisassociateBackupVaultMpaApprovalTeamRequestMarshaller Instance
         {
             get
             {
