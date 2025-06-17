@@ -35,6 +35,9 @@ namespace Amazon.Inspector2.Model
     public partial class CoverageFilterCriteria
     {
         private List<CoverageStringFilter> _accountId = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
+        private List<CoverageStringFilter> _codeRepositoryProjectName = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
+        private List<CoverageStringFilter> _codeRepositoryProviderType = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
+        private List<CoverageStringFilter> _codeRepositoryProviderTypeVisibility = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageMapFilter> _ec2InstanceTags = AWSConfigs.InitializeCollections ? new List<CoverageMapFilter>() : null;
         private List<CoverageNumberFilter> _ecrImageInUseCount = AWSConfigs.InitializeCollections ? new List<CoverageNumberFilter>() : null;
         private List<CoverageDateFilter> _ecrImageLastInUseAt = AWSConfigs.InitializeCollections ? new List<CoverageDateFilter>() : null;
@@ -45,6 +48,7 @@ namespace Amazon.Inspector2.Model
         private List<CoverageStringFilter> _lambdaFunctionRuntime = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageMapFilter> _lambdaFunctionTags = AWSConfigs.InitializeCollections ? new List<CoverageMapFilter>() : null;
         private List<CoverageDateFilter> _lastScannedAt = AWSConfigs.InitializeCollections ? new List<CoverageDateFilter>() : null;
+        private List<CoverageStringFilter> _lastScannedCommitId = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageStringFilter> _resourceId = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageStringFilter> _resourceType = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageStringFilter> _scanMode = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
@@ -74,6 +78,79 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null && (this._accountId.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeRepositoryProjectName. 
+        /// <para>
+        /// Filter criteria for code repositories based on project name.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CoverageStringFilter> CodeRepositoryProjectName
+        {
+            get { return this._codeRepositoryProjectName; }
+            set { this._codeRepositoryProjectName = value; }
+        }
+
+        // Check to see if CodeRepositoryProjectName property is set
+        internal bool IsSetCodeRepositoryProjectName()
+        {
+            return this._codeRepositoryProjectName != null && (this._codeRepositoryProjectName.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeRepositoryProviderType. 
+        /// <para>
+        /// Filter criteria for code repositories based on provider type (such as GitHub, GitLab,
+        /// etc.).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CoverageStringFilter> CodeRepositoryProviderType
+        {
+            get { return this._codeRepositoryProviderType; }
+            set { this._codeRepositoryProviderType = value; }
+        }
+
+        // Check to see if CodeRepositoryProviderType property is set
+        internal bool IsSetCodeRepositoryProviderType()
+        {
+            return this._codeRepositoryProviderType != null && (this._codeRepositoryProviderType.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeRepositoryProviderTypeVisibility. 
+        /// <para>
+        /// Filter criteria for code repositories based on visibility setting (public or private).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CoverageStringFilter> CodeRepositoryProviderTypeVisibility
+        {
+            get { return this._codeRepositoryProviderTypeVisibility; }
+            set { this._codeRepositoryProviderTypeVisibility = value; }
+        }
+
+        // Check to see if CodeRepositoryProviderTypeVisibility property is set
+        internal bool IsSetCodeRepositoryProviderTypeVisibility()
+        {
+            return this._codeRepositoryProviderTypeVisibility != null && (this._codeRepositoryProviderTypeVisibility.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -316,6 +393,30 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetLastScannedAt()
         {
             return this._lastScannedAt != null && (this._lastScannedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastScannedCommitId. 
+        /// <para>
+        /// Filter criteria for code repositories based on the ID of the last scanned commit.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CoverageStringFilter> LastScannedCommitId
+        {
+            get { return this._lastScannedCommitId; }
+            set { this._lastScannedCommitId = value; }
+        }
+
+        // Check to see if LastScannedCommitId property is set
+        internal bool IsSetLastScannedCommitId()
+        {
+            return this._lastScannedCommitId != null && (this._lastScannedCommitId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.Inspector2.Model
         private AwsEc2InstanceDetails _awsEc2Instance;
         private AwsEcrContainerImageDetails _awsEcrContainerImage;
         private AwsLambdaFunctionDetails _awsLambdaFunction;
+        private CodeRepositoryDetails _codeRepository;
 
         /// <summary>
         /// Gets and sets the property AwsEc2Instance. 
@@ -92,6 +93,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAwsLambdaFunction()
         {
             return this._awsLambdaFunction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeRepository. 
+        /// <para>
+        /// Contains details about a code repository resource associated with a finding.
+        /// </para>
+        /// </summary>
+        public CodeRepositoryDetails CodeRepository
+        {
+            get { return this._codeRepository; }
+            set { this._codeRepository = value; }
+        }
+
+        // Check to see if CodeRepository property is set
+        internal bool IsSetCodeRepository()
+        {
+            return this._codeRepository != null;
         }
 
     }

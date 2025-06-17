@@ -84,7 +84,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property RescanDuration. 
         /// <para>
-        /// The rescan duration configured for image push date. <pre><c> &lt;/p&gt; </c></pre>
+        /// The rescan duration configured for image push date. 
+        /// </para>
         /// </summary>
         public EcrRescanDuration RescanDuration
         {

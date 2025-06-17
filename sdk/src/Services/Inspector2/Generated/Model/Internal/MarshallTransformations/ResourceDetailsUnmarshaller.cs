@@ -74,6 +74,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsLambdaFunction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("codeRepository", targetDepth))
+                {
+                    var unmarshaller = CodeRepositoryDetailsUnmarshaller.Instance;
+                    unmarshalledObject.CodeRepository = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -34,10 +34,29 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ResourceScanMetadata
     {
+        private CodeRepositoryMetadata _codeRepository;
         private Ec2Metadata _ec2;
         private EcrContainerImageMetadata _ecrImage;
         private EcrRepositoryMetadata _ecrRepository;
         private LambdaFunctionMetadata _lambdaFunction;
+
+        /// <summary>
+        /// Gets and sets the property CodeRepository. 
+        /// <para>
+        /// Contains metadata about scan coverage for a code repository resource.
+        /// </para>
+        /// </summary>
+        public CodeRepositoryMetadata CodeRepository
+        {
+            get { return this._codeRepository; }
+            set { this._codeRepository = value; }
+        }
+
+        // Check to see if CodeRepository property is set
+        internal bool IsSetCodeRepository()
+        {
+            return this._codeRepository != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2. 

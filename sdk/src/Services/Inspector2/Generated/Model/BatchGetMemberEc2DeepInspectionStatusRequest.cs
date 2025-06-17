@@ -43,7 +43,8 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector
-        /// deep inspection activation status for. <pre><c> &lt;/p&gt; </c></pre>
+        /// deep inspection activation status for. 
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

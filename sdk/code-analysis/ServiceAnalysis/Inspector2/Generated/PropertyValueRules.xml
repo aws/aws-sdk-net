@@ -38,6 +38,26 @@
     <pattern>^arn:aws(-us-gov|-cn)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-[0-9]{1}:[0-9]{12}:owner/(o-[a-z0-9]+|[0-9]{12})/cis-configuration/[0-9a-fA-F-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.CreateCodeSecurityIntegrationRequest.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CreateCodeSecurityIntegrationResponse.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CreateCodeSecurityScanConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CreateCodeSecurityScanConfigurationResponse.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.CreateFilterRequest.Description</property>
     <min>1</min>
     <max>512</max>
@@ -72,6 +92,22 @@
   <property-value-rule>
     <property>Amazon.Inspector2.Model.DeleteCisScanConfigurationResponse.ScanConfigurationArn</property>
     <pattern>^arn:aws(-us-gov|-cn)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-[0-9]{1}:[0-9]{12}:owner/(o-[a-z0-9]+|[0-9]{12})/cis-configuration/[0-9a-fA-F-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.DeleteCodeSecurityIntegrationRequest.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.DeleteCodeSecurityIntegrationResponse.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.DeleteCodeSecurityScanConfigurationRequest.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.DeleteCodeSecurityScanConfigurationResponse.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.DeleteFilterRequest.Arn</property>
@@ -157,7 +193,7 @@
     <property>Amazon.Inspector2.Model.GetCisScanResultDetailsRequest.TargetResourceId</property>
     <min>10</min>
     <max>341</max>
-    <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$))</pattern>
+    <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$)|(^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration\/[a-f0-9-]{36}\/project-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.GetCisScanResultDetailsResponse.NextToken</property>
@@ -178,6 +214,42 @@
     <property>Amazon.Inspector2.Model.GetClustersForImageResponse.NextToken</property>
     <min>1</min>
     <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetCodeSecurityIntegrationRequest.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetCodeSecurityIntegrationResponse.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetCodeSecurityIntegrationResponse.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetCodeSecurityScanRequest.ScanId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetCodeSecurityScanResponse.ScanId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetCodeSecurityScanConfigurationRequest.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetCodeSecurityScanConfigurationResponse.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetCodeSecurityScanConfigurationResponse.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.GetEc2DeepInspectionConfigurationResponse.ErrorMessage</property>
@@ -293,6 +365,45 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ListCisScansResponse.NextToken</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ListCodeSecurityIntegrationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ListCodeSecurityScanConfigurationAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ListCodeSecurityScanConfigurationAssociationsRequest.NextToken</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ListCodeSecurityScanConfigurationAssociationsRequest.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ListCodeSecurityScanConfigurationAssociationsResponse.NextToken</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ListCodeSecurityScanConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ListCodeSecurityScanConfigurationsRequest.NextToken</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ListCodeSecurityScanConfigurationsResponse.NextToken</property>
     <min>0</min>
     <max>1000000</max>
   </property-value-rule>
@@ -445,6 +556,16 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.StartCodeSecurityScanRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.StartCodeSecurityScanResponse.ScanId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.StopCisSessionRequest.ScanJobId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
@@ -474,6 +595,22 @@
   <property-value-rule>
     <property>Amazon.Inspector2.Model.UpdateCisScanConfigurationResponse.ScanConfigurationArn</property>
     <pattern>^arn:aws(-us-gov|-cn)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-[0-9]{1}:[0-9]{12}:owner/(o-[a-z0-9]+|[0-9]{12})/cis-configuration/[0-9a-fA-F-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateCodeSecurityIntegrationRequest.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateCodeSecurityIntegrationResponse.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateCodeSecurityScanConfigurationRequest.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateCodeSecurityScanConfigurationResponse.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.UpdateEc2DeepInspectionConfigurationResponse.ErrorMessage</property>
@@ -535,6 +672,10 @@
   <property-value-rule>
     <property>Amazon.Inspector2.Model.AmiAggregationResponse.Ami</property>
     <pattern>^ami-([a-z0-9]{8}|[a-z0-9]{17}|\*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.AssociateConfigurationRequest.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.AwsEc2InstanceDetails.IamInstanceProfileArn</property>
@@ -697,7 +838,7 @@
     <property>Amazon.Inspector2.Model.CisScanResultDetails.TargetResourceId</property>
     <min>10</min>
     <max>341</max>
-    <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$))</pattern>
+    <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$)|(^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration\/[a-f0-9-]{36}\/project-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CisSessionMessage.CisRuleDetails</property>
@@ -723,7 +864,7 @@
     <property>Amazon.Inspector2.Model.CisTargetResourceAggregation.TargetResourceId</property>
     <min>10</min>
     <max>341</max>
-    <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$))</pattern>
+    <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$)|(^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration\/[a-f0-9-]{36}\/project-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ClusterForImageFilterCriteria.ResourceId</property>
@@ -747,6 +888,81 @@
     <property>Amazon.Inspector2.Model.CodeLine.Content</property>
     <min>0</min>
     <max>240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeRepositoryDetails.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration\/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeRepositoryDetails.ProjectName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeRepositoryMetadata.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration\/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeRepositoryMetadata.LastScannedCommitId</property>
+    <min>0</min>
+    <max>40</max>
+    <pattern>^([a-f0-9]{40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeRepositoryMetadata.ProjectName</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeRepositoryMetadata.ProviderType</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeRepositoryMetadata.ProviderTypeVisibility</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeRepositoryOnDemandScan.LastScannedCommitId</property>
+    <min>0</min>
+    <max>40</max>
+    <pattern>^([a-f0-9]{40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityIntegrationSummary.IntegrationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityIntegrationSummary.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityResource.ProjectId</property>
+    <pattern>^project-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityScanConfigurationSummary.FrequencyExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityScanConfigurationSummary.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityScanConfigurationSummary.OwnerAccountId</property>
+    <min>12</min>
+    <max>34</max>
+    <pattern>(^\d{12}$)|(^o-[a-z0-9]{10,32}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityScanConfigurationSummary.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CodeSnippetError.ErrorMessage</property>
@@ -818,7 +1034,11 @@
     <property>Amazon.Inspector2.Model.CoveredResource.ResourceId</property>
     <min>10</min>
     <max>341</max>
-    <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$))</pattern>
+    <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$)|(^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration\/[a-f0-9-]{36}\/project-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CreateGitLabSelfManagedIntegrationDetail.InstanceUrl</property>
+    <pattern>^https://[-a-zA-Z0-9()@:%_+.~#?&amp;//=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Cvss2.ScoringVector</property>
@@ -877,6 +1097,10 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.DisassociateConfigurationRequest.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.Ec2InstanceAggregationResponse.Ami</property>
     <pattern>^ami-([a-z0-9]{8}|[a-z0-9]{17}|\*)$</pattern>
   </property-value-rule>
@@ -913,6 +1137,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.FailedAccount.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.FailedAssociationResult.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.FailedAssociationResult.StatusMessage</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -1119,6 +1351,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.PeriodicScanConfiguration.FrequencyExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.PortRange.Begin</property>
     <min>0</min>
     <max>65535</max>
@@ -1137,6 +1374,11 @@
     <property>Amazon.Inspector2.Model.PortRangeFilter.EndInclusive</property>
     <min>0</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ProjectPeriodicScanConfiguration.FrequencyExpression</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Recommendation.Text</property>
@@ -1250,6 +1492,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.SuccessfulAssociationResult.ScanConfigurationArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:owner/(\d{12}|o-[a-z0-9]{10,32})/codesecurity-configuration/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.SuggestedFix.Code</property>
     <min>1</min>
     <max>2500</max>
@@ -1285,6 +1531,21 @@
   <property-value-rule>
     <property>Amazon.Inspector2.Model.TitleAggregationResponse.Title</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateGitHubIntegrationDetail.Code</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateGitHubIntegrationDetail.InstallationId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateGitLabSelfManagedIntegrationDetail.AuthCode</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Usage.EstimatedMonthlyCost</property>

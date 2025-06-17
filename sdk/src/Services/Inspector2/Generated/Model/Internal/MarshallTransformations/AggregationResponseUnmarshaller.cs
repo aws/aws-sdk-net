@@ -74,6 +74,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsEcrContainerAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("codeRepositoryAggregation", targetDepth))
+                {
+                    var unmarshaller = CodeRepositoryAggregationResponseUnmarshaller.Instance;
+                    unmarshalledObject.CodeRepositoryAggregation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ec2InstanceAggregation", targetDepth))
                 {
                     var unmarshaller = Ec2InstanceAggregationResponseUnmarshaller.Instance;

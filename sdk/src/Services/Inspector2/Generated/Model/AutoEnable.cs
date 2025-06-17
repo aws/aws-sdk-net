@@ -35,10 +35,30 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class AutoEnable
     {
+        private bool? _codeRepository;
         private bool? _ec2;
         private bool? _ecr;
         private bool? _lambda;
         private bool? _lambdaCode;
+
+        /// <summary>
+        /// Gets and sets the property CodeRepository. 
+        /// <para>
+        /// Represents whether code repository scans are automatically enabled for new members
+        /// of your Amazon Inspector organization.
+        /// </para>
+        /// </summary>
+        public bool? CodeRepository
+        {
+            get { return this._codeRepository; }
+            set { this._codeRepository = value; }
+        }
+
+        // Check to see if CodeRepository property is set
+        internal bool IsSetCodeRepository()
+        {
+            return this._codeRepository.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2. 
@@ -103,7 +123,8 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property LambdaCode. 
         /// <para>
         /// Represents whether Lambda code scans are automatically enabled for new members of
-        /// your Amazon Inspector organization. <pre><c> &lt;/p&gt; </c></pre>
+        /// your Amazon Inspector organization. 
+        /// </para>
         /// </summary>
         public bool? LambdaCode
         {

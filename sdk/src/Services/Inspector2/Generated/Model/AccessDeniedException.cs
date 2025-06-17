@@ -31,6 +31,12 @@ namespace Amazon.Inspector2.Model
 {
     /// <summary>
     /// You do not have sufficient access to perform this action.
+    /// 
+    ///  
+    /// <para>
+    ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+    /// Amazon Web Services Region. 
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

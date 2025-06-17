@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// A conflict occurred.
+    /// A conflict occurred. This exception occurs when the same resource is being modified
+    /// by concurrent requests.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
