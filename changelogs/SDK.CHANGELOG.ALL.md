@@ -1,3 +1,31 @@
+### 4.0.33.0 (2025-06-17 18:45 UTC)
+* AccessAnalyzer (4.0.1.0)
+	* We are launching a new analyzer type, internal access analyzer. The new analyzer will generate internal access findings, which help customers understand who within their AWS organization or AWS Account has access to their critical AWS resources.
+* Backup (4.0.2.0)
+	* AWS Backup is adding support for integration of its logically air-gapped vaults with the AWS Organizations Multi-party approval capability.
+* Bedrock (4.0.3.1)
+	* This release of the SDK has the API and documentation for the createcustommodel API. This feature lets you copy a trained model into Amazon Bedrock for inference.
+* CertificateManager (4.0.1.0)
+	* Adds support for Exportable Public Certificates
+* DatabaseMigrationService (4.0.2.0)
+	* Add "Virtual" field to Data Provider as well as "S3Path" and "S3AccessRoleArn" fields to DataProvider settings
+* GuardDuty (4.0.1.0)
+	* Adding support for extended threat detection for EKS Audit Logs and EKS Runtime Monitoring.
+* Inspector2 (4.0.2.0)
+	* Add Code Repository Scanning as part of AWS InspectorV2
+* MPA (4.0.0.0)
+	* This release enables customers to create Multi-party approval teams and approval requests to protect supported operations.
+* NetworkFirewall (4.0.4.0)
+	* Release of Active Threat Defense in Network Firewall
+* Organizations (4.0.1.0)
+	* Add support for policy operations on the SECURITYHUB_POLICY policy type.
+* SecurityHub (4.0.1.0)
+	* Adds operations, structures, and exceptions required for public preview release of Security Hub V2.
+* SecurityToken (4.0.1.0)
+	* The AWS Security Token Service APIs AssumeRoleWithSAML and AssumeRoleWithWebIdentity can now be invoked without pre-configured AWS credentials in the SDK configuration.
+* WAFV2 (4.0.3.0)
+	* AWS WAF can now suggest protection packs for you based on the application information you provide when you create a webACL.
+
 ### 4.0.32.0 (2025-06-16 18:18 UTC)
 * Bedrock (4.0.3.0)
 	* This release of the SDK has the API and documentation for the createcustommodel API. This feature lets you copy a Amazon SageMaker trained Amazon Nova model into Amazon Bedrock for inference.
