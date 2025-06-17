@@ -172,10 +172,26 @@ namespace <#=this.Config.Namespace#>.Model
                     // If the shape is a response then skip adding ContentLength because the property comes from the base class.
                     if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
                         continue;
+                    if (this.Config.ServiceModel.Customizations.EmitDifferentPrivateDataType != null && this.Config.ServiceModel.Customizations.EmitDifferentPrivateDataType[this.Structure.Name] != null)
+                    {
+                        var jsonData = this.Config.ServiceModel.Customizations.EmitDifferentPrivateDataType;
+                        var structureData = jsonData[this.Structure.Name];
+                        if (structureData[member.ModeledName] != null)
+                        {
+                            var privateDataTypeSwap = structureData[member.ModeledName]["privateDataType"].ToString();
+#>
+        private <#=privateDataTypeSwap#> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
+<#
+                        }
+                    }
+                    else
+                    {
 #>
         private <#=member.DetermineType()#> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#
+                    }
                 }
+                
 
 #>
 

@@ -424,6 +424,7 @@ namespace ServiceClientGenerator
         public const string OverrideContentTypeKey = "overrideContentType";
         public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
         public const string OriginalMemberKey = "originalMember";
+        public const string EmitDifferentPrivateDataTypeKey = "emitDifferentPrivateDataType";
 
         JsonData _documentRoot;
 
@@ -597,6 +598,17 @@ namespace ServiceClientGenerator
                 overloads.Sort();
 
                 return overloads;
+            }
+        }
+
+        public JsonData EmitDifferentPrivateDataType
+        {
+            get
+            {
+                var data = _documentRoot[EmitDifferentPrivateDataTypeKey];
+                if (data == null)
+                    return null;
+                return data;
             }
         }
 

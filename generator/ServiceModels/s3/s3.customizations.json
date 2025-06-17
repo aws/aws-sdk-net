@@ -113,6 +113,23 @@
                 }
             ]
         },
+        "GetBucketMetadataTableConfigurationResult":{
+            "modify":[
+                {
+                    "Status":{"emitPropertyName":"MetadataTableStatus"}
+                },
+                {
+                    "Error":{"emitPropertyName":"ErrorDetails"}
+                }
+            ]
+        },
+        "GetBucketLocationOutput":{
+            "modify":[
+                {
+                    "LocationConstraint":{"emitPropertyName": "Location"}
+                }
+            ]
+        },
         "LifecycleRule": {
             "modify": [
                 {
@@ -324,6 +341,14 @@
         },
         "ServerSideEncryption":{
             "renameShape":"ServerSideEncryptionMethod"
+        },
+        "BucketLocationConstraint":{
+            "renameShape": "S3Region"
+        }
+    },
+    "emitDifferentPrivateDataType":{
+        "GetBucketLocationOutput":{
+            "Location":{"privateDataType": "string"}
         }
     }
 }
