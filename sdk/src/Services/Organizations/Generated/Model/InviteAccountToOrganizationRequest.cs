@@ -36,24 +36,14 @@ namespace Amazon.Organizations.Model
     /// the other account's owner. The invitation is implemented as a <a>Handshake</a> whose
     /// details are in the response.
     /// 
-    ///  <important> <ul> <li> 
-    /// <para>
-    /// You can invite Amazon Web Services accounts only from the same seller as the management
-    /// account. For example, if your organization's management account was created by Amazon
-    /// Internet Services Pvt. Ltd (AISPL), an Amazon Web Services seller in India, you can
-    /// invite only other AISPL accounts to your organization. You can't combine accounts
-    /// from AISPL and Amazon Web Services or from any other Amazon Web Services seller. For
-    /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-India.html">Consolidated
-    /// billing in India</a>.
-    /// </para>
-    ///  </li> <li> 
+    ///  <important> 
     /// <para>
     /// If you receive an exception that indicates that you exceeded your account limits for
     /// the organization or that the operation failed because your organization is still initializing,
     /// wait one hour and then try again. If the error persists after an hour, contact <a
     /// href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.
     /// </para>
-    ///  </li> </ul> </important> 
+    ///  </important> 
     /// <para>
     /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
     /// permission.

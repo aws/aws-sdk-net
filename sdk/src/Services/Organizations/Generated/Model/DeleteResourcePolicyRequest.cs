@@ -35,7 +35,7 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// You can only call this operation from the organization's management account.
+    /// This operation can be called only from the organization's management account.
     /// </para>
     /// </summary>
     public partial class DeleteResourcePolicyRequest : AmazonOrganizationsRequest

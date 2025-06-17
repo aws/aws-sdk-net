@@ -250,10 +250,25 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-    /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+    /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+    /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+    /// you must first disable the policy type.
     /// </para>
     ///  </li> <li> 
+    /// <para>
+    /// SERVICE_ACCESS_NOT_ENABLED:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You attempted to register a delegated administrator before you enabled service access.
+    /// Call the <c>EnableAWSServiceAccess</c> API first.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You attempted to enable a policy type before you enabled service access. Call the
+    /// <c>EnableAWSServiceAccess</c> API first.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
     /// <para>
     /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
     /// are not compliant with the tag policy requirements for this account.

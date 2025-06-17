@@ -79,9 +79,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-    /// is from a different marketplace than the accounts in the organization. For example,
-    /// accounts with India addresses must be associated with the AISPL marketplace. All accounts
-    /// in an organization must be from the same marketplace.
+    /// is from a different marketplace than the accounts in the organization.
     /// </para>
     ///  </li> <li> 
     /// <para>
