@@ -111,6 +111,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
             }
 
+            else if(!(publicRequest.IsSetIdempotencyToken()))
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
             if(publicRequest.IsSetIndex())
             {
                 context.Writer.WritePropertyName("Index");

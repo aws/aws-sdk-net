@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Backup.Model.AssociateBackupVaultMpaApprovalTeamRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.CreateBackupVaultRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -47,6 +50,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateRestoreAccessBackupVaultRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateRestoreAccessBackupVaultResponse.RestoreAccessBackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DeleteBackupVaultAccessPolicyRequest.BackupVaultName</property>
@@ -128,6 +137,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeRestoreJobResponse.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DisassociateBackupVaultMpaApprovalTeamRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DisassociateRecoveryPointRequest.BackupVaultName</property>
@@ -313,6 +325,14 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.ListRestoreAccessBackupVaultsRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListRestoreAccessBackupVaultsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ListRestoreJobsRequest.ByAccountId</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
@@ -364,6 +384,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.PutBackupVaultNotificationsRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.RevokeRestoreAccessBackupVaultRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.StartBackupJobRequest.BackupVaultName</property>

@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartCopyJob Request Marshaller
+    /// CreateRestoreAccessBackupVault Request Marshaller
     /// </summary>       
-    public class StartCopyJobRequestMarshaller : IMarshaller<IRequest, StartCopyJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateRestoreAccessBackupVaultRequestMarshaller : IMarshaller<IRequest, CreateRestoreAccessBackupVaultRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartCopyJobRequest)input);
+            return this.Marshall((CreateRestoreAccessBackupVaultRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartCopyJobRequest publicRequest)
+        public IRequest Marshall(CreateRestoreAccessBackupVaultRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
             request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/copy-jobs";
+            request.ResourcePath = "/restore-access-backup-vaults";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -73,50 +73,47 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDestinationBackupVaultArn())
+            if(publicRequest.IsSetBackupVaultName())
             {
-                context.Writer.WritePropertyName("DestinationBackupVaultArn");
-                context.Writer.WriteStringValue(publicRequest.DestinationBackupVaultArn);
+                context.Writer.WritePropertyName("BackupVaultName");
+                context.Writer.WriteStringValue(publicRequest.BackupVaultName);
             }
 
-            if(publicRequest.IsSetIamRoleArn())
+            if(publicRequest.IsSetBackupVaultTags())
             {
-                context.Writer.WritePropertyName("IamRoleArn");
-                context.Writer.WriteStringValue(publicRequest.IamRoleArn);
-            }
-
-            if(publicRequest.IsSetIdempotencyToken())
-            {
-                context.Writer.WritePropertyName("IdempotencyToken");
-                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
-            }
-
-            else if(!(publicRequest.IsSetIdempotencyToken()))
-            {
-                context.Writer.WritePropertyName("IdempotencyToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetLifecycle())
-            {
-                context.Writer.WritePropertyName("Lifecycle");
+                context.Writer.WritePropertyName("BackupVaultTags");
                 context.Writer.WriteStartObject();
+                foreach (var publicRequestBackupVaultTagsKvp in publicRequest.BackupVaultTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestBackupVaultTagsKvp.Key);
+                    var publicRequestBackupVaultTagsValue = publicRequestBackupVaultTagsKvp.Value;
 
-                var marshaller = LifecycleMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Lifecycle, context);
-
+                        context.Writer.WriteStringValue(publicRequestBackupVaultTagsValue);
+                }
                 context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetRecoveryPointArn())
+            if(publicRequest.IsSetCreatorRequestId())
             {
-                context.Writer.WritePropertyName("RecoveryPointArn");
-                context.Writer.WriteStringValue(publicRequest.RecoveryPointArn);
+                context.Writer.WritePropertyName("CreatorRequestId");
+                context.Writer.WriteStringValue(publicRequest.CreatorRequestId);
             }
 
-            if(publicRequest.IsSetSourceBackupVaultName())
+            else if(!(publicRequest.IsSetCreatorRequestId()))
             {
-                context.Writer.WritePropertyName("SourceBackupVaultName");
-                context.Writer.WriteStringValue(publicRequest.SourceBackupVaultName);
+                context.Writer.WritePropertyName("CreatorRequestId");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetRequesterComment())
+            {
+                context.Writer.WritePropertyName("RequesterComment");
+                context.Writer.WriteStringValue(publicRequest.RequesterComment);
+            }
+
+            if(publicRequest.IsSetSourceBackupVaultArn())
+            {
+                context.Writer.WritePropertyName("SourceBackupVaultArn");
+                context.Writer.WriteStringValue(publicRequest.SourceBackupVaultArn);
             }
 
             writer.WriteEndObject();
@@ -132,9 +129,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartCopyJobRequestMarshaller _instance = new StartCopyJobRequestMarshaller();        
+        private static CreateRestoreAccessBackupVaultRequestMarshaller _instance = new CreateRestoreAccessBackupVaultRequestMarshaller();        
 
-        internal static StartCopyJobRequestMarshaller GetInstance()
+        internal static CreateRestoreAccessBackupVaultRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +139,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartCopyJobRequestMarshaller Instance
+        public static CreateRestoreAccessBackupVaultRequestMarshaller Instance
         {
             get
             {

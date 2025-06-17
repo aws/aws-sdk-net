@@ -39,11 +39,15 @@ namespace Amazon.Backup.Model
         private DateTime? _creationDate;
         private string _creatorRequestId;
         private string _encryptionKeyArn;
+        private LatestMpaApprovalTeamUpdate _latestMpaApprovalTeamUpdate;
         private DateTime? _lockDate;
         private bool? _locked;
         private long? _maxRetentionDays;
         private long? _minRetentionDays;
+        private string _mpaApprovalTeamArn;
+        private string _mpaSessionArn;
         private long? _numberOfRecoveryPoints;
+        private string _sourceBackupVaultArn;
         private VaultState _vaultState;
         private VaultType _vaultType;
 
@@ -143,6 +147,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetEncryptionKeyArn()
         {
             return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestMpaApprovalTeamUpdate. 
+        /// <para>
+        /// Information about the latest update to the MPA approval team association for this
+        /// backup vault.
+        /// </para>
+        /// </summary>
+        public LatestMpaApprovalTeamUpdate LatestMpaApprovalTeamUpdate
+        {
+            get { return this._latestMpaApprovalTeamUpdate; }
+            set { this._latestMpaApprovalTeamUpdate = value; }
+        }
+
+        // Check to see if LatestMpaApprovalTeamUpdate property is set
+        internal bool IsSetLatestMpaApprovalTeamUpdate()
+        {
+            return this._latestMpaApprovalTeamUpdate != null;
         }
 
         /// <summary>
@@ -255,6 +278,42 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MpaApprovalTeamArn. 
+        /// <para>
+        /// The ARN of the MPA approval team associated with this backup vault.
+        /// </para>
+        /// </summary>
+        public string MpaApprovalTeamArn
+        {
+            get { return this._mpaApprovalTeamArn; }
+            set { this._mpaApprovalTeamArn = value; }
+        }
+
+        // Check to see if MpaApprovalTeamArn property is set
+        internal bool IsSetMpaApprovalTeamArn()
+        {
+            return this._mpaApprovalTeamArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MpaSessionArn. 
+        /// <para>
+        /// The ARN of the MPA session associated with this backup vault.
+        /// </para>
+        /// </summary>
+        public string MpaSessionArn
+        {
+            get { return this._mpaSessionArn; }
+            set { this._mpaSessionArn = value; }
+        }
+
+        // Check to see if MpaSessionArn property is set
+        internal bool IsSetMpaSessionArn()
+        {
+            return this._mpaSessionArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NumberOfRecoveryPoints. 
         /// <para>
         /// The number of recovery points that are stored in a backup vault.
@@ -276,6 +335,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetNumberOfRecoveryPoints()
         {
             return this._numberOfRecoveryPoints.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceBackupVaultArn. 
+        /// <para>
+        /// The ARN of the source backup vault from which this restore access backup vault was
+        /// created.
+        /// </para>
+        /// </summary>
+        public string SourceBackupVaultArn
+        {
+            get { return this._sourceBackupVaultArn; }
+            set { this._sourceBackupVaultArn = value; }
+        }
+
+        // Check to see if SourceBackupVaultArn property is set
+        internal bool IsSetSourceBackupVaultArn()
+        {
+            return this._sourceBackupVaultArn != null;
         }
 
         /// <summary>

@@ -93,6 +93,11 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CreatorRequestId);
             }
 
+            else if(!(publicRequest.IsSetCreatorRequestId()))
+            {
+                context.Writer.WritePropertyName("CreatorRequestId");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

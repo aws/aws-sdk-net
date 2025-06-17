@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartCopyJob Request Marshaller
+    /// AssociateBackupVaultMpaApprovalTeam Request Marshaller
     /// </summary>       
-    public class StartCopyJobRequestMarshaller : IMarshaller<IRequest, StartCopyJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateBackupVaultMpaApprovalTeamRequestMarshaller : IMarshaller<IRequest, AssociateBackupVaultMpaApprovalTeamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartCopyJobRequest)input);
+            return this.Marshall((AssociateBackupVaultMpaApprovalTeamRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,17 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartCopyJobRequest publicRequest)
+        public IRequest Marshall(AssociateBackupVaultMpaApprovalTeamRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
             request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/copy-jobs";
+            if (!publicRequest.IsSetBackupVaultName())
+                throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
+            request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
+            request.ResourcePath = "/backup-vaults/{backupVaultName}/mpaApprovalTeam";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -73,50 +76,16 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDestinationBackupVaultArn())
+            if(publicRequest.IsSetMpaApprovalTeamArn())
             {
-                context.Writer.WritePropertyName("DestinationBackupVaultArn");
-                context.Writer.WriteStringValue(publicRequest.DestinationBackupVaultArn);
+                context.Writer.WritePropertyName("MpaApprovalTeamArn");
+                context.Writer.WriteStringValue(publicRequest.MpaApprovalTeamArn);
             }
 
-            if(publicRequest.IsSetIamRoleArn())
+            if(publicRequest.IsSetRequesterComment())
             {
-                context.Writer.WritePropertyName("IamRoleArn");
-                context.Writer.WriteStringValue(publicRequest.IamRoleArn);
-            }
-
-            if(publicRequest.IsSetIdempotencyToken())
-            {
-                context.Writer.WritePropertyName("IdempotencyToken");
-                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
-            }
-
-            else if(!(publicRequest.IsSetIdempotencyToken()))
-            {
-                context.Writer.WritePropertyName("IdempotencyToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetLifecycle())
-            {
-                context.Writer.WritePropertyName("Lifecycle");
-                context.Writer.WriteStartObject();
-
-                var marshaller = LifecycleMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Lifecycle, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetRecoveryPointArn())
-            {
-                context.Writer.WritePropertyName("RecoveryPointArn");
-                context.Writer.WriteStringValue(publicRequest.RecoveryPointArn);
-            }
-
-            if(publicRequest.IsSetSourceBackupVaultName())
-            {
-                context.Writer.WritePropertyName("SourceBackupVaultName");
-                context.Writer.WriteStringValue(publicRequest.SourceBackupVaultName);
+                context.Writer.WritePropertyName("RequesterComment");
+                context.Writer.WriteStringValue(publicRequest.RequesterComment);
             }
 
             writer.WriteEndObject();
@@ -132,9 +101,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartCopyJobRequestMarshaller _instance = new StartCopyJobRequestMarshaller();        
+        private static AssociateBackupVaultMpaApprovalTeamRequestMarshaller _instance = new AssociateBackupVaultMpaApprovalTeamRequestMarshaller();        
 
-        internal static StartCopyJobRequestMarshaller GetInstance()
+        internal static AssociateBackupVaultMpaApprovalTeamRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +111,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartCopyJobRequestMarshaller Instance
+        public static AssociateBackupVaultMpaApprovalTeamRequestMarshaller Instance
         {
             get
             {
