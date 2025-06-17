@@ -37,7 +37,7 @@ namespace Amazon.Organizations.Model
     ///  
     /// <para>
     /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator for an Amazon Web Services service.
+    /// a member account that is a delegated administrator.
     /// </para>
     /// </summary>
     public partial class ListDelegatedServicesForAccountRequest : AmazonOrganizationsRequest

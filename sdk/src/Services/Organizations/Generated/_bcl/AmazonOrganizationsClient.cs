@@ -483,9 +483,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization. For example,
-        /// accounts with India addresses must be associated with the AISPL marketplace. All accounts
-        /// in an organization must be from the same marketplace.
+        /// is from a different marketplace than the accounts in the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -782,9 +780,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization. For example,
-        /// accounts with India addresses must be associated with the AISPL marketplace. All accounts
-        /// in an organization must be from the same marketplace.
+        /// is from a different marketplace than the accounts in the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1004,10 +1000,15 @@ namespace Amazon.Organizations
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a>
+        /// 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachPolicy service method.</param>
@@ -1248,10 +1249,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -1480,10 +1496,15 @@ namespace Amazon.Organizations
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a>
+        /// 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachPolicy service method.</param>
@@ -1727,10 +1748,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -2620,10 +2656,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -3096,10 +3147,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -3601,10 +3667,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -4111,10 +4192,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -4682,10 +4778,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -5252,10 +5363,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -5698,10 +5824,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -6134,10 +6275,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -6568,10 +6724,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -7007,10 +7178,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -7204,7 +7390,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
@@ -7445,10 +7631,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -7650,7 +7851,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
@@ -7894,10 +8095,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -9238,7 +9454,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
@@ -9429,7 +9645,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
@@ -9625,7 +9841,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// You can only call this operation from the organization's management account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
@@ -9866,10 +10082,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -9918,7 +10149,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// You can only call this operation from the organization's management account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
@@ -10162,10 +10393,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -10484,10 +10730,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -10931,10 +11192,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -11114,7 +11390,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccount service method.</param>
@@ -11295,7 +11571,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccount service method.</param>
@@ -11483,7 +11759,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCreateAccountStatus service method.</param>
@@ -11666,7 +11942,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCreateAccountStatus service method.</param>
@@ -12105,10 +12381,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -12545,10 +12836,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -13237,7 +13543,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationalUnit service method.</param>
@@ -13416,7 +13722,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationalUnit service method.</param>
@@ -13602,7 +13908,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePolicy service method.</param>
@@ -13784,7 +14090,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePolicy service method.</param>
@@ -13973,7 +14279,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
@@ -14210,10 +14516,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -14263,7 +14584,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
@@ -14503,10 +14824,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -14578,7 +14914,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachPolicy service method.</param>
@@ -14819,10 +15155,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -15029,7 +15380,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachPolicy service method.</param>
@@ -15273,10 +15624,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -15776,10 +16142,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -16265,10 +16646,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -16461,7 +16857,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         ///  
         /// <para>
@@ -16706,10 +17102,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -16911,7 +17322,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         ///  
         /// <para>
@@ -17159,10 +17570,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -17628,10 +18054,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -17694,9 +18135,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization. For example,
-        /// accounts with India addresses must be associated with the AISPL marketplace. All accounts
-        /// in an organization must be from the same marketplace.
+        /// is from a different marketplace than the accounts in the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18146,10 +18585,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -18212,9 +18666,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization. For example,
-        /// accounts with India addresses must be associated with the AISPL marketplace. All accounts
-        /// in an organization must be from the same marketplace.
+        /// is from a different marketplace than the accounts in the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18412,9 +18864,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// You can only call this operation from the organization's management account and only
-        /// if the organization has <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
-        /// all features</a>.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAWSServiceAccess service method.</param>
@@ -18655,10 +19105,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -18854,9 +19319,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// You can only call this operation from the organization's management account and only
-        /// if the organization has <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
-        /// all features</a>.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAWSServiceAccess service method.</param>
@@ -19100,10 +19563,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -19291,7 +19769,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         ///  
         /// <para>
@@ -19538,10 +20016,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -19741,7 +20234,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         ///  
         /// <para>
@@ -19991,10 +20484,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -20190,24 +20698,14 @@ namespace Amazon.Organizations
         /// the other account's owner. The invitation is implemented as a <a>Handshake</a> whose
         /// details are in the response.
         /// 
-        ///  <important> <ul> <li> 
-        /// <para>
-        /// You can invite Amazon Web Services accounts only from the same seller as the management
-        /// account. For example, if your organization's management account was created by Amazon
-        /// Internet Services Pvt. Ltd (AISPL), an Amazon Web Services seller in India, you can
-        /// invite only other AISPL accounts to your organization. You can't combine accounts
-        /// from AISPL and Amazon Web Services or from any other Amazon Web Services seller. For
-        /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-India.html">Consolidated
-        /// billing in India</a>.
-        /// </para>
-        ///  </li> <li> 
+        ///  <important> 
         /// <para>
         /// If you receive an exception that indicates that you exceeded your account limits for
         /// the organization or that the operation failed because your organization is still initializing,
         /// wait one hour and then try again. If the error persists after an hour, contact <a
         /// href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.
         /// </para>
-        ///  </li> </ul> </important> 
+        ///  </important> 
         /// <para>
         /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
@@ -20461,10 +20959,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -20540,9 +21053,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization. For example,
-        /// accounts with India addresses must be associated with the AISPL marketplace. All accounts
-        /// in an organization must be from the same marketplace.
+        /// is from a different marketplace than the accounts in the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20716,24 +21227,14 @@ namespace Amazon.Organizations
         /// the other account's owner. The invitation is implemented as a <a>Handshake</a> whose
         /// details are in the response.
         /// 
-        ///  <important> <ul> <li> 
-        /// <para>
-        /// You can invite Amazon Web Services accounts only from the same seller as the management
-        /// account. For example, if your organization's management account was created by Amazon
-        /// Internet Services Pvt. Ltd (AISPL), an Amazon Web Services seller in India, you can
-        /// invite only other AISPL accounts to your organization. You can't combine accounts
-        /// from AISPL and Amazon Web Services or from any other Amazon Web Services seller. For
-        /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-India.html">Consolidated
-        /// billing in India</a>.
-        /// </para>
-        ///  </li> <li> 
+        ///  <important> 
         /// <para>
         /// If you receive an exception that indicates that you exceeded your account limits for
         /// the organization or that the operation failed because your organization is still initializing,
         /// wait one hour and then try again. If the error persists after an hour, contact <a
         /// href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.
         /// </para>
-        ///  </li> </ul> </important> 
+        ///  </important> 
         /// <para>
         /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
@@ -20990,10 +21491,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -21069,9 +21585,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization. For example,
-        /// accounts with India addresses must be associated with the AISPL marketplace. All accounts
-        /// in an organization must be from the same marketplace.
+        /// is from a different marketplace than the accounts in the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21297,13 +21811,6 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can leave an organization only after you enable IAM user access to billing in
-        /// your account. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
-        /// IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services
-        /// Billing and Cost Management User Guide</i>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// After the account leaves the organization, all tags that were attached to the account
         /// object in the organization are deleted. Amazon Web Services accounts outside of an
         /// organization do not support tags.
@@ -21564,10 +22071,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -21793,13 +22315,6 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can leave an organization only after you enable IAM user access to billing in
-        /// your account. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
-        /// IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services
-        /// Billing and Cost Management User Guide</i>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// After the account leaves the organization, all tags that were attached to the account
         /// object in the organization are deleted. Amazon Web Services accounts outside of an
         /// organization do not support tags.
@@ -22063,10 +22578,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -22256,7 +22786,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccounts service method.</param>
@@ -22440,7 +22970,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccounts service method.</param>
@@ -22634,7 +23164,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountsForParent service method.</param>
@@ -22824,7 +23354,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountsForParent service method.</param>
@@ -23019,7 +23549,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAWSServiceAccessForOrganization service method.</param>
@@ -23256,10 +23786,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -23444,7 +23989,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAWSServiceAccessForOrganization service method.</param>
@@ -23684,10 +24229,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -23876,7 +24436,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChildren service method.</param>
@@ -24064,7 +24624,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChildren service method.</param>
@@ -24258,7 +24818,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCreateAccountStatus service method.</param>
@@ -24445,7 +25005,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCreateAccountStatus service method.</param>
@@ -24632,7 +25192,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDelegatedAdministrators service method.</param>
@@ -24869,10 +25429,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -25049,7 +25624,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDelegatedAdministrators service method.</param>
@@ -25289,10 +25864,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -25473,7 +26063,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDelegatedServicesForAccount service method.</param>
@@ -25719,10 +26309,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -25899,7 +26504,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDelegatedServicesForAccount service method.</param>
@@ -26148,10 +26753,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -26731,7 +27351,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHandshakesForOrganization service method.</param>
@@ -26926,7 +27546,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHandshakesForOrganization service method.</param>
@@ -27120,7 +27740,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationalUnitsForParent service method.</param>
@@ -27306,7 +27926,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationalUnitsForParent service method.</param>
@@ -27501,7 +28121,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         ///  <note> 
         /// <para>
@@ -27695,7 +28315,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         ///  <note> 
         /// <para>
@@ -27894,7 +28514,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
@@ -28080,7 +28700,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
@@ -28275,7 +28895,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPoliciesForTarget service method.</param>
@@ -28466,7 +29086,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPoliciesForTarget service method.</param>
@@ -28662,7 +29282,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         ///  <note> 
         /// <para>
@@ -28854,7 +29474,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         ///  <note> 
         /// <para>
@@ -29066,7 +29686,7 @@ namespace Amazon.Organizations
         ///  </li> </ul> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -29265,7 +29885,7 @@ namespace Amazon.Organizations
         ///  </li> </ul> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -29459,7 +30079,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargetsForPolicy service method.</param>
@@ -29649,7 +30269,7 @@ namespace Amazon.Organizations
         ///  </note> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargetsForPolicy service method.</param>
@@ -30234,7 +30854,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// You can only call this operation from the organization's management account.
+        /// This operation can be called only from the organization's management account..
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
@@ -30475,10 +31095,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -30653,7 +31288,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// You can only call this operation from the organization's management account.
+        /// This operation can be called only from the organization's management account..
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
@@ -30897,10 +31532,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -31340,10 +31990,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -31782,10 +32447,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -32241,10 +32921,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -32701,10 +33396,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -32906,7 +33616,7 @@ namespace Amazon.Organizations
         ///  </li> </ul> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -33147,10 +33857,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -33346,7 +34071,7 @@ namespace Amazon.Organizations
         ///  </li> </ul> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -33590,10 +34315,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -33793,7 +34533,7 @@ namespace Amazon.Organizations
         ///  </li> </ul> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -34034,10 +34774,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -34233,7 +34988,7 @@ namespace Amazon.Organizations
         ///  </li> </ul> 
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -34477,10 +35232,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -35040,7 +35810,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePolicy service method.</param>
@@ -35281,10 +36051,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.
@@ -35477,7 +36262,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// This operation can be called only from the organization's management account or by
-        /// a member account that is a delegated administrator for an Amazon Web Services service.
+        /// a member account that is a delegated administrator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePolicy service method.</param>
@@ -35721,10 +36506,25 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before
+        /// you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation,
+        /// you must first disable the policy type.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to register a delegated administrator before you enabled service access.
+        /// Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You attempted to enable a policy type before you enabled service access. Call the
+        /// <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
         /// are not compliant with the tag policy requirements for this account.

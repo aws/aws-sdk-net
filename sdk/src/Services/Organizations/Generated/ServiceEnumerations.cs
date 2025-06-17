@@ -421,6 +421,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason POLICY_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("POLICY_NUMBER_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant POLICY_TYPE_ENABLED_FOR_THIS_SERVICE for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason POLICY_TYPE_ENABLED_FOR_THIS_SERVICE = new ConstraintViolationExceptionReason("POLICY_TYPE_ENABLED_FOR_THIS_SERVICE");
+        /// <summary>
         /// Constant SERVICE_ACCESS_NOT_ENABLED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason SERVICE_ACCESS_NOT_ENABLED = new ConstraintViolationExceptionReason("SERVICE_ACCESS_NOT_ENABLED");
@@ -646,6 +650,10 @@ namespace Amazon.Organizations
         /// Constant DECLARATIVE_POLICY_EC2 for EffectivePolicyType
         /// </summary>
         public static readonly EffectivePolicyType DECLARATIVE_POLICY_EC2 = new EffectivePolicyType("DECLARATIVE_POLICY_EC2");
+        /// <summary>
+        /// Constant SECURITYHUB_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType SECURITYHUB_POLICY = new EffectivePolicyType("SECURITYHUB_POLICY");
         /// <summary>
         /// Constant TAG_POLICY for EffectivePolicyType
         /// </summary>
@@ -1300,6 +1308,10 @@ namespace Amazon.Organizations
         /// Constant RESOURCE_CONTROL_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType RESOURCE_CONTROL_POLICY = new PolicyType("RESOURCE_CONTROL_POLICY");
+        /// <summary>
+        /// Constant SECURITYHUB_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType SECURITYHUB_POLICY = new PolicyType("SECURITYHUB_POLICY");
         /// <summary>
         /// Constant SERVICE_CONTROL_POLICY for PolicyType
         /// </summary>
