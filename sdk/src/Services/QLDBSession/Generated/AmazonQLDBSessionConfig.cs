@@ -33,7 +33,7 @@ namespace Amazon.QLDBSession
     public partial class AmazonQLDBSessionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("QLDB Session", "4.0.0.9");
+            InternalSDKUtils.BuildUserAgentString("QLDB Session", "4.0.0.10");
 
         private static readonly AmazonQLDBSessionEndpointResolver EndpointResolver =
             new AmazonQLDBSessionEndpointResolver();

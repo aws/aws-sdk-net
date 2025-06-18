@@ -33,7 +33,7 @@ namespace Amazon.SSMGuiConnect
     public partial class AmazonSSMGuiConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM GuiConnect", "4.0.0.9");
+            InternalSDKUtils.BuildUserAgentString("SSM GuiConnect", "4.0.0.10");
 
         private static readonly AmazonSSMGuiConnectEndpointResolver EndpointResolver =
             new AmazonSSMGuiConnectEndpointResolver();

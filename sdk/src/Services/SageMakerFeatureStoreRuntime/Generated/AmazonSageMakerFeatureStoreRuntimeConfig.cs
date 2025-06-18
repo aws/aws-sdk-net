@@ -33,7 +33,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
     public partial class AmazonSageMakerFeatureStoreRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker FeatureStore Runtime", "4.0.0.9");
+            InternalSDKUtils.BuildUserAgentString("SageMaker FeatureStore Runtime", "4.0.0.10");
 
         private static readonly AmazonSageMakerFeatureStoreRuntimeEndpointResolver EndpointResolver =
             new AmazonSageMakerFeatureStoreRuntimeEndpointResolver();

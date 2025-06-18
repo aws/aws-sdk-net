@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchServerless
     public partial class AmazonOpenSearchServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("OpenSearchServerless", "4.0.0.9");
+            InternalSDKUtils.BuildUserAgentString("OpenSearchServerless", "4.0.0.10");
 
         private static readonly AmazonOpenSearchServerlessEndpointResolver EndpointResolver =
             new AmazonOpenSearchServerlessEndpointResolver();
