@@ -48,6 +48,7 @@ namespace Amazon.CloudWatchLogs.Model
         private ParseKeyValue _parseKeyValue;
         private ParsePostgres _parsePostgres;
         private ParseRoute53 _parseRoute53;
+        private ParseToOCSF _parseToOCSF;
         private ParseVPC _parsevpc;
         private ParseWAF _parsewaf;
         private RenameKeys _renameKeys;
@@ -333,6 +334,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetParseRoute53()
         {
             return this._parseRoute53 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParseToOCSF. 
+        /// <para>
+        /// Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF)
+        /// format
+        /// </para>
+        /// </summary>
+        public ParseToOCSF ParseToOCSF
+        {
+            get { return this._parseToOCSF; }
+            set { this._parseToOCSF = value; }
+        }
+
+        // Check to see if ParseToOCSF property is set
+        internal bool IsSetParseToOCSF()
+        {
+            return this._parseToOCSF != null;
         }
 
         /// <summary>

@@ -6323,12 +6323,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// None of the log events in the batch can be more than 2 hours in the future.
+        /// Events more than 2 hours in the future are rejected while processing remaining valid
+        /// events.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// None of the log events in the batch can be more than 14 days in the past. Also, none
-        /// of the log events can be from earlier than the retention period of the log group.
+        /// Events older than 14 days or preceding the log group's retention period are rejected
+        /// while processing remaining valid events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6340,7 +6341,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
+        ///  A batch of log events in a single request must be in a chronological order. Otherwise,
         /// the operation fails.
         /// </para>
         ///  </li> <li> 
@@ -6351,13 +6352,18 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// The maximum number of log events in a batch is 10,000.
         /// </para>
-        ///  </li> <li> <important> 
+        ///  </li> <li> 
+        /// <para>
+        /// For valid events (within 14 days in the past to 2 hours in future), the time span
+        /// in a single batch cannot exceed 24 hours. Otherwise, the operation fails.
+        /// </para>
+        ///  </li> </ul> <important> 
         /// <para>
         /// The quota of five requests per second per log stream has been removed. Instead, <c>PutLogEvents</c>
         /// actions are throttled based on a per-second per-account quota. You can request an
         /// increase to the per-second throttling quota by using the Service Quotas service.
         /// </para>
-        ///  </important> </li> </ul> 
+        ///  </important> 
         /// <para>
         /// If a call to <c>PutLogEvents</c> returns "UnrecognizedClientException" the most likely
         /// cause is a non-valid Amazon Web Services access key ID or secret key. 

@@ -150,6 +150,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParseRoute53 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parseToOCSF", targetDepth))
+                {
+                    var unmarshaller = ParseToOCSFUnmarshaller.Instance;
+                    unmarshalledObject.ParseToOCSF = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("parseVPC", targetDepth))
                 {
                     var unmarshaller = ParseVPCUnmarshaller.Instance;

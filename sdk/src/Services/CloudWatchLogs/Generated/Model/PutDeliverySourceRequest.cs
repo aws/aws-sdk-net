@@ -117,6 +117,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Entity Resolution, the valid value is <c>WORKFLOW_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For IAM Identity Center, the valid value is <c>ERROR_LOGS</c>.
         /// </para>
         ///  </li> <li> 
@@ -125,7 +129,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon SES mail manager, the valid value is <c>APPLICATION_LOG</c>.
+        /// For Amazon SES mail manager, the valid values are <c>APPLICATION_LOG</c> and <c>TRAFFIC_POLICY_DEBUG_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
