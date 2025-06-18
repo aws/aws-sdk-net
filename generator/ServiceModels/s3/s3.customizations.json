@@ -197,6 +197,30 @@
                 }
             ]
         },
+        "ServerSideEncryptionRule":{
+            "modify":[
+                {
+                    "ApplyServerSideEncryptionByDefault": { "emitPropertyName": "ServerSideEncryptionByDefault"}
+                }
+            ]
+        },
+        "ServerSideEncryptionConfiguration":{
+            "modify":[
+                {
+                    "Rules" : { "emitPropertyName": "ServerSideEncryptionRules" }
+                }
+            ]
+        },
+        "ServerSideEncryptionByDefault":{
+            "modify": [
+                {
+                    "KMSMasterKeyID": {"emitPropertyName": "ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "SSEAlgorithm": {"emitPropertyName": "ServerSideEncryptionAlgorithm"}
+                }
+            ]
+        },
         "UploadPartCopyRequest": {
             "modify": [
                 {
@@ -297,6 +321,9 @@
     "shapeSubstitutions":{
         "Bucket":{
             "renameShape":"S3Bucket"
+        },
+        "ServerSideEncryption":{
+            "renameShape":"ServerSideEncryptionMethod"
         }
     }
 }
