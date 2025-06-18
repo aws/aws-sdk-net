@@ -652,6 +652,12 @@ namespace Amazon.S3.Internal
                 result.Bucket = request.BucketName;
                 return result;
             }
+            if (requestContext.RequestName == "RenameObjectRequest") {
+                var request = (RenameObjectRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                result.Key = request.Key;
+                return result;
+            }
             if (requestContext.RequestName == "RestoreObjectRequest") {
                 var request = (RestoreObjectRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;

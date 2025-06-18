@@ -771,8 +771,25 @@ namespace Amazon.S3
         #region  CopyObject
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates a copy of an object that is already stored in Amazon S3.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
@@ -992,8 +1009,25 @@ namespace Amazon.S3
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates a copy of an object that is already stored in Amazon S3.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
@@ -1215,8 +1249,25 @@ namespace Amazon.S3
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates a copy of an object that is already stored in Amazon S3.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
@@ -5112,7 +5163,21 @@ namespace Amazon.S3
         #region  GetACL
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -5170,7 +5235,21 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -5984,7 +6063,21 @@ namespace Amazon.S3
         #region  GetBucketLogging
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -6022,7 +6115,21 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -6458,7 +6565,25 @@ namespace Amazon.S3
         /// about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html">Specifying
         /// permissions in a policy</a>. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A bucket doesn't have <c>OwnershipControls</c> settings in the following cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The bucket was created before the <c>BucketOwnerEnforced</c> ownership setting was
+        /// introduced and you've never explicitly applied this value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You've manually deleted the bucket ownership control value using the <c>DeleteBucketOwnershipControls</c>
+        /// API operation.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// By default, Amazon S3 sets <c>OwnershipControls</c> for all newly created buckets.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Using
         /// Object Ownership</a>. 
@@ -10015,13 +10140,30 @@ namespace Amazon.S3
         #region  InitiateMultipartUpload
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// This action initiates a multipart upload and returns an upload ID. This upload ID
         /// is used to associate all of the parts in the specific multipart upload. You specify
         /// this upload ID in each of your subsequent upload part requests (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
         /// You also include this upload ID in the final request to either complete or abort the
         /// multipart upload request. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
         /// Upload Overview</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// After you initiate a multipart upload and upload one or more parts, to stop being
@@ -10291,13 +10433,30 @@ namespace Amazon.S3
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// This action initiates a multipart upload and returns an upload ID. This upload ID
         /// is used to associate all of the parts in the specific multipart upload. You specify
         /// this upload ID in each of your subsequent upload part requests (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>).
         /// You also include this upload ID in the final request to either complete or abort the
         /// multipart upload request. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
         /// Upload Overview</a> in the <i>Amazon S3 User Guide</i>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// After you initiate a multipart upload and upload one or more parts, to stop being
@@ -11024,7 +11183,21 @@ namespace Amazon.S3
         #region  ListBuckets
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -11060,7 +11233,21 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -11227,10 +11414,26 @@ namespace Amazon.S3
         #region  ListMultipartUploads
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -11368,10 +11571,26 @@ namespace Amazon.S3
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -11511,10 +11730,26 @@ namespace Amazon.S3
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -11691,7 +11926,21 @@ namespace Amazon.S3
         #region  ListObjects
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -11752,7 +12001,21 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -11815,7 +12078,21 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -12061,8 +12338,24 @@ namespace Amazon.S3
         #region  ListParts
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Lists the parts that have been uploaded for a specific multipart upload.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To use this operation, you must provide the <c>upload ID</c> in the request. You obtain
@@ -12180,8 +12473,24 @@ namespace Amazon.S3
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Lists the parts that have been uploaded for a specific multipart upload.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To use this operation, you must provide the <c>upload ID</c> in the request. You obtain
@@ -12334,7 +12643,21 @@ namespace Amazon.S3
         #region  ListVersions
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -12397,7 +12720,21 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -12462,7 +12799,21 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -12564,7 +12915,22 @@ namespace Amazon.S3
         #region  PutACL
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -12709,7 +13075,9 @@ namespace Amazon.S3
         ///  </dd> <dt>Grantee Values</dt> <dd> 
         /// <para>
         /// You can specify the person (grantee) to whom you're assigning access rights (using
-        /// request elements) in the following ways:
+        /// request elements) in the following ways. For examples of how to specify these grantee
+        /// values in JSON format, see the Amazon Web Services CLI example in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html">
+        /// Enabling Amazon S3 server access logging</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12862,7 +13230,36 @@ namespace Amazon.S3
         #region  PutBucket
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
@@ -13016,7 +13413,36 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
+        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
+        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
+        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
@@ -13969,7 +14395,22 @@ namespace Amazon.S3
         #region  PutBucketLogging
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -13997,7 +14438,9 @@ namespace Amazon.S3
         ///  </important> <dl> <dt>Grantee Values</dt> <dd> 
         /// <para>
         /// You can specify the person (grantee) to whom you're assigning access rights (by using
-        /// request elements) in the following ways:
+        /// request elements) in the following ways. For examples of how to specify these grantee
+        /// values in JSON format, see the Amazon Web Services CLI example in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html">
+        /// Enabling Amazon S3 server access logging</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -16299,8 +16742,25 @@ namespace Amazon.S3
         #region  PutObject
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
+        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
+        /// prior to this date will continue to work and remain accessible through the Amazon
+        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
+        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
+        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
+        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
+        /// Region, and South America (São Paulo) Region.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Adds an object to a bucket.
-        /// 
+        /// </para>
         ///  <note> <ul> <li> 
         /// <para>
         /// Amazon S3 never adds partial objects; if you receive a success response, Amazon S3
@@ -16943,6 +17403,109 @@ namespace Amazon.S3
         public virtual PutPublicAccessBlockResponse EndPutPublicAccessBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<PutPublicAccessBlockResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RenameObject
+
+        /// <summary>
+        /// Renames an existing object in a directory bucket that uses the S3 Express One Zone
+        /// storage class. You can use <c>RenameObject</c> by specifying an existing object’s
+        /// name as the source and the new name of the object as the destination within the same
+        /// directory bucket.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>RenameObject</c> is only supported for objects stored in the S3 Express One Zone
+        /// storage class.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  To prevent overwriting an object, you can use the <c>If-None-Match</c> conditional
+        /// header.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>If-None-Match</b> - Renames the object only if an object with the specified name
+        /// does not already exist in the directory bucket. If you don't want to overwrite an
+        /// existing object, you can add the <c>If-None-Match</c> conditional header with the
+        /// value <c>‘*’</c> in the <c>RenameObject</c> request. Amazon S3 then returns a <c>412
+        /// Precondition Failed</c> error if the object with the specified name already exists.
+        /// For more information, see <a href="https://datatracker.ietf.org/doc/rfc7232/">RFC
+        /// 7232</a>.
+        /// </para>
+        ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        ///  To grant access to the <c>RenameObject</c> operation on a directory bucket, we recommend
+        /// that you use the <c>CreateSession</c> operation for session-based authorization. Specifically,
+        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
+        /// API call on the directory bucket to obtain a session token. With the session token
+        /// in your request header, you can make API requests to this operation. After the session
+        /// token expires, you make another <c>CreateSession</c> API call to generate a new session
+        /// token for use. The Amazon Web Services CLI and SDKs will create and manage your session
+        /// including refreshing the session token automatically to avoid service interruptions
+        /// when a session expires. In your bucket policy, you can specify the <c>s3express:SessionMode</c>
+        /// condition key to control who can create a <c>ReadWrite</c> or <c>ReadOnly</c> session.
+        /// A <c>ReadWrite</c> session is required for executing all the Zonal endpoint API operations,
+        /// including <c>RenameObject</c>. For more information about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a>. To learn more about Zonal endpoint APT operations, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-create-session.html">Authorizing
+        /// Zonal endpoint API operations with CreateSession</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RenameObject service method.</param>
+        /// 
+        /// <returns>The response from the RenameObject service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RenameObject">REST API Reference for RenameObject Operation</seealso>
+        public virtual RenameObjectResponse RenameObject(RenameObjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenameObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenameObjectResponseUnmarshaller.Instance;
+
+            return Invoke<RenameObjectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenameObject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenameObject operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRenameObject
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RenameObject">REST API Reference for RenameObject Operation</seealso>
+        public virtual IAsyncResult BeginRenameObject(RenameObjectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenameObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenameObjectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RenameObject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRenameObject.</param>
+        /// 
+        /// <returns>Returns a  RenameObjectResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RenameObject">REST API Reference for RenameObject Operation</seealso>
+        public virtual RenameObjectResponse EndRenameObject(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RenameObjectResponse>(asyncResult);
         }
 
         #endregion
