@@ -389,6 +389,68 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type EventSource.
+    /// </summary>
+    public class EventSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSWAF for EventSource
+        /// </summary>
+        public static readonly EventSource AWSWAF = new EventSource("AWSWAF");
+        /// <summary>
+        /// Constant CloudTrail for EventSource
+        /// </summary>
+        public static readonly EventSource CloudTrail = new EventSource("CloudTrail");
+        /// <summary>
+        /// Constant EKSAudit for EventSource
+        /// </summary>
+        public static readonly EventSource EKSAudit = new EventSource("EKSAudit");
+        /// <summary>
+        /// Constant Route53Resolver for EventSource
+        /// </summary>
+        public static readonly EventSource Route53Resolver = new EventSource("Route53Resolver");
+        /// <summary>
+        /// Constant VPCFlow for EventSource
+        /// </summary>
+        public static readonly EventSource VPCFlow = new EventSource("VPCFlow");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSource FindValue(string value)
+        {
+            return FindValue<EventSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportTaskStatusCode.
     /// </summary>
     public class ExportTaskStatusCode : ConstantClass
@@ -748,6 +810,52 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogGroupClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OCSFVersion.
+    /// </summary>
+    public class OCSFVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V11 for OCSFVersion
+        /// </summary>
+        public static readonly OCSFVersion V11 = new OCSFVersion("V1.1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OCSFVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OCSFVersion FindValue(string value)
+        {
+            return FindValue<OCSFVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OCSFVersion(string value)
         {
             return FindValue(value);
         }
