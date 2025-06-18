@@ -1,3 +1,19 @@
+### 3.7.1066.0 (2025-06-18 19:03 UTC)
+* AIOps (3.7.400.0)
+	* This is the initial SDK release for Amazon AI Operations (AIOps). AIOps is a generative AI-powered assistant that helps you respond to incidents in your system by scanning your system's telemetry and quickly surface suggestions that might be related to your issue.
+* AutoScaling (3.7.409.0)
+	* Add IncludeInstances parameter to DescribeAutoScalingGroups API
+* CloudWatchLogs (3.7.414.0)
+	* Added CloudWatch Logs Transformer support for converting CloudTrail, VPC Flow, EKS Audit, AWS WAF and Route53 Resolver logs to OCSF v1.1 format.
+* S3 (3.7.418.0)
+	* Added support for renaming objects within the same bucket using the new RenameObject API.
+	* Added support for the RenameObject operation in S3 Directory Buckets, allowing atomic renaming of objects and directories.
+* SageMaker (3.7.445.0)
+	* Add support for p6-b200 instance type for SageMaker Hyperpod
+* Core 3.7.402.72
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1065.0 (2025-06-17 21:05 UTC)
 * AccessAnalyzer (3.7.405.0)
 	* We are launching a new analyzer type, internal access analyzer. The new analyzer will generate internal access findings, which help customers understand who within their AWS organization or AWS Account has access to their critical AWS resources.

@@ -32,7 +32,7 @@ namespace Amazon.Invoicing
     public partial class AmazonInvoicingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Invoicing", "3.7.401.5");
+            InternalSDKUtils.BuildUserAgentString("Invoicing", "3.7.401.6");
 
         private string _userAgent = UserAgentString;
         ///<summary>

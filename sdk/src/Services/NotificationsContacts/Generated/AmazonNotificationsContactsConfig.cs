@@ -32,7 +32,7 @@ namespace Amazon.NotificationsContacts
     public partial class AmazonNotificationsContactsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("NotificationsContacts", "3.7.400.109");
+            InternalSDKUtils.BuildUserAgentString("NotificationsContacts", "3.7.400.110");
 
         private string _userAgent = UserAgentString;
         ///<summary>
