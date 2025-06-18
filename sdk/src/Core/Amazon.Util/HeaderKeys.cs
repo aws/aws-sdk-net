@@ -112,6 +112,13 @@ namespace Amazon.Util
         public const string AmzSdkRequest = "amz-sdk-request";
         public const string XAmzQueryError = "x-amzn-query-error";
         public const string XAmzS3ExpressSessionTokenQueryParam = "X-Amz-S3session-Token";
+
+        public const string XAmzClientTokenHeader = "x-amz-client-token";
+        public const string XAmzRenameSourceHeader = "x-amz-rename-source";
+        public const string XAmzRenameSourceIfMatchHeader = "x-amz-rename-source-if-match";
+        public const string XAmzRenameSourceIfModifiedSinceHeader = "x-amz-rename-source-if-modified-since";
+        public const string XAmzRenameSourceIfNoneMatchHeader = "x-amz-rename-source-if-none-match";
+        public const string XAmzRenameSourceIfUnmodifiedSinceHeader = "x-amz-rename-source-if-unmodified-since";
         public const string XAmzQueryMode = "x-amzn-query-mode";
     }
 }
