@@ -214,6 +214,93 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 request.ExpressionAttributeValues = attributeValues;
             }
         }
+        internal static Expression MergeUpdateExpressions(Expression right, Expression left)
+        {
+            if (right == null && left == null)
+                return null;
+            if (right == null)
+                return left;
+            if (left == null)
+                return right;
+
+            var leftSections = ParseSections(left.ExpressionStatement);
+            var rightSections = ParseSections(right.ExpressionStatement);
+
+            // Merge sections by keyword, combining with commas where needed
+            var keywordsOrder = new[] { "SET", "REMOVE", "ADD", "DELETE" };
+            var mergedSections = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+            foreach (var keyword in keywordsOrder)
+            {
+                var leftPart = leftSections.ContainsKey(keyword) ? leftSections[keyword] : null;
+                var rightPart = rightSections.ContainsKey(keyword) ? rightSections[keyword] : null;
+
+                if (!string.IsNullOrEmpty(leftPart) && !string.IsNullOrEmpty(rightPart))
+                {
+                    mergedSections[keyword] = leftPart + ", " + rightPart;
+                }
+                else if (!string.IsNullOrEmpty(leftPart))
+                {
+                    mergedSections[keyword] = leftPart;
+                }
+                else if (!string.IsNullOrEmpty(rightPart))
+                {
+                    mergedSections[keyword] = rightPart;
+                }
+            }
+
+            var mergedStatement = string.Join(" ",
+                keywordsOrder.Where(k => mergedSections.ContainsKey(k))
+                             .Select(k => $"{k} {mergedSections[k]}"));
+
+            var mergedNames = Common.Combine(left.ExpressionAttributeNames, right.ExpressionAttributeNames, StringComparer.Ordinal); ;
+
+            var mergedValues = Common.Combine(left.ExpressionAttributeValues, right.ExpressionAttributeValues, null);
+
+            return new Expression
+            {
+                ExpressionStatement = string.IsNullOrWhiteSpace(mergedStatement) ? null : mergedStatement,
+                ExpressionAttributeNames = mergedNames,
+                ExpressionAttributeValues = mergedValues
+            };
+
+
+            static Dictionary<string, string> ParseSections(string expr)
+            {
+                var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+                if (string.IsNullOrWhiteSpace(expr))
+                    return result;
+
+                // Find all keywords and their positions
+                var keywords = new[] { "SET", "REMOVE", "ADD", "DELETE" };
+                var positions = new List<(string keyword, int index)>();
+                foreach (var keyword in keywords)
+                {
+                    int idx = expr.IndexOf(keyword, StringComparison.OrdinalIgnoreCase);
+                    if (idx >= 0)
+                        positions.Add((keyword, idx));
+                }
+                if (positions.Count == 0)
+                {
+                    // No recognized keywords, treat as a single section
+                    result[string.Empty] = expr.Trim();
+                    return result;
+                }
+
+                // Sort by position
+                positions = positions.OrderBy(p => p.index).ToList();
+                for (int i = 0; i < positions.Count; i++)
+                {
+                    var keyword = positions[i].keyword;
+                    int start = positions[i].index + keyword.Length;
+                    int end = (i + 1 < positions.Count) ? positions[i + 1].index : expr.Length;
+                    string section = expr.Substring(start, end - start).Trim();
+                    if (!string.IsNullOrEmpty(section))
+                        result[keyword] = section;
+                }
+                return result;
+            }
+        }
 
         internal static Dictionary<string, AttributeValue> ConvertToAttributeValues(
             Dictionary<string, DynamoDBEntry> valueMap, Table table)
