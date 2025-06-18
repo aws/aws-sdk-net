@@ -41,6 +41,14 @@ namespace Amazon.AutoScaling
     ///
     /// Amazon EC2 Auto Scaling 
     /// <para>
+    /// The <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a>
+    /// API operation might be throttled when retrieving details for an Auto Scaling group
+    /// that contains many instances. By default, this operation returns details for all instances
+    /// in the group. To help prevent throttling, you can set the <c>IncludeInstances</c>
+    /// parameter to <c>false</c> to exclude instance details from the response.
+    /// </para>
+    ///  
+    /// <para>
     /// Amazon EC2 Auto Scaling is designed to automatically launch and terminate EC2 instances
     /// based on user-defined scaling policies, scheduled actions, and health checks.
     /// </para>

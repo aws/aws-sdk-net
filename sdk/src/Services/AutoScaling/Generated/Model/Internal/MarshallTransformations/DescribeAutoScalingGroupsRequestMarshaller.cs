@@ -89,6 +89,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetIncludeInstances())
+                {
+                    request.Parameters.Add("IncludeInstances", StringUtils.FromBool(publicRequest.IncludeInstances));
+                }
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
