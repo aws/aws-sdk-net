@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AmazonManagedKafkaEventSourceConfig Marshaller
+    /// KafkaSchemaValidationConfig Marshaller
     /// </summary>
-    public class AmazonManagedKafkaEventSourceConfigMarshaller : IRequestMarshaller<AmazonManagedKafkaEventSourceConfig, JsonMarshallerContext> 
+    public class KafkaSchemaValidationConfigMarshaller : IRequestMarshaller<KafkaSchemaValidationConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AmazonManagedKafkaEventSourceConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(KafkaSchemaValidationConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConsumerGroupId())
+            if(requestObject.IsSetAttribute())
             {
-                context.Writer.WritePropertyName("ConsumerGroupId");
-                context.Writer.WriteStringValue(requestObject.ConsumerGroupId);
-            }
-
-            if(requestObject.IsSetSchemaRegistryConfig())
-            {
-                context.Writer.WritePropertyName("SchemaRegistryConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = KafkaSchemaRegistryConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.SchemaRegistryConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("Attribute");
+                context.Writer.WriteStringValue(requestObject.Attribute);
             }
 
         }
@@ -68,7 +57,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AmazonManagedKafkaEventSourceConfigMarshaller Instance = new AmazonManagedKafkaEventSourceConfigMarshaller();
+        public readonly static KafkaSchemaValidationConfigMarshaller Instance = new KafkaSchemaValidationConfigMarshaller();
 
     }
 }

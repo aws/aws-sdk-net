@@ -342,7 +342,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastProcessingResult. 
         /// <para>
-        /// The result of the last Lambda invocation of your function.
+        /// The result of the event source mapping's last processing attempt.
         /// </para>
         /// </summary>
         public string LastProcessingResult

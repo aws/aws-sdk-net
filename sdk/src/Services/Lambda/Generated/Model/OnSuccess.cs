@@ -38,6 +38,12 @@ namespace Amazon.Lambda.Model
     /// invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda function,
     /// or Amazon EventBridge event bus as the destination.
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <c>OnSuccess</c> is not supported in <c>CreateEventSourceMapping</c> or <c>UpdateEventSourceMapping</c>
+    /// requests.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class OnSuccess
     {

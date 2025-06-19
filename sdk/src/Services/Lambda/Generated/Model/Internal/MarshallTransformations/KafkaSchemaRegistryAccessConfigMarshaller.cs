@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AmazonManagedKafkaEventSourceConfig Marshaller
+    /// KafkaSchemaRegistryAccessConfig Marshaller
     /// </summary>
-    public class AmazonManagedKafkaEventSourceConfigMarshaller : IRequestMarshaller<AmazonManagedKafkaEventSourceConfig, JsonMarshallerContext> 
+    public class KafkaSchemaRegistryAccessConfigMarshaller : IRequestMarshaller<KafkaSchemaRegistryAccessConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,20 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AmazonManagedKafkaEventSourceConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(KafkaSchemaRegistryAccessConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConsumerGroupId())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("ConsumerGroupId");
-                context.Writer.WriteStringValue(requestObject.ConsumerGroupId);
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
-            if(requestObject.IsSetSchemaRegistryConfig())
+            if(requestObject.IsSetURI())
             {
-                context.Writer.WritePropertyName("SchemaRegistryConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = KafkaSchemaRegistryConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.SchemaRegistryConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("URI");
+                context.Writer.WriteStringValue(requestObject.URI);
             }
 
         }
@@ -68,7 +63,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AmazonManagedKafkaEventSourceConfigMarshaller Instance = new AmazonManagedKafkaEventSourceConfigMarshaller();
+        public readonly static KafkaSchemaRegistryAccessConfigMarshaller Instance = new KafkaSchemaRegistryAccessConfigMarshaller();
 
     }
 }
