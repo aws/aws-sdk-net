@@ -48,6 +48,7 @@ namespace Amazon.SageMaker.Model
         private string _projectName;
         private ServiceCatalogProvisioningUpdateDetails _serviceCatalogProvisioningUpdateDetails;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<UpdateTemplateProvider> _templateProvidersToUpdate = AWSConfigs.InitializeCollections ? new List<UpdateTemplateProvider>() : null;
 
         /// <summary>
         /// Gets and sets the property ProjectDescription. 
@@ -136,6 +137,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateProvidersToUpdate. 
+        /// <para>
+        ///  The template providers to update in the project. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<UpdateTemplateProvider> TemplateProvidersToUpdate
+        {
+            get { return this._templateProvidersToUpdate; }
+            set { this._templateProvidersToUpdate = value; }
+        }
+
+        // Check to see if TemplateProvidersToUpdate property is set
+        internal bool IsSetTemplateProvidersToUpdate()
+        {
+            return this._templateProvidersToUpdate != null && (this._templateProvidersToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
