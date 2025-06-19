@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private ServiceCatalogProvisionedProductDetails _serviceCatalogProvisionedProductDetails;
         private ServiceCatalogProvisioningDetails _serviceCatalogProvisioningDetails;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TemplateProviderDetail> _templateProviderDetails = AWSConfigs.InitializeCollections ? new List<TemplateProviderDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedBy. 
@@ -260,6 +261,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateProviderDetails. 
+        /// <para>
+        ///  An array of template providers associated with the project. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<TemplateProviderDetail> TemplateProviderDetails
+        {
+            get { return this._templateProviderDetails; }
+            set { this._templateProviderDetails = value; }
+        }
+
+        // Check to see if TemplateProviderDetails property is set
+        internal bool IsSetTemplateProviderDetails()
+        {
+            return this._templateProviderDetails != null && (this._templateProviderDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

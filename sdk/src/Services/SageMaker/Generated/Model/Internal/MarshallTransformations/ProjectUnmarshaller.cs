@@ -138,6 +138,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TemplateProviderDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TemplateProviderDetail, TemplateProviderDetailUnmarshaller>(TemplateProviderDetailUnmarshaller.Instance);
+                    unmarshalledObject.TemplateProviderDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

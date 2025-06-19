@@ -87,35 +87,6 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The ML compute instance type. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview
-        /// release starting December 9th, 2022. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a>
-        /// (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance
-        /// HBM2e GPU memory, which accelerate the speed of training ML models that need to be
-        /// trained on large datasets of high-resolution data. In this preview release, Amazon
-        /// SageMaker supports ML training jobs on P4de instances (<c>ml.p4de.24xlarge</c>) to
-        /// reduce model training time. The <c>ml.p4de.24xlarge</c> instances are available in
-        /// the following Amazon Web Services Regions. 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// US East (N. Virginia) (us-east-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// US West (Oregon) (us-west-2)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To request quota limit increase and start using P4de instances, contact the SageMaker
-        /// Training service team through your account team.
-        /// </para>
-        ///  </note>
         /// </summary>
         public TrainingInstanceType InstanceType
         {

@@ -108,6 +108,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTemplateProviders())
+                {
+                    context.Writer.WritePropertyName("TemplateProviders");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTemplateProvidersListValue in publicRequest.TemplateProviders)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreateTemplateProviderMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTemplateProvidersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

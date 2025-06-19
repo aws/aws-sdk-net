@@ -48,6 +48,7 @@ namespace Amazon.SageMaker.Model
         private string _projectName;
         private ServiceCatalogProvisioningUpdateDetails _serviceCatalogProvisioningUpdateDetails;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<UpdateTemplateProvider> _templateProvidersToUpdate = AWSConfigs.InitializeCollections ? new List<UpdateTemplateProvider>() : null;
 
         /// <summary>
         /// Gets and sets the property ProjectDescription. 
@@ -131,6 +132,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateProvidersToUpdate. 
+        /// <para>
+        ///  The template providers to update in the project. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<UpdateTemplateProvider> TemplateProvidersToUpdate
+        {
+            get { return this._templateProvidersToUpdate; }
+            set { this._templateProvidersToUpdate = value; }
+        }
+
+        // Check to see if TemplateProvidersToUpdate property is set
+        internal bool IsSetTemplateProvidersToUpdate()
+        {
+            return this._templateProvidersToUpdate != null && (this._templateProvidersToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
