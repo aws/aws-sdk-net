@@ -45,8 +45,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property DiffieHellmanTr31KeyBlock. 
         /// <para>
-        /// Parameter information for key material import using the asymmetric ECDH key exchange
-        /// method.
+        /// Key derivation parameter information for key material import using asymmetric ECDH
+        /// key exchange method.
         /// </para>
         /// </summary>
         public ImportDiffieHellmanTr31KeyBlock DiffieHellmanTr31KeyBlock

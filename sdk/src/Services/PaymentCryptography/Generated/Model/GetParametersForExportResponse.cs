@@ -44,7 +44,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property ExportToken. 
         /// <para>
         /// The export token to initiate key export from Amazon Web Services Payment Cryptography.
-        /// The export token expires after 7 days. You can use the same export token to export
+        /// The export token expires after 30 days. You can use the same export token to export
         /// multiple keys from the same service account.
         /// </para>
         /// </summary>
@@ -104,7 +104,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property SigningKeyCertificate. 
         /// <para>
         /// The signing key certificate in PEM format (base64 encoded) of the public key for signature
-        /// within the TR-34 key block. The certificate expires after 7 days.
+        /// within the TR-34 key block. The certificate expires after 30 days.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
