@@ -39,6 +39,7 @@
 	  <ProjectReference Include="../Services/EC2Protocol/AWSSDK.EC2Protocol.NetFramework.csproj" />
 	  <ProjectReference Include="../Services/RestXmlProtocol/AWSSDK.RestXmlProtocol.NetFramework.csproj" />
 	  <ProjectReference Include="../Services/RestXmlProtocolNamespace/AWSSDK.RestXmlProtocolNamespace.NetFramework.csproj" />
+    <ProjectReference Include="../Services/RpcV2Protocol/AWSSDK.RpcV2Protocol.NetFramework.csproj" />
       <ProjectReference Include="../UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj" />
       <ProjectReference Include="..\Services\QueryCompatibleJSONRPC10\AWSSDK.QueryCompatibleJSONRPC10.NetFramework.csproj" />
     </ItemGroup>
