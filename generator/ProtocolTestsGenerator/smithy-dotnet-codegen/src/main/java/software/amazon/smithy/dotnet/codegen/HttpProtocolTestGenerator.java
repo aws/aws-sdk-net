@@ -16,6 +16,7 @@
 package software.amazon.smithy.dotnet.codegen;
 
 import software.amazon.smithy.aws.traits.ServiceTrait;
+import software.amazon.smithy.model.traits.TitleTrait;
 import software.amazon.smithy.codegen.core.CodegenException;
 import software.amazon.smithy.dotnet.codegen.utils.ProtocolTestUtils;
 import software.amazon.smithy.model.Model;
@@ -51,7 +52,14 @@ public final class HttpProtocolTestGenerator implements Runnable {
         this.model = context.model();
         this.service = settings.getService(model);
         this.context = context;
-        this.serviceNamespace = service.getTrait(ServiceTrait.class).get().getSdkId().replace(" ", "");
+
+        String serviceNamespace = null;
+        if(service.getTrait(ServiceTrait.class).isPresent())
+                serviceNamespace = service.getTrait(ServiceTrait.class).get().getSdkId();
+        else if(service.getTrait(TitleTrait.class).isPresent())
+            serviceNamespace = service.getTrait(TitleTrait.class).get().getValue().replace("Service", "");
+
+        this.serviceNamespace = serviceNamespace.replace(" ", "");
     }
 
     @Override
@@ -60,6 +68,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
         OperationIndex operationIndex = OperationIndex.of(model);
         for (OperationShape operation : new TreeSet<>(topDownIndex.getContainedOperations(service))) {
             var operationName = operation.getId().getName();
+            if (ProtocolTestCustomizations.OperationsToSkip.contains(operationName))
+                continue;
             context.writerDelegator().useFileWriter(operationName + ".cs", serviceName, writer -> {
                 this.writer = writer;
                 addServiceProtocolSpecificImports();
@@ -87,6 +97,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
         } else if (this.serviceName.toLowerCase().contains("xml")) {
             writer.addImport(serviceName, "System.Xml");
             writer.addImport(serviceName, "System.Xml.Linq");
+        } else if (this.serviceName.toLowerCase().contains("rpcv2")) {
+            writer.addImport(serviceName, "AWSSDK.Extensions.CborProtocol.Internal");
         }
     }
 
@@ -94,9 +106,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
         for (StructureShape error : index.getErrors(operation, service)) {
             error.getTrait(HttpResponseTestsTrait.class).ifPresent(trait -> {
                 for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                    if (!ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId())){
+                    if(!ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId())&& 
+                        !trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName().toLowerCase().contains("cbor")) // Skip CBOR response tests until the unmarshallers are ready
                         generateErrorResponseTest(operation, error, httpResponseTestCase);
-                    }
                 }
             });
         }
@@ -285,6 +297,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
         } else if (httpRequestTestCase.getProtocol().getName().equals("restXml")) {
             writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
             writer.write("XmlTestUtils.AssertBody(marshalledRequest,expectedBody);");
+        } else if (this.marshallerType.equals("Cbor")) {
+            writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
+            writer.write("CborProtocolUtils.AssertBody(marshalledRequest, expectedBody);");
         } else {
             throw new CodegenException("Unsupported protocol detected while generating request test block.");
         }
@@ -296,7 +311,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()) || httpResponseTestCase.hasTag("defaults"))
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()) || httpResponseTestCase.hasTag("defaults")
+                || trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName().toLowerCase().contains("cbor")) // Skip CBOR response tests until the unmarshallers are ready
                     continue;
                 generateResponseTest(operation, httpResponseTestCase);
             }
@@ -345,6 +361,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
             this.marshallerType = "Json";
         } else if (protocol.toLowerCase().contains("xml") || protocol.toLowerCase().contains("query")) {
             this.marshallerType = "Xml";
+        } else if (protocol.toLowerCase().contains("cbor")) {
+            this.marshallerType = "Cbor";
         }
     }
 

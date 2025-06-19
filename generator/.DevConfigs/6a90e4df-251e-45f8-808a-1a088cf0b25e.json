@@ -1,0 +1,10 @@
+
+{
+  "core": {
+    "changeLogMessages": [
+      "Add support for RPCv2 CBOR protocol."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
