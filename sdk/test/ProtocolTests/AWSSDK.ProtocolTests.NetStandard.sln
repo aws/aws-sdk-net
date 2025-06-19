@@ -33,6 +33,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities.Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.QueryCompatibleJSONRPC10.NetStandard", "..\Services\QueryCompatibleJSONRPC10\AWSSDK.QueryCompatibleJSONRPC10.NetStandard.csproj", "{2CB42D7B-1D22-8605-7EC8-207E0DACC076}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.RpcV2Protocol.NetStandard", "..\Services\RpcV2Protocol\AWSSDK.RpcV2Protocol.NetStandard.csproj", "{5416C5A8-2446-0BD3-C670-B15344172326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Extensions.CborProtocol.NetStandard", "..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj", "{81474FD0-7BA6-F9DD-3C62-C8D954A57425}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,14 @@ Global
 		{2CB42D7B-1D22-8605-7EC8-207E0DACC076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CB42D7B-1D22-8605-7EC8-207E0DACC076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CB42D7B-1D22-8605-7EC8-207E0DACC076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5416C5A8-2446-0BD3-C670-B15344172326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5416C5A8-2446-0BD3-C670-B15344172326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5416C5A8-2446-0BD3-C670-B15344172326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5416C5A8-2446-0BD3-C670-B15344172326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81474FD0-7BA6-F9DD-3C62-C8D954A57425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81474FD0-7BA6-F9DD-3C62-C8D954A57425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81474FD0-7BA6-F9DD-3C62-C8D954A57425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81474FD0-7BA6-F9DD-3C62-C8D954A57425}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
