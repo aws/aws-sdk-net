@@ -108,7 +108,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// unique identifier and an internal transaction counter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=10, Max=24)]
+        [AWSProperty(Required=true, Min=16, Max=24)]
         public string KeySerialNumber
         {
             get { return this._keySerialNumber; }

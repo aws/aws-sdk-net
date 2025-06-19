@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DecryptDataRequest.CipherText</property>
     <min>2</min>
-    <max>4096</max>
+    <max>4224</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -27,7 +27,7 @@
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DecryptDataResponse.PlainText</property>
     <min>2</min>
-    <max>4096</max>
+    <max>4224</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -39,13 +39,13 @@
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.EncryptDataRequest.PlainText</property>
     <min>2</min>
-    <max>4064</max>
+    <max>4096</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.EncryptDataResponse.CipherText</property>
     <min>2</min>
-    <max>4096</max>
+    <max>4224</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -264,7 +264,7 @@
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.ReEncryptDataRequest.CipherText</property>
     <min>2</min>
-    <max>4096</max>
+    <max>4224</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -282,7 +282,7 @@
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.ReEncryptDataResponse.CipherText</property>
     <min>2</min>
-    <max>4096</max>
+    <max>4224</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -615,15 +615,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DukptAttributes.KeySerialNumber</property>
-    <min>10</min>
+    <min>16</min>
     <max>24</max>
-    <pattern>[0-9a-fA-F]+</pattern>
+    <pattern>(?:[0-9a-fA-F]{16}|[0-9a-fA-F]{20}|[0-9a-fA-F]{24})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DukptDerivationAttributes.KeySerialNumber</property>
-    <min>10</min>
+    <min>16</min>
     <max>24</max>
-    <pattern>[0-9a-fA-F]+</pattern>
+    <pattern>(?:[0-9a-fA-F]{16}|[0-9a-fA-F]{20}|[0-9a-fA-F]{24})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DukptEncryptionAttributes.InitializationVector</property>
@@ -633,9 +633,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DukptEncryptionAttributes.KeySerialNumber</property>
-    <min>10</min>
+    <min>16</min>
     <max>24</max>
-    <pattern>[0-9a-fA-F]+</pattern>
+    <pattern>(?:[0-9a-fA-F]{16}|[0-9a-fA-F]{20}|[0-9a-fA-F]{24})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DynamicCardVerificationCode.ApplicationTransactionCounter</property>
@@ -873,9 +873,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.MacAlgorithmDukpt.KeySerialNumber</property>
-    <min>10</min>
+    <min>16</min>
     <max>24</max>
-    <pattern>[0-9a-fA-F]+</pattern>
+    <pattern>(?:[0-9a-fA-F]{16}|[0-9a-fA-F]{20}|[0-9a-fA-F]{24})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.MacAlgorithmEmv.PanSequenceNumber</property>

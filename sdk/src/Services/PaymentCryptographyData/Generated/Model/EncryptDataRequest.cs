@@ -182,7 +182,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4064)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4096)]
         public string PlainText
         {
             get { return this._plainText; }
