@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using ThirdParty.RuntimeBackports;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Reflection;
 using Expression = System.Linq.Expressions.Expression;
 
 namespace Amazon.DynamoDBv2.DataModel
@@ -34,14 +37,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             Filter = filterExpression.Body;
         }
-    }
 
-    /// <summary>
-    /// Provides extension methods for use in LINQ-to-DynamoDB expression trees.
-    /// These methods are intended for query translation and should not be called directly at runtime.
-    /// </summary>
-    public static class LinqDdbExtensions
-    {
         /// <summary>
         /// Indicates that the value should be compared to see if it falls inclusively between the specified lower and upper bounds.
         /// Intended for use in LINQ expressions to generate DynamoDB BETWEEN conditions.
@@ -51,8 +47,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">The value to test.</param>
         /// <param name="lower">The inclusive lower bound.</param>
         /// <param name="upper">The inclusive upper bound.</param>
-        /// <returns>True if the value is between the bounds; otherwise, false.</returns>
-        public static bool Between<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(this T value, T lower, T upper) => throw null!;
+        /// <returns>This method is intended to be used only within expression definitions (such as LINQ expression trees) and should not be called at runtime.</returns>
+        public static bool Between<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, T lower, T upper) => throw null!;
 
         /// <summary>
         /// Indicates that the attribute exists in the DynamoDB item.
@@ -61,7 +57,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="_">The object representing the attribute to check.</param>
         /// <returns>True if the attribute exists; otherwise, false.</returns>
-        public static bool AttributeExists(this object _) => throw null!;
+        public static bool AttributeExists(object _) => throw null!;
 
         /// <summary>
         /// Indicates that the attribute does not exist in the DynamoDB item.
@@ -69,8 +65,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// This method is only used inside expression trees and should not be called at runtime.
         /// </summary>
         /// <param name="_">The object representing the attribute to check.</param>
-        /// <returns>True if the attribute does not exist; otherwise, false.</returns>
-        public static bool AttributeNotExists(this object _) => throw null!;
+        /// <returns>This method is intended to be used only within expression definitions (such as LINQ expression trees) and should not be called at runtime.</returns>
+        public static bool AttributeNotExists(object _) => throw null!;
 
         /// <summary>
         /// Indicates that the attribute is of the specified DynamoDB type.
@@ -79,8 +75,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="_">The object representing the attribute to check.</param>
         /// <param name="dynamoDbType">The DynamoDB attribute type to compare against.</param>
-        /// <returns>True if the attribute is of the specified type; otherwise, false.</returns>
-        public static bool AttributeType(this object _, DynamoDBAttributeType dynamoDbType) => throw null!;
+        /// <returns>This method is intended to be used only within expression definitions (such as LINQ expression trees) and should not be called at runtime.</returns>
+        public static bool AttributeType(object _, string dynamoDbType) => throw null!;
     }
 
     /// <summary>
@@ -140,8 +136,43 @@ namespace Amazon.DynamoDBv2.DataModel
                 // If the expression is a UnaryExpression, check its Operand
                 UnaryExpression unary => unary.Operand as ConstantExpression,
                 NewExpression => throw new NotSupportedException($"Unsupported expression type {expr.Type}"),
+                MemberExpression member => GetConstantFromMember(member),
                 _ => null
             };
+        }
+
+        private static ConstantExpression GetConstantFromMember(MemberExpression member)
+        {
+            var memberExpression= member.Expression;
+            var memberName= member.Member.Name;
+            if (memberExpression==null)
+            {
+                throw new InvalidOperationException("MemberExpression does not have an associated expression.");
+            }
+            var constant= GetConstant(memberExpression);
+
+            var value= constant?.Value;
+            if (value != null)
+            {
+                // Use reflection to get the value of the member
+                var memberInfo = value.GetType().GetMember(memberName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).FirstOrDefault();
+                if (memberInfo is FieldInfo field)
+                {
+                    var fieldValue = field.GetValue(value);
+                    return Expression.Constant(fieldValue, field.FieldType);
+                }
+                else if (memberInfo is PropertyInfo property)
+                {
+                    var propertyValue = property.GetValue(value);
+                    return Expression.Constant(propertyValue, property.PropertyType);
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Member '{memberName}' not found on type '{value.GetType()}'.");
+                }
+            }
+
+            return constant ?? throw new InvalidOperationException($"Cannot extract constant from MemberExpression: {member}");
         }
 
         internal static bool IsComparison(ExpressionType type)
@@ -153,15 +184,27 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal static MemberExpression GetMember(Expression expr)
         {
-            if (expr is MemberExpression memberExpr)
-                return memberExpr;
+            switch (expr)
+            {
+                case MemberExpression memberExpr:
+                    return memberExpr;
+                case UnaryExpression ue:
+                    return GetMember(ue.Operand);
+                // Handle indexer access (get_Item) for lists/arrays/dictionaries
+                case MethodCallExpression methodCall:
+                    switch (methodCall.Method.Name)
+                    {
+                        case "get_Item":
+                            return GetMember(methodCall.Object);
+                        case "First":
+                        case "FirstOrDefault":
+                            if (methodCall.Arguments.Count > 0)
+                                return GetMember(methodCall.Arguments[0]);
+                            break;
+                    }
 
-            if (expr is UnaryExpression ue)
-                return GetMember(ue.Operand);
-
-            // Handle indexer access (get_Item) for lists/arrays/dictionaries
-            if (expr is MethodCallExpression methodCall && methodCall.Method.Name == "get_Item")
-                return GetMember(methodCall.Object);
+                    break;
+            }
 
             return null;
         }

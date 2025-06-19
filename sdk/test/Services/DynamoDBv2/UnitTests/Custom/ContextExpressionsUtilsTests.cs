@@ -79,6 +79,59 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
+        public void GetConstant_ReturnsConstantFromMember_Field()
+        {
+            var testObj = new TestClass { Field = 123 };
+            Expression<Func<int>> expr = () => testObj.Field;
+            var memberExpr = (MemberExpression)expr.Body;
+            var result = ContextExpressionsUtils.GetConstant(memberExpr);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(123, result.Value);
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsConstantFromMember_Property()
+        {
+            var testObj = new TestClass { Property = 456 };
+            Expression<Func<int>> expr = () => testObj.Property;
+            var memberExpr = (MemberExpression)expr.Body;
+            var result = ContextExpressionsUtils.GetConstant(memberExpr);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(456, result.Value);
+        }
+
+        [TestMethod]
+        public void GetConstant_ThrowsForUnsupportedNewExpression()
+        {
+            Expression expr = Expression.New(typeof(TestClass));
+            Assert.ThrowsException<NotSupportedException>(() => ContextExpressionsUtils.GetConstant(expr));
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsConstantFromNestedMember()
+        {
+            var inner = new TestClass { Field = 99, Property = 100 };
+            var outer = new NestedTestClass { Inner = inner };
+            Expression<Func<int>> expr = () => outer.Inner.Field;
+            var memberExpr = (MemberExpression)expr.Body;
+            var result = ContextExpressionsUtils.GetConstant(memberExpr);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(99, result.Value);
+        }
+
+        class NestedTestClass
+        {
+            public TestClass Inner { get; set; }
+        }
+
+        class TestClass
+        {
+            public int Field;
+            public int Property { get; set; }
+            public List<bool> Array { get; set; }
+        }
+
+        [TestMethod]
         public void IsComparison_ReturnsTrueForComparisonTypes()
         {
             Assert.IsTrue(ContextExpressionsUtils.IsComparison(ExpressionType.Equal));
@@ -100,6 +153,62 @@ namespace AWSSDK_DotNet.UnitTests
         {
             Expression<Func<int>> expr = () => 5 + 3;
             Assert.IsNull(ContextExpressionsUtils.GetMember(expr.Body));
+        }
+
+                [TestMethod]
+        public void GetMember_ReturnsMemberExpression_Direct()
+        {
+            Expression<Func<TestClass, int>> expr = t => t.Field;
+            var memberExpr = expr.Body as MemberExpression;
+            var result = ContextExpressionsUtils.GetMember(expr.Body);
+            Assert.AreEqual(memberExpr, result);
+        }
+
+        [TestMethod]
+        public void GetMember_ReturnsMemberExpression_FromUnary()
+        {
+            Expression<Func<TestClass, object>> expr = t => (object)t.Property;
+            var result = ContextExpressionsUtils.GetMember(expr.Body);
+            Assert.IsNotNull(result);
+            Assert.AreEqual("Property", result.Member.Name);
+        }
+
+        [TestMethod]
+        public void GetMember_ReturnsMemberExpression_FirstOrDefault()
+        {
+            Expression<Func<TestClass, bool>> expr = l => l.Array.FirstOrDefault() == true;
+            var methodCall = expr.Body as BinaryExpression;
+            var result = ContextExpressionsUtils.GetMember(methodCall.Left);
+            Assert.IsNotNull(result);
+            Assert.AreEqual("Array", result.Member.Name);
+        }
+
+        [TestMethod]
+        public void GetMember_ReturnsMemberExpression_FromIndexer()
+        {
+            Expression<Func<TestClass, bool>> expr = l => l.Array[0] == true;
+            var methodCall = expr.Body as BinaryExpression;
+            var result = ContextExpressionsUtils.GetMember(methodCall.Left);
+            Assert.IsNotNull(result);
+            Assert.AreEqual("Array", result.Member.Name);
+        }
+
+        [TestMethod]
+        public void GetMember_ReturnsMemberExpression_First()
+        {
+            Expression<Func<TestClass, bool>> expr = l => l.Array.First() == true;
+            var methodCall = expr.Body as BinaryExpression;
+            var result = ContextExpressionsUtils.GetMember(methodCall.Left);
+            Assert.IsNotNull(result);
+            Assert.AreEqual("Array", result.Member.Name);
+        }
+
+        [TestMethod]
+        public void GetMember_ReturnsNull_ForNonMember()
+        {
+            Expression<Func<int>> expr = () => 1 + 2;
+            var result = ContextExpressionsUtils.GetMember(expr.Body);
+            Assert.IsNull(result);
         }
 
         [TestMethod]

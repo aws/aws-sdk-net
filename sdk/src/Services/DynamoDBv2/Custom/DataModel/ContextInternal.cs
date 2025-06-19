@@ -1791,8 +1791,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (expr.Arguments.Count == 2 && expr.Object == null)
             {
-                if (expr.Arguments[0] is MemberExpression memberObj &&
-                    expr.Arguments[1] is ConstantExpression typeExpr)
+                var memberObj = ContextExpressionsUtils.GetMember(expr.Arguments[0]);
+                var typeExpr = ContextExpressionsUtils.GetConstant(expr.Arguments[1]);
+                if (memberObj!=null && typeExpr!=null)
                 {
                     SetExpressionNodeAttributes(storageConfig, memberObj, typeExpr, node, flatConfig);
                 }

@@ -689,7 +689,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual("CloudSpotter", byDictionaryNested[0].Name);
         }
 
-
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void TestContext_Scan_WithExpressionFilter()
@@ -736,8 +735,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Context.Save(employee4);
 
             // Numeric equality
+            int age = 45;
             var exprAgeEq = new ContextExpression();
-            exprAgeEq.SetFilter<Employee>(e => e.Age == 45);
+            exprAgeEq.SetFilter<Employee>(e => e.Age == age);
             var ageEqResult = Context.Scan<Employee>(exprAgeEq).ToList();
             Assert.AreEqual(2, ageEqResult.Count);
 
@@ -810,7 +810,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Between
             var exprBetween = new ContextExpression();
-            exprBetween.SetFilter<Employee>(e => e.Age.Between(40, 50));
+            exprBetween.SetFilter<Employee>(e => ContextExpression.Between(e.Age, 40, 50));
             var betweenResult = Context.Scan<Employee>(exprBetween).ToList();
             Assert.AreEqual(3, betweenResult.Count);
             Assert.IsTrue(betweenResult.All(e => e.Age >= 40 && e.Age <= 50));
@@ -822,14 +822,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsTrue(stringContainsResult.Any(e => e.Name == "Bob" || e.Name == "Rob" || e.Name == "Cob"));
 
             var exprNullCheck = new ContextExpression();
-            exprNullCheck.SetFilter<Employee>(e => e.MiddleName.AttributeExists());
+            exprNullCheck.SetFilter<Employee>(e => ContextExpression.AttributeExists(e.MiddleName));
             var nullCheckResult = Context.Scan<Employee>(exprNullCheck).ToList();
             Assert.IsTrue(nullCheckResult.Count == 1);
 
             var exprNull = new ContextExpression();
-            exprNull.SetFilter<Employee>(e => e.MiddleName.AttributeNotExists());
+            exprNull.SetFilter<Employee>(e => ContextExpression.AttributeNotExists(e.MiddleName));
             var nullResult = Context.Scan<Employee>(exprNull).ToList();
             Assert.IsTrue(nullResult.Count == 4);
+
+            //AttributeType scenario: filter for employees where MiddleName is a DynamoDB String
+            var empWithStringMiddleName = new Employee
+            {
+                Name = "TypeTest",
+                Age = 55,
+                CurrentStatus = Status.Inactive,
+                MiddleName = "StringType",
+                CompanyName = "test"
+            };
+            Context.Save(empWithStringMiddleName);
+
+            var attributeType = DynamoDBAttributeType.S.Value;
+            var exprAttributeType = new ContextExpression();
+            exprAttributeType.SetFilter<Employee>(e => ContextExpression.AttributeType(e.MiddleName, attributeType));
+            var attributeTypeResult = Context.Scan<Employee>(exprAttributeType).ToList();
+            Assert.IsTrue(attributeTypeResult.Any(e => e.Name == "TypeTest"));
 
             // --- Enum scenario ---
             // Scan for employees with CurrentStatus == Status.Active
