@@ -229,6 +229,21 @@
             "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A BadRequest error.</li> </ol> <p>Implementations must be able to successfully take a response and properly (de)serialize successful and error responses based on the the presence of the</p>",
             "idempotent": true
         },
+        "HttpEmptyPrefixHeaders": {
+            "name": "HttpEmptyPrefixHeaders",
+            "http": {
+                "method": "GET",
+                "requestUri": "/HttpEmptyPrefixHeaders",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpEmptyPrefixHeadersInput"
+            },
+            "output": {
+                "shape": "HttpEmptyPrefixHeadersOutput"
+            },
+            "documentation": "<p>Clients that perform this test extract all headers from the response.</p>"
+        },
         "HttpEnumPayload": {
             "name": "HttpEnumPayload",
             "http": {
@@ -476,11 +491,11 @@
                 "responseCode": 200
             },
             "input": {
-                "shape": "NestedXmlMapWithXmlNameInputOutput",
+                "shape": "NestedXmlMapWithXmlNameRequest",
                 "locationName": "NestedXmlMapWithXmlNameRequest"
             },
             "output": {
-                "shape": "NestedXmlMapWithXmlNameInputOutput"
+                "shape": "NestedXmlMapWithXmlNameResponse"
             },
             "documentation": "<p>Nested Xml Maps with key/values with @xmlName</p>"
         },
@@ -1337,6 +1352,36 @@
             "type": "timestamp",
             "timestampFormat": "rfc822"
         },
+        "HttpEmptyPrefixHeadersInput": {
+            "type": "structure",
+            "members": {
+                "prefixHeaders": {
+                    "shape": "StringMap",
+                    "location": "headers",
+                    "locationName": ""
+                },
+                "specificHeader": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "hello"
+                }
+            }
+        },
+        "HttpEmptyPrefixHeadersOutput": {
+            "type": "structure",
+            "members": {
+                "prefixHeaders": {
+                    "shape": "StringMap",
+                    "location": "headers",
+                    "locationName": ""
+                },
+                "specificHeader": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "hello"
+                }
+            }
+        },
         "HttpPayloadTraitsInputOutput": {
             "type": "structure",
             "members": {
@@ -1786,14 +1831,6 @@
                 "locationName": "InnerValue"
             }
         },
-        "NestedXmlMapWithXmlNameInputOutput": {
-            "type": "structure",
-            "members": {
-                "nestedXmlMapWithXmlNameMap": {
-                    "shape": "NestedXmlMapWithXmlNameMap"
-                }
-            }
-        },
         "NestedXmlMapWithXmlNameMap": {
             "type": "map",
             "key": {
@@ -1802,6 +1839,22 @@
             },
             "value": {
                 "shape": "NestedXmlMapWithXmlNameInnerMap"
+            }
+        },
+        "NestedXmlMapWithXmlNameRequest": {
+            "type": "structure",
+            "members": {
+                "nestedXmlMapWithXmlNameMap": {
+                    "shape": "NestedXmlMapWithXmlNameMap"
+                }
+            }
+        },
+        "NestedXmlMapWithXmlNameResponse": {
+            "type": "structure",
+            "members": {
+                "nestedXmlMapWithXmlNameMap": {
+                    "shape": "NestedXmlMapWithXmlNameMap"
+                }
             }
         },
         "NestedXmlMapsRequest": {

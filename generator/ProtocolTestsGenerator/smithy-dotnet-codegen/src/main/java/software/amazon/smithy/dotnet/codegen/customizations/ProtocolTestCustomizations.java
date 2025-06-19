@@ -20,6 +20,14 @@ public final class ProtocolTestCustomizations {
             "SparseBooleanMap",
             "SparseNumberMap"
     );
+    
+    // These operations don't exist in C2J
+    public static final List<String> OperationsToSkip = Arrays.asList(
+            "RpcV2CborSparseMaps",
+            "OperationWithDefaults",
+            "SparseNullsOperation"
+    );
+
     //The rename is written in smithy and since we're generating from the C2J structures we will skip this test.
     public static final List<String> TestsToSkip = Arrays.asList(
             "RestJsonSerializeRenamedStructureUnionValue",

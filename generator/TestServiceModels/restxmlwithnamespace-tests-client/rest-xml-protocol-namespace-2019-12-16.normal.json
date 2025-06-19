@@ -25,14 +25,14 @@
                 "responseCode": 200
             },
             "input": {
-                "shape": "SimpleScalarPropertiesInputOutput",
+                "shape": "SimpleScalarPropertiesRequest",
                 "locationName": "SimpleScalarPropertiesRequest",
                 "xmlNamespace": {
                     "uri": "https://example.com"
                 }
             },
             "output": {
-                "shape": "SimpleScalarPropertiesInputOutput"
+                "shape": "SimpleScalarPropertiesResponse"
             },
             "idempotent": true
         }
@@ -68,7 +68,7 @@
                 }
             }
         },
-        "SimpleScalarPropertiesInputOutput": {
+        "SimpleScalarPropertiesRequest": {
             "type": "structure",
             "members": {
                 "foo": {
@@ -102,10 +102,49 @@
                 },
                 "Nested": {
                     "shape": "NestedWithNamespace",
-                    "xmlNamespace": {
-                        "prefix": "xsi",
-                        "uri": "https://example.com"
-                    }
+                    "xmlNamespace": "https://example.com"
+                },
+                "doubleValue": {
+                    "shape": "Double",
+                    "locationName": "DoubleDribble"
+                }
+            }
+        },
+        "SimpleScalarPropertiesResponse": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "X-Foo"
+                },
+                "stringValue": {
+                    "shape": "String"
+                },
+                "trueBooleanValue": {
+                    "shape": "Boolean"
+                },
+                "falseBooleanValue": {
+                    "shape": "Boolean"
+                },
+                "byteValue": {
+                    "shape": "Integer"
+                },
+                "shortValue": {
+                    "shape": "Integer"
+                },
+                "integerValue": {
+                    "shape": "Integer"
+                },
+                "longValue": {
+                    "shape": "Long"
+                },
+                "floatValue": {
+                    "shape": "Float"
+                },
+                "Nested": {
+                    "shape": "NestedWithNamespace",
+                    "xmlNamespace": "https://example.com"
                 },
                 "doubleValue": {
                     "shape": "Double",
