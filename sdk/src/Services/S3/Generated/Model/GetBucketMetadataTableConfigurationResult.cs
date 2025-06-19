@@ -34,28 +34,28 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetBucketMetadataTableConfigurationResult
     {
-        private ErrorDetails _errorDetails;
+        private ErrorDetails _error;
         private MetadataTableConfigurationResult _metadataTableConfigurationResult;
         private string _status;
 
         /// <summary>
-        /// Gets and sets the property ErrorDetails. 
+        /// Gets and sets the property Error. 
         /// <para>
         ///  If the <c>CreateBucketMetadataTableConfiguration</c> request succeeds, but S3 Metadata
         /// was unable to create the table, this structure contains the error code and error message.
         /// 
         /// </para>
         /// </summary>
-        public ErrorDetails ErrorDetails
+        public ErrorDetails Error
         {
-            get { return this._errorDetails; }
-            set { this._errorDetails = value; }
+            get { return this._error; }
+            set { this._error = value; }
         }
 
-        // Check to see if ErrorDetails property is set
-        internal bool IsSetErrorDetails()
+        // Check to see if Error property is set
+        internal bool IsSetError()
         {
-            return this._errorDetails != null;
+            return this._error != null;
         }
 
         /// <summary>

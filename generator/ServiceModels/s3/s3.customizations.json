@@ -113,10 +113,13 @@
                 }
             ]
         },
-        "GetBucketMetadataTableConfigurationResult":{
-            "modify":[
+        "ReplicationDestination" : {
+            "modify": [
                 {
-                    "Error":{"emitPropertyName":"ErrorDetails"}
+                    "Account" : {"emitPropertyName": "AccountId"}
+                },
+                {
+                    "Bucket" : { "emitPropertyName": "BucketArn"}
                 }
             ]
         },
@@ -124,6 +127,13 @@
             "modify":[
                 {
                     "LocationConstraint":{"emitPropertyName": "Location"}
+                }
+            ]
+        },
+        "GetBucketReplicationOutput":{
+            "modify":[
+                {
+                    "ReplicationConfiguration":{"emitPropertyName": "Configuration"}
                 }
             ]
         },
@@ -179,10 +189,27 @@
                 }
             ]
         },
+        "PutBucketReplicationRequest": {
+            "modify": [
+                {
+                    "ReplicationConfiguration" : {"emitPropertyName": "Configuration"}
+                }
+            ]
+        },
         "QueueConfigurationDeprecated": {
             "modify": [
                 {
                     "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
+                }
+            ]
+        },
+        "ReplicationRule":{
+            "modify":[
+                {
+                    "Prefix" : {"deprecatedMessage" : "This property is deprecated. Use Filter instead."}
+                },
+                {
+                    "ID": { "emitPropertyName": "Id" }
                 }
             ]
         },
@@ -232,6 +259,13 @@
                 },
                 {
                     "SSEAlgorithm": {"emitPropertyName": "ServerSideEncryptionAlgorithm"}
+                }
+            ]
+        },
+        "SseKmsEncryptedObjects":{
+            "modify":[
+                {
+                    "Status": {"emitPropertyName" : "SseKmsEncryptedObjectsStatus"}
                 }
             ]
         },
@@ -341,6 +375,12 @@
         },
         "BucketLocationConstraint":{
             "renameShape": "S3Region"
+        },
+        "Destination" :{
+            "renameShape" : "ReplicationDestination"
+        },
+        "StorageClass":{
+            "renameShape": "S3StorageClass"
         }
     },
     "emitDifferentPrivateDataType":{

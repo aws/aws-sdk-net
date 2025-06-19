@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetBucketMetadataTableConfigurationResult Object
+    /// Response Unmarshaller for ReplicationRuleFilter Object
     /// </summary>  
-    public class GetBucketMetadataTableConfigurationResultUnmarshaller : IXmlUnmarshaller<GetBucketMetadataTableConfigurationResult, XmlUnmarshallerContext>
+    public class ReplicationRuleFilterUnmarshaller : IXmlUnmarshaller<ReplicationRuleFilter, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GetBucketMetadataTableConfigurationResult Unmarshall(XmlUnmarshallerContext context)
+        public ReplicationRuleFilter Unmarshall(XmlUnmarshallerContext context)
         {
-            GetBucketMetadataTableConfigurationResult unmarshalledObject = new GetBucketMetadataTableConfigurationResult();
+            ReplicationRuleFilter unmarshalledObject = new ReplicationRuleFilter();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,22 +56,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Error", targetDepth))
+                    if (context.TestExpression("And", targetDepth))
                     {
-                        var unmarshaller = ErrorDetailsUnmarshaller.Instance;
-                        unmarshalledObject.Error = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ReplicationRuleAndOperatorUnmarshaller.Instance;
+                        unmarshalledObject.And = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("MetadataTableConfigurationResult", targetDepth))
-                    {
-                        var unmarshaller = MetadataTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.MetadataTableConfigurationResult = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
+                    if (context.TestExpression("Prefix", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        unmarshalledObject.Tag = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -82,12 +82,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        private static GetBucketMetadataTableConfigurationResultUnmarshaller _instance = new GetBucketMetadataTableConfigurationResultUnmarshaller();        
+        private static ReplicationRuleFilterUnmarshaller _instance = new ReplicationRuleFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetBucketMetadataTableConfigurationResultUnmarshaller Instance
+        public static ReplicationRuleFilterUnmarshaller Instance
         {
             get
             {

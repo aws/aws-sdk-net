@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetBucketMetadataTableConfigurationResult Object
+    /// Response Unmarshaller for EncryptionConfiguration Object
     /// </summary>  
-    public class GetBucketMetadataTableConfigurationResultUnmarshaller : IXmlUnmarshaller<GetBucketMetadataTableConfigurationResult, XmlUnmarshallerContext>
+    public class EncryptionConfigurationUnmarshaller : IXmlUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GetBucketMetadataTableConfigurationResult Unmarshall(XmlUnmarshallerContext context)
+        public EncryptionConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            GetBucketMetadataTableConfigurationResult unmarshalledObject = new GetBucketMetadataTableConfigurationResult();
+            EncryptionConfiguration unmarshalledObject = new EncryptionConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,22 +56,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Error", targetDepth))
-                    {
-                        var unmarshaller = ErrorDetailsUnmarshaller.Instance;
-                        unmarshalledObject.Error = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MetadataTableConfigurationResult", targetDepth))
-                    {
-                        var unmarshaller = MetadataTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.MetadataTableConfigurationResult = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
+                    if (context.TestExpression("ReplicaKmsKeyID", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ReplicaKmsKeyID = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -82,12 +70,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        private static GetBucketMetadataTableConfigurationResultUnmarshaller _instance = new GetBucketMetadataTableConfigurationResultUnmarshaller();        
+        private static EncryptionConfigurationUnmarshaller _instance = new EncryptionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetBucketMetadataTableConfigurationResultUnmarshaller Instance
+        public static EncryptionConfigurationUnmarshaller Instance
         {
             get
             {

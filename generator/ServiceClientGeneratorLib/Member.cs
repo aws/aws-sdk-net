@@ -992,6 +992,15 @@ namespace ServiceClientGenerator
             {
                 string message = this.model.Customizations.GetPropertyModifier(this.OwningShape.Name, this._name)?.DeprecationMessage ??
                                  this.data[DeprecatedMessageKey].CastToString();
+                if (message == null)
+                {
+                    var shapeModifier = this.model.Customizations.GetShapeModifier(this.OwningShape.Name);
+                    if (shapeModifier != null && shapeModifier.PropertyModifier(this._name) != null)
+                    {
+                        var propertyModifier = shapeModifier.PropertyModifier(this._name);
+                        message = propertyModifier.DeprecationMessage;
+                    }
+                }
                 // TODO: Fill in s3 deprecation messages
                 if (message == null)
                     throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for member {0}.{1}.\nFor example: \"MemberName\":{{ ... \"deprecated\":true, \"deprecatedMessage\":\"This property is deprecated, use XXX instead.\"}}", this.OwningShape.Name, this._name));
