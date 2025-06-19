@@ -40,6 +40,7 @@ namespace Amazon.EMRServerless.Model
         private AutoStartConfig _autoStartConfiguration;
         private AutoStopConfig _autoStopConfiguration;
         private DateTime? _createdAt;
+        private IdentityCenterConfiguration _identityCenterConfiguration;
         private ImageConfiguration _imageConfiguration;
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = AWSConfigs.InitializeCollections ? new Dictionary<string, InitialCapacityConfig>() : null;
         private InteractiveConfiguration _interactiveConfiguration;
@@ -167,6 +168,25 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterConfiguration. 
+        /// <para>
+        /// The IAM Identity Center configuration applied to enable trusted identity propagation.
+        /// 
+        /// </para>
+        /// </summary>
+        public IdentityCenterConfiguration IdentityCenterConfiguration
+        {
+            get { return this._identityCenterConfiguration; }
+            set { this._identityCenterConfiguration = value; }
+        }
+
+        // Check to see if IdentityCenterConfiguration property is set
+        internal bool IsSetIdentityCenterConfiguration()
+        {
+            return this._identityCenterConfiguration != null;
         }
 
         /// <summary>

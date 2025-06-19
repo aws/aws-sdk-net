@@ -112,6 +112,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetIdentityCenterConfiguration())
+            {
+                context.Writer.WritePropertyName("identityCenterConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IdentityCenterConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IdentityCenterConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetImageConfiguration())
             {
                 context.Writer.WritePropertyName("imageConfiguration");

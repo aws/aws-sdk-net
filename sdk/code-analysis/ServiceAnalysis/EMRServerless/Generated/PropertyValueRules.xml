@@ -396,6 +396,22 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.IdentityCenterConfiguration.IdentityCenterApplicationArn</property>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.IdentityCenterConfiguration.IdentityCenterInstanceArn</property>
+    <min>10</min>
+    <max>1024</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.IdentityCenterConfigurationInput.IdentityCenterInstanceArn</property>
+    <min>10</min>
+    <max>1024</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.ImageConfiguration.ImageUri</property>
     <min>1</min>
     <max>1024</max>
