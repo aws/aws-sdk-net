@@ -102,6 +102,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("identityCenterConfiguration", targetDepth))
+                {
+                    var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IdentityCenterConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageConfiguration", targetDepth))
                 {
                     var unmarshaller = ImageConfigurationUnmarshaller.Instance;
