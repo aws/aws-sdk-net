@@ -70,6 +70,7 @@ namespace Amazon.Util
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
 
         private const int MaxIsSetMethodsCacheSize = 50;
+        private const long TicksPerSecond = 10_000_000;
 
         public static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
@@ -598,7 +599,7 @@ namespace Amazon.Util
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixEpochSeconds(int seconds)
         {
-            return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc);
+            return new DateTime(seconds * TicksPerSecond + EPOCH_START.Ticks, DateTimeKind.Utc);
         }
 
         /// <summary>
@@ -608,7 +609,18 @@ namespace Amazon.Util
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixLongEpochSeconds(long seconds)
         {
-            return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc);
+            return new DateTime(seconds * TicksPerSecond + EPOCH_START.Ticks, DateTimeKind.Utc);
+        }
+
+        /// <summary>
+        /// Utility method for converting Unix epoch seconds to DateTime structure.
+        /// </summary>
+        /// <param name="seconds">The number of seconds since January 1, 1970.</param>
+        /// <returns>Converted DateTime structure</returns>
+        public static DateTime ConvertFromUnixDoubleEpochSeconds(double seconds)
+        {
+            var ticksSinceEpoch = (long)(seconds * TicksPerSecond);
+            return new DateTime(ticksSinceEpoch + EPOCH_START.Ticks, DateTimeKind.Utc);
         }
 
         /// <summary>
