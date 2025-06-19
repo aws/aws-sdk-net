@@ -13,7 +13,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestClass]
     public class Replicationtests : TestBase<AmazonS3Client>
     {
-        //[Ignore("This test is disabled, it depends on a preexisiting role arn:aws:iam::pikc123456:role/abcdef which does not exist. The test should create it's own role instead.")]
+        [Ignore("This test is disabled, it depends on a preexisiting role arn:aws:iam::pikc123456:role/abcdef which does not exist. The test should create it's own role instead.")]
         [TestMethod]
         [TestCategory("S3")]
         public void TestReplicationConfiguration()
@@ -21,7 +21,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestReplicationConfigurationForPrefix("foo-");
         }
 
-        //[Ignore("This test is disabled, it depends on a preexisiting role arn:aws:iam::pikc123456:role/abcdef which does not exist. The test should create it's own role instead.")]
+        [Ignore("This test is disabled, it depends on a preexisiting role arn:aws:iam::pikc123456:role/abcdef which does not exist. The test should create it's own role instead.")]
         [TestMethod]
         [TestCategory("S3")]
         public void TestReplicationConfigurationNoPrefix()
