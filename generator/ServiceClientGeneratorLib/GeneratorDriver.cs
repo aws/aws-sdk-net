@@ -1379,7 +1379,7 @@ namespace ServiceClientGenerator
         /// Sets the marshaller of the generator based on the service type
         /// </summary>
         /// <param name="marshaller">The marshaller to be set</param>
-        /// <param name="normalizeMarshallers">If the service type is a type of json then normalizeMarshallers is set to true, false otherwise</param>
+        /// <param name="normalizeMarshallers">If the service type is using structure marshallers then normalizeMarshallers is set to true, false otherwise</param>
         void GetRequestMarshaller(out BaseRequestMarshaller marshaller, out bool normalizeMarshallers)
         {
             normalizeMarshallers = false;
@@ -1388,6 +1388,10 @@ namespace ServiceClientGenerator
                 case ServiceType.Rest_Json:
                 case ServiceType.Json:
                     marshaller = new JsonRPCRequestMarshaller();
+                    normalizeMarshallers = true;
+                    break;
+                case ServiceType.Cbor:
+                    marshaller = new CborRequestMarshaller();
                     normalizeMarshallers = true;
                     break;
                 case ServiceType.Query:
@@ -1412,6 +1416,8 @@ namespace ServiceClientGenerator
                 case ServiceType.Rest_Json:
                 case ServiceType.Json:
                     return new JsonRPCStructureMarshaller();
+                case ServiceType.Cbor:
+                    return new CborStructureMarshaller();
                 default:
                     throw new Exception("No structure marshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
@@ -1433,6 +1439,8 @@ namespace ServiceClientGenerator
                     return new AWSQueryResponseUnmarshaller();
                 case ServiceType.Rest_Xml:
                     return new RestXmlResponseUnmarshaller();
+                case ServiceType.Cbor:
+                    return new CborResponseUnmarshaller();
                 default:
                     throw new Exception("No response unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
@@ -1453,6 +1461,8 @@ namespace ServiceClientGenerator
                     return new AWSQueryStructureUnmarshaller();
                 case ServiceType.Rest_Xml:
                     return new RestXmlStructureUnmarshaller();
+                case ServiceType.Cbor:
+                    return new CborStructureUnmarshaller();
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
@@ -1472,6 +1482,8 @@ namespace ServiceClientGenerator
                     return new AWSQueryExceptionUnmarshaller();
                 case ServiceType.Rest_Xml:
                     return new RestXmlExceptionUnmarshaller();
+                case ServiceType.Cbor:
+                    return new CborExceptionUnmarshaller();
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
