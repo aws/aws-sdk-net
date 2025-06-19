@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Parameter information for key material import using the asymmetric ECDH key exchange
-    /// method.
+    /// Key derivation parameter information for key material import using asymmetric ECDH
+    /// key exchange method.
     /// </summary>
     public partial class ImportDiffieHellmanTr31KeyBlock
     {
@@ -47,7 +47,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityPublicKeyIdentifier. 
         /// <para>
-        /// The <c>keyARN</c> of the certificate that signed the client's <c>PublicKeyCertificate</c>.
+        /// The <c>keyARN</c> of the CA that signed the <c>PublicKeyCertificate</c> for the client's
+        /// receiving ECC key pair.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]
@@ -66,7 +67,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property DerivationData. 
         /// <para>
-        /// Derivation data used to derive an ECDH key.
+        /// The shared information used when deriving a key using ECDH.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +86,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property DeriveKeyAlgorithm. 
         /// <para>
-        /// The key algorithm of the derived ECDH key.
+        /// The key algorithm of the shared derived ECDH key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +105,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property KeyDerivationFunction. 
         /// <para>
-        /// The key derivation function to use for deriving a key using ECDH.
+        /// The key derivation function to use when deriving a key using ECDH.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,7 +124,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property KeyDerivationHashAlgorithm. 
         /// <para>
-        /// The hash type to use for deriving a key using ECDH.
+        /// The hash type to use when deriving a key using ECDH.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -142,7 +143,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property PrivateKeyIdentifier. 
         /// <para>
-        /// The <c>keyARN</c> of the asymmetric ECC key.
+        /// The <c>keyARN</c> of the asymmetric ECC key created within Amazon Web Services Payment
+        /// Cryptography.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]
@@ -161,8 +163,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property PublicKeyCertificate. 
         /// <para>
-        /// The client's public key certificate in PEM format (base64 encoded) to use for ECDH
-        /// key derivation.
+        /// The public key certificate of the client's receiving ECC key pair, in PEM format (base64
+        /// encoded), to use for ECDH key derivation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]

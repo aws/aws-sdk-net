@@ -44,7 +44,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property ImportToken. 
         /// <para>
         /// The import token to initiate key import into Amazon Web Services Payment Cryptography.
-        /// The import token expires after 7 days. You can use the same import token to import
+        /// The import token expires after 30 days. You can use the same import token to import
         /// multiple keys to the same service account.
         /// </para>
         /// </summary>
@@ -103,7 +103,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property WrappingKeyCertificate. 
         /// <para>
         /// The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for
-        /// use within the TR-34 key block. The certificate expires in 7 days.
+        /// use within the TR-34 key block. The certificate expires in 30 days.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]

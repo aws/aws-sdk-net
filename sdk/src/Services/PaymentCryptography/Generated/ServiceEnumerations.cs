@@ -173,6 +173,22 @@ namespace Amazon.PaymentCryptography
         /// </summary>
         public static readonly KeyAlgorithm ECC_NIST_P521 = new KeyAlgorithm("ECC_NIST_P521");
         /// <summary>
+        /// Constant HMAC_SHA224 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm HMAC_SHA224 = new KeyAlgorithm("HMAC_SHA224");
+        /// <summary>
+        /// Constant HMAC_SHA256 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm HMAC_SHA256 = new KeyAlgorithm("HMAC_SHA256");
+        /// <summary>
+        /// Constant HMAC_SHA384 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm HMAC_SHA384 = new KeyAlgorithm("HMAC_SHA384");
+        /// <summary>
+        /// Constant HMAC_SHA512 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm HMAC_SHA512 = new KeyAlgorithm("HMAC_SHA512");
+        /// <summary>
         /// Constant RSA_2048 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm RSA_2048 = new KeyAlgorithm("RSA_2048");
@@ -242,6 +258,10 @@ namespace Amazon.PaymentCryptography
         /// Constant CMAC for KeyCheckValueAlgorithm
         /// </summary>
         public static readonly KeyCheckValueAlgorithm CMAC = new KeyCheckValueAlgorithm("CMAC");
+        /// <summary>
+        /// Constant HMAC for KeyCheckValueAlgorithm
+        /// </summary>
+        public static readonly KeyCheckValueAlgorithm HMAC = new KeyCheckValueAlgorithm("HMAC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -816,6 +836,22 @@ namespace Amazon.PaymentCryptography
         /// Constant AES_256 for SymmetricKeyAlgorithm
         /// </summary>
         public static readonly SymmetricKeyAlgorithm AES_256 = new SymmetricKeyAlgorithm("AES_256");
+        /// <summary>
+        /// Constant HMAC_SHA224 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm HMAC_SHA224 = new SymmetricKeyAlgorithm("HMAC_SHA224");
+        /// <summary>
+        /// Constant HMAC_SHA256 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm HMAC_SHA256 = new SymmetricKeyAlgorithm("HMAC_SHA256");
+        /// <summary>
+        /// Constant HMAC_SHA384 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm HMAC_SHA384 = new SymmetricKeyAlgorithm("HMAC_SHA384");
+        /// <summary>
+        /// Constant HMAC_SHA512 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm HMAC_SHA512 = new SymmetricKeyAlgorithm("HMAC_SHA512");
         /// <summary>
         /// Constant TDES_2KEY for SymmetricKeyAlgorithm
         /// </summary>
