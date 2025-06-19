@@ -339,6 +339,31 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RestXmlResponseUnmarshaller.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\Marshallers\CborExceptionUnmarshaller.cs">
+      <DependentUpon>CborExceptionUnmarshaller.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Generators\Marshallers\CborResponseUnmarshaller.cs">
+      <DependentUpon>CborResponseUnmarshaller.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Generators\Marshallers\CborStructureMarshaller.cs">
+      <DependentUpon>CborStructureMarshaller.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Generators\Marshallers\CborStructureUnmarshaller.cs">
+      <DependentUpon>CborStructureUnmarshaller.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Generators\Marshallers\CborRequestMarshaller.cs">
+      <DependentUpon>CborRequestMarshaller.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Generators\SourceFiles\EventCollectionAddImplementation.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -622,6 +647,30 @@
     <None Update="Generators\Marshallers\EventStreamPublisherMarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EventStreamPublisherMarshaller.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\Marshallers\CborExceptionUnmarshaller.tt">
+      <LastGenOutput>CborExceptionUnmarshaller.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Marshallers\CborRequestMarshaller.tt">
+      <LastGenOutput>CborRequestMarshaller.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Marshallers\CborResponseUnmarshaller.tt">
+      <LastGenOutput>CborResponseUnmarshaller.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Marshallers\CborStructureMarshaller.tt">
+      <LastGenOutput>CborStructureMarshaller.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Marshallers\CborStructureUnmarshaller.tt">
+      <LastGenOutput>CborStructureUnmarshaller.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Marshallers\CborRequestMarshaller.tt">
+      <LastGenOutput>CborRequestMarshaller.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
     <None Update="Generators\SourceFiles\EventCollectionAddImplementation.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
