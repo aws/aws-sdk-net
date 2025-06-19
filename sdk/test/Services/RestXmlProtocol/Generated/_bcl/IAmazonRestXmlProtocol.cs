@@ -503,6 +503,34 @@ namespace Amazon.RestXmlProtocol
 
         #endregion
         
+        #region  HttpEmptyPrefixHeaders
+
+
+        /// <summary>
+        /// Clients that perform this test extract all headers from the response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpEmptyPrefixHeaders service method.</param>
+        /// 
+        /// <returns>The response from the HttpEmptyPrefixHeaders service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">REST API Reference for HttpEmptyPrefixHeaders Operation</seealso>
+        HttpEmptyPrefixHeadersResponse HttpEmptyPrefixHeaders(HttpEmptyPrefixHeadersRequest request);
+
+
+
+        /// <summary>
+        /// Clients that perform this test extract all headers from the response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpEmptyPrefixHeaders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the HttpEmptyPrefixHeaders service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">REST API Reference for HttpEmptyPrefixHeaders Operation</seealso>
+        Task<HttpEmptyPrefixHeadersResponse> HttpEmptyPrefixHeadersAsync(HttpEmptyPrefixHeadersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  HttpEnumPayload
 
 
