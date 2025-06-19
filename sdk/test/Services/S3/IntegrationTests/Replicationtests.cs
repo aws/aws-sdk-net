@@ -13,7 +13,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestClass]
     public class Replicationtests : TestBase<AmazonS3Client>
     {
-        [Ignore("This test is disabled, it depends on a preexisiting role arn:aws:iam::pikc123456:role/abcdef which does not exist. The test should create it's own role instead.")]
+        //[Ignore("This test is disabled, it depends on a preexisiting role arn:aws:iam::pikc123456:role/abcdef which does not exist. The test should create it's own role instead.")]
         [TestMethod]
         [TestCategory("S3")]
         public void TestReplicationConfiguration()
@@ -21,7 +21,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestReplicationConfigurationForPrefix("foo-");
         }
 
-        [Ignore("This test is disabled, it depends on a preexisiting role arn:aws:iam::pikc123456:role/abcdef which does not exist. The test should create it's own role instead.")]
+        //[Ignore("This test is disabled, it depends on a preexisiting role arn:aws:iam::pikc123456:role/abcdef which does not exist. The test should create it's own role instead.")]
         [TestMethod]
         [TestCategory("S3")]
         public void TestReplicationConfigurationNoPrefix()
@@ -68,14 +68,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {
-                Client.PutBucketReplication(new PutBucketReplicationRequest { 
+                Client.PutBucketReplication(new PutBucketReplicationRequest 
+                { 
                     BucketName = bucketName,
                     Configuration = new ReplicationConfiguration
                     {
                         Role = roleArn,
-                        Rules =
+                        Rules = new List<ReplicationRule>
                         {
-                            new ReplicationRule 
+                            new ReplicationRule
                             {
                                 Id = UtilityMethods.GenerateName(),
                                 Filter = new ReplicationRuleFilter
@@ -87,8 +88,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                                 {
                                     BucketArn = destinationBucketArn,
                                     StorageClass = storageClass
+                                },
+                                Priority = 1,
+                                DeleteMarkerReplication = new DeleteMarkerReplication
+                                {
+                                    Status = DeleteMarkerReplicationStatus.Enabled
                                 }
-                                
                             }
                         }
                     }
@@ -113,9 +118,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 Assert.IsNotNull(rule);
                 Assert.IsNotNull(rule.Id);
-                Assert.IsNotNull(rule.Filter.Prefix);
                 if (string.IsNullOrEmpty(prefix))
-                    Assert.AreEqual(string.Empty, rule.Filter.Prefix);
+                    Assert.AreEqual(null, rule.Filter.Prefix);
                 else
                     Assert.AreEqual(prefix, rule.Filter.Prefix);
                 Assert.AreEqual(destinationBucketArn, rule.Destination.BucketArn);
