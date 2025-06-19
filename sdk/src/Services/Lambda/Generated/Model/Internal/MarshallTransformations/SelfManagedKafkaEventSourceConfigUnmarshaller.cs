@@ -72,6 +72,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConsumerGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SchemaRegistryConfig", targetDepth))
+                {
+                    var unmarshaller = KafkaSchemaRegistryConfigUnmarshaller.Instance;
+                    unmarshalledObject.SchemaRegistryConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -31,7 +31,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// A configuration object that specifies the destination of an event after Lambda processes
-    /// it.
+    /// it. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+    /// a destination</a>.
     /// </summary>
     public partial class DestinationConfig
     {
@@ -59,7 +60,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property OnSuccess. 
         /// <para>
-        /// The destination configuration for successful invocations.
+        /// The destination configuration for successful invocations. Not supported in <c>CreateEventSourceMapping</c>
+        /// or <c>UpdateEventSourceMapping</c>.
         /// </para>
         /// </summary>
         public OnSuccess OnSuccess

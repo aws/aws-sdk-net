@@ -30,29 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-dlq">dead-letter
-    /// queue</a> for failed asynchronous invocations.
+    /// Specific schema validation configuration settings that tell Lambda the message attributes
+    /// you want to validate and filter using your schema registry.
     /// </summary>
-    public partial class DeadLetterConfig
+    public partial class KafkaSchemaValidationConfig
     {
-        private string _targetArn;
+        private KafkaSchemaValidationAttribute _attribute;
 
         /// <summary>
-        /// Gets and sets the property TargetArn. 
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+        ///  The attributes you want your schema registry to validate and filter for. If you selected
+        /// <c>JSON</c> as the <c>EventRecordFormat</c>, Lambda also deserializes the selected
+        /// message attributes. 
         /// </para>
         /// </summary>
-        public string TargetArn
+        public KafkaSchemaValidationAttribute Attribute
         {
-            get { return this._targetArn; }
-            set { this._targetArn = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
-        // Check to see if TargetArn property is set
-        internal bool IsSetTargetArn()
+        // Check to see if Attribute property is set
+        internal bool IsSetAttribute()
         {
-            return this._targetArn != null;
+            return this._attribute != null;
         }
 
     }

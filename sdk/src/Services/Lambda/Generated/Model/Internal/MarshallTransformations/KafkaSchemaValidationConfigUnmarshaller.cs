@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AmazonManagedKafkaEventSourceConfig Object
+    /// Response Unmarshaller for KafkaSchemaValidationConfig Object
     /// </summary>  
-    public class AmazonManagedKafkaEventSourceConfigUnmarshaller : IUnmarshaller<AmazonManagedKafkaEventSourceConfig, XmlUnmarshallerContext>, IUnmarshaller<AmazonManagedKafkaEventSourceConfig, JsonUnmarshallerContext>
+    public class KafkaSchemaValidationConfigUnmarshaller : IUnmarshaller<KafkaSchemaValidationConfig, XmlUnmarshallerContext>, IUnmarshaller<KafkaSchemaValidationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AmazonManagedKafkaEventSourceConfig IUnmarshaller<AmazonManagedKafkaEventSourceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KafkaSchemaValidationConfig IUnmarshaller<KafkaSchemaValidationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AmazonManagedKafkaEventSourceConfig Unmarshall(JsonUnmarshallerContext context)
+        public KafkaSchemaValidationConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            AmazonManagedKafkaEventSourceConfig unmarshalledObject = new AmazonManagedKafkaEventSourceConfig();
+            KafkaSchemaValidationConfig unmarshalledObject = new KafkaSchemaValidationConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConsumerGroupId", targetDepth))
+                if (context.TestExpression("Attribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConsumerGroupId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SchemaRegistryConfig", targetDepth))
-                {
-                    var unmarshaller = KafkaSchemaRegistryConfigUnmarshaller.Instance;
-                    unmarshalledObject.SchemaRegistryConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Attribute = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         }
 
 
-        private static AmazonManagedKafkaEventSourceConfigUnmarshaller _instance = new AmazonManagedKafkaEventSourceConfigUnmarshaller();        
+        private static KafkaSchemaValidationConfigUnmarshaller _instance = new KafkaSchemaValidationConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AmazonManagedKafkaEventSourceConfigUnmarshaller Instance
+        public static KafkaSchemaValidationConfigUnmarshaller Instance
         {
             get
             {

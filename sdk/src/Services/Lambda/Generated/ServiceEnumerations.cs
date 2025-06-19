@@ -633,6 +633,110 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type KafkaSchemaRegistryAuthType.
+    /// </summary>
+    public class KafkaSchemaRegistryAuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC_AUTH for KafkaSchemaRegistryAuthType
+        /// </summary>
+        public static readonly KafkaSchemaRegistryAuthType BASIC_AUTH = new KafkaSchemaRegistryAuthType("BASIC_AUTH");
+        /// <summary>
+        /// Constant CLIENT_CERTIFICATE_TLS_AUTH for KafkaSchemaRegistryAuthType
+        /// </summary>
+        public static readonly KafkaSchemaRegistryAuthType CLIENT_CERTIFICATE_TLS_AUTH = new KafkaSchemaRegistryAuthType("CLIENT_CERTIFICATE_TLS_AUTH");
+        /// <summary>
+        /// Constant SERVER_ROOT_CA_CERTIFICATE for KafkaSchemaRegistryAuthType
+        /// </summary>
+        public static readonly KafkaSchemaRegistryAuthType SERVER_ROOT_CA_CERTIFICATE = new KafkaSchemaRegistryAuthType("SERVER_ROOT_CA_CERTIFICATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KafkaSchemaRegistryAuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KafkaSchemaRegistryAuthType FindValue(string value)
+        {
+            return FindValue<KafkaSchemaRegistryAuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KafkaSchemaRegistryAuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KafkaSchemaValidationAttribute.
+    /// </summary>
+    public class KafkaSchemaValidationAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KEY for KafkaSchemaValidationAttribute
+        /// </summary>
+        public static readonly KafkaSchemaValidationAttribute KEY = new KafkaSchemaValidationAttribute("KEY");
+        /// <summary>
+        /// Constant VALUE for KafkaSchemaValidationAttribute
+        /// </summary>
+        public static readonly KafkaSchemaValidationAttribute VALUE = new KafkaSchemaValidationAttribute("VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KafkaSchemaValidationAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KafkaSchemaValidationAttribute FindValue(string value)
+        {
+            return FindValue<KafkaSchemaValidationAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KafkaSchemaValidationAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LastUpdateStatus.
     /// </summary>
     public class LastUpdateStatus : ConstantClass
@@ -1316,6 +1420,56 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Runtime(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchemaRegistryEventRecordFormat.
+    /// </summary>
+    public class SchemaRegistryEventRecordFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for SchemaRegistryEventRecordFormat
+        /// </summary>
+        public static readonly SchemaRegistryEventRecordFormat JSON = new SchemaRegistryEventRecordFormat("JSON");
+        /// <summary>
+        /// Constant SOURCE for SchemaRegistryEventRecordFormat
+        /// </summary>
+        public static readonly SchemaRegistryEventRecordFormat SOURCE = new SchemaRegistryEventRecordFormat("SOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaRegistryEventRecordFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaRegistryEventRecordFormat FindValue(string value)
+        {
+            return FindValue<SchemaRegistryEventRecordFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaRegistryEventRecordFormat(string value)
         {
             return FindValue(value);
         }

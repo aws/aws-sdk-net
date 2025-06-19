@@ -795,8 +795,9 @@ namespace Amazon.Lambda
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue, Amazon
-        /// SNS topic, or Amazon S3 bucket.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5667,8 +5668,9 @@ namespace Amazon.Lambda
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue, Amazon
-        /// SNS topic, or Amazon S3 bucket.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
