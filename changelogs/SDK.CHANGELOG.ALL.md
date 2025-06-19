@@ -1,3 +1,17 @@
+### 3.7.1067.0 (2025-06-19 18:19 UTC)
+* Bedrock (3.7.423.0)
+	* This release of the SDK has the API and documentation for the createcustommodel API. This feature lets you copy a trained model into Amazon Bedrock for inference.
+* EMRServerless (3.7.407.0)
+	* This release adds the capability to enable IAM IdentityCenter Trusted Identity Propagation for users running Interactive Sessions on EMR Serverless Applications.
+* Lambda (3.7.413.0)
+	* Support Schema Registry feature for Kafka Event Source Mapping. Customers can now configure a Schema Registry to enable schema validation and filtering for Avro, Protobuf, and JSON-formatted events in Lambda for Kafka Event Source.
+* PaymentCryptography (3.7.404.0)
+	* Additional support for managing HMAC keys that adheres to changes documented in X9.143-2021 and provides better interoperability for key import/export
+* PaymentCryptographyData (3.7.403.0)
+	* Additional support for managing HMAC keys that adheres to changes documented in X9.143-2021 and provides better interoperability for key import/export
+* SageMaker (3.7.446.0)
+	* This release introduces alternative support for utilizing CFN templates from S3 for SageMaker Projects.
+
 ### 3.7.1066.0 (2025-06-18 19:03 UTC)
 * AIOps (3.7.400.0)
 	* This is the initial SDK release for Amazon AI Operations (AIOps). AIOps is a generative AI-powered assistant that helps you respond to incidents in your system by scanning your system's telemetry and quickly surface suggestions that might be related to your issue.
