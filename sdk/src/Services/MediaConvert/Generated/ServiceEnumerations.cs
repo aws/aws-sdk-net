@@ -7312,6 +7312,10 @@ namespace Amazon.MediaConvert
         /// Constant SPECIFIED for DvbddsHandling
         /// </summary>
         public static readonly DvbddsHandling SPECIFIED = new DvbddsHandling("SPECIFIED");
+        /// <summary>
+        /// Constant SPECIFIED_OPTIMAL for DvbddsHandling
+        /// </summary>
+        public static readonly DvbddsHandling SPECIFIED_OPTIMAL = new DvbddsHandling("SPECIFIED_OPTIMAL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
