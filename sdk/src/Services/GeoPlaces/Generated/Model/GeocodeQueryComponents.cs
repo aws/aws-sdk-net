@@ -105,7 +105,7 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Locality. 
         /// <para>
-        /// City or locality results should be present in. 
+        /// The city or locality results should be present in. 
         /// </para>
         ///  
         /// <para>
@@ -129,7 +129,7 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property PostalCode. 
         /// <para>
         /// An alphanumeric string included in a postal address to facilitate mail sorting, such
-        /// as post code, postcode, or ZIP code for which the result should posses. 
+        /// as post code, postcode, or ZIP code for which the result should possess. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=100)]

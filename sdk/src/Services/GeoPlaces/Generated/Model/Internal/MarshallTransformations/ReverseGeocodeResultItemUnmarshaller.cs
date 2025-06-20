@@ -102,6 +102,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.FoodTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Intersections", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Intersection, IntersectionUnmarshaller>(IntersectionUnmarshaller.Instance);
+                    unmarshalledObject.Intersections = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MapView", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);

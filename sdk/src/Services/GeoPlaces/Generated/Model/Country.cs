@@ -45,7 +45,7 @@ namespace Amazon.GeoPlaces.Model
         /// Country, represented by its alpha 2-character code. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=2)]
+        [AWSProperty(Sensitive=true, Min=2, Max=2)]
         public string Code2
         {
             get { return this._code2; }
@@ -64,7 +64,7 @@ namespace Amazon.GeoPlaces.Model
         /// Country, represented by its alpha t-character code. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Sensitive=true, Min=3, Max=3)]
         public string Code3
         {
             get { return this._code3; }
@@ -83,7 +83,7 @@ namespace Amazon.GeoPlaces.Model
         /// Name of the country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Sensitive=true, Min=0, Max=100)]
         public string Name
         {
             get { return this._name; }

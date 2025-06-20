@@ -50,10 +50,10 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: Younge from the “Younge street".
+        /// Example: Younge from the "Younge street".
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string BaseName
         {
             get { return this._baseName; }
@@ -72,7 +72,7 @@ namespace Amazon.GeoPlaces.Model
         /// Indicates the official directional identifiers assigned to highways.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public string Direction
         {
             get { return this._direction; }
@@ -117,7 +117,7 @@ namespace Amazon.GeoPlaces.Model
         /// Example: E for East.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public string Prefix
         {
             get { return this._prefix; }
@@ -141,7 +141,7 @@ namespace Amazon.GeoPlaces.Model
         /// Example W for West.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public string Suffix
         {
             get { return this._suffix; }
@@ -161,10 +161,10 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <c>“avenue"</c>.
+        /// Example: <c>"avenue"</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public string Type
         {
             get { return this._type; }
@@ -198,7 +198,8 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property TypeSeparator. 
         /// <para>
-        /// What character(s) separates the string from its type. 
+        /// Defines a separator character such as <c>""</c> or <c>" "</c> between the base name
+        /// and type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

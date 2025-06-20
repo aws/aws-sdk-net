@@ -72,7 +72,11 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Block. 
         /// <para>
-        /// Name of the block. Example: Sunny Mansion 203 block: 2 Chome
+        /// Name of the block. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>Sunny Mansion 203 block: 2 Chome</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -213,7 +217,7 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property PostalCode. 
         /// <para>
         /// An alphanumeric string included in a postal address to facilitate mail sorting, such
-        /// as post code, postcode, or ZIP code for which the result should posses. 
+        /// as post code, postcode, or ZIP code for which the result should possess. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -273,7 +277,11 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property SubBlock. 
         /// <para>
-        /// Name of sub-block. Example Sunny Mansion 203 sub-block: 4
+        /// Name of sub-block. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>Sunny Mansion 203 sub-block: 4</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

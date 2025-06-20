@@ -42,6 +42,7 @@ namespace Amazon.GeoPlaces.Model
         private List<Category> _categories = AWSConfigs.InitializeCollections ? new List<Category>() : null;
         private Contacts _contacts;
         private List<FoodType> _foodTypes = AWSConfigs.InitializeCollections ? new List<FoodType>() : null;
+        private RelatedPlace _mainAddress;
         private List<double> _mapView = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private List<OpeningHours> _openingHours = AWSConfigs.InitializeCollections ? new List<OpeningHours>() : null;
         private PhonemeDetails _phonemes;
@@ -51,6 +52,7 @@ namespace Amazon.GeoPlaces.Model
         private List<double> _position = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private List<PostalCodeDetails> _postalCodeDetails = AWSConfigs.InitializeCollections ? new List<PostalCodeDetails>() : null;
         private string _pricingBucket;
+        private List<RelatedPlace> _secondaryAddresses = AWSConfigs.InitializeCollections ? new List<RelatedPlace>() : null;
         private TimeZone _timeZone;
         private string _title;
 
@@ -117,6 +119,7 @@ namespace Amazon.GeoPlaces.Model
         /// Boolean indicating if the address provided has been corrected.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool AddressNumberCorrected
         {
             get { return this._addressNumberCorrected.GetValueOrDefault(); }
@@ -205,6 +208,24 @@ namespace Amazon.GeoPlaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MainAddress. 
+        /// <para>
+        /// The main address corresponding to a place of type Secondary Address.
+        /// </para>
+        /// </summary>
+        public RelatedPlace MainAddress
+        {
+            get { return this._mainAddress; }
+            set { this._mainAddress = value; }
+        }
+
+        // Check to see if MainAddress property is set
+        internal bool IsSetMainAddress()
+        {
+            return this._mainAddress != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MapView. 
         /// <para>
         /// The bounding box enclosing the geometric shape (area or line) that an individual result
@@ -272,7 +293,7 @@ namespace Amazon.GeoPlaces.Model
         /// The <c>PlaceId</c> of the place you wish to receive the information for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=500)]
         public string PlaceId
         {
             get { return this._placeId; }
@@ -291,7 +312,7 @@ namespace Amazon.GeoPlaces.Model
         /// A <c>PlaceType</c> is a category that the result place must belong to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public PlaceType PlaceType
         {
             get { return this._placeType; }
@@ -312,7 +333,7 @@ namespace Amazon.GeoPlaces.Model
         /// through the point of view of the specified country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Sensitive=true, Min=3, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -370,7 +391,7 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         ///  
         /// <para>
-        /// For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon
+        /// For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon
         /// Location Service Pricing</a>.
         /// </para>
         /// </summary>
@@ -385,6 +406,27 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetPricingBucket()
         {
             return !string.IsNullOrEmpty(this._pricingBucket);
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryAddresses. 
+        /// <para>
+        /// All secondary addresses that are associated with a main address. A secondary address
+        /// is one that includes secondary designators, such as a Suite or Unit Number, Building,
+        /// or Floor information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<RelatedPlace> SecondaryAddresses
+        {
+            get { return this._secondaryAddresses; }
+            set { this._secondaryAddresses = value; }
+        }
+
+        // Check to see if SecondaryAddresses property is set
+        internal bool IsSetSecondaryAddresses()
+        {
+            return this._secondaryAddresses != null && (this._secondaryAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -409,10 +451,9 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property Title. 
         /// <para>
         /// The localized display name of this result item based on request parameter <c>language</c>.
-        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
         public string Title
         {
             get { return this._title; }

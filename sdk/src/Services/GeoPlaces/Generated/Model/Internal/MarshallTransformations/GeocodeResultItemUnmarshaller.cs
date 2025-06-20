@@ -102,6 +102,18 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.FoodTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Intersections", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Intersection, IntersectionUnmarshaller>(IntersectionUnmarshaller.Instance);
+                    unmarshalledObject.Intersections = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MainAddress", targetDepth))
+                {
+                    var unmarshaller = RelatedPlaceUnmarshaller.Instance;
+                    unmarshalledObject.MainAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MapView", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
@@ -112,6 +124,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MatchScoreDetailsUnmarshaller.Instance;
                     unmarshalledObject.MatchScores = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParsedQuery", targetDepth))
+                {
+                    var unmarshaller = GeocodeParsedQueryUnmarshaller.Instance;
+                    unmarshalledObject.ParsedQuery = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PlaceId", targetDepth))
@@ -142,6 +160,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<PostalCodeDetails, PostalCodeDetailsUnmarshaller>(PostalCodeDetailsUnmarshaller.Instance);
                     unmarshalledObject.PostalCodeDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecondaryAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RelatedPlace, RelatedPlaceUnmarshaller>(RelatedPlaceUnmarshaller.Instance);
+                    unmarshalledObject.SecondaryAddresses = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimeZone", targetDepth))

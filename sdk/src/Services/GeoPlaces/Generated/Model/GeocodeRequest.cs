@@ -31,8 +31,12 @@ namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
     /// Container for the parameters to the Geocode operation.
-    /// The <c>Geocode</c> action allows you to obtain coordinates, addresses, and other information
-    /// about places.
+    /// <c>Geocode</c> converts a textual address or place into geographic coordinates. You
+    /// can obtain geographic coordinates, address component, and other related information.
+    /// It supports flexible queries, including free-form text or structured queries with
+    /// components like street names, postal codes, and regions. The Geocode API can also
+    /// provide additional features such as time zone information and the inclusion of political
+    /// views.
     /// </summary>
     public partial class GeocodeRequest : AmazonGeoPlacesRequest
     {
@@ -98,7 +102,7 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// A structure which contains a set of inclusion/exclusion properties that results must
-        /// posses in order to be returned as a result.
+        /// possess in order to be returned as a result.
         /// </para>
         /// </summary>
         public GeocodeFilter Filter
@@ -118,6 +122,14 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// Indicates if the results will be stored. Defaults to <c>SingleUse</c>, if left empty.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Storing the response of an Geocode query is required to comply with service terms,
+        /// but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user
+        /// agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing
+        /// structure</a> to determine the correct setting for your use case.
+        /// </para>
+        ///  </note>
         /// </summary>
         public GeocodeIntendedUse IntendedUse
         {
@@ -199,7 +211,7 @@ namespace Amazon.GeoPlaces.Model
         /// through the point of view of the specified country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Sensitive=true, Min=2, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -233,6 +245,11 @@ namespace Amazon.GeoPlaces.Model
         /// The free-form text query to match addresses against. This is usually a partially typed
         /// address from an end user in an address box or form.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
         public string QueryText

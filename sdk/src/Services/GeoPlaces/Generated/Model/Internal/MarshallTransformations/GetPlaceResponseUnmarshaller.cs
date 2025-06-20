@@ -100,6 +100,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     response.FoodTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MainAddress", targetDepth))
+                {
+                    var unmarshaller = RelatedPlaceUnmarshaller.Instance;
+                    response.MainAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MapView", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
@@ -146,6 +152,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<PostalCodeDetails, PostalCodeDetailsUnmarshaller>(PostalCodeDetailsUnmarshaller.Instance);
                     response.PostalCodeDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecondaryAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RelatedPlace, RelatedPlaceUnmarshaller>(RelatedPlaceUnmarshaller.Instance);
+                    response.SecondaryAddresses = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimeZone", targetDepth))

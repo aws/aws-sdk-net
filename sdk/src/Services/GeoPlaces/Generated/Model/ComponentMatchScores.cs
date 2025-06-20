@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
-    /// Indicates how well the input matches the returned element. It is equal to 1 if all
-    /// input tokens are recognized and matched to the title in the result.
+    /// Indicates how well the returned title and address components matches the input TextQuery.
+    /// For each component a score is provied with 1 indicating all tokens were matched and
+    /// 0 indicating no tokens were matched.
     /// </summary>
     public partial class ComponentMatchScores
     {
@@ -59,8 +60,8 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// Indicates the starting and ending index of the title in the text query that match
-        /// the found title. 
+        /// Indicates the match score of the title in the text query that match the found title.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

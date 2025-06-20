@@ -31,10 +31,12 @@ namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
     /// Container for the parameters to the Autocomplete operation.
-    /// The autocomplete operation speeds up and increases the accuracy of entering addresses
-    /// by providing a list of address candidates matching a partially entered address. Results
-    /// are sorted from most to least matching. Filtering and biasing can be used to increase
-    /// the relevance of the results if additional search context is known
+    /// <c>Autocomplete</c> completes potential places and addresses as the user types, based
+    /// on the partial input. The API enhances the efficiency and accuracy of address by completing
+    /// query based on a few entered keystrokes. It helps you by completing partial queries
+    /// with valid address completion. Also, the API supports the filtering of results based
+    /// on geographic location, country, or specific place types, and can be tailored using
+    /// optional parameters like language and political views.
     /// </summary>
     public partial class AutocompleteRequest : AmazonGeoPlacesRequest
     {
@@ -99,7 +101,7 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// A structure which contains a set of inclusion/exclusion properties that results must
-        /// posses in order to be returned as a result.
+        /// possess in order to be returned as a result.
         /// </para>
         /// </summary>
         public AutocompleteFilter Filter
@@ -199,8 +201,70 @@ namespace Amazon.GeoPlaces.Model
         /// view applies to the results of the request to represent unresolved territorial claims
         /// through the point of view of the specified country.
         /// </para>
+        ///  
+        /// <para>
+        /// The following political views are currently supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ARG</c>: Argentina's view on the Southern Patagonian Ice Field and Tierra Del
+        /// Fuego, including the Falkland Islands, South Georgia, and South Sandwich Islands
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EGY</c>: Egypt's view on Bir Tawil
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IND</c>: India's view on Gilgit-Baltistan
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>KEN</c>: Kenya's view on the Ilemi Triangle
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MAR</c>: Morocco's view on Western Sahara
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RUS</c>: Russia's view on Crimea
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SDN</c>: Sudan's view on the Halaib Triangle
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SRB</c>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SUR</c>: Suriname's view on the Courantyne Headwaters and Lawa Headwaters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SYR</c>: Syria's view on the Golan Heights
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TUR</c>: Turkey's view on Cyprus and Northern Cyprus
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TZA</c>: Tanzania's view on Lake Malawi
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>URY</c>: Uruguay's view on Rincon de Artigas
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VNM</c>: Vietnam's view on the Paracel Islands and Spratly Islands
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Sensitive=true, Min=2, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -219,7 +283,8 @@ namespace Amazon.GeoPlaces.Model
         /// The <c>PostalCodeMode</c> affects how postal code results are returned. If a postal
         /// code spans multiple localities and this value is empty, partial district or locality
         /// information may be returned under a single postal code result entry. If it's populated
-        /// with the value <c>cityLookup</c>, all cities in that postal code are returned.
+        /// with the value <c>EnumerateSpannedLocalities</c>, all cities in that postal code are
+        /// returned.
         /// </para>
         /// </summary>
         public PostalCodeMode PostalCodeMode
@@ -240,6 +305,11 @@ namespace Amazon.GeoPlaces.Model
         /// The free-form text query to match addresses against. This is usually a partially typed
         /// address from an end user in an address box or form.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
         public string QueryText

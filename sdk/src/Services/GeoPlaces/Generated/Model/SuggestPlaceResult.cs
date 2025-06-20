@@ -150,7 +150,7 @@ namespace Amazon.GeoPlaces.Model
         /// The distance in meters from the QueryPosition.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long Distance
         {
             get { return this._distance.GetValueOrDefault(); }
@@ -231,7 +231,7 @@ namespace Amazon.GeoPlaces.Model
         /// The <c>PlaceId</c> of the place you wish to receive the information for.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=500)]
         public string PlaceId
         {
             get { return this._placeId; }
@@ -250,6 +250,7 @@ namespace Amazon.GeoPlaces.Model
         /// A <c>PlaceType</c> is a category that the result place must belong to.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public PlaceType PlaceType
         {
             get { return this._placeType; }
@@ -270,7 +271,7 @@ namespace Amazon.GeoPlaces.Model
         /// through the point of view of the specified country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Sensitive=true, Min=3, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }

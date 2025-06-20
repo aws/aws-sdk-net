@@ -44,7 +44,7 @@ namespace Amazon.GeoPlaces.Model
         /// The Food Type Id.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -63,7 +63,7 @@ namespace Amazon.GeoPlaces.Model
         /// Localized name of the food type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string LocalizedName
         {
             get { return this._localizedName; }
@@ -84,6 +84,7 @@ namespace Amazon.GeoPlaces.Model
         /// be fast food.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Primary
         {
             get { return this._primary.GetValueOrDefault(); }

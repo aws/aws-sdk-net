@@ -86,19 +86,19 @@ namespace Amazon.GeoPlaces.Internal
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
                     {
-                        return new Endpoint(Interpolate(@"https://places.geo.{Region}.us-gov.{PartitionResult#dnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://places.geo.{Region}.{PartitionResult#dnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
-                        return new Endpoint(Interpolate(@"https://places.geo-fips.{Region}.us-gov.{PartitionResult#dualStackDnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://places.geo-fips.{Region}.{PartitionResult#dualStackDnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
-                        return new Endpoint(Interpolate(@"https://places.geo-fips.{Region}.us-gov.{PartitionResult#dnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://places.geo-fips.{Region}.{PartitionResult#dnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
-                        return new Endpoint(Interpolate(@"https://places.geo.{Region}.us-gov.{PartitionResult#dualStackDnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://places.geo.{Region}.{PartitionResult#dualStackDnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {

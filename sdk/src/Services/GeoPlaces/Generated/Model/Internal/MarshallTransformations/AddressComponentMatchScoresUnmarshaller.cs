@@ -120,6 +120,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecondaryAddressComponents", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SecondaryAddressComponentMatchScore, SecondaryAddressComponentMatchScoreUnmarshaller>(SecondaryAddressComponentMatchScoreUnmarshaller.Instance);
+                    unmarshalledObject.SecondaryAddressComponents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SubBlock", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

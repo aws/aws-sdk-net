@@ -31,7 +31,8 @@ namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPlace operation.
-    /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other place operations.
+    /// <c>GetPlace</c> finds a place by its unique ID. A <c>PlaceId</c> is returned by other
+    /// place operations.
     /// </summary>
     public partial class GetPlaceRequest : AmazonGeoPlacesRequest
     {
@@ -67,6 +68,14 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// Indicates if the results will be stored. Defaults to <c>SingleUse</c>, if left empty.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Storing the response of an GetPlace query is required to comply with service terms,
+        /// but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user
+        /// agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing
+        /// structure</a> to determine the correct setting for your use case.
+        /// </para>
+        ///  </note>
         /// </summary>
         public GetPlaceIntendedUse IntendedUse
         {
@@ -127,7 +136,7 @@ namespace Amazon.GeoPlaces.Model
         /// The <c>PlaceId</c> of the place you wish to receive the information for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=500)]
         public string PlaceId
         {
             get { return this._placeId; }
@@ -148,7 +157,7 @@ namespace Amazon.GeoPlaces.Model
         /// through the point of view of the specified country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Sensitive=true, Min=2, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }

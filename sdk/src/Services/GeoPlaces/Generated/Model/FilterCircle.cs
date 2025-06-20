@@ -62,7 +62,7 @@ namespace Amazon.GeoPlaces.Model
         /// The radius, in meters, of the <c>FilterCircle</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=21000000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=21000000)]
         public long Radius
         {
             get { return this._radius.GetValueOrDefault(); }

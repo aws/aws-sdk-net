@@ -126,6 +126,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecondaryAddressComponents", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SecondaryAddressComponent, SecondaryAddressComponentUnmarshaller>(SecondaryAddressComponentUnmarshaller.Instance);
+                    unmarshalledObject.SecondaryAddressComponents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Street", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

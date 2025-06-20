@@ -63,6 +63,7 @@ namespace Amazon.GeoPlaces.Model
         /// The restriction.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Restricted
         {
             get { return this._restricted.GetValueOrDefault(); }

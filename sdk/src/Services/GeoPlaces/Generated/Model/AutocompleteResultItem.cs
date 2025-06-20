@@ -68,7 +68,7 @@ namespace Amazon.GeoPlaces.Model
         /// to evaluate how far away from the original bias position the result is.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long Distance
         {
             get { return this._distance.GetValueOrDefault(); }
@@ -128,7 +128,7 @@ namespace Amazon.GeoPlaces.Model
         /// additional details about the result via GetPlace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=500)]
         public string PlaceId
         {
             get { return this._placeId; }
@@ -147,7 +147,7 @@ namespace Amazon.GeoPlaces.Model
         /// PlaceType describes the type of result entry returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public PlaceType PlaceType
         {
             get { return this._placeType; }
@@ -168,7 +168,7 @@ namespace Amazon.GeoPlaces.Model
         /// through the point of view of the specified country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Sensitive=true, Min=3, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -187,7 +187,7 @@ namespace Amazon.GeoPlaces.Model
         /// A formatted string for display when presenting this result to an end user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
         public string Title
         {
             get { return this._title; }

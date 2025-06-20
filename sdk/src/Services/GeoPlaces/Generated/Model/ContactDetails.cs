@@ -63,7 +63,7 @@ namespace Amazon.GeoPlaces.Model
         /// The contact's label.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Label
         {
             get { return this._label; }
@@ -82,7 +82,7 @@ namespace Amazon.GeoPlaces.Model
         /// The contact's value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Value
         {
             get { return this._value; }

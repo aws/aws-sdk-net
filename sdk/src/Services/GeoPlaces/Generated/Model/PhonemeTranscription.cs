@@ -65,6 +65,7 @@ namespace Amazon.GeoPlaces.Model
         /// Boolean which indicates if it the preferred pronunciation.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Preferred
         {
             get { return this._preferred.GetValueOrDefault(); }
@@ -83,7 +84,7 @@ namespace Amazon.GeoPlaces.Model
         /// Value which indicates how to pronounce the value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public string Value
         {
             get { return this._value; }

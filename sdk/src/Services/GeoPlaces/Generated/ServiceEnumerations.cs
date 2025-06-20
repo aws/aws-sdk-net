@@ -177,6 +177,14 @@ namespace Amazon.GeoPlaces
         /// </summary>
         public static readonly GeocodeAdditionalFeature Access = new GeocodeAdditionalFeature("Access");
         /// <summary>
+        /// Constant Intersections for GeocodeAdditionalFeature
+        /// </summary>
+        public static readonly GeocodeAdditionalFeature Intersections = new GeocodeAdditionalFeature("Intersections");
+        /// <summary>
+        /// Constant SecondaryAddresses for GeocodeAdditionalFeature
+        /// </summary>
+        public static readonly GeocodeAdditionalFeature SecondaryAddresses = new GeocodeAdditionalFeature("SecondaryAddresses");
+        /// <summary>
         /// Constant TimeZone for GeocodeAdditionalFeature
         /// </summary>
         public static readonly GeocodeAdditionalFeature TimeZone = new GeocodeAdditionalFeature("TimeZone");
@@ -351,6 +359,10 @@ namespace Amazon.GeoPlaces
         /// </summary>
         public static readonly GetPlaceAdditionalFeature Phonemes = new GetPlaceAdditionalFeature("Phonemes");
         /// <summary>
+        /// Constant SecondaryAddresses for GetPlaceAdditionalFeature
+        /// </summary>
+        public static readonly GetPlaceAdditionalFeature SecondaryAddresses = new GetPlaceAdditionalFeature("SecondaryAddresses");
+        /// <summary>
         /// Constant TimeZone for GetPlaceAdditionalFeature
         /// </summary>
         public static readonly GetPlaceAdditionalFeature TimeZone = new GetPlaceAdditionalFeature("TimeZone");
@@ -486,6 +498,10 @@ namespace Amazon.GeoPlaces
         /// Constant Region for PlaceType
         /// </summary>
         public static readonly PlaceType Region = new PlaceType("Region");
+        /// <summary>
+        /// Constant SecondaryAddress for PlaceType
+        /// </summary>
+        public static readonly PlaceType SecondaryAddress = new PlaceType("SecondaryAddress");
         /// <summary>
         /// Constant Street for PlaceType
         /// </summary>
@@ -810,6 +826,10 @@ namespace Amazon.GeoPlaces
         /// Constant Access for ReverseGeocodeAdditionalFeature
         /// </summary>
         public static readonly ReverseGeocodeAdditionalFeature Access = new ReverseGeocodeAdditionalFeature("Access");
+        /// <summary>
+        /// Constant Intersections for ReverseGeocodeAdditionalFeature
+        /// </summary>
+        public static readonly ReverseGeocodeAdditionalFeature Intersections = new ReverseGeocodeAdditionalFeature("Intersections");
         /// <summary>
         /// Constant TimeZone for ReverseGeocodeAdditionalFeature
         /// </summary>
