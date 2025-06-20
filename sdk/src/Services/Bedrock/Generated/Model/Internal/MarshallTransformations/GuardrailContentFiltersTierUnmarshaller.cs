@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GuardrailContentPolicy Object
+    /// Response Unmarshaller for GuardrailContentFiltersTier Object
     /// </summary>  
-    public class GuardrailContentPolicyUnmarshaller : IJsonUnmarshaller<GuardrailContentPolicy, JsonUnmarshallerContext>
+    public class GuardrailContentFiltersTierUnmarshaller : IJsonUnmarshaller<GuardrailContentFiltersTier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailContentPolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GuardrailContentFiltersTier Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            GuardrailContentPolicy unmarshalledObject = new GuardrailContentPolicy();
+            GuardrailContentFiltersTier unmarshalledObject = new GuardrailContentFiltersTier();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("filters", targetDepth))
+                if (context.TestExpression("tierName", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<GuardrailContentFilter, GuardrailContentFilterUnmarshaller>(GuardrailContentFilterUnmarshaller.Instance);
-                    unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tier", targetDepth))
-                {
-                    var unmarshaller = GuardrailContentFiltersTierUnmarshaller.Instance;
-                    unmarshalledObject.Tier = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TierName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static GuardrailContentPolicyUnmarshaller _instance = new GuardrailContentPolicyUnmarshaller();        
+        private static GuardrailContentFiltersTierUnmarshaller _instance = new GuardrailContentFiltersTierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GuardrailContentPolicyUnmarshaller Instance
+        public static GuardrailContentFiltersTierUnmarshaller Instance
         {
             get
             {

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GuardrailTopicPolicyConfig Marshaller
+    /// GuardrailContentFiltersTierConfig Marshaller
     /// </summary>
-    public class GuardrailTopicPolicyConfigMarshaller : IRequestMarshaller<GuardrailTopicPolicyConfig, JsonMarshallerContext> 
+    public class GuardrailContentFiltersTierConfigMarshaller : IRequestMarshaller<GuardrailContentFiltersTierConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,35 +42,14 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GuardrailTopicPolicyConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(GuardrailContentFiltersTierConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetTierConfig())
+            if(requestObject.IsSetTierName())
             {
-                context.Writer.WritePropertyName("tierConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = GuardrailTopicsTierConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.TierConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetTopicsConfig())
-            {
-                context.Writer.WritePropertyName("topicsConfig");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectTopicsConfigListValue in requestObject.TopicsConfig)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = GuardrailTopicConfigMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTopicsConfigListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("tierName");
+                context.Writer.WriteStringValue(requestObject.TierName);
             }
 
         }
@@ -78,7 +57,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GuardrailTopicPolicyConfigMarshaller Instance = new GuardrailTopicPolicyConfigMarshaller();
+        public readonly static GuardrailContentFiltersTierConfigMarshaller Instance = new GuardrailContentFiltersTierConfigMarshaller();
 
     }
 }

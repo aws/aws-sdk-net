@@ -62,6 +62,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTierConfig())
+            {
+                context.Writer.WritePropertyName("tierConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GuardrailContentFiltersTierConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TierConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

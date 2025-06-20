@@ -573,6 +573,56 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailContentFiltersTierName.
+    /// </summary>
+    public class GuardrailContentFiltersTierName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASSIC for GuardrailContentFiltersTierName
+        /// </summary>
+        public static readonly GuardrailContentFiltersTierName CLASSIC = new GuardrailContentFiltersTierName("CLASSIC");
+        /// <summary>
+        /// Constant STANDARD for GuardrailContentFiltersTierName
+        /// </summary>
+        public static readonly GuardrailContentFiltersTierName STANDARD = new GuardrailContentFiltersTierName("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentFiltersTierName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentFiltersTierName FindValue(string value)
+        {
+            return FindValue<GuardrailContentFiltersTierName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentFiltersTierName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailContentFilterType.
     /// </summary>
     public class GuardrailContentFilterType : ConstantClass
@@ -1222,6 +1272,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailTopicAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailTopicsTierName.
+    /// </summary>
+    public class GuardrailTopicsTierName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASSIC for GuardrailTopicsTierName
+        /// </summary>
+        public static readonly GuardrailTopicsTierName CLASSIC = new GuardrailTopicsTierName("CLASSIC");
+        /// <summary>
+        /// Constant STANDARD for GuardrailTopicsTierName
+        /// </summary>
+        public static readonly GuardrailTopicsTierName STANDARD = new GuardrailTopicsTierName("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailTopicsTierName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailTopicsTierName FindValue(string value)
+        {
+            return FindValue<GuardrailTopicsTierName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailTopicsTierName(string value)
         {
             return FindValue(value);
         }
