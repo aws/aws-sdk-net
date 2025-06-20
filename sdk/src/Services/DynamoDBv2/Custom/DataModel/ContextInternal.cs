@@ -1473,7 +1473,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-            
+          
             ContextSearch query;
             if (operationConfig is { Expression: { Filter: not null } })
             {
@@ -2087,18 +2087,17 @@ namespace Amazon.DynamoDBv2.DataModel
                     depth += nextPathNode.IndexDepth;
                 }
 
-                var nodePropertyType = propertyType;
+                var node = new PropertyNode()
+                {
+                    PropertyType = propertyType
+                };
                 var currentDepth = 0;
 
-                while (currentDepth <= depth && nodePropertyType != null && Utils.ImplementsInterface(nodePropertyType, typeof(ICollection<>))
-                       && nodePropertyType != typeof(string))
+                while (currentDepth <= depth && node.PropertyType != null && Utils.ImplementsInterface(node.PropertyType, typeof(ICollection<>))
+                       && node.PropertyType != typeof(string))
                 {
-                    elementType = Utils.GetElementType(nodePropertyType);
-                    if (elementType == null)
-                    {
-                        IsSupportedDictionaryType(nodePropertyType, out elementType);
-                    }
-                    nodePropertyType = elementType;
+                    elementType = Utils.GetElementType(node.PropertyType) ?? GetDictionaryValueType(node.PropertyType);
+                    node.PropertyType = elementType;
                     currentDepth++;
                 }
                 elementType ??= propertyType;
@@ -2110,6 +2109,24 @@ namespace Amazon.DynamoDBv2.DataModel
             return propertyStorage;
         }
 
+
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2073",
+            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2063",
+            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
+        [return: DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)]
+        private static Type GetDictionaryValueType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type type)
+        {
+            if (!(Utils.ImplementsInterface(type, typeof(IDictionary<,>)) &&
+                  Utils.ImplementsInterface(type, typeof(IDictionary)))) { }
+            else
+            {
+                var genericArguments = type.GetGenericArguments();
+                if (genericArguments != null && genericArguments.Length == 2)
+                    return genericArguments[1];
+            }
+            return null;
+        }
         private PropertyStorage SetExpressionNameNode(ItemStorageConfig storageConfig, Expression memberObj,
             ExpressionNode node, DynamoDBFlatConfig flatConfig)
         {

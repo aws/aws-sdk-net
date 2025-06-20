@@ -79,27 +79,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public static bool AttributeType(object _, string dynamoDbType) => throw null!;
     }
 
-    /// <summary>
-    /// Represents a node in a path expression for DynamoDB operations.
-    /// </summary>
-    internal class PathNode
-    {
-        public string Path { get; }
-
-        public string FormattedPath { get; }
-
-        public int IndexDepth { get; }
-
-        public bool IsMap { get;  }
-
-        public PathNode(string path, int indexDepth, bool isMap, string formattedPath)
-        {
-            Path = path;
-            IndexDepth = indexDepth;
-            IsMap = isMap;
-            FormattedPath = formattedPath;
-        }
-    }
+   
 
     internal static class ContextExpressionsUtils
     {
@@ -127,7 +107,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 _ => false
             };
         }
-
+        
         internal static ConstantExpression GetConstant(Expression expr)
         {
             return expr switch
@@ -141,38 +121,46 @@ namespace Amazon.DynamoDBv2.DataModel
             };
         }
 
-        private static ConstantExpression GetConstantFromMember(MemberExpression member)
+        private static ConstantExpression GetConstantFromMember(
+            MemberExpression member)
         {
-            var memberExpression= member.Expression;
-            var memberName= member.Member.Name;
-            if (memberExpression==null)
+            var memberExpression = member.Expression;
+            var memberName = member.Member.Name;
+            if (memberExpression == null)
             {
                 throw new InvalidOperationException("MemberExpression does not have an associated expression.");
             }
-            var constant= GetConstant(memberExpression);
+            var constant = GetConstant(memberExpression);
 
-            var value= constant?.Value;
+            var value = constant?.Value;
             if (value != null)
             {
-                // Use reflection to get the value of the member
-                var memberInfo = value.GetType().GetMember(memberName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).FirstOrDefault();
-                if (memberInfo is FieldInfo field)
-                {
-                    var fieldValue = field.GetValue(value);
-                    return Expression.Constant(fieldValue, field.FieldType);
-                }
-                else if (memberInfo is PropertyInfo property)
-                {
-                    var propertyValue = property.GetValue(value);
-                    return Expression.Constant(propertyValue, property.PropertyType);
-                }
-                else
-                {
-                    throw new InvalidOperationException($"Member '{memberName}' not found on type '{value.GetType()}'.");
-                }
+                return ConstantFromMember(value, memberName);
             }
 
             return constant ?? throw new InvalidOperationException($"Cannot extract constant from MemberExpression: {member}");
+        }
+
+        private static ConstantExpression ConstantFromMember(
+            object value, string memberName)
+        {
+            var type = value.GetType();
+            var memberInfo = Utils.GetMembersFromType(type).FirstOrDefault();
+
+            if (memberInfo is FieldInfo field)
+            {
+                var fieldValue = field.GetValue(value);
+                return Expression.Constant(fieldValue, field.FieldType);
+            }
+            else if (memberInfo is PropertyInfo property)
+            {
+                var propertyValue = property.GetValue(value);
+                return Expression.Constant(propertyValue, property.PropertyType);
+            }
+            else
+            {
+                throw new InvalidOperationException($"Member '{memberName}' not found on type '{value.GetType()}'.");
+            }
         }
 
         internal static bool IsComparison(ExpressionType type)
@@ -281,5 +269,33 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return pathNodes;
         }
+    }
+
+    /// <summary>
+    /// Represents a node in a path expression for DynamoDB operations.
+    /// </summary>
+    internal class PathNode
+    {
+        public string Path { get; }
+
+        public string FormattedPath { get; }
+
+        public int IndexDepth { get; }
+
+        public bool IsMap { get; }
+
+        public PathNode(string path, int indexDepth, bool isMap, string formattedPath)
+        {
+            Path = path;
+            IndexDepth = indexDepth;
+            IsMap = isMap;
+            FormattedPath = formattedPath;
+        }
+    }
+
+    internal class PropertyNode
+    {
+        [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)]
+        public Type PropertyType { get; set; }
     }
 }
