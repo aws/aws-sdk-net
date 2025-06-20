@@ -691,6 +691,58 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
+        public void TestContext_ScanConfigFilter()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            var employee = new Employee()
+            {
+                Name = "Bob",
+                Age = 45,
+                CurrentStatus = Status.Active,
+                CompanyName = "test",
+            };
+
+            var employee3 = new Employee
+            {
+                Name = "Cob",
+                Age = 45,
+                CurrentStatus = Status.Inactive,
+                CompanyName = "test1",
+            };
+
+
+            Context.Save(employee);
+            Context.Save(employee3);
+
+            var ageEqResultScan = Context.Scan<Employee>(new List<ScanCondition>(), new ScanConfig()
+            {
+                QueryFilter = new List<ScanCondition>()
+                {
+                    new ScanCondition("Age", ScanOperator.GreaterThan,50)
+                },
+                ConditionalOperator = ConditionalOperatorValues.And
+            }).ToList();
+            Assert.AreEqual(0, ageEqResultScan.Count);
+
+            var ageAndCompanyResultScan = Context.Scan<Employee>(new List<ScanCondition>()
+            {
+                new ScanCondition("Age", ScanOperator.Equal,45)
+            }, new ScanConfig()
+            {
+                QueryFilter = new List<ScanCondition>()
+                {
+                    new ScanCondition("CompanyName", ScanOperator.Equal, "Test")
+                },
+                ConditionalOperator = ConditionalOperatorValues.And
+            }).ToList();
+            Assert.AreEqual(1, ageEqResultScan.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public void TestContext_Scan_WithExpressionFilter()
         {
             TableCache.Clear();
