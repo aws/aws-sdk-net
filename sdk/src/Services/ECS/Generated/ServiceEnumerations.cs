@@ -1979,6 +1979,14 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly OSFamily WINDOWS_SERVER_2022_FULL = new OSFamily("WINDOWS_SERVER_2022_FULL");
         /// <summary>
+        /// Constant WINDOWS_SERVER_2025_CORE for OSFamily
+        /// </summary>
+        public static readonly OSFamily WINDOWS_SERVER_2025_CORE = new OSFamily("WINDOWS_SERVER_2025_CORE");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2025_FULL for OSFamily
+        /// </summary>
+        public static readonly OSFamily WINDOWS_SERVER_2025_FULL = new OSFamily("WINDOWS_SERVER_2025_FULL");
+        /// <summary>
         /// Constant WINDOWS_SERVER_20H2_CORE for OSFamily
         /// </summary>
         public static readonly OSFamily WINDOWS_SERVER_20H2_CORE = new OSFamily("WINDOWS_SERVER_20H2_CORE");
