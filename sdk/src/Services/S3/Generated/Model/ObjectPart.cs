@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -23,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Container for elements related to an individual part.
+    /// A container for elements related to an individual part.
     /// </summary>
     public partial class ObjectPart
     {
@@ -41,8 +45,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32. 
         /// <para>
-        /// The Base64 encoded, 32-bit <c>CRC-32</c> checksum of the part. This checksum is only present
-        /// if the multipart upload request was created with the <c>CRC-32</c> checksum algorithm.
+        /// The Base64 encoded, 32-bit <c>CRC32</c> checksum of the part. This checksum is present
+        /// if the multipart upload request was created with the <c>CRC32</c> checksum algorithm.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
@@ -62,8 +66,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32C. 
         /// <para>
-        /// The Base64 encoded, 32-bit <c>CRC-32C</c> checksum of the part. This checksum is only present
-        /// if the multipart upload request was created with the <c>CRC-32C</c> checksum algorithm.
+        /// The Base64 encoded, 32-bit <c>CRC32C</c> checksum of the part. This checksum is present
+        /// if the multipart upload request was created with the <c>CRC32C</c> checksum algorithm.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
@@ -83,10 +87,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC64NVME. 
         /// <para>
-        /// The Base64 encoded, 64-bit <c>CRC-64NVME</c> checksum of the part. This checksum is only present
-        /// if the multipart upload request was created with the <c>CRC-64NVME</c> checksum algorithm, or if the object was uploaded without 
-        /// a checksum (and Amazon S3 added the default checksum, <c>CRC-64NVME</c>, to the uploaded object). 
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// The Base64 encoded, 64-bit <c>CRC64NVME</c> checksum of the part. This checksum is
+        /// present if the multipart upload request was created with the <c>CRC64NVME</c> checksum
+        /// algorithm, or if the object was uploaded without a checksum (and Amazon S3 added the
+        /// default checksum, <c>CRC64NVME</c>, to the uploaded object). For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -105,8 +110,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumSHA1. 
         /// <para>
-        /// The Base64 encoded, 160-bit <c>SHA-1</c> checksum of the part. This checksum is only present
-        /// if the multipart upload request was created with the <c>SHA-1</c> checksum algorithm.
+        /// The Base64 encoded, 160-bit <c>SHA1</c> checksum of the part. This checksum is present
+        /// if the multipart upload request was created with the <c>SHA1</c> checksum algorithm.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
@@ -126,10 +131,10 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumSHA256. 
         /// <para>
-        /// The Base64 encoded, 256-bit <c>SHA-256</c> checksum of the part.
-        /// This checksum is present if the multipart upload request was created with the <c>SHA-256</c> checksum algorithm.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// The Base64 encoded, 256-bit <c>SHA256</c> checksum of the part. This checksum is present
+        /// if the multipart upload request was created with the <c>SHA256</c> checksum algorithm.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumSHA256
@@ -160,7 +165,7 @@ namespace Amazon.S3.Model
         // Check to see if PartNumber property is set
         internal bool IsSetPartNumber()
         {
-            return this._partNumber.HasValue;
+            return this._partNumber.HasValue; 
         }
 
         /// <summary>
@@ -178,7 +183,7 @@ namespace Amazon.S3.Model
         // Check to see if Size property is set
         internal bool IsSetSize()
         {
-            return this._size.HasValue;
+            return this._size.HasValue; 
         }
 
     }

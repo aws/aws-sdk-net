@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -27,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -44,35 +48,35 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetObjectAttributesParts unmarshalledObject = new GetObjectAttributesParts();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
-            if (context.IsStartOfDocument)
-                targetDepth += 2;
-
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("IsTruncated", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.IsTruncated = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxParts", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxParts = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NextPartNumberMarker", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NextPartNumberMarker = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PartNumberMarker", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.PartNumberMarker = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -88,7 +92,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("PartsCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TotalPartsCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -97,11 +101,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     return unmarshalledObject;
                 }
-            }
+            }          
             return unmarshalledObject;
         }
-
-        private static GetObjectAttributesPartsUnmarshaller _instance = new GetObjectAttributesPartsUnmarshaller();
+        private static GetObjectAttributesPartsUnmarshaller _instance = new GetObjectAttributesPartsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.

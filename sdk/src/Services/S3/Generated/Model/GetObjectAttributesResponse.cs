@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -23,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -61,8 +65,10 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property DeleteMarker. 
         /// <para>
-        /// Specifies whether the object retrieved was (true) or was not (false) a Delete Marker.
-        /// If false, this response header does not appear in the response.
+        /// Specifies whether the object retrieved was (<c>true</c>) or was not (<c>false</c>)
+        /// a delete marker. If <c>false</c>, this response header does not appear in the response.
+        /// To learn more about delete markers, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working
+        /// with delete markers</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -79,7 +85,7 @@ namespace Amazon.S3.Model
         // Check to see if DeleteMarker property is set
         internal bool IsSetDeleteMarker()
         {
-            return this._deleteMarker.HasValue;
+            return this._deleteMarker.HasValue; 
         }
 
         /// <summary>
@@ -104,7 +110,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// Creation date of the object.
+        /// Date and time when the object was last modified.
         /// </para>
         /// </summary>
         public DateTime? LastModified
@@ -116,7 +122,7 @@ namespace Amazon.S3.Model
         // Check to see if LastModified property is set
         internal bool IsSetLastModified()
         {
-            return this._lastModified.HasValue;
+            return this._lastModified.HasValue; 
         }
 
         /// <summary>
@@ -152,7 +158,7 @@ namespace Amazon.S3.Model
         // Check to see if ObjectSize property is set
         internal bool IsSetObjectSize()
         {
-            return this._objectSize.HasValue;
+            return this._objectSize.HasValue; 
         }
 
         /// <summary>
@@ -173,8 +179,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property StorageClass. 
         /// <para>
-        /// Provides storage class information of the object. Amazon S3 returns this header for
-        /// all objects except for S3 Standard storage class objects.
+        /// Provides the storage class information of the object. Amazon S3 returns this header
+        /// for all objects except for S3 Standard storage class objects.
         /// </para>
         ///  
         /// <para>
@@ -183,8 +189,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported
-        /// by directory buckets to store objects.
+        ///  <b>Directory buckets</b> - Directory buckets only support <c>EXPRESS_ONEZONE</c>
+        /// (the S3 Express One Zone storage class) in Availability Zones and <c>ONEZONE_IA</c>
+        /// (the S3 One Zone-Infrequent Access storage class) in Dedicated Local Zones.
         /// </para>
         ///  </note>
         /// </summary>
@@ -203,7 +210,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// Version of the object.
+        /// The version ID of the object.
         /// </para>
         ///  <note> 
         /// <para>

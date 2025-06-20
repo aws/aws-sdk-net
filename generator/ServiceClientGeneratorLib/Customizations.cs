@@ -425,7 +425,7 @@ namespace ServiceClientGenerator
         public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
         public const string OriginalMemberKey = "originalMember";
         public const string EmitDifferentPrivateDataTypeKey = "emitDifferentPrivateDataType";
-
+        public const string TreatEnumsAsEnums = "treatEnumsAsEnums";
         JsonData _documentRoot;
 
         SimpleMethodFormsModel _simpleMethodsModel;
@@ -610,6 +610,23 @@ namespace ServiceClientGenerator
                     return null;
                 return data;
             }
+        }
+
+
+        /// <summary>
+        /// For Lists of enums, the generator automatically treats the enum as a string via passing in true to "treatEnumAsString".
+        /// This customization overrides that so that the enum is treated as an enum. 
+        ///     "treatEnumsAsEnums":{
+        ///        "ObjectAttributesList": true
+        /// }
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool GetTreatEnumAsEnum(string shapeName)
+        {
+            var data = _documentRoot[TreatEnumsAsEnums];
+            if (data == null) return false;
+            return data[shapeName]  == null ? false : true;
         }
 
         private HashSet<string> _resultGenerationSuppressions = null;

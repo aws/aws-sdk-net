@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -27,12 +30,13 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GetObjectAttributes Request Marshaller
     /// </summary>       
-    public class GetObjectAttributesRequestMarshaller : IMarshaller<IRequest, GetObjectAttributesRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    public partial class GetObjectAttributesRequestMarshaller : IMarshaller<IRequest, GetObjectAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -53,48 +57,62 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/{Key+}";
             request.AddSubResource("attributes");
-
-            if (publicRequest.IsSetExpectedBucketOwner())
+        
+            if (publicRequest.IsSetExpectedBucketOwner()) 
+            {
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
-
-            if (publicRequest.IsSetMaxParts())
+            }
+        
+            if (publicRequest.IsSetMaxParts()) 
+            {
                 request.Headers["x-amz-max-parts"] = StringUtils.FromInt(publicRequest.MaxParts);
-
-            if (publicRequest.IsSetObjectAttributes())
-                request.Headers["x-amz-object-attributes"] = StringUtils.FromList(publicRequest.ObjectAttributes);
-
-            if (publicRequest.IsSetPartNumberMarker())
+            }
+        
+            if (publicRequest.IsSetObjectAttributes()) 
+            {
+                        request.Headers["x-amz-object-attributes"] = StringUtils.FromList(publicRequest.ObjectAttributes);
+            }
+        
+            if (publicRequest.IsSetPartNumberMarker()) 
+            {
                 request.Headers["x-amz-part-number-marker"] = StringUtils.FromInt(publicRequest.PartNumberMarker);
-
-            if (publicRequest.IsSetRequestPayer())
+            }
+        
+            if (publicRequest.IsSetRequestPayer()) 
+            {
                 request.Headers["x-amz-request-payer"] = publicRequest.RequestPayer;
-
-            if (publicRequest.IsSetSSECustomerAlgorithm())
+            }
+        
+            if (publicRequest.IsSetSSECustomerAlgorithm()) 
+            {
                 request.Headers["x-amz-server-side-encryption-customer-algorithm"] = publicRequest.SSECustomerAlgorithm;
-
-            if (publicRequest.IsSetSSECustomerKey())
+            }
+        
+            if (publicRequest.IsSetSSECustomerKey()) 
+            {
                 request.Headers["x-amz-server-side-encryption-customer-key"] = publicRequest.SSECustomerKey;
-
-            if (publicRequest.IsSetSSECustomerKeyMD5())
+            }
+        
+            if (publicRequest.IsSetSSECustomerKeyMD5()) 
+            {
                 request.Headers["x-amz-server-side-encryption-customer-key-MD5"] = publicRequest.SSECustomerKeyMD5;
-
+            }
             if (!publicRequest.IsSetBucketName())
                 throw new AmazonS3Exception("Request object does not have required field BucketName set");
-
             if (!publicRequest.IsSetKey())
                 throw new AmazonS3Exception("Request object does not have required field Key set");
-            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(publicRequest.Key));
-
+            request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
+            
             if (publicRequest.IsSetVersionId())
-                request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
+                request.AddSubResource("versionId", StringUtils.FromString(publicRequest.VersionId));
+            request.ResourcePath = "/{Key+}";
 
-            request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
-        private static GetObjectAttributesRequestMarshaller _instance = new GetObjectAttributesRequestMarshaller();
+        private static GetObjectAttributesRequestMarshaller _instance = new GetObjectAttributesRequestMarshaller();        
 
         internal static GetObjectAttributesRequestMarshaller GetInstance()
         {
@@ -111,5 +129,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 return _instance;
             }
         }
-    }
+
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectAttributesRequest publicRequest);
+    }    
 }

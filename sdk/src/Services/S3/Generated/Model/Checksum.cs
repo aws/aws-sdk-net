@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -23,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -35,17 +39,17 @@ namespace Amazon.S3.Model
         private string _checksumCRC64NVME;
         private string _checksumSHA1;
         private string _checksumSHA256;
-        private ChecksumType checksumType;
+        private ChecksumType _checksumType;
 
         /// <summary>
         /// Gets and sets the property ChecksumCRC32. 
         /// <para>
-        /// The Base64 encoded, 32-bit <c>CRC-32</c> checksum of the object. This checksum is only present
-        /// if the checksum was uploaded with the object. When you use an API operation on an object that
-        /// was uploaded using multipart uploads, this value may not be a direct checksum value
-        /// of the full object. Instead, it's a calculation based on the checksum values of each
-        /// individual part. For more information about how checksums are calculated with multipart
-        /// uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+        /// The Base64 encoded, 32-bit <c>CRC32 checksum</c> of the object. This checksum is only
+        /// be present if the checksum was uploaded with the object. When you use an API operation
+        /// on an object that was uploaded using multipart uploads, this value may not be a direct
+        /// checksum value of the full object. Instead, it's a calculation based on the checksum
+        /// values of each individual part. For more information about how checksums are calculated
+        /// with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -64,12 +68,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32C. 
         /// <para>
-        /// The Base64 encoded, 32-bit <c>CRC-32C</c> checksum of the object. This checksum is only present
-        /// if the checksum was uploaded with the object. When you use an API operation on an object that
-        /// was uploaded using multipart uploads, this value may not be a direct checksum value
-        /// of the full object. Instead, it's a calculation based on the checksum values of each
-        /// individual part. For more information about how checksums are calculated with multipart
-        /// uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+        /// The Base64 encoded, 32-bit <c>CRC32C</c> checksum of the object. This checksum is
+        /// only present if the checksum was uploaded with the object. When you use an API operation
+        /// on an object that was uploaded using multipart uploads, this value may not be a direct
+        /// checksum value of the full object. Instead, it's a calculation based on the checksum
+        /// values of each individual part. For more information about how checksums are calculated
+        /// with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -88,13 +92,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC64NVME. 
         /// <para>
-        /// The Base64 encoded, 64-bit <c>CRC-64NVME</c>  checksum of the object. This checksum is only present
-        /// if the checksum was uploaded with the object. When you use an API operation on an object that
-        /// was uploaded using multipart uploads, this value may not be a direct checksum value
-        /// of the full object. Instead, it's a calculation based on the checksum values of each
-        /// individual part. For more information about how checksums are calculated with multipart
-        /// uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// The Base64 encoded, 64-bit <c>CRC64NVME</c> checksum of the object. This checksum
+        /// is present if the object was uploaded with the <c>CRC64NVME</c> checksum algorithm,
+        /// or if the object was uploaded without a checksum (and Amazon S3 added the default
+        /// checksum, <c>CRC64NVME</c>, to the uploaded object). For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumCRC64NVME
@@ -112,12 +115,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumSHA1. 
         /// <para>
-        /// The Base64 encoded, 160-bit <c>SHA-1</c> digest of the object. This will only be present
-        /// if it was uploaded with the object. When you use the API operation on an object that
-        /// was uploaded using multipart uploads, this value may not be a direct checksum value
-        /// of the full object. Instead, it's a calculation based on the checksum values of each
-        /// individual part. For more information about how checksums are calculated with multipart
-        /// uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+        /// The Base64 encoded, 160-bit <c>SHA1</c> digest of the object. This will only be present
+        /// if the object was uploaded with the object. When you use the API operation on an object
+        /// that was uploaded using multipart uploads, this value may not be a direct checksum
+        /// value of the full object. Instead, it's a calculation based on the checksum values
+        /// of each individual part. For more information about how checksums are calculated with
+        /// multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -136,12 +139,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumSHA256. 
         /// <para>
-        /// The Base64 encoded, 256-bit <c>SHA-256</c> digest of the object. This will only be present
-        /// if it was uploaded with the object. When you use an API operation on an object that
-        /// was uploaded using multipart uploads, this value may not be a direct checksum value
-        /// of the full object. Instead, it's a calculation based on the checksum values of each
-        /// individual part. For more information about how checksums are calculated with multipart
-        /// uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+        /// The Base64 encoded, 256-bit <c>SHA256</c> digest of the object. This will only be
+        /// present if the object was uploaded with the object. When you use an API operation
+        /// on an object that was uploaded using multipart uploads, this value may not be a direct
+        /// checksum value of the full object. Instead, it's a calculation based on the checksum
+        /// values of each individual part. For more information about how checksums are calculated
+        /// with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -158,26 +161,24 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChecksumType.
+        /// Gets and sets the property ChecksumType. 
         /// <para>
-        /// The checksum type that is used to calculate the object’s checksum value.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity in the Amazon S3 User Guide</a>.
+        /// The checksum type that is used to calculate the object’s checksum value. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public ChecksumType ChecksumType
         {
-            get { return this.checksumType; }
-            set { this.checksumType = value; }
+            get { return this._checksumType; }
+            set { this._checksumType = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ChecksumType is set.
-        /// </summary>
-        /// <returns>true, if ChecksumType property is set.</returns>
+        // Check to see if ChecksumType property is set
         internal bool IsSetChecksumType()
         {
-            return checksumType != null;
+            return this._checksumType != null;
         }
+
     }
 }

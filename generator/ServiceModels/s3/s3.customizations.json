@@ -381,11 +381,17 @@
         },
         "StorageClass":{
             "renameShape": "S3StorageClass"
+        },
+        "Payer":{
+            "renameShape": "string"
         }
     },
     "emitDifferentPrivateDataType":{
         "GetBucketLocationOutput":{
             "Location":{"privateDataType": "string"}
         }
+    },
+    "treatEnumsAsEnums":{
+        "ObjectAttributesList": true
     }
 }
