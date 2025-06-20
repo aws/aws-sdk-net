@@ -46,6 +46,7 @@ namespace Amazon.Bedrock.Model
     public partial class GuardrailContentPolicy
     {
         private List<GuardrailContentFilter> _filters = AWSConfigs.InitializeCollections ? new List<GuardrailContentFilter>() : null;
+        private GuardrailContentFiltersTier _tier;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -65,6 +66,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// The tier that your guardrail uses for content filters.
+        /// </para>
+        /// </summary>
+        public GuardrailContentFiltersTier Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
         }
 
     }

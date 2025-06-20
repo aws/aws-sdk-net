@@ -34,7 +34,26 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class GuardrailTopicPolicyConfig
     {
+        private GuardrailTopicsTierConfig _tierConfig;
         private List<GuardrailTopicConfig> _topicsConfig = AWSConfigs.InitializeCollections ? new List<GuardrailTopicConfig>() : null;
+
+        /// <summary>
+        /// Gets and sets the property TierConfig. 
+        /// <para>
+        /// The tier that your guardrail uses for denied topic filters.
+        /// </para>
+        /// </summary>
+        public GuardrailTopicsTierConfig TierConfig
+        {
+            get { return this._tierConfig; }
+            set { this._tierConfig = value; }
+        }
+
+        // Check to see if TierConfig property is set
+        internal bool IsSetTierConfig()
+        {
+            return this._tierConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TopicsConfig. 
