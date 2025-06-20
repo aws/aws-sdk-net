@@ -1,3 +1,18 @@
+### 3.7.1068.0 (2025-06-20 18:23 UTC)
+* Bedrock (3.7.424.0)
+	* Add support for tiers in Content Filters and Denied Topics for Amazon Bedrock Guardrails.
+* ECS (3.7.412.0)
+	* Add ECS support for Windows Server 2025
+* GeoPlaces (3.7.401.0)
+	* Geocode, ReverseGeocode, and GetPlace APIs added Intersections and SecondaryAddresses. To use, add to the AdditionalFeatures list in your request. This provides info about nearby intersections and secondary addresses that are associated with a main address. Also added MainAddress and ParsedQuery.
+* Glue (3.7.421.0)
+	* AWS Glue Data Quality now provides aggregated metrics in evaluation results when publishAggregatedMetrics with row-level results are enabled. These metrics include summary statistics showing total counts of processed, passed, and failed rows and rules in a single view.
+* MediaConvert (3.7.415.0)
+	* This release adds a new SPECIFIED_OPTIMAL option for handling DDS when using DVB-Sub with high resolution video.
+* Core 3.7.402.73
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1067.0 (2025-06-19 18:19 UTC)
 * Bedrock (3.7.423.0)
 	* This release of the SDK has the API and documentation for the createcustommodel API. This feature lets you copy a trained model into Amazon Bedrock for inference.
