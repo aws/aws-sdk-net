@@ -176,6 +176,17 @@
       "documentation":"<p>This example tests httpChecksumRequired trait</p>",
       "httpChecksumRequired":true
     },
+    "HttpEmptyPrefixHeaders":{
+      "name":"HttpEmptyPrefixHeaders",
+      "http":{
+        "method":"GET",
+        "requestUri":"/HttpEmptyPrefixHeaders",
+        "responseCode":200
+      },
+      "input":{"shape":"HttpEmptyPrefixHeadersInput"},
+      "output":{"shape":"HttpEmptyPrefixHeadersOutput"},
+      "documentation":"<p>Clients that perform this test extract all headers from the response.</p>"
+    },
     "HttpEnumPayload":{
       "name":"HttpEnumPayload",
       "http":{
@@ -1029,6 +1040,36 @@
     "HttpDate":{
       "type":"timestamp",
       "timestampFormat":"rfc822"
+    },
+    "HttpEmptyPrefixHeadersInput":{
+      "type":"structure",
+      "members":{
+        "prefixHeaders":{
+          "shape":"StringMap",
+          "location":"headers",
+          "locationName":""
+        },
+        "specificHeader":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"hello"
+        }
+      }
+    },
+    "HttpEmptyPrefixHeadersOutput":{
+      "type":"structure",
+      "members":{
+        "prefixHeaders":{
+          "shape":"StringMap",
+          "location":"headers",
+          "locationName":""
+        },
+        "specificHeader":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"hello"
+        }
+      }
     },
     "HttpPayloadTraitsInputOutput":{
       "type":"structure",
