@@ -734,11 +734,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 QueryFilter = new List<ScanCondition>()
                 {
-                    new ScanCondition("CompanyName", ScanOperator.Equal, "Test")
+                    new ScanCondition("CompanyName", ScanOperator.Equal, "test")
                 },
                 ConditionalOperator = ConditionalOperatorValues.And
             }).ToList();
-            Assert.AreEqual(1, ageEqResultScan.Count);
+            Assert.AreEqual(1, ageAndCompanyResultScan.Count);
         }
 
         [TestMethod]

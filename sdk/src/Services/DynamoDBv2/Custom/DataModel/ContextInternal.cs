@@ -1035,29 +1035,44 @@ namespace Amazon.DynamoDBv2.DataModel
         private ScanFilter ComposeScanFilter(IEnumerable<ScanCondition> conditions, ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig)
         {
             ScanFilter filter = new ScanFilter();
+
+            var conditionsToUse = new List<ScanCondition>();
             if (conditions != null)
             {
-                foreach (var condition in conditions)
-                {
-                    PropertyStorage propertyStorage = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
-                    List<AttributeValue> attributeValues = new List<AttributeValue>();
-                    foreach (var value in condition.Values)
-                    {
-                        var entry = ToDynamoDBEntry(propertyStorage, value, flatConfig, canReturnScalarInsteadOfList: true);
-                        if (entry == null)
-                            throw new InvalidOperationException(
-                                string.Format(CultureInfo.InvariantCulture, "Unable to convert value corresponding to property [{0}] to DynamoDB representation", condition.PropertyName));
-
-                        var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
-                        AttributeValue nativeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
-                        if (nativeValue != null)
-                        {
-                            attributeValues.Add(nativeValue);
-                        }
-                    }
-                    filter.AddCondition(propertyStorage.AttributeName, condition.Operator, attributeValues);
-                }
+                conditionsToUse.AddRange(conditions);
             }
+            if (flatConfig.QueryFilter != null)
+            {
+                conditionsToUse.AddRange(flatConfig.QueryFilter);
+            }
+
+            foreach (var condition in conditionsToUse)
+            {
+                PropertyStorage propertyStorage =
+                    storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
+                List<AttributeValue> attributeValues = new List<AttributeValue>();
+                foreach (var value in condition.Values)
+                {
+                    var entry = ToDynamoDBEntry(propertyStorage, value, flatConfig, canReturnScalarInsteadOfList: true);
+                    if (entry == null)
+                        throw new InvalidOperationException(
+                            string.Format(CultureInfo.InvariantCulture,
+                                "Unable to convert value corresponding to property [{0}] to DynamoDB representation",
+                                condition.PropertyName));
+
+                    var attributeConversionConfig =
+                        new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion,
+                            flatConfig.IsEmptyStringValueEnabled);
+                    AttributeValue nativeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
+                    if (nativeValue != null)
+                    {
+                        attributeValues.Add(nativeValue);
+                    }
+                }
+
+                filter.AddCondition(propertyStorage.AttributeName, condition.Operator, attributeValues);
+            }
+
             return filter;
         }
 
@@ -1514,7 +1529,6 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             else
             {
-
                 List<string> indexNames;
                 QueryFilter filter = ComposeQueryFilter(flatConfig, hashKeyValue, conditions, storageConfig, out indexNames);
                 query = ConvertQueryHelper<T>(flatConfig, storageConfig, filter, indexNames);
