@@ -382,10 +382,5 @@
         "StorageClass":{
             "renameShape": "S3StorageClass"
         }
-    },
-    "emitDifferentPrivateDataType":{
-        "GetBucketLocationOutput":{
-            "Location":{"privateDataType": "string"}
-        }
     }
 }

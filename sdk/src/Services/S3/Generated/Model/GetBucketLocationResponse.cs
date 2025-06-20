@@ -34,7 +34,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetBucketLocationResponse : AmazonWebServiceResponse
     {
-        private string _location;
+        private S3Region _location;
 
         /// <summary>
         /// Gets and sets the property Location. 
