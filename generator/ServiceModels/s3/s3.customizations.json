@@ -113,6 +113,30 @@
                 }
             ]
         },
+        "ReplicationDestination" : {
+            "modify": [
+                {
+                    "Account" : {"emitPropertyName": "AccountId"}
+                },
+                {
+                    "Bucket" : { "emitPropertyName": "BucketArn"}
+                }
+            ]
+        },
+        "GetBucketLocationOutput":{
+            "modify":[
+                {
+                    "LocationConstraint":{"emitPropertyName": "Location"}
+                }
+            ]
+        },
+        "GetBucketReplicationOutput":{
+            "modify":[
+                {
+                    "ReplicationConfiguration":{"emitPropertyName": "Configuration"}
+                }
+            ]
+        },
         "LifecycleRule": {
             "modify": [
                 {
@@ -165,10 +189,27 @@
                 }
             ]
         },
+        "PutBucketReplicationRequest": {
+            "modify": [
+                {
+                    "ReplicationConfiguration" : {"emitPropertyName": "Configuration"}
+                }
+            ]
+        },
         "QueueConfigurationDeprecated": {
             "modify": [
                 {
                     "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
+                }
+            ]
+        },
+        "ReplicationRule":{
+            "modify":[
+                {
+                    "Prefix" : {"deprecatedMessage" : "This property is deprecated. Use Filter instead."}
+                },
+                {
+                    "ID": { "emitPropertyName": "Id" }
                 }
             ]
         },
@@ -218,6 +259,13 @@
                 },
                 {
                     "SSEAlgorithm": {"emitPropertyName": "ServerSideEncryptionAlgorithm"}
+                }
+            ]
+        },
+        "SseKmsEncryptedObjects":{
+            "modify":[
+                {
+                    "Status": {"emitPropertyName" : "SseKmsEncryptedObjectsStatus"}
                 }
             ]
         },
@@ -324,6 +372,15 @@
         },
         "ServerSideEncryption":{
             "renameShape":"ServerSideEncryptionMethod"
+        },
+        "BucketLocationConstraint":{
+            "renameShape": "S3Region"
+        },
+        "Destination" :{
+            "renameShape" : "ReplicationDestination"
+        },
+        "StorageClass":{
+            "renameShape": "S3StorageClass"
         }
     }
 }

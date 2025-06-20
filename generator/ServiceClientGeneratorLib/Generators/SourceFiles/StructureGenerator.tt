@@ -172,11 +172,11 @@ namespace <#=this.Config.Namespace#>.Model
                     // If the shape is a response then skip adding ContentLength because the property comes from the base class.
                     if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
                         continue;
+
 #>
         private <#=member.DetermineType()#> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
-<#
+<#                  
                 }
-
 #>
 
 <#

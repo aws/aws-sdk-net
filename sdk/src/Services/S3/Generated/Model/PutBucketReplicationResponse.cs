@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,19 +13,27 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.S3.Util;
 
-#pragma warning disable 1591
-
-namespace Amazon.S3.Model.Internal.MarshallTransformations
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.S3.Model
 {
-    public partial class GetBucketReplicationRequestMarshaller : IMarshaller<IRequest, GetBucketReplicationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    /// <summary>
+    /// This is the response object from the PutBucketReplication operation.
+    /// </summary>
+    public partial class PutBucketReplicationResponse : AmazonWebServiceResponse
     {
-        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketReplicationRequest publicRequest)
-        {
-            defaultRequest.Suppress404Exceptions = true;
-        }
+
     }
 }
