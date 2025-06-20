@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataQualityRuleResult Object
+    /// Response Unmarshaller for DataQualityAggregatedMetrics Object
     /// </summary>  
-    public class DataQualityRuleResultUnmarshaller : IUnmarshaller<DataQualityRuleResult, XmlUnmarshallerContext>, IUnmarshaller<DataQualityRuleResult, JsonUnmarshallerContext>
+    public class DataQualityAggregatedMetricsUnmarshaller : IUnmarshaller<DataQualityAggregatedMetrics, XmlUnmarshallerContext>, IUnmarshaller<DataQualityAggregatedMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataQualityRuleResult IUnmarshaller<DataQualityRuleResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DataQualityAggregatedMetrics IUnmarshaller<DataQualityAggregatedMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataQualityRuleResult Unmarshall(JsonUnmarshallerContext context)
+        public DataQualityAggregatedMetrics Unmarshall(JsonUnmarshallerContext context)
         {
-            DataQualityRuleResult unmarshalledObject = new DataQualityRuleResult();
+            DataQualityAggregatedMetrics unmarshalledObject = new DataQualityAggregatedMetrics();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,40 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("TotalRowsFailed", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TotalRowsFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EvaluatedMetrics", targetDepth))
+                if (context.TestExpression("TotalRowsPassed", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
-                    unmarshalledObject.EvaluatedMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TotalRowsPassed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EvaluatedRule", targetDepth))
+                if (context.TestExpression("TotalRowsProcessed", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EvaluatedRule = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TotalRowsProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EvaluationMessage", targetDepth))
+                if (context.TestExpression("TotalRulesFailed", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationMessage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TotalRulesFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("TotalRulesPassed", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TotalRulesPassed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Result", targetDepth))
+                if (context.TestExpression("TotalRulesProcessed", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Result = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleMetrics", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
-                    unmarshalledObject.RuleMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TotalRulesProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +107,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataQualityRuleResultUnmarshaller _instance = new DataQualityRuleResultUnmarshaller();        
+        private static DataQualityAggregatedMetricsUnmarshaller _instance = new DataQualityAggregatedMetricsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataQualityRuleResultUnmarshaller Instance
+        public static DataQualityAggregatedMetricsUnmarshaller Instance
         {
             get
             {

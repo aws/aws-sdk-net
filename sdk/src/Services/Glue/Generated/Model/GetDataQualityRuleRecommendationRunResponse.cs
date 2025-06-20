@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the GetDataQualityRuleRecommendationRun operation.
+    /// The response for the Data Quality rule recommendation run.
     /// </summary>
     public partial class GetDataQualityRuleRecommendationRunResponse : AmazonWebServiceResponse
     {
