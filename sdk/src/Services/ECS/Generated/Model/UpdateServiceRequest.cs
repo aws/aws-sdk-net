@@ -50,12 +50,12 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
-    /// starting or running a task, or when creating or updating a service. For more infomation,
+    /// starting or running a task, or when creating or updating a service. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
     /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. You
     /// can update your volume configurations and trigger a new deployment. <c>volumeConfigurations</c>
     /// is only supported for REPLICA service and not DAEMON service. If you leave <c>volumeConfigurations</c>
-    /// <c>null</c>, it doesn't trigger a new deployment. For more infomation on volumes,
+    /// <c>null</c>, it doesn't trigger a new deployment. For more information on volumes,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
     /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
@@ -86,7 +86,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
-    /// starting or running a task, or when creating or updating a service. For more infomation,
+    /// starting or running a task, or when creating or updating a service. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
     /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
@@ -260,7 +260,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Update the Fargate launch type to an EC2 capacity provider.
+        /// Update the Fargate launch type to an Auto Scaling group capacity provider.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -268,7 +268,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Update the Fargate capacity provider to an EC2 capacity provider.
+        /// Update the Fargate capacity provider to an Auto Scaling group capacity provider.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -276,11 +276,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Update the EC2 or Fargate capacity provider back to the launch type.
+        /// Update the Auto Scaling group or Fargate capacity provider back to the launch type.
         /// </para>
         ///  
         /// <para>
-        /// Pass an empty list in the <c>capacityProvider</c> parameter.
+        /// Pass an empty list in the <c>capacityProviderStrategy</c> parameter.
         /// </para>
         ///  </li> </ul> 
         /// <para>
