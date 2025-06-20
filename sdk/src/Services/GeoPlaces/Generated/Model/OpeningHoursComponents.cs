@@ -44,7 +44,7 @@ namespace Amazon.GeoPlaces.Model
         /// String which represents the duration of the opening period, such as <c>"PT12H00M"</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string OpenDuration
         {
             get { return this._openDuration; }
@@ -63,7 +63,7 @@ namespace Amazon.GeoPlaces.Model
         /// String which represents the opening hours, such as <c>"T070000"</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=21)]
+        [AWSProperty(Sensitive=true, Min=0, Max=21)]
         public string OpenTime
         {
             get { return this._openTime; }
@@ -86,7 +86,7 @@ namespace Amazon.GeoPlaces.Model
         /// Example: <c>FREQ:DAILY;BYDAY:MO,TU,WE,TH,SU</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Recurrence
         {
             get { return this._recurrence; }

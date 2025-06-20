@@ -42,6 +42,7 @@ namespace Amazon.GeoPlaces.Model
         /// The USPS ZIP+4 Record Type Code.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RecordTypeCode RecordTypeCode
         {
             get { return this._recordTypeCode; }

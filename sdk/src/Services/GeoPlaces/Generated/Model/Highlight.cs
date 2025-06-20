@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
-    /// Describes how parts of the result response match the input query.
+    /// Indicates the starting and ending index of the text query that match the found title.
     /// </summary>
     public partial class Highlight
     {
@@ -82,7 +82,7 @@ namespace Amazon.GeoPlaces.Model
         /// The highlight's value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Value
         {
             get { return this._value; }

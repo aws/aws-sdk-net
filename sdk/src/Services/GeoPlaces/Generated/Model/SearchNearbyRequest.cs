@@ -31,7 +31,11 @@ namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchNearby operation.
-    /// Search nearby a specified location.
+    /// <c>SearchNearby</c> queries for points of interest within a radius from a central
+    /// coordinates, returning place results with optional filters such as categories, business
+    /// chains, food types and more. The API returns details such as a place name, address,
+    /// phone, category, food type, contact, opening hours. Also, the API can return phonemes,
+    /// time zones and more based on requested parameters.
     /// </summary>
     public partial class SearchNearbyRequest : AmazonGeoPlacesRequest
     {
@@ -75,7 +79,7 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// A structure which contains a set of inclusion/exclusion properties that results must
-        /// posses in order to be returned as a result.
+        /// possess in order to be returned as a result.
         /// </para>
         /// </summary>
         public SearchNearbyFilter Filter
@@ -95,6 +99,14 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// Indicates if the results will be stored. Defaults to <c>SingleUse</c>, if left empty.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Storing the response of an SearchNearby query is required to comply with service terms,
+        /// but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user
+        /// agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing
+        /// structure</a> to determine the correct setting for your use case.
+        /// </para>
+        ///  </note>
         /// </summary>
         public SearchNearbyIntendedUse IntendedUse
         {
@@ -196,7 +208,7 @@ namespace Amazon.GeoPlaces.Model
         /// through the point of view of the specified country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Sensitive=true, Min=2, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -212,8 +224,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property QueryPosition. 
         /// <para>
-        /// The position, in <c>[lng, lat]</c> for which you are querying nearby resultsfor. Results
-        /// closer to the position will be ranked higher then results further away from the position
+        /// The position, in <c>[lng, lat]</c> for which you are querying nearby results for.
+        /// Results closer to the position will be ranked higher then results further away from
+        /// the position
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -240,8 +253,13 @@ namespace Amazon.GeoPlaces.Model
         /// The maximum distance in meters from the QueryPosition from which a result will be
         /// returned.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=21000000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=21000000)]
         public long? QueryRadius
         {
             get { return this._queryRadius; }

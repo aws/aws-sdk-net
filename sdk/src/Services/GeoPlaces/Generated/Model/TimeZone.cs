@@ -44,7 +44,7 @@ namespace Amazon.GeoPlaces.Model
         /// The time zone name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
         public string Name
         {
             get { return this._name; }
@@ -63,7 +63,7 @@ namespace Amazon.GeoPlaces.Model
         /// Time zone offset of the timezone from UTC.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=6)]
+        [AWSProperty(Sensitive=true, Min=0, Max=6)]
         public string Offset
         {
             get { return this._offset; }
@@ -82,7 +82,7 @@ namespace Amazon.GeoPlaces.Model
         /// The offset of the time zone from UTC, in seconds.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public long? OffsetSeconds
         {
             get { return this._offsetSeconds; }

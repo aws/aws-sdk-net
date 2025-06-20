@@ -65,7 +65,7 @@ namespace Amazon.GeoPlaces.Model
         /// The sub-string of the original query that is replaced by this query term.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
         public string OriginalTerm
         {
             get { return this._originalTerm; }
@@ -84,7 +84,7 @@ namespace Amazon.GeoPlaces.Model
         /// The term that will be suggested to the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
         public string RefinedTerm
         {
             get { return this._refinedTerm; }

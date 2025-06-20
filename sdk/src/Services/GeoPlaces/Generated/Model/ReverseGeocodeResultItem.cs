@@ -40,6 +40,7 @@ namespace Amazon.GeoPlaces.Model
         private List<Category> _categories = AWSConfigs.InitializeCollections ? new List<Category>() : null;
         private long? _distance;
         private List<FoodType> _foodTypes = AWSConfigs.InitializeCollections ? new List<FoodType>() : null;
+        private List<Intersection> _intersections = AWSConfigs.InitializeCollections ? new List<Intersection>() : null;
         private List<double> _mapView = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private string _placeId;
         private PlaceType _placeType;
@@ -52,7 +53,7 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property AccessPoints. 
         /// <para>
-        /// Position of the access point represent by longitude and latitude.
+        /// Position of the access point represented by longitude and latitude.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -97,6 +98,7 @@ namespace Amazon.GeoPlaces.Model
         /// Boolean indicating if the address provided has been corrected.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? AddressNumberCorrected
         {
             get { return this._addressNumberCorrected; }
@@ -139,7 +141,7 @@ namespace Amazon.GeoPlaces.Model
         /// The distance in meters from the QueryPosition.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? Distance
         {
             get { return this._distance; }
@@ -174,6 +176,30 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetFoodTypes()
         {
             return this._foodTypes != null && (this._foodTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Intersections. 
+        /// <para>
+        /// All Intersections that are near the provided address.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Intersection> Intersections
+        {
+            get { return this._intersections; }
+            set { this._intersections = value; }
+        }
+
+        // Check to see if Intersections property is set
+        internal bool IsSetIntersections()
+        {
+            return this._intersections != null && (this._intersections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +238,7 @@ namespace Amazon.GeoPlaces.Model
         /// The <c>PlaceId</c> of the place you wish to receive the information for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=500)]
         public string PlaceId
         {
             get { return this._placeId; }
@@ -231,7 +257,7 @@ namespace Amazon.GeoPlaces.Model
         /// A <c>PlaceType</c> is a category that the result place must belong to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public PlaceType PlaceType
         {
             get { return this._placeType; }
@@ -252,7 +278,7 @@ namespace Amazon.GeoPlaces.Model
         /// through the point of view of the specified country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Sensitive=true, Min=3, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -338,7 +364,7 @@ namespace Amazon.GeoPlaces.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
         public string Title
         {
             get { return this._title; }

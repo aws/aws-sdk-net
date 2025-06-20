@@ -92,6 +92,18 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.FoodTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Intersections", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Intersection, IntersectionUnmarshaller>(IntersectionUnmarshaller.Instance);
+                    unmarshalledObject.Intersections = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MainAddress", targetDepth))
+                {
+                    var unmarshaller = RelatedPlaceUnmarshaller.Instance;
+                    unmarshalledObject.MainAddress = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MapView", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
@@ -102,6 +114,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MatchScoreDetailsUnmarshaller.Instance;
                     unmarshalledObject.MatchScores = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ParsedQuery", targetDepth))
+                {
+                    var unmarshaller = GeocodeParsedQueryUnmarshaller.Instance;
+                    unmarshalledObject.ParsedQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PlaceId", targetDepth))
@@ -132,6 +150,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<PostalCodeDetails, PostalCodeDetailsUnmarshaller>(PostalCodeDetailsUnmarshaller.Instance);
                     unmarshalledObject.PostalCodeDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SecondaryAddresses", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RelatedPlace, RelatedPlaceUnmarshaller>(RelatedPlaceUnmarshaller.Instance);
+                    unmarshalledObject.SecondaryAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeZone", targetDepth))

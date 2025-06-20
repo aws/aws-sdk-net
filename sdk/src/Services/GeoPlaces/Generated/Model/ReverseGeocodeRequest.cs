@@ -31,8 +31,12 @@ namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ReverseGeocode operation.
-    /// The <c>ReverseGeocode</c> operation allows you to retrieve addresses and place information
-    /// from coordinates.
+    /// <c>ReverseGeocode</c> converts geographic coordinates into a human-readable address
+    /// or place. You can obtain address component, and other related information such as
+    /// place type, category, street information. The Reverse Geocode API supports filtering
+    /// to on place type so that you can refine result based on your need. Also, The Reverse
+    /// Geocode API can also provide additional features such as time zone information and
+    /// the inclusion of political views.
     /// </summary>
     public partial class ReverseGeocodeRequest : AmazonGeoPlacesRequest
     {
@@ -75,7 +79,7 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// A structure which contains a set of inclusion/exclusion properties that results must
-        /// posses in order to be returned as a result.
+        /// possess in order to be returned as a result.
         /// </para>
         /// </summary>
         public ReverseGeocodeFilter Filter
@@ -95,6 +99,14 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// Indicates if the results will be stored. Defaults to <c>SingleUse</c>, if left empty.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Storing the response of an ReverseGeocode query is required to comply with service
+        /// terms, but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user
+        /// agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing
+        /// structure</a> to determine the correct setting for your use case.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ReverseGeocodeIntendedUse IntendedUse
         {
@@ -176,7 +188,7 @@ namespace Amazon.GeoPlaces.Model
         /// through the point of view of the specified country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Sensitive=true, Min=2, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -192,8 +204,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property QueryPosition. 
         /// <para>
-        /// The position, in <c>[lng, lat]</c> for which you are querying nearby resultsfor. Results
-        /// closer to the position will be ranked higher then results further away from the position
+        /// The position, in <c>[lng, lat]</c> for which you are querying nearby results for.
+        /// Results closer to the position will be ranked higher then results further away from
+        /// the position
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -221,7 +234,7 @@ namespace Amazon.GeoPlaces.Model
         /// returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=21000000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=21000000)]
         public long? QueryRadius
         {
             get { return this._queryRadius; }

@@ -44,6 +44,7 @@ namespace Amazon.GeoPlaces.Model
         private string _locality;
         private string _postalCode;
         private Region _region;
+        private List<SecondaryAddressComponent> _secondaryAddressComponents = AWSConfigs.InitializeCollections ? new List<SecondaryAddressComponent>() : null;
         private string _street;
         private List<StreetComponents> _streetComponents = AWSConfigs.InitializeCollections ? new List<StreetComponents>() : null;
         private string _subBlock;
@@ -56,7 +57,7 @@ namespace Amazon.GeoPlaces.Model
         /// The number that identifies an address within a street.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Sensitive=true, Min=0, Max=10)]
         public string AddressNumber
         {
             get { return this._addressNumber; }
@@ -79,7 +80,7 @@ namespace Amazon.GeoPlaces.Model
         /// Example: <c>Sunny Mansion 203 block: 2 Chome</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Block
         {
             get { return this._block; }
@@ -98,7 +99,7 @@ namespace Amazon.GeoPlaces.Model
         /// The name of the building at the address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Building
         {
             get { return this._building; }
@@ -135,7 +136,7 @@ namespace Amazon.GeoPlaces.Model
         /// The district or division of a locality associated with this address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string District
         {
             get { return this._district; }
@@ -183,7 +184,7 @@ namespace Amazon.GeoPlaces.Model
         /// postal rules. This is the correctly formatted address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Label
         {
             get { return this._label; }
@@ -199,14 +200,14 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Locality. 
         /// <para>
-        /// The locality or city of the address.
+        /// The city or locality of the address.
         /// </para>
         ///  
         /// <para>
         /// Example: <c>Vancouver</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Locality
         {
             get { return this._locality; }
@@ -223,10 +224,10 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property PostalCode. 
         /// <para>
         /// An alphanumeric string included in a postal address to facilitate mail sorting, such
-        /// as post code, postcode, or ZIP code, for which the result should posses. 
+        /// as post code, postcode, or ZIP code, for which the result should possess. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -262,12 +263,37 @@ namespace Amazon.GeoPlaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecondaryAddressComponents. 
+        /// <para>
+        /// Components that correspond to secondary identifiers on an Address. Secondary address
+        /// components include information such as Suite or Unit Number, Building, or Floor.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<SecondaryAddressComponent> SecondaryAddressComponents
+        {
+            get { return this._secondaryAddressComponents; }
+            set { this._secondaryAddressComponents = value; }
+        }
+
+        // Check to see if SecondaryAddressComponents property is set
+        internal bool IsSetSecondaryAddressComponents()
+        {
+            return this._secondaryAddressComponents != null && (this._secondaryAddressComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Street. 
         /// <para>
         /// The name of the street results should be present in.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Street
         {
             get { return this._street; }
@@ -318,7 +344,7 @@ namespace Amazon.GeoPlaces.Model
         /// Example: <c>Sunny Mansion 203 sub-block: 4</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string SubBlock
         {
             get { return this._subBlock; }
@@ -341,7 +367,7 @@ namespace Amazon.GeoPlaces.Model
         /// Example: <c>Minden-Lübbecke</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string SubDistrict
         {
             get { return this._subDistrict; }

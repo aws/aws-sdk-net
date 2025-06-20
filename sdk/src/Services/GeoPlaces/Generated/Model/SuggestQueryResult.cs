@@ -45,8 +45,13 @@ namespace Amazon.GeoPlaces.Model
         /// view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/latest/APIReference/API_geoplaces_SearchText.html">SearchText
         /// API docs</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min=0, Max=400)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string QueryId
         {
             get { return this._queryId; }
@@ -62,7 +67,7 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property QueryType. 
         /// <para>
-        /// The query type. Category qeuries will search for places which have an entry matching
+        /// The query type. Category queries will search for places which have an entry matching
         /// the given category, for example "doctor office". BusinessChain queries will search
         /// for instances of a given business.
         /// </para>

@@ -44,6 +44,7 @@ namespace Amazon.GeoPlaces.Model
         private double? _locality;
         private double? _postalCode;
         private double? _region;
+        private List<SecondaryAddressComponentMatchScore> _secondaryAddressComponents = AWSConfigs.InitializeCollections ? new List<SecondaryAddressComponentMatchScore>() : null;
         private double? _subBlock;
         private double? _subDistrict;
         private double? _subRegion;
@@ -203,7 +204,7 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property PostalCode. 
         /// <para>
         /// An alphanumeric string included in a postal address to facilitate mail sorting, such
-        /// as post code, postcode, or ZIP code, for which the result should posses. 
+        /// as post code, postcode, or ZIP code, for which the result should possess. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -240,6 +241,29 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetRegion()
         {
             return this._region.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryAddressComponents. 
+        /// <para>
+        /// Match scores for the secondary address components in the result.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<SecondaryAddressComponentMatchScore> SecondaryAddressComponents
+        {
+            get { return this._secondaryAddressComponents; }
+            set { this._secondaryAddressComponents = value; }
+        }
+
+        // Check to see if SecondaryAddressComponents property is set
+        internal bool IsSetSecondaryAddressComponents()
+        {
+            return this._secondaryAddressComponents != null && (this._secondaryAddressComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

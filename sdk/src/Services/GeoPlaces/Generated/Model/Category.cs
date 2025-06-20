@@ -45,7 +45,7 @@ namespace Amazon.GeoPlaces.Model
         /// The category ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -64,7 +64,7 @@ namespace Amazon.GeoPlaces.Model
         /// Localized name of the category type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string LocalizedName
         {
             get { return this._localizedName; }
@@ -83,7 +83,7 @@ namespace Amazon.GeoPlaces.Model
         /// The category name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -102,6 +102,7 @@ namespace Amazon.GeoPlaces.Model
         /// Boolean which indicates if this category is the primary offered by the place.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? Primary
         {
             get { return this._primary; }

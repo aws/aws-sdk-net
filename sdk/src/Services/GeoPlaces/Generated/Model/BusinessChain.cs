@@ -44,7 +44,7 @@ namespace Amazon.GeoPlaces.Model
         /// The Business Chain Id.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -63,7 +63,7 @@ namespace Amazon.GeoPlaces.Model
         /// The business chain name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
