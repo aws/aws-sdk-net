@@ -318,8 +318,7 @@ namespace Amazon.Runtime.Internal.Util
             string chunkSignature = "";
             if (HeaderSigningResult is AWS4aSigningResult v4aHeaderSigningResult)
             {
-                using var signingKey = AWS4aSigner.ComputeSigningKey(v4aHeaderSigningResult.Credentials);
-                chunkSignature = AWSSDKUtils.ToHex(AWS4aSigner.SignBlob(signingKey, chunkStringToSign), true);
+                chunkSignature = AWSSDKUtils.ToHex(AWS4aSigner.SignBlob(v4aHeaderSigningResult.Credentials, chunkStringToSign), true);
             }
             else if (HeaderSigningResult is AWS4SigningResult v4HeaderSingingResult) // SigV4
             {
@@ -404,14 +403,14 @@ namespace Amazon.Runtime.Internal.Util
                 AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(canonicalizedTrailingHeaders), true);
 
             string chunkSignature;
-            if (HeaderSigningResult is AWS4SigningResult result)
+            if (HeaderSigningResult is AWS4SigningResult aws4Result)
             {
-                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(result.GetSigningKey(), chunkStringToSign), true);
+                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(aws4Result.GetSigningKey(), chunkStringToSign), true);
             }
             else // SigV4a
             {
-                using var signingKey = AWS4aSigner.ComputeSigningKey(((AWS4aSigningResult)HeaderSigningResult).Credentials);
-                chunkSignature = AWSSDKUtils.ToHex(AWS4aSigner.SignBlob(signingKey, chunkStringToSign), true).PadRight(V4A_SIGNATURE_LENGTH, '*');
+                var aws4aResult = (AWS4aSigningResult)HeaderSigningResult;
+                chunkSignature = AWSSDKUtils.ToHex(AWS4aSigner.SignBlob(aws4aResult.Credentials, chunkStringToSign), true).PadRight(V4A_SIGNATURE_LENGTH, '*');
             }
 
             var chunk = new StringBuilder();

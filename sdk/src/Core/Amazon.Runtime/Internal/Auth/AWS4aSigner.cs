@@ -250,10 +250,8 @@ namespace Amazon.Runtime.Internal.Auth
 
             metrics?.AddProperty(Metric.StringToSign, stringToSignBuilder);
 
-            using var key = ComputeSigningKey(credentials);
-
             var stringToSign = stringToSignBuilder.ToString();
-            var signature = AWSSDKUtils.ToHex(SignBlob(key, stringToSign), true);
+            var signature = AWSSDKUtils.ToHex(SignBlob(credentials, stringToSign), true);
             return new AWS4aSigningResult(credentials.AccessKey, signedAt, signedHeaders, scope, regionSet, signature, service, "", credentials);
         }
 
@@ -309,9 +307,10 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Compute and return the signing key for the request.
         /// </summary>
-        /// <param name="credentials">The credentials.</param>
+        /// <param name="awsAccessKey">Access key credential.</param>
+        /// <param name="awsSecretAccessKey">Secret access key credential.</param>
         /// <returns>Computed signing key</returns>
-        public static ECDsa ComputeSigningKey(ImmutableCredentials credentials)
+        public static ECDsa ComputeSigningKey(string awsAccessKey, string awsSecretAccessKey)
         {
             byte[] kvalue = null;
             byte[] ksecret = null;
@@ -328,7 +327,7 @@ namespace Amazon.Runtime.Internal.Auth
                 idx += 4;
                 idx += Encoding.UTF8.GetBytes(AWS4aAlgorithmTag, 0, AWS4aAlgorithmTag.Length, kvalue, idx);
                 idx++;
-                idx += Encoding.UTF8.GetBytes(credentials.AccessKey, 0, credentials.AccessKey.Length, kvalue, idx);
+                idx += Encoding.UTF8.GetBytes(awsAccessKey, 0, awsAccessKey.Length, kvalue, idx);
                 ref byte counterValue = ref kvalue[idx++];
                 kvalue[idx + 2] = 1;
 
@@ -366,22 +365,23 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         /// <summary>
-        /// Returns the ECDSA signature for an arbitrary blob using the specified key
+        /// Returns the ECDSA signature for an arbitrary blob using the specified credentials.
         /// </summary>
-        /// <param name="key">The key to use.</param>
+        /// <param name="credentials">The credentials to use.</param>
         /// <param name="data">The data to sign.</param>
-        public static byte[] SignBlob(ECDsa key, string data)
+        public static byte[] SignBlob(ImmutableCredentials credentials, string data)
         {
-            return SignBlob(key, Encoding.UTF8.GetBytes(data));
+            return SignBlob(credentials, Encoding.UTF8.GetBytes(data));
         }
 
         /// <summary>
-        /// Returns the ECDSA signature for an arbitrary blob using the specified key
+        /// Returns the ECDSA signature for an arbitrary blob using the specified credentials.
         /// </summary>
-        /// <param name="key">The key to use.</param>
+        /// <param name="credentials">The credentials to use.</param>
         /// <param name="data">The data to sign.</param>
-        public static byte[] SignBlob(ECDsa key, byte[] data)
+        public static byte[] SignBlob(ImmutableCredentials credentials, byte[] data)
         {
+            var key = credentials.AWS4aSigningKey ??= ComputeSigningKey(credentials.AccessKey, credentials.SecretKey);
             return key.SignData(data, HashAlgorithmName.SHA256);
         }
         #endregion
