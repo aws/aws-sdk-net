@@ -162,6 +162,14 @@ namespace Amazon.Runtime.Internal.Transform
 
             while (TryReadContext(context, ref reader))
             {
+                // Do not attempt to process nested properties, as for DynamoDB the error response may contain
+                // extra values that end with one of the prefixes we're looking.
+                // Issue reported in: https://github.com/aws/aws-sdk-net/issues/3764
+                if (context.CurrentDepth > 1)
+                {
+                    continue;
+                }
+
                 if (context.TestExpression("__type"))
                 {
                     type = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
