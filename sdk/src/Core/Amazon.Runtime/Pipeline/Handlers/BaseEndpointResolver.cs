@@ -162,16 +162,6 @@ namespace Amazon.Runtime.Internal
                                     }
                                 case "sigv4a":
                                     {
-                                        // If there are multiple authentication schemes but the CRT dependency is not available,
-                                        // we will proceed to check the next value in authSchemes.
-                                        if (hasMultipleSchemes)
-                                        {
-                                            if (!IsCrtDependencyAvailable())
-                                            {
-                                                continue;
-                                            }
-                                        }
-
                                         request.SignatureVersion = SignatureVersion.SigV4a;
 
                                         var signingRegions = ((List<object>)schema["signingRegionSet"]).OfType<string>().ToArray();
@@ -217,25 +207,6 @@ namespace Amazon.Runtime.Internal
             if (disableDoubleEncoding != null)
             {
                 request.UseDoubleEncoding = !(bool)disableDoubleEncoding;
-            }
-        }
-
-        /// <summary>
-        /// Validates whether the CRT dependency is available by trying to create an <see cref="AWS4aSignerCRTWrapper"/> instance.
-        /// </summary>
-        /// <returns>
-        /// True if the CRT package is available at runtime, false otherwise.
-        /// </returns>
-        private static bool IsCrtDependencyAvailable()
-        {
-            try
-            {
-                var signer = new AWS4aSignerCRTWrapper();
-                return signer != null;
-            }
-            catch (AWSCommonRuntimeException)
-            {
-                return false;
             }
         }
 
