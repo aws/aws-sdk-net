@@ -1,3 +1,16 @@
+### 3.7.1069.0 (2025-06-23 18:25 UTC)
+* DynamoDBv2 (3.7.407.29)
+	* Fix issue where `ReturnValuesOnConditionCheckFailure` could not be used if the provided document included properties that ended with `code` or `message` (https://github.com/aws/aws-sdk-net/issues/3764).
+* Glue (3.7.422.0)
+	* AWS Glue now supports sort and z-order strategy for managed automated compaction for Iceberg tables in addition to binpack.
+* S3Tables (3.7.404.0)
+	* S3 Tables now supports sort and z-order compaction strategies for Iceberg tables in addition to binpack.
+* WorkspacesInstances (3.7.400.0)
+	* Added support for Amazon WorkSpaces Instances API
+* Core 3.7.402.74
+	* Update `JsonErrorResponseUnmarshaller` not to check nested properties when trying to populate details for operations that failed.
+	* All services packages updated to require new Core
+
 ### 3.7.1068.0 (2025-06-20 18:23 UTC)
 * Bedrock (3.7.424.0)
 	* Add support for tiers in Content Filters and Denied Topics for Amazon Bedrock Guardrails.
