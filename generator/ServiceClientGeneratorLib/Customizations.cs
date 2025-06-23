@@ -424,7 +424,7 @@ namespace ServiceClientGenerator
         public const string OverrideContentTypeKey = "overrideContentType";
         public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
         public const string OriginalMemberKey = "originalMember";
-        public const string TreatEnumsAsEnums = "treatEnumsAsEnums";
+        public const string OverrideTreatEnumsAsStringKey = "overrideTreatEnumsAsString";
         JsonData _documentRoot;
 
         SimpleMethodFormsModel _simpleMethodsModel;
@@ -609,9 +609,9 @@ namespace ServiceClientGenerator
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool GetTreatEnumAsEnum(string shapeName)
+        public bool OverrideTreatEnumsAsString(string shapeName)
         {
-            var data = _documentRoot[TreatEnumsAsEnums];
+            var data = _documentRoot[OverrideTreatEnumsAsStringKey];
             if (data == null) return false;
             return data[shapeName]  == null ? false : true;
         }

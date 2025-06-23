@@ -394,7 +394,7 @@
         }
 
     },
-    "treatEnumsAsEnums":{
+    "overrideTreatEnumsAsString":{
         "ObjectAttributesList": true
     }
 }
