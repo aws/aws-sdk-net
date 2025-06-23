@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement
     public partial class AmazonSimpleSystemsManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM", "4.0.1.10");
+            InternalSDKUtils.BuildUserAgentString("SSM", "4.0.1.11");
 
         private static readonly AmazonSimpleSystemsManagementEndpointResolver EndpointResolver =
             new AmazonSimpleSystemsManagementEndpointResolver();

@@ -1,3 +1,20 @@
+### 4.0.37.0 (2025-06-23 18:23 UTC)
+* DynamoDBv2 (4.0.1.9)
+	* Fix issue where `ReturnValuesOnConditionCheckFailure` could not be used if the provided document included properties that ended with `code` or `message` (https://github.com/aws/aws-sdk-net/issues/3764).
+* Glue (4.0.6.0)
+	* AWS Glue now supports sort and z-order strategy for managed automated compaction for Iceberg tables in addition to binpack.
+* S3 (4.0.2.1)
+	* Generate GetBucketReplication, PutBucketReplication, GetBucketPolicy, GetBucketLocation, GetBucketMetadataTableConfiguration, GetBucketOwnershipControls
+	* [Breaking Change] The following public IsSet() methods are now internal: IsSetAccountId() in Amazon.S3.Model.ReplicationDestination. IsSetEncryptionConfiguration() in Amazon.S3.Model.ReplicationDestination, IsSetAccessControlTranslation() in Amazon.S3.Model.ReplicationDestination.
+	* [Breaking Change] Priority in Amazon.S3.Model.ReplicationRule changed from int to int?
+* S3Tables (4.0.2.0)
+	* S3 Tables now supports sort and z-order compaction strategies for Iceberg tables in addition to binpack.
+* WorkspacesInstances (4.0.0.0)
+	* Added support for Amazon WorkSpaces Instances API
+* Core 4.0.0.13
+	* Update `JsonErrorResponseUnmarshaller` not to check nested properties when trying to populate details for operations that failed.
+	* All services packages updated to require new Core
+
 ### 4.0.36.0 (2025-06-20 18:23 UTC)
 * Bedrock (4.0.5.0)
 	* Add support for tiers in Content Filters and Denied Topics for Amazon Bedrock Guardrails.

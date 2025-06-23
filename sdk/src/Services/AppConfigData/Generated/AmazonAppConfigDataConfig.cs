@@ -33,7 +33,7 @@ namespace Amazon.AppConfigData
     public partial class AmazonAppConfigDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppConfigData", "4.0.0.10");
+            InternalSDKUtils.BuildUserAgentString("AppConfigData", "4.0.0.11");
 
         private static readonly AmazonAppConfigDataEndpointResolver EndpointResolver =
             new AmazonAppConfigDataEndpointResolver();
