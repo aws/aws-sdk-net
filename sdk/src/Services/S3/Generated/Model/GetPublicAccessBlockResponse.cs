@@ -12,15 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -28,22 +34,26 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetPublicAccessBlockResponse : AmazonWebServiceResponse
     {
-        private PublicAccessBlockConfiguration publicAccessBlockConfiguration;
+        private PublicAccessBlockConfiguration _publicAccessBlockConfiguration;
 
         /// <summary>
-        /// The Public Access Block configuration currently in effect for this Amazon S3 bucket.
+        /// Gets and sets the property PublicAccessBlockConfiguration. 
+        /// <para>
+        /// The <c>PublicAccessBlock</c> configuration currently in effect for this Amazon S3
+        /// bucket.
+        /// </para>
         /// </summary>
         public PublicAccessBlockConfiguration PublicAccessBlockConfiguration
         {
-            get { return this.publicAccessBlockConfiguration; }
-            set { this.publicAccessBlockConfiguration = value; }
+            get { return this._publicAccessBlockConfiguration; }
+            set { this._publicAccessBlockConfiguration = value; }
         }
 
         // Check to see if PublicAccessBlockConfiguration property is set
         internal bool IsSetPublicAccessBlockConfiguration()
         {
-            return this.publicAccessBlockConfiguration != null;
+            return this._publicAccessBlockConfiguration != null;
         }
+
     }
 }
-    

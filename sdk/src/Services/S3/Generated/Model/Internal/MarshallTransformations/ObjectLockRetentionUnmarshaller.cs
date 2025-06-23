@@ -30,66 +30,63 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetObjectRetention operation
+    /// Response Unmarshaller for ObjectLockRetention Object
     /// </summary>  
-    public class GetObjectRetentionResponseUnmarshaller : S3ReponseUnmarshaller
+    public class ObjectLockRetentionUnmarshaller : IXmlUnmarshaller<ObjectLockRetention, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public ObjectLockRetention Unmarshall(XmlUnmarshallerContext context)
         {
-            GetObjectRetentionResponse response = new GetObjectRetentionResponse();
-            UnmarshallResult(context,response);
-            
-            return response;
-        }        
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetObjectRetentionResponse response)
-        {
+            ObjectLockRetention unmarshalledObject = new ObjectLockRetention();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Retention", targetDepth))
+                    if (context.TestExpression("Mode", targetDepth))
                     {
-                        var unmarshaller = ObjectLockRetentionUnmarshaller.Instance;
-                        response.Retention = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RetainUntilDate", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.RetainUntilDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return;
+                    return unmarshalledObject;
                 }
-            }
-          
-            return;
+            }          
+            return unmarshalledObject;
         }
-        private static GetObjectRetentionResponseUnmarshaller _instance;
-                
+        private static ObjectLockRetentionUnmarshaller _instance = new ObjectLockRetentionUnmarshaller();        
+
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetObjectRetentionResponseUnmarshaller Instance
+        public static ObjectLockRetentionUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new GetObjectRetentionResponseUnmarshaller();
-                }
                 return _instance;
             }
         }
-
     }
 }

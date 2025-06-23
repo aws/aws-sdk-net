@@ -30,21 +30,22 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ObjectLockRetention Object
+    /// Response Unmarshaller for PublicAccessBlockConfiguration Object
     /// </summary>  
-    public class ObjectLockRetentionUnmarshaller : IXmlUnmarshaller<ObjectLockRetention, XmlUnmarshallerContext>
+    public class PublicAccessBlockConfigurationUnmarshaller : IXmlUnmarshaller<PublicAccessBlockConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ObjectLockRetention Unmarshall(XmlUnmarshallerContext context)
+        public PublicAccessBlockConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            ObjectLockRetention unmarshalledObject = new ObjectLockRetention();
+            PublicAccessBlockConfiguration unmarshalledObject = new PublicAccessBlockConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,16 +56,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Mode", targetDepth))
+                    if (context.TestExpression("BlockPublicAcls", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.BlockPublicAcls = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("RetainUntilDate", targetDepth))
+                    if (context.TestExpression("BlockPublicPolicy", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.RetainUntilDate = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.BlockPublicPolicy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IgnorePublicAcls", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.IgnorePublicAcls = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RestrictPublicBuckets", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.RestrictPublicBuckets = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -75,23 +88,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-
-        private static ObjectLockRetentionUnmarshaller _instance;
+        private static PublicAccessBlockConfigurationUnmarshaller _instance = new PublicAccessBlockConfigurationUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static ObjectLockRetentionUnmarshaller Instance
+        /// Gets the singleton.
+        /// </summary>  
+        public static PublicAccessBlockConfigurationUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new ObjectLockRetentionUnmarshaller();
-                }
                 return _instance;
             }
         }
-
     }
 }

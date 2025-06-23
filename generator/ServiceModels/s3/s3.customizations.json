@@ -137,6 +137,13 @@
                 }
             ]
         },
+        "GetObjectTaggingOutput":{
+            "modify":[
+                {
+                    "TagSet": {"emitPropertyName": "Tagging"}
+                }
+            ]
+        },
         "LifecycleRule": {
             "modify": [
                 {

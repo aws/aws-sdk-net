@@ -500,9 +500,9 @@ namespace ServiceClientGenerator
                         new Operation(this, "GetObjectAttributes", DocumentRoot[OperationsKey]["GetObjectAttributes"]),
                         new Operation(this, "GetObjectLegalHold", DocumentRoot[OperationsKey]["GetObjectLegalHold"]),
                         new Operation(this, "GetObjectLockConfiguration", DocumentRoot[OperationsKey]["GetObjectLockConfiguration"]),
-                        //new Operation(this, "GetObjectRetention", DocumentRoot[OperationsKey]["GetObjectRetention"]),
-                        //new Operation(this, "GetObjectTagging", DocumentRoot[OperationsKey]["GetObjectTagging"]),
-                        //new Operation(this, "GetPublicAccessBlock", DocumentRoot[OperationsKey]["GetPublicAccessBlock"]),
+                        new Operation(this, "GetObjectRetention", DocumentRoot[OperationsKey]["GetObjectRetention"]),
+                        new Operation(this, "GetObjectTagging", DocumentRoot[OperationsKey]["GetObjectTagging"]),
+                        new Operation(this, "GetPublicAccessBlock", DocumentRoot[OperationsKey]["GetPublicAccessBlock"]),
                         //new Operation(this, "HeadBucket", DocumentRoot[OperationsKey]["HeadBucket"]),
                         //new Operation(this, "ListBucketAnalyticsConfigurations", DocumentRoot[OperationsKey]["ListBucketAnalyticsConfigurations"]),
                         //new Operation(this, "ListBucketIntelligentTieringConfigurations", DocumentRoot[OperationsKey]["ListBucketIntelligentTieringConfigurations"]),
@@ -543,7 +543,8 @@ namespace ServiceClientGenerator
                     {
                         "ListBuckets",
                         "ListDirectoryBuckets",
-                        "GetObjectLegalHold"
+                        "GetObjectLegalHold",
+                        "GetObjectRetention"
                     };
                 }
                 return _s3AddParametersList;

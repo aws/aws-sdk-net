@@ -12,38 +12,43 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPublicAccessBlock operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported by directory buckets.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
-    /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3 bucket.
-    /// To use this operation, you must have the <code>s3:GetBucketPublicAccessBlock</code>
-    /// permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+    /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. To use
+    /// this operation, you must have the <c>s3:GetBucketPublicAccessBlock</c> permission.
+    /// For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
     /// Permissions in a Policy</a>.
     /// </para>
     ///  <important> 
     /// <para>
-    /// When Amazon S3 evaluates the <code>PublicAccessBlock</code> configuration for a bucket
-    /// or an object, it checks the <code>PublicAccessBlock</code> configuration for both
-    /// the bucket (or the bucket that contains the object) and the bucket owner's account.
-    /// If the <code>PublicAccessBlock</code> settings are different between the bucket and
-    /// the account, Amazon S3 uses the most restrictive combination of the bucket-level and
-    /// account-level settings.
+    /// When Amazon S3 evaluates the <c>PublicAccessBlock</c> configuration for a bucket or
+    /// an object, it checks the <c>PublicAccessBlock</c> configuration for both the bucket
+    /// (or the bucket that contains the object) and the bucket owner's account. If the <c>PublicAccessBlock</c>
+    /// settings are different between the bucket and the account, Amazon S3 uses the most
+    /// restrictive combination of the bucket-level and account-level settings.
     /// </para>
     ///  </important> 
     /// <para>
@@ -53,7 +58,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>GetPublicAccessBlock</code>:
+    /// The following operations are related to <c>GetPublicAccessBlock</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -79,26 +84,26 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetPublicAccessBlockRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
-        private string expectedBucketOwner;
+        private string _bucketName;
+        private string _expectedBucketOwner;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        ///  The name of the Amazon S3 bucket whose Public Access Block configuration you want
-        /// to retrieve. 
+        /// The name of the Amazon S3 bucket whose <c>PublicAccessBlock</c> configuration you
+        /// want to retrieve. 
         /// </para>
         /// </summary>
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.BucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -106,23 +111,20 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return this._expectedBucketOwner != null;
         }
+
     }
 }
-    
