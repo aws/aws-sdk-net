@@ -35,12 +35,17 @@ namespace Amazon.S3Tables.Model
     /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
     /// Tables maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.
     /// 
-    ///  <dl> <dt>Permissions</dt> <dd> 
+    ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
     /// You must have the <c>s3tables:GetTableMaintenanceConfiguration</c> permission to use
     /// this operation. 
     /// </para>
-    ///  </dd> </dl>
+    ///  </li> <li> 
+    /// <para>
+    /// You must have the <c>s3tables:GetTableData</c> permission to use set the compaction
+    /// strategy to <c>sort</c> or <c>zorder</c>.
+    /// </para>
+    ///  </li> </ul> </dd> </dl>
     /// </summary>
     public partial class GetTableMaintenanceConfigurationRequest : AmazonS3TablesRequest
     {
