@@ -34,7 +34,27 @@ namespace Amazon.S3Tables.Model
     /// </summary>
     public partial class IcebergCompactionSettings
     {
+        private IcebergCompactionStrategy _strategy;
         private int? _targetFileSizeMB;
+
+        /// <summary>
+        /// Gets and sets the property Strategy. 
+        /// <para>
+        /// The compaction strategy to use for the table. This determines how files are selected
+        /// and combined during compaction operations.
+        /// </para>
+        /// </summary>
+        public IcebergCompactionStrategy Strategy
+        {
+            get { return this._strategy; }
+            set { this._strategy = value; }
+        }
+
+        // Check to see if Strategy property is set
+        internal bool IsSetStrategy()
+        {
+            return this._strategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TargetFileSizeMB. 

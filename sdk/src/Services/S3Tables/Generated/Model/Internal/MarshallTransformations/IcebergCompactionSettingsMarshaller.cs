@@ -48,6 +48,12 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetStrategy())
+            {
+                context.Writer.WritePropertyName("strategy");
+                context.Writer.Write(requestObject.Strategy);
+            }
+
             if(requestObject.IsSetTargetFileSizeMB())
             {
                 context.Writer.WritePropertyName("targetFileSizeMB");
