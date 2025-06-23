@@ -908,6 +908,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This release allows customers to access email messages as they flow to and from Amazon WorkMail.
 * [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
 	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
+* [AWSSDK.WorkspacesInstances](https://www.nuget.org/packages/AWSSDK.WorkspacesInstances/)
+	* Added support for Amazon WorkSpaces Instances API
 * [AWSSDK.WorkSpacesThinClient](https://www.nuget.org/packages/AWSSDK.WorkSpacesThinClient/)
 	* Initial release of Amazon WorkSpaces Thin Client
 * [AWSSDK.WorkSpacesWeb](https://www.nuget.org/packages/AWSSDK.WorkSpacesWeb/)
