@@ -493,13 +493,13 @@ namespace ServiceClientGenerator
                         new Operation(this, "GetBucketPolicy", DocumentRoot[OperationsKey]["GetBucketPolicy"]),
                         new Operation(this, "GetBucketPolicyStatus", DocumentRoot[OperationsKey]["GetBucketPolicyStatus"]),
                         new Operation(this, "GetBucketReplication", DocumentRoot[OperationsKey]["GetBucketReplication"]),
-                        //new Operation(this, "GetBucketRequestPayment", DocumentRoot[OperationsKey]["GetBucketRequestPayment"]),
-                        //new Operation(this, "GetBucketTagging", DocumentRoot[OperationsKey]["GetBucketTagging"]),
+                        new Operation(this, "GetBucketRequestPayment", DocumentRoot[OperationsKey]["GetBucketRequestPayment"]),
+                        new Operation(this, "GetBucketTagging", DocumentRoot[OperationsKey]["GetBucketTagging"]),
                         //new Operation(this, "GetBucketVersioning", DocumentRoot[OperationsKey]["GetBucketVersioning"]),
                         //new Operation(this, "GetBucketWebsite", DocumentRoot[OperationsKey]["GetBucketWebsite"]),
-                        //new Operation(this, "GetObjectAttributes", DocumentRoot[OperationsKey]["GetObjectAttributes"]),
-                        //new Operation(this, "GetObjectLegalHold", DocumentRoot[OperationsKey]["GetObjectLegalHold"]),
-                        //new Operation(this, "GetObjectLockConfiguration", DocumentRoot[OperationsKey]["GetObjectLockConfiguration"]),
+                        new Operation(this, "GetObjectAttributes", DocumentRoot[OperationsKey]["GetObjectAttributes"]),
+                        new Operation(this, "GetObjectLegalHold", DocumentRoot[OperationsKey]["GetObjectLegalHold"]),
+                        new Operation(this, "GetObjectLockConfiguration", DocumentRoot[OperationsKey]["GetObjectLockConfiguration"]),
                         //new Operation(this, "GetObjectRetention", DocumentRoot[OperationsKey]["GetObjectRetention"]),
                         //new Operation(this, "GetObjectTagging", DocumentRoot[OperationsKey]["GetObjectTagging"]),
                         //new Operation(this, "GetPublicAccessBlock", DocumentRoot[OperationsKey]["GetPublicAccessBlock"]),
@@ -542,7 +542,8 @@ namespace ServiceClientGenerator
                     _s3AddParametersList = new List<string>
                     {
                         "ListBuckets",
-                        "ListDirectoryBuckets"
+                        "ListDirectoryBuckets",
+                        "GetObjectLegalHold"
                     };
                 }
                 return _s3AddParametersList;
@@ -567,7 +568,8 @@ namespace ServiceClientGenerator
                 {
                     _s3RequestMarshallerThrowAmazonS3ExceptionList = new List<string>()
                     {
-                        "CreateSession"
+                        "CreateSession",
+                        "GetObjectAttributes"
                     };
                 }
                 return _s3RequestMarshallerThrowAmazonS3ExceptionList;

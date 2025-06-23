@@ -381,6 +381,13 @@
         },
         "StorageClass":{
             "renameShape": "S3StorageClass"
+        },
+        "Payer":{
+            "renameShape": "string"
         }
+
+    },
+    "treatEnumsAsEnums":{
+        "ObjectAttributesList": true
     }
 }
