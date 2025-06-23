@@ -66,6 +66,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("compactionConfiguration", targetDepth))
+                {
+                    var unmarshaller = CompactionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CompactionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("enabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

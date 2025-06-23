@@ -35,11 +35,32 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class TableOptimizerConfiguration
     {
+        private CompactionConfiguration _compactionConfiguration;
         private bool? _enabled;
         private OrphanFileDeletionConfiguration _orphanFileDeletionConfiguration;
         private RetentionConfiguration _retentionConfiguration;
         private string _roleArn;
         private TableOptimizerVpcConfiguration _vpcConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property CompactionConfiguration. 
+        /// <para>
+        /// The configuration for a compaction optimizer. This configuration defines how data
+        /// files in your table will be compacted to improve query performance and reduce storage
+        /// costs.
+        /// </para>
+        /// </summary>
+        public CompactionConfiguration CompactionConfiguration
+        {
+            get { return this._compactionConfiguration; }
+            set { this._compactionConfiguration = value; }
+        }
+
+        // Check to see if CompactionConfiguration property is set
+        internal bool IsSetCompactionConfiguration()
+        {
+            return this._compactionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. 

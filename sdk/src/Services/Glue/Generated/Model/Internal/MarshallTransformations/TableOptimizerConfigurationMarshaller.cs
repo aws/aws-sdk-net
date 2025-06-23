@@ -48,6 +48,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCompactionConfiguration())
+            {
+                context.Writer.WritePropertyName("compactionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CompactionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CompactionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
