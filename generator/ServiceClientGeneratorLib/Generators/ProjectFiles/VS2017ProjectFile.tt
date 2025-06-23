@@ -153,7 +153,7 @@
 <#
     else
     {
-        if(this.Project.AssemblyName == "AWSSDK.UnitTests.DynamoDBv2.NetFramework")
+        if(this.Project.AssemblyName.StartsWith("AWSSDK.UnitTests."))
         {
         #>
         <AssemblyOriginatorKeyFile>../../../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
