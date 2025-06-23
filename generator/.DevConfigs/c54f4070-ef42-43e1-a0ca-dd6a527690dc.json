@@ -1,0 +1,18 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Update `JsonErrorResponseUnmarshaller` not to check nested properties when trying to populate details for operations that failed."
+        ],
+        "type": "patch",
+        "updateMinimum": true
+    },
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fix issue where `ReturnValuesOnConditionCheckFailure` could not be used if the provided document included properties that ended with `code` or `message` (https://github.com/aws/aws-sdk-net/issues/3764)."
+            ]
+        }
+    ]
+}
