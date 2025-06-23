@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class TableOptimizerRun
     {
         private CompactionMetrics _compactionMetrics;
+        private CompactionStrategy _compactionStrategy;
         private DateTime? _endTimestamp;
         private string _error;
         private TableOptimizerEventType _eventType;
@@ -59,6 +60,50 @@ namespace Amazon.Glue.Model
         internal bool IsSetCompactionMetrics()
         {
             return this._compactionMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompactionStrategy. 
+        /// <para>
+        /// The strategy used for the compaction run. Indicates which algorithm was applied to
+        /// determine how files were selected and combined during the compaction process. Valid
+        /// values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>binpack</c>: Combines small files into larger files, typically targeting sizes
+        /// over 100MB, while applying any pending deletes. This is the recommended compaction
+        /// strategy for most use cases. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sort</c>: Organizes data based on specified columns which are sorted hierarchically
+        /// during compaction, improving query performance for filtered operations. This strategy
+        /// is recommended when your queries frequently filter on specific columns. To use this
+        /// strategy, you must first define a sort order in your Iceberg table properties using
+        /// the <c>sort_order</c> table property.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>z-order</c>: Optimizes data organization by blending multiple attributes into
+        /// a single scalar value that can be used for sorting, allowing efficient querying across
+        /// multiple dimensions. This strategy is recommended when you need to query data across
+        /// multiple dimensions simultaneously. To use this strategy, you must first define a
+        /// sort order in your Iceberg table properties using the <c>sort_order</c> table property.
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CompactionStrategy CompactionStrategy
+        {
+            get { return this._compactionStrategy; }
+            set { this._compactionStrategy = value; }
+        }
+
+        // Check to see if CompactionStrategy property is set
+        internal bool IsSetCompactionStrategy()
+        {
+            return this._compactionStrategy != null;
         }
 
         /// <summary>
