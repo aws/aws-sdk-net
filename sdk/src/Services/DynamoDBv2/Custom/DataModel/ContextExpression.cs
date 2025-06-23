@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public static bool AttributeType(object _, string dynamoDbType) => throw null!;
     }
 
-   
+
 
     internal static class ContextExpressionsUtils
     {
@@ -107,60 +107,56 @@ namespace Amazon.DynamoDBv2.DataModel
                 _ => false
             };
         }
-        
-        internal static ConstantExpression GetConstant(Expression expr)
+
+        internal static object GetConstant(Expression expr)
         {
-            return expr switch
-            {
-                ConstantExpression constant => constant,
-                // If the expression is a UnaryExpression, check its Operand
-                UnaryExpression unary => unary.Operand as ConstantExpression,
-                NewExpression => throw new NotSupportedException($"Unsupported expression type {expr.Type}"),
-                MemberExpression member => GetConstantFromMember(member),
-                _ => null
-            };
+            return EvaluateExpression(expr);
         }
 
-        private static ConstantExpression GetConstantFromMember(
-            MemberExpression member)
+        private static object EvaluateExpression(Expression expr)
         {
-            var memberExpression = member.Expression;
-            var memberName = member.Member.Name;
-            if (memberExpression == null)
+            switch (expr)
             {
-                throw new InvalidOperationException("MemberExpression does not have an associated expression.");
-            }
-            var constant = GetConstant(memberExpression);
+                case ConstantExpression c:
+                    return c.Value;
 
-            var value = constant?.Value;
-            if (value != null)
-            {
-                return ConstantFromMember(value, memberName);
+                case MemberExpression m:
+                    var instance = m.Expression != null ? EvaluateExpression(m.Expression) : null;
+                    if (m.Member is FieldInfo fi)
+                        return fi.GetValue(instance);
+                    if (m.Member is PropertyInfo pi)
+                        return pi.GetValue(instance);
+                    break;
+
+                case MethodCallExpression call:
+                    var method = call.Method;
+
+                    if (method.Name == "get_Item")
+                    {
+                        var target = EvaluateExpression(call.Object);
+                        var indexArgs = call.Arguments.Select(EvaluateExpression).ToArray();
+                        return method.Invoke(target, indexArgs);
+                    }
+
+                    if (method.Name == "Contains")
+                    {
+                        throw new NotSupportedException("The 'Contains' method is not supported for constant extraction in expression trees. Use supported property or indexer access instead.");
+                    }
+
+                    var targetObj = call.Object != null ? EvaluateExpression(call.Object) : null;
+                    var arguments = call.Arguments.Select(EvaluateExpression).ToArray();
+                    return method.Invoke(targetObj, arguments);
+
+                case UnaryExpression u when u.NodeType == ExpressionType.Convert:
+                    var operand = EvaluateExpression(u.Operand);
+                    return Convert.ChangeType(operand, u.Type);
+
+                case NewExpression n:
+                    var args = n.Arguments.Select(EvaluateExpression).ToArray();
+                    return n.Constructor.Invoke(args);
             }
 
-            return constant ?? throw new InvalidOperationException($"Cannot extract constant from MemberExpression: {member}");
-        }
-
-        private static ConstantExpression ConstantFromMember(
-            object value, string memberName)
-        {
-            var type = value.GetType();
-            var memberInfo = Utils.GetMembersFromType(type).FirstOrDefault();
-
-            if (memberInfo is FieldInfo field)
-            {
-                var fieldValue = field.GetValue(value);
-                return Expression.Constant(fieldValue, field.FieldType);
-            }
-            else if (memberInfo is PropertyInfo property)
-            {
-                var propertyValue = property.GetValue(value);
-                return Expression.Constant(propertyValue, property.PropertyType);
-            }
-            else
-            {
-                throw new InvalidOperationException($"Member '{memberName}' not found on type '{value.GetType()}'.");
-            }
+            throw new NotSupportedException($"Expression type '{expr.NodeType}' not supported.");
         }
 
         internal static bool IsComparison(ExpressionType type)
@@ -208,7 +204,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 switch (expr)
                 {
                     case MemberExpression memberExpr:
-                        pathNodes.Insert(0, 
+                        pathNodes.Insert(0,
                             new PathNode(memberExpr.Member.Name, indexDepth, false, $"#n{indexed}"));
                         indexed = string.Empty;
                         indexDepth = 0;
@@ -220,36 +216,36 @@ namespace Amazon.DynamoDBv2.DataModel
                         indexed += "[0]";
                         break;
                     case MethodCallExpression { Method: { Name: "get_Item" } } methodCall:
-                    {
-                        var arg = methodCall.Arguments[0];
-                        if (arg is ConstantExpression constArg)
                         {
-                            var indexValue = constArg.Value;
-                            switch (indexValue)
+                            var arg = methodCall.Arguments[0];
+                            if (arg is ConstantExpression constArg)
                             {
-                                case int intValue:
-                                    indexDepth++;
-                                    indexed += $"[{intValue}]";
-                                    break;
-                                case string stringValue:
-                                    pathNodes.Insert(0, new PathNode(stringValue, indexDepth, true, $"#n{indexed}"));
-                                    indexDepth = 0;
-                                    indexed = string.Empty;
-                                    break;
-                                default:
-                                    throw new NotSupportedException(
-                                        $"Indexer argument must be an integer or string, got {indexValue.GetType().Name}.");
+                                var indexValue = constArg.Value;
+                                switch (indexValue)
+                                {
+                                    case int intValue:
+                                        indexDepth++;
+                                        indexed += $"[{intValue}]";
+                                        break;
+                                    case string stringValue:
+                                        pathNodes.Insert(0, new PathNode(stringValue, indexDepth, true, $"#n{indexed}"));
+                                        indexDepth = 0;
+                                        indexed = string.Empty;
+                                        break;
+                                    default:
+                                        throw new NotSupportedException(
+                                            $"Indexer argument must be an integer or string, got {indexValue.GetType().Name}.");
+                                }
                             }
-                        }
-                        else
-                        {
-                            throw new NotSupportedException(
-                                $"Method {methodCall.Method.Name} is not supported in property path.");
-                        }
+                            else
+                            {
+                                throw new NotSupportedException(
+                                    $"Method {methodCall.Method.Name} is not supported in property path.");
+                            }
 
-                        expr = methodCall.Object;
-                        break;
-                    }
+                            expr = methodCall.Object;
+                            break;
+                        }
                     case MethodCallExpression methodCall:
                         throw new NotSupportedException(
                             $"Method {methodCall.Method.Name} is not supported in property path.");
@@ -270,6 +266,30 @@ namespace Amazon.DynamoDBv2.DataModel
             return pathNodes;
         }
     }
+
+    //internal class ConstantExtractor : ExpressionVisitor
+    //{
+    //    public object ConstantValue { get; private set; }
+
+    //    protected override Expression VisitBinary(BinaryExpression node)
+    //    {
+    //        if (TryResolveValue(node.Right, out var value))
+    //        {
+    //            ConstantValue = value;
+    //        }
+
+    //        return base.VisitBinary(node);
+    //    }
+
+    //    private bool TryResolveValue(Expression expr, out object value)
+    //    {
+    //        value = EvaluateExpression(expr);
+    //        return true;
+    //    }
+
+       
+
+    //}
 
     /// <summary>
     /// Represents a node in a path expression for DynamoDB operations.

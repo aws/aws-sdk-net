@@ -1742,7 +1742,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private ExpressionNode HandleBinaryComparison(BinaryExpression expr, ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig)
         {
             Expression member = null;
-            ConstantExpression constant = null;
+            object constant = null;
 
             if (ContextExpressionsUtils.IsMember(expr.Left))
             {
@@ -1927,8 +1927,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (collectionExpr != null && constExprLeft != null && constExprRight != null)
                 {
                     var propertyStorage = SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig);
-                    SetExpressionValueNode(constExprLeft, node, propertyStorage, flatConfig);
-                    SetExpressionValueNode(constExprRight, node, propertyStorage, flatConfig);
+
+                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprLeft), node, propertyStorage, flatConfig);
+                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprRight), node, propertyStorage, flatConfig);
                 }
             }
             else
@@ -1948,7 +1949,8 @@ namespace Amazon.DynamoDBv2.DataModel
             };
             if (expr.Object is MemberExpression memberObj && expr.Arguments[0] is ConstantExpression argConst)
             {
-                SetExpressionNodeAttributes(storageConfig, memberObj, argConst, node, flatConfig);
+                var constantValue=ContextExpressionsUtils.GetConstant(argConst);
+                SetExpressionNodeAttributes(storageConfig, memberObj, constantValue, node, flatConfig);
             }
             else
             {
@@ -1967,7 +1969,7 @@ namespace Amazon.DynamoDBv2.DataModel
             };
             if (expr.Object is MemberExpression memberObj && expr.Arguments[0] is ConstantExpression argConst)
             {
-                SetExpressionNodeAttributes(storageConfig, memberObj, argConst, node, flatConfig);
+                SetExpressionNodeAttributes(storageConfig, memberObj, ContextExpressionsUtils.GetConstant(argConst), node, flatConfig);
             }
             else if (expr.Arguments.Count == 2 && expr.Object == null)
             {
@@ -1976,7 +1978,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 if (collectionExpr != null && constExpr != null)
                 {
-                    SetExpressionNodeAttributes(storageConfig, collectionExpr, constExpr, node, flatConfig);
+                    SetExpressionNodeAttributes(storageConfig, collectionExpr, ContextExpressionsUtils.GetConstant(constExpr), node, flatConfig);
                 }
                 else
                 {
@@ -2011,10 +2013,20 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             else if (expr.Arguments.Count == 2 && expr.Object == null)
             {
-                var memberObj = ContextExpressionsUtils.GetMember(expr.Arguments[0])
-                                ?? ContextExpressionsUtils.GetMember(expr.Arguments[1]);
-                var argConst = ContextExpressionsUtils.GetConstant(expr.Arguments[1])
-                               ?? ContextExpressionsUtils.GetConstant(expr.Arguments[0]);
+                Expression memberObj = null;
+                object argConst = null;
+
+                if (ContextExpressionsUtils.IsMember(expr.Arguments[0]))
+                {
+                    memberObj = expr.Arguments[0];
+                    argConst = ContextExpressionsUtils.GetConstant(expr.Arguments[1]);
+                }
+                else if (ContextExpressionsUtils.IsMember(expr.Arguments[1]))
+                {
+                    memberObj = expr.Arguments[1];
+                    argConst = ContextExpressionsUtils.GetConstant(expr.Arguments[0]);
+                }
+
                 if (memberObj != null && argConst != null)
                 {
                     SetExpressionNodeAttributes(storageConfig, memberObj, argConst, node, flatConfig);
@@ -2026,15 +2038,15 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         private void SetExpressionNodeAttributes(ItemStorageConfig storageConfig, Expression memberObj,
-            ConstantExpression argConst, ExpressionNode node, DynamoDBFlatConfig flatConfig)
+            object argConst, ExpressionNode node, DynamoDBFlatConfig flatConfig)
         {
             var propertyStorage = SetExpressionNameNode(storageConfig, memberObj, node, flatConfig);
             SetExpressionValueNode(argConst, node, propertyStorage, flatConfig);
         }
 
-        private void SetExpressionValueNode(ConstantExpression argConst, ExpressionNode node, PropertyStorage propertyStorage, DynamoDBFlatConfig flatConfig)
+        private void SetExpressionValueNode(object argConst, ExpressionNode node, PropertyStorage propertyStorage, DynamoDBFlatConfig flatConfig)
         {
-            DynamoDBEntry entry = ToDynamoDBEntry(propertyStorage, argConst?.Value, flatConfig, canReturnScalarInsteadOfList: true);
+            DynamoDBEntry entry = ToDynamoDBEntry(propertyStorage, argConst, flatConfig, canReturnScalarInsteadOfList: true);
             var valuesNode = new ExpressionNode()
             {
                 FormatedExpression = ExpressionFormatConstants.Value

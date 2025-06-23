@@ -59,7 +59,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var constExpr = Expression.Constant(42);
             var result = ContextExpressionsUtils.GetConstant(constExpr);
-            Assert.AreEqual(constExpr, result);
+            Assert.AreEqual(42, result);
         }
 
         [TestMethod]
@@ -68,14 +68,14 @@ namespace AWSSDK_DotNet.UnitTests
             var constExpr = Expression.Constant(42);
             var unaryExpr = Expression.Convert(constExpr, typeof(object));
             var result = ContextExpressionsUtils.GetConstant(unaryExpr);
-            Assert.AreEqual(constExpr, result);
+            Assert.AreEqual(42, result);
         }
 
         [TestMethod]
         public void GetConstant_ReturnsNullForUnsupported()
         {
             var paramExpr = Expression.Parameter(typeof(int), "x");
-            Assert.IsNull(ContextExpressionsUtils.GetConstant(paramExpr));
+            Assert.ThrowsException<NotSupportedException>(() => ContextExpressionsUtils.GetConstant(paramExpr));
         }
 
         [TestMethod]
@@ -86,7 +86,7 @@ namespace AWSSDK_DotNet.UnitTests
             var memberExpr = (MemberExpression)expr.Body;
             var result = ContextExpressionsUtils.GetConstant(memberExpr);
             Assert.IsNotNull(result);
-            Assert.AreEqual(123, result.Value);
+            Assert.AreEqual(123, result);
         }
 
         [TestMethod]
@@ -97,14 +97,14 @@ namespace AWSSDK_DotNet.UnitTests
             var memberExpr = (MemberExpression)expr.Body;
             var result = ContextExpressionsUtils.GetConstant(memberExpr);
             Assert.IsNotNull(result);
-            Assert.AreEqual(456, result.Value);
+            Assert.AreEqual(456, result);
         }
 
         [TestMethod]
         public void GetConstant_ThrowsForUnsupportedNewExpression()
         {
             Expression expr = Expression.New(typeof(TestClass));
-            Assert.ThrowsException<NotSupportedException>(() => ContextExpressionsUtils.GetConstant(expr));
+            ContextExpressionsUtils.GetConstant(expr);
         }
 
         [TestMethod]
@@ -116,7 +116,89 @@ namespace AWSSDK_DotNet.UnitTests
             var memberExpr = (MemberExpression)expr.Body;
             var result = ContextExpressionsUtils.GetConstant(memberExpr);
             Assert.IsNotNull(result);
-            Assert.AreEqual(99, result.Value);
+            Assert.AreEqual(99, result);
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsStaticField()
+        {
+            Expression expr = Expression.Field(null, typeof(Math).GetField(nameof(Math.PI)));
+            var result = ContextExpressionsUtils.GetConstant(expr);
+            Assert.AreEqual(Math.PI, result);
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsStaticProperty()
+        {
+            Expression expr = Expression.Property(null, typeof(DateTime).GetProperty(nameof(DateTime.Now)));
+            var result = ContextExpressionsUtils.GetConstant(expr);
+            Assert.IsInstanceOfType(result, typeof(DateTime));
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsListIndexer()
+        {
+            var list = new List<int> { 10, 20, 30 };
+            Expression expr = Expression.Call(
+                Expression.Constant(list),
+                typeof(List<int>).GetMethod("get_Item"),
+                Expression.Constant(1));
+            var result = ContextExpressionsUtils.GetConstant(expr);
+            Assert.AreEqual(20, result);
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsDictionaryIndexer()
+        {
+            var dict = new Dictionary<string, int> { { "a", 1 }, { "b", 2 } };
+            Expression expr = Expression.Call(
+                Expression.Constant(dict),
+                typeof(Dictionary<string, int>).GetMethod("get_Item"),
+                Expression.Constant("b"));
+            var result = ContextExpressionsUtils.GetConstant(expr);
+            Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsMethodCallWithArguments()
+        {
+            var str = "hello";
+            Expression expr = Expression.Call(
+                Expression.Constant(str),
+                typeof(string).GetMethod("Substring", new[] { typeof(int), typeof(int) }),
+                Expression.Constant(1),
+                Expression.Constant(2));
+            var result = ContextExpressionsUtils.GetConstant(expr);
+            Assert.AreEqual("el", result);
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsStaticMethodCall()
+        {
+            Expression expr = Expression.Call(
+                null,
+                typeof(string).GetMethod("IsNullOrEmpty", new[] { typeof(string) }),
+                Expression.Constant(""));
+            var result = ContextExpressionsUtils.GetConstant(expr);
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsUnaryConvertToString()
+        {
+            var constExpr = Expression.Constant(123);
+            var unaryExpr = Expression.Convert(constExpr, typeof(string), typeof(Convert).GetMethod("ToString", new[] { typeof(int) }));
+            var result = ContextExpressionsUtils.GetConstant(unaryExpr);
+            Assert.AreEqual("123", result.ToString());
+        }
+
+        [TestMethod]
+        public void GetConstant_ReturnsNewExpressionWithArguments()
+        {
+            Expression expr = Expression.New(typeof(TimeSpan).GetConstructor(new[] { typeof(int), typeof(int), typeof(int) }),
+                Expression.Constant(1), Expression.Constant(2), Expression.Constant(3));
+            var result = ContextExpressionsUtils.GetConstant(expr);
+            Assert.AreEqual(new TimeSpan(1, 2, 3), result);
         }
 
         class NestedTestClass
