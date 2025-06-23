@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Generate GetBucketRequestPayment, GetBucketTagging, and GetObjectAttributes"
+        "Generate GetBucketRequestPayment, GetBucketTagging, and GetObjectAttributes, GetObjectLegalHold, GetObjectLockConfiguration, GetObjectRetention, GetObjectTagging, GetPublicAccessBlock"
       ]
     }
   ]
