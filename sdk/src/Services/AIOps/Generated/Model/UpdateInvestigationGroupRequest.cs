@@ -36,6 +36,7 @@ namespace Amazon.AIOps.Model
     public partial class UpdateInvestigationGroupRequest : AmazonAIOpsRequest
     {
         private Dictionary<string, List<string>> _chatbotNotificationChannel = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private List<CrossAccountConfiguration> _crossAccountConfigurations = AWSConfigs.InitializeCollections ? new List<CrossAccountConfiguration>() : null;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _identifier;
         private bool? _isCloudTrailEventHistoryEnabled;
@@ -45,11 +46,11 @@ namespace Amazon.AIOps.Model
         /// <summary>
         /// Gets and sets the property ChatbotNotificationChannel. 
         /// <para>
-        /// Use this structure to integrate Amazon Q Developer operational investigations with
-        /// Amazon Q in chat applications. This structure is a string array. For the first string,
-        /// specify the ARN of an Amazon SNS topic. For the array of strings, specify the ARNs
-        /// of one or more Amazon Q in chat applications configurations that you want to associate
-        /// with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting
+        /// Use this structure to integrate CloudWatch investigations with Amazon Q in chat applications.
+        /// This structure is a string array. For the first string, specify the ARN of an Amazon
+        /// SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat
+        /// applications configurations that you want to associate with that topic. For more information
+        /// about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting
         /// started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource
         /// type defined by Amazon Web Services Chatbot</a>.
         /// </para>
@@ -72,11 +73,36 @@ namespace Amazon.AIOps.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CrossAccountConfigurations. 
+        /// <para>
+        /// Used to configure cross-account access for an investigation group. It allows the investigation
+        /// group to access resources in other accounts. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public List<CrossAccountConfiguration> CrossAccountConfigurations
+        {
+            get { return this._crossAccountConfigurations; }
+            set { this._crossAccountConfigurations = value; }
+        }
+
+        // Check to see if CrossAccountConfigurations property is set
+        internal bool IsSetCrossAccountConfigurations()
+        {
+            return this._crossAccountConfigurations != null && (this._crossAccountConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
         /// Use this structure if you want to use a customer managed KMS key to encrypt your investigation
-        /// data. If you omit this parameter, Amazon Q Developer operational investigations will
-        /// use an Amazon Web Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption
+        /// data. If you omit this parameter, CloudWatch investigations will use an Amazon Web
+        /// Services key to encrypt the data. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-KMS">Encryption
         /// of investigation data</a>.
         /// </para>
         /// </summary>
@@ -114,8 +140,8 @@ namespace Amazon.AIOps.Model
         /// <summary>
         /// Gets and sets the property IsCloudTrailEventHistoryEnabled. 
         /// <para>
-        /// Specify <c>true</c> to enable Amazon Q Developer operational investigations to have
-        /// access to change events that are recorded by CloudTrail. The default is <c>true</c>.
+        /// Specify <c>true</c> to enable CloudWatch investigations to have access to change events
+        /// that are recorded by CloudTrail. The default is <c>true</c>.
         /// </para>
         /// </summary>
         public bool? IsCloudTrailEventHistoryEnabled
@@ -133,14 +159,14 @@ namespace Amazon.AIOps.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// Specify this field if you want to change the IAM role that Amazon Q Developer operational
-        /// investigations will use when it gathers investigation data. To do so, specify the
-        /// ARN of the new role.
+        /// Specify this field if you want to change the IAM role that CloudWatch investigations
+        /// will use when it gathers investigation data. To do so, specify the ARN of the new
+        /// role.
         /// </para>
         ///  
         /// <para>
-        /// The permissions in this role determine which of your resources that Amazon Q Developer
-        /// operational investigations will have access to during investigations.
+        /// The permissions in this role determine which of your resources that CloudWatch investigations
+        /// will have access to during investigations.
         /// </para>
         ///  
         /// <para>

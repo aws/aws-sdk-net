@@ -76,6 +76,12 @@ namespace Amazon.AIOps.Model.Internal.MarshallTransformations
                     response.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("crossAccountConfigurations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CrossAccountConfiguration, CrossAccountConfigurationUnmarshaller>(CrossAccountConfigurationUnmarshaller.Instance);
+                    response.CrossAccountConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("encryptionConfiguration", targetDepth))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
