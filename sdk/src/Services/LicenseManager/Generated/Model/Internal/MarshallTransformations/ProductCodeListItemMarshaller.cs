@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LicenseConversionContext Marshaller
+    /// ProductCodeListItem Marshaller
     /// </summary>
-    public class LicenseConversionContextMarshaller : IRequestMarshaller<LicenseConversionContext, JsonMarshallerContext> 
+    public class ProductCodeListItemMarshaller : IRequestMarshaller<ProductCodeListItem, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,20 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LicenseConversionContext requestObject, JsonMarshallerContext context)
+        public void Marshall(ProductCodeListItem requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetProductCodes())
+            if(requestObject.IsSetProductCodeId())
             {
-                context.Writer.WritePropertyName("ProductCodes");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectProductCodesListValue in requestObject.ProductCodes)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ProductCodeListItemMarshaller.Instance;
-                    marshaller.Marshall(requestObjectProductCodesListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("ProductCodeId");
+                context.Writer.WriteStringValue(requestObject.ProductCodeId);
             }
 
-            if(requestObject.IsSetUsageOperation())
+            if(requestObject.IsSetProductCodeType())
             {
-                context.Writer.WritePropertyName("UsageOperation");
-                context.Writer.WriteStringValue(requestObject.UsageOperation);
+                context.Writer.WritePropertyName("ProductCodeType");
+                context.Writer.WriteStringValue(requestObject.ProductCodeType);
             }
 
         }
@@ -73,7 +63,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LicenseConversionContextMarshaller Instance = new LicenseConversionContextMarshaller();
+        public readonly static ProductCodeListItemMarshaller Instance = new ProductCodeListItemMarshaller();
 
     }
 }
