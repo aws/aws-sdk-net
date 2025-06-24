@@ -120,6 +120,12 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AIOps.Model.CrossAccountConfiguration.SourceRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AIOps.Model.EncryptionConfiguration.KmsKeyId</property>
     <min>1</min>
     <max>256</max>

@@ -38,6 +38,7 @@ namespace Amazon.AIOps.Model
         private Dictionary<string, List<string>> _chatbotNotificationChannel = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private DateTime? _createdAt;
         private string _createdBy;
+        private List<CrossAccountConfiguration> _crossAccountConfigurations = AWSConfigs.InitializeCollections ? new List<CrossAccountConfiguration>() : null;
         private EncryptionConfiguration _encryptionConfiguration;
         private bool? _isCloudTrailEventHistoryEnabled;
         private DateTime? _lastModifiedAt;
@@ -126,6 +127,26 @@ namespace Amazon.AIOps.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CrossAccountConfigurations. 
+        /// <para>
+        /// Lists the <c>AWSAccountId</c> of the accounts configured for cross-account access
+        /// and the results of the last scan performed on each account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public List<CrossAccountConfiguration> CrossAccountConfigurations
+        {
+            get { return this._crossAccountConfigurations; }
+            set { this._crossAccountConfigurations = value; }
+        }
+
+        // Check to see if CrossAccountConfigurations property is set
+        internal bool IsSetCrossAccountConfigurations()
+        {
+            return this._crossAccountConfigurations != null && (this._crossAccountConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
         /// Specifies the customer managed KMS key that the investigation group uses to encrypt
@@ -148,8 +169,8 @@ namespace Amazon.AIOps.Model
         /// <summary>
         /// Gets and sets the property IsCloudTrailEventHistoryEnabled. 
         /// <para>
-        /// Specifies whether Amazon Q Developer operational investigationshas access to change
-        /// events that are recorded by CloudTrail.
+        /// Specifies whether CloudWatch investigationshas access to change events that are recorded
+        /// by CloudTrail.
         /// </para>
         /// </summary>
         public bool IsCloudTrailEventHistoryEnabled

@@ -31,8 +31,8 @@ namespace Amazon.AIOps.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Displays the tags associated with a Amazon Q Developer operational investigations
-    /// resource. Currently, investigation groups support tagging.
+    /// Displays the tags associated with a CloudWatch investigations resource. Currently,
+    /// investigation groups support tagging.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonAIOpsRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.AIOps.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the Amazon Q Developer operational investigations resource that you want
-        /// to view tags for. You can use the <a href="https://docs.aws.amazon.com/operationalinvestigations/latest/AmazonQDeveloperOperationalInvestigationsAPIReference/API_ListInvestigationGroups.html">ListInvestigationGroups</a>
+        /// The ARN of the CloudWatch investigations resource that you want to view tags for.
+        /// You can use the <a href="https://docs.aws.amazon.com/operationalinvestigations/latest/AmazonQDeveloperOperationalInvestigationsAPIReference/API_ListInvestigationGroups.html">ListInvestigationGroups</a>
         /// operation to find the ARNs of investigation groups.
         /// </para>
         ///  

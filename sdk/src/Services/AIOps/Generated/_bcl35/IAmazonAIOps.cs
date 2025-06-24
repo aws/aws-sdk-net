@@ -30,11 +30,10 @@ namespace Amazon.AIOps
     /// <summary>
     /// <para>Interface for accessing AIOps</para>
     ///
-    /// The Amazon Q Developer operational investigations feature is a generative AI-powered
-    /// assistant that can help you respond to incidents in your system. It uses generative
-    /// AI to scan your system's telemetry and quickly surface suggestions that might be related
-    /// to your issue. These suggestions include metrics, logs, deployment events, and root-cause
-    /// hypotheses. 
+    /// The CloudWatch investigations feature is a generative AI-powered assistant that can
+    /// help you respond to incidents in your system. It uses generative AI to scan your system's
+    /// telemetry and quickly surface suggestions that might be related to your issue. These
+    /// suggestions include metrics, logs, deployment events, and root-cause hypotheses. 
     /// 
     ///  
     /// <para>
@@ -88,8 +87,8 @@ namespace Amazon.AIOps
         /// </para>
         ///  
         /// <para>
-        /// To create an investigation group and set up Amazon Q Developer operational investigations,
-        /// you must be signed in to an IAM principal that has the either the <c>AIOpsConsoleAdminPolicy</c>
+        /// To create an investigation group and set up CloudWatch investigations, you must be
+        /// signed in to an IAM principal that has the either the <c>AIOpsConsoleAdminPolicy</c>
         /// or the <c>AdministratorAccess</c> IAM policy attached, or to an account that has similar
         /// permissions.
         /// </para>
@@ -102,8 +101,8 @@ namespace Amazon.AIOps
         /// </para>
         ///  
         /// <para>
-        /// For more information about configuring CloudWatch alarms to work with Amazon Q Developer
-        /// operational investigations, see 
+        /// For more information about configuring CloudWatch alarms to work with CloudWatch investigations,
+        /// see 
         /// </para>
         ///  </important>
         /// </summary>
@@ -484,8 +483,8 @@ namespace Amazon.AIOps
 
 
         /// <summary>
-        /// Displays the tags associated with a Amazon Q Developer operational investigations
-        /// resource. Currently, investigation groups support tagging.
+        /// Displays the tags associated with a CloudWatch investigations resource. Currently,
+        /// investigation groups support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 

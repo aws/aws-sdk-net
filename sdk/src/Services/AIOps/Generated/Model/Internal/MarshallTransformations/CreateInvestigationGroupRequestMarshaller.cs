@@ -86,6 +86,22 @@ namespace Amazon.AIOps.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCrossAccountConfigurations())
+                {
+                    context.Writer.WritePropertyName("crossAccountConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCrossAccountConfigurationsListValue in publicRequest.CrossAccountConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CrossAccountConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCrossAccountConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetEncryptionConfiguration())
                 {
                     context.Writer.WritePropertyName("encryptionConfiguration");
