@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LicenseConversionContext Object
+    /// Response Unmarshaller for ProductCodeListItem Object
     /// </summary>  
-    public class LicenseConversionContextUnmarshaller : IUnmarshaller<LicenseConversionContext, XmlUnmarshallerContext>, IUnmarshaller<LicenseConversionContext, JsonUnmarshallerContext>
+    public class ProductCodeListItemUnmarshaller : IUnmarshaller<ProductCodeListItem, XmlUnmarshallerContext>, IUnmarshaller<ProductCodeListItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LicenseConversionContext IUnmarshaller<LicenseConversionContext, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ProductCodeListItem IUnmarshaller<ProductCodeListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LicenseConversionContext Unmarshall(JsonUnmarshallerContext context)
+        public ProductCodeListItem Unmarshall(JsonUnmarshallerContext context)
         {
-            LicenseConversionContext unmarshalledObject = new LicenseConversionContext();
+            ProductCodeListItem unmarshalledObject = new ProductCodeListItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ProductCodes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ProductCodeListItem, ProductCodeListItemUnmarshaller>(ProductCodeListItemUnmarshaller.Instance);
-                    unmarshalledObject.ProductCodes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UsageOperation", targetDepth))
+                if (context.TestExpression("ProductCodeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsageOperation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProductCodeId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProductCodeType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProductCodeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static LicenseConversionContextUnmarshaller _instance = new LicenseConversionContextUnmarshaller();        
+        private static ProductCodeListItemUnmarshaller _instance = new ProductCodeListItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LicenseConversionContextUnmarshaller Instance
+        public static ProductCodeListItemUnmarshaller Instance
         {
             get
             {

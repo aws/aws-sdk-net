@@ -34,7 +34,26 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class LicenseConversionContext
     {
+        private List<ProductCodeListItem> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCodeListItem>() : null;
         private string _usageOperation;
+
+        /// <summary>
+        /// Gets and sets the property ProductCodes. 
+        /// <para>
+        /// Product codes referred to in the license conversion process.
+        /// </para>
+        /// </summary>
+        public List<ProductCodeListItem> ProductCodes
+        {
+            get { return this._productCodes; }
+            set { this._productCodes = value; }
+        }
+
+        // Check to see if ProductCodes property is set
+        internal bool IsSetProductCodes()
+        {
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property UsageOperation. 
