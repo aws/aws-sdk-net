@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Amazon GameLift configuration options for your Anywhere fleets.
+    /// Amazon GameLift Servers configuration options for your Anywhere fleets.
     /// </summary>
     public partial class AnywhereConfiguration
     {
@@ -39,9 +39,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Cost. 
         /// <para>
-        /// The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your
-        /// fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-        /// up queues</a> in the <i>Amazon GameLift Developer Guide</i>.
+        /// The cost to run your fleet per hour. Amazon GameLift Servers uses the provided cost
+        /// of your fleet to balance usage in queues. For more information about queues, see <a
+        /// href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
+        /// up queues</a> in the <i>Amazon GameLift Servers Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=11)]

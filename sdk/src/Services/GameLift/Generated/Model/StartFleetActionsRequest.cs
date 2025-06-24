@@ -51,8 +51,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If successful, Amazon GameLift once again initiates scaling events as triggered by
-    /// the fleet's scaling policies. If actions on the fleet location were never stopped,
+    /// If successful, Amazon GameLift Servers once again initiates scaling events as triggered
+    /// by the fleet's scaling policies. If actions on the fleet location were never stopped,
     /// this operation will have no effect.
     /// </para>
     ///  
@@ -62,7 +62,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up Amazon GameLift fleets</a> 
+    /// up Amazon GameLift Servers fleets</a> 
     /// </para>
     /// </summary>
     public partial class StartFleetActionsRequest : AmazonGameLiftRequest

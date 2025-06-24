@@ -36,8 +36,8 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift returns a fleet
-    /// ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
+    /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift Servers returns
+    /// a fleet ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
     /// </para>
     ///  
     /// <para>

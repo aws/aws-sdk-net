@@ -31,13 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameServerGroup operation.
-    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-    /// groups.</b> 
+    /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+    /// server groups.</b> 
     /// 
     ///  
     /// <para>
     /// Retrieves information on a game server group. This operation returns only properties
-    /// related to Amazon GameLift FleetIQ. To view or update properties for the corresponding
+    /// related to Amazon GameLift Servers FleetIQ. To view or update properties for the corresponding
     /// Auto Scaling group, such as launch template, auto scaling policies, and maximum/minimum
     /// group size, access the Auto Scaling group directly.
     /// </para>
@@ -53,7 +53,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-    /// GameLift FleetIQ Guide</a> 
+    /// GameLift Servers FleetIQ Guide</a> 
     /// </para>
     /// </summary>
     public partial class DescribeGameServerGroupRequest : AmazonGameLiftRequest

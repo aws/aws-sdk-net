@@ -32,9 +32,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DeregisterCompute operation.
     /// Removes a compute resource from an Anywhere fleet. Deregistered computes can no longer
-    /// host game sessions through Amazon GameLift. Use this operation with an Anywhere fleet
-    /// that doesn't use the Amazon GameLift Agent For Anywhere fleets with the Agent, the
-    /// Agent handles all compute registry tasks for you. 
+    /// host game sessions through Amazon GameLift Servers. Use this operation with an Anywhere
+    /// fleet that doesn't use the Amazon GameLift Servers Agent For Anywhere fleets with
+    /// the Agent, the Agent handles all compute registry tasks for you. 
     /// 
     ///  
     /// <para>

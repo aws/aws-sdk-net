@@ -31,7 +31,30 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLocations operation.
-    /// Lists all custom and Amazon Web Services locations.
+    /// Lists all custom and Amazon Web Services locations where Amazon GameLift Servers can
+    /// host game servers. 
+    /// 
+    ///  
+    /// <para>
+    /// Note that if you call this API using a location that doesn't have a service endpoint,
+    /// such as one that can only be a remote location in a multi-location fleet, the API
+    /// returns an error.
+    /// </para>
+    ///  
+    /// <para>
+    /// Consult the table of supported locations in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
+    /// GameLift Servers service locations</a> to identify home Regions that support single
+    /// and multi-location fleets.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Service
+    /// locations</a> 
+    /// </para>
     /// </summary>
     public partial class ListLocationsRequest : AmazonGameLiftRequest
     {
@@ -42,7 +65,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters the list for <c>AWS</c> or <c>CUSTOM</c> locations.
+        /// Filters the list for <c>AWS</c> or <c>CUSTOM</c> locations. Use this parameter to
+        /// narrow down results to only Amazon Web Services-managed locations (Amazon EC2 or container)
+        /// or only your custom locations (such as an Amazon GameLift Servers Anywhere fleet).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]

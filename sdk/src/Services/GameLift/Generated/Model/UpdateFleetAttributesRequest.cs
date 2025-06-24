@@ -37,8 +37,8 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// To update fleet attributes, specify the fleet ID and the property values that you
-    /// want to change. If successful, Amazon GameLift returns the identifiers for the updated
-    /// fleet.
+    /// want to change. If successful, Amazon GameLift Servers returns the identifiers for
+    /// the updated fleet.
     /// </para>
     ///  
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up Amazon GameLift fleets</a> 
+    /// up Amazon GameLift Servers fleets</a> 
     /// </para>
     /// </summary>
     public partial class UpdateFleetAttributesRequest : AmazonGameLiftRequest
@@ -63,7 +63,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AnywhereConfiguration. 
         /// <para>
-        /// Amazon GameLift Anywhere configuration options.
+        /// Amazon GameLift Servers Anywhere configuration options.
         /// </para>
         /// </summary>
         public AnywhereConfiguration AnywhereConfiguration

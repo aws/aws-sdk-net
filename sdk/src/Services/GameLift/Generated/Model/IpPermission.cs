@@ -36,8 +36,8 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// For Amazon GameLift Realtime fleets, Amazon GameLift automatically opens two port
-    /// ranges, one for TCP messaging and one for UDP.
+    /// For Amazon GameLift Servers Realtime fleets, Amazon GameLift Servers automatically
+    /// opens two port ranges, one for TCP messaging and one for UDP.
     /// </para>
     /// </summary>
     public partial class IpPermission

@@ -30,33 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateScript operation.
+    /// The domain name and port information for a UDP endpoint.
     /// </summary>
-    public partial class UpdateScriptResponse : AmazonWebServiceResponse
+    public partial class UDPEndpoint
     {
-        private Script _script;
+        private string _domain;
+        private int? _port;
 
         /// <summary>
-        /// Gets and sets the property Script. 
+        /// Gets and sets the property Domain. 
         /// <para>
-        /// The newly created script record with a unique script ID. The new script's storage
-        /// location reflects an Amazon S3 location: (1) If the script was uploaded from an S3
-        /// bucket under your account, the storage location reflects the information that was
-        /// provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from
-        /// a local zip file, the storage location reflects an S3 location controls by the Amazon
-        /// GameLift Servers service.
+        /// The domain name of the UDP endpoint. 
         /// </para>
         /// </summary>
-        public Script Script
+        [AWSProperty(Min=1, Max=1024)]
+        public string Domain
         {
-            get { return this._script; }
-            set { this._script = value; }
+            get { return this._domain; }
+            set { this._domain = value; }
         }
 
-        // Check to see if Script property is set
-        internal bool IsSetScript()
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
         {
-            return this._script != null;
+            return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number of the UDP endpoint. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
     }

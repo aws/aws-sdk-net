@@ -32,7 +32,8 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the GetComputeAccess operation.
     /// Requests authorization to remotely connect to a hosting resource in a Amazon GameLift
-    /// managed fleet. This operation is not used with Amazon GameLift Anywhere fleets.
+    /// Servers managed fleet. This operation is not used with Amazon GameLift Servers Anywhere
+    /// fleets.
     /// 
     ///  
     /// <para>

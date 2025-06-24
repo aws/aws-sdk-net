@@ -41,8 +41,8 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// An EC2 fleet is a set of Amazon Elastic Compute Cloud (Amazon EC2) instances. Your
-    /// game server build is deployed to each fleet instance. Amazon GameLift manages the
-    /// fleet's instances and controls the lifecycle of game server processes, which host
+    /// game server build is deployed to each fleet instance. Amazon GameLift Servers manages
+    /// the fleet's instances and controls the lifecycle of game server processes, which host
     /// game sessions for players. EC2 fleets can have instances in multiple locations. Each
     /// instance in the fleet is designated a <c>Compute</c>.
     /// </para>
@@ -81,7 +81,7 @@ namespace Amazon.GameLift.Model
     ///  </li> </ul> 
     /// <para>
     /// If successful, this operation creates a new fleet resource and places it in <c>NEW</c>
-    /// status while Amazon GameLift initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
+    /// status while Amazon GameLift Servers initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
     /// creation workflow</a>. To debug your fleet, fetch logs, view performance metrics or
     /// other actions on the fleet, create a development fleet with port 22/3389 open. As
     /// a best practice, we recommend opening ports for remote access only when you need them
@@ -99,7 +99,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// An Anywhere fleet represents compute resources that are not owned or managed by Amazon
-    /// GameLift. You might create an Anywhere fleet with your local machine for testing,
+    /// GameLift Servers. You might create an Anywhere fleet with your local machine for testing,
     /// or use one to host game servers with on-premises hardware or other game hosting solutions.
     /// 
     /// </para>
@@ -173,7 +173,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AnywhereConfiguration. 
         /// <para>
-        /// Amazon GameLift Anywhere configuration options.
+        /// Amazon GameLift Servers Anywhere configuration options.
         /// </para>
         /// </summary>
         public AnywhereConfiguration AnywhereConfiguration
@@ -193,8 +193,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The unique identifier for a custom game server build to be deployed to a fleet with
         /// compute type <c>EC2</c>. You can use either the build ID or ARN. The build must be
-        /// uploaded to Amazon GameLift and in <c>READY</c> status. This fleet property can't
-        /// be changed after the fleet is created.
+        /// uploaded to Amazon GameLift Servers and in <c>READY</c> status. This fleet property
+        /// can't be changed after the fleet is created.
         /// </para>
         /// </summary>
         public string BuildId
@@ -212,10 +212,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CertificateConfiguration. 
         /// <para>
-        /// Prompts Amazon GameLift to generate a TLS/SSL certificate for the fleet. Amazon GameLift
-        /// uses the certificates to encrypt traffic between game clients and the game servers
-        /// running on Amazon GameLift. By default, the <c>CertificateConfiguration</c> is <c>DISABLED</c>.
-        /// You can't change this property after you create the fleet. 
+        /// Prompts Amazon GameLift Servers to generate a TLS/SSL certificate for the fleet. Amazon
+        /// GameLift Servers uses the certificates to encrypt traffic between game clients and
+        /// the game servers running on Amazon GameLift Servers. By default, the <c>CertificateConfiguration</c>
+        /// is <c>DISABLED</c>. You can't change this property after you create the fleet. 
         /// </para>
         ///  
         /// <para>
@@ -303,8 +303,8 @@ namespace Amazon.GameLift.Model
         /// call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings">https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings</a>
         /// to set it before players can connect to game sessions. As a best practice, we recommend
         /// opening ports for remote access only when you need them and closing them when you're
-        /// finished. For Amazon GameLift Realtime fleets, Amazon GameLift automatically sets
-        /// TCP and UDP ranges.
+        /// finished. For Amazon GameLift Servers Realtime fleets, Amazon GameLift Servers automatically
+        /// sets TCP and UDP ranges.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -323,11 +323,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceType. 
         /// <para>
-        /// The Amazon GameLift-supported Amazon EC2 instance type to use with managed EC2 fleets.
-        /// Instance type determines the computing resources that will be used to host your game
-        /// servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
-        /// Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance
-        /// types.
+        /// The Amazon GameLift Servers-supported Amazon EC2 instance type to use with managed
+        /// EC2 fleets. Instance type determines the computing resources that will be used to
+        /// host your game servers, including CPU, memory, storage, and networking capacity. See
+        /// <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance
+        /// Types</a> for detailed descriptions of Amazon EC2 instance types.
         /// </para>
         /// </summary>
         public EC2InstanceType EC2InstanceType
@@ -393,12 +393,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceRoleCredentialsProvider. 
         /// <para>
-        /// Prompts Amazon GameLift to generate a shared credentials file for the IAM role that's
-        /// defined in <c>InstanceRoleArn</c>. The shared credentials file is stored on each fleet
-        /// instance and refreshed as needed. Use shared credentials for applications that are
-        /// deployed along with the game server executable, if the game server is integrated with
-        /// server SDK version 5.x. For more information about using shared credentials, see <a
-        /// href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// Prompts Amazon GameLift Servers to generate a shared credentials file for the IAM
+        /// role that's defined in <c>InstanceRoleArn</c>. The shared credentials file is stored
+        /// on each fleet instance and refreshed as needed. Use shared credentials for applications
+        /// that are deployed along with the game server executable, if the game server is integrated
+        /// with server SDK version 5.x. For more information about using shared credentials,
+        /// see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Communicate with other Amazon Web Services resources from your fleets</a>.
         /// </para>
         /// </summary>
@@ -420,11 +420,11 @@ namespace Amazon.GameLift.Model
         /// A set of remote locations to deploy additional instances to and manage as a multi-location
         /// fleet. Use this parameter when creating a fleet in Amazon Web Services Regions that
         /// support multiple locations. You can add any Amazon Web Services Region or Local Zone
-        /// that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services
-        /// Region codes, such as <c>us-west-2</c>, or Local Zone names. When using this parameter,
-        /// Amazon GameLift requires you to include your home location in the request. For a list
-        /// of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-        /// Amazon GameLift service locations</a> for managed hosting.
+        /// that's supported by Amazon GameLift Servers. Provide a list of one or more Amazon
+        /// Web Services Region codes, such as <c>us-west-2</c>, or Local Zone names. When using
+        /// this parameter, Amazon GameLift Servers requires you to include your home location
+        /// in the request. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+        /// Amazon GameLift Servers service locations</a> for managed hosting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -443,11 +443,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LogPaths. 
         /// <para>
-        ///  <b>This parameter is no longer used.</b> To specify where Amazon GameLift should
-        /// store log files once a server process shuts down, use the Amazon GameLift server API
-        /// <c>ProcessReady()</c> and specify one or more directory paths in <c>logParameters</c>.
+        ///  <b>This parameter is no longer used.</b> To specify where Amazon GameLift Servers
+        /// should store log files once a server process shuts down, use the Amazon GameLift Servers
+        /// server API <c>ProcessReady()</c> and specify one or more directory paths in <c>logParameters</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
-        /// the server process</a> in the <i>Amazon GameLift Developer Guide</i>. 
+        /// the server process</a> in the <i>Amazon GameLift Servers Developer Guide</i>. 
         /// </para>
         /// </summary>
         public List<string> LogPaths
@@ -538,9 +538,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PeerVpcAwsAccountId. 
         /// <para>
-        /// Used when peering your Amazon GameLift fleet with a VPC, the unique identifier for
-        /// the Amazon Web Services account that owns the VPC. You can find your account ID in
-        /// the Amazon Web Services Management Console under account settings. 
+        /// Used when peering your Amazon GameLift Servers fleet with a VPC, the unique identifier
+        /// for the Amazon Web Services account that owns the VPC. You can find your account ID
+        /// in the Amazon Web Services Management Console under account settings. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -560,10 +560,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PeerVpcId. 
         /// <para>
         /// A unique identifier for a VPC with resources to be accessed by your Amazon GameLift
-        /// fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use
-        /// the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon
-        /// Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon GameLift Fleets</a>.
+        /// Servers fleet. The VPC must be in the same Region as your fleet. To look up a VPC
+        /// ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
+        /// Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Servers Fleets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -603,9 +603,10 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Instructions for how to launch and run server processes on the fleet. Set runtime
         /// configuration for managed EC2 fleets. For an Anywhere fleets, set this parameter only
-        /// if the fleet is running the Amazon GameLift Agent. The runtime configuration defines
-        /// one or more server process configurations. Each server process identifies a game executable
-        /// or Realtime script file and the number of processes to run concurrently. 
+        /// if the fleet is running the Amazon GameLift Servers Agent. The runtime configuration
+        /// defines one or more server process configurations. Each server process identifies
+        /// a game executable or Realtime script file and the number of processes to run concurrently.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
@@ -631,8 +632,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The unique identifier for a Realtime configuration script to be deployed to a fleet
         /// with compute type <c>EC2</c>. You can use either the script ID or ARN. Scripts must
-        /// be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't
-        /// be changed after the fleet is created.
+        /// be uploaded to Amazon GameLift Servers prior to creating the fleet. This fleet property
+        /// can't be changed after the fleet is created.
         /// </para>
         /// </summary>
         public string ScriptId

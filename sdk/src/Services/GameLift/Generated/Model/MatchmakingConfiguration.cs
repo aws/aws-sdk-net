@@ -145,10 +145,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ConfigurationArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a Amazon GameLift matchmaking configuration resource and uniquely
-        /// identifies it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::matchmakingconfiguration/&lt;matchmaking
-        /// configuration name&gt;</c>. In a Amazon GameLift configuration ARN, the resource ID
-        /// matches the <i>Name</i> value.
+        /// that is assigned to a Amazon GameLift Servers matchmaking configuration resource and
+        /// uniquely identifies it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::matchmakingconfiguration/&lt;matchmaking
+        /// configuration name&gt;</c>. In a Amazon GameLift Servers configuration ARN, the resource
+        /// ID matches the <i>Name</i> value.
         /// </para>
         /// </summary>
         public string ConfigurationArn
@@ -224,7 +224,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FlexMatchMode. 
         /// <para>
         /// Indicates whether this matchmaking configuration is being used with Amazon GameLift
-        /// hosting or as a standalone matchmaking solution. 
+        /// Servers hosting or as a standalone matchmaking solution. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -235,7 +235,7 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift
-        /// queue to start a game session for the match. 
+        /// Servers queue to start a game session for the match. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -301,11 +301,11 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionQueueArns. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a Amazon GameLift game session queue resource and uniquely identifies
-        /// it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+        /// that is assigned to a Amazon GameLift Servers game session queue resource and uniquely
+        /// identifies it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
         /// name&gt;</c>. Queues can be located in any Region. Queues are used to start new Amazon
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking configuration.
-        /// This property is not set when <c>FlexMatchMode</c> is set to <c>STANDALONE</c>.
+        /// GameLift Servers-hosted game sessions for matches that are created with this matchmaking
+        /// configuration. This property is not set when <c>FlexMatchMode</c> is set to <c>STANDALONE</c>.
         /// </para>
         /// </summary>
         public List<string> GameSessionQueueArns

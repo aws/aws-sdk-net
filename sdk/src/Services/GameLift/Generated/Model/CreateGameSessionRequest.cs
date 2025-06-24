@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// Creates a multiplayer game session for players in a specific fleet location. This
     /// operation prompts an available server process to start a game session and retrieves
     /// connection information for the new game session. As an alternative, consider using
-    /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
+    /// the Amazon GameLift Servers game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
     /// which uses the FleetIQ algorithm and queues to optimize the placement process.
     /// 
     ///  
@@ -64,9 +64,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If successful, Amazon GameLift initiates a workflow to start a new game session and
-    /// returns a <c>GameSession</c> object containing the game session configuration and
-    /// status. When the game session status is <c>ACTIVE</c>, it is updated with connection
+    /// If successful, Amazon GameLift Servers initiates a workflow to start a new game session
+    /// and returns a <c>GameSession</c> object containing the game session configuration
+    /// and status. When the game session status is <c>ACTIVE</c>, it is updated with connection
     /// information and you can create player sessions for the game session. By default, newly
     /// created game sessions are open to new players. You can restrict new player access
     /// by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
@@ -74,12 +74,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon GameLift retains logs for active for 14 days. To access the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
+    /// Amazon GameLift Servers retains logs for active for 14 days. To access the logs, call
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
     /// to download the log files.
     /// </para>
     ///  
     /// <para>
-    ///  <i>Available in Amazon GameLift Local.</i> 
+    ///  <i>Available in Amazon GameLift Servers Local.</i> 
     /// </para>
     ///  
     /// <para>
@@ -137,14 +138,15 @@ namespace Amazon.GameLift.Model
         ///  
         /// <para>
         /// If you add a resource creation limit policy to a fleet, the <c>CreateGameSession</c>
-        /// operation requires a <c>CreatorId</c>. Amazon GameLift limits the number of game session
-        /// creation requests with the same <c>CreatorId</c> in a specified time period.
+        /// operation requires a <c>CreatorId</c>. Amazon GameLift Servers limits the number of
+        /// game session creation requests with the same <c>CreatorId</c> in a specified time
+        /// period.
         /// </para>
         ///  
         /// <para>
         /// If you your fleet doesn't have a resource creation limit policy and you provide a
-        /// <c>CreatorId</c> in your <c>CreateGameSession</c> requests, Amazon GameLift limits
-        /// requests to one request per <c>CreatorId</c> per second.
+        /// <c>CreatorId</c> in your <c>CreateGameSession</c> requests, Amazon GameLift Servers
+        /// limits requests to one request per <c>CreatorId</c> per second.
         /// </para>
         ///  
         /// <para>

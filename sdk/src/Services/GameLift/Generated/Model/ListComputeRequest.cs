@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCompute operation.
-    /// Retrieves information on the compute resources in an Amazon GameLift fleet. Use the
-    /// pagination parameters to retrieve results in a set of sequential pages.
+    /// Retrieves information on the compute resources in an Amazon GameLift Servers fleet.
+    /// Use the pagination parameters to retrieve results in a set of sequential pages.
     /// 
     ///  
     /// <para>
@@ -170,9 +170,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere
-        /// fleet, use a custom location. For a managed fleet, provide a Amazon Web Services Region
-        /// or Local Zone code (for example: <c>us-west-2</c> or <c>us-west-2-lax-1</c>).
+        /// The name of a location to retrieve compute resources for. For an Amazon GameLift Servers
+        /// Anywhere fleet, use a custom location. For a managed fleet, provide a Amazon Web Services
+        /// Region or Local Zone code (for example: <c>us-west-2</c> or <c>us-west-2-lax-1</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

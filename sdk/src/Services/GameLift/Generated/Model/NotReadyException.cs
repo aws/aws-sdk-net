@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// The operation failed because Amazon GameLift has not yet finished validating this
-    /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+    /// The operation failed because Amazon GameLift Servers has not yet finished validating
+    /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+    /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
     /// backoffs and jitter</a>.
     /// </summary>
     #if !NETSTANDARD

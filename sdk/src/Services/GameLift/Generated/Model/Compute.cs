@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// An Amazon GameLift compute resource for hosting your game servers. Computes in an
-    /// Amazon GameLift fleet differs depending on the fleet's compute type property as follows:
-    /// 
+    /// An Amazon GameLift Servers compute resource for hosting your game servers. Computes
+    /// in an Amazon GameLift Servers fleet differs depending on the fleet's compute type
+    /// property as follows: 
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -165,8 +165,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP address
-        /// for a compute.
+        /// The DNS name of a compute resource. Amazon GameLift Servers requires a DNS name or
+        /// IP address for a compute.
         /// </para>
         /// </summary>
         public string DnsName
@@ -222,7 +222,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameLiftAgentEndpoint. 
         /// <para>
-        ///  The endpoint of the Amazon GameLift Agent. 
+        ///  The endpoint of the Amazon GameLift Servers Agent. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -241,9 +241,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameLiftServiceSdkEndpoint. 
         /// <para>
-        /// The Amazon GameLift SDK endpoint connection for a registered compute resource in an
-        /// Anywhere fleet. The game servers on the compute use this endpoint to connect to the
-        /// Amazon GameLift service.
+        /// The Amazon GameLift Servers SDK endpoint connection for a registered compute resource
+        /// in an Anywhere fleet. The game servers on the compute use this endpoint to connect
+        /// to the Amazon GameLift Servers service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -299,8 +299,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of a compute resource. Amazon GameLift requires a DNS name or IP address
-        /// for a compute.
+        /// The IP address of a compute resource. Amazon GameLift Servers requires a DNS name
+        /// or IP address for a compute.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -344,10 +344,10 @@ namespace Amazon.GameLift.Model
         ///  <note> 
         /// <para>
         /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
-        /// <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-        /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift,
-        /// first update the game server build to server SDK 5.x, and then deploy to AL2023 instances.
-        /// See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
+        /// <a href="http://aws.amazon.com/aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
+        /// FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for
+        /// Amazon GameLift Servers, first update the game server build to server SDK 5.x, and
+        /// then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
         /// Migrate to server SDK version 5.</a> 
         /// </para>
         ///  </note>
@@ -368,7 +368,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The Amazon EC2 instance type that the fleet uses. For registered computes in an Amazon
-        /// GameLift Anywhere fleet, this property is empty. 
+        /// GameLift Servers Anywhere fleet, this property is empty. 
         /// </para>
         /// </summary>
         public EC2InstanceType Type

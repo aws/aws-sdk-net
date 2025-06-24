@@ -95,9 +95,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ScriptArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a Amazon GameLift script resource and uniquely identifies it.
-        /// ARNs are unique across all Regions. In a GameLift script ARN, the resource ID matches
-        /// the <i>ScriptId</i> value.
+        /// that is assigned to a Amazon GameLift Servers script resource and uniquely identifies
+        /// it. ARNs are unique across all Regions. In a GameLift script ARN, the resource ID
+        /// matches the <i>ScriptId</i> value.
         /// </para>
         /// </summary>
         public string ScriptArn
@@ -155,11 +155,11 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The location of the Amazon S3 bucket where a zipped file containing your Realtime
         /// scripts is stored. The storage location must specify the Amazon S3 bucket name, the
-        /// zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the
-        /// Amazon S3 storage location. The S3 bucket must be in the same Region where you want
-        /// to create a new script. By default, Amazon GameLift uploads the latest version of
-        /// the zip file; if you have S3 object versioning turned on, you can use the <c>ObjectVersion</c>
-        /// parameter to specify an earlier version. 
+        /// zip file name (the "key"), and a role ARN that allows Amazon GameLift Servers to access
+        /// the Amazon S3 storage location. The S3 bucket must be in the same Region where you
+        /// want to create a new script. By default, Amazon GameLift Servers uploads the latest
+        /// version of the zip file; if you have S3 object versioning turned on, you can use the
+        /// <c>ObjectVersion</c> parameter to specify an earlier version. 
         /// </para>
         /// </summary>
         public S3Location StorageLocation

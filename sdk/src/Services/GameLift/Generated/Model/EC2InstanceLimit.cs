@@ -30,11 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// The Amazon GameLift service limits for an Amazon EC2 instance type and current utilization.
-    /// Amazon GameLift allows Amazon Web Services accounts a maximum number of instances,
-    /// per instance type, per Amazon Web Services Region or location, for use with Amazon
-    /// GameLift. You can request an limit increase for your account by using the <b>Service
-    /// limits</b> page in the Amazon GameLift console.
+    /// The Amazon GameLift Servers service limits for an Amazon EC2 instance type and current
+    /// utilization. Amazon GameLift Servers allows Amazon Web Services accounts a maximum
+    /// number of instances, per instance type, per Amazon Web Services Region or location,
+    /// for use with Amazon GameLift Servers. You can request an limit increase for your account
+    /// by using the <b>Service limits</b> page in the Amazon GameLift Servers console.
     /// </summary>
     public partial class EC2InstanceLimit
     {

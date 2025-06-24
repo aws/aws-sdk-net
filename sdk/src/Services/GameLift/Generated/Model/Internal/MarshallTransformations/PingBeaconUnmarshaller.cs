@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LocationModel Object
+    /// Response Unmarshaller for PingBeacon Object
     /// </summary>  
-    public class LocationModelUnmarshaller : IUnmarshaller<LocationModel, XmlUnmarshallerContext>, IUnmarshaller<LocationModel, JsonUnmarshallerContext>
+    public class PingBeaconUnmarshaller : IUnmarshaller<PingBeacon, XmlUnmarshallerContext>, IUnmarshaller<PingBeacon, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LocationModel IUnmarshaller<LocationModel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PingBeacon IUnmarshaller<PingBeacon, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LocationModel Unmarshall(JsonUnmarshallerContext context)
+        public PingBeacon Unmarshall(JsonUnmarshallerContext context)
         {
-            LocationModel unmarshalledObject = new LocationModel();
+            PingBeacon unmarshalledObject = new PingBeacon();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("LocationArn", targetDepth))
+                if (context.TestExpression("UDPEndpoint", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LocationName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PingBeacon", targetDepth))
-                {
-                    var unmarshaller = PingBeaconUnmarshaller.Instance;
-                    unmarshalledObject.PingBeacon = unmarshaller.Unmarshall(context);
+                    var unmarshaller = UDPEndpointUnmarshaller.Instance;
+                    unmarshalledObject.UDPEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
 
 
-        private static LocationModelUnmarshaller _instance = new LocationModelUnmarshaller();        
+        private static PingBeaconUnmarshaller _instance = new PingBeaconUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LocationModelUnmarshaller Instance
+        public static PingBeaconUnmarshaller Instance
         {
             get
             {

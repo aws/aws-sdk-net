@@ -108,10 +108,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionQueueArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a Amazon GameLift game session queue resource and uniquely identifies
-        /// it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
-        /// name&gt;</c>. In a Amazon GameLift game session queue ARN, the resource ID matches
-        /// the <i>Name</i> value.
+        /// that is assigned to a Amazon GameLift Servers game session queue resource and uniquely
+        /// identifies it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+        /// name&gt;</c>. In a Amazon GameLift Servers game session queue ARN, the resource ID
+        /// matches the <i>Name</i> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -173,8 +173,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A set of policies that enforce a sliding cap on player latency when processing game
         /// sessions placement requests. Use multiple policies to gradually relax the cap over
-        /// time if Amazon GameLift can't make a placement. Policies are evaluated in order starting
-        /// with the lowest maximum latency value. 
+        /// time if Amazon GameLift Servers can't make a placement. Policies are evaluated in
+        /// order starting with the lowest maximum latency value. 
         /// </para>
         /// </summary>
         public List<PlayerLatencyPolicy> PlayerLatencyPolicies

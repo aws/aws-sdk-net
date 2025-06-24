@@ -39,51 +39,53 @@ namespace Amazon.GameLift
     /// <summary>
     /// <para>Implementation for accessing GameLift</para>
     ///
-    /// Amazon GameLift provides solutions for hosting session-based multiplayer game servers
-    /// in the cloud, including tools for deploying, operating, and scaling game servers.
+    /// Amazon GameLift Servers provides solutions for hosting session-based multiplayer game
+    /// servers in the cloud, including tools for deploying, operating, and scaling game servers.
     /// Built on Amazon Web Services global computing infrastructure, GameLift helps you deliver
     /// high-performance, high-reliability, low-cost game servers while dynamically scaling
     /// your resource usage to meet player demand. 
     /// 
     ///  
     /// <para>
-    ///  <b>About Amazon GameLift solutions</b> 
+    ///  <b>About Amazon GameLift Servers solutions</b> 
     /// </para>
     ///  
     /// <para>
-    /// Get more information on these Amazon GameLift solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-    /// GameLift Developer Guide</a>.
+    /// Get more information on these Amazon GameLift Servers solutions in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+    /// GameLift Servers Developer Guide</a>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon GameLift managed hosting -- Amazon GameLift offers a fully managed service
-    /// to set up and maintain computing machines for hosting, manage game session and player
-    /// session life cycle, and handle security, storage, and performance tracking. You can
-    /// use automatic scaling tools to balance player demand and hosting costs, configure
-    /// your game session management to minimize player latency, and add FlexMatch for matchmaking.
+    /// Amazon GameLift Servers managed hosting -- Amazon GameLift Servers offers a fully
+    /// managed service to set up and maintain computing machines for hosting, manage game
+    /// session and player session life cycle, and handle security, storage, and performance
+    /// tracking. You can use automatic scaling tools to balance player demand and hosting
+    /// costs, configure your game session management to minimize player latency, and add
+    /// FlexMatch for matchmaking.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Managed hosting with Amazon GameLift Realtime -- With Amazon GameLift Amazon GameLift
-    /// Realtime, you can quickly configure and set up ready-to-go game servers for your game.
-    /// Amazon GameLift Realtime provides a game server framework with core Amazon GameLift
-    /// infrastructure already built in. Then use the full range of Amazon GameLift managed
-    /// hosting features, including FlexMatch, for your game.
+    /// Managed hosting with Amazon GameLift Servers Realtime -- With Amazon GameLift Servers
+    /// Amazon GameLift Servers Realtime, you can quickly configure and set up ready-to-go
+    /// game servers for your game. Amazon GameLift Servers Realtime provides a game server
+    /// framework with core Amazon GameLift Servers infrastructure already built in. Then
+    /// use the full range of Amazon GameLift Servers managed hosting features, including
+    /// FlexMatch, for your game.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon GameLift FleetIQ -- Use Amazon GameLift FleetIQ as a standalone service while
-    /// hosting your games using EC2 instances and Auto Scaling groups. Amazon GameLift FleetIQ
-    /// provides optimizations for game hosting, including boosting the viability of low-cost
-    /// Spot Instances gaming. For a complete solution, pair the Amazon GameLift FleetIQ and
-    /// FlexMatch standalone services.
+    /// Amazon GameLift Servers FleetIQ -- Use Amazon GameLift Servers FleetIQ as a standalone
+    /// service while hosting your games using EC2 instances and Auto Scaling groups. Amazon
+    /// GameLift Servers FleetIQ provides optimizations for game hosting, including boosting
+    /// the viability of low-cost Spot Instances gaming. For a complete solution, pair the
+    /// Amazon GameLift Servers FleetIQ and FlexMatch standalone services.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch
-    /// is a customizable matchmaking service for multiplayer games. Use FlexMatch as integrated
-    /// with Amazon GameLift managed hosting or incorporate FlexMatch as a standalone service
-    /// into your own hosting solution.
+    /// Amazon GameLift Servers FlexMatch -- Add matchmaking to your game hosting solution.
+    /// FlexMatch is a customizable matchmaking service for multiplayer games. Use FlexMatch
+    /// as integrated with Amazon GameLift Servers managed hosting or incorporate FlexMatch
+    /// as a standalone service into your own hosting solution.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -91,19 +93,19 @@ namespace Amazon.GameLift
     /// </para>
     ///  
     /// <para>
-    /// This reference guide describes the low-level service API for Amazon GameLift. With
-    /// each topic in this guide, you can find links to language-specific SDK guides and the
-    /// Amazon Web Services CLI reference. Useful links:
+    /// This reference guide describes the low-level service API for Amazon GameLift Servers.
+    /// With each topic in this guide, you can find links to language-specific SDK guides
+    /// and the Amazon Web Services CLI reference. Useful links:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">Amazon
-    /// GameLift API operations listed by tasks</a> 
+    /// GameLift Servers API operations listed by tasks</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html">
-    /// Amazon GameLift tools and resources</a> 
+    /// Amazon GameLift Servers tools and resources</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -350,7 +352,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To register acceptance, specify the ticket ID, one or more players, and an acceptance
-        /// response. When all players have accepted, Amazon GameLift advances the matchmaking
+        /// response. When all players have accepted, Amazon GameLift Servers advances the matchmaking
         /// tickets to status <c>PLACING</c>, and attempts to create a new game session for the
         /// match. 
         /// </para>
@@ -431,7 +433,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To register acceptance, specify the ticket ID, one or more players, and an acceptance
-        /// response. When all players have accepted, Amazon GameLift advances the matchmaking
+        /// response. When all players have accepted, Amazon GameLift Servers advances the matchmaking
         /// tickets to status <c>PLACING</c>, and attempts to create a new game session for the
         /// match. 
         /// </para>
@@ -503,26 +505,26 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
         /// Locates an available game server and temporarily reserves it to host gameplay and
         /// players. This operation is called from a game client or client service (such as a
         /// matchmaker) to request hosting resources for a new game session. In response, Amazon
-        /// GameLift FleetIQ locates an available game server, places it in <c>CLAIMED</c> status
-        /// for 60 seconds, and returns connection information that players can use to connect
-        /// to the game server. 
+        /// GameLift Servers FleetIQ locates an available game server, places it in <c>CLAIMED</c>
+        /// status for 60 seconds, and returns connection information that players can use to
+        /// connect to the game server. 
         /// </para>
         ///  
         /// <para>
         /// To claim a game server, identify a game server group. You can also specify a game
-        /// server ID, although this approach bypasses Amazon GameLift FleetIQ placement optimization.
-        /// Optionally, include game data to pass to the game server at the start of a game session,
-        /// such as a game map or player information. Add filter options to further restrict how
-        /// a game server is chosen, such as only allowing game servers on <c>ACTIVE</c> instances
-        /// to be claimed.
+        /// server ID, although this approach bypasses Amazon GameLift Servers FleetIQ placement
+        /// optimization. Optionally, include game data to pass to the game server at the start
+        /// of a game session, such as a game map or player information. Add filter options to
+        /// further restrict how a game server is chosen, such as only allowing game servers on
+        /// <c>ACTIVE</c> instances to be claimed.
         /// </para>
         ///  
         /// <para>
@@ -559,7 +561,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClaimGameServer service method.</param>
@@ -600,26 +602,26 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
         /// Locates an available game server and temporarily reserves it to host gameplay and
         /// players. This operation is called from a game client or client service (such as a
         /// matchmaker) to request hosting resources for a new game session. In response, Amazon
-        /// GameLift FleetIQ locates an available game server, places it in <c>CLAIMED</c> status
-        /// for 60 seconds, and returns connection information that players can use to connect
-        /// to the game server. 
+        /// GameLift Servers FleetIQ locates an available game server, places it in <c>CLAIMED</c>
+        /// status for 60 seconds, and returns connection information that players can use to
+        /// connect to the game server. 
         /// </para>
         ///  
         /// <para>
         /// To claim a game server, identify a game server group. You can also specify a game
-        /// server ID, although this approach bypasses Amazon GameLift FleetIQ placement optimization.
-        /// Optionally, include game data to pass to the game server at the start of a game session,
-        /// such as a game map or player information. Add filter options to further restrict how
-        /// a game server is chosen, such as only allowing game servers on <c>ACTIVE</c> instances
-        /// to be claimed.
+        /// server ID, although this approach bypasses Amazon GameLift Servers FleetIQ placement
+        /// optimization. Optionally, include game data to pass to the game server at the start
+        /// of a game session, such as a game map or player information. Add filter options to
+        /// further restrict how a game server is chosen, such as only allowing game servers on
+        /// <c>ACTIVE</c> instances to be claimed.
         /// </para>
         ///  
         /// <para>
@@ -656,7 +658,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClaimGameServer service method.</param>
@@ -711,11 +713,11 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Amazon GameLift supports two types of routing strategies for aliases: simple and terminal.
-        /// A simple alias points to an active fleet. A terminal alias is used to display messaging
-        /// or link to a URL instead of routing players to an active fleet. For example, you might
-        /// use a terminal alias when a game version is no longer supported and you want to direct
-        /// players to an upgrade site. 
+        /// Amazon GameLift Servers supports two types of routing strategies for aliases: simple
+        /// and terminal. A simple alias points to an active fleet. A terminal alias is used to
+        /// display messaging or link to a URL instead of routing players to an active fleet.
+        /// For example, you might use a terminal alias when a game version is no longer supported
+        /// and you want to direct players to an upgrade site. 
         /// </para>
         ///  
         /// <para>
@@ -779,11 +781,11 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Amazon GameLift supports two types of routing strategies for aliases: simple and terminal.
-        /// A simple alias points to an active fleet. A terminal alias is used to display messaging
-        /// or link to a URL instead of routing players to an active fleet. For example, you might
-        /// use a terminal alias when a game version is no longer supported and you want to direct
-        /// players to an upgrade site. 
+        /// Amazon GameLift Servers supports two types of routing strategies for aliases: simple
+        /// and terminal. A simple alias points to an active fleet. A terminal alias is used to
+        /// display messaging or link to a URL instead of routing players to an active fleet.
+        /// For example, you might use a terminal alias when a game version is no longer supported
+        /// and you want to direct players to an upgrade site. 
         /// </para>
         ///  
         /// <para>
@@ -847,16 +849,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates a new Amazon GameLift build resource for your game server binary files. Combine
-        /// game server binaries into a zip file for use with Amazon GameLift. 
+        /// Creates a new Amazon GameLift Servers build resource for your game server binary files.
+        /// Combine game server binaries into a zip file for use with Amazon GameLift Servers.
+        /// 
         /// 
         ///  <important> 
         /// <para>
-        /// When setting up a new game build for Amazon GameLift, we recommend using the CLI command
-        /// <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+        /// When setting up a new game build for Amazon GameLift Servers, we recommend using the
+        /// CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
         /// </b>. This helper command combines two tasks: (1) it uploads your build files from
-        /// a file directory to an Amazon GameLift Amazon S3 location, and (2) it creates a new
-        /// build resource.
+        /// a file directory to an Amazon GameLift Servers Amazon S3 location, and (2) it creates
+        /// a new build resource.
         /// </para>
         ///  </important> 
         /// <para>
@@ -866,18 +869,18 @@ namespace Amazon.GameLift
         /// <para>
         /// Create a new game build with build files that are in an Amazon S3 location under an
         /// Amazon Web Services account that you control. To use this option, you give Amazon
-        /// GameLift access to the Amazon S3 bucket. With permissions in place, specify a build
-        /// name, operating system, and the Amazon S3 storage location of your game build.
+        /// GameLift Servers access to the Amazon S3 bucket. With permissions in place, specify
+        /// a build name, operating system, and the Amazon S3 storage location of your game build.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Upload your build files to a Amazon GameLift Amazon S3 location. To use this option,
-        /// specify a build name and operating system. This operation creates a new build resource
-        /// and also returns an Amazon S3 location with temporary access credentials. Use the
-        /// credentials to manually upload your build files to the specified Amazon S3 location.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+        /// Upload your build files to a Amazon GameLift Servers Amazon S3 location. To use this
+        /// option, specify a build name and operating system. This operation creates a new build
+        /// resource and also returns an Amazon S3 location with temporary access credentials.
+        /// Use the credentials to manually upload your build files to the specified Amazon S3
+        /// location. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
         /// Objects</a> in the <i>Amazon S3 Developer Guide</i>. After you upload build files
-        /// to the Amazon GameLift Amazon S3 location, you can't update them. 
+        /// to the Amazon GameLift Servers Amazon S3 location, you can't update them. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -939,16 +942,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates a new Amazon GameLift build resource for your game server binary files. Combine
-        /// game server binaries into a zip file for use with Amazon GameLift. 
+        /// Creates a new Amazon GameLift Servers build resource for your game server binary files.
+        /// Combine game server binaries into a zip file for use with Amazon GameLift Servers.
+        /// 
         /// 
         ///  <important> 
         /// <para>
-        /// When setting up a new game build for Amazon GameLift, we recommend using the CLI command
-        /// <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+        /// When setting up a new game build for Amazon GameLift Servers, we recommend using the
+        /// CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
         /// </b>. This helper command combines two tasks: (1) it uploads your build files from
-        /// a file directory to an Amazon GameLift Amazon S3 location, and (2) it creates a new
-        /// build resource.
+        /// a file directory to an Amazon GameLift Servers Amazon S3 location, and (2) it creates
+        /// a new build resource.
         /// </para>
         ///  </important> 
         /// <para>
@@ -958,18 +962,18 @@ namespace Amazon.GameLift
         /// <para>
         /// Create a new game build with build files that are in an Amazon S3 location under an
         /// Amazon Web Services account that you control. To use this option, you give Amazon
-        /// GameLift access to the Amazon S3 bucket. With permissions in place, specify a build
-        /// name, operating system, and the Amazon S3 storage location of your game build.
+        /// GameLift Servers access to the Amazon S3 bucket. With permissions in place, specify
+        /// a build name, operating system, and the Amazon S3 storage location of your game build.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Upload your build files to a Amazon GameLift Amazon S3 location. To use this option,
-        /// specify a build name and operating system. This operation creates a new build resource
-        /// and also returns an Amazon S3 location with temporary access credentials. Use the
-        /// credentials to manually upload your build files to the specified Amazon S3 location.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+        /// Upload your build files to a Amazon GameLift Servers Amazon S3 location. To use this
+        /// option, specify a build name and operating system. This operation creates a new build
+        /// resource and also returns an Amazon S3 location with temporary access credentials.
+        /// Use the credentials to manually upload your build files to the specified Amazon S3
+        /// location. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
         /// Objects</a> in the <i>Amazon S3 Developer Guide</i>. After you upload build files
-        /// to the Amazon GameLift Amazon S3 location, you can't update them. 
+        /// to the Amazon GameLift Servers Amazon S3 location, you can't update them. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1042,9 +1046,9 @@ namespace Amazon.GameLift
         /// host your containerized game servers. Use this operation to define how to deploy a
         /// container architecture onto each fleet instance and configure fleet settings. You
         /// can create a container fleet in any Amazon Web Services Regions that Amazon GameLift
-        /// supports for multi-location fleets. A container fleet can be deployed to a single
-        /// location or multiple locations. Container fleets are deployed with Amazon Linux 2023
-        /// as the instance operating system.
+        /// Servers supports for multi-location fleets. A container fleet can be deployed to a
+        /// single location or multiple locations. Container fleets are deployed with Amazon Linux
+        /// 2023 as the instance operating system.
         /// 
         ///  
         /// <para>
@@ -1054,9 +1058,9 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// The game server container group runs your game server build and dependent software.
-        /// Amazon GameLift deploys one or more replicas of this container group to each fleet
-        /// instance. The number of replicas depends on the computing capabilities of the fleet
-        /// instance in use. 
+        /// Amazon GameLift Servers deploys one or more replicas of this container group to each
+        /// fleet instance. The number of replicas depends on the computing capabilities of the
+        /// fleet instance in use. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1185,9 +1189,9 @@ namespace Amazon.GameLift
         /// host your containerized game servers. Use this operation to define how to deploy a
         /// container architecture onto each fleet instance and configure fleet settings. You
         /// can create a container fleet in any Amazon Web Services Regions that Amazon GameLift
-        /// supports for multi-location fleets. A container fleet can be deployed to a single
-        /// location or multiple locations. Container fleets are deployed with Amazon Linux 2023
-        /// as the instance operating system.
+        /// Servers supports for multi-location fleets. A container fleet can be deployed to a
+        /// single location or multiple locations. Container fleets are deployed with Amazon Linux
+        /// 2023 as the instance operating system.
         /// 
         ///  
         /// <para>
@@ -1197,9 +1201,9 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// The game server container group runs your game server build and dependent software.
-        /// Amazon GameLift deploys one or more replicas of this container group to each fleet
-        /// instance. The number of replicas depends on the computing capabilities of the fleet
-        /// instance in use. 
+        /// Amazon GameLift Servers deploys one or more replicas of this container group to each
+        /// fleet instance. The number of replicas depends on the computing capabilities of the
+        /// fleet instance in use. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1332,14 +1336,14 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
-        /// your game server with Amazon GameLift managed containers hosting. An Amazon GameLift
-        /// container group is similar to a container task or pod. Use container group definitions
-        /// when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
+        /// your game server with Amazon GameLift Servers managed containers hosting. An Amazon
+        /// GameLift Servers container group is similar to a container task or pod. Use container
+        /// group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
         /// 
         /// 
         ///  
         /// <para>
-        /// A container group definition determines how Amazon GameLift deploys your containers
+        /// A container group definition determines how Amazon GameLift Servers deploys your containers
         /// to each instance in a container fleet. You can maintain multiple versions of a container
         /// group definition.
         /// </para>
@@ -1388,7 +1392,7 @@ namespace Amazon.GameLift
         /// <para>
         /// This operation requires Identity and Access Management (IAM) permissions to access
         /// container images in Amazon ECR repositories. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
-        /// IAM permissions for Amazon GameLift</a> for help setting the appropriate permissions.
+        /// IAM permissions for Amazon GameLift Servers</a> for help setting the appropriate permissions.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1535,14 +1539,14 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
-        /// your game server with Amazon GameLift managed containers hosting. An Amazon GameLift
-        /// container group is similar to a container task or pod. Use container group definitions
-        /// when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
+        /// your game server with Amazon GameLift Servers managed containers hosting. An Amazon
+        /// GameLift Servers container group is similar to a container task or pod. Use container
+        /// group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
         /// 
         /// 
         ///  
         /// <para>
-        /// A container group definition determines how Amazon GameLift deploys your containers
+        /// A container group definition determines how Amazon GameLift Servers deploys your containers
         /// to each instance in a container fleet. You can maintain multiple versions of a container
         /// group definition.
         /// </para>
@@ -1591,7 +1595,7 @@ namespace Amazon.GameLift
         /// <para>
         /// This operation requires Identity and Access Management (IAM) permissions to access
         /// container images in Amazon ECR repositories. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
-        /// IAM permissions for Amazon GameLift</a> for help setting the appropriate permissions.
+        /// IAM permissions for Amazon GameLift Servers</a> for help setting the appropriate permissions.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1754,8 +1758,8 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// An EC2 fleet is a set of Amazon Elastic Compute Cloud (Amazon EC2) instances. Your
-        /// game server build is deployed to each fleet instance. Amazon GameLift manages the
-        /// fleet's instances and controls the lifecycle of game server processes, which host
+        /// game server build is deployed to each fleet instance. Amazon GameLift Servers manages
+        /// the fleet's instances and controls the lifecycle of game server processes, which host
         /// game sessions for players. EC2 fleets can have instances in multiple locations. Each
         /// instance in the fleet is designated a <c>Compute</c>.
         /// </para>
@@ -1794,7 +1798,7 @@ namespace Amazon.GameLift
         ///  </li> </ul> 
         /// <para>
         /// If successful, this operation creates a new fleet resource and places it in <c>NEW</c>
-        /// status while Amazon GameLift initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
+        /// status while Amazon GameLift Servers initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
         /// creation workflow</a>. To debug your fleet, fetch logs, view performance metrics or
         /// other actions on the fleet, create a development fleet with port 22/3389 open. As
         /// a best practice, we recommend opening ports for remote access only when you need them
@@ -1812,7 +1816,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// An Anywhere fleet represents compute resources that are not owned or managed by Amazon
-        /// GameLift. You might create an Anywhere fleet with your local machine for testing,
+        /// GameLift Servers. You might create an Anywhere fleet with your local machine for testing,
         /// or use one to host game servers with on-premises hardware or other game hosting solutions.
         /// 
         /// </para>
@@ -1881,8 +1885,9 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -1917,8 +1922,8 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// An EC2 fleet is a set of Amazon Elastic Compute Cloud (Amazon EC2) instances. Your
-        /// game server build is deployed to each fleet instance. Amazon GameLift manages the
-        /// fleet's instances and controls the lifecycle of game server processes, which host
+        /// game server build is deployed to each fleet instance. Amazon GameLift Servers manages
+        /// the fleet's instances and controls the lifecycle of game server processes, which host
         /// game sessions for players. EC2 fleets can have instances in multiple locations. Each
         /// instance in the fleet is designated a <c>Compute</c>.
         /// </para>
@@ -1957,7 +1962,7 @@ namespace Amazon.GameLift
         ///  </li> </ul> 
         /// <para>
         /// If successful, this operation creates a new fleet resource and places it in <c>NEW</c>
-        /// status while Amazon GameLift initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
+        /// status while Amazon GameLift Servers initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
         /// creation workflow</a>. To debug your fleet, fetch logs, view performance metrics or
         /// other actions on the fleet, create a development fleet with port 22/3389 open. As
         /// a best practice, we recommend opening ports for remote access only when you need them
@@ -1975,7 +1980,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// An Anywhere fleet represents compute resources that are not owned or managed by Amazon
-        /// GameLift. You might create an Anywhere fleet with your local machine for testing,
+        /// GameLift Servers. You might create an Anywhere fleet with your local machine for testing,
         /// or use one to host game servers with on-premises hardware or other game hosting solutions.
         /// 
         /// </para>
@@ -2047,8 +2052,9 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -2095,9 +2101,9 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If successful, this operation returns the list of added locations with their status
-        /// set to <c>NEW</c>. Amazon GameLift initiates the process of starting an instance in
-        /// each added location. You can track the status of each new location by monitoring location
-        /// creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.
+        /// set to <c>NEW</c>. Amazon GameLift Servers initiates the process of starting an instance
+        /// in each added location. You can track the status of each new location by monitoring
+        /// location creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.
         /// </para>
         ///  
         /// <para>
@@ -2116,7 +2122,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-        /// Amazon GameLift service locations</a> for managed hosting.
+        /// Amazon GameLift Servers service locations</a> for managed hosting.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleetLocations service method.</param>
@@ -2147,8 +2153,9 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -2187,9 +2194,9 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If successful, this operation returns the list of added locations with their status
-        /// set to <c>NEW</c>. Amazon GameLift initiates the process of starting an instance in
-        /// each added location. You can track the status of each new location by monitoring location
-        /// creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.
+        /// set to <c>NEW</c>. Amazon GameLift Servers initiates the process of starting an instance
+        /// in each added location. You can track the status of each new location by monitoring
+        /// location creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.
         /// </para>
         ///  
         /// <para>
@@ -2208,7 +2215,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-        /// Amazon GameLift service locations</a> for managed hosting.
+        /// Amazon GameLift Servers service locations</a> for managed hosting.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleetLocations service method.</param>
@@ -2242,8 +2249,9 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -2268,17 +2276,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
-        /// Creates a Amazon GameLift FleetIQ game server group for managing game hosting on a
-        /// collection of Amazon Elastic Compute Cloud instances for game hosting. This operation
+        /// Creates a Amazon GameLift Servers FleetIQ game server group for managing game hosting
+        /// on a collection of Amazon Elastic Compute Cloud instances for game hosting. This operation
         /// creates the game server group, creates an Auto Scaling group in your Amazon Web Services
         /// account, and establishes a link between the two groups. You can view the status of
-        /// your game server groups in the Amazon GameLift console. Game server group metrics
-        /// and events are emitted to Amazon CloudWatch.
+        /// your game server groups in the Amazon GameLift Servers console. Game server group
+        /// metrics and events are emitted to Amazon CloudWatch.
         /// </para>
         ///  
         /// <para>
@@ -2295,10 +2303,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         /// An IAM role that extends limited access to your Amazon Web Services account to allow
-        /// Amazon GameLift FleetIQ to create and interact with the Auto Scaling group. For more
-        /// information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create
-        /// IAM roles for cross-service interaction</a> in the <i>Amazon GameLift FleetIQ Developer
-        /// Guide</i>.
+        /// Amazon GameLift Servers FleetIQ to create and interact with the Auto Scaling group.
+        /// For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create
+        /// IAM roles for cross-service interaction</a> in the <i>Amazon GameLift Servers FleetIQ
+        /// Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2306,7 +2314,7 @@ namespace Amazon.GameLift
         /// Elastic Compute Cloud launch template, and provide a list of instance types that can
         /// be used in the group. You must also set initial maximum and minimum limits on the
         /// group's instance count. You can optionally set an Auto Scaling policy with target
-        /// tracking based on a Amazon GameLift FleetIQ metric.
+        /// tracking based on a Amazon GameLift Servers FleetIQ metric.
         /// </para>
         ///  
         /// <para>
@@ -2315,7 +2323,7 @@ namespace Amazon.GameLift
         /// that are set when creating a game server group, including maximum/minimum size and
         /// auto-scaling policy settings, must be updated directly in the Auto Scaling group.
         /// Keep in mind that some Auto Scaling group properties are periodically updated by Amazon
-        /// GameLift FleetIQ as part of its balancing activities to optimize for availability
+        /// GameLift Servers FleetIQ as part of its balancing activities to optimize for availability
         /// and cost.
         /// </para>
         ///  
@@ -2325,7 +2333,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGameServerGroup service method.</param>
@@ -2362,17 +2370,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
-        /// Creates a Amazon GameLift FleetIQ game server group for managing game hosting on a
-        /// collection of Amazon Elastic Compute Cloud instances for game hosting. This operation
+        /// Creates a Amazon GameLift Servers FleetIQ game server group for managing game hosting
+        /// on a collection of Amazon Elastic Compute Cloud instances for game hosting. This operation
         /// creates the game server group, creates an Auto Scaling group in your Amazon Web Services
         /// account, and establishes a link between the two groups. You can view the status of
-        /// your game server groups in the Amazon GameLift console. Game server group metrics
-        /// and events are emitted to Amazon CloudWatch.
+        /// your game server groups in the Amazon GameLift Servers console. Game server group
+        /// metrics and events are emitted to Amazon CloudWatch.
         /// </para>
         ///  
         /// <para>
@@ -2389,10 +2397,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         /// An IAM role that extends limited access to your Amazon Web Services account to allow
-        /// Amazon GameLift FleetIQ to create and interact with the Auto Scaling group. For more
-        /// information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create
-        /// IAM roles for cross-service interaction</a> in the <i>Amazon GameLift FleetIQ Developer
-        /// Guide</i>.
+        /// Amazon GameLift Servers FleetIQ to create and interact with the Auto Scaling group.
+        /// For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create
+        /// IAM roles for cross-service interaction</a> in the <i>Amazon GameLift Servers FleetIQ
+        /// Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2400,7 +2408,7 @@ namespace Amazon.GameLift
         /// Elastic Compute Cloud launch template, and provide a list of instance types that can
         /// be used in the group. You must also set initial maximum and minimum limits on the
         /// group's instance count. You can optionally set an Auto Scaling policy with target
-        /// tracking based on a Amazon GameLift FleetIQ metric.
+        /// tracking based on a Amazon GameLift Servers FleetIQ metric.
         /// </para>
         ///  
         /// <para>
@@ -2409,7 +2417,7 @@ namespace Amazon.GameLift
         /// that are set when creating a game server group, including maximum/minimum size and
         /// auto-scaling policy settings, must be updated directly in the Auto Scaling group.
         /// Keep in mind that some Auto Scaling group properties are periodically updated by Amazon
-        /// GameLift FleetIQ as part of its balancing activities to optimize for availability
+        /// GameLift Servers FleetIQ as part of its balancing activities to optimize for availability
         /// and cost.
         /// </para>
         ///  
@@ -2419,7 +2427,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGameServerGroup service method.</param>
@@ -2466,7 +2474,7 @@ namespace Amazon.GameLift
         /// Creates a multiplayer game session for players in a specific fleet location. This
         /// operation prompts an available server process to start a game session and retrieves
         /// connection information for the new game session. As an alternative, consider using
-        /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
+        /// the Amazon GameLift Servers game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
         /// which uses the FleetIQ algorithm and queues to optimize the placement process.
         /// 
         ///  
@@ -2496,9 +2504,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, Amazon GameLift initiates a workflow to start a new game session and
-        /// returns a <c>GameSession</c> object containing the game session configuration and
-        /// status. When the game session status is <c>ACTIVE</c>, it is updated with connection
+        /// If successful, Amazon GameLift Servers initiates a workflow to start a new game session
+        /// and returns a <c>GameSession</c> object containing the game session configuration
+        /// and status. When the game session status is <c>ACTIVE</c>, it is updated with connection
         /// information and you can create player sessions for the game session. By default, newly
         /// created game sessions are open to new players. You can restrict new player access
         /// by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
@@ -2506,12 +2514,13 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// Amazon GameLift retains logs for active for 14 days. To access the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
+        /// Amazon GameLift Servers retains logs for active for 14 days. To access the logs, call
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
         /// to download the log files.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon GameLift Local.</i> 
+        ///  <i>Available in Amazon GameLift Servers Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -2590,7 +2599,7 @@ namespace Amazon.GameLift
         /// Creates a multiplayer game session for players in a specific fleet location. This
         /// operation prompts an available server process to start a game session and retrieves
         /// connection information for the new game session. As an alternative, consider using
-        /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
+        /// the Amazon GameLift Servers game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
         /// which uses the FleetIQ algorithm and queues to optimize the placement process.
         /// 
         ///  
@@ -2620,9 +2629,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, Amazon GameLift initiates a workflow to start a new game session and
-        /// returns a <c>GameSession</c> object containing the game session configuration and
-        /// status. When the game session status is <c>ACTIVE</c>, it is updated with connection
+        /// If successful, Amazon GameLift Servers initiates a workflow to start a new game session
+        /// and returns a <c>GameSession</c> object containing the game session configuration
+        /// and status. When the game session status is <c>ACTIVE</c>, it is updated with connection
         /// information and you can create player sessions for the game session. By default, newly
         /// created game sessions are open to new players. You can restrict new player access
         /// by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
@@ -2630,12 +2639,13 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// Amazon GameLift retains logs for active for 14 days. To access the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
+        /// Amazon GameLift Servers retains logs for active for 14 days. To access the logs, call
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
         /// to download the log files.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon GameLift Local.</i> 
+        ///  <i>Available in Amazon GameLift Servers Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -2724,11 +2734,11 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// A game session queue is configured with a set of destinations (Amazon GameLift fleets
-        /// or aliases) that determine where the queue can place new game sessions. These destinations
-        /// can span multiple Amazon Web Services Regions, can use different instance types, and
-        /// can include both Spot and On-Demand fleets. If the queue includes multi-location fleets,
-        /// the queue can place game sessions in any of a fleet's remote locations.
+        /// A game session queue is configured with a set of destinations (Amazon GameLift Servers
+        /// fleets or aliases) that determine where the queue can place new game sessions. These
+        /// destinations can span multiple Amazon Web Services Regions, can use different instance
+        /// types, and can include both Spot and On-Demand fleets. If the queue includes multi-location
+        /// fleets, the queue can place game sessions in any of a fleet's remote locations.
         /// </para>
         ///  
         /// <para>
@@ -2881,11 +2891,11 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// A game session queue is configured with a set of destinations (Amazon GameLift fleets
-        /// or aliases) that determine where the queue can place new game sessions. These destinations
-        /// can span multiple Amazon Web Services Regions, can use different instance types, and
-        /// can include both Spot and On-Demand fleets. If the queue includes multi-location fleets,
-        /// the queue can place game sessions in any of a fleet's remote locations.
+        /// A game session queue is configured with a set of destinations (Amazon GameLift Servers
+        /// fleets or aliases) that determine where the queue can place new game sessions. These
+        /// destinations can span multiple Amazon Web Services Regions, can use different instance
+        /// types, and can include both Spot and On-Demand fleets. If the queue includes multi-location
+        /// fleets, the queue can place game sessions in any of a fleet's remote locations.
         /// </para>
         ///  
         /// <para>
@@ -3127,21 +3137,22 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Defines a new matchmaking configuration for use with FlexMatch. Whether your are using
-        /// FlexMatch with Amazon GameLift hosting or as a standalone matchmaking service, the
-        /// matchmaking configuration sets out rules for matching players and forming teams. If
-        /// you're also using Amazon GameLift hosting, it defines how to start game sessions for
-        /// each match. Your matchmaking system can use multiple configurations to handle different
-        /// game scenarios. All matchmaking requests identify the matchmaking configuration to
-        /// use and provide player attributes consistent with that configuration. 
+        /// FlexMatch with Amazon GameLift Servers hosting or as a standalone matchmaking service,
+        /// the matchmaking configuration sets out rules for matching players and forming teams.
+        /// If you're also using Amazon GameLift Servers hosting, it defines how to start game
+        /// sessions for each match. Your matchmaking system can use multiple configurations to
+        /// handle different game scenarios. All matchmaking requests identify the matchmaking
+        /// configuration to use and provide player attributes consistent with that configuration.
+        /// 
         /// 
         ///  
         /// <para>
         /// To create a matchmaking configuration, you must provide the following: configuration
-        /// name and FlexMatch mode (with or without Amazon GameLift hosting); a rule set that
-        /// specifies how to evaluate players and find acceptable matches; whether player acceptance
-        /// is required; and the maximum time allowed for a matchmaking attempt. When using FlexMatch
-        /// with Amazon GameLift hosting, you also need to identify the game session queue to
-        /// use when starting a game session for the match.
+        /// name and FlexMatch mode (with or without Amazon GameLift Servers hosting); a rule
+        /// set that specifies how to evaluate players and find acceptable matches; whether player
+        /// acceptance is required; and the maximum time allowed for a matchmaking attempt. When
+        /// using FlexMatch with Amazon GameLift Servers hosting, you also need to identify the
+        /// game session queue to use when starting a game session for the match.
         /// </para>
         ///  
         /// <para>
@@ -3202,21 +3213,22 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Defines a new matchmaking configuration for use with FlexMatch. Whether your are using
-        /// FlexMatch with Amazon GameLift hosting or as a standalone matchmaking service, the
-        /// matchmaking configuration sets out rules for matching players and forming teams. If
-        /// you're also using Amazon GameLift hosting, it defines how to start game sessions for
-        /// each match. Your matchmaking system can use multiple configurations to handle different
-        /// game scenarios. All matchmaking requests identify the matchmaking configuration to
-        /// use and provide player attributes consistent with that configuration. 
+        /// FlexMatch with Amazon GameLift Servers hosting or as a standalone matchmaking service,
+        /// the matchmaking configuration sets out rules for matching players and forming teams.
+        /// If you're also using Amazon GameLift Servers hosting, it defines how to start game
+        /// sessions for each match. Your matchmaking system can use multiple configurations to
+        /// handle different game scenarios. All matchmaking requests identify the matchmaking
+        /// configuration to use and provide player attributes consistent with that configuration.
+        /// 
         /// 
         ///  
         /// <para>
         /// To create a matchmaking configuration, you must provide the following: configuration
-        /// name and FlexMatch mode (with or without Amazon GameLift hosting); a rule set that
-        /// specifies how to evaluate players and find acceptable matches; whether player acceptance
-        /// is required; and the maximum time allowed for a matchmaking attempt. When using FlexMatch
-        /// with Amazon GameLift hosting, you also need to identify the game session queue to
-        /// use when starting a game session for the match.
+        /// name and FlexMatch mode (with or without Amazon GameLift Servers hosting); a rule
+        /// set that specifies how to evaluate players and find acceptable matches; whether player
+        /// acceptance is required; and the maximum time allowed for a matchmaking attempt. When
+        /// using FlexMatch with Amazon GameLift Servers hosting, you also need to identify the
+        /// game session queue to use when starting a game session for the match.
         /// </para>
         ///  
         /// <para>
@@ -3448,8 +3460,8 @@ namespace Amazon.GameLift
         /// If successful, a slot is reserved in the game session for the player and a new <c>PlayerSessions</c>
         /// object is returned with a player session ID. The player references the player session
         /// ID when sending a connection request to the game session, and the game server can
-        /// use it to validate the player reservation with the Amazon GameLift service. Player
-        /// sessions cannot be updated. 
+        /// use it to validate the player reservation with the Amazon GameLift Servers service.
+        /// Player sessions cannot be updated. 
         /// </para>
         ///  
         /// <para>
@@ -3526,8 +3538,8 @@ namespace Amazon.GameLift
         /// If successful, a slot is reserved in the game session for the player and a new <c>PlayerSessions</c>
         /// object is returned with a player session ID. The player references the player session
         /// ID when sending a connection request to the game session, and the game server can
-        /// use it to validate the player reservation with the Amazon GameLift service. Player
-        /// sessions cannot be updated. 
+        /// use it to validate the player reservation with the Amazon GameLift Servers service.
+        /// Player sessions cannot be updated. 
         /// </para>
         ///  
         /// <para>
@@ -3604,8 +3616,8 @@ namespace Amazon.GameLift
         /// If successful, a slot is reserved in the game session for the player and a new <c>PlayerSessions</c>
         /// object is returned with a player session ID. The player references the player session
         /// ID when sending a connection request to the game session, and the game server can
-        /// use it to validate the player reservation with the Amazon GameLift service. Player
-        /// sessions cannot be updated. 
+        /// use it to validate the player reservation with the Amazon GameLift Servers service.
+        /// Player sessions cannot be updated. 
         /// </para>
         ///  
         /// <para>
@@ -3685,8 +3697,8 @@ namespace Amazon.GameLift
         /// If successful, a slot is reserved in the game session for the player and a new <c>PlayerSessions</c>
         /// object is returned with a player session ID. The player references the player session
         /// ID when sending a connection request to the game session, and the game server can
-        /// use it to validate the player reservation with the Amazon GameLift service. Player
-        /// sessions cannot be updated. 
+        /// use it to validate the player reservation with the Amazon GameLift Servers service.
+        /// Player sessions cannot be updated. 
         /// </para>
         ///  
         /// <para>
@@ -3770,8 +3782,8 @@ namespace Amazon.GameLift
         /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
         /// objects are returned with player session IDs. Each player references their player
         /// session ID when sending a connection request to the game session, and the game server
-        /// can use it to validate the player reservation with the Amazon GameLift service. Player
-        /// sessions cannot be updated.
+        /// can use it to validate the player reservation with the Amazon GameLift Servers service.
+        /// Player sessions cannot be updated.
         /// </para>
         ///  
         /// <para>
@@ -3848,8 +3860,8 @@ namespace Amazon.GameLift
         /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
         /// objects are returned with player session IDs. Each player references their player
         /// session ID when sending a connection request to the game session, and the game server
-        /// can use it to validate the player reservation with the Amazon GameLift service. Player
-        /// sessions cannot be updated.
+        /// can use it to validate the player reservation with the Amazon GameLift Servers service.
+        /// Player sessions cannot be updated.
         /// </para>
         ///  
         /// <para>
@@ -3926,8 +3938,8 @@ namespace Amazon.GameLift
         /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
         /// objects are returned with player session IDs. Each player references their player
         /// session ID when sending a connection request to the game session, and the game server
-        /// can use it to validate the player reservation with the Amazon GameLift service. Player
-        /// sessions cannot be updated.
+        /// can use it to validate the player reservation with the Amazon GameLift Servers service.
+        /// Player sessions cannot be updated.
         /// </para>
         ///  
         /// <para>
@@ -4007,8 +4019,8 @@ namespace Amazon.GameLift
         /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
         /// objects are returned with player session IDs. Each player references their player
         /// session ID when sending a connection request to the game session, and the game server
-        /// can use it to validate the player reservation with the Amazon GameLift service. Player
-        /// sessions cannot be updated.
+        /// can use it to validate the player reservation with the Amazon GameLift Servers service.
+        /// Player sessions cannot be updated.
         /// </para>
         ///  
         /// <para>
@@ -4076,11 +4088,11 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates a new script record for your Amazon GameLift Realtime script. Realtime scripts
-        /// are JavaScript that provide configuration settings and optional custom game logic
-        /// for your game. The script is deployed when you create a Amazon GameLift Realtime fleet
-        /// to host your game sessions. Script logic is executed during an active game session.
-        /// 
+        /// Creates a new script record for your Amazon GameLift Servers Realtime script. Realtime
+        /// scripts are JavaScript that provide configuration settings and optional custom game
+        /// logic for your game. The script is deployed when you create a Amazon GameLift Servers
+        /// Realtime fleet to host your game sessions. Script logic is executed during an active
+        /// game session. 
         /// 
         ///  
         /// <para>
@@ -4096,16 +4108,16 @@ namespace Amazon.GameLift
         /// <para>
         /// An Amazon Simple Storage Service (Amazon S3) bucket under your Amazon Web Services
         /// account. Use the <i>StorageLocation</i> parameter for this option. You'll need to
-        /// have an Identity Access Management (IAM) role that allows the Amazon GameLift service
-        /// to access your S3 bucket. 
+        /// have an Identity Access Management (IAM) role that allows the Amazon GameLift Servers
+        /// service to access your S3 bucket. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the call is successful, a new script record is created with a unique script ID.
         /// If the script file is provided as a local file, the file is uploaded to an Amazon
-        /// GameLift-owned S3 bucket and the script record's storage location reflects this location.
-        /// If the script file is provided as an S3 bucket, Amazon GameLift accesses the file
-        /// at this storage location as needed for deployment.
+        /// GameLift Servers-owned S3 bucket and the script record's storage location reflects
+        /// this location. If the script file is provided as an S3 bucket, Amazon GameLift Servers
+        /// accesses the file at this storage location as needed for deployment.
         /// </para>
         ///  
         /// <para>
@@ -4114,12 +4126,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set
-        /// Up a Role for Amazon GameLift Access</a> 
+        /// Up a Role for Amazon GameLift Servers Access</a> 
         /// </para>
         ///  
         /// <para>
@@ -4165,11 +4177,11 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates a new script record for your Amazon GameLift Realtime script. Realtime scripts
-        /// are JavaScript that provide configuration settings and optional custom game logic
-        /// for your game. The script is deployed when you create a Amazon GameLift Realtime fleet
-        /// to host your game sessions. Script logic is executed during an active game session.
-        /// 
+        /// Creates a new script record for your Amazon GameLift Servers Realtime script. Realtime
+        /// scripts are JavaScript that provide configuration settings and optional custom game
+        /// logic for your game. The script is deployed when you create a Amazon GameLift Servers
+        /// Realtime fleet to host your game sessions. Script logic is executed during an active
+        /// game session. 
         /// 
         ///  
         /// <para>
@@ -4185,16 +4197,16 @@ namespace Amazon.GameLift
         /// <para>
         /// An Amazon Simple Storage Service (Amazon S3) bucket under your Amazon Web Services
         /// account. Use the <i>StorageLocation</i> parameter for this option. You'll need to
-        /// have an Identity Access Management (IAM) role that allows the Amazon GameLift service
-        /// to access your S3 bucket. 
+        /// have an Identity Access Management (IAM) role that allows the Amazon GameLift Servers
+        /// service to access your S3 bucket. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the call is successful, a new script record is created with a unique script ID.
         /// If the script file is provided as a local file, the file is uploaded to an Amazon
-        /// GameLift-owned S3 bucket and the script record's storage location reflects this location.
-        /// If the script file is provided as an S3 bucket, Amazon GameLift accesses the file
-        /// at this storage location as needed for deployment.
+        /// GameLift Servers-owned S3 bucket and the script record's storage location reflects
+        /// this location. If the script file is provided as an S3 bucket, Amazon GameLift Servers
+        /// accesses the file at this storage location as needed for deployment.
         /// </para>
         ///  
         /// <para>
@@ -4203,12 +4215,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set
-        /// Up a Role for Amazon GameLift Access</a> 
+        /// Up a Role for Amazon GameLift Servers Access</a> 
         /// </para>
         ///  
         /// <para>
@@ -4262,36 +4274,36 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Requests authorization to create or delete a peer connection between the VPC for your
-        /// Amazon GameLift fleet and a virtual private cloud (VPC) in your Amazon Web Services
-        /// account. VPC peering enables the game servers on your fleet to communicate directly
-        /// with other Amazon Web Services resources. After you've received authorization, use
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html">CreateVpcPeeringConnection</a>
+        /// Amazon GameLift Servers fleet and a virtual private cloud (VPC) in your Amazon Web
+        /// Services account. VPC peering enables the game servers on your fleet to communicate
+        /// directly with other Amazon Web Services resources. After you've received authorization,
+        /// use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html">CreateVpcPeeringConnection</a>
         /// to establish the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon GameLift Fleets</a>.
+        /// Peering with Amazon GameLift Servers Fleets</a>.
         /// 
         ///  
         /// <para>
         /// You can peer with VPCs that are owned by any Amazon Web Services account you have
-        /// access to, including the account that you use to manage your Amazon GameLift fleets.
-        /// You cannot peer with VPCs that are in different Regions.
+        /// access to, including the account that you use to manage your Amazon GameLift Servers
+        /// fleets. You cannot peer with VPCs that are in different Regions.
         /// </para>
         ///  
         /// <para>
         /// To request authorization to create a connection, call this operation from the Amazon
-        /// Web Services account with the VPC that you want to peer to your Amazon GameLift fleet.
-        /// For example, to enable your game servers to retrieve data from a DynamoDB table, use
-        /// the account that manages that DynamoDB resource. Identify the following values: (1)
-        /// The ID of the VPC that you want to peer with, and (2) the ID of the Amazon Web Services
-        /// account that you use to manage Amazon GameLift. If successful, VPC peering is authorized
-        /// for the specified VPC. 
+        /// Web Services account with the VPC that you want to peer to your Amazon GameLift Servers
+        /// fleet. For example, to enable your game servers to retrieve data from a DynamoDB table,
+        /// use the account that manages that DynamoDB resource. Identify the following values:
+        /// (1) The ID of the VPC that you want to peer with, and (2) the ID of the Amazon Web
+        /// Services account that you use to manage Amazon GameLift Servers. If successful, VPC
+        /// peering is authorized for the specified VPC. 
         /// </para>
         ///  
         /// <para>
         /// To request authorization to delete a connection, call this operation from the Amazon
-        /// Web Services account with the VPC that is peered with your Amazon GameLift fleet.
-        /// Identify the following values: (1) VPC ID that you want to delete the peering connection
-        /// for, and (2) ID of the Amazon Web Services account that you use to manage Amazon GameLift.
-        /// 
+        /// Web Services account with the VPC that is peered with your Amazon GameLift Servers
+        /// fleet. Identify the following values: (1) VPC ID that you want to delete the peering
+        /// connection for, and (2) ID of the Amazon Web Services account that you use to manage
+        /// Amazon GameLift Servers. 
         /// </para>
         ///  
         /// <para>
@@ -4339,36 +4351,36 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Requests authorization to create or delete a peer connection between the VPC for your
-        /// Amazon GameLift fleet and a virtual private cloud (VPC) in your Amazon Web Services
-        /// account. VPC peering enables the game servers on your fleet to communicate directly
-        /// with other Amazon Web Services resources. After you've received authorization, use
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html">CreateVpcPeeringConnection</a>
+        /// Amazon GameLift Servers fleet and a virtual private cloud (VPC) in your Amazon Web
+        /// Services account. VPC peering enables the game servers on your fleet to communicate
+        /// directly with other Amazon Web Services resources. After you've received authorization,
+        /// use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html">CreateVpcPeeringConnection</a>
         /// to establish the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon GameLift Fleets</a>.
+        /// Peering with Amazon GameLift Servers Fleets</a>.
         /// 
         ///  
         /// <para>
         /// You can peer with VPCs that are owned by any Amazon Web Services account you have
-        /// access to, including the account that you use to manage your Amazon GameLift fleets.
-        /// You cannot peer with VPCs that are in different Regions.
+        /// access to, including the account that you use to manage your Amazon GameLift Servers
+        /// fleets. You cannot peer with VPCs that are in different Regions.
         /// </para>
         ///  
         /// <para>
         /// To request authorization to create a connection, call this operation from the Amazon
-        /// Web Services account with the VPC that you want to peer to your Amazon GameLift fleet.
-        /// For example, to enable your game servers to retrieve data from a DynamoDB table, use
-        /// the account that manages that DynamoDB resource. Identify the following values: (1)
-        /// The ID of the VPC that you want to peer with, and (2) the ID of the Amazon Web Services
-        /// account that you use to manage Amazon GameLift. If successful, VPC peering is authorized
-        /// for the specified VPC. 
+        /// Web Services account with the VPC that you want to peer to your Amazon GameLift Servers
+        /// fleet. For example, to enable your game servers to retrieve data from a DynamoDB table,
+        /// use the account that manages that DynamoDB resource. Identify the following values:
+        /// (1) The ID of the VPC that you want to peer with, and (2) the ID of the Amazon Web
+        /// Services account that you use to manage Amazon GameLift Servers. If successful, VPC
+        /// peering is authorized for the specified VPC. 
         /// </para>
         ///  
         /// <para>
         /// To request authorization to delete a connection, call this operation from the Amazon
-        /// Web Services account with the VPC that is peered with your Amazon GameLift fleet.
-        /// Identify the following values: (1) VPC ID that you want to delete the peering connection
-        /// for, and (2) ID of the Amazon Web Services account that you use to manage Amazon GameLift.
-        /// 
+        /// Web Services account with the VPC that is peered with your Amazon GameLift Servers
+        /// fleet. Identify the following values: (1) VPC ID that you want to delete the peering
+        /// connection for, and (2) ID of the Amazon Web Services account that you use to manage
+        /// Amazon GameLift Servers. 
         /// </para>
         ///  
         /// <para>
@@ -4423,13 +4435,13 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Establishes a VPC peering connection between a virtual private cloud (VPC) in an Amazon
-        /// Web Services account with the VPC for your Amazon GameLift fleet. VPC peering enables
-        /// the game servers on your fleet to communicate directly with other Amazon Web Services
-        /// resources. You can peer with VPCs in any Amazon Web Services account that you have
-        /// access to, including the account that you use to manage your Amazon GameLift fleets.
-        /// You cannot peer with VPCs that are in different Regions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon GameLift Fleets</a>.
+        /// Web Services account with the VPC for your Amazon GameLift Servers fleet. VPC peering
+        /// enables the game servers on your fleet to communicate directly with other Amazon Web
+        /// Services resources. You can peer with VPCs in any Amazon Web Services account that
+        /// you have access to, including the account that you use to manage your Amazon GameLift
+        /// Servers fleets. You cannot peer with VPCs that are in different Regions. For more
+        /// information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Servers Fleets</a>.
         /// 
         ///  
         /// <para>
@@ -4443,11 +4455,11 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To establish the connection, call this operation from the Amazon Web Services account
-        /// that is used to manage the Amazon GameLift fleets. Identify the following values:
-        /// (1) The ID of the fleet you want to be enable a VPC peering connection for; (2) The
-        /// Amazon Web Services account with the VPC that you want to peer with; and (3) The ID
-        /// of the VPC you want to peer with. This operation is asynchronous. If successful, a
-        /// connection request is created. You can use continuous polling to track the request's
+        /// that is used to manage the Amazon GameLift Servers fleets. Identify the following
+        /// values: (1) The ID of the fleet you want to be enable a VPC peering connection for;
+        /// (2) The Amazon Web Services account with the VPC that you want to peer with; and (3)
+        /// The ID of the VPC you want to peer with. This operation is asynchronous. If successful,
+        /// a connection request is created. You can use continuous polling to track the request's
         /// status using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringConnections.html">DescribeVpcPeeringConnections</a>
         /// , or by monitoring fleet events for success or failure using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>
         /// . 
@@ -4493,13 +4505,13 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Establishes a VPC peering connection between a virtual private cloud (VPC) in an Amazon
-        /// Web Services account with the VPC for your Amazon GameLift fleet. VPC peering enables
-        /// the game servers on your fleet to communicate directly with other Amazon Web Services
-        /// resources. You can peer with VPCs in any Amazon Web Services account that you have
-        /// access to, including the account that you use to manage your Amazon GameLift fleets.
-        /// You cannot peer with VPCs that are in different Regions. For more information, see
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon GameLift Fleets</a>.
+        /// Web Services account with the VPC for your Amazon GameLift Servers fleet. VPC peering
+        /// enables the game servers on your fleet to communicate directly with other Amazon Web
+        /// Services resources. You can peer with VPCs in any Amazon Web Services account that
+        /// you have access to, including the account that you use to manage your Amazon GameLift
+        /// Servers fleets. You cannot peer with VPCs that are in different Regions. For more
+        /// information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Servers Fleets</a>.
         /// 
         ///  
         /// <para>
@@ -4513,11 +4525,11 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To establish the connection, call this operation from the Amazon Web Services account
-        /// that is used to manage the Amazon GameLift fleets. Identify the following values:
-        /// (1) The ID of the fleet you want to be enable a VPC peering connection for; (2) The
-        /// Amazon Web Services account with the VPC that you want to peer with; and (3) The ID
-        /// of the VPC you want to peer with. This operation is asynchronous. If successful, a
-        /// connection request is created. You can use continuous polling to track the request's
+        /// that is used to manage the Amazon GameLift Servers fleets. Identify the following
+        /// values: (1) The ID of the fleet you want to be enable a VPC peering connection for;
+        /// (2) The Amazon Web Services account with the VPC that you want to peer with; and (3)
+        /// The ID of the VPC you want to peer with. This operation is asynchronous. If successful,
+        /// a connection request is created. You can use continuous polling to track the request's
         /// status using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringConnections.html">DescribeVpcPeeringConnections</a>
         /// , or by monitoring fleet events for success or failure using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>
         /// . 
@@ -5017,7 +5029,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContainerFleet service method.</param>
@@ -5073,7 +5085,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContainerFleet service method.</param>
@@ -5148,9 +5160,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, Amazon GameLift removes the container group definition versions that
-        /// you request deletion for. This request will fail for any requested versions if the
-        /// following is true: 
+        /// If successful, Amazon GameLift Servers removes the container group definition versions
+        /// that you request deletion for. This request will fail for any requested versions if
+        /// the following is true: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5241,9 +5253,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, Amazon GameLift removes the container group definition versions that
-        /// you request deletion for. This request will fail for any requested versions if the
-        /// following is true: 
+        /// If successful, Amazon GameLift Servers removes the container group definition versions
+        /// that you request deletion for. This request will fail for any requested versions if
+        /// the following is true: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5335,7 +5347,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="fleetId">A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</param>
@@ -5396,7 +5408,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
@@ -5459,7 +5471,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="fleetId">A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</param>
@@ -5523,7 +5535,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
@@ -5593,7 +5605,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleetLocations service method.</param>
@@ -5651,7 +5663,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleetLocations service method.</param>
@@ -5694,8 +5706,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -5727,13 +5739,13 @@ namespace Amazon.GameLift
         /// If the delete request is successful, a series of operations are kicked off. The game
         /// server group status is changed to <c>DELETE_SCHEDULED</c>, which prevents new game
         /// servers from being registered and stops automatic scaling activity. Once all game
-        /// servers in the game server group are deregistered, Amazon GameLift FleetIQ can begin
-        /// deleting resources. If any of the delete operations fail, the game server group is
-        /// placed in <c>ERROR</c> status.
+        /// servers in the game server group are deregistered, Amazon GameLift Servers FleetIQ
+        /// can begin deleting resources. If any of the delete operations fail, the game server
+        /// group is placed in <c>ERROR</c> status.
         /// </para>
         ///  
         /// <para>
-        /// Amazon GameLift FleetIQ emits delete events to Amazon CloudWatch.
+        /// Amazon GameLift Servers FleetIQ emits delete events to Amazon CloudWatch.
         /// </para>
         ///  
         /// <para>
@@ -5742,7 +5754,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGameServerGroup service method.</param>
@@ -5775,8 +5787,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -5808,13 +5820,13 @@ namespace Amazon.GameLift
         /// If the delete request is successful, a series of operations are kicked off. The game
         /// server group status is changed to <c>DELETE_SCHEDULED</c>, which prevents new game
         /// servers from being registered and stops automatic scaling activity. Once all game
-        /// servers in the game server group are deregistered, Amazon GameLift FleetIQ can begin
-        /// deleting resources. If any of the delete operations fail, the game server group is
-        /// placed in <c>ERROR</c> status.
+        /// servers in the game server group are deregistered, Amazon GameLift Servers FleetIQ
+        /// can begin deleting resources. If any of the delete operations fail, the game server
+        /// group is placed in <c>ERROR</c> status.
         /// </para>
         ///  
         /// <para>
-        /// Amazon GameLift FleetIQ emits delete events to Amazon CloudWatch.
+        /// Amazon GameLift Servers FleetIQ emits delete events to Amazon CloudWatch.
         /// </para>
         ///  
         /// <para>
@@ -5823,7 +5835,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGameServerGroup service method.</param>
@@ -6220,8 +6232,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Deletes a fleet scaling policy. Once deleted, the policy is no longer in force and
-        /// Amazon GameLift removes all record of it. To delete a scaling policy, specify both
-        /// the scaling policy name and the fleet ID it is associated with.
+        /// Amazon GameLift Servers removes all record of it. To delete a scaling policy, specify
+        /// both the scaling policy name and the fleet ID it is associated with.
         /// 
         ///  
         /// <para>
@@ -6263,8 +6275,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Deletes a fleet scaling policy. Once deleted, the policy is no longer in force and
-        /// Amazon GameLift removes all record of it. To delete a scaling policy, specify both
-        /// the scaling policy name and the fleet ID it is associated with.
+        /// Amazon GameLift Servers removes all record of it. To delete a scaling policy, specify
+        /// both the scaling policy name and the fleet ID it is associated with.
         /// 
         ///  
         /// <para>
@@ -6330,7 +6342,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>
@@ -6394,7 +6406,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>
@@ -6546,7 +6558,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Once a valid authorization exists, call this operation from the Amazon Web Services
-        /// account that is used to manage the Amazon GameLift fleets. Identify the connection
+        /// account that is used to manage the Amazon GameLift Servers fleets. Identify the connection
         /// to delete by the connection ID and fleet ID. If successful, the connection is removed.
         /// 
         /// </para>
@@ -6596,7 +6608,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Once a valid authorization exists, call this operation from the Amazon Web Services
-        /// account that is used to manage the Amazon GameLift fleets. Identify the connection
+        /// account that is used to manage the Amazon GameLift Servers fleets. Identify the connection
         /// to delete by the connection ID and fleet ID. If successful, the connection is removed.
         /// 
         /// </para>
@@ -6648,9 +6660,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Removes a compute resource from an Anywhere fleet. Deregistered computes can no longer
-        /// host game sessions through Amazon GameLift. Use this operation with an Anywhere fleet
-        /// that doesn't use the Amazon GameLift Agent For Anywhere fleets with the Agent, the
-        /// Agent handles all compute registry tasks for you. 
+        /// host game sessions through Amazon GameLift Servers. Use this operation with an Anywhere
+        /// fleet that doesn't use the Amazon GameLift Servers Agent For Anywhere fleets with
+        /// the Agent, the Agent handles all compute registry tasks for you. 
         /// 
         ///  
         /// <para>
@@ -6689,9 +6701,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Removes a compute resource from an Anywhere fleet. Deregistered computes can no longer
-        /// host game sessions through Amazon GameLift. Use this operation with an Anywhere fleet
-        /// that doesn't use the Amazon GameLift Agent For Anywhere fleets with the Agent, the
-        /// Agent handles all compute registry tasks for you. 
+        /// host game sessions through Amazon GameLift Servers. Use this operation with an Anywhere
+        /// fleet that doesn't use the Amazon GameLift Servers Agent For Anywhere fleets with
+        /// the Agent, the Agent handles all compute registry tasks for you. 
         /// 
         ///  
         /// <para>
@@ -6736,8 +6748,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -6758,7 +6770,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterGameServer service method.</param>
@@ -6791,8 +6803,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -6813,7 +6825,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterGameServer service method.</param>
@@ -7249,8 +7261,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for a specific compute resource in an Amazon GameLift fleet.
-        /// You can list all computes in a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.
+        /// Retrieves properties for a specific compute resource in an Amazon GameLift Servers
+        /// fleet. You can list all computes in a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.
         /// 
         /// 
         ///  
@@ -7331,8 +7343,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for a specific compute resource in an Amazon GameLift fleet.
-        /// You can list all computes in a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.
+        /// Retrieves properties for a specific compute resource in an Amazon GameLift Servers
+        /// fleet. You can list all computes in a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.
         /// 
         /// 
         ///  
@@ -7705,8 +7717,9 @@ namespace Amazon.GameLift
         /// location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
         /// EC2 Instance Types</a>. The information returned includes the maximum number of instances
         /// allowed and your account's current usage across all fleets. This information can affect
-        /// your ability to scale your Amazon GameLift fleets. You can request a limit increase
-        /// for your account by using the <b>Service limits</b> page in the Amazon GameLift console.
+        /// your ability to scale your Amazon GameLift Servers fleets. You can request a limit
+        /// increase for your account by using the <b>Service limits</b> page in the Amazon GameLift
+        /// Servers console.
         /// 
         ///  
         /// <para>
@@ -7765,10 +7778,10 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
-        /// <param name="ec2InstanceType">Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</param>
+        /// <param name="ec2InstanceType">Name of an Amazon EC2 instance type that is supported in Amazon GameLift Servers. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</param>
         /// 
         /// <returns>The response from the DescribeEC2InstanceLimits service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
@@ -7800,8 +7813,9 @@ namespace Amazon.GameLift
         /// location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
         /// EC2 Instance Types</a>. The information returned includes the maximum number of instances
         /// allowed and your account's current usage across all fleets. This information can affect
-        /// your ability to scale your Amazon GameLift fleets. You can request a limit increase
-        /// for your account by using the <b>Service limits</b> page in the Amazon GameLift console.
+        /// your ability to scale your Amazon GameLift Servers fleets. You can request a limit
+        /// increase for your account by using the <b>Service limits</b> page in the Amazon GameLift
+        /// Servers console.
         /// 
         ///  
         /// <para>
@@ -7860,7 +7874,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEC2InstanceLimits service method.</param>
@@ -7897,8 +7911,9 @@ namespace Amazon.GameLift
         /// location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
         /// EC2 Instance Types</a>. The information returned includes the maximum number of instances
         /// allowed and your account's current usage across all fleets. This information can affect
-        /// your ability to scale your Amazon GameLift fleets. You can request a limit increase
-        /// for your account by using the <b>Service limits</b> page in the Amazon GameLift console.
+        /// your ability to scale your Amazon GameLift Servers fleets. You can request a limit
+        /// increase for your account by using the <b>Service limits</b> page in the Amazon GameLift
+        /// Servers console.
         /// 
         ///  
         /// <para>
@@ -7957,10 +7972,10 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
-        /// <param name="ec2InstanceType">Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</param>
+        /// <param name="ec2InstanceType">Name of an Amazon EC2 instance type that is supported in Amazon GameLift Servers. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -7995,8 +8010,9 @@ namespace Amazon.GameLift
         /// location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
         /// EC2 Instance Types</a>. The information returned includes the maximum number of instances
         /// allowed and your account's current usage across all fleets. This information can affect
-        /// your ability to scale your Amazon GameLift fleets. You can request a limit increase
-        /// for your account by using the <b>Service limits</b> page in the Amazon GameLift console.
+        /// your ability to scale your Amazon GameLift Servers fleets. You can request a limit
+        /// increase for your account by using the <b>Service limits</b> page in the Amazon GameLift
+        /// Servers console.
         /// 
         ///  
         /// <para>
@@ -8055,7 +8071,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEC2InstanceLimits service method.</param>
@@ -8133,7 +8149,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAttributes service method.</param>
@@ -8205,7 +8221,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAttributes service method.</param>
@@ -8291,7 +8307,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
@@ -8378,7 +8394,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
@@ -8570,7 +8586,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetEvents service method.</param>
@@ -8627,7 +8643,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetEvents service method.</param>
@@ -8706,12 +8722,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-        /// Amazon GameLift service locations</a> for managed hosting
+        /// Amazon GameLift Servers service locations</a> for managed hosting
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetLocationAttributes service method.</param>
@@ -8783,12 +8799,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-        /// Amazon GameLift service locations</a> for managed hosting
+        /// Amazon GameLift Servers service locations</a> for managed hosting
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetLocationAttributes service method.</param>
@@ -8857,12 +8873,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-        /// Amazon GameLift service locations</a> for managed hosting
+        /// Amazon GameLift Servers service locations</a> for managed hosting
         /// </para>
         ///  
         /// <para>
@@ -8929,12 +8945,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-        /// Amazon GameLift service locations</a> for managed hosting
+        /// Amazon GameLift Servers service locations</a> for managed hosting
         /// </para>
         ///  
         /// <para>
@@ -9003,12 +9019,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-        /// Amazon GameLift service locations</a> for managed hosting
+        /// Amazon GameLift Servers service locations</a> for managed hosting
         /// </para>
         ///  
         /// <para>
@@ -9070,12 +9086,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-        /// Amazon GameLift service locations</a> for managed hosting
+        /// Amazon GameLift Servers service locations</a> for managed hosting
         /// </para>
         ///  
         /// <para>
@@ -9156,7 +9172,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="fleetId">A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</param>
@@ -9223,7 +9239,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetPortSettings service method.</param>
@@ -9292,7 +9308,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="fleetId">A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</param>
@@ -9362,7 +9378,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetPortSettings service method.</param>
@@ -9449,7 +9465,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         ///  
         /// <para>
@@ -9531,7 +9547,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         ///  
         /// <para>
@@ -9576,8 +9592,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -9596,7 +9612,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameServer service method.</param>
@@ -9629,8 +9645,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -9649,7 +9665,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameServer service method.</param>
@@ -9689,13 +9705,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
         /// Retrieves information on a game server group. This operation returns only properties
-        /// related to Amazon GameLift FleetIQ. To view or update properties for the corresponding
+        /// related to Amazon GameLift Servers FleetIQ. To view or update properties for the corresponding
         /// Auto Scaling group, such as launch template, auto scaling policies, and maximum/minimum
         /// group size, access the Auto Scaling group directly.
         /// </para>
@@ -9711,7 +9727,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameServerGroup service method.</param>
@@ -9744,13 +9760,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
         /// Retrieves information on a game server group. This operation returns only properties
-        /// related to Amazon GameLift FleetIQ. To view or update properties for the corresponding
+        /// related to Amazon GameLift Servers FleetIQ. To view or update properties for the corresponding
         /// Auto Scaling group, such as launch template, auto scaling policies, and maximum/minimum
         /// group size, access the Auto Scaling group directly.
         /// </para>
@@ -9766,7 +9782,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameServerGroup service method.</param>
@@ -9806,14 +9822,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
         /// Retrieves status information about the Amazon EC2 instances associated with a Amazon
-        /// GameLift FleetIQ game server group. Use this operation to detect when instances are
-        /// active or not available to host new game servers.
+        /// GameLift Servers FleetIQ game server group. Use this operation to detect when instances
+        /// are active or not available to host new game servers.
         /// </para>
         ///  
         /// <para>
@@ -9837,7 +9853,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameServerInstances service method.</param>
@@ -9870,14 +9886,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
         /// Retrieves status information about the Amazon EC2 instances associated with a Amazon
-        /// GameLift FleetIQ game server group. Use this operation to detect when instances are
-        /// active or not available to host new game servers.
+        /// GameLift Servers FleetIQ game server group. Use this operation to detect when instances
+        /// are active or not available to host new game servers.
         /// </para>
         ///  
         /// <para>
@@ -9901,7 +9917,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameServerInstances service method.</param>
@@ -10366,7 +10382,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon GameLift Local.</i> 
+        ///  <i>Available in Amazon GameLift Servers Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -10466,7 +10482,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon GameLift Local.</i> 
+        ///  <i>Available in Amazon GameLift Servers Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -10529,9 +10545,9 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves information about the EC2 instances in an Amazon GameLift managed fleet,
-        /// including instance ID, connection data, and status. You can use this operation with
-        /// a multi-location fleet to get location-specific instance information. As an alternative,
+        /// Retrieves information about the EC2 instances in an Amazon GameLift Servers managed
+        /// fleet, including instance ID, connection data, and status. You can use this operation
+        /// with a multi-location fleet to get location-specific instance information. As an alternative,
         /// use the operations <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute</a>
         /// and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute</a>
         /// to retrieve information for compute resources, including EC2 and Anywhere fleets.
@@ -10621,9 +10637,9 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves information about the EC2 instances in an Amazon GameLift managed fleet,
-        /// including instance ID, connection data, and status. You can use this operation with
-        /// a multi-location fleet to get location-specific instance information. As an alternative,
+        /// Retrieves information about the EC2 instances in an Amazon GameLift Servers managed
+        /// fleet, including instance ID, connection data, and status. You can use this operation
+        /// with a multi-location fleet to get location-specific instance information. As an alternative,
         /// use the operations <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute</a>
         /// and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute</a>
         /// to retrieve information for compute resources, including EC2 and Anywhere fleets.
@@ -11069,9 +11085,9 @@ namespace Amazon.GameLift
         /// <para>
         /// To request player sessions, specify either a player session ID, game session ID, or
         /// player ID. You can filter this request by player session status. If you provide a
-        /// specific <c>PlayerSessionId</c> or <c>PlayerId</c>, Amazon GameLift ignores the filter
-        /// criteria. Use the pagination parameters to retrieve results as a set of sequential
-        /// pages. 
+        /// specific <c>PlayerSessionId</c> or <c>PlayerId</c>, Amazon GameLift Servers ignores
+        /// the filter criteria. Use the pagination parameters to retrieve results as a set of
+        /// sequential pages. 
         /// </para>
         ///  
         /// <para>
@@ -11140,9 +11156,9 @@ namespace Amazon.GameLift
         /// <para>
         /// To request player sessions, specify either a player session ID, game session ID, or
         /// player ID. You can filter this request by player session status. If you provide a
-        /// specific <c>PlayerSessionId</c> or <c>PlayerId</c>, Amazon GameLift ignores the filter
-        /// criteria. Use the pagination parameters to retrieve results as a set of sequential
-        /// pages. 
+        /// specific <c>PlayerSessionId</c> or <c>PlayerId</c>, Amazon GameLift Servers ignores
+        /// the filter criteria. Use the pagination parameters to retrieve results as a set of
+        /// sequential pages. 
         /// </para>
         ///  
         /// <para>
@@ -11217,7 +11233,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
@@ -11276,7 +11292,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         ///  
         /// <para>
@@ -11438,7 +11454,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>
@@ -11494,7 +11510,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>
@@ -11636,10 +11652,10 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To retrieve connection information, call this operation from the Amazon Web Services
-        /// account that is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave
-        /// the parameter empty to retrieve all connection records. If successful, the retrieved
-        /// information includes both active and pending connections. Active connections identify
-        /// the IpV4 CIDR block that the VPC uses to connect. 
+        /// account that is used to manage the Amazon GameLift Servers fleets. Specify a fleet
+        /// ID or leave the parameter empty to retrieve all connection records. If successful,
+        /// the retrieved information includes both active and pending connections. Active connections
+        /// identify the IpV4 CIDR block that the VPC uses to connect. 
         /// </para>
         ///  
         /// <para>
@@ -11687,10 +11703,10 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To retrieve connection information, call this operation from the Amazon Web Services
-        /// account that is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave
-        /// the parameter empty to retrieve all connection records. If successful, the retrieved
-        /// information includes both active and pending connections. Active connections identify
-        /// the IpV4 CIDR block that the VPC uses to connect. 
+        /// account that is used to manage the Amazon GameLift Servers fleets. Specify a fleet
+        /// ID or leave the parameter empty to retrieve all connection records. If successful,
+        /// the retrieved information includes both active and pending connections. Active connections
+        /// identify the IpV4 CIDR block that the VPC uses to connect. 
         /// </para>
         ///  
         /// <para>
@@ -11740,7 +11756,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Requests authorization to remotely connect to a hosting resource in a Amazon GameLift
-        /// managed fleet. This operation is not used with Amazon GameLift Anywhere fleets.
+        /// Servers managed fleet. This operation is not used with Amazon GameLift Servers Anywhere
+        /// fleets.
         /// 
         ///  
         /// <para>
@@ -11814,7 +11831,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Requests authorization to remotely connect to a hosting resource in a Amazon GameLift
-        /// managed fleet. This operation is not used with Amazon GameLift Anywhere fleets.
+        /// Servers managed fleet. This operation is not used with Amazon GameLift Servers Anywhere
+        /// fleets.
         /// 
         ///  
         /// <para>
@@ -11894,11 +11912,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Requests an authentication token from Amazon GameLift for a compute resource in an
-        /// Amazon GameLift fleet. Game servers that are running on the compute use this token
-        /// to communicate with the Amazon GameLift service, such as when calling the Amazon GameLift
-        /// server SDK action <c>InitSDK()</c>. Authentication tokens are valid for a limited
-        /// time span, so you need to request a fresh token before the current token expires.
+        /// Requests an authentication token from Amazon GameLift Servers for a compute resource
+        /// in an Amazon GameLift Servers fleet. Game servers that are running on the compute
+        /// use this token to communicate with the Amazon GameLift Servers service, such as when
+        /// calling the Amazon GameLift Servers server SDK action <c>InitSDK()</c>. Authentication
+        /// tokens are valid for a limited time span, so you need to request a fresh token before
+        /// the current token expires.
         /// 
         ///  
         /// <para>
@@ -11913,8 +11932,8 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         /// For Anywhere fleets (compute type <c>ANYWHERE</c>), if you're using the Amazon GameLift
-        /// Agent, auth token retrieval and refresh is handled automatically for any compute where
-        /// the Agent is running. If you're not using the Agent, create a mechanism to retrieve
+        /// Servers Agent, auth token retrieval and refresh is handled automatically for any compute
+        /// where the Agent is running. If you're not using the Agent, create a mechanism to retrieve
         /// and refresh auth tokens for computes that are running game server processes.
         /// </para>
         ///  </li> </ul> 
@@ -11971,11 +11990,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Requests an authentication token from Amazon GameLift for a compute resource in an
-        /// Amazon GameLift fleet. Game servers that are running on the compute use this token
-        /// to communicate with the Amazon GameLift service, such as when calling the Amazon GameLift
-        /// server SDK action <c>InitSDK()</c>. Authentication tokens are valid for a limited
-        /// time span, so you need to request a fresh token before the current token expires.
+        /// Requests an authentication token from Amazon GameLift Servers for a compute resource
+        /// in an Amazon GameLift Servers fleet. Game servers that are running on the compute
+        /// use this token to communicate with the Amazon GameLift Servers service, such as when
+        /// calling the Amazon GameLift Servers server SDK action <c>InitSDK()</c>. Authentication
+        /// tokens are valid for a limited time span, so you need to request a fresh token before
+        /// the current token expires.
         /// 
         ///  
         /// <para>
@@ -11990,8 +12010,8 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         /// For Anywhere fleets (compute type <c>ANYWHERE</c>), if you're using the Amazon GameLift
-        /// Agent, auth token retrieval and refresh is handled automatically for any compute where
-        /// the Agent is running. If you're not using the Agent, create a mechanism to retrieve
+        /// Servers Agent, auth token retrieval and refresh is handled automatically for any compute
+        /// where the Agent is running. If you're not using the Agent, create a mechanism to retrieve
         /// and refresh auth tokens for computes that are running game server processes.
         /// </para>
         ///  </li> </ul> 
@@ -12056,9 +12076,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves the location of stored game session logs for a specified game session on
-        /// Amazon GameLift managed fleets. When a game session is terminated, Amazon GameLift
-        /// automatically stores the logs in Amazon S3 and retains them for 14 days. Use this
-        /// URL to download the logs.
+        /// Amazon GameLift Servers managed fleets. When a game session is terminated, Amazon
+        /// GameLift Servers automatically stores the logs in Amazon S3 and retains them for 14
+        /// days. Use this URL to download the logs.
         /// 
         ///  <note> 
         /// <para>
@@ -12101,9 +12121,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves the location of stored game session logs for a specified game session on
-        /// Amazon GameLift managed fleets. When a game session is terminated, Amazon GameLift
-        /// automatically stores the logs in Amazon S3 and retains them for 14 days. Use this
-        /// URL to download the logs.
+        /// Amazon GameLift Servers managed fleets. When a game session is terminated, Amazon
+        /// GameLift Servers automatically stores the logs in Amazon S3 and retains them for 14
+        /// days. Use this URL to download the logs.
         /// 
         ///  <note> 
         /// <para>
@@ -12148,9 +12168,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves the location of stored game session logs for a specified game session on
-        /// Amazon GameLift managed fleets. When a game session is terminated, Amazon GameLift
-        /// automatically stores the logs in Amazon S3 and retains them for 14 days. Use this
-        /// URL to download the logs.
+        /// Amazon GameLift Servers managed fleets. When a game session is terminated, Amazon
+        /// GameLift Servers automatically stores the logs in Amazon S3 and retains them for 14
+        /// days. Use this URL to download the logs.
         /// 
         ///  <note> 
         /// <para>
@@ -12196,9 +12216,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves the location of stored game session logs for a specified game session on
-        /// Amazon GameLift managed fleets. When a game session is terminated, Amazon GameLift
-        /// automatically stores the logs in Amazon S3 and retains them for 14 days. Use this
-        /// URL to download the logs.
+        /// Amazon GameLift Servers managed fleets. When a game session is terminated, Amazon
+        /// GameLift Servers automatically stores the logs in Amazon S3 and retains them for 14
+        /// days. Use this URL to download the logs.
         /// 
         ///  <note> 
         /// <para>
@@ -12249,10 +12269,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Requests authorization to remotely connect to an instance in an Amazon GameLift managed
-        /// fleet. Use this operation to connect to instances with game servers that use Amazon
-        /// GameLift server SDK 4.x or earlier. To connect to instances with game servers that
-        /// use server SDK 5.x or later, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess</a>.
+        /// Requests authorization to remotely connect to an instance in an Amazon GameLift Servers
+        /// managed fleet. Use this operation to connect to instances with game servers that use
+        /// Amazon GameLift Servers server SDK 4.x or earlier. To connect to instances with game
+        /// servers that use server SDK 5.x or later, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess</a>.
         /// 
         ///  
         /// <para>
@@ -12332,10 +12352,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Requests authorization to remotely connect to an instance in an Amazon GameLift managed
-        /// fleet. Use this operation to connect to instances with game servers that use Amazon
-        /// GameLift server SDK 4.x or earlier. To connect to instances with game servers that
-        /// use server SDK 5.x or later, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess</a>.
+        /// Requests authorization to remotely connect to an instance in an Amazon GameLift Servers
+        /// managed fleet. Use this operation to connect to instances with game servers that use
+        /// Amazon GameLift Servers server SDK 4.x or earlier. To connect to instances with game
+        /// servers that use server SDK 5.x or later, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess</a>.
         /// 
         ///  
         /// <para>
@@ -12624,8 +12644,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves information on the compute resources in an Amazon GameLift fleet. Use the
-        /// pagination parameters to retrieve results in a set of sequential pages.
+        /// Retrieves information on the compute resources in an Amazon GameLift Servers fleet.
+        /// Use the pagination parameters to retrieve results in a set of sequential pages.
         /// 
         ///  
         /// <para>
@@ -12691,8 +12711,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves information on the compute resources in an Amazon GameLift fleet. Use the
-        /// pagination parameters to retrieve results in a set of sequential pages.
+        /// Retrieves information on the compute resources in an Amazon GameLift Servers fleet.
+        /// Use the pagination parameters to retrieve results in a set of sequential pages.
         /// 
         ///  
         /// <para>
@@ -12785,7 +12805,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To get a list of all Amazon GameLift Realtime fleets with a specific configuration
+        /// To get a list of all Amazon GameLift Servers Realtime fleets with a specific configuration
         /// script, provide the script ID. 
         /// </para>
         ///  </li> </ul> 
@@ -12853,7 +12873,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To get a list of all Amazon GameLift Realtime fleets with a specific configuration
+        /// To get a list of all Amazon GameLift Servers Realtime fleets with a specific configuration
         /// script, provide the script ID. 
         /// </para>
         ///  </li> </ul> 
@@ -13351,7 +13371,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To get a list of all Amazon GameLift Realtime fleets with a specific configuration
+        /// To get a list of all Amazon GameLift Servers Realtime fleets with a specific configuration
         /// script, provide the script ID. 
         /// </para>
         ///  </li> </ul> 
@@ -13419,7 +13439,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To get a list of all Amazon GameLift Realtime fleets with a specific configuration
+        /// To get a list of all Amazon GameLift Servers Realtime fleets with a specific configuration
         /// script, provide the script ID. 
         /// </para>
         ///  </li> </ul> 
@@ -13537,8 +13557,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -13553,7 +13573,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGameServers service method.</param>
@@ -13582,8 +13602,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -13598,7 +13618,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGameServers service method.</param>
@@ -13634,7 +13654,30 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Lists all custom and Amazon Web Services locations.
+        /// Lists all custom and Amazon Web Services locations where Amazon GameLift Servers can
+        /// host game servers. 
+        /// 
+        ///  
+        /// <para>
+        /// Note that if you call this API using a location that doesn't have a service endpoint,
+        /// such as one that can only be a remote location in a multi-location fleet, the API
+        /// returns an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Consult the table of supported locations in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
+        /// GameLift Servers service locations</a> to identify home Regions that support single
+        /// and multi-location fleets.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Service
+        /// locations</a> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLocations service method.</param>
         /// 
@@ -13662,7 +13705,30 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Lists all custom and Amazon Web Services locations.
+        /// Lists all custom and Amazon Web Services locations where Amazon GameLift Servers can
+        /// host game servers. 
+        /// 
+        ///  
+        /// <para>
+        /// Note that if you call this API using a location that doesn't have a service endpoint,
+        /// such as one that can only be a remote location in a multi-location fleet, the API
+        /// returns an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Consult the table of supported locations in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
+        /// GameLift Servers service locations</a> to identify home Regions that support single
+        /// and multi-location fleets.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Service
+        /// locations</a> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLocations service method.</param>
         /// <param name="cancellationToken">
@@ -13707,7 +13773,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>
@@ -13755,7 +13821,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>
@@ -13800,9 +13866,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves all tags assigned to a Amazon GameLift resource. Use resource tags to organize
-        /// Amazon Web Services resources for a range of purposes. This operation handles the
-        /// permissions necessary to manage tags for Amazon GameLift resources that support tagging.
+        /// Retrieves all tags assigned to a Amazon GameLift Servers resource. Use resource tags
+        /// to organize Amazon Web Services resources for a range of purposes. This operation
+        /// handles the permissions necessary to manage tags for Amazon GameLift Servers resources
+        /// that support tagging.
         /// 
         ///  
         /// <para>
@@ -13867,9 +13934,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves all tags assigned to a Amazon GameLift resource. Use resource tags to organize
-        /// Amazon Web Services resources for a range of purposes. This operation handles the
-        /// permissions necessary to manage tags for Amazon GameLift resources that support tagging.
+        /// Retrieves all tags assigned to a Amazon GameLift Servers resource. Use resource tags
+        /// to organize Amazon Web Services resources for a range of purposes. This operation
+        /// handles the permissions necessary to manage tags for Amazon GameLift Servers resources
+        /// that support tagging.
         /// 
         ///  
         /// <para>
@@ -13943,11 +14011,11 @@ namespace Amazon.GameLift
         /// <summary>
         /// Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically
         /// scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs
-        /// Amazon GameLift to track a fleet metric and automatically change the fleet's capacity
-        /// when a certain threshold is reached. There are two types of scaling policies: target-based
-        /// and rule-based. Use a target-based policy to quickly and efficiently manage fleet
-        /// scaling; this option is the most commonly used. Use rule-based policies when you need
-        /// to exert fine-grained control over auto-scaling. 
+        /// Amazon GameLift Servers to track a fleet metric and automatically change the fleet's
+        /// capacity when a certain threshold is reached. There are two types of scaling policies:
+        /// target-based and rule-based. Use a target-based policy to quickly and efficiently
+        /// manage fleet scaling; this option is the most commonly used. Use rule-based policies
+        /// when you need to exert fine-grained control over auto-scaling. 
         /// 
         ///  
         /// <para>
@@ -13971,16 +14039,16 @@ namespace Amazon.GameLift
         /// tells us how much of a fleet's hosting capacity is ready to host game sessions but
         /// is not currently in use. This is the fleet's buffer; it measures the additional player
         /// demand that the fleet could handle at current capacity. With a target-based policy,
-        /// you set your ideal buffer size and leave it to Amazon GameLift to take whatever action
-        /// is needed to maintain that target. 
+        /// you set your ideal buffer size and leave it to Amazon GameLift Servers to take whatever
+        /// action is needed to maintain that target. 
         /// </para>
         ///  
         /// <para>
         /// For example, you might choose to maintain a 10% buffer for a fleet that has the capacity
-        /// to host 100 simultaneous game sessions. This policy tells Amazon GameLift to take
-        /// action whenever the fleet's available capacity falls below or rises above 10 game
-        /// sessions. Amazon GameLift will start new instances or stop unused instances in order
-        /// to return to the 10% buffer. 
+        /// to host 100 simultaneous game sessions. This policy tells Amazon GameLift Servers
+        /// to take action whenever the fleet's available capacity falls below or rises above
+        /// 10 game sessions. Amazon GameLift Servers will start new instances or stop unused
+        /// instances in order to return to the 10% buffer. 
         /// </para>
         ///  
         /// <para>
@@ -14072,11 +14140,11 @@ namespace Amazon.GameLift
         /// <summary>
         /// Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically
         /// scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs
-        /// Amazon GameLift to track a fleet metric and automatically change the fleet's capacity
-        /// when a certain threshold is reached. There are two types of scaling policies: target-based
-        /// and rule-based. Use a target-based policy to quickly and efficiently manage fleet
-        /// scaling; this option is the most commonly used. Use rule-based policies when you need
-        /// to exert fine-grained control over auto-scaling. 
+        /// Amazon GameLift Servers to track a fleet metric and automatically change the fleet's
+        /// capacity when a certain threshold is reached. There are two types of scaling policies:
+        /// target-based and rule-based. Use a target-based policy to quickly and efficiently
+        /// manage fleet scaling; this option is the most commonly used. Use rule-based policies
+        /// when you need to exert fine-grained control over auto-scaling. 
         /// 
         ///  
         /// <para>
@@ -14100,16 +14168,16 @@ namespace Amazon.GameLift
         /// tells us how much of a fleet's hosting capacity is ready to host game sessions but
         /// is not currently in use. This is the fleet's buffer; it measures the additional player
         /// demand that the fleet could handle at current capacity. With a target-based policy,
-        /// you set your ideal buffer size and leave it to Amazon GameLift to take whatever action
-        /// is needed to maintain that target. 
+        /// you set your ideal buffer size and leave it to Amazon GameLift Servers to take whatever
+        /// action is needed to maintain that target. 
         /// </para>
         ///  
         /// <para>
         /// For example, you might choose to maintain a 10% buffer for a fleet that has the capacity
-        /// to host 100 simultaneous game sessions. This policy tells Amazon GameLift to take
-        /// action whenever the fleet's available capacity falls below or rises above 10 game
-        /// sessions. Amazon GameLift will start new instances or stop unused instances in order
-        /// to return to the 10% buffer. 
+        /// to host 100 simultaneous game sessions. This policy tells Amazon GameLift Servers
+        /// to take action whenever the fleet's available capacity falls below or rises above
+        /// 10 game sessions. Amazon GameLift Servers will start new instances or stop unused
+        /// instances in order to return to the 10% buffer. 
         /// </para>
         ///  
         /// <para>
@@ -14206,13 +14274,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Registers a compute resource in an Amazon GameLift Anywhere fleet. 
+        /// Registers a compute resource in an Amazon GameLift Servers Anywhere fleet. 
         /// 
         ///  
         /// <para>
-        /// For an Anywhere fleet that's running the Amazon GameLift Agent, the Agent handles
-        /// all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent,
-        /// call this operation to register fleet computes.
+        /// For an Anywhere fleet that's running the Amazon GameLift Servers Agent, the Agent
+        /// handles all compute registry tasks for you. For an Anywhere fleet that doesn't use
+        /// the Agent, call this operation to register fleet computes.
         /// </para>
         ///  
         /// <para>
@@ -14224,10 +14292,10 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If successful, this operation returns compute details, including an Amazon GameLift
-        /// SDK endpoint or Agent endpoint. Game server processes running on the compute can use
-        /// this endpoint to communicate with the Amazon GameLift service. Each server process
-        /// includes the SDK endpoint in its call to the Amazon GameLift server SDK action <c>InitSDK()</c>.
-        /// 
+        /// Servers SDK endpoint or Agent endpoint. Game server processes running on the compute
+        /// can use this endpoint to communicate with the Amazon GameLift Servers service. Each
+        /// server process includes the SDK endpoint in its call to the Amazon GameLift Servers
+        /// server SDK action <c>InitSDK()</c>. 
         /// </para>
         ///  
         /// <para>
@@ -14275,8 +14343,9 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -14294,13 +14363,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Registers a compute resource in an Amazon GameLift Anywhere fleet. 
+        /// Registers a compute resource in an Amazon GameLift Servers Anywhere fleet. 
         /// 
         ///  
         /// <para>
-        /// For an Anywhere fleet that's running the Amazon GameLift Agent, the Agent handles
-        /// all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent,
-        /// call this operation to register fleet computes.
+        /// For an Anywhere fleet that's running the Amazon GameLift Servers Agent, the Agent
+        /// handles all compute registry tasks for you. For an Anywhere fleet that doesn't use
+        /// the Agent, call this operation to register fleet computes.
         /// </para>
         ///  
         /// <para>
@@ -14312,10 +14381,10 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If successful, this operation returns compute details, including an Amazon GameLift
-        /// SDK endpoint or Agent endpoint. Game server processes running on the compute can use
-        /// this endpoint to communicate with the Amazon GameLift service. Each server process
-        /// includes the SDK endpoint in its call to the Amazon GameLift server SDK action <c>InitSDK()</c>.
-        /// 
+        /// Servers SDK endpoint or Agent endpoint. Game server processes running on the compute
+        /// can use this endpoint to communicate with the Amazon GameLift Servers service. Each
+        /// server process includes the SDK endpoint in its call to the Amazon GameLift Servers
+        /// server SDK action <c>InitSDK()</c>. 
         /// </para>
         ///  
         /// <para>
@@ -14366,8 +14435,9 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -14389,16 +14459,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
-        /// Creates a new game server resource and notifies Amazon GameLift FleetIQ that the game
-        /// server is ready to host gameplay and players. This operation is called by a game server
-        /// process that is running on an instance in a game server group. Registering game servers
-        /// enables Amazon GameLift FleetIQ to track available game servers and enables game clients
-        /// and services to claim a game server for a new game session. 
+        /// Creates a new game server resource and notifies Amazon GameLift Servers FleetIQ that
+        /// the game server is ready to host gameplay and players. This operation is called by
+        /// a game server process that is running on an instance in a game server group. Registering
+        /// game servers enables Amazon GameLift Servers FleetIQ to track available game servers
+        /// and enables game clients and services to claim a game server for a new game session.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -14420,7 +14491,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterGameServer service method.</param>
@@ -14457,16 +14528,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
-        /// Creates a new game server resource and notifies Amazon GameLift FleetIQ that the game
-        /// server is ready to host gameplay and players. This operation is called by a game server
-        /// process that is running on an instance in a game server group. Registering game servers
-        /// enables Amazon GameLift FleetIQ to track available game servers and enables game clients
-        /// and services to claim a game server for a new game session. 
+        /// Creates a new game server resource and notifies Amazon GameLift Servers FleetIQ that
+        /// the game server is ready to host gameplay and players. This operation is called by
+        /// a game server process that is running on an instance in a game server group. Registering
+        /// game servers enables Amazon GameLift Servers FleetIQ to track available game servers
+        /// and enables game clients and services to claim a game server for a new game session.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -14488,7 +14560,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterGameServer service method.</param>
@@ -14533,8 +14605,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a fresh set of credentials for use when uploading a new set of game build
-        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
-        /// see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
+        /// files to Amazon GameLift Servers's Amazon S3. This is done as part of the build creation
+        /// process; see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
         /// 
         ///  
         /// <para>
@@ -14586,8 +14658,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a fresh set of credentials for use when uploading a new set of game build
-        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
-        /// see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
+        /// files to Amazon GameLift Servers's Amazon S3. This is done as part of the build creation
+        /// process; see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
         /// 
         ///  
         /// <para>
@@ -14641,8 +14713,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a fresh set of credentials for use when uploading a new set of game build
-        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
-        /// see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
+        /// files to Amazon GameLift Servers's Amazon S3. This is done as part of the build creation
+        /// process; see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
         /// 
         ///  
         /// <para>
@@ -14697,8 +14769,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a fresh set of credentials for use when uploading a new set of game build
-        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
-        /// see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
+        /// files to Amazon GameLift Servers's Amazon S3. This is done as part of the build creation
+        /// process; see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>.
         /// 
         ///  
         /// <para>
@@ -14763,8 +14835,8 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift returns a fleet
-        /// ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
+        /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift Servers returns
+        /// a fleet ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
         /// </para>
         ///  
         /// <para>
@@ -14815,8 +14887,8 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift returns a fleet
-        /// ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
+        /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift Servers returns
+        /// a fleet ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
         /// </para>
         ///  
         /// <para>
@@ -14869,8 +14941,8 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift returns a fleet
-        /// ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
+        /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift Servers returns
+        /// a fleet ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
         /// </para>
         ///  
         /// <para>
@@ -14924,8 +14996,8 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift returns a fleet
-        /// ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
+        /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift Servers returns
+        /// a fleet ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
         /// </para>
         ///  
         /// <para>
@@ -14980,8 +15052,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -15005,7 +15077,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeGameServerGroup service method.</param>
@@ -15038,8 +15110,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -15063,7 +15135,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeGameServerGroup service method.</param>
@@ -15428,8 +15500,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, Amazon GameLift once again initiates scaling events as triggered by
-        /// the fleet's scaling policies. If actions on the fleet location were never stopped,
+        /// If successful, Amazon GameLift Servers once again initiates scaling events as triggered
+        /// by the fleet's scaling policies. If actions on the fleet location were never stopped,
         /// this operation will have no effect.
         /// </para>
         ///  
@@ -15439,7 +15511,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFleetActions service method.</param>
@@ -15495,8 +15567,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, Amazon GameLift once again initiates scaling events as triggered by
-        /// the fleet's scaling policies. If actions on the fleet location were never stopped,
+        /// If successful, Amazon GameLift Servers once again initiates scaling events as triggered
+        /// by the fleet's scaling policies. If actions on the fleet location were never stopped,
         /// this operation will have no effect.
         /// </para>
         ///  
@@ -15506,7 +15578,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFleetActions service method.</param>
@@ -15550,13 +15622,13 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Makes a request to start a new game session using a game session queue. When processing
-        /// a placement request, Amazon GameLift looks for the best possible available resource
-        /// to host the game session, based on how the queue is configured to prioritize factors
-        /// such as resource cost, latency, and location. After selecting an available resource,
-        /// Amazon GameLift prompts the resource to start a game session. A placement request
-        /// can include a list of players to create a set of player sessions. The request can
-        /// also include information to pass to the new game session, such as to specify a game
-        /// map or other options.
+        /// a placement request, Amazon GameLift Servers looks for the best possible available
+        /// resource to host the game session, based on how the queue is configured to prioritize
+        /// factors such as resource cost, latency, and location. After selecting an available
+        /// resource, Amazon GameLift Servers prompts the resource to start a game session. A
+        /// placement request can include a list of players to create a set of player sessions.
+        /// The request can also include information to pass to the new game session, such as
+        /// to specify a game map or other options.
         /// 
         ///  
         /// <para>
@@ -15596,10 +15668,11 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <c>PlayerLatencies</c>. Include a set of latency values for destinations in the queue.
-        /// When a request includes latency data, Amazon GameLift automatically reorder the queue's
-        /// locations priority list based on lowest available latency values. If a request includes
-        /// latency data for multiple players, Amazon GameLift calculates each location's average
-        /// latency for all players and reorders to find the lowest latency across all players.
+        /// When a request includes latency data, Amazon GameLift Servers automatically reorder
+        /// the queue's locations priority list based on lowest available latency values. If a
+        /// request includes latency data for multiple players, Amazon GameLift Servers calculates
+        /// each location's average latency for all players and reorders to find the lowest latency
+        /// across all players. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15611,10 +15684,10 @@ namespace Amazon.GameLift
         /// to prioritize location first (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_PriorityConfiguration.html">PriorityConfiguration</a>
         /// for game session queues), you can optionally use the <i>PriorityConfigurationOverride</i>
         /// parameter to substitute a different location priority list for this placement request.
-        /// Amazon GameLift searches each location on the priority override list to find an available
-        /// hosting resource for the new game session. Specify a fallback strategy to use in the
-        /// event that Amazon GameLift fails to place the game session in any of the locations
-        /// on the override list. 
+        /// Amazon GameLift Servers searches each location on the priority override list to find
+        /// an available hosting resource for the new game session. Specify a fallback strategy
+        /// to use in the event that Amazon GameLift Servers fails to place the game session in
+        /// any of the locations on the override list. 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -15638,7 +15711,8 @@ namespace Amazon.GameLift
         /// or by monitoring queue notifications. When the request status is <c>FULFILLED</c>,
         /// a new game session has started and the placement request is updated with connection
         /// information for the game session (IP address and port). If the request included player
-        /// session data, Amazon GameLift creates a player session for each player ID in the request.
+        /// session data, Amazon GameLift Servers creates a player session for each player ID
+        /// in the request.
         /// </para>
         ///  
         /// <para>
@@ -15656,9 +15730,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Amazon GameLift continues to retry each placement request until it reaches the queue's
-        /// timeout setting. If a request times out, you can resubmit the request to the same
-        /// queue or try a different queue. 
+        /// Amazon GameLift Servers continues to retry each placement request until it reaches
+        /// the queue's timeout setting. If a request times out, you can resubmit the request
+        /// to the same queue or try a different queue. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement service method.</param>
@@ -15695,13 +15769,13 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Makes a request to start a new game session using a game session queue. When processing
-        /// a placement request, Amazon GameLift looks for the best possible available resource
-        /// to host the game session, based on how the queue is configured to prioritize factors
-        /// such as resource cost, latency, and location. After selecting an available resource,
-        /// Amazon GameLift prompts the resource to start a game session. A placement request
-        /// can include a list of players to create a set of player sessions. The request can
-        /// also include information to pass to the new game session, such as to specify a game
-        /// map or other options.
+        /// a placement request, Amazon GameLift Servers looks for the best possible available
+        /// resource to host the game session, based on how the queue is configured to prioritize
+        /// factors such as resource cost, latency, and location. After selecting an available
+        /// resource, Amazon GameLift Servers prompts the resource to start a game session. A
+        /// placement request can include a list of players to create a set of player sessions.
+        /// The request can also include information to pass to the new game session, such as
+        /// to specify a game map or other options.
         /// 
         ///  
         /// <para>
@@ -15741,10 +15815,11 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <c>PlayerLatencies</c>. Include a set of latency values for destinations in the queue.
-        /// When a request includes latency data, Amazon GameLift automatically reorder the queue's
-        /// locations priority list based on lowest available latency values. If a request includes
-        /// latency data for multiple players, Amazon GameLift calculates each location's average
-        /// latency for all players and reorders to find the lowest latency across all players.
+        /// When a request includes latency data, Amazon GameLift Servers automatically reorder
+        /// the queue's locations priority list based on lowest available latency values. If a
+        /// request includes latency data for multiple players, Amazon GameLift Servers calculates
+        /// each location's average latency for all players and reorders to find the lowest latency
+        /// across all players. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15756,10 +15831,10 @@ namespace Amazon.GameLift
         /// to prioritize location first (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_PriorityConfiguration.html">PriorityConfiguration</a>
         /// for game session queues), you can optionally use the <i>PriorityConfigurationOverride</i>
         /// parameter to substitute a different location priority list for this placement request.
-        /// Amazon GameLift searches each location on the priority override list to find an available
-        /// hosting resource for the new game session. Specify a fallback strategy to use in the
-        /// event that Amazon GameLift fails to place the game session in any of the locations
-        /// on the override list. 
+        /// Amazon GameLift Servers searches each location on the priority override list to find
+        /// an available hosting resource for the new game session. Specify a fallback strategy
+        /// to use in the event that Amazon GameLift Servers fails to place the game session in
+        /// any of the locations on the override list. 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -15783,7 +15858,8 @@ namespace Amazon.GameLift
         /// or by monitoring queue notifications. When the request status is <c>FULFILLED</c>,
         /// a new game session has started and the placement request is updated with connection
         /// information for the game session (IP address and port). If the request included player
-        /// session data, Amazon GameLift creates a player session for each player ID in the request.
+        /// session data, Amazon GameLift Servers creates a player session for each player ID
+        /// in the request.
         /// </para>
         ///  
         /// <para>
@@ -15801,9 +15877,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Amazon GameLift continues to retry each placement request until it reaches the queue's
-        /// timeout setting. If a request times out, you can resubmit the request to the same
-        /// queue or try a different queue. 
+        /// Amazon GameLift Servers continues to retry each placement request until it reaches
+        /// the queue's timeout setting. If a request times out, you can resubmit the request
+        /// to the same queue or try a different queue. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement service method.</param>
@@ -15855,9 +15931,9 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// When using FlexMatch with Amazon GameLift managed hosting, you can request a backfill
-        /// match from a client service by calling this operation with a <c>GameSessions</c> ID.
-        /// You also have the option of making backfill requests directly from your game server.
+        /// When using FlexMatch with Amazon GameLift Servers managed hosting, you can request
+        /// a backfill match from a client service by calling this operation with a <c>GameSessions</c>
+        /// ID. You also have the option of making backfill requests directly from your game server.
         /// In response to a request, FlexMatch creates player sessions for the new players, updates
         /// the <c>GameSession</c> resource, and sends updated matchmaking data to the game server.
         /// You can request a backfill match at any point after a game session is started. Each
@@ -15900,7 +15976,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-        /// How Amazon GameLift FlexMatch works</a> 
+        /// How Amazon GameLift Servers FlexMatch works</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMatchBackfill service method.</param>
@@ -15942,9 +16018,9 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// When using FlexMatch with Amazon GameLift managed hosting, you can request a backfill
-        /// match from a client service by calling this operation with a <c>GameSessions</c> ID.
-        /// You also have the option of making backfill requests directly from your game server.
+        /// When using FlexMatch with Amazon GameLift Servers managed hosting, you can request
+        /// a backfill match from a client service by calling this operation with a <c>GameSessions</c>
+        /// ID. You also have the option of making backfill requests directly from your game server.
         /// In response to a request, FlexMatch creates player sessions for the new players, updates
         /// the <c>GameSession</c> resource, and sends updated matchmaking data to the game server.
         /// You can request a backfill match at any point after a game session is started. Each
@@ -15987,7 +16063,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-        /// How Amazon GameLift FlexMatch works</a> 
+        /// How Amazon GameLift Servers FlexMatch works</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMatchBackfill service method.</param>
@@ -16028,12 +16104,13 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Uses FlexMatch to create a game match for a group of players based on custom matchmaking
-        /// rules. With games that use Amazon GameLift managed hosting, this operation also triggers
-        /// Amazon GameLift to find hosting resources and start a new game session for the new
-        /// match. Each matchmaking request includes information on one or more players and specifies
-        /// the FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch
-        /// attempts to build a match that includes all players in the request, placing them in
-        /// the same team and finding additional players as needed to fill the match. 
+        /// rules. With games that use Amazon GameLift Servers managed hosting, this operation
+        /// also triggers Amazon GameLift Servers to find hosting resources and start a new game
+        /// session for the new match. Each matchmaking request includes information on one or
+        /// more players and specifies the FlexMatch matchmaker to use. When a request is for
+        /// multiple players, FlexMatch attempts to build a match that includes all players in
+        /// the request, placing them in the same team and finding additional players as needed
+        /// to fill the match. 
         /// 
         ///  
         /// <para>
@@ -16066,7 +16143,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-        /// How Amazon GameLift FlexMatch works</a> 
+        /// How Amazon GameLift Servers FlexMatch works</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMatchmaking service method.</param>
@@ -16100,12 +16177,13 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Uses FlexMatch to create a game match for a group of players based on custom matchmaking
-        /// rules. With games that use Amazon GameLift managed hosting, this operation also triggers
-        /// Amazon GameLift to find hosting resources and start a new game session for the new
-        /// match. Each matchmaking request includes information on one or more players and specifies
-        /// the FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch
-        /// attempts to build a match that includes all players in the request, placing them in
-        /// the same team and finding additional players as needed to fill the match. 
+        /// rules. With games that use Amazon GameLift Servers managed hosting, this operation
+        /// also triggers Amazon GameLift Servers to find hosting resources and start a new game
+        /// session for the new match. Each matchmaking request includes information on one or
+        /// more players and specifies the FlexMatch matchmaker to use. When a request is for
+        /// multiple players, FlexMatch attempts to build a match that includes all players in
+        /// the request, placing them in the same team and finding additional players as needed
+        /// to fill the match. 
         /// 
         ///  
         /// <para>
@@ -16138,7 +16216,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-        /// How Amazon GameLift FlexMatch works</a> 
+        /// How Amazon GameLift Servers FlexMatch works</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMatchmaking service method.</param>
@@ -16205,8 +16283,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, Amazon GameLift no longer initiates scaling events except in response
-        /// to manual changes using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>.
+        /// If successful, Amazon GameLift Servers no longer initiates scaling events except in
+        /// response to manual changes using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>.
         /// To restart fleet actions again, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartFleetActions.html">StartFleetActions</a>.
         /// </para>
         ///  
@@ -16216,7 +16294,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopFleetActions service method.</param>
@@ -16279,8 +16357,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, Amazon GameLift no longer initiates scaling events except in response
-        /// to manual changes using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>.
+        /// If successful, Amazon GameLift Servers no longer initiates scaling events except in
+        /// response to manual changes using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>.
         /// To restart fleet actions again, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartFleetActions.html">StartFleetActions</a>.
         /// </para>
         ///  
@@ -16290,7 +16368,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift Fleets</a> 
+        /// up Amazon GameLift Servers Fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopFleetActions service method.</param>
@@ -16557,8 +16635,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -16589,7 +16667,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendGameServerGroup service method.</param>
@@ -16622,8 +16700,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
@@ -16654,7 +16732,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendGameServerGroup service method.</param>
@@ -16694,10 +16772,11 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Assigns a tag to an Amazon GameLift resource. You can use tags to organize resources,
-        /// create IAM permissions policies to manage access to groups of resources, customize
-        /// Amazon Web Services cost breakdowns, and more. This operation handles the permissions
-        /// necessary to manage tags for Amazon GameLift resources that support tagging.
+        /// Assigns a tag to an Amazon GameLift Servers resource. You can use tags to organize
+        /// resources, create IAM permissions policies to manage access to groups of resources,
+        /// customize Amazon Web Services cost breakdowns, and more. This operation handles the
+        /// permissions necessary to manage tags for Amazon GameLift Servers resources that support
+        /// tagging.
         /// 
         ///  
         /// <para>
@@ -16764,10 +16843,11 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Assigns a tag to an Amazon GameLift resource. You can use tags to organize resources,
-        /// create IAM permissions policies to manage access to groups of resources, customize
-        /// Amazon Web Services cost breakdowns, and more. This operation handles the permissions
-        /// necessary to manage tags for Amazon GameLift resources that support tagging.
+        /// Assigns a tag to an Amazon GameLift Servers resource. You can use tags to organize
+        /// resources, create IAM permissions policies to manage access to groups of resources,
+        /// customize Amazon Web Services cost breakdowns, and more. This operation handles the
+        /// permissions necessary to manage tags for Amazon GameLift Servers resources that support
+        /// tagging.
         /// 
         ///  
         /// <para>
@@ -16845,9 +16925,9 @@ namespace Amazon.GameLift
         /// game session that isn't in <c>ERROR</c> status. Terminating a game session is the
         /// most efficient way to free up a server process when it's hosting a game session that's
         /// in a bad state or not ending properly. You can use this action to terminate a game
-        /// session that's being hosted on any type of Amazon GameLift fleet compute, including
-        /// computes for managed EC2, managed container, and Anywhere fleets. The game server
-        /// must be integrated with Amazon GameLift server SDK 5.x or greater.
+        /// session that's being hosted on any type of Amazon GameLift Servers fleet compute,
+        /// including computes for managed EC2, managed container, and Anywhere fleets. The game
+        /// server must be integrated with Amazon GameLift Servers server SDK 5.x or greater.
         /// 
         ///  
         /// <para>
@@ -16861,17 +16941,17 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// Initiate a graceful termination using the normal game session shutdown sequence. With
-        /// this mode, the Amazon GameLift service prompts the server process that's hosting the
-        /// game session by calling the server SDK callback method <c>OnProcessTerminate()</c>.
+        /// this mode, the Amazon GameLift Servers service prompts the server process that's hosting
+        /// the game session by calling the server SDK callback method <c>OnProcessTerminate()</c>.
         /// The callback implementation is part of the custom game server code. It might involve
         /// a variety of actions to gracefully end a game session, such as notifying players,
         /// before stopping the server process.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Force an immediate game session termination. With this mode, the Amazon GameLift service
-        /// takes action to stop the server process, which ends the game session without the normal
-        /// game session shutdown sequence. 
+        /// Force an immediate game session termination. With this mode, the Amazon GameLift Servers
+        /// service takes action to stop the server process, which ends the game session without
+        /// the normal game session shutdown sequence. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -16893,11 +16973,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html">Add
-        /// Amazon GameLift to your game server</a> 
+        /// Amazon GameLift Servers to your game server</a> 
         /// </para>
         ///  
         /// <para>
-        /// Amazon GameLift server SDK 5 reference guide for <c>OnProcessTerminate()</c> (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-cpp-initsdk.html">C++</a>)
+        /// Amazon GameLift Servers server SDK 5 reference guide for <c>OnProcessTerminate()</c>
+        /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-cpp-initsdk.html">C++</a>)
         /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-csharp-initsdk.html">C#</a>)
         /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-unreal-initsdk.html">Unreal</a>)
         /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk-go-initsdk.html">Go</a>)
@@ -16925,8 +17006,9 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -16948,9 +17030,9 @@ namespace Amazon.GameLift
         /// game session that isn't in <c>ERROR</c> status. Terminating a game session is the
         /// most efficient way to free up a server process when it's hosting a game session that's
         /// in a bad state or not ending properly. You can use this action to terminate a game
-        /// session that's being hosted on any type of Amazon GameLift fleet compute, including
-        /// computes for managed EC2, managed container, and Anywhere fleets. The game server
-        /// must be integrated with Amazon GameLift server SDK 5.x or greater.
+        /// session that's being hosted on any type of Amazon GameLift Servers fleet compute,
+        /// including computes for managed EC2, managed container, and Anywhere fleets. The game
+        /// server must be integrated with Amazon GameLift Servers server SDK 5.x or greater.
         /// 
         ///  
         /// <para>
@@ -16964,17 +17046,17 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// Initiate a graceful termination using the normal game session shutdown sequence. With
-        /// this mode, the Amazon GameLift service prompts the server process that's hosting the
-        /// game session by calling the server SDK callback method <c>OnProcessTerminate()</c>.
+        /// this mode, the Amazon GameLift Servers service prompts the server process that's hosting
+        /// the game session by calling the server SDK callback method <c>OnProcessTerminate()</c>.
         /// The callback implementation is part of the custom game server code. It might involve
         /// a variety of actions to gracefully end a game session, such as notifying players,
         /// before stopping the server process.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Force an immediate game session termination. With this mode, the Amazon GameLift service
-        /// takes action to stop the server process, which ends the game session without the normal
-        /// game session shutdown sequence. 
+        /// Force an immediate game session termination. With this mode, the Amazon GameLift Servers
+        /// service takes action to stop the server process, which ends the game session without
+        /// the normal game session shutdown sequence. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -16996,11 +17078,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html">Add
-        /// Amazon GameLift to your game server</a> 
+        /// Amazon GameLift Servers to your game server</a> 
         /// </para>
         ///  
         /// <para>
-        /// Amazon GameLift server SDK 5 reference guide for <c>OnProcessTerminate()</c> (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-cpp-initsdk.html">C++</a>)
+        /// Amazon GameLift Servers server SDK 5 reference guide for <c>OnProcessTerminate()</c>
+        /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-cpp-initsdk.html">C++</a>)
         /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-csharp-initsdk.html">C#</a>)
         /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-unreal-initsdk.html">Unreal</a>)
         /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk-go-initsdk.html">Go</a>)
@@ -17031,8 +17114,9 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -17054,10 +17138,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Removes a tag assigned to a Amazon GameLift resource. You can use resource tags to
-        /// organize Amazon Web Services resources for a range of purposes. This operation handles
-        /// the permissions necessary to manage tags for Amazon GameLift resources that support
-        /// tagging.
+        /// Removes a tag assigned to a Amazon GameLift Servers resource. You can use resource
+        /// tags to organize Amazon Web Services resources for a range of purposes. This operation
+        /// handles the permissions necessary to manage tags for Amazon GameLift Servers resources
+        /// that support tagging.
         /// 
         ///  
         /// <para>
@@ -17124,10 +17208,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Removes a tag assigned to a Amazon GameLift resource. You can use resource tags to
-        /// organize Amazon Web Services resources for a range of purposes. This operation handles
-        /// the permissions necessary to manage tags for Amazon GameLift resources that support
-        /// tagging.
+        /// Removes a tag assigned to a Amazon GameLift Servers resource. You can use resource
+        /// tags to organize Amazon Web Services resources for a range of purposes. This operation
+        /// handles the permissions necessary to manage tags for Amazon GameLift Servers resources
+        /// that support tagging.
         /// 
         ///  
         /// <para>
@@ -17491,8 +17575,9 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -17606,8 +17691,9 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
-        /// The operation failed because Amazon GameLift has not yet finished validating this
-        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// The operation failed because Amazon GameLift Servers has not yet finished validating
+        /// this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a
+        /// href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
         /// backoffs and jitter</a>.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -17833,8 +17919,8 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To update fleet attributes, specify the fleet ID and the property values that you
-        /// want to change. If successful, Amazon GameLift returns the identifiers for the updated
-        /// fleet.
+        /// want to change. If successful, Amazon GameLift Servers returns the identifiers for
+        /// the updated fleet.
         /// </para>
         ///  
         /// <para>
@@ -17843,7 +17929,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetAttributes service method.</param>
@@ -17894,8 +17980,8 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To update fleet attributes, specify the fleet ID and the property values that you
-        /// want to change. If successful, Amazon GameLift returns the identifiers for the updated
-        /// fleet.
+        /// want to change. If successful, Amazon GameLift Servers returns the identifiers for
+        /// the updated fleet.
         /// </para>
         ///  
         /// <para>
@@ -17904,7 +17990,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetAttributes service method.</param>
@@ -17969,8 +18055,8 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// Minimum/maximum size: Set hard limits on the number of Amazon EC2 instances allowed.
-        /// If Amazon GameLift receives a request--either through manual update or automatic scaling--it
-        /// won't change the capacity to a value outside of this range.
+        /// If Amazon GameLift Servers receives a request--either through manual update or automatic
+        /// scaling--it won't change the capacity to a value outside of this range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17990,16 +18076,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, Amazon GameLift updates the capacity settings and returns the identifiers
-        /// for the updated fleet and/or location. If a requested change to desired capacity exceeds
-        /// the instance type's limit, the <c>LimitExceeded</c> exception occurs. 
+        /// If successful, Amazon GameLift Servers updates the capacity settings and returns the
+        /// identifiers for the updated fleet and/or location. If a requested change to desired
+        /// capacity exceeds the instance type's limit, the <c>LimitExceeded</c> exception occurs.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// Updates often prompt an immediate change in fleet capacity, such as when current capacity
         /// is different than the new desired capacity or outside the new limits. In this scenario,
-        /// Amazon GameLift automatically initiates steps to add or remove instances in the fleet
-        /// location. You can track a fleet's current capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
+        /// Amazon GameLift Servers automatically initiates steps to add or remove instances in
+        /// the fleet location. You can track a fleet's current capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
         /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>.
         /// 
         /// </para>
@@ -18071,8 +18158,8 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// Minimum/maximum size: Set hard limits on the number of Amazon EC2 instances allowed.
-        /// If Amazon GameLift receives a request--either through manual update or automatic scaling--it
-        /// won't change the capacity to a value outside of this range.
+        /// If Amazon GameLift Servers receives a request--either through manual update or automatic
+        /// scaling--it won't change the capacity to a value outside of this range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18092,16 +18179,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, Amazon GameLift updates the capacity settings and returns the identifiers
-        /// for the updated fleet and/or location. If a requested change to desired capacity exceeds
-        /// the instance type's limit, the <c>LimitExceeded</c> exception occurs. 
+        /// If successful, Amazon GameLift Servers updates the capacity settings and returns the
+        /// identifiers for the updated fleet and/or location. If a requested change to desired
+        /// capacity exceeds the instance type's limit, the <c>LimitExceeded</c> exception occurs.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// Updates often prompt an immediate change in fleet capacity, such as when current capacity
         /// is different than the new desired capacity or outside the new limits. In this scenario,
-        /// Amazon GameLift automatically initiates steps to add or remove instances in the fleet
-        /// location. You can track a fleet's current capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
+        /// Amazon GameLift Servers automatically initiates steps to add or remove instances in
+        /// the fleet location. You can track a fleet's current capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
         /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>.
         /// 
         /// </para>
@@ -18191,7 +18279,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetPortSettings service method.</param>
@@ -18260,7 +18348,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetPortSettings service method.</param>
@@ -18312,14 +18400,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
-        /// Updates information about a registered game server to help Amazon GameLift FleetIQ
-        /// track game server availability. This operation is called by a game server process
-        /// that is running on an instance in a game server group. 
+        /// Updates information about a registered game server to help Amazon GameLift Servers
+        /// FleetIQ track game server availability. This operation is called by a game server
+        /// process that is running on an instance in a game server group. 
         /// </para>
         ///  
         /// <para>
@@ -18358,7 +18446,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGameServer service method.</param>
@@ -18391,14 +18479,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
-        /// Updates information about a registered game server to help Amazon GameLift FleetIQ
-        /// track game server availability. This operation is called by a game server process
-        /// that is running on an instance in a game server group. 
+        /// Updates information about a registered game server to help Amazon GameLift Servers
+        /// FleetIQ track game server availability. This operation is called by a game server
+        /// process that is running on an instance in a game server group. 
         /// </para>
         ///  
         /// <para>
@@ -18437,7 +18525,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGameServer service method.</param>
@@ -18477,20 +18565,21 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
-        /// Updates Amazon GameLift FleetIQ-specific properties for a game server group. Many
-        /// Auto Scaling group properties are updated on the Auto Scaling group directly, including
-        /// the launch template, Auto Scaling policies, and maximum/minimum/desired instance counts.
+        /// Updates Amazon GameLift Servers FleetIQ-specific properties for a game server group.
+        /// Many Auto Scaling group properties are updated on the Auto Scaling group directly,
+        /// including the launch template, Auto Scaling policies, and maximum/minimum/desired
+        /// instance counts.
         /// </para>
         ///  
         /// <para>
         /// To update the game server group, specify the game server group ID and provide the
         /// updated values. Before applying the updates, the new values are validated to ensure
-        /// that Amazon GameLift FleetIQ can continue to perform instance balancing activity.
+        /// that Amazon GameLift Servers FleetIQ can continue to perform instance balancing activity.
         /// If successful, a <c>GameServerGroup</c> object is returned.
         /// </para>
         ///  
@@ -18500,7 +18589,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGameServerGroup service method.</param>
@@ -18533,20 +18622,21 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
-        /// groups.</b> 
+        /// <b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game
+        /// server groups.</b> 
         /// 
         ///  
         /// <para>
-        /// Updates Amazon GameLift FleetIQ-specific properties for a game server group. Many
-        /// Auto Scaling group properties are updated on the Auto Scaling group directly, including
-        /// the launch template, Auto Scaling policies, and maximum/minimum/desired instance counts.
+        /// Updates Amazon GameLift Servers FleetIQ-specific properties for a game server group.
+        /// Many Auto Scaling group properties are updated on the Auto Scaling group directly,
+        /// including the launch template, Auto Scaling policies, and maximum/minimum/desired
+        /// instance counts.
         /// </para>
         ///  
         /// <para>
         /// To update the game server group, specify the game server group ID and provide the
         /// updated values. Before applying the updates, the new values are validated to ensure
-        /// that Amazon GameLift FleetIQ can continue to perform instance balancing activity.
+        /// that Amazon GameLift Servers FleetIQ can continue to perform instance balancing activity.
         /// If successful, a <c>GameServerGroup</c> object is returned.
         /// </para>
         ///  
@@ -18556,7 +18646,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
-        /// GameLift FleetIQ Guide</a> 
+        /// GameLift Servers FleetIQ Guide</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGameServerGroup service method.</param>
@@ -18908,9 +18998,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Updates the runtime configuration for the specified fleet. The runtime configuration
-        /// tells Amazon GameLift how to launch server processes on computes in managed EC2 and
-        /// Anywhere fleets. You can update a fleet's runtime configuration at any time after
-        /// the fleet is created; it does not need to be in <c>ACTIVE</c> status.
+        /// tells Amazon GameLift Servers how to launch server processes on computes in managed
+        /// EC2 and Anywhere fleets. You can update a fleet's runtime configuration at any time
+        /// after the fleet is created; it does not need to be in <c>ACTIVE</c> status.
         /// 
         ///  
         /// <para>
@@ -18932,7 +19022,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuntimeConfiguration service method.</param>
@@ -18974,9 +19064,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Updates the runtime configuration for the specified fleet. The runtime configuration
-        /// tells Amazon GameLift how to launch server processes on computes in managed EC2 and
-        /// Anywhere fleets. You can update a fleet's runtime configuration at any time after
-        /// the fleet is created; it does not need to be in <c>ACTIVE</c> status.
+        /// tells Amazon GameLift Servers how to launch server processes on computes in managed
+        /// EC2 and Anywhere fleets. You can update a fleet's runtime configuration at any time
+        /// after the fleet is created; it does not need to be in <c>ACTIVE</c> status.
         /// 
         ///  
         /// <para>
@@ -18998,7 +19088,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-        /// up Amazon GameLift fleets</a> 
+        /// up Amazon GameLift Servers fleets</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuntimeConfiguration service method.</param>
@@ -19063,9 +19153,9 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If the call is successful, the updated metadata is stored in the script record and
-        /// a revised script is uploaded to the Amazon GameLift service. Once the script is updated
-        /// and acquired by a fleet instance, the new version is used for all new game sessions.
-        /// 
+        /// a revised script is uploaded to the Amazon GameLift Servers service. Once the script
+        /// is updated and acquired by a fleet instance, the new version is used for all new game
+        /// sessions. 
         /// </para>
         ///  
         /// <para>
@@ -19074,7 +19164,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>
@@ -19133,9 +19223,9 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If the call is successful, the updated metadata is stored in the script record and
-        /// a revised script is uploaded to the Amazon GameLift service. Once the script is updated
-        /// and acquired by a fleet instance, the new version is used for all new game sessions.
-        /// 
+        /// a revised script is uploaded to the Amazon GameLift Servers service. Once the script
+        /// is updated and acquired by a fleet instance, the new version is used for all new game
+        /// sessions. 
         /// </para>
         ///  
         /// <para>
@@ -19144,7 +19234,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// GameLift Amazon GameLift Realtime</a> 
+        /// GameLift Servers Amazon GameLift Servers Realtime</a> 
         /// </para>
         ///  
         /// <para>

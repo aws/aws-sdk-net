@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// A label that you can assign to a Amazon GameLift resource. 
+    /// A label that you can assign to a Amazon GameLift Servers resource. 
     /// 
     ///  
     /// <para>

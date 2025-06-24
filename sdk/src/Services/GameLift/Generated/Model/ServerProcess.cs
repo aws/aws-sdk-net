@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// A set of instructions for launching server processes on fleet computes. Server processes
-    /// run either an executable in a custom game build or a Amazon GameLift Realtime script.
-    /// Server process configurations are part of a fleet's runtime configuration.
+    /// run either an executable in a custom game build or a Amazon GameLift Servers Realtime
+    /// script. Server process configurations are part of a fleet's runtime configuration.
     /// </summary>
     public partial class ServerProcess
     {
@@ -77,9 +77,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// Amazon GameLift doesn't support the use of setup scripts that launch the game executable.
-        /// For custom game builds, this parameter must indicate the executable that calls the
-        /// server SDK operations <c>initSDK()</c> and <c>ProcessReady()</c>. 
+        /// Amazon GameLift Servers doesn't support the use of setup scripts that launch the game
+        /// executable. For custom game builds, this parameter must indicate the executable that
+        /// calls the server SDK operations <c>initSDK()</c> and <c>ProcessReady()</c>. 
         /// </para>
         ///  </note>
         /// </summary>

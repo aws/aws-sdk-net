@@ -30,33 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateScript operation.
+    /// Information about a UDP ping beacon that can be used to measure network latency between
+    /// a player device and an Amazon GameLift Servers hosting location.
     /// </summary>
-    public partial class UpdateScriptResponse : AmazonWebServiceResponse
+    public partial class PingBeacon
     {
-        private Script _script;
+        private UDPEndpoint _udpEndpoint;
 
         /// <summary>
-        /// Gets and sets the property Script. 
+        /// Gets and sets the property UDPEndpoint. 
         /// <para>
-        /// The newly created script record with a unique script ID. The new script's storage
-        /// location reflects an Amazon S3 location: (1) If the script was uploaded from an S3
-        /// bucket under your account, the storage location reflects the information that was
-        /// provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from
-        /// a local zip file, the storage location reflects an S3 location controls by the Amazon
-        /// GameLift Servers service.
+        /// The domain name and port of the UDP ping beacon. 
         /// </para>
         /// </summary>
-        public Script Script
+        public UDPEndpoint UDPEndpoint
         {
-            get { return this._script; }
-            set { this._script = value; }
+            get { return this._udpEndpoint; }
+            set { this._udpEndpoint = value; }
         }
 
-        // Check to see if Script property is set
-        internal bool IsSetScript()
+        // Check to see if UDPEndpoint property is set
+        internal bool IsSetUDPEndpoint()
         {
-            return this._script != null;
+            return this._udpEndpoint != null;
         }
 
     }

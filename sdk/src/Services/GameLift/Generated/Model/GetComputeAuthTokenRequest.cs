@@ -31,11 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComputeAuthToken operation.
-    /// Requests an authentication token from Amazon GameLift for a compute resource in an
-    /// Amazon GameLift fleet. Game servers that are running on the compute use this token
-    /// to communicate with the Amazon GameLift service, such as when calling the Amazon GameLift
-    /// server SDK action <c>InitSDK()</c>. Authentication tokens are valid for a limited
-    /// time span, so you need to request a fresh token before the current token expires.
+    /// Requests an authentication token from Amazon GameLift Servers for a compute resource
+    /// in an Amazon GameLift Servers fleet. Game servers that are running on the compute
+    /// use this token to communicate with the Amazon GameLift Servers service, such as when
+    /// calling the Amazon GameLift Servers server SDK action <c>InitSDK()</c>. Authentication
+    /// tokens are valid for a limited time span, so you need to request a fresh token before
+    /// the current token expires.
     /// 
     ///  
     /// <para>
@@ -50,8 +51,8 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     /// For Anywhere fleets (compute type <c>ANYWHERE</c>), if you're using the Amazon GameLift
-    /// Agent, auth token retrieval and refresh is handled automatically for any compute where
-    /// the Agent is running. If you're not using the Agent, create a mechanism to retrieve
+    /// Servers Agent, auth token retrieval and refresh is handled automatically for any compute
+    /// where the Agent is running. If you're not using the Agent, create a mechanism to retrieve
     /// and refresh auth tokens for computes that are running game server processes.
     /// </para>
     ///  </li> </ul> 

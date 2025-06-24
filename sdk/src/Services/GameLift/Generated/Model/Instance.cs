@@ -31,7 +31,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Represents a virtual computing instance that runs game server processes and hosts
-    /// game sessions. In Amazon GameLift, one or more instances make up a managed EC2 fleet.
+    /// game sessions. In Amazon GameLift Servers, one or more instances make up a managed
+    /// EC2 fleet.
     /// </summary>
     public partial class Instance
     {
@@ -103,8 +104,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs
-        /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
+        /// that is assigned to a Amazon GameLift Servers fleet resource and uniquely identifies
+        /// it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -204,10 +205,10 @@ namespace Amazon.GameLift.Model
         ///  <note> 
         /// <para>
         /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
-        /// <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-        /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift,
-        /// first update the game server build to server SDK 5.x, and then deploy to AL2023 instances.
-        /// See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
+        /// <a href="http://aws.amazon.com/aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
+        /// FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for
+        /// Amazon GameLift Servers, first update the game server build to server SDK 5.x, and
+        /// then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
         /// Migrate to server SDK version 5.</a> 
         /// </para>
         ///  </note>
@@ -237,9 +238,9 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>ACTIVE</b> -- The instance has been successfully created and at least one server
-        /// process has successfully launched and reported back to Amazon GameLift that it is
-        /// ready to host a game session. The instance is now considered ready to host game sessions.
-        /// 
+        /// process has successfully launched and reported back to Amazon GameLift Servers that
+        /// it is ready to host a game session. The instance is now considered ready to host game
+        /// sessions. 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -75,7 +75,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <i>Available in Amazon GameLift Local.</i> 
+    ///  <i>Available in Amazon GameLift Servers Local.</i> 
     /// </para>
     ///  
     /// <para>

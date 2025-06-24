@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// A set of one or more port numbers that can be opened on the container. 
+    /// A set of one or more port numbers that can be opened on the container, and the supported
+    /// network protocol. 
     /// 
     ///  
     /// <para>

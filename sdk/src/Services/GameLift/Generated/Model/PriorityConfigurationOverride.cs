@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model
     /// setting, if the queue has one. Filter configurations are used to limit placements
     /// to a subset of the locations in a queue's destinations. If the override list includes
     /// a location that's not on in the <c>FilterConfiguration</c> allowed list, Amazon GameLift
-    /// won't attempt to place a game session there.
+    /// Servers won't attempt to place a game session there.
     /// </para>
     ///  </note>
     /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.GameLift.Model
         /// A prioritized list of hosting locations. The list can include Amazon Web Services
         /// Regions (such as <c>us-west-2</c>), local zones, and custom locations (for Anywhere
         /// fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
-        /// GameLift service locations.</a> 
+        /// GameLift Servers service locations.</a> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

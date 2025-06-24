@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-    /// GameLift Amazon GameLift Realtime</a> 
+    /// GameLift Servers Amazon GameLift Servers Realtime</a> 
     /// </para>
     ///  
     /// <para>
