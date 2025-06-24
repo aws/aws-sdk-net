@@ -395,6 +395,6 @@
 
     },
     "overrideTreatEnumsAsString":{
-        "ObjectAttributesList": true
+        "ObjectAttributesList": false
     }
 }
