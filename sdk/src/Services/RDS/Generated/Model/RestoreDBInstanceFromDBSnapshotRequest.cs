@@ -228,8 +228,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <c>outposts</c> (Amazon Web Services Outposts) and <c>region</c>
-        /// (Amazon Web Services Region). The default is <c>region</c>.
+        /// Possible values are <c>local</c> (Dedicated Local Zone), <c>outposts</c> (Amazon Web
+        /// Services Outposts), and <c>region</c> (Amazon Web Services Region). The default is
+        /// <c>region</c>.
         /// </para>
         ///  
         /// <para>

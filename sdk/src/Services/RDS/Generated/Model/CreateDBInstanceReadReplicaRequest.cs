@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
+        private string _backupTarget;
         private string _caCertificateIdentifier;
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
@@ -212,6 +213,37 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupTarget. 
+        /// <para>
+        /// The location where RDS stores automated backups and manual snapshots.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>local</c> for Dedicated Local Zones
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>region</c> for Amazon Web Services Region
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string BackupTarget
+        {
+            get { return this._backupTarget; }
+            set { this._backupTarget = value; }
+        }
+
+        // Check to see if BackupTarget property is set
+        internal bool IsSetBackupTarget()
+        {
+            return this._backupTarget != null;
         }
 
         /// <summary>

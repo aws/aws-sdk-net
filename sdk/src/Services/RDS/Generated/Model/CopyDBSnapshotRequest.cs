@@ -57,6 +57,8 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private string _optionGroupName;
         private string _preSignedUrl;
+        private string _snapshotAvailabilityZone;
+        private string _snapshotTarget;
         private string _sourceDBSnapshotIdentifier;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetCustomAvailabilityZone;
@@ -254,6 +256,60 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreSignedUrl()
         {
             return this._preSignedUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotAvailabilityZone. 
+        /// <para>
+        /// Specifies the name of the Availability Zone where RDS stores the DB snapshot. This
+        /// value is valid only for snapshots that RDS stores on a Dedicated Local Zone.
+        /// </para>
+        /// </summary>
+        public string SnapshotAvailabilityZone
+        {
+            get { return this._snapshotAvailabilityZone; }
+            set { this._snapshotAvailabilityZone = value; }
+        }
+
+        // Check to see if SnapshotAvailabilityZone property is set
+        internal bool IsSetSnapshotAvailabilityZone()
+        {
+            return this._snapshotAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotTarget. 
+        /// <para>
+        /// Configures the location where RDS will store copied snapshots.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>local</c> (Dedicated Local Zone)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>outposts</c> (Amazon Web Services Outposts)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>region</c> (Amazon Web Services Region)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string SnapshotTarget
+        {
+            get { return this._snapshotTarget; }
+            set { this._snapshotTarget = value; }
+        }
+
+        // Check to see if SnapshotTarget property is set
+        internal bool IsSetSnapshotTarget()
+        {
+            return this._snapshotTarget != null;
         }
 
         /// <summary>
