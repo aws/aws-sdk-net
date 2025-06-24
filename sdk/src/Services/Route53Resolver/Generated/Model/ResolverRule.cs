@@ -44,6 +44,7 @@ namespace Amazon.Route53Resolver.Model
         private string _arn;
         private string _creationTime;
         private string _creatorRequestId;
+        private string _delegationRecord;
         private string _domainName;
         private string _id;
         private string _modificationTime;
@@ -114,6 +115,26 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetCreatorRequestId()
         {
             return this._creatorRequestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DelegationRecord. 
+        /// <para>
+        ///  DNS queries with delegation records that point to this domain name are forwarded
+        /// to resolvers on your network. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string DelegationRecord
+        {
+            get { return this._delegationRecord; }
+            set { this._delegationRecord = value; }
+        }
+
+        // Check to see if DelegationRecord property is set
+        internal bool IsSetDelegationRecord()
+        {
+            return this._delegationRecord != null;
         }
 
         /// <summary>
@@ -240,7 +261,9 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property RuleType. 
         /// <para>
         /// When you want to forward DNS queries for specified domain name to resolvers on your
-        /// network, specify <c>FORWARD</c>.
+        /// network, specify <c>FORWARD</c> or <c>DELEGATE</c>. If a query matches multiple Resolver
+        /// rules (example.com and www.example.com), outbound DNS queries are routed using the
+        /// Resolver rule that contains the most specific domain name (www.example.com).
         /// </para>
         ///  
         /// <para>

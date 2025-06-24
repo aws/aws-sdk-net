@@ -75,6 +75,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreatorRequestId);
                 }
 
+                if(publicRequest.IsSetDelegationRecord())
+                {
+                    context.Writer.WritePropertyName("DelegationRecord");
+                    context.Writer.Write(publicRequest.DelegationRecord);
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("DomainName");

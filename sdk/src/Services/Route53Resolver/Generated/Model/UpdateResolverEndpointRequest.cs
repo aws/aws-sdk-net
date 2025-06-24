@@ -65,12 +65,12 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Protocols. 
         /// <para>
-        ///  The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound
-        /// endpoints only. 
+        ///  The protocols you want to use for the endpoint. DoH-FIPS is applicable for default
+        /// inbound endpoints only. 
         /// </para>
         ///  
         /// <para>
-        /// For an inbound endpoint you can apply the protocols as follows:
+        /// For a default inbound endpoint you can apply the protocols as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -97,6 +97,10 @@ namespace Amazon.Route53Resolver.Model
         /// None, which is treated as Do53.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// For a delegation inbound endpoint you can use Do53 only.
+        /// </para>
+        ///  
         /// <para>
         /// For an outbound endpoint you can apply the protocols as follows:
         /// </para>

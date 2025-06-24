@@ -118,7 +118,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the Amazon Virtual Private Cloud VPC that you're configuring Resolver for.
+        /// The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring
+        /// Resolver for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

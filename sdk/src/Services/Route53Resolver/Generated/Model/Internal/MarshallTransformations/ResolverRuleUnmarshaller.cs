@@ -84,6 +84,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DelegationRecord", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DelegationRecord = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
