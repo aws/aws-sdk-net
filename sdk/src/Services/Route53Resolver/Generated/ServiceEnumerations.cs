@@ -749,6 +749,10 @@ namespace Amazon.Route53Resolver
         /// </summary>
         public static readonly IpAddressStatus FAILED_RESOURCE_GONE = new IpAddressStatus("FAILED_RESOURCE_GONE");
         /// <summary>
+        /// Constant ISOLATED for IpAddressStatus
+        /// </summary>
+        public static readonly IpAddressStatus ISOLATED = new IpAddressStatus("ISOLATED");
+        /// <summary>
         /// Constant REMAP_ATTACHING for IpAddressStatus
         /// </summary>
         public static readonly IpAddressStatus REMAP_ATTACHING = new IpAddressStatus("REMAP_ATTACHING");
@@ -1116,6 +1120,10 @@ namespace Amazon.Route53Resolver
         /// Constant INBOUND for ResolverEndpointDirection
         /// </summary>
         public static readonly ResolverEndpointDirection INBOUND = new ResolverEndpointDirection("INBOUND");
+        /// <summary>
+        /// Constant INBOUND_DELEGATION for ResolverEndpointDirection
+        /// </summary>
+        public static readonly ResolverEndpointDirection INBOUND_DELEGATION = new ResolverEndpointDirection("INBOUND_DELEGATION");
         /// <summary>
         /// Constant OUTBOUND for ResolverEndpointDirection
         /// </summary>
@@ -1580,6 +1588,10 @@ namespace Amazon.Route53Resolver
     public class RuleTypeOption : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DELEGATE for RuleTypeOption
+        /// </summary>
+        public static readonly RuleTypeOption DELEGATE = new RuleTypeOption("DELEGATE");
         /// <summary>
         /// Constant FORWARD for RuleTypeOption
         /// </summary>
