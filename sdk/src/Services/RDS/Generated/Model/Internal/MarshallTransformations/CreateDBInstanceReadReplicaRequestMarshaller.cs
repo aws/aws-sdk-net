@@ -71,6 +71,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
                 }
+                if(publicRequest.IsSetBackupTarget())
+                {
+                    request.Parameters.Add("BackupTarget", StringUtils.FromString(publicRequest.BackupTarget));
+                }
                 if(publicRequest.IsSetCACertificateIdentifier())
                 {
                     request.Parameters.Add("CACertificateIdentifier", StringUtils.FromString(publicRequest.CACertificateIdentifier));

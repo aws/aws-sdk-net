@@ -432,6 +432,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>local</c> (Dedicated Local Zone)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>outposts</c> (Amazon Web Services Outposts)
         /// </para>
         ///  </li> <li> 

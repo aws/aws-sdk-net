@@ -403,8 +403,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupTarget. 
         /// <para>
-        /// The location where automated backups and manual snapshots are stored: Amazon Web Services
-        /// Outposts or the Amazon Web Services Region.
+        /// The location where automated backups and manual snapshots are stored: Dedicated Local
+        /// Zones, Amazon Web Services Outposts or the Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string BackupTarget
