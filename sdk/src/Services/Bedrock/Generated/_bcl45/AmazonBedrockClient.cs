@@ -622,6 +622,85 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreateFoundationModelAgreement
+
+
+        /// <summary>
+        /// Request a model access agreement for the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFoundationModelAgreement service method.</param>
+        /// 
+        /// <returns>The response from the CreateFoundationModelAgreement service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateFoundationModelAgreement">REST API Reference for CreateFoundationModelAgreement Operation</seealso>
+        public virtual CreateFoundationModelAgreementResponse CreateFoundationModelAgreement(CreateFoundationModelAgreementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFoundationModelAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFoundationModelAgreementResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFoundationModelAgreementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Request a model access agreement for the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFoundationModelAgreement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFoundationModelAgreement service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateFoundationModelAgreement">REST API Reference for CreateFoundationModelAgreement Operation</seealso>
+        public virtual Task<CreateFoundationModelAgreementResponse> CreateFoundationModelAgreementAsync(CreateFoundationModelAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFoundationModelAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFoundationModelAgreementResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateFoundationModelAgreementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateGuardrail
 
 
@@ -1787,6 +1866,85 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  DeleteFoundationModelAgreement
+
+
+        /// <summary>
+        /// Delete the model access agreement for the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFoundationModelAgreement service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFoundationModelAgreement service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">REST API Reference for DeleteFoundationModelAgreement Operation</seealso>
+        public virtual DeleteFoundationModelAgreementResponse DeleteFoundationModelAgreement(DeleteFoundationModelAgreementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFoundationModelAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFoundationModelAgreementResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFoundationModelAgreementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete the model access agreement for the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFoundationModelAgreement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFoundationModelAgreement service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">REST API Reference for DeleteFoundationModelAgreement Operation</seealso>
+        public virtual Task<DeleteFoundationModelAgreementResponse> DeleteFoundationModelAgreementAsync(DeleteFoundationModelAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFoundationModelAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFoundationModelAgreementResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteFoundationModelAgreementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteGuardrail
 
 
@@ -2654,6 +2812,79 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetFoundationModelAvailability
+
+
+        /// <summary>
+        /// Get information about the Foundation model availability.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFoundationModelAvailability service method.</param>
+        /// 
+        /// <returns>The response from the GetFoundationModelAvailability service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModelAvailability">REST API Reference for GetFoundationModelAvailability Operation</seealso>
+        public virtual GetFoundationModelAvailabilityResponse GetFoundationModelAvailability(GetFoundationModelAvailabilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFoundationModelAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFoundationModelAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<GetFoundationModelAvailabilityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get information about the Foundation model availability.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFoundationModelAvailability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFoundationModelAvailability service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModelAvailability">REST API Reference for GetFoundationModelAvailability Operation</seealso>
+        public virtual Task<GetFoundationModelAvailabilityResponse> GetFoundationModelAvailabilityAsync(GetFoundationModelAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFoundationModelAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFoundationModelAvailabilityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetFoundationModelAvailabilityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGuardrail
 
 
@@ -3471,6 +3702,73 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetUseCaseForModelAccess
+
+
+        /// <summary>
+        /// Get usecase for model access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUseCaseForModelAccess service method.</param>
+        /// 
+        /// <returns>The response from the GetUseCaseForModelAccess service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">REST API Reference for GetUseCaseForModelAccess Operation</seealso>
+        public virtual GetUseCaseForModelAccessResponse GetUseCaseForModelAccess(GetUseCaseForModelAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUseCaseForModelAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUseCaseForModelAccessResponseUnmarshaller.Instance;
+
+            return Invoke<GetUseCaseForModelAccessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get usecase for model access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUseCaseForModelAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUseCaseForModelAccess service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">REST API Reference for GetUseCaseForModelAccess Operation</seealso>
+        public virtual Task<GetUseCaseForModelAccessResponse> GetUseCaseForModelAccessAsync(GetUseCaseForModelAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUseCaseForModelAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUseCaseForModelAccessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetUseCaseForModelAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCustomModels
 
 
@@ -3613,6 +3911,79 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = ListEvaluationJobsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListEvaluationJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFoundationModelAgreementOffers
+
+
+        /// <summary>
+        /// Get the offers associated with the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFoundationModelAgreementOffers service method.</param>
+        /// 
+        /// <returns>The response from the ListFoundationModelAgreementOffers service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModelAgreementOffers">REST API Reference for ListFoundationModelAgreementOffers Operation</seealso>
+        public virtual ListFoundationModelAgreementOffersResponse ListFoundationModelAgreementOffers(ListFoundationModelAgreementOffersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFoundationModelAgreementOffersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFoundationModelAgreementOffersResponseUnmarshaller.Instance;
+
+            return Invoke<ListFoundationModelAgreementOffersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get the offers associated with the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFoundationModelAgreementOffers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFoundationModelAgreementOffers service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModelAgreementOffers">REST API Reference for ListFoundationModelAgreementOffers Operation</seealso>
+        public virtual Task<ListFoundationModelAgreementOffersResponse> ListFoundationModelAgreementOffersAsync(ListFoundationModelAgreementOffersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFoundationModelAgreementOffersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFoundationModelAgreementOffersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListFoundationModelAgreementOffersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4580,6 +4951,71 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = PutModelInvocationLoggingConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutModelInvocationLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutUseCaseForModelAccess
+
+
+        /// <summary>
+        /// Put usecase for model access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUseCaseForModelAccess service method.</param>
+        /// 
+        /// <returns>The response from the PutUseCaseForModelAccess service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutUseCaseForModelAccess">REST API Reference for PutUseCaseForModelAccess Operation</seealso>
+        public virtual PutUseCaseForModelAccessResponse PutUseCaseForModelAccess(PutUseCaseForModelAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUseCaseForModelAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUseCaseForModelAccessResponseUnmarshaller.Instance;
+
+            return Invoke<PutUseCaseForModelAccessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Put usecase for model access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUseCaseForModelAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutUseCaseForModelAccess service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutUseCaseForModelAccess">REST API Reference for PutUseCaseForModelAccess Operation</seealso>
+        public virtual Task<PutUseCaseForModelAccessResponse> PutUseCaseForModelAccessAsync(PutUseCaseForModelAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUseCaseForModelAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUseCaseForModelAccessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutUseCaseForModelAccessResponse>(request, options, cancellationToken);
         }
 
         #endregion

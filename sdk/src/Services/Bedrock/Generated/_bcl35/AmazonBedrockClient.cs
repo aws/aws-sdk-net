@@ -544,6 +544,79 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreateFoundationModelAgreement
+
+        /// <summary>
+        /// Request a model access agreement for the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFoundationModelAgreement service method.</param>
+        /// 
+        /// <returns>The response from the CreateFoundationModelAgreement service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateFoundationModelAgreement">REST API Reference for CreateFoundationModelAgreement Operation</seealso>
+        public virtual CreateFoundationModelAgreementResponse CreateFoundationModelAgreement(CreateFoundationModelAgreementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFoundationModelAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFoundationModelAgreementResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFoundationModelAgreementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFoundationModelAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFoundationModelAgreement operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFoundationModelAgreement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateFoundationModelAgreement">REST API Reference for CreateFoundationModelAgreement Operation</seealso>
+        public virtual IAsyncResult BeginCreateFoundationModelAgreement(CreateFoundationModelAgreementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFoundationModelAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFoundationModelAgreementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFoundationModelAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFoundationModelAgreement.</param>
+        /// 
+        /// <returns>Returns a  CreateFoundationModelAgreementResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateFoundationModelAgreement">REST API Reference for CreateFoundationModelAgreement Operation</seealso>
+        public virtual CreateFoundationModelAgreementResponse EndCreateFoundationModelAgreement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFoundationModelAgreementResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateGuardrail
 
         /// <summary>
@@ -1495,6 +1568,79 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  DeleteFoundationModelAgreement
+
+        /// <summary>
+        /// Delete the model access agreement for the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFoundationModelAgreement service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFoundationModelAgreement service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">REST API Reference for DeleteFoundationModelAgreement Operation</seealso>
+        public virtual DeleteFoundationModelAgreementResponse DeleteFoundationModelAgreement(DeleteFoundationModelAgreementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFoundationModelAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFoundationModelAgreementResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFoundationModelAgreementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFoundationModelAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFoundationModelAgreement operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFoundationModelAgreement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">REST API Reference for DeleteFoundationModelAgreement Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFoundationModelAgreement(DeleteFoundationModelAgreementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFoundationModelAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFoundationModelAgreementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFoundationModelAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFoundationModelAgreement.</param>
+        /// 
+        /// <returns>Returns a  DeleteFoundationModelAgreementResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">REST API Reference for DeleteFoundationModelAgreement Operation</seealso>
+        public virtual DeleteFoundationModelAgreementResponse EndDeleteFoundationModelAgreement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFoundationModelAgreementResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteGuardrail
 
         /// <summary>
@@ -2297,6 +2443,76 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetFoundationModelAvailability
+
+        /// <summary>
+        /// Get information about the Foundation model availability.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFoundationModelAvailability service method.</param>
+        /// 
+        /// <returns>The response from the GetFoundationModelAvailability service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModelAvailability">REST API Reference for GetFoundationModelAvailability Operation</seealso>
+        public virtual GetFoundationModelAvailabilityResponse GetFoundationModelAvailability(GetFoundationModelAvailabilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFoundationModelAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFoundationModelAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<GetFoundationModelAvailabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFoundationModelAvailability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFoundationModelAvailability operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFoundationModelAvailability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModelAvailability">REST API Reference for GetFoundationModelAvailability Operation</seealso>
+        public virtual IAsyncResult BeginGetFoundationModelAvailability(GetFoundationModelAvailabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFoundationModelAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFoundationModelAvailabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFoundationModelAvailability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFoundationModelAvailability.</param>
+        /// 
+        /// <returns>Returns a  GetFoundationModelAvailabilityResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModelAvailability">REST API Reference for GetFoundationModelAvailability Operation</seealso>
+        public virtual GetFoundationModelAvailabilityResponse EndGetFoundationModelAvailability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFoundationModelAvailabilityResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetGuardrail
 
         /// <summary>
@@ -3074,6 +3290,73 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetUseCaseForModelAccess
+
+        /// <summary>
+        /// Get usecase for model access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUseCaseForModelAccess service method.</param>
+        /// 
+        /// <returns>The response from the GetUseCaseForModelAccess service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">REST API Reference for GetUseCaseForModelAccess Operation</seealso>
+        public virtual GetUseCaseForModelAccessResponse GetUseCaseForModelAccess(GetUseCaseForModelAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUseCaseForModelAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUseCaseForModelAccessResponseUnmarshaller.Instance;
+
+            return Invoke<GetUseCaseForModelAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUseCaseForModelAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUseCaseForModelAccess operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUseCaseForModelAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">REST API Reference for GetUseCaseForModelAccess Operation</seealso>
+        public virtual IAsyncResult BeginGetUseCaseForModelAccess(GetUseCaseForModelAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUseCaseForModelAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUseCaseForModelAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUseCaseForModelAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUseCaseForModelAccess.</param>
+        /// 
+        /// <returns>Returns a  GetUseCaseForModelAccessResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">REST API Reference for GetUseCaseForModelAccess Operation</seealso>
+        public virtual GetUseCaseForModelAccessResponse EndGetUseCaseForModelAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUseCaseForModelAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCustomModels
 
         /// <summary>
@@ -3210,6 +3493,76 @@ namespace Amazon.Bedrock
         public virtual ListEvaluationJobsResponse EndListEvaluationJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEvaluationJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFoundationModelAgreementOffers
+
+        /// <summary>
+        /// Get the offers associated with the specified model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFoundationModelAgreementOffers service method.</param>
+        /// 
+        /// <returns>The response from the ListFoundationModelAgreementOffers service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModelAgreementOffers">REST API Reference for ListFoundationModelAgreementOffers Operation</seealso>
+        public virtual ListFoundationModelAgreementOffersResponse ListFoundationModelAgreementOffers(ListFoundationModelAgreementOffersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFoundationModelAgreementOffersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFoundationModelAgreementOffersResponseUnmarshaller.Instance;
+
+            return Invoke<ListFoundationModelAgreementOffersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFoundationModelAgreementOffers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFoundationModelAgreementOffers operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFoundationModelAgreementOffers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModelAgreementOffers">REST API Reference for ListFoundationModelAgreementOffers Operation</seealso>
+        public virtual IAsyncResult BeginListFoundationModelAgreementOffers(ListFoundationModelAgreementOffersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFoundationModelAgreementOffersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFoundationModelAgreementOffersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFoundationModelAgreementOffers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFoundationModelAgreementOffers.</param>
+        /// 
+        /// <returns>Returns a  ListFoundationModelAgreementOffersResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModelAgreementOffers">REST API Reference for ListFoundationModelAgreementOffers Operation</seealso>
+        public virtual ListFoundationModelAgreementOffersResponse EndListFoundationModelAgreementOffers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFoundationModelAgreementOffersResponse>(asyncResult);
         }
 
         #endregion
@@ -4129,6 +4482,72 @@ namespace Amazon.Bedrock
         public virtual PutModelInvocationLoggingConfigurationResponse EndPutModelInvocationLoggingConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutModelInvocationLoggingConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutUseCaseForModelAccess
+
+        /// <summary>
+        /// Put usecase for model access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUseCaseForModelAccess service method.</param>
+        /// 
+        /// <returns>The response from the PutUseCaseForModelAccess service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutUseCaseForModelAccess">REST API Reference for PutUseCaseForModelAccess Operation</seealso>
+        public virtual PutUseCaseForModelAccessResponse PutUseCaseForModelAccess(PutUseCaseForModelAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUseCaseForModelAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUseCaseForModelAccessResponseUnmarshaller.Instance;
+
+            return Invoke<PutUseCaseForModelAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutUseCaseForModelAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutUseCaseForModelAccess operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutUseCaseForModelAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutUseCaseForModelAccess">REST API Reference for PutUseCaseForModelAccess Operation</seealso>
+        public virtual IAsyncResult BeginPutUseCaseForModelAccess(PutUseCaseForModelAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUseCaseForModelAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUseCaseForModelAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutUseCaseForModelAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutUseCaseForModelAccess.</param>
+        /// 
+        /// <returns>Returns a  PutUseCaseForModelAccessResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutUseCaseForModelAccess">REST API Reference for PutUseCaseForModelAccess Operation</seealso>
+        public virtual PutUseCaseForModelAccessResponse EndPutUseCaseForModelAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutUseCaseForModelAccessResponse>(asyncResult);
         }
 
         #endregion
