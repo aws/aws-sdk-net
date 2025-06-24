@@ -34,6 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class EbsBlockDevice
     {
+        private string _availabilityZone;
+        private string _availabilityZoneId;
         private bool? _deleteOnTermination;
         private bool? _encrypted;
         private int? _iops;
@@ -44,6 +46,63 @@ namespace Amazon.EC2.Model
         private int? _volumeInitializationRate;
         private int? _volumeSize;
         private VolumeType _volumeType;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone where the EBS volume will be created (for example, <c>us-east-1a</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both. If neither is specified, Amazon EC2 automatically selects an Availability
+        /// Zone within the Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone where the EBS volume will be created (for example,
+        /// <c>use1-az1</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both. If neither is specified, Amazon EC2 automatically selects an Availability
+        /// Zone within the Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 

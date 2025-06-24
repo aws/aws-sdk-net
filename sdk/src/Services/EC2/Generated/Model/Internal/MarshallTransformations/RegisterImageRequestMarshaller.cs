@@ -83,6 +83,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequestlistValue.IsSetEbs())
                         {
+                            if(publicRequestlistValue.Ebs.IsSetAvailabilityZone())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.Ebs.AvailabilityZone));
+                            }
+                            if(publicRequestlistValue.Ebs.IsSetAvailabilityZoneId())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestlistValue.Ebs.AvailabilityZoneId));
+                            }
                             if(publicRequestlistValue.Ebs.IsSetDeleteOnTermination())
                             {
                                 request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));

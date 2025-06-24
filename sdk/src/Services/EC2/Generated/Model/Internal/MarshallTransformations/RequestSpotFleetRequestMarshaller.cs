@@ -113,6 +113,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     }
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetEbs())
                                     {
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetAvailabilityZone())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "AvailabilityZone", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.AvailabilityZone));
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetAvailabilityZoneId())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.AvailabilityZoneId));
+                                        }
                                         if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetDeleteOnTermination())
                                         {
                                             request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.DeleteOnTermination));
