@@ -160,6 +160,21 @@ namespace Amazon.Batch.Model
         /// and <c>G4</c>) and can be used for all non Amazon Web Services Graviton-based instance
         /// types.
         /// </para>
+        ///  </dd> <dt>EKS_AL2023</dt> <dd> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
+        /// Linux 2023</a>: Batch supports Amazon Linux 2023.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Linux 2023 does not support <c>A1</c> instances.
+        /// </para>
+        ///  </note> </dd> <dt>EKS_AL2023_NVIDIA</dt> <dd> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
+        /// Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon
+        /// Web Services Graviton-based instance types.
+        /// </para>
         ///  </dd> </dl> </dd> </dl>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
