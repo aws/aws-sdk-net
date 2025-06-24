@@ -41,7 +41,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The host names. The maximum size of each name is 128 characters. The comparison is
         /// case insensitive. The following wildcard characters are supported: * (matches 0 or
-        /// more characters) and ? (matches exactly 1 character).
+        /// more characters) and ? (matches exactly 1 character). You must include at least one
+        /// "." character. You can include only alphabetical characters after the final "." character.
         /// </para>
         ///  
         /// <para>

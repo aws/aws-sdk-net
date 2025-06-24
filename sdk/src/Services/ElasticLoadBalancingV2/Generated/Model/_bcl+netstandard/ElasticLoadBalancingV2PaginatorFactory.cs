@@ -37,6 +37,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAccountLimits operation
+        ///</summary>
+        public IDescribeAccountLimitsPaginator DescribeAccountLimits(DescribeAccountLimitsRequest request) 
+        {
+            return new DescribeAccountLimitsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeListenerCertificates operation
         ///</summary>
         public IDescribeListenerCertificatesPaginator DescribeListenerCertificates(DescribeListenerCertificatesRequest request) 

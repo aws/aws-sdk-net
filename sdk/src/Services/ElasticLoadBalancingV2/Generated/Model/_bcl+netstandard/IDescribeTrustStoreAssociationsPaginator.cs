@@ -30,5 +30,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeTrustStoreAssociationsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the TrustStoreAssociations
+        /// </summary>
+        IPaginatedEnumerable<TrustStoreAssociation> TrustStoreAssociations { get; }
     }
 }
