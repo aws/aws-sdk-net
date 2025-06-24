@@ -29,32 +29,32 @@ using Amazon.Runtime;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Base class for DescribeTrustStoreRevocations paginators.
+    /// Base class for DescribeAccountLimits paginators.
     /// </summary>
-    internal sealed partial class DescribeTrustStoreRevocationsPaginator : IPaginator<DescribeTrustStoreRevocationsResponse>, IDescribeTrustStoreRevocationsPaginator
+    internal sealed partial class DescribeAccountLimitsPaginator : IPaginator<DescribeAccountLimitsResponse>, IDescribeAccountLimitsPaginator
     {
         private readonly IAmazonElasticLoadBalancingV2 _client;
-        private readonly DescribeTrustStoreRevocationsRequest _request;
+        private readonly DescribeAccountLimitsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<DescribeTrustStoreRevocationsResponse> Responses => new PaginatedResponse<DescribeTrustStoreRevocationsResponse>(this);
+        public IPaginatedEnumerable<DescribeAccountLimitsResponse> Responses => new PaginatedResponse<DescribeAccountLimitsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the TrustStoreRevocations
+        /// Enumerable containing all of the Limits
         /// </summary>
-        public IPaginatedEnumerable<DescribeTrustStoreRevocation> TrustStoreRevocations => 
-            new PaginatedResultKeyResponse<DescribeTrustStoreRevocationsResponse, DescribeTrustStoreRevocation>(this, (i) => i.TrustStoreRevocations ?? new List<DescribeTrustStoreRevocation>());
+        public IPaginatedEnumerable<Limit> Limits => 
+            new PaginatedResultKeyResponse<DescribeAccountLimitsResponse, Limit>(this, (i) => i.Limits ?? new List<Limit>());
 
-        internal DescribeTrustStoreRevocationsPaginator(IAmazonElasticLoadBalancingV2 client, DescribeTrustStoreRevocationsRequest request)
+        internal DescribeAccountLimitsPaginator(IAmazonElasticLoadBalancingV2 client, DescribeAccountLimitsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<DescribeTrustStoreRevocationsResponse> IPaginator<DescribeTrustStoreRevocationsResponse>.Paginate()
+        IEnumerable<DescribeAccountLimitsResponse> IPaginator<DescribeAccountLimitsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -62,11 +62,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var marker = _request.Marker;
-            DescribeTrustStoreRevocationsResponse response;
+            DescribeAccountLimitsResponse response;
             do
             {
                 _request.Marker = marker;
-                response = _client.DescribeTrustStoreRevocations(_request);
+                response = _client.DescribeAccountLimits(_request);
                 marker = response.NextMarker;
                 yield return response;
             }
@@ -74,7 +74,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeTrustStoreRevocationsResponse> IPaginator<DescribeTrustStoreRevocationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
+        async IAsyncEnumerable<DescribeAccountLimitsResponse> IPaginator<DescribeAccountLimitsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -82,11 +82,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var marker = _request.Marker;
-            DescribeTrustStoreRevocationsResponse response;
+            DescribeAccountLimitsResponse response;
             do
             {
                 _request.Marker = marker;
-                response = await _client.DescribeTrustStoreRevocationsAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.DescribeAccountLimitsAsync(_request, cancellationToken).ConfigureAwait(false);
                 marker = response.NextMarker;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

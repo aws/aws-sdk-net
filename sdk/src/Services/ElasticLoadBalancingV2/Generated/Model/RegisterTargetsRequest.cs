@@ -47,10 +47,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </para>
     ///  
     /// <para>
-    /// With a Network Load Balancer, you can't register instances by instance ID if they
-    /// have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1,
-    /// HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.
+    /// For more information, see the following:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-register-targets.html">Register
+    /// targets for your Application Load Balancer</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/target-group-register-targets.html">Register
+    /// targets for your Network Load Balancer</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-group-register-targets.html">Register
+    /// targets for your Gateway Load Balancer</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RegisterTargetsRequest : AmazonElasticLoadBalancingV2Request
     {

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// The capacity reservation status for each availability zone.
+    /// The capacity reservation status for each Availability Zone.
     /// </summary>
     public partial class ZonalCapacityReservationState
     {
@@ -41,7 +41,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// Information about the availability zone.
+        /// Information about the Availability Zone.
         /// </para>
         /// </summary>
         public string AvailabilityZone

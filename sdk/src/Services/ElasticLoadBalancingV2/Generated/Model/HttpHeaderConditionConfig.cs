@@ -52,8 +52,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a>
-        /// to specify a host header condition.
+        /// You can't use an HTTP header condition to specify the host header. Instead, use a
+        /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions">host
+        /// condition</a>.
         /// </para>
         /// </summary>
         public string HttpHeaderName

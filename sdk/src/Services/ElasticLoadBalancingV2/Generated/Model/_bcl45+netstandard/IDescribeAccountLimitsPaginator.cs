@@ -22,18 +22,18 @@ using Amazon.Runtime;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Paginator for the DescribeTrustStoreRevocations operation
+    /// Paginator for the DescribeAccountLimits operation
     ///</summary>
-    public interface IDescribeTrustStoreRevocationsPaginator
+    public interface IDescribeAccountLimitsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<DescribeTrustStoreRevocationsResponse> Responses { get; }
+        IPaginatedEnumerable<DescribeAccountLimitsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the TrustStoreRevocations
+        /// Enumerable containing all of the Limits
         /// </summary>
-        IPaginatedEnumerable<DescribeTrustStoreRevocation> TrustStoreRevocations { get; }
+        IPaginatedEnumerable<Limit> Limits { get; }
     }
 }

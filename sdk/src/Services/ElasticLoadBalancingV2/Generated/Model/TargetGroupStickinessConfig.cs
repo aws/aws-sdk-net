@@ -41,7 +41,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property DurationSeconds. 
         /// <para>
         /// The time period, in seconds, during which requests from a client should be routed
-        /// to the same target group. The range is 1-604800 seconds (7 days).
+        /// to the same target group. The range is 1-604800 seconds (7 days). You must specify
+        /// this value when enabling target group stickiness.
         /// </para>
         /// </summary>
         public int DurationSeconds

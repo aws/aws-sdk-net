@@ -54,7 +54,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// If you specify multiple addresses, the condition is satisfied if the source IP address
         /// of the request matches one of the CIDR blocks. This condition is not satisfied by
         /// the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-        /// header, use <a>HttpHeaderConditionConfig</a>.
+        /// header, use an <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#http-header-conditions">HTTP
+        /// header condition</a>.
         /// </para>
         ///  
         /// <para>
