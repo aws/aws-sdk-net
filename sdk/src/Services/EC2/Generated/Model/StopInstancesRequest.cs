@@ -31,12 +31,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the StopInstances operation.
-    /// Stops an Amazon EBS-backed instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
+    /// Stops an Amazon EBS-backed instance. You can restart your instance at any time using
+    /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartInstances.html">StartInstances</a>
+    /// API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
     /// and start Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// When you stop an instance, we shut it down. You can restart your instance at any time.
+    /// When you stop an instance, we shut it down.
     /// </para>
     ///  
     /// <para>

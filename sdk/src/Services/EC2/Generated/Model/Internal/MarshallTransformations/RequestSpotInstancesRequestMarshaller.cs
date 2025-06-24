@@ -108,6 +108,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 }
                                 if(publicRequestLaunchSpecificationlistValue.IsSetEbs())
                                 {
+                                    if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetAvailabilityZone())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "AvailabilityZone", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.Ebs.AvailabilityZone));
+                                    }
+                                    if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetAvailabilityZoneId())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.Ebs.AvailabilityZoneId));
+                                    }
                                     if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetDeleteOnTermination())
                                     {
                                         request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.Ebs.DeleteOnTermination));

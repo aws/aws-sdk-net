@@ -43,6 +43,21 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// The location of the source instance determines where you can create the snapshots
+    /// of the AMI:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If the source instance is in a Region, you must create the snapshots in the same Region
+    /// as the instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the source instance is in a Local Zone, you can create the snapshots in the same
+    /// Local Zone or in its parent Region.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
     /// an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
@@ -55,6 +70,7 @@ namespace Amazon.EC2.Model
         private string _instanceId;
         private string _name;
         private bool? _noReboot;
+        private SnapshotLocationEnum _snapshotLocation;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
@@ -233,6 +249,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetNoReboot()
         {
             return this._noReboot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotLocation. <note> 
+        /// <para>
+        /// Only supported for instances in Local Zones. If the source instance is not in a Local
+        /// Zone, omit this parameter.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The Amazon S3 location where the snapshots will be stored.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create local snapshots in the same Local Zone as the source instance, specify <c>local</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create regional snapshots in the parent Region of the Local Zone, specify <c>regional</c>
+        /// or omit this parameter.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <c>regional</c> 
+        /// </para>
+        /// </summary>
+        public SnapshotLocationEnum SnapshotLocation
+        {
+            get { return this._snapshotLocation; }
+            set { this._snapshotLocation = value; }
+        }
+
+        // Check to see if SnapshotLocation property is set
+        internal bool IsSetSnapshotLocation()
+        {
+            return this._snapshotLocation != null;
         }
 
         /// <summary>
