@@ -1,3 +1,25 @@
+### 3.7.1070.0 (2025-06-24 18:30 UTC)
+* AIOps (3.7.401.0)
+	* Adds support for cross account investigations for CloudWatch investigations AI Operations (AIOps).
+* Batch (3.7.407.0)
+	* Add userdataType to LaunchTemplateSpecification and LaunchTemplateSpecificationOverride.
+* Bedrock (3.7.425.0)
+	* We are making ListFoundationModelAgreementOffers, DeleteFoundationModelAgreement, CreateFoundationModelAgreement, GetFoundationModelAvailability, PutUseCaseForModelAccess and GetUseCaseForModelAccess APIs public, previously they were console.
+* EC2 (3.7.452.0)
+	* This release allows you to create and register AMIs while maintaining their underlying EBS snapshots within Local Zones.
+* ElasticLoadBalancingV2 (3.7.410.0)
+	* Add Paginator for DescribeAccountLimits, and fix Paginators for DescribeTrustStoreAssociations, DescribeTrustStoreRevocations, and DescribeTrustStores
+* GameLift (3.7.406.0)
+	* Add support for UDP ping beacons to ListLocations API, including new PingBeacon and UDPEndpoint data types within its Locations return value. Use UDP ping beacon endpoints to help measure real-time network latency for multiplayer games.
+* LicenseManager (3.7.402.0)
+	* AWS License Manager now supports license type conversions for AWS Marketplace products. Customers can provide Marketplace codes in the source license context or destination license context in the CreateLicenseConversionTaskForResource requests.
+* RDS (3.7.414.0)
+	* Adding support for RDS on Dedicated Local Zones, including local backup target, snapshot availability zone and snapshot target
+* Route53Resolver (3.7.403.0)
+	* Add support for iterative DNS queries through the new INBOUND_DELEGATION endpoint. Add delegation support through the Outbound Endpoints with DELEGATE rules.
+* TranscribeService (3.7.405.0)
+	* This Feature Adds Support for the "et-EE" Locale for Batch Operations
+
 ### 3.7.1069.0 (2025-06-23 18:25 UTC)
 * DynamoDBv2 (3.7.407.29)
 	* Fix issue where `ReturnValuesOnConditionCheckFailure` could not be used if the provided document included properties that ended with `code` or `message` (https://github.com/aws/aws-sdk-net/issues/3764).
