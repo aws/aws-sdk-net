@@ -62,8 +62,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property TerminateJobsOnUpdate. 
         /// <para>
-        /// Specifies whether jobs are automatically terminated when the computer environment
-        /// infrastructure is updated. The default value is <c>false</c>.
+        /// Specifies whether jobs are automatically terminated when the compute environment infrastructure
+        /// is updated. The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool TerminateJobsOnUpdate

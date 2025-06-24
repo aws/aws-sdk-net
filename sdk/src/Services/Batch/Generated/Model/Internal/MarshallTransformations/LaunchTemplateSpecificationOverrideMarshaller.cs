@@ -71,6 +71,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetUserdataType())
+            {
+                context.Writer.WritePropertyName("userdataType");
+                context.Writer.Write(requestObject.UserdataType);
+            }
+
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");

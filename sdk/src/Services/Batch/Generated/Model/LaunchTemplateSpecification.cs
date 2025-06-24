@@ -51,6 +51,7 @@ namespace Amazon.Batch.Model
         private string _launchTemplateId;
         private string _launchTemplateName;
         private List<LaunchTemplateSpecificationOverride> _overrides = AWSConfigs.InitializeCollections ? new List<LaunchTemplateSpecificationOverride>() : null;
+        private UserdataType _userdataType;
         private string _version;
 
         /// <summary>
@@ -119,6 +120,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetOverrides()
         {
             return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserdataType. 
+        /// <para>
+        /// The EKS node initialization process to use. You only need to specify this value if
+        /// you are using a custom AMI. The default value is <c>EKS_BOOTSTRAP_SH</c>. If <i>imageType</i>
+        /// is a custom AMI based on EKS_AL2023 or EKS_AL2023_NVIDIA then you must choose <c>EKS_NODEADM</c>.
+        /// </para>
+        /// </summary>
+        public UserdataType UserdataType
+        {
+            get { return this._userdataType; }
+            set { this._userdataType = value; }
+        }
+
+        // Check to see if UserdataType property is set
+        internal bool IsSetUserdataType()
+        {
+            return this._userdataType != null;
         }
 
         /// <summary>
