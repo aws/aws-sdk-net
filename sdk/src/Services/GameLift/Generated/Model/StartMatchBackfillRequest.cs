@@ -40,9 +40,9 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// When using FlexMatch with Amazon GameLift managed hosting, you can request a backfill
-    /// match from a client service by calling this operation with a <c>GameSessions</c> ID.
-    /// You also have the option of making backfill requests directly from your game server.
+    /// When using FlexMatch with Amazon GameLift Servers managed hosting, you can request
+    /// a backfill match from a client service by calling this operation with a <c>GameSessions</c>
+    /// ID. You also have the option of making backfill requests directly from your game server.
     /// In response to a request, FlexMatch creates player sessions for the new players, updates
     /// the <c>GameSession</c> resource, and sends updated matchmaking data to the game server.
     /// You can request a backfill match at any point after a game session is started. Each
@@ -85,7 +85,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-    /// How Amazon GameLift FlexMatch works</a> 
+    /// How Amazon GameLift Servers FlexMatch works</a> 
     /// </para>
     /// </summary>
     public partial class StartMatchBackfillRequest : AmazonGameLiftRequest
@@ -190,8 +190,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TicketId. 
         /// <para>
         /// A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon
-        /// GameLift will generate one in the form of a UUID. Use this identifier to track the
-        /// match backfill ticket status and retrieve match results.
+        /// GameLift Servers will generate one in the form of a UUID. Use this identifier to track
+        /// the match backfill ticket status and retrieve match results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// A set of credentials that allow remote access to an instance in an EC2 managed fleet.
     /// These credentials are returned in response to a call to <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess</a>,
     /// which requests access for instances that are running game servers with the Amazon
-    /// GameLift server SDK version 4.x or earlier.
+    /// GameLift Servers server SDK version 4.x or earlier.
     /// </summary>
     public partial class InstanceCredentials
     {

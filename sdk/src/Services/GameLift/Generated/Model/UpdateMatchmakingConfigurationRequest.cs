@@ -191,7 +191,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FlexMatchMode. 
         /// <para>
         /// Indicates whether this matchmaking configuration is being used with Amazon GameLift
-        /// hosting or as a standalone matchmaking solution. 
+        /// Servers hosting or as a standalone matchmaking solution. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -202,7 +202,7 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift
-        /// queue to start a game session for the match. 
+        /// Servers queue to start a game session for the match. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -273,11 +273,12 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionQueueArns. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a Amazon GameLift game session queue resource and uniquely identifies
-        /// it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
+        /// that is assigned to a Amazon GameLift Servers game session queue resource and uniquely
+        /// identifies it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
         /// name&gt;</c>. Queues can be located in any Region. Queues are used to start new Amazon
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking configuration.
-        /// If <c>FlexMatchMode</c> is set to <c>STANDALONE</c>, do not set this parameter.
+        /// GameLift Servers-hosted game sessions for matches that are created with this matchmaking
+        /// configuration. If <c>FlexMatchMode</c> is set to <c>STANDALONE</c>, do not set this
+        /// parameter.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

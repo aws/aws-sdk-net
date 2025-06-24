@@ -35,9 +35,9 @@ namespace Amazon.GameLift.Model
     /// game session that isn't in <c>ERROR</c> status. Terminating a game session is the
     /// most efficient way to free up a server process when it's hosting a game session that's
     /// in a bad state or not ending properly. You can use this action to terminate a game
-    /// session that's being hosted on any type of Amazon GameLift fleet compute, including
-    /// computes for managed EC2, managed container, and Anywhere fleets. The game server
-    /// must be integrated with Amazon GameLift server SDK 5.x or greater.
+    /// session that's being hosted on any type of Amazon GameLift Servers fleet compute,
+    /// including computes for managed EC2, managed container, and Anywhere fleets. The game
+    /// server must be integrated with Amazon GameLift Servers server SDK 5.x or greater.
     /// 
     ///  
     /// <para>
@@ -51,17 +51,17 @@ namespace Amazon.GameLift.Model
     ///  <ul> <li> 
     /// <para>
     /// Initiate a graceful termination using the normal game session shutdown sequence. With
-    /// this mode, the Amazon GameLift service prompts the server process that's hosting the
-    /// game session by calling the server SDK callback method <c>OnProcessTerminate()</c>.
+    /// this mode, the Amazon GameLift Servers service prompts the server process that's hosting
+    /// the game session by calling the server SDK callback method <c>OnProcessTerminate()</c>.
     /// The callback implementation is part of the custom game server code. It might involve
     /// a variety of actions to gracefully end a game session, such as notifying players,
     /// before stopping the server process.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Force an immediate game session termination. With this mode, the Amazon GameLift service
-    /// takes action to stop the server process, which ends the game session without the normal
-    /// game session shutdown sequence. 
+    /// Force an immediate game session termination. With this mode, the Amazon GameLift Servers
+    /// service takes action to stop the server process, which ends the game session without
+    /// the normal game session shutdown sequence. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -83,11 +83,12 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html">Add
-    /// Amazon GameLift to your game server</a> 
+    /// Amazon GameLift Servers to your game server</a> 
     /// </para>
     ///  
     /// <para>
-    /// Amazon GameLift server SDK 5 reference guide for <c>OnProcessTerminate()</c> (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-cpp-initsdk.html">C++</a>)
+    /// Amazon GameLift Servers server SDK 5 reference guide for <c>OnProcessTerminate()</c>
+    /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-cpp-initsdk.html">C++</a>)
     /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-csharp-initsdk.html">C#</a>)
     /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-unreal-initsdk.html">Unreal</a>)
     /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk-go-initsdk.html">Go</a>)
@@ -127,25 +128,26 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>TRIGGER_ON_PROCESS_TERMINATE</c> – Prompts the Amazon GameLift service to send
-        /// an <c>OnProcessTerminate()</c> callback to the server process and initiate the normal
-        /// game session shutdown sequence. The <c>OnProcessTerminate</c> method, which is implemented
-        /// in the game server code, must include a call to the server SDK action <c>ProcessEnding()</c>,
-        /// which is how the server process signals to Amazon GameLift that a game session is
-        /// ending. If the server process doesn't call <c>ProcessEnding()</c>, the game session
-        /// termination won't conclude successfully.
+        ///  <c>TRIGGER_ON_PROCESS_TERMINATE</c> – Prompts the Amazon GameLift Servers service
+        /// to send an <c>OnProcessTerminate()</c> callback to the server process and initiate
+        /// the normal game session shutdown sequence. The <c>OnProcessTerminate</c> method, which
+        /// is implemented in the game server code, must include a call to the server SDK action
+        /// <c>ProcessEnding()</c>, which is how the server process signals to Amazon GameLift
+        /// Servers that a game session is ending. If the server process doesn't call <c>ProcessEnding()</c>,
+        /// the game session termination won't conclude successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FORCE_TERMINATE</c> – Prompts the Amazon GameLift service to stop the server process
-        /// immediately. Amazon GameLift takes action (depending on the type of fleet) to shut
-        /// down the server process without the normal game session shutdown sequence. 
+        ///  <c>FORCE_TERMINATE</c> – Prompts the Amazon GameLift Servers service to stop the
+        /// server process immediately. Amazon GameLift Servers takes action (depending on the
+        /// type of fleet) to shut down the server process without the normal game session shutdown
+        /// sequence. 
         /// </para>
         ///  <note> 
         /// <para>
         /// This method is not available for game sessions that are running on Anywhere fleets
-        /// unless the fleet is deployed with the Amazon GameLift Agent. In this scenario, a force
-        /// terminate request results in an invalid or bad request exception.
+        /// unless the fleet is deployed with the Amazon GameLift Servers Agent. In this scenario,
+        /// a force terminate request results in an invalid or bad request exception.
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>

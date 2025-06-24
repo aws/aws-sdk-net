@@ -79,7 +79,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ContainerGroupType. 
         /// <para>
         /// The type of container group to retrieve. Container group type determines how Amazon
-        /// GameLift deploys the container group on each fleet instance.
+        /// GameLift Servers deploys the container group on each fleet instance.
         /// </para>
         /// </summary>
         public ContainerGroupType ContainerGroupType

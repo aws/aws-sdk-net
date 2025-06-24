@@ -67,9 +67,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ContainerGroupDefinitionArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to an Amazon GameLift <c>ContainerGroupDefinition</c> resource. It
-        /// uniquely identifies the resource across all Amazon Web Services Regions. Format is
-        /// <c>arn:aws:gamelift:[region]::containergroupdefinition/[container group definition
+        /// that is assigned to an Amazon GameLift Servers <c>ContainerGroupDefinition</c> resource.
+        /// It uniquely identifies the resource across all Amazon Web Services Regions. Format
+        /// is <c>arn:aws:gamelift:[region]::containergroupdefinition/[container group definition
         /// name]:[version]</c>.
         /// </para>
         /// </summary>
@@ -89,8 +89,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ContainerGroupType. 
         /// <para>
-        /// The type of container group. Container group type determines how Amazon GameLift deploys
-        /// the container group on each fleet instance.
+        /// The type of container group. Container group type determines how Amazon GameLift Servers
+        /// deploys the container group on each fleet instance.
         /// </para>
         /// </summary>
         public ContainerGroupType ContainerGroupType
@@ -172,10 +172,10 @@ namespace Amazon.GameLift.Model
         ///  <note> 
         /// <para>
         /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
-        /// <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-        /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift,
-        /// first update the game server build to server SDK 5.x, and then deploy to AL2023 instances.
-        /// See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
+        /// <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
+        /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift
+        /// Servers, first update the game server build to server SDK 5.x, and then deploy to
+        /// AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
         /// Migrate to server SDK version 5.</a> 
         /// </para>
         ///  </note>
@@ -199,21 +199,21 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>COPYING</c> -- Amazon GameLift is in the process of making copies of all container
-        /// images that are defined in the group. While in this state, the resource can't be used
-        /// to create a container fleet.
+        ///  <c>COPYING</c> -- Amazon GameLift Servers is in the process of making copies of all
+        /// container images that are defined in the group. While in this state, the resource
+        /// can't be used to create a container fleet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>READY</c> -- Amazon GameLift has copied the registry images for all containers
+        ///  <c>READY</c> -- Amazon GameLift Servers has copied the registry images for all containers
         /// that are defined in the group. You can use a container group definition in this status
         /// to create a container fleet. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FAILED</c> -- Amazon GameLift failed to create a valid container group definition
-        /// resource. For more details on the cause of the failure, see <c>StatusReason</c>. A
-        /// container group definition resource in failed status will be deleted within a few
+        ///  <c>FAILED</c> -- Amazon GameLift Servers failed to create a valid container group
+        /// definition resource. For more details on the cause of the failure, see <c>StatusReason</c>.
+        /// A container group definition resource in failed status will be deleted within a few
         /// minutes.
         /// </para>
         ///  </li> </ul>
@@ -238,8 +238,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// An internal issue prevented Amazon GameLift from creating the container group definition
-        /// resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.
+        /// An internal issue prevented Amazon GameLift Servers from creating the container group
+        /// definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.
         /// 
         /// </para>
         ///  </li> <li> 
@@ -247,7 +247,7 @@ namespace Amazon.GameLift.Model
         /// An access-denied message means that you don't have permissions to access the container
         /// image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html">
         /// IAM permission examples</a> for help setting up required IAM permissions for Amazon
-        /// GameLift.
+        /// GameLift Servers.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -258,7 +258,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// At least one of the container images referenced in the container group definition
         /// exceeds the allowed size. For size limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">
-        /// Amazon GameLift endpoints and quotas</a>.
+        /// Amazon GameLift Servers endpoints and quotas</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

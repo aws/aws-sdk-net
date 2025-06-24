@@ -61,9 +61,9 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The fleet's locations and life-cycle status of each location. For new fleets, the
         /// status of all locations is set to <c>NEW</c>. During fleet creation, Amazon GameLift
-        /// updates each location status as instances are deployed there and prepared for game
-        /// hosting. This list includes an entry for the fleet's home Region. For fleets with
-        /// no remote locations, only one entry, representing the home Region, is returned.
+        /// Servers updates each location status as instances are deployed there and prepared
+        /// for game hosting. This list includes an entry for the fleet's home Region. For fleets
+        /// with no remote locations, only one entry, representing the home Region, is returned.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

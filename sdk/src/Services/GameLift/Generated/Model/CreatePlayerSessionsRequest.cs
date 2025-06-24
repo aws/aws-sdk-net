@@ -47,8 +47,8 @@ namespace Amazon.GameLift.Model
     /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
     /// objects are returned with player session IDs. Each player references their player
     /// session ID when sending a connection request to the game session, and the game server
-    /// can use it to validate the player reservation with the Amazon GameLift service. Player
-    /// sessions cannot be updated.
+    /// can use it to validate the player reservation with the Amazon GameLift Servers service.
+    /// Player sessions cannot be updated.
     /// </para>
     ///  
     /// <para>
@@ -93,9 +93,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerDataMap. 
         /// <para>
         /// Map of string pairs, each specifying a player ID and a set of developer-defined information
-        /// related to the player. Amazon GameLift does not use this data, so it can be formatted
-        /// as needed for use in the game. Any player data strings for player IDs that are not
-        /// included in the <c>PlayerIds</c> parameter are ignored. 
+        /// related to the player. Amazon GameLift Servers does not use this data, so it can be
+        /// formatted as needed for use in the game. Any player data strings for player IDs that
+        /// are not included in the <c>PlayerIds</c> parameter are ignored. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

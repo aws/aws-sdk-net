@@ -31,11 +31,11 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScript operation.
-    /// Creates a new script record for your Amazon GameLift Realtime script. Realtime scripts
-    /// are JavaScript that provide configuration settings and optional custom game logic
-    /// for your game. The script is deployed when you create a Amazon GameLift Realtime fleet
-    /// to host your game sessions. Script logic is executed during an active game session.
-    /// 
+    /// Creates a new script record for your Amazon GameLift Servers Realtime script. Realtime
+    /// scripts are JavaScript that provide configuration settings and optional custom game
+    /// logic for your game. The script is deployed when you create a Amazon GameLift Servers
+    /// Realtime fleet to host your game sessions. Script logic is executed during an active
+    /// game session. 
     /// 
     ///  
     /// <para>
@@ -51,16 +51,16 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// An Amazon Simple Storage Service (Amazon S3) bucket under your Amazon Web Services
     /// account. Use the <i>StorageLocation</i> parameter for this option. You'll need to
-    /// have an Identity Access Management (IAM) role that allows the Amazon GameLift service
-    /// to access your S3 bucket. 
+    /// have an Identity Access Management (IAM) role that allows the Amazon GameLift Servers
+    /// service to access your S3 bucket. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// If the call is successful, a new script record is created with a unique script ID.
     /// If the script file is provided as a local file, the file is uploaded to an Amazon
-    /// GameLift-owned S3 bucket and the script record's storage location reflects this location.
-    /// If the script file is provided as an S3 bucket, Amazon GameLift accesses the file
-    /// at this storage location as needed for deployment.
+    /// GameLift Servers-owned S3 bucket and the script record's storage location reflects
+    /// this location. If the script file is provided as an S3 bucket, Amazon GameLift Servers
+    /// accesses the file at this storage location as needed for deployment.
     /// </para>
     ///  
     /// <para>
@@ -69,12 +69,12 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-    /// GameLift Amazon GameLift Realtime</a> 
+    /// GameLift Servers Amazon GameLift Servers Realtime</a> 
     /// </para>
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set
-    /// Up a Role for Amazon GameLift Access</a> 
+    /// Up a Role for Amazon GameLift Servers Access</a> 
     /// </para>
     ///  
     /// <para>
@@ -120,11 +120,11 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The location of the Amazon S3 bucket where a zipped file containing your Realtime
         /// scripts is stored. The storage location must specify the Amazon S3 bucket name, the
-        /// zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the
-        /// Amazon S3 storage location. The S3 bucket must be in the same Region where you want
-        /// to create a new script. By default, Amazon GameLift uploads the latest version of
-        /// the zip file; if you have S3 object versioning turned on, you can use the <c>ObjectVersion</c>
-        /// parameter to specify an earlier version. 
+        /// zip file name (the "key"), and a role ARN that allows Amazon GameLift Servers to access
+        /// the Amazon S3 storage location. The S3 bucket must be in the same Region where you
+        /// want to create a new script. By default, Amazon GameLift Servers uploads the latest
+        /// version of the zip file; if you have S3 object versioning turned on, you can use the
+        /// <c>ObjectVersion</c> parameter to specify an earlier version. 
         /// </para>
         /// </summary>
         public S3Location StorageLocation

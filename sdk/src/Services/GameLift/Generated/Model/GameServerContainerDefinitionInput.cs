@@ -140,8 +140,8 @@ namespace Amazon.GameLift.Model
         /// in an Amazon Elastic Container Registry public or private repository. The repository
         /// must be in the same Amazon Web Services account and Amazon Web Services Region where
         /// you're creating the container group definition. For limits on image size, see <a href="https://docs.aws.amazon.com/general/latest/gr/gamelift.html">Amazon
-        /// GameLift endpoints and quotas</a>. You can use any of the following image URI formats:
-        /// 
+        /// GameLift Servers endpoints and quotas</a>. You can use any of the following image
+        /// URI formats: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -201,11 +201,17 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PortConfiguration. 
         /// <para>
-        /// A set of ports that Amazon GameLift can assign to processes in the container. Processes,
-        /// must be assigned a container port to accept inbound traffic connections. For example,
-        /// a game server process requires a container port to allow game clients to connect to
-        /// it. Container ports aren't directly accessed by inbound traffic. Instead, Amazon GameLift
-        /// maps container ports to externally accessible connection ports (see the container
+        /// A set of ports that Amazon GameLift Servers can assign to processes in a container.
+        /// The container port configuration must have enough ports for each container process
+        /// that accepts inbound traffic connections. For example, a game server process requires
+        /// a container port to allow game clients to connect to it. A container port configuration
+        /// can have can have one or more container port ranges. Each range specifies starting
+        /// and ending values as well as the supported network protocol.
+        /// </para>
+        ///  
+        /// <para>
+        /// Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers
+        /// maps each container port to an externally accessible connection port (see the container
         /// fleet property <c>ConnectionPortRange</c>). 
         /// </para>
         /// </summary>
@@ -225,8 +231,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ServerSdkVersion. 
         /// <para>
-        /// The Amazon GameLift server SDK version that the game server is integrated with. Only
-        /// game servers using 5.2.0 or higher are compatible with container fleets.
+        /// The Amazon GameLift Servers server SDK version that the game server is integrated
+        /// with. Only game servers using 5.2.0 or higher are compatible with container fleets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

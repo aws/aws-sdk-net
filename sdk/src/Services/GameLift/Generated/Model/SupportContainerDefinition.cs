@@ -181,8 +181,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ImageUri. 
         /// <para>
-        /// The URI to the image that Amazon GameLift deploys to a container fleet. For a more
-        /// specific identifier, see <c>ResolvedImageDigest</c>. 
+        /// The URI to the image that Amazon GameLift Servers deploys to a container fleet. For
+        /// a more specific identifier, see <c>ResolvedImageDigest</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -201,9 +201,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MemoryHardLimitMebibytes. 
         /// <para>
-        /// The amount of memory that Amazon GameLift makes available to the container. If memory
-        /// limits aren't set for an individual container, the container shares the container
-        /// group's total memory allocation.
+        /// The amount of memory that Amazon GameLift Servers makes available to the container.
+        /// If memory limits aren't set for an individual container, the container shares the
+        /// container group's total memory allocation.
         /// </para>
         ///  
         /// <para>
@@ -254,9 +254,9 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A set of ports that allow access to the container from external users. Processes running
         /// in the container can bind to a one of these ports. Container ports aren't directly
-        /// accessed by inbound traffic. Amazon GameLift maps these container ports to externally
-        /// accessible connection ports, which are assigned as needed from the container fleet's
-        /// <c>ConnectionPortRange</c>.
+        /// accessed by inbound traffic. Amazon GameLift Servers maps these container ports to
+        /// externally accessible connection ports, which are assigned as needed from the container
+        /// fleet's <c>ConnectionPortRange</c>.
         /// </para>
         /// </summary>
         public ContainerPortConfiguration PortConfiguration

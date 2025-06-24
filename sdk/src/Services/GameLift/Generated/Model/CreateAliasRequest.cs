@@ -38,11 +38,11 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// Amazon GameLift supports two types of routing strategies for aliases: simple and terminal.
-    /// A simple alias points to an active fleet. A terminal alias is used to display messaging
-    /// or link to a URL instead of routing players to an active fleet. For example, you might
-    /// use a terminal alias when a game version is no longer supported and you want to direct
-    /// players to an upgrade site. 
+    /// Amazon GameLift Servers supports two types of routing strategies for aliases: simple
+    /// and terminal. A simple alias points to an active fleet. A terminal alias is used to
+    /// display messaging or link to a URL instead of routing players to an active fleet.
+    /// For example, you might use a terminal alias when a game version is no longer supported
+    /// and you want to direct players to an upgrade site. 
     /// </para>
     ///  
     /// <para>

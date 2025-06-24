@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Describes an Amazon GameLift managed container fleet.
+    /// Describes an Amazon GameLift Servers managed container fleet.
     /// </summary>
     public partial class ContainerFleet
     {
@@ -141,8 +141,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs
-        /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
+        /// that is assigned to a Amazon GameLift Servers fleet resource and uniquely identifies
+        /// it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
         /// In a GameLift fleet ARN, the resource ID matches the <c>FleetId</c> value.
         /// </para>
         /// </summary>
@@ -182,7 +182,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetRoleArn. 
         /// <para>
         /// The unique identifier for an Identity and Access Management (IAM) role with permissions
-        /// to run your containers on resources that are managed by Amazon GameLift. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set
+        /// to run your containers on resources that are managed by Amazon GameLift Servers. See
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set
         /// up an IAM service role</a>. This fleet property can't be changed.
         /// </para>
         /// </summary>
@@ -369,8 +370,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LogConfiguration. 
         /// <para>
-        /// The method that is used to collect container logs for the fleet. Amazon GameLift saves
-        /// all standard output for each container in logs, including game session logs. 
+        /// The method that is used to collect container logs for the fleet. Amazon GameLift Servers
+        /// saves all standard output for each container in logs, including game session logs.
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -448,10 +450,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NewGameSessionProtectionPolicy. 
         /// <para>
-        /// Determines whether Amazon GameLift can shut down game sessions on the fleet that are
-        /// actively running and hosting players. Amazon GameLift might prompt an instance shutdown
-        /// when scaling down fleet capacity or when retiring unhealthy instances. You can also
-        /// set game session protection for individual game sessions using <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.
+        /// Determines whether Amazon GameLift Servers can shut down game sessions on the fleet
+        /// that are actively running and hosting players. Amazon GameLift Servers might prompt
+        /// an instance shutdown when scaling down fleet capacity or when retiring unhealthy instances.
+        /// You can also set game session protection for individual game sessions using <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

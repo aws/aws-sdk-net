@@ -66,10 +66,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DESIRED. 
         /// <para>
-        /// Requested number of active instances. Amazon GameLift takes action as needed to maintain
-        /// the desired number of instances. Capacity is scaled up or down by changing the desired
-        /// instances. A change in the desired instances value can take up to 1 minute to be reflected
-        /// when viewing a fleet's capacity settings. 
+        /// Requested number of active instances. Amazon GameLift Servers takes action as needed
+        /// to maintain the desired number of instances. Capacity is scaled up or down by changing
+        /// the desired instances. A change in the desired instances value can take up to 1 minute
+        /// to be reflected when viewing a fleet's capacity settings. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

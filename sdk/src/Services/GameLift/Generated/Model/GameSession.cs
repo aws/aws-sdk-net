@@ -39,9 +39,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon GameLift retains a game session resource for 30 days after the game session
-    /// ends. You can reuse idempotency token values after this time. Game session logs are
-    /// retained for 14 days.
+    /// Amazon GameLift Servers retains a game session resource for 30 days after the game
+    /// session ends. You can reuse idempotency token values after this time. Game session
+    /// logs are retained for 14 days.
     /// </para>
     ///  
     /// <para>
@@ -273,8 +273,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the game session. To connect to a Amazon GameLift game server, an
-        /// app needs both the IP address and port number.
+        /// The IP address of the game session. To connect to a Amazon GameLift Servers game server,
+        /// an app needs both the IP address and port number.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -396,8 +396,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number for the game session. To connect to a Amazon GameLift game server,
-        /// an app needs both the IP address and port number.
+        /// The port number for the game session. To connect to a Amazon GameLift Servers game
+        /// server, an app needs both the IP address and port number.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=60000)]

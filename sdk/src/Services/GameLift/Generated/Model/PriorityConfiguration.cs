@@ -41,16 +41,16 @@ namespace Amazon.GameLift.Model
     ///  <ul> <li> 
     /// <para>
     /// When a game session request does not include player latency data, Amazon GameLift
-    /// places game sessions based on the following priorities: (1) the queue's default destination
-    /// order, and (2) for multi-location fleets, an alphabetic list of locations.
+    /// Servers places game sessions based on the following priorities: (1) the queue's default
+    /// destination order, and (2) for multi-location fleets, an alphabetic list of locations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// When a game session request includes player latency data, Amazon GameLift re-orders
-    /// the queue's destinations to make placements where the average player latency is lowest.
-    /// It reorders based the following priorities: (1) the lowest average latency across
-    /// all players, (2) the lowest hosting cost, (3) the queue's default destination order,
-    /// and (4) for multi-location fleets, an alphabetic list of locations.
+    /// When a game session request includes player latency data, Amazon GameLift Servers
+    /// re-orders the queue's destinations to make placements where the average player latency
+    /// is lowest. It reorders based the following priorities: (1) the lowest average latency
+    /// across all players, (2) the lowest hosting cost, (3) the queue's default destination
+    /// order, and (4) for multi-location fleets, an alphabetic list of locations.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.GameLift.Model
         /// property includes <c>LOCATION</c>. Locations can include Amazon Web Services Region
         /// codes (such as <c>us-west-2</c>), local zones, and custom locations (for Anywhere
         /// fleets). Each location must be listed only once. For details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
-        /// GameLift service locations.</a> 
+        /// GameLift Servers service locations.</a> 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -95,25 +95,25 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>LATENCY</c> -- Amazon GameLift prioritizes locations where the average player
-        /// latency is lowest. Player latency data is provided in each game session placement
+        ///  <c>LATENCY</c> -- Amazon GameLift Servers prioritizes locations where the average
+        /// player latency is lowest. Player latency data is provided in each game session placement
         /// request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>COST</c> -- Amazon GameLift prioritizes queue destinations with the lowest current
-        /// hosting costs. Cost is evaluated based on the destination's location, instance type,
-        /// and fleet type (Spot or On-Demand).
+        ///  <c>COST</c> -- Amazon GameLift Servers prioritizes queue destinations with the lowest
+        /// current hosting costs. Cost is evaluated based on the destination's location, instance
+        /// type, and fleet type (Spot or On-Demand).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DESTINATION</c> -- Amazon GameLift prioritizes based on the list order of destinations
-        /// in the queue configuration.
+        ///  <c>DESTINATION</c> -- Amazon GameLift Servers prioritizes based on the list order
+        /// of destinations in the queue configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>LOCATION</c> -- Amazon GameLift prioritizes based on the provided order of locations,
-        /// as defined in <c>LocationOrder</c>. 
+        ///  <c>LOCATION</c> -- Amazon GameLift Servers prioritizes based on the provided order
+        /// of locations, as defined in <c>LocationOrder</c>. 
         /// </para>
         ///  </li> </ul>
         /// <para />

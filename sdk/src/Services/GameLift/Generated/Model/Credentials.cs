@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Amazon Web Services account security credentials that allow interactions with Amazon
-    /// GameLift resources. The credentials are temporary and valid for a limited time span.
-    /// You can request fresh credentials at any time. 
+    /// GameLift Servers resources. The credentials are temporary and valid for a limited
+    /// time span. You can request fresh credentials at any time. 
     /// 
     ///  
     /// <para>
@@ -46,13 +46,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To upload a game server build directly to Amazon GameLift S3 storage using <c>CreateBuild</c>.
-    /// To get access for this task, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html</a>.
+    /// To upload a game server build directly to Amazon GameLift Servers S3 storage using
+    /// <c>CreateBuild</c>. To get access for this task, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To remotely connect to an active Amazon GameLift fleet instances. To get remote access,
-    /// call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html</a>.
+    /// To remotely connect to an active Amazon GameLift Servers fleet instances. To get remote
+    /// access, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

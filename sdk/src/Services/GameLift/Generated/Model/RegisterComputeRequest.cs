@@ -31,13 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCompute operation.
-    /// Registers a compute resource in an Amazon GameLift Anywhere fleet. 
+    /// Registers a compute resource in an Amazon GameLift Servers Anywhere fleet. 
     /// 
     ///  
     /// <para>
-    /// For an Anywhere fleet that's running the Amazon GameLift Agent, the Agent handles
-    /// all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent,
-    /// call this operation to register fleet computes.
+    /// For an Anywhere fleet that's running the Amazon GameLift Servers Agent, the Agent
+    /// handles all compute registry tasks for you. For an Anywhere fleet that doesn't use
+    /// the Agent, call this operation to register fleet computes.
     /// </para>
     ///  
     /// <para>
@@ -49,10 +49,10 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// If successful, this operation returns compute details, including an Amazon GameLift
-    /// SDK endpoint or Agent endpoint. Game server processes running on the compute can use
-    /// this endpoint to communicate with the Amazon GameLift service. Each server process
-    /// includes the SDK endpoint in its call to the Amazon GameLift server SDK action <c>InitSDK()</c>.
-    /// 
+    /// Servers SDK endpoint or Agent endpoint. Game server processes running on the compute
+    /// can use this endpoint to communicate with the Amazon GameLift Servers service. Each
+    /// server process includes the SDK endpoint in its call to the Amazon GameLift Servers
+    /// server SDK action <c>InitSDK()</c>. 
     /// </para>
     ///  
     /// <para>
@@ -92,8 +92,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CertificatePath. 
         /// <para>
-        /// The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate
-        /// the path and certificate.
+        /// The path to a TLS certificate on your compute resource. Amazon GameLift Servers doesn't
+        /// validate the path and certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -131,8 +131,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The DNS name of the compute resource. Amazon GameLift requires either a DNS name or
-        /// IP address.
+        /// The DNS name of the compute resource. Amazon GameLift Servers requires either a DNS
+        /// name or IP address.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -171,8 +171,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the compute resource. Amazon GameLift requires either a DNS name
-        /// or IP address. When registering an Anywhere fleet, an IP address is required.
+        /// The IP address of the compute resource. Amazon GameLift Servers requires either a
+        /// DNS name or IP address. When registering an Anywhere fleet, an IP address is required.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]

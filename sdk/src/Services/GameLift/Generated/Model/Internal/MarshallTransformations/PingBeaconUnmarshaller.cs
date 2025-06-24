@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LocationModel Object
+    /// Response Unmarshaller for PingBeacon Object
     /// </summary>  
-    public class LocationModelUnmarshaller : IJsonUnmarshaller<LocationModel, JsonUnmarshallerContext>
+    public class PingBeaconUnmarshaller : IJsonUnmarshaller<PingBeacon, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LocationModel Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PingBeacon Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            LocationModel unmarshalledObject = new LocationModel();
+            PingBeacon unmarshalledObject = new PingBeacon();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LocationArn", targetDepth))
+                if (context.TestExpression("UDPEndpoint", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LocationName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PingBeacon", targetDepth))
-                {
-                    var unmarshaller = PingBeaconUnmarshaller.Instance;
-                    unmarshalledObject.PingBeacon = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = UDPEndpointUnmarshaller.Instance;
+                    unmarshalledObject.UDPEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
 
 
-        private static LocationModelUnmarshaller _instance = new LocationModelUnmarshaller();        
+        private static PingBeaconUnmarshaller _instance = new PingBeaconUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LocationModelUnmarshaller Instance
+        public static PingBeaconUnmarshaller Instance
         {
             get
             {

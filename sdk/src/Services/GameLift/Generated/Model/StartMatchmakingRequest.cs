@@ -32,12 +32,13 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the StartMatchmaking operation.
     /// Uses FlexMatch to create a game match for a group of players based on custom matchmaking
-    /// rules. With games that use Amazon GameLift managed hosting, this operation also triggers
-    /// Amazon GameLift to find hosting resources and start a new game session for the new
-    /// match. Each matchmaking request includes information on one or more players and specifies
-    /// the FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch
-    /// attempts to build a match that includes all players in the request, placing them in
-    /// the same team and finding additional players as needed to fill the match. 
+    /// rules. With games that use Amazon GameLift Servers managed hosting, this operation
+    /// also triggers Amazon GameLift Servers to find hosting resources and start a new game
+    /// session for the new match. Each matchmaking request includes information on one or
+    /// more players and specifies the FlexMatch matchmaker to use. When a request is for
+    /// multiple players, FlexMatch attempts to build a match that includes all players in
+    /// the request, placing them in the same team and finding additional players as needed
+    /// to fill the match. 
     /// 
     ///  
     /// <para>
@@ -70,7 +71,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-    /// How Amazon GameLift FlexMatch works</a> 
+    /// How Amazon GameLift Servers FlexMatch works</a> 
     /// </para>
     /// </summary>
     public partial class StartMatchmakingRequest : AmazonGameLiftRequest
@@ -135,8 +136,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TicketId. 
         /// <para>
         /// A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon
-        /// GameLift will generate one in the form of a UUID. Use this identifier to track the
-        /// matchmaking ticket status and retrieve match results.
+        /// GameLift Servers will generate one in the form of a UUID. Use this identifier to track
+        /// the matchmaking ticket status and retrieve match results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

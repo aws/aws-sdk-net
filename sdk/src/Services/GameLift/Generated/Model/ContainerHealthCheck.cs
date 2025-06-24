@@ -34,8 +34,8 @@ namespace Amazon.GameLift.Model
     /// fleet. These properties override any Docker health checks that are set in the container
     /// image. For more information on container health checks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html#ECS-Type-HealthCheck-command">HealthCheck
     /// command</a> in the <i>Amazon Elastic Container Service API</i>. Game server containers
-    /// don't have a health check parameter; Amazon GameLift automatically handles health
-    /// checks for these containers.
+    /// don't have a health check parameter; Amazon GameLift Servers automatically handles
+    /// health checks for these containers.
     /// 
     ///  
     /// <para>

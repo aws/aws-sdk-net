@@ -141,8 +141,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ImageUri. 
         /// <para>
-        /// The URI to the image that Amazon GameLift uses when deploying this container to a
-        /// container fleet. For a more specific identifier, see <c>ResolvedImageDigest</c>. 
+        /// The URI to the image that Amazon GameLift Servers uses when deploying this container
+        /// to a container fleet. For a more specific identifier, see <c>ResolvedImageDigest</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -188,8 +189,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The set of ports that are available to bind to processes in the container. For example,
         /// a game server process requires a container port to allow game clients to connect to
-        /// it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift maps
-        /// these container ports to externally accessible connection ports, which are assigned
+        /// it. Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers
+        /// maps these container ports to externally accessible connection ports, which are assigned
         /// as needed from the container fleet's <c>ConnectionPortRange</c>. 
         /// </para>
         /// </summary>
@@ -227,8 +228,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ServerSdkVersion. 
         /// <para>
-        /// The Amazon GameLift server SDK version that the game server is integrated with. Only
-        /// game servers using 5.2.0 or higher are compatible with container fleets.
+        /// The Amazon GameLift Servers server SDK version that the game server is integrated
+        /// with. Only game servers using 5.2.0 or higher are compatible with container fleets.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

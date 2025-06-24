@@ -32,8 +32,8 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DeleteScalingPolicy operation.
     /// Deletes a fleet scaling policy. Once deleted, the policy is no longer in force and
-    /// Amazon GameLift removes all record of it. To delete a scaling policy, specify both
-    /// the scaling policy name and the fleet ID it is associated with.
+    /// Amazon GameLift Servers removes all record of it. To delete a scaling policy, specify
+    /// both the scaling policy name and the fleet ID it is associated with.
     /// 
     ///  
     /// <para>

@@ -31,9 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Retrieves all tags assigned to a Amazon GameLift resource. Use resource tags to organize
-    /// Amazon Web Services resources for a range of purposes. This operation handles the
-    /// permissions necessary to manage tags for Amazon GameLift resources that support tagging.
+    /// Retrieves all tags assigned to a Amazon GameLift Servers resource. Use resource tags
+    /// to organize Amazon Web Services resources for a range of purposes. This operation
+    /// handles the permissions necessary to manage tags for Amazon GameLift Servers resources
+    /// that support tagging.
     /// 
     ///  
     /// <para>
@@ -72,10 +73,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ResourceARN. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that uniquely identifies the Amazon GameLift resource that you want to retrieve tags
-        /// for. Amazon GameLift includes resource ARNs in the data object for the resource. You
-        /// can retrieve the ARN by calling a <c>List</c> or <c>Describe</c> operation for the
-        /// resource type. 
+        /// that uniquely identifies the Amazon GameLift Servers resource that you want to retrieve
+        /// tags for. Amazon GameLift Servers includes resource ARNs in the data object for the
+        /// resource. You can retrieve the ARN by calling a <c>List</c> or <c>Describe</c> operation
+        /// for the resource type. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
