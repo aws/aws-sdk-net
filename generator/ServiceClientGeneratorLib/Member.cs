@@ -583,8 +583,8 @@ namespace ServiceClientGenerator
                     var valueType = DetermineType(memberShape["value"], true, false);
                     return string.Format("Dictionary<{0}, {1}>", keyType, valueType);
                 case "list":
-                    // if customization exists to treat the enum as an enum instead of a string, we pass in false
-                    var listType = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ? DetermineType(memberShape["member"], false, false) : DetermineType(memberShape["member"], true, false) ;
+                    var overrideTreatEnumsAsString = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ?? true;
+                    var listType = DetermineType(memberShape["member"], overrideTreatEnumsAsString, false);
                     return string.Format("List<{0}>", listType);
 
                 case "decimal":

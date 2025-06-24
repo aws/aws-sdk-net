@@ -602,18 +602,20 @@ namespace ServiceClientGenerator
 
         /// <summary>
         /// For Lists of enums, the generator automatically treats the enum as a string via passing in true to "treatEnumAsString".
-        /// This customization overrides that so that the enum is treated as an enum. 
-        ///     "treatEnumsAsEnums":{
-        ///        "ObjectAttributesList": true
+        /// This customization sets the "treatEnumAsString" value to whatever is set here. This can be used outside of list of enums
+        /// but this is just one example of how it can be used. 
+        ///     "overrideTreatEnumsAsString":{
+        ///        "ObjectAttributesList": false
         /// }
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool OverrideTreatEnumsAsString(string shapeName)
+        public bool? OverrideTreatEnumsAsString(string shapeName)
         {
             var data = _documentRoot[OverrideTreatEnumsAsStringKey];
-            if (data == null) return false;
-            return data[shapeName]  == null ? false : true;
+            if (data == null || data[shapeName] == null) return null;
+
+            return (bool)data[shapeName];
         }
 
         private HashSet<string> _resultGenerationSuppressions = null;

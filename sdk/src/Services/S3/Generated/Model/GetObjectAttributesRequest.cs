@@ -270,7 +270,7 @@ namespace Amazon.S3.Model
         private string _expectedBucketOwner;
         private string _key;
         private int? _maxParts;
-        private List<ObjectAttributes> _objectAttributes = AWSConfigs.InitializeCollections ? new List<ObjectAttributes>() : null;
+        private List<string> _objectAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _partNumberMarker;
         private RequestPayer _requestPayer;
         private string _sseCustomerAlgorithm;
@@ -405,7 +405,7 @@ namespace Amazon.S3.Model
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<ObjectAttributes> ObjectAttributes
+        public List<string> ObjectAttributes
         {
             get { return this._objectAttributes; }
             set { this._objectAttributes = value; }
