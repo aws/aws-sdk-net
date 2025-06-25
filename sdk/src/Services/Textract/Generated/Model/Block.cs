@@ -86,8 +86,8 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a
-        /// document page.
+        ///  <i>LINE</i> - A string of space-delimited, contiguous words that are detected on
+        /// a document page.
         /// </para>
         ///  </li> </ul> 
         /// <para>

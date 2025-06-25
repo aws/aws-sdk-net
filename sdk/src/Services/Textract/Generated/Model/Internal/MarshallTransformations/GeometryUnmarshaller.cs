@@ -78,6 +78,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     unmarshalledObject.Polygon = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RotationAngle", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.RotationAngle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

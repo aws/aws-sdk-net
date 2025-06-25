@@ -37,6 +37,7 @@ namespace Amazon.Textract.Model
     {
         private BoundingBox _boundingBox;
         private List<Point> _polygon = AWSConfigs.InitializeCollections ? new List<Point>() : null;
+        private float? _rotationAngle;
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
@@ -73,6 +74,24 @@ namespace Amazon.Textract.Model
         internal bool IsSetPolygon()
         {
             return this._polygon != null && (this._polygon.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RotationAngle. 
+        /// <para>
+        /// Provides a numerical value corresponding to the rotation of the text.
+        /// </para>
+        /// </summary>
+        public float RotationAngle
+        {
+            get { return this._rotationAngle.GetValueOrDefault(); }
+            set { this._rotationAngle = value; }
+        }
+
+        // Check to see if RotationAngle property is set
+        internal bool IsSetRotationAngle()
+        {
+            return this._rotationAngle.HasValue; 
         }
 
     }

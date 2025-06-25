@@ -2272,8 +2272,8 @@ namespace Amazon.Textract
         /// </para>
         ///  
         /// <para>
-        ///  <c>StartTextDetection</c> returns a job identifier (<c>JobId</c>) that you use to
-        /// get the results of the operation. When text detection is finished, Amazon Textract
+        ///  <c>StartDocumentTextDetection</c> returns a job identifier (<c>JobId</c>) that you
+        /// use to get the results of the operation. When text detection is finished, Amazon Textract
         /// publishes a completion status to the Amazon Simple Notification Service (Amazon SNS)
         /// topic that you specify in <c>NotificationChannel</c>. To get the results of the text
         /// detection operation, first check that the status value published to the Amazon SNS
