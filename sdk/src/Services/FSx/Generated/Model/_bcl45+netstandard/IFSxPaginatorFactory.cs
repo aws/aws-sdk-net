@@ -88,6 +88,16 @@ namespace Amazon.FSx.Model
         IDescribeFileSystemsPaginator DescribeFileSystems(DescribeFileSystemsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeS3AccessPointAttachments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeS3AccessPointAttachmentsPaginator DescribeS3AccessPointAttachments(DescribeS3AccessPointAttachmentsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSnapshots operation
         ///</summary>
         [AWSPaginator(

@@ -554,6 +554,114 @@ namespace Amazon.FSx
 
         #endregion
         
+        #region  CreateAndAttachS3AccessPoint
+
+        internal virtual CreateAndAttachS3AccessPointResponse CreateAndAttachS3AccessPoint(CreateAndAttachS3AccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAndAttachS3AccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAndAttachS3AccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAndAttachS3AccessPointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx for OpenZFS
+        /// file systems, the volume must be hosted on a high-availability file system, either
+        /// Single-AZ or Multi-AZ. For more information, see <a href="fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
+        /// your data using access points</a> in the Amazon FSx for OpenZFS User Guide. 
+        /// 
+        ///  
+        /// <para>
+        /// The requester requires the following permissions to perform these actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>fsx:CreateAndAttachS3AccessPoint</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3:CreateAccessPoint</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3:GetAccessPoint</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3:PutAccessPointPolicy</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3:DeleteAccessPoint</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following actions are related to <c>CreateAndAttachS3AccessPoint</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeS3AccessPointAttachments</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DetachAndDeleteS3AccessPoint</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAndAttachS3AccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAndAttachS3AccessPoint service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.AccessPointAlreadyOwnedByYouException">
+        /// An access point with that name already exists in the Amazon Web Services Region in
+        /// your Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidAccessPointException">
+        /// The access point specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.TooManyAccessPointsException">
+        /// You have reached the maximum number of S3 access points attachments allowed for your
+        /// account in this Amazon Web Services Region, or for the file system. For more information,
+        /// or to request an increase, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/limits.html">Service
+        /// quotas on FSx resources</a> in the FSx for OpenZFS User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateAndAttachS3AccessPoint">REST API Reference for CreateAndAttachS3AccessPoint Operation</seealso>
+        public virtual Task<CreateAndAttachS3AccessPointResponse> CreateAndAttachS3AccessPointAsync(CreateAndAttachS3AccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAndAttachS3AccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAndAttachS3AccessPointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAndAttachS3AccessPointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateBackup
 
         internal virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
@@ -1646,6 +1754,15 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
+        /// Before deleting an Amazon FSx for OpenZFS file system, make sure that there aren't
+        /// any Amazon S3 access points attached to any volume. For more information on how to
+        /// list S3 access points that are attached to volumes, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list">Listing
+        /// S3 access point attachments</a>. For more information on how to delete S3 access points,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-points-list">Deleting
+        /// an S3 access point attachment</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// By default, when you delete an Amazon FSx for Windows File Server file system, a final
         /// backup is created upon deletion. This final backup isn't subject to the file system's
         /// retention policy, and must be manually deleted.
@@ -2293,6 +2410,62 @@ namespace Amazon.FSx
 
         #endregion
         
+        #region  DescribeS3AccessPointAttachments
+
+        internal virtual DescribeS3AccessPointAttachmentsResponse DescribeS3AccessPointAttachments(DescribeS3AccessPointAttachmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeS3AccessPointAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeS3AccessPointAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeS3AccessPointAttachmentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more S3 access points attached to Amazon FSx volumes.
+        /// 
+        ///  
+        /// <para>
+        /// The requester requires the following permission to perform this action:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>fsx:DescribeS3AccessPointAttachments</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeS3AccessPointAttachments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeS3AccessPointAttachments service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.S3AccessPointAttachmentNotFoundException">
+        /// The access point specified was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeS3AccessPointAttachments">REST API Reference for DescribeS3AccessPointAttachments Operation</seealso>
+        public virtual Task<DescribeS3AccessPointAttachmentsResponse> DescribeS3AccessPointAttachmentsAsync(DescribeS3AccessPointAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeS3AccessPointAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeS3AccessPointAttachmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeS3AccessPointAttachmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSharedVpcConfiguration
 
         internal virtual DescribeSharedVpcConfigurationResponse DescribeSharedVpcConfiguration(DescribeSharedVpcConfigurationRequest request)
@@ -2496,6 +2669,71 @@ namespace Amazon.FSx
             options.ResponseUnmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVolumesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachAndDeleteS3AccessPoint
+
+        internal virtual DetachAndDeleteS3AccessPointResponse DetachAndDeleteS3AccessPoint(DetachAndDeleteS3AccessPointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachAndDeleteS3AccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachAndDeleteS3AccessPointResponseUnmarshaller.Instance;
+
+            return Invoke<DetachAndDeleteS3AccessPointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Detaches an S3 access point from an Amazon FSx volume and deletes the S3 access point.
+        /// 
+        ///  
+        /// <para>
+        /// The requester requires the following permission to perform this action:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>fsx:DetachAndDeleteS3AccessPoint</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3:DeleteAccessPoint</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachAndDeleteS3AccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachAndDeleteS3AccessPoint service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.S3AccessPointAttachmentNotFoundException">
+        /// The access point specified was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DetachAndDeleteS3AccessPoint">REST API Reference for DetachAndDeleteS3AccessPoint Operation</seealso>
+        public virtual Task<DetachAndDeleteS3AccessPointResponse> DetachAndDeleteS3AccessPointAsync(DetachAndDeleteS3AccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachAndDeleteS3AccessPointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachAndDeleteS3AccessPointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachAndDeleteS3AccessPointResponse>(request, options, cancellationToken);
         }
 
         #endregion

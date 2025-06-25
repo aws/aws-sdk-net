@@ -85,6 +85,14 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeS3AccessPointAttachments operation
+        ///</summary>
+        public IDescribeS3AccessPointAttachmentsPaginator DescribeS3AccessPointAttachments(DescribeS3AccessPointAttachmentsRequest request) 
+        {
+            return new DescribeS3AccessPointAttachmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSnapshots operation
         ///</summary>
         public IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request) 

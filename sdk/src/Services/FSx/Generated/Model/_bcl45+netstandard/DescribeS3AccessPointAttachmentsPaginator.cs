@@ -29,32 +29,32 @@ using Amazon.Runtime;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Base class for DescribeSnapshots paginators.
+    /// Base class for DescribeS3AccessPointAttachments paginators.
     /// </summary>
-    internal sealed partial class DescribeSnapshotsPaginator : IPaginator<DescribeSnapshotsResponse>, IDescribeSnapshotsPaginator
+    internal sealed partial class DescribeS3AccessPointAttachmentsPaginator : IPaginator<DescribeS3AccessPointAttachmentsResponse>, IDescribeS3AccessPointAttachmentsPaginator
     {
         private readonly IAmazonFSx _client;
-        private readonly DescribeSnapshotsRequest _request;
+        private readonly DescribeS3AccessPointAttachmentsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<DescribeSnapshotsResponse> Responses => new PaginatedResponse<DescribeSnapshotsResponse>(this);
+        public IPaginatedEnumerable<DescribeS3AccessPointAttachmentsResponse> Responses => new PaginatedResponse<DescribeS3AccessPointAttachmentsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the Snapshots
+        /// Enumerable containing all of the S3AccessPointAttachments
         /// </summary>
-        public IPaginatedEnumerable<Snapshot> Snapshots => 
-            new PaginatedResultKeyResponse<DescribeSnapshotsResponse, Snapshot>(this, (i) => i.Snapshots ?? new List<Snapshot>());
+        public IPaginatedEnumerable<S3AccessPointAttachment> S3AccessPointAttachments => 
+            new PaginatedResultKeyResponse<DescribeS3AccessPointAttachmentsResponse, S3AccessPointAttachment>(this, (i) => i.S3AccessPointAttachments ?? new List<S3AccessPointAttachment>());
 
-        internal DescribeSnapshotsPaginator(IAmazonFSx client, DescribeSnapshotsRequest request)
+        internal DescribeS3AccessPointAttachmentsPaginator(IAmazonFSx client, DescribeS3AccessPointAttachmentsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<DescribeSnapshotsResponse> IPaginator<DescribeSnapshotsResponse>.Paginate()
+        IEnumerable<DescribeS3AccessPointAttachmentsResponse> IPaginator<DescribeS3AccessPointAttachmentsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -62,11 +62,11 @@ namespace Amazon.FSx.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            DescribeSnapshotsResponse response;
+            DescribeS3AccessPointAttachmentsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.DescribeSnapshots(_request);
+                response = _client.DescribeS3AccessPointAttachments(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -74,7 +74,7 @@ namespace Amazon.FSx.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeSnapshotsResponse> IPaginator<DescribeSnapshotsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
+        async IAsyncEnumerable<DescribeS3AccessPointAttachmentsResponse> IPaginator<DescribeS3AccessPointAttachmentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -82,11 +82,11 @@ namespace Amazon.FSx.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            DescribeSnapshotsResponse response;
+            DescribeS3AccessPointAttachmentsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.DescribeSnapshotsAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.DescribeS3AccessPointAttachmentsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
