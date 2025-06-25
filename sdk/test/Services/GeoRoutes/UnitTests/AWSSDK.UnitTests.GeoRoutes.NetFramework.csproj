@@ -37,7 +37,7 @@
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
-        <AssemblyOriginatorKeyFile>../../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
+        <AssemblyOriginatorKeyFile>../../../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
       </PropertyGroup>
     </When>
     <Otherwise>
