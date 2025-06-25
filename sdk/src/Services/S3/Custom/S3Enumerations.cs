@@ -848,6 +848,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3StorageClass ExpressOnezone = new S3StorageClass("EXPRESS_ONEZONE");
         /// <summary>
+        /// The Amazon FSx for OpenZFS is a fully managed file storage service built on the OpenZFS file system.
+        /// </summary>
+        public static readonly S3StorageClass FSX_OPENZFS = new S3StorageClass("FSX_OPENZFS");
+        /// <summary>
         /// Construct an instance of S3StorageClass.
         /// </summary>
         /// <param name="value"></param>
@@ -953,6 +957,11 @@ namespace Amazon.S3
         /// Use AES 256 server side encryption.
         /// </summary>
         public static readonly ServerSideEncryptionMethod AES256 = new ServerSideEncryptionMethod("AES256");
+
+        /// <summary>
+        /// Use AWS FSx for server side encryption.
+        /// </summary>
+        public static readonly ServerSideEncryptionMethod AWSFSX = new ServerSideEncryptionMethod("aws:fsx");
 
         /// <summary>
         /// Use AWS Key Management Service for server side encryption.

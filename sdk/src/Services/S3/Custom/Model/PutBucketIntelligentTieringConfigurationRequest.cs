@@ -110,6 +110,7 @@ namespace Amazon.S3.Model
     public partial class PutBucketIntelligentTieringConfigurationRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private string expectedBucketOwner;
         private string intelligentTieringId;
         private IntelligentTieringConfiguration intelligentTieringConfiguration;
 
@@ -126,6 +127,26 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the account ID that you provide does
+        /// not match the actual owner of the bucket, the request fails with the HTTP status code
+        /// <c>403 Forbidden</c> (access denied).
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return this.expectedBucketOwner != null;
         }
 
         /// <summary>

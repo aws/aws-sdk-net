@@ -15950,7 +15950,7 @@ namespace Amazon.S3
         /// condition key to control who can create a <c>ReadWrite</c> or <c>ReadOnly</c> session.
         /// A <c>ReadWrite</c> session is required for executing all the Zonal endpoint API operations,
         /// including <c>RenameObject</c>. For more information about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-        /// <c>CreateSession</c> </a>. To learn more about Zonal endpoint APT operations, see
+        /// <c>CreateSession</c> </a>. To learn more about Zonal endpoint API operations, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-create-session.html">Authorizing
         /// Zonal endpoint API operations with CreateSession</a> in the <i>Amazon S3 User Guide</i>.
         /// 

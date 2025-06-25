@@ -50,7 +50,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The server-side encryption algorithm used when you store objects in the directory bucket.
+        /// <para>
+        /// The server-side encryption algorithm used when you store objects in the directory
+        /// bucket.
+        /// </para>
+        /// <note> 
+        /// <para>
+        /// When accessing data stored in Amazon FSx file systems using S3 access points, the
+        /// only valid server side encryption option is <c>aws:fsx</c>.
+        /// </para>
+        /// </note>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryption
         {

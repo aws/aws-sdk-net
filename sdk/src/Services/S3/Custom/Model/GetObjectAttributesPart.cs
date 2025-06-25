@@ -120,16 +120,16 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  <b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+        ///  <b>General purpose buckets</b> - For <code>GetObjectAttributes</code>, if an additional
         /// checksum (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>,
-        /// <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied
-        /// to the object specified in the request, the response doesn't return <code>Part</code>.
+        /// <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) isn't applied 
+        /// to the object specified in the request, the response doesn't return the <code>Part</code> element.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter whether
-        /// a additional checksum is applied to the object specified in the request, the response
-        /// returns <code>Part</code>.
+        ///  <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, regardless of whether
+        /// an additional checksum is applied to the object specified in the request, the response
+        /// returns the <code>Part</code> element.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
