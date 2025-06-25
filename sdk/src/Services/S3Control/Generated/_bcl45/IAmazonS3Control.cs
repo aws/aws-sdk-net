@@ -341,11 +341,16 @@ namespace Amazon.S3Control
         /// <summary>
         /// Creates an access point and associates it to a specified bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-        /// access to shared datasets in general purpose buckets with access points</a> or <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+        /// access to shared datasets with access points</a> or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
         /// access to shared datasets in directory buckets with access points</a> in the <i>Amazon
         /// S3 User Guide</i>.
         /// 
+        ///  
+        /// <para>
+        /// To create an access point and attach it to a volume on an Amazon FSx file system,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateAndAttachS3AccessPoint.html">CreateAndAttachS3AccessPoint</a>
+        /// in the <i>Amazon FSx API Reference</i>.
+        /// </para>
         ///   <note> 
         /// <para>
         /// S3 on Outposts only supports VPC-style access points. 
@@ -403,11 +408,16 @@ namespace Amazon.S3Control
         /// <summary>
         /// Creates an access point and associates it to a specified bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-        /// access to shared datasets in general purpose buckets with access points</a> or <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+        /// access to shared datasets with access points</a> or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
         /// access to shared datasets in directory buckets with access points</a> in the <i>Amazon
         /// S3 User Guide</i>.
         /// 
+        ///  
+        /// <para>
+        /// To create an access point and attach it to a volume on an Amazon FSx file system,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateAndAttachS3AccessPoint.html">CreateAndAttachS3AccessPoint</a>
+        /// in the <i>Amazon FSx API Reference</i>.
+        /// </para>
         ///   <note> 
         /// <para>
         /// S3 on Outposts only supports VPC-style access points. 
@@ -5543,11 +5553,15 @@ namespace Amazon.S3Control
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns a list of the access points that are owned by the current account that's associated
-        /// with the specified bucket. You can retrieve up to 1000 access points per call. If
-        /// the specified bucket has more than 1,000 access points (or the number specified in
+        /// Returns a list of the access points. You can retrieve up to 1,000 access points per
+        /// call. If the call returns more than 1,000 access points (or the number specified in
         /// <c>maxResults</c>, whichever is less), the response will include a continuation token
         /// that you can use to list the additional access points.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returns only access points attached to S3 buckets by default. To return all access
+        /// points specify <c>DataSourceType</c> as <c>ALL</c>.
         /// </para>
         ///   
         /// <para>
@@ -5595,11 +5609,15 @@ namespace Amazon.S3Control
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns a list of the access points that are owned by the current account that's associated
-        /// with the specified bucket. You can retrieve up to 1000 access points per call. If
-        /// the specified bucket has more than 1,000 access points (or the number specified in
+        /// Returns a list of the access points. You can retrieve up to 1,000 access points per
+        /// call. If the call returns more than 1,000 access points (or the number specified in
         /// <c>maxResults</c>, whichever is less), the response will include a continuation token
         /// that you can use to list the additional access points.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returns only access points attached to S3 buckets by default. To return all access
+        /// points specify <c>DataSourceType</c> as <c>ALL</c>.
         /// </para>
         ///   
         /// <para>

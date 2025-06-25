@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets-manage-scope.html">Manage
-    /// the scope of your access points for directory buckets.</a> 
+    /// the scope of your access points for directory buckets</a>.
     /// </para>
     /// </summary>
     public partial class Scope

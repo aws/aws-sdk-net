@@ -95,6 +95,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         response.CreationDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DataSourceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DataSourceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DataSourceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DataSourceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Endpoints", targetDepth))
                     {
                         var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

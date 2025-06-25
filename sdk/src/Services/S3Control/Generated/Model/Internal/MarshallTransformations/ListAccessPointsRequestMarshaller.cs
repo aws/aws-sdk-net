@@ -66,6 +66,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetBucket())
                 request.Parameters.Add("bucket", StringUtils.FromString(publicRequest.Bucket));
             
+            if (publicRequest.IsSetDataSourceId())
+                request.Parameters.Add("dataSourceId", StringUtils.FromString(publicRequest.DataSourceId));
+            
+            if (publicRequest.IsSetDataSourceType())
+                request.Parameters.Add("dataSourceType", StringUtils.FromString(publicRequest.DataSourceType));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

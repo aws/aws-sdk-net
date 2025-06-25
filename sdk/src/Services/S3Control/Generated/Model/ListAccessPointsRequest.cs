@@ -37,11 +37,15 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns a list of the access points that are owned by the current account that's associated
-    /// with the specified bucket. You can retrieve up to 1000 access points per call. If
-    /// the specified bucket has more than 1,000 access points (or the number specified in
+    /// Returns a list of the access points. You can retrieve up to 1,000 access points per
+    /// call. If the call returns more than 1,000 access points (or the number specified in
     /// <c>maxResults</c>, whichever is less), the response will include a continuation token
     /// that you can use to list the additional access points.
+    /// </para>
+    ///  
+    /// <para>
+    /// Returns only access points attached to S3 buckets by default. To return all access
+    /// points specify <c>DataSourceType</c> as <c>ALL</c>.
     /// </para>
     ///   
     /// <para>
@@ -78,6 +82,8 @@ namespace Amazon.S3Control.Model
     {
         private string _accountId;
         private string _bucket;
+        private string _dataSourceId;
+        private string _dataSourceType;
         private int? _maxResults;
         private string _nextToken;
 
@@ -132,6 +138,45 @@ namespace Amazon.S3Control.Model
         internal bool IsSetBucket()
         {
             return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// The unique identifier for the data source of the access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=191)]
+        public string DataSourceId
+        {
+            get { return this._dataSourceId; }
+            set { this._dataSourceId = value; }
+        }
+
+        // Check to see if DataSourceId property is set
+        internal bool IsSetDataSourceId()
+        {
+            return this._dataSourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceType. 
+        /// <para>
+        /// The type of the data source that the access point is attached to. Returns only access
+        /// points attached to S3 buckets by default. To return all access points specify <c>DataSourceType</c>
+        /// as <c>ALL</c>.
+        /// </para>
+        /// </summary>
+        public string DataSourceType
+        {
+            get { return this._dataSourceType; }
+            set { this._dataSourceType = value; }
+        }
+
+        // Check to see if DataSourceType property is set
+        internal bool IsSetDataSourceType()
+        {
+            return this._dataSourceType != null;
         }
 
         /// <summary>
