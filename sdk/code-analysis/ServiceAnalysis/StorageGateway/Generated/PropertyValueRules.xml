@@ -145,10 +145,6 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StorageGateway.Model.AttachVolumeRequest.NetworkInterfaceId</property>
-    <pattern>\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.StorageGateway.Model.AttachVolumeRequest.TargetName</property>
     <min>1</min>
     <max>200</max>
@@ -230,10 +226,6 @@
     <min>7</min>
     <max>2048</max>
     <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.NetworkInterfaceId</property>
-    <pattern>\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.SnapshotId</property>
@@ -455,10 +447,6 @@
     <min>7</min>
     <max>2048</max>
     <pattern>(^arn:(aws(|-cn|-us-gov|-iso[A-Za-z0-9_-]*)):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.NetworkInterfaceId</property>
-    <pattern>\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.SnapshotId</property>
@@ -1894,10 +1882,6 @@
     <max>800</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.StorageGateway.Model.DeviceiSCSIAttributes.NetworkInterfaceId</property>
-    <pattern>\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeviceiSCSIAttributes.TargetARN</property>
     <min>50</min>
     <max>800</max>
@@ -2365,10 +2349,6 @@
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.VolumeiSCSIAttributes.LunNumber</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.StorageGateway.Model.VolumeiSCSIAttributes.NetworkInterfaceId</property>
-    <pattern>\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.VolumeiSCSIAttributes.TargetARN</property>

@@ -144,7 +144,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property ClientList. 
         /// <para>
         /// The list of clients that are allowed to access the S3 File Gateway. The list must
-        /// contain either valid IP addresses or valid CIDR blocks.
+        /// contain either valid IPv4/IPv6 addresses or valid CIDR blocks.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
