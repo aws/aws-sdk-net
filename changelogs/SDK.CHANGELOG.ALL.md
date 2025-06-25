@@ -1,3 +1,19 @@
+### 3.7.1071.0 (2025-06-25 18:29 UTC)
+* ECS (3.7.412.2)
+	* Updates for change to Amazon ECS default log driver mode from blocking to non-blocking
+* FSx (3.7.405.0)
+	* Add support for the ability to create Amazon S3 Access Points for Amazon FSx for OpenZFS file systems.
+* S3 (3.7.419.0)
+	* Adds support for additional server-side encryption mode and storage class values for accessing Amazon FSx data from Amazon S3 using S3 Access Points
+* S3Control (3.7.410.0)
+	* Add support for the ability to use Amazon S3 Access Points with Amazon FSx for OpenZFS file systems.
+* StorageGateway (3.7.405.0)
+	* This release adds IPv6 support to the Storage Gateway APIs. APIs that previously only accept or return IPv4 address will now accept or return both IPv4 and IPv6 addresses.
+* Textract (3.7.401.0)
+	* Add RotationAngle field to Geometry of WORD blocks for Textract AnalyzeDocument API
+* WorkSpacesThinClient (3.7.405.0)
+	* Remove Tags field from Get API responses
+
 ### 3.7.1070.0 (2025-06-24 18:30 UTC)
 * AIOps (3.7.401.0)
 	* Adds support for cross account investigations for CloudWatch investigations AI Operations (AIOps).
