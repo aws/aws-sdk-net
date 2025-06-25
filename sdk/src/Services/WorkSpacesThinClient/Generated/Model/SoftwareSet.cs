@@ -39,7 +39,6 @@ namespace Amazon.WorkSpacesThinClient.Model
         private DateTime? _releasedAt;
         private List<Software> _software = AWSConfigs.InitializeCollections ? new List<Software>() : null;
         private DateTime? _supportedUntil;
-        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private SoftwareSetValidationStatus _validationStatus;
         private string _version;
 
@@ -132,26 +131,6 @@ namespace Amazon.WorkSpacesThinClient.Model
         internal bool IsSetSupportedUntil()
         {
             return this._supportedUntil.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tag keys and optional values for the resource.
-        /// </para>
-        /// </summary>
-        [Obsolete("This field will be removed in future releases. Use ListTagsForResource API instead.")]
-        [AWSProperty(Sensitive=true)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
