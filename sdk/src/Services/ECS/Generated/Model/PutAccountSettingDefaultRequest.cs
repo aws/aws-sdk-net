@@ -157,7 +157,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// On June 25, 2025, Amazon ECS is changing the default log driver mode from <c>blocking</c>
+        /// On June 25, 2025, Amazon ECS changed the default log driver mode from <c>blocking</c>
         /// to <c>non-blocking</c> to prioritize task availability over logging. To continue using
         /// the <c>blocking</c> mode after this change, do one of the following:
         /// </para>
