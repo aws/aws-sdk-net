@@ -33,11 +33,16 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the CreateAccessPoint operation.
     /// Creates an access point and associates it to a specified bucket. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-    /// access to shared datasets in general purpose buckets with access points</a> or <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+    /// access to shared datasets with access points</a> or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
     /// access to shared datasets in directory buckets with access points</a> in the <i>Amazon
     /// S3 User Guide</i>.
     /// 
+    ///  
+    /// <para>
+    /// To create an access point and attach it to a volume on an Amazon FSx file system,
+    /// see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateAndAttachS3AccessPoint.html">CreateAndAttachS3AccessPoint</a>
+    /// in the <i>Amazon FSx API Reference</i>.
+    /// </para>
     ///   <note> 
     /// <para>
     /// S3 on Outposts only supports VPC-style access points. 
@@ -185,8 +190,8 @@ namespace Amazon.S3Control.Model
         /// provide and suffix that includes the <c>ZoneID</c> (Amazon Web Services Availability
         /// Zone or Local Zone) of your bucket location, followed by <c>--xa-s3</c>. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
-        /// access to shared datasets in directory buckets with access points</a> in the Amazon
-        /// S3 User Guide.
+        /// access to shared datasets in directory buckets with access points</a> in the <i>Amazon
+        /// S3 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]
@@ -226,12 +231,12 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// For directory buckets, you can filter access control to specific prefixes, API operations,
         /// or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
-        /// access to shared datasets in directory buckets with access points</a> in the Amazon
-        /// S3 User Guide.
+        /// access to shared datasets in directory buckets with access points</a> in the <i>Amazon
+        /// S3 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Scope is not supported for access points for general purpose buckets.
+        /// Scope is only supported for access points attached to directory buckets.
         /// </para>
         ///  </note>
         /// </summary>
