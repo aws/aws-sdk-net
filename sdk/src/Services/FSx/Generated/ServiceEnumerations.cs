@@ -2093,6 +2093,52 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type OpenZFSFileSystemUserType.
+    /// </summary>
+    public class OpenZFSFileSystemUserType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POSIX for OpenZFSFileSystemUserType
+        /// </summary>
+        public static readonly OpenZFSFileSystemUserType POSIX = new OpenZFSFileSystemUserType("POSIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpenZFSFileSystemUserType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpenZFSFileSystemUserType FindValue(string value)
+        {
+            return FindValue<OpenZFSFileSystemUserType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpenZFSFileSystemUserType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OpenZFSQuotaType.
     /// </summary>
     public class OpenZFSQuotaType : ConstantClass
@@ -2510,6 +2556,168 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RetentionPeriodType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3AccessPointAttachmentLifecycle.
+    /// </summary>
+    public class S3AccessPointAttachmentLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for S3AccessPointAttachmentLifecycle
+        /// </summary>
+        public static readonly S3AccessPointAttachmentLifecycle AVAILABLE = new S3AccessPointAttachmentLifecycle("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for S3AccessPointAttachmentLifecycle
+        /// </summary>
+        public static readonly S3AccessPointAttachmentLifecycle CREATING = new S3AccessPointAttachmentLifecycle("CREATING");
+        /// <summary>
+        /// Constant DELETING for S3AccessPointAttachmentLifecycle
+        /// </summary>
+        public static readonly S3AccessPointAttachmentLifecycle DELETING = new S3AccessPointAttachmentLifecycle("DELETING");
+        /// <summary>
+        /// Constant FAILED for S3AccessPointAttachmentLifecycle
+        /// </summary>
+        public static readonly S3AccessPointAttachmentLifecycle FAILED = new S3AccessPointAttachmentLifecycle("FAILED");
+        /// <summary>
+        /// Constant UPDATING for S3AccessPointAttachmentLifecycle
+        /// </summary>
+        public static readonly S3AccessPointAttachmentLifecycle UPDATING = new S3AccessPointAttachmentLifecycle("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3AccessPointAttachmentLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3AccessPointAttachmentLifecycle FindValue(string value)
+        {
+            return FindValue<S3AccessPointAttachmentLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3AccessPointAttachmentLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3AccessPointAttachmentsFilterName.
+    /// </summary>
+    public class S3AccessPointAttachmentsFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FileSystemId for S3AccessPointAttachmentsFilterName
+        /// </summary>
+        public static readonly S3AccessPointAttachmentsFilterName FileSystemId = new S3AccessPointAttachmentsFilterName("file-system-id");
+        /// <summary>
+        /// Constant Type for S3AccessPointAttachmentsFilterName
+        /// </summary>
+        public static readonly S3AccessPointAttachmentsFilterName Type = new S3AccessPointAttachmentsFilterName("type");
+        /// <summary>
+        /// Constant VolumeId for S3AccessPointAttachmentsFilterName
+        /// </summary>
+        public static readonly S3AccessPointAttachmentsFilterName VolumeId = new S3AccessPointAttachmentsFilterName("volume-id");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3AccessPointAttachmentsFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3AccessPointAttachmentsFilterName FindValue(string value)
+        {
+            return FindValue<S3AccessPointAttachmentsFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3AccessPointAttachmentsFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3AccessPointAttachmentType.
+    /// </summary>
+    public class S3AccessPointAttachmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPENZFS for S3AccessPointAttachmentType
+        /// </summary>
+        public static readonly S3AccessPointAttachmentType OPENZFS = new S3AccessPointAttachmentType("OPENZFS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3AccessPointAttachmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3AccessPointAttachmentType FindValue(string value)
+        {
+            return FindValue<S3AccessPointAttachmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3AccessPointAttachmentType(string value)
         {
             return FindValue(value);
         }

@@ -22,18 +22,18 @@ using Amazon.Runtime;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Paginator for the DescribeSnapshots operation
+    /// Paginator for the DescribeS3AccessPointAttachments operation
     ///</summary>
-    public interface IDescribeSnapshotsPaginator
+    public interface IDescribeS3AccessPointAttachmentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<DescribeSnapshotsResponse> Responses { get; }
+        IPaginatedEnumerable<DescribeS3AccessPointAttachmentsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the Snapshots
+        /// Enumerable containing all of the S3AccessPointAttachments
         /// </summary>
-        IPaginatedEnumerable<Snapshot> Snapshots { get; }
+        IPaginatedEnumerable<S3AccessPointAttachment> S3AccessPointAttachments { get; }
     }
 }
