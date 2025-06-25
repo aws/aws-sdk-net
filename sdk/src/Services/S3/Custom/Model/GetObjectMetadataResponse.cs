@@ -48,6 +48,7 @@ namespace Amazon.S3.Model
         private ReplicationStatus replicationStatus;
         private ArchiveStatus archiveStatus;
         private int? partsCount;
+        private int? tagsCount;
         private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
         private ObjectLockMode objectLockMode;
         private DateTime? objectLockRetainUntilDate;
@@ -346,10 +347,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The Server-side encryption algorithm used when storing this object in S3.
+        /// The server-side encryption algorithm used when storing this object in Amazon S3 or Amazon FSx.
         /// <para>
-        /// The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <c>AES256</c>, <c>aws:kms</c>, <c>aws:kms:dsse</c>).
+        /// The server-side encryption algorithm used when you store this object in Amazon S3 or Amazon FSx.
         /// </para>
+        /// <note>
+        /// <para>When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <c>aws:fsx</c>.
+        /// </para>
+        /// </note>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -494,6 +499,35 @@ namespace Amazon.S3.Model
         internal bool IsSetPartsCount()
         {
             return this.partsCount.HasValue;
+        }
+
+        /// <summary>
+        /// The count of tags this object has.
+        /// <para>
+        /// The number of tags, if any, on the object, when you have the relevant permission 
+        /// to read object tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+        /// to retrieve the tag set associated with an object.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int? TagsCount
+        {
+            get { return this.tagsCount; }
+            set { this.tagsCount = value; }
+        }
+
+        // Check to see if TagsCount property is set
+        internal bool IsSetTagsCount()
+        {
+            return this.tagsCount.HasValue;
         }
 
         /// <summary>

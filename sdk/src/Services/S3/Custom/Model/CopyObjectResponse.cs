@@ -109,8 +109,15 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
-        /// The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <c>AES256</c>, <c>aws:kms</c>, <c>aws:kms:dsse</c>).
+        /// The server-side encryption algorithm used when you store this object in Amazon S3
+        /// or Amazon FSx.
         /// </para>
+        /// <note> 
+        /// <para>
+        /// When accessing data stored in Amazon FSx file systems using S3 access points, the
+        /// only valid server side encryption option is <c>aws:fsx</c>.
+        /// </para>
+        /// </note>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {

@@ -220,40 +220,13 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionMethod. 
         /// <para>
-        /// The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <c>AES256</c>, <c>aws:kms</c>).
+        /// The server-side encryption algorithm used when you store this object in Amazon S3 or Amazon FSx.
         /// </para> 
-        /// 
+        /// <note>
         /// <para>
-        /// <b>Directory buckets</b> - For directory buckets, there are only two supported options for server-side encryption: server-side encryption with 
-        /// Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>). 
-        /// We recommend that the bucket's default encryption uses the desired encryption configuration and you don't override the bucket default encryption 
-        /// in your <c>CreateSession</c> requests or <c>PUT</c> object requests. 
-        /// 
-        /// Then, new objects are automatically encrypted with the desired encryption settings. 
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting data with server-side encryption</a> in 
-        /// the <i>Amazon S3 User Guide</i>. 
-        /// For more information about the encryption overriding behaviors in directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying server-side encryption with KMS for new object uploads</a>. 
+        /// When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <c>aws:fsx</c>.
         /// </para>
-        /// 
-        /// <para>
-        /// In the Zonal endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>) using the REST API, 
-        /// the encryption request headers must match the encryption settings that are specified in the <c>CreateSession</c> request. 
-        /// You can't override the values of the encryption settings (<c>x-amz-server-side-encryption</c>, <c>x-amz-server-side-encryption-aws-kms-key-id</c>, <c>x-amz-server-side-encryption-context</c>, and <c>x-amz-server-side-encryption-bucket-key-enabled</c>) 
-        /// that are specified in the <c>CreateSession</c> request. 
-        /// 
-        /// You don't need to explicitly specify these encryption settings values in Zonal endpoint API calls, and Amazon S3 will use the encryption settings values from the <c>CreateSession</c> 
-        /// request to protect new objects in the directory bucket. 
-        /// </para> 
-        /// <para>
-        /// When you use the CLI or the Amazon Web Services SDKs, for <c>CreateSession</c>, the session token refreshes automatically to avoid service 
-        /// interruptions when a session expires. 
-        /// The CLI or the Amazon Web Services SDKs use the bucket's default encryption configuration for the <c>CreateSession</c> request. 
-        /// 
-        /// It's not supported to override the encryption settings values in the <c>CreateSession</c> request. 
-        /// So in the Zonal endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a> and 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>), the encryption request headers must match the 
-        /// default encryption configuration of the directory bucket.
-        /// </para>
+        /// </note>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {

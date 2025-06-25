@@ -76,6 +76,14 @@ namespace Amazon.S3.Model
         /// For directory buckets, there are only two supported options for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>). 
         /// By default, Amazon S3 encrypts data with SSE-S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        /// <para>
+        /// <b>S3 access points for Amazon FSx </b> - When accessing data stored in Amazon FSx
+        /// file systems using S3 access points, the only valid server side encryption option
+        /// is <c>aws:fsx</c>. All Amazon FSx file systems have encryption configured by default
+        /// and are encrypted at rest. Data is automatically encrypted before being written to
+        /// the file system, and automatically decrypted as it is read. These processes are handled
+        /// transparently by Amazon FSx.
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryption
         {

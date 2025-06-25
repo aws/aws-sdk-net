@@ -16,6 +16,7 @@
 
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.S3.Util;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -43,6 +44,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             if (string.IsNullOrEmpty(getBucketIntelligentTieringConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketInventoryConfigurationRequest.BucketName");
+
+            if (getBucketIntelligentTieringConfigurationRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getBucketIntelligentTieringConfigurationRequest.ExpectedBucketOwner));
 
             request.ResourcePath = "/";
             request.AddSubResource("intelligent-tiering");

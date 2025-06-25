@@ -100,6 +100,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ReplicationStatus = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-replication-status"));
             if (responseData.IsHeaderPresent(S3Constants.AmzHeaderMultipartPartsCount))
                 response.PartsCount = S3Transforms.ToInt(responseData.GetHeaderValue(S3Constants.AmzHeaderMultipartPartsCount));
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderTaggingCount))
+                response.TagsCount = S3Transforms.ToInt(responseData.GetHeaderValue(S3Constants.AmzHeaderTaggingCount));
             if (responseData.IsHeaderPresent("x-amz-object-lock-mode"))
                 response.ObjectLockMode = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-object-lock-mode"));
             if (responseData.IsHeaderPresent("x-amz-object-lock-retain-until-date"))

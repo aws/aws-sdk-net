@@ -115,8 +115,7 @@ namespace Amazon.S3.Model
         /// <para>
         ///  If <code>ContinuationToken</code> was sent with the request, it is included in the
         /// response. You can use the returned <code>ContinuationToken</code> for pagination of
-        /// the list response. You can use this <code>ContinuationToken</code> for pagination
-        /// of the list results. 
+        /// the list response.
         /// </para>
         /// </summary>
         public string ContinuationToken
