@@ -1,3 +1,19 @@
+### 4.0.39.0 (2025-06-25 18:27 UTC)
+* ECS (4.0.2.2)
+	* Updates for change to Amazon ECS default log driver mode from blocking to non-blocking
+* FSx (4.0.2.0)
+	* Add support for the ability to create Amazon S3 Access Points for Amazon FSx for OpenZFS file systems.
+* S3 (4.0.3.0)
+	* Adds support for additional server-side encryption mode and storage class values for accessing Amazon FSx data from Amazon S3 using S3 Access Points
+* S3Control (4.0.2.0)
+	* Add support for the ability to use Amazon S3 Access Points with Amazon FSx for OpenZFS file systems.
+* StorageGateway (4.0.1.0)
+	* This release adds IPv6 support to the Storage Gateway APIs. APIs that previously only accept or return IPv4 address will now accept or return both IPv4 and IPv6 addresses.
+* Textract (4.0.1.0)
+	* Add RotationAngle field to Geometry of WORD blocks for Textract AnalyzeDocument API
+* WorkSpacesThinClient (4.0.2.0)
+	* Remove Tags field from Get API responses
+
 ### 4.0.38.0 (2025-06-24 18:33 UTC)
 * AIOps (4.0.1.0)
 	* Adds support for cross account investigations for CloudWatch investigations AI Operations (AIOps).
