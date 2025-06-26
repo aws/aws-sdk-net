@@ -87,6 +87,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetConditions())
+            {
+                context.Writer.WritePropertyName("conditions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestConditionsListValue in publicRequest.Conditions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PermissionConditionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestConditionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetPrincipal())
             {
                 context.Writer.WritePropertyName("principal");

@@ -2254,6 +2254,12 @@
     <pattern>arn:aws:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.DataAccessorIdcTrustedTokenIssuerConfiguration.IdcTrustedTokenIssuerArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:aws:sso::[0-9]{12}:trustedTokenIssuer/(sso)?ins-[a-zA-Z0-9-.]{16}/tti-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSource.DataSourceId</property>
     <min>36</min>
     <max>36</max>
@@ -2584,6 +2590,10 @@
     <min>0</min>
     <max>1284</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.PermissionCondition.ConditionKey</property>
+    <pattern>aws:PrincipalTag/qbusiness-dataaccessor:[a-zA-Z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Plugin.DisplayName</property>
