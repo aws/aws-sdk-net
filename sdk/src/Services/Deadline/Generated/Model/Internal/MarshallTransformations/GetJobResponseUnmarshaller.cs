@@ -160,6 +160,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     response.TargetTaskRunStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("taskFailureRetryCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.TaskFailureRetryCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("taskRunStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

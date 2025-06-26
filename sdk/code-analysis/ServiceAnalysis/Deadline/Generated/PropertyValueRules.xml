@@ -784,6 +784,11 @@
     <pattern>sp-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.GetJobResponse.TaskFailureRetryCount</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.GetLicenseEndpointRequest.LicenseEndpointId</property>
     <pattern>le-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -1073,6 +1078,11 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepResponse.StepId</property>
     <pattern>step-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.GetStepResponse.TaskFailureRetryCount</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStorageProfileRequest.FarmId</property>
@@ -2441,6 +2451,11 @@
     <pattern>job-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.JobSearchSummary.TaskFailureRetryCount</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.JobSummary.JobId</property>
     <pattern>job-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -2472,6 +2487,11 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSummary.SourceJobId</property>
     <pattern>job-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.JobSummary.TaskFailureRetryCount</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.LicenseEndpointSummary.LicenseEndpointId</property>
@@ -2815,6 +2835,11 @@
     <pattern>step-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.StepSearchSummary.TaskFailureRetryCount</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.StepSummary.Name</property>
     <min>1</min>
     <max>64</max>
@@ -2822,6 +2847,11 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSummary.StepId</property>
     <pattern>step-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.StepSummary.TaskFailureRetryCount</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StorageProfileSummary.DisplayName</property>
