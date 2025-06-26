@@ -56,8 +56,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public NoSuchKeyException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            NoSuchKeyException response = new NoSuchKeyException(errorResponse.Message, errorResponse.InnerException, 
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            string id2 = null, amzCfId = null;
+            var s3ErrorResponse = errorResponse as S3ErrorResponse;
+            if (s3ErrorResponse != null)
+            {
+                id2 = s3ErrorResponse.Id2;
+                amzCfId = s3ErrorResponse.AmzCfId;
+            }
+            NoSuchKeyException response = new NoSuchKeyException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
+
 
             while (context.Read())
             {

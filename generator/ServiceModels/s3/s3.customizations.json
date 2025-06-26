@@ -144,6 +144,13 @@
                 }
             ]
         },
+        "Initiator": {
+            "modify":[
+                {
+                    "ID": {"emitPropertyName" : "Id"}
+                }
+            ]
+        },
         "LifecycleRule": {
             "modify": [
                 {
@@ -391,10 +398,40 @@
         },
         "Payer":{
             "renameShape": "string"
+        },
+        "Part":{
+            "renameShape": "PartDetail"
         }
 
     },
     "overrideTreatEnumsAsString":{
         "ObjectAttributesList": false
+    },
+    "dataTypeSwap":{
+        "ListPartsRequest":{
+            "PartNumberMarker":{
+                "Type" : "string",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "ListPartsOutput":{
+            "StorageClass":{
+                "Type": "string",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        }
+    },
+    "excludeMembers":{
+        "PartDetail":[
+            "ChecksumCRC32",
+            "ChecksumCRC32C",
+            "ChecksumCRC64NVME",
+            "ChecksumSHA1",
+            "ChecksumSHA256",
+            "ETag",
+            "PartNumber",
+        ]
     }
 }

@@ -34,59 +34,62 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NoSuchUploadException operation
+    /// Response Unmarshaller for PutPublicAccessBlock operation
     /// </summary>  
-    public class NoSuchUploadExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchUploadException, XmlUnmarshallerContext>
+    public class PutPublicAccessBlockResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NoSuchUploadException Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            throw new NotImplementedException();
-        }
+            PutPublicAccessBlockResponse response = new PutPublicAccessBlockResponse();
+            
+            return response;
+        }        
+  
 
         /// <summary>
-        /// Unmarshaller the response from the service to the response class.
+        /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public NoSuchUploadException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            string id2 = null, amzCfId = null;
-            var s3ErrorResponse = errorResponse as S3ErrorResponse;
-            if (s3ErrorResponse != null)
-            {
-                id2 = s3ErrorResponse.Id2;
-                amzCfId = s3ErrorResponse.AmzCfId;
-            }
-            NoSuchUploadException response = new NoSuchUploadException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
 
+            var responseBodyBytes = context.GetResponseBodyBytes();
 
-            while (context.Read())
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                }
             }
-            return response;
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
-        private static NoSuchUploadExceptionUnmarshaller _instance = new NoSuchUploadExceptionUnmarshaller();        
+        private static PutPublicAccessBlockResponseUnmarshaller _instance = new PutPublicAccessBlockResponseUnmarshaller();        
+
+        internal static PutPublicAccessBlockResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NoSuchUploadExceptionUnmarshaller Instance
+        public static PutPublicAccessBlockResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

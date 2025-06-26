@@ -12,29 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
-    public partial class PutBucketPolicyRequest : AmazonWebServiceRequest
+    /// <summary>
+    /// This is the response object from the PutObjectTagging operation.
+    /// </summary>
+    public partial class PutObjectTaggingResponse : AmazonWebServiceResponse
     {
+        private string _versionId;
+
         /// <summary>
-        /// Overriden to turn off sending SHA256 header.
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The versionId of the object the tag-set was added to.
+        /// </para>
         /// </summary>
-        protected override bool IncludeSHA256Header
+        public string VersionId
         {
-            get
-            {
-                return false;
-            }
+            get { return this._versionId; }
+            set { this._versionId = value; }
         }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
+        }
+
     }
 }
-    
