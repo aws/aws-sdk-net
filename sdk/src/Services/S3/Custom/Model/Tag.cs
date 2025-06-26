@@ -39,40 +39,4 @@ namespace Amazon.S3.Model
             xmlWriter.WriteEndElement();
         }
     }
-
-    /// <summary>
-    /// Structure that contains list of Tags
-    /// </summary>
-    public class Tagging
-    {
-        private List<Tag> tagSet = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
-
-        /// <summary>
-        /// TagSet
-        /// </summary>
-        public List<Tag> TagSet
-        {
-            get { return this.tagSet; }
-            set { this.tagSet = value; }
-        }
-
-        internal void Marshall(string memberName, XmlWriter xmlWriter)
-        {
-            xmlWriter.WriteStartElement(memberName);
-            {
-                xmlWriter.WriteStartElement("TagSet");
-                {
-                    if (this.tagSet != null)
-                    {
-                        foreach (var tag in tagSet)
-                        {
-                            tag.Marshall("Tag", xmlWriter);
-                        }
-                    }
-                }
-                xmlWriter.WriteEndElement();
-            }
-            xmlWriter.WriteEndElement();
-        }
-    }
 }
