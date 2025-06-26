@@ -25,6 +25,114 @@ namespace Amazon.Keyspaces
 {
 
     /// <summary>
+    /// Constants used for properties of type CdcPropagateTags.
+    /// </summary>
+    public class CdcPropagateTags : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for CdcPropagateTags
+        /// </summary>
+        public static readonly CdcPropagateTags NONE = new CdcPropagateTags("NONE");
+        /// <summary>
+        /// Constant TABLE for CdcPropagateTags
+        /// </summary>
+        public static readonly CdcPropagateTags TABLE = new CdcPropagateTags("TABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CdcPropagateTags(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CdcPropagateTags FindValue(string value)
+        {
+            return FindValue<CdcPropagateTags>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CdcPropagateTags(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CdcStatus.
+    /// </summary>
+    public class CdcStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CdcStatus
+        /// </summary>
+        public static readonly CdcStatus DISABLED = new CdcStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for CdcStatus
+        /// </summary>
+        public static readonly CdcStatus DISABLING = new CdcStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for CdcStatus
+        /// </summary>
+        public static readonly CdcStatus ENABLED = new CdcStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for CdcStatus
+        /// </summary>
+        public static readonly CdcStatus ENABLING = new CdcStatus("ENABLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CdcStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CdcStatus FindValue(string value)
+        {
+            return FindValue<CdcStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CdcStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClientSideTimestampsStatus.
     /// </summary>
     public class ClientSideTimestampsStatus : ConstantClass
@@ -546,6 +654,64 @@ namespace Amazon.Keyspaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TypeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ViewType.
+    /// </summary>
+    public class ViewType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KEYS_ONLY for ViewType
+        /// </summary>
+        public static readonly ViewType KEYS_ONLY = new ViewType("KEYS_ONLY");
+        /// <summary>
+        /// Constant NEW_AND_OLD_IMAGES for ViewType
+        /// </summary>
+        public static readonly ViewType NEW_AND_OLD_IMAGES = new ViewType("NEW_AND_OLD_IMAGES");
+        /// <summary>
+        /// Constant NEW_IMAGE for ViewType
+        /// </summary>
+        public static readonly ViewType NEW_IMAGE = new ViewType("NEW_IMAGE");
+        /// <summary>
+        /// Constant OLD_IMAGE for ViewType
+        /// </summary>
+        public static readonly ViewType OLD_IMAGE = new ViewType("OLD_IMAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ViewType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ViewType FindValue(string value)
+        {
+            return FindValue<ViewType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ViewType(string value)
         {
             return FindValue(value);
         }
