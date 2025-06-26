@@ -1,3 +1,24 @@
+### 3.7.1072.0 (2025-06-26 18:31 UTC)
+* Deadline (3.7.409.0)
+	* Added fields to track cumulative task retry attempts for steps and jobs
+* EC2 (3.7.453.0)
+	* This release adds support for OdbNetworkArn as a target in VPC Route Tables
+* IoTManagedIntegrations (3.7.401.0)
+	* Adding managed integrations APIs for IoT Device Management to onboard and control devices across different manufacturers, connectivity protocols and third party vendor clouds. APIs include managed thing operations, provisioning profile management, and cloud connector operations.
+* KeyManagementService (3.7.403.4)
+	* This release updates AWS CLI examples for KMS APIs.
+* Keyspaces (3.7.404.0)
+	* This release provides change data capture (CDC) streams support through updates to the Amazon Keyspaces API.
+* KeyspacesStreams (3.7.400.0)
+	* This release adds change data capture (CDC) streams support through the new Amazon Keyspaces Streams API.
+* QBusiness (3.7.415.0)
+	* Added support for App level authentication for QBusiness DataAccessor using AWS IAM Identity center Trusted Token issuer
+* WorkSpaces (3.7.413.0)
+	* Updated modifyStreamingProperties to support PrivateLink VPC endpoints for directories
+* Core 3.7.402.75
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1071.0 (2025-06-25 18:29 UTC)
 * ECS (3.7.412.2)
 	* Updates for change to Amazon ECS default log driver mode from blocking to non-blocking
