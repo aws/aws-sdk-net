@@ -424,7 +424,7 @@ namespace ServiceClientGenerator
         public const string OverrideContentTypeKey = "overrideContentType";
         public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
         public const string OriginalMemberKey = "originalMember";
-
+        public const string OverrideTreatEnumsAsStringKey = "overrideTreatEnumsAsString";
         JsonData _documentRoot;
 
         SimpleMethodFormsModel _simpleMethodsModel;
@@ -598,6 +598,24 @@ namespace ServiceClientGenerator
 
                 return overloads;
             }
+        }
+
+        /// <summary>
+        /// For Lists of enums, the generator automatically treats the enum as a string via passing in true to "treatEnumAsString".
+        /// This customization sets the "treatEnumAsString" value to whatever is set here. This can be used outside of list of enums
+        /// but this is just one example of how it can be used. 
+        ///     "overrideTreatEnumsAsString":{
+        ///        "ObjectAttributesList": false
+        /// }
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool? OverrideTreatEnumsAsString(string shapeName)
+        {
+            var data = _documentRoot[OverrideTreatEnumsAsStringKey];
+            if (data == null || data[shapeName] == null) return null;
+
+            return (bool)data[shapeName];
         }
 
         private HashSet<string> _resultGenerationSuppressions = null;

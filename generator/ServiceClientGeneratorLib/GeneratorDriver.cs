@@ -211,7 +211,6 @@ namespace ServiceClientGenerator
                 this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
             }
 
-          
             // Any paginators for the service
             // skip paginators for s3 until we're at the end of s3 client generation
             if (Configuration.ServiceModel.HasPaginators && Configuration.ServiceId != "S3")

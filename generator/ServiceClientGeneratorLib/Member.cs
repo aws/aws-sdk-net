@@ -579,11 +579,13 @@ namespace ServiceClientGenerator
                     }
                     return typeName;
                 case "map":
-                    var keyType = DetermineType(memberShape["key"], true, false);
-                    var valueType = DetermineType(memberShape["value"], true, false);
+                    bool overrideMapTreatEnumsAsString = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ?? true;
+                    var keyType = DetermineType(memberShape["key"], overrideMapTreatEnumsAsString, false);
+                    var valueType = DetermineType(memberShape["value"], overrideMapTreatEnumsAsString, false);
                     return string.Format("Dictionary<{0}, {1}>", keyType, valueType);
                 case "list":
-                    var listType = DetermineType(memberShape["member"], true, false);
+                    bool overrideListTreatEnumsAsString = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ?? true;
+                    var listType = DetermineType(memberShape["member"], overrideListTreatEnumsAsString, false);
                     return string.Format("List<{0}>", listType);
 
                 case "decimal":
