@@ -70,6 +70,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccountAssociationId())
+                {
+                    context.Writer.WritePropertyName("AccountAssociationId");
+                    context.Writer.Write(publicRequest.AccountAssociationId);
+                }
+
                 if(publicRequest.IsSetConnectorAssociationId())
                 {
                     context.Writer.WritePropertyName("ConnectorAssociationId");

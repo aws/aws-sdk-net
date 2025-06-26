@@ -85,7 +85,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The id of the schema version.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=7, Max=128)]
         public string Id
         {
             get { return this._id; }

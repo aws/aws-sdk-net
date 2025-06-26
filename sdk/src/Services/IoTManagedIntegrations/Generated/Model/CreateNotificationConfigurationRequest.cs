@@ -106,6 +106,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// A set of key/value pairs that are used to manage the notification configuration.
         /// </para>
         /// </summary>
+        [Obsolete("Tags has been deprecated from this api")]
         [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {

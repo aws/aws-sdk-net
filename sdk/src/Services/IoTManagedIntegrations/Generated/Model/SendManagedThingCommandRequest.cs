@@ -35,9 +35,30 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// </summary>
     public partial class SendManagedThingCommandRequest : AmazonIoTManagedIntegrationsRequest
     {
+        private string _accountAssociationId;
         private string _connectorAssociationId;
         private List<CommandEndpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<CommandEndpoint>() : null;
         private string _managedThingId;
+
+        /// <summary>
+        /// Gets and sets the property AccountAssociationId. 
+        /// <para>
+        /// The identifier of the account association to use when sending a command to a managed
+        /// thing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string AccountAssociationId
+        {
+            get { return this._accountAssociationId; }
+            set { this._accountAssociationId = value; }
+        }
+
+        // Check to see if AccountAssociationId property is set
+        internal bool IsSetAccountAssociationId()
+        {
+            return this._accountAssociationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectorAssociationId. 
@@ -45,6 +66,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The ID tracking the current discovery process for one connector association.
         /// </para>
         /// </summary>
+        [Obsolete("ConnectorAssociationId has been deprecated")]
         [AWSProperty(Min=1, Max=64)]
         public string ConnectorAssociationId
         {

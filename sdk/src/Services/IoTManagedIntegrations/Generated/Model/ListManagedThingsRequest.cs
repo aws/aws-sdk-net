@@ -31,10 +31,12 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the ListManagedThings operation.
-    /// List all of the associations and statuses for a managed thing by its owner.
+    /// Listing all managed things with provision for filters.
     /// </summary>
     public partial class ListManagedThingsRequest : AmazonIoTManagedIntegrationsRequest
     {
+        private string _connectorDestinationIdFilter;
+        private string _connectorDeviceIdFilter;
         private string _connectorPolicyIdFilter;
         private string _credentialLockerFilter;
         private int? _maxResults;
@@ -46,11 +48,51 @@ namespace Amazon.IoTManagedIntegrations.Model
         private string _serialNumberFilter;
 
         /// <summary>
+        /// Gets and sets the property ConnectorDestinationIdFilter. 
+        /// <para>
+        /// Filter managed things by the connector destination ID they are associated with.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ConnectorDestinationIdFilter
+        {
+            get { return this._connectorDestinationIdFilter; }
+            set { this._connectorDestinationIdFilter = value; }
+        }
+
+        // Check to see if ConnectorDestinationIdFilter property is set
+        internal bool IsSetConnectorDestinationIdFilter()
+        {
+            return this._connectorDestinationIdFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorDeviceIdFilter. 
+        /// <para>
+        /// Filter managed things by the connector device ID they are associated with. When specified,
+        /// only managed things with this connector device ID will be returned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
+        public string ConnectorDeviceIdFilter
+        {
+            get { return this._connectorDeviceIdFilter; }
+            set { this._connectorDeviceIdFilter = value; }
+        }
+
+        // Check to see if ConnectorDeviceIdFilter property is set
+        internal bool IsSetConnectorDeviceIdFilter()
+        {
+            return this._connectorDeviceIdFilter != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ConnectorPolicyIdFilter. 
         /// <para>
         /// Filter on a connector policy id for a managed thing.
         /// </para>
         /// </summary>
+        [Obsolete("ConnectorPolicyIdFilter is deprecated")]
         [AWSProperty(Min=1, Max=64)]
         public string ConnectorPolicyIdFilter
         {

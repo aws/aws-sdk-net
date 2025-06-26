@@ -41,6 +41,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private string _brand;
         private string _capabilities;
         private CapabilityReport _capabilityReport;
+        private List<CapabilitySchemaItem> _capabilitySchemas = AWSConfigs.InitializeCollections ? new List<CapabilitySchemaItem>() : null;
         private string _classification;
         private string _clientToken;
         private string _credentialLockerId;
@@ -148,6 +149,26 @@ namespace Amazon.IoTManagedIntegrations.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CapabilitySchemas. 
+        /// <para>
+        /// The capability schemas that define the functionality and features supported by the
+        /// managed thing, including device capabilities and their associated properties.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=40)]
+        public List<CapabilitySchemaItem> CapabilitySchemas
+        {
+            get { return this._capabilitySchemas; }
+            set { this._capabilitySchemas = value; }
+        }
+
+        // Check to see if CapabilitySchemas property is set
+        internal bool IsSetCapabilitySchemas()
+        {
+            return this._capabilitySchemas != null && (this._capabilitySchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Classification. 
         /// <para>
         /// The classification of the managed thing such as light bulb or thermostat.
@@ -211,6 +232,14 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <para>
         /// The metadata for the managed thing.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>managedThing</c> <c>metadata</c> parameter is used for associating attributes
+        /// with a <c>managedThing</c> that can be used for grouping over-the-air (OTA) tasks.
+        /// Name value pairs in <c>metadata</c> can be used in the <c>OtaTargetQueryString</c>
+        /// parameter for the <c>CreateOtaTask</c> API operation.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> MetaData

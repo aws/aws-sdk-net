@@ -49,6 +49,181 @@ namespace Amazon.IoTManagedIntegrations
 
 
         
+        #region  CreateAccountAssociation
+
+
+        /// <summary>
+        /// Creates a new account association via the destination id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateAccountAssociation">REST API Reference for CreateAccountAssociation Operation</seealso>
+        CreateAccountAssociationResponse CreateAccountAssociation(CreateAccountAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountAssociation operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccountAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateAccountAssociation">REST API Reference for CreateAccountAssociation Operation</seealso>
+        IAsyncResult BeginCreateAccountAssociation(CreateAccountAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccountAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateAccountAssociationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateAccountAssociation">REST API Reference for CreateAccountAssociation Operation</seealso>
+        CreateAccountAssociationResponse EndCreateAccountAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateCloudConnector
+
+
+        /// <summary>
+        /// Creates a C2C (cloud-to-cloud) connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreateCloudConnector service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateCloudConnector">REST API Reference for CreateCloudConnector Operation</seealso>
+        CreateCloudConnectorResponse CreateCloudConnector(CreateCloudConnectorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCloudConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudConnector operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCloudConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateCloudConnector">REST API Reference for CreateCloudConnector Operation</seealso>
+        IAsyncResult BeginCreateCloudConnector(CreateCloudConnectorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCloudConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCloudConnector.</param>
+        /// 
+        /// <returns>Returns a  CreateCloudConnectorResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateCloudConnector">REST API Reference for CreateCloudConnector Operation</seealso>
+        CreateCloudConnectorResponse EndCreateCloudConnector(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateConnectorDestination
+
+
+        /// <summary>
+        /// Create a connector destination for connecting a cloud-to-cloud (C2C) connector to
+        /// the customer's Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDestination service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectorDestination service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateConnectorDestination">REST API Reference for CreateConnectorDestination Operation</seealso>
+        CreateConnectorDestinationResponse CreateConnectorDestination(CreateConnectorDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectorDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDestination operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectorDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateConnectorDestination">REST API Reference for CreateConnectorDestination Operation</seealso>
+        IAsyncResult BeginCreateConnectorDestination(CreateConnectorDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectorDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectorDestination.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectorDestinationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateConnectorDestination">REST API Reference for CreateConnectorDestination Operation</seealso>
+        CreateConnectorDestinationResponse EndCreateConnectorDestination(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCredentialLocker
 
 
@@ -370,8 +545,14 @@ namespace Amazon.IoTManagedIntegrations
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
         /// A validation error occurred when performing the API request.
@@ -484,6 +665,9 @@ namespace Amazon.IoTManagedIntegrations
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
@@ -524,6 +708,178 @@ namespace Amazon.IoTManagedIntegrations
         /// <returns>Returns a  CreateProvisioningProfileResult from IoTManagedIntegrations.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateProvisioningProfile">REST API Reference for CreateProvisioningProfile Operation</seealso>
         CreateProvisioningProfileResponse EndCreateProvisioningProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAccountAssociation
+
+
+        /// <summary>
+        /// Remove a third party account and related devices from an end user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteAccountAssociation">REST API Reference for DeleteAccountAssociation Operation</seealso>
+        DeleteAccountAssociationResponse DeleteAccountAssociation(DeleteAccountAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAssociation operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccountAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteAccountAssociation">REST API Reference for DeleteAccountAssociation Operation</seealso>
+        IAsyncResult BeginDeleteAccountAssociation(DeleteAccountAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccountAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccountAssociationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteAccountAssociation">REST API Reference for DeleteAccountAssociation Operation</seealso>
+        DeleteAccountAssociationResponse EndDeleteAccountAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteCloudConnector
+
+
+        /// <summary>
+        /// Delete a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCloudConnector service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteCloudConnector">REST API Reference for DeleteCloudConnector Operation</seealso>
+        DeleteCloudConnectorResponse DeleteCloudConnector(DeleteCloudConnectorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCloudConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudConnector operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCloudConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteCloudConnector">REST API Reference for DeleteCloudConnector Operation</seealso>
+        IAsyncResult BeginDeleteCloudConnector(DeleteCloudConnectorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCloudConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCloudConnector.</param>
+        /// 
+        /// <returns>Returns a  DeleteCloudConnectorResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteCloudConnector">REST API Reference for DeleteCloudConnector Operation</seealso>
+        DeleteCloudConnectorResponse EndDeleteCloudConnector(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteConnectorDestination
+
+
+        /// <summary>
+        /// Delete a connector destination for connecting a cloud-to-cloud (C2C) connector to
+        /// the customer's Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectorDestination service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteConnectorDestination">REST API Reference for DeleteConnectorDestination Operation</seealso>
+        DeleteConnectorDestinationResponse DeleteConnectorDestination(DeleteConnectorDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnectorDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorDestination operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnectorDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteConnectorDestination">REST API Reference for DeleteConnectorDestination Operation</seealso>
+        IAsyncResult BeginDeleteConnectorDestination(DeleteConnectorDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnectorDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnectorDestination.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectorDestinationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteConnectorDestination">REST API Reference for DeleteConnectorDestination Operation</seealso>
+        DeleteConnectorDestinationResponse EndDeleteConnectorDestination(IAsyncResult asyncResult);
 
         #endregion
         
@@ -844,6 +1200,10 @@ namespace Amazon.IoTManagedIntegrations
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.LimitExceededException">
+        /// The request exceeds a service limit or quota. Adjust your request parameters and try
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
@@ -999,6 +1359,236 @@ namespace Amazon.IoTManagedIntegrations
         /// <returns>Returns a  DeleteProvisioningProfileResult from IoTManagedIntegrations.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteProvisioningProfile">REST API Reference for DeleteProvisioningProfile Operation</seealso>
         DeleteProvisioningProfileResponse EndDeleteProvisioningProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeregisterAccountAssociation
+
+
+        /// <summary>
+        /// Deregisters an account association, removing the connection between a managed thing
+        /// and a third-party account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterAccountAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeregisterAccountAssociation">REST API Reference for DeregisterAccountAssociation Operation</seealso>
+        DeregisterAccountAssociationResponse DeregisterAccountAssociation(DeregisterAccountAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterAccountAssociation operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterAccountAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeregisterAccountAssociation">REST API Reference for DeregisterAccountAssociation Operation</seealso>
+        IAsyncResult BeginDeregisterAccountAssociation(DeregisterAccountAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterAccountAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeregisterAccountAssociationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeregisterAccountAssociation">REST API Reference for DeregisterAccountAssociation Operation</seealso>
+        DeregisterAccountAssociationResponse EndDeregisterAccountAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAccountAssociation
+
+
+        /// <summary>
+        /// Get an account association for an Amazon Web Services account linked to a customer-managed
+        /// destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetAccountAssociation">REST API Reference for GetAccountAssociation Operation</seealso>
+        GetAccountAssociationResponse GetAccountAssociation(GetAccountAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountAssociation operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetAccountAssociation">REST API Reference for GetAccountAssociation Operation</seealso>
+        IAsyncResult BeginGetAccountAssociation(GetAccountAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetAccountAssociationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetAccountAssociation">REST API Reference for GetAccountAssociation Operation</seealso>
+        GetAccountAssociationResponse EndGetAccountAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCloudConnector
+
+
+        /// <summary>
+        /// Gets all the information about a connector for a connector developer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudConnector service method.</param>
+        /// 
+        /// <returns>The response from the GetCloudConnector service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetCloudConnector">REST API Reference for GetCloudConnector Operation</seealso>
+        GetCloudConnectorResponse GetCloudConnector(GetCloudConnectorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCloudConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudConnector operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCloudConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetCloudConnector">REST API Reference for GetCloudConnector Operation</seealso>
+        IAsyncResult BeginGetCloudConnector(GetCloudConnectorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCloudConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCloudConnector.</param>
+        /// 
+        /// <returns>Returns a  GetCloudConnectorResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetCloudConnector">REST API Reference for GetCloudConnector Operation</seealso>
+        GetCloudConnectorResponse EndGetCloudConnector(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConnectorDestination
+
+
+        /// <summary>
+        /// Get a connector destination of a cloud-to-cloud (C2C) connector connecting to a customer's
+        /// Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDestination service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectorDestination service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetConnectorDestination">REST API Reference for GetConnectorDestination Operation</seealso>
+        GetConnectorDestinationResponse GetConnectorDestination(GetConnectorDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectorDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDestination operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectorDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetConnectorDestination">REST API Reference for GetConnectorDestination Operation</seealso>
+        IAsyncResult BeginGetConnectorDestination(GetConnectorDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectorDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectorDestination.</param>
+        /// 
+        /// <returns>Returns a  GetConnectorDestinationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetConnectorDestination">REST API Reference for GetConnectorDestination Operation</seealso>
+        GetConnectorDestinationResponse EndGetConnectorDestination(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1611,6 +2201,15 @@ namespace Amazon.IoTManagedIntegrations
 
         /// <summary>
         /// Get the metadata information for a managed thing.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>managedThing</c> <c>metadata</c> parameter is used for associating attributes
+        /// with a <c>managedThing</c> that can be used for grouping over-the-air (OTA) tasks.
+        /// Name value pairs in <c>metadata</c> can be used in the <c>OtaTargetQueryString</c>
+        /// parameter for the <c>CreateOtaTask</c> API operation.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetManagedThingMetaData service method.</param>
         /// 
@@ -2078,6 +2677,168 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
         
+        #region  ListAccountAssociations
+
+
+        /// <summary>
+        /// Lists all account associations, with optional filtering by connector destination ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountAssociations service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListAccountAssociations">REST API Reference for ListAccountAssociations Operation</seealso>
+        ListAccountAssociationsResponse ListAccountAssociations(ListAccountAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccountAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountAssociations operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccountAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListAccountAssociations">REST API Reference for ListAccountAssociations Operation</seealso>
+        IAsyncResult BeginListAccountAssociations(ListAccountAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccountAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccountAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListAccountAssociationsResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListAccountAssociations">REST API Reference for ListAccountAssociations Operation</seealso>
+        ListAccountAssociationsResponse EndListAccountAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCloudConnectors
+
+
+        /// <summary>
+        /// Returns a list of connectors based on permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListCloudConnectors service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListCloudConnectors">REST API Reference for ListCloudConnectors Operation</seealso>
+        ListCloudConnectorsResponse ListCloudConnectors(ListCloudConnectorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCloudConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudConnectors operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCloudConnectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListCloudConnectors">REST API Reference for ListCloudConnectors Operation</seealso>
+        IAsyncResult BeginListCloudConnectors(ListCloudConnectorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCloudConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCloudConnectors.</param>
+        /// 
+        /// <returns>Returns a  ListCloudConnectorsResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListCloudConnectors">REST API Reference for ListCloudConnectors Operation</seealso>
+        ListCloudConnectorsResponse EndListCloudConnectors(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConnectorDestinations
+
+
+        /// <summary>
+        /// Lists all connector destinations, with optional filtering by cloud connector ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDestinations service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectorDestinations service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListConnectorDestinations">REST API Reference for ListConnectorDestinations Operation</seealso>
+        ListConnectorDestinationsResponse ListConnectorDestinations(ListConnectorDestinationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectorDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDestinations operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectorDestinations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListConnectorDestinations">REST API Reference for ListConnectorDestinations Operation</seealso>
+        IAsyncResult BeginListConnectorDestinations(ListConnectorDestinationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectorDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectorDestinations.</param>
+        /// 
+        /// <returns>Returns a  ListConnectorDestinationsResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListConnectorDestinations">REST API Reference for ListConnectorDestinations Operation</seealso>
+        ListConnectorDestinationsResponse EndListConnectorDestinations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListCredentialLockers
 
 
@@ -2187,6 +2948,127 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
         
+        #region  ListDeviceDiscoveries
+
+
+        /// <summary>
+        /// Lists all device discovery tasks, with optional filtering by type and status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceDiscoveries service method.</param>
+        /// 
+        /// <returns>The response from the ListDeviceDiscoveries service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDeviceDiscoveries">REST API Reference for ListDeviceDiscoveries Operation</seealso>
+        ListDeviceDiscoveriesResponse ListDeviceDiscoveries(ListDeviceDiscoveriesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeviceDiscoveries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceDiscoveries operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeviceDiscoveries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDeviceDiscoveries">REST API Reference for ListDeviceDiscoveries Operation</seealso>
+        IAsyncResult BeginListDeviceDiscoveries(ListDeviceDiscoveriesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDeviceDiscoveries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeviceDiscoveries.</param>
+        /// 
+        /// <returns>Returns a  ListDeviceDiscoveriesResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDeviceDiscoveries">REST API Reference for ListDeviceDiscoveries Operation</seealso>
+        ListDeviceDiscoveriesResponse EndListDeviceDiscoveries(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDiscoveredDevices
+
+
+        /// <summary>
+        /// Lists all devices discovered during a specific device discovery task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredDevices service method.</param>
+        /// 
+        /// <returns>The response from the ListDiscoveredDevices service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDiscoveredDevices">REST API Reference for ListDiscoveredDevices Operation</seealso>
+        ListDiscoveredDevicesResponse ListDiscoveredDevices(ListDiscoveredDevicesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDiscoveredDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredDevices operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDiscoveredDevices
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDiscoveredDevices">REST API Reference for ListDiscoveredDevices Operation</seealso>
+        IAsyncResult BeginListDiscoveredDevices(ListDiscoveredDevicesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDiscoveredDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDiscoveredDevices.</param>
+        /// 
+        /// <returns>Returns a  ListDiscoveredDevicesResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDiscoveredDevices">REST API Reference for ListDiscoveredDevices Operation</seealso>
+        ListDiscoveredDevicesResponse EndListDiscoveredDevices(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListEventLogConfigurations
 
 
@@ -2240,11 +3122,64 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
         
+        #region  ListManagedThingAccountAssociations
+
+
+        /// <summary>
+        /// Lists all account associations for a specific managed thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedThingAccountAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedThingAccountAssociations service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListManagedThingAccountAssociations">REST API Reference for ListManagedThingAccountAssociations Operation</seealso>
+        ListManagedThingAccountAssociationsResponse ListManagedThingAccountAssociations(ListManagedThingAccountAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListManagedThingAccountAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedThingAccountAssociations operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListManagedThingAccountAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListManagedThingAccountAssociations">REST API Reference for ListManagedThingAccountAssociations Operation</seealso>
+        IAsyncResult BeginListManagedThingAccountAssociations(ListManagedThingAccountAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListManagedThingAccountAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListManagedThingAccountAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListManagedThingAccountAssociationsResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListManagedThingAccountAssociations">REST API Reference for ListManagedThingAccountAssociations Operation</seealso>
+        ListManagedThingAccountAssociationsResponse EndListManagedThingAccountAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListManagedThings
 
 
         /// <summary>
-        /// List all of the associations and statuses for a managed thing by its owner.
+        /// Listing all managed things with provision for filters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedThings service method.</param>
         /// 
@@ -2483,6 +3418,9 @@ namespace Amazon.IoTManagedIntegrations
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
         /// </exception>
@@ -2535,6 +3473,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -2688,6 +3629,58 @@ namespace Amazon.IoTManagedIntegrations
         /// <returns>Returns a  ListSchemaVersionsResult from IoTManagedIntegrations.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
         ListSchemaVersionsResponse EndListSchemaVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2870,6 +3863,66 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
         
+        #region  RegisterAccountAssociation
+
+
+        /// <summary>
+        /// Registers an account association with a managed thing, establishing a connection between
+        /// a device and a third-party account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAccountAssociation service method.</param>
+        /// 
+        /// <returns>The response from the RegisterAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/RegisterAccountAssociation">REST API Reference for RegisterAccountAssociation Operation</seealso>
+        RegisterAccountAssociationResponse RegisterAccountAssociation(RegisterAccountAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAccountAssociation operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterAccountAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/RegisterAccountAssociation">REST API Reference for RegisterAccountAssociation Operation</seealso>
+        IAsyncResult BeginRegisterAccountAssociation(RegisterAccountAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterAccountAssociation.</param>
+        /// 
+        /// <returns>Returns a  RegisterAccountAssociationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/RegisterAccountAssociation">REST API Reference for RegisterAccountAssociation Operation</seealso>
+        RegisterAccountAssociationResponse EndRegisterAccountAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RegisterCustomEndpoint
 
 
@@ -2991,6 +4044,66 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
         
+        #region  SendConnectorEvent
+
+
+        /// <summary>
+        /// Relays third-party device events for a connector such as a new device or a device
+        /// state change event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendConnectorEvent service method.</param>
+        /// 
+        /// <returns>The response from the SendConnectorEvent service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/SendConnectorEvent">REST API Reference for SendConnectorEvent Operation</seealso>
+        SendConnectorEventResponse SendConnectorEvent(SendConnectorEventRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendConnectorEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendConnectorEvent operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendConnectorEvent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/SendConnectorEvent">REST API Reference for SendConnectorEvent Operation</seealso>
+        IAsyncResult BeginSendConnectorEvent(SendConnectorEventRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendConnectorEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendConnectorEvent.</param>
+        /// 
+        /// <returns>Returns a  SendConnectorEventResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/SendConnectorEvent">REST API Reference for SendConnectorEvent Operation</seealso>
+        SendConnectorEventResponse EndSendConnectorEvent(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SendManagedThingCommand
 
 
@@ -3015,6 +4128,9 @@ namespace Amazon.IoTManagedIntegrations
         /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
         /// A validation error occurred when performing the API request.
@@ -3050,13 +4166,73 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
         
+        #region  StartAccountAssociationRefresh
+
+
+        /// <summary>
+        /// Initiates a refresh of an existing account association to update its authorization
+        /// and connection status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAccountAssociationRefresh service method.</param>
+        /// 
+        /// <returns>The response from the StartAccountAssociationRefresh service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/StartAccountAssociationRefresh">REST API Reference for StartAccountAssociationRefresh Operation</seealso>
+        StartAccountAssociationRefreshResponse StartAccountAssociationRefresh(StartAccountAssociationRefreshRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAccountAssociationRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAccountAssociationRefresh operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAccountAssociationRefresh
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/StartAccountAssociationRefresh">REST API Reference for StartAccountAssociationRefresh Operation</seealso>
+        IAsyncResult BeginStartAccountAssociationRefresh(StartAccountAssociationRefreshRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAccountAssociationRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAccountAssociationRefresh.</param>
+        /// 
+        /// <returns>Returns a  StartAccountAssociationRefreshResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/StartAccountAssociationRefresh">REST API Reference for StartAccountAssociationRefresh Operation</seealso>
+        StartAccountAssociationRefreshResponse EndStartAccountAssociationRefresh(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartDeviceDiscovery
 
 
         /// <summary>
-        /// During user-guided setup, this is used to start device discovery. The authentication
-        /// material (install code) is passed as a message to the controller telling it to start
-        /// the discovery.
+        /// This API is used to start device discovery for hub-connected and third-party-connected
+        /// devices. The authentication material (install code) is passed as a message to the
+        /// controller telling it to start the discovery.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeviceDiscovery service method.</param>
         /// 
@@ -3114,6 +4290,290 @@ namespace Amazon.IoTManagedIntegrations
         /// <returns>Returns a  StartDeviceDiscoveryResult from IoTManagedIntegrations.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/StartDeviceDiscovery">REST API Reference for StartDeviceDiscovery Operation</seealso>
         StartDeviceDiscoveryResponse EndStartDeviceDiscovery(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAccountAssociation
+
+
+        /// <summary>
+        /// Updates the properties of an existing account association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateAccountAssociation">REST API Reference for UpdateAccountAssociation Operation</seealso>
+        UpdateAccountAssociationResponse UpdateAccountAssociation(UpdateAccountAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountAssociation operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccountAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateAccountAssociation">REST API Reference for UpdateAccountAssociation Operation</seealso>
+        IAsyncResult BeginUpdateAccountAssociation(UpdateAccountAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAccountAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccountAssociation.</param>
+        /// 
+        /// <returns>Returns a  UpdateAccountAssociationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateAccountAssociation">REST API Reference for UpdateAccountAssociation Operation</seealso>
+        UpdateAccountAssociationResponse EndUpdateAccountAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateCloudConnector
+
+
+        /// <summary>
+        /// Update an existing cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudConnector service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCloudConnector service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateCloudConnector">REST API Reference for UpdateCloudConnector Operation</seealso>
+        UpdateCloudConnectorResponse UpdateCloudConnector(UpdateCloudConnectorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCloudConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudConnector operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCloudConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateCloudConnector">REST API Reference for UpdateCloudConnector Operation</seealso>
+        IAsyncResult BeginUpdateCloudConnector(UpdateCloudConnectorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCloudConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCloudConnector.</param>
+        /// 
+        /// <returns>Returns a  UpdateCloudConnectorResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateCloudConnector">REST API Reference for UpdateCloudConnector Operation</seealso>
+        UpdateCloudConnectorResponse EndUpdateCloudConnector(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateConnectorDestination
+
+
+        /// <summary>
+        /// Updates the properties of an existing connector destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorDestination service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectorDestination service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateConnectorDestination">REST API Reference for UpdateConnectorDestination Operation</seealso>
+        UpdateConnectorDestinationResponse UpdateConnectorDestination(UpdateConnectorDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectorDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorDestination operation on AmazonIoTManagedIntegrationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectorDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateConnectorDestination">REST API Reference for UpdateConnectorDestination Operation</seealso>
+        IAsyncResult BeginUpdateConnectorDestination(UpdateConnectorDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnectorDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnectorDestination.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectorDestinationResult from IoTManagedIntegrations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateConnectorDestination">REST API Reference for UpdateConnectorDestination Operation</seealso>
+        UpdateConnectorDestinationResponse EndUpdateConnectorDestination(IAsyncResult asyncResult);
 
         #endregion
         

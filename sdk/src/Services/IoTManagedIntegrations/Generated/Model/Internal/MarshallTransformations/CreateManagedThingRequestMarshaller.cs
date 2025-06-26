@@ -102,6 +102,22 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCapabilitySchemas())
+                {
+                    context.Writer.WritePropertyName("CapabilitySchemas");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCapabilitySchemasListValue in publicRequest.CapabilitySchemas)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CapabilitySchemaItemMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCapabilitySchemasListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetClassification())
                 {
                     context.Writer.WritePropertyName("Classification");

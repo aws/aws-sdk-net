@@ -31,19 +31,41 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDeviceDiscovery operation.
-    /// During user-guided setup, this is used to start device discovery. The authentication
-    /// material (install code) is passed as a message to the controller telling it to start
-    /// the discovery.
+    /// This API is used to start device discovery for hub-connected and third-party-connected
+    /// devices. The authentication material (install code) is passed as a message to the
+    /// controller telling it to start the discovery.
     /// </summary>
     public partial class StartDeviceDiscoveryRequest : AmazonIoTManagedIntegrationsRequest
     {
+        private string _accountAssociationId;
         private string _authenticationMaterial;
         private DiscoveryAuthMaterialType _authenticationMaterialType;
         private string _clientToken;
         private string _connectorAssociationIdentifier;
         private string _controllerIdentifier;
+        private Dictionary<string, string> _customProtocolDetail = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DiscoveryType _discoveryType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AccountAssociationId. 
+        /// <para>
+        /// The identifier of the cloud-to-cloud account association to use for discovery of third-party
+        /// devices.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string AccountAssociationId
+        {
+            get { return this._accountAssociationId; }
+            set { this._accountAssociationId = value; }
+        }
+
+        // Check to see if AccountAssociationId property is set
+        internal bool IsSetAccountAssociationId()
+        {
+            return this._accountAssociationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthenticationMaterial. 
@@ -109,6 +131,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The id of the connector association.
         /// </para>
         /// </summary>
+        [Obsolete("ConnectorAssociationIdentifier is deprecated")]
         [AWSProperty(Min=1, Max=64)]
         public string ConnectorAssociationIdentifier
         {
@@ -142,10 +165,36 @@ namespace Amazon.IoTManagedIntegrations.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomProtocolDetail. 
+        /// <para>
+        /// Additional protocol-specific details required for device discovery, which vary based
+        /// on the discovery type.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For a <c>DiscoveryType</c> of <c>CUSTOM</c>, the string-to-string map must have a
+        /// key value of <c>Name</c> set to a non-empty-string.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> CustomProtocolDetail
+        {
+            get { return this._customProtocolDetail; }
+            set { this._customProtocolDetail = value; }
+        }
+
+        // Check to see if CustomProtocolDetail property is set
+        internal bool IsSetCustomProtocolDetail()
+        {
+            return this._customProtocolDetail != null && (this._customProtocolDetail.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property DiscoveryType. 
         /// <para>
         /// The discovery type supporting the type of device to be discovered in the device discovery
-        /// job request.
+        /// task request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -167,6 +216,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// A set of key/value pairs that are used to manage the device discovery request.
         /// </para>
         /// </summary>
+        [Obsolete("Tags have been deprecated from this api")]
         [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {

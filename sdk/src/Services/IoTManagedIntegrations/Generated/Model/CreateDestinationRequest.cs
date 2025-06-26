@@ -166,6 +166,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// A set of key/value pairs that are used to manage the destination.
         /// </para>
         /// </summary>
+        [Obsolete("Tags have been deprecated from this api")]
         [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {

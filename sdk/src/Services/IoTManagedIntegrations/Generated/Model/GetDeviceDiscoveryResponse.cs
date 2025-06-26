@@ -34,6 +34,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// </summary>
     public partial class GetDeviceDiscoveryResponse : AmazonWebServiceResponse
     {
+        private string _accountAssociationId;
         private string _arn;
         private string _connectorAssociationId;
         private string _controllerId;
@@ -43,6 +44,25 @@ namespace Amazon.IoTManagedIntegrations.Model
         private DateTime? _startedAt;
         private DeviceDiscoveryStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AccountAssociationId. 
+        /// <para>
+        /// The identifier of the account association used for the device discovery.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string AccountAssociationId
+        {
+            get { return this._accountAssociationId; }
+            set { this._accountAssociationId = value; }
+        }
+
+        // Check to see if AccountAssociationId property is set
+        internal bool IsSetAccountAssociationId()
+        {
+            return this._accountAssociationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -69,6 +89,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The ID tracking the current discovery process for one connector association.
         /// </para>
         /// </summary>
+        [Obsolete("ConnectorAssociationId has been deprecated")]
         [AWSProperty(Min=1, Max=64)]
         public string ConnectorAssociationId
         {
@@ -202,6 +223,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// A set of key/value pairs that are used to manage the device discovery request.
         /// </para>
         /// </summary>
+        [Obsolete("Tags have been deprecated from this api")]
         [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {

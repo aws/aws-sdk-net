@@ -38,6 +38,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private string _brand;
         private string _capabilities;
         private CapabilityReport _capabilityReport;
+        private List<CapabilitySchemaItem> _capabilitySchemas = AWSConfigs.InitializeCollections ? new List<CapabilitySchemaItem>() : null;
         private string _classification;
         private string _credentialLockerId;
         private HubNetworkMode _hubNetworkMode;
@@ -102,6 +103,26 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetCapabilityReport()
         {
             return this._capabilityReport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapabilitySchemas. 
+        /// <para>
+        /// The updated capability schemas that define the functionality and features supported
+        /// by the managed thing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=40)]
+        public List<CapabilitySchemaItem> CapabilitySchemas
+        {
+            get { return this._capabilitySchemas; }
+            set { this._capabilitySchemas = value; }
+        }
+
+        // Check to see if CapabilitySchemas property is set
+        internal bool IsSetCapabilitySchemas()
+        {
+            return this._capabilitySchemas != null && (this._capabilitySchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
