@@ -51,6 +51,7 @@ namespace Amazon.Keyspaces.Model
     {
         private AutoScalingSpecification _autoScalingSpecification;
         private CapacitySpecification _capacitySpecification;
+        private CdcSpecification _cdcSpecification;
         private ClientSideTimestamps _clientSideTimestamps;
         private Comment _comment;
         private int? _defaultTimeToLive;
@@ -128,6 +129,24 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetCapacitySpecification()
         {
             return this._capacitySpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CdcSpecification. 
+        /// <para>
+        /// The CDC stream settings of the table.
+        /// </para>
+        /// </summary>
+        public CdcSpecification CdcSpecification
+        {
+            get { return this._cdcSpecification; }
+            set { this._cdcSpecification = value; }
+        }
+
+        // Check to see if CdcSpecification property is set
+        internal bool IsSetCdcSpecification()
+        {
+            return this._cdcSpecification != null;
         }
 
         /// <summary>

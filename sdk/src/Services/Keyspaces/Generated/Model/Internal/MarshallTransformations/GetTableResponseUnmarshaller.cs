@@ -58,6 +58,12 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     response.CapacitySpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cdcSpecification", targetDepth))
+                {
+                    var unmarshaller = CdcSpecificationSummaryUnmarshaller.Instance;
+                    response.CdcSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clientSideTimestamps", targetDepth))
                 {
                     var unmarshaller = ClientSideTimestampsUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyspaceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("latestStreamArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestStreamArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pointInTimeRecovery", targetDepth))
