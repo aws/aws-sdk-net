@@ -107,6 +107,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
                 }
+                if(publicRequest.IsSetOdbNetworkArn())
+                {
+                    request.Parameters.Add("OdbNetworkArn", StringUtils.FromString(publicRequest.OdbNetworkArn));
+                }
                 if(publicRequest.IsSetRouteTableId())
                 {
                     request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));

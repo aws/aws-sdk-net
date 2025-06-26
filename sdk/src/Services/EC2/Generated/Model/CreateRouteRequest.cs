@@ -77,6 +77,7 @@ namespace Amazon.EC2.Model
         private string _localGatewayId;
         private string _natGatewayId;
         private string _networkInterfaceId;
+        private string _odbNetworkArn;
         private string _routeTableId;
         private string _transitGatewayId;
         private string _vpcEndpointId;
@@ -287,6 +288,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceId()
         {
             return this._networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OdbNetworkArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the ODB network.
+        /// </para>
+        /// </summary>
+        public string OdbNetworkArn
+        {
+            get { return this._odbNetworkArn; }
+            set { this._odbNetworkArn = value; }
+        }
+
+        // Check to see if OdbNetworkArn property is set
+        internal bool IsSetOdbNetworkArn()
+        {
+            return this._odbNetworkArn != null;
         }
 
         /// <summary>
