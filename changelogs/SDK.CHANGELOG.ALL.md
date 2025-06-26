@@ -1,3 +1,23 @@
+### 4.0.40.0 (2025-06-26 18:31 UTC)
+* Deadline (4.0.4.0)
+	* Added fields to track cumulative task retry attempts for steps and jobs
+* EC2 (4.0.15.0)
+	* This release adds support for OdbNetworkArn as a target in VPC Route Tables
+* IoTManagedIntegrations (4.0.1.0)
+	* Adding managed integrations APIs for IoT Device Management to onboard and control devices across different manufacturers, connectivity protocols and third party vendor clouds. APIs include managed thing operations, provisioning profile management, and cloud connector operations.
+* KeyManagementService (4.0.3.4)
+	* This release updates AWS CLI examples for KMS APIs.
+* Keyspaces (4.0.1.0)
+	* This release provides change data capture (CDC) streams support through updates to the Amazon Keyspaces API.
+* KeyspacesStreams (4.0.0.0)
+	* This release adds change data capture (CDC) streams support through the new Amazon Keyspaces Streams API.
+* QBusiness (4.0.2.0)
+	* Added support for App level authentication for QBusiness DataAccessor using AWS IAM Identity center Trusted Token issuer
+* S3 (4.0.3.1)
+	* Generate GetBucketRequestPayment, GetBucketTagging, and GetObjectAttributes, GetObjectLegalHold, GetObjectLockConfiguration, GetObjectRetention, GetObjectTagging, GetPublicAccessBlock
+* WorkSpaces (4.0.3.0)
+	* Updated modifyStreamingProperties to support PrivateLink VPC endpoints for directories
+
 ### 4.0.39.0 (2025-06-25 18:27 UTC)
 * ECS (4.0.2.2)
 	* Updates for change to Amazon ECS default log driver mode from blocking to non-blocking
