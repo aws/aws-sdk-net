@@ -52,6 +52,7 @@ namespace Amazon.Deadline.Model
         private DateTime? _startedAt;
         private string _storageProfileId;
         private JobTargetTaskRunStatus _targetTaskRunStatus;
+        private int? _taskFailureRetryCount;
         private TaskRunStatus _taskRunStatus;
         private Dictionary<string, int> _taskRunStatusCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private DateTime? _updatedAt;
@@ -409,6 +410,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTargetTaskRunStatus()
         {
             return this._targetTaskRunStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskFailureRetryCount. 
+        /// <para>
+        /// The total number of times tasks from the job failed and were retried.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int? TaskFailureRetryCount
+        {
+            get { return this._taskFailureRetryCount; }
+            set { this._taskFailureRetryCount = value; }
+        }
+
+        // Check to see if TaskFailureRetryCount property is set
+        internal bool IsSetTaskFailureRetryCount()
+        {
+            return this._taskFailureRetryCount.HasValue; 
         }
 
         /// <summary>

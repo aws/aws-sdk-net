@@ -46,7 +46,7 @@ namespace Amazon.Deadline.Model
         ///  
         /// <para>
         /// If you specify <c>l4</c> as the name of the accelerator, you must specify <c>latest</c>
-        /// or <c>grid:r550</c> as the runtime.
+        /// or <c>grid:r570</c> as the runtime.
         /// </para>
         ///  
         /// <para>
@@ -100,8 +100,8 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>grid:r550</c> - <a href="https://docs.nvidia.com/vgpu/17.0/index.html">NVIDIA
-        /// vGPU software 17</a> 
+        ///  <c>grid:r570</c> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA
+        /// vGPU software 18</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>

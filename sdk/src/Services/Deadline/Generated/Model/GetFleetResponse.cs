@@ -314,7 +314,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The Auto Scaling status of the fleet.
+        /// The status of the fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
