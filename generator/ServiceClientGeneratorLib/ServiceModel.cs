@@ -503,23 +503,23 @@ namespace ServiceClientGenerator
                         new Operation(this, "GetObjectRetention", DocumentRoot[OperationsKey]["GetObjectRetention"]),
                         new Operation(this, "GetObjectTagging", DocumentRoot[OperationsKey]["GetObjectTagging"]),
                         new Operation(this, "GetPublicAccessBlock", DocumentRoot[OperationsKey]["GetPublicAccessBlock"]),
-                        //new Operation(this, "HeadBucket", DocumentRoot[OperationsKey]["HeadBucket"]),
+                        new Operation(this, "HeadBucket", DocumentRoot[OperationsKey]["HeadBucket"]),
                         //new Operation(this, "ListBucketAnalyticsConfigurations", DocumentRoot[OperationsKey]["ListBucketAnalyticsConfigurations"]),
                         //new Operation(this, "ListBucketIntelligentTieringConfigurations", DocumentRoot[OperationsKey]["ListBucketIntelligentTieringConfigurations"]),
                         //new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
                         //new Operation(this, "ListBucketMetricsConfigurations", DocumentRoot[OperationsKey]["ListBucketMetricsConfigurations"]),
                         new Operation(this, "ListBuckets", DocumentRoot[OperationsKey]["ListBuckets"]),
                         new Operation(this, "ListDirectoryBuckets", DocumentRoot[OperationsKey]["ListDirectoryBuckets"]),
-                        //new Operation(this, "ListParts", DocumentRoot[OperationsKey]["ListParts"]),
+                        new Operation(this, "ListParts", DocumentRoot[OperationsKey]["ListParts"]),
                         //new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
                         new Operation(this, "PutBucketEncryption", DocumentRoot[OperationsKey]["PutBucketEncryption"]),
                         new Operation(this, "PutBucketReplication", DocumentRoot[OperationsKey]["PutBucketReplication"]),
-                        //new Operation(this, "PutBucketPolicy", DocumentRoot[OperationsKey]["PutBucketPolicy"]),
-                        //new Operation(this, "PutObjectLegalHold", DocumentRoot[OperationsKey]["PutObjectLegalHold"]),
-                        //new Operation(this, "PutObjectLockConfiguration", DocumentRoot[OperationsKey]["PutObjectLockConfiguration"]),
-                        //new Operation(this, "PutObjectRetention", DocumentRoot[OperationsKey]["PutObjectRetention"]),
-                        //new Operation(this, "PutObjectTagging", DocumentRoot[OperationsKey]["PutObjectTagging"]),
-                        //new Operation(this, "PutPublicAccessBlock", DocumentRoot[OperationsKey]["PutPublicAccessBlock"]),
+                        new Operation(this, "PutBucketPolicy", DocumentRoot[OperationsKey]["PutBucketPolicy"]),
+                        new Operation(this, "PutObjectLegalHold", DocumentRoot[OperationsKey]["PutObjectLegalHold"]),
+                        new Operation(this, "PutObjectLockConfiguration", DocumentRoot[OperationsKey]["PutObjectLockConfiguration"]),
+                        new Operation(this, "PutObjectRetention", DocumentRoot[OperationsKey]["PutObjectRetention"]),
+                        new Operation(this, "PutObjectTagging", DocumentRoot[OperationsKey]["PutObjectTagging"]),
+                        new Operation(this, "PutPublicAccessBlock", DocumentRoot[OperationsKey]["PutPublicAccessBlock"]),
                         //new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
                         //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"])
                     };
@@ -544,7 +544,8 @@ namespace ServiceClientGenerator
                         "ListBuckets",
                         "ListDirectoryBuckets",
                         "GetObjectLegalHold",
-                        "GetObjectRetention"
+                        "GetObjectRetention",
+                        "PutObjectRetention"
                     };
                 }
                 return _s3AddParametersList;

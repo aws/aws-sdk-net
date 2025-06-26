@@ -34,54 +34,54 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NoSuchUploadException operation
+    /// Response Unmarshaller for Initiator Object
     /// </summary>  
-    public class NoSuchUploadExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchUploadException, XmlUnmarshallerContext>
+    public class InitiatorUnmarshaller : IXmlUnmarshaller<Initiator, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NoSuchUploadException Unmarshall(XmlUnmarshallerContext context)
+        public Initiator Unmarshall(XmlUnmarshallerContext context)
         {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
-        /// <returns></returns>
-        public NoSuchUploadException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
-        {
-            string id2 = null, amzCfId = null;
-            var s3ErrorResponse = errorResponse as S3ErrorResponse;
-            if (s3ErrorResponse != null)
-            {
-                id2 = s3ErrorResponse.Id2;
-                amzCfId = s3ErrorResponse.AmzCfId;
-            }
-            NoSuchUploadException response = new NoSuchUploadException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
-
-
+            Initiator unmarshalledObject = new Initiator();
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("DisplayName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ID", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
-            }
-            return response;
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
+            }          
+            return unmarshalledObject;
         }
-
-        private static NoSuchUploadExceptionUnmarshaller _instance = new NoSuchUploadExceptionUnmarshaller();        
+        private static InitiatorUnmarshaller _instance = new InitiatorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NoSuchUploadExceptionUnmarshaller Instance
+        public static InitiatorUnmarshaller Instance
         {
             get
             {
