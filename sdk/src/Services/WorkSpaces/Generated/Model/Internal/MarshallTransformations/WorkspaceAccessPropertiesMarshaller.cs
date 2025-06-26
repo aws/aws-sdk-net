@@ -48,6 +48,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccessEndpointConfig())
+            {
+                context.Writer.WritePropertyName("AccessEndpointConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AccessEndpointConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AccessEndpointConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeviceTypeAndroid())
             {
                 context.Writer.WritePropertyName("DeviceTypeAndroid");

@@ -66,6 +66,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccessEndpointConfig", targetDepth))
+                {
+                    var unmarshaller = AccessEndpointConfigUnmarshaller.Instance;
+                    unmarshalledObject.AccessEndpointConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceTypeAndroid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

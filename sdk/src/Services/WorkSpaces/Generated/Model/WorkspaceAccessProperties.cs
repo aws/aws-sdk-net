@@ -36,6 +36,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class WorkspaceAccessProperties
     {
+        private AccessEndpointConfig _accessEndpointConfig;
         private AccessPropertyValue _deviceTypeAndroid;
         private AccessPropertyValue _deviceTypeChromeOs;
         private AccessPropertyValue _deviceTypeIos;
@@ -45,6 +46,24 @@ namespace Amazon.WorkSpaces.Model
         private AccessPropertyValue _deviceTypeWindows;
         private AccessPropertyValue _deviceTypeWorkSpacesThinClient;
         private AccessPropertyValue _deviceTypeZeroClient;
+
+        /// <summary>
+        /// Gets and sets the property AccessEndpointConfig. 
+        /// <para>
+        /// Specifies the configuration for accessing the WorkSpace.
+        /// </para>
+        /// </summary>
+        public AccessEndpointConfig AccessEndpointConfig
+        {
+            get { return this._accessEndpointConfig; }
+            set { this._accessEndpointConfig = value; }
+        }
+
+        // Check to see if AccessEndpointConfig property is set
+        internal bool IsSetAccessEndpointConfig()
+        {
+            return this._accessEndpointConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeviceTypeAndroid. 
