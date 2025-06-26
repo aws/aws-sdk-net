@@ -40,6 +40,7 @@ namespace Amazon.QBusiness.Model
     {
         private List<ActionConfiguration> _actionConfigurations = AWSConfigs.InitializeCollections ? new List<ActionConfiguration>() : null;
         private string _applicationId;
+        private DataAccessorAuthenticationDetail _authenticationDetail;
         private string _dataAccessorId;
         private string _displayName;
 
@@ -80,6 +81,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationDetail. 
+        /// <para>
+        /// The updated authentication configuration details for the data accessor. This specifies
+        /// how the ISV will authenticate when accessing data through this data accessor.
+        /// </para>
+        /// </summary>
+        public DataAccessorAuthenticationDetail AuthenticationDetail
+        {
+            get { return this._authenticationDetail; }
+            set { this._authenticationDetail = value; }
+        }
+
+        // Check to see if AuthenticationDetail property is set
+        internal bool IsSetAuthenticationDetail()
+        {
+            return this._authenticationDetail != null;
         }
 
         /// <summary>

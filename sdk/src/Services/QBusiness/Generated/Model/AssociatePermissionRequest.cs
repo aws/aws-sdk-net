@@ -41,6 +41,7 @@ namespace Amazon.QBusiness.Model
     {
         private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _applicationId;
+        private List<PermissionCondition> _conditions = AWSConfigs.InitializeCollections ? new List<PermissionCondition>() : null;
         private string _principal;
         private string _statementId;
 
@@ -80,6 +81,26 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Conditions. 
+        /// <para>
+        /// The conditions that restrict when the permission is effective. These conditions can
+        /// be used to limit the permission based on specific attributes of the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<PermissionCondition> Conditions
+        {
+            get { return this._conditions; }
+            set { this._conditions = value; }
+        }
+
+        // Check to see if Conditions property is set
+        internal bool IsSetConditions()
+        {
+            return this._conditions != null && (this._conditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

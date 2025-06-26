@@ -66,6 +66,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("authenticationDetail", targetDepth))
+                {
+                    var unmarshaller = DataAccessorAuthenticationDetailUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationDetail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
