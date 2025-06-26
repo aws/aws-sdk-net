@@ -101,7 +101,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The Amazon Resource Name (ARN) of the over-the-air (OTA) task.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1011)]
+        [AWSProperty(Min=32, Max=1011)]
         public string TaskArn
         {
             get { return this._taskArn; }

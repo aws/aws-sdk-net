@@ -49,7 +49,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
+        [AWSProperty(Required=true, Min=0, Max=40)]
         public List<CapabilityReportCapability> Capabilities
         {
             get { return this._capabilities; }

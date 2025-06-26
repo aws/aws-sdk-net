@@ -39,6 +39,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private string _arn;
         private string _brand;
         private string _classification;
+        private string _connectorDestinationId;
         private string _connectorDeviceId;
         private string _connectorPolicyId;
         private DateTime? _createdAt;
@@ -148,6 +149,26 @@ namespace Amazon.IoTManagedIntegrations.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectorDestinationId. 
+        /// <para>
+        /// The identifier of the connector destination associated with this managed thing, if
+        /// applicable.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ConnectorDestinationId
+        {
+            get { return this._connectorDestinationId; }
+            set { this._connectorDestinationId = value; }
+        }
+
+        // Check to see if ConnectorDestinationId property is set
+        internal bool IsSetConnectorDestinationId()
+        {
+            return this._connectorDestinationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ConnectorDeviceId. 
         /// <para>
         /// The third-party device id as defined by the connector. This device id must not contain
@@ -183,6 +204,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [Obsolete("ConnectorPolicyId has been deprecated")]
         [AWSProperty(Min=1, Max=64)]
         public string ConnectorPolicyId
         {

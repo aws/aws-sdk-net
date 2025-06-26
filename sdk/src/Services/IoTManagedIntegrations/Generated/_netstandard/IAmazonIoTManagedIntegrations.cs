@@ -47,6 +47,115 @@ namespace Amazon.IoTManagedIntegrations
         IIoTManagedIntegrationsPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  CreateAccountAssociation
+
+
+
+        /// <summary>
+        /// Creates a new account association via the destination id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateAccountAssociation">REST API Reference for CreateAccountAssociation Operation</seealso>
+        Task<CreateAccountAssociationResponse> CreateAccountAssociationAsync(CreateAccountAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateCloudConnector
+
+
+
+        /// <summary>
+        /// Creates a C2C (cloud-to-cloud) connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCloudConnector service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateCloudConnector">REST API Reference for CreateCloudConnector Operation</seealso>
+        Task<CreateCloudConnectorResponse> CreateCloudConnectorAsync(CreateCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateConnectorDestination
+
+
+
+        /// <summary>
+        /// Create a connector destination for connecting a cloud-to-cloud (C2C) connector to
+        /// the customer's Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectorDestination service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateConnectorDestination">REST API Reference for CreateConnectorDestination Operation</seealso>
+        Task<CreateConnectorDestinationResponse> CreateConnectorDestinationAsync(CreateConnectorDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateCredentialLocker
 
 
@@ -262,8 +371,14 @@ namespace Amazon.IoTManagedIntegrations
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
         /// A validation error occurred when performing the API request.
@@ -332,6 +447,9 @@ namespace Amazon.IoTManagedIntegrations
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
@@ -346,6 +464,112 @@ namespace Amazon.IoTManagedIntegrations
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateProvisioningProfile">REST API Reference for CreateProvisioningProfile Operation</seealso>
         Task<CreateProvisioningProfileResponse> CreateProvisioningProfileAsync(CreateProvisioningProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAccountAssociation
+
+
+
+        /// <summary>
+        /// Remove a third party account and related devices from an end user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteAccountAssociation">REST API Reference for DeleteAccountAssociation Operation</seealso>
+        Task<DeleteAccountAssociationResponse> DeleteAccountAssociationAsync(DeleteAccountAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCloudConnector
+
+
+
+        /// <summary>
+        /// Delete a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCloudConnector service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteCloudConnector">REST API Reference for DeleteCloudConnector Operation</seealso>
+        Task<DeleteCloudConnectorResponse> DeleteCloudConnectorAsync(DeleteCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteConnectorDestination
+
+
+
+        /// <summary>
+        /// Delete a connector destination for connecting a cloud-to-cloud (C2C) connector to
+        /// the customer's Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectorDestination service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteConnectorDestination">REST API Reference for DeleteConnectorDestination Operation</seealso>
+        Task<DeleteConnectorDestinationResponse> DeleteConnectorDestinationAsync(DeleteConnectorDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -560,6 +784,10 @@ namespace Amazon.IoTManagedIntegrations
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.LimitExceededException">
+        /// The request exceeds a service limit or quota. Adjust your request parameters and try
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
@@ -645,6 +873,148 @@ namespace Amazon.IoTManagedIntegrations
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeleteProvisioningProfile">REST API Reference for DeleteProvisioningProfile Operation</seealso>
         Task<DeleteProvisioningProfileResponse> DeleteProvisioningProfileAsync(DeleteProvisioningProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeregisterAccountAssociation
+
+
+
+        /// <summary>
+        /// Deregisters an account association, removing the connection between a managed thing
+        /// and a third-party account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterAccountAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/DeregisterAccountAssociation">REST API Reference for DeregisterAccountAssociation Operation</seealso>
+        Task<DeregisterAccountAssociationResponse> DeregisterAccountAssociationAsync(DeregisterAccountAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccountAssociation
+
+
+
+        /// <summary>
+        /// Get an account association for an Amazon Web Services account linked to a customer-managed
+        /// destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetAccountAssociation">REST API Reference for GetAccountAssociation Operation</seealso>
+        Task<GetAccountAssociationResponse> GetAccountAssociationAsync(GetAccountAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCloudConnector
+
+
+
+        /// <summary>
+        /// Gets all the information about a connector for a connector developer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCloudConnector service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetCloudConnector">REST API Reference for GetCloudConnector Operation</seealso>
+        Task<GetCloudConnectorResponse> GetCloudConnectorAsync(GetCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetConnectorDestination
+
+
+
+        /// <summary>
+        /// Get a connector destination of a cloud-to-cloud (C2C) connector connecting to a customer's
+        /// Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectorDestination service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetConnectorDestination">REST API Reference for GetConnectorDestination Operation</seealso>
+        Task<GetConnectorDestinationResponse> GetConnectorDestinationAsync(GetConnectorDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1038,6 +1408,15 @@ namespace Amazon.IoTManagedIntegrations
 
         /// <summary>
         /// Get the metadata information for a managed thing.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>managedThing</c> <c>metadata</c> parameter is used for associating attributes
+        /// with a <c>managedThing</c> that can be used for grouping over-the-air (OTA) tasks.
+        /// Name value pairs in <c>metadata</c> can be used in the <c>OtaTargetQueryString</c>
+        /// parameter for the <c>CreateOtaTask</c> API operation.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetManagedThingMetaData service method.</param>
         /// <param name="cancellationToken">
@@ -1328,6 +1707,102 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
                 
+        #region  ListAccountAssociations
+
+
+
+        /// <summary>
+        /// Lists all account associations, with optional filtering by connector destination ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccountAssociations service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListAccountAssociations">REST API Reference for ListAccountAssociations Operation</seealso>
+        Task<ListAccountAssociationsResponse> ListAccountAssociationsAsync(ListAccountAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCloudConnectors
+
+
+
+        /// <summary>
+        /// Returns a list of connectors based on permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCloudConnectors service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListCloudConnectors">REST API Reference for ListCloudConnectors Operation</seealso>
+        Task<ListCloudConnectorsResponse> ListCloudConnectorsAsync(ListCloudConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListConnectorDestinations
+
+
+
+        /// <summary>
+        /// Lists all connector destinations, with optional filtering by cloud connector ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDestinations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectorDestinations service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListConnectorDestinations">REST API Reference for ListConnectorDestinations Operation</seealso>
+        Task<ListConnectorDestinationsResponse> ListConnectorDestinationsAsync(ListConnectorDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListCredentialLockers
 
 
@@ -1393,6 +1868,83 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
                 
+        #region  ListDeviceDiscoveries
+
+
+
+        /// <summary>
+        /// Lists all device discovery tasks, with optional filtering by type and status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceDiscoveries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeviceDiscoveries service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDeviceDiscoveries">REST API Reference for ListDeviceDiscoveries Operation</seealso>
+        Task<ListDeviceDiscoveriesResponse> ListDeviceDiscoveriesAsync(ListDeviceDiscoveriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDiscoveredDevices
+
+
+
+        /// <summary>
+        /// Lists all devices discovered during a specific device discovery task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredDevices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDiscoveredDevices service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListDiscoveredDevices">REST API Reference for ListDiscoveredDevices Operation</seealso>
+        Task<ListDiscoveredDevicesResponse> ListDiscoveredDevicesAsync(ListDiscoveredDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListEventLogConfigurations
 
 
@@ -1424,12 +1976,43 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
                 
+        #region  ListManagedThingAccountAssociations
+
+
+
+        /// <summary>
+        /// Lists all account associations for a specific managed thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedThingAccountAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedThingAccountAssociations service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListManagedThingAccountAssociations">REST API Reference for ListManagedThingAccountAssociations Operation</seealso>
+        Task<ListManagedThingAccountAssociationsResponse> ListManagedThingAccountAssociationsAsync(ListManagedThingAccountAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListManagedThings
 
 
 
         /// <summary>
-        /// List all of the associations and statuses for a managed thing by its owner.
+        /// Listing all managed things with provision for filters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedThings service method.</param>
         /// <param name="cancellationToken">
@@ -1583,6 +2166,9 @@ namespace Amazon.IoTManagedIntegrations
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
         /// </exception>
@@ -1613,6 +2199,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -1696,6 +2285,36 @@ namespace Amazon.IoTManagedIntegrations
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
         Task<ListSchemaVersionsResponse> ListSchemaVersionsAsync(ListSchemaVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// List tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1812,6 +2431,44 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
                 
+        #region  RegisterAccountAssociation
+
+
+
+        /// <summary>
+        /// Registers an account association with a managed thing, establishing a connection between
+        /// a device and a third-party account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAccountAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/RegisterAccountAssociation">REST API Reference for RegisterAccountAssociation Operation</seealso>
+        Task<RegisterAccountAssociationResponse> RegisterAccountAssociationAsync(RegisterAccountAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RegisterCustomEndpoint
 
 
@@ -1889,6 +2546,44 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
                 
+        #region  SendConnectorEvent
+
+
+
+        /// <summary>
+        /// Relays third-party device events for a connector such as a new device or a device
+        /// state change event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendConnectorEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendConnectorEvent service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/SendConnectorEvent">REST API Reference for SendConnectorEvent Operation</seealso>
+        Task<SendConnectorEventResponse> SendConnectorEventAsync(SendConnectorEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SendManagedThingCommand
 
 
@@ -1918,6 +2613,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
         /// The rate exceeds the limit.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
         /// A validation error occurred when performing the API request.
         /// </exception>
@@ -1926,14 +2624,52 @@ namespace Amazon.IoTManagedIntegrations
 
         #endregion
                 
+        #region  StartAccountAssociationRefresh
+
+
+
+        /// <summary>
+        /// Initiates a refresh of an existing account association to update its authorization
+        /// and connection status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAccountAssociationRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAccountAssociationRefresh service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/StartAccountAssociationRefresh">REST API Reference for StartAccountAssociationRefresh Operation</seealso>
+        Task<StartAccountAssociationRefreshResponse> StartAccountAssociationRefreshAsync(StartAccountAssociationRefreshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartDeviceDiscovery
 
 
 
         /// <summary>
-        /// During user-guided setup, this is used to start device discovery. The authentication
-        /// material (install code) is passed as a message to the controller telling it to start
-        /// the discovery.
+        /// This API is used to start device discovery for hub-connected and third-party-connected
+        /// devices. The authentication material (install code) is passed as a message to the
+        /// controller telling it to start the discovery.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeviceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -1968,6 +2704,180 @@ namespace Amazon.IoTManagedIntegrations
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/StartDeviceDiscovery">REST API Reference for StartDeviceDiscovery Operation</seealso>
         Task<StartDeviceDiscoveryResponse> StartDeviceDiscoveryAsync(StartDeviceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Add tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Remove tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAccountAssociation
+
+
+
+        /// <summary>
+        /// Updates the properties of an existing account association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountAssociation service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateAccountAssociation">REST API Reference for UpdateAccountAssociation Operation</seealso>
+        Task<UpdateAccountAssociationResponse> UpdateAccountAssociationAsync(UpdateAccountAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCloudConnector
+
+
+
+        /// <summary>
+        /// Update an existing cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCloudConnector service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateCloudConnector">REST API Reference for UpdateCloudConnector Operation</seealso>
+        Task<UpdateCloudConnectorResponse> UpdateCloudConnectorAsync(UpdateCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateConnectorDestination
+
+
+
+        /// <summary>
+        /// Updates the properties of an existing connector destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectorDestination service method, as returned by IoTManagedIntegrations.</returns>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
+        /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UpdateConnectorDestination">REST API Reference for UpdateConnectorDestination Operation</seealso>
+        Task<UpdateConnectorDestinationResponse> UpdateConnectorDestinationAsync(UpdateConnectorDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

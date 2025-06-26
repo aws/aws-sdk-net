@@ -82,6 +82,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                     response.Classification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ConnectorDestinationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectorDestinationId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ConnectorDeviceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

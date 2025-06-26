@@ -28,6 +28,36 @@ namespace Amazon.IoTManagedIntegrations.Model
     {
 
         /// <summary>
+        /// Paginator for ListAccountAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAccountAssociationsPaginator ListAccountAssociations(ListAccountAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCloudConnectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCloudConnectorsPaginator ListCloudConnectors(ListCloudConnectorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListConnectorDestinations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConnectorDestinationsPaginator ListConnectorDestinations(ListConnectorDestinationsRequest request);
+
+        /// <summary>
         /// Paginator for ListCredentialLockers operation
         ///</summary>
         [AWSPaginator(
@@ -48,6 +78,26 @@ namespace Amazon.IoTManagedIntegrations.Model
         IListDestinationsPaginator ListDestinations(ListDestinationsRequest request);
 
         /// <summary>
+        /// Paginator for ListDeviceDiscoveries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDeviceDiscoveriesPaginator ListDeviceDiscoveries(ListDeviceDiscoveriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDiscoveredDevices operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDiscoveredDevicesPaginator ListDiscoveredDevices(ListDiscoveredDevicesRequest request);
+
+        /// <summary>
         /// Paginator for ListEventLogConfigurations operation
         ///</summary>
         [AWSPaginator(
@@ -56,6 +106,16 @@ namespace Amazon.IoTManagedIntegrations.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListEventLogConfigurationsPaginator ListEventLogConfigurations(ListEventLogConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListManagedThingAccountAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListManagedThingAccountAssociationsPaginator ListManagedThingAccountAssociations(ListManagedThingAccountAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListManagedThings operation

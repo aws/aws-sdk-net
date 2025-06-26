@@ -63,6 +63,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetConnectorDestinationIdFilter())
+                request.Parameters.Add("ConnectorDestinationIdFilter", StringUtils.FromString(publicRequest.ConnectorDestinationIdFilter));
+            
+            if (publicRequest.IsSetConnectorDeviceIdFilter())
+                request.Parameters.Add("ConnectorDeviceIdFilter", StringUtils.FromString(publicRequest.ConnectorDeviceIdFilter));
+            
             if (publicRequest.IsSetConnectorPolicyIdFilter())
                 request.Parameters.Add("ConnectorPolicyIdFilter", StringUtils.FromString(publicRequest.ConnectorPolicyIdFilter));
             
