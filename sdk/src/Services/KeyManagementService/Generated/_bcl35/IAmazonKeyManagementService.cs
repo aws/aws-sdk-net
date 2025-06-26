@@ -46,12 +46,13 @@ namespace Amazon.KeyManagementService
     ///  
     /// <para>
     /// Amazon Web Services provides SDKs that consist of libraries and sample code for various
-    /// programming languages and platforms (Java, Ruby, .Net, macOS, Android, etc.). The
-    /// SDKs provide a convenient way to create programmatic access to KMS and other Amazon
-    /// Web Services services. For example, the SDKs take care of tasks such as signing requests
-    /// (see below), managing errors, and retrying requests automatically. For more information
-    /// about the Amazon Web Services SDKs, including how to download and install them, see
-    /// <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+    /// programming languages and platforms (Java, Rust, Python, Ruby, .Net, macOS, Android,
+    /// etc.). The SDKs provide a convenient way to create programmatic access to KMS and
+    /// other Amazon Web Services services. For example, the SDKs take care of tasks such
+    /// as signing requests (see below), managing errors, and retrying requests automatically.
+    /// For more information about the Amazon Web Services SDKs, including how to download
+    /// and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
+    /// Services</a>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -61,10 +62,12 @@ namespace Amazon.KeyManagementService
     ///  
     /// <para>
     /// If you need to use FIPS 140-2 validated cryptographic modules when communicating with
-    /// Amazon Web Services, use the FIPS endpoint in your preferred Amazon Web Services Region.
-    /// For more information about the available FIPS endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">Service
+    /// Amazon Web Services, use one of the FIPS endpoints in your preferred Amazon Web Services
+    /// Region. If you need communicate over IPv6, use the dual-stack endpoint in your preferred
+    /// Amazon Web Services Region. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">Service
     /// endpoints</a> in the Key Management Service topic of the <i>Amazon Web Services General
-    /// Reference</i>.
+    /// Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/ipv6-kms.html">Dual-stack
+    /// endpoint support</a> in the KMS Developer Guide.
     /// </para>
     ///  
     /// <para>
