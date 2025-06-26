@@ -629,6 +629,72 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (entry is DynamoDBNull)
                     return null;
 
+                // Check for Native AOT collection type issues
+                if (InternalSDKUtils.IsRunningNativeAot() && targetType != null)
+                {
+                    // Skip checking primitive types - they always work
+                    if (!Utils.PrimitiveTypes.Contains(targetType) && 
+                        !Utils.PrimitiveTypesCollectionsAndArray.Contains(targetType) &&
+                        Utils.IsCollectionType(targetType))
+                    {
+                        // Check if this is a generic collection
+                        if (targetType.IsGenericType)
+                        {
+                            // Get the generic type definition
+                            Type genericTypeDef = targetType.GetGenericTypeDefinition();
+                            
+                            // Handle list-like collections
+                            if ((entry is DynamoDBList || entry is PrimitiveList) && 
+                                (genericTypeDef == typeof(List<>) || 
+                                 genericTypeDef == typeof(IList<>) ||
+                                 genericTypeDef == typeof(HashSet<>) ||
+                                 genericTypeDef == typeof(IEnumerable<>)))
+                            {
+                                // Check if we can instantiate the collection type
+                                if (!Utils.CanInstantiate(targetType))
+                                {
+                                    ThrowNativeAotTypeInstantiationError(targetType, propertyStorage.PropertyName, entry);
+                                }
+                                
+                                // Get element type through Utils to maintain correct annotations
+                                Type elementType = Utils.GetElementType(targetType);
+                                
+                                // Check if the element type can be instantiated
+                                if (elementType != null && !Utils.CanInstantiate(elementType))
+                                {
+                                    ThrowNativeAotTypeInstantiationError(elementType, propertyStorage.PropertyName, entry);
+                                }
+                            }
+                            // Handle dictionary-like collections
+                            else if (entry is Document && 
+                                    (genericTypeDef == typeof(Dictionary<,>) || 
+                                     genericTypeDef == typeof(IDictionary<,>)))
+                            {
+                                // Check if we can instantiate the dictionary type
+                                if (!Utils.CanInstantiate(targetType))
+                                {
+                                    ThrowNativeAotTypeInstantiationError(targetType, propertyStorage.PropertyName, entry);
+                                }
+                                
+                                // Get key and value types directly with proper annotations
+                                Type keyType = null, valueType = null;
+                                IsSupportedDictionaryType(targetType, out keyType, out valueType);
+                                
+                                // Check if key and value types can be instantiated
+                                if (keyType != null && !Utils.CanInstantiate(keyType))
+                                {
+                                    ThrowNativeAotTypeInstantiationError(keyType, propertyStorage.PropertyName, entry);
+                                }
+                                
+                                if (valueType != null && !Utils.CanInstantiate(valueType))
+                                {
+                                    ThrowNativeAotTypeInstantiationError(valueType, propertyStorage.PropertyName, entry);
+                                }
+                            }
+                        }
+                    }
+                }
+
                 object output;
                 Document document = entry as Document;
                 if (document != null)
@@ -729,8 +795,21 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
-            Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
+
+
+        /// <summary>
+        /// Throws a detailed error message for Native AOT type instantiation issues
+        /// </summary>
+        private void ThrowNativeAotTypeInstantiationError(Type problematicType, string propertyName, DynamoDBEntry entry)
+        {
+            string errorMessage = $"Type {problematicType.FullName} is unsupported, it cannot be instantiated. Since the application is running in Native AOT mode the type could possibly be trimmed. " + 
+                "This can happen if the type being created is a nested type of a type being used for saving and loading DynamoDB items. " +
+                $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({problematicType.FullName}))]\" attribute to the constructor of the parent type." + 
+                "If the parent type can not be modified the attribute can also be used on the method invoking the DynamoDB sdk or some other method that you are sure is not being trimmed.";
+                
+            throw new InvalidOperationException(errorMessage);
+        }
+
         private bool TryFromMap([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, SimplePropertyStorage parentPropertyStorage, out object output)
         {
             output = null;
