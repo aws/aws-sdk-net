@@ -680,13 +680,17 @@ namespace Amazon.DynamoDBv2.DataModel
                                 Type keyType = null, valueType = null;
                                 IsSupportedDictionaryType(targetType, out keyType, out valueType);
                                 
-                                // Check if key and value types can be instantiated
-                                if (keyType != null && !Utils.CanInstantiate(keyType))
+                                // Check if key and value types can be instantiated (skip check for primitive types)
+                                if (keyType != null && 
+                                    !Utils.PrimitiveTypes.Contains(keyType) && 
+                                    !Utils.CanInstantiate(keyType))
                                 {
                                     ThrowNativeAotTypeInstantiationError(keyType, propertyStorage.PropertyName, entry);
                                 }
                                 
-                                if (valueType != null && !Utils.CanInstantiate(valueType))
+                                if (valueType != null && 
+                                    !Utils.PrimitiveTypes.Contains(valueType) && 
+                                    !Utils.CanInstantiate(valueType))
                                 {
                                     ThrowNativeAotTypeInstantiationError(valueType, propertyStorage.PropertyName, entry);
                                 }
@@ -810,6 +814,8 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException(errorMessage);
         }
 
+         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
+            Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
         private bool TryFromMap([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, SimplePropertyStorage parentPropertyStorage, out object output)
         {
             output = null;
