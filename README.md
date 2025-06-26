@@ -520,6 +520,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.
 * [AWSSDK.Keyspaces](https://www.nuget.org/packages/AWSSDK.Keyspaces/)
 	* This release adds support for data definition language (DDL) operations
+* [AWSSDK.KeyspacesStreams](https://www.nuget.org/packages/AWSSDK.KeyspacesStreams/)
+	* This release adds change data capture (CDC) streams support through the new Amazon Keyspaces Streams API.
 * [AWSSDK.Kinesis](https://www.nuget.org/packages/AWSSDK.Kinesis/)
 	* Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.
 * [AWSSDK.KinesisAnalytics](https://www.nuget.org/packages/AWSSDK.KinesisAnalytics/)
