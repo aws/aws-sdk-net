@@ -54,9 +54,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
         this.context = context;
 
         String serviceNamespace = null;
-        if(service.getTrait(ServiceTrait.class).isPresent())
+        if (service.getTrait(ServiceTrait.class).isPresent())
                 serviceNamespace = service.getTrait(ServiceTrait.class).get().getSdkId();
-        else if(service.getTrait(TitleTrait.class).isPresent())
+        else if (service.getTrait(TitleTrait.class).isPresent())
             serviceNamespace = service.getTrait(TitleTrait.class).get().getValue().replace("Service", "");
 
         this.serviceNamespace = serviceNamespace.replace(" ", "");
@@ -106,7 +106,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         for (StructureShape error : index.getErrors(operation, service)) {
             error.getTrait(HttpResponseTestsTrait.class).ifPresent(trait -> {
                 for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                    if(!trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName().toLowerCase().contains("cbor")) // Skip CBOR response tests until the unmarshallers are ready
+                    if (!trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName().toLowerCase().contains("cbor")) // Skip CBOR response tests until the unmarshallers are ready
                         generateErrorResponseTest(operation, error, httpResponseTestCase);
                 }
             });

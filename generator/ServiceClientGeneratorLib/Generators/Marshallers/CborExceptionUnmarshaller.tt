@@ -1,0 +1,95 @@
+﻿<#@ template language="C#" inherits="BaseResponseUnmarshaller"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+
+    AddCommonUsingStatements();
+#>
+using System.Text.Json;
+using Amazon.Util;
+#pragma warning disable CS0612,CS0618
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
+    /// </summary>  
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IJsonErrorResponseUnmarshaller<<#=this.UnmarshallerBaseName #>, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="reader"></param>
+        /// <returns></returns>
+        public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+        }
+
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
+        /// <returns></returns>
+        public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        {
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
+
+<#
+            if  (this.Config.ServiceModel.IsAwsQueryCompatible)
+            {
+                GenerateAWSQueryCompatibleBlock();
+#>
+            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
+                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+<#
+            }
+            else
+            {
+#>
+            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+<#
+            }
+#>
+        
+            int targetDepth = context.CurrentDepth;
+            if (context.Stream.Length > 0)
+            {
+                while (context.ReadAtDepth(targetDepth, ref reader))
+                {
+<#
+    if(this.Structure != null)
+    {
+        foreach (var member in this.Structure.Members)
+        {
+#>
+                    if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+                    {
+                        var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                        unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+<#
+        }
+    }
+#>
+                }
+            }
+          
+            return unmarshalledObject;
+        }
+
+<#
+    this.AddStructureSingletonMethod();
+#>
+    }
+}
