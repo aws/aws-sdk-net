@@ -2,9 +2,11 @@
   "version":"2.0",
   "metadata":{
     "apiVersion":"2018-01-01",
+    "auth":["aws.auth#sigv4"],
     "endpointPrefix":"jsonprotocol",
     "jsonVersion":"1.1",
     "protocol":"json",
+    "protocols":["json"],
     "serviceFullName":"Sample Json 1.1 Protocol Service",
     "serviceId":"Json Protocol",
     "signatureVersion":"v4",
@@ -13,6 +15,16 @@
     "uid":"json-protocol-2018-01-01"
   },
   "operations":{
+    "ContentTypeParameters":{
+      "name":"ContentTypeParameters",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ContentTypeParametersInput"},
+      "output":{"shape":"ContentTypeParametersOutput"},
+      "documentation":"<p>The example tests how servers must support requests containing a <code>Content-Type</code> header with parameters.</p>"
+    },
     "DatetimeOffsets":{
       "name":"DatetimeOffsets",
       "http":{
@@ -86,6 +98,17 @@
       "input":{"shape":"JsonEnumsInputOutput"},
       "output":{"shape":"JsonEnumsInputOutput"},
       "documentation":"<p>This example serializes enums as top level properties, in lists, sets, and maps.</p>",
+      "idempotent":true
+    },
+    "JsonIntEnums":{
+      "name":"JsonIntEnums",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"JsonIntEnumsInputOutput"},
+      "output":{"shape":"JsonIntEnumsInputOutput"},
+      "documentation":"<p>This example serializes intEnums as top level properties, in lists, sets, and maps.</p>",
       "idempotent":true
     },
     "JsonUnions":{
@@ -180,6 +203,16 @@
         "Foo":{"shape":"String"}
       }
     },
+    "ContentTypeParametersInput":{
+      "type":"structure",
+      "members":{
+        "value":{"shape":"Integer"}
+      }
+    },
+    "ContentTypeParametersOutput":{
+      "type":"structure",
+      "members":{}
+    },
     "DateTime":{
       "type":"timestamp",
       "timestampFormat":"iso8601"
@@ -192,8 +225,7 @@
     },
     "Document":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "Double":{
@@ -202,8 +234,7 @@
     },
     "EmptyStruct":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ErrorWithMembers":{
       "type":"structure",
@@ -223,8 +254,7 @@
     },
     "ErrorWithoutMembers":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true,
       "fault":true
     },
@@ -257,8 +287,7 @@
     },
     "FooError":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>This error has test cases that test some of the dark corners of Amazon service framework history. It should only be implemented by clients.</p>",
       "exception":true,
       "fault":true
@@ -295,6 +324,23 @@
       "type":"integer",
       "box":true
     },
+    "IntegerEnum":{
+      "type":"integer",
+      "box":true
+    },
+    "IntegerEnumList":{
+      "type":"list",
+      "member":{"shape":"IntegerEnum"}
+    },
+    "IntegerEnumMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"IntegerEnum"}
+    },
+    "IntegerEnumSet":{
+      "type":"list",
+      "member":{"shape":"IntegerEnum"}
+    },
     "InvalidGreeting":{
       "type":"structure",
       "members":{
@@ -312,6 +358,17 @@
         "fooEnumList":{"shape":"FooEnumList"},
         "fooEnumSet":{"shape":"FooEnumSet"},
         "fooEnumMap":{"shape":"FooEnumMap"}
+      }
+    },
+    "JsonIntEnumsInputOutput":{
+      "type":"structure",
+      "members":{
+        "intEnum1":{"shape":"IntegerEnum"},
+        "intEnum2":{"shape":"IntegerEnum"},
+        "intEnum3":{"shape":"IntegerEnum"},
+        "intEnumList":{"shape":"IntegerEnumList"},
+        "intEnumSet":{"shape":"IntegerEnumSet"},
+        "intEnumMap":{"shape":"IntegerEnumMap"}
       }
     },
     "JsonValue":{"type":"string"},

@@ -458,6 +458,61 @@ namespace Amazon.RestXmlProtocol
 
         #endregion
         
+        #region  ContentTypeParameters
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return Invoke<ContentTypeParametersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ContentTypeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters operation on AmazonRestXmlProtocolClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndContentTypeParameters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual IAsyncResult BeginContentTypeParameters(ContentTypeParametersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ContentTypeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginContentTypeParameters.</param>
+        /// 
+        /// <returns>Returns a  ContentTypeParametersResult from RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual ContentTypeParametersResponse EndContentTypeParameters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ContentTypeParametersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DatetimeOffsets
 
         /// <summary>
@@ -1010,6 +1065,60 @@ namespace Amazon.RestXmlProtocol
         public virtual GreetingWithErrorsResponse EndGreetingWithErrors(IAsyncResult asyncResult)
         {
             return EndInvoke<GreetingWithErrorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  HttpEmptyPrefixHeaders
+
+        /// <summary>
+        /// Clients that perform this test extract all headers from the response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpEmptyPrefixHeaders service method.</param>
+        /// 
+        /// <returns>The response from the HttpEmptyPrefixHeaders service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">REST API Reference for HttpEmptyPrefixHeaders Operation</seealso>
+        public virtual HttpEmptyPrefixHeadersResponse HttpEmptyPrefixHeaders(HttpEmptyPrefixHeadersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = HttpEmptyPrefixHeadersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HttpEmptyPrefixHeadersResponseUnmarshaller.Instance;
+
+            return Invoke<HttpEmptyPrefixHeadersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the HttpEmptyPrefixHeaders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the HttpEmptyPrefixHeaders operation on AmazonRestXmlProtocolClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndHttpEmptyPrefixHeaders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">REST API Reference for HttpEmptyPrefixHeaders Operation</seealso>
+        public virtual IAsyncResult BeginHttpEmptyPrefixHeaders(HttpEmptyPrefixHeadersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = HttpEmptyPrefixHeadersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HttpEmptyPrefixHeadersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  HttpEmptyPrefixHeaders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginHttpEmptyPrefixHeaders.</param>
+        /// 
+        /// <returns>Returns a  HttpEmptyPrefixHeadersResult from RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">REST API Reference for HttpEmptyPrefixHeaders Operation</seealso>
+        public virtual HttpEmptyPrefixHeadersResponse EndHttpEmptyPrefixHeaders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<HttpEmptyPrefixHeadersResponse>(asyncResult);
         }
 
         #endregion
@@ -2003,6 +2112,60 @@ namespace Amazon.RestXmlProtocol
 
         #endregion
         
+        #region  NestedXmlMapWithXmlName
+
+        /// <summary>
+        /// Nested Xml Maps with key/values with @xmlName
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NestedXmlMapWithXmlName service method.</param>
+        /// 
+        /// <returns>The response from the NestedXmlMapWithXmlName service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NestedXmlMapWithXmlName">REST API Reference for NestedXmlMapWithXmlName Operation</seealso>
+        public virtual NestedXmlMapWithXmlNameResponse NestedXmlMapWithXmlName(NestedXmlMapWithXmlNameRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NestedXmlMapWithXmlNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NestedXmlMapWithXmlNameResponseUnmarshaller.Instance;
+
+            return Invoke<NestedXmlMapWithXmlNameResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the NestedXmlMapWithXmlName operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the NestedXmlMapWithXmlName operation on AmazonRestXmlProtocolClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNestedXmlMapWithXmlName
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NestedXmlMapWithXmlName">REST API Reference for NestedXmlMapWithXmlName Operation</seealso>
+        public virtual IAsyncResult BeginNestedXmlMapWithXmlName(NestedXmlMapWithXmlNameRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NestedXmlMapWithXmlNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NestedXmlMapWithXmlNameResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  NestedXmlMapWithXmlName operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNestedXmlMapWithXmlName.</param>
+        /// 
+        /// <returns>Returns a  NestedXmlMapWithXmlNameResult from RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NestedXmlMapWithXmlName">REST API Reference for NestedXmlMapWithXmlName Operation</seealso>
+        public virtual NestedXmlMapWithXmlNameResponse EndNestedXmlMapWithXmlName(IAsyncResult asyncResult)
+        {
+            return EndInvoke<NestedXmlMapWithXmlNameResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  NoInputAndNoOutput
 
         /// <summary>
@@ -2118,7 +2281,7 @@ namespace Amazon.RestXmlProtocol
         #region  NullAndEmptyHeadersClient
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersClient service method.</param>
         /// 
@@ -2172,7 +2335,7 @@ namespace Amazon.RestXmlProtocol
         #region  NullAndEmptyHeadersServer
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersServer service method.</param>
         /// 

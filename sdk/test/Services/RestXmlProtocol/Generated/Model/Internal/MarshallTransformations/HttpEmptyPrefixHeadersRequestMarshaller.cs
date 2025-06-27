@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rest-json-protocol-2019-12-16.normal.json service model.
+ * Do not modify this file. This file is generated from the rest-xml-protocol-2019-12-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -23,20 +23,20 @@ using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.RestJsonProtocol.Model;
+using Amazon.RestXmlProtocol.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
+using System.Xml;
 
 #pragma warning disable CS0612,CS0618
-namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
+namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TestNoPayload Request Marshaller
+    /// HttpEmptyPrefixHeaders Request Marshaller
     /// </summary>       
-    public class TestNoPayloadRequestMarshaller : IMarshaller<IRequest, TestNoPayloadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class HttpEmptyPrefixHeadersRequestMarshaller : IMarshaller<IRequest, HttpEmptyPrefixHeadersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((TestNoPayloadRequest)input);
+            return this.Marshall((HttpEmptyPrefixHeadersRequest)input);
         }
 
         /// <summary>
@@ -53,24 +53,32 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(TestNoPayloadRequest publicRequest)
+        public IRequest Marshall(HttpEmptyPrefixHeadersRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(publicRequest, "Amazon.RestJsonProtocol");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-16";
+            var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
             request.HttpMethod = "GET";
-
-            request.ResourcePath = "/no_payload";
         
-            if (publicRequest.IsSetTestId()) 
+            if (publicRequest.IsSetPrefixHeaders()) 
             {
-                request.Headers["X-Amz-Test-Id"] = publicRequest.TestId;
+                //Map of headers with prefix "".
+                foreach (var kvpPrefixHeaders in publicRequest.PrefixHeaders)
+                {
+                     request.Headers[$"{kvpPrefixHeaders.Key}"] = kvpPrefixHeaders.Value;
+                }
             }
+        
+            if (publicRequest.IsSetSpecificHeader()) 
+            {
+                request.Headers["hello"] = publicRequest.SpecificHeader;
+            }
+            request.ResourcePath = "/HttpEmptyPrefixHeaders";
+
 
             return request;
         }
-        private static TestNoPayloadRequestMarshaller _instance = new TestNoPayloadRequestMarshaller();        
+        private static HttpEmptyPrefixHeadersRequestMarshaller _instance = new HttpEmptyPrefixHeadersRequestMarshaller();        
 
-        internal static TestNoPayloadRequestMarshaller GetInstance()
+        internal static HttpEmptyPrefixHeadersRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -78,7 +86,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TestNoPayloadRequestMarshaller Instance
+        public static HttpEmptyPrefixHeadersRequestMarshaller Instance
         {
             get
             {
@@ -86,5 +94,5 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             }
         }
 
-    }
+    }    
 }

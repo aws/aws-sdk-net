@@ -2,9 +2,11 @@
   "version":"2.0",
   "metadata":{
     "apiVersion":"2020-07-14",
+    "auth":["aws.auth#sigv4"],
     "endpointPrefix":"jsonrpc10",
     "jsonVersion":"1.0",
     "protocol":"json",
+    "protocols":["json"],
     "serviceFullName":"Sample Json 1.0 Protocol Service",
     "serviceId":"JSON RPC 10",
     "signatureVersion":"v4",
@@ -13,6 +15,16 @@
     "uid":"json-rpc-10-2020-07-14"
   },
   "operations":{
+    "ContentTypeParameters":{
+      "name":"ContentTypeParameters",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ContentTypeParametersInput"},
+      "output":{"shape":"ContentTypeParametersOutput"},
+      "documentation":"<p>The example tests how servers must support requests containing a <code>Content-Type</code> header with parameters.</p>"
+    },
     "EmptyInputAndEmptyOutput":{
       "name":"EmptyInputAndEmptyOutput",
       "http":{
@@ -102,6 +114,14 @@
       "input":{"shape":"PutWithContentEncodingInput"},
       "requestcompression":{"encodings":["gzip"]}
     },
+    "QueryIncompatibleOperation":{
+      "name":"QueryIncompatibleOperation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "idempotent":true
+    },
     "SimpleScalarProperties":{
       "name":"SimpleScalarProperties",
       "http":{
@@ -133,19 +153,27 @@
         "Foo":{"shape":"String"}
       }
     },
+    "ContentTypeParametersInput":{
+      "type":"structure",
+      "members":{
+        "value":{"shape":"Integer"}
+      }
+    },
+    "ContentTypeParametersOutput":{
+      "type":"structure",
+      "members":{}
+    },
     "Double":{
       "type":"double",
       "box":true
     },
     "EmptyInputAndEmptyOutputInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EmptyInputAndEmptyOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EndpointWithHostLabelOperationInput":{
       "type":"structure",
@@ -173,8 +201,7 @@
     },
     "FooError":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>This error has test cases that test some of the dark corners of Amazon service framework history. It should only be implemented by clients.</p>",
       "exception":true,
       "fault":true
@@ -244,8 +271,7 @@
     },
     "NoInputAndOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "PutWithContentEncodingInput":{
       "type":"structure",

@@ -60,15 +60,15 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetFoo()) 
             {
-                request.Headers["X-Foo"] = publicRequest.Foo;
+                request.Headers["x-foo"] = publicRequest.Foo;
             }
         
             if (publicRequest.IsSetFooMap()) 
             {
-                //Map of headers with prefix "X-Foo-".
+                //Map of headers with prefix "x-foo-".
                 foreach (var kvpFooMap in publicRequest.FooMap)
                 {
-                     request.Headers[$"X-Foo-{kvpFooMap.Key}"] = kvpFooMap.Value;
+                     request.Headers[$"x-foo-{kvpFooMap.Key}"] = kvpFooMap.Value;
                 }
             }
             request.ResourcePath = "/HttpPrefixHeaders";

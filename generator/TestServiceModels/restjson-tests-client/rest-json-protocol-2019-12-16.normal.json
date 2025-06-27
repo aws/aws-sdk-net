@@ -2,9 +2,10 @@
   "version":"2.0",
   "metadata":{
     "apiVersion":"2019-12-16",
+    "auth":["aws.auth#sigv4"],
     "endpointPrefix":"restjson",
-    "jsonVersion":"1.1",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceFullName":"Sample Rest Json Protocol Service",
     "serviceId":"Rest Json Protocol",
     "signatureVersion":"v4",
@@ -41,6 +42,17 @@
       },
       "input":{"shape":"ConstantQueryStringInput"},
       "documentation":"<p>This example uses a constant query string parameters and a label. This simply tests that labels and query string parameters are compatible. The fixed query string parameter named &quot;hello&quot; should in no way conflict with the label, <code>{hello}</code>.</p>"
+    },
+    "ContentTypeParameters":{
+      "name":"ContentTypeParameters",
+      "http":{
+        "method":"POST",
+        "requestUri":"/ContentTypeParameters",
+        "responseCode":200
+      },
+      "input":{"shape":"ContentTypeParametersInput"},
+      "output":{"shape":"ContentTypeParametersOutput"},
+      "documentation":"<p>The example tests how servers must support requests containing a <code>Content-Type</code> header with parameters.</p>"
     },
     "DatetimeOffsets":{
       "name":"DatetimeOffsets",
@@ -163,6 +175,17 @@
       "output":{"shape":"HttpChecksumRequiredInputOutput"},
       "documentation":"<p>This example tests httpChecksumRequired trait</p>",
       "httpChecksumRequired":true
+    },
+    "HttpEmptyPrefixHeaders":{
+      "name":"HttpEmptyPrefixHeaders",
+      "http":{
+        "method":"GET",
+        "requestUri":"/HttpEmptyPrefixHeaders",
+        "responseCode":200
+      },
+      "input":{"shape":"HttpEmptyPrefixHeadersInput"},
+      "output":{"shape":"HttpEmptyPrefixHeadersOutput"},
+      "documentation":"<p>Clients that perform this test extract all headers from the response.</p>"
     },
     "HttpEnumPayload":{
       "name":"HttpEnumPayload",
@@ -439,7 +462,7 @@
       },
       "input":{"shape":"NullAndEmptyHeadersIO"},
       "output":{"shape":"NullAndEmptyHeadersIO"},
-      "documentation":"<p>Null and empty headers are not sent over the wire.</p>"
+      "documentation":"<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
     },
     "NullAndEmptyHeadersServer":{
       "name":"NullAndEmptyHeadersServer",
@@ -450,7 +473,7 @@
       },
       "input":{"shape":"NullAndEmptyHeadersIO"},
       "output":{"shape":"NullAndEmptyHeadersIO"},
-      "documentation":"<p>Null and empty headers are not sent over the wire.</p>"
+      "documentation":"<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
     },
     "OmitsNullSerializesEmptyString":{
       "name":"OmitsNullSerializesEmptyString",
@@ -533,6 +556,25 @@
       "documentation":"<p>Recursive shapes</p>",
       "idempotent":true
     },
+    "ResponseCodeHttpFallback":{
+      "name":"ResponseCodeHttpFallback",
+      "http":{
+        "method":"GET",
+        "requestUri":"/responseCodeHttpFallback",
+        "responseCode":201
+      },
+      "input":{"shape":"ResponseCodeHttpFallbackInputOutput"},
+      "output":{"shape":"ResponseCodeHttpFallbackInputOutput"}
+    },
+    "ResponseCodeRequired":{
+      "name":"ResponseCodeRequired",
+      "http":{
+        "method":"GET",
+        "requestUri":"/responseCodeRequired",
+        "responseCode":200
+      },
+      "output":{"shape":"ResponseCodeRequiredOutput"}
+    },
     "SimpleScalarProperties":{
       "name":"SimpleScalarProperties",
       "http":{
@@ -556,8 +598,18 @@
       "documentation":"<p>This example operation serializes a structure in the HTTP body.</p> <p>It should ensure Content-Type: application/json is used in all requests and that an &quot;empty&quot; body is an empty JSON document ({}).</p>",
       "idempotent":true
     },
-    "TestNoPayload":{
-      "name":"TestNoPayload",
+    "TestGetNoInputNoPayload":{
+      "name":"TestGetNoInputNoPayload",
+      "http":{
+        "method":"GET",
+        "requestUri":"/no_input_no_payload",
+        "responseCode":200
+      },
+      "output":{"shape":"TestNoPayloadInputOutput"},
+      "documentation":"<p>This example GET operation has no input and serializes a request without a HTTP body.</p> <p>These tests are to ensure we do not attach a body or related headers (Content-Length, Content-Type) to operations that semantically cannot produce an HTTP body.</p>"
+    },
+    "TestGetNoPayload":{
+      "name":"TestGetNoPayload",
       "http":{
         "method":"GET",
         "requestUri":"/no_payload",
@@ -565,7 +617,7 @@
       },
       "input":{"shape":"TestNoPayloadInputOutput"},
       "output":{"shape":"TestNoPayloadInputOutput"},
-      "documentation":"<p>This example operation serializes a request without an HTTP body.</p> <p>These tests are to ensure we do not attach a body or related headers (Content-Length, Content-Type) to operations that semantically cannot produce an HTTP body.</p>"
+      "documentation":"<p>This example GET operation serializes a request without a modeled HTTP body.</p> <p>These tests are to ensure we do not attach a body or related headers (Content-Length, Content-Type) to operations that semantically cannot produce an HTTP body.</p>"
     },
     "TestPayloadBlob":{
       "name":"TestPayloadBlob",
@@ -590,6 +642,27 @@
       "output":{"shape":"TestPayloadStructureInputOutput"},
       "documentation":"<p>This example operation serializes a payload targeting a structure.</p> <p>This enforces the same requirements as TestBodyStructure but with the body specified by the @httpPayload trait.</p>",
       "idempotent":true
+    },
+    "TestPostNoInputNoPayload":{
+      "name":"TestPostNoInputNoPayload",
+      "http":{
+        "method":"POST",
+        "requestUri":"/no_input_no_payload",
+        "responseCode":200
+      },
+      "output":{"shape":"TestNoPayloadInputOutput"},
+      "documentation":"<p>This example POST operation has no input and serializes a request without a HTTP body.</p> <p>These tests are to ensure we do not attach a body or related headers (Content-Type) to a POST operation with no modeled input.</p>"
+    },
+    "TestPostNoPayload":{
+      "name":"TestPostNoPayload",
+      "http":{
+        "method":"POST",
+        "requestUri":"/no_payload",
+        "responseCode":200
+      },
+      "input":{"shape":"TestNoPayloadInputOutput"},
+      "output":{"shape":"TestNoPayloadInputOutput"},
+      "documentation":"<p>This example POST operation serializes a request without a modeled HTTP body.</p> <p>These tests are to ensure we do not attach a body or related headers (Content-Type) to a POST operation with no modeled payload.</p>"
     },
     "TimestampFormatHeaders":{
       "name":"TimestampFormatHeaders",
@@ -784,6 +857,16 @@
         }
       }
     },
+    "ContentTypeParametersInput":{
+      "type":"structure",
+      "members":{
+        "value":{"shape":"Integer"}
+      }
+    },
+    "ContentTypeParametersOutput":{
+      "type":"structure",
+      "members":{}
+    },
     "DateTime":{
       "type":"timestamp",
       "timestampFormat":"iso8601"
@@ -821,8 +904,7 @@
     },
     "Document":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "DocumentTypeAsMapValueInputOutput":{
@@ -860,13 +942,11 @@
     },
     "EmptyInputAndEmptyOutputInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EmptyInputAndEmptyOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EnumPayloadInput":{
       "type":"structure",
@@ -908,8 +988,7 @@
     },
     "FooError":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>This error has test cases that test some of the dark corners of Amazon service framework history. It should only be implemented by clients.</p>",
       "error":{"httpStatusCode":500},
       "exception":true,
@@ -957,6 +1036,36 @@
       "type":"timestamp",
       "timestampFormat":"rfc822"
     },
+    "HttpEmptyPrefixHeadersInput":{
+      "type":"structure",
+      "members":{
+        "prefixHeaders":{
+          "shape":"StringMap",
+          "location":"headers",
+          "locationName":""
+        },
+        "specificHeader":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"hello"
+        }
+      }
+    },
+    "HttpEmptyPrefixHeadersOutput":{
+      "type":"structure",
+      "members":{
+        "prefixHeaders":{
+          "shape":"StringMap",
+          "location":"headers",
+          "locationName":""
+        },
+        "specificHeader":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"hello"
+        }
+      }
+    },
     "HttpPayloadTraitsInputOutput":{
       "type":"structure",
       "members":{
@@ -985,8 +1094,7 @@
     },
     "HttpPrefixHeadersInResponseInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "HttpPrefixHeadersInResponseOutput":{
       "type":"structure",
@@ -1004,12 +1112,12 @@
         "foo":{
           "shape":"String",
           "location":"header",
-          "locationName":"X-Foo"
+          "locationName":"x-foo"
         },
         "fooMap":{
           "shape":"StringMap",
           "location":"headers",
-          "locationName":"X-Foo-"
+          "locationName":"x-foo-"
         }
       }
     },
@@ -1019,12 +1127,12 @@
         "foo":{
           "shape":"String",
           "location":"header",
-          "locationName":"X-Foo"
+          "locationName":"x-foo"
         },
         "fooMap":{
           "shape":"StringMap",
           "location":"headers",
-          "locationName":"X-Foo-"
+          "locationName":"x-foo-"
         }
       }
     },
@@ -1463,8 +1571,7 @@
     },
     "NoInputAndOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "NullAndEmptyHeadersIO":{
       "type":"structure",
@@ -1634,6 +1741,20 @@
       "type":"structure",
       "members":{
         "salutation":{"shape":"String"}
+      }
+    },
+    "ResponseCodeHttpFallbackInputOutput":{
+      "type":"structure",
+      "members":{}
+    },
+    "ResponseCodeRequiredOutput":{
+      "type":"structure",
+      "required":["responseCode"],
+      "members":{
+        "responseCode":{
+          "shape":"Integer",
+          "location":"statusCode"
+        }
       }
     },
     "SimpleScalarPropertiesInputOutput":{

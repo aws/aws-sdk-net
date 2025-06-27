@@ -92,7 +92,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         }
 
         /// <summary>
-        /// Serializes empty query lists
+        /// Does not serialize empty query lists.
         /// </summary>
         /*
         * This test either requires a breaking change and will be addressed
@@ -123,7 +123,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&ListArg=");
+            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08");
             foreach(var queryParam in expectedParams.Keys)
             {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));

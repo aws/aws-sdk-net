@@ -241,6 +241,41 @@ namespace Amazon.JsonProtocol
         #endregion
 
 
+        #region  ContentTypeParameters
+
+        internal virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return Invoke<ContentTypeParametersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual Task<ContentTypeParametersResponse> ContentTypeParametersAsync(ContentTypeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ContentTypeParametersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DatetimeOffsets
 
         internal virtual DatetimeOffsetsResponse DatetimeOffsets(DatetimeOffsetsRequest request)
@@ -526,6 +561,40 @@ namespace Amazon.JsonProtocol
             options.ResponseUnmarshaller = JsonEnumsResponseUnmarshaller.Instance;
 
             return InvokeAsync<JsonEnumsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  JsonIntEnums
+
+        internal virtual JsonIntEnumsResponse JsonIntEnums(JsonIntEnumsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonIntEnumsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonIntEnumsResponseUnmarshaller.Instance;
+
+            return Invoke<JsonIntEnumsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This example serializes intEnums as top level properties, in lists, sets, and maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonIntEnums service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the JsonIntEnums service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/JsonIntEnums">REST API Reference for JsonIntEnums Operation</seealso>
+        public virtual Task<JsonIntEnumsResponse> JsonIntEnumsAsync(JsonIntEnumsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonIntEnumsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonIntEnumsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<JsonIntEnumsResponse>(request, options, cancellationToken);
         }
 
         #endregion

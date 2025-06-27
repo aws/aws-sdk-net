@@ -88,7 +88,12 @@ public final class ProtocolTestCustomizations {
             "XmlUnionsWithStructMember",
             "XmlUnionsWithStringMember",
             "XmlUnionsWithBooleanMember",
-            "XmlUnionsWithUnionMember"
+            "XmlUnionsWithUnionMember",
+            // this test is skipped because in the C2J Ruby added a hook which adds the "code" json key which can NEVER exist in a
+            // non-query protocol. this causes our code generation to check on this code instead of what is modeled and our protocol
+            // test passes. As this can never happen in a real service, we can skip this to avoid unnecessary customizations in the generator
+            // for a scenario that will never happen.
+            "QueryCompatibleAwsJson10CustomCodeError"
 
     );
     public static final List<String> VNextTests = Arrays.asList(

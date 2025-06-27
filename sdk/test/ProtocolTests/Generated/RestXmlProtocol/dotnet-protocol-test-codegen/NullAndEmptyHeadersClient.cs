@@ -40,8 +40,8 @@ namespace AWSSDK.ProtocolTests.RestXml
     public class NullAndEmptyHeadersClient
     {
         /// <summary>
-        /// Do not send null values, empty strings, or empty lists over the
-        /// wire in headers
+        /// Do not send null values, but do send empty strings and empty
+        /// lists over the wire in headers
         /// </summary>
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -71,9 +71,9 @@ namespace AWSSDK.ProtocolTests.RestXml
             Assert.AreEqual("GET", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/NullAndEmptyHeadersClient", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("".Replace(" ",""), marshalledRequest.Headers["X-B"].Replace(" ",""));
+            Assert.AreEqual("".Replace(" ",""), marshalledRequest.Headers["X-C"].Replace(" ",""));
             Assert.IsFalse(marshalledRequest.Headers.ContainsKey("X-A"));
-            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("X-B"));
-            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("X-C"));
         }
 
     }

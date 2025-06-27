@@ -30,32 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RestJsonProtocol.Model
 {
     /// <summary>
-    /// Container for the parameters to the TestNoPayload operation.
-    /// This example operation serializes a request without an HTTP body.
-    /// 
-    ///  
-    /// <para>
-    /// These tests are to ensure we do not attach a body or related headers (Content-Length,
-    /// Content-Type) to operations that semantically cannot produce an HTTP body.
-    /// </para>
+    /// This is the response object from the ResponseCodeRequired operation.
     /// </summary>
-    public partial class TestNoPayloadRequest : AmazonRestJsonProtocolRequest
+    public partial class ResponseCodeRequiredResponse : AmazonWebServiceResponse
     {
-        private string _testId;
+        private int? _responseCode;
 
         /// <summary>
-        /// Gets and sets the property TestId.
+        /// Gets and sets the property ResponseCode.
         /// </summary>
-        public string TestId
+        [AWSProperty(Required=true)]
+        public int ResponseCode
         {
-            get { return this._testId; }
-            set { this._testId = value; }
+            get { return this._responseCode.GetValueOrDefault(); }
+            set { this._responseCode = value; }
         }
 
-        // Check to see if TestId property is set
-        internal bool IsSetTestId()
+        // Check to see if ResponseCode property is set
+        internal bool IsSetResponseCode()
         {
-            return !string.IsNullOrEmpty(this._testId);
+            return this._responseCode.HasValue; 
         }
 
     }

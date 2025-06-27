@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TestNoPayload operation
+    /// Response Unmarshaller for TestGetNoInputNoPayload operation
     /// </summary>  
-    public class TestNoPayloadResponseUnmarshaller : JsonResponseUnmarshaller
+    public class TestGetNoInputNoPayloadResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            TestNoPayloadResponse response = new TestNoPayloadResponse();
+            TestGetNoInputNoPayloadResponse response = new TestGetNoInputNoPayloadResponse();
 
             if (context.ResponseData.IsHeaderPresent("X-Amz-Test-Id"))
                 response.TestId = context.ResponseData.GetHeaderValue("X-Amz-Test-Id");
@@ -76,9 +76,9 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             return new AmazonRestJsonProtocolException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static TestNoPayloadResponseUnmarshaller _instance = new TestNoPayloadResponseUnmarshaller();        
+        private static TestGetNoInputNoPayloadResponseUnmarshaller _instance = new TestGetNoInputNoPayloadResponseUnmarshaller();        
 
-        internal static TestNoPayloadResponseUnmarshaller GetInstance()
+        internal static TestGetNoInputNoPayloadResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +86,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TestNoPayloadResponseUnmarshaller Instance
+        public static TestGetNoInputNoPayloadResponseUnmarshaller Instance
         {
             get
             {

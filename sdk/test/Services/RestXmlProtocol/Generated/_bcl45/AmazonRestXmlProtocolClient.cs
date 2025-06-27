@@ -413,6 +413,49 @@ namespace Amazon.RestXmlProtocol
 
         #endregion
         
+        #region  ContentTypeParameters
+
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return Invoke<ContentTypeParametersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual Task<ContentTypeParametersResponse> ContentTypeParametersAsync(ContentTypeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ContentTypeParametersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DatetimeOffsets
 
 
@@ -851,6 +894,47 @@ namespace Amazon.RestXmlProtocol
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
             
             return InvokeAsync<GreetingWithErrorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  HttpEmptyPrefixHeaders
+
+
+        /// <summary>
+        /// Clients that perform this test extract all headers from the response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpEmptyPrefixHeaders service method.</param>
+        /// 
+        /// <returns>The response from the HttpEmptyPrefixHeaders service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">REST API Reference for HttpEmptyPrefixHeaders Operation</seealso>
+        public virtual HttpEmptyPrefixHeadersResponse HttpEmptyPrefixHeaders(HttpEmptyPrefixHeadersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = HttpEmptyPrefixHeadersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HttpEmptyPrefixHeadersResponseUnmarshaller.Instance;
+
+            return Invoke<HttpEmptyPrefixHeadersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Clients that perform this test extract all headers from the response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpEmptyPrefixHeaders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the HttpEmptyPrefixHeaders service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">REST API Reference for HttpEmptyPrefixHeaders Operation</seealso>
+        public virtual Task<HttpEmptyPrefixHeadersResponse> HttpEmptyPrefixHeadersAsync(HttpEmptyPrefixHeadersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = HttpEmptyPrefixHeadersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HttpEmptyPrefixHeadersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<HttpEmptyPrefixHeadersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1627,6 +1711,47 @@ namespace Amazon.RestXmlProtocol
 
         #endregion
         
+        #region  NestedXmlMapWithXmlName
+
+
+        /// <summary>
+        /// Nested Xml Maps with key/values with @xmlName
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NestedXmlMapWithXmlName service method.</param>
+        /// 
+        /// <returns>The response from the NestedXmlMapWithXmlName service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NestedXmlMapWithXmlName">REST API Reference for NestedXmlMapWithXmlName Operation</seealso>
+        public virtual NestedXmlMapWithXmlNameResponse NestedXmlMapWithXmlName(NestedXmlMapWithXmlNameRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NestedXmlMapWithXmlNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NestedXmlMapWithXmlNameResponseUnmarshaller.Instance;
+
+            return Invoke<NestedXmlMapWithXmlNameResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Nested Xml Maps with key/values with @xmlName
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NestedXmlMapWithXmlName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the NestedXmlMapWithXmlName service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NestedXmlMapWithXmlName">REST API Reference for NestedXmlMapWithXmlName Operation</seealso>
+        public virtual Task<NestedXmlMapWithXmlNameResponse> NestedXmlMapWithXmlNameAsync(NestedXmlMapWithXmlNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NestedXmlMapWithXmlNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NestedXmlMapWithXmlNameResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<NestedXmlMapWithXmlNameResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  NoInputAndNoOutput
 
 
@@ -1721,7 +1846,7 @@ namespace Amazon.RestXmlProtocol
 
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersClient service method.</param>
         /// 
@@ -1738,7 +1863,7 @@ namespace Amazon.RestXmlProtocol
 
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersClient service method.</param>
         /// <param name="cancellationToken">
@@ -1762,7 +1887,7 @@ namespace Amazon.RestXmlProtocol
 
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersServer service method.</param>
         /// 
@@ -1779,7 +1904,7 @@ namespace Amazon.RestXmlProtocol
 
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersServer service method.</param>
         /// <param name="cancellationToken">

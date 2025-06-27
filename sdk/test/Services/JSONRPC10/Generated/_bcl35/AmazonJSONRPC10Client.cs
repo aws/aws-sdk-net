@@ -237,6 +237,61 @@ namespace Amazon.JSONRPC10
         #endregion
 
 
+        #region  ContentTypeParameters
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by JSONRPC10.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return Invoke<ContentTypeParametersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ContentTypeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters operation on AmazonJSONRPC10Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndContentTypeParameters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual IAsyncResult BeginContentTypeParameters(ContentTypeParametersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ContentTypeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginContentTypeParameters.</param>
+        /// 
+        /// <returns>Returns a  ContentTypeParametersResult from JSONRPC10.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual ContentTypeParametersResponse EndContentTypeParameters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ContentTypeParametersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EmptyInputAndEmptyOutput
 
         /// <summary>
@@ -743,6 +798,60 @@ namespace Amazon.JSONRPC10
         public virtual PutWithContentEncodingResponse EndPutWithContentEncoding(IAsyncResult asyncResult)
         {
             return EndInvoke<PutWithContentEncodingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QueryIncompatibleOperation
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryIncompatibleOperation service method.</param>
+        /// 
+        /// <returns>The response from the QueryIncompatibleOperation service method, as returned by JSONRPC10.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/QueryIncompatibleOperation">REST API Reference for QueryIncompatibleOperation Operation</seealso>
+        public virtual QueryIncompatibleOperationResponse QueryIncompatibleOperation(QueryIncompatibleOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIncompatibleOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIncompatibleOperationResponseUnmarshaller.Instance;
+
+            return Invoke<QueryIncompatibleOperationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryIncompatibleOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryIncompatibleOperation operation on AmazonJSONRPC10Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryIncompatibleOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/QueryIncompatibleOperation">REST API Reference for QueryIncompatibleOperation Operation</seealso>
+        public virtual IAsyncResult BeginQueryIncompatibleOperation(QueryIncompatibleOperationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIncompatibleOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIncompatibleOperationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryIncompatibleOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryIncompatibleOperation.</param>
+        /// 
+        /// <returns>Returns a  QueryIncompatibleOperationResult from JSONRPC10.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/QueryIncompatibleOperation">REST API Reference for QueryIncompatibleOperation Operation</seealso>
+        public virtual QueryIncompatibleOperationResponse EndQueryIncompatibleOperation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryIncompatibleOperationResponse>(asyncResult);
         }
 
         #endregion
