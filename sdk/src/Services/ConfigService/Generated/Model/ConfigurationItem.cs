@@ -131,7 +131,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The description of the resource configuration.
+        /// A JSON-encoded string that contains the contents for the resource configuration. This
+        /// string needs to be deserialized using <c>json.loads()</c> before you can access the
+        /// contents.
         /// </para>
         /// </summary>
         public string Configuration
@@ -174,8 +176,11 @@ namespace Amazon.ConfigService.Model
         /// This field is optional and is not guaranteed to be present in a configuration item
         /// (CI). If you are using daily recording, this field will be populated. However, if
         /// you are using continuous recording, this field will be omitted since the delivery
-        /// time is instantaneous as the CI is available right away. For more information on daily
-        /// recording and continuous recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+        /// time is instantaneous as the CI is available right away.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on daily recording and continuous recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
         /// Frequency</a> in the <i>Config Developer Guide</i>.
         /// </para>
         ///  </note>
@@ -279,6 +284,15 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The recording frequency that Config uses to record configuration changes for the resource.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field only appears in the API response when <c>DAILY</c> recording is enabled
+        /// for a resource type. If this field is not present, <c>CONTINUOUS</c> recording is
+        /// enabled for that resource type. For more information on daily recording and continuous
+        /// recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+        /// Frequency</a> in the <i>Config Developer Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public RecordingFrequency RecordingFrequency
         {
@@ -416,8 +430,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SupplementaryConfiguration. 
         /// <para>
-        /// Configuration attributes that Config returns for certain resource types to supplement
-        /// the information returned for the <c>configuration</c> parameter.
+        /// A string to string map that contains additional contents for the resource configuration.Config
+        /// returns this field for certain resource types to supplement the information returned
+        /// for the <c>configuration</c> field.
+        /// </para>
+        ///  
+        /// <para>
+        /// This string to string map needs to be deserialized using <c>json.loads()</c> before
+        /// you can accessing the contents.
         /// </para>
         /// </summary>
         public Dictionary<string, string> SupplementaryConfiguration

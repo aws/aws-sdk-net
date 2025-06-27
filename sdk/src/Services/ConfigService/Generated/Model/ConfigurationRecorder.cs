@@ -81,7 +81,8 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// For service-linked configuration recorders, Config automatically assigns a name that
-        /// has the prefix "<c>AWS</c>" to a new service-linked configuration recorder.
+        /// has the prefix "<c>AWSConfigurationRecorderFor</c>" to a new service-linked configuration
+        /// recorder.
         /// </para>
         ///  <note> 
         /// <para>

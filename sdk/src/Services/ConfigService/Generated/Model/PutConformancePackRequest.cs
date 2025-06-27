@@ -36,7 +36,20 @@ namespace Amazon.ConfigService.Model
     /// For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
     /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
     /// 
+    ///  <important> 
+    /// <para>
+    /// When you use <c>PutConformancePack</c> to deploy conformance packs in your account,
+    /// the operation can create Config rules and remediation actions without requiring <c>config:PutConfigRule</c>
+    /// or <c>config:PutRemediationConfigurations</c> permissions in your account IAM policies.
+    /// </para>
     ///  
+    /// <para>
+    /// This API uses the <c>AWSServiceRoleForConfigConforms</c> service-linked role in your
+    /// account to create conformance pack resources. This service-linked role includes the
+    /// permissions to create Config rules and remediation configurations, even if your account
+    /// IAM policies explicitly deny these actions.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// This API creates a service-linked role <c>AWSServiceRoleForConfigConforms</c> in your
     /// account. The service-linked role is created only when the role does not exist in your
@@ -148,7 +161,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// A string containing the full conformance pack template body. The structure containing
+        /// A string that contains the full conformance pack template body. The structure containing
         /// the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.
         /// </para>
         ///  <note> 
