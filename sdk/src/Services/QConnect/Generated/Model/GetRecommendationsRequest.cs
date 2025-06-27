@@ -37,7 +37,7 @@ namespace Amazon.QConnect.Model
     /// after March 1, 2024, you will need to create a new Assistant in the Amazon Connect
     /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
     /// into your applications.
-    /// </para>
+    /// 
     ///  </important> 
     /// <para>
     /// Retrieves recommendations for the specified session. To avoid retrieving the same
@@ -45,6 +45,8 @@ namespace Amazon.QConnect.Model
     /// This API supports long-polling behavior with the <c>waitTimeSeconds</c> parameter.
     /// Short poll is the default behavior and only returns recommendations already available.
     /// To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class GetRecommendationsRequest : AmazonQConnectRequest

@@ -101,6 +101,12 @@ namespace Amazon.QConnect.Model
         /// The locale to which specifies the language and region settings that determine the
         /// response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For more information on supported locales, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/supported-languages.html#qic-notes-languages">Language
+        /// support for Amazon Q in Connect</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
         public string Locale

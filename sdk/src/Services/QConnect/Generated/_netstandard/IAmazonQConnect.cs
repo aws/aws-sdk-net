@@ -155,6 +155,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -194,6 +197,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -235,6 +241,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -274,6 +283,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -315,6 +327,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -355,6 +370,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -388,6 +406,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
         /// You've exceeded your service quota. To perform the requested action, remove some of
         /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -466,6 +487,9 @@ namespace Amazon.QConnect
         /// You've exceeded your service quota. To perform the requested action, remove some of
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -535,6 +559,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -599,6 +626,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
         /// You've exceeded your service quota. To perform the requested action, remove some of
         /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -688,6 +718,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -774,6 +807,9 @@ namespace Amazon.QConnect
         /// You've exceeded your service quota. To perform the requested action, remove some of
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -808,6 +844,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -877,6 +916,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -912,6 +954,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -949,6 +994,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -985,6 +1033,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1014,6 +1065,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1051,6 +1105,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1078,6 +1135,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1104,6 +1164,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1137,6 +1200,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1173,6 +1239,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1205,6 +1274,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1250,6 +1322,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1356,6 +1431,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1385,6 +1463,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1416,6 +1497,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1446,6 +1530,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1472,6 +1559,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1500,6 +1590,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1526,6 +1619,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1562,6 +1658,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1588,6 +1687,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1643,6 +1745,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1676,6 +1781,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1731,6 +1839,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1750,7 +1861,7 @@ namespace Amazon.QConnect
         /// after March 1, 2024, you will need to create a new Assistant in the Amazon Connect
         /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
         /// into your applications.
-        /// </para>
+        /// 
         ///  </important> 
         /// <para>
         /// Retrieves recommendations for the specified session. To avoid retrieving the same
@@ -1758,6 +1869,8 @@ namespace Amazon.QConnect
         /// This API supports long-polling behavior with the <c>waitTimeSeconds</c> parameter.
         /// Short poll is the default behavior and only returns recommendations already available.
         /// To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecommendations service method.</param>
@@ -1800,6 +1913,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1829,6 +1945,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1860,6 +1979,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1889,6 +2011,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -1920,6 +2045,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1950,6 +2078,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -1979,6 +2110,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -2031,6 +2165,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -2065,6 +2202,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -2354,11 +2494,13 @@ namespace Amazon.QConnect
         /// after March 1, 2024, you will need to create a new Assistant in the Amazon Connect
         /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
         /// into your applications.
-        /// </para>
+        /// 
         ///  </important> 
         /// <para>
         /// Performs a manual search against the specified assistant. To retrieve recommendations
         /// for an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.
+        /// 
+        /// </para>
         /// 
         /// </para>
         /// </summary>
@@ -2499,6 +2641,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -2528,6 +2673,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -2562,6 +2710,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -2588,6 +2739,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -2662,6 +2816,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -2709,6 +2866,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
         /// You've exceeded your service quota. To perform the requested action, remove some of
         /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -2791,6 +2951,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -2827,6 +2990,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -2862,6 +3028,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -2923,6 +3092,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
@@ -3072,6 +3244,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -3101,6 +3276,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -3127,6 +3305,9 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
