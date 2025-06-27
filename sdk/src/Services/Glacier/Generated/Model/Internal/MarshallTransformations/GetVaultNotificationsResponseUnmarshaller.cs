@@ -48,6 +48,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         {
             GetVaultNotificationsResponse response = new GetVaultNotificationsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = VaultNotificationConfigUnmarshaller.Instance;
             response.VaultNotificationConfig = unmarshaller.Unmarshall(context, ref reader);
 

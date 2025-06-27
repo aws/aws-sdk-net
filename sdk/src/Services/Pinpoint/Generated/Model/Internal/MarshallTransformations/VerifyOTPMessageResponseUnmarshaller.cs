@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             VerifyOTPMessageResponse response = new VerifyOTPMessageResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = VerificationResponseUnmarshaller.Instance;
             response.VerificationResponse = unmarshaller.Unmarshall(context, ref reader);
 

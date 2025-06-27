@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             CreateImportJobResponse response = new CreateImportJobResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = ImportJobResponseUnmarshaller.Instance;
             response.ImportJobResponse = unmarshaller.Unmarshall(context, ref reader);
 

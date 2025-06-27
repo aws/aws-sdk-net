@@ -48,6 +48,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         {
             CreateVirtualNodeResponse response = new CreateVirtualNodeResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = VirtualNodeDataUnmarshaller.Instance;
             response.VirtualNode = unmarshaller.Unmarshall(context, ref reader);
 

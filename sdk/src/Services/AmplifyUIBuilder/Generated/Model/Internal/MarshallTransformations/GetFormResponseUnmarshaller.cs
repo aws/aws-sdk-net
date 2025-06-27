@@ -48,6 +48,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         {
             GetFormResponse response = new GetFormResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = FormUnmarshaller.Instance;
             response.Form = unmarshaller.Unmarshall(context, ref reader);
 

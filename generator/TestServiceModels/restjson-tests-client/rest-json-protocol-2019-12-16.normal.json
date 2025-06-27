@@ -176,6 +176,17 @@
       "documentation":"<p>This example tests httpChecksumRequired trait</p>",
       "httpChecksumRequired":true
     },
+    "HttpEmptyPrefixHeaders":{
+      "name":"HttpEmptyPrefixHeaders",
+      "http":{
+        "method":"GET",
+        "requestUri":"/HttpEmptyPrefixHeaders",
+        "responseCode":200
+      },
+      "input":{"shape":"HttpEmptyPrefixHeadersInput"},
+      "output":{"shape":"HttpEmptyPrefixHeadersOutput"},
+      "documentation":"<p>Clients that perform this test extract all headers from the response.</p>"
+    },
     "HttpEnumPayload":{
       "name":"HttpEnumPayload",
       "http":{
@@ -854,8 +865,7 @@
     },
     "ContentTypeParametersOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DateTime":{
       "type":"timestamp",
@@ -894,8 +904,7 @@
     },
     "Document":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "DocumentTypeAsMapValueInputOutput":{
@@ -933,13 +942,11 @@
     },
     "EmptyInputAndEmptyOutputInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EmptyInputAndEmptyOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EnumPayloadInput":{
       "type":"structure",
@@ -981,8 +988,7 @@
     },
     "FooError":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>This error has test cases that test some of the dark corners of Amazon service framework history. It should only be implemented by clients.</p>",
       "error":{"httpStatusCode":500},
       "exception":true,
@@ -1030,6 +1036,36 @@
       "type":"timestamp",
       "timestampFormat":"rfc822"
     },
+    "HttpEmptyPrefixHeadersInput":{
+      "type":"structure",
+      "members":{
+        "prefixHeaders":{
+          "shape":"StringMap",
+          "location":"headers",
+          "locationName":""
+        },
+        "specificHeader":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"hello"
+        }
+      }
+    },
+    "HttpEmptyPrefixHeadersOutput":{
+      "type":"structure",
+      "members":{
+        "prefixHeaders":{
+          "shape":"StringMap",
+          "location":"headers",
+          "locationName":""
+        },
+        "specificHeader":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"hello"
+        }
+      }
+    },
     "HttpPayloadTraitsInputOutput":{
       "type":"structure",
       "members":{
@@ -1058,8 +1094,7 @@
     },
     "HttpPrefixHeadersInResponseInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "HttpPrefixHeadersInResponseOutput":{
       "type":"structure",
@@ -1536,8 +1571,7 @@
     },
     "NoInputAndOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "NullAndEmptyHeadersIO":{
       "type":"structure",
@@ -1711,8 +1745,7 @@
     },
     "ResponseCodeHttpFallbackInputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ResponseCodeRequiredOutput":{
       "type":"structure",
