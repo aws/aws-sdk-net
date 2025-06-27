@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class FederatedDatabase
     {
         private string _connectionName;
+        private string _connectionType;
         private string _identifier;
 
         /// <summary>
@@ -54,6 +55,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetConnectionName()
         {
             return this._connectionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionType. 
+        /// <para>
+        /// The type of connection used to access the federated database, such as JDBC, ODBC,
+        /// or other supported connection protocols.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ConnectionType
+        {
+            get { return this._connectionType; }
+            set { this._connectionType = value; }
+        }
+
+        // Check to see if ConnectionType property is set
+        internal bool IsSetConnectionType()
+        {
+            return this._connectionType != null;
         }
 
         /// <summary>

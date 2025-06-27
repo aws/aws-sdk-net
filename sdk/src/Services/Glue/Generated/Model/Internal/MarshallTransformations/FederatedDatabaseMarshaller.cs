@@ -54,6 +54,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConnectionName);
             }
 
+            if(requestObject.IsSetConnectionType())
+            {
+                context.Writer.WritePropertyName("ConnectionType");
+                context.Writer.Write(requestObject.ConnectionType);
+            }
+
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("Identifier");

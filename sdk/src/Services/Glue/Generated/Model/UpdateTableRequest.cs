@@ -38,9 +38,11 @@ namespace Amazon.Glue.Model
         private string _catalogId;
         private string _databaseName;
         private bool? _force;
+        private string _name;
         private bool? _skipArchive;
         private TableInput _tableInput;
         private string _transactionId;
+        private UpdateOpenTableFormatInput _updateOpenTableFormatInput;
         private string _versionId;
         private ViewUpdateAction _viewUpdateAction;
 
@@ -104,6 +106,26 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The unique identifier for the table within the specified database that will be created
+        /// in the Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SkipArchive. 
         /// <para>
         /// By default, <c>UpdateTable</c> always creates an archived version of the table before
@@ -129,7 +151,6 @@ namespace Amazon.Glue.Model
         /// An updated <c>TableInput</c> object to define the metadata table in the catalog.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TableInput TableInput
         {
             get { return this._tableInput; }
@@ -159,6 +180,21 @@ namespace Amazon.Glue.Model
         internal bool IsSetTransactionId()
         {
             return this._transactionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateOpenTableFormatInput.
+        /// </summary>
+        public UpdateOpenTableFormatInput UpdateOpenTableFormatInput
+        {
+            get { return this._updateOpenTableFormatInput; }
+            set { this._updateOpenTableFormatInput = value; }
+        }
+
+        // Check to see if UpdateOpenTableFormatInput property is set
+        internal bool IsSetUpdateOpenTableFormatInput()
+        {
+            return this._updateOpenTableFormatInput != null;
         }
 
         /// <summary>

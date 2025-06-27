@@ -52,6 +52,12 @@ namespace Amazon.Glue.Model
     /// future runs of the machine learning transform will use the new and improved labels
     /// and perform a higher-quality transformation.
     /// </para>
+    ///  
+    /// <para>
+    /// Note: The role used to write the generated labeling set to the <c>OutputS3Path</c>
+    /// is the role associated with the Machine Learning Transform, specified in the <c>CreateMLTransform</c>
+    /// API.
+    /// </para>
     /// </summary>
     public partial class StartMLLabelingSetGenerationTaskRunRequest : AmazonGlueRequest
     {

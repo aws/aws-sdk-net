@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FederatedCatalog Marshaller
+    /// IcebergSortOrder Marshaller
     /// </summary>
-    public class FederatedCatalogMarshaller : IRequestMarshaller<FederatedCatalog, JsonMarshallerContext> 
+    public class IcebergSortOrderMarshaller : IRequestMarshaller<IcebergSortOrder, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,26 +44,30 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FederatedCatalog requestObject, JsonMarshallerContext context)
+        public void Marshall(IcebergSortOrder requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConnectionName())
+            if(requestObject.IsSetFields())
             {
-                context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WritePropertyName("Fields");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFieldsListValue in requestObject.Fields)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IcebergSortFieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFieldsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetConnectionType())
+            if(requestObject.IsSetOrderId())
             {
-                context.Writer.WritePropertyName("ConnectionType");
-                context.Writer.Write(requestObject.ConnectionType);
-            }
-
-            if(requestObject.IsSetIdentifier())
-            {
-                context.Writer.WritePropertyName("Identifier");
-                context.Writer.Write(requestObject.Identifier);
+                context.Writer.WritePropertyName("OrderId");
+                context.Writer.Write(requestObject.OrderId);
             }
 
         }
@@ -71,7 +75,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FederatedCatalogMarshaller Instance = new FederatedCatalogMarshaller();
+        public readonly static IcebergSortOrderMarshaller Instance = new IcebergSortOrderMarshaller();
 
     }
 }

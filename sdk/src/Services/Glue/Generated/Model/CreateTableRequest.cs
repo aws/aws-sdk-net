@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
+        private string _name;
         private OpenTableFormatInput _openTableFormatInput;
         private List<PartitionIndex> _partitionIndexes = AWSConfigs.InitializeCollections ? new List<PartitionIndex>() : null;
         private TableInput _tableInput;
@@ -80,6 +81,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The unique identifier for the table within the specified database that will be created
+        /// in the Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>

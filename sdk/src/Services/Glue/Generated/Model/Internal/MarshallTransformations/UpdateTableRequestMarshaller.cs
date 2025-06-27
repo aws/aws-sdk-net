@@ -87,6 +87,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Force);
                 }
 
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
                 if(publicRequest.IsSetSkipArchive())
                 {
                     context.Writer.WritePropertyName("SkipArchive");
@@ -108,6 +114,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("TransactionId");
                     context.Writer.Write(publicRequest.TransactionId);
+                }
+
+                if(publicRequest.IsSetUpdateOpenTableFormatInput())
+                {
+                    context.Writer.WritePropertyName("UpdateOpenTableFormatInput");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateOpenTableFormatInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpdateOpenTableFormatInput, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetVersionId())

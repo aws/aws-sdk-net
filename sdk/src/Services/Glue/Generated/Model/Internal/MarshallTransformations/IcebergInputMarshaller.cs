@@ -48,6 +48,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCreateIcebergTableInput())
+            {
+                context.Writer.WritePropertyName("CreateIcebergTableInput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateIcebergTableInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreateIcebergTableInput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMetadataOperation())
             {
                 context.Writer.WritePropertyName("MetadataOperation");
