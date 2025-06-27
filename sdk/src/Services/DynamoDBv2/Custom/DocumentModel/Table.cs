@@ -1410,7 +1410,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
             {
-                currentConfig.ConditionalExpression.ApplyExpression(req, this);
+                currentConfig.ConditionalExpression?.ApplyExpression(req, this);
 
                 string statement;
                 Dictionary<string, AttributeValue> expressionAttributeValues;
