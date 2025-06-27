@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FederatedDatabase Marshaller
+    /// UpdateOpenTableFormatInput Marshaller
     /// </summary>
-    public class FederatedDatabaseMarshaller : IRequestMarshaller<FederatedDatabase, JsonMarshallerContext> 
+    public class UpdateOpenTableFormatInputMarshaller : IRequestMarshaller<UpdateOpenTableFormatInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FederatedDatabase requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateOpenTableFormatInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConnectionName())
+            if(requestObject.IsSetUpdateIcebergInput())
             {
-                context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.WriteStringValue(requestObject.ConnectionName);
-            }
+                context.Writer.WritePropertyName("UpdateIcebergInput");
+                context.Writer.WriteStartObject();
 
-            if(requestObject.IsSetConnectionType())
-            {
-                context.Writer.WritePropertyName("ConnectionType");
-                context.Writer.WriteStringValue(requestObject.ConnectionType);
-            }
+                var marshaller = UpdateIcebergInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.UpdateIcebergInput, context);
 
-            if(requestObject.IsSetIdentifier())
-            {
-                context.Writer.WritePropertyName("Identifier");
-                context.Writer.WriteStringValue(requestObject.Identifier);
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -69,7 +62,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FederatedDatabaseMarshaller Instance = new FederatedDatabaseMarshaller();
+        public readonly static UpdateOpenTableFormatInputMarshaller Instance = new UpdateOpenTableFormatInputMarshaller();
 
     }
 }

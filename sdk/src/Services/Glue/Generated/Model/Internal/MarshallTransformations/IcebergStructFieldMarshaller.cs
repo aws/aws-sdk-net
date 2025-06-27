@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FederatedDatabase Marshaller
+    /// IcebergStructField Marshaller
     /// </summary>
-    public class FederatedDatabaseMarshaller : IRequestMarshaller<FederatedDatabase, JsonMarshallerContext> 
+    public class IcebergStructFieldMarshaller : IRequestMarshaller<IcebergStructField, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,38 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FederatedDatabase requestObject, JsonMarshallerContext context)
+        public void Marshall(IcebergStructField requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConnectionName())
+            if(requestObject.IsSetDoc())
             {
-                context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.WriteStringValue(requestObject.ConnectionName);
+                context.Writer.WritePropertyName("Doc");
+                context.Writer.WriteStringValue(requestObject.Doc);
             }
 
-            if(requestObject.IsSetConnectionType())
+            if(requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("ConnectionType");
-                context.Writer.WriteStringValue(requestObject.ConnectionType);
+                context.Writer.WritePropertyName("Id");
+                context.Writer.WriteNumberValue(requestObject.Id.Value);
             }
 
-            if(requestObject.IsSetIdentifier())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Identifier");
-                context.Writer.WriteStringValue(requestObject.Identifier);
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(requestObject.Name);
+            }
+
+            if(requestObject.IsSetRequired())
+            {
+                context.Writer.WritePropertyName("Required");
+                context.Writer.WriteBooleanValue(requestObject.Required.Value);
+            }
+
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Type);
             }
 
         }
@@ -69,7 +81,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FederatedDatabaseMarshaller Instance = new FederatedDatabaseMarshaller();
+        public readonly static IcebergStructFieldMarshaller Instance = new IcebergStructFieldMarshaller();
 
     }
 }

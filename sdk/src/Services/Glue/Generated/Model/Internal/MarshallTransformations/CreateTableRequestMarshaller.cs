@@ -87,6 +87,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DatabaseName);
             }
 
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
             if(publicRequest.IsSetOpenTableFormatInput())
             {
                 context.Writer.WritePropertyName("OpenTableFormatInput");

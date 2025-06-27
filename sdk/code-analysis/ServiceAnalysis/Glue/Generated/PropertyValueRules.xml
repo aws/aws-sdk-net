@@ -656,6 +656,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateTableRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateTableRequest.TransactionId</property>
     <min>1</min>
     <max>255</max>
@@ -3401,6 +3406,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateTableRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.UpdateTableRequest.TransactionId</property>
     <min>1</min>
     <max>255</max>
@@ -4261,6 +4271,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateIcebergTableInput.Location</property>
+    <max>2056</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateJsonClassifierRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -4769,12 +4783,22 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.FederatedCatalog.ConnectionType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.FederatedCatalog.Identifier</property>
     <min>1</min>
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.FederatedDatabase.ConnectionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.FederatedDatabase.ConnectionType</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -4791,6 +4815,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.FederatedTable.ConnectionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.FederatedTable.ConnectionType</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -4954,6 +4983,25 @@
     <property>Amazon.Glue.Model.IcebergInput.Version</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergPartitionField.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergStructField.Doc</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergStructField.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergTableUpdate.Location</property>
+    <max>2056</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.InboundIntegration.IntegrationArn</property>
