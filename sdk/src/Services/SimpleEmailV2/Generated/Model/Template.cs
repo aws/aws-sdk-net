@@ -162,7 +162,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property TemplateName. 
         /// <para>
         /// The name of the template. You will refer to this name when you send email using the
-        /// <c>SendTemplatedEmail</c> or <c>SendBulkTemplatedEmail</c> operations. 
+        /// <c>SendEmail</c> or <c>SendBulkEmail</c> operations. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

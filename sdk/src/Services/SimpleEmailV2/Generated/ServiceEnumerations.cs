@@ -735,6 +735,10 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         public static readonly DkimSigningAttributesOrigin AWS_SES_AP_SOUTH_1 = new DkimSigningAttributesOrigin("AWS_SES_AP_SOUTH_1");
         /// <summary>
+        /// Constant AWS_SES_AP_SOUTH_2 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AP_SOUTH_2 = new DkimSigningAttributesOrigin("AWS_SES_AP_SOUTH_2");
+        /// <summary>
         /// Constant AWS_SES_AP_SOUTHEAST_1 for DkimSigningAttributesOrigin
         /// </summary>
         public static readonly DkimSigningAttributesOrigin AWS_SES_AP_SOUTHEAST_1 = new DkimSigningAttributesOrigin("AWS_SES_AP_SOUTHEAST_1");
@@ -754,6 +758,10 @@ namespace Amazon.SimpleEmailV2
         /// Constant AWS_SES_EU_CENTRAL_1 for DkimSigningAttributesOrigin
         /// </summary>
         public static readonly DkimSigningAttributesOrigin AWS_SES_EU_CENTRAL_1 = new DkimSigningAttributesOrigin("AWS_SES_EU_CENTRAL_1");
+        /// <summary>
+        /// Constant AWS_SES_EU_CENTRAL_2 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_EU_CENTRAL_2 = new DkimSigningAttributesOrigin("AWS_SES_EU_CENTRAL_2");
         /// <summary>
         /// Constant AWS_SES_EU_NORTH_1 for DkimSigningAttributesOrigin
         /// </summary>
@@ -778,6 +786,10 @@ namespace Amazon.SimpleEmailV2
         /// Constant AWS_SES_IL_CENTRAL_1 for DkimSigningAttributesOrigin
         /// </summary>
         public static readonly DkimSigningAttributesOrigin AWS_SES_IL_CENTRAL_1 = new DkimSigningAttributesOrigin("AWS_SES_IL_CENTRAL_1");
+        /// <summary>
+        /// Constant AWS_SES_ME_CENTRAL_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_ME_CENTRAL_1 = new DkimSigningAttributesOrigin("AWS_SES_ME_CENTRAL_1");
         /// <summary>
         /// Constant AWS_SES_ME_SOUTH_1 for DkimSigningAttributesOrigin
         /// </summary>
