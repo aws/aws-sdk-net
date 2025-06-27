@@ -1,3 +1,19 @@
+### 4.0.41.0 (2025-06-27 19:22 UTC)
+* ConfigService (4.0.0.12)
+	* Added important considerations to the PutConformancePack and PutOrganizationConformancPack APIs.
+* Connect (4.0.3.0)
+	* This release adds the following value to an InitiateAs enum: COMPLETED
+* Glue (4.0.7.0)
+	* AWS Glue now supports schema, partition and sort management of Apache Iceberg tables using Glue SDK
+* GuardDuty (4.0.2.0)
+	* Update JSON target for Kubernetes workload resource type.
+* QConnect (4.0.1.0)
+	* Adding UnauthorizedException to public SDK
+* RDS (4.0.4.0)
+	* StartDBCluster and StopDBCluster can now throw InvalidDBShardGroupStateFault.
+* SimpleEmailV2 (4.0.1.0)
+	* Added support for new SES regions
+
 ### 4.0.40.0 (2025-06-26 18:31 UTC)
 * Deadline (4.0.4.0)
 	* Added fields to track cumulative task retry attempts for steps and jobs
