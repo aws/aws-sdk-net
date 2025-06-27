@@ -364,6 +364,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// User details for the contact
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// UserInfo is required when creating an EMAIL contact with OUTBOUND and AGENT_REPLY
+        /// contact initiation methods.
+        /// </para>
+        ///  </important>
         /// </summary>
         public UserInfo UserInfo
         {

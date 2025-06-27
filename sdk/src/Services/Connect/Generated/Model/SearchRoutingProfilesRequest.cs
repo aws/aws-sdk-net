@@ -32,6 +32,15 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the SearchRoutingProfiles operation.
     /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <c>SearchRoutingProfiles</c> does not populate LastModifiedRegion, LastModifiedTime,
+    /// MediaConcurrencies.CrossChannelBehavior, and AgentAvailabilityTimer in its response,
+    /// but <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a>
+    /// does.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SearchRoutingProfilesRequest : AmazonConnectRequest
     {

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The additional recipients information of outbound email.
+    /// Information about the additional recipients of outbound email.
     /// </summary>
     public partial class OutboundAdditionalRecipients
     {
@@ -39,7 +39,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property CcEmailAddresses. 
         /// <para>
-        /// The additional CC email address recipients information.
+        /// Information about the <b>additional</b> CC email address recipients. Email recipients
+        /// are limited to 50 total addresses: 1 required recipient in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SendOutboundEmail.html#API_SendOutboundEmail_RequestBody">DestinationEmailAddress</a>
+        /// field and up to 49 recipients in the 'CcEmailAddresses' field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

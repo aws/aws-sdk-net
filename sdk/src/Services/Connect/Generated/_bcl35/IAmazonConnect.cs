@@ -6168,6 +6168,15 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Describes the specified routing profile.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>DescribeRoutingProfile</c> does not populate AssociatedQueueIds in its response.
+        /// The example Response Syntax shown on this page is incorrect; we are working to update
+        /// it. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html">SearchRoutingProfiles</a>
+        /// does include AssociatedQueueIds.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRoutingProfile service method.</param>
         /// 
@@ -12438,6 +12447,15 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>SearchRoutingProfiles</c> does not populate LastModifiedRegion, LastModifiedTime,
+        /// MediaConcurrencies.CrossChannelBehavior, and AgentAvailabilityTimer in its response,
+        /// but <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a>
+        /// does.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchRoutingProfiles service method.</param>
         /// 

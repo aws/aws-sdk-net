@@ -30,7 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The additional TO CC recipients information of inbound email.
+    /// Information about the additional TO and CC recipients of an inbound email contact.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You can include up to 50 email addresses in total, distributed across <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartEmailContact.html#API_StartEmailContact_RequestBody">DestinationEmailAddress</a>,
+    /// <c>ToAddresses</c>, and <c>CcAddresses</c>. This total must include one required <c>DestinationEmailAddress</c>.
+    /// You can then specify up to 49 addresses allocated across <c>ToAddresses</c> and <c>CcAddresses</c>
+    /// as needed.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class InboundAdditionalRecipients
     {
@@ -40,7 +49,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property CcAddresses. 
         /// <para>
-        /// The additional recipients information present in cc list.
+        /// The <b>additional</b> recipients information present in cc list. You must have 1 required
+        /// recipient (<c>DestinationEmailAddress</c>). You can then specify up to 49 additional
+        /// recipients (across <c>ToAddresses</c> and <c>CcAddresses</c>), for a total of 50 recipients.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -59,7 +70,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ToAddresses. 
         /// <para>
-        /// The additional recipients information present in to list.
+        /// The <b>additional</b> recipients information present in to list. You must have 1 required
+        /// recipient (<c>DestinationEmailAddress</c>). You can then specify up to 49 additional
+        /// recipients (across <c>ToAddresses</c> and <c>CcAddresses</c>), for a total of 50 recipients.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

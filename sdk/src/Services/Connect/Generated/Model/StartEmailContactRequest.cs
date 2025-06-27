@@ -184,7 +184,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DestinationEmailAddress. 
         /// <para>
-        /// The email address associated with the instance.
+        /// The email address associated with the Amazon Connect instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]

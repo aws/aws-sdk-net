@@ -144,15 +144,16 @@ namespace Amazon.Connect.Model
         /// | <c>AGENT_HIERARCHY_LEVEL_THREE</c> | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c>
         /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c> BOT_ID</c> | <c>BOT_ALIAS</c> |
         /// <c>BOT_VERSION</c> | <c>BOT_LOCALE</c> | <c>BOT_INTENT_NAME</c> | <c>CAMPAIGN</c>
-        /// | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c> |<c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c>
-        /// | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c> | <c>DISCONNECT_REASON</c>
-        /// | <c>EVALUATION_FORM</c> | <c>EVALUATION_SECTION</c> | <c>EVALUATION_QUESTION</c>
-        /// | <c>EVALUATION_SOURCE</c> | <c>FEATURE</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c>
-        /// | <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c>
-        /// | <c>FLOWS_OUTCOME_TYPE</c> | <c>FLOWS_RESOURCE_ID</c> | <c>FORM_VERSION</c> | <c>INITIATION_METHOD</c>
-        /// | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c>
-        /// | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c>
-        /// | <c>QUEUE</c> | <c>Q_CONNECT_ENABLED</c> | 
+        /// | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c> | <c>CAMPAIGN_EXCLUDED_EVENT_TYPE </c> | <c>CASE_TEMPLATE_ARN</c>
+        /// | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
+        /// | <c>DISCONNECT_REASON</c> | <c>EVALUATION_FORM</c> | <c>EVALUATION_SECTION</c> |
+        /// <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SOURCE</c> | <c>FEATURE</c> | <c>FLOW_ACTION_ID</c>
+        /// | <c>FLOW_TYPE</c> | <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_ID</c>
+        /// | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>FLOWS_RESOURCE_ID</c>
+        /// | <c>FORM_VERSION</c> | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c>
+        /// | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c>
+        /// | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c> | <c>QUEUE</c> | <c>Q_CONNECT_ENABLED</c>
+        /// | 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -235,7 +236,8 @@ namespace Amazon.Connect.Model
         /// | <c>AGENT_HIERARCHY_LEVEL_THREE</c> | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c>
         /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c>BOT_ID</c> | <c>BOT_ALIAS</c> | <c>BOT_VERSION</c>
         /// | <c>BOT_LOCALE</c> | <c>BOT_INTENT_NAME</c> | <c>CAMPAIGN</c> | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>
-        /// | <c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
+        /// | <c>CAMPAIGN_EXCLUDED_EVENT_TYPE</c> | <c>CAMPAIGN_EXECUTION_TIMESTAMP</c> | <c>CASE_TEMPLATE_ARN</c>
+        /// | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
         /// | <c>DISCONNECT_REASON</c> | <c>EVALUATION_FORM</c> | <c>EVALUATION_SECTION</c> |
         /// <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SOURCE</c> | <c>FLOWS_RESOURCE_ID</c> |
         /// <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c>
@@ -1142,6 +1144,24 @@ namespace Amazon.Connect.Model
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-interactions">Campaign
         /// interactions</a> 
         /// </para>
+        ///  </dd> <dt>CAMPAIGN_PROGRESS_RATE</dt> <dd> 
+        /// <para>
+        /// This metric is only available for outbound campaigns initiated using a customer segment.
+        /// It is not available for event triggered campaigns.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Campaign, Campaign Execution Timestamp
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-progress-rate">Campaign
+        /// progress rate</a> 
+        /// </para>
         ///  </dd> <dt>CAMPAIGN_SEND_ATTEMPTS</dt> <dd> 
         /// <para>
         /// This metric is available only for outbound campaigns.
@@ -1159,6 +1179,28 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-send-attempts">Campaign
         /// send attempts</a> 
+        /// </para>
+        ///  </dd> <dt>CAMPAIGN_SEND_EXCLUSIONS</dt> <dd> 
+        /// <para>
+        /// This metric is available only for outbound campaigns.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid metric filter key: CAMPAIGN_EXCLUDED_EVENT_TYPE
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Campaign, Campaign Excluded Event Type, Campaign Execution
+        /// Timestamp
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-send-exclusions">Campaign
+        /// send exclusions</a> 
         /// </para>
         ///  </dd> <dt>CASES_CREATED</dt> <dd> 
         /// <para>
@@ -1810,6 +1852,65 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#customer-talk-time-percent">Customer
         /// talk time percent</a> 
+        /// </para>
+        ///  </dd> <dt>RECIPIENTS_ATTEMPTED</dt> <dd> 
+        /// <para>
+        /// This metric is only available for outbound campaigns initiated using a customer segment.
+        /// It is not available for event triggered campaigns.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Campaign, Campaign Execution Timestamp
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-attempted">Recipients
+        /// attempted</a> 
+        /// </para>
+        ///  </dd> <dt>RECIPIENTS_INTERACTED</dt> <dd> 
+        /// <para>
+        /// This metric is only available for outbound campaigns initiated using a customer segment.
+        /// It is not available for event triggered campaigns.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid metric filter key: CAMPAIGN_INTERACTION_EVENT_TYPE
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Campaign, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Campaign Execution Timestamp
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-interacted">Recipients
+        /// interacted</a> 
+        /// </para>
+        ///  </dd> <dt>RECIPIENTS_TARGETED</dt> <dd> 
+        /// <para>
+        /// This metric is only available for outbound campaigns initiated using a customer segment.
+        /// It is not available for event triggered campaigns.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Campaign, Campaign Execution Timestamp
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-targeted">Recipients
+        /// targeted</a> 
         /// </para>
         ///  </dd> <dt>REOPENED_CASE_ACTIONS</dt> <dd> 
         /// <para>
