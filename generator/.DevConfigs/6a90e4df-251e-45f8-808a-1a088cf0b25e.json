@@ -1,0 +1,10 @@
+
+{
+  "core": {
+    "changeLogMessages": [
+      "Cbor protocol temp message"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
