@@ -242,6 +242,24 @@ namespace Amazon.JSONRPC10
 
         #endregion
                 
+        #region  QueryIncompatibleOperation
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryIncompatibleOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryIncompatibleOperation service method, as returned by JSONRPC10.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/QueryIncompatibleOperation">REST API Reference for QueryIncompatibleOperation Operation</seealso>
+        Task<QueryIncompatibleOperationResponse> QueryIncompatibleOperationAsync(QueryIncompatibleOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SimpleScalarProperties
 
 

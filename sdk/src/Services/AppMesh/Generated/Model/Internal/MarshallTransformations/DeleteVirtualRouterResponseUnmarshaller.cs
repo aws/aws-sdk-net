@@ -48,6 +48,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         {
             DeleteVirtualRouterResponse response = new DeleteVirtualRouterResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = VirtualRouterDataUnmarshaller.Instance;
             response.VirtualRouter = unmarshaller.Unmarshall(context, ref reader);
 

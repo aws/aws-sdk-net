@@ -48,6 +48,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         {
             DescribeGatewayRouteResponse response = new DescribeGatewayRouteResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = GatewayRouteDataUnmarshaller.Instance;
             response.GatewayRoute = unmarshaller.Unmarshall(context, ref reader);
 

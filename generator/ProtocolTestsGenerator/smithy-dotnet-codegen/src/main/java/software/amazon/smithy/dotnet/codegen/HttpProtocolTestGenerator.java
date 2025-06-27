@@ -94,7 +94,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
         for (StructureShape error : index.getErrors(operation, service)) {
             error.getTrait(HttpResponseTestsTrait.class).ifPresent(trait -> {
                 for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                    generateErrorResponseTest(operation, error, httpResponseTestCase);
+                    if (!ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId())){
+                        generateErrorResponseTest(operation, error, httpResponseTestCase);
+                    }
                 }
             });
         }

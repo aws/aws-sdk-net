@@ -106,6 +106,76 @@ namespace AWSSDK.ProtocolTests.RestJson
         }
 
         /// <summary>
+        /// Parses simple JSON errors
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonInvalidGreetingErrorErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            webResponseData.Headers["X-Amzn-Errortype"] = "InvalidGreeting";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"Message\": \"Hi\"\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(InvalidGreetingException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+        }
+
+        /// <summary>
+        /// Serializes a complex error with no message member
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonComplexErrorWithNoMessageErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            webResponseData.Headers["X-Amzn-Errortype"] = "ComplexError";
+            webResponseData.Headers["X-Header"] = "Header";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"TopLevel\": \"Top level\",\n    \"Nested\": {\n        \"Fooooo\": \"bar\"\n    }\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403));
+        }
+
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonEmptyComplexErrorWithNoMessageErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            webResponseData.Headers["X-Amzn-Errortype"] = "ComplexError";
+            byte[] bytes = Encoding.ASCII.GetBytes("{}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403));
+        }
+
+        /// <summary>
         /// Serializes the X-Amzn-ErrorType header. For an example service,
         /// see Amazon EKS.
         /// </summary>
@@ -334,76 +404,6 @@ namespace AWSSDK.ProtocolTests.RestJson
             // Assert
             Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
             Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
-        }
-
-        /// <summary>
-        /// Serializes a complex error with no message member
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ErrorTest")]
-        [TestCategory("RestJson")]
-        public void RestJsonComplexErrorWithNoMessageErrorResponse()
-        {
-            // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            webResponseData.Headers["X-Amzn-Errortype"] = "ComplexError";
-            webResponseData.Headers["X-Header"] = "Header";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"TopLevel\": \"Top level\",\n    \"Nested\": {\n        \"Fooooo\": \"bar\"\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
-            // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403));
-            // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403));
-        }
-
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ErrorTest")]
-        [TestCategory("RestJson")]
-        public void RestJsonEmptyComplexErrorWithNoMessageErrorResponse()
-        {
-            // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            webResponseData.Headers["X-Amzn-Errortype"] = "ComplexError";
-            byte[] bytes = Encoding.ASCII.GetBytes("{}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
-            // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403));
-            // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 403));
-        }
-
-        /// <summary>
-        /// Parses simple JSON errors
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ErrorTest")]
-        [TestCategory("RestJson")]
-        public void RestJsonInvalidGreetingErrorErrorResponse()
-        {
-            // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            webResponseData.Headers["X-Amzn-Errortype"] = "InvalidGreeting";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"Message\": \"Hi\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
-            // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
-            // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(InvalidGreetingException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
         }
 
     }

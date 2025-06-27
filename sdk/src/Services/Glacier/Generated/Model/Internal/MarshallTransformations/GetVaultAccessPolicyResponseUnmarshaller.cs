@@ -48,6 +48,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         {
             GetVaultAccessPolicyResponse response = new GetVaultAccessPolicyResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = VaultAccessPolicyUnmarshaller.Instance;
             response.Policy = unmarshaller.Unmarshall(context, ref reader);
 

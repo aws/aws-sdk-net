@@ -48,6 +48,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         {
             ConfigureAgentResponse response = new ConfigureAgentResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = AgentConfigurationUnmarshaller.Instance;
             response.Configuration = unmarshaller.Unmarshall(context, ref reader);
 

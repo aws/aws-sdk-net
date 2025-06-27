@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             PhoneNumberValidateResponse response = new PhoneNumberValidateResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = NumberValidateResponseUnmarshaller.Instance;
             response.NumberValidateResponse = unmarshaller.Unmarshall(context, ref reader);
 

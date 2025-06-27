@@ -127,6 +127,24 @@
           "packageVersion": "0.0.1"
         }
       }
+    },
+    "QueryCompatibleJSONRPC10": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.json10#QueryCompatibleJsonRpc10"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.json10#QueryCompatibleJsonRpc10",
+          "packageVersion": "0.0.1"
+        }
+      }
     }
   }
 }

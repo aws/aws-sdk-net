@@ -62,7 +62,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("NestedXmlMapWithXmlNameInputOutput", "");
+                xmlWriter.WriteStartElement("NestedXmlMapWithXmlNameRequest", "");
                 if(publicRequest.IsSetNestedXmlMapWithXmlNameMap())
                 {
                     xmlWriter.WriteStartElement("nestedXmlMapWithXmlNameMap");

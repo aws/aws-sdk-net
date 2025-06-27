@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             GetInAppTemplateResponse response = new GetInAppTemplateResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = InAppTemplateResponseUnmarshaller.Instance;
             response.InAppTemplateResponse = unmarshaller.Unmarshall(context, ref reader);
 

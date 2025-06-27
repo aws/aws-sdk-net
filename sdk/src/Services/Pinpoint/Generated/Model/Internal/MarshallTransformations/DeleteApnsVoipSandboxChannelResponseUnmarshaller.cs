@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             DeleteApnsVoipSandboxChannelResponse response = new DeleteApnsVoipSandboxChannelResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = APNSVoipSandboxChannelResponseUnmarshaller.Instance;
             response.APNSVoipSandboxChannelResponse = unmarshaller.Unmarshall(context, ref reader);
 
