@@ -709,33 +709,29 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>Recommendation: Stop recording resource compliance before deleting rules</b> 
+        ///  <b>Recommendation: Consider excluding the <c>AWS::Config::ResourceCompliance</c>
+        /// resource type from recording before deleting rules</b> 
         /// </para>
         ///  
         /// <para>
-        /// It is highly recommended that you stop recording for the <c>AWS::Config::ResourceCompliance</c>
-        /// resource type before you delete rules in your account. Deleting rules creates CIs
-        /// for <c>AWS::Config::ResourceCompliance</c> and can affect your Config <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">configuration
-        /// recorder</a> costs. If you are deleting rules which evaluate a large number of resource
-        /// types, this can lead to a spike in the number of CIs recorded.
+        /// Deleting rules creates configuration items (CIs) for <c>AWS::Config::ResourceCompliance</c>
+        /// that can affect your costs for the configuration recorder. If you are deleting rules
+        /// which evaluate a large number of resource types, this can lead to a spike in the number
+        /// of CIs recorded.
         /// </para>
         ///  
         /// <para>
-        /// Best practice:
+        /// To avoid the associated costs, you can opt to disable recording for the <c>AWS::Config::ResourceCompliance</c>
+        /// resource type before deleting rules, and re-enable recording after the rules have
+        /// been deleted.
         /// </para>
-        ///  <ol> <li> 
+        ///  
         /// <para>
-        /// Stop recording <c>AWS::Config::ResourceCompliance</c> 
+        /// However, since deleting rules is an asynchronous process, it might take an hour or
+        /// more to complete. During the time when recording is disabled for <c>AWS::Config::ResourceCompliance</c>,
+        /// rule evaluations will not be recorded in the associated resource’s history.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Delete rule(s)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Turn on recording for <c>AWS::Config::ResourceCompliance</c> 
-        /// </para>
-        ///  </li> </ol> </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfigRule service method.</param>
         /// <param name="cancellationToken">
@@ -930,6 +926,31 @@ namespace Amazon.ConfigService
         /// Config sets the conformance pack to <c>DELETE_IN_PROGRESS</c> until the deletion is
         /// complete. You cannot update a conformance pack while it is in this state.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Recommendation: Consider excluding the <c>AWS::Config::ResourceCompliance</c>
+        /// resource type from recording before deleting rules</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Deleting rules creates configuration items (CIs) for <c>AWS::Config::ResourceCompliance</c>
+        /// that can affect your costs for the configuration recorder. If you are deleting rules
+        /// which evaluate a large number of resource types, this can lead to a spike in the number
+        /// of CIs recorded.
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid the associated costs, you can opt to disable recording for the <c>AWS::Config::ResourceCompliance</c>
+        /// resource type before deleting rules, and re-enable recording after the rules have
+        /// been deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// However, since deleting rules is an asynchronous process, it might take an hour or
+        /// more to complete. During the time when recording is disabled for <c>AWS::Config::ResourceCompliance</c>,
+        /// rule evaluations will not be recorded in the associated resource’s history.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConformancePack service method.</param>
         /// <param name="cancellationToken">
@@ -1179,6 +1200,31 @@ namespace Amazon.ConfigService
         /// Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.
         /// You cannot update a rule while it is in this state.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Recommendation: Consider excluding the <c>AWS::Config::ResourceCompliance</c>
+        /// resource type from recording before deleting rules</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Deleting rules creates configuration items (CIs) for <c>AWS::Config::ResourceCompliance</c>
+        /// that can affect your costs for the configuration recorder. If you are deleting rules
+        /// which evaluate a large number of resource types, this can lead to a spike in the number
+        /// of CIs recorded.
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid the associated costs, you can opt to disable recording for the <c>AWS::Config::ResourceCompliance</c>
+        /// resource type before deleting rules, and re-enable recording after the rules have
+        /// been deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// However, since deleting rules is an asynchronous process, it might take an hour or
+        /// more to complete. During the time when recording is disabled for <c>AWS::Config::ResourceCompliance</c>,
+        /// rule evaluations will not be recorded in the associated resource’s history.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationConfigRule service method.</param>
         /// <param name="cancellationToken">
@@ -1304,6 +1350,31 @@ namespace Amazon.ConfigService
         /// Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion
         /// is complete. You cannot update a conformance pack while it is in this state. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Recommendation: Consider excluding the <c>AWS::Config::ResourceCompliance</c>
+        /// resource type from recording before deleting rules</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Deleting rules creates configuration items (CIs) for <c>AWS::Config::ResourceCompliance</c>
+        /// that can affect your costs for the configuration recorder. If you are deleting rules
+        /// which evaluate a large number of resource types, this can lead to a spike in the number
+        /// of CIs recorded.
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid the associated costs, you can opt to disable recording for the <c>AWS::Config::ResourceCompliance</c>
+        /// resource type before deleting rules, and re-enable recording after the rules have
+        /// been deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// However, since deleting rules is an asynchronous process, it might take an hour or
+        /// more to complete. During the time when recording is disabled for <c>AWS::Config::ResourceCompliance</c>,
+        /// rule evaluations will not be recorded in the associated resource’s history.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationConformancePack service method.</param>
         /// <param name="cancellationToken">
@@ -5424,16 +5495,31 @@ namespace Amazon.ConfigService
         /// <important> 
         /// <para>
         /// For accurate reporting on the compliance status, you must record the <c>AWS::Config::ResourceCompliance</c>
-        /// resource type. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
-        /// Which Resources Config Records</a>.
+        /// resource type.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Recording
+        /// Amazon Web Services Resources</a> in the <i>Config Resources Developer Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
-        /// Returns a list of <c>ConfigurationItems</c> for the specified resource. The list contains
-        /// details about each state of the resource during the specified time interval. If you
-        /// specified a retention period to retain your <c>ConfigurationItems</c> between a minimum
-        /// of 30 days and a maximum of 7 years (2557 days), Config returns the <c>ConfigurationItems</c>
-        /// for the specified retention period. 
+        /// Returns a list of configurations items (CIs) for the specified resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Contents</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The list contains details about each state of the resource during the specified time
+        /// interval. If you specified a retention period to retain your CIs between a minimum
+        /// of 30 days and a maximum of 7 years (2557 days), Config returns the CIs for the specified
+        /// retention period. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Pagination</b> 
         /// </para>
         ///  
         /// <para>
@@ -5963,24 +6049,62 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Accepts a resource type and returns a list of resource identifiers for the resources
-        /// of that type. A resource identifier includes the resource type, ID, and (if available)
-        /// the custom resource name. The results consist of resources that Config has discovered,
-        /// including those that Config is not currently recording. You can narrow the results
-        /// to include only resources that have specific resource IDs or a resource name.
+        /// Returns a list of resource resource identifiers for the specified resource types for
+        /// the resources of that type. A <i>resource identifier</i> includes the resource type,
+        /// ID, and (if available) the custom resource name.
         /// 
+        ///  
+        /// <para>
+        /// The results consist of resources that Config has <i>discovered</i>, including those
+        /// that Config is not currently recording. You can narrow the results to include only
+        /// resources that have specific resource IDs or a resource name.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can specify either resource IDs or a resource name, but not both, in the same
         /// request.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
         /// <para>
-        /// The response is paginated. By default, Config lists 100 resource identifiers on each
-        /// page. You can customize this number with the <c>limit</c> parameter. The response
-        /// includes a <c>nextToken</c> string. To get the next page of results, run the request
-        /// again and specify the string for the <c>nextToken</c> parameter.
+        ///  <i>CloudFormation stack recording behavior in Config</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// When a CloudFormation stack fails to create (for example, it enters the <c>ROLLBACK_FAILED</c>
+        /// state), Config does not record a configuration item (CI) for that stack. Configuration
+        /// items are only recorded for stacks that reach the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CREATE_COMPLETE</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UPDATE_COMPLETE</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UPDATE_ROLLBACK_COMPLETE</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UPDATE_ROLLBACK_FAILED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETE_FAILED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETE_COMPLETE</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Because no CI is created for a failed stack creation, you won't see configuration
+        /// history for that stack in Config, even after the stack is deleted. This helps make
+        /// sure that Config only tracks resources that were successfully provisioned.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredResources service method.</param>
         /// <param name="cancellationToken">
@@ -6796,8 +6920,8 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutConfigurationRecorder service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidConfigurationRecorderNameException">
-        /// You have provided a name for the customer managed configuration recorder that is not
-        /// valid.
+        /// The configuration recorder name is not valid. The prefix "<c>AWSConfigurationRecorderFor</c>"
+        /// is reserved for service-linked configuration recorders.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRecordingGroupException">
         /// One of the following errors:
@@ -6957,7 +7081,20 @@ namespace Amazon.ConfigService
         /// For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
         /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// 
+        ///  <important> 
+        /// <para>
+        /// When you use <c>PutConformancePack</c> to deploy conformance packs in your account,
+        /// the operation can create Config rules and remediation actions without requiring <c>config:PutConfigRule</c>
+        /// or <c>config:PutRemediationConfigurations</c> permissions in your account IAM policies.
+        /// </para>
         ///  
+        /// <para>
+        /// This API uses the <c>AWSServiceRoleForConfigConforms</c> service-linked role in your
+        /// account to create conformance pack resources. This service-linked role includes the
+        /// permissions to create Config rules and remediation configurations, even if your account
+        /// IAM policies explicitly deny these actions.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This API creates a service-linked role <c>AWSServiceRoleForConfigConforms</c> in your
         /// account. The service-linked role is created only when the role does not exist in your
@@ -7575,7 +7712,21 @@ namespace Amazon.ConfigService
         /// this API with a delegated administrator, you must ensure Organizations <c>ListDelegatedAdministrator</c>
         /// permissions are added. An organization can have up to 3 delegated administrators.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you use <c>PutOrganizationConformancePack</c> to deploy conformance packs across
+        /// member accounts, the operation can create Config rules and remediation actions without
+        /// requiring <c>config:PutConfigRule</c> or <c>config:PutRemediationConfigurations</c>
+        /// permissions in member account IAM policies.
+        /// </para>
         ///  
+        /// <para>
+        /// This API uses the <c>AWSServiceRoleForConfigConforms</c> service-linked role in each
+        /// member account to create conformance pack resources. This service-linked role includes
+        /// the permissions to create Config rules and remediation configurations, even if member
+        /// account IAM policies explicitly deny these actions.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This API enables organization service access for <c>config-multiaccountsetup.amazonaws.com</c>
         /// through the <c>EnableAWSServiceAccess</c> action and creates a service-linked role
@@ -8344,7 +8495,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+        /// For more information and a list of supported services/service principals, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
         /// <b>Working with the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
         /// </para>
         ///  
