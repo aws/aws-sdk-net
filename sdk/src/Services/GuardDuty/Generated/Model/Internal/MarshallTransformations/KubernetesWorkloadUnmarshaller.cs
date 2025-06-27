@@ -72,7 +72,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerUids = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("kubernetesResourcesTypes", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KubernetesResourcesTypes = unmarshaller.Unmarshall(context);
