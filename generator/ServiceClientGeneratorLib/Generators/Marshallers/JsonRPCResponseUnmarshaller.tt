@@ -91,6 +91,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         {
 #>
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = <#= payload.DetermineTypeUnmarshallerInstantiate() #>;
             response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
 <#

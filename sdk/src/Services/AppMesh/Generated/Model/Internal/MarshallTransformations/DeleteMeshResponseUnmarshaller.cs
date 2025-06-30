@@ -48,6 +48,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         {
             DeleteMeshResponse response = new DeleteMeshResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = MeshDataUnmarshaller.Instance;
             response.Mesh = unmarshaller.Unmarshall(context, ref reader);
 

@@ -40,6 +40,7 @@
 	  <ProjectReference Include="../Services/RestXmlProtocol/AWSSDK.RestXmlProtocol.NetFramework.csproj" />
 	  <ProjectReference Include="../Services/RestXmlProtocolNamespace/AWSSDK.RestXmlProtocolNamespace.NetFramework.csproj" />
       <ProjectReference Include="../UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj" />
+      <ProjectReference Include="..\Services\QueryCompatibleJSONRPC10\AWSSDK.QueryCompatibleJSONRPC10.NetFramework.csproj" />
     </ItemGroup>
     <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
     </ItemGroup>
@@ -51,5 +52,8 @@
           <PackageReference Include="AutoFixture" Version="3.51.0" />
           <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0" />
           <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Generated\QueryCompatibleJSONRPC10\dotnet-protocol-test-codegen\" />
     </ItemGroup>
   </Project>

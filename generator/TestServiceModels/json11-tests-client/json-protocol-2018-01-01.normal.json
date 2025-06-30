@@ -211,8 +211,7 @@
     },
     "ContentTypeParametersOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DateTime":{
       "type":"timestamp",
@@ -226,8 +225,7 @@
     },
     "Document":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "Double":{
@@ -236,8 +234,7 @@
     },
     "EmptyStruct":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ErrorWithMembers":{
       "type":"structure",
@@ -257,8 +254,7 @@
     },
     "ErrorWithoutMembers":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true,
       "fault":true
     },
@@ -291,8 +287,7 @@
     },
     "FooError":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>This error has test cases that test some of the dark corners of Amazon service framework history. It should only be implemented by clients.</p>",
       "exception":true,
       "fault":true

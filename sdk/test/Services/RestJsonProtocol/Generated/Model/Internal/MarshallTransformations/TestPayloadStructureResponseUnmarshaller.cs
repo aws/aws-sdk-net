@@ -48,6 +48,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         {
             TestPayloadStructureResponse response = new TestPayloadStructureResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = PayloadConfigUnmarshaller.Instance;
             response.PayloadConfig = unmarshaller.Unmarshall(context, ref reader);
             if (context.ResponseData.IsHeaderPresent("x-amz-test-id"))

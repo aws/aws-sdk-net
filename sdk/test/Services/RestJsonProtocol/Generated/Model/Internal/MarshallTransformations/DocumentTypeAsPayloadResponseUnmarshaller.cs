@@ -48,6 +48,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         {
             DocumentTypeAsPayloadResponse response = new DocumentTypeAsPayloadResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
             response.DocumentValue = unmarshaller.Unmarshall(context, ref reader);
 

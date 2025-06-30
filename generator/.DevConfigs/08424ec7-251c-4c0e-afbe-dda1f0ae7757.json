@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add new protocol tests. Update JSON response unmarshallers to return safely if the service returns an empty string as a response instead of an empty json body"
+    ]
+  }
+}

@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             UpdateGcmChannelResponse response = new UpdateGcmChannelResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = GCMChannelResponseUnmarshaller.Instance;
             response.GCMChannelResponse = unmarshaller.Unmarshall(context, ref reader);
 
