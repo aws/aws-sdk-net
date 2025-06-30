@@ -54,6 +54,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RefreshInterval);
             }
 
+            if(requestObject.IsSetSourceProperties())
+            {
+                context.Writer.WritePropertyName("SourceProperties");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectSourcePropertiesKvp in requestObject.SourceProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectSourcePropertiesKvp.Key);
+                    var requestObjectSourcePropertiesValue = requestObjectSourcePropertiesKvp.Value;
+
+                        context.Writer.Write(requestObjectSourcePropertiesValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
