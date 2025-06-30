@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ServiceSpecificCredentialId. 
         /// <para>
         /// The unique identifier of the service-specific credential. You can get this value by
-        /// calling <a>ListServiceSpecificCredentials</a>.
+        /// calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServiceSpecificCredentials.html">ListServiceSpecificCredentials</a>.
         /// </para>
         ///  
         /// <para>

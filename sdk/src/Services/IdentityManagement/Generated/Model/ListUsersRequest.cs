@@ -51,7 +51,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To view all of the information for a user, see <a>GetUser</a>.
+    /// To view all of the information for a user, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a>.
     /// </para>
     ///  </note> 
     /// <para>

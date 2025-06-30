@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>UploadSigningCertificate</a> request.
+    /// Contains the response to a successful <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSigningCertificate.html">UploadSigningCertificate</a>
+    /// request.
     /// </summary>
     public partial class UploadSigningCertificateResponse : AmazonWebServiceResponse
     {

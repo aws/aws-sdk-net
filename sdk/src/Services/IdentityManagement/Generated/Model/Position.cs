@@ -35,7 +35,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a member of the <c> <a>Statement</a> </c> type.
+    /// This data type is used as a member of the <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_Statement.html">Statement</a>
+    /// </c> type.
     /// </para>
     /// </summary>
     public partial class Position

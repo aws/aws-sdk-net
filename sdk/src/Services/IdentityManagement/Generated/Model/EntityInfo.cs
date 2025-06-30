@@ -34,7 +34,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is an element of the <a>EntityDetails</a> object.
+    /// This data type is an element of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_EntityDetails.html">EntityDetails</a>
+    /// object.
     /// </para>
     /// </summary>
     public partial class EntityInfo

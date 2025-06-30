@@ -34,8 +34,10 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>,
-    /// and <a>ListPolicies</a> operations. 
+    /// This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html">GetPolicy</a>,
+    /// and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html">ListPolicies</a>
+    /// operations. 
     /// </para>
     ///  
     /// <para>
@@ -136,8 +138,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This element is included in the response to the <a>GetPolicy</a> operation. It is
-        /// not included in the response to the <a>ListPolicies</a> operation. 
+        /// This element is included in the response to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
+        /// operation. It is not included in the response to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html">ListPolicies</a>
+        /// operation. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>GetAccountSummary</a> request.
+    /// Contains the response to a successful <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html">GetAccountSummary</a>
+    /// request.
     /// </summary>
     public partial class GetAccountSummaryResponse : AmazonWebServiceResponse
     {

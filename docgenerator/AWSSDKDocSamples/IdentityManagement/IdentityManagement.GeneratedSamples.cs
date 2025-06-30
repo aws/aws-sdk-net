@@ -845,9 +845,9 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             var client = new AmazonIdentityManagementServiceClient();
             var response = client.PutGroupPolicy(new PutGroupPolicyRequest 
             {
-                GroupName = "Admins",
-                PolicyDocument = "{\"Version\":\"2012-10-17\",\"Statement\":{\"Effect\":\"Allow\",\"Action\":\"*\",\"Resource\":\"*\"}}",
-                PolicyName = "AllPerms"
+                GroupName = "PowerUsers",
+                PolicyDocument = "{\"Version\":\"2012-10-17\",\"Statement\":{\"Effect\":\"Allow\",\"Action\":[\"iam:Get*\",\"iam:List*\",\"iam:Generate*\"],\"Resource\":\"*\"}}",
+                PolicyName = "IAMReadAccess"
             });
 
 

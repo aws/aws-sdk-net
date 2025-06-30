@@ -77,7 +77,9 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// Policies that are attached to users and roles as permissions boundaries are not returned.
     /// To view which managed policy is currently used to set the permissions boundary for
-    /// a user or role, use the <a>GetUser</a> or <a>GetRole</a> operations.
+    /// a user or role, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a>
+    /// or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html">GetRole</a>
+    /// operations.
     /// </para>
     /// </summary>
     public partial class ListPoliciesGrantingServiceAccessRequest : AmazonIdentityManagementServiceRequest

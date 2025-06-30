@@ -39,7 +39,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The job identifier that you can use in the <a>GetOrganizationsAccessReport</a> operation.
+        /// The job identifier that you can use in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

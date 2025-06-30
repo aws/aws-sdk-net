@@ -82,6 +82,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("IsTruncated", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        response.IsTruncated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ServiceSpecificCredentials/member", targetDepth))
                     {
                         var unmarshaller = ServiceSpecificCredentialMetadataUnmarshaller.Instance;

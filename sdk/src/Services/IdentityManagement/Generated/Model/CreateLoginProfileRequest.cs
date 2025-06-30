@@ -37,9 +37,9 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the
-    /// IAM console to create a password for any IAM user. Use <a>ChangePassword</a> to update
-    /// your own existing password in the <b>My Security Credentials</b> page in the Amazon
-    /// Web Services Management Console.
+    /// IAM console to create a password for any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
+    /// to update your own existing password in the <b>My Security Credentials</b> page in
+    /// the Amazon Web Services Management Console.
     /// </para>
     ///  
     /// <para>

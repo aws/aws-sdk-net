@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>ListAccountAliases</a> request.
+    /// Contains the response to a successful <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html">ListAccountAliases</a>
+    /// request.
     /// </summary>
     public partial class ListAccountAliasesResponse : AmazonWebServiceResponse
     {

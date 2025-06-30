@@ -72,7 +72,8 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which
         /// you want to update the thumbprint. You can get a list of OIDC provider ARNs by using
-        /// the <a>ListOpenIDConnectProviders</a> operation.
+        /// the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html">ListOpenIDConnectProviders</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -97,7 +98,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ThumbprintList. 
         /// <para>
         /// A list of certificate thumbprints that are associated with the specified IAM OpenID
-        /// Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. 
+        /// Connect provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>.
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

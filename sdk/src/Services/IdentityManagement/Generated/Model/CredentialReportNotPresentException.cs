@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// The request was rejected because the credential report does not exist. To generate
-    /// a credential report, use <a>GenerateCredentialReport</a>.
+    /// a credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

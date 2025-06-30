@@ -34,7 +34,48 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListServiceSpecificCredentialsResponse : AmazonWebServiceResponse
     {
+        private bool? _isTruncated;
+        private string _marker;
         private List<ServiceSpecificCredentialMetadata> _serviceSpecificCredentials = AWSConfigs.InitializeCollections ? new List<ServiceSpecificCredentialMetadata>() : null;
+
+        /// <summary>
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether there are more items to return. If your results were
+        /// truncated, you can make a subsequent pagination request using the Marker request parameter
+        /// to retrieve more items.
+        /// </para>
+        /// </summary>
+        public bool? IsTruncated
+        {
+            get { return this._isTruncated; }
+            set { this._isTruncated = value; }
+        }
+
+        // Check to see if IsTruncated property is set
+        internal bool IsSetIsTruncated()
+        {
+            return this._isTruncated.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// When IsTruncated is true, this element is present and contains the value to use for
+        /// the Marker parameter in a subsequent pagination request.
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ServiceSpecificCredentials. 

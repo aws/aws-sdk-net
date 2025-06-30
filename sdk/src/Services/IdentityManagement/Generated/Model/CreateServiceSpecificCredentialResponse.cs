@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         ///  <important> 
         /// <para>
         /// This is the only time that the password for this credential set is available. It cannot
-        /// be recovered later. Instead, you must reset the password with <a>ResetServiceSpecificCredential</a>.
+        /// be recovered later. Instead, you must reset the password with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResetServiceSpecificCredential.html">ResetServiceSpecificCredential</a>.
         /// </para>
         ///  </important>
         /// </summary>

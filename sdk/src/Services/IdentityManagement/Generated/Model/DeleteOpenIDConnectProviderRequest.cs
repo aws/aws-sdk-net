@@ -54,7 +54,8 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object
         /// to delete. You can get a list of OpenID Connect provider resource ARNs by using the
-        /// <a>ListOpenIDConnectProviders</a> operation.
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html">ListOpenIDConnectProviders</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
