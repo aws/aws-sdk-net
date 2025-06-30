@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// X12Envelope Marshaller
+    /// X12ControlNumbers Marshaller
     /// </summary>
-    public class X12EnvelopeMarshaller : IRequestMarshaller<X12Envelope, JsonMarshallerContext> 
+    public class X12ControlNumbersMarshaller : IRequestMarshaller<X12ControlNumbers, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,26 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(X12Envelope requestObject, JsonMarshallerContext context)
+        public void Marshall(X12ControlNumbers requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCommon())
+            if(requestObject.IsSetStartingFunctionalGroupControlNumber())
             {
-                context.Writer.WritePropertyName("common");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = X12OutboundEdiHeadersMarshaller.Instance;
-                marshaller.Marshall(requestObject.Common, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("startingFunctionalGroupControlNumber");
+                context.Writer.Write(requestObject.StartingFunctionalGroupControlNumber);
             }
 
-            if(requestObject.IsSetWrapOptions())
+            if(requestObject.IsSetStartingInterchangeControlNumber())
             {
-                context.Writer.WritePropertyName("wrapOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("startingInterchangeControlNumber");
+                context.Writer.Write(requestObject.StartingInterchangeControlNumber);
+            }
 
-                var marshaller = WrapOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.WrapOptions, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetStartingTransactionSetControlNumber())
+            {
+                context.Writer.WritePropertyName("startingTransactionSetControlNumber");
+                context.Writer.Write(requestObject.StartingTransactionSetControlNumber);
             }
 
         }
@@ -75,7 +71,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static X12EnvelopeMarshaller Instance = new X12EnvelopeMarshaller();
+        public readonly static X12ControlNumbersMarshaller Instance = new X12ControlNumbersMarshaller();
 
     }
 }

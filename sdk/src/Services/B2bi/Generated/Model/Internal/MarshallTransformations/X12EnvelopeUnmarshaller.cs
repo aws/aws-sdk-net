@@ -72,6 +72,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     unmarshalledObject.Common = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("wrapOptions", targetDepth))
+                {
+                    var unmarshaller = WrapOptionsUnmarshaller.Instance;
+                    unmarshalledObject.WrapOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

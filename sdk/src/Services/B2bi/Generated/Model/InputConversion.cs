@@ -35,8 +35,28 @@ namespace Amazon.B2bi.Model
     /// </summary>
     public partial class InputConversion
     {
+        private AdvancedOptions _advancedOptions;
         private FormatOptions _formatOptions;
         private FromFormat _fromFormat;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedOptions. 
+        /// <para>
+        /// Specifies advanced options for the input conversion process. These options provide
+        /// additional control over how EDI files are processed during transformation.
+        /// </para>
+        /// </summary>
+        public AdvancedOptions AdvancedOptions
+        {
+            get { return this._advancedOptions; }
+            set { this._advancedOptions = value; }
+        }
+
+        // Check to see if AdvancedOptions property is set
+        internal bool IsSetAdvancedOptions()
+        {
+            return this._advancedOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FormatOptions. 

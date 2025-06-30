@@ -58,6 +58,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     response.ParsedFileContent = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parsedSplitFileContents", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ParsedSplitFileContents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

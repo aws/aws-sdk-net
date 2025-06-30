@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// X12Envelope Marshaller
+    /// X12AcknowledgmentOptions Marshaller
     /// </summary>
-    public class X12EnvelopeMarshaller : IRequestMarshaller<X12Envelope, JsonMarshallerContext> 
+    public class X12AcknowledgmentOptionsMarshaller : IRequestMarshaller<X12AcknowledgmentOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,20 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(X12Envelope requestObject, JsonMarshallerContext context)
+        public void Marshall(X12AcknowledgmentOptions requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCommon())
+            if(requestObject.IsSetFunctionalAcknowledgment())
             {
-                context.Writer.WritePropertyName("common");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = X12OutboundEdiHeadersMarshaller.Instance;
-                marshaller.Marshall(requestObject.Common, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("functionalAcknowledgment");
+                context.Writer.Write(requestObject.FunctionalAcknowledgment);
             }
 
-            if(requestObject.IsSetWrapOptions())
+            if(requestObject.IsSetTechnicalAcknowledgment())
             {
-                context.Writer.WritePropertyName("wrapOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = WrapOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.WrapOptions, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("technicalAcknowledgment");
+                context.Writer.Write(requestObject.TechnicalAcknowledgment);
             }
 
         }
@@ -75,7 +65,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static X12EnvelopeMarshaller Instance = new X12EnvelopeMarshaller();
+        public readonly static X12AcknowledgmentOptionsMarshaller Instance = new X12AcknowledgmentOptionsMarshaller();
 
     }
 }

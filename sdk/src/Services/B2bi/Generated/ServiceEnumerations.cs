@@ -317,6 +317,60 @@ namespace Amazon.B2bi
 
 
     /// <summary>
+    /// Constants used for properties of type LineTerminator.
+    /// </summary>
+    public class LineTerminator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CR for LineTerminator
+        /// </summary>
+        public static readonly LineTerminator CR = new LineTerminator("CR");
+        /// <summary>
+        /// Constant CRLF for LineTerminator
+        /// </summary>
+        public static readonly LineTerminator CRLF = new LineTerminator("CRLF");
+        /// <summary>
+        /// Constant LF for LineTerminator
+        /// </summary>
+        public static readonly LineTerminator LF = new LineTerminator("LF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LineTerminator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LineTerminator FindValue(string value)
+        {
+            return FindValue<LineTerminator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LineTerminator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Logging.
     /// </summary>
     public class Logging : ConstantClass
@@ -610,6 +664,268 @@ namespace Amazon.B2bi
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TransformerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WrapFormat.
+    /// </summary>
+    public class WrapFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINE_LENGTH for WrapFormat
+        /// </summary>
+        public static readonly WrapFormat LINE_LENGTH = new WrapFormat("LINE_LENGTH");
+        /// <summary>
+        /// Constant ONE_LINE for WrapFormat
+        /// </summary>
+        public static readonly WrapFormat ONE_LINE = new WrapFormat("ONE_LINE");
+        /// <summary>
+        /// Constant SEGMENT for WrapFormat
+        /// </summary>
+        public static readonly WrapFormat SEGMENT = new WrapFormat("SEGMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WrapFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WrapFormat FindValue(string value)
+        {
+            return FindValue<WrapFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WrapFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type X12FunctionalAcknowledgment.
+    /// </summary>
+    public class X12FunctionalAcknowledgment : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DO_NOT_GENERATE for X12FunctionalAcknowledgment
+        /// </summary>
+        public static readonly X12FunctionalAcknowledgment DO_NOT_GENERATE = new X12FunctionalAcknowledgment("DO_NOT_GENERATE");
+        /// <summary>
+        /// Constant GENERATE_ALL_SEGMENTS for X12FunctionalAcknowledgment
+        /// </summary>
+        public static readonly X12FunctionalAcknowledgment GENERATE_ALL_SEGMENTS = new X12FunctionalAcknowledgment("GENERATE_ALL_SEGMENTS");
+        /// <summary>
+        /// Constant GENERATE_WITHOUT_TRANSACTION_SET_RESPONSE_LOOP for X12FunctionalAcknowledgment
+        /// </summary>
+        public static readonly X12FunctionalAcknowledgment GENERATE_WITHOUT_TRANSACTION_SET_RESPONSE_LOOP = new X12FunctionalAcknowledgment("GENERATE_WITHOUT_TRANSACTION_SET_RESPONSE_LOOP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public X12FunctionalAcknowledgment(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static X12FunctionalAcknowledgment FindValue(string value)
+        {
+            return FindValue<X12FunctionalAcknowledgment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator X12FunctionalAcknowledgment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type X12GS05TimeFormat.
+    /// </summary>
+    public class X12GS05TimeFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HHMM for X12GS05TimeFormat
+        /// </summary>
+        public static readonly X12GS05TimeFormat HHMM = new X12GS05TimeFormat("HHMM");
+        /// <summary>
+        /// Constant HHMMSS for X12GS05TimeFormat
+        /// </summary>
+        public static readonly X12GS05TimeFormat HHMMSS = new X12GS05TimeFormat("HHMMSS");
+        /// <summary>
+        /// Constant HHMMSSDD for X12GS05TimeFormat
+        /// </summary>
+        public static readonly X12GS05TimeFormat HHMMSSDD = new X12GS05TimeFormat("HHMMSSDD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public X12GS05TimeFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static X12GS05TimeFormat FindValue(string value)
+        {
+            return FindValue<X12GS05TimeFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator X12GS05TimeFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type X12SplitBy.
+    /// </summary>
+    public class X12SplitBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for X12SplitBy
+        /// </summary>
+        public static readonly X12SplitBy NONE = new X12SplitBy("NONE");
+        /// <summary>
+        /// Constant TRANSACTION for X12SplitBy
+        /// </summary>
+        public static readonly X12SplitBy TRANSACTION = new X12SplitBy("TRANSACTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public X12SplitBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static X12SplitBy FindValue(string value)
+        {
+            return FindValue<X12SplitBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator X12SplitBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type X12TechnicalAcknowledgment.
+    /// </summary>
+    public class X12TechnicalAcknowledgment : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DO_NOT_GENERATE for X12TechnicalAcknowledgment
+        /// </summary>
+        public static readonly X12TechnicalAcknowledgment DO_NOT_GENERATE = new X12TechnicalAcknowledgment("DO_NOT_GENERATE");
+        /// <summary>
+        /// Constant GENERATE_ALL_SEGMENTS for X12TechnicalAcknowledgment
+        /// </summary>
+        public static readonly X12TechnicalAcknowledgment GENERATE_ALL_SEGMENTS = new X12TechnicalAcknowledgment("GENERATE_ALL_SEGMENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public X12TechnicalAcknowledgment(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static X12TechnicalAcknowledgment FindValue(string value)
+        {
+            return FindValue<X12TechnicalAcknowledgment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator X12TechnicalAcknowledgment(string value)
         {
             return FindValue(value);
         }

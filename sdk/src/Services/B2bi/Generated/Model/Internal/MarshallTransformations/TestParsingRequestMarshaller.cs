@@ -69,6 +69,17 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdvancedOptions())
+                {
+                    context.Writer.WritePropertyName("advancedOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdvancedOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AdvancedOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEdiType())
                 {
                     context.Writer.WritePropertyName("ediType");

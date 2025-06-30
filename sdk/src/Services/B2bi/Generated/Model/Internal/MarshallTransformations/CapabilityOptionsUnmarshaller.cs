@@ -66,6 +66,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("inboundEdi", targetDepth))
+                {
+                    var unmarshaller = InboundEdiOptionsUnmarshaller.Instance;
+                    unmarshalledObject.InboundEdi = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outboundEdi", targetDepth))
                 {
                     var unmarshaller = OutboundEdiOptionsUnmarshaller.Instance;

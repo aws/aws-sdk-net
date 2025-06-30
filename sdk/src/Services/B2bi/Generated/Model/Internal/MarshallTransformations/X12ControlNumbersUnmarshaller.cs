@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputConversion Object
+    /// Response Unmarshaller for X12ControlNumbers Object
     /// </summary>  
-    public class InputConversionUnmarshaller : IUnmarshaller<InputConversion, XmlUnmarshallerContext>, IUnmarshaller<InputConversion, JsonUnmarshallerContext>
+    public class X12ControlNumbersUnmarshaller : IUnmarshaller<X12ControlNumbers, XmlUnmarshallerContext>, IUnmarshaller<X12ControlNumbers, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InputConversion IUnmarshaller<InputConversion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        X12ControlNumbers IUnmarshaller<X12ControlNumbers, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputConversion Unmarshall(JsonUnmarshallerContext context)
+        public X12ControlNumbers Unmarshall(JsonUnmarshallerContext context)
         {
-            InputConversion unmarshalledObject = new InputConversion();
+            X12ControlNumbers unmarshalledObject = new X12ControlNumbers();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,22 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("advancedOptions", targetDepth))
+                if (context.TestExpression("startingFunctionalGroupControlNumber", targetDepth))
                 {
-                    var unmarshaller = AdvancedOptionsUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StartingFunctionalGroupControlNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("formatOptions", targetDepth))
+                if (context.TestExpression("startingInterchangeControlNumber", targetDepth))
                 {
-                    var unmarshaller = FormatOptionsUnmarshaller.Instance;
-                    unmarshalledObject.FormatOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StartingInterchangeControlNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("fromFormat", targetDepth))
+                if (context.TestExpression("startingTransactionSetControlNumber", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromFormat = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StartingTransactionSetControlNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +89,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputConversionUnmarshaller _instance = new InputConversionUnmarshaller();        
+        private static X12ControlNumbersUnmarshaller _instance = new X12ControlNumbersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputConversionUnmarshaller Instance
+        public static X12ControlNumbersUnmarshaller Instance
         {
             get
             {

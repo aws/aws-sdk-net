@@ -36,9 +36,29 @@ namespace Amazon.B2bi.Model
     /// </summary>
     public partial class TestParsingRequest : AmazonB2biRequest
     {
+        private AdvancedOptions _advancedOptions;
         private EdiType _ediType;
         private FileFormat _fileFormat;
         private S3Location _inputFile;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedOptions. 
+        /// <para>
+        /// Specifies advanced options for parsing the input EDI file. These options allow for
+        /// more granular control over the parsing process, including split options for X12 files.
+        /// </para>
+        /// </summary>
+        public AdvancedOptions AdvancedOptions
+        {
+            get { return this._advancedOptions; }
+            set { this._advancedOptions = value; }
+        }
+
+        // Check to see if AdvancedOptions property is set
+        internal bool IsSetAdvancedOptions()
+        {
+            return this._advancedOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EdiType. 

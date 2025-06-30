@@ -66,6 +66,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("controlNumbers", targetDepth))
+                {
+                    var unmarshaller = X12ControlNumbersUnmarshaller.Instance;
+                    unmarshalledObject.ControlNumbers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("delimiters", targetDepth))
                 {
                     var unmarshaller = X12DelimitersUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = X12FunctionalGroupHeadersUnmarshaller.Instance;
                     unmarshalledObject.FunctionalGroupHeaders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("gs05TimeFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Gs05TimeFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("interchangeControlHeaders", targetDepth))

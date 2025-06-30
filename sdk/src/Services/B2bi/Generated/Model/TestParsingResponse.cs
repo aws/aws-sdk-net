@@ -35,6 +35,7 @@ namespace Amazon.B2bi.Model
     public partial class TestParsingResponse : AmazonWebServiceResponse
     {
         private string _parsedFileContent;
+        private List<string> _parsedSplitFileContents = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ParsedFileContent. 
@@ -54,6 +55,26 @@ namespace Amazon.B2bi.Model
         internal bool IsSetParsedFileContent()
         {
             return this._parsedFileContent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParsedSplitFileContents. 
+        /// <para>
+        /// Returns an array of parsed file contents when the input file is split according to
+        /// the specified split options. Each element in the array represents a separate split
+        /// file's parsed content.
+        /// </para>
+        /// </summary>
+        public List<string> ParsedSplitFileContents
+        {
+            get { return this._parsedSplitFileContents; }
+            set { this._parsedSplitFileContents = value; }
+        }
+
+        // Check to see if ParsedSplitFileContents property is set
+        internal bool IsSetParsedSplitFileContents()
+        {
+            return this._parsedSplitFileContents != null && (this._parsedSplitFileContents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

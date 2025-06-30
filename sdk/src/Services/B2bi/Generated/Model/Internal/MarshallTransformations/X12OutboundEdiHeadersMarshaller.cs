@@ -48,6 +48,17 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetControlNumbers())
+            {
+                context.Writer.WritePropertyName("controlNumbers");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = X12ControlNumbersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ControlNumbers, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDelimiters())
             {
                 context.Writer.WritePropertyName("delimiters");
@@ -68,6 +79,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.FunctionalGroupHeaders, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetGs05TimeFormat())
+            {
+                context.Writer.WritePropertyName("gs05TimeFormat");
+                context.Writer.Write(requestObject.Gs05TimeFormat);
             }
 
             if(requestObject.IsSetInterchangeControlHeaders())

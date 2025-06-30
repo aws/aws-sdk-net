@@ -42,7 +42,24 @@ namespace Amazon.B2bi.Model
     /// template mapping prerequisites</a> in the <i>Amazon Web Services B2B Data Interchange
     /// User guide</i>.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// To generate a mapping, perform the following steps:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Start with an X12 EDI document to use as the input.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call <c>TestMapping</c> using your EDI document.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use the output from the <c>TestMapping</c> operation as either input or output for
+    /// your GenerateMapping call, along with your sample file.
+    /// </para>
+    ///  </li> </ol>
     /// </summary>
     public partial class GenerateMappingRequest : AmazonB2biRequest
     {
@@ -53,8 +70,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property InputFileContent. 
         /// <para>
-        /// Provide the contents of a sample X12 EDI file (for inbound EDI) or JSON/XML file (for
-        /// outbound EDI) to use as a starting point for the mapping.
+        /// Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use
+        /// as a starting point for the mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=5000000)]
@@ -92,8 +109,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property OutputFileContent. 
         /// <para>
-        /// Provide the contents of a sample X12 EDI file (for outbound EDI) or JSON/XML file
-        /// (for inbound EDI) to use as a target for the mapping.
+        /// Provide the contents of a sample X12 EDI file, either in JSON or XML format, to use
+        /// as a target for the mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=5000000)]

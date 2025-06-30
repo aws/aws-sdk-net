@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputConversion Object
+    /// Response Unmarshaller for X12AdvancedOptions Object
     /// </summary>  
-    public class InputConversionUnmarshaller : IUnmarshaller<InputConversion, XmlUnmarshallerContext>, IUnmarshaller<InputConversion, JsonUnmarshallerContext>
+    public class X12AdvancedOptionsUnmarshaller : IUnmarshaller<X12AdvancedOptions, XmlUnmarshallerContext>, IUnmarshaller<X12AdvancedOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InputConversion IUnmarshaller<InputConversion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        X12AdvancedOptions IUnmarshaller<X12AdvancedOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputConversion Unmarshall(JsonUnmarshallerContext context)
+        public X12AdvancedOptions Unmarshall(JsonUnmarshallerContext context)
         {
-            InputConversion unmarshalledObject = new InputConversion();
+            X12AdvancedOptions unmarshalledObject = new X12AdvancedOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("advancedOptions", targetDepth))
+                if (context.TestExpression("splitOptions", targetDepth))
                 {
-                    var unmarshaller = AdvancedOptionsUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("formatOptions", targetDepth))
-                {
-                    var unmarshaller = FormatOptionsUnmarshaller.Instance;
-                    unmarshalledObject.FormatOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fromFormat", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromFormat = unmarshaller.Unmarshall(context);
+                    var unmarshaller = X12SplitOptionsUnmarshaller.Instance;
+                    unmarshalledObject.SplitOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputConversionUnmarshaller _instance = new InputConversionUnmarshaller();        
+        private static X12AdvancedOptionsUnmarshaller _instance = new X12AdvancedOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputConversionUnmarshaller Instance
+        public static X12AdvancedOptionsUnmarshaller Instance
         {
             get
             {
