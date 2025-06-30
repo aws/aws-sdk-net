@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishAot>true</PublishAot>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Remove these package references
+    <PackageReference Include="AWSSDK.Core" Version="4.0.0.8" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="4.0.1.4" />
+    -->
+    
+    <!-- Add these project references instead -->
+    <ProjectReference Include="..\sdk\src\Core\AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="..\sdk\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj" />
+  </ItemGroup>
+
+</Project>
