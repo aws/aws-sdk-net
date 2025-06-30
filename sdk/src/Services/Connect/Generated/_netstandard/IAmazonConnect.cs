@@ -1021,13 +1021,34 @@ namespace Amazon.Connect
         /// <summary>
         /// <important> 
         /// <para>
-        /// Only the EMAIL and VOICE channels are supported. The supported initiation methods
-        /// for EMAIL are: OUTBOUND, AGENT_REPLY, and FLOW. For VOICE the supported initiation
-        /// methods are TRANSFER and the subtype connect:ExternalAudio. 
+        /// Only the VOICE, EMAIL, and TASK channels are supported. 
         /// </para>
-        ///  </important> 
+        ///  <ul> <li> 
         /// <para>
-        /// Creates a new EMAIL or VOICE contact. 
+        /// For VOICE: The supported initiation method is <c>TRANSFER</c>. The contacts created
+        /// with this initiation method have a subtype <c>connect:ExternalAudio</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For EMAIL: The supported initiation methods are <c>OUTBOUND</c>, <c>AGENT_REPLY</c>,
+        /// and <c>FLOW</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For TASK: The supported initiation method is <c>API</c>. Contacts created with this
+        /// API have a sub-type of <c>connect:ExternalTask</c>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Creates a new VOICE, EMAIL, or TASK contact. 
+        /// </para>
+        ///  
+        /// <para>
+        /// After a contact is created, you can move it to the desired state by using the <c>InitiateAs</c>
+        /// parameter. While you can use API to create task contacts that are in the <c>COMPLETED</c>
+        /// state, you must contact Amazon Web Services Support before using it for bulk import
+        /// use cases. Bulk import causes your requests to be throttled or fail if your CreateContact
+        /// limits aren't high enough. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>

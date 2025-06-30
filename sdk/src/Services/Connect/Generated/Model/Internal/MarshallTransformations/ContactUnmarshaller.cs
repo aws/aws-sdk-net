@@ -108,6 +108,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChatMetrics", targetDepth))
+                {
+                    var unmarshaller = ChatMetricsUnmarshaller.Instance;
+                    unmarshalledObject.ChatMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConnectedToSystemTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
