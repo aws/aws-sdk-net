@@ -46,6 +46,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			request.Headers["X-Amz-Target"] = target;
 <#
 	}
+	
+    var payload = this.Operation.RequestPayloadMember;
 	if (this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE")
 	{
 
@@ -59,6 +61,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		{
 #>
 			request.Headers["Content-Type"] = "application/x-amz-json-<#=this.Config.ServiceModel.JsonVersion #>";
+<#
+		}
+		else if (payload?.Shape.IsString == true || payload?.Shape.IsEnum == true)
+		{
+#>
+			request.Headers["Content-Type"] = "text/plain";
 <#
 		}
 		else if (this.Operation.RequestHasBodyMembers || this.Operation.RequestPayloadMember != null)
@@ -93,7 +101,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			request.ResourcePath = "<#=this.Operation.RequestUri #>";
 <#  
 
-    var payload = this.Operation.RequestPayloadMember;
     var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString);
 	// Process any members which are marshalled as part of the request body
 	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)

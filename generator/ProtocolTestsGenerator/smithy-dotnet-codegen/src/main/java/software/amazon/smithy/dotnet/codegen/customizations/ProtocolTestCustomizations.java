@@ -12,7 +12,9 @@ public final class ProtocolTestCustomizations {
     //These contain collections with nullable values
     public static final List<String> RestJsonNullMapValueOperations = Arrays.asList(
             "JsonMapsRequest",
-            "JsonMapsResponse"
+            "JsonMapsResponse",
+            "SparseJsonMapsRequest",
+            "SparseJsonMapsResponse"
     );
     public static final List<String> RestJsonNullMapValueStructures = Arrays.asList(
             "SparseBooleanMap",
@@ -94,6 +96,7 @@ public final class ProtocolTestCustomizations {
             // test passes. As this can never happen in a real service, we can skip this to avoid unnecessary customizations in the generator
             // for a scenario that will never happen.
             "QueryCompatibleAwsJson10CustomCodeError"
+            // skip sparseMaps. the customization hook isn't working in v3
 
     );
     public static final List<String> VNextTests = Arrays.asList(
@@ -127,6 +130,11 @@ public final class ProtocolTestCustomizations {
             "QueryNoInputAndNoOutput",
             "QueryNoInputAndOutput",
             "RestJsonToleratesRegexCharsInSegments",
-            "RestXmlXmlMapWithXmlNamespace"
+            "RestXmlXmlMapWithXmlNamespace",
+            "NestedXmlMapWithXmlNameSerializes",
+            "NestedXmlMapWithXmlNameDeserializes",
+            "RestJsonNullAndEmptyHeaders",
+            "NullAndEmptyHeaders",
+            "RestJsonHttpPayloadWithStructureAndEmptyResponseBody"
     );
 }

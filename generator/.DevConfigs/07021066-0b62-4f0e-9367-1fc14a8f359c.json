@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Update to consume latest protocol tests (1.60.3). Add query compatible protocol tests."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
