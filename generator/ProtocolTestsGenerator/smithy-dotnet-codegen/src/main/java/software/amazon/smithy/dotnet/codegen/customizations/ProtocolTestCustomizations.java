@@ -96,7 +96,6 @@ public final class ProtocolTestCustomizations {
             // test passes. As this can never happen in a real service, we can skip this to avoid unnecessary customizations in the generator
             // for a scenario that will never happen.
             "QueryCompatibleAwsJson10CustomCodeError"
-            // skip sparseMaps. the customization hook isn't working in v3
 
     );
     public static final List<String> VNextTests = Arrays.asList(
