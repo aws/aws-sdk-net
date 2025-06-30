@@ -1036,7 +1036,7 @@
         <value>
             <example>
                 <para>
-                    The following command adds a policy named AllPerms to the IAM group named Admins.
+                    The following command adds a policy named IAMReadAccess to the IAM group named PowerUsers.
                 </para>
                 <code
                     title="To add a policy to a group"

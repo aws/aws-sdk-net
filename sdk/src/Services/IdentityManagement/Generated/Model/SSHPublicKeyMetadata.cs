@@ -34,7 +34,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>ListSSHPublicKeys</a> operation.
+    /// This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSSHPublicKeys.html">ListSSHPublicKeys</a>
+    /// operation.
     /// </para>
     /// </summary>
     public partial class SSHPublicKeyMetadata

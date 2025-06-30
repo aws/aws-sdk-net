@@ -40,8 +40,73 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListServiceSpecificCredentialsRequest : AmazonIdentityManagementServiceRequest
     {
+        private bool? _allUsers;
+        private string _marker;
+        private int? _maxItems;
         private string _serviceName;
         private string _userName;
+
+        /// <summary>
+        /// Gets and sets the property AllUsers. 
+        /// <para>
+        /// A flag indicating whether to list service specific credentials for all users. This
+        /// parameter cannot be specified together with UserName. When true, returns all credentials
+        /// associated with the specified service.
+        /// </para>
+        /// </summary>
+        public bool AllUsers
+        {
+            get { return this._allUsers.GetValueOrDefault(); }
+            set { this._allUsers = value; }
+        }
+
+        // Check to see if AllUsers property is set
+        internal bool IsSetAllUsers()
+        {
+            return this._allUsers.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use this parameter only when paginating results and only after you receive a response
+        /// indicating that the results are truncated. Set it to the value of the Marker from
+        /// the response that you received to indicate where the next call should start.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=320)]
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// Use this only when paginating results to indicate the maximum number of items you
+        /// want in the response. If additional items exist beyond the maximum you specify, the
+        /// IsTruncated response element is true.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxItems
+        {
+            get { return this._maxItems.GetValueOrDefault(); }
+            set { this._maxItems = value; }
+        }
+
+        // Check to see if MaxItems property is set
+        internal bool IsSetMaxItems()
+        {
+            return this._maxItems.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ServiceName. 

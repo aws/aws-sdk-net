@@ -374,9 +374,10 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// Use <a>UpdateLoginProfile</a> to use the CLI, the Amazon Web Services API, or the
-        /// <b>Users</b> page in the IAM console to change the password for any IAM user. For
-        /// more information about modifying passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+        /// Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html">UpdateLoginProfile</a>
+        /// to use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the IAM console
+        /// to change the password for any IAM user. For more information about modifying passwords,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
         /// passwords</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -643,9 +644,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the
-        /// IAM console to create a password for any IAM user. Use <a>ChangePassword</a> to update
-        /// your own existing password in the <b>My Security Credentials</b> page in the Amazon
-        /// Web Services Management Console.
+        /// IAM console to create a password for any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
+        /// to update your own existing password in the <b>My Security Credentials</b> page in
+        /// the Amazon Web Services Management Console.
         /// </para>
         ///  
         /// <para>
@@ -742,7 +743,7 @@ namespace Amazon.IdentityManagement
         ///  </note> <note> 
         /// <para>
         /// The trust for the OIDC provider is derived from the IAM provider that this operation
-        /// creates. Therefore, it is best to limit access to the <a>CreateOpenIDConnectProvider</a>
+        /// creates. Therefore, it is best to limit access to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>
         /// operation to highly privileged users.
         /// </para>
         ///  </note>
@@ -845,7 +846,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Creates a new version of the specified managed policy. To update a managed policy,
         /// you create a new policy version. A managed policy can have up to five versions. If
-        /// the policy has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
+        /// the policy has five versions, you must delete an existing version using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html">DeletePolicyVersion</a>
         /// before you create a new version.
         /// 
         ///  
@@ -1065,18 +1066,17 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can create service-specific credentials for CodeCommit and Amazon Keyspaces (for
-        /// Apache Cassandra).
+        /// You can create service-specific credentials for Amazon Bedrock, CodeCommit and Amazon
+        /// Keyspaces (for Apache Cassandra).
         /// </para>
         ///  
         /// <para>
-        /// You can reset the password to a new service-generated value by calling <a>ResetServiceSpecificCredential</a>.
+        /// You can reset the password to a new service-generated value by calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResetServiceSpecificCredential.html">ResetServiceSpecificCredential</a>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about service-specific credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using
-        /// IAM with CodeCommit: Git credentials, SSH keys, and Amazon Web Services access keys</a>
-        /// in the <i>IAM User Guide</i>.
+        /// For more information about service-specific credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bedrock.html">Service-specific
+        /// credentials for IAM users</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential service method.</param>
@@ -1153,8 +1153,9 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Creates a new virtual MFA device for the Amazon Web Services account. After creating
-        /// the virtual MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user.
-        /// For more information about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// the virtual MFA, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html">EnableMFADevice</a>
+        /// to attach the MFA device to an IAM user. For more information about creating and working
+        /// with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
         /// a virtual MFA device</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
@@ -1417,8 +1418,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A group can also have managed policies attached to it. To detach a managed policy
-        /// from a group, use <a>DetachGroupPolicy</a>. For more information about policies, refer
-        /// to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// from a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html">DetachGroupPolicy</a>.
+        /// For more information about policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -1495,13 +1496,14 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the password for the specified IAM user, For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_admin-change-user.html">Managing
+        /// Deletes the password for the specified IAM user or root user, For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_admin-change-user.html">Managing
         /// passwords for IAM users</a>.
         /// 
         ///  
         /// <para>
         /// You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the
-        /// IAM console to delete a password for any IAM user. You can use <a>ChangePassword</a>
+        /// IAM console to delete a password for any IAM user. You can use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
         /// to update, but not delete, your own password in the <b>My Security Credentials</b>
         /// page in the Amazon Web Services Management Console.
         /// </para>
@@ -1510,7 +1512,8 @@ namespace Amazon.IdentityManagement
         /// Deleting a user's password does not prevent a user from accessing Amazon Web Services
         /// through the command line interface or the API. To prevent all user access, you must
         /// also either make any access keys inactive or delete them. For more information about
-        /// making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
+        /// making keys inactive or deleting them, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html">UpdateAccessKey</a>
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html">DeleteAccessKey</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1600,13 +1603,16 @@ namespace Amazon.IdentityManagement
         ///  <ul> <li> 
         /// <para>
         /// Detach the policy from all users, groups, and roles that the policy is attached to,
-        /// using <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a>.
-        /// To list all the users, groups, and roles that a policy is attached to, use <a>ListEntitiesForPolicy</a>.
+        /// using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html">DetachUserPolicy</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html">DetachGroupPolicy</a>,
+        /// or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html">DetachRolePolicy</a>.
+        /// To list all the users, groups, and roles that a policy is attached to, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html">ListEntitiesForPolicy</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delete all versions of the policy using <a>DeletePolicyVersion</a>. To list the policy's
-        /// versions, use <a>ListPolicyVersions</a>. You cannot use <a>DeletePolicyVersion</a>
+        /// Delete all versions of the policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html">DeletePolicyVersion</a>.
+        /// To list the policy's versions, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html">ListPolicyVersions</a>.
+        /// You cannot use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html">DeletePolicyVersion</a>
         /// to delete the version that is marked as the default version. You delete the policy's
         /// default version in the next step of the process.
         /// </para>
@@ -1661,8 +1667,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// You cannot delete the default version from a policy using this operation. To delete
-        /// the default version from a policy, use <a>DeletePolicy</a>. To find out which version
-        /// of a policy is marked as the default version, use <a>ListPolicyVersions</a>.
+        /// the default version from a policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
+        /// To find out which version of a policy is marked as the default version, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html">ListPolicyVersions</a>.
         /// </para>
         ///  
         /// <para>
@@ -1713,20 +1719,20 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Inline policies (<a>DeleteRolePolicy</a>)
+        /// Inline policies (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html">DeleteRolePolicy</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Attached managed policies (<a>DetachRolePolicy</a>)
+        /// Attached managed policies (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html">DetachRolePolicy</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Instance profile (<a>RemoveRoleFromInstanceProfile</a>)
+        /// Instance profile (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveRoleFromInstanceProfile.html">RemoveRoleFromInstanceProfile</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Optional – Delete instance profile after detaching from role for resource clean up
-        /// (<a>DeleteInstanceProfile</a>)
+        /// (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteInstanceProfile.html">DeleteInstanceProfile</a>)
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
@@ -1827,8 +1833,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A role can also have managed policies attached to it. To detach a managed policy from
-        /// a role, use <a>DetachRolePolicy</a>. For more information about policies, refer to
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html">DetachRolePolicy</a>.
+        /// For more information about policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -1974,7 +1980,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you submit a deletion request for a service-linked role whose linked service is
-        /// still accessing a resource, then the deletion task fails. If it fails, the <a>GetServiceLinkedRoleDeletionStatus</a>
+        /// still accessing a resource, then the deletion task fails. If it fails, the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLinkedRoleDeletionStatus.html">GetServiceLinkedRoleDeletionStatus</a>
         /// operation returns the reason for the failure, usually including the resources that
         /// must be deleted. To delete the service-linked role, you must first remove those resources
         /// from the linked service and then submit the deletion request again. Resources are
@@ -2117,39 +2123,40 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Password (<a>DeleteLoginProfile</a>)
+        /// Password (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html">DeleteLoginProfile</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Access keys (<a>DeleteAccessKey</a>)
+        /// Access keys (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html">DeleteAccessKey</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Signing certificate (<a>DeleteSigningCertificate</a>)
+        /// Signing certificate (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSigningCertificate.html">DeleteSigningCertificate</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SSH public key (<a>DeleteSSHPublicKey</a>)
+        /// SSH public key (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSSHPublicKey.html">DeleteSSHPublicKey</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Git credentials (<a>DeleteServiceSpecificCredential</a>)
+        /// Git credentials (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceSpecificCredential.html">DeleteServiceSpecificCredential</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Multi-factor authentication (MFA) device (<a>DeactivateMFADevice</a>, <a>DeleteVirtualMFADevice</a>)
+        /// Multi-factor authentication (MFA) device (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html">DeactivateMFADevice</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html">DeleteVirtualMFADevice</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Inline policies (<a>DeleteUserPolicy</a>)
+        /// Inline policies (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html">DeleteUserPolicy</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Attached managed policies (<a>DetachUserPolicy</a>)
+        /// Attached managed policies (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html">DetachUserPolicy</a>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Group memberships (<a>RemoveUserFromGroup</a>)
+        /// Group memberships (<a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html">RemoveUserFromGroup</a>)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2225,8 +2232,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A user can also have managed policies attached to it. To detach a managed policy from
-        /// a user, use <a>DetachUserPolicy</a>. For more information about policies, refer to
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html">DetachUserPolicy</a>.
+        /// For more information about policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -2262,7 +2269,8 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         ///  You must deactivate a user's virtual MFA device before you can delete it. For information
-        /// about deactivating MFA devices, see <a>DeactivateMFADevice</a>. 
+        /// about deactivating MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html">DeactivateMFADevice</a>.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -2306,7 +2314,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A group can also have inline policies embedded with it. To delete an inline policy,
-        /// use <a>DeleteGroupPolicy</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html">DeleteGroupPolicy</a>.
+        /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -2346,7 +2355,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A role can also have inline policies embedded with it. To delete an inline policy,
-        /// use <a>DeleteRolePolicy</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html">DeleteRolePolicy</a>.
+        /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -2393,7 +2403,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// A user can also have inline policies embedded with it. To delete an inline policy,
-        /// use <a>DeleteUserPolicy</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html">DeleteUserPolicy</a>.
+        /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -2764,9 +2775,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </important> 
         /// <para>
-        /// This operation returns a <c>JobId</c>. Use this parameter in the <c> <a>GetOrganizationsAccessReport</a>
+        /// This operation returns a <c>JobId</c>. Use this parameter in the <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>
         /// </c> operation to check the status of the report generation. To check the status of
-        /// this request, use the <c>JobId</c> parameter in the <c> <a>GetOrganizationsAccessReport</a>
+        /// this request, use the <c>JobId</c> parameter in the <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>
         /// </c> operation and test the <c>JobStatus</c> response parameter. When the job is complete,
         /// you can retrieve the report.
         /// </para>
@@ -2909,10 +2920,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetServiceLastAccessedDetails</a> – Use this operation for users, groups, roles,
-        /// or policies to list every Amazon Web Services service that the resource could access
-        /// using permissions policies. For each service, the response includes information about
-        /// the most recent access attempt.
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>
+        /// – Use this operation for users, groups, roles, or policies to list every Amazon Web
+        /// Services service that the resource could access using permissions policies. For each
+        /// service, the response includes information about the most recent access attempt.
         /// </para>
         ///  
         /// <para>
@@ -2921,9 +2932,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetServiceLastAccessedDetailsWithEntities</a> – Use this operation for groups
-        /// and policies to list information about the associated entities (users or roles) that
-        /// attempted to access a specific Amazon Web Services service. 
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a>
+        /// – Use this operation for groups and policies to list information about the associated
+        /// entities (users or roles) that attempted to access a specific Amazon Web Services
+        /// service. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2934,7 +2946,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For additional information about the permissions policies that allow an identity (user,
-        /// group, or role) to access specific services, use the <a>ListPoliciesGrantingServiceAccess</a>
+        /// group, or role) to access specific services, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPoliciesGrantingServiceAccess.html">ListPoliciesGrantingServiceAccess</a>
         /// operation.
         /// </para>
         ///  <note> 
@@ -3006,7 +3018,8 @@ namespace Amazon.IdentityManagement
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
-        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality,
+        /// and some SDKs do this decoding automatically.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3134,14 +3147,14 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Gets a list of all of the context keys referenced in the input policies. The policies
         /// are supplied as a list of one or more strings. To get the context keys from policies
-        /// associated with an IAM user, group, or role, use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// associated with an IAM user, group, or role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.
         /// 
         ///  
         /// <para>
         /// Context keys are variables maintained by Amazon Web Services and its services that
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value specified in an IAM policy. Use <c>GetContextKeysForCustomPolicy</c>
-        /// to understand what key names and values you must supply when you call <a>SimulateCustomPolicy</a>.
+        /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>.
         /// Note that all parameters are shown in unencoded form here for clarity but must be
         /// URL encoded to be included as a part of a real HTML request.
         /// </para>
@@ -3163,14 +3176,14 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Gets a list of all of the context keys referenced in the input policies. The policies
         /// are supplied as a list of one or more strings. To get the context keys from policies
-        /// associated with an IAM user, group, or role, use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// associated with an IAM user, group, or role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.
         /// 
         ///  
         /// <para>
         /// Context keys are variables maintained by Amazon Web Services and its services that
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value specified in an IAM policy. Use <c>GetContextKeysForCustomPolicy</c>
-        /// to understand what key names and values you must supply when you call <a>SimulateCustomPolicy</a>.
+        /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>.
         /// Note that all parameters are shown in unencoded form here for clarity but must be
         /// URL encoded to be included as a part of a real HTML request.
         /// </para>
@@ -3202,21 +3215,22 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// You can optionally include a list of one or more additional policies, specified as
-        /// strings. If you want to include <i>only</i> a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// strings. If you want to include <i>only</i> a list of policies by string, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
         /// instead.
         /// </para>
         ///  
         /// <para>
         ///  <b>Note:</b> This operation discloses information about the permissions granted to
         /// other users. If you do not want users to see other user's permissions, then consider
-        /// allowing them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        /// allowing them to use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
         /// Context keys are variables maintained by Amazon Web Services and its services that
         /// provide details about the context of an API query request. Context keys can be evaluated
-        /// by testing against a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a>
-        /// to understand what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
+        /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
@@ -3245,21 +3259,22 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// You can optionally include a list of one or more additional policies, specified as
-        /// strings. If you want to include <i>only</i> a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// strings. If you want to include <i>only</i> a list of policies by string, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
         /// instead.
         /// </para>
         ///  
         /// <para>
         ///  <b>Note:</b> This operation discloses information about the permissions granted to
         /// other users. If you do not want users to see other user's permissions, then consider
-        /// allowing them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        /// allowing them to use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
         /// Context keys are variables maintained by Amazon Web Services and its services that
         /// provide details about the context of an API query request. Context keys can be evaluated
-        /// by testing against a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a>
-        /// to understand what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
+        /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
@@ -3290,21 +3305,22 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// You can optionally include a list of one or more additional policies, specified as
-        /// strings. If you want to include <i>only</i> a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// strings. If you want to include <i>only</i> a list of policies by string, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
         /// instead.
         /// </para>
         ///  
         /// <para>
         ///  <b>Note:</b> This operation discloses information about the permissions granted to
         /// other users. If you do not want users to see other user's permissions, then consider
-        /// allowing them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        /// allowing them to use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
         /// Context keys are variables maintained by Amazon Web Services and its services that
         /// provide details about the context of an API query request. Context keys can be evaluated
-        /// by testing against a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a>
-        /// to understand what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
+        /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForPrincipalPolicy service method.</param>
@@ -3341,13 +3357,13 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the GetCredentialReport service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportExpiredException">
         /// The request was rejected because the most recent credential report has expired. To
-        /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
-        /// about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// generate a new credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>.
+        /// For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
-        /// a credential report, use <a>GenerateCredentialReport</a>.
+        /// a credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotReadyException">
         /// The request was rejected because the credential report is still being generated.
@@ -3373,13 +3389,13 @@ namespace Amazon.IdentityManagement
         /// <returns>The response from the GetCredentialReport service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportExpiredException">
         /// The request was rejected because the most recent credential report has expired. To
-        /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
-        /// about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// generate a new credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>.
+        /// For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
-        /// a credential report, use <a>GenerateCredentialReport</a>.
+        /// a credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotReadyException">
         /// The request was rejected because the credential report is still being generated.
@@ -3431,14 +3447,15 @@ namespace Amazon.IdentityManagement
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
-        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality,
+        /// and some SDKs do this decoding automatically.
         /// </para>
         ///  </note> 
         /// <para>
         /// An IAM group can also have managed policies attached to it. To retrieve a managed
-        /// policy document that is attached to a group, use <a>GetPolicy</a> to determine the
-        /// policy's default version, then use <a>GetPolicyVersion</a> to retrieve the policy
-        /// document.
+        /// policy document that is attached to a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
+        /// to determine the policy's default version, then use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html">GetPolicyVersion</a>
+        /// to retrieve the policy document.
         /// </para>
         ///  
         /// <para>
@@ -3595,13 +3612,14 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Retrieves the service last accessed data report for Organizations that was previously
-        /// generated using the <c> <a>GenerateOrganizationsAccessReport</a> </c> operation. This
-        /// operation retrieves the status of your report job and the report contents.
+        /// generated using the <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html">GenerateOrganizationsAccessReport</a>
+        /// </c> operation. This operation retrieves the status of your report job and the report
+        /// contents.
         /// 
         ///  
         /// <para>
         /// Depending on the parameters that you passed when you generated the report, the data
-        /// returned could include different information. For details, see <a>GenerateOrganizationsAccessReport</a>.
+        /// returned could include different information. For details, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html">GenerateOrganizationsAccessReport</a>.
         /// </para>
         ///  
         /// <para>
@@ -3646,15 +3664,16 @@ namespace Amazon.IdentityManagement
         /// Retrieves information about the specified managed policy, including the policy's default
         /// version and the total number of IAM users, groups, and roles to which the policy is
         /// attached. To retrieve the list of the specific users, groups, and roles that the policy
-        /// is attached to, use <a>ListEntitiesForPolicy</a>. This operation returns metadata
-        /// about the policy. To retrieve the actual policy document for a specific version of
-        /// the policy, use <a>GetPolicyVersion</a>.
+        /// is attached to, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html">ListEntitiesForPolicy</a>.
+        /// This operation returns metadata about the policy. To retrieve the actual policy document
+        /// for a specific version of the policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html">GetPolicyVersion</a>.
         /// 
         ///  
         /// <para>
         /// This operation retrieves information about managed policies. To retrieve information
-        /// about an inline policy that is embedded with an IAM user, group, or role, use <a>GetUserPolicy</a>,
-        /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a>.
+        /// about an inline policy that is embedded with an IAM user, group, or role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUserPolicy.html">GetUserPolicy</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroupPolicy.html">GetGroupPolicy</a>,
+        /// or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html">GetRolePolicy</a>.
         /// </para>
         ///  
         /// <para>
@@ -3697,17 +3716,19 @@ namespace Amazon.IdentityManagement
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
-        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality,
+        /// and some SDKs do this decoding automatically.
         /// </para>
         ///  </note> 
         /// <para>
-        /// To list the available versions for a policy, use <a>ListPolicyVersions</a>.
+        /// To list the available versions for a policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html">ListPolicyVersions</a>.
         /// </para>
         ///  
         /// <para>
         /// This operation retrieves information about managed policies. To retrieve information
-        /// about an inline policy that is embedded in a user, group, or role, use <a>GetUserPolicy</a>,
-        /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a>.
+        /// about an inline policy that is embedded in a user, group, or role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUserPolicy.html">GetUserPolicy</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroupPolicy.html">GetGroupPolicy</a>,
+        /// or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html">GetRolePolicy</a>.
         /// </para>
         ///  
         /// <para>
@@ -3757,7 +3778,8 @@ namespace Amazon.IdentityManagement
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
-        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality,
+        /// and some SDKs do this decoding automatically.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3792,13 +3814,15 @@ namespace Amazon.IdentityManagement
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
-        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality,
+        /// and some SDKs do this decoding automatically.
         /// </para>
         ///  </note> 
         /// <para>
         /// An IAM role can also have managed policies attached to it. To retrieve a managed policy
-        /// document that is attached to a role, use <a>GetPolicy</a> to determine the policy's
-        /// default version, then use <a>GetPolicyVersion</a> to retrieve the policy document.
+        /// document that is attached to a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
+        /// to determine the policy's default version, then use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html">GetPolicyVersion</a>
+        /// to retrieve the policy document.
         /// </para>
         ///  
         /// <para>
@@ -4048,7 +4072,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves the status of your service-linked role deletion. After you use <a>DeleteServiceLinkedRole</a>
+        /// Retrieves the status of your service-linked role deletion. After you use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a>
         /// to submit a service-linked role for deletion, you can use the <c>DeletionTaskId</c>
         /// parameter in <c>GetServiceLinkedRoleDeletionStatus</c> to check the status of the
         /// deletion. If the deletion fails, this operation returns the reason that it failed,
@@ -4181,13 +4205,15 @@ namespace Amazon.IdentityManagement
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
         /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
-        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality,
+        /// and some SDKs do this decoding automatically.
         /// </para>
         ///  </note> 
         /// <para>
         /// An IAM user can also have managed policies attached to it. To retrieve a managed policy
-        /// document that is attached to a user, use <a>GetPolicy</a> to determine the policy's
-        /// default version. Then use <a>GetPolicyVersion</a> to retrieve the policy document.
+        /// document that is attached to a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
+        /// to determine the policy's default version. Then use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html">GetPolicyVersion</a>
+        /// to retrieve the policy document.
         /// </para>
         ///  
         /// <para>
@@ -4363,8 +4389,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM group can also have inline policies embedded with it. To list the inline policies
-        /// for a group, use <a>ListGroupPolicies</a>. For information about policies, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// for a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html">ListGroupPolicies</a>.
+        /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -4408,7 +4434,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM role can also have inline policies embedded with it. To list the inline policies
-        /// for a role, use <a>ListRolePolicies</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// for a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html">ListRolePolicies</a>.
+        /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -4452,7 +4479,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM user can also have inline policies embedded with it. To list the inline policies
-        /// for a user, use <a>ListUserPolicies</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// for a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserPolicies.html">ListUserPolicies</a>.
+        /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -4537,8 +4565,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM group can also have managed policies attached to it. To list the managed policies
-        /// that are attached to a group, use <a>ListAttachedGroupPolicies</a>. For more information
-        /// about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// that are attached to a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html">ListAttachedGroupPolicies</a>.
+        /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -4656,7 +4684,7 @@ namespace Amazon.IdentityManagement
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
         /// attribute of the returned object. To view all of the information for an instance profile,
-        /// see <a>GetInstanceProfile</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html">GetInstanceProfile</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4687,7 +4715,7 @@ namespace Amazon.IdentityManagement
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
         /// attribute of the returned object. To view all of the information for an instance profile,
-        /// see <a>GetInstanceProfile</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html">GetInstanceProfile</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4873,7 +4901,7 @@ namespace Amazon.IdentityManagement
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
         /// attribute of the returned object. To view all of the information for an OIDC provider,
-        /// see <a>GetOpenIDConnectProvider</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html">GetOpenIDConnectProvider</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4995,7 +5023,7 @@ namespace Amazon.IdentityManagement
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
         /// attribute of the returned object. To view all of the information for a customer manged
-        /// policy, see <a>GetPolicy</a>.
+        /// policy, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html">GetPolicy</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5038,7 +5066,7 @@ namespace Amazon.IdentityManagement
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
         /// attribute of the returned object. To view all of the information for a customer manged
-        /// policy, see <a>GetPolicy</a>.
+        /// policy, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html">GetPolicy</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5107,7 +5135,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Policies that are attached to users and roles as permissions boundaries are not returned.
         /// To view which managed policy is currently used to set the permissions boundary for
-        /// a user or role, use the <a>GetUser</a> or <a>GetRole</a> operations.
+        /// a user or role, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a>
+        /// or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html">GetRole</a>
+        /// operations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPoliciesGrantingServiceAccess service method.</param>
@@ -5207,8 +5237,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM role can also have managed policies attached to it. To list the managed policies
-        /// that are attached to a role, use <a>ListAttachedRolePolicies</a>. For more information
-        /// about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// that are attached to a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html">ListAttachedRolePolicies</a>.
+        /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -5264,7 +5294,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To view all of the information for a role, see <a>GetRole</a>.
+        /// To view all of the information for a role, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html">GetRole</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5309,7 +5339,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To view all of the information for a role, see <a>GetRole</a>.
+        /// To view all of the information for a role, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html">GetRole</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5364,7 +5394,7 @@ namespace Amazon.IdentityManagement
         /// Lists the SAML provider resource objects defined in IAM in the account. IAM resource-listing
         /// operations return a subset of the available attributes for the resource. For example,
         /// this operation does not return tags, even though they are an attribute of the returned
-        /// object. To view all of the information for a SAML provider, see <a>GetSAMLProvider</a>.
+        /// object. To view all of the information for a SAML provider, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html">GetSAMLProvider</a>.
         /// 
         ///  <important> 
         /// <para>
@@ -5390,7 +5420,7 @@ namespace Amazon.IdentityManagement
         /// Lists the SAML provider resource objects defined in IAM in the account. IAM resource-listing
         /// operations return a subset of the available attributes for the resource. For example,
         /// this operation does not return tags, even though they are an attribute of the returned
-        /// object. To view all of the information for a SAML provider, see <a>GetSAMLProvider</a>.
+        /// object. To view all of the information for a SAML provider, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html">GetSAMLProvider</a>.
         /// 
         ///  <important> 
         /// <para>
@@ -5474,7 +5504,7 @@ namespace Amazon.IdentityManagement
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
         /// attribute of the returned object. To view all of the information for a servercertificate,
-        /// see <a>GetServerCertificate</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html">GetServerCertificate</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5511,7 +5541,7 @@ namespace Amazon.IdentityManagement
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
         /// attribute of the returned object. To view all of the information for a servercertificate,
-        /// see <a>GetServerCertificate</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html">GetServerCertificate</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5716,8 +5746,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// An IAM user can also have managed policies attached to it. To list the managed policies
-        /// that are attached to a user, use <a>ListAttachedUserPolicies</a>. For more information
-        /// about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// that are attached to a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html">ListAttachedUserPolicies</a>.
+        /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -5769,7 +5799,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To view all of the information for a user, see <a>GetUser</a>.
+        /// To view all of the information for a user, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5810,7 +5840,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To view all of the information for a user, see <a>GetUser</a>.
+        /// To view all of the information for a user, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5872,7 +5902,7 @@ namespace Amazon.IdentityManagement
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
         /// attribute of the returned object. To view tag information for a virtual MFA device,
-        /// see <a>ListMFADeviceTags</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADeviceTags.html">ListMFADeviceTags</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5900,7 +5930,7 @@ namespace Amazon.IdentityManagement
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
         /// attribute of the returned object. To view tag information for a virtual MFA device,
-        /// see <a>ListMFADeviceTags</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADeviceTags.html">ListMFADeviceTags</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6401,7 +6431,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// This operation affects all users, groups, and roles that the policy is attached to.
-        /// To list the users, groups, and roles that the policy is attached to, use <a>ListEntitiesForPolicy</a>.
+        /// To list the users, groups, and roles that the policy is attached to, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html">ListEntitiesForPolicy</a>.
         /// </para>
         ///  
         /// <para>
@@ -6466,7 +6496,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// To view the current session token version, see the <c>GlobalEndpointTokenVersion</c>
-        /// entry in the response of the <a>GetAccountSummary</a> operation.
+        /// entry in the response of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html">GetAccountSummary</a>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSecurityTokenServicePreferences service method.</param>
@@ -6501,14 +6532,15 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you want to simulate existing policies that are attached to an IAM user, group,
-        /// or role, use <a>SimulatePrincipalPolicy</a> instead.
+        /// or role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
         /// Context keys are variables that are maintained by Amazon Web Services and its services
         /// and which provide details about the context of an API query request. You can use the
         /// <c>Condition</c> element of an IAM policy to evaluate context keys. To get the list
-        /// of context keys that the policies require for correct simulation, use <a>GetContextKeysForCustomPolicy</a>.
+        /// of context keys that the policies require for correct simulation, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>.
         /// </para>
         ///  
         /// <para>
@@ -6561,7 +6593,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// You can optionally include a list of one or more additional policies specified as
         /// strings to include in the simulation. If you want to simulate only policies specified
-        /// as strings, use <a>SimulateCustomPolicy</a> instead.
+        /// as strings, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -6577,14 +6610,15 @@ namespace Amazon.IdentityManagement
         /// <para>
         ///  <b>Note:</b> This operation discloses information about the permissions granted to
         /// other users. If you do not want users to see other user's permissions, then consider
-        /// allowing them to use <a>SimulateCustomPolicy</a> instead.
+        /// allowing them to use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
         /// Context keys are variables maintained by Amazon Web Services and its services that
         /// provide details about the context of an API query request. You can use the <c>Condition</c>
         /// element of an IAM policy to evaluate context keys. To get the list of context keys
-        /// that the policies require for correct simulation, use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// that the policies require for correct simulation, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.
         /// </para>
         ///  
         /// <para>
@@ -7562,6 +7596,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the UpdateAccessKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Amazon Web Services account limits. The error message describes the limit exceeded.
@@ -7768,8 +7806,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Changes the password for the specified IAM user. You can use the CLI, the Amazon Web
         /// Services API, or the <b>Users</b> page in the IAM console to change the password for
-        /// any IAM user. Use <a>ChangePassword</a> to change your own password in the <b>My Security
-        /// Credentials</b> page in the Amazon Web Services Management Console.
+        /// any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
+        /// to change your own password in the <b>My Security Credentials</b> page in the Amazon
+        /// Web Services Management Console.
         /// 
         ///  
         /// <para>
@@ -7904,7 +7943,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Use <a>UpdateRole</a> instead.
+        /// Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html">UpdateRole</a>
+        /// instead.
         /// 
         ///  
         /// <para>
@@ -8078,6 +8118,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the UpdateSigningCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Amazon Web Services account limits. The error message describes the limit exceeded.
@@ -8117,6 +8161,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the UpdateSSHPublicKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
         /// The error message describes the resource.

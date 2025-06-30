@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>ListOpenIDConnectProviders</a> request.
+    /// Contains the response to a successful <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html">ListOpenIDConnectProviders</a>
+    /// request.
     /// </summary>
     public partial class ListOpenIDConnectProvidersResponse : AmazonWebServiceResponse
     {

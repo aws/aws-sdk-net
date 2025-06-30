@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also
-    /// returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a>
+    /// Contains the response to a successful <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html">GetAccessKeyLastUsed</a>
+    /// request. It is also returned as a member of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AccessKeyMetaData.html">AccessKeyMetaData</a>
+    /// structure returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html">ListAccessKeys</a>
     /// action.
     /// </summary>
     public partial class GetAccessKeyLastUsedResponse : AmazonWebServiceResponse

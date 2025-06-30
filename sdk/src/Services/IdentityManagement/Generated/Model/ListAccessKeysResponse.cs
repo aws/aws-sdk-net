@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>ListAccessKeys</a> request.
+    /// Contains the response to a successful <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html">ListAccessKeys</a>
+    /// request.
     /// </summary>
     public partial class ListAccessKeysResponse : AmazonWebServiceResponse
     {

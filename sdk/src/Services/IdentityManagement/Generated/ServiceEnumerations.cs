@@ -1139,6 +1139,10 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public static readonly StatusType Active = new StatusType("Active");
         /// <summary>
+        /// Constant Expired for StatusType
+        /// </summary>
+        public static readonly StatusType Expired = new StatusType("Expired");
+        /// <summary>
         /// Constant Inactive for StatusType
         /// </summary>
         public static readonly StatusType Inactive = new StatusType("Inactive");

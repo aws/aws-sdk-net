@@ -78,9 +78,9 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// This operation returns a <c>JobId</c>. Use this parameter in the <c> <a>GetOrganizationsAccessReport</a>
+    /// This operation returns a <c>JobId</c>. Use this parameter in the <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>
     /// </c> operation to check the status of the report generation. To check the status of
-    /// this request, use the <c>JobId</c> parameter in the <c> <a>GetOrganizationsAccessReport</a>
+    /// this request, use the <c>JobId</c> parameter in the <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>
     /// </c> operation and test the <c>JobStatus</c> response parameter. When the job is complete,
     /// you can retrieve the report.
     /// </para>

@@ -42,24 +42,45 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// You can create service-specific credentials for CodeCommit and Amazon Keyspaces (for
-    /// Apache Cassandra).
+    /// You can create service-specific credentials for Amazon Bedrock, CodeCommit and Amazon
+    /// Keyspaces (for Apache Cassandra).
     /// </para>
     ///  
     /// <para>
-    /// You can reset the password to a new service-generated value by calling <a>ResetServiceSpecificCredential</a>.
+    /// You can reset the password to a new service-generated value by calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResetServiceSpecificCredential.html">ResetServiceSpecificCredential</a>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about service-specific credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using
-    /// IAM with CodeCommit: Git credentials, SSH keys, and Amazon Web Services access keys</a>
-    /// in the <i>IAM User Guide</i>.
+    /// For more information about service-specific credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bedrock.html">Service-specific
+    /// credentials for IAM users</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateServiceSpecificCredentialRequest : AmazonIdentityManagementServiceRequest
     {
+        private int? _credentialAgeDays;
         private string _serviceName;
         private string _userName;
+
+        /// <summary>
+        /// Gets and sets the property CredentialAgeDays. 
+        /// <para>
+        /// The number of days until the service specific credential expires. This field is only
+        /// valid for Bedrock API keys and must be a positive integer. When not specified, the
+        /// credential will not expire.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36600)]
+        public int CredentialAgeDays
+        {
+            get { return this._credentialAgeDays.GetValueOrDefault(); }
+            set { this._credentialAgeDays = value; }
+        }
+
+        // Check to see if CredentialAgeDays property is set
+        internal bool IsSetCredentialAgeDays()
+        {
+            return this._credentialAgeDays.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ServiceName. 

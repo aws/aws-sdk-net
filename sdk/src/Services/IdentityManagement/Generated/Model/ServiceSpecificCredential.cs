@@ -35,6 +35,9 @@ namespace Amazon.IdentityManagement.Model
     public partial class ServiceSpecificCredential
     {
         private DateTime? _createDate;
+        private DateTime? _expirationDate;
+        private string _serviceCredentialAlias;
+        private string _serviceCredentialSecret;
         private string _serviceName;
         private string _servicePassword;
         private string _serviceSpecificCredentialId;
@@ -63,6 +66,66 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpirationDate. 
+        /// <para>
+        /// The date and time when the service specific credential expires. This field is only
+        /// present for Bedrock API keys that were created with an expiration period.
+        /// </para>
+        /// </summary>
+        public DateTime ExpirationDate
+        {
+            get { return this._expirationDate.GetValueOrDefault(); }
+            set { this._expirationDate = value; }
+        }
+
+        // Check to see if ExpirationDate property is set
+        internal bool IsSetExpirationDate()
+        {
+            return this._expirationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCredentialAlias. 
+        /// <para>
+        /// For Bedrock API keys, this is the public portion of the credential that includes the
+        /// IAM user name and a suffix containing version and creation information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public string ServiceCredentialAlias
+        {
+            get { return this._serviceCredentialAlias; }
+            set { this._serviceCredentialAlias = value; }
+        }
+
+        // Check to see if ServiceCredentialAlias property is set
+        internal bool IsSetServiceCredentialAlias()
+        {
+            return this._serviceCredentialAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCredentialSecret. 
+        /// <para>
+        /// For Bedrock API keys, this is the secret portion of the credential that should be
+        /// used to authenticate API calls. This value is returned only when the credential is
+        /// created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ServiceCredentialSecret
+        {
+            get { return this._serviceCredentialSecret; }
+            set { this._serviceCredentialSecret = value; }
+        }
+
+        // Check to see if ServiceCredentialSecret property is set
+        internal bool IsSetServiceCredentialSecret()
+        {
+            return this._serviceCredentialSecret != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
         /// The name of the service associated with the service-specific credential.
@@ -87,7 +150,7 @@ namespace Amazon.IdentityManagement.Model
         /// The generated password for the service-specific credential.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Sensitive=true)]
         public string ServicePassword
         {
             get { return this._servicePassword; }
@@ -128,7 +191,7 @@ namespace Amazon.IdentityManagement.Model
         /// by the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=17, Max=200)]
+        [AWSProperty(Min=0, Max=200)]
         public string ServiceUserName
         {
             get { return this._serviceUserName; }

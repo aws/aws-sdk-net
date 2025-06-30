@@ -49,7 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ClientID. 
         /// <para>
         /// The client ID (also known as audience) to remove from the IAM OIDC provider resource.
-        /// For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.
+        /// For more information about client IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -69,7 +69,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property OpenIDConnectProviderArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client
-        /// ID from. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
+        /// ID from. You can get a list of OIDC provider ARNs by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html">ListOpenIDConnectProviders</a>
         /// operation.
         /// </para>
         ///  

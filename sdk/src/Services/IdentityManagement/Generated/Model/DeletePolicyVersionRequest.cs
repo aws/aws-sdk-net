@@ -36,8 +36,8 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// You cannot delete the default version from a policy using this operation. To delete
-    /// the default version from a policy, use <a>DeletePolicy</a>. To find out which version
-    /// of a policy is marked as the default version, use <a>ListPolicyVersions</a>.
+    /// the default version from a policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
+    /// To find out which version of a policy is marked as the default version, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html">ListPolicyVersions</a>.
     /// </para>
     ///  
     /// <para>

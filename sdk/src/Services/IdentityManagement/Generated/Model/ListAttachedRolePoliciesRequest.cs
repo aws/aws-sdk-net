@@ -36,7 +36,8 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// An IAM role can also have inline policies embedded with it. To list the inline policies
-    /// for a role, use <a>ListRolePolicies</a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// for a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html">ListRolePolicies</a>.
+    /// For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
     /// policies and inline policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  

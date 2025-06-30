@@ -59,6 +59,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllUsers())
+                {
+                    request.Parameters.Add("AllUsers", StringUtils.FromBool(publicRequest.AllUsers));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxItems())
+                {
+                    request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
+                }
                 if(publicRequest.IsSetServiceName())
                 {
                     request.Parameters.Add("ServiceName", StringUtils.FromString(publicRequest.ServiceName));

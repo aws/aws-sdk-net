@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>GetOpenIDConnectProvider</a> request.
+    /// Contains the response to a successful <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html">GetOpenIDConnectProvider</a>
+    /// request.
     /// </summary>
     public partial class GetOpenIDConnectProviderResponse : AmazonWebServiceResponse
     {
@@ -44,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ClientIDList. 
         /// <para>
         /// A list of client IDs (also known as audiences) that are associated with the specified
-        /// IAM OIDC provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>.
+        /// IAM OIDC provider resource object. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>.
         /// </para>
         /// </summary>
         public List<string> ClientIDList
@@ -103,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ThumbprintList. 
         /// <para>
         /// A list of certificate thumbprints that are associated with the specified IAM OIDC
-        /// provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>.
+        /// provider resource object. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>.
         /// 
         /// </para>
         /// </summary>
@@ -123,7 +124,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Url. 
         /// <para>
         /// The URL that the IAM OIDC provider resource object is associated with. For more information,
-        /// see <a>CreateOpenIDConnectProvider</a>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

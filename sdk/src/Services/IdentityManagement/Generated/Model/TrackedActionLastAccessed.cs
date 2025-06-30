@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a>
+    /// This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>
     /// operation.
     /// </para>
     /// </summary>

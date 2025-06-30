@@ -38,15 +38,18 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateGroup</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateGroup.html">CreateGroup</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetGroup</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html">GetGroup</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListGroups</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html">ListGroups</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

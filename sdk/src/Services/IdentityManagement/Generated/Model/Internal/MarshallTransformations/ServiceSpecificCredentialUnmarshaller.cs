@@ -61,6 +61,24 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExpirationDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ServiceCredentialAlias", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceCredentialAlias = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ServiceCredentialSecret", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceCredentialSecret = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ServiceName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

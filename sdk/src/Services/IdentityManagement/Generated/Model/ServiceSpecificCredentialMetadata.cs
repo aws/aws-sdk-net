@@ -35,6 +35,8 @@ namespace Amazon.IdentityManagement.Model
     public partial class ServiceSpecificCredentialMetadata
     {
         private DateTime? _createDate;
+        private DateTime? _expirationDate;
+        private string _serviceCredentialAlias;
         private string _serviceName;
         private string _serviceSpecificCredentialId;
         private string _serviceUserName;
@@ -59,6 +61,45 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetCreateDate()
         {
             return this._createDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpirationDate. 
+        /// <para>
+        /// The date and time when the service specific credential expires. This field is only
+        /// present for Bedrock API keys that were created with an expiration period.
+        /// </para>
+        /// </summary>
+        public DateTime ExpirationDate
+        {
+            get { return this._expirationDate.GetValueOrDefault(); }
+            set { this._expirationDate = value; }
+        }
+
+        // Check to see if ExpirationDate property is set
+        internal bool IsSetExpirationDate()
+        {
+            return this._expirationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCredentialAlias. 
+        /// <para>
+        /// For Bedrock API keys, this is the public portion of the credential that includes the
+        /// IAM user name and a suffix containing version and creation information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public string ServiceCredentialAlias
+        {
+            get { return this._serviceCredentialAlias; }
+            set { this._serviceCredentialAlias = value; }
+        }
+
+        // Check to see if ServiceCredentialAlias property is set
+        internal bool IsSetServiceCredentialAlias()
+        {
+            return this._serviceCredentialAlias != null;
         }
 
         /// <summary>
@@ -105,7 +146,7 @@ namespace Amazon.IdentityManagement.Model
         /// The generated user name for the service-specific credential.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=17, Max=200)]
+        [AWSProperty(Min=0, Max=200)]
         public string ServiceUserName
         {
             get { return this._serviceUserName; }

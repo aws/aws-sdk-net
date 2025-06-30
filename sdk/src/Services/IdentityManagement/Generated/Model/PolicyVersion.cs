@@ -34,8 +34,11 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>,
-    /// <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. 
+    /// This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html">CreatePolicyVersion</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html">GetPolicyVersion</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html">ListPolicyVersions</a>,
+    /// and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountAuthorizationDetails.html">GetAccountAuthorizationDetails</a>
+    /// operations. 
     /// </para>
     ///  
     /// <para>
@@ -76,9 +79,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The policy document is returned in the response to the <a>GetPolicyVersion</a> and
-        /// <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response
-        /// to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. 
+        /// The policy document is returned in the response to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html">GetPolicyVersion</a>
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountAuthorizationDetails.html">GetAccountAuthorizationDetails</a>
+        /// operations. It is not returned in the response to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html">CreatePolicyVersion</a>
+        /// or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html">ListPolicyVersions</a>
+        /// operations. 
         /// </para>
         ///  
         /// <para>

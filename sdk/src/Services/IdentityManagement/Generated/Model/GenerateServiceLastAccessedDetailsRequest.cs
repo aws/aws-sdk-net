@@ -60,10 +60,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>GetServiceLastAccessedDetails</a> – Use this operation for users, groups, roles,
-    /// or policies to list every Amazon Web Services service that the resource could access
-    /// using permissions policies. For each service, the response includes information about
-    /// the most recent access attempt.
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>
+    /// – Use this operation for users, groups, roles, or policies to list every Amazon Web
+    /// Services service that the resource could access using permissions policies. For each
+    /// service, the response includes information about the most recent access attempt.
     /// </para>
     ///  
     /// <para>
@@ -72,9 +72,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetServiceLastAccessedDetailsWithEntities</a> – Use this operation for groups
-    /// and policies to list information about the associated entities (users or roles) that
-    /// attempted to access a specific Amazon Web Services service. 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a>
+    /// – Use this operation for groups and policies to list information about the associated
+    /// entities (users or roles) that attempted to access a specific Amazon Web Services
+    /// service. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -85,7 +86,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For additional information about the permissions policies that allow an identity (user,
-    /// group, or role) to access specific services, use the <a>ListPoliciesGrantingServiceAccess</a>
+    /// group, or role) to access specific services, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPoliciesGrantingServiceAccess.html">ListPoliciesGrantingServiceAccess</a>
     /// operation.
     /// </para>
     ///  <note> 

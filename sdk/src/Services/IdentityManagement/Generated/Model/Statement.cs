@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used by the <c>MatchedStatements</c> member of the <c> <a>EvaluationResult</a>
+    /// This data type is used by the <c>MatchedStatements</c> member of the <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_EvaluationResult.html">EvaluationResult</a>
     /// </c> type.
     /// </para>
     /// </summary>

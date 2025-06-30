@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
     /// IAM resource-listing operations return a subset of the available attributes for the
     /// resource. For example, this operation does not return tags, even though they are an
     /// attribute of the returned object. To view all of the information for a servercertificate,
-    /// see <a>GetServerCertificate</a>.
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html">GetServerCertificate</a>.
     /// </para>
     ///  </note>
     /// </summary>
