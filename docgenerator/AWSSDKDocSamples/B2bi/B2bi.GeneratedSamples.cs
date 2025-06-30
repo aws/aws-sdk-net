@@ -577,6 +577,55 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
             #endregion
         }
 
+        public void B2biTestParsing()
+        {
+            #region example-2
+
+            var client = new AmazonB2biClient();
+            var response = client.TestParsing(new TestParsingRequest 
+            {
+                AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions { SplitOptions = new X12SplitOptions { SplitBy = "NONE" } } },
+                EdiType = new EdiType { X12Details = new X12Details {
+                    Version = "VERSION_4010",
+                    TransactionSet = "X12_110"
+                } },
+                FileFormat = "JSON",
+                InputFile = new S3Location {
+                    Key = "sampleFile.txt",
+                    BucketName = "test-bucket"
+                }
+            });
+
+            string parsedFileContent = response.ParsedFileContent;
+
+            #endregion
+        }
+
+        public void B2biTestParsing()
+        {
+            #region example-3
+
+            var client = new AmazonB2biClient();
+            var response = client.TestParsing(new TestParsingRequest 
+            {
+                AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions { SplitOptions = new X12SplitOptions { SplitBy = "TRANSACTION" } } },
+                EdiType = new EdiType { X12Details = new X12Details {
+                    Version = "VERSION_4010",
+                    TransactionSet = "X12_110"
+                } },
+                FileFormat = "JSON",
+                InputFile = new S3Location {
+                    Key = "sampleFile.txt",
+                    BucketName = "test-bucket"
+                }
+            });
+
+            string parsedFileContent = response.ParsedFileContent;
+            List<string> parsedSplitFileContents = response.ParsedSplitFileContents;
+
+            #endregion
+        }
+
         public void B2biUntagResource()
         {
             #region example-1

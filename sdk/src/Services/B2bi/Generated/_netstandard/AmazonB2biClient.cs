@@ -883,7 +883,24 @@ namespace Amazon.B2bi
         /// template mapping prerequisites</a> in the <i>Amazon Web Services B2B Data Interchange
         /// User guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// To generate a mapping, perform the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Start with an X12 EDI document to use as the input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>TestMapping</c> using your EDI document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the output from the <c>TestMapping</c> operation as either input or output for
+        /// your GenerateMapping call, along with your sample file.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateMapping service method.</param>
         /// <param name="cancellationToken">
@@ -1142,6 +1159,15 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Returns the details of the transformer run, based on the Transformer job ID.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If 30 days have elapsed since your transformer job was started, the system deletes
+        /// it. So, if you run <c>GetTransformerJob</c> and supply a <c>transformerId</c> and
+        /// <c>transformerJobId</c> for a job that was started more than 30 days previously, you
+        /// receive a 404 response.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTransformerJob service method.</param>
         /// <param name="cancellationToken">
@@ -1446,6 +1472,14 @@ namespace Amazon.B2bi
         /// need to create profiles, partnerships or capabilities. Just create and configure a
         /// transformer, and then run the <c>StartTransformerJob</c> API to process your files.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The system stores transformer jobs for 30 days. During that period, you can run <a
+        /// href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GetTransformerJob.html">GetTransformerJob</a>
+        /// and supply its <c>transformerId</c> and <c>transformerJobId</c> to return details
+        /// of the job.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTransformerJob service method.</param>
         /// <param name="cancellationToken">

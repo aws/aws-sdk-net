@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputConversion Object
+    /// Response Unmarshaller for X12InboundEdiOptions Object
     /// </summary>  
-    public class InputConversionUnmarshaller : IJsonUnmarshaller<InputConversion, JsonUnmarshallerContext>
+    public class X12InboundEdiOptionsUnmarshaller : IJsonUnmarshaller<X12InboundEdiOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputConversion Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public X12InboundEdiOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            InputConversion unmarshalledObject = new InputConversion();
+            X12InboundEdiOptions unmarshalledObject = new X12InboundEdiOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("advancedOptions", targetDepth))
+                if (context.TestExpression("acknowledgmentOptions", targetDepth))
                 {
-                    var unmarshaller = AdvancedOptionsUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("formatOptions", targetDepth))
-                {
-                    var unmarshaller = FormatOptionsUnmarshaller.Instance;
-                    unmarshalledObject.FormatOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("fromFormat", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromFormat = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = X12AcknowledgmentOptionsUnmarshaller.Instance;
+                    unmarshalledObject.AcknowledgmentOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputConversionUnmarshaller _instance = new InputConversionUnmarshaller();        
+        private static X12InboundEdiOptionsUnmarshaller _instance = new X12InboundEdiOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputConversionUnmarshaller Instance
+        public static X12InboundEdiOptionsUnmarshaller Instance
         {
             get
             {

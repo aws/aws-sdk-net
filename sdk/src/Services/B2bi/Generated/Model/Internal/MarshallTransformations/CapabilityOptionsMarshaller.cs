@@ -46,6 +46,17 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetInboundEdi())
+            {
+                context.Writer.WritePropertyName("inboundEdi");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InboundEdiOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.InboundEdi, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOutboundEdi())
             {
                 context.Writer.WritePropertyName("outboundEdi");

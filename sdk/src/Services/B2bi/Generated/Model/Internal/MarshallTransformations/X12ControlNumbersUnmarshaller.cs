@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputConversion Object
+    /// Response Unmarshaller for X12ControlNumbers Object
     /// </summary>  
-    public class InputConversionUnmarshaller : IJsonUnmarshaller<InputConversion, JsonUnmarshallerContext>
+    public class X12ControlNumbersUnmarshaller : IJsonUnmarshaller<X12ControlNumbers, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputConversion Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public X12ControlNumbers Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            InputConversion unmarshalledObject = new InputConversion();
+            X12ControlNumbers unmarshalledObject = new X12ControlNumbers();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,22 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("advancedOptions", targetDepth))
+                if (context.TestExpression("startingFunctionalGroupControlNumber", targetDepth))
                 {
-                    var unmarshaller = AdvancedOptionsUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StartingFunctionalGroupControlNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("formatOptions", targetDepth))
+                if (context.TestExpression("startingInterchangeControlNumber", targetDepth))
                 {
-                    var unmarshaller = FormatOptionsUnmarshaller.Instance;
-                    unmarshalledObject.FormatOptions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StartingInterchangeControlNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fromFormat", targetDepth))
+                if (context.TestExpression("startingTransactionSetControlNumber", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromFormat = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StartingTransactionSetControlNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +79,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputConversionUnmarshaller _instance = new InputConversionUnmarshaller();        
+        private static X12ControlNumbersUnmarshaller _instance = new X12ControlNumbersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputConversionUnmarshaller Instance
+        public static X12ControlNumbersUnmarshaller Instance
         {
             get
             {

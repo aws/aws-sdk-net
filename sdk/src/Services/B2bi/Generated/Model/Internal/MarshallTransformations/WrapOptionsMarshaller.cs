@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// X12Envelope Marshaller
+    /// WrapOptions Marshaller
     /// </summary>
-    public class X12EnvelopeMarshaller : IRequestMarshaller<X12Envelope, JsonMarshallerContext> 
+    public class WrapOptionsMarshaller : IRequestMarshaller<WrapOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,26 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(X12Envelope requestObject, JsonMarshallerContext context)
+        public void Marshall(WrapOptions requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCommon())
+            if(requestObject.IsSetLineLength())
             {
-                context.Writer.WritePropertyName("common");
-                context.Writer.WriteStartObject();
-
-                var marshaller = X12OutboundEdiHeadersMarshaller.Instance;
-                marshaller.Marshall(requestObject.Common, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("lineLength");
+                context.Writer.WriteNumberValue(requestObject.LineLength.Value);
             }
 
-            if(requestObject.IsSetWrapOptions())
+            if(requestObject.IsSetLineTerminator())
             {
-                context.Writer.WritePropertyName("wrapOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("lineTerminator");
+                context.Writer.WriteStringValue(requestObject.LineTerminator);
+            }
 
-                var marshaller = WrapOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.WrapOptions, context);
-
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetWrapBy())
+            {
+                context.Writer.WritePropertyName("wrapBy");
+                context.Writer.WriteStringValue(requestObject.WrapBy);
             }
 
         }
@@ -73,7 +69,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static X12EnvelopeMarshaller Instance = new X12EnvelopeMarshaller();
+        public readonly static WrapOptionsMarshaller Instance = new WrapOptionsMarshaller();
 
     }
 }

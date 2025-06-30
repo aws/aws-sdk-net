@@ -34,10 +34,32 @@ namespace Amazon.B2bi.Model
     /// </summary>
     public partial class X12OutboundEdiHeaders
     {
+        private X12ControlNumbers _controlNumbers;
         private X12Delimiters _delimiters;
         private X12FunctionalGroupHeaders _functionalGroupHeaders;
+        private X12GS05TimeFormat _gs05TimeFormat;
         private X12InterchangeControlHeaders _interchangeControlHeaders;
         private bool? _validateEdi;
+
+        /// <summary>
+        /// Gets and sets the property ControlNumbers. 
+        /// <para>
+        /// Specifies control number configuration for outbound X12 EDI headers. These settings
+        /// determine the starting values for interchange, functional group, and transaction set
+        /// control numbers.
+        /// </para>
+        /// </summary>
+        public X12ControlNumbers ControlNumbers
+        {
+            get { return this._controlNumbers; }
+            set { this._controlNumbers = value; }
+        }
+
+        // Check to see if ControlNumbers property is set
+        internal bool IsSetControlNumbers()
+        {
+            return this._controlNumbers != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Delimiters. 
@@ -74,6 +96,21 @@ namespace Amazon.B2bi.Model
         internal bool IsSetFunctionalGroupHeaders()
         {
             return this._functionalGroupHeaders != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Gs05TimeFormat.
+        /// </summary>
+        public X12GS05TimeFormat Gs05TimeFormat
+        {
+            get { return this._gs05TimeFormat; }
+            set { this._gs05TimeFormat = value; }
+        }
+
+        // Check to see if Gs05TimeFormat property is set
+        internal bool IsSetGs05TimeFormat()
+        {
+            return this._gs05TimeFormat != null;
         }
 
         /// <summary>

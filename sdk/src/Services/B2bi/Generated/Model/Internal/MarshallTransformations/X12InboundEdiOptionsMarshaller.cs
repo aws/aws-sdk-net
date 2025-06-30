@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// X12Envelope Marshaller
+    /// X12InboundEdiOptions Marshaller
     /// </summary>
-    public class X12EnvelopeMarshaller : IRequestMarshaller<X12Envelope, JsonMarshallerContext> 
+    public class X12InboundEdiOptionsMarshaller : IRequestMarshaller<X12InboundEdiOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +42,17 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(X12Envelope requestObject, JsonMarshallerContext context)
+        public void Marshall(X12InboundEdiOptions requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCommon())
+            if(requestObject.IsSetAcknowledgmentOptions())
             {
-                context.Writer.WritePropertyName("common");
+                context.Writer.WritePropertyName("acknowledgmentOptions");
                 context.Writer.WriteStartObject();
 
-                var marshaller = X12OutboundEdiHeadersMarshaller.Instance;
-                marshaller.Marshall(requestObject.Common, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetWrapOptions())
-            {
-                context.Writer.WritePropertyName("wrapOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = WrapOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.WrapOptions, context);
+                var marshaller = X12AcknowledgmentOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AcknowledgmentOptions, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -73,7 +62,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static X12EnvelopeMarshaller Instance = new X12EnvelopeMarshaller();
+        public readonly static X12InboundEdiOptionsMarshaller Instance = new X12InboundEdiOptionsMarshaller();
 
     }
 }
