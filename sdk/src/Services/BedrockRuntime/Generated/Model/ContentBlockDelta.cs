@@ -34,9 +34,29 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ContentBlockDelta
     {
+        private CitationsDelta _citation;
         private ReasoningContentBlockDelta _reasoningContent;
         private string _text;
         private ToolUseBlockDelta _toolUse;
+
+        /// <summary>
+        /// Gets and sets the property Citation. 
+        /// <para>
+        /// Incremental citation information that is streamed as part of the response generation
+        /// process.
+        /// </para>
+        /// </summary>
+        public CitationsDelta Citation
+        {
+            get { return this._citation; }
+            set { this._citation = value; }
+        }
+
+        // Check to see if Citation property is set
+        internal bool IsSetCitation()
+        {
+            return this._citation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ReasoningContent. 

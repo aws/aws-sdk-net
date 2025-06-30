@@ -38,6 +38,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class ContentBlock
     {
         private CachePointBlock _cachePoint;
+        private CitationsContentBlock _citationsContent;
         private DocumentBlock _document;
         private GuardrailConverseContentBlock _guardContent;
         private ImageBlock _image;
@@ -63,6 +64,25 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetCachePoint()
         {
             return this._cachePoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CitationsContent. 
+        /// <para>
+        /// A content block that contains both generated text and associated citation information,
+        /// providing traceability between the response and source documents.
+        /// </para>
+        /// </summary>
+        public CitationsContentBlock CitationsContent
+        {
+            get { return this._citationsContent; }
+            set { this._citationsContent = value; }
+        }
+
+        // Check to see if CitationsContent property is set
+        internal bool IsSetCitationsContent()
+        {
+            return this._citationsContent != null;
         }
 
         /// <summary>
@@ -93,7 +113,8 @@ namespace Amazon.BedrockRuntime.Model
         ///  
         /// <para>
         /// For more information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
-        /// Bedrock User Guide</i>. <pre><c> &lt;/p&gt; </c></pre>
+        /// Bedrock User Guide</i>. 
+        /// </para>
         /// </summary>
         public GuardrailConverseContentBlock GuardContent
         {

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DocumentSource Marshaller
+    /// CitationGeneratedContent Marshaller
     /// </summary>
-    public class DocumentSourceMarshaller : IRequestMarshaller<DocumentSource, JsonMarshallerContext> 
+    public class CitationGeneratedContentMarshaller : IRequestMarshaller<CitationGeneratedContent, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,43 +42,10 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DocumentSource requestObject, JsonMarshallerContext context)
+        public void Marshall(CitationGeneratedContent requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBytes())
-            {
-                context.Writer.WritePropertyName("bytes");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Bytes));
-            }
-
-            if(requestObject.IsSetContent())
-            {
-                context.Writer.WritePropertyName("content");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectContentListValue in requestObject.Content)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = DocumentContentBlockMarshaller.Instance;
-                    marshaller.Marshall(requestObjectContentListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetS3Location())
-            {
-                context.Writer.WritePropertyName("s3Location");
-                context.Writer.WriteStartObject();
-
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3Location, context);
-
-                context.Writer.WriteEndObject();
-            }
-
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");
@@ -90,7 +57,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DocumentSourceMarshaller Instance = new DocumentSourceMarshaller();
+        public readonly static CitationGeneratedContentMarshaller Instance = new CitationGeneratedContentMarshaller();
 
     }
 }

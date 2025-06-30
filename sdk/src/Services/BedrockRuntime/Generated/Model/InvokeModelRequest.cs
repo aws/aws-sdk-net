@@ -218,8 +218,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you use a custom model, first purchase Provisioned Throughput for it. Then specify
-        /// the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
+        /// If you use a custom model, specify the ARN of the custom model deployment (for on-demand
+        /// inference) or the ARN of your provisioned model (for Provisioned Throughput). For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
         /// a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
         /// </para>
         ///  </li> <li> 

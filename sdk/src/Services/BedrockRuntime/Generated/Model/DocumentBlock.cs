@@ -34,9 +34,49 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class DocumentBlock
     {
+        private CitationsConfig _citations;
+        private string _context;
         private DocumentFormat _format;
         private string _name;
         private DocumentSource _source;
+
+        /// <summary>
+        /// Gets and sets the property Citations. 
+        /// <para>
+        /// Configuration settings that control how citations should be generated for this specific
+        /// document.
+        /// </para>
+        /// </summary>
+        public CitationsConfig Citations
+        {
+            get { return this._citations; }
+            set { this._citations = value; }
+        }
+
+        // Check to see if Citations property is set
+        internal bool IsSetCitations()
+        {
+            return this._citations != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Contextual information about how the document should be processed or interpreted by
+        /// the model when generating citations.
+        /// </para>
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Format. 
@@ -44,7 +84,6 @@ namespace Amazon.BedrockRuntime.Model
         /// The format of a document, or its extension.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DocumentFormat Format
         {
             get { return this._format; }

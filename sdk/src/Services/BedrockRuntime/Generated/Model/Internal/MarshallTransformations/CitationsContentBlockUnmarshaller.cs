@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContentBlockDelta Object
+    /// Response Unmarshaller for CitationsContentBlock Object
     /// </summary>  
-    public class ContentBlockDeltaUnmarshaller : IJsonUnmarshaller<ContentBlockDelta, JsonUnmarshallerContext>
+    public class CitationsContentBlockUnmarshaller : IJsonUnmarshaller<CitationsContentBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContentBlockDelta Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CitationsContentBlock Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ContentBlockDelta unmarshalledObject = new ContentBlockDelta();
+            CitationsContentBlock unmarshalledObject = new CitationsContentBlock();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("citation", targetDepth))
+                if (context.TestExpression("citations", targetDepth))
                 {
-                    var unmarshaller = CitationsDeltaUnmarshaller.Instance;
-                    unmarshalledObject.Citation = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<Citation, CitationUnmarshaller>(CitationUnmarshaller.Instance);
+                    unmarshalledObject.Citations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reasoningContent", targetDepth))
+                if (context.TestExpression("content", targetDepth))
                 {
-                    var unmarshaller = ReasoningContentBlockDeltaUnmarshaller.Instance;
-                    unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("toolUse", targetDepth))
-                {
-                    var unmarshaller = ToolUseBlockDeltaUnmarshaller.Instance;
-                    unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<CitationGeneratedContent, CitationGeneratedContentUnmarshaller>(CitationGeneratedContentUnmarshaller.Instance);
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContentBlockDeltaUnmarshaller _instance = new ContentBlockDeltaUnmarshaller();        
+        private static CitationsContentBlockUnmarshaller _instance = new CitationsContentBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContentBlockDeltaUnmarshaller Instance
+        public static CitationsContentBlockUnmarshaller Instance
         {
             get
             {
