@@ -95,6 +95,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DICOMStudyInstanceUID);
             }
 
+            if(requestObject.IsSetIsPrimary())
+            {
+                context.Writer.WritePropertyName("isPrimary");
+                context.Writer.Write(requestObject.IsPrimary);
+            }
+
             if(requestObject.IsSetUpdatedAt())
             {
                 context.Writer.WritePropertyName("updatedAt");

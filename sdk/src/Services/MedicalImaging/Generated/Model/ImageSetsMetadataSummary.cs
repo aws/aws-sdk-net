@@ -37,6 +37,7 @@ namespace Amazon.MedicalImaging.Model
         private DateTime? _createdAt;
         private DICOMTags _dicomTags;
         private string _imageSetId;
+        private bool? _isPrimary;
         private DateTime? _updatedAt;
         private int? _version;
 
@@ -94,6 +95,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetImageSetId()
         {
             return this._imageSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsPrimary. 
+        /// <para>
+        /// The flag to determine whether the image set is primary or not.
+        /// </para>
+        /// </summary>
+        public bool IsPrimary
+        {
+            get { return this._isPrimary.GetValueOrDefault(); }
+            set { this._isPrimary = value; }
+        }
+
+        // Check to see if IsPrimary property is set
+        internal bool IsSetIsPrimary()
+        {
+            return this._isPrimary.HasValue; 
         }
 
         /// <summary>

@@ -41,6 +41,7 @@ namespace Amazon.MedicalImaging.Model
         private DICOMStudyDateAndTime _dicomStudyDateAndTime;
         private string _dicomStudyId;
         private string _dicomStudyInstanceUID;
+        private bool? _isPrimary;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -172,6 +173,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetDICOMStudyInstanceUID()
         {
             return this._dicomStudyInstanceUID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsPrimary. 
+        /// <para>
+        /// The primary image set flag provided for search.
+        /// </para>
+        /// </summary>
+        public bool IsPrimary
+        {
+            get { return this._isPrimary.GetValueOrDefault(); }
+            set { this._isPrimary = value; }
+        }
+
+        // Check to see if IsPrimary property is set
+        internal bool IsSetIsPrimary()
+        {
+            return this._isPrimary.HasValue; 
         }
 
         /// <summary>

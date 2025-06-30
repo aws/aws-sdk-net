@@ -69,6 +69,9 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetForce())
                 request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
+            
+            if (publicRequest.IsSetPromoteToPrimary())
+                request.Parameters.Add("promoteToPrimary", StringUtils.FromBool(publicRequest.PromoteToPrimary));
             request.ResourcePath = "/datastore/{datastoreId}/imageSet/{sourceImageSetId}/copyImageSet";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

@@ -84,6 +84,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageSetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isPrimary", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsPrimary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
