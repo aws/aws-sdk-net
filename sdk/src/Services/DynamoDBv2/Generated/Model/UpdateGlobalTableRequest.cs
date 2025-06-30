@@ -52,9 +52,8 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </important> <note> 
     /// <para>
-    ///  For global tables, this operation only applies to global tables using Version 2019.11.21
-    /// (Current version). If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Version
-    /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
+    ///  If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Version
+    /// 2019.11.21</a> (Current) you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
     /// instead. 
     /// </para>
     ///  

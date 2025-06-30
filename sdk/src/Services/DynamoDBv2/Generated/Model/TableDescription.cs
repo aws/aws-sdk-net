@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndexDescription> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexDescription>() : null;
         private string _globalTableVersion;
+        private List<GlobalTableWitnessDescription> _globalTableWitnesses = AWSConfigs.InitializeCollections ? new List<GlobalTableWitnessDescription>() : null;
         private long? _itemCount;
         private List<KeySchemaElement> _keySchema = AWSConfigs.InitializeCollections ? new List<KeySchemaElement>() : null;
         private string _latestStreamArn;
@@ -324,6 +325,30 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GlobalTableWitnesses. 
+        /// <para>
+        /// The witness Region and its current status in the MRSC global table. Only one witness
+        /// Region can be configured per MRSC global table.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<GlobalTableWitnessDescription> GlobalTableWitnesses
+        {
+            get { return this._globalTableWitnesses; }
+            set { this._globalTableWitnesses = value; }
+        }
+
+        // Check to see if GlobalTableWitnesses property is set
+        internal bool IsSetGlobalTableWitnesses()
+        {
+            return this._globalTableWitnesses != null && (this._globalTableWitnesses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ItemCount. 
         /// <para>
         /// The number of items in the specified table. DynamoDB updates this value approximately
@@ -551,22 +576,18 @@ namespace Amazon.DynamoDBv2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>EVENTUAL</c>: Indicates that the global table is configured for multi-Region eventual
-        /// consistency.
+        /// consistency (MREC).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>STRONG</c>: Indicates that the global table is configured for multi-Region strong
-        /// consistency (preview).
+        /// consistency (MRSC).
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability
-        /// currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global
-        /// tables multi-Region strong consistency</a>.
-        /// </para>
-        ///  </note> </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// If you don't specify this field, the global table consistency mode defaults to <c>EVENTUAL</c>.
+        /// For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes">
+        /// Consistency modes</a> in DynamoDB developer guide. 
         /// </para>
         /// </summary>
         public MultiRegionConsistency MultiRegionConsistency

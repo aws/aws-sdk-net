@@ -571,6 +571,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
@@ -720,6 +724,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -1581,12 +1589,7 @@ namespace Amazon.DynamoDBv2
         /// If the specified table does not exist, DynamoDB returns a <c>ResourceNotFoundException</c>.
         /// If table is already in the <c>DELETING</c> state, no error is returned. 
         /// 
-        ///  <important> 
-        /// <para>
-        /// For global tables, this operation only applies to global tables using Version 2019.11.21
-        /// (Current version). 
-        /// </para>
-        ///  </important> <note> 
+        ///  <note> 
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
@@ -1687,12 +1690,7 @@ namespace Amazon.DynamoDBv2
         /// If the specified table does not exist, DynamoDB returns a <c>ResourceNotFoundException</c>.
         /// If table is already in the <c>DELETING</c> state, no error is returned. 
         /// 
-        ///  <important> 
-        /// <para>
-        /// For global tables, this operation only applies to global tables using Version 2019.11.21
-        /// (Current version). 
-        /// </para>
-        ///  </important> <note> 
+        ///  <note> 
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
@@ -2205,12 +2203,7 @@ namespace Amazon.DynamoDBv2
         /// Returns information about the table, including the current status of the table, when
         /// it was created, the primary key schema, and any indexes on the table.
         /// 
-        ///  <important> 
-        /// <para>
-        /// For global tables, this operation only applies to global tables using Version 2019.11.21
-        /// (Current version). 
-        /// </para>
-        ///  </important> <note> 
+        ///  <note> 
         /// <para>
         /// If you issue a <c>DescribeTable</c> request immediately after a <c>CreateTable</c>
         /// request, DynamoDB might return a <c>ResourceNotFoundException</c>. This is because
@@ -2241,12 +2234,7 @@ namespace Amazon.DynamoDBv2
         /// Returns information about the table, including the current status of the table, when
         /// it was created, the primary key schema, and any indexes on the table.
         /// 
-        ///  <important> 
-        /// <para>
-        /// For global tables, this operation only applies to global tables using Version 2019.11.21
-        /// (Current version). 
-        /// </para>
-        ///  </important> <note> 
+        ///  <note> 
         /// <para>
         /// If you issue a <c>DescribeTable</c> request immediately after a <c>CreateTable</c>
         /// request, DynamoDB might return a <c>ResourceNotFoundException</c>. This is because
@@ -2280,13 +2268,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Describes auto scaling settings across replicas of the global table at once.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// For global tables, this operation only applies to global tables using Version 2019.11.21
-        /// (Current version).
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTableReplicaAutoScaling service method.</param>
         /// <param name="cancellationToken">
@@ -5752,9 +5733,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> <note> 
         /// <para>
-        ///  For global tables, this operation only applies to global tables using Version 2019.11.21
-        /// (Current version). If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Version
-        /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
+        ///  If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Version
+        /// 2019.11.21</a> (Current) you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
         /// instead. 
         /// </para>
         ///  
@@ -6176,12 +6156,7 @@ namespace Amazon.DynamoDBv2
         /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
         /// Streams settings for a given table.
         /// 
-        ///  <important> 
-        /// <para>
-        /// For global tables, this operation only applies to global tables using Version 2019.11.21
-        /// (Current version). 
-        /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// You can only perform one of the following operations at once:
         /// </para>
@@ -6283,12 +6258,7 @@ namespace Amazon.DynamoDBv2
         /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
         /// Streams settings for a given table.
         /// 
-        ///  <important> 
-        /// <para>
-        /// For global tables, this operation only applies to global tables using Version 2019.11.21
-        /// (Current version). 
-        /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// You can only perform one of the following operations at once:
         /// </para>
@@ -6392,13 +6362,6 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Updates auto scaling settings on your global tables at once.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// For global tables, this operation only applies to global tables using Version 2019.11.21
-        /// (Current version). 
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTableReplicaAutoScaling service method.</param>
         /// <param name="cancellationToken">

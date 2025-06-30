@@ -38,12 +38,7 @@ namespace Amazon.DynamoDBv2.Model
     /// If the specified table does not exist, DynamoDB returns a <c>ResourceNotFoundException</c>.
     /// If table is already in the <c>DELETING</c> state, no error is returned. 
     /// 
-    ///  <important> 
-    /// <para>
-    /// For global tables, this operation only applies to global tables using Version 2019.11.21
-    /// (Current version). 
-    /// </para>
-    ///  </important> <note> 
+    ///  <note> 
     /// <para>
     /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
     /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion

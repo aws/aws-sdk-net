@@ -30,31 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeTableReplicaAutoScaling operation.
-    /// Describes auto scaling settings across replicas of the global table at once.
+    /// Specifies the action to remove a witness Region from a MRSC global table. You cannot
+    /// delete a single witness from a MRSC global table - you must delete both a replica
+    /// and the witness together. The deletion of both a witness and replica converts the
+    /// remaining replica to a single-Region DynamoDB table.
     /// </summary>
-    public partial class DescribeTableReplicaAutoScalingRequest : AmazonDynamoDBRequest
+    public partial class DeleteGlobalTableWitnessGroupMemberAction
     {
-        private string _tableName;
+        private string _regionName;
 
         /// <summary>
-        /// Gets and sets the property TableName. 
+        /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the table. You can also provide the Amazon Resource Name (ARN) of the
-        /// table in this parameter.
+        /// The witness Region name to be removed from the MRSC global table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string TableName
+        [AWSProperty(Required=true)]
+        public string RegionName
         {
-            get { return this._tableName; }
-            set { this._tableName = value; }
+            get { return this._regionName; }
+            set { this._regionName = value; }
         }
 
-        // Check to see if TableName property is set
-        internal bool IsSetTableName()
+        // Check to see if RegionName property is set
+        internal bool IsSetRegionName()
         {
-            return this._tableName != null;
+            return this._regionName != null;
         }
 
     }
