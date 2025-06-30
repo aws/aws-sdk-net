@@ -53,6 +53,10 @@ namespace Amazon.EventBridge.Internal
                 ["Endpoint"] = parameters["Endpoint"],
                 ["EndpointId"] = parameters["EndpointId"],
             };
+            if (!IsSet(refs["Endpoint"]) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+            {
+                return new Endpoint(Interpolate(@"https://events.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
             if (IsSet(refs["EndpointId"]) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
             {
                 if (IsValidHostLabel((string)refs["EndpointId"], true))
