@@ -40,8 +40,8 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property Forced. 
         /// <para>
-        /// Setting this flag will force the <c>CopyImageSet</c> and <c>UpdateImageSetMetadata</c>
-        /// operations, even if Patient, Study, or Series level metadata are mismatched.
+        /// Providing this parameter will force completion of the <c>CopyImageSet</c> and <c>UpdateImageSetMetadata</c>
+        /// actions, even if metadata is inconsistent at the Patient, Study, and/or Series levels.
         /// </para>
         /// </summary>
         public bool? Forced
