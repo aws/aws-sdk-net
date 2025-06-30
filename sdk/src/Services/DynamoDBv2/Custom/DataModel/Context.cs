@@ -59,6 +59,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region Public methods
+
         /// <inheritdoc/>
         public void RegisterTableDefinition(Table table)
         {
