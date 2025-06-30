@@ -35,15 +35,14 @@ namespace Amazon.ARCZonalShift.Model
     /// 
     ///  
     /// <para>
-    /// A managed resource is a load balancer that has been registered with ARC by Elastic
-    /// Load Balancing. You can start a zonal shift in ARC for a managed resource to temporarily
-    /// move traffic for the resource away from an Availability Zone in an Amazon Web Services
-    /// Region. You can also configure zonal autoshift for a managed resource.
+    /// You can start a zonal shift in ARC for a managed resource to temporarily move traffic
+    /// for the resource away from an Availability Zone in an Amazon Web Services Region.
+    /// You can also configure zonal autoshift for a managed resource.
     /// </para>
     ///  <note> 
     /// <para>
-    /// At this time, managed resources are Network Load Balancers and Application Load Balancers
-    /// with cross-zone load balancing turned off.
+    /// At this time, managed resources are Amazon EC2 Auto Scaling groups, Amazon Elastic
+    /// Kubernetes Service, Network Load Balancers, and Application Load Balancer.
     /// </para>
     ///  </note>
     /// </summary>

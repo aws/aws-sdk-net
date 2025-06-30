@@ -43,6 +43,10 @@ namespace Amazon.ARCZonalShift.Model
     /// ends the autoshift, and traffic for the resource is no longer directed to the other
     /// Availability Zones in the Region.
     /// </para>
+    ///  
+    /// <para>
+    /// You can stop an autoshift for a resource by disabling zonal autoshift.
+    /// </para>
     /// </summary>
     public partial class AutoshiftSummary
     {
