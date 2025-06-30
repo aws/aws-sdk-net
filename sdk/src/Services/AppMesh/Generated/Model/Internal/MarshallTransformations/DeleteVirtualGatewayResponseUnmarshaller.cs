@@ -48,6 +48,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         {
             DeleteVirtualGatewayResponse response = new DeleteVirtualGatewayResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = VirtualGatewayDataUnmarshaller.Instance;
             response.VirtualGateway = unmarshaller.Unmarshall(context, ref reader);
 

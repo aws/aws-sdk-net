@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             GetSmsTemplateResponse response = new GetSmsTemplateResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = SMSTemplateResponseUnmarshaller.Instance;
             response.SMSTemplateResponse = unmarshaller.Unmarshall(context, ref reader);
 

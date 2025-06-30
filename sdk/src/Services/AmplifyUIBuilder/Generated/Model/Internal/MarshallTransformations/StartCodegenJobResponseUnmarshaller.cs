@@ -48,6 +48,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         {
             StartCodegenJobResponse response = new StartCodegenJobResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = CodegenJobUnmarshaller.Instance;
             response.Entity = unmarshaller.Unmarshall(context, ref reader);
 
