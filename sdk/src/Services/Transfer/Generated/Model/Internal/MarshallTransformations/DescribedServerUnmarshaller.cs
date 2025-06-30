@@ -120,6 +120,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdentityProviderType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IpAddressType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LoggingRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

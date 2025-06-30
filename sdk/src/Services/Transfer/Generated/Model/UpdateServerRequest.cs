@@ -46,6 +46,7 @@ namespace Amazon.Transfer.Model
         private EndpointType _endpointType;
         private string _hostKey;
         private IdentityProviderDetails _identityProviderDetails;
+        private IpAddressType _ipAddressType;
         private string _loggingRole;
         private string _postAuthenticationLoginBanner;
         private string _preAuthenticationLoginBanner;
@@ -275,6 +276,46 @@ namespace Amazon.Transfer.Model
         internal bool IsSetIdentityProviderDetails()
         {
             return this._identityProviderDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// Specifies whether to use IPv4 only, or to use dual-stack (IPv4 and IPv6) for your
+        /// Transfer Family endpoint. The default value is <c>IPV4</c>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <c>IpAddressType</c> parameter has the following limitations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It cannot be changed while the server is online. You must stop the server before modifying
+        /// this parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It cannot be updated to <c>DUALSTACK</c> if the server has <c>AddressAllocationIds</c>
+        /// specified.
+        /// </para>
+        ///  </li> </ul> </important> <note> 
+        /// <para>
+        /// When using <c>DUALSTACK</c> as the <c>IpAddressType</c>, you cannot set the <c>AddressAllocationIds</c>
+        /// parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a>
+        /// for the server.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>
