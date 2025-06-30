@@ -1,3 +1,45 @@
+### 4.0.42.0 (2025-06-30 18:38 UTC)
+* ARCZonalShift (4.0.1.0)
+	* Added support for on-demand practice runs and balanced capacity checks in ARC autoshift practice.
+* B2bi (4.0.1.0)
+	* Updated APIs to support inbound EDI split capabilities and additional Partnership-level configurations of generated EDI files' contents and format.
+* Bedrock (4.0.7.0)
+	* Add support for API Keys, Re-Ranker, implicit filter for RAG / KB evaluation for Bedrock APIs.
+* BedrockRuntime (4.0.1.0)
+	* Add API Key and document citations support for Bedrock Runtime APIs
+* CloudFormation (4.0.2.0)
+	* Added support for UNKNOWN drift status.
+* CloudWatchLogs (4.0.5.0)
+	* Increase minimum length of queryId parameter to 1 character.
+* ConfigService (4.0.1.0)
+	* Updated ResourceType enum with new resource types onboarded by AWS Config as of June 2025
+* Connect (4.0.4.0)
+	* This release introduces ChatMetrics to the model, providing comprehensive analytics insights for Amazon Connect chat conversations. Users can access these detailed metrics through the AWS Connect API by using the DescribeContact operation with their specific instance and contact IDs
+* DataExchange (4.0.2.0)
+	* This release updates resource Id with alphanumeric constraint, including Asset id, Revision id, Data Set id, Job id, and Event Action id.
+* DynamoDBv2 (4.0.2.0)
+	* This change adds support for witnesses in global tables. It also adds a new table status, REPLICATION_NOT_AUTHORIZED. This status will indicate scenarios where global replicas table can't be utilized for data plane operations.
+* EventBridge (4.0.2.0)
+	* Added support for EventBridge Dualstack endpoints in AWS GovCloud (US) regions (us-gov-east-1 and us-gov-west-1). The dualstack endpoints are identical for both FIPS and non-FIPS configurations, following the format: events.{region}.api.aws
+* Glue (4.0.8.0)
+	* releasing source processing properties to support source properties for ODB integrations
+* IdentityManagement (4.0.2.0)
+	* Updated IAM ServiceSpecificCredential support to include expiration, API Key output format instead of username and password for services that will support API keys, and the ability to list credentials for all users in the account for a given service configuration.
+* MedicalImaging (4.0.1.0)
+	* Added new fields to support the concept of primary image sets within the storage hierarchy.
+* NetworkFlowMonitor (4.0.1.0)
+	* Add ConflictExceptions to UpdateScope and DeleteScope operations for scopes being mutated.
+* Outposts (4.0.1.0)
+	* Make ContactName and ContactPhoneNumber required fields when creating and updating Outpost Site Addresses.
+* PCS (4.0.4.0)
+	* Fixed the validation pattern for an instance profile Amazon Resource Name (ARN) in AWS PCS.
+* QuickSight (4.0.1.0)
+	* Introduced custom permission capabilities for reporting content. Added menu option in exploration to preserve configuration data when textbox menu option is used. Added support for Athena trusted identity propagation.
+* SimpleSystemsManagement (4.0.2.0)
+	* Introduces AccessType, a new filter value for the DescribeSessions API.
+* Transfer (4.0.1.0)
+	* Added support for dual-stack (IPv4 and IPv6) endpoints for SFTP public endpoints and VPC-internal endpoints (SFTP, FTPS, FTP, and AS2), enabling customers to configure new servers with IPv4 or dual-stack mode, convert existing servers to dual-stack, and use IPv6 with service APIs.
+
 ### 4.0.41.0 (2025-06-27 19:22 UTC)
 * ConfigService (4.0.0.12)
 	* Added important considerations to the PutConformancePack and PutOrganizationConformancPack APIs.
