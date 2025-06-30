@@ -4,6 +4,10 @@
         "suppressions": [
             {
                 "id": "HttpMethodSemantics",
+                "namespace": "com.amazonaws.glacier"
+            },
+            {
+                "id": "HttpMethodSemantics",
                 "namespace": "com.amazonaws.s3"
             },
             {
@@ -11,18 +15,14 @@
                 "namespace": "com.amazonaws.s3"
             },
             {
-                "id": "HttpMethodSemantics",
-                "namespace": "com.amazonaws.glacier"
+                "id": "UnreferencedShape",
+                "namespace": "aws.protocoltests.config",
+                "reason": "These shapes are intended to be used to validate vendorParams in\nprotocol tests, so they naturally will not be connected to a service.\n"
             },
             {
                 "id": "DeprecatedTrait",
                 "namespace": "*",
                 "reason": "Some of the AWS protocols make use of deprecated traits, and some are\nthemselves deprecated traits. As this package is intended to test those\nprotocols, the warnings should be suppressed."
-            },
-            {
-                "id": "UnreferencedShape",
-                "namespace": "aws.protocoltests.config",
-                "reason": "These shapes are intended to be used to validate vendorParams in\nprotocol tests, so they naturally will not be connected to a service.\n"
             }
         ],
         "validators": [
@@ -6317,7 +6317,7 @@
                             "Content-Type": "application/x-amz-json-1.0",
                             "x-amzn-query-error": "Customized;Sender"
                         },
-                        "body": "{\n    \"__type\": \"aws.protocoltests.json10#CustomCodeError\",\n    \"Message\": \"Hi\"\n}",
+                        "body": "{\n    \"__type\": \"aws.protocoltests.json10#CustomCodeError\",\n    \"message\": \"Hi\"\n}",
                         "bodyMediaType": "application/json",
                         "vendorParamsShape": "aws.protocoltests.config#ErrorCodeParams",
                         "vendorParams": {
@@ -7401,7 +7401,7 @@
                 "smithy.api#error": "client",
                 "smithy.test#httpResponseTests": [
                     {
-                        "id": "QueryCompatibleAwsJson10CborNoCustomCodeError",
+                        "id": "QueryCompatibleAwsJson10NoCustomCodeError",
                         "documentation": "Parses simple errors with no query error code",
                         "protocol": "aws.protocols#awsJson1_0",
                         "params": {
@@ -7411,7 +7411,7 @@
                         "headers": {
                             "Content-Type": "application/x-amz-json-1.0"
                         },
-                        "body": "{\n    \"__type\": \"aws.protocoltests.json10#NoCustomCodeError\",\n    \"Message\": \"Hi\"\n}",
+                        "body": "{\n    \"__type\": \"aws.protocoltests.json10#NoCustomCodeError\",\n    \"message\": \"Hi\"\n}",
                         "bodyMediaType": "application/json",
                         "vendorParamsShape": "aws.protocoltests.config#ErrorCodeParams",
                         "vendorParams": {
@@ -35102,7 +35102,7 @@
                             "Content-Type": "application/cbor",
                             "x-amzn-query-error": "Customized;Sender"
                         },
-                        "body": "uQACZl9fdHlwZXgrYXdzLnByb3RvY29sdGVzdHMucnBjdjJjYm9yI0N1c3RvbUNvZGVFcnJvcmdNZXNzYWdlYkhp",
+                        "body": "uQACZl9fdHlwZXgrYXdzLnByb3RvY29sdGVzdHMucnBjdjJjYm9yI0N1c3RvbUNvZGVFcnJvcmdtZXNzYWdlYkhp",
                         "bodyMediaType": "application/cbor",
                         "vendorParamsShape": "aws.protocoltests.config#ErrorCodeParams",
                         "vendorParams": {
@@ -35135,7 +35135,7 @@
                             "smithy-protocol": "rpc-v2-cbor",
                             "Content-Type": "application/cbor"
                         },
-                        "body": "uQACZl9fdHlwZXgtYXdzLnByb3RvY29sdGVzdHMucnBjdjJjYm9yI05vQ3VzdG9tQ29kZUVycm9yZ01lc3NhZ2ViSGk=",
+                        "body": "uQACZl9fdHlwZXgtYXdzLnByb3RvY29sdGVzdHMucnBjdjJjYm9yI05vQ3VzdG9tQ29kZUVycm9yZ21lc3NhZ2ViSGk=",
                         "bodyMediaType": "application/cbor",
                         "vendorParamsShape": "aws.protocoltests.config#ErrorCodeParams",
                         "vendorParams": {
@@ -35168,7 +35168,7 @@
                         "forbidHeaders": [
                             "x-amzn-query-mode"
                         ],
-                        "uri": "/service/NonQueryCompatibleRpcV2Protocol/operation/QueryIncompatibleOperation",
+                        "uri": "/service/NonQueryCompatibleRpcV2Protocol/operation/NonQueryCompatibleOperation",
                         "body": ""
                     }
                 ]

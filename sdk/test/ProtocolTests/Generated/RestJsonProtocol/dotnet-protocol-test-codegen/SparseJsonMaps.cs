@@ -95,12 +95,12 @@ namespace AWSSDK.ProtocolTests.RestJson
             // Arrange
             var request = new SparseJsonMapsRequest
             {
-                SparseBooleanMap = new Dictionary<string, bool>()
+                SparseBooleanMap = new Dictionary<string, bool?>()
                 {
 
                     { "x", null },
                 },
-                SparseNumberMap = new Dictionary<string, int>()
+                SparseNumberMap = new Dictionary<string, int?>()
                 {
 
                     { "x", null },
@@ -147,12 +147,12 @@ namespace AWSSDK.ProtocolTests.RestJson
             // Arrange
             var request = new SparseJsonMapsRequest
             {
-                SparseNumberMap = new Dictionary<string, int>()
+                SparseNumberMap = new Dictionary<string, int?>()
                 {
 
                     { "x", 0 },
                 },
-                SparseBooleanMap = new Dictionary<string, bool>()
+                SparseBooleanMap = new Dictionary<string, bool?>()
                 {
 
                     { "x", false },
@@ -238,12 +238,12 @@ namespace AWSSDK.ProtocolTests.RestJson
             var unmarshalledResponse = new SparseJsonMapsResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SparseJsonMapsResponse
             {
-                SparseBooleanMap = new Dictionary<string, bool>()
+                SparseBooleanMap = new Dictionary<string, bool?>()
                 {
 
                     { "x", null },
                 },
-                SparseNumberMap = new Dictionary<string, int>()
+                SparseNumberMap = new Dictionary<string, int?>()
                 {
 
                     { "x", null },
@@ -288,12 +288,12 @@ namespace AWSSDK.ProtocolTests.RestJson
             var unmarshalledResponse = new SparseJsonMapsResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SparseJsonMapsResponse
             {
-                SparseNumberMap = new Dictionary<string, int>()
+                SparseNumberMap = new Dictionary<string, int?>()
                 {
 
                     { "x", 0 },
                 },
-                SparseBooleanMap = new Dictionary<string, bool>()
+                SparseBooleanMap = new Dictionary<string, bool?>()
                 {
 
                     { "x", false },

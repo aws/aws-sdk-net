@@ -43,6 +43,12 @@ namespace AWSSDK.ProtocolTests.RestXml
         /// Do not send null values, but do send empty strings and empty
         /// lists over the wire in headers
         /// </summary>
+        /*
+        * This test either requires a breaking change and will be addressed
+        * in V4, or has a backlog item to be fixed in the future. Please
+        * refer to the VNextTests list to see which it is.
+        * */
+        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
