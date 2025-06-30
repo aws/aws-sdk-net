@@ -30,25 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelZonalShift operation.
-    /// Cancel a zonal shift in Amazon Application Recovery Controller. To cancel the zonal
-    /// shift, specify the zonal shift ID.
-    /// 
-    ///  
-    /// <para>
-    /// A zonal shift can be one that you've started for a resource in your Amazon Web Services
-    /// account in an Amazon Web Services Region, or it can be a zonal shift started by a
-    /// practice run with zonal autoshift. 
-    /// </para>
+    /// Container for the parameters to the CancelPracticeRun operation.
+    /// Cancel an in-progress practice run zonal shift in Amazon Application Recovery Controller.
     /// </summary>
-    public partial class CancelZonalShiftRequest : AmazonARCZonalShiftRequest
+    public partial class CancelPracticeRunRequest : AmazonARCZonalShiftRequest
     {
         private string _zonalShiftId;
 
         /// <summary>
         /// Gets and sets the property ZonalShiftId. 
         /// <para>
-        /// The internally-generated identifier of a zonal shift.
+        /// The identifier of a practice run zonal shift in Amazon Application Recovery Controller
+        /// that you want to cancel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=6, Max=36)]
