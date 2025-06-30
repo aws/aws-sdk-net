@@ -46,6 +46,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetIdentityCenterConfiguration())
+            {
+                context.Writer.WritePropertyName("IdentityCenterConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IdentityCenterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IdentityCenterConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");

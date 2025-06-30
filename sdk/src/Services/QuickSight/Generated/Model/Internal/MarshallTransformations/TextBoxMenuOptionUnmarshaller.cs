@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SheetTextBox Object
+    /// Response Unmarshaller for TextBoxMenuOption Object
     /// </summary>  
-    public class SheetTextBoxUnmarshaller : IJsonUnmarshaller<SheetTextBox, JsonUnmarshallerContext>
+    public class TextBoxMenuOptionUnmarshaller : IJsonUnmarshaller<TextBoxMenuOption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SheetTextBox Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TextBoxMenuOption Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SheetTextBox unmarshalledObject = new SheetTextBox();
+            TextBoxMenuOption unmarshalledObject = new TextBoxMenuOption();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("AvailabilityStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Interactions", targetDepth))
-                {
-                    var unmarshaller = TextBoxInteractionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SheetTextBoxId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SheetTextBoxId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AvailabilityStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static SheetTextBoxUnmarshaller _instance = new SheetTextBoxUnmarshaller();        
+        private static TextBoxMenuOptionUnmarshaller _instance = new TextBoxMenuOptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SheetTextBoxUnmarshaller Instance
+        public static TextBoxMenuOptionUnmarshaller Instance
         {
             get
             {

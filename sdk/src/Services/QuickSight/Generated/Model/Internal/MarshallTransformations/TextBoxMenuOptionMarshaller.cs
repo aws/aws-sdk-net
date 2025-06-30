@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SheetTextBox Marshaller
+    /// TextBoxMenuOption Marshaller
     /// </summary>
-    public class SheetTextBoxMarshaller : IRequestMarshaller<SheetTextBox, JsonMarshallerContext> 
+    public class TextBoxMenuOptionMarshaller : IRequestMarshaller<TextBoxMenuOption, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,31 +42,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SheetTextBox requestObject, JsonMarshallerContext context)
+        public void Marshall(TextBoxMenuOption requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetContent())
+            if(requestObject.IsSetAvailabilityStatus())
             {
-                context.Writer.WritePropertyName("Content");
-                context.Writer.WriteStringValue(requestObject.Content);
-            }
-
-            if(requestObject.IsSetInteractions())
-            {
-                context.Writer.WritePropertyName("Interactions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TextBoxInteractionOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Interactions, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSheetTextBoxId())
-            {
-                context.Writer.WritePropertyName("SheetTextBoxId");
-                context.Writer.WriteStringValue(requestObject.SheetTextBoxId);
+                context.Writer.WritePropertyName("AvailabilityStatus");
+                context.Writer.WriteStringValue(requestObject.AvailabilityStatus);
             }
 
         }
@@ -74,7 +57,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SheetTextBoxMarshaller Instance = new SheetTextBoxMarshaller();
+        public readonly static TextBoxMenuOptionMarshaller Instance = new TextBoxMenuOptionMarshaller();
 
     }
 }
