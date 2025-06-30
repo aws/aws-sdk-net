@@ -40,8 +40,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationItems. 
         /// <para>
-        /// An array of <c>ConfigurationItems</c> Objects. Contatins the configuration history
-        /// for one or more resources.
+        /// A list that contains the configuration history of one or more resources.
         /// </para>
         /// </summary>
         public List<ConfigurationItem> ConfigurationItems
