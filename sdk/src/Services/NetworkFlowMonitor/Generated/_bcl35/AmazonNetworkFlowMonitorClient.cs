@@ -523,6 +523,9 @@ namespace Amazon.NetworkFlowMonitor
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
         /// You don't have sufficient permission to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
         /// An internal error occurred.
         /// </exception>
@@ -671,7 +674,9 @@ namespace Amazon.NetworkFlowMonitor
         ///  
         /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable call for the top
+        /// contributors that you want to be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryResultsMonitorTopContributors service method.</param>
@@ -763,7 +768,9 @@ namespace Amazon.NetworkFlowMonitor
         ///  
         /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable call for the top
+        /// contributors that you want to be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryResultsWorkloadInsightsTopContributors service method.</param>
@@ -855,11 +862,13 @@ namespace Amazon.NetworkFlowMonitor
         ///  
         /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable call for the top
+        /// contributors that you want to be returned.
         /// </para>
         ///  
         /// <para>
-        /// The top contributor network flows overall for a specific metric type, for example,
+        /// The top contributor network flows overall are for a specific metric type, for example,
         /// the number of retransmissions.
         /// </para>
         /// </summary>
@@ -939,10 +948,9 @@ namespace Amazon.NetworkFlowMonitor
         /// 
         ///  
         /// <para>
-        /// When you start a query, use this call to check the status of the query to make sure
-        /// that it has has <c>SUCCEEDED</c> before you reviewStartQueryWorkloadInsightsTopContributorsData
-        /// the results. Use the same query ID that you used for the corresponding API call to
-        /// start the query, <c>StartQueryMonitorTopContributors</c>.
+        /// When you create a query, use this call to check the status of the query to make sure
+        /// that it has has <c>SUCCEEDED</c> before you review the results. Use the same query
+        /// ID that you used for the corresponding API call to start (create) the query, <c>StartQueryMonitorTopContributors</c>.
         /// </para>
         ///  
         /// <para>
@@ -1030,7 +1038,9 @@ namespace Amazon.NetworkFlowMonitor
         ///  
         /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable call for the top
+        /// contributors that you want to be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryStatusWorkloadInsightsTopContributors service method.</param>
@@ -1113,11 +1123,13 @@ namespace Amazon.NetworkFlowMonitor
         ///  
         /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable call for the top
+        /// contributors that you want to be returned.
         /// </para>
         ///  
         /// <para>
-        /// The top contributor network flows overall for a specific metric type, for example,
+        /// The top contributor network flows overall are for a specific metric type, for example,
         /// the number of retransmissions.
         /// </para>
         /// </summary>
@@ -1469,14 +1481,22 @@ namespace Amazon.NetworkFlowMonitor
         #region  StartQueryMonitorTopContributors
 
         /// <summary>
-        /// Start a query to return the data with the Network Flow Monitor query interface. Specify
-        /// the query that you want to return results for by providing a query ID and a monitor
-        /// name. This query returns the top contributors for a specific monitor.
+        /// Create a query that you can use with the Network Flow Monitor query interface to return
+        /// the top contributors for a monitor. Specify the monitor that you want to create the
+        /// query for. 
         /// 
         ///  
         /// <para>
+        /// The call returns a query ID that you can use with <a href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsMonitorTopContributors.html">
+        /// GetQueryResultsMonitorTopContributors</a> to run the query and return the top contributors
+        /// for a specific monitor.
+        /// </para>
+        ///  
+        /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable APIs for the top
+        /// contributors that you want to be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQueryMonitorTopContributors service method.</param>
@@ -1546,14 +1566,22 @@ namespace Amazon.NetworkFlowMonitor
         #region  StartQueryWorkloadInsightsTopContributors
 
         /// <summary>
-        /// Start a query to return the data with the Network Flow Monitor query interface. Specify
-        /// the query that you want to start by providing a query ID and a monitor name. This
-        /// query returns the top contributors for a specific monitor.
+        /// Create a query with the Network Flow Monitor query interface that you can run to return
+        /// workload insights top contributors. Specify the scope that you want to create a query
+        /// for.
         /// 
         ///  
         /// <para>
+        /// The call returns a query ID that you can use with <a href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsWorkloadInsightsTopContributors.html">
+        /// GetQueryResultsWorkloadInsightsTopContributors</a> to run the query and return the
+        /// top contributors for the workload insights for a scope.
+        /// </para>
+        ///  
+        /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable APIs for the top
+        /// contributors that you want to be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQueryWorkloadInsightsTopContributors service method.</param>
@@ -1623,14 +1651,22 @@ namespace Amazon.NetworkFlowMonitor
         #region  StartQueryWorkloadInsightsTopContributorsData
 
         /// <summary>
-        /// Start a query to return the with the Network Flow Monitor query interface. Specify
-        /// the query that you want to start by providing a query ID and a monitor name. This
-        /// query returns the data for top contributors for workload insights.
+        /// Create a query with the Network Flow Monitor query interface that you can run to return
+        /// data for workload insights top contributors. Specify the scope that you want to create
+        /// a query for.
         /// 
         ///  
         /// <para>
+        /// The call returns a query ID that you can use with <a href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsWorkloadInsightsTopContributorsData.html">
+        /// GetQueryResultsWorkloadInsightsTopContributorsData</a> to run the query and return
+        /// the data for the top contributors for the workload insights for a scope.
+        /// </para>
+        ///  
+        /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable call for the top
+        /// contributors that you want to be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQueryWorkloadInsightsTopContributorsData service method.</param>
@@ -1700,14 +1736,15 @@ namespace Amazon.NetworkFlowMonitor
         #region  StopQueryMonitorTopContributors
 
         /// <summary>
-        /// Stop a query with the Network Flow Monitor query interface. Specify the query that
-        /// you want to stop by providing a query ID and a monitor name. This query returns the
-        /// top contributors for a specific monitor.
+        /// Stop a top contributors query for a monitor. Specify the query that you want to stop
+        /// by providing a query ID and a monitor name. 
         /// 
         ///  
         /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable call for the top
+        /// contributors that you want to be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopQueryMonitorTopContributors service method.</param>
@@ -1777,14 +1814,15 @@ namespace Amazon.NetworkFlowMonitor
         #region  StopQueryWorkloadInsightsTopContributors
 
         /// <summary>
-        /// Stop a query with the Network Flow Monitor query interface. Specify the query that
-        /// you want to stop by providing a query ID and a monitor name. This query returns the
-        /// top contributors for a specific monitor.
+        /// Stop a top contributors query for workload insights. Specify the query that you want
+        /// to stop by providing a query ID and a scope ID. 
         /// 
         ///  
         /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable call for the top
+        /// contributors that you want to be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopQueryWorkloadInsightsTopContributors service method.</param>
@@ -1854,21 +1892,15 @@ namespace Amazon.NetworkFlowMonitor
         #region  StopQueryWorkloadInsightsTopContributorsData
 
         /// <summary>
-        /// Return the data for a query with the Network Flow Monitor query interface. Specify
-        /// the query that you want to return results for by providing a query ID and a scope
-        /// ID. This query returns data for the top contributors for workload insights. Workload
-        /// insights provide a high level view of network flow performance data collected by agents
-        /// for a scope.
+        /// Stop a top contributors data query for workload insights. Specify the query that you
+        /// want to stop by providing a query ID and a scope ID. 
         /// 
         ///  
         /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
-        /// for a specific metric type, related to a scope (for workload insights) or a monitor.
-        /// </para>
-        ///  
-        /// <para>
-        /// The top contributor network flows overall for a specific metric type, for example,
-        /// the number of retransmissions.
+        /// for a specific metric type. Top contributors can be across all workload insights,
+        /// for a given scope, or for a specific monitor. Use the applicable call for the top
+        /// contributors that you want to be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopQueryWorkloadInsightsTopContributorsData service method.</param>
@@ -2160,6 +2192,9 @@ namespace Amazon.NetworkFlowMonitor
         /// <returns>The response from the UpdateScope service method, as returned by NetworkFlowMonitor.</returns>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
         /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
         /// </exception>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
         /// An internal error occurred.

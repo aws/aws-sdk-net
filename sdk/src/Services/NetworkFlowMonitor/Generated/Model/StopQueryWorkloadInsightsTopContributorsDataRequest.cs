@@ -31,21 +31,15 @@ namespace Amazon.NetworkFlowMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the StopQueryWorkloadInsightsTopContributorsData operation.
-    /// Return the data for a query with the Network Flow Monitor query interface. Specify
-    /// the query that you want to return results for by providing a query ID and a scope
-    /// ID. This query returns data for the top contributors for workload insights. Workload
-    /// insights provide a high level view of network flow performance data collected by agents
-    /// for a scope.
+    /// Stop a top contributors data query for workload insights. Specify the query that you
+    /// want to stop by providing a query ID and a scope ID. 
     /// 
     ///  
     /// <para>
     /// Top contributors in Network Flow Monitor are network flows with the highest values
-    /// for a specific metric type, related to a scope (for workload insights) or a monitor.
-    /// </para>
-    ///  
-    /// <para>
-    /// The top contributor network flows overall for a specific metric type, for example,
-    /// the number of retransmissions.
+    /// for a specific metric type. Top contributors can be across all workload insights,
+    /// for a given scope, or for a specific monitor. Use the applicable call for the top
+    /// contributors that you want to be returned.
     /// </para>
     /// </summary>
     public partial class StopQueryWorkloadInsightsTopContributorsDataRequest : AmazonNetworkFlowMonitorRequest
@@ -57,7 +51,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// Gets and sets the property QueryId. 
         /// <para>
         /// The identifier for the query. A query ID is an internally-generated identifier for
-        /// a specific query returned from an API call to start a query.
+        /// a specific query returned from an API call to create a query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
