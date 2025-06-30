@@ -34,12 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
     /// Streams settings for a given table.
     /// 
-    ///  <important> 
-    /// <para>
-    /// For global tables, this operation only applies to global tables using Version 2019.11.21
-    /// (Current version). 
-    /// </para>
-    ///  </important> 
+    ///  
     /// <para>
     /// You can only perform one of the following operations at once:
     /// </para>
@@ -70,6 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         private BillingMode _billingMode;
         private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexUpdate>() : null;
+        private List<GlobalTableWitnessGroupUpdate> _globalTableWitnessUpdates = AWSConfigs.InitializeCollections ? new List<GlobalTableWitnessGroupUpdate>() : null;
         private MultiRegionConsistency _multiRegionConsistency;
         private OnDemandThroughput _onDemandThroughput;
         private ProvisionedThroughput _provisionedThroughput;
@@ -213,6 +209,45 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GlobalTableWitnessUpdates. 
+        /// <para>
+        /// A list of witness updates for a MRSC global table. A witness provides a cost-effective
+        /// alternative to a full replica in a MRSC global table by maintaining replicated change
+        /// data written to global table replicas. You cannot perform read or write operations
+        /// on a witness. For each witness, you can request one action:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Create</c> - add a new witness to the global table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Delete</c> - remove a witness from the global table.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can create or delete only one witness per <c>UpdateTable</c> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes">Multi-Region
+        /// strong consistency (MRSC)</a> in the Amazon DynamoDB Developer Guide
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<GlobalTableWitnessGroupUpdate> GlobalTableWitnessUpdates
+        {
+            get { return this._globalTableWitnessUpdates; }
+            set { this._globalTableWitnessUpdates = value; }
+        }
+
+        // Check to see if GlobalTableWitnessUpdates property is set
+        internal bool IsSetGlobalTableWitnessUpdates()
+        {
+            return this._globalTableWitnessUpdates != null && (this._globalTableWitnessUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property MultiRegionConsistency. 
         /// <para>
         /// Specifies the consistency mode for a new global table. This parameter is only valid
@@ -226,24 +261,19 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>EVENTUAL</c>: Configures a new global table for multi-Region eventual consistency.
-        /// This is the default consistency mode for global tables.
+        ///  <c>EVENTUAL</c>: Configures a new global table for multi-Region eventual consistency
+        /// (MREC). This is the default consistency mode for global tables.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>STRONG</c>: Configures a new global table for multi-Region strong consistency
-        /// (preview).
+        /// (MRSC).
         /// </para>
-        ///  <note> 
+        ///  </li> </ul> 
         /// <para>
-        /// Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability
-        /// currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global
-        /// tables multi-Region strong consistency</a>.
-        /// </para>
-        ///  </note> </li> </ul> 
-        /// <para>
-        /// If you don't specify this parameter, the global table consistency mode defaults to
-        /// <c>EVENTUAL</c>.
+        /// If you don't specify this field, the global table consistency mode defaults to <c>EVENTUAL</c>.
+        /// For more information about global tables consistency modes, see <a href="https://docs.aws.amazon.com/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes">
+        /// Consistency modes</a> in DynamoDB developer guide. 
         /// </para>
         /// </summary>
         public MultiRegionConsistency MultiRegionConsistency
@@ -301,12 +331,6 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A list of replica update actions (create, delete, or update) for the table.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// For global tables, this property only applies to global tables using Version 2019.11.21
-        /// (Current version). 
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ReplicationGroupUpdate> ReplicaUpdates

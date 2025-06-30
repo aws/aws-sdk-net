@@ -113,6 +113,22 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetGlobalTableWitnessUpdates())
+                {
+                    context.Writer.WritePropertyName("GlobalTableWitnessUpdates");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGlobalTableWitnessUpdatesListValue in publicRequest.GlobalTableWitnessUpdates)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GlobalTableWitnessGroupUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequestGlobalTableWitnessUpdatesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMultiRegionConsistency())
                 {
                     context.Writer.WritePropertyName("MultiRegionConsistency");

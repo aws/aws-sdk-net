@@ -108,6 +108,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlobalTableVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GlobalTableWitnesses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GlobalTableWitnessDescription, GlobalTableWitnessDescriptionUnmarshaller>(GlobalTableWitnessDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.GlobalTableWitnesses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
