@@ -51,6 +51,7 @@ namespace Amazon.CloudFormation.Model
     public partial class StackResourceDrift
     {
         private string _actualProperties;
+        private string _driftStatusReason;
         private string _expectedProperties;
         private string _logicalResourceId;
         private ModuleInfo _moduleInfo;
@@ -65,7 +66,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ActualProperties. 
         /// <para>
-        /// A JSON structure containing the actual property values of the stack resource.
+        /// A JSON structure that contains the actual property values of the stack resource.
         /// </para>
         ///  
         /// <para>
@@ -86,10 +87,28 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DriftStatusReason. 
+        /// <para>
+        /// The reason for the drift status. 
+        /// </para>
+        /// </summary>
+        public string DriftStatusReason
+        {
+            get { return this._driftStatusReason; }
+            set { this._driftStatusReason = value; }
+        }
+
+        // Check to see if DriftStatusReason property is set
+        internal bool IsSetDriftStatusReason()
+        {
+            return this._driftStatusReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExpectedProperties. 
         /// <para>
-        /// A JSON structure containing the expected property values of the stack resource, as
-        /// defined in the stack template and any values specified as template parameters.
+        /// A JSON structure that contains the expected property values of the stack resource,
+        /// as defined in the stack template and any values specified as template parameters.
         /// </para>
         ///  
         /// <para>
@@ -269,6 +288,11 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>NOT_CHECKED</c>: CloudFormation does not currently return this value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UNKNOWN</c>: CloudFormation could not run drift detection for the resource. See
+        /// the <c>DriftStatusReason</c> for details.
         /// </para>
         ///  </li> </ul>
         /// </summary>

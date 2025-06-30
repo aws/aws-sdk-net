@@ -110,42 +110,42 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-accesskey.html">
         /// AWS::IAM::AccessKey</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-group.html">
         /// AWS::IAM::Group</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-managedpolicy.html">
         /// AWS::IAM::ManagedPolicy</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-policy.html">AWS::IAM::Policy</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-role.html">
         /// AWS::IAM::Role</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-user.html">
         /// AWS::IAM::User</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -434,7 +434,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackPolicyBody. 
         /// <para>
-        /// Structure containing a new stack policy body. You can specify either the <c>StackPolicyBody</c>
+        /// Structure that contains a new stack policy body. You can specify either the <c>StackPolicyBody</c>
         /// or the <c>StackPolicyURL</c> parameter, but not both.
         /// </para>
         ///  
@@ -460,9 +460,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackPolicyDuringUpdateBody. 
         /// <para>
-        /// Structure containing the temporary overriding stack policy body. You can specify either
-        /// the <c>StackPolicyDuringUpdateBody</c> or the <c>StackPolicyDuringUpdateURL</c> parameter,
-        /// but not both.
+        /// Structure that contains the temporary overriding stack policy body. You can specify
+        /// either the <c>StackPolicyDuringUpdateBody</c> or the <c>StackPolicyDuringUpdateURL</c>
+        /// parameter, but not both.
         /// </para>
         ///  
         /// <para>
@@ -487,10 +487,14 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackPolicyDuringUpdateURL. 
         /// <para>
-        /// Location of a file containing the temporary overriding stack policy. The URL must
+        /// Location of a file that contains the temporary overriding stack policy. The URL must
         /// point to a policy (max size: 16KB) located in an S3 bucket in the same Region as the
-        /// stack. The location for an Amazon S3 bucket must start with <c>https://</c>. You can
-        /// specify either the <c>StackPolicyDuringUpdateBody</c> or the <c>StackPolicyDuringUpdateURL</c>
+        /// stack. The location for an Amazon S3 bucket must start with <c>https://</c>. URLs
+        /// from S3 static websites are not supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify either the <c>StackPolicyDuringUpdateBody</c> or the <c>StackPolicyDuringUpdateURL</c>
         /// parameter, but not both.
         /// </para>
         ///  
@@ -516,10 +520,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackPolicyURL. 
         /// <para>
-        /// Location of a file containing the updated stack policy. The URL must point to a policy
-        /// (max size: 16KB) located in an S3 bucket in the same Region as the stack. The location
-        /// for an Amazon S3 bucket must start with <c>https://</c>. You can specify either the
-        /// <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter, but not both.
+        /// Location of a file that contains the updated stack policy. The URL must point to a
+        /// policy (max size: 16KB) located in an S3 bucket in the same Region as the stack. The
+        /// location for an Amazon S3 bucket must start with <c>https://</c>. URLs from S3 static
+        /// websites are not supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify either the <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter,
+        /// but not both.
         /// </para>
         ///  
         /// <para>
@@ -569,7 +578,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// Structure containing the template body with a minimum length of 1 byte and a maximum
+        /// Structure that contains the template body with a minimum length of 1 byte and a maximum
         /// length of 51,200 bytes.
         /// </para>
         ///  
@@ -594,9 +603,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateURL. 
         /// <para>
-        /// The URL of a file containing the template body. The URL must point to a template that's
-        /// located in an Amazon S3 bucket or a Systems Manager document. The location for an
-        /// Amazon S3 bucket must start with <c>https://</c>.
+        /// The URL of a file that contains the template body. The URL must point to a template
+        /// that's located in an Amazon S3 bucket or a Systems Manager document. The location
+        /// for an Amazon S3 bucket must start with <c>https://</c>.
         /// </para>
         ///  
         /// <para>

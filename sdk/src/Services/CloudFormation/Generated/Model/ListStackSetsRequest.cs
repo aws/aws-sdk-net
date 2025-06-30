@@ -33,7 +33,12 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the ListStackSets operation.
     /// Returns summary information about stack sets that are associated with the user.
     /// 
-    ///  <ul> <li> 
+    ///  <note> 
+    /// <para>
+    /// This API provides <i>strongly consistent</i> reads meaning it will always return the
+    /// most up-to-date data.
+    /// </para>
+    ///  </note> <ul> <li> 
     /// <para>
     /// [Self-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c> while
     /// signed in to your Amazon Web Services account, <c>ListStackSets</c> returns all self-managed

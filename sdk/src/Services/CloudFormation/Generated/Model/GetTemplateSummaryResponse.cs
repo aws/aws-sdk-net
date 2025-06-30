@@ -226,7 +226,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Warnings. 
         /// <para>
-        /// An object containing any warnings returned.
+        /// An object that contains any warnings returned.
         /// </para>
         /// </summary>
         public Warnings Warnings

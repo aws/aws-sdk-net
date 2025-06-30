@@ -32,6 +32,13 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the ListStackSetOperationResults operation.
     /// Returns summary information about the results of a stack set operation.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API provides <i>eventually consistent</i> reads meaning it may take some time
+    /// but will eventually return the most up-to-date data.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListStackSetOperationResultsRequest : AmazonCloudFormationRequest
     {

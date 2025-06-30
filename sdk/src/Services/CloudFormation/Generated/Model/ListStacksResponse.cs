@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSummaries. 
         /// <para>
-        /// A list of <c>StackSummary</c> structures containing information about the specified
+        /// A list of <c>StackSummary</c> structures that contains information about the specified
         /// stacks.
         /// </para>
         /// </summary>

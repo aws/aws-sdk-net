@@ -35,6 +35,27 @@ namespace Amazon.CloudFormation.Model
     /// Services Regions. A stack instance refers to a stack in a specific account and Region.
     /// You must specify at least one value for either <c>Accounts</c> or <c>DeploymentTargets</c>,
     /// and you must specify at least one value for <c>Regions</c>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The maximum number of organizational unit (OUs) supported by a <c>CreateStackInstances</c>
+    /// operation is 50.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you need more than 50, consider the following options:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Batch processing:</i> If you don't want to expose your OU hierarchy, split up
+    /// the operations into multiple calls with less than 50 OUs each.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Parent OU strategy:</i> If you don't mind exposing the OU hierarchy, target a
+    /// parent OU that contains all desired child OUs.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class CreateStackInstancesRequest : AmazonCloudFormationRequest
     {

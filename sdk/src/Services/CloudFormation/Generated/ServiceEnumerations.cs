@@ -3480,6 +3480,10 @@ namespace Amazon.CloudFormation
         /// Constant NOT_CHECKED for StackResourceDriftStatus
         /// </summary>
         public static readonly StackResourceDriftStatus NOT_CHECKED = new StackResourceDriftStatus("NOT_CHECKED");
+        /// <summary>
+        /// Constant UNKNOWN for StackResourceDriftStatus
+        /// </summary>
+        public static readonly StackResourceDriftStatus UNKNOWN = new StackResourceDriftStatus("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

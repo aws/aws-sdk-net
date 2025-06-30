@@ -740,6 +740,27 @@ namespace Amazon.CloudFormation
         /// Services Regions. A stack instance refers to a stack in a specific account and Region.
         /// You must specify at least one value for either <c>Accounts</c> or <c>DeploymentTargets</c>,
         /// and you must specify at least one value for <c>Regions</c>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The maximum number of organizational unit (OUs) supported by a <c>CreateStackInstances</c>
+        /// operation is 50.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need more than 50, consider the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Batch processing:</i> If you don't want to expose your OU hierarchy, split up
+        /// the operations into multiple calls with less than 50 OUs each.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Parent OU strategy:</i> If you don't mind exposing the OU hierarchy, target a
+        /// parent OU that contains all desired child OUs.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStackInstances service method.</param>
         /// <param name="cancellationToken">
@@ -1114,6 +1135,27 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Deletes stack instances for the specified accounts, in the specified Amazon Web Services
         /// Regions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The maximum number of organizational unit (OUs) supported by a <c>DeleteStackInstances</c>
+        /// operation is 50.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need more than 50, consider the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Batch processing:</i> If you don't want to expose your OU hierarchy, split up
+        /// the operations into multiple calls with less than 50 OUs each.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Parent OU strategy:</i> If you don't mind exposing the OU hierarchy, target a
+        /// parent OU that contains all desired child OUs.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStackInstances service method.</param>
         /// <param name="cancellationToken">
@@ -1962,6 +2004,13 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description of the specified StackSet.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API provides <i>strongly consistent</i> reads meaning it will always return the
+        /// most up-to-date data.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackSet service method.</param>
         /// <param name="cancellationToken">
@@ -1999,6 +2048,13 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description of the specified StackSet operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API provides <i>strongly consistent</i> reads meaning it will always return the
+        /// most up-to-date data.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackSetOperation service method.</param>
         /// <param name="cancellationToken">
@@ -3328,6 +3384,13 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns summary information about the results of a stack set operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API provides <i>eventually consistent</i> reads meaning it may take some time
+        /// but will eventually return the most up-to-date data.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackSetOperationResults service method.</param>
         /// <param name="cancellationToken">
@@ -3368,6 +3431,13 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns summary information about operations performed on a stack set.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API provides <i>eventually consistent</i> reads meaning it may take some time
+        /// but will eventually return the most up-to-date data.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackSetOperations service method.</param>
         /// <param name="cancellationToken">
@@ -3406,7 +3476,12 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about stack sets that are associated with the user.
         /// 
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// This API provides <i>strongly consistent</i> reads meaning it will always return the
+        /// most up-to-date data.
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// [Self-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c> while
         /// signed in to your Amazon Web Services account, <c>ListStackSets</c> returns all self-managed
@@ -4352,6 +4427,26 @@ namespace Amazon.CloudFormation
         /// in the stack set. Once a stack instance has been updated with the new parameter, you
         /// can then override the parameter value using <c>UpdateStackInstances</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The maximum number of organizational unit (OUs) supported by a <c>UpdateStackInstances</c>
+        /// operation is 50.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need more than 50, consider the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Batch processing:</i> If you don't want to expose your OU hierarchy, split up
+        /// the operations into multiple calls with less than 50 OUs each.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Parent OU strategy:</i> If you don't mind exposing the OU hierarchy, target a
+        /// parent OU that contains all desired child OUs.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStackInstances service method.</param>
         /// <param name="cancellationToken">
@@ -4415,6 +4510,26 @@ namespace Amazon.CloudFormation
         /// with your changes. Subsequent <a>CreateStackInstances</a> calls on the specified stack
         /// set use the updated stack set.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The maximum number of organizational unit (OUs) supported by a <c>UpdateStackSet</c>
+        /// operation is 50.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need more than 50, consider the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Batch processing:</i> If you don't want to expose your OU hierarchy, split up
+        /// the operations into multiple calls with less than 50 OUs each.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Parent OU strategy:</i> If you don't mind exposing the OU hierarchy, target a
+        /// parent OU that contains all desired child OUs.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStackSet service method.</param>
         /// <param name="cancellationToken">
