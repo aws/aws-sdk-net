@@ -128,7 +128,7 @@ namespace Amazon.Outposts.Model
         /// The name of the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ContactName
         {
             get { return this._contactName; }
@@ -147,7 +147,7 @@ namespace Amazon.Outposts.Model
         /// The phone number of the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public string ContactPhoneNumber
         {
             get { return this._contactPhoneNumber; }
