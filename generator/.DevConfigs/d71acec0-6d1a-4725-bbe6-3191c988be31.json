@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Fix exception message format exception"
+        "Fix GetSignedPolicyFromJson error handling exception message"
       ]
     }
   ]
