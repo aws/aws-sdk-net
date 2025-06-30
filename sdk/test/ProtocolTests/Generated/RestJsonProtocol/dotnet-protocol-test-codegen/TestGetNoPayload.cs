@@ -37,7 +37,7 @@ using System.Text;
 namespace AWSSDK.ProtocolTests.RestJson
 {
     [TestClass]
-    public class TestNoPayload
+    public class TestGetNoPayload
     {
         /// <summary>
         /// Serializes a GET request with no modeled body
@@ -46,10 +46,10 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonHttpWithNoModeledBodyRequest()
+        public void RestJsonHttpGetWithNoModeledBodyRequest()
         {
             // Arrange
-            var request = new TestNoPayloadRequest
+            var request = new TestGetNoPayloadRequest
             {
             };
             var config = new AmazonRestJsonProtocolConfig
@@ -57,7 +57,7 @@ namespace AWSSDK.ProtocolTests.RestJson
               ServiceURL = "https://test.com/"
             };
 
-            var marshaller = new TestNoPayloadRequestMarshaller();
+            var marshaller = new TestGetNoPayloadRequestMarshaller();
             // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
@@ -76,10 +76,10 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonHttpWithHeaderMemberNoModeledBodyRequest()
+        public void RestJsonHttpGetWithHeaderMemberNoModeledBodyRequest()
         {
             // Arrange
-            var request = new TestNoPayloadRequest
+            var request = new TestGetNoPayloadRequest
             {
                 TestId = "t-12345",
             };
@@ -88,7 +88,7 @@ namespace AWSSDK.ProtocolTests.RestJson
               ServiceURL = "https://test.com/"
             };
 
-            var marshaller = new TestNoPayloadRequestMarshaller();
+            var marshaller = new TestGetNoPayloadRequestMarshaller();
             // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 

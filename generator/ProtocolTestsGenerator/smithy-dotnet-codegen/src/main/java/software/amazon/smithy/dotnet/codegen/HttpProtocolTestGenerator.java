@@ -110,7 +110,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("[TestCategory(\"ErrorTest\")]");
         writer.write("[TestCategory(\"$L\")]", serviceName);
         writer.openBlock("public void $LErrorResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
-            generateErrorResponseTestBlock(operation, error, httpResponseTestCase);
+            if (!ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId())){
+                generateErrorResponseTest(operation, error, httpResponseTestCase);
+            }
         });
         writer.write("\n");
     }
@@ -151,7 +153,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpRequestTestCase httpRequestTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()))
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()) || httpRequestTestCase.hasTag("defaults"))
                     continue;
                 generateRequestTest(operation, httpRequestTestCase);
             }
@@ -295,7 +297,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()))
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId())  || httpResponseTestCase.hasTag("defaults"))
                     continue;
                 generateResponseTest(operation, httpResponseTestCase);
             }

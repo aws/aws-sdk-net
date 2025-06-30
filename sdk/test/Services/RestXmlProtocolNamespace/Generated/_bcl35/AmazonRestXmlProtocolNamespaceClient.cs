@@ -46,7 +46,7 @@ namespace Amazon.RestXmlProtocolNamespace
     /// </para>
     ///  
     /// <para>
-    /// See https://github.com/awslabs/smithy/issues/616
+    /// See https://github.com/smithy-lang/smithy/issues/616
     /// </para>
     /// </summary>
     public partial class AmazonRestXmlProtocolNamespaceClient : AmazonServiceClient, IAmazonRestXmlProtocolNamespace

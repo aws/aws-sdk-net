@@ -40,6 +40,7 @@
 	  <ProjectReference Include="../Services/RestXmlProtocol/AWSSDK.RestXmlProtocol.Net45.csproj" />
 	  <ProjectReference Include="../Services/RestXmlProtocolNamespace/AWSSDK.RestXmlProtocolNamespace.Net45.csproj" />
       <ProjectReference Include="../UnitTests/Custom/AWSSDK.UnitTestUtilities.Net45.csproj" />
+      <ProjectReference Include="..\Services\QueryCompatibleJSONRPC10\AWSSDK.QueryCompatibleJSONRPC10.Net45.csproj" />
     </ItemGroup>
     <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
     </ItemGroup>

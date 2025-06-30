@@ -31,7 +31,7 @@ namespace Amazon.RestJsonProtocol.Model
 {
     /// <summary>
     /// Container for the parameters to the NullAndEmptyHeadersClient operation.
-    /// Null and empty headers are not sent over the wire.
+    /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
     /// </summary>
     public partial class NullAndEmptyHeadersClientRequest : AmazonRestJsonProtocolRequest
     {

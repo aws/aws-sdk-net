@@ -237,6 +237,61 @@ namespace Amazon.JsonProtocol
         #endregion
 
 
+        #region  ContentTypeParameters
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return Invoke<ContentTypeParametersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ContentTypeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters operation on AmazonJsonProtocolClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndContentTypeParameters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual IAsyncResult BeginContentTypeParameters(ContentTypeParametersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ContentTypeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginContentTypeParameters.</param>
+        /// 
+        /// <returns>Returns a  ContentTypeParametersResult from JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual ContentTypeParametersResponse EndContentTypeParameters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ContentTypeParametersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DatetimeOffsets
 
         /// <summary>
@@ -682,6 +737,60 @@ namespace Amazon.JsonProtocol
         public virtual JsonEnumsResponse EndJsonEnums(IAsyncResult asyncResult)
         {
             return EndInvoke<JsonEnumsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  JsonIntEnums
+
+        /// <summary>
+        /// This example serializes intEnums as top level properties, in lists, sets, and maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonIntEnums service method.</param>
+        /// 
+        /// <returns>The response from the JsonIntEnums service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/JsonIntEnums">REST API Reference for JsonIntEnums Operation</seealso>
+        public virtual JsonIntEnumsResponse JsonIntEnums(JsonIntEnumsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonIntEnumsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonIntEnumsResponseUnmarshaller.Instance;
+
+            return Invoke<JsonIntEnumsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the JsonIntEnums operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the JsonIntEnums operation on AmazonJsonProtocolClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndJsonIntEnums
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/JsonIntEnums">REST API Reference for JsonIntEnums Operation</seealso>
+        public virtual IAsyncResult BeginJsonIntEnums(JsonIntEnumsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonIntEnumsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonIntEnumsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  JsonIntEnums operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginJsonIntEnums.</param>
+        /// 
+        /// <returns>Returns a  JsonIntEnumsResult from JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/JsonIntEnums">REST API Reference for JsonIntEnums Operation</seealso>
+        public virtual JsonIntEnumsResponse EndJsonIntEnums(IAsyncResult asyncResult)
+        {
+            return EndInvoke<JsonIntEnumsResponse>(asyncResult);
         }
 
         #endregion

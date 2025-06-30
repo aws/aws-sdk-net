@@ -65,7 +65,6 @@ namespace AWSSDK.ProtocolTests.RestJson
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/blob_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/octet-stream".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rest-json-protocol-2019-12-16.normal.json service model.
+ * Do not modify this file. This file is generated from the json-rpc-10-2020-07-14.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -27,29 +27,14 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
-namespace Amazon.RestJsonProtocol.Model
+namespace Amazon.JSONRPC10.Model
 {
     /// <summary>
-    /// This is the response object from the TestNoPayload operation.
+    /// Container for the parameters to the QueryIncompatibleOperation operation.
+    /// 
     /// </summary>
-    public partial class TestNoPayloadResponse : AmazonWebServiceResponse
+    public partial class QueryIncompatibleOperationRequest : AmazonJSONRPC10Request
     {
-        private string _testId;
-
-        /// <summary>
-        /// Gets and sets the property TestId.
-        /// </summary>
-        public string TestId
-        {
-            get { return this._testId; }
-            set { this._testId = value; }
-        }
-
-        // Check to see if TestId property is set
-        internal bool IsSetTestId()
-        {
-            return !string.IsNullOrEmpty(this._testId);
-        }
 
     }
 }
