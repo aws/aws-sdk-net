@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DocumentBlock Marshaller
+    /// Citation Marshaller
     /// </summary>
-    public class DocumentBlockMarshaller : IRequestMarshaller<DocumentBlock, JsonMarshallerContext> 
+    public class CitationMarshaller : IRequestMarshaller<Citation, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,48 +44,41 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DocumentBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(Citation requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCitations())
+            if(requestObject.IsSetLocation())
             {
-                context.Writer.WritePropertyName("citations");
+                context.Writer.WritePropertyName("location");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CitationsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Citations, context);
+                var marshaller = CitationLocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Location, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetContext())
+            if(requestObject.IsSetSourceContent())
             {
-                context.Writer.WritePropertyName("context");
-                context.Writer.Write(requestObject.Context);
+                context.Writer.WritePropertyName("sourceContent");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSourceContentListValue in requestObject.SourceContent)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CitationSourceContentMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSourceContentListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetFormat())
+            if(requestObject.IsSetTitle())
             {
-                context.Writer.WritePropertyName("format");
-                context.Writer.Write(requestObject.Format);
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
-            }
-
-            if(requestObject.IsSetSource())
-            {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DocumentSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.Source, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("title");
+                context.Writer.Write(requestObject.Title);
             }
 
         }
@@ -93,7 +86,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DocumentBlockMarshaller Instance = new DocumentBlockMarshaller();
+        public readonly static CitationMarshaller Instance = new CitationMarshaller();
 
     }
 }

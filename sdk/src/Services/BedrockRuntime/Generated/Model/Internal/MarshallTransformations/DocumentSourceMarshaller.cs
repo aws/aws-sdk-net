@@ -54,6 +54,22 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Bytes));
             }
 
+            if(requestObject.IsSetContent())
+            {
+                context.Writer.WritePropertyName("content");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectContentListValue in requestObject.Content)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DocumentContentBlockMarshaller.Instance;
+                    marshaller.Marshall(requestObjectContentListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetS3Location())
             {
                 context.Writer.WritePropertyName("s3Location");
@@ -63,6 +79,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.S3Location, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetText())
+            {
+                context.Writer.WritePropertyName("text");
+                context.Writer.Write(requestObject.Text);
             }
 
         }

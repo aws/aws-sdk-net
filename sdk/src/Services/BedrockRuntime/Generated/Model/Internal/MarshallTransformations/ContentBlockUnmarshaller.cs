@@ -72,6 +72,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.CachePoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("citationsContent", targetDepth))
+                {
+                    var unmarshaller = CitationsContentBlockUnmarshaller.Instance;
+                    unmarshalledObject.CitationsContent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("document", targetDepth))
                 {
                     var unmarshaller = DocumentBlockUnmarshaller.Instance;

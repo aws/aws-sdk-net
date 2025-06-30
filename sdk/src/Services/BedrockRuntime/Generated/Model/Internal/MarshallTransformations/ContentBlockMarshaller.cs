@@ -59,6 +59,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCitationsContent())
+            {
+                context.Writer.WritePropertyName("citationsContent");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CitationsContentBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.CitationsContent, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDocument())
             {
                 context.Writer.WritePropertyName("document");

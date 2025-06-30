@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContentBlockDelta Object
+    /// Response Unmarshaller for CitationsDelta Object
     /// </summary>  
-    public class ContentBlockDeltaUnmarshaller : IUnmarshaller<ContentBlockDelta, XmlUnmarshallerContext>, IUnmarshaller<ContentBlockDelta, JsonUnmarshallerContext>
+    public class CitationsDeltaUnmarshaller : IUnmarshaller<CitationsDelta, XmlUnmarshallerContext>, IUnmarshaller<CitationsDelta, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ContentBlockDelta IUnmarshaller<ContentBlockDelta, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CitationsDelta IUnmarshaller<CitationsDelta, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContentBlockDelta Unmarshall(JsonUnmarshallerContext context)
+        public CitationsDelta Unmarshall(JsonUnmarshallerContext context)
         {
-            ContentBlockDelta unmarshalledObject = new ContentBlockDelta();
+            CitationsDelta unmarshalledObject = new CitationsDelta();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,22 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("citation", targetDepth))
+                if (context.TestExpression("location", targetDepth))
                 {
-                    var unmarshaller = CitationsDeltaUnmarshaller.Instance;
-                    unmarshalledObject.Citation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CitationLocationUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("reasoningContent", targetDepth))
+                if (context.TestExpression("sourceContent", targetDepth))
                 {
-                    var unmarshaller = ReasoningContentBlockDeltaUnmarshaller.Instance;
-                    unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<CitationSourceContentDelta, CitationSourceContentDeltaUnmarshaller>(CitationSourceContentDeltaUnmarshaller.Instance);
+                    unmarshalledObject.SourceContent = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("title", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("toolUse", targetDepth))
-                {
-                    var unmarshaller = ToolUseBlockDeltaUnmarshaller.Instance;
-                    unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Title = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContentBlockDeltaUnmarshaller _instance = new ContentBlockDeltaUnmarshaller();        
+        private static CitationsDeltaUnmarshaller _instance = new CitationsDeltaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContentBlockDeltaUnmarshaller Instance
+        public static CitationsDeltaUnmarshaller Instance
         {
             get
             {
