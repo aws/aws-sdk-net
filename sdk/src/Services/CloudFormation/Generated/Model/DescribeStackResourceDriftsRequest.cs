@@ -142,6 +142,10 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <c>NOT_CHECKED</c>: CloudFormation doesn't currently return this value.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UNKNOWN</c>: CloudFormation could not run drift detection for the resource.
+        /// </para>
         ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

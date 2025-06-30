@@ -126,42 +126,42 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-accesskey.html">
         /// AWS::IAM::AccessKey</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-group.html">
         /// AWS::IAM::Group</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-managedpolicy.html">
         /// AWS::IAM::ManagedPolicy</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-policy.html">
         /// AWS::IAM::Policy</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-role.html">
         /// AWS::IAM::Role</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-user.html">
         /// AWS::IAM::User</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -326,17 +326,18 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ImportExistingResources. 
         /// <para>
-        /// Indicates if the change set imports resources that already exist.
+        /// Indicates if the change set auto-imports resources that already exist. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/import-resources-automatically.html">Import
+        /// Amazon Web Services resources into a CloudFormation stack automatically</a> in the
+        /// <i>CloudFormation User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// This parameter can only import resources that have custom names in templates. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-name.html">name
         /// type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not
-        /// accept custom names, such as EC2 instances, use the resource import feature instead.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Import
-        /// Amazon Web Services resources into a CloudFormation stack with a resource import</a>
-        /// in the <i>CloudFormation User Guide</i>.
+        /// accept custom names, such as EC2 instances, use the <c>ResourcesToImport</c> parameter
+        /// instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -652,6 +653,7 @@ namespace Amazon.CloudFormation.Model
         /// (max size: 1 MB) that's located in an Amazon S3 bucket or a Systems Manager document.
         /// CloudFormation generates the change set by comparing this template with the stack
         /// that you specified. The location for an Amazon S3 bucket must start with <c>https://</c>.
+        /// URLs from S3 static websites are not supported.
         /// </para>
         ///  
         /// <para>

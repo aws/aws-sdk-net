@@ -163,7 +163,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property SchemaHandlerPackage. 
         /// <para>
-        /// A URL to the S3 bucket containing the extension project package that contains the
+        /// A URL to the S3 bucket that contains the extension project package that contains the
         /// necessary files for the extension you want to register.
         /// </para>
         ///  

@@ -126,14 +126,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ParentId. 
         /// <para>
-        /// For nested stacks--stacks created as resources for another stack--the stack ID of
-        /// the direct parent of this stack. For the first level of nested stacks, the root stack
-        /// is also the parent stack.
+        /// For nested stacks, the stack ID of the direct parent of this stack. For the first
+        /// level of nested stacks, the root stack is also the parent stack.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
-        /// stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested
+        /// stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string ParentId
@@ -151,13 +150,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RootId. 
         /// <para>
-        /// For nested stacks--stacks created as resources for another stack--the stack ID of
-        /// the top-level stack to which the nested stack ultimately belongs.
+        /// For nested stacks, the stack ID of the top-level stack to which the nested stack ultimately
+        /// belongs.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
-        /// stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Nested
+        /// stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string RootId

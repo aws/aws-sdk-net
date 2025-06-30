@@ -48,8 +48,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LogicalIdHierarchy. 
         /// <para>
-        /// A concatenated list of the logical IDs of the module or modules containing the resource.
-        /// Modules are listed starting with the inner-most nested module, and separated by <c>/</c>.
+        /// A concatenated list of the logical IDs of the module or modules that contains the
+        /// resource. Modules are listed starting with the inner-most nested module, and separated
+        /// by <c>/</c>.
         /// </para>
         ///  
         /// <para>
@@ -81,8 +82,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeHierarchy. 
         /// <para>
-        /// A concatenated list of the module type or types containing the resource. Module types
-        /// are listed starting with the inner-most nested module, and separated by <c>/</c>.
+        /// A concatenated list of the module type or types that contains the resource. Module
+        /// types are listed starting with the inner-most nested module, and separated by <c>/</c>.
         /// </para>
         ///  
         /// <para>
