@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KnowledgeBaseVectorSearchConfiguration Object
+    /// Response Unmarshaller for MetadataConfigurationForReranking Object
     /// </summary>  
-    public class KnowledgeBaseVectorSearchConfigurationUnmarshaller : IJsonUnmarshaller<KnowledgeBaseVectorSearchConfiguration, JsonUnmarshallerContext>
+    public class MetadataConfigurationForRerankingUnmarshaller : IJsonUnmarshaller<MetadataConfigurationForReranking, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KnowledgeBaseVectorSearchConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MetadataConfigurationForReranking Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            KnowledgeBaseVectorSearchConfiguration unmarshalledObject = new KnowledgeBaseVectorSearchConfiguration();
+            MetadataConfigurationForReranking unmarshalledObject = new MetadataConfigurationForReranking();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("filter", targetDepth))
-                {
-                    var unmarshaller = RetrievalFilterUnmarshaller.Instance;
-                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("implicitFilterConfiguration", targetDepth))
-                {
-                    var unmarshaller = ImplicitFilterConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ImplicitFilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("numberOfResults", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfResults = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("overrideSearchType", targetDepth))
+                if (context.TestExpression("selectionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OverrideSearchType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.SelectionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rerankingConfiguration", targetDepth))
+                if (context.TestExpression("selectiveModeConfiguration", targetDepth))
                 {
-                    var unmarshaller = VectorSearchRerankingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RerankingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = RerankingMetadataSelectiveModeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SelectiveModeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static KnowledgeBaseVectorSearchConfigurationUnmarshaller _instance = new KnowledgeBaseVectorSearchConfigurationUnmarshaller();        
+        private static MetadataConfigurationForRerankingUnmarshaller _instance = new MetadataConfigurationForRerankingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KnowledgeBaseVectorSearchConfigurationUnmarshaller Instance
+        public static MetadataConfigurationForRerankingUnmarshaller Instance
         {
             get
             {

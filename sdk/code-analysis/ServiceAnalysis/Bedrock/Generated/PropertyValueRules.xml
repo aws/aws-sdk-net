@@ -1542,6 +1542,11 @@
     <pattern>(arn:aws(-[^:]+)?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.FieldForReranking.FieldName</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.FilterAttribute.Key</property>
     <min>1</min>
     <max>100</max>
@@ -1748,6 +1753,12 @@
     <pattern>[\S\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.ImplicitFilterConfiguration.ModelArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws(-[^:]+)?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.ImportedModelSummary.ModelArn</property>
     <min>20</min>
     <max>1011</max>
@@ -1837,6 +1848,18 @@
     <min>0</min>
     <max>2048</max>
     <pattern>.*arn:aws:sagemaker:.*:hub-content/SageMakerPublicHub/Model/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.MetadataAttributeSchema.Description</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.MetadataAttributeSchema.Key</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ModelCopyJobSummary.FailureMessage</property>
@@ -2184,5 +2207,16 @@
     <min>1</min>
     <max>1024</max>
     <pattern>s3://[a-z0-9][-.a-z0-9]{1,61}[a-z0-9](?:/[-!_*'().a-z0-9A-Z]+(?:/[-!_*'().a-z0-9A-Z]+)*)?/?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.VectorSearchBedrockRerankingConfiguration.NumberOfRerankedResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.VectorSearchBedrockRerankingModelConfiguration.ModelArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}::foundation-model/(.*))?</pattern>
   </property-value-rule>
 </property-value-rules>

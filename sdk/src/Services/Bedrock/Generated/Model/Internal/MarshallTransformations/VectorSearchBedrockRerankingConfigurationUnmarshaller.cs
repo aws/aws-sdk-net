@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KnowledgeBaseVectorSearchConfiguration Object
+    /// Response Unmarshaller for VectorSearchBedrockRerankingConfiguration Object
     /// </summary>  
-    public class KnowledgeBaseVectorSearchConfigurationUnmarshaller : IJsonUnmarshaller<KnowledgeBaseVectorSearchConfiguration, JsonUnmarshallerContext>
+    public class VectorSearchBedrockRerankingConfigurationUnmarshaller : IJsonUnmarshaller<VectorSearchBedrockRerankingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KnowledgeBaseVectorSearchConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VectorSearchBedrockRerankingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            KnowledgeBaseVectorSearchConfiguration unmarshalledObject = new KnowledgeBaseVectorSearchConfiguration();
+            VectorSearchBedrockRerankingConfiguration unmarshalledObject = new VectorSearchBedrockRerankingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,22 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("filter", targetDepth))
+                if (context.TestExpression("metadataConfiguration", targetDepth))
                 {
-                    var unmarshaller = RetrievalFilterUnmarshaller.Instance;
-                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = MetadataConfigurationForRerankingUnmarshaller.Instance;
+                    unmarshalledObject.MetadataConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("implicitFilterConfiguration", targetDepth))
+                if (context.TestExpression("modelConfiguration", targetDepth))
                 {
-                    var unmarshaller = ImplicitFilterConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ImplicitFilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = VectorSearchBedrockRerankingModelConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ModelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfResults", targetDepth))
+                if (context.TestExpression("numberOfRerankedResults", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfResults = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("overrideSearchType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OverrideSearchType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("rerankingConfiguration", targetDepth))
-                {
-                    var unmarshaller = VectorSearchRerankingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RerankingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.NumberOfRerankedResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +79,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static KnowledgeBaseVectorSearchConfigurationUnmarshaller _instance = new KnowledgeBaseVectorSearchConfigurationUnmarshaller();        
+        private static VectorSearchBedrockRerankingConfigurationUnmarshaller _instance = new VectorSearchBedrockRerankingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KnowledgeBaseVectorSearchConfigurationUnmarshaller Instance
+        public static VectorSearchBedrockRerankingConfigurationUnmarshaller Instance
         {
             get
             {
