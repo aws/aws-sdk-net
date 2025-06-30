@@ -146,7 +146,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// to this operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string QueryDefinitionId
         {
             get { return this._queryDefinitionId; }

@@ -55,7 +55,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// to retrieve the IDs of your saved query definitions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string QueryDefinitionId
         {
             get { return this._queryDefinitionId; }
