@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class SheetTextBox
     {
         private string _content;
+        private TextBoxInteractionOptions _interactions;
         private string _sheetTextBoxId;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interactions. 
+        /// <para>
+        /// The general textbox interactions setup for a textbox.
+        /// </para>
+        /// </summary>
+        public TextBoxInteractionOptions Interactions
+        {
+            get { return this._interactions; }
+            set { this._interactions = value; }
+        }
+
+        // Check to see if Interactions property is set
+        internal bool IsSetInteractions()
+        {
+            return this._interactions != null;
         }
 
         /// <summary>

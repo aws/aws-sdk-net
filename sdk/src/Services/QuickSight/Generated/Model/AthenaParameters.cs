@@ -34,8 +34,33 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AthenaParameters
     {
+        private IdentityCenterConfiguration _identityCenterConfiguration;
         private string _roleArn;
         private string _workGroup;
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterConfiguration. 
+        /// <para>
+        /// An optional parameter that configures IAM Identity Center authentication to grant
+        /// Amazon QuickSight access to your workgroup.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter can only be specified if your Amazon QuickSight account is configured
+        /// with IAM Identity Center.
+        /// </para>
+        /// </summary>
+        public IdentityCenterConfiguration IdentityCenterConfiguration
+        {
+            get { return this._identityCenterConfiguration; }
+            set { this._identityCenterConfiguration = value; }
+        }
+
+        // Check to see if IdentityCenterConfiguration property is set
+        internal bool IsSetIdentityCenterConfiguration()
+        {
+            return this._identityCenterConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 

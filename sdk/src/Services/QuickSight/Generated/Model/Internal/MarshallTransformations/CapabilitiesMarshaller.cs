@@ -102,10 +102,46 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExportToCsv);
             }
 
+            if(requestObject.IsSetExportToCsvInScheduledReports())
+            {
+                context.Writer.WritePropertyName("ExportToCsvInScheduledReports");
+                context.Writer.Write(requestObject.ExportToCsvInScheduledReports);
+            }
+
             if(requestObject.IsSetExportToExcel())
             {
                 context.Writer.WritePropertyName("ExportToExcel");
                 context.Writer.Write(requestObject.ExportToExcel);
+            }
+
+            if(requestObject.IsSetExportToExcelInScheduledReports())
+            {
+                context.Writer.WritePropertyName("ExportToExcelInScheduledReports");
+                context.Writer.Write(requestObject.ExportToExcelInScheduledReports);
+            }
+
+            if(requestObject.IsSetExportToPdf())
+            {
+                context.Writer.WritePropertyName("ExportToPdf");
+                context.Writer.Write(requestObject.ExportToPdf);
+            }
+
+            if(requestObject.IsSetExportToPdfInScheduledReports())
+            {
+                context.Writer.WritePropertyName("ExportToPdfInScheduledReports");
+                context.Writer.Write(requestObject.ExportToPdfInScheduledReports);
+            }
+
+            if(requestObject.IsSetIncludeContentInScheduledReportsEmail())
+            {
+                context.Writer.WritePropertyName("IncludeContentInScheduledReportsEmail");
+                context.Writer.Write(requestObject.IncludeContentInScheduledReportsEmail);
+            }
+
+            if(requestObject.IsSetPrintReports())
+            {
+                context.Writer.WritePropertyName("PrintReports");
+                context.Writer.Write(requestObject.PrintReports);
             }
 
             if(requestObject.IsSetRenameSharedFolders())
