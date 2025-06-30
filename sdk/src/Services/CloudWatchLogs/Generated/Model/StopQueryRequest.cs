@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The ID number of the query to stop. To find this ID number, use <c>DescribeQueries</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string QueryId
         {
             get { return this._queryId; }

@@ -86,7 +86,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The unique ID number of this query.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string QueryId
         {
             get { return this._queryId; }
