@@ -32,7 +32,7 @@ namespace Amazon.Rekognition
     public partial class AmazonRekognitionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Rekognition", "3.7.401.8");
+            InternalSDKUtils.BuildUserAgentString("Rekognition", "3.7.401.9");
 
         private string _userAgent = UserAgentString;
         ///<summary>
