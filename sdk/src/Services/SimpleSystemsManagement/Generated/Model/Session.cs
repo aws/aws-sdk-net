@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class Session
     {
+        private AccessType _accessType;
         private string _details;
         private string _documentName;
         private DateTime? _endDate;
@@ -45,6 +46,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _startDate;
         private SessionStatus _status;
         private string _target;
+
+        /// <summary>
+        /// Gets and sets the property AccessType. 
+        /// <para>
+        ///  <c>Standard</c> access type is the default for Session Manager sessions. <c>JustInTime</c>
+        /// is the access type for <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-just-in-time-node-access.html">Just-in-time
+        /// node access</a>. 
+        /// </para>
+        /// </summary>
+        public AccessType AccessType
+        {
+            get { return this._accessType; }
+            set { this._accessType = value; }
+        }
+
+        // Check to see if AccessType property is set
+        internal bool IsSetAccessType()
+        {
+            return this._accessType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Details. 

@@ -66,6 +66,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccessType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccessType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Details", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

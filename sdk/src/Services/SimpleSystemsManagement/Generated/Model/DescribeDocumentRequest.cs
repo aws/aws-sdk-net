@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates DescribeDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the SSM document. <note> If you're calling a shared SSM document from a different Amazon Web Services account, <c>Name</c> is the full Amazon Resource Name (ARN) of the document. </note></param>
         public DescribeDocumentRequest(string name)
         {
             _name = name;
@@ -77,6 +77,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The name of the SSM document.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're calling a shared SSM document from a different Amazon Web Services account,
+        /// <c>Name</c> is the full Amazon Resource Name (ARN) of the document.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name

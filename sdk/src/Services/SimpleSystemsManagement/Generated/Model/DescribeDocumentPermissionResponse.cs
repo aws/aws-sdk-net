@@ -42,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// The account IDs that have permission to use this document. The ID can be either an
-        /// Amazon Web Services account or <i>All</i>.
+        /// Amazon Web Services account number or <c>all</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
