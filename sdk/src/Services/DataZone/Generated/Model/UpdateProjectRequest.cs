@@ -37,6 +37,7 @@ namespace Amazon.DataZone.Model
     {
         private string _description;
         private string _domainIdentifier;
+        private string _domainUnitId;
         private EnvironmentDeploymentDetails _environmentDeploymentDetails;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
@@ -80,6 +81,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainIdentifier()
         {
             return this._domainIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainUnitId. 
+        /// <para>
+        /// The ID of the domain unit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string DomainUnitId
+        {
+            get { return this._domainUnitId; }
+            set { this._domainUnitId = value; }
+        }
+
+        // Check to see if DomainUnitId property is set
+        internal bool IsSetDomainUnitId()
+        {
+            return this._domainUnitId != null;
         }
 
         /// <summary>
