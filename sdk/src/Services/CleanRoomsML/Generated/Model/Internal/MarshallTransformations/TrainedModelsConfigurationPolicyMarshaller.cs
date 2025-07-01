@@ -73,6 +73,17 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMaxArtifactSize())
+            {
+                context.Writer.WritePropertyName("maxArtifactSize");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TrainedModelArtifactMaxSizeMarshaller.Instance;
+                marshaller.Marshall(requestObject.MaxArtifactSize, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -68,7 +68,11 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTrainedModelArn())
                 throw new AmazonCleanRoomsMLException("Request object does not have required field TrainedModelArn set");
             request.AddPathResource("{trainedModelArn}", StringUtils.FromString(publicRequest.TrainedModelArn));
+            
+            if (publicRequest.IsSetVersionIdentifier())
+                request.Parameters.Add("versionIdentifier", StringUtils.FromString(publicRequest.VersionIdentifier));
             request.ResourcePath = "/memberships/{membershipIdentifier}/trained-models/{trainedModelArn}";
+            request.UseQueryString = true;
 
             return request;
         }

@@ -102,6 +102,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetTrainedModelVersionIdentifier())
+            {
+                context.Writer.WritePropertyName("trainedModelVersionIdentifier");
+                context.Writer.WriteStringValue(publicRequest.TrainedModelVersionIdentifier);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

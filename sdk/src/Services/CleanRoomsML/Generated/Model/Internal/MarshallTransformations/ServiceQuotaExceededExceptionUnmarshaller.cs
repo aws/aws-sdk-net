@@ -72,6 +72,18 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
+                    if (context.TestExpression("quotaName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.QuotaName = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                    if (context.TestExpression("quotaValue", targetDepth))
+                    {
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                        unmarshalledObject.QuotaValue = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

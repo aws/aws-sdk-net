@@ -39,6 +39,7 @@ namespace Amazon.CleanRoomsML.Model
         private DateTime? _createTime;
         private string _creatorAccountId;
         private string _description;
+        private List<IncrementalTrainingDataChannelOutput> _incrementalTrainingDataChannels = AWSConfigs.InitializeCollections ? new List<IncrementalTrainingDataChannelOutput>() : null;
         private LogsStatus _logsStatus;
         private string _logsStatusDetails;
         private string _membershipIdentifier;
@@ -51,7 +52,9 @@ namespace Amazon.CleanRoomsML.Model
         private StoppingCondition _stoppingCondition;
         private string _trainedModelArn;
         private string _trainingContainerImageDigest;
+        private TrainingInputMode _trainingInputMode;
         private DateTime? _updateTime;
+        private string _versionIdentifier;
 
         /// <summary>
         /// Gets and sets the property CollaborationIdentifier. 
@@ -147,6 +150,32 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncrementalTrainingDataChannels. 
+        /// <para>
+        /// Information about the incremental training data channels used to create this version
+        /// of the trained model. This includes details about the base model that was used for
+        /// incremental training and the channel configuration.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<IncrementalTrainingDataChannelOutput> IncrementalTrainingDataChannels
+        {
+            get { return this._incrementalTrainingDataChannels; }
+            set { this._incrementalTrainingDataChannels = value; }
+        }
+
+        // Check to see if IncrementalTrainingDataChannels property is set
+        internal bool IsSetIncrementalTrainingDataChannels()
+        {
+            return this._incrementalTrainingDataChannels != null && (this._incrementalTrainingDataChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -367,6 +396,26 @@ namespace Amazon.CleanRoomsML.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TrainingInputMode. 
+        /// <para>
+        /// The input mode that was used for accessing the training data when this trained model
+        /// was created. This indicates how the training data was made available to the training
+        /// algorithm.
+        /// </para>
+        /// </summary>
+        public TrainingInputMode TrainingInputMode
+        {
+            get { return this._trainingInputMode; }
+            set { this._trainingInputMode = value; }
+        }
+
+        // Check to see if TrainingInputMode property is set
+        internal bool IsSetTrainingInputMode()
+        {
+            return this._trainingInputMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
         /// The most recent time at which the trained model was updated.
@@ -383,6 +432,26 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetUpdateTime()
         {
             return this._updateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionIdentifier. 
+        /// <para>
+        /// The version identifier of the trained model. This unique identifier distinguishes
+        /// this version from other versions of the same trained model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string VersionIdentifier
+        {
+            get { return this._versionIdentifier; }
+            set { this._versionIdentifier = value; }
+        }
+
+        // Check to see if VersionIdentifier property is set
+        internal bool IsSetVersionIdentifier()
+        {
+            return this._versionIdentifier != null;
         }
 
     }

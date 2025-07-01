@@ -58,6 +58,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.MlInputChannelArn);
             }
 
+            if(requestObject.IsSetS3DataDistributionType())
+            {
+                context.Writer.WritePropertyName("s3DataDistributionType");
+                context.Writer.WriteStringValue(requestObject.S3DataDistributionType);
+            }
+
         }
 
         /// <summary>

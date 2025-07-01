@@ -36,6 +36,7 @@ namespace Amazon.CleanRoomsML.Model
     {
         private List<LogsConfigurationPolicy> _containerLogs = AWSConfigs.InitializeCollections ? new List<LogsConfigurationPolicy>() : null;
         private MetricsConfigurationPolicy _containerMetrics;
+        private TrainedModelArtifactMaxSize _maxArtifactSize;
 
         /// <summary>
         /// Gets and sets the property ContainerLogs. 
@@ -77,6 +78,26 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetContainerMetrics()
         {
             return this._containerMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxArtifactSize. 
+        /// <para>
+        /// The maximum size limit for trained model artifacts as defined in the configuration
+        /// policy. This setting helps enforce consistent size limits across trained models in
+        /// the collaboration.
+        /// </para>
+        /// </summary>
+        public TrainedModelArtifactMaxSize MaxArtifactSize
+        {
+            get { return this._maxArtifactSize; }
+            set { this._maxArtifactSize = value; }
+        }
+
+        // Check to see if MaxArtifactSize property is set
+        internal bool IsSetMaxArtifactSize()
+        {
+            return this._maxArtifactSize != null;
         }
 
     }
