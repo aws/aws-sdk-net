@@ -668,6 +668,75 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  CreateChatResponseConfiguration
+
+
+        /// <summary>
+        /// Creates a new chat response configuration for an Amazon Q Business application. This
+        /// operation establishes a set of parameters that define how the system generates and
+        /// formats responses to user queries in chat interactions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChatResponseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateChatResponseConfiguration">REST API Reference for CreateChatResponseConfiguration Operation</seealso>
+        CreateChatResponseConfigurationResponse CreateChatResponseConfiguration(CreateChatResponseConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChatResponseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChatResponseConfiguration operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChatResponseConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateChatResponseConfiguration">REST API Reference for CreateChatResponseConfiguration Operation</seealso>
+        IAsyncResult BeginCreateChatResponseConfiguration(CreateChatResponseConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateChatResponseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateChatResponseConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateChatResponseConfigurationResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateChatResponseConfiguration">REST API Reference for CreateChatResponseConfiguration Operation</seealso>
+        CreateChatResponseConfigurationResponse EndCreateChatResponseConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDataAccessor
 
 
@@ -1421,6 +1490,70 @@ namespace Amazon.QBusiness
         /// <returns>Returns a  DeleteChatControlsConfigurationResult from QBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatControlsConfiguration">REST API Reference for DeleteChatControlsConfiguration Operation</seealso>
         DeleteChatControlsConfigurationResponse EndDeleteChatControlsConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteChatResponseConfiguration
+
+
+        /// <summary>
+        /// Deletes a specified chat response configuration from an Amazon Q Business application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChatResponseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatResponseConfiguration">REST API Reference for DeleteChatResponseConfiguration Operation</seealso>
+        DeleteChatResponseConfigurationResponse DeleteChatResponseConfiguration(DeleteChatResponseConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChatResponseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChatResponseConfiguration operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChatResponseConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatResponseConfiguration">REST API Reference for DeleteChatResponseConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteChatResponseConfiguration(DeleteChatResponseConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChatResponseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChatResponseConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteChatResponseConfigurationResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatResponseConfiguration">REST API Reference for DeleteChatResponseConfiguration Operation</seealso>
+        DeleteChatResponseConfigurationResponse EndDeleteChatResponseConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2202,6 +2335,68 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  GetChatResponseConfiguration
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific chat response configuration from an
+        /// Amazon Q Business application. This operation returns the complete configuration settings
+        /// and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChatResponseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatResponseConfiguration">REST API Reference for GetChatResponseConfiguration Operation</seealso>
+        GetChatResponseConfigurationResponse GetChatResponseConfiguration(GetChatResponseConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChatResponseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChatResponseConfiguration operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChatResponseConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatResponseConfiguration">REST API Reference for GetChatResponseConfiguration Operation</seealso>
+        IAsyncResult BeginGetChatResponseConfiguration(GetChatResponseConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChatResponseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChatResponseConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetChatResponseConfigurationResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatResponseConfiguration">REST API Reference for GetChatResponseConfiguration Operation</seealso>
+        GetChatResponseConfigurationResponse EndGetChatResponseConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDataAccessor
 
 
@@ -2959,6 +3154,68 @@ namespace Amazon.QBusiness
         /// <returns>Returns a  ListAttachmentsResult from QBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
         ListAttachmentsResponse EndListAttachments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChatResponseConfigurations
+
+
+        /// <summary>
+        /// Retrieves a list of all chat response configurations available in a specified Amazon
+        /// Q Business application. This operation returns summary information about each configuration
+        /// to help administrators manage and select appropriate response settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChatResponseConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListChatResponseConfigurations service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListChatResponseConfigurations">REST API Reference for ListChatResponseConfigurations Operation</seealso>
+        ListChatResponseConfigurationsResponse ListChatResponseConfigurations(ListChatResponseConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChatResponseConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChatResponseConfigurations operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChatResponseConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListChatResponseConfigurations">REST API Reference for ListChatResponseConfigurations Operation</seealso>
+        IAsyncResult BeginListChatResponseConfigurations(ListChatResponseConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChatResponseConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChatResponseConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListChatResponseConfigurationsResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListChatResponseConfigurations">REST API Reference for ListChatResponseConfigurations Operation</seealso>
+        ListChatResponseConfigurationsResponse EndListChatResponseConfigurations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4552,6 +4809,72 @@ namespace Amazon.QBusiness
         /// <returns>Returns a  UpdateChatControlsConfigurationResult from QBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatControlsConfiguration">REST API Reference for UpdateChatControlsConfiguration Operation</seealso>
         UpdateChatControlsConfigurationResponse EndUpdateChatControlsConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateChatResponseConfiguration
+
+
+        /// <summary>
+        /// Updates an existing chat response configuration in an Amazon Q Business application.
+        /// This operation allows administrators to modify configuration settings, display name,
+        /// and response parameters to refine how the system generates responses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChatResponseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatResponseConfiguration">REST API Reference for UpdateChatResponseConfiguration Operation</seealso>
+        UpdateChatResponseConfigurationResponse UpdateChatResponseConfiguration(UpdateChatResponseConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChatResponseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChatResponseConfiguration operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateChatResponseConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatResponseConfiguration">REST API Reference for UpdateChatResponseConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateChatResponseConfiguration(UpdateChatResponseConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateChatResponseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateChatResponseConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateChatResponseConfigurationResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatResponseConfiguration">REST API Reference for UpdateChatResponseConfiguration Operation</seealso>
+        UpdateChatResponseConfigurationResponse EndUpdateChatResponseConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

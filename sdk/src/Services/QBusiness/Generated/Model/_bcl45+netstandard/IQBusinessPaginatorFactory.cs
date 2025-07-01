@@ -58,6 +58,16 @@ namespace Amazon.QBusiness.Model
         IListAttachmentsPaginator ListAttachments(ListAttachmentsRequest request);
 
         /// <summary>
+        /// Paginator for ListChatResponseConfigurations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListChatResponseConfigurationsPaginator ListChatResponseConfigurations(ListChatResponseConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListConversations operation
         ///</summary>
         [AWSPaginator(

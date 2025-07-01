@@ -32,6 +32,13 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Provides information on boosting <c>STRING_LIST</c> type document attributes.
     /// 
+    ///  
+    /// <para>
+    /// In the current boosting implementation, boosting focuses primarily on <c>DATE</c>
+    /// attributes for recency and <c>STRING</c> attributes for source prioritization. <c>STRING_LIST</c>
+    /// attributes can serve as additional boosting factors when needed, but are not supported
+    /// when using <c>NativeIndexConfiguration</c> version 2.
+    /// </para>
     ///  <note> 
     /// <para>
     /// For <c>STRING</c> and <c>STRING_LIST</c> type document attributes to be used for boosting
@@ -54,7 +61,11 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property BoostingLevel. 
         /// <para>
-        /// Specifies how much a document attribute is boosted.
+        /// Specifies the priority of boosted document attributes in relation to other boosted
+        /// attributes. This parameter determines how strongly the attribute influences document
+        /// ranking in search results. <c>STRING_LIST</c> attributes can serve as additional boosting
+        /// factors when needed, but are not supported when using <c>NativeIndexConfiguration</c>
+        /// version 2.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NativeIndexConfiguration Object
+    /// Response Unmarshaller for ResponseConfiguration Object
     /// </summary>  
-    public class NativeIndexConfigurationUnmarshaller : IUnmarshaller<NativeIndexConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NativeIndexConfiguration, JsonUnmarshallerContext>
+    public class ResponseConfigurationUnmarshaller : IUnmarshaller<ResponseConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ResponseConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NativeIndexConfiguration IUnmarshaller<NativeIndexConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResponseConfiguration IUnmarshaller<ResponseConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public NativeIndexConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ResponseConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            NativeIndexConfiguration unmarshalledObject = new NativeIndexConfiguration();
+            ResponseConfiguration unmarshalledObject = new ResponseConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("boostingOverride", targetDepth))
+                if (context.TestExpression("instructionCollection", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, DocumentAttributeBoostingConfiguration, StringUnmarshaller, DocumentAttributeBoostingConfigurationUnmarshaller>(StringUnmarshaller.Instance, DocumentAttributeBoostingConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.BoostingOverride = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("indexId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("version", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InstructionCollectionUnmarshaller.Instance;
+                    unmarshalledObject.InstructionCollection = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static NativeIndexConfigurationUnmarshaller _instance = new NativeIndexConfigurationUnmarshaller();        
+        private static ResponseConfigurationUnmarshaller _instance = new ResponseConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NativeIndexConfigurationUnmarshaller Instance
+        public static ResponseConfigurationUnmarshaller Instance
         {
             get
             {
