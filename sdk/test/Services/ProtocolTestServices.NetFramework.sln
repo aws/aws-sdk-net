@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.Net45", "..\..\src\Core\AWSSDK.Core.Net45.csproj", "{DEB7558F-8951-4798-8B43-0CBAE1578D61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.NetFramework", "..\..\src\Core\AWSSDK.Core.NetFramework.csproj", "{DEB7558F-8951-4798-8B43-0CBAE1578D61}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2Protocol.Net45", "EC2Protocol\AWSSDK.EC2Protocol.Net45.csproj", "{7245C0FC-DC66-4FB0-B3A1-9F9F4655843F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EC2Protocol.NetFramework", "EC2Protocol\AWSSDK.EC2Protocol.NetFramework.csproj", "{7245C0FC-DC66-4FB0-B3A1-9F9F4655843F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.JsonProtocol.Net45", "JsonProtocol\AWSSDK.JsonProtocol.Net45.csproj", "{174FFB1B-BD05-468E-A878-4D032213CF14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.JsonProtocol.NetFramework", "JsonProtocol\AWSSDK.JsonProtocol.NetFramework.csproj", "{174FFB1B-BD05-468E-A878-4D032213CF14}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.JSONRPC10.Net45", "JSONRPC10\AWSSDK.JSONRPC10.Net45.csproj", "{9031CD7F-05C9-409D-8F0A-D5912CF07274}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.JSONRPC10.NetFramework", "JSONRPC10\AWSSDK.JSONRPC10.NetFramework.csproj", "{9031CD7F-05C9-409D-8F0A-D5912CF07274}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QueryProtocol.Net45", "QueryProtocol\AWSSDK.QueryProtocol.Net45.csproj", "{60B1700F-ABDD-4FA5-A933-59641EBDD4BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.QueryProtocol.NetFramework", "QueryProtocol\AWSSDK.QueryProtocol.NetFramework.csproj", "{60B1700F-ABDD-4FA5-A933-59641EBDD4BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestJsonProtocol.Net45", "RestJsonProtocol\AWSSDK.RestJsonProtocol.Net45.csproj", "{E286B6C2-35FB-4A2A-95DA-9CF6DB635212}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestJsonProtocol.NetFramework", "RestJsonProtocol\AWSSDK.RestJsonProtocol.NetFramework.csproj", "{E286B6C2-35FB-4A2A-95DA-9CF6DB635212}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestXmlProtocol.Net45", "RestXmlProtocol\AWSSDK.RestXmlProtocol.Net45.csproj", "{F2784555-5671-4298-8AA8-5B138E3F20E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestXmlProtocol.NetFramework", "RestXmlProtocol\AWSSDK.RestXmlProtocol.NetFramework.csproj", "{F2784555-5671-4298-8AA8-5B138E3F20E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestXmlProtocolNamespace.Net45", "RestXmlProtocolNamespace\AWSSDK.RestXmlProtocolNamespace.Net45.csproj", "{EB946AFC-3C70-4962-86D5-1DE56106531F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.RestXmlProtocolNamespace.NetFramework", "RestXmlProtocolNamespace\AWSSDK.RestXmlProtocolNamespace.NetFramework.csproj", "{EB946AFC-3C70-4962-86D5-1DE56106531F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

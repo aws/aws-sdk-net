@@ -384,17 +384,11 @@ namespace Amazon.Runtime.Internal.Util
             }
             // See https://datatracker.ietf.org/doc/html/rfc7231.html#section-7.1.1.1
             // FromDateTimeToRFC822 is compatible with IMF-fixdate
-#if NET35
-            else if (typeof(T) == typeof(DateTime))
-            {
-                return string.Join(",", values?.Select(x => FromDateTimeToRFC822((DateTime)(object)x)).ToArray());
-            }
-#else
             else if (typeof(T) == typeof(DateTime))
             {
                 return string.Join(",", values?.Select(x => FromDateTimeToRFC822((DateTime)(object)x)));
             }
-#endif
+
             return FromList(values?.Select(x => x.ToString()));
         }
 

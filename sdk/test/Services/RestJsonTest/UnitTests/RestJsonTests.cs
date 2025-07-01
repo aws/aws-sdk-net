@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace AWSSDK.UnitTests.RestJsonTest.Net35
+namespace AWSSDK.UnitTests.RestJsonTest
 {
     [TestClass]
     public class RestJsonTests

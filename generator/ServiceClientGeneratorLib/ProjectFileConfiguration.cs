@@ -159,8 +159,8 @@ namespace ServiceClientGenerator
         public IEnumerable<ProjectFileCreator.PackageReference> PackageReferences { get; private set; }
 
         /// <summary>
-        /// Specify where the framework binaries are.  For net35 in vs2017 project, this is needed
-        /// to work around https://github.com/Microsoft/msbuild/issues/1333
+        /// Specify where the framework binaries are.  This was last needed for net35 in vs2017 project
+        /// to work around https://github.com/Microsoft/msbuild/issues/1333 when the target was in use.
         /// </summary>
         public string FrameworkPathOverride { get; private set; }
 
