@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NativeIndexConfiguration Marshaller
+    /// ResponseConfiguration Marshaller
     /// </summary>
-    public class NativeIndexConfigurationMarshaller : IRequestMarshaller<NativeIndexConfiguration, JsonMarshallerContext> 
+    public class ResponseConfigurationMarshaller : IRequestMarshaller<ResponseConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +42,19 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NativeIndexConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ResponseConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBoostingOverride())
+            if(requestObject.IsSetInstructionCollection())
             {
-                context.Writer.WritePropertyName("boostingOverride");
+                context.Writer.WritePropertyName("instructionCollection");
                 context.Writer.WriteStartObject();
-                foreach (var requestObjectBoostingOverrideKvp in requestObject.BoostingOverride)
-                {
-                    context.Writer.WritePropertyName(requestObjectBoostingOverrideKvp.Key);
-                    var requestObjectBoostingOverrideValue = requestObjectBoostingOverrideKvp.Value;
 
-                    context.Writer.WriteStartObject();
+                var marshaller = InstructionCollectionMarshaller.Instance;
+                marshaller.Marshall(requestObject.InstructionCollection, context);
 
-                    var marshaller = DocumentAttributeBoostingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(requestObjectBoostingOverrideValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
                 context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetIndexId())
-            {
-                context.Writer.WritePropertyName("indexId");
-                context.Writer.WriteStringValue(requestObject.IndexId);
-            }
-
-            if(requestObject.IsSetVersion())
-            {
-                context.Writer.WritePropertyName("version");
-                context.Writer.WriteNumberValue(requestObject.Version.Value);
             }
 
         }
@@ -82,7 +62,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static NativeIndexConfigurationMarshaller Instance = new NativeIndexConfigurationMarshaller();
+        public readonly static ResponseConfigurationMarshaller Instance = new ResponseConfigurationMarshaller();
 
     }
 }

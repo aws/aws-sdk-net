@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NativeIndexConfiguration Object
+    /// Response Unmarshaller for ChatResponseConfigurationDetail Object
     /// </summary>  
-    public class NativeIndexConfigurationUnmarshaller : IJsonUnmarshaller<NativeIndexConfiguration, JsonUnmarshallerContext>
+    public class ChatResponseConfigurationDetailUnmarshaller : IJsonUnmarshaller<ChatResponseConfigurationDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NativeIndexConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ChatResponseConfigurationDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            NativeIndexConfiguration unmarshalledObject = new NativeIndexConfiguration();
+            ChatResponseConfigurationDetail unmarshalledObject = new ChatResponseConfigurationDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,34 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("boostingOverride", targetDepth))
+                if (context.TestExpression("error", targetDepth))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, DocumentAttributeBoostingConfiguration, StringUnmarshaller, DocumentAttributeBoostingConfigurationUnmarshaller>(StringUnmarshaller.Instance, DocumentAttributeBoostingConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.BoostingOverride = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ErrorDetailUnmarshaller.Instance;
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("indexId", targetDepth))
+                if (context.TestExpression("responseConfigurations", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, ResponseConfiguration, StringUnmarshaller, ResponseConfigurationUnmarshaller>(StringUnmarshaller.Instance, ResponseConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ResponseConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("responseConfigurationSummary", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ResponseConfigurationSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("updatedAt", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +91,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static NativeIndexConfigurationUnmarshaller _instance = new NativeIndexConfigurationUnmarshaller();        
+        private static ChatResponseConfigurationDetailUnmarshaller _instance = new ChatResponseConfigurationDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NativeIndexConfigurationUnmarshaller Instance
+        public static ChatResponseConfigurationDetailUnmarshaller Instance
         {
             get
             {

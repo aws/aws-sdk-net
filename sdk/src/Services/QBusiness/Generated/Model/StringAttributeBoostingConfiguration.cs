@@ -56,6 +56,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property AttributeValueBoosting. 
         /// <para>
         /// Specifies specific values of a <c>STRING</c> type document attribute being boosted.
+        /// When using <c>NativeIndexConfiguration</c> version 2, you can specify up to five values
+        /// in order of priority.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -79,7 +81,13 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property BoostingLevel. 
         /// <para>
-        /// Specifies how much a document attribute is boosted.
+        /// Specifies the priority tier ranking of boosting applied to document attributes. For
+        /// version 2, this parameter indicates the relative ranking between boosted fields (ONE
+        /// being highest priority, TWO being second highest, etc.) and determines the order in
+        /// which attributes influence document ranking in search results. For version 1, this
+        /// parameter specifies the boosting intensity. For version 2, boosting intensity (VERY
+        /// HIGH, HIGH, MEDIUM, LOW, NONE) are not supported. Note that in version 2, you are
+        /// not allowed to boost on only one field and make this value TWO.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

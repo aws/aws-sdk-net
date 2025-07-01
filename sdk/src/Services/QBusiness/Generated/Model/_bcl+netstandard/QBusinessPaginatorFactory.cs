@@ -61,6 +61,14 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Paginator for ListChatResponseConfigurations operation
+        ///</summary>
+        public IListChatResponseConfigurationsPaginator ListChatResponseConfigurations(ListChatResponseConfigurationsRequest request) 
+        {
+            return new ListChatResponseConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListConversations operation
         ///</summary>
         public IListConversationsPaginator ListConversations(ListConversationsRequest request) 
