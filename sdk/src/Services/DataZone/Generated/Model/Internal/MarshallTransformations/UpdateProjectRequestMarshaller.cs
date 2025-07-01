@@ -85,6 +85,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetDomainUnitId())
+            {
+                context.Writer.WritePropertyName("domainUnitId");
+                context.Writer.WriteStringValue(publicRequest.DomainUnitId);
+            }
+
             if(publicRequest.IsSetEnvironmentDeploymentDetails())
             {
                 context.Writer.WritePropertyName("environmentDeploymentDetails");
