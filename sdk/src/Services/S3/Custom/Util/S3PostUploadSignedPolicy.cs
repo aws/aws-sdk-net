@@ -268,7 +268,7 @@ namespace Amazon.S3.Util
         /// <returns>XML String</returns>
 #if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
-   Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+   Justification = "This suppression is here to ignore the warnings since we haev not made this function AOT compatible yet.")]
 
 #endif
         public string ToXml()
@@ -289,7 +289,7 @@ namespace Amazon.S3.Util
         /// <returns>Instance of S3PostUploadSignedPolicy</returns>
 #if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
-   Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+   Justification = "This suppression is here to ignore the warnings since we haev not made this function AOT compatible yet.")]
 
 #endif
         public static S3PostUploadSignedPolicy GetSignedPolicyFromXml(string policyXml)
