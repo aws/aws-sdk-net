@@ -1,3 +1,23 @@
+### 3.7.1075.0 (2025-07-01 18:21 UTC)
+* CleanRoomsML (3.7.403.0)
+	* This release introduces support for incremental training and distributed training for custom models in AWS Clean Rooms ML.
+* DataZone (3.7.414.0)
+	* Add support for the new optional domain-unit-id parameter in the UpdateProject API.
+* EC2 (3.7.454.0)
+	* Add Context to GetInstanceTypesFromInstanceRequirements API
+* Odb (3.7.400.0)
+	* This release adds API operations for Oracle Database@AWS. You can use the APIs to create Exadata infrastructure, ODB networks, and Exadata and Autonomous VM clusters inside AWS data centers. The infrastructure is managed by OCI. You can integrate these resources with AWS services.
+* QBusiness (3.7.416.0)
+	* New ChatResponseConfiguration to Customize Q Business chat responses for specific use cases and communication needs. Updated Boosting capability allowing admins to provide preference on date attributes for recency and/or provide a preferred data source.
+* RDS (3.7.415.2)
+	* Amazon RDS Custom for Oracle now supports multi-AZ database instances.
+* SageMaker (3.7.447.0)
+	* Updated field validation requirements for InstanceGroups.
+* Core 3.7.402.78
+	* Update to consume latest protocol tests (1.60.3). Add query compatible protocol tests.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1074.0 (2025-06-30 18:38 UTC)
 * ARCZonalShift (3.7.403.0)
 	* Added support for on-demand practice runs and balanced capacity checks in ARC autoshift practice.
