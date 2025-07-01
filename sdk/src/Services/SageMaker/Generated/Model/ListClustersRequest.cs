@@ -118,7 +118,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Set the maximum number of SageMaker HyperPod clusters to list.
+        /// Specifies the maximum number of clusters to evaluate for the operation (not necessarily
+        /// the number of matching items). After SageMaker processes the number of clusters up
+        /// to <c>MaxResults</c>, it stops the operation and returns the matching clusters up
+        /// to that point. If all the matching clusters are desired, SageMaker will go through
+        /// all the clusters until <c>NextToken</c> is empty.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

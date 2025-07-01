@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// The instance groups to be created in the SageMaker HyperPod cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public List<ClusterInstanceGroupSpecification> InstanceGroups
         {
             get { return this._instanceGroups; }

@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// Specify the instance groups to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public List<ClusterInstanceGroupSpecification> InstanceGroups
         {
             get { return this._instanceGroups; }
