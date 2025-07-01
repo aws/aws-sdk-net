@@ -26,9 +26,9 @@ cd ProtocolTestsGenerator
 ```
 3. The protocol tests will be outputted to the `sdk/test/ProtocolTests/Generated/<ProtocolName>/dotnet-protocol-test-codegen` folder.
 
-4. To run the tests you can open the AWSSDK.ProtocolTests.Net45.sln and run the tests in Visual Studio or run the following command in the `sdk/test/ProtocolTests` directory.
+4. To run the tests you can open the AWSSDK.ProtocolTests.NetFramework.sln and run the tests in Visual Studio or run the following command in the `sdk/test/ProtocolTests` directory.
 ```
-dotnet test AWSSDK.ProtocolTests.Net45.csproj
+dotnet test AWSSDK.ProtocolTests.NetFramework.csproj
 ```
 
 ## Debugging Protocol Tests
