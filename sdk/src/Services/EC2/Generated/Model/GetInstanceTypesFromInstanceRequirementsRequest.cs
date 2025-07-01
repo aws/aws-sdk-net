@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
     public partial class GetInstanceTypesFromInstanceRequirementsRequest : AmazonEC2Request
     {
         private List<string> _architectureTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _context;
         private InstanceRequirementsRequest _instanceRequirements;
         private int? _maxResults;
         private string _nextToken;
@@ -76,6 +77,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetArchitectureTypes()
         {
             return this._architectureTypes != null && (this._architectureTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
         }
 
         /// <summary>

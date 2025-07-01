@@ -68,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetContext())
+                {
+                    request.Parameters.Add("Context", StringUtils.FromString(publicRequest.Context));
+                }
                 if(publicRequest.IsSetInstanceRequirements())
                 {
                     if(publicRequest.InstanceRequirements.IsSetAcceleratorCount())
