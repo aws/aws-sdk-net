@@ -74,6 +74,13 @@ Create additional files/folders within memory-bank/ when they help organize:
    - Core and service section specifications
    - Version numbering and handling
 
+8. `dualSupport.md`
+   - GitHub branch structure for V3/V4 support
+   - Issue and PR management across versions
+   - Branch naming conventions
+   - Build system considerations
+   - Developer guidelines for dual version support
+
 ## Core Workflows
 
 ### Plan Mode
