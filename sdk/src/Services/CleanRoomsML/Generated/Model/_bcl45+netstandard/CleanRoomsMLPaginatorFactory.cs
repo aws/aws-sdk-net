@@ -149,6 +149,14 @@ namespace Amazon.CleanRoomsML.Model
         }
 
         /// <summary>
+        /// Paginator for ListTrainedModelVersions operation
+        ///</summary>
+        public IListTrainedModelVersionsPaginator ListTrainedModelVersions(ListTrainedModelVersionsRequest request) 
+        {
+            return new ListTrainedModelVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTrainingDatasets operation
         ///</summary>
         public IListTrainingDatasetsPaginator ListTrainingDatasets(ListTrainingDatasetsRequest request) 

@@ -71,6 +71,9 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetTrainedModelVersionIdentifier())
+                request.Parameters.Add("trainedModelVersionIdentifier", StringUtils.FromString(publicRequest.TrainedModelVersionIdentifier));
             request.ResourcePath = "/collaborations/{collaborationIdentifier}/trained-models/{trainedModelArn}/export-jobs";
             request.UseQueryString = true;
 

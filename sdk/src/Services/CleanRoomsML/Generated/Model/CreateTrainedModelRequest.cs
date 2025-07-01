@@ -41,12 +41,14 @@ namespace Amazon.CleanRoomsML.Model
         private string _description;
         private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Dictionary<string, string> _hyperparameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<IncrementalTrainingDataChannel> _incrementalTrainingDataChannels = AWSConfigs.InitializeCollections ? new List<IncrementalTrainingDataChannel>() : null;
         private string _kmsKeyArn;
         private string _membershipIdentifier;
         private string _name;
         private ResourceConfig _resourceConfig;
         private StoppingCondition _stoppingCondition;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TrainingInputMode _trainingInputMode;
 
         /// <summary>
         /// Gets and sets the property ConfiguredModelAlgorithmAssociationArn. 
@@ -71,6 +73,10 @@ namespace Amazon.CleanRoomsML.Model
         /// Gets and sets the property DataChannels. 
         /// <para>
         /// Defines the data channels that are used as input for the trained model request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Limit: Maximum of 20 channels total (including both <c>dataChannels</c> and <c>incrementalTrainingDataChannels</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -142,6 +148,36 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetHyperparameters()
         {
             return this._hyperparameters != null && (this._hyperparameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncrementalTrainingDataChannels. 
+        /// <para>
+        /// Specifies the incremental training data channels for the trained model. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Incremental training allows you to create a new trained model with updates without
+        /// retraining from scratch. You can specify up to one incremental training data channel
+        /// that references a previously trained model and its version.
+        /// </para>
+        ///  
+        /// <para>
+        /// Limit: Maximum of 20 channels total (including both <c>incrementalTrainingDataChannels</c>
+        /// and <c>dataChannels</c>).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<IncrementalTrainingDataChannel> IncrementalTrainingDataChannels
+        {
+            get { return this._incrementalTrainingDataChannels; }
+            set { this._incrementalTrainingDataChannels = value; }
+        }
+
+        // Check to see if IncrementalTrainingDataChannels property is set
+        internal bool IsSetIncrementalTrainingDataChannels()
+        {
+            return this._incrementalTrainingDataChannels != null && (this._incrementalTrainingDataChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -299,6 +335,41 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingInputMode. 
+        /// <para>
+        /// The input mode for accessing the training data. This parameter determines how the
+        /// training data is made available to the training algorithm. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>File</c> - The training data is downloaded to the training instance and made available
+        /// as files.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FastFile</c> - The training data is streamed directly from Amazon S3 to the training
+        /// algorithm, providing faster access for large datasets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Pipe</c> - The training data is streamed to the training algorithm using named
+        /// pipes, which can improve performance for certain algorithms.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TrainingInputMode TrainingInputMode
+        {
+            get { return this._trainingInputMode; }
+            set { this._trainingInputMode = value; }
+        }
+
+        // Check to see if TrainingInputMode property is set
+        internal bool IsSetTrainingInputMode()
+        {
+            return this._trainingInputMode != null;
         }
 
     }

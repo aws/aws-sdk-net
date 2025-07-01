@@ -126,6 +126,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainedModelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainedModelVersionIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainedModelVersionIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

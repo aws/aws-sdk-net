@@ -85,6 +85,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -136,6 +139,9 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -358,6 +364,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
         /// You have exceeded your service quota.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -414,6 +423,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
         /// You have exceeded your service quota.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -464,11 +476,18 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
         /// You can't complete this action because another resource depends on this resource.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.InternalServiceException">
+        /// An internal service error occurred. Retry your request. If the problem persists, contact
+        /// AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
         /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -835,6 +854,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -883,6 +905,9 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -936,6 +961,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -974,7 +1002,7 @@ namespace Amazon.CleanRoomsML
 
 
         /// <summary>
-        /// Deletes the output of a trained model.
+        /// Deletes the model artifacts stored by the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrainedModelOutput service method.</param>
         /// 
@@ -987,6 +1015,9 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -1190,6 +1221,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -1239,6 +1273,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -1287,6 +1324,9 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -1484,6 +1524,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -1532,6 +1575,9 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -1582,6 +1628,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -1631,6 +1680,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -1679,6 +1731,9 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -1913,6 +1968,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -1958,6 +2016,9 @@ namespace Amazon.CleanRoomsML
         /// <returns>The response from the ListCollaborationMLInputChannels service method, as returned by CleanRoomsML.</returns>
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -2005,6 +2066,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -2051,6 +2115,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -2096,6 +2163,9 @@ namespace Amazon.CleanRoomsML
         /// <returns>The response from the ListCollaborationTrainedModels service method, as returned by CleanRoomsML.</returns>
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -2189,6 +2259,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -2280,6 +2353,9 @@ namespace Amazon.CleanRoomsML
         /// <returns>The response from the ListMLInputChannels service method, as returned by CleanRoomsML.</returns>
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -2376,6 +2452,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -2422,6 +2501,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -2453,6 +2535,61 @@ namespace Amazon.CleanRoomsML
         /// <returns>Returns a  ListTrainedModelsResult from CleanRoomsML.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModels">REST API Reference for ListTrainedModels Operation</seealso>
         ListTrainedModelsResponse EndListTrainedModels(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTrainedModelVersions
+
+
+        /// <summary>
+        /// Returns a list of trained model versions for a specified trained model. This operation
+        /// allows you to view all versions of a trained model, including information about their
+        /// status and creation details. You can use this to track the evolution of your trained
+        /// models and select specific versions for inference or further training.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainedModelVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListTrainedModelVersions service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelVersions">REST API Reference for ListTrainedModelVersions Operation</seealso>
+        ListTrainedModelVersionsResponse ListTrainedModelVersions(ListTrainedModelVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrainedModelVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainedModelVersions operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrainedModelVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelVersions">REST API Reference for ListTrainedModelVersions Operation</seealso>
+        IAsyncResult BeginListTrainedModelVersions(ListTrainedModelVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrainedModelVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrainedModelVersions.</param>
+        /// 
+        /// <returns>Returns a  ListTrainedModelVersionsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelVersions">REST API Reference for ListTrainedModelVersions Operation</seealso>
+        ListTrainedModelVersionsResponse EndListTrainedModelVersions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2562,6 +2699,9 @@ namespace Amazon.CleanRoomsML
         /// <returns>The response from the PutMLConfiguration service method, as returned by CleanRoomsML.</returns>
         /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -2673,6 +2813,9 @@ namespace Amazon.CleanRoomsML
         /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
         /// You have exceeded your service quota.
         /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
         /// </exception>
@@ -2724,6 +2867,9 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -2779,6 +2925,9 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
         /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.

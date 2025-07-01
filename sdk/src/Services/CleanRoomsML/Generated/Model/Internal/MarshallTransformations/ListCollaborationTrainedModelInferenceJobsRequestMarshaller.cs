@@ -71,6 +71,9 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTrainedModelArn())
                 request.Parameters.Add("trainedModelArn", StringUtils.FromString(publicRequest.TrainedModelArn));
+            
+            if (publicRequest.IsSetTrainedModelVersionIdentifier())
+                request.Parameters.Add("trainedModelVersionIdentifier", StringUtils.FromString(publicRequest.TrainedModelVersionIdentifier));
             request.ResourcePath = "/collaborations/{collaborationIdentifier}/trained-model-inference-jobs";
             request.UseQueryString = true;
 

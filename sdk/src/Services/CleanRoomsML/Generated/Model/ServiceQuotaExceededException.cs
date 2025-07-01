@@ -37,6 +37,8 @@ namespace Amazon.CleanRoomsML.Model
     #endif
     public partial class ServiceQuotaExceededException : AmazonCleanRoomsMLException
     {
+        private string _quotaName;
+        private double? _quotaValue;
 
         /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
@@ -98,6 +100,8 @@ namespace Amazon.CleanRoomsML.Model
         protected ServiceQuotaExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.QuotaName = (string)info.GetValue("QuotaName", typeof(string));
+            this.QuotaValue = (double)info.GetValue("QuotaValue", typeof(double));
         }
 
         /// <summary>
@@ -118,8 +122,47 @@ namespace Amazon.CleanRoomsML.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("QuotaName", this.QuotaName);
+            info.AddValue("QuotaValue", this.QuotaValue);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property QuotaName. 
+        /// <para>
+        /// The name of the service quota limit that was exceeded
+        /// </para>
+        /// </summary>
+        public string QuotaName
+        {
+            get { return this._quotaName; }
+            set { this._quotaName = value; }
+        }
+
+        // Check to see if QuotaName property is set
+        internal bool IsSetQuotaName()
+        {
+            return this._quotaName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuotaValue. 
+        /// <para>
+        /// The current limit on the service quota that was exceeded
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100000)]
+        public double QuotaValue
+        {
+            get { return this._quotaValue.GetValueOrDefault(); }
+            set { this._quotaValue = value; }
+        }
+
+        // Check to see if QuotaValue property is set
+        internal bool IsSetQuotaValue()
+        {
+            return this._quotaValue.HasValue; 
+        }
 
     }
 }

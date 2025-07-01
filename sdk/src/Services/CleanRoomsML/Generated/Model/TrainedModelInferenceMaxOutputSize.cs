@@ -62,7 +62,7 @@ namespace Amazon.CleanRoomsML.Model
         /// The maximum output size value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10)]
+        [AWSProperty(Required=true, Max=50)]
         public double Value
         {
             get { return this._value.GetValueOrDefault(); }

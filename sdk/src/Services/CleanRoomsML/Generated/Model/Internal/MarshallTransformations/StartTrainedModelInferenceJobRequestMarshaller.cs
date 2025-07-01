@@ -172,6 +172,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TrainedModelArn);
                 }
 
+                if(publicRequest.IsSetTrainedModelVersionIdentifier())
+                {
+                    context.Writer.WritePropertyName("trainedModelVersionIdentifier");
+                    context.Writer.Write(publicRequest.TrainedModelVersionIdentifier);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

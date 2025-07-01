@@ -96,6 +96,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("incrementalTrainingDataChannels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<IncrementalTrainingDataChannelOutput, IncrementalTrainingDataChannelOutputUnmarshaller>(IncrementalTrainingDataChannelOutputUnmarshaller.Instance);
+                    unmarshalledObject.IncrementalTrainingDataChannels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("membershipIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -78,6 +78,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxArtifactSize", targetDepth))
+                {
+                    var unmarshaller = TrainedModelArtifactMaxSizeUnmarshaller.Instance;
+                    unmarshalledObject.MaxArtifactSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

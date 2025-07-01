@@ -94,6 +94,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.Hyperparameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("incrementalTrainingDataChannels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<IncrementalTrainingDataChannelOutput, IncrementalTrainingDataChannelOutputUnmarshaller>(IncrementalTrainingDataChannelOutputUnmarshaller.Instance);
+                    response.IncrementalTrainingDataChannels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -178,10 +184,22 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.TrainingContainerImageDigest = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainingInputMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TrainingInputMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.UpdateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -214,6 +232,10 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                {
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {

@@ -168,6 +168,16 @@ namespace Amazon.CleanRoomsML.Model
         IListTrainedModelsPaginator ListTrainedModels(ListTrainedModelsRequest request);
 
         /// <summary>
+        /// Paginator for ListTrainedModelVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTrainedModelVersionsPaginator ListTrainedModelVersions(ListTrainedModelVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListTrainingDatasets operation
         ///</summary>
         [AWSPaginator(

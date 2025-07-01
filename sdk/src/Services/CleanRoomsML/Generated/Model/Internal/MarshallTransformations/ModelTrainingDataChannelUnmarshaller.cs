@@ -78,6 +78,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     unmarshalledObject.MlInputChannelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3DataDistributionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3DataDistributionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
