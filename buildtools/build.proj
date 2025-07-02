@@ -240,7 +240,7 @@
             <SignableItemsBasePath>../</SignableItemsBasePath>
             <ZipPrefix>netsdk</ZipPrefix>
             <ZipFilesPath>$(MSBuildProjectDirectory)/../codesign-zip</ZipFilesPath>
-            <SigningS3KeyPrefix>netsdk</SigningS3KeyPrefix>
+            <SigningS3KeyPrefix>dotnet3-$([System.Guid]::NewGuid())</SigningS3KeyPrefix>
             <SignedItemsPath>../</SignedItemsPath>
             <SigningRoleSessionName>netsdk-signer-session</SigningRoleSessionName>
         </PropertyGroup>
