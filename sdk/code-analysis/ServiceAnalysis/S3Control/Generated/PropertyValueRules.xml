@@ -1143,7 +1143,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.ListTagsForResourceRequest.ResourceArn</property>
     <max>1011</max>
-    <pattern>arn:[^:]+:s3:[^:].*</pattern>
+    <pattern>arn:[^:]+:s3(express)?:[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutAccessGrantsInstanceResourcePolicyRequest.AccountId</property>
@@ -1333,7 +1333,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.TagResourceRequest.ResourceArn</property>
     <max>1011</max>
-    <pattern>arn:[^:]+:s3:[^:].*</pattern>
+    <pattern>arn:[^:]+:s3(express)?:[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.UntagResourceRequest.AccountId</property>
@@ -1343,7 +1343,7 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.UntagResourceRequest.ResourceArn</property>
     <max>1011</max>
-    <pattern>arn:[^:]+:s3:[^:].*</pattern>
+    <pattern>arn:[^:]+:s3(express)?:[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.UpdateAccessGrantsLocationRequest.AccessGrantsLocationId</property>

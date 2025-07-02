@@ -559,6 +559,7 @@ namespace Amazon.S3Control.Internal
                 result.RequiresAccountId = true;
                 var request = (ListTagsForResourceRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
+                result.ResourceArn = request.ResourceArn;
                 return result;
             }
             if (requestContext.RequestName == "PutAccessGrantsInstanceResourcePolicyRequest") {
@@ -669,12 +670,14 @@ namespace Amazon.S3Control.Internal
                 result.RequiresAccountId = true;
                 var request = (TagResourceRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
+                result.ResourceArn = request.ResourceArn;
                 return result;
             }
             if (requestContext.RequestName == "UntagResourceRequest") {
                 result.RequiresAccountId = true;
                 var request = (UntagResourceRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
+                result.ResourceArn = request.ResourceArn;
                 return result;
             }
             if (requestContext.RequestName == "UpdateAccessGrantsLocationRequest") {

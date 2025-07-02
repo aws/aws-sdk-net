@@ -1959,6 +1959,153 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
+        [Description("Tagging on express bucket routed to s3express-control")]
+        public void Tagging_on_express_bucket_routed_to_s3expresscontrol_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["ResourceArn"] = "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Tagging on express ap routed to s3express-control")]
+        public void Tagging_on_express_ap_routed_to_s3expresscontrol_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["ResourceArn"] = "arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Tagging on express bucket routed to s3express-control FIPS when FIPS enabled")]
+        public void Tagging_on_express_bucket_routed_to_s3expresscontrol_FIPS_when_FIPS_enabled_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["ResourceArn"] = "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Tagging on express bucket cn routed to s3express-control china endpoint")]
+        public void Tagging_on_express_bucket_cn_routed_to_s3expresscontrol_china_endpoint_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["ResourceArn"] = "arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "cn-north-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Tagging on express bucket cn routed to s3express-control china endpoint with FIPS")]
+        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
+        public void Tagging_on_express_bucket_cn_routed_to_s3expresscontrol_china_endpoint_with_FIPS_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["ResourceArn"] = "arn:aws-cn:s3express:cn-north-1:871317572157:bucket/crachlintest--use1-az4--x-s3";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "cn-north-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Tagging on express bucket with custom endpoint routed to custom endpoint")]
+        public void Tagging_on_express_bucket_with_custom_endpoint_routed_to_custom_endpoint_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["ResourceArn"] = "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3";
+            parameters["Endpoint"] = "https://my-endpoint.express-control.s3.aws.dev";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://my-endpoint.express-control.s3.aws.dev", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Tagging on express access point with custom endpoint routed to custom endpoint")]
+        public void Tagging_on_express_access_point_with_custom_endpoint_routed_to_custom_endpoint_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["ResourceArn"] = "arn:aws:s3express:us-east-1:871317572157:accesspoint/crachlintest--use1-az4--xa-s3";
+            parameters["Endpoint"] = "https://my-endpoint.express-control.s3.aws.dev";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://my-endpoint.express-control.s3.aws.dev", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("Tagging on express bucket with dualstack and custom endpoint fails")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
+        public void Tagging_on_express_bucket_with_dualstack_and_custom_endpoint_fails_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["ResourceArn"] = "arn:aws:s3express:us-east-1:871317572157:bucket/crachlintest--use1-az4--x-s3";
+            parameters["Endpoint"] = "https://my-endpoint.express-control.s3.aws.dev";
+            parameters["AccountId"] = "871317572157";
+            parameters["Region"] = "us-east-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
         [Description("Access Point APIs on express bucket routed to s3express-control")]
         public void Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_Test()
         {
