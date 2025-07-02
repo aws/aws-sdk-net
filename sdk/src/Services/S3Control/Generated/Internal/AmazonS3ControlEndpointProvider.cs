@@ -57,6 +57,7 @@ namespace Amazon.S3Control.Internal
                 ["Bucket"] = parameters["Bucket"],
                 ["AccessPointName"] = parameters["AccessPointName"],
                 ["UseArnRegion"] = parameters["UseArnRegion"],
+                ["ResourceArn"] = parameters["ResourceArn"],
                 ["UseS3ExpressControlEndpoint"] = parameters["UseS3ExpressControlEndpoint"],
             };
             if (IsSet(refs["Region"]))
@@ -106,6 +107,40 @@ namespace Amazon.S3Control.Internal
                             return new Endpoint(Interpolate(@"https://s3-outposts.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("Invalid region: region was not a valid DNS name.");
+                    }
+                }
+                if (IsSet(refs["ResourceArn"]) && (refs["resourceArn"] = ParseArn((string)refs["ResourceArn"])) != null && Equals(GetAttr(refs["resourceArn"], "service"), "s3express"))
+                {
+                    if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
+                    {
+                        if ((refs["arnPartition"] = Partition((string)GetAttr(refs["resourceArn"], "region"))) != null)
+                        {
+                            if (Equals(GetAttr(refs["arnPartition"], "name"), GetAttr(refs["partitionResult"], "name")))
+                            {
+                                if (IsSet(refs["UseArnRegion"]) && Equals(refs["UseArnRegion"], false) && !Equals(GetAttr(refs["resourceArn"], "region"), Interpolate(@"{Region}", refs)))
+                                {
+                                    throw new AmazonClientException(Interpolate(@"Invalid configuration: region from ARN `{resourceArn#region}` does not match client region `{Region}` and UseArnRegion is `false`", refs));
+                                }
+                                if (IsSet(refs["Endpoint"]) && Equals(refs["UseDualStack"], true))
+                                {
+                                    throw new AmazonClientException("Invalid Configuration: DualStack and custom endpoint are not supported");
+                                }
+                                if (Equals(refs["UseDualStack"], true))
+                                {
+                                    throw new AmazonClientException("S3Express does not support Dual-stack.");
+                                }
+                                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                                {
+                                    return new Endpoint(Interpolate(@"{url#scheme}://{url#authority}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                if (Equals(refs["UseFIPS"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://s3express-control-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                return new Endpoint(Interpolate(@"https://s3express-control.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            throw new AmazonClientException(Interpolate(@"Client was configured for partition `{partitionResult#name}` but ARN has `{arnPartition#name}`", refs));
+                        }
                     }
                 }
                 if (IsSet(refs["AccessPointName"]) && (refs["accessPointSuffix"] = Substring((string)refs["AccessPointName"], 0, 7, true)) != null && Equals(refs["accessPointSuffix"], "--xa-s3"))

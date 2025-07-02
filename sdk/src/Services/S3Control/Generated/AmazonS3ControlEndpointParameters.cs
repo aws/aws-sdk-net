@@ -131,6 +131,15 @@ namespace Amazon.S3Control.Endpoints
         }
 
         /// <summary>
+        /// ResourceArn parameter
+        /// </summary>
+        public string ResourceArn 
+        { 
+            get { return (string)this["ResourceArn"]; }
+            set { this["ResourceArn"] = value; } 
+        }
+
+        /// <summary>
         /// UseS3ExpressControlEndpoint parameter
         /// </summary>
         public bool? UseS3ExpressControlEndpoint 

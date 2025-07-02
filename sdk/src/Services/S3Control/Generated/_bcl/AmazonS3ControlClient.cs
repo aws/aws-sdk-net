@@ -7455,28 +7455,51 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// This operation allows you to list all the Amazon Web Services resource tags for a
-        /// specified resource. Each tag is a label consisting of a user-defined key and value.
-        /// Tags can help you manage, identify, organize, search for, and filter resources. 
+        /// This operation allows you to list all of the tags for a specified resource. Each tag
+        /// is a label consisting of a key and value. Tags can help you organize, track costs
+        /// for, and control access to resources. 
         /// 
-        ///  <dl> <dt>Permissions</dt> <dd> 
+        ///  <note> 
         /// <para>
-        /// You must have the <c>s3:ListTagsForResource</c> permission to use this operation.
-        /// 
+        /// This operation is only supported for the following Amazon S3 resources:
         /// </para>
-        ///  </dd> </dl> <note> 
+        ///  <ul> <li> 
         /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
-        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
-        /// Grants instance, registered location, or grant. 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
+        /// buckets</a> 
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">Storage
+        /// Lens groups</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants instances, registered locations, and grants</a>.
+        /// </para>
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:ListTagsForResource</c>
+        /// permission to use this operation. 
+        /// </para>
+        ///  
         /// <para>
         /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
-        ///  
+        ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
+        /// <para>
+        /// For directory buckets, you must have the <c>s3express:ListTagsForResource</c> permission
+        /// to use this operation. For more information about directory buckets policies and permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
@@ -7497,28 +7520,51 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// This operation allows you to list all the Amazon Web Services resource tags for a
-        /// specified resource. Each tag is a label consisting of a user-defined key and value.
-        /// Tags can help you manage, identify, organize, search for, and filter resources. 
+        /// This operation allows you to list all of the tags for a specified resource. Each tag
+        /// is a label consisting of a key and value. Tags can help you organize, track costs
+        /// for, and control access to resources. 
         /// 
-        ///  <dl> <dt>Permissions</dt> <dd> 
+        ///  <note> 
         /// <para>
-        /// You must have the <c>s3:ListTagsForResource</c> permission to use this operation.
-        /// 
+        /// This operation is only supported for the following Amazon S3 resources:
         /// </para>
-        ///  </dd> </dl> <note> 
+        ///  <ul> <li> 
         /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
-        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
-        /// Grants instance, registered location, or grant. 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
+        /// buckets</a> 
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">Storage
+        /// Lens groups</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants instances, registered locations, and grants</a>.
+        /// </para>
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:ListTagsForResource</c>
+        /// permission to use this operation. 
+        /// </para>
+        ///  
         /// <para>
         /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
-        ///  
+        ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
+        /// <para>
+        /// For directory buckets, you must have the <c>s3express:ListTagsForResource</c> permission
+        /// to use this operation. For more information about directory buckets policies and permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
@@ -9638,28 +9684,52 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Creates a new Amazon Web Services resource tag or updates an existing resource tag.
-        /// Each tag is a label consisting of a user-defined key and value. Tags can help you
-        /// manage, identify, organize, search for, and filter resources. You can add up to 50
-        /// Amazon Web Services resource tags for each S3 resource. 
+        /// Creates a new user-defined tag or updates an existing tag. Each tag is a label consisting
+        /// of a key and value that is applied to your resource. Tags can help you organize, track
+        /// costs for, and control access to your resources. You can add up to 50 Amazon Web Services
+        /// resource tags for each S3 resource. 
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
-        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
-        /// Grants instance, registered location, or grant. 
+        /// This operation is only supported for the following Amazon S3 resource:
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        ///  <ul> <li> 
         /// <para>
-        /// You must have the <c>s3:TagResource</c> permission to use this operation. 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
+        /// buckets</a> 
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants instances, registered locations, or grants</a>.
+        /// </para>
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:TagResource</c>
+        /// permission to use this operation. 
+        /// </para>
+        ///  
         /// <para>
         /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
-        ///  
+        ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
+        /// <para>
+        /// For directory buckets, you must have the <c>s3express:TagResource</c> permission to
+        /// use this operation. For more information about directory buckets policies and permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
@@ -9680,28 +9750,52 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Creates a new Amazon Web Services resource tag or updates an existing resource tag.
-        /// Each tag is a label consisting of a user-defined key and value. Tags can help you
-        /// manage, identify, organize, search for, and filter resources. You can add up to 50
-        /// Amazon Web Services resource tags for each S3 resource. 
+        /// Creates a new user-defined tag or updates an existing tag. Each tag is a label consisting
+        /// of a key and value that is applied to your resource. Tags can help you organize, track
+        /// costs for, and control access to your resources. You can add up to 50 Amazon Web Services
+        /// resource tags for each S3 resource. 
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
-        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
-        /// Grants instance, registered location, or grant. 
+        /// This operation is only supported for the following Amazon S3 resource:
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        ///  <ul> <li> 
         /// <para>
-        /// You must have the <c>s3:TagResource</c> permission to use this operation. 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
+        /// buckets</a> 
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants instances, registered locations, or grants</a>.
+        /// </para>
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:TagResource</c>
+        /// permission to use this operation. 
+        /// </para>
+        ///  
         /// <para>
         /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
-        ///  
+        ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
+        /// <para>
+        /// For directory buckets, you must have the <c>s3express:TagResource</c> permission to
+        /// use this operation. For more information about directory buckets policies and permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
@@ -9729,27 +9823,50 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// This operation removes the specified Amazon Web Services resource tags from an S3
-        /// resource. Each tag is a label consisting of a user-defined key and value. Tags can
-        /// help you manage, identify, organize, search for, and filter resources. 
+        /// This operation removes the specified user-defined tags from an S3 resource. You can
+        /// pass one or more tag keys. 
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
-        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
-        /// Grants instance, registered location, or grant. 
+        /// This operation is only supported for the following Amazon S3 resources:
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        ///  <ul> <li> 
         /// <para>
-        /// You must have the <c>s3:UntagResource</c> permission to use this operation. 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
+        /// buckets</a> 
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">Storage
+        /// Lens groups</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants instances, registered locations, and grants</a>.
+        /// </para>
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:UntagResource</c>
+        /// permission to use this operation. 
+        /// </para>
+        ///  
         /// <para>
         /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
-        ///  
+        ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
+        /// <para>
+        /// For directory buckets, you must have the <c>s3express:UntagResource</c> permission
+        /// to use this operation. For more information about directory buckets policies and permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
@@ -9770,27 +9887,50 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// This operation removes the specified Amazon Web Services resource tags from an S3
-        /// resource. Each tag is a label consisting of a user-defined key and value. Tags can
-        /// help you manage, identify, organize, search for, and filter resources. 
+        /// This operation removes the specified user-defined tags from an S3 resource. You can
+        /// pass one or more tag keys. 
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
-        /// Storage Lens groups</a> and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
-        /// Access Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access
-        /// Grants instance, registered location, or grant. 
+        /// This operation is only supported for the following Amazon S3 resources:
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        ///  <ul> <li> 
         /// <para>
-        /// You must have the <c>s3:UntagResource</c> permission to use this operation. 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
+        /// buckets</a> 
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">Storage
+        /// Lens groups</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants instances, registered locations, and grants</a>.
+        /// </para>
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:UntagResource</c>
+        /// permission to use this operation. 
+        /// </para>
+        ///  
         /// <para>
         /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
         /// account permissions to use S3 Storage Lens groups</a>.
         /// </para>
-        ///  
+        ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
+        /// <para>
+        /// For directory buckets, you must have the <c>s3express:UntagResource</c> permission
+        /// to use this operation. For more information about directory buckets policies and permissions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
