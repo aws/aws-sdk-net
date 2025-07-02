@@ -10,8 +10,6 @@ namespace Amazon.S3.Util
     /// <remarks>
     /// <para>
     /// S3 POST policy conditions are used to restrict what can be uploaded through a presigned POST request.
-    /// Each condition type corresponds to a specific validation rule that Amazon S3 will enforce when 
-    /// processing the POST request from a web browser or other client.
     /// </para>
     /// <para>
     /// S3 supports three types of conditions in POST policies:
@@ -351,8 +349,7 @@ namespace Amazon.S3.Util
     /// <remarks>
     /// <para>
     /// A content length range condition restricts the size of files that can be uploaded
-    /// through the presigned POST request. This is essential for controlling storage costs
-    /// and preventing abuse by limiting file sizes to acceptable ranges.
+    /// through the presigned POST request.
     /// </para>
     /// <para>
     /// The condition is serialized as a JSON array: <c>["content-length-range", minimumLength, maximumLength]</c>
