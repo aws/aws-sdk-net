@@ -1,3 +1,13 @@
+### 3.7.1076.0 (2025-07-02 18:18 UTC)
+* ConnectCases (3.7.404.0)
+	* This release adds DeleteCase and DeleteRelatedItem APIs, which enable deleting cases and comments, undoing contact association, and removing service level agreements (SLAs) from cases. Contact center admins can use these APIs to delete cases when requested by customers and correct agent errors.
+* EC2 (3.7.455.0)
+	* AWS Site-to-Site VPN now supports IPv6 addresses on outer tunnel IPs, making it easier for customers to build or transition to IPv6-only networks.
+* S3 (3.7.420.0)
+	* Added support for directory bucket creation with tags and bucket ARN retrieval in CreateBucket, ListDirectoryBuckets, and HeadBucket operations
+* S3Control (3.7.411.0)
+	* Added TagResource, UntagResource, and ListTagsForResource support for directory bucket
+
 ### 3.7.1075.0 (2025-07-01 18:21 UTC)
 * CleanRoomsML (3.7.403.0)
 	* This release introduces support for incremental training and distributed training for custom models in AWS Clean Rooms ML.
