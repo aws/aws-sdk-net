@@ -731,12 +731,9 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 #>
 <#=new string(' ', level * 4)#>request.Content = Encoding.UTF8.GetBytes(<#=this.Operation.RequestPayloadMember.PrimitiveMarshaller#>(publicRequest.<#=this.Operation.RequestPayloadMember.PropertyName#>));
 <#+
-			if (this.Operation.Name != "PutBucketPolicy")
-			{
 #>
 <#=new string(' ', level * 4)#>request.Headers["Content-Type"] = "text/plain";
 <#+
-			}
 		}
 		else if(payload.Shape.IsMemoryStream)
 		{
