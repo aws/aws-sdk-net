@@ -632,7 +632,7 @@ namespace Amazon.S3
         private IRequest CreateAndProcessRequest(CreatePresignedPostRequest request)
         {
             // Marshall the request to create a proper IRequest object
-            var irequest = MarshallCreatePresignedPost(this.Config, request);
+            var irequest = MarshallCreatePresignedPost(request);
 
             // Use the same endpoint resolution pipeline as GetPreSignedURL
             var context = new Amazon.Runtime.Internal.ExecutionContext(
@@ -736,11 +736,9 @@ namespace Amazon.S3
         /// <summary>
         /// Marshalls the parameters for a presigned POST request to create a proper IRequest object.
         /// </summary>
-        /// <param name="config">service client configuration</param>
         /// <param name="createPresignedPostRequest">The presigned POST request</param>
         /// <returns>Internal request object</returns>
-        private static IRequest MarshallCreatePresignedPost(IClientConfig config,
-                                                           CreatePresignedPostRequest createPresignedPostRequest)
+        private static IRequest MarshallCreatePresignedPost(CreatePresignedPostRequest createPresignedPostRequest)
         {
             IRequest request = new DefaultRequest(createPresignedPostRequest, "AmazonS3");
             request.HttpMethod = "POST";
