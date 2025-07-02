@@ -117,6 +117,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
+                    if (putBucketRequest.PutBucketConfiguration.IsSetTags())
+                    {
+                        xmlWriter.WriteStartElement("Tags", S3Constants.S3RequestXmlNamespace);
+                        foreach (var tag in putBucketRequest.PutBucketConfiguration.Tags)
+                        {
+                            tag.Marshall("Tag", xmlWriter);
+                        }
+
+                        xmlWriter.WriteEndElement();
+                    }
                 }
                 if(regionCode != null || putBucketRequest.IsSetPutBucketConfiguration())
                 {

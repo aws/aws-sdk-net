@@ -177,8 +177,11 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
+        /// For valid values, see the <c>StorageClass</c> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
         /// Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.
+        /// </para>
+        /// <para>
+        ///  <c>FSX_OPENZFS</c> is not an accepted value when replicating objects.
         /// </para>
         /// </summary>
         public S3StorageClass StorageClass

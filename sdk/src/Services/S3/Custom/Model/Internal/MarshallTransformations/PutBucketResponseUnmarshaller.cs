@@ -48,6 +48,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (responseData.IsHeaderPresent("Location"))
                 response.Location = BucketLocationConstraint.FindValue(responseData.GetHeaderValue("Location"));
+            
+            if (responseData.IsHeaderPresent("x-amz-bucket-arn"))
+                response.BucketArn = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-bucket-arn"));
+            
             return;
         }
 

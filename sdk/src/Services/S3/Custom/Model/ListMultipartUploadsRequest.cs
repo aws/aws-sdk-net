@@ -221,6 +221,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> 
         /// <para>
+        /// <c>CommonPrefixes</c> is filtered out from results if it is not lexicographically greater than the key-marker.
+        /// </para>
+        /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, <c>/</c> is the only supported
         /// delimiter.
         /// </para>

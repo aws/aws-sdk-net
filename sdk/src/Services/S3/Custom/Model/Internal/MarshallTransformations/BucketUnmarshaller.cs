@@ -12,10 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System.Collections.Generic;
-
-using Amazon.S3.Model;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.S3.Model;
+using System;
+using System.Collections.Generic;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -42,6 +42,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("BucketArn", targetDepth))
+                    {
+                        bucket.BucketArn = StringUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
                     if (context.TestExpression("CreationDate", targetDepth))
                     {
                         bucket.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);

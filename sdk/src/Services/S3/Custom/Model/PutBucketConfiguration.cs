@@ -27,6 +27,7 @@ namespace Amazon.S3.Model
         private BucketInfo _bucketInfo;
         private LocationInfo _location;
         private BucketLocationConstraint _bucketLocationConstraint;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property LocationConstraint.
@@ -71,6 +72,31 @@ namespace Amazon.S3.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// <para>
+        /// An array of tags that you can apply to the bucket that you're creating. 
+        /// Tags are key-value pairs of metadata used to categorize and organize your buckets, track costs, and control access. 
+        /// </para> 
+        /// <note>
+        /// <para>
+        /// This parameter is only supported for S3 directory buckets. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using tags with directory buckets</a>.
+        /// </para>
+        /// </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections);
         }
     }
 }
