@@ -19,10 +19,6 @@ namespace Amazon.S3.Util
     /// <item><description>Starts With - Field value must start with a specified prefix</description></item>
     /// <item><description>Content Length Range - File size must be within specified byte limits</description></item>
     /// </list>
-    /// <para>
-    /// Use the static factory methods to create condition instances for better discoverability:
-    /// <see cref="ExactMatch"/>, <see cref="StartsWith"/>, <see cref="ContentLengthRange"/>.
-    /// </para>
     /// </remarks>
     public abstract class S3PostCondition
     {
