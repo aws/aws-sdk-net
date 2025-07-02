@@ -20,10 +20,6 @@ namespace Amazon.S3.Util
     /// <item><description>Content Length Range - File size must be within specified byte limits</description></item>
     /// </list>
     /// <para>
-    /// Conditions are automatically serialized to the appropriate JSON format for inclusion 
-    /// in the S3 POST policy document.
-    /// </para>
-    /// <para>
     /// Use the static factory methods to create condition instances for better discoverability:
     /// <see cref="ExactMatch"/>, <see cref="StartsWith"/>, <see cref="ContentLengthRange"/>.
     /// </para>
