@@ -35,10 +35,10 @@ namespace Amazon.S3.Model
     public partial class HeadBucketResponse : AmazonWebServiceResponse
     {
         private bool? _accessPointAlias;
+        private string _bucketArn;
         private string _bucketLocationName;
         private LocationType _bucketLocationType;
         private string _bucketRegion;
-        private string _bucketArn;
 
         /// <summary>
         /// Gets and sets the property AccessPointAlias. 
@@ -61,6 +61,33 @@ namespace Amazon.S3.Model
         internal bool IsSetAccessPointAlias()
         {
             return this._accessPointAlias.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web
+        /// Services resources across all of Amazon Web Services.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only supported for S3 directory buckets. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
+        /// tags with directory buckets</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string BucketArn
+        {
+            get { return this._bucketArn; }
+            set { this._bucketArn = value; }
+        }
+
+        // Check to see if BucketArn property is set
+        internal bool IsSetBucketArn()
+        {
+            return this._bucketArn != null;
         }
 
         /// <summary>
@@ -133,31 +160,5 @@ namespace Amazon.S3.Model
             return this._bucketRegion != null;
         }
 
-        /// <summary>
-        /// Gets and sets the property BucketArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the S3 bucket. ARNs uniquely identify Amazon Web
-        /// Services resources across all of Amazon Web Services.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This parameter is only supported for S3 directory buckets. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
-        /// tags with directory buckets</a>.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string BucketArn
-        {
-            get { return this._bucketArn; }
-            set { this._bucketArn = value; }
-        }
-
-        // Check to see if BucketArn property is set
-        internal bool IsSetBucketArn()
-        {
-            return this._bucketArn != null;
-        }
     }
 }

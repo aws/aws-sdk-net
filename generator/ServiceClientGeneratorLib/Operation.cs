@@ -304,24 +304,32 @@ namespace ServiceClientGenerator
                     var payload = this.RequestStructure.PayloadMemberName;
                     // check to see if the payload member has been overridden by another member defined in the service customizations
                     // file. For example, the payload member could've been included in the "exclude" array and another member
-                    // could've been injected. 
-                    if (this.model.Customizations.ShapeModifiers.ContainsKey(this.RequestStructure.Name))
+                    // could've been injected.
+                    // For example:
+                    //        "RestoreObjectRequest": {
+                    //          "exclude": ["RestoreRequest"],
+                    //          "inject": [
+                    //          {
+                    //            "Days": {
+                    //                "shape": "Days",
+                    //            "originalMember": "RestoreRequest"
+                    //            }
+                    //          }
+                    //      ]
+                    //  },
+                    // The payload is "RestoreRequest" but it has been excluded via a customization. so we check for 
+                    // that scenario here. 
+                    if (this.model.Customizations.ShapeModifiers.TryGetValue(this.RequestStructure.Name, out var customization) && customization.IsExcludedProperty(payload))
                     {
-                        var customization = this.model.Customizations.ShapeModifiers[this.RequestStructure.Name];
-                        if (customization.IsExcludedProperty(payload))
+                        foreach (var injectedProperty in customization.InjectedPropertyNames)
                         {
-                            foreach (var injectedProperty in customization.InjectedPropertyNames)
+                            var propertyInjector = customization.InjectedPropertyData(injectedProperty);
+                            if (string.Equals(propertyInjector.Data[CustomizationsModel.OriginalMemberKey].ToString(), payload, StringComparison.OrdinalIgnoreCase))
                             {
-                                var propertyInjector = customization.InjectedPropertyData(injectedProperty);
-                                if (string.Equals(propertyInjector.Data[CustomizationsModel.OriginalMemberKey].ToString(), payload, StringComparison.OrdinalIgnoreCase))
-                                {
-                                    payload = injectedProperty;
-                                    break;
-                                }
-
+                                payload = injectedProperty;
+                                break;
                             }
                         }
-
                     }
                     if (!string.IsNullOrWhiteSpace(payload))
                     {

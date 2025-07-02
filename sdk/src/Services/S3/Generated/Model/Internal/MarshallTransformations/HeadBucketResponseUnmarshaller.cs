@@ -48,6 +48,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             HeadBucketResponse response = new HeadBucketResponse();
             if (context.ResponseData.IsHeaderPresent("x-amz-access-point-alias"))
                 response.AccessPointAlias = bool.Parse(context.ResponseData.GetHeaderValue("x-amz-access-point-alias"));
+            if (context.ResponseData.IsHeaderPresent("x-amz-bucket-arn"))
+                response.BucketArn = context.ResponseData.GetHeaderValue("x-amz-bucket-arn");
             if (context.ResponseData.IsHeaderPresent("x-amz-bucket-location-name"))
                 response.BucketLocationName = context.ResponseData.GetHeaderValue("x-amz-bucket-location-name");
             if (context.ResponseData.IsHeaderPresent("x-amz-bucket-location-type"))
@@ -56,29 +58,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.BucketRegion = context.ResponseData.GetHeaderValue("x-amz-bucket-region");
             
             return response;
-        }
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, HeadBucketResponse response)
-        {
-            IWebResponseData responseData = context.ResponseData;
-            if (responseData.IsHeaderPresent("x-amz-bucket-location-type"))
-                response.BucketLocationType = LocationType.FindValue(responseData.GetHeaderValue("x-amz-bucket-location-type"));
-
-            if (responseData.IsHeaderPresent("x-amz-bucket-location-name"))
-                response.BucketLocationName = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-bucket-location-name"));
-
-            if (responseData.IsHeaderPresent("x-amz-bucket-region"))
-                response.BucketRegion = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-bucket-region"));
-
-            if (responseData.IsHeaderPresent("x-amz-access-point-alias"))
-                response.AccessPointAlias = S3Transforms.ToBool(responseData.GetHeaderValue("x-amz-access-point-alias"));
-
-            if (responseData.IsHeaderPresent("x-amz-bucket-arn"))
-                response.BucketArn = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-bucket-arn"));
-
-            return;
-        }
-
+        }        
+  
 
         /// <summary>
         /// Unmarshaller error response to exception.
