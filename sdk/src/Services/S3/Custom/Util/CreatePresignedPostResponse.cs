@@ -15,13 +15,13 @@ namespace Amazon.S3.Util
         /// <summary>
         /// Gets the URL where the POST request should be submitted.
         /// </summary>
-        public string Url { get; internal set; }
+        public string Url { get; set; }
         
         /// <summary>
         /// Gets the form fields that must be included in the POST request.
         /// These fields contain the policy, signature, and other AWS-required parameters.
         /// </summary>
-        public Dictionary<string, string> Fields { get; internal set; }
+        public Dictionary<string, string> Fields { get; set; }
         
         /// <summary>
         /// Initializes a new instance of the CreatePresignedPostResponse class.
