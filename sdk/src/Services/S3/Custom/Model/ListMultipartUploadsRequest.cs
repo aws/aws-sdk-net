@@ -219,7 +219,10 @@ namespace Amazon.S3.Model
         /// starts at the beginning of the key. The keys that are grouped under <c>CommonPrefixes</c>
         /// result element are not returned elsewhere in the response.
         /// </para>
-        ///  <note> 
+        ///  <note>
+        /// <para>
+        /// <c>CommonPrefixes</c> is filtered out from results if it is not lexicographically greater than the key-marker.
+        /// </para>
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, <c>/</c> is the only supported
         /// delimiter.

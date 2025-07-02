@@ -57,6 +57,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (responseData.IsHeaderPresent("x-amz-access-point-alias"))
                 response.AccessPointAlias = S3Transforms.ToBool(responseData.GetHeaderValue("x-amz-access-point-alias"));
 
+            if (responseData.IsHeaderPresent("x-amz-bucket-arn"))
+                response.BucketArn = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-bucket-arn"));
+
             return;
         }
 

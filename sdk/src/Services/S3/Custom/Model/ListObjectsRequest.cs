@@ -135,6 +135,9 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// A delimiter is a character that you use to group keys.
+        /// <para> 
+        /// <c>CommonPrefixes</c> is filtered out from results if it is not lexicographically greater than the key-marker.
+        /// </para>
         /// </summary>
         public string Delimiter
         {
