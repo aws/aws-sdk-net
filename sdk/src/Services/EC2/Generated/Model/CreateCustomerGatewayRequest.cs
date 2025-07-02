@@ -199,10 +199,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IPv4 address for the customer gateway device's outside interface. The address must
+        /// The IP address for the customer gateway device's outside interface. The address must
         /// be static. If <c>OutsideIpAddressType</c> in your VPN connection options is set to
         /// <c>PrivateIpv4</c>, you can use an RFC6598 or RFC1918 private IPv4 address. If <c>OutsideIpAddressType</c>
-        /// is set to <c>PublicIpv4</c>, you can use a public IPv4 address. 
+        /// is set to <c>Ipv6</c>, you can use an IPv6 address. 
         /// </para>
         /// </summary>
         public string IpAddress
