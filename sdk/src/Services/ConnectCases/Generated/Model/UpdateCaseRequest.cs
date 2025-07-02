@@ -35,7 +35,7 @@ namespace Amazon.ConnectCases.Model
     /// <para>
     /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
     /// permission on the User ARN resource that you provide
-    /// </para>
+    /// 
     ///  </note> 
     /// <para>
     /// Updates the values of fields on a case. Fields to be updated are received as an array
@@ -45,6 +45,8 @@ namespace Amazon.ConnectCases.Model
     /// <para>
     /// If the action is successful, the service sends back an HTTP 200 response with an empty
     /// HTTP body.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class UpdateCaseRequest : AmazonConnectCasesRequest

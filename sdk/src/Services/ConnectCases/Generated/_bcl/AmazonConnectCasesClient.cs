@@ -523,7 +523,7 @@ namespace Amazon.ConnectCases
         /// <para>
         /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
         /// permission on the User ARN resource that you provide
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Creates a case in the specified Cases domain. Case system and custom fields are taken
@@ -544,6 +544,7 @@ namespace Amazon.ConnectCases
         ///  <c>title</c> 
         /// </para>
         ///  </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// 
@@ -586,7 +587,7 @@ namespace Amazon.ConnectCases
         /// <para>
         /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
         /// permission on the User ARN resource that you provide
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Creates a case in the specified Cases domain. Case system and custom fields are taken
@@ -607,6 +608,7 @@ namespace Amazon.ConnectCases
         ///  <c>title</c> 
         /// </para>
         ///  </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// <param name="cancellationToken">
@@ -1344,6 +1346,119 @@ namespace Amazon.ConnectCases
 
         #endregion
         
+        #region  DeleteCase
+
+
+        /// <summary>
+        /// The DeleteCase API permanently deletes a case and all its associated resources from
+        /// the cases data store. After a successful deletion, you cannot:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve related items
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Access audit history
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Perform any operations that require the CaseID
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// This action is irreversible. Once you delete a case, you cannot recover its data.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCase service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteCase">REST API Reference for DeleteCase Operation</seealso>
+        public virtual DeleteCaseResponse DeleteCase(DeleteCaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The DeleteCase API permanently deletes a case and all its associated resources from
+        /// the cases data store. After a successful deletion, you cannot:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve related items
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Access audit history
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Perform any operations that require the CaseID
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// This action is irreversible. Once you delete a case, you cannot recover its data.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCase service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteCase">REST API Reference for DeleteCase Operation</seealso>
+        public virtual Task<DeleteCaseResponse> DeleteCaseAsync(DeleteCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCaseRule
 
 
@@ -1862,6 +1977,97 @@ namespace Amazon.ConnectCases
             options.ResponseUnmarshaller = DeleteLayoutResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteLayoutResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRelatedItem
+
+
+        /// <summary>
+        /// Deletes the related item resource under a case.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API cannot be used on a FILE type related attachment. To delete this type of
+        /// file, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
+        /// API
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRelatedItem service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRelatedItem service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteRelatedItem">REST API Reference for DeleteRelatedItem Operation</seealso>
+        public virtual DeleteRelatedItemResponse DeleteRelatedItem(DeleteRelatedItemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRelatedItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRelatedItemResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRelatedItemResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the related item resource under a case.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API cannot be used on a FILE type related attachment. To delete this type of
+        /// file, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
+        /// API
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRelatedItem service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRelatedItem service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteRelatedItem">REST API Reference for DeleteRelatedItem Operation</seealso>
+        public virtual Task<DeleteRelatedItemResponse> DeleteRelatedItemAsync(DeleteRelatedItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRelatedItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRelatedItemResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRelatedItemResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3570,7 +3776,7 @@ namespace Amazon.ConnectCases
         /// <para>
         /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
         /// permission on the User ARN resource that you provide
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Updates the values of fields on a case. Fields to be updated are received as an array
@@ -3580,6 +3786,8 @@ namespace Amazon.ConnectCases
         /// <para>
         /// If the action is successful, the service sends back an HTTP 200 response with an empty
         /// HTTP body.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCase service method.</param>
@@ -3618,7 +3826,7 @@ namespace Amazon.ConnectCases
         /// <para>
         /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
         /// permission on the User ARN resource that you provide
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Updates the values of fields on a case. Fields to be updated are received as an array
@@ -3628,6 +3836,8 @@ namespace Amazon.ConnectCases
         /// <para>
         /// If the action is successful, the service sends back an HTTP 200 response with an empty
         /// HTTP body.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCase service method.</param>
