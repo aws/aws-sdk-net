@@ -181,6 +181,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.DeleteCaseRequest.CaseId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.DeleteCaseRequest.DomainId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.DeleteCaseRuleRequest.CaseRuleId</property>
     <min>1</min>
     <max>500</max>
@@ -212,6 +222,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.DeleteLayoutRequest.LayoutId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.DeleteRelatedItemRequest.CaseId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.DeleteRelatedItemRequest.DomainId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.DeleteRelatedItemRequest.RelatedItemId</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>

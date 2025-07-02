@@ -30,31 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateCase operation.
-    /// <note> 
-    /// <para>
-    /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
-    /// permission on the User ARN resource that you provide
+    /// Container for the parameters to the DeleteRelatedItem operation.
+    /// Deletes the related item resource under a case.
     /// 
-    ///  </note> 
+    ///  <note> 
     /// <para>
-    /// Updates the values of fields on a case. Fields to be updated are received as an array
-    /// of id/value pairs identical to the <c>CreateCase</c> input .
+    /// This API cannot be used on a FILE type related attachment. To delete this type of
+    /// file, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
+    /// API
     /// </para>
-    ///  
-    /// <para>
-    /// If the action is successful, the service sends back an HTTP 200 response with an empty
-    /// HTTP body.
-    /// </para>
-    /// 
-    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class UpdateCaseRequest : AmazonConnectCasesRequest
+    public partial class DeleteRelatedItemRequest : AmazonConnectCasesRequest
     {
         private string _caseId;
         private string _domainId;
-        private List<FieldValue> _fields = AWSConfigs.InitializeCollections ? new List<FieldValue>() : null;
-        private UserUnion _performedBy;
+        private string _relatedItemId;
 
         /// <summary>
         /// Gets and sets the property CaseId. 
@@ -78,7 +69,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The unique identifier of the Cases domain. 
+        /// A unique identifier of the Cases domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
@@ -95,38 +86,22 @@ namespace Amazon.ConnectCases.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Fields. 
+        /// Gets and sets the property RelatedItemId. 
         /// <para>
-        /// An array of objects with <c>fieldId</c> (matching ListFields/DescribeField) and value
-        /// union data, structured identical to <c>CreateCase</c>.
+        /// A unique identifier of a related item.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
-        public List<FieldValue> Fields
+        [AWSProperty(Required=true, Min=1, Max=500)]
+        public string RelatedItemId
         {
-            get { return this._fields; }
-            set { this._fields = value; }
+            get { return this._relatedItemId; }
+            set { this._relatedItemId = value; }
         }
 
-        // Check to see if Fields property is set
-        internal bool IsSetFields()
+        // Check to see if RelatedItemId property is set
+        internal bool IsSetRelatedItemId()
         {
-            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property PerformedBy.
-        /// </summary>
-        public UserUnion PerformedBy
-        {
-            get { return this._performedBy; }
-            set { this._performedBy = value; }
-        }
-
-        // Check to see if PerformedBy property is set
-        internal bool IsSetPerformedBy()
-        {
-            return this._performedBy != null;
+            return this._relatedItemId != null;
         }
 
     }
