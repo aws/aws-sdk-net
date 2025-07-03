@@ -2645,6 +2645,56 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type StatusReason.
+    /// </summary>
+    public class StatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for StatusReason
+        /// </summary>
+        public static readonly StatusReason INTERNAL_FAILURE = new StatusReason("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant VALIDATION_FAILURE for StatusReason
+        /// </summary>
+        public static readonly StatusReason VALIDATION_FAILURE = new StatusReason("VALIDATION_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusReason FindValue(string value)
+        {
+            return FindValue<StatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StringDimensionType.
     /// </summary>
     public class StringDimensionType : ConstantClass
@@ -2924,6 +2974,72 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Unit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UploadJobStatus.
+    /// </summary>
+    public class UploadJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for UploadJobStatus
+        /// </summary>
+        public static readonly UploadJobStatus CREATED = new UploadJobStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for UploadJobStatus
+        /// </summary>
+        public static readonly UploadJobStatus FAILED = new UploadJobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for UploadJobStatus
+        /// </summary>
+        public static readonly UploadJobStatus IN_PROGRESS = new UploadJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PARTIALLY_SUCCEEDED for UploadJobStatus
+        /// </summary>
+        public static readonly UploadJobStatus PARTIALLY_SUCCEEDED = new UploadJobStatus("PARTIALLY_SUCCEEDED");
+        /// <summary>
+        /// Constant STOPPED for UploadJobStatus
+        /// </summary>
+        public static readonly UploadJobStatus STOPPED = new UploadJobStatus("STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for UploadJobStatus
+        /// </summary>
+        public static readonly UploadJobStatus SUCCEEDED = new UploadJobStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UploadJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UploadJobStatus FindValue(string value)
+        {
+            return FindValue<UploadJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UploadJobStatus(string value)
         {
             return FindValue(value);
         }
