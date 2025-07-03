@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TaskRunSessionActionDefinitionSummary Object
+    /// Response Unmarshaller for TaskRunManifestPropertiesResponse Object
     /// </summary>  
-    public class TaskRunSessionActionDefinitionSummaryUnmarshaller : IJsonUnmarshaller<TaskRunSessionActionDefinitionSummary, JsonUnmarshallerContext>
+    public class TaskRunManifestPropertiesResponseUnmarshaller : IJsonUnmarshaller<TaskRunManifestPropertiesResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskRunSessionActionDefinitionSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TaskRunManifestPropertiesResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TaskRunSessionActionDefinitionSummary unmarshalledObject = new TaskRunSessionActionDefinitionSummary();
+            TaskRunManifestPropertiesResponse unmarshalledObject = new TaskRunManifestPropertiesResponse();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("parameters", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, TaskParameterValue, StringUnmarshaller, TaskParameterValueUnmarshaller>(StringUnmarshaller.Instance, TaskParameterValueUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("stepId", targetDepth))
+                if (context.TestExpression("outputManifestHash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StepId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.OutputManifestHash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskId", targetDepth))
+                if (context.TestExpression("outputManifestPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.OutputManifestPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         }
 
 
-        private static TaskRunSessionActionDefinitionSummaryUnmarshaller _instance = new TaskRunSessionActionDefinitionSummaryUnmarshaller();        
+        private static TaskRunManifestPropertiesResponseUnmarshaller _instance = new TaskRunManifestPropertiesResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TaskRunSessionActionDefinitionSummaryUnmarshaller Instance
+        public static TaskRunManifestPropertiesResponseUnmarshaller Instance
         {
             get
             {
