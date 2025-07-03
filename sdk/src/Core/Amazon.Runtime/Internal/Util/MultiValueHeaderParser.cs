@@ -249,18 +249,5 @@ namespace Amazon.Runtime.Internal.Util
                 throw new ArgumentException($"Expected delimiter `{Delimiter}` in input data at index {index}.");
             }
         }
-
-#if BCL35
-        private class Tuple<T1, T2>
-        {
-            internal T1 Item1 { get; private set; }
-            internal T2 Item2 { get; private set; }
-            internal Tuple(T1 item1, T2 item2)
-            {
-                Item1 = item1;
-                Item2 = item2;
-            }
-        }
-#endif
     }
 }
