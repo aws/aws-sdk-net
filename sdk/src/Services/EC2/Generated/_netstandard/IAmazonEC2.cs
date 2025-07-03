@@ -897,7 +897,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must own the security group and the VPC that it was created in.
+        /// You must own the security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
