@@ -114,15 +114,26 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		private static void UnmarshallResult(XmlUnmarshallerContext context, <#=this.Operation.Name #>Response response)
         {
             int originalDepth = context.CurrentDepth;
+<#
+    if (this.Config.ServiceId == "S3" && this.Operation.Name == "GetBucketLocation")
+    {
+#>
+            int targetDepth = 1;
+<#
+    }
+    else
+    {
+#>
             int targetDepth = originalDepth + 1;
 <#
-	if (payload == null)
-	{
+        if (payload == null)
+        {
 #>
 			if (context.IsStartOfDocument) 
 				   targetDepth += 1;
 <#
-	}
+        }
+    }
 #>
             if (context.IsEmptyResponse)
             {

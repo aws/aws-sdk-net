@@ -54,9 +54,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         private static void UnmarshallResult(XmlUnmarshallerContext context, GetBucketLocationResponse response)
         {
             int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            if (context.IsStartOfDocument) 
-                   targetDepth += 1;
+            int targetDepth = 1;
             if (context.IsEmptyResponse)
             {
                 return;
