@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Encryption Object
+    /// Response Unmarshaller for GetMssManifestConfiguration Object
     /// </summary>  
-    public class EncryptionUnmarshaller : IJsonUnmarshaller<Encryption, JsonUnmarshallerContext>
+    public class GetMssManifestConfigurationUnmarshaller : IJsonUnmarshaller<GetMssManifestConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Encryption Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GetMssManifestConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Encryption unmarshalledObject = new Encryption();
+            GetMssManifestConfiguration unmarshalledObject = new GetMssManifestConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,34 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CmafExcludeSegmentDrmMetadata", targetDepth))
+                if (context.TestExpression("FilterConfiguration", targetDepth))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CmafExcludeSegmentDrmMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = FilterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConstantInitializationVector", targetDepth))
+                if (context.TestExpression("ManifestLayout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConstantInitializationVector = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ManifestLayout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionMethod", targetDepth))
+                if (context.TestExpression("ManifestName", targetDepth))
                 {
-                    var unmarshaller = EncryptionMethodUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionMethod = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyRotationIntervalSeconds", targetDepth))
+                if (context.TestExpression("ManifestWindowSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.KeyRotationIntervalSeconds = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpekeKeyProvider", targetDepth))
+                if (context.TestExpression("Url", targetDepth))
                 {
-                    var unmarshaller = SpekeKeyProviderUnmarshaller.Instance;
-                    unmarshalledObject.SpekeKeyProvider = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +91,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static EncryptionUnmarshaller _instance = new EncryptionUnmarshaller();        
+        private static GetMssManifestConfigurationUnmarshaller _instance = new GetMssManifestConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EncryptionUnmarshaller Instance
+        public static GetMssManifestConfigurationUnmarshaller Instance
         {
             get
             {

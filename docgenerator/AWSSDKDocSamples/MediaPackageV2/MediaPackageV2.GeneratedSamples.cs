@@ -445,6 +445,75 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             #endregion
         }
 
+        public void MediaPackageV2CreateOriginEndpoint()
+        {
+            #region example-3
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.CreateOriginEndpoint(new CreateOriginEndpointRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannel",
+                ContainerType = "ISM",
+                Description = "Description for exampleOriginEndpointISM",
+                ForceEndpointErrorConfiguration = new ForceEndpointErrorConfiguration { EndpointErrorConditions = new List<string> {
+                    "STALE_MANIFEST",
+                    "INCOMPLETE_MANIFEST",
+                    "MISSING_DRM_KEY",
+                    "SLATE_INPUT"
+                } },
+                MssManifests = new List<CreateMssManifestConfiguration> {
+                    new CreateMssManifestConfiguration {
+                        ManifestLayout = "FULL",
+                        ManifestName = "exampleMssManifest1",
+                        ManifestWindowSeconds = 60
+                    }
+                },
+                OriginEndpointName = "exampleOriginEndpointISM",
+                Segment = new Segment {
+                    Encryption = new Encryption {
+                        EncryptionMethod = new EncryptionMethod { IsmEncryptionMethod = "CENC" },
+                        SpekeKeyProvider = new SpekeKeyProvider {
+                            DrmSystems = new List<string> {
+                                "PLAYREADY"
+                            },
+                            EncryptionContractConfiguration = new EncryptionContractConfiguration {
+                                PresetSpeke20Audio = "SHARED",
+                                PresetSpeke20Video = "SHARED"
+                            },
+                            ResourceId = "ResourceId",
+                            RoleArn = "arn:aws:iam::123456789012:role/empRole",
+                            Url = "https://speke-key-provider.example.com"
+                        }
+                    },
+                    SegmentDurationSeconds = 2,
+                    SegmentName = "segmentName"
+                },
+                StartoverWindowSeconds = 300,
+                Tags = new Dictionary<string, string> {
+                    { "key1", "value1" },
+                    { "key2", "value2" }
+                }
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            string containerType = response.ContainerType;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            string eTag = response.ETag;
+            ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
+            DateTime modifiedAt = response.ModifiedAt;
+            List<GetMssManifestConfiguration> mssManifests = response.MssManifests;
+            string originEndpointName = response.OriginEndpointName;
+            Segment segment = response.Segment;
+            int startoverWindowSeconds = response.StartoverWindowSeconds;
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
         public void MediaPackageV2DeleteChannel()
         {
             #region example-1
@@ -640,6 +709,36 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             List<GetHlsManifestConfiguration> hlsManifests = response.HlsManifests;
             List<GetLowLatencyHlsManifestConfiguration> lowLatencyHlsManifests = response.LowLatencyHlsManifests;
             DateTime modifiedAt = response.ModifiedAt;
+            string originEndpointName = response.OriginEndpointName;
+            Segment segment = response.Segment;
+            int startoverWindowSeconds = response.StartoverWindowSeconds;
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
+        public void MediaPackageV2GetOriginEndpoint()
+        {
+            #region example-2
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.GetOriginEndpoint(new GetOriginEndpointRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannel",
+                OriginEndpointName = "exampleOriginEndpointISM"
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            string containerType = response.ContainerType;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            string eTag = response.ETag;
+            ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
+            DateTime modifiedAt = response.ModifiedAt;
+            List<GetMssManifestConfiguration> mssManifests = response.MssManifests;
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;
@@ -1063,6 +1162,76 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             List<GetHlsManifestConfiguration> hlsManifests = response.HlsManifests;
             List<GetLowLatencyHlsManifestConfiguration> lowLatencyHlsManifests = response.LowLatencyHlsManifests;
             DateTime modifiedAt = response.ModifiedAt;
+            string originEndpointName = response.OriginEndpointName;
+            Segment segment = response.Segment;
+            int startoverWindowSeconds = response.StartoverWindowSeconds;
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
+        public void MediaPackageV2UpdateOriginEndpoint()
+        {
+            #region example-2
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.UpdateOriginEndpoint(new UpdateOriginEndpointRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannel",
+                ContainerType = "ISM",
+                Description = "Updated description for exampleOriginEndpointISM",
+                ForceEndpointErrorConfiguration = new ForceEndpointErrorConfiguration { EndpointErrorConditions = new List<string> {
+                    "STALE_MANIFEST",
+                    "INCOMPLETE_MANIFEST",
+                    "MISSING_DRM_KEY",
+                    "SLATE_INPUT"
+                } },
+                MssManifests = new List<CreateMssManifestConfiguration> {
+                    new CreateMssManifestConfiguration {
+                        ManifestLayout = "FULL",
+                        ManifestName = "exampleMssManifest1",
+                        ManifestWindowSeconds = 60
+                    },
+                    new CreateMssManifestConfiguration {
+                        ManifestLayout = "COMPACT",
+                        ManifestName = "exampleMssManifest2",
+                        ManifestWindowSeconds = 30
+                    }
+                },
+                OriginEndpointName = "exampleOriginEndpointISM",
+                Segment = new Segment {
+                    Encryption = new Encryption {
+                        EncryptionMethod = new EncryptionMethod { IsmEncryptionMethod = "CENC" },
+                        SpekeKeyProvider = new SpekeKeyProvider {
+                            DrmSystems = new List<string> {
+                                "PLAYREADY"
+                            },
+                            EncryptionContractConfiguration = new EncryptionContractConfiguration {
+                                PresetSpeke20Audio = "SHARED",
+                                PresetSpeke20Video = "SHARED"
+                            },
+                            ResourceId = "ResourceId",
+                            RoleArn = "arn:aws:iam::123456789012:role/empRole",
+                            Url = "https://speke-key-provider.example.com"
+                        }
+                    },
+                    SegmentDurationSeconds = 2,
+                    SegmentName = "segmentName2"
+                },
+                StartoverWindowSeconds = 600
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            string containerType = response.ContainerType;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            string eTag = response.ETag;
+            ForceEndpointErrorConfiguration forceEndpointErrorConfiguration = response.ForceEndpointErrorConfiguration;
+            DateTime modifiedAt = response.ModifiedAt;
+            List<GetMssManifestConfiguration> mssManifests = response.MssManifests;
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;

@@ -122,6 +122,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModifiedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MssManifests", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ListMssManifestConfiguration, ListMssManifestConfigurationUnmarshaller>(ListMssManifestConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.MssManifests = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("OriginEndpointName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Encryption Marshaller
+    /// CreateMssManifestConfiguration Marshaller
     /// </summary>
-    public class EncryptionMarshaller : IRequestMarshaller<Encryption, JsonMarshallerContext> 
+    public class CreateMssManifestConfigurationMarshaller : IRequestMarshaller<CreateMssManifestConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,48 +42,37 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Encryption requestObject, JsonMarshallerContext context)
+        public void Marshall(CreateMssManifestConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCmafExcludeSegmentDrmMetadata())
+            if(requestObject.IsSetFilterConfiguration())
             {
-                context.Writer.WritePropertyName("CmafExcludeSegmentDrmMetadata");
-                context.Writer.WriteBooleanValue(requestObject.CmafExcludeSegmentDrmMetadata.Value);
-            }
-
-            if(requestObject.IsSetConstantInitializationVector())
-            {
-                context.Writer.WritePropertyName("ConstantInitializationVector");
-                context.Writer.WriteStringValue(requestObject.ConstantInitializationVector);
-            }
-
-            if(requestObject.IsSetEncryptionMethod())
-            {
-                context.Writer.WritePropertyName("EncryptionMethod");
+                context.Writer.WritePropertyName("FilterConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = EncryptionMethodMarshaller.Instance;
-                marshaller.Marshall(requestObject.EncryptionMethod, context);
+                var marshaller = FilterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilterConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetKeyRotationIntervalSeconds())
+            if(requestObject.IsSetManifestLayout())
             {
-                context.Writer.WritePropertyName("KeyRotationIntervalSeconds");
-                context.Writer.WriteNumberValue(requestObject.KeyRotationIntervalSeconds.Value);
+                context.Writer.WritePropertyName("ManifestLayout");
+                context.Writer.WriteStringValue(requestObject.ManifestLayout);
             }
 
-            if(requestObject.IsSetSpekeKeyProvider())
+            if(requestObject.IsSetManifestName())
             {
-                context.Writer.WritePropertyName("SpekeKeyProvider");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("ManifestName");
+                context.Writer.WriteStringValue(requestObject.ManifestName);
+            }
 
-                var marshaller = SpekeKeyProviderMarshaller.Instance;
-                marshaller.Marshall(requestObject.SpekeKeyProvider, context);
-
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetManifestWindowSeconds())
+            {
+                context.Writer.WritePropertyName("ManifestWindowSeconds");
+                context.Writer.WriteNumberValue(requestObject.ManifestWindowSeconds.Value);
             }
 
         }
@@ -91,7 +80,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EncryptionMarshaller Instance = new EncryptionMarshaller();
+        public readonly static CreateMssManifestConfigurationMarshaller Instance = new CreateMssManifestConfigurationMarshaller();
 
     }
 }

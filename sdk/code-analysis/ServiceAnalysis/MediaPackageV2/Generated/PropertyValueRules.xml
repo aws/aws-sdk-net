@@ -842,6 +842,16 @@
     <max>1209600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.CreateMssManifestConfiguration.ManifestName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.CreateMssManifestConfiguration.ManifestWindowSeconds</property>
+    <min>30</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.DashBaseUrl.DvbPriority</property>
     <min>1</min>
     <max>15000</max>
@@ -970,6 +980,12 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.GetMssManifestConfiguration.ManifestName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.HarvestedDashManifest.ManifestName</property>
     <min>1</min>
     <max>256</max>
@@ -1048,6 +1064,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.ListLowLatencyHlsManifestConfiguration.ManifestName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.ListMssManifestConfiguration.ManifestName</property>
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>

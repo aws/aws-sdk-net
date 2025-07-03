@@ -50,6 +50,7 @@ namespace Amazon.MediaPackageV2.Model
         private ForceEndpointErrorConfiguration _forceEndpointErrorConfiguration;
         private List<CreateHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<CreateHlsManifestConfiguration>() : null;
         private List<CreateLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<CreateLowLatencyHlsManifestConfiguration>() : null;
+        private List<CreateMssManifestConfiguration> _mssManifests = AWSConfigs.InitializeCollections ? new List<CreateMssManifestConfiguration>() : null;
         private string _originEndpointName;
         private Segment _segment;
         private int? _startoverWindowSeconds;
@@ -240,6 +241,30 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetLowLatencyHlsManifests()
         {
             return this._lowLatencyHlsManifests != null && (this._lowLatencyHlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MssManifests. 
+        /// <para>
+        /// A list of Microsoft Smooth Streaming (MSS) manifest configurations to update for the
+        /// origin endpoint. This replaces the existing MSS manifest configurations.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CreateMssManifestConfiguration> MssManifests
+        {
+            get { return this._mssManifests; }
+            set { this._mssManifests = value; }
+        }
+
+        // Check to see if MssManifests property is set
+        internal bool IsSetMssManifests()
+        {
+            return this._mssManifests != null && (this._mssManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

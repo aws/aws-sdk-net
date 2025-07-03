@@ -35,6 +35,7 @@ namespace Amazon.MediaPackageV2.Model
     public partial class EncryptionMethod
     {
         private CmafEncryptionMethod _cmafEncryptionMethod;
+        private IsmEncryptionMethod _ismEncryptionMethod;
         private TsEncryptionMethod _tsEncryptionMethod;
 
         /// <summary>
@@ -53,6 +54,26 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetCmafEncryptionMethod()
         {
             return this._cmafEncryptionMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsmEncryptionMethod. 
+        /// <para>
+        /// The encryption method used for Microsoft Smooth Streaming (MSS) content. This specifies
+        /// how the MSS segments are encrypted to protect the content during delivery to client
+        /// players.
+        /// </para>
+        /// </summary>
+        public IsmEncryptionMethod IsmEncryptionMethod
+        {
+            get { return this._ismEncryptionMethod; }
+            set { this._ismEncryptionMethod = value; }
+        }
+
+        // Check to see if IsmEncryptionMethod property is set
+        internal bool IsSetIsmEncryptionMethod()
+        {
+            return this._ismEncryptionMethod != null;
         }
 
         /// <summary>

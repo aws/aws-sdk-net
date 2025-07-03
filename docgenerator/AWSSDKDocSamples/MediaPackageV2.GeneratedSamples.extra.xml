@@ -116,6 +116,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
+            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
+            <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest" />
+            <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Creating an OriginEndpoint with container type ISM, and encryption enabled"
+                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteChannel(Amazon.MediaPackageV2.Model.DeleteChannelRequest)" />
             <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteChannel(Amazon.MediaPackageV2.Model.DeleteChannelRequest)" />
             <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelRequest" />
@@ -301,6 +320,25 @@
                     title="Getting an OriginEndpoint"
                     source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
+            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
+            <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointRequest" />
+            <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Getting an OriginEndpoint with ISM container"
+                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>
@@ -662,6 +700,25 @@
                     title="Updating an OriginEndpoint"
                     source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
+            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
+            <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest" />
+            <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Updating an OriginEndpoint with ISM container"
+                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>
