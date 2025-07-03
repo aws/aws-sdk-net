@@ -1,3 +1,20 @@
+### 3.7.1077.0 (2025-07-03 18:24 UTC)
+* CustomerProfiles (3.7.405.0)
+	* This release introduces capability of create Segments via importing a CSV file directly. This consumes the CSV file and creates/updates corresponding profiles for the particular domain.
+* Deadline (3.7.410.0)
+	* Added fields for output manifest reporting and task chunking parameters
+* EC2 (3.7.456.0)
+	* This release adds GroupOwnerId as a response member to the DescribeSecurityGroupVpcAssociations API and also adds waiters for SecurityGroupVpcAssociations (SecurityGroupVpcAssociationAssociated and SecurityGroupVpcAssociationDisassociated).
+* MediaPackageV2 (3.7.406.0)
+	* This release adds support for Microsoft Smooth Streaming (MSS) and allows users to exclude DRM segment Metadata in MediaPackage v2 Origin Endpoints
+* Route53 (3.7.409.0)
+	* Amazon Route 53 now supports the iso-e regions for private DNS Amazon VPCs and cloudwatch healthchecks.
+* SageMaker (3.7.448.0)
+	* Changes include new StartSession API for SageMaker Studio spaces and CreateHubContentPresignedUrls API for SageMaker JumpStart.
+* Core 3.7.402.79
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1076.0 (2025-07-02 18:18 UTC)
 * ConnectCases (3.7.404.0)
 	* This release adds DeleteCase and DeleteRelatedItem APIs, which enable deleting cases and comments, undoing contact association, and removing service level agreements (SLAs) from cases. Contact center admins can use these APIs to delete cases when requested by customers and correct agent errors.
