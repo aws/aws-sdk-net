@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpaceSettingsSummary Object
+    /// Response Unmarshaller for AuthorizedUrl Object
     /// </summary>  
-    public class SpaceSettingsSummaryUnmarshaller : IJsonUnmarshaller<SpaceSettingsSummary, JsonUnmarshallerContext>
+    public class AuthorizedUrlUnmarshaller : IJsonUnmarshaller<AuthorizedUrl, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SpaceSettingsSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AuthorizedUrl Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SpaceSettingsSummary unmarshalledObject = new SpaceSettingsSummary();
+            AuthorizedUrl unmarshalledObject = new AuthorizedUrl();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppType", targetDepth))
+                if (context.TestExpression("LocalPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.LocalPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemoteAccess", targetDepth))
+                if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RemoteAccess = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SpaceStorageSettings", targetDepth))
-                {
-                    var unmarshaller = SpaceStorageSettingsUnmarshaller.Instance;
-                    unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static SpaceSettingsSummaryUnmarshaller _instance = new SpaceSettingsSummaryUnmarshaller();        
+        private static AuthorizedUrlUnmarshaller _instance = new AuthorizedUrlUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpaceSettingsSummaryUnmarshaller Instance
+        public static AuthorizedUrlUnmarshaller Instance
         {
             get
             {
