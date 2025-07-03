@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private SpaceJupyterLabAppSettings _jupyterLabAppSettings;
         private JupyterServerAppSettings _jupyterServerAppSettings;
         private KernelGatewayAppSettings _kernelGatewayAppSettings;
+        private FeatureStatus _remoteAccess;
         private FeatureStatus _spaceManagedResources;
         private SpaceStorageSettings _spaceStorageSettings;
 
@@ -151,6 +152,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetKernelGatewayAppSettings()
         {
             return this._kernelGatewayAppSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteAccess. 
+        /// <para>
+        /// A setting that enables or disables remote access for a SageMaker space. When enabled,
+        /// this allows you to connect to the remote space from your local IDE.
+        /// </para>
+        /// </summary>
+        public FeatureStatus RemoteAccess
+        {
+            get { return this._remoteAccess; }
+            set { this._remoteAccess = value; }
+        }
+
+        // Check to see if RemoteAccess property is set
+        internal bool IsSetRemoteAccess()
+        {
+            return this._remoteAccess != null;
         }
 
         /// <summary>

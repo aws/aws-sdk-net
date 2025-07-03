@@ -37,6 +37,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for CreateHubContentPresignedUrls operation
+        ///</summary>
+        public ICreateHubContentPresignedUrlsPaginator CreateHubContentPresignedUrls(CreateHubContentPresignedUrlsRequest request) 
+        {
+            return new CreateHubContentPresignedUrlsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListActions operation
         ///</summary>
         public IListActionsPaginator ListActions(ListActionsRequest request) 

@@ -2808,6 +2808,53 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateHubContentPresignedUrls
+
+
+        /// <summary>
+        /// Creates presigned URLs for accessing hub content artifacts. This operation generates
+        /// time-limited, secure URLs that allow direct download of model artifacts and associated
+        /// files from Amazon SageMaker hub content, including gated models that require end-user
+        /// license agreement acceptance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentPresignedUrls service method.</param>
+        /// 
+        /// <returns>The response from the CreateHubContentPresignedUrls service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentPresignedUrls">REST API Reference for CreateHubContentPresignedUrls Operation</seealso>
+        public virtual CreateHubContentPresignedUrlsResponse CreateHubContentPresignedUrls(CreateHubContentPresignedUrlsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHubContentPresignedUrlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHubContentPresignedUrlsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHubContentPresignedUrlsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates presigned URLs for accessing hub content artifacts. This operation generates
+        /// time-limited, secure URLs that allow direct download of model artifacts and associated
+        /// files from Amazon SageMaker hub content, including gated models that require end-user
+        /// license agreement acceptance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentPresignedUrls service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHubContentPresignedUrls service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentPresignedUrls">REST API Reference for CreateHubContentPresignedUrls Operation</seealso>
+        public virtual Task<CreateHubContentPresignedUrlsResponse> CreateHubContentPresignedUrlsAsync(CreateHubContentPresignedUrlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHubContentPresignedUrlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHubContentPresignedUrlsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateHubContentPresignedUrlsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateHubContentReference
 
 
@@ -17343,6 +17390,63 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartPipelineExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSession
+
+
+        /// <summary>
+        /// Initiates a remote connection session between a local integrated development environments
+        /// (IDEs) and a remote SageMaker space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
+        /// 
+        /// <returns>The response from the StartSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartSession">REST API Reference for StartSession Operation</seealso>
+        public virtual StartSessionResponse StartSession(StartSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates a remote connection session between a local integrated development environments
+        /// (IDEs) and a remote SageMaker space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartSession">REST API Reference for StartSession Operation</seealso>
+        public virtual Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -1910,6 +1910,49 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateHubContentPresignedUrls
+
+
+        /// <summary>
+        /// Creates presigned URLs for accessing hub content artifacts. This operation generates
+        /// time-limited, secure URLs that allow direct download of model artifacts and associated
+        /// files from Amazon SageMaker hub content, including gated models that require end-user
+        /// license agreement acceptance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentPresignedUrls service method.</param>
+        /// 
+        /// <returns>The response from the CreateHubContentPresignedUrls service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentPresignedUrls">REST API Reference for CreateHubContentPresignedUrls Operation</seealso>
+        CreateHubContentPresignedUrlsResponse CreateHubContentPresignedUrls(CreateHubContentPresignedUrlsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHubContentPresignedUrls operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentPresignedUrls operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHubContentPresignedUrls
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentPresignedUrls">REST API Reference for CreateHubContentPresignedUrls Operation</seealso>
+        IAsyncResult BeginCreateHubContentPresignedUrls(CreateHubContentPresignedUrlsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHubContentPresignedUrls operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHubContentPresignedUrls.</param>
+        /// 
+        /// <returns>Returns a  CreateHubContentPresignedUrlsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentPresignedUrls">REST API Reference for CreateHubContentPresignedUrls Operation</seealso>
+        CreateHubContentPresignedUrlsResponse EndCreateHubContentPresignedUrls(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateHubContentReference
 
 
@@ -14422,6 +14465,54 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  StartPipelineExecutionResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         StartPipelineExecutionResponse EndStartPipelineExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartSession
+
+
+        /// <summary>
+        /// Initiates a remote connection session between a local integrated development environments
+        /// (IDEs) and a remote SageMaker space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
+        /// 
+        /// <returns>The response from the StartSession service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartSession">REST API Reference for StartSession Operation</seealso>
+        StartSessionResponse StartSession(StartSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSession operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartSession">REST API Reference for StartSession Operation</seealso>
+        IAsyncResult BeginStartSession(StartSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSession.</param>
+        /// 
+        /// <returns>Returns a  StartSessionResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartSession">REST API Reference for StartSession Operation</seealso>
+        StartSessionResponse EndStartSession(IAsyncResult asyncResult);
 
         #endregion
         

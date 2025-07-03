@@ -114,6 +114,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRemoteAccess())
+            {
+                context.Writer.WritePropertyName("RemoteAccess");
+                context.Writer.Write(requestObject.RemoteAccess);
+            }
+
             if(requestObject.IsSetSpaceManagedResources())
             {
                 context.Writer.WritePropertyName("SpaceManagedResources");

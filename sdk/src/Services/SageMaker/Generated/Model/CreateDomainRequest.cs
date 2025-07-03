@@ -306,7 +306,7 @@ namespace Amazon.SageMaker.Model
         /// The VPC subnets that the domain uses for communication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=16)]
+        [AWSProperty(Min=1, Max=16)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -369,7 +369,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=32)]
+        [AWSProperty(Min=0, Max=32)]
         public string VpcId
         {
             get { return this._vpcId; }

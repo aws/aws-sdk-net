@@ -28,6 +28,16 @@ namespace Amazon.SageMaker.Model
     {
 
         /// <summary>
+        /// Paginator for CreateHubContentPresignedUrls operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ICreateHubContentPresignedUrlsPaginator CreateHubContentPresignedUrls(CreateHubContentPresignedUrlsRequest request);
+
+        /// <summary>
         /// Paginator for ListActions operation
         ///</summary>
         [AWSPaginator(
