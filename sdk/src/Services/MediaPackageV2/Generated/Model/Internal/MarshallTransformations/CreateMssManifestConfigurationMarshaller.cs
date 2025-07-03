@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EncryptionMethod Marshaller
+    /// CreateMssManifestConfiguration Marshaller
     /// </summary>
-    public class EncryptionMethodMarshaller : IRequestMarshaller<EncryptionMethod, JsonMarshallerContext> 
+    public class CreateMssManifestConfigurationMarshaller : IRequestMarshaller<CreateMssManifestConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,26 +44,37 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EncryptionMethod requestObject, JsonMarshallerContext context)
+        public void Marshall(CreateMssManifestConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCmafEncryptionMethod())
+            if(requestObject.IsSetFilterConfiguration())
             {
-                context.Writer.WritePropertyName("CmafEncryptionMethod");
-                context.Writer.Write(requestObject.CmafEncryptionMethod);
+                context.Writer.WritePropertyName("FilterConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FilterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilterConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetIsmEncryptionMethod())
+            if(requestObject.IsSetManifestLayout())
             {
-                context.Writer.WritePropertyName("IsmEncryptionMethod");
-                context.Writer.Write(requestObject.IsmEncryptionMethod);
+                context.Writer.WritePropertyName("ManifestLayout");
+                context.Writer.Write(requestObject.ManifestLayout);
             }
 
-            if(requestObject.IsSetTsEncryptionMethod())
+            if(requestObject.IsSetManifestName())
             {
-                context.Writer.WritePropertyName("TsEncryptionMethod");
-                context.Writer.Write(requestObject.TsEncryptionMethod);
+                context.Writer.WritePropertyName("ManifestName");
+                context.Writer.Write(requestObject.ManifestName);
+            }
+
+            if(requestObject.IsSetManifestWindowSeconds())
+            {
+                context.Writer.WritePropertyName("ManifestWindowSeconds");
+                context.Writer.Write(requestObject.ManifestWindowSeconds);
             }
 
         }
@@ -71,7 +82,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EncryptionMethodMarshaller Instance = new EncryptionMethodMarshaller();
+        public readonly static CreateMssManifestConfigurationMarshaller Instance = new CreateMssManifestConfigurationMarshaller();
 
     }
 }

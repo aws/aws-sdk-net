@@ -46,6 +46,7 @@ namespace Amazon.MediaPackageV2.Model
         private List<GetHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<GetHlsManifestConfiguration>() : null;
         private List<GetLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<GetLowLatencyHlsManifestConfiguration>() : null;
         private DateTime? _modifiedAt;
+        private List<GetMssManifestConfiguration> _mssManifests = AWSConfigs.InitializeCollections ? new List<GetMssManifestConfiguration>() : null;
         private string _originEndpointName;
         private Segment _segment;
         private int? _startoverWindowSeconds;
@@ -276,6 +277,25 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetModifiedAt()
         {
             return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MssManifests. 
+        /// <para>
+        /// The updated Microsoft Smooth Streaming (MSS) manifest configurations for this origin
+        /// endpoint.
+        /// </para>
+        /// </summary>
+        public List<GetMssManifestConfiguration> MssManifests
+        {
+            get { return this._mssManifests; }
+            set { this._mssManifests = value; }
+        }
+
+        // Check to see if MssManifests property is set
+        internal bool IsSetMssManifests()
+        {
+            return this._mssManifests != null && (this._mssManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

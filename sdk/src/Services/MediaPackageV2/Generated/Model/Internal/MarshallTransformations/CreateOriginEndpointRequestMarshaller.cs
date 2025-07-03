@@ -144,6 +144,22 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMssManifests())
+                {
+                    context.Writer.WritePropertyName("MssManifests");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMssManifestsListValue in publicRequest.MssManifests)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreateMssManifestConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMssManifestsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetOriginEndpointName())
                 {
                     context.Writer.WritePropertyName("OriginEndpointName");

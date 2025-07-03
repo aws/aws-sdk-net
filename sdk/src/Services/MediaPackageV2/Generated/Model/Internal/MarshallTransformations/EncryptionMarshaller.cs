@@ -48,6 +48,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCmafExcludeSegmentDrmMetadata())
+            {
+                context.Writer.WritePropertyName("CmafExcludeSegmentDrmMetadata");
+                context.Writer.Write(requestObject.CmafExcludeSegmentDrmMetadata);
+            }
+
             if(requestObject.IsSetConstantInitializationVector())
             {
                 context.Writer.WritePropertyName("ConstantInitializationVector");

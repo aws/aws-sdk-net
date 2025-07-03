@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EncryptionMethod Object
+    /// Response Unmarshaller for GetMssManifestConfiguration Object
     /// </summary>  
-    public class EncryptionMethodUnmarshaller : IUnmarshaller<EncryptionMethod, XmlUnmarshallerContext>, IUnmarshaller<EncryptionMethod, JsonUnmarshallerContext>
+    public class GetMssManifestConfigurationUnmarshaller : IUnmarshaller<GetMssManifestConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GetMssManifestConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EncryptionMethod IUnmarshaller<EncryptionMethod, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GetMssManifestConfiguration IUnmarshaller<GetMssManifestConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public EncryptionMethod Unmarshall(JsonUnmarshallerContext context)
+        public GetMssManifestConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            EncryptionMethod unmarshalledObject = new EncryptionMethod();
+            GetMssManifestConfiguration unmarshalledObject = new GetMssManifestConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,34 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CmafEncryptionMethod", targetDepth))
+                if (context.TestExpression("FilterConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CmafEncryptionMethod = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FilterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IsmEncryptionMethod", targetDepth))
+                if (context.TestExpression("ManifestLayout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IsmEncryptionMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestLayout = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TsEncryptionMethod", targetDepth))
+                if (context.TestExpression("ManifestName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TsEncryptionMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ManifestWindowSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Url", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +101,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static EncryptionMethodUnmarshaller _instance = new EncryptionMethodUnmarshaller();        
+        private static GetMssManifestConfigurationUnmarshaller _instance = new GetMssManifestConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EncryptionMethodUnmarshaller Instance
+        public static GetMssManifestConfigurationUnmarshaller Instance
         {
             get
             {
