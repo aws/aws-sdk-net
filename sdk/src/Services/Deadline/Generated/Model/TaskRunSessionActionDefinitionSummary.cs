@@ -34,8 +34,28 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class TaskRunSessionActionDefinitionSummary
     {
+        private Dictionary<string, TaskParameterValue> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, TaskParameterValue>() : null;
         private string _stepId;
         private string _taskId;
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The parameters of a task run in a session action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Dictionary<string, TaskParameterValue> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property StepId. 

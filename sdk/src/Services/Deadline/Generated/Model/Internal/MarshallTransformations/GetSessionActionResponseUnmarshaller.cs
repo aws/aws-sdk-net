@@ -70,6 +70,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     response.EndedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("manifests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TaskRunManifestPropertiesResponse, TaskRunManifestPropertiesResponseUnmarshaller>(TaskRunManifestPropertiesResponseUnmarshaller.Instance);
+                    response.Manifests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("processExitCode", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

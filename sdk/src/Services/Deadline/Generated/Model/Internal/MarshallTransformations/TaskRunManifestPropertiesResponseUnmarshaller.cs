@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TaskRunSessionActionDefinitionSummary Object
+    /// Response Unmarshaller for TaskRunManifestPropertiesResponse Object
     /// </summary>  
-    public class TaskRunSessionActionDefinitionSummaryUnmarshaller : IUnmarshaller<TaskRunSessionActionDefinitionSummary, XmlUnmarshallerContext>, IUnmarshaller<TaskRunSessionActionDefinitionSummary, JsonUnmarshallerContext>
+    public class TaskRunManifestPropertiesResponseUnmarshaller : IUnmarshaller<TaskRunManifestPropertiesResponse, XmlUnmarshallerContext>, IUnmarshaller<TaskRunManifestPropertiesResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TaskRunSessionActionDefinitionSummary IUnmarshaller<TaskRunSessionActionDefinitionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TaskRunManifestPropertiesResponse IUnmarshaller<TaskRunManifestPropertiesResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskRunSessionActionDefinitionSummary Unmarshall(JsonUnmarshallerContext context)
+        public TaskRunManifestPropertiesResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            TaskRunSessionActionDefinitionSummary unmarshalledObject = new TaskRunSessionActionDefinitionSummary();
+            TaskRunManifestPropertiesResponse unmarshalledObject = new TaskRunManifestPropertiesResponse();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("parameters", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, TaskParameterValue, StringUnmarshaller, TaskParameterValueUnmarshaller>(StringUnmarshaller.Instance, TaskParameterValueUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stepId", targetDepth))
+                if (context.TestExpression("outputManifestHash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StepId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputManifestHash = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("taskId", targetDepth))
+                if (context.TestExpression("outputManifestPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputManifestPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         }
 
 
-        private static TaskRunSessionActionDefinitionSummaryUnmarshaller _instance = new TaskRunSessionActionDefinitionSummaryUnmarshaller();        
+        private static TaskRunManifestPropertiesResponseUnmarshaller _instance = new TaskRunManifestPropertiesResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TaskRunSessionActionDefinitionSummaryUnmarshaller Instance
+        public static TaskRunManifestPropertiesResponseUnmarshaller Instance
         {
             get
             {

@@ -2898,6 +2898,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.TaskRunManifestPropertiesRequest.OutputManifestHash</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.TaskRunManifestPropertiesRequest.OutputManifestPath</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.TaskRunSessionActionDefinition.StepId</property>
     <pattern>step-[0-9a-f]{32}</pattern>
   </property-value-rule>

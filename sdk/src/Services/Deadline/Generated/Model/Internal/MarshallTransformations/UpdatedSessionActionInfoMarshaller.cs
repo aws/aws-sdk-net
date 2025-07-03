@@ -60,6 +60,22 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.EndedAt));
             }
 
+            if(requestObject.IsSetManifests())
+            {
+                context.Writer.WritePropertyName("manifests");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectManifestsListValue in requestObject.Manifests)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TaskRunManifestPropertiesRequestMarshaller.Instance;
+                    marshaller.Marshall(requestObjectManifestsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetProcessExitCode())
             {
                 context.Writer.WritePropertyName("processExitCode");

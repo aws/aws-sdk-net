@@ -37,6 +37,7 @@ namespace Amazon.Deadline.Model
         private List<AcquiredLimit> _acquiredLimits = AWSConfigs.InitializeCollections ? new List<AcquiredLimit>() : null;
         private SessionActionDefinition _definition;
         private DateTime? _endedAt;
+        private List<TaskRunManifestPropertiesResponse> _manifests = AWSConfigs.InitializeCollections ? new List<TaskRunManifestPropertiesResponse>() : null;
         private int? _processExitCode;
         private string _progressMessage;
         private float? _progressPercent;
@@ -100,6 +101,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt()
         {
             return this._endedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Manifests. 
+        /// <para>
+        /// The list of manifest properties that describe file attachments for the task run.
+        /// </para>
+        /// </summary>
+        public List<TaskRunManifestPropertiesResponse> Manifests
+        {
+            get { return this._manifests; }
+            set { this._manifests = value; }
+        }
+
+        // Check to see if Manifests property is set
+        internal bool IsSetManifests()
+        {
+            return this._manifests != null && (this._manifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

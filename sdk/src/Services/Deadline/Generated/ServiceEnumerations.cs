@@ -2463,6 +2463,10 @@ namespace Amazon.Deadline
     {
 
         /// <summary>
+        /// Constant CHUNK_INT for StepParameterType
+        /// </summary>
+        public static readonly StepParameterType CHUNK_INT = new StepParameterType("CHUNK_INT");
+        /// <summary>
         /// Constant FLOAT for StepParameterType
         /// </summary>
         public static readonly StepParameterType FLOAT = new StepParameterType("FLOAT");

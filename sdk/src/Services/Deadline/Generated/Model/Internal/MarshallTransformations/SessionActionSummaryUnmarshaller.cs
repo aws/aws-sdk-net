@@ -78,6 +78,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("manifests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TaskRunManifestPropertiesResponse, TaskRunManifestPropertiesResponseUnmarshaller>(TaskRunManifestPropertiesResponseUnmarshaller.Instance);
+                    unmarshalledObject.Manifests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("progressPercent", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;

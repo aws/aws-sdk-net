@@ -37,6 +37,7 @@ namespace Amazon.Deadline.Model
     {
         private CompletedStatus _completedStatus;
         private DateTime? _endedAt;
+        private List<TaskRunManifestPropertiesRequest> _manifests = AWSConfigs.InitializeCollections ? new List<TaskRunManifestPropertiesRequest>() : null;
         private int? _processExitCode;
         private string _progressMessage;
         private float? _progressPercent;
@@ -77,6 +78,26 @@ namespace Amazon.Deadline.Model
         internal bool IsSetEndedAt()
         {
             return this._endedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Manifests. 
+        /// <para>
+        /// A list of output manifest properties reported by the worker agent, with each entry
+        /// corresponding to a manifest property in the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<TaskRunManifestPropertiesRequest> Manifests
+        {
+            get { return this._manifests; }
+            set { this._manifests = value; }
+        }
+
+        // Check to see if Manifests property is set
+        internal bool IsSetManifests()
+        {
+            return this._manifests != null && (this._manifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
