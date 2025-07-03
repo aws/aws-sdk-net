@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class SecurityGroupVpcAssociation
     {
         private string _groupId;
+        private string _groupOwnerId;
         private SecurityGroupVpcAssociationState _state;
         private string _stateReason;
         private string _vpcId;
@@ -56,6 +57,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroupId()
         {
             return this._groupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupOwnerId. 
+        /// <para>
+        /// The Amazon Web Services account ID of the owner of the security group.
+        /// </para>
+        /// </summary>
+        public string GroupOwnerId
+        {
+            get { return this._groupOwnerId; }
+            set { this._groupOwnerId = value; }
+        }
+
+        // Check to see if GroupOwnerId property is set
+        internal bool IsSetGroupOwnerId()
+        {
+            return this._groupOwnerId != null;
         }
 
         /// <summary>

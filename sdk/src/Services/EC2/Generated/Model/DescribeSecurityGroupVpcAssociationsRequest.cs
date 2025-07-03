@@ -50,6 +50,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>group-owner-id</c>: The group owner ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>vpc-id</c>: The ID of the associated VPC.
         /// </para>
         ///  </li> <li> 
