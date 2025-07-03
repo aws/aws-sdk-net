@@ -96,5 +96,15 @@ namespace Amazon.CustomerProfiles.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListSegmentDefinitionsPaginator ListSegmentDefinitions(ListSegmentDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListUploadJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListUploadJobsPaginator ListUploadJobs(ListUploadJobsRequest request);
     }
 }
