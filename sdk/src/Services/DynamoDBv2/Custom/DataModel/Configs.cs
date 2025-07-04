@@ -270,6 +270,14 @@ namespace Amazon.DynamoDBv2.DataModel
         public List<ScanCondition> QueryFilter { get; set; }
 
         /// <summary>
+        /// Represents a filter expression that can be used to filter results in DynamoDB operations.
+        /// </summary>
+        /// <remarks>
+        /// Note: Conditions must be against non-key properties.
+        /// </remarks>
+        public ContextExpression Expression { get; set; }
+
+        /// <summary>
         /// Default constructor
         /// </summary>
         public DynamoDBOperationConfig()
@@ -281,6 +289,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Checks if the IndexName is set on the config
         /// </summary>
         internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }
+
+        internal void ValidateFilter()
+        {
+            if (QueryFilter is { Count: > 0 } && Expression is { Filter: not null } )
+            {
+                throw new InvalidOperationException("Cannot specify both QueryFilter and ExpressionFilter in the same operation configuration. Please use one or the other.");
+            }
+        }
     }
 
     /// <summary>
