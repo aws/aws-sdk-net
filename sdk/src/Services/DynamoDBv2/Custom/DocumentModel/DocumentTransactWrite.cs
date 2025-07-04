@@ -278,19 +278,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, Primitive hashKey, Primitive rangeKey, TransactWriteItemOperationConfig operationConfig = null)
         {
-            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(hashKey, rangeKey), operationConfig);
+            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(hashKey, rangeKey),null,operationConfig);
         }
 
         /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, IDictionary<string, DynamoDBEntry> key, TransactWriteItemOperationConfig operationConfig = null)
         {
-            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(key), operationConfig);
+            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(key), null, operationConfig);
         }
 
         /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, TransactWriteItemOperationConfig operationConfig = null)
         {
-            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(document), operationConfig);
+            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(document), null, operationConfig);
         }
 
         /// <inheritdoc/>
@@ -385,6 +385,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal/private methods
 
+        internal void AddDocumentToUpdate(Document document, List<string> ifNotExistAttributeNames, TransactWriteItemOperationConfig operationConfig = null)
+        {
+            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(document), ifNotExistAttributeNames, operationConfig);
+        }
+
         internal void ExecuteHelper()
         {
             try
@@ -429,14 +434,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
             });
         }
 
-        internal void AddDocumentToUpdateHelper(Document document, Key key, TransactWriteItemOperationConfig operationConfig = null)
+        internal void AddDocumentToUpdateHelper(Document document, Key key, List<string> ifNotExistAttributeNames, TransactWriteItemOperationConfig operationConfig = null)
         {
             Items.Add(new ToUpdateWithDocumentTransactWriteRequestItem
             {
                 TransactionPart = this,
                 Document = document,
                 Key = key,
-                OperationConfig = operationConfig
+                OperationConfig = operationConfig,
+                IfNotExistAttributeNames = ifNotExistAttributeNames
             });
         }
 
@@ -926,7 +932,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new TransactWriteItem { Update = update };
         }
 
-        protected abstract bool TryGetUpdateExpression(out string statement,
+        protected abstract bool TryGetUpdateExpression( out string statement,
             out Dictionary<string, AttributeValue> expressionAttributeValues,
             out Dictionary<string, string> expressionAttributes);
 
@@ -938,6 +944,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Properties
 
         public Document Document { get; set; }
+
+        public List<string> IfNotExistAttributeNames { get; set; }
 
         #endregion
 
@@ -966,7 +974,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return false;
             }
 
-            Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates,null,null,
+            Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, IfNotExistAttributeNames, null, null,
                 out statement, out expressionAttributeValues, out expressionAttributes);
 
             return true;

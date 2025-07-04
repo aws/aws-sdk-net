@@ -214,6 +214,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 request.ExpressionAttributeValues = attributeValues;
             }
         }
+
         internal static Expression MergeUpdateExpressions(Expression right, Expression left)
         {
             if (right == null && left == null)

@@ -539,7 +539,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 
-        private void ValidateConditional(IConditionalOperationConfig config, Expression updateExpression)
+        private void ValidateConditional(IConditionalOperationConfig config, Expression updateExpression, List<string> createOnlyAttributes)
         {
 
             if (config == null)
@@ -549,7 +549,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             conditionsSet += config.Expected != null ? 1 : 0;
             conditionsSet += config.ExpectedState != null ? 1 : 0;
             conditionsSet += 
-                (config.ConditionalExpression is { ExpressionStatement: not null } || updateExpression is { ExpressionStatement: not null }) ? 1 : 0;
+                (config.ConditionalExpression is { ExpressionStatement: not null } || 
+                 updateExpression is { ExpressionStatement: not null } || 
+                 (createOnlyAttributes!=null && createOnlyAttributes.Any())) ?
+                    1 : 0;
 
             if (conditionsSet > 1)
                 throw new InvalidOperationException("Only one of the conditional properties Expected, ExpectedState and ConditionalExpression or UpdateExpression can be set.");
@@ -1369,8 +1372,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
         }
 #endif
-
-        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression)
+        //todo unit tests for UpdateHelper with Expression and ifNotExistAttributeNames
+        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, 
+            List<string> ifNotExistAttributeNames = null)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -1394,7 +1398,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(req, isAsync: false);
 
-            ValidateConditional(currentConfig, updateExpression);
+            ValidateConditional(currentConfig, updateExpression, ifNotExistAttributeNames);
 
             if (currentConfig.Expected != null)
             {
@@ -1408,7 +1412,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
-            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
+            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true } ||
+                     (ifNotExistAttributeNames != null && ifNotExistAttributeNames.Any()))
             {
                 currentConfig.ConditionalExpression?.ApplyExpression(req, this);
 
@@ -1416,7 +1421,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Dictionary<string, AttributeValue> expressionAttributeValues;
                 Dictionary<string, string> expressionAttributeNames;
 
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression, this, out statement, out expressionAttributeValues, out expressionAttributeNames);
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, ifNotExistAttributeNames, updateExpression, this,
+                    out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
@@ -1462,7 +1468,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #if AWS_ASYNC_API
-        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, CancellationToken cancellationToken)
+        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression,
+            CancellationToken cancellationToken, List<string> ifNotExistAttributeNames = null)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -1486,7 +1493,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(req, isAsync: true);
 
-            ValidateConditional(currentConfig, updateExpression);
+            ValidateConditional(currentConfig, updateExpression, ifNotExistAttributeNames);
 
             if (currentConfig.Expected != null)
             {
@@ -1500,7 +1507,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
-            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
+            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true }||
+                     (ifNotExistAttributeNames != null && ifNotExistAttributeNames.Any()))
             {
                 currentConfig.ConditionalExpression?.ApplyExpression(req, this);
 
@@ -1508,7 +1516,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Dictionary<string, AttributeValue> expressionAttributeValues;
                 Dictionary<string, string> expressionAttributeNames;
 
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression,this, out statement, out expressionAttributeValues, out expressionAttributeNames);
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, ifNotExistAttributeNames, updateExpression, this, 
+                    out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
