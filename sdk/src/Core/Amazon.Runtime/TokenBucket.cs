@@ -148,7 +148,6 @@ namespace Amazon.Runtime.Internal
             return true;            
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// This method attempts to acquire capacity from the client's token 
         /// </summary>        
@@ -189,7 +188,6 @@ namespace Amazon.Runtime.Internal
 
             return true;
         }
-#endif
 
         private bool? SetupAcquireToken(double amount)
         {
@@ -351,12 +349,10 @@ namespace Amazon.Runtime.Internal
             AWSSDKUtils.Sleep(delayMs);
         }
 
-#if AWS_ASYNC_API
         protected virtual async System.Threading.Tasks.Task WaitForTokenAsync(int delayMs, CancellationToken cancellationToken)
         {
             await System.Threading.Tasks.Task.Delay(delayMs, cancellationToken).ConfigureAwait(false);
         }
-#endif
 
         protected virtual double GetTimestamp()
         {

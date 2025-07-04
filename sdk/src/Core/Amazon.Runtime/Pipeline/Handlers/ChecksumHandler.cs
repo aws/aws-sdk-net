@@ -37,7 +37,6 @@ namespace Amazon.Runtime.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -51,7 +50,6 @@ namespace Amazon.Runtime.Internal
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);
         }
-#endif
 
         /// <summary>
         /// Calculates the checksum of the payload of a request, and sets the checksum request header only once.

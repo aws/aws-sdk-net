@@ -17,11 +17,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-
-#endif
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime.Telemetry.Tracing;
 using ThirdParty.RuntimeBackports;
@@ -180,13 +177,11 @@ namespace Amazon.DynamoDBv2.DataModel
             PopulateResults();
         }
 
-#if AWS_ASYNC_API
         private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             await DocumentTransaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             PopulateResults();
         }
-#endif
 
         internal override void PopulateResults()
         {
@@ -266,7 +261,6 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#if AWS_ASYNC_API
         private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentTransactGet transaction = new MultiTableDocumentTransactGet();
@@ -283,7 +277,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 abstractTransactGet.PopulateResults();
             }
         }
-#endif
+
         private TracerProvider GetTracerProvider(List<ITransactGet> allTransactionParts)
         {
             var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;

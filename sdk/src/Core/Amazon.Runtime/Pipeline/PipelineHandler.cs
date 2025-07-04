@@ -60,8 +60,6 @@ namespace Amazon.Runtime.Internal
             throw new InvalidOperationException("Cannot invoke InnerHandler. InnerHandler is not set.");
         }
 
-#if AWS_ASYNC_API
-
         /// <summary>
         /// Contains the processing logic for an asynchronous request invocation.
         /// This method calls InnerHandler.InvokeSync to continue processing of the
@@ -83,7 +81,6 @@ namespace Amazon.Runtime.Internal
             }
             throw new InvalidOperationException("Cannot invoke InnerHandler. InnerHandler is not set.");
         }
-#endif
 
         /// <summary>
         /// Logs the metrics for the current execution context.

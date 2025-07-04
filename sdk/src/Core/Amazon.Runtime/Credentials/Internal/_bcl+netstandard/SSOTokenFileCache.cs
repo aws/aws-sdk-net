@@ -18,10 +18,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Text;
 using Amazon.Runtime.CredentialManagement;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using Amazon.Util.Internal;
@@ -45,8 +43,6 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <inheritdoc cref="ScanSsoTokensAsync"/>
         List<SSOTokenFile> ScanSsoTokens(string ssoCacheDirectory);
 
-
-#if AWS_ASYNC_API
         /// <summary>
         /// Tries to load a <see cref="SsoToken"/> from the SSO File Cache.
         /// </summary>
@@ -86,7 +82,6 @@ namespace Amazon.Runtime.Credentials.Internal
         /// Cancels the operation
         /// </param>
         Task<List<SSOTokenFile>> ScanSsoTokensAsync(string ssoCacheDirectory, CancellationToken cancellationToken = default);
-#endif
     }
 
     [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Try methods intentionally suppress all Exceptions")]

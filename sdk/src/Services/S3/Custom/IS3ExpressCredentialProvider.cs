@@ -15,10 +15,8 @@
 
 using Amazon.S3.Model;
 using System;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.S3
 {
@@ -34,11 +32,9 @@ namespace Amazon.S3
         /// </summary>
         SessionCredentials ResolveSessionCredentials(string bucketName);
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Resolves S3Express session credentials based on the bucket name.
         /// </summary>
         Task<SessionCredentials> ResolveSessionCredentialsAsync(string bucketName, CancellationToken cancellationToken = default);
-#endif
     }
 }

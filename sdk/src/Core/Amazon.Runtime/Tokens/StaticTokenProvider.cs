@@ -1,8 +1,6 @@
 using System;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 using Amazon.Util;
 
 namespace Amazon.Runtime
@@ -55,7 +53,6 @@ namespace Amazon.Runtime
         }
 #endif
 
-#if AWS_ASYNC_API
         public Task<TryResponse<AWSToken>> TryResolveTokenAsync(CancellationToken cancellationToken = default)
         {
             var isTokenUnexpired = IsTokenUnexpired();
@@ -67,7 +64,6 @@ namespace Amazon.Runtime
                     Value = isTokenUnexpired ? new AWSToken { Token = _token, Expiration = _expiration } : null
                 });
         }
-#endif
 
         private bool IsTokenUnexpired()
         {

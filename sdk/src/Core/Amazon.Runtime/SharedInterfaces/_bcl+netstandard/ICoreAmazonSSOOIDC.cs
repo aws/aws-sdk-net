@@ -15,10 +15,8 @@
 
 using System;
 using System.Collections.Generic;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime.SharedInterfaces
 {
@@ -44,7 +42,6 @@ namespace Amazon.Runtime.SharedInterfaces
         GetSsoTokenResponse GetSsoToken(GetSsoTokenRequest getSsoTokenRequest);
 #endif
 
-#if AWS_ASYNC_API
         /// <summary>
         /// <para>
         /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
@@ -56,7 +53,6 @@ namespace Amazon.Runtime.SharedInterfaces
         /// </para>
         /// </summary>
         Task<GetSsoTokenResponse> GetSsoTokenAsync(GetSsoTokenRequest getSsoTokenRequest);
-#endif
 
 #if BCL
         /// <summary>
@@ -72,7 +68,6 @@ namespace Amazon.Runtime.SharedInterfaces
         GetSsoTokenResponse RefreshToken(GetSsoTokenResponse previousResponse);
 #endif
 
-#if AWS_ASYNC_API
         /// <summary>
         /// <para>
         /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
@@ -84,7 +79,6 @@ namespace Amazon.Runtime.SharedInterfaces
         /// </para>
         /// </summary>
         Task<GetSsoTokenResponse> RefreshTokenAsync(GetSsoTokenResponse previousResponse);
-#endif
     }
 
     /// <summary>
@@ -95,7 +89,6 @@ namespace Amazon.Runtime.SharedInterfaces
     /// </summary>
     public interface ICoreAmazonSSOOIDC_V2
     {
-#if AWS_ASYNC_API
         /// <summary>
         /// <para>
         /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
@@ -107,7 +100,6 @@ namespace Amazon.Runtime.SharedInterfaces
         /// </para>
         /// </summary>
         Task<GetSsoTokenResponse> GetSsoTokenAsync(GetSsoTokenRequest getSsoTokenRequest, CancellationToken cancellationToken);
-#endif
     }
 
     /// <summary>
@@ -149,7 +141,6 @@ namespace Amazon.Runtime.SharedInterfaces
         public Func<Uri, string> RetrieveAuthorizationCodeCallback { get; set; }
 #endif
 
-#if AWS_ASYNC_API
         /// <summary>
         /// The SDK will construct an authorization URL which the client must send an HTTP GET to retrieve the authorization code (as described in RFC 7636). 
         /// The return value of this delegate will then be used when invoking the <c>CreateToken</c> operation (in addition to the generated <c>code_verifier</c>).
@@ -158,7 +149,6 @@ namespace Amazon.Runtime.SharedInterfaces
         /// This callback will only be invoked in the asynchronous code path of the SSO token manager.
         /// </remarks>
         public Func<Uri, CancellationToken, Task<string>> RetrieveAuthorizationCodeCallbackAsync { get; set; }
-#endif
     }
 
     public class GetSsoTokenRequest

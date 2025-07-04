@@ -41,7 +41,6 @@ namespace Amazon.Runtime.Internal
             } while (HandleRedirect(executionContext));
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Processes HTTP redirects and reissues the call to the
         /// redirected location.
@@ -59,7 +58,6 @@ namespace Amazon.Runtime.Internal
             } while (HandleRedirect(executionContext));
             return result;
         }
-#endif
 
         /// <summary>
         /// Checks if an HTTP 307 (temporary redirect) has occured and changes the 

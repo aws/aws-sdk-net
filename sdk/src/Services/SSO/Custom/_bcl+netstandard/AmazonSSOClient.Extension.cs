@@ -53,8 +53,6 @@ namespace Amazon.SSO
         }
 #endif
 
-#if AWS_ASYNC_API
-
         /// <summary>
         /// Create credentials from SSO access token
         /// </summary>
@@ -80,6 +78,5 @@ namespace Amazon.SSO
         {
             return CoreAmazonSSO.LogoutAsync(this, accessToken, cancellationToken);
         }
-#endif
     }
 }
