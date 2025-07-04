@@ -22,10 +22,8 @@
 
 using System;
 using System.IO;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -303,7 +301,6 @@ namespace Amazon.Runtime.Internal.Util
             BaseStream.Write(buffer, offset, count);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Asynchronously clears all buffers for this stream and causes any buffered data
         /// to be written to the underlying device.
@@ -373,7 +370,6 @@ namespace Amazon.Runtime.Internal.Util
         {
             return BaseStream.WriteAsync(buffer, offset, count, cancellationToken);
         }
-#endif
 
 #endregion
 

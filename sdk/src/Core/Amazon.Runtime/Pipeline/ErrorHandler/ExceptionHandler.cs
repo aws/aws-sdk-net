@@ -40,12 +40,10 @@ namespace Amazon.Runtime.Internal
 
         public abstract bool HandleException(IExecutionContext executionContext, T exception);
 
-#if AWS_ASYNC_API
         public async System.Threading.Tasks.Task<bool> HandleAsync(IExecutionContext executionContext, Exception exception)
         {
             return await HandleExceptionAsync(executionContext, exception as T).ConfigureAwait(false);
         }
         public abstract System.Threading.Tasks.Task<bool> HandleExceptionAsync(IExecutionContext executionContext, T exception);
-#endif
     }
 }

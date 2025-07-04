@@ -105,7 +105,6 @@ namespace Amazon.Runtime.Internal.Auth
 
         public abstract void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity);
 
-#if AWS_ASYNC_API
         public virtual System.Threading.Tasks.Task SignAsync(
             IRequest request, 
             IClientConfig clientConfig,
@@ -120,7 +119,6 @@ namespace Amazon.Runtime.Internal.Auth
             return Task.FromResult(0);
 #endif
         }
-#endif
 
         public abstract ClientProtocol Protocol { get; }
 

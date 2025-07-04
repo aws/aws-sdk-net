@@ -26,7 +26,6 @@ namespace Amazon.Route53.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -40,7 +39,6 @@ namespace Amazon.Route53.Internal
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);                        
         }
-#endif
 
         /// <summary>
         /// Custom pipeline handler

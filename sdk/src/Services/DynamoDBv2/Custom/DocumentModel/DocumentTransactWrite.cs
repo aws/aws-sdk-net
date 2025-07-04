@@ -16,10 +16,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 
@@ -397,7 +395,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             try
@@ -409,7 +406,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (ConditionCheckFailedItems == null) ConditionCheckFailedItems = new List<Document>();
             }
         }
-#endif
 
         private MultiTransactWrite GetMultiTransactWrite()
         {
@@ -624,7 +620,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             List<DocumentTransactWrite> docTransactionParts = new();
@@ -643,7 +638,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
         }
-#endif
 
         private MultiTransactWrite GetMultiTransactWrite()
         {
@@ -690,12 +684,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             WriteItemsHelper();
         }
 
-#if AWS_ASYNC_API
         public Task WriteItemsAsync(CancellationToken cancellationToken)
         {
             return WriteItemsHelperAsync(cancellationToken);
         }
-#endif
+
         #endregion
 
 
@@ -735,7 +728,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API
         private async Task WriteItemsHelperAsync(CancellationToken cancellationToken)
         {
             if (Items == null || !Items.Any()) return;
@@ -758,7 +750,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 item.CommitChanges();
             }
         }
-#endif
 
         private TransactWriteItemsRequest ConstructRequest(bool isAsync)
         {

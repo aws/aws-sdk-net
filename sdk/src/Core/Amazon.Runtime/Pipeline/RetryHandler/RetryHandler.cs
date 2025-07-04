@@ -118,8 +118,6 @@ namespace Amazon.Runtime.Internal
             } while (shouldRetry);
         }
 
-#if AWS_ASYNC_API 
-
         /// <summary>
         /// Invokes the inner handler and performs a retry, if required as per the
         /// retry policy.
@@ -188,8 +186,6 @@ namespace Amazon.Runtime.Internal
             } while (shouldRetry);
             throw new AmazonClientException("Neither a response was returned nor an exception was thrown in the Runtime RetryHandler.");
         }
-
-#endif
 
         /// <summary>
         /// Prepares the request for retry.

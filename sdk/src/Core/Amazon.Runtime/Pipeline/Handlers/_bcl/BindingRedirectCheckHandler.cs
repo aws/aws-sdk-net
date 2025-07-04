@@ -54,7 +54,6 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Check FileNotFoundException for binding errors.
         /// </summary>
@@ -78,7 +77,6 @@ namespace Amazon.Runtime.Internal
                 throw;
             }
         }
-#endif
 
         public static bool IsBindingException(FileNotFoundException e)
         {

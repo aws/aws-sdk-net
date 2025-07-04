@@ -56,7 +56,6 @@ namespace Amazon.RDS.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -70,7 +69,6 @@ namespace Amazon.RDS.Internal
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);                        
         }
-#endif
 
         /// <summary>
         /// Auto-generates pre-signed URLs for requests that implement <see cref="IPreSignedUrlRequest"/>.

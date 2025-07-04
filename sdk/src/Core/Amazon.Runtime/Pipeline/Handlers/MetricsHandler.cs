@@ -68,7 +68,6 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Captures the overall execution time and logs final metrics.
         /// </summary>
@@ -112,6 +111,5 @@ namespace Amazon.Runtime.Internal
                 span.Dispose();
             }            
         }
-#endif
     }
 }

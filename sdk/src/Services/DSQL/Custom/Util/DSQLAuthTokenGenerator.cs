@@ -119,7 +119,6 @@ namespace Amazon.DSQL.Util
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
         /// </summary>
@@ -135,8 +134,6 @@ namespace Amazon.DSQL.Util
             var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue);
         }
-#endif
-
 
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
@@ -204,7 +201,6 @@ namespace Amazon.DSQL.Util
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
         /// </summary>
@@ -220,8 +216,6 @@ namespace Amazon.DSQL.Util
             var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue);
         }
-#endif
-
 
         private static string GenerateAuthToken(ImmutableCredentials immutableCredentials, RegionEndpoint region, string hostname, string actionValue)
         {

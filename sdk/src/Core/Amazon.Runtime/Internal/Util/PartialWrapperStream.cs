@@ -24,10 +24,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -153,7 +151,6 @@ namespace Amazon.Runtime.Internal.Util
             throw new NotSupportedException();
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Asynchronously reads a sequence of bytes from the current stream, advances
         /// the position within the stream by the number of bytes read, and monitors
@@ -210,7 +207,6 @@ namespace Amazon.Runtime.Internal.Util
         {
             throw new NotSupportedException();
         }
-#endif
 
 #if !NETSTANDARD
         public override IAsyncResult BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, Object state)
