@@ -22,10 +22,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime.Internal
 {
@@ -223,7 +221,6 @@ namespace Amazon.Runtime.Internal
             throw new NotImplementedException();
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Writes a stream to the request body.
         /// </summary>
@@ -380,7 +377,6 @@ namespace Amazon.Runtime.Internal
                 }
             }
         }
-#endif
 
         /// <summary>
         /// Configures a request as per the request context.

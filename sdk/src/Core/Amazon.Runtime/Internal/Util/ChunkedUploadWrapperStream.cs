@@ -22,10 +22,8 @@ using Amazon.Runtime.Internal.Auth;
 using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Linq;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -207,7 +205,6 @@ namespace Amazon.Runtime.Internal.Util
             return count;
         }
 
-#if AWS_ASYNC_API
         public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             int bytesRead = 0;
@@ -283,7 +280,6 @@ namespace Amazon.Runtime.Internal.Util
 
             return inputBufferPos;
         }
-#endif
 
         /// <summary>
         /// Results of the header-signing portion of the request when using SigV4 signing

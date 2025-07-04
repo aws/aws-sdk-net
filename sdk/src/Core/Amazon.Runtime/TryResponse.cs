@@ -15,7 +15,6 @@
 
 namespace Amazon.Runtime
 {
-#if AWS_ASYNC_API
     /// <summary>
     /// Helper class to support a TryGetFoo(out var foo) pattern for async operations.
     /// This is necessary because async methods do not support output parameters.
@@ -30,5 +29,4 @@ namespace Amazon.Runtime
 #pragma warning restore CA1000 // Do not declare static members on generic types
 
     }
-#endif
 }

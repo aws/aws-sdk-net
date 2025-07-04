@@ -7,7 +7,7 @@ This project file should not be used as part of a release pipeline.
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
-        <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
+        <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
         <DebugType>portable</DebugType>
         <PackageId>UnitTests</PackageId>
         <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants)</DefineConstants>

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <DebugType>portable</DebugType>
-    <DefineConstants>DEBUG;TRACE;BCL;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;BCL;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.CSM.IntegrationTests.NetFramework</AssemblyName>
     <PackageId>AWSSDK.CSM.IntegrationTests.NetFramework</PackageId>

@@ -18,9 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 
@@ -169,7 +167,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             multiBatchWrite.WriteItems();
         }
 
-#if AWS_ASYNC_API 
         internal Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiBatchWrite multiBatchWrite = new MultiBatchWrite
@@ -178,7 +175,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             };
             return multiBatchWrite.WriteItemsAsync(cancellationToken);
         }
-#endif
 
         internal void AddKeyToDelete(Key key)
         {
@@ -263,7 +259,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             multiBatchWrite.WriteItems();
         }
 
-#if AWS_ASYNC_API
         internal Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             var errMsg = $"All {nameof(IDocumentBatchWrite)} objects must be of type {nameof(DocumentBatchWrite)}";
@@ -273,7 +268,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             };
             return multiBatchWrite.WriteItemsAsync(cancellationToken);
         }
-#endif
 
         #endregion
 
@@ -322,7 +316,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             WriteItemsHelper(Batches);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Pushes items configured in Batches to the server asynchronously
         /// </summary>
@@ -330,7 +323,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return WriteItemsHelperAsync(Batches, cancellationToken);
         }
-#endif
 
         #region Private helper methods
 
@@ -351,7 +343,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API 
         private async Task WriteItemsHelperAsync(List<DocumentBatchWrite> batches, CancellationToken cancellationToken)
         {
             if (Batches == null || Batches.Count == 0)
@@ -368,7 +359,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 await SendSetAsync(nextSet, targetTable, cancellationToken).ConfigureAwait(false);
             }
         }
-#endif
 
         private void SendSet(Dictionary<string, QuickList<WriteRequestDocument>> set, Table targetTable)
         {
@@ -408,7 +398,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API 
         private async Task SendSetAsync(Dictionary<string, QuickList<WriteRequestDocument>> set, Table targetTable, CancellationToken cancellationToken)
         {
             Dictionary<string, Dictionary<Key, Document>> documentMap = null;
@@ -446,7 +435,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
         }
-#endif
 
         private static int GetNumberOfWrites(BatchWriteItemRequest request)
         {
@@ -592,7 +580,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API 
         private async Task CallUntilCompletionAsync(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client, CancellationToken cancellationToken)
         {
             do
@@ -647,7 +634,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
         }
-#endif
 
         private Dictionary<string, QuickList<WriteRequestDocument>> ConvertBatches(List<DocumentBatchWrite> batches)
         {

@@ -3,7 +3,7 @@
 	<TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
 	<AssemblyName>AWSSDK.Extensions.CloudFront.Signers</AssemblyName>
 	<PackageId>AWSSDK.Extensions.CloudFront.Signers</PackageId>
-	<DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
+	<DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
 	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
 	<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
 	<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>

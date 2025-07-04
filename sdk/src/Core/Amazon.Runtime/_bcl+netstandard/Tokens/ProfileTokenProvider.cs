@@ -18,10 +18,8 @@ using Amazon.Runtime.Credentials;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Util;
 using Amazon.Util.Internal;
-#if AWS_ASYNC_API 
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime
 {
@@ -72,7 +70,6 @@ namespace Amazon.Runtime
         }
 #endif
 
-#if AWS_ASYNC_API
         public Task<TryResponse<AWSToken>> TryResolveTokenAsync(CancellationToken cancellationToken = default)
         {
             if (LoadAndValidateProfile(out var profile))
@@ -84,7 +81,6 @@ namespace Amazon.Runtime
                 return Task.FromResult(TryResponse<AWSToken>.Failure);
             }
         }
-#endif
 
         /// <summary>
         /// Loads the <see cref="CredentialProfile"/> from <see cref="_credentialProfileSource"/>

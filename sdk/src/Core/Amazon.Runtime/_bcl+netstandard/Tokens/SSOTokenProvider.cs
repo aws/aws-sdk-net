@@ -16,10 +16,8 @@
 using System;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal.Util;
-#if AWS_ASYNC_API 
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime
 {
@@ -88,7 +86,6 @@ namespace Amazon.Runtime
         }
 #endif
 
-#if AWS_ASYNC_API
         public async Task<TryResponse<AWSToken>> TryResolveTokenAsync(CancellationToken cancellationToken = default)
         {
             try
@@ -114,7 +111,6 @@ namespace Amazon.Runtime
                 throw;
             }
         }
-#endif
 
         private SSOTokenManagerGetTokenOptions BuildSsoTokenManagerGetTokenOptions()
         {

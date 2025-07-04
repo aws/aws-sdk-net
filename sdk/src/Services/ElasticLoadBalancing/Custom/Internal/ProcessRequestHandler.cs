@@ -40,7 +40,6 @@ namespace Amazon.ElasticLoadBalancing.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -54,7 +53,6 @@ namespace Amazon.ElasticLoadBalancing.Internal
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);                        
         }
-#endif
 
         /// <summary>
         /// Method to set the policy names before continuing on with the pipeline.

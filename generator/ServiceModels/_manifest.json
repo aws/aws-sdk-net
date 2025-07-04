@@ -3,7 +3,7 @@
         {
             "name": "NetFramework",
             "targetFrameworks": [ "net472" ],
-            "defineConstants": [ "BCL", "AWS_ASYNC_API", "CODE_ANALYSIS" ],
+            "defineConstants": [ "BCL", "CODE_ANALYSIS" ],
             "template": "VS2017ProjectFile",
             "excludeFolders": [ "_netstandard", "obj"],
             "nugetTargetPlatform": "net472",
@@ -28,7 +28,7 @@
         {
             "name": "NetStandard",
             "targetFrameworks": [ "netstandard2.0", "netcoreapp3.1", "net8.0" ],
-            "defineConstants": [ "NETSTANDARD", "AWS_ASYNC_API"],
+            "defineConstants": [ "NETSTANDARD"],
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",
             "configurations" : [],
@@ -60,7 +60,7 @@
                 "Custom\\Runtime\\TestResponses\\*.txt",
                 "Custom\\Runtime\\EventStreams\\test_vectors\\*",
                 "Custom\\Runtime\\TestEndpoints\\*.json",
-                "Custom\\TestTools\\ComparerTest.json",
+                "Custom\\TestTools\\ComparerTest.json"
             ],
             "packageReferences": [
                 {

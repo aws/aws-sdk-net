@@ -46,7 +46,6 @@ namespace Amazon.Runtime.Internal
             PostInvoke(executionContext);
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Calls the PreInvoke and PostInvoke methods before and after calling the next handler 
         /// in the pipeline.
@@ -62,7 +61,6 @@ namespace Amazon.Runtime.Internal
             PostInvoke(executionContext);
             return response;
         }
-#endif
 
         /// <summary>
         /// Executes the OnPreInvoke action as part of pre-invoke.

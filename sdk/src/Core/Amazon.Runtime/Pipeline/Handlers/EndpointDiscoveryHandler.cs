@@ -63,7 +63,6 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -102,7 +101,6 @@ namespace Amazon.Runtime.Internal
 
             throw new AmazonClientException("Neither a response was returned nor an exception was thrown in the Runtime EndpointDiscoveryResolver.");
         }
-#endif
 
         /// <summary>
         /// Resolves the endpoint to be used for the current request

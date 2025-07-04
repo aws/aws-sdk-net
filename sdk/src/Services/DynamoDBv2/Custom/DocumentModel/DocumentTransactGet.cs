@@ -17,9 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 
@@ -194,13 +192,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Results = items.Values.SingleOrDefault() ?? new List<Document>();
         }
 
-#if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
             Results = items.Values.SingleOrDefault() ?? new List<Document>();
         }
-#endif
 
         internal void AddKeyHelper(Key key, TransactGetItemOperationConfig operationConfig = null)
         {
@@ -301,7 +297,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
@@ -314,7 +309,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 docTransactGet.Results = results ?? new List<Document>();
             }
         }
-#endif
 
         private MultiTransactGet GetMultiTransactGet()
         {
@@ -361,12 +355,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return GetItemsHelper();
         }
 
-#if AWS_ASYNC_API
         public Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsAsync(CancellationToken cancellationToken)
         {
             return GetItemsHelperAsync(cancellationToken);
         }
-#endif
 
         #endregion
 
@@ -393,7 +385,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return GetDocuments(response.Responses);
         }
 
-#if AWS_ASYNC_API
         private async Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsHelperAsync(CancellationToken cancellationToken)
         {
             if (Items == null || !Items.Any()) return new Dictionary<DocumentTransactGet, List<Document>>();
@@ -403,7 +394,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var response = await dynamoDbClient.TransactGetItemsAsync(request, cancellationToken).ConfigureAwait(false);
             return GetDocuments(response.Responses);
         }
-#endif
 
         private TransactGetItemsRequest ConstructRequest(bool isAsync)
         {

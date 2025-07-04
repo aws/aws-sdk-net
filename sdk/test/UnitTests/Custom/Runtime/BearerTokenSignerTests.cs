@@ -63,8 +63,6 @@ namespace AWSSDK.UnitTests.Runtime
             Assert.IsTrue(exception.Message.Contains("Endpoint must not use 'http'"));
         }
 
-
-#if AWS_ASYNC_API
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -95,7 +93,6 @@ namespace AWSSDK.UnitTests.Runtime
             Assert.IsNotNull(exception);
             Assert.IsTrue(exception.Message.Contains("Endpoint must not use 'http'"));
         }
-#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -116,7 +113,6 @@ namespace AWSSDK.UnitTests.Runtime
             AssertAuthorizationHeaderIs(context, fakeAuthToken);
         }
 
-#if AWS_ASYNC_API
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -135,7 +131,6 @@ namespace AWSSDK.UnitTests.Runtime
 
             AssertAuthorizationHeaderIs(context, fakeAuthToken);
         }
-#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -156,7 +151,6 @@ namespace AWSSDK.UnitTests.Runtime
             AssertAuthorizationHeaderIs(context, fakeAuthToken);
         }
 
-#if AWS_ASYNC_API
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -175,7 +169,6 @@ namespace AWSSDK.UnitTests.Runtime
 
             AssertAuthorizationHeaderIs(context, fakeAuthToken);
         }
-#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -200,7 +193,6 @@ namespace AWSSDK.UnitTests.Runtime
             AssertAuthorizationHeaderIs(context, fakeAuthToken);
         }
 
-#if AWS_ASYNC_API
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -223,7 +215,6 @@ namespace AWSSDK.UnitTests.Runtime
 
             AssertAuthorizationHeaderIs(context, fakeAuthToken);
         }
-#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]

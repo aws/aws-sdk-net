@@ -83,7 +83,6 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Handles and processes any exception thrown from underlying handlers.
         /// </summary>
@@ -118,7 +117,6 @@ namespace Amazon.Runtime.Internal
 
             return null;
         }
-#endif
 
         /// <summary>
         /// Disposes the response body.
@@ -172,7 +170,6 @@ namespace Amazon.Runtime.Internal
             return true;
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Processes an exception by invoking a matching exception handler
         /// for the given exception.
@@ -211,6 +208,5 @@ namespace Amazon.Runtime.Internal
             // No match found, rethrow the original exception.
             return true;
         }
-#endif
     }
 }

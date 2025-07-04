@@ -21,9 +21,7 @@ using Amazon.S3.Model;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.S3.Internal.S3Express
 {
@@ -118,7 +116,6 @@ namespace Amazon.S3.Internal.S3Express
             return sessionCredentials;
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Resolves S3Express session credentials based on the bucket name.
         /// </summary>
@@ -162,7 +159,6 @@ namespace Amazon.S3.Internal.S3Express
             }
             return sessionCredentials;
         }
-#endif
 
         private SessionCredentials GetSessionCredentialsFromCache(string bucketName)
         {
@@ -199,11 +195,7 @@ namespace Amazon.S3.Internal.S3Express
         // to avoid keys being overwritten while the list is being populated. Once the list is populated
         // we only lock the cache when adding or updating items to allow other threads to resolve session
         // credentials.
-#if AWS_ASYNC_API
         private async void RefreshCredentials(object _)
-#else
-        private void RefreshCredentials(object _)
-#endif
         {
             try
             {
@@ -240,11 +232,7 @@ namespace Amazon.S3.Internal.S3Express
                     CreateSessionResponse credentials = null;
                     try
                     {
-#if AWS_ASYNC_API
                         credentials = await _s3Client.CreateSessionAsync(new CreateSessionRequest { BucketName = key }).ConfigureAwait(false);
-#else
-                        credentials = _s3Client.CreateSession(new CreateSessionRequest { BucketName = key });
-#endif
                     }
                     catch (NoSuchBucketException e)
                     {

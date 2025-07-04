@@ -18,9 +18,7 @@ using Amazon.Util;
 using System;
 using System.Globalization;
 using System.Threading;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime
 {

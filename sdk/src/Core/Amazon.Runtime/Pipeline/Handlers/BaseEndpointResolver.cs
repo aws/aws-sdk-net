@@ -37,13 +37,11 @@ namespace Amazon.Runtime.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API
         public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);
         }
-#endif
 
         protected virtual void PreInvoke(IExecutionContext executionContext)
         {

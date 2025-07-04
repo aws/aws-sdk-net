@@ -19,9 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -123,8 +121,6 @@ namespace Amazon.Runtime.Internal.Util
             throw new NotImplementedException();
         }
 
-
-#if AWS_ASYNC_API
         public override Task FlushAsync(CancellationToken cancellationToken)
         {
             return BaseStream.FlushAsync(cancellationToken);
@@ -145,7 +141,6 @@ namespace Amazon.Runtime.Internal.Util
         {
             throw new NotImplementedException();
         }
-#endif
 
 #if !NETSTANDARD
         public override IAsyncResult BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, Object state)

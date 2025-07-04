@@ -127,7 +127,6 @@ namespace Amazon.RDS.Util
             return GenerateAuthToken(immutableCredentials, region, hostname, port, dbUser);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Generate a token for IAM authentication to an RDS database.
         /// </summary>
@@ -145,7 +144,6 @@ namespace Amazon.RDS.Util
             var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, port, dbUser);
         }
-#endif
 
         private static string GenerateAuthToken(ImmutableCredentials immutableCredentials, RegionEndpoint region, string hostname, int port, string dbUser)
         {

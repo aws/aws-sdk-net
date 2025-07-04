@@ -827,18 +827,6 @@ namespace Amazon.Runtime.CredentialManagement
                 AccountIdEndpointMode? accountIdEndpointMode = null;
                 if (reservedProperties.TryGetValue(AccountIdEndpointModeField, out var accountIdEndpointModeString))
                 {
-#if BCL35
-                    try
-                    {
-                        accountIdEndpointMode = (AccountIdEndpointMode)Enum.Parse(typeof(AccountIdEndpointMode), accountIdEndpointModeString, true);
-                    }
-                    catch (Exception)
-                    {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string preferred/disabled/required is expected.", accountIdEndpointModeString, AccountIdEndpointModeField, profileName);
-                        profile = null;
-                        return false;
-                    }
-#else
                     if (!Enum.TryParse<AccountIdEndpointMode>(accountIdEndpointModeString, true, out var accountIdEndpointModeTemp))
                     {
                         _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string  preferred/disabled/required is expected.", accountIdEndpointModeString, AccountIdEndpointModeField, profileName);
@@ -846,24 +834,11 @@ namespace Amazon.Runtime.CredentialManagement
                         return false;
                     }
                     accountIdEndpointMode = accountIdEndpointModeTemp;
-#endif
                 }
 
                 RequestChecksumCalculation? requestChecksumCalculation = null;
                 if (reservedProperties.TryGetValue(RequestChecksumCalculationField, out var requestChecksumCalculationString))
                 {
-#if BCL35
-                    try
-                    {
-                        requestChecksumCalculation = (RequestChecksumCalculation)Enum.Parse(typeof(RequestChecksumCalculation), requestChecksumCalculationString, true);
-                    }
-                    catch (Exception)
-                    {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string WHEN_SUPPORTED or WHEN_REQUIRED is expected.", requestChecksumCalculationString, RequestChecksumCalculationField, profileName);
-                        profile = null;
-                        return false;
-                    }
-#else
                     if (!Enum.TryParse<RequestChecksumCalculation>(requestChecksumCalculationString, true, out var requestChecksumCalculationTemp))
                     {
                         _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string WHEN_SUPPORTED or WHEN_REQUIRED is expected.", requestChecksumCalculationString, RequestChecksumCalculationField, profileName);
@@ -871,24 +846,11 @@ namespace Amazon.Runtime.CredentialManagement
                         return false;
                     }
                     requestChecksumCalculation = requestChecksumCalculationTemp;
-#endif
                 }
 
                 ResponseChecksumValidation? responseChecksumValidation = null;
                 if (reservedProperties.TryGetValue(ResponseChecksumValidationField, out var responseChecksumValidationString))
                 {
-#if BCL35
-                    try
-                    {
-                        responseChecksumValidation = (ResponseChecksumValidation)Enum.Parse(typeof(ResponseChecksumValidation), responseChecksumValidationString, true);
-                    }
-                    catch (Exception)
-                    {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string WHEN_SUPPORTED or WHEN_REQUIRED is expected.", responseChecksumValidationString, ResponseChecksumValidationField, profileName);
-                        profile = null;
-                        return false;
-                    }
-#else
                     if (!Enum.TryParse<ResponseChecksumValidation>(responseChecksumValidationString, true, out var responseChecksumValidationTemp))
                     {
                         _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string WHEN_SUPPORTED or WHEN_REQUIRED is expected.", responseChecksumValidationString, ResponseChecksumValidationField, profileName);
@@ -896,7 +858,6 @@ namespace Amazon.Runtime.CredentialManagement
                         return false;
                     }
                     responseChecksumValidation = responseChecksumValidationTemp;
-#endif
                 }
                     profile = new CredentialProfile(profileName, profileOptions)
                 {

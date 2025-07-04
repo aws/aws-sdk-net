@@ -49,7 +49,6 @@ namespace Amazon.S3.Internal
             }
         }
 
-#if AWS_ASYNC_API
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             try
@@ -62,7 +61,6 @@ namespace Amazon.S3.Internal
                 throw;
             }
         }
-#endif
 
         /// <summary>
         /// Catch exceptions and clean up any open streams.

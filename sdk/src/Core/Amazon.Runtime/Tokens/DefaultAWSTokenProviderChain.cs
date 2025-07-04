@@ -14,10 +14,8 @@
  */
 
 using System;
-#if AWS_ASYNC_API 
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime
 {
@@ -69,11 +67,9 @@ namespace Amazon.Runtime
         }
 #endif
 
-#if AWS_ASYNC_API
         public async Task<TryResponse<AWSToken>> TryResolveTokenAsync(CancellationToken cancellationToken = default)
         {
             return await _chain.Value.TryResolveTokenAsync(cancellationToken).ConfigureAwait(false);
         }
-#endif
     }
 }

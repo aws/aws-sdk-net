@@ -51,7 +51,6 @@ namespace Amazon.S3Control.Internal
             }
         }
 
-#if AWS_ASYNC_API
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             try
@@ -64,7 +63,6 @@ namespace Amazon.S3Control.Internal
                 throw;
             }
         }
-#endif
 
         private static void ExtractAmazonIdHeader(IExecutionContext executionContext, Exception exception)
         {

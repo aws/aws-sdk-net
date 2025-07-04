@@ -17,9 +17,7 @@ using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.S3.Util;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.S3.Internal.S3Express
 {
@@ -87,7 +85,6 @@ namespace Amazon.S3.Internal.S3Express
             requestContext.Identity = new BasicAWSCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey);
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -136,7 +133,6 @@ namespace Amazon.S3.Internal.S3Express
             requestContext.Request.Headers[S3ExpressSessionHeader] = sessionCredentials.SessionToken;
             requestContext.Identity = new BasicAWSCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey);
         }
-#endif
 
         private static string GetRequestBucketName(IRequest request)
         {

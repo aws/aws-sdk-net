@@ -31,7 +31,7 @@ namespace Amazon.SQS
         /// <returns>The ARN for the SQS queue. This can be used when setting up the S3 bucket notification.</returns>
         string AuthorizeS3ToSendMessage(string queueUrl, string bucket);
 #endif
-#if AWS_ASYNC_API
+
         /// <summary>
         /// This is a utility method which asynchronously updates the policy of a queue to allow the
         /// S3 bucket to publish events to it.
@@ -40,6 +40,5 @@ namespace Amazon.SQS
         /// <param name="bucket">The bucket that will be given access to send messages from.</param>
         /// <returns>A Task containing the ARN for the SQS queue. This can be used when setting up the S3 bucket notification.</returns>
         System.Threading.Tasks.Task<string> AuthorizeS3ToSendMessageAsync(string queueUrl, string bucket);
-#endif
     }
 }

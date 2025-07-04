@@ -13,10 +13,8 @@
  * permissions and limitations under the License.
  */
 
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Identity;
 

@@ -17,9 +17,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
 
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 
 
@@ -33,7 +31,6 @@ namespace Amazon.S3
 
     internal static class AmazonS3HttpUtil
     {
-#if AWS_ASYNC_API
         internal static async Task<GetHeadResponse> GetHeadAsync(IAmazonS3 s3Client, IClientConfig config, string url, string header)
         {
             HttpWebRequest httpRequest = GetHeadHttpRequest(config, url);
@@ -49,7 +46,6 @@ namespace Amazon.S3
                 return HandleWebException(header, we);
             }
         }
-#endif
 
         internal static GetHeadResponse GetHead(IAmazonS3 s3Client, IClientConfig config, string url, string header)
         {

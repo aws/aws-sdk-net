@@ -64,7 +64,6 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Handles an exception for the given execution context.
         /// </summary>
@@ -92,9 +91,6 @@ namespace Amazon.Runtime.Internal
                 return HandleExceptionStream(requestContext, httpErrorResponse, exception, responseStream);
             }
         }
-
-
-#endif
 
         /// <summary>
         /// Shared logic for the HandleException and HandleExceptionAsync

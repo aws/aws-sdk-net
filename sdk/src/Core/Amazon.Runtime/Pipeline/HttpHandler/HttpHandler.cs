@@ -171,7 +171,6 @@ namespace Amazon.Runtime.Internal
             traceSpan.SetAttribute(TelemetryConstants.HTTPResponseContentLengthAttributeKey, response.ContentLength);
         }
 		
-#if AWS_ASYNC_API 
         /// <summary>
         /// Issues an HTTP request for the current request context.
         /// </summary>
@@ -264,7 +263,6 @@ namespace Amazon.Runtime.Internal
                     iwrd.ResponseBody.Dispose();
             }
         }
-#endif
 
         private static void SetMetrics(IRequestContext requestContext)
         {
