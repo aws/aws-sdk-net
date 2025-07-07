@@ -707,6 +707,11 @@ namespace ServiceClientGenerator
                     else if (this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml)
                         return string.Format("XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
+                    else if (this.model.Type == ServiceType.Cbor)
+                        //TODO return string.Format("CborDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
+                        //    keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
+                        return string.Format("JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
                     else
                         throw new Exception("Unknown protocol type");
                 case "list":
@@ -714,9 +719,13 @@ namespace ServiceClientGenerator
                     var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Member.MemberKey], useNullable);
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("JsonListUnmarshaller<{0},{1}>",listType, listTypeUnmarshaller);
-                    if (this.model.Type == ServiceType.Rest_Xml || this.model.Type == ServiceType.Query)
+                    else if (this.model.Type == ServiceType.Rest_Xml || this.model.Type == ServiceType.Query)
                         return string.Format("XmlListUnmarshaller<{0}, {1}>",
                         listType, listTypeUnmarshaller);
+                    else if (this.model.Type == ServiceType.Cbor)
+                        //TODO return string.Format("CborListUnmarshaller<{0}, {1}>",
+                        //listType, listTypeUnmarshaller);
+                        return string.Format("JsonListUnmarshaller<{0},{1}>",listType, listTypeUnmarshaller);
                     else
                     {
                         throw new Exception("Unknown protocol type");
@@ -813,6 +822,11 @@ namespace ServiceClientGenerator
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("new JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
+                    else if (this.model.Type == ServiceType.Cbor)
+                        //TODO return string.Format("new CborDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
+                        //    keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
+                        return string.Format("new JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else if (this.model.Type == ServiceType.Rest_Xml && !isFlat)
                         return string.Format("new XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5}, \"{6}\", \"{7}\")",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate, keyLocationName, valueLocationName);
@@ -825,6 +839,11 @@ namespace ServiceClientGenerator
                     var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey], typeNode.ToString(), false);
 
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
+                        return string.Format("new JsonListUnmarshaller<{0}, {1}>({2})",
+                            listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);
+                    else if (this.model.Type == ServiceType.Cbor)
+                        // TODO return string.Format("new CborListUnmarshaller<{0}, {1}>({2})",
+                        //    listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);
                         return string.Format("new JsonListUnmarshaller<{0}, {1}>({2})",
                             listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);
                     else if ((this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml) && $"{listTypeUnmarshaller}.Instance" != listTypeUnmarshallerInstantiate)
@@ -1219,6 +1238,8 @@ namespace ServiceClientGenerator
                         return TimestampFormat.ISO8601;
                     case ServiceType.Rest_Xml:
                         return TimestampFormat.ISO8601;
+                    case ServiceType.Cbor:
+                        return TimestampFormat.UnixTimestamp;
 
                     default:
                         throw new InvalidOperationException(
