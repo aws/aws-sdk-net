@@ -398,7 +398,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (sets.Length > 0)
             {
                 var setStatement= updateExpression!=null ? updateExpression.ExpressionStatement + "," : "SET";
-                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} {1}", setStatement, sets.ToString());
+                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} {1} ", setStatement, sets.ToString());
+            }
+            else
+            {
+                var setStatement = updateExpression != null ? updateExpression.ExpressionStatement : "";
+                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} ", setStatement);
             }
             if (removes.Length > 0)
             {

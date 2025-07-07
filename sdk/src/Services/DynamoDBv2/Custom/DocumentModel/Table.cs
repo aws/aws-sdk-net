@@ -1372,7 +1372,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
         }
 #endif
-        //todo unit tests for UpdateHelper with Expression and ifNotExistAttributeNames
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, 
             List<string> ifNotExistAttributeNames = null)
         {

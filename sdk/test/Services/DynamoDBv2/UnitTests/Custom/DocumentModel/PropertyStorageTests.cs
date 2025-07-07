@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Amazon.DynamoDBv2;
 
-namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.DocumentModel
+namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
     public class PropertyStorageTests

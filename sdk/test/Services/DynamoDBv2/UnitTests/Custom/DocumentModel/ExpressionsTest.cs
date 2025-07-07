@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Amazon.DynamoDBv2.DocumentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.DocumentModel
+namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
     public class ExpressionsTest

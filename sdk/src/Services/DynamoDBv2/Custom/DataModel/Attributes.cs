@@ -736,8 +736,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
     /// <summary>
     /// Specifies the update behavior for a property when performing DynamoDB update operations.
-    /// This attribute can be used to control whether a property is always updated, only updated if not null,
-    /// or ignored during update operations.
+    /// This attribute can be used to control whether a property is always updated, only updated if not null.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
     public sealed class DynamoDbUpdateBehaviorAttribute : DynamoDBPropertyAttribute
