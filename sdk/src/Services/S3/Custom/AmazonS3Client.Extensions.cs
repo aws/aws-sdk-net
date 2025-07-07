@@ -744,7 +744,7 @@ namespace Amazon.S3
             request.HttpMethod = "POST";
 
             // POST requests go to the bucket root, not to a specific key
-            request.ResourcePath = "/";
+            request.ResourcePath = "";
             request.UseQueryString = false; // POST uses form data, not query string
 
             return request;
@@ -783,17 +783,33 @@ namespace Amazon.S3
                 writer.WriteEndObject();
             }
             
+            // Track field conditions to avoid duplicates
+            var fieldConditions = new HashSet<string>();
+            
             // Add field conditions
             foreach (var field in request.Fields)
             {
                 writer.WriteStartObject();
                 writer.WriteString(field.Key, field.Value);
                 writer.WriteEndObject();
+                
+                // Track this field+value combination
+                fieldConditions.Add($"{field.Key}:{field.Value}");
             }
             
-            // Add custom conditions using WriteToJsonWriter
+            // Add custom conditions, skipping duplicates of field conditions
             foreach (var condition in request.Conditions)
             {
+                // Skip ExactMatch conditions that duplicate field conditions
+                if (condition is ExactMatchCondition exactMatch)
+                {
+                    var conditionKey = $"{exactMatch.FieldName}:{exactMatch.ExpectedValue}";
+                    if (fieldConditions.Contains(conditionKey))
+                    {
+                        continue; // Skip duplicate
+                    }
+                }
+                
                 condition.WriteToJsonWriter(writer);
             }
             
