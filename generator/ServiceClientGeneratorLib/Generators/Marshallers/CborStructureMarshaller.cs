@@ -39,7 +39,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             this.Write("using AWSSDK.Extensions.CborProtocol;\r\nusing AWSSDK.Extensions.CborProtocol.Inter" +
-                    "nal;\r\n\r\n#pragma warning disable CS0612,CS0618\r\nnamespace ");
+                    "nal.Transform;\r\n\r\n#pragma warning disable CS0612,CS0618\r\nnamespace ");
             
             #line 15 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));

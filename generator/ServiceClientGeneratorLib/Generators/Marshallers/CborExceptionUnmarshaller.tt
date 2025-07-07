@@ -8,25 +8,25 @@
 
     AddCommonUsingStatements();
 #>
-using System.Text.Json;
 using Amazon.Util;
+using System.Formats.Cbor;
+using AWSSDK.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
     /// </summary>  
-    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IJsonErrorResponseUnmarshaller<<#=this.UnmarshallerBaseName #>, JsonUnmarshallerContext>
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : ICborErrorResponseUnmarshaller<<#=this.UnmarshallerBaseName #>, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns></returns>
-        public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public <#=this.UnmarshallerBaseName #> Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -34,15 +34,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
-        /// <param name="reader"></param>
         /// <returns></returns>
-        public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public <#=this.UnmarshallerBaseName #> Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            if (context.Stream.Length > 0)
-            {
-                context.Read(ref reader);
-            }
-
 <#
             if  (this.Config.ServiceModel.IsAwsQueryCompatible)
             {
@@ -60,11 +54,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
             }
 #>
-        
-            int targetDepth = context.CurrentDepth;
-            if (context.Stream.Length > 0)
+            var reader = context.Reader;
+            context.AddPathSegment("<#=this.UnmarshallerBaseName#>");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                while (context.ReadAtDepth(targetDepth, ref reader))
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
 <#
     if(this.Structure != null)
@@ -72,18 +68,25 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         foreach (var member in this.Structure.Members)
         {
 #>
-                    if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
-                    {
-                        var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-                        unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "<#=member.MarshallName#>":
+                        {
+                            context.AddPathSegment("<#=member.PropertyName#>");
+                            var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                            unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
 <#
         }
     }
 #>
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
           
             return unmarshalledObject;
         }

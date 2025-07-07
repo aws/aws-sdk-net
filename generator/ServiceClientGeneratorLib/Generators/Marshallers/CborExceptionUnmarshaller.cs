@@ -38,10 +38,10 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("using System.Text.Json;\r\nusing Amazon.Util;\r\n#pragma warning disable CS0612,CS061" +
-                    "8\r\nnamespace ");
+            this.Write("using Amazon.Util;\r\nusing System.Formats.Cbor;\r\nusing AWSSDK.Extensions.CborProto" +
+                    "col.Internal.Transform;\r\n#pragma warning disable CS0612,CS0618\r\nnamespace ");
             
-            #line 14 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 15 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -49,43 +49,38 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n    /// <summary>\r\n    /// Response U" +
                     "nmarshaller for ");
             
-            #line 17 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 18 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" Object\r\n    /// </summary>  \r\n    public class ");
             
-            #line 19 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 20 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
-            this.Write("Unmarshaller : IJsonErrorResponseUnmarshaller<");
+            this.Write("Unmarshaller : ICborErrorResponseUnmarshaller<");
             
-            #line 19 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 20 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
-            this.Write(@", JsonUnmarshallerContext>
-    {
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name=""context""></param>
-        /// <param name=""reader""></param>
-        /// <returns></returns>
-        public ");
+            this.Write(", CborUnmarshallerContext>\r\n    {\r\n        /// <summary>\r\n        /// Unmarshalle" +
+                    "r the response from the service to the response class.\r\n        /// </summary>  " +
+                    "\r\n        /// <param name=\"context\"></param>\r\n        /// <returns></returns>\r\n " +
+                    "       public ");
             
             #line 27 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
-            this.Write(@" Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+            this.Write(@" Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -93,25 +88,18 @@ namespace ServiceClientGenerator.Generators.Marshallers
         /// </summary>  
         /// <param name=""context""></param>
         /// <param name=""errorResponse""></param>
-        /// <param name=""reader""></param>
         /// <returns></returns>
         public ");
             
-            #line 39 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 38 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
-            this.Write(@" Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
-        {
-            if (context.Stream.Length > 0)
-            {
-                context.Read(ref reader);
-            }
-
-");
+            this.Write(" Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorRespons" +
+                    "e errorResponse)\r\n        {\r\n");
             
-            #line 46 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 40 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
 
             if  (this.Config.ServiceModel.IsAwsQueryCompatible)
             {
@@ -122,14 +110,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            ");
             
-            #line 51 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 45 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" unmarshalledObject = new ");
             
-            #line 51 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 45 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
@@ -137,7 +125,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, errorResponse.InnerException,\r\n                errorType," +
                     " errorCode, errorResponse.RequestId, errorResponse.StatusCode);\r\n");
             
-            #line 53 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 47 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
 
             }
             else
@@ -148,14 +136,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            ");
             
-            #line 58 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 52 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" unmarshalledObject = new ");
             
-            #line 58 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 52 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
@@ -164,18 +152,26 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "nse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode)" +
                     ";\r\n");
             
-            #line 60 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 54 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
 
             }
 
             
             #line default
             #line hidden
-            this.Write("        \r\n            int targetDepth = context.CurrentDepth;\r\n            if (co" +
-                    "ntext.Stream.Length > 0)\r\n            {\r\n                while (context.ReadAtDe" +
-                    "pth(targetDepth, ref reader))\r\n                {\r\n");
+            this.Write("            var reader = context.Reader;\r\n            context.AddPathSegment(\"");
             
-            #line 69 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 58 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
+            
+            #line default
+            #line hidden
+            this.Write("\");\r\n            reader.ReadStartMap();\r\n            while (reader.PeekState() !=" +
+                    " CborReaderState.EndMap)\r\n            {\r\n                string propertyName = r" +
+                    "eader.ReadTextString();\r\n                switch (propertyName)\r\n                " +
+                    "{\r\n");
+            
+            #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
 
     if(this.Structure != null)
     {
@@ -185,32 +181,39 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("                    if (context.TestExpression(\"");
+            this.Write("                    case \"");
             
-            #line 75 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 71 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
             #line hidden
-            this.Write("\", targetDepth))\r\n                    {\r\n                        var unmarshaller" +
-                    " = ");
+            this.Write("\":\r\n                        {\r\n                            context.AddPathSegment" +
+                    "(\"");
             
-            #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
-            
-            #line default
-            #line hidden
-            this.Write(";\r\n                        unmarshalledObject.");
-            
-            #line 78 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 73 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
-            this.Write(" = unmarshaller.Unmarshall(context, ref reader);\r\n                        continu" +
-                    "e;\r\n                    }\r\n");
+            this.Write("\");\r\n                            var unmarshaller = ");
             
-            #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 74 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n                            unmarshalledObject.");
+            
+            #line 75 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write(" = unmarshaller.Unmarshall(context);\r\n                            context.PopPath" +
+                    "Segment();\r\n                            break;\r\n                        }\r\n");
+            
+            #line 79 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
 
         }
     }
@@ -218,10 +221,20 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("                }\r\n            }\r\n          \r\n            return unmarshalledObje" +
-                    "ct;\r\n        }\r\n\r\n");
+            this.Write(@"                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
+            context.PopPathSegment();
+          
+            return unmarshalledObject;
+        }
+
+");
             
-            #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
+            #line 94 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"
 
     this.AddStructureSingletonMethod();
 

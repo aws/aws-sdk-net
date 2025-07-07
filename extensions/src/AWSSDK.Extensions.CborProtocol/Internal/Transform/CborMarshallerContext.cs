@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,30 +13,26 @@
  * permissions and limitations under the License.
  */
 
-/*
- * Do not modify this file. This file is generated.
- */
-using AWSSDK.Extensions.CborProtocol.Internal.Transform;
-using AWSSDK.ProtocolTests;
-using AWSSDK.ProtocolTests.Utils;
-using AWSSDK_DotNet.UnitTests.TestTools;
-using Amazon.RpcV2Protocol;
-using Amazon.RpcV2Protocol.Model;
-using Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
+using System.Formats.Cbor;
 using System.IO;
-using System.Linq;
-using System.Text;
 
-namespace AWSSDK.ProtocolTests.RpcV2Protocol
+namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
 {
-    [TestClass]
-    public class GreetingWithErrors
+    public class CborMarshallerContext : MarshallerContext
     {
+        public CborWriter Writer { get; private set; }
+
+        public CborMarshallerContext(IRequest request, CborWriter writer)
+            : base(request)
+        {
+            Writer = writer;
+        }
     }
 }

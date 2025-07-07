@@ -8,24 +8,28 @@
 
     AddCommonUsingStatements();
 #>
-using System.Text.Json;
 using Amazon.Util;
+using System.Formats.Cbor;
+using AWSSDK.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> operation
     /// </summary>  
-    public class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : JsonResponseUnmarshaller
+    public class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             <#=this.UnmarshallerBaseName #>Response response = new <#=this.Operation.Name #>Response();
+            var reader = context.Reader;
+            context.AddPathSegment("<#=this.Operation.Name#>");
 <#
     var payload = this.Operation.ResponsePayloadMember;
     var unmarshallPayload = payload != null && payload.IsStructure;
@@ -62,20 +66,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             else if (payload.ModelShape.IsString)
             {
 #>
-            using (var sr = new StreamReader(context.Stream))
-            {
-                response.<#=payload.PropertyName#> = sr.ReadToEnd();
-            }
+            response.<#=payload.PropertyName#> = reader.ReadTextString();
 <#
             }
             else if (payload.ModelShape.IsMemoryStream)
             {
 #>
-            var ms = new MemoryStream();
-            Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
-            ms.Seek(0, SeekOrigin.Begin);
-            if (ms.Length > 0)
-                response.<#=payload.PropertyName#> = ms;
+            response.<#=payload.PropertyName#> = CborMemoryStreamUnmarshaller.Instance.Unmarshall(context);
 <#
             }
             else
@@ -90,45 +87,51 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         else if (unmarshallPayload)
         {
 #>
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             var unmarshaller = <#= payload.DetermineTypeUnmarshallerInstantiate() #>;
-            response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
+            response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
 <#
         }
 		else if (this.IsWrapped)
 		{
 #>
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-			response.<#=this.WrappedResultMember#> = <#=this.Structure.Name#>Unmarshaller.Instance.Unmarshall(context, ref reader);
+			response.<#=this.WrappedResultMember#> = <#=this.Structure.Name#>Unmarshaller.Instance.Unmarshall(context);
 <#
 		}
         else
         {
 #>
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
 <#
         
             foreach (var member in this.Operation.ResponseBodyMembers)
             {
 #>
-                if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
-                {
-                    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-                    response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "<#=member.MarshallName#>":
+                        {
+                            context.AddPathSegment("<#=member.PropertyName#>");
+                            var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                            response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
 <#
             }
 #>
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 <#
         }
     }
-	UnmarshallHeaders();
 	ProcessStatusCode();
 #>
 
@@ -142,10 +145,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -159,26 +161,24 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <# // Create a copy of context with headers in the response 
 
 #>
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, true, context.ResponseData))
 <#
             }   
             else
             {
 #>
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
 <#
-            // Create a new reader because the stream has been read already in the original context
             }
 #>
             {
-                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
 <#
     foreach (var exception in this.Operation.Exceptions)
     {
 #>
                 if (errorResponse.Code != null && errorResponse.Code.Equals("<#=exception.Code #>"))
                 {
-                    return <#=exception.Name#>Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return <#=exception.Name#>Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
 <#
     }

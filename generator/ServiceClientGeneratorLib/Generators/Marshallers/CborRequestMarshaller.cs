@@ -39,30 +39,31 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             this.Write("using AWSSDK.Extensions.CborProtocol;\r\nusing AWSSDK.Extensions.CborProtocol.Inter" +
-                    "nal;\r\n\r\n#pragma warning disable CS0612,CS0618\r\nnamespace ");
+                    "nal;\r\nusing AWSSDK.Extensions.CborProtocol.Internal.Transform;\r\n\r\n#pragma warnin" +
+                    "g disable CS0612,CS0618\r\nnamespace ");
             
-            #line 15 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 16 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n\t/// <summary>\r\n\t/// ");
             
-            #line 18 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 19 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write(" Request Marshaller\r\n\t/// </summary>       \r\n\tpublic class ");
             
-            #line 20 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 21 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller : IMarshaller<IRequest, ");
             
-            #line 20 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 21 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -78,7 +79,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         {
             return this.Marshall((");
             
-            #line 29 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 30 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -88,7 +89,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     " name=\"publicRequest\"></param>\r\n        /// <returns></returns>\r\n\t\tpublic IReque" +
                     "st Marshall(");
             
-            #line 37 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 38 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -96,14 +97,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Request publicRequest)\r\n\t\t{\r\n\t\t\tIRequest request = new DefaultRequest(publicReque" +
                     "st, \"");
             
-            #line 39 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 40 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\");\r\n            request.Headers[\"smithy-protocol\"] = \"rpc-v2-cbor\";\r\n");
             
-            #line 41 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 42 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 
 			if (string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
 			{
@@ -115,14 +116,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.ResourcePath = \"");
             
-            #line 47 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 48 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture($"service/{this.Config.ServiceModel.TargetPrefix}/operation/{this.Operation.Name}"));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 48 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 49 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 
 	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && this.Operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
 	{
@@ -133,7 +134,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("#if NET8_0_OR_GREATER\r\n            request.HttpProtocolVersion = System.Net.HttpV" +
                     "ersion.Version20;\r\n#endif\r\n");
             
-            #line 55 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 56 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 
 	}
 	var requestStructure = this.Operation.RequestStructure;
@@ -148,21 +149,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            request.Headers[\"Content-Type\"] = \"application/vnd.amazon.eventstream" +
                     "\";\r\n            request.EventStreamPublisher = new ");
             
-            #line 64 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(eventStreamMember.Shape.Name));
             
             #line default
             #line hidden
             this.Write("PublisherMarshaller(publicRequest.");
             
-            #line 64 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(eventStreamMember.PropertyName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 65 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 66 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 
 	}
 	else if (requestStructure != null)
@@ -173,7 +174,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.Headers[\"Content-Type\"] = \"application/cbor\";\r\n");
             
-            #line 71 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 72 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 	
 	}
 
@@ -185,7 +186,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.Headers[\"Accept\"] = \"application/vnd.amazon.eventstream\";\r\n");
             
-            #line 78 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 79 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 
 	}
 	else
@@ -196,7 +197,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.Headers[\"Accept\"] = \"application/cbor\";\r\n");
             
-            #line 84 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 85 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 	
 	}
 
@@ -209,14 +210,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = \"");
             
-            #line 91 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 92 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.APIVersion));
             
             #line default
             #line hidden
             this.Write("\";\r\n            request.HttpMethod = \"POST\";\r\n\r\n");
             
-            #line 94 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 
     // Generates code to add members of the request to the request being created by the marshaller
 	ProcessRequestUri(this.Operation);
@@ -232,7 +233,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            var writer = CborWriterPool.Rent();\r\n            try\r\n            {\r\n" +
                     "");
             
-            #line 106 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 107 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 		
 		if (payload?.Shape.IsString == true) 
 		{
@@ -242,14 +243,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\twriter.WriteTextString(publicRequest.");
             
-            #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 111 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 111 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 112 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 		
 		}
 		else if (shouldMarshallPayload)
@@ -260,7 +261,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\tvar context = new CborMarshallerContext(request, writer);\r\n\r\n");
             
-            #line 118 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 		
 				ProcessStructure(1, "publicRequest." + payload.PropertyName, payload.Shape);
 		}
@@ -273,7 +274,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\t\twriter.WriteStartMap(null);\r\n\t\t\t\tvar context = new CborMarshallerContext(requ" +
                     "est, writer);\r\n");
             
-            #line 126 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 127 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 		
 				ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
 
@@ -282,7 +283,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\twriter.WriteEndMap();\r\n");
             
-            #line 130 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 131 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 
 		}
 
@@ -292,7 +293,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\t\trequest.Content = writer.Encode();\r\n\t\t\t}\r\n            finally\r\n            {\r" +
                     "\n                CborWriterPool.Return(writer);\r\n            }\r\n");
             
-            #line 139 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 140 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 
 			GenerateRequestChecksumHandling(this.Operation, "snippet");
 
@@ -301,7 +302,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\r\n");
             
-            #line 142 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 143 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 
 	}
 
@@ -313,7 +314,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.DisablePayloadSigning = true;\r\n");
             
-            #line 149 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 150 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 	}
 
 	if (!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
@@ -326,7 +327,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\treturn request;\r\n\t\t}\r\n");
             
-            #line 158 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
+            #line 159 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 				
 		this.AddRequestSingletonMethod();
 
