@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,26 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Runtime;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
+
+/*
+ * Do not modify this file. This file is generated from the rpcv2protocol-2020-07-14.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Formats.Cbor;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 
-namespace AWSSDK.Extensions.CborProtocol.Internal
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.RpcV2Protocol.Model
 {
-    public class CborMarshallerContext : MarshallerContext
+    /// <summary>
+    /// Container for the parameters to the Float16 operation.
+    /// 
+    /// </summary>
+    public partial class Float16Request : AmazonRpcV2ProtocolRequest
     {
-        public CborWriter Writer { get; private set; }
 
-        public CborMarshallerContext(IRequest request, CborWriter writer)
-            : base(request)
-        {
-            Writer = writer;
-        }
     }
 }

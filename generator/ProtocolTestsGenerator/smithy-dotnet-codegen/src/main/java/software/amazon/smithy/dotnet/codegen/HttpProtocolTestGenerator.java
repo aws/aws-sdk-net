@@ -54,9 +54,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
         this.context = context;
 
         String serviceNamespace = null;
-        if(service.getTrait(ServiceTrait.class).isPresent())
+        if (service.getTrait(ServiceTrait.class).isPresent())
                 serviceNamespace = service.getTrait(ServiceTrait.class).get().getSdkId();
-        else if(service.getTrait(TitleTrait.class).isPresent())
+        else if (service.getTrait(TitleTrait.class).isPresent())
             serviceNamespace = service.getTrait(TitleTrait.class).get().getValue().replace("Service", "");
 
         this.serviceNamespace = serviceNamespace.replace(" ", "");

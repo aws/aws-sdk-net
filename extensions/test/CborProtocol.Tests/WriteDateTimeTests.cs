@@ -15,7 +15,7 @@ public class WriteDateTimeTests
     [InlineData("2025-06-19T20:15:28.468Z", 1750364128.468, CborReaderState.DoublePrecisionFloat, 10)]
     public void WriteDateTime_EncodesCorrectly(string isoDate, double expectedUnixEpoch, CborReaderState expectedState, int expectedTotalBytes)
     {
-        var dt = DateTime.Parse(isoDate).ToUniversalTime();
+        var dt = DateTime.Parse(isoDate);
         var writer = new CborWriter();
         writer.WriteDateTime(dt);
 
