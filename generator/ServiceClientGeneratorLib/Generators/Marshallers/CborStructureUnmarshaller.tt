@@ -8,26 +8,27 @@
 
     AddCommonUsingStatements();
 #>
-using System.Text.Json;
+using System.Formats.Cbor;
+using AWSSDK.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
     /// </summary>  
-    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IJsonUnmarshaller<<#=this.UnmarshallerBaseName #>, JsonUnmarshallerContext>
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : ICborUnmarshaller<<#=this.UnmarshallerBaseName #>, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public <#=this.UnmarshallerBaseName #> Unmarshall(CborUnmarshallerContext context)
         {
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();
             if (context.IsEmptyResponse)
                 return null;
+            var reader = context.Reader;
 <#
     //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
     if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers())
@@ -36,10 +37,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         if(eventPayloadMember.ModelShape.IsString)
         {
 #>
-            using (var sr = new StreamReader(context.Stream))
-            {
-                unmarshalledObject.<#=eventPayloadMember.PropertyName#> = sr.ReadToEnd();
-            }
+            unmarshalledObject.<#=eventPayloadMember.PropertyName#> = reader.ReadTextString();
 <#
         }
 #>
@@ -47,7 +45,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         else
         {
 #>
-            unmarshalledObject.<#=eventPayloadMember.PropertyName#> = context.Stream as MemoryStream;
+            unmarshalledObject.<#=eventPayloadMember.PropertyName#> = reader.ReadByteString();
 <#
         }
 #>
@@ -58,13 +56,18 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
     {
 #>
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            if (reader.PeekState() == CborReaderState.Null)
             {
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
 <#
     }
 #>
@@ -74,16 +77,22 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         foreach (var member in this.Structure.Members)
         {
 #>
-                if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
-                {
-                    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-                    unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "<#=member.MarshallName#>":
+                        {
+                            context.AddPathSegment("<#=member.PropertyName#>");
+                            var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                            unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
 <#
         }
     }
 #>
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
 <#
     if(this.Structure != null && (!this.Structure.IsEvent || this.Structure.HasImplicitEventPayloadMembers()))
     {
@@ -92,6 +101,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
     }
 #>
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 
