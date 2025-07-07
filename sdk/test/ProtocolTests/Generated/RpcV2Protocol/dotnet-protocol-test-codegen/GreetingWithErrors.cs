@@ -16,7 +16,7 @@
 /*
  * Do not modify this file. This file is generated.
  */
-using AWSSDK.Extensions.CborProtocol.Internal;
+using AWSSDK.Extensions.CborProtocol.Internal.Transform;
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;

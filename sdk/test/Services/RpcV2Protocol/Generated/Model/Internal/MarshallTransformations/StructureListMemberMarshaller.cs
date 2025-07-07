@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK.Extensions.CborProtocol;
-using AWSSDK.Extensions.CborProtocol.Internal;
+using AWSSDK.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations
