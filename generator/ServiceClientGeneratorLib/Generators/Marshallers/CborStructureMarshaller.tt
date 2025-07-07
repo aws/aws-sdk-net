@@ -9,7 +9,7 @@
 	AddCommonUsingStatements();
 #>
 using AWSSDK.Extensions.CborProtocol;
-using AWSSDK.Extensions.CborProtocol.Internal;
+using AWSSDK.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformations
