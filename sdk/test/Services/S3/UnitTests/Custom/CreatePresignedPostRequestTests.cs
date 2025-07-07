@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Amazon.S3.Util;
+using Amazon.S3.Model;
 using Amazon.Util;
 
 namespace AWSSDK.UnitTests.S3.Custom

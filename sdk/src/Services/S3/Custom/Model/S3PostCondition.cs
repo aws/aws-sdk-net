@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 
-namespace Amazon.S3.Util
+namespace Amazon.S3.Model
 {
     /// <summary>
     /// Base abstract class for all S3 POST policy conditions.

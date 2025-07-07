@@ -667,10 +667,8 @@ namespace Amazon.S3
             // Build the response
             var response = new CreatePresignedPostResponse();
             
-            // Determine the endpoint URL using the processed request context
-            var parameters = new ServiceOperationEndpointParameters(irequest.OriginalRequest);
-            var endpoint = Config.DetermineServiceOperationEndpoint(parameters);
-            response.Url = $"{endpoint.URL}/{request.BucketName}";
+            // Use ComposeUrl to build the proper URL (same approach as GetPreSignedURL)
+            response.Url = ComposeUrl(irequest).AbsoluteUri;
 
             // Add all the required form fields
             response.Fields = new Dictionary<string, string>(request.Fields);
@@ -743,8 +741,8 @@ namespace Amazon.S3
             IRequest request = new DefaultRequest(createPresignedPostRequest, "AmazonS3");
             request.HttpMethod = "POST";
 
-            // POST requests go to the bucket root, not to a specific key
-            request.ResourcePath = "";
+            // Post uses root resource path
+            request.ResourcePath = "/";
             request.UseQueryString = false; // POST uses form data, not query string
 
             return request;

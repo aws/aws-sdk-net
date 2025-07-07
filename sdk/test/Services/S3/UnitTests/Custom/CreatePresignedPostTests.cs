@@ -24,7 +24,7 @@ using Moq;
 using Amazon;
 using Amazon.Runtime;
 using Amazon.S3;
-using Amazon.S3.Util;
+using Amazon.S3.Model;
 using Amazon.Util;
 
 namespace AWSSDK.UnitTests.S3.Custom

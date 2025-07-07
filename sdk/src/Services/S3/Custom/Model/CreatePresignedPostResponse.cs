@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Amazon.S3.Util
+namespace Amazon.S3.Model
 {
     /// <summary>
     /// Response from creating a presigned POST request for S3.

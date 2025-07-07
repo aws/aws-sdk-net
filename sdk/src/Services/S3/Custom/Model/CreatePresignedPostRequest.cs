@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Util;
 
-namespace Amazon.S3.Util
+namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to create a presigned POST request for S3.

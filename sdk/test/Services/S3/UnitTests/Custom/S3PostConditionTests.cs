@@ -19,7 +19,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Amazon.S3.Util;
+using Amazon.S3.Model;
 
 namespace AWSSDK.UnitTests.S3.Custom
 {
