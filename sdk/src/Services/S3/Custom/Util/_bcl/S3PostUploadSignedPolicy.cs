@@ -221,11 +221,11 @@ namespace Amazon.S3.Util
 
                     // Check if required fields exist and are of the correct type
                     if (!json.TryGetProperty(KEY_POLICY, out var policyNode) || policyNode.ValueKind != JsonValueKind.String)
-                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field"), KEY_POLICY);
+                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field", KEY_POLICY), KEY_POLICY);
                     if (!json.TryGetProperty(KEY_SIGNATURE, out var signatureNode) || signatureNode.ValueKind != JsonValueKind.String)
-                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field"), KEY_SIGNATURE);
+                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field", KEY_SIGNATURE), KEY_SIGNATURE);
                     if (!json.TryGetProperty(KEY_ACCESSKEY, out var accessKeyNode) || accessKeyNode.ValueKind != JsonValueKind.String)
-                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field"), KEY_ACCESSKEY);
+                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field", KEY_ACCESSKEY), KEY_ACCESSKEY);
 
                     return new S3PostUploadSignedPolicy
                     {
