@@ -27,7 +27,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.Util;
 
-namespace AWSSDK.UnitTests.S3.Custom
+namespace AWSSDK.UnitTests
 {
     [TestClass]
     public class CreatePresignedPostTests
