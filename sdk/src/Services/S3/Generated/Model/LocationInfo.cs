@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,31 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// Specifies the location where the bucket will be created.
+    /// 
+    ///  
     /// <para>
-    /// Specifies the location where the bucket will be created.
-    /// </para> 
-    /// <para> 
-    /// <b>Directory buckets </b> - The location type is Availability Zone or Local Zone. To use the Local Zone location type, your account must be enabled 
-    /// for Dedicated Local Zones. Otherwise, you get an HTTP <c>403 Forbidden</c> error with the error code <c>AccessDenied</c>. To learn more, see 
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Enable accounts for Dedicated Local Zones</a> in 
-    /// the <i>Amazon S3 User Guide</i>. 
-    /// </para> 
-    /// <note> 
+    /// For directory buckets, the location type is Availability Zone or Local Zone. For more
+    /// information about directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Working
+    /// with directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  <note> 
     /// <para>
     /// This functionality is only supported by directory buckets.
-    /// </para> 
-    /// </note>
+    /// </para>
+    ///  </note>
     /// </summary>
-    public class LocationInfo
+    public partial class LocationInfo
     {
         private string _name;
         private LocationType _type;
@@ -48,8 +56,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// For directory buckets, the name of the location is the AZ ID of the Availability Zone
-        /// where the bucket will be created. An example AZ ID value is <c>usw2-az1</c>.
+        /// For directory buckets, the name of the location is the Zone ID of the Availability
+        /// Zone (AZ) or Local Zone (LZ) where the bucket will be created. An example AZ ID value
+        /// is <c>usw2-az1</c>.
         /// </para>
         /// </summary>
         public string Name

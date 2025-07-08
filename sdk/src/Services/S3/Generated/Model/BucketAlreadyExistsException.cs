@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,6 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -22,71 +26,46 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The bucket you tried to create already exists, and you own it. Amazon S3 returns this
-    /// error in all Amazon Web Services Regions except in the North Virginia Region. For
-    /// legacy compatibility, if you re-create an existing bucket that you already own in
-    /// the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control
-    /// lists (ACLs).
+    /// The requested bucket name is not available. The bucket namespace is shared by all
+    /// users of the system. Select a different name and try again.
     /// </summary>
-#if !NETSTANDARD
+    #if !NETSTANDARD
     [Serializable]
-#endif
-    public partial class BucketAlreadyOwnedByYouException : AmazonS3Exception
+    #endif
+    public partial class BucketAlreadyExistsException : AmazonS3Exception
     {
 
         /// <summary>
-        /// Constructs a new BucketAlreadyOwnedByYouException with the specified error
+        /// Constructs a new BucketAlreadyExistsException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public BucketAlreadyOwnedByYouException(string message)
-            : base(message) { }
+        public BucketAlreadyExistsException(string message) 
+            : base(message) {}
 
         /// <summary>
-        /// Construct instance of BucketAlreadyOwnedByYouException
+        /// Construct instance of BucketAlreadyExistsException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public BucketAlreadyOwnedByYouException(string message, Exception innerException)
-            : base(message, innerException) { }
+        public BucketAlreadyExistsException(string message, Exception innerException) 
+            : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of BucketAlreadyOwnedByYouException
+        /// Construct instance of BucketAlreadyExistsException
         /// </summary>
         /// <param name="innerException"></param>
-        public BucketAlreadyOwnedByYouException(Exception innerException)
-            : base(innerException) { }
+        public BucketAlreadyExistsException(Exception innerException) 
+            : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of BucketAlreadyOwnedByYouException
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public BucketAlreadyOwnedByYouException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message, innerException, errorType, errorCode, requestId, statusCode) { }
-
-        /// <summary>
-        /// Construct instance of BucketAlreadyOwnedByYouException
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="errorType"></param>
-        /// <param name="errorCode"></param>
-        /// <param name="requestId"></param>
-        /// <param name="statusCode"></param>
-        public BucketAlreadyOwnedByYouException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message, errorType, errorCode, requestId, statusCode) { }
-
-        /// <summary>
-        /// Construct instance of BucketAlreadyOwnedByYouException
+        /// Construct instance of BucketAlreadyExistsException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -94,20 +73,30 @@ namespace Amazon.S3.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        /// <param name="amazonId2"></param>
-        /// <param name="amazonCfId"></param>
-        public BucketAlreadyOwnedByYouException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId)
-            : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }
+        public BucketAlreadyExistsException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
+
+        /// <summary>
+        /// Construct instance of BucketAlreadyExistsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        public BucketAlreadyExistsException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+            : base(message, errorType, errorCode, requestId, statusCode) {}
+
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the BucketAlreadyOwnedByYouException class with serialized data.
+        /// Constructs a new instance of the BucketAlreadyExistsException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected BucketAlreadyOwnedByYouException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected BucketAlreadyExistsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }
@@ -128,5 +117,18 @@ namespace Amazon.S3.Model
         }
 #endif
 
+        /// <summary>
+        /// Construct instance of BucketAlreadyExistsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        /// <param name="amazonId2"></param>
+        /// <param name="amazonCfId"></param>
+        public BucketAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId)
+            : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }
     }
 }

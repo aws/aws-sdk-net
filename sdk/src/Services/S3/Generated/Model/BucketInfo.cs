@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,24 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
+using System.Xml.Serialization;
 using System.Text;
-using Amazon.S3.Model.Internal;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Contains information about the Bucket
+    /// Specifies the information about the bucket that will be created. For more information
+    /// about directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+    /// buckets</a> in the <i>Amazon S3 User Guide</i>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This functionality is only supported by directory buckets.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public class BucketInfo
+    public partial class BucketInfo
     {
         private DataRedundancy _dataRedundancy;
         private BucketType _type;
 
         /// <summary>
-        /// Gets and sets the property DataRedundancy.
+        /// Gets and sets the property DataRedundancy. 
+        /// <para>
+        /// The number of Zone (Availability Zone or Local Zone) that's used for redundancy for
+        /// the bucket.
+        /// </para>
         /// </summary>
         public DataRedundancy DataRedundancy
         {
@@ -44,7 +65,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of bucket.
+        /// </para>
         /// </summary>
         public BucketType Type
         {
@@ -57,5 +81,6 @@ namespace Amazon.S3.Model
         {
             return this._type != null;
         }
+
     }
 }
