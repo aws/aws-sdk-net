@@ -759,15 +759,21 @@ namespace Amazon.S3
             return request;
         }
 
+        /// <summary>
+        /// Builds the policy document JSON string from the request using Utf8JsonWriter.
+        /// This approach follows AWS SDK patterns and is Native AOT compatible.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest containing the policy conditions.</param>
+        /// <returns>A JSON string representing the policy document.</returns>
         private string BuildPolicyDocument(CreatePresignedPostRequest request)
         {
-        #if !NETFRAMEWORK
+#if !NETFRAMEWORK
             using var arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using var writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-        #else
+#else
             using var memoryStream = new MemoryStream();
             using var writer = new Utf8JsonWriter(memoryStream);
-        #endif
+#endif
             
             writer.WriteStartObject();
             writer.WriteString("expiration", request.Expires.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"));
@@ -786,8 +792,33 @@ namespace Amazon.S3
                 writer.WriteEndObject();
             }
             
+            // Track field conditions to avoid duplicates
+            var fieldConditions = new HashSet<string>();
+            
+            // Add field conditions
+            foreach (var field in request.Fields)
+            {
+                writer.WriteStartObject();
+                writer.WriteString(field.Key, field.Value);
+                writer.WriteEndObject();
+                
+                // Track this field+value combination
+                fieldConditions.Add($"{field.Key}:{field.Value}");
+            }
+            
+            // Add custom conditions, skipping duplicates of field conditions
             foreach (var condition in request.Conditions)
             {
+                // Skip ExactMatch conditions that duplicate field conditions
+                if (condition is ExactMatchCondition exactMatch)
+                {
+                    var conditionKey = $"{exactMatch.FieldName}:{exactMatch.ExpectedValue}";
+                    if (fieldConditions.Contains(conditionKey))
+                    {
+                        continue; // Skip duplicate
+                    }
+                }
+                
                 condition.WriteToJsonWriter(writer);
             }
             
@@ -795,11 +826,11 @@ namespace Amazon.S3
             writer.WriteEndObject();
             writer.Flush();
             
-        #if !NETFRAMEWORK
+#if !NETFRAMEWORK
             return Encoding.UTF8.GetString(arrayPoolBufferWriter.WrittenMemory.ToArray());
-        #else
+#else
             return Encoding.UTF8.GetString(memoryStream.ToArray());
-        #endif
+#endif
         }
 
         #endregion
