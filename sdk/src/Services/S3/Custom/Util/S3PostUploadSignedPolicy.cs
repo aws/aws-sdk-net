@@ -138,20 +138,27 @@ namespace Amazon.S3.Util
         }
 
         /// <summary>
-        /// Framework-agnostic implementation to add conditions to a policy document.
-        /// Uses JsonDocument/JsonElement instead of JsonNode.
+        /// Adds or updates conditions in an S3 POST policy document while preserving other elements.
+        /// This method creates a new policy document that includes all original policy properties,
+        /// updates any existing conditions that match the new conditions, and adds any new conditions.
         /// </summary>
+        /// <param name="policy">Original policy document as JSON string</param>
+        /// <param name="newConditions">Dictionary of new conditions to add or update</param>
+        /// <returns>UTF-8 bytes of the modified policy document</returns>
         private static byte[] AddConditionsToPolicy(string policy, Dictionary<string, string> newConditions)
         {
+            // Parse the original policy document
             using (JsonDocument policyDoc = JsonDocument.Parse(policy, options))
             {
                 using (var ms = new MemoryStream())
                 {
                     using (var writer = new Utf8JsonWriter(ms))
                     {
+                        // Start writing the new policy document object
                         writer.WriteStartObject();
 
-                        // Copy all properties except "conditions" from the original policy
+                        // Step 1: Copy all properties except "conditions" from the original policy
+                        // (We'll handle the conditions array separately)
                         foreach (var property in policyDoc.RootElement.EnumerateObject())
                         {
                             if (property.Name != "conditions")
@@ -160,63 +167,78 @@ namespace Amazon.S3.Util
                             }
                         }
 
-                        // Write conditions array with modifications
+                        // Step 2: Start writing the new "conditions" array
                         writer.WritePropertyName("conditions");
                         writer.WriteStartArray();
 
+                        // Check if the original policy has a conditions array
                         bool foundConditions = policyDoc.RootElement.TryGetProperty("conditions", out JsonElement conditionsElement);
 
                         if (foundConditions && conditionsElement.ValueKind == JsonValueKind.Array)
                         {
-                            // Process each existing condition
+                            // Step 3: Process each existing condition in the original policy
                             foreach (JsonElement condition in conditionsElement.EnumerateArray())
                             {
-                                bool shouldCopyCondition = true;
-                                string matchedKey = null;
+                                bool shouldCopyCondition = true;  // Default: copy the original condition as-is
+                                string matchedKey = null;         // Track if we found a key to update
 
-                                // Check if this condition is an object that contains any of our new condition keys
+                                // Step 3a: If this condition is an object, check if it contains any keys
+                                // that match our new conditions (meaning we need to update this condition)
                                 if (condition.ValueKind == JsonValueKind.Object)
                                 {
                                     foreach (var newCond in newConditions.Keys.ToList())
                                     {
                                         if (condition.TryGetProperty(newCond, out _))
                                         {
+                                            // This condition contains a key we want to update
                                             matchedKey = newCond;
-                                            shouldCopyCondition = false;
+                                            shouldCopyCondition = false;  // Don't copy as-is, we'll update it
                                             break;
                                         }
                                     }
                                 }
 
+                                // Step 3b: Handle the condition based on whether we need to update it
                                 if (shouldCopyCondition)
                                 {
-                                    // Copy the original condition
+                                    // Case 1: This condition doesn't need updating, copy it as-is
                                     condition.WriteTo(writer);
                                 }
                                 else if (matchedKey != null)
                                 {
-                                    // Write updated condition
+                                    // Case 2: This condition needs updating because it contains a key
+                                    // that matches one of our new conditions
+                                    
+                                    // Start a new object for the updated condition
                                     writer.WriteStartObject();
+                                    
+                                    // Process each property in the original condition
                                     foreach (var property in condition.EnumerateObject())
                                     {
                                         if (property.Name == matchedKey)
                                         {
+                                            // This is the property we want to update
                                             writer.WriteString(matchedKey, newConditions[matchedKey]);
 
-                                            // Remove this key from newConditions since we've handled it
+                                            // Remove this key from newConditions since we've now handled it
+                                            // (It won't need to be added as a new condition at the end)
                                             newConditions.Remove(matchedKey);
                                         }
                                         else
                                         {
+                                            // This is a property we want to preserve (not update)
+                                            // Without this, properties other than the one being updated would be lost
                                             property.WriteTo(writer);
                                         }
                                     }
+                                    
+                                    // End the updated condition object
                                     writer.WriteEndObject();
                                 }
                             }
                         }
 
-                        // Add any remaining new conditions
+                        // Step 4: Add any remaining new conditions that weren't updates to existing ones
                         foreach (var newCond in newConditions)
                         {
                             writer.WriteStartObject();
@@ -224,10 +246,12 @@ namespace Amazon.S3.Util
                             writer.WriteEndObject();
                         }
 
+                        // Step 5: Close the conditions array and the overall policy object
                         writer.WriteEndArray();
                         writer.WriteEndObject();
                         writer.Flush();
 
+                        // Step 6: Return the complete modified policy document as bytes
                         return ms.ToArray();
                     }
                 }
