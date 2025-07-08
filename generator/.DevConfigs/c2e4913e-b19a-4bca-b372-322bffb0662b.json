@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Move core logic of S3PostUploadSignedPolicy out of _bcl folder"
+        "Move S3PostUploadSignedPolicy out of _bcl folder"
       ]
     }
   ]
