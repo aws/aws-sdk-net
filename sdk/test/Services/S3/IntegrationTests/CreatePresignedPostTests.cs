@@ -40,18 +40,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         private const string TestContent = "This is the content body!";
         private const string TestKey = "presigned-post-key";
-        private Dictionary<RegionEndpoint, string> RegionCodePairs = new Dictionary<RegionEndpoint, string>()
-        {
-            { RegionEndpoint.USEast1, "use1-az5" },
-            { RegionEndpoint.USWest2, "usw2-az1" },
-            { RegionEndpoint.EUNorth1, "eun1-az1" }
-        };
 
         private class PresignedPostTestParameters
         {
             public RegionEndpoint Region { get; set; }
             public DateTime Expiration { get; set; }
-            public bool IsS3Express { get; set; }
             public string BucketName { get; set; }
             public Dictionary<string, string> Fields { get; set; }
             public List<S3PostCondition> Conditions { get; set; }
@@ -65,15 +58,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestPresignedPost(new PresignedPostTestParameters
             {
                 Region = RegionEndpoint.USEast1,
-                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2),
-                IsS3Express = false
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2)
             });
 
             TestPresignedPostWithSessionToken(new PresignedPostTestParameters
             {
                 Region = RegionEndpoint.USEast1,
-                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2),
-                IsS3Express = false
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(-2)
             });
         }
 
@@ -88,8 +79,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TestPresignedPost(new PresignedPostTestParameters
                 {
                     Region = RegionEndpoint.USEast1,
-                    Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2),
-                    IsS3Express = false
+                    Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2)
                 });
             }, typeof(ArgumentException), "The maximum expiry period for a presigned url using AWS4 signing is 604800 seconds");
 
@@ -98,8 +88,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TestPresignedPostWithSessionToken(new PresignedPostTestParameters
                 {
                     Region = RegionEndpoint.USEast1,
-                    Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2),
-                    IsS3Express = false
+                    Expiration = AWSSDKUtils.CorrectedUtcNow.AddDays(7).AddHours(2)
                 });
             }, typeof(ArgumentException), "The maximum expiry period for a presigned url using AWS4 signing is 604800 seconds");
         }
@@ -123,8 +112,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     S3PostCondition.StartsWith("Content-Type", "text/"),
                     S3PostCondition.ContentLengthRange(1, 1048576) // 1 byte to 1 MB
-                },
-                IsS3Express = false
+                }
             };
 
             TestPresignedPostWithConditions(testParams);
@@ -150,8 +138,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     // Also add a starts-with condition for Content-Type
                     S3PostCondition.StartsWith("Content-Type", "text/"),
                     S3PostCondition.ContentLengthRange(1, 1048576) // 1 byte to 1 MB
-                },
-                IsS3Express = false
+                }
             };
 
             TestPresignedPostWithMixedContentType(testParams);
@@ -162,26 +149,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var client = new AmazonS3Client(testParams.Region);
             try
             {
-                if (testParams.IsS3Express)
-                {
-                    // Create S3 Express directory bucket
-                    testParams.BucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}--{RegionCodePairs[testParams.Region]}--x-s3";
-                    
-                    client.PutBucket(new PutBucketRequest 
-                    {
-                        BucketName = testParams.BucketName,
-                        PutBucketConfiguration = new PutBucketConfiguration
-                        {
-                            BucketInfo = new BucketInfo { DataRedundancy = DataRedundancy.SingleAvailabilityZone, Type = BucketType.Directory },
-                            Location = new LocationInfo { Name = RegionCodePairs[testParams.Region], Type = LocationType.AvailabilityZone }
-                        }
-                    });
-                }
-                else
-                {
-                    // Create regular bucket
-                    testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
-                }
+                // Create regular bucket
+                testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
+                
                 AssertPresignedPost(client, testParams);
             }
             finally
@@ -199,26 +169,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var client = new AmazonS3Client(credentials, testParams.Region);
                 try
                 {
-                    if (testParams.IsS3Express)
-                    {
-                        // Create S3 Express directory bucket
-                        testParams.BucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}--{RegionCodePairs[testParams.Region]}--x-s3";
-                        
-                        client.PutBucket(new PutBucketRequest 
-                        {
-                            BucketName = testParams.BucketName,
-                            PutBucketConfiguration = new PutBucketConfiguration
-                            {
-                                BucketInfo = new BucketInfo { DataRedundancy = DataRedundancy.SingleAvailabilityZone, Type = BucketType.Directory },
-                                Location = new LocationInfo { Name = RegionCodePairs[testParams.Region], Type = LocationType.AvailabilityZone }
-                            }
-                        });
-                    }
-                    else
-                    {
-                        // Create regular bucket
-                        testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
-                    }
+                    // Create regular bucket
+                    testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
+                    
                     AssertPresignedPost(client, testParams);
                 }
                 finally
@@ -234,26 +187,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var client = new AmazonS3Client(testParams.Region);
             try
             {
-                if (testParams.IsS3Express)
-                {
-                    // Create S3 Express directory bucket
-                    testParams.BucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}--{RegionCodePairs[testParams.Region]}--x-s3";
-                    
-                    client.PutBucket(new PutBucketRequest 
-                    {
-                        BucketName = testParams.BucketName,
-                        PutBucketConfiguration = new PutBucketConfiguration
-                        {
-                            BucketInfo = new BucketInfo { DataRedundancy = DataRedundancy.SingleAvailabilityZone, Type = BucketType.Directory },
-                            Location = new LocationInfo { Name = RegionCodePairs[testParams.Region], Type = LocationType.AvailabilityZone }
-                        }
-                    });
-                }
-                else
-                {
-                    // Create regular bucket
-                    testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
-                }
+                // Create regular bucket
+                testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
+                
                 AssertPresignedPostWithFields(client, testParams);
             }
             finally
@@ -268,26 +204,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var client = new AmazonS3Client(testParams.Region);
             try
             {
-                if (testParams.IsS3Express)
-                {
-                    // Create S3 Express directory bucket
-                    testParams.BucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}--{RegionCodePairs[testParams.Region]}--x-s3";
-                    
-                    client.PutBucket(new PutBucketRequest 
-                    {
-                        BucketName = testParams.BucketName,
-                        PutBucketConfiguration = new PutBucketConfiguration
-                        {
-                            BucketInfo = new BucketInfo { DataRedundancy = DataRedundancy.SingleAvailabilityZone, Type = BucketType.Directory },
-                            Location = new LocationInfo { Name = RegionCodePairs[testParams.Region], Type = LocationType.AvailabilityZone }
-                        }
-                    });
-                }
-                else
-                {
-                    // Create regular bucket
-                    testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
-                }
+                // Create regular bucket
+                testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
+                
                 AssertPresignedPostWithConditions(client, testParams);
             }
             finally
