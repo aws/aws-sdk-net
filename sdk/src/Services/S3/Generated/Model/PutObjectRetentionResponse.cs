@@ -12,29 +12,44 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
-    public partial class PutBucketPolicyRequest : AmazonWebServiceRequest
+    /// <summary>
+    /// This is the response object from the PutObjectRetention operation.
+    /// </summary>
+    public partial class PutObjectRetentionResponse : AmazonWebServiceResponse
     {
+        private RequestCharged _requestCharged;
+
         /// <summary>
-        /// Overriden to turn off sending SHA256 header.
+        /// Gets and sets the property RequestCharged.
         /// </summary>
-        protected override bool IncludeSHA256Header
+        public RequestCharged RequestCharged
         {
-            get
-            {
-                return false;
-            }
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
         }
+
+        // Check to see if RequestCharged property is set
+        internal bool IsSetRequestCharged()
+        {
+            return this._requestCharged != null;
+        }
+
     }
 }
-    

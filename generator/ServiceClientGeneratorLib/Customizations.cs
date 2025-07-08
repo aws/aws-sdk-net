@@ -425,6 +425,8 @@ namespace ServiceClientGenerator
         public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
         public const string OriginalMemberKey = "originalMember";
         public const string OverrideTreatEnumsAsStringKey = "overrideTreatEnumsAsString";
+        public const string ExcludeMembersKey = "excludeMembers";
+
         JsonData _documentRoot;
 
         SimpleMethodFormsModel _simpleMethodsModel;
@@ -558,6 +560,40 @@ namespace ServiceClientGenerator
                 }
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Used to exclude property generation, but not at the marshaller level and only at the shape level.
+        /// To use this customization add an entry like below, where the top-level key is the name of the shape and 
+        /// the array is filled with members to exclude. To exclude members from marshalling, use ShapeModifiers.Exclude key.
+        ///     "excludeMembers":{
+        ///       "PartDetail":[
+        ///          "ChecksumCRC32",
+        ///          "ChecksumCRC32C",
+        ///          "ChecksumCRC64NVME",
+        ///          "ChecksumSHA1",
+        ///          "ChecksumSHA256",
+        ///          "ETag",
+        ///          "LastModified",
+        ///          "PartNumber"
+        ///      ]
+        /// }
+        /// </summary>
+        public List<string> ExcludeMembers(string shapeName)
+        {
+            var data = _documentRoot[ExcludeMembersKey];
+            if (data == null || data[shapeName] == null) return null;
+            if (!data[shapeName].IsArray)
+                throw new InvalidDataException("The members to exclude must be within an array.");
+
+            
+            var excludedMembers = new List<string>();
+            foreach (var member in data[shapeName])
+            {
+                excludedMembers.Add(member.ToString());
+            }
+            return excludedMembers;
+
         }
 
         /// <summary>

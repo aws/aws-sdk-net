@@ -94,6 +94,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	else if(payload != null && !payload.Shape.IsStructure)
 	{
 		ProcessNonStructurePayload(payload, 3);
+		GenerateRequestChecksumHandling(this.Operation, "content");
 	}
 #>
 

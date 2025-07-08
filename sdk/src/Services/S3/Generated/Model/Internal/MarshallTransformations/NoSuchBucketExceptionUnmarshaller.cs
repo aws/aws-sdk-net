@@ -34,16 +34,16 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NoSuchUploadException operation
+    /// Response Unmarshaller for NoSuchBucketException operation
     /// </summary>  
-    public class NoSuchUploadExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchUploadException, XmlUnmarshallerContext>
+    public class NoSuchBucketExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchBucketException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NoSuchUploadException Unmarshall(XmlUnmarshallerContext context)
+        public NoSuchBucketException Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,7 +54,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public NoSuchUploadException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public NoSuchBucketException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             string id2 = null, amzCfId = null;
             var s3ErrorResponse = errorResponse as S3ErrorResponse;
@@ -63,7 +63,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 id2 = s3ErrorResponse.Id2;
                 amzCfId = s3ErrorResponse.AmzCfId;
             }
-            NoSuchUploadException response = new NoSuchUploadException(errorResponse.Message, errorResponse.InnerException,
+            NoSuchBucketException response = new NoSuchBucketException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
 
 
@@ -76,12 +76,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static NoSuchUploadExceptionUnmarshaller _instance = new NoSuchUploadExceptionUnmarshaller();        
+        private static NoSuchBucketExceptionUnmarshaller _instance = new NoSuchBucketExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NoSuchUploadExceptionUnmarshaller Instance
+        public static NoSuchBucketExceptionUnmarshaller Instance
         {
             get
             {
