@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add UnwrapXmlOutput customization hook for GetBucketLocation"
+    ]
+  }
+}

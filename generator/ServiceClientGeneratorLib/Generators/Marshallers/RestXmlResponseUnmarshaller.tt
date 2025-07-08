@@ -115,7 +115,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         {
             int originalDepth = context.CurrentDepth;
 <#
-    if (this.Config.ServiceId == "S3" && this.Operation.Name == "GetBucketLocation")
+    if (this.Config.ServiceModel.Customizations.UnwrapXmlOutput(this.Structure.Name))
     {
 #>
             int targetDepth = 1;
