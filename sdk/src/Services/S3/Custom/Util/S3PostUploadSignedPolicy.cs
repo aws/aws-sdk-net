@@ -147,17 +147,16 @@ namespace Amazon.S3.Util
         /// <returns>UTF-8 bytes of the modified policy document</returns>
         private static byte[] AddConditionsToPolicy(string policy, Dictionary<string, string> newConditions)
         {
-            // Parse the original policy document
             using (JsonDocument policyDoc = JsonDocument.Parse(policy, options))
             {
                 using (var ms = new MemoryStream())
                 {
                     using (var writer = new Utf8JsonWriter(ms))
                     {
-                        // Start writing the new policy document object
+                        // Step 1: Start writing the new policy document object
                         writer.WriteStartObject();
 
-                        // Step 1: Copy all properties except "conditions" from the original policy
+                        // Step 2: Copy all properties except "conditions" from the original policy
                         // (We'll handle the conditions array separately)
                         foreach (var property in policyDoc.RootElement.EnumerateObject())
                         {
@@ -167,38 +166,39 @@ namespace Amazon.S3.Util
                             }
                         }
 
-                        // Step 2: Start writing the new "conditions" array
+                        // Step 3: Start writing the new "conditions" array
                         writer.WritePropertyName("conditions");
                         writer.WriteStartArray();
 
-                        // Check if the original policy has a conditions array
+                        // Step 4: Check if the original policy has a conditions array
                         bool foundConditions = policyDoc.RootElement.TryGetProperty("conditions", out JsonElement conditionsElement);
 
                         if (foundConditions && conditionsElement.ValueKind == JsonValueKind.Array)
                         {
-                            // Step 3: Process each existing condition in the original policy
+                            // Step 5: Process each existing condition in the original policy
                             foreach (JsonElement condition in conditionsElement.EnumerateArray())
                             {
                                 bool shouldCopyCondition = true;  // Default: copy the original condition as-is
                                 string matchedKey = null;         // Track if we found a key to update
 
-                                // Step 3a: If this condition is an object, check if it contains any keys
+                                // Step 5a: If this condition is an object, check if it contains any keys
                                 // that match our new conditions (meaning we need to update this condition)
                                 if (condition.ValueKind == JsonValueKind.Object)
                                 {
-                                    foreach (var newCond in newConditions.Keys.ToList())
+                                    // Optimized: Directly iterate over dictionary entries to avoid ToList allocation
+                                    foreach (var newCond in newConditions)
                                     {
-                                        if (condition.TryGetProperty(newCond, out _))
+                                        if (condition.TryGetProperty(newCond.Key, out _))
                                         {
                                             // This condition contains a key we want to update
-                                            matchedKey = newCond;
+                                            matchedKey = newCond.Key;
                                             shouldCopyCondition = false;  // Don't copy as-is, we'll update it
                                             break;
                                         }
                                     }
                                 }
 
-                                // Step 3b: Handle the condition based on whether we need to update it
+                                // Step 5b: Handle the condition based on whether we need to update it
                                 if (shouldCopyCondition)
                                 {
                                     // Case 1: This condition doesn't need updating, copy it as-is
@@ -217,7 +217,7 @@ namespace Amazon.S3.Util
                                     {
                                         if (property.Name == matchedKey)
                                         {
-                                            // This is the property we want to update
+                                            // This is the property we want to update with the new value
                                             writer.WriteString(matchedKey, newConditions[matchedKey]);
 
                                             // Remove this key from newConditions since we've now handled it
@@ -227,7 +227,7 @@ namespace Amazon.S3.Util
                                         else
                                         {
                                             // This is a property we want to preserve (not update)
-                                            // Without this, properties other than the one being updated would be lost
+                                            // Without this else clause, properties other than the one being updated would be lost
                                             property.WriteTo(writer);
                                         }
                                     }
@@ -238,7 +238,7 @@ namespace Amazon.S3.Util
                             }
                         }
 
-                        // Step 4: Add any remaining new conditions that weren't updates to existing ones
+                        // Step 6: Add any remaining new conditions that weren't updates to existing ones
                         foreach (var newCond in newConditions)
                         {
                             writer.WriteStartObject();
@@ -246,12 +246,12 @@ namespace Amazon.S3.Util
                             writer.WriteEndObject();
                         }
 
-                        // Step 5: Close the conditions array and the overall policy object
+                        // Step 7: Close the conditions array and the overall policy object
                         writer.WriteEndArray();
                         writer.WriteEndObject();
                         writer.Flush();
 
-                        // Step 6: Return the complete modified policy document as bytes
+                        // Step 8: Return the complete modified policy document as bytes
                         return ms.ToArray();
                     }
                 }
