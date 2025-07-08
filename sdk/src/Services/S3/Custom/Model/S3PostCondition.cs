@@ -138,9 +138,6 @@ namespace Amazon.S3.Model
     /// This is useful for enforcing specific values for metadata, ACL settings, storage class, etc.
     /// </para>
     /// <para>
-    /// The condition is serialized as a JSON object: <c>{"fieldName": "expectedValue"}</c>
-    /// </para>
-    /// <para>
     /// Common use cases include:
     /// </para>
     /// <list type="bullet">
