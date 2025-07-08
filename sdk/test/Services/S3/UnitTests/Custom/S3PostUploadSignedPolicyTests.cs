@@ -24,7 +24,7 @@ using Amazon.Runtime;
 using Amazon.S3.Util;
 using Amazon;
 
-namespace AWSSDK.UnitTests.S3.Custom
+namespace AWSSDK.UnitTests
 {
     [TestClass]
     public class S3PostUploadSignedPolicyTests

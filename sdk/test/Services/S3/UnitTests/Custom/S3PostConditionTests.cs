@@ -21,7 +21,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.S3.Model;
 
-namespace AWSSDK.UnitTests.S3.Custom
+namespace AWSSDK.UnitTests
 {
     [TestClass]
     public class S3PostConditionTests
