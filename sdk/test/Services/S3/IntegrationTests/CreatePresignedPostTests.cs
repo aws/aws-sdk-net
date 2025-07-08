@@ -38,6 +38,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestClass]
     public class CreatePresignedPostTests : TestBase<AmazonS3Client>
     {
+        // Test result classes for better structure
+        private class UploadResult
+        {
+            public bool IsSuccessful { get; set; }
+            public HttpStatusCode StatusCode { get; set; }
+            public string ResponseText { get; set; }
+        }
+
         private const string TestContent = "This is the content body!";
         private const string TestKey = "presigned-post-key";
 
@@ -216,6 +224,138 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
         
+        // Helper methods for creating and working with presigned POST URLs
+        private CreatePresignedPostResponse GeneratePresignedPostRequest(
+            AmazonS3Client client, 
+            string bucketName, 
+            string objectKey, 
+            DateTime expiration,
+            Dictionary<string, string> fields = null,
+            List<S3PostCondition> conditions = null)
+        {
+            var request = new CreatePresignedPostRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey,
+                Expires = expiration
+            };
+
+            // Add custom fields if provided
+            if (fields != null)
+            {
+                foreach (var field in fields)
+                {
+                    request.Fields.Add(field.Key, field.Value);
+                }
+            }
+
+            // Add conditions if provided
+            if (conditions != null)
+            {
+                foreach (var condition in conditions)
+                {
+                    request.Conditions.Add(condition);
+                }
+            }
+
+            return client.CreatePresignedPost(request);
+        }
+
+        // Validates that Content-Type field exists with expected value
+        private void ValidateContentTypeFieldPresent(CreatePresignedPostResponse response, string expectedContentType)
+        {
+            Assert.IsTrue(response.Fields.ContainsKey("Content-Type"), 
+                "Content-Type should be included in response fields even with a starts-with condition");
+            Assert.AreEqual(expectedContentType, response.Fields["Content-Type"]);
+        }
+
+        // Performs an upload with valid Content-Type
+        private UploadResult PerformUpload(
+            string url, 
+            Dictionary<string, string> fields, 
+            string content, 
+            string objectKey,
+            string contentType)
+        {
+            var formData = new MultipartFormDataContent();
+
+            // Add all form fields
+            foreach (var field in fields)
+            {
+                formData.Add(new StringContent(field.Value), field.Key);
+            }
+
+            // Add file content with proper Content-Type
+            var fileContent = new ByteArrayContent(Encoding.UTF8.GetBytes(content));
+            fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
+            formData.Add(fileContent, "file", objectKey);
+
+            using (var httpClient = new System.Net.Http.HttpClient())
+            {
+                // Send the POST request
+                var httpResponse = httpClient.PostAsync(url, formData).Result;
+                
+                return new UploadResult
+                {
+                    IsSuccessful = httpResponse.IsSuccessStatusCode,
+                    StatusCode = httpResponse.StatusCode,
+                    ResponseText = httpResponse.Content.ReadAsStringAsync().Result
+                };
+            }
+        }
+
+        // Validates that the object was uploaded correctly
+        private void ValidateObjectContent(AmazonS3Client client, string bucketName, string objectKey, string expectedContent)
+        {
+            var getObjectResponse = client.GetObject(bucketName, objectKey);
+            using (var reader = new StreamReader(getObjectResponse.ResponseStream))
+            {
+                var content = reader.ReadToEnd();
+                Assert.AreEqual(expectedContent, content, "Object content does not match expected content");
+            }
+        }
+
+        // Performs an upload with invalid Content-Type to test condition enforcement
+        private UploadResult PerformInvalidContentTypeUpload(
+            string url,
+            Dictionary<string, string> fields,
+            string content,
+            string objectKey)
+        {
+            var formData = new MultipartFormDataContent();
+            
+            // Add all fields from response
+            foreach (var field in fields)
+            {
+                if (field.Key == "Content-Type")
+                {
+                    // Override Content-Type with an invalid one
+                    formData.Add(new StringContent("image/jpeg"), field.Key);
+                }
+                else
+                {
+                    formData.Add(new StringContent(field.Value), field.Key);
+                }
+            }
+            
+            // Add file with invalid Content-Type header
+            var invalidFileContent = new ByteArrayContent(Encoding.UTF8.GetBytes(content));
+            invalidFileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
+            formData.Add(invalidFileContent, "file", objectKey);
+            
+            using (var httpClient = new System.Net.Http.HttpClient())
+            {
+                var httpResponse = httpClient.PostAsync(url, formData).Result;
+                
+                return new UploadResult
+                {
+                    IsSuccessful = httpResponse.IsSuccessStatusCode,
+                    StatusCode = httpResponse.StatusCode,
+                    ResponseText = httpResponse.Content.ReadAsStringAsync().Result
+                };
+            }
+        }
+
         private void TestPresignedPostWithMixedContentType(PresignedPostTestParameters testParams)
         {
             var client = new AmazonS3Client(testParams.Region);
@@ -224,101 +364,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // Create regular bucket
                 testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
                 
+                // Create a unique object key
                 string objectKey = TestKey + DateTime.UtcNow.Ticks;
 
-                // Generate presigned POST response
-                var request = new CreatePresignedPostRequest
-                {
-                    BucketName = testParams.BucketName,
-                    Key = objectKey,
-                    Expires = testParams.Expiration
-                };
-
-                // Add custom fields
-                foreach (var field in testParams.Fields)
-                {
-                    request.Fields.Add(field.Key, field.Value);
-                }
-
-                // Add conditions
-                foreach (var condition in testParams.Conditions)
-                {
-                    request.Conditions.Add(condition);
-                }
-
-                var response = client.CreatePresignedPost(request);
-
-                // VALIDATION 1: Content-Type should be included in response fields
-                // matching the JavaScript SDK behavior
-                Assert.IsTrue(response.Fields.ContainsKey("Content-Type"), 
-                    "Content-Type should be included in response fields even with a starts-with condition");
-                Assert.AreEqual("text/plain", response.Fields["Content-Type"]);
+                // Step 1: Generate presigned POST response
+                var response = GeneratePresignedPostRequest(
+                    client, 
+                    testParams.BucketName, 
+                    objectKey, 
+                    testParams.Expiration,
+                    testParams.Fields,
+                    testParams.Conditions);
                 
-                // Use the presigned post form to upload a file
-                var formData = new MultipartFormDataContent();
-
-                // Add all form fields
-                foreach (var field in response.Fields)
-                {
-                    formData.Add(new StringContent(field.Value), field.Key);
-                }
-
-                // Add file content with proper Content-Type
-                var fileContent = new ByteArrayContent(Encoding.UTF8.GetBytes(TestContent));
-                fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
-                formData.Add(fileContent, "file", objectKey);
-
-                // Create and configure the HttpClient
-                using (var httpClient = new System.Net.Http.HttpClient())
-                {
-                    // Send the POST request
-                    var httpResponse = httpClient.PostAsync(response.Url, formData).Result;
-                    
-                    // VALIDATION 2: Verify the upload was successful
-                    Assert.IsTrue(httpResponse.IsSuccessStatusCode, 
-                        $"Upload failed with status code {httpResponse.StatusCode}");
-                    
-                    // VALIDATION 3: Verify the uploaded object exists and has the correct content
-                    var getObjectResponse = client.GetObject(testParams.BucketName, objectKey);
-                    using (var reader = new StreamReader(getObjectResponse.ResponseStream))
-                    {
-                        var content = reader.ReadToEnd();
-                        Assert.AreEqual(TestContent, content);
-                    }
-                    
-                    // Delete the object for the next test
-                    client.DeleteObject(testParams.BucketName, objectKey);
-                    
-                    // VALIDATION 4: Test with an invalid Content-Type that doesn't match the starts-with condition
-                    // This tests that the condition is enforced despite having Content-Type in fields
-                    var invalidFormData = new MultipartFormDataContent();
-                    
-                    // Add all fields from response
-                    foreach (var field in response.Fields)
-                    {
-                        if (field.Key == "Content-Type")
-                        {
-                            // Override Content-Type with an invalid one
-                            invalidFormData.Add(new StringContent("image/jpeg"), field.Key);
-                        }
-                        else
-                        {
-                            invalidFormData.Add(new StringContent(field.Value), field.Key);
-                        }
-                    }
-                    
-                    // Add file with invalid Content-Type header
-                    var invalidFileContent = new ByteArrayContent(Encoding.UTF8.GetBytes(TestContent));
-                    invalidFileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
-                    invalidFormData.Add(invalidFileContent, "file", objectKey);
-                    
-                    // This request should fail with 403 Forbidden
-                    var invalidResponse = httpClient.PostAsync(response.Url, invalidFormData).Result;
-                    
-                    // VALIDATION 5: Verify the upload with invalid Content-Type was rejected
-                    Assert.AreEqual(HttpStatusCode.Forbidden, invalidResponse.StatusCode,
-                        "Upload with invalid Content-Type should be rejected");
-                }
+                // Step 2: Verify Content-Type field is included in response
+                ValidateContentTypeFieldPresent(response, "text/plain");
+                
+                // Step 3: Perform upload with valid Content-Type
+                var uploadResult = PerformUpload(
+                    response.Url,
+                    response.Fields,
+                    TestContent,
+                    objectKey,
+                    "text/plain");
+                
+                // Step 4: Verify upload was successful
+                Assert.IsTrue(uploadResult.IsSuccessful, 
+                    $"Upload failed with status code {uploadResult.StatusCode}");
+                
+                // Step 5: Verify uploaded content
+                ValidateObjectContent(client, testParams.BucketName, objectKey, TestContent);
+                
+                // Step 6: Clean up for next test
+                client.DeleteObject(testParams.BucketName, objectKey);
+                
+                // Step 7: Test with invalid Content-Type
+                var invalidResult = PerformInvalidContentTypeUpload(
+                    response.Url,
+                    response.Fields,
+                    TestContent,
+                    objectKey);
+                
+                // Step 8: Verify upload with invalid Content-Type was rejected
+                Assert.AreEqual(HttpStatusCode.Forbidden, invalidResult.StatusCode,
+                    "Upload with invalid Content-Type should be rejected");
             }
             finally
             {
