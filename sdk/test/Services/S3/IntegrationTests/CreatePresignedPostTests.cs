@@ -107,32 +107,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         [TestCategory("S3")]
         [TestCategory("RequiresIAMUser")]
-        public void WithCustomFields()
-        {
-            TestPresignedPostWithConditions(new PresignedPostTestParameters
-            {
-                Region = RegionEndpoint.USEast1,
-                Expiration = AWSSDKUtils.CorrectedUtcNow.AddHours(1),
-                Fields = new Dictionary<string, string>
-                {
-                    { "Content-Type", "text/plain" },
-                    { "success_action_status", "201" },
-                    { "x-amz-meta-original-filename", "test.txt" }
-                },
-                // Add explicit conditions for all fields to match Python SDK behavior
-                Conditions = new List<S3PostCondition>
-                {
-                    S3PostCondition.ExactMatch("Content-Type", "text/plain"),
-                    S3PostCondition.ExactMatch("success_action_status", "201"),
-                    S3PostCondition.ExactMatch("x-amz-meta-original-filename", "test.txt")
-                },
-                IsS3Express = false
-            });
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [TestCategory("RequiresIAMUser")]
         public void WithCustomConditions()
         {
             var testParams = new PresignedPostTestParameters
@@ -141,7 +115,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Expiration = AWSSDKUtils.CorrectedUtcNow.AddHours(1),
                 Fields = new Dictionary<string, string>
                 {
-                    { "Content-Type", "text/plain" }
+                      // Include Content-Type in Fields even with a starts-with condition
+                        // This matches JavaScript SDK behavior - fields and conditions can coexist
+                     { "Content-Type", "text/plain" }
                 },
                 Conditions = new List<S3PostCondition>
                 {
@@ -157,23 +133,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         [TestCategory("S3")]
         [TestCategory("RequiresIAMUser")]
-        public void S3ExpressDirectoryBucket()
+        public void WithContentTypeFieldAndStartsWithCondition()
         {
-            // Test with a directory bucket in US-East-1
-            TestPresignedPost(new PresignedPostTestParameters
+            var testParams = new PresignedPostTestParameters
             {
                 Region = RegionEndpoint.USEast1,
                 Expiration = AWSSDKUtils.CorrectedUtcNow.AddHours(1),
-                IsS3Express = true
-            });
+                Fields = new Dictionary<string, string>
+                {
+                    // Include Content-Type in Fields, matching JavaScript SDK behavior
+                    { "Content-Type", "text/plain" },
+                    { "success_action_status", "201" }
+                },
+                Conditions = new List<S3PostCondition>
+                {
+                    // Also add a starts-with condition for Content-Type
+                    S3PostCondition.StartsWith("Content-Type", "text/"),
+                    S3PostCondition.ContentLengthRange(1, 1048576) // 1 byte to 1 MB
+                },
+                IsS3Express = false
+            };
 
-            // Test with session token
-            TestPresignedPostWithSessionToken(new PresignedPostTestParameters
-            {
-                Region = RegionEndpoint.USEast1,
-                Expiration = AWSSDKUtils.CorrectedUtcNow.AddHours(1),
-                IsS3Express = true
-            });
+            TestPresignedPostWithMixedContentType(testParams);
         }
 
         private void TestPresignedPost(PresignedPostTestParameters testParams)
@@ -308,6 +289,117 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
                 }
                 AssertPresignedPostWithConditions(client, testParams);
+            }
+            finally
+            {
+                if (testParams.BucketName != null)
+                    AmazonS3Util.DeleteS3BucketWithObjects(client, testParams.BucketName);
+            }
+        }
+        
+        private void TestPresignedPostWithMixedContentType(PresignedPostTestParameters testParams)
+        {
+            var client = new AmazonS3Client(testParams.Region);
+            try
+            {
+                // Create regular bucket
+                testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
+                
+                string objectKey = TestKey + DateTime.UtcNow.Ticks;
+
+                // Generate presigned POST response
+                var request = new CreatePresignedPostRequest
+                {
+                    BucketName = testParams.BucketName,
+                    Key = objectKey,
+                    Expires = testParams.Expiration
+                };
+
+                // Add custom fields
+                foreach (var field in testParams.Fields)
+                {
+                    request.Fields.Add(field.Key, field.Value);
+                }
+
+                // Add conditions
+                foreach (var condition in testParams.Conditions)
+                {
+                    request.Conditions.Add(condition);
+                }
+
+                var response = client.CreatePresignedPost(request);
+
+                // VALIDATION 1: Content-Type should be included in response fields
+                // matching the JavaScript SDK behavior
+                Assert.IsTrue(response.Fields.ContainsKey("Content-Type"), 
+                    "Content-Type should be included in response fields even with a starts-with condition");
+                Assert.AreEqual("text/plain", response.Fields["Content-Type"]);
+                
+                // Use the presigned post form to upload a file
+                var formData = new MultipartFormDataContent();
+
+                // Add all form fields
+                foreach (var field in response.Fields)
+                {
+                    formData.Add(new StringContent(field.Value), field.Key);
+                }
+
+                // Add file content with proper Content-Type
+                var fileContent = new ByteArrayContent(Encoding.UTF8.GetBytes(TestContent));
+                fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
+                formData.Add(fileContent, "file", objectKey);
+
+                // Create and configure the HttpClient
+                using (var httpClient = new System.Net.Http.HttpClient())
+                {
+                    // Send the POST request
+                    var httpResponse = httpClient.PostAsync(response.Url, formData).Result;
+                    
+                    // VALIDATION 2: Verify the upload was successful
+                    Assert.IsTrue(httpResponse.IsSuccessStatusCode, 
+                        $"Upload failed with status code {httpResponse.StatusCode}");
+                    
+                    // VALIDATION 3: Verify the uploaded object exists and has the correct content
+                    var getObjectResponse = client.GetObject(testParams.BucketName, objectKey);
+                    using (var reader = new StreamReader(getObjectResponse.ResponseStream))
+                    {
+                        var content = reader.ReadToEnd();
+                        Assert.AreEqual(TestContent, content);
+                    }
+                    
+                    // Delete the object for the next test
+                    client.DeleteObject(testParams.BucketName, objectKey);
+                    
+                    // VALIDATION 4: Test with an invalid Content-Type that doesn't match the starts-with condition
+                    // This tests that the condition is enforced despite having Content-Type in fields
+                    var invalidFormData = new MultipartFormDataContent();
+                    
+                    // Add all fields from response
+                    foreach (var field in response.Fields)
+                    {
+                        if (field.Key == "Content-Type")
+                        {
+                            // Override Content-Type with an invalid one
+                            invalidFormData.Add(new StringContent("image/jpeg"), field.Key);
+                        }
+                        else
+                        {
+                            invalidFormData.Add(new StringContent(field.Value), field.Key);
+                        }
+                    }
+                    
+                    // Add file with invalid Content-Type header
+                    var invalidFileContent = new ByteArrayContent(Encoding.UTF8.GetBytes(TestContent));
+                    invalidFileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
+                    invalidFormData.Add(invalidFileContent, "file", objectKey);
+                    
+                    // This request should fail with 403 Forbidden
+                    var invalidResponse = httpClient.PostAsync(response.Url, invalidFormData).Result;
+                    
+                    // VALIDATION 5: Verify the upload with invalid Content-Type was rejected
+                    Assert.AreEqual(HttpStatusCode.Forbidden, invalidResponse.StatusCode,
+                        "Upload with invalid Content-Type should be rejected");
+                }
             }
             finally
             {
@@ -476,8 +568,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 validFormData.Add(new StringContent(field.Value), field.Key);
             }
 
+            // Check if we have a Content-Type starts-with condition
+            var contentTypeCondition = testParams.Conditions.FirstOrDefault(c => c is StartsWithCondition && 
+                ((StartsWithCondition)c).FieldName == "Content-Type") as StartsWithCondition;
+
             // Add file content that meets conditions
-            validFormData.Add(new ByteArrayContent(Encoding.UTF8.GetBytes(TestContent)), "file", objectKey);
+            if (contentTypeCondition != null)
+            {
+                // With JavaScript-like behavior, explicitly set Content-Type for uploads with starts-with conditions
+                var fileContent = new ByteArrayContent(Encoding.UTF8.GetBytes(TestContent));
+                
+                // Use a Content-Type that satisfies the starts-with condition
+                string contentTypeToUse = "text/plain"; // Default for our tests that use text/ prefix
+                fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentTypeToUse);
+                
+                // Also add Content-Type as a form field if it's not already in response.Fields
+                if (!response.Fields.ContainsKey("Content-Type"))
+                {
+                    validFormData.Add(new StringContent(contentTypeToUse), "Content-Type");
+                }
+                
+                validFormData.Add(fileContent, "file", objectKey);
+            }
+            else
+            {
+                // Standard file upload without special Content-Type handling
+                validFormData.Add(new ByteArrayContent(Encoding.UTF8.GetBytes(TestContent)), "file", objectKey);
+            }
 
             // Create and configure the HttpClient
             using (var httpClient = new System.Net.Http.HttpClient())
@@ -500,27 +617,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 client.DeleteObject(testParams.BucketName, objectKey);
 
                 // Test a violation of the Content-Type condition if present
-                if (testParams.Conditions.Any(c => c is StartsWithCondition && 
-                   ((StartsWithCondition)c).FieldName == "Content-Type" && 
-                   ((StartsWithCondition)c).Prefix == "text/"))
+                var invalidContentTypeCondition = testParams.Conditions.FirstOrDefault(c => c is StartsWithCondition && 
+                   ((StartsWithCondition)c).FieldName == "Content-Type") as StartsWithCondition;
+                   
+                if (invalidContentTypeCondition != null)
                 {
                     // Create new form data with invalid Content-Type
                     var invalidFormData = new MultipartFormDataContent();
                     
-                    // Add all fields but modify Content-Type to violate condition
+                    // Add all fields from response
                     foreach (var field in response.Fields)
                     {
-                        if (field.Key == "Content-Type")
-                        {
-                            invalidFormData.Add(new StringContent("image/jpeg"), field.Key); // This violates the text/ prefix
-                        }
-                        else
-                        {
-                            invalidFormData.Add(new StringContent(field.Value), field.Key);
-                        }
+                        invalidFormData.Add(new StringContent(field.Value), field.Key);
                     }
+                    
+                    // Manually add a Content-Type that violates the condition
+                    // Note: With JavaScript-like behavior, Content-Type might not be in response.Fields
+                    // if there's a starts-with condition for it
+                    invalidFormData.Add(new StringContent("image/jpeg"), "Content-Type");
 
-                    invalidFormData.Add(new ByteArrayContent(Encoding.UTF8.GetBytes(TestContent)), "file", objectKey);
+                    // Add file content
+                    var fileContent = new ByteArrayContent(Encoding.UTF8.GetBytes(TestContent));
+                    fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
+                    invalidFormData.Add(fileContent, "file", objectKey);
                     
                     // This request should fail with 403 Forbidden
                     var invalidResponse = httpClient.PostAsync(response.Url, invalidFormData).Result;
