@@ -615,6 +615,17 @@ namespace Amazon.S3
 
             if (!request.Expires.HasValue)
                 throw new ArgumentException("Expires is required", nameof(request));
+                
+            // Check for expiration > 7 days
+            var secondsUntilExpiration = Convert.ToInt64((request.Expires.Value.ToUniversalTime() - 
+                AWSSDKUtils.CorrectedUtcNow).TotalSeconds);
+            if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
+            {
+                var msg = string.Format(CultureInfo.InvariantCulture, 
+                                       "The maximum expiry period for a presigned url using AWS4 signing is {0} seconds",
+                                       AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry);
+                throw new ArgumentException(msg);
+            }
 
             // Check for access point ARNs and reject them - S3 presigned POST doesn't support access points
             if (Arn.TryParse(request.BucketName, out var arn))
