@@ -367,7 +367,7 @@ namespace AWSSDK.UnitTests.S3.Custom
 
         [TestMethod]
         [TestCategory("S3")]
-        public void CreatePresignedPost_PolicyDocument_IncludesFormFields()
+        public void CreatePresignedPost_PolicyDocument_FormFieldsNotInPolicy()
         {
             // Arrange
             var request = new CreatePresignedPostRequest
@@ -385,10 +385,13 @@ namespace AWSSDK.UnitTests.S3.Custom
             var policyBytes = Convert.FromBase64String(response.Fields["Policy"]);
             var policyJson = System.Text.Encoding.UTF8.GetString(policyBytes);
             
-            Assert.IsTrue(policyJson.Contains("\"success_action_status\""));
-            Assert.IsTrue(policyJson.Contains("\"201\""));
-            Assert.IsTrue(policyJson.Contains("\"x-amz-meta-category\""));
-            Assert.IsTrue(policyJson.Contains("\"photos\""));
+            // Verify fields are in the form data
+            Assert.AreEqual("201", response.Fields["success_action_status"]);
+            Assert.AreEqual("photos", response.Fields["x-amz-meta-category"]);
+            
+            // Verify fields are NOT in the policy document (Python-style behavior)
+            Assert.IsFalse(policyJson.Contains("\"success_action_status\""));
+            Assert.IsFalse(policyJson.Contains("\"x-amz-meta-category\""));
         }
 
         #endregion
@@ -603,9 +606,9 @@ namespace AWSSDK.UnitTests.S3.Custom
 
         [TestMethod]
         [TestCategory("S3")]
-        public void CreatePresignedPost_DuplicateFieldAndCondition_ShouldDeduplicateInPolicy()
+        public void CreatePresignedPost_OnlyExplicitConditionsInPolicy()
         {
-            // Arrange - Create a scenario with duplicate field and exact match condition
+            // Arrange - Create a scenario with fields and explicit conditions
             var request = new CreatePresignedPostRequest
             {
                 BucketName = "test-bucket",
@@ -613,26 +616,25 @@ namespace AWSSDK.UnitTests.S3.Custom
                 Expires = DateTime.UtcNow.AddHours(1)
             };
 
-            // Add ACL in both Fields and Conditions (should be deduplicated)
+            // Add fields - these should NOT generate conditions in policy
             request.Fields["acl"] = "public-read";
-            request.Conditions.Add(S3PostCondition.ExactMatch("acl", "public-read"));
-            
-            // Add Content-Type in both Fields and Conditions (should be deduplicated)  
             request.Fields["Content-Type"] = "image/jpeg";
-            request.Conditions.Add(S3PostCondition.ExactMatch("Content-Type", "image/jpeg"));
+            request.Fields["success_action_status"] = "201";
             
-            // Add a non-duplicate condition (should remain)
+            // Add explicit conditions - these SHOULD appear in policy
+            request.Conditions.Add(S3PostCondition.ExactMatch("acl", "public-read"));
             request.Conditions.Add(S3PostCondition.StartsWith("key", "demo/"));
             request.Conditions.Add(S3PostCondition.ContentLengthRange(1024, 5242880));
 
             // Act
             var response = _s3Client.CreatePresignedPost(request);
 
-            // Assert - Verify response contains the fields
+            // Assert - Verify response contains all fields
             Assert.AreEqual("public-read", response.Fields["acl"]);
             Assert.AreEqual("image/jpeg", response.Fields["Content-Type"]);
+            Assert.AreEqual("201", response.Fields["success_action_status"]);
 
-            // Assert - Verify policy document has no duplicates
+            // Assert - Verify policy document contains only explicit conditions
             var policyBytes = Convert.FromBase64String(response.Fields["Policy"]);
             var policyJson = System.Text.Encoding.UTF8.GetString(policyBytes);
             var policyDoc = JsonDocument.Parse(policyJson);
@@ -644,45 +646,78 @@ namespace AWSSDK.UnitTests.S3.Custom
                 conditionsList.Add(condition);
             }
 
-            // Count exact match conditions for ACL
+            // Bucket and key conditions are always added
+            var bucketConditions = conditionsList.Count(c => 
+                c.ValueKind == JsonValueKind.Object && 
+                c.TryGetProperty("bucket", out _));
+            Assert.AreEqual(1, bucketConditions, "Should have bucket condition");
+
+            var keyConditions = conditionsList.Count(c => 
+                c.ValueKind == JsonValueKind.Object && 
+                c.TryGetProperty("key", out _));
+            Assert.AreEqual(1, keyConditions, "Should have key condition");
+
+            // Only explicit condition for ACL should be in policy
             var aclConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Object && 
                 c.TryGetProperty("acl", out var aclProp) && 
                 aclProp.GetString() == "public-read");
-            
-            Assert.AreEqual(1, aclConditions, "Should have exactly one ACL condition (no duplicates)");
+            Assert.AreEqual(1, aclConditions, "Should have ACL condition from explicit condition");
 
-            // Count exact match conditions for Content-Type
+            // Content-Type field should NOT generate a condition
             var contentTypeConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Object && 
-                c.TryGetProperty("Content-Type", out var ctProp) && 
-                ctProp.GetString() == "image/jpeg");
-            
-            Assert.AreEqual(1, contentTypeConditions, "Should have exactly one Content-Type condition (no duplicates)");
+                c.TryGetProperty("Content-Type", out _));
+            Assert.AreEqual(0, contentTypeConditions, "Should NOT have Content-Type condition");
 
-            // Verify non-duplicate conditions are still present
+            // success_action_status field should NOT generate a condition
+            var successActionConditions = conditionsList.Count(c => 
+                c.ValueKind == JsonValueKind.Object && 
+                c.TryGetProperty("success_action_status", out _));
+            Assert.AreEqual(0, successActionConditions, "Should NOT have success_action_status condition");
+
+            // Explicit starts-with condition should be in policy
             var startsWithConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Array && 
                 c.GetArrayLength() >= 3 &&
                 c[0].GetString() == "starts-with" &&
                 c[1].GetString() == "$key" &&
                 c[2].GetString() == "demo/");
-            
-            Assert.AreEqual(1, startsWithConditions, "Should have exactly one starts-with condition");
+            Assert.AreEqual(1, startsWithConditions, "Should have starts-with condition");
 
+            // Explicit content-length-range condition should be in policy
             var contentLengthConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Array && 
                 c.GetArrayLength() >= 3 &&
                 c[0].GetString() == "content-length-range" &&
                 c[1].GetInt64() == 1024 &&
                 c[2].GetInt64() == 5242880);
+            Assert.AreEqual(1, contentLengthConditions, "Should have content-length-range condition");
             
-            Assert.AreEqual(1, contentLengthConditions, "Should have exactly one content-length-range condition");
+            // Check for AWS signing fields that are always added to the policy
+            var algorithmConditions = conditionsList.Count(c => 
+                c.ValueKind == JsonValueKind.Object && 
+                c.TryGetProperty("x-amz-algorithm", out _));
+            Assert.AreEqual(1, algorithmConditions, "Should have x-amz-algorithm condition");
+
+            var credentialConditions = conditionsList.Count(c => 
+                c.ValueKind == JsonValueKind.Object && 
+                c.TryGetProperty("x-amz-credential", out _));
+            Assert.AreEqual(1, credentialConditions, "Should have x-amz-credential condition");
+
+            var dateConditions = conditionsList.Count(c => 
+                c.ValueKind == JsonValueKind.Object && 
+                c.TryGetProperty("x-amz-date", out _));
+            Assert.AreEqual(1, dateConditions, "Should have x-amz-date condition");
+            
+            // Total conditions should be:
+            // bucket + key + acl + starts-with + content-length-range + algorithm + credential + date = 8
+            Assert.AreEqual(8, conditionsList.Count, "Should have exactly 8 conditions");
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        public void CreatePresignedPost_FieldWithoutMatchingCondition_ShouldIncludeBoth()
+        public void CreatePresignedPost_FieldWithoutMatchingCondition_ShouldNotBeInPolicy()
         {
             // Arrange - Create fields that don't match conditions
             var request = new CreatePresignedPostRequest
@@ -704,51 +739,70 @@ namespace AWSSDK.UnitTests.S3.Custom
             // Assert
             var policyBytes = Convert.FromBase64String(response.Fields["Policy"]);
             var policyJson = System.Text.Encoding.UTF8.GetString(policyBytes);
-            var policyDoc = JsonDocument.Parse(policyJson);
             
+            // Fields should be in form data
+            Assert.AreEqual("public-read", response.Fields["acl"]);
+            Assert.AreEqual("image/jpeg", response.Fields["Content-Type"]);
+            
+            // Only explicitly provided conditions should be in policy
+            var policyDoc = JsonDocument.Parse(policyJson);
             var conditions = policyDoc.RootElement.GetProperty("conditions");
             var conditionsList = new List<JsonElement>();
             foreach (var condition in conditions.EnumerateArray())
             {
                 conditionsList.Add(condition);
             }
-
-            // Should have both ACL conditions since values are different
+            
+            // No condition for "public-read" since we only provided "private" in conditions
             var publicReadConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Object && 
                 c.TryGetProperty("acl", out var aclProp) && 
                 aclProp.GetString() == "public-read");
+            Assert.AreEqual(0, publicReadConditions, "Should not have public-read ACL condition");
             
+            // Should have private condition we explicitly added
             var privateConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Object && 
                 c.TryGetProperty("acl", out var aclProp) && 
                 aclProp.GetString() == "private");
+            Assert.AreEqual(1, privateConditions, "Should have private ACL condition from explicit condition");
 
-            Assert.AreEqual(1, publicReadConditions, "Should have public-read ACL condition from field");
-            Assert.AreEqual(1, privateConditions, "Should have private ACL condition from condition");
-
-            // Should have Content-Type condition from field (no matching condition)
+            // Should NOT have Content-Type condition since it wasn't explicitly added
             var contentTypeConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Object && 
                 c.TryGetProperty("Content-Type", out var ctProp) && 
                 ctProp.GetString() == "image/jpeg");
-            
-            Assert.AreEqual(1, contentTypeConditions, "Should have Content-Type condition from field");
+            Assert.AreEqual(0, contentTypeConditions, "Should NOT have Content-Type condition");
 
-            // Should have x-amz-meta-test condition from condition
+            // Should have x-amz-meta-test condition we explicitly added
             var metaTestConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Object && 
                 c.TryGetProperty("x-amz-meta-test", out var metaProp) && 
                 metaProp.GetString() == "value");
+            Assert.AreEqual(1, metaTestConditions, "Should have x-amz-meta-test condition from explicit condition");
             
-            Assert.AreEqual(1, metaTestConditions, "Should have x-amz-meta-test condition from condition");
+            // Check for AWS signing fields that are always added to the policy
+            var algorithmConditions = conditionsList.Count(c => 
+                c.ValueKind == JsonValueKind.Object && 
+                c.TryGetProperty("x-amz-algorithm", out _));
+            Assert.AreEqual(1, algorithmConditions, "Should have x-amz-algorithm condition");
+
+            var credentialConditions = conditionsList.Count(c => 
+                c.ValueKind == JsonValueKind.Object && 
+                c.TryGetProperty("x-amz-credential", out _));
+            Assert.AreEqual(1, credentialConditions, "Should have x-amz-credential condition");
+
+            var dateConditions = conditionsList.Count(c => 
+                c.ValueKind == JsonValueKind.Object && 
+                c.TryGetProperty("x-amz-date", out _));
+            Assert.AreEqual(1, dateConditions, "Should have x-amz-date condition");
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        public void CreatePresignedPost_OnlyStartsWith_ShouldNotDeduplicate()
+        public void CreatePresignedPost_StartsWithCondition_ShouldBeInPolicy()
         {
-            // Arrange - Ensure StartsWith conditions are never deduplicated
+            // Arrange - Ensure StartsWith conditions are preserved
             var request = new CreatePresignedPostRequest
             {
                 BucketName = "test-bucket",
@@ -757,7 +811,7 @@ namespace AWSSDK.UnitTests.S3.Custom
 
             request.Fields["Content-Type"] = "image/jpeg";
             
-            // Add StartsWith condition - should not be deduplicated even if field exists
+            // Add StartsWith condition - should be in policy
             request.Conditions.Add(S3PostCondition.StartsWith("Content-Type", "image/"));
 
             // Act
@@ -775,15 +829,15 @@ namespace AWSSDK.UnitTests.S3.Custom
                 conditionsList.Add(condition);
             }
 
-            // Should have exact match condition from field
+            // Should NOT have exact match condition from field (Python behavior)
             var exactMatchConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Object && 
                 c.TryGetProperty("Content-Type", out var ctProp) && 
                 ctProp.GetString() == "image/jpeg");
             
-            Assert.AreEqual(1, exactMatchConditions, "Should have exact match Content-Type condition from field");
+            Assert.AreEqual(0, exactMatchConditions, "Should NOT have exact match Content-Type condition from field");
 
-            // Should have starts-with condition from condition
+            // Should have starts-with condition we explicitly added
             var startsWithConditions = conditionsList.Count(c => 
                 c.ValueKind == JsonValueKind.Array && 
                 c.GetArrayLength() >= 3 &&
@@ -791,7 +845,10 @@ namespace AWSSDK.UnitTests.S3.Custom
                 c[1].GetString() == "$Content-Type" &&
                 c[2].GetString() == "image/");
             
-            Assert.AreEqual(1, startsWithConditions, "Should have starts-with Content-Type condition from condition");
+            Assert.AreEqual(1, startsWithConditions, "Should have starts-with Content-Type condition from explicit condition");
+            
+            // Field should still be in the form data
+            Assert.AreEqual("image/jpeg", response.Fields["Content-Type"]);
         }
 
         #endregion
