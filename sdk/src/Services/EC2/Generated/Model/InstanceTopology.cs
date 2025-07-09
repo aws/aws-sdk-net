@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class InstanceTopology
     {
         private string _availabilityZone;
+        private string _capacityBlockId;
         private string _groupName;
         private string _instanceId;
         private string _instanceType;
@@ -57,6 +58,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityBlockId. 
+        /// <para>
+        /// The ID of the Capacity Block. This parameter is only supported for Ultraserver instances
+        /// and identifies instances within the Ultraserver domain.
+        /// </para>
+        /// </summary>
+        public string CapacityBlockId
+        {
+            get { return this._capacityBlockId; }
+            set { this._capacityBlockId = value; }
+        }
+
+        // Check to see if CapacityBlockId property is set
+        internal bool IsSetCapacityBlockId()
+        {
+            return this._capacityBlockId != null;
         }
 
         /// <summary>

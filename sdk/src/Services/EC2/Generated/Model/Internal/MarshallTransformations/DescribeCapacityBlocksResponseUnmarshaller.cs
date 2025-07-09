@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PurchaseCapacityBlock operation
+    /// Response Unmarshaller for DescribeCapacityBlocks operation
     /// </summary>  
-    public class PurchaseCapacityBlockResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class DescribeCapacityBlocksResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            PurchaseCapacityBlockResponse response = new PurchaseCapacityBlockResponse();
+            DescribeCapacityBlocksResponse response = new DescribeCapacityBlocksResponse();
 
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -67,10 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.CapacityBlocks.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("capacityReservation", targetDepth))
+                    if (context.TestExpression("nextToken", targetDepth))
                     {
-                        var unmarshaller = CapacityReservationUnmarshaller.Instance;
-                        response.CapacityReservation = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -91,9 +91,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static PurchaseCapacityBlockResponseUnmarshaller _instance = new PurchaseCapacityBlockResponseUnmarshaller();        
+        private static DescribeCapacityBlocksResponseUnmarshaller _instance = new DescribeCapacityBlocksResponseUnmarshaller();        
 
-        internal static PurchaseCapacityBlockResponseUnmarshaller GetInstance()
+        internal static DescribeCapacityBlocksResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PurchaseCapacityBlockResponseUnmarshaller Instance
+        public static DescribeCapacityBlocksResponseUnmarshaller Instance
         {
             get
             {

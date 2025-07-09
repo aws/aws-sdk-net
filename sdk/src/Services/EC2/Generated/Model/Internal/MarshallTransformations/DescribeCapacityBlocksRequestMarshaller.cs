@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeCapacityBlockOfferings Request Marshaller
+    /// DescribeCapacityBlocks Request Marshaller
     /// </summary>       
-    public class DescribeCapacityBlockOfferingsRequestMarshaller : IMarshaller<IRequest, DescribeCapacityBlockOfferingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeCapacityBlocksRequestMarshaller : IMarshaller<IRequest, DescribeCapacityBlocksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeCapacityBlockOfferingsRequest)input);
+            return this.Marshall((DescribeCapacityBlocksRequest)input);
         }
     
         /// <summary>
@@ -51,29 +51,43 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeCapacityBlockOfferingsRequest publicRequest)
+        public IRequest Marshall(DescribeCapacityBlocksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "DescribeCapacityBlockOfferings");
+            request.Parameters.Add("Action", "DescribeCapacityBlocks");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetCapacityDurationHours())
+                if(publicRequest.IsSetCapacityBlockIds())
                 {
-                    request.Parameters.Add("CapacityDurationHours", StringUtils.FromInt(publicRequest.CapacityDurationHours));
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.CapacityBlockIds)
+                    {
+                        request.Parameters.Add("CapacityBlockId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
-                if(publicRequest.IsSetEndDateRange())
+                if(publicRequest.IsSetFilters())
                 {
-                    request.Parameters.Add("EndDateRange", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDateRange));
-                }
-                if(publicRequest.IsSetInstanceCount())
-                {
-                    request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
-                }
-                if(publicRequest.IsSetInstanceType())
-                {
-                    request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Filters)
+                    {
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                        }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
+                    }
                 }
                 if(publicRequest.IsSetMaxResults())
                 {
@@ -83,24 +97,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-                if(publicRequest.IsSetStartDateRange())
-                {
-                    request.Parameters.Add("StartDateRange", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDateRange));
-                }
-                if(publicRequest.IsSetUltraserverCount())
-                {
-                    request.Parameters.Add("UltraserverCount", StringUtils.FromInt(publicRequest.UltraserverCount));
-                }
-                if(publicRequest.IsSetUltraserverType())
-                {
-                    request.Parameters.Add("UltraserverType", StringUtils.FromString(publicRequest.UltraserverType));
-                }
             }
             return request;
         }
-                    private static DescribeCapacityBlockOfferingsRequestMarshaller _instance = new DescribeCapacityBlockOfferingsRequestMarshaller();        
+                    private static DescribeCapacityBlocksRequestMarshaller _instance = new DescribeCapacityBlocksRequestMarshaller();        
 
-        internal static DescribeCapacityBlockOfferingsRequestMarshaller GetInstance()
+        internal static DescribeCapacityBlocksRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -108,7 +110,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeCapacityBlockOfferingsRequestMarshaller Instance
+        public static DescribeCapacityBlocksRequestMarshaller Instance
         {
             get
             {

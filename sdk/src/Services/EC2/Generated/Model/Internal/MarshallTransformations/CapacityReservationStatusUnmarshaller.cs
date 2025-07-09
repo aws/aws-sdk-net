@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceTopology Object
+    /// Response Unmarshaller for CapacityReservationStatus Object
     /// </summary>  
-    public class InstanceTopologyUnmarshaller : IUnmarshaller<InstanceTopology, XmlUnmarshallerContext>, IUnmarshaller<InstanceTopology, JsonUnmarshallerContext>
+    public class CapacityReservationStatusUnmarshaller : IUnmarshaller<CapacityReservationStatus, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservationStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InstanceTopology Unmarshall(XmlUnmarshallerContext context)
+        public CapacityReservationStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceTopology unmarshalledObject = new InstanceTopology();
+            CapacityReservationStatus unmarshalledObject = new CapacityReservationStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,51 +55,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("availabilityZone", targetDepth))
+                    if (context.TestExpression("capacityReservationId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CapacityReservationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("capacityBlockId", targetDepth))
+                    if (context.TestExpression("totalAvailableCapacity", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CapacityBlockId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.TotalAvailableCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("groupName", targetDepth))
+                    if (context.TestExpression("totalCapacity", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.TotalCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("instanceId", targetDepth))
+                    if (context.TestExpression("totalUnavailableCapacity", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("networkNodeSet/item", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.NetworkNodes == null)
-                        {
-                            unmarshalledObject.NetworkNodes = new List<string>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.NetworkNodes.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("zoneId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ZoneId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.TotalUnavailableCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -117,18 +94,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InstanceTopology Unmarshall(JsonUnmarshallerContext context)
+        public CapacityReservationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static InstanceTopologyUnmarshaller _instance = new InstanceTopologyUnmarshaller();        
+        private static CapacityReservationStatusUnmarshaller _instance = new CapacityReservationStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceTopologyUnmarshaller Instance
+        public static CapacityReservationStatusUnmarshaller Instance
         {
             get
             {

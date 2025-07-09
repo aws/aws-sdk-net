@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CapacityBlockOffering Object
+    /// Response Unmarshaller for CapacityBlock Object
     /// </summary>  
-    public class CapacityBlockOfferingUnmarshaller : IUnmarshaller<CapacityBlockOffering, XmlUnmarshallerContext>, IUnmarshaller<CapacityBlockOffering, JsonUnmarshallerContext>
+    public class CapacityBlockUnmarshaller : IUnmarshaller<CapacityBlock, XmlUnmarshallerContext>, IUnmarshaller<CapacityBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityBlockOffering Unmarshall(XmlUnmarshallerContext context)
+        public CapacityBlock Unmarshall(XmlUnmarshallerContext context)
         {
-            CapacityBlockOffering unmarshalledObject = new CapacityBlockOffering();
+            CapacityBlock unmarshalledObject = new CapacityBlock();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -61,28 +61,33 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("capacityBlockDurationHours", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.CapacityBlockDurationHours = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("capacityBlockDurationMinutes", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.CapacityBlockDurationMinutes = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("capacityBlockOfferingId", targetDepth))
+                    if (context.TestExpression("availabilityZoneId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CapacityBlockOfferingId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("currencyCode", targetDepth))
+                    if (context.TestExpression("capacityBlockId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CapacityBlockId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityReservationIdSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.CapacityReservationIds == null)
+                        {
+                            unmarshalledObject.CapacityReservationIds = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CapacityReservationIds.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("createDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("endDate", targetDepth))
@@ -91,46 +96,33 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("instanceCount", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("startDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("tenancy", targetDepth))
+                    if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ultraserverCount", targetDepth))
+                    if (context.TestExpression("tagSet/item", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.UltraserverCount = unmarshaller.Unmarshall(context);
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
                         continue;
                     }
                     if (context.TestExpression("ultraserverType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.UltraserverType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("upfrontFee", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.UpfrontFee = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -148,18 +140,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityBlockOffering Unmarshall(JsonUnmarshallerContext context)
+        public CapacityBlock Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static CapacityBlockOfferingUnmarshaller _instance = new CapacityBlockOfferingUnmarshaller();        
+        private static CapacityBlockUnmarshaller _instance = new CapacityBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CapacityBlockOfferingUnmarshaller Instance
+        public static CapacityBlockUnmarshaller Instance
         {
             get
             {
