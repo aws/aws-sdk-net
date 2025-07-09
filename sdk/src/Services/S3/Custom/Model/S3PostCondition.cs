@@ -111,7 +111,7 @@ namespace Amazon.S3.Model
         /// </param>
         /// <param name="maximumLength">
         /// The maximum allowed file size in bytes. Must be greater than or equal to 
-        /// the minimum length. Consider S3's maximum object size limit of 5TB when setting this value.
+        /// the minimum length.
         /// </param>
         /// <returns>A <see cref="ContentLengthRangeCondition"/> for the specified size range.</returns>
         /// <exception cref="T:System.ArgumentException">
@@ -120,7 +120,7 @@ namespace Amazon.S3.Model
         /// </exception>
         /// <example>
         /// <code>
-        /// // Allow files between 1KB and 5MB (typical for profile images)
+        /// // Allow files between 1KB and 5MB
         /// var sizeCondition = S3PostCondition.ContentLengthRange(1024, 5 * 1024 * 1024);
         /// 
         /// // Allow documents up to 10MB
@@ -177,8 +177,6 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <value>
         /// The form field name (e.g., "acl", "Content-Type", "x-amz-meta-category").
-        /// Case sensitivity depends on the specific field - most S3 fields are case-insensitive,
-        /// but user-defined metadata fields are case-sensitive.
         /// </value>
         public string FieldName { get; }
         
@@ -413,7 +411,7 @@ namespace Amazon.S3.Model
         /// </param>
         /// <param name="maximumLength">
         /// The maximum allowed file size in bytes. Must be greater than or equal to 
-        /// the minimum length. Consider S3's maximum object size limit of 5TB when setting this value.
+        /// the minimum length.
         /// </param>
         /// <exception cref="T:System.ArgumentException">
         /// Thrown when <paramref name="minimumLength"/> is negative, or when 
