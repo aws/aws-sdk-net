@@ -1,0 +1,18 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add CreatePresignedPostRequest endpoint resolver logic"
+    ]
+  },
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Implement presigned POST urls"
+      ]
+    }
+  ]
+}

@@ -110,6 +110,13 @@ namespace Amazon.S3.Internal
                 result.Bucket = request.BucketName;
                 return result;
             }
+            // Special handling of CreatePresignedPostRequest
+            if (requestContext.Request.RequestName == "CreatePresignedPostRequest")
+            {
+                var request = (CreatePresignedPostRequest)requestContext.Request.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
             if (requestContext.RequestName == "GetACLRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (GetACLRequest)requestContext.OriginalRequest;
