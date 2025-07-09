@@ -1,3 +1,14 @@
+### 3.7.1078.0 (2025-07-09 19:35 UTC)
+* EC2 (3.7.457.0)
+	* Adds support to Capacity Blocks for ML for purchasing EC2 P6e-GB200 UltraServers. Customers can now purchase u-p6e-gb200x72 and u-p6e-gb200x36 UltraServers. Adds new DescribeCapacityBlocks andDescribeCapacityBlockStatus APIs. Adds support for CapacityBlockId to DescribeInstanceTopology.
+* FreeTier (3.7.401.0)
+	* This release introduces four new APIs: GetAccountPlanState and UpgradeAccountPlan for AWS account plan management; ListAccountActivities and GetAccountActivity that provide activity tracking capabilities.
+* OpsWorksCM (3.7.400.174)
+	* Removing content that refers to an S3 bucket that is no longer in use.
+* Core 3.7.402.80
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1077.0 (2025-07-03 18:24 UTC)
 * CustomerProfiles (3.7.405.0)
 	* This release introduces capability of create Segments via importing a CSV file directly. This consumes the CSV file and creates/updates corresponding profiles for the particular domain.
