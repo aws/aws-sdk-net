@@ -38,15 +38,18 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateUser</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html">CreateUser</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetUser</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListUsers</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -153,8 +156,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
-        /// 
+        /// This value is returned only in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html">GetUser</a>
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html">ListUsers</a>
+        /// operations. 
         /// </para>
         /// </summary>
         public DateTime? PasswordLastUsed

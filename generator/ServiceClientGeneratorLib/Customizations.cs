@@ -424,6 +424,8 @@ namespace ServiceClientGenerator
         public const string OverrideContentTypeKey = "overrideContentType";
         public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
         public const string OriginalMemberKey = "originalMember";
+        public const string OverrideTreatEnumsAsStringKey = "overrideTreatEnumsAsString";
+        public const string ExcludeMembersKey = "excludeMembers";
 
         JsonData _documentRoot;
 
@@ -561,6 +563,40 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Used to exclude property generation, but not at the marshaller level and only at the shape level.
+        /// To use this customization add an entry like below, where the top-level key is the name of the shape and 
+        /// the array is filled with members to exclude. To exclude members from marshalling, use ShapeModifiers.Exclude key.
+        ///     "excludeMembers":{
+        ///       "PartDetail":[
+        ///          "ChecksumCRC32",
+        ///          "ChecksumCRC32C",
+        ///          "ChecksumCRC64NVME",
+        ///          "ChecksumSHA1",
+        ///          "ChecksumSHA256",
+        ///          "ETag",
+        ///          "LastModified",
+        ///          "PartNumber"
+        ///      ]
+        /// }
+        /// </summary>
+        public List<string> ExcludeMembers(string shapeName)
+        {
+            var data = _documentRoot[ExcludeMembersKey];
+            if (data == null || data[shapeName] == null) return null;
+            if (!data[shapeName].IsArray)
+                throw new InvalidDataException("The members to exclude must be within an array.");
+
+            
+            var excludedMembers = new List<string>();
+            foreach (var member in data[shapeName])
+            {
+                excludedMembers.Add(member.ToString());
+            }
+            return excludedMembers;
+
+        }
+
+        /// <summary>
         /// A list of uri properties for the service where we should not do validation for presence.
         /// </summary>
         public List<string> SkipUriPropertyValidations
@@ -598,6 +634,24 @@ namespace ServiceClientGenerator
 
                 return overloads;
             }
+        }
+
+        /// <summary>
+        /// For Lists of enums, the generator automatically treats the enum as a string via passing in true to "treatEnumAsString".
+        /// This customization sets the "treatEnumAsString" value to whatever is set here. This can be used outside of list of enums
+        /// but this is just one example of how it can be used. 
+        ///     "overrideTreatEnumsAsString":{
+        ///        "ObjectAttributesList": false
+        /// }
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool? OverrideTreatEnumsAsString(string shapeName)
+        {
+            var data = _documentRoot[OverrideTreatEnumsAsStringKey];
+            if (data == null || data[shapeName] == null) return null;
+
+            return (bool)data[shapeName];
         }
 
         private HashSet<string> _resultGenerationSuppressions = null;
@@ -1220,7 +1274,7 @@ namespace ServiceClientGenerator
             var data = _documentRoot[OperationModifiers.OperationModifiersKey];
             if (data == null)
                 return null;
-
+            
             var operation = data[operationName] as JsonData;
             if (operation == null)
                 return null;
@@ -1248,7 +1302,6 @@ namespace ServiceClientGenerator
                 modifiers.DeprecatedMessage = (string)operation[OperationModifiers.DeprecatedMessageKey];
             if (operation[OperationModifiers.StopPaginationOnSameTokenKey] != null && operation[OperationModifiers.StopPaginationOnSameTokenKey].IsBoolean)
                 modifiers.StopPaginationOnSameToken = (bool)operation[OperationModifiers.StopPaginationOnSameTokenKey];
-
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
             {

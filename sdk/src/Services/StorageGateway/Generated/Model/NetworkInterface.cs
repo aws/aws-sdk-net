@@ -59,9 +59,13 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Ipv6Address. 
         /// <para>
-        /// The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not
-        /// supported</i>.
+        /// The Internet Protocol version 6 (IPv6) address of the interface.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This element returns IPv6 addresses for all gateway types except FSx File Gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Ipv6Address
         {

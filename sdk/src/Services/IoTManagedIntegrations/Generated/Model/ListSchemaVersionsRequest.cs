@@ -68,7 +68,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Filter on the name of the schema version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=3, Max=12)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -106,7 +106,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Filter on the id of the schema version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=3, Max=128)]
         public string SchemaId
         {
             get { return this._schemaId; }
@@ -125,7 +125,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The schema version. If this is left blank, it defaults to the latest version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=3, Max=12)]
         public string SemanticVersion
         {
             get { return this._semanticVersion; }

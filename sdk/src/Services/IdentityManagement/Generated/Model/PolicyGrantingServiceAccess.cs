@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is an element of the <a>ListPoliciesGrantingServiceAccessEntry</a>
+    /// This data type is an element of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPoliciesGrantingServiceAccessEntry.html">ListPoliciesGrantingServiceAccessEntry</a>
     /// object.
     /// </para>
     /// </summary>

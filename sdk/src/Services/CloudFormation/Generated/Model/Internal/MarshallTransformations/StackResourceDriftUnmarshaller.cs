@@ -61,6 +61,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.ActualProperties = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DriftStatusReason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DriftStatusReason = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ExpectedProperties", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

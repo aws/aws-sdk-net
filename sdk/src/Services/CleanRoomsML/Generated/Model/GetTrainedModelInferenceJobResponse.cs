@@ -55,6 +55,7 @@ namespace Amazon.CleanRoomsML.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _trainedModelArn;
         private string _trainedModelInferenceJobArn;
+        private string _trainedModelVersionIdentifier;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -501,6 +502,27 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetTrainedModelInferenceJobArn()
         {
             return this._trainedModelInferenceJobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainedModelVersionIdentifier. 
+        /// <para>
+        /// The version identifier of the trained model used for this inference job. This identifies
+        /// the specific version of the trained model that was used to generate the inference
+        /// results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string TrainedModelVersionIdentifier
+        {
+            get { return this._trainedModelVersionIdentifier; }
+            set { this._trainedModelVersionIdentifier = value; }
+        }
+
+        // Check to see if TrainedModelVersionIdentifier property is set
+        internal bool IsSetTrainedModelVersionIdentifier()
+        {
+            return this._trainedModelVersionIdentifier != null;
         }
 
         /// <summary>

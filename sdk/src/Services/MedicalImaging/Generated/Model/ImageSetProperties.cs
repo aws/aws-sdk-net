@@ -39,6 +39,7 @@ namespace Amazon.MedicalImaging.Model
         private string _imageSetId;
         private ImageSetState _imageSetState;
         private ImageSetWorkflowStatus _imageSetWorkflowStatus;
+        private bool? _isPrimary;
         private string _message;
         private Overrides _overrides;
         private DateTime? _updatedAt;
@@ -134,6 +135,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetImageSetWorkflowStatus()
         {
             return this._imageSetWorkflowStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsPrimary. 
+        /// <para>
+        /// The flag to determine whether the image set is primary or not.
+        /// </para>
+        /// </summary>
+        public bool? IsPrimary
+        {
+            get { return this._isPrimary; }
+            set { this._isPrimary = value; }
+        }
+
+        // Check to see if IsPrimary property is set
+        internal bool IsSetIsPrimary()
+        {
+            return this._isPrimary.HasValue; 
         }
 
         /// <summary>

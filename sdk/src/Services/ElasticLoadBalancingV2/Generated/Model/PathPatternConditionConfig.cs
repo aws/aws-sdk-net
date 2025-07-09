@@ -47,7 +47,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// If you specify multiple strings, the condition is satisfied if one of them matches
         /// the request URL. The path pattern is compared only to the path of the URL, not to
-        /// its query string. To compare against the query string, use <a>QueryStringConditionConfig</a>.
+        /// its query string. To compare against the query string, use a <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#query-string-conditions">query
+        /// string condition</a>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

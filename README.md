@@ -106,6 +106,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This release of the Account Management API enables customers to manage the alternate contacts for their AWS accounts. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/accounts-welcome.html
 * [AWSSDK.ACMPCA](https://www.nuget.org/packages/AWSSDK.ACMPCA/)
 	* AWS Certificate Manager (ACM) Private Certificate Authority (CA) is a managed private CA service that helps you easily and securely manage the lifecycle of your private certificates. ACM Private CA provides you a highly-available private CA service without the upfront investment and ongoing maintenance costs of operating your own private CA. ACM Private CA extends ACM's certificate management capabilities to private certificates, enabling you to manage public and private certificates centrally.
+* [AWSSDK.AIOps](https://www.nuget.org/packages/AWSSDK.AIOps/)
+	* This is the initial SDK release for Amazon AI Operations (AIOps). AIOps is a generative AI-powered assistant that helps you respond to incidents in your system by scanning your system's telemetry and quickly surface suggestions that might be related to your issue.
 * [AWSSDK.Amplify](https://www.nuget.org/packages/AWSSDK.Amplify/)
 	* Amplify is a fully managed continuous deployment and hosting service for modern web apps.
 * [AWSSDK.AmplifyBackend](https://www.nuget.org/packages/AWSSDK.AmplifyBackend/)
@@ -520,6 +522,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.
 * [AWSSDK.Keyspaces](https://www.nuget.org/packages/AWSSDK.Keyspaces/)
 	* This release adds support for data definition language (DDL) operations
+* [AWSSDK.KeyspacesStreams](https://www.nuget.org/packages/AWSSDK.KeyspacesStreams/)
+	* This release adds change data capture (CDC) streams support through the new Amazon Keyspaces Streams API.
 * [AWSSDK.Kinesis](https://www.nuget.org/packages/AWSSDK.Kinesis/)
 	* Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.
 * [AWSSDK.KinesisAnalytics](https://www.nuget.org/packages/AWSSDK.KinesisAnalytics/)
@@ -628,6 +632,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS SDK for Migration Hub Strategy Recommendations. It includes APIs to start the portfolio assessment, import portfolio data for assessment, and to retrieve recommendations. For more information, see the AWS Migration Hub documentation at https://docs.aws.amazon.com/migrationhub/index.html
 * [AWSSDK.MobileAnalytics](https://www.nuget.org/packages/AWSSDK.MobileAnalytics/)
 	* Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse.
+* [AWSSDK.MPA](https://www.nuget.org/packages/AWSSDK.MPA/)
+	* This release enables customers to create Multi-party approval teams and approval requests to protect supported operations.
 * [AWSSDK.MQ](https://www.nuget.org/packages/AWSSDK.MQ/)
 	* This is the initial SDK release for Amazon MQ. Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud.
 * [AWSSDK.MTurk](https://www.nuget.org/packages/AWSSDK.MTurk/)
@@ -656,6 +662,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon CloudWatch Observability Access Manager is a new service that allows configuration of the CloudWatch cross-account observability feature.
 * [AWSSDK.ObservabilityAdmin](https://www.nuget.org/packages/AWSSDK.ObservabilityAdmin/)
 	* Amazon CloudWatch Observability Admin adds the ability to audit telemetry configuration for AWS resources in customers AWS Accounts and Organizations. The release introduces new APIs to turn on/off the new experience, which supports discovering supported AWS resources and their state of telemetry.
+* [AWSSDK.Odb](https://www.nuget.org/packages/AWSSDK.Odb/)
+	* This release adds API operations for Oracle Database@AWS. You can use the APIs to create Exadata infrastructure, ODB networks, and Exadata and Autonomous VM clusters inside AWS data centers. The infrastructure is managed by OCI. You can integrate these resources with AWS services.
 * [AWSSDK.Omics](https://www.nuget.org/packages/AWSSDK.Omics/)
 	* Amazon Omics is a new, purpose-built service that can be used by healthcare and life science organizations to store, query, and analyze omics data. The insights from that data can be used to accelerate scientific discoveries and improve healthcare.
 * [AWSSDK.OpenSearchServerless](https://www.nuget.org/packages/AWSSDK.OpenSearchServerless/)
@@ -908,6 +916,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This release allows customers to access email messages as they flow to and from Amazon WorkMail.
 * [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
 	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
+* [AWSSDK.WorkspacesInstances](https://www.nuget.org/packages/AWSSDK.WorkspacesInstances/)
+	* Added support for Amazon WorkSpaces Instances API
 * [AWSSDK.WorkSpacesThinClient](https://www.nuget.org/packages/AWSSDK.WorkSpacesThinClient/)
 	* Initial release of Amazon WorkSpaces Thin Client
 * [AWSSDK.WorkSpacesWeb](https://www.nuget.org/packages/AWSSDK.WorkSpacesWeb/)

@@ -42,7 +42,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property OpenIDConnectProviderArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get
-        /// information for. You can get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a>
+        /// information for. You can get a list of OIDC provider resource ARNs by using the <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html">ListOpenIDConnectProviders</a>
         /// operation.
         /// </para>
         ///  

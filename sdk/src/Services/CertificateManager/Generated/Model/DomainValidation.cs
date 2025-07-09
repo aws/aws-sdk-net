@@ -66,8 +66,8 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property HttpRedirect. 
         /// <para>
         /// Contains information for HTTP-based domain validation of certificates requested through
-        /// CloudFront and issued by ACM. This field exists only when the certificate type is
-        /// <c>AMAZON_ISSUED</c> and the validation method is <c>HTTP</c>.
+        /// Amazon CloudFront and issued by ACM. This field exists only when the certificate type
+        /// is <c>AMAZON_ISSUED</c> and the validation method is <c>HTTP</c>.
         /// </para>
         /// </summary>
         public HttpRedirect HttpRedirect
@@ -89,13 +89,14 @@ namespace Amazon.CertificateManager.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
         /// DNS to Validate Domain Ownership</a>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Note: The CNAME information that you need does not include the name of your domain.
-        /// If you include your domain name in the DNS database CNAME record, validation fails.
-        /// For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only
-        /// "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.
+        /// The CNAME information that you need does not include the name of your domain. If you
+        /// include your domain name in the DNS database CNAME record, validation fails. For example,
+        /// if the name is <c>_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com</c>, only <c>_a79865eb4cd1a6ab990a45779b4e0b96</c>
+        /// must be used.
         /// </para>
+        ///  </note>
         /// </summary>
         public ResourceRecord ResourceRecord
         {

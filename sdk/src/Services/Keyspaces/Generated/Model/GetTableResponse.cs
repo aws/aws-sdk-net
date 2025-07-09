@@ -35,12 +35,14 @@ namespace Amazon.Keyspaces.Model
     public partial class GetTableResponse : AmazonWebServiceResponse
     {
         private CapacitySpecificationSummary _capacitySpecification;
+        private CdcSpecificationSummary _cdcSpecification;
         private ClientSideTimestamps _clientSideTimestamps;
         private Comment _comment;
         private DateTime? _creationTimestamp;
         private int? _defaultTimeToLive;
         private EncryptionSpecification _encryptionSpecification;
         private string _keyspaceName;
+        private string _latestStreamArn;
         private PointInTimeRecoverySummary _pointInTimeRecovery;
         private List<ReplicaSpecificationSummary> _replicaSpecifications = AWSConfigs.InitializeCollections ? new List<ReplicaSpecificationSummary>() : null;
         private string _resourceArn;
@@ -74,6 +76,24 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetCapacitySpecification()
         {
             return this._capacitySpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CdcSpecification. 
+        /// <para>
+        /// The CDC stream settings of the table.
+        /// </para>
+        /// </summary>
+        public CdcSpecificationSummary CdcSpecification
+        {
+            get { return this._cdcSpecification; }
+            set { this._cdcSpecification = value; }
+        }
+
+        // Check to see if CdcSpecification property is set
+        internal bool IsSetCdcSpecification()
+        {
+            return this._cdcSpecification != null;
         }
 
         /// <summary>
@@ -184,6 +204,25 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetKeyspaceName()
         {
             return this._keyspaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestStreamArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string LatestStreamArn
+        {
+            get { return this._latestStreamArn; }
+            set { this._latestStreamArn = value; }
+        }
+
+        // Check to see if LatestStreamArn property is set
+        internal bool IsSetLatestStreamArn()
+        {
+            return this._latestStreamArn != null;
         }
 
         /// <summary>

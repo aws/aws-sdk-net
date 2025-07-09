@@ -2677,6 +2677,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant COMPLETED for InitiateAs
+        /// </summary>
+        public static readonly InitiateAs COMPLETED = new InitiateAs("COMPLETED");
+        /// <summary>
         /// Constant CONNECTED_TO_USER for InitiateAs
         /// </summary>
         public static readonly InitiateAs CONNECTED_TO_USER = new InitiateAs("CONNECTED_TO_USER");

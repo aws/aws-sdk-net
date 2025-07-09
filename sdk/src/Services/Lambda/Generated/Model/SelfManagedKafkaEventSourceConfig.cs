@@ -35,14 +35,15 @@ namespace Amazon.Lambda.Model
     public partial class SelfManagedKafkaEventSourceConfig
     {
         private string _consumerGroupId;
+        private KafkaSchemaRegistryConfig _schemaRegistryConfig;
 
         /// <summary>
         /// Gets and sets the property ConsumerGroupId. 
         /// <para>
-        /// The identifier for the Kafka consumer group to join. The consumer group ID must be
+        ///  The identifier for the Kafka consumer group to join. The consumer group ID must be
         /// unique among all your Kafka event sources. After creating a Kafka event source mapping
         /// with the consumer group ID specified, you cannot update this value. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka-process.html#services-smaa-topic-add">Customizable
         /// consumer group ID</a>.
         /// </para>
         /// </summary>
@@ -57,6 +58,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetConsumerGroupId()
         {
             return this._consumerGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaRegistryConfig. 
+        /// <para>
+        /// Specific configuration settings for a Kafka schema registry.
+        /// </para>
+        /// </summary>
+        public KafkaSchemaRegistryConfig SchemaRegistryConfig
+        {
+            get { return this._schemaRegistryConfig; }
+            set { this._schemaRegistryConfig = value; }
+        }
+
+        // Check to see if SchemaRegistryConfig property is set
+        internal bool IsSetSchemaRegistryConfig()
+        {
+            return this._schemaRegistryConfig != null;
         }
 
     }

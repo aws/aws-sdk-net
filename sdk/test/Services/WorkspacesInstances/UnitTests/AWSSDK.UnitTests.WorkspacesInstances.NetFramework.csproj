@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+   <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
+    <TargetFramework>net472</TargetFramework>
+    <DefineConstants>$(DefineConstants);TRACE;BCL;ASYNC_AWAIT;DEBUG</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.UnitTests.WorkspacesInstances.NetFramework</AssemblyName>
+    <PackageId>AWSSDK.UnitTests.WorkspacesInstances.NetFramework</PackageId>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <SignAssembly>true</SignAssembly>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <NoWarn>CS1591,CS0612,CS0618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+  <!-- 
+    For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
+    the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
+  -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <LangVersion>11.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>../../../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <ItemGroup>
+    <Compile Remove="**/obj/**"/>
+    <None Remove="**/obj/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
+    <ProjectReference Include="../../../Common/AWSSDK.CommonTest.csproj"/>
+    <ProjectReference Include="../../../UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj"/>
+    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj"/>
+    <ProjectReference Include="../../../../src/Services/WorkspacesInstances/AWSSDK.WorkspacesInstances.NetFramework.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+  </ItemGroup>
+  <ItemGroup>
+        <PackageReference Include="Moq" Version="4.8.3"/>
+        <PackageReference Include="MSTest.TestAdapter" Version="1.4.0"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0"/>
+        <PackageReference Include="MSTest.TestFramework" Version="1.4.0"/>
+        <PackageReference Include="AutoFixture" Version="3.51.0"/>
+        <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration"/>
+  </ItemGroup>
+
+
+</Project>

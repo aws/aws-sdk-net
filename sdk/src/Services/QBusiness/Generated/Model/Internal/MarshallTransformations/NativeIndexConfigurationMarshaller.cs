@@ -71,6 +71,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.IndexId);
             }
 
+            if(requestObject.IsSetVersion())
+            {
+                context.Writer.WritePropertyName("version");
+                context.Writer.WriteNumberValue(requestObject.Version.Value);
+            }
+
         }
 
         /// <summary>

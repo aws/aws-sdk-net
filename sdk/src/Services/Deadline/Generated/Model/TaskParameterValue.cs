@@ -34,10 +34,30 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class TaskParameterValue
     {
+        private string _chunkInt;
         private string _float;
         private string _int;
         private string _path;
         private string _string;
+
+        /// <summary>
+        /// Gets and sets the property ChunkInt. 
+        /// <para>
+        /// A range (for example 1-10) or selection of specific (for example 1,3,7,8,10) integers
+        /// represented as a string.
+        /// </para>
+        /// </summary>
+        public string ChunkInt
+        {
+            get { return this._chunkInt; }
+            set { this._chunkInt = value; }
+        }
+
+        // Check to see if ChunkInt property is set
+        internal bool IsSetChunkInt()
+        {
+            return this._chunkInt != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Float. 

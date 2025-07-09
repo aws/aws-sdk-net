@@ -31,12 +31,13 @@ namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTrainedModelOutput operation.
-    /// Deletes the output of a trained model.
+    /// Deletes the model artifacts stored by the service.
     /// </summary>
     public partial class DeleteTrainedModelOutputRequest : AmazonCleanRoomsMLRequest
     {
         private string _membershipIdentifier;
         private string _trainedModelArn;
+        private string _versionIdentifier;
 
         /// <summary>
         /// Gets and sets the property MembershipIdentifier. 
@@ -74,6 +75,27 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetTrainedModelArn()
         {
             return this._trainedModelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionIdentifier. 
+        /// <para>
+        /// The version identifier of the trained model to delete. If not specified, the operation
+        /// will delete the base version of the trained model. When specified, only the particular
+        /// version will be deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string VersionIdentifier
+        {
+            get { return this._versionIdentifier; }
+            set { this._versionIdentifier = value; }
+        }
+
+        // Check to see if VersionIdentifier property is set
+        internal bool IsSetVersionIdentifier()
+        {
+            return this._versionIdentifier != null;
         }
 
     }

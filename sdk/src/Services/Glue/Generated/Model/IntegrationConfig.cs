@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class IntegrationConfig
     {
         private string _refreshInterval;
+        private Dictionary<string, string> _sourceProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property RefreshInterval. 
@@ -57,6 +58,31 @@ namespace Amazon.Glue.Model
         internal bool IsSetRefreshInterval()
         {
             return this._refreshInterval != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceProperties. 
+        /// <para>
+        ///  A collection of key-value pairs that specify additional properties for the integration
+        /// source. These properties provide configuration options that can be used to customize
+        /// the behavior of the ODB source during data integration operations. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> SourceProperties
+        {
+            get { return this._sourceProperties; }
+            set { this._sourceProperties = value; }
+        }
+
+        // Check to see if SourceProperties property is set
+        internal bool IsSetSourceProperties()
+        {
+            return this._sourceProperties != null && (this._sourceProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

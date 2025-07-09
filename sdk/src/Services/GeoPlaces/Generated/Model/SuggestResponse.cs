@@ -45,7 +45,7 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         ///  
         /// <para>
-        /// For more inforamtion on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon
+        /// For more information on pricing, please visit <a href="https://aws.amazon.com/location/pricing/">Amazon
         /// Location Service Pricing</a>.
         /// </para>
         /// </summary>

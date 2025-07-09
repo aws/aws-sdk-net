@@ -34,8 +34,9 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used by the return parameter of <c> <a>SimulateCustomPolicy</a>
-    /// </c> and <c> <a>SimulatePrincipalPolicy</a> </c>.
+    /// This data type is used by the return parameter of <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>
+    /// </c> and <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>
+    /// </c>.
     /// </para>
     /// </summary>
     public partial class EvaluationResult
@@ -187,8 +188,8 @@ namespace Amazon.IdentityManagement.Model
         /// a simulation is "*", either explicitly, or when the <c>ResourceArns</c> parameter
         /// blank. If you include a list of resources, then any missing context values are instead
         /// included under the <c>ResourceSpecificResults</c> section. To discover the context
-        /// keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a>
-        /// or <a>GetContextKeysForPrincipalPolicy</a>.
+        /// keys used by a set of policies, you can call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
+        /// or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteKeySigningKey Request Marshaller
     /// </summary>       
-    public class DeleteKeySigningKeyRequestMarshaller : IMarshaller<IRequest, DeleteKeySigningKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteKeySigningKeyRequestMarshaller : IMarshaller<IRequest, DeleteKeySigningKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/keysigningkey/{HostedZoneId}/{Name}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteKeySigningKeyRequestMarshaller _instance = new DeleteKeySigningKeyRequestMarshaller();        
@@ -86,5 +87,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteKeySigningKeyRequest publicRequest);
     }    
 }

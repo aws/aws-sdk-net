@@ -156,7 +156,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To create a regional snapshots in the parent Region of the Local Zone, specify <c>regional</c>
+        /// To create regional snapshots in the parent Region of the Local Zone, specify <c>regional</c>
         /// or omit this parameter.
         /// </para>
         ///  </li> </ul> 

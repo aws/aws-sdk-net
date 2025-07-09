@@ -47,6 +47,7 @@ namespace Amazon.GeoPlaces.Model
         /// authority, or a designated postal operator.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public PostalAuthority PostalAuthority
         {
             get { return this._postalAuthority; }
@@ -63,10 +64,10 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property PostalCode. 
         /// <para>
         /// An alphanumeric string included in a postal address to facilitate mail sorting, such
-        /// as post code, postcode, or ZIP code for which the result should posses. 
+        /// as post code, postcode, or ZIP code for which the result should possess. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -85,6 +86,7 @@ namespace Amazon.GeoPlaces.Model
         /// The postal code type.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public PostalCodeType PostalCodeType
         {
             get { return this._postalCodeType; }

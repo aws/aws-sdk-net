@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetAccessGrantsInstanceResourcePolicy Request Marshaller
     /// </summary>       
-    public class GetAccessGrantsInstanceResourcePolicyRequestMarshaller : IMarshaller<IRequest, GetAccessGrantsInstanceResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetAccessGrantsInstanceResourcePolicyRequestMarshaller : IMarshaller<IRequest, GetAccessGrantsInstanceResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,6 +65,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accessgrantsinstance/resourcepolicy";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetAccessGrantsInstanceResourcePolicyRequestMarshaller _instance = new GetAccessGrantsInstanceResourcePolicyRequestMarshaller();        
@@ -85,5 +86,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetAccessGrantsInstanceResourcePolicyRequest publicRequest);
     }    
 }

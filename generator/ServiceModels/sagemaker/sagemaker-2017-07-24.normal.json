@@ -406,6 +406,16 @@
       ],
       "documentation":"<p>Create a hub.</p>"
     },
+    "CreateHubContentPresignedUrls":{
+      "name":"CreateHubContentPresignedUrls",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateHubContentPresignedUrlsRequest"},
+      "output":{"shape":"CreateHubContentPresignedUrlsResponse"},
+      "documentation":"<p>Creates presigned URLs for accessing hub content artifacts. This operation generates time-limited, secure URLs that allow direct download of model artifacts and associated files from Amazon SageMaker hub content, including gated models that require end-user license agreement acceptance.</p>"
+    },
     "CreateHubContentReference":{
       "name":"CreateHubContentReference",
       "http":{
@@ -3639,6 +3649,20 @@
       ],
       "documentation":"<p>Starts a pipeline execution.</p>"
     },
+    "StartSession":{
+      "name":"StartSession",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartSessionRequest"},
+      "output":{"shape":"StartSessionResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"},
+        {"shape":"ResourceLimitExceeded"}
+      ],
+      "documentation":"<p>Initiates a remote connection session between a local integrated development environments (IDEs) and a remote SageMaker space.</p>"
+    },
     "StopAutoMLJob":{
       "name":"StopAutoMLJob",
       "http":{
@@ -5724,6 +5748,24 @@
       "min":0,
       "pattern":".*"
     },
+    "AuthorizedUrl":{
+      "type":"structure",
+      "members":{
+        "Url":{
+          "shape":"LongS3Uri",
+          "documentation":"<p>The presigned S3 URL that provides temporary, secure access to download the file. URLs expire within 15 minutes for security purposes.</p>"
+        },
+        "LocalPath":{
+          "shape":"LocalPath",
+          "documentation":"<p>The recommended local file path where the downloaded file should be stored to maintain proper directory structure and file organization.</p>"
+        }
+      },
+      "documentation":"<p>Contains a presigned URL and its associated local file path for downloading hub content artifacts.</p>"
+    },
+    "AuthorizedUrlConfigs":{
+      "type":"list",
+      "member":{"shape":"AuthorizedUrl"}
+    },
     "AutoGenerateEndpointName":{"type":"boolean"},
     "AutoMLAlgorithm":{
       "type":"string",
@@ -7204,6 +7246,208 @@
       "min":0
     },
     "CertifyForMarketplace":{"type":"boolean"},
+    "CfnCreateTemplateProvider":{
+      "type":"structure",
+      "required":[
+        "TemplateName",
+        "TemplateURL"
+      ],
+      "members":{
+        "TemplateName":{
+          "shape":"CfnTemplateName",
+          "documentation":"<p> A unique identifier for the template within the project. </p>"
+        },
+        "TemplateURL":{
+          "shape":"CfnTemplateURL",
+          "documentation":"<p> The Amazon S3 URL of the CloudFormation template. </p>"
+        },
+        "RoleARN":{
+          "shape":"RoleArn",
+          "documentation":"<p> The IAM role that CloudFormation assumes when creating the stack. </p>"
+        },
+        "Parameters":{
+          "shape":"CfnStackCreateParameters",
+          "documentation":"<p> An array of CloudFormation stack parameters.</p>"
+        }
+      },
+      "documentation":"<p> The CloudFormation template provider configuration for creating infrastructure resources. </p>"
+    },
+    "CfnStackCreateParameter":{
+      "type":"structure",
+      "required":["Key"],
+      "members":{
+        "Key":{
+          "shape":"CfnStackParameterKey",
+          "documentation":"<p> The name of the CloudFormation parameter. </p>"
+        },
+        "Value":{
+          "shape":"CfnStackParameterValue",
+          "documentation":"<p> The value of the CloudFormation parameter. </p>"
+        }
+      },
+      "documentation":"<p> A key-value pair that represents a parameter for the CloudFormation stack. </p>"
+    },
+    "CfnStackCreateParameters":{
+      "type":"list",
+      "member":{"shape":"CfnStackCreateParameter"},
+      "max":180,
+      "min":0
+    },
+    "CfnStackDetail":{
+      "type":"structure",
+      "required":["StatusMessage"],
+      "members":{
+        "Name":{
+          "shape":"CfnStackName",
+          "documentation":"<p> The name of the CloudFormation stack. </p>"
+        },
+        "Id":{
+          "shape":"CfnStackId",
+          "documentation":"<p> The unique identifier of the CloudFormation stack. </p>"
+        },
+        "StatusMessage":{
+          "shape":"CfnStackStatusMessage",
+          "documentation":"<p> A human-readable message about the stack's current status. </p>"
+        }
+      },
+      "documentation":"<p> Details about the CloudFormation stack. </p>"
+    },
+    "CfnStackId":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"(?=.{1,256}$)arn:aws[a-z\\-]*:cloudformation:[a-z0-9\\-]*:[0-9]{12}:stack/[a-zA-Z][a-zA-Z0-9-]{0,127}/.*"
+    },
+    "CfnStackName":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[A-Za-z][A-Za-z0-9-]{0,127}"
+    },
+    "CfnStackParameter":{
+      "type":"structure",
+      "required":["Key"],
+      "members":{
+        "Key":{
+          "shape":"CfnStackParameterKey",
+          "documentation":"<p> The name of the CloudFormation parameter. </p>"
+        },
+        "Value":{
+          "shape":"CfnStackParameterValue",
+          "documentation":"<p> The value of the CloudFormation parameter. </p>"
+        }
+      },
+      "documentation":"<p> A key-value pair representing a parameter used in the CloudFormation stack. </p>"
+    },
+    "CfnStackParameterKey":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":".{1,255}"
+    },
+    "CfnStackParameterValue":{
+      "type":"string",
+      "max":4096,
+      "min":0,
+      "pattern":".{0,4096}"
+    },
+    "CfnStackParameters":{
+      "type":"list",
+      "member":{"shape":"CfnStackParameter"},
+      "max":180,
+      "min":0
+    },
+    "CfnStackStatusMessage":{
+      "type":"string",
+      "max":4096,
+      "min":1,
+      "pattern":".{1,4096}"
+    },
+    "CfnStackUpdateParameter":{
+      "type":"structure",
+      "required":["Key"],
+      "members":{
+        "Key":{
+          "shape":"CfnStackParameterKey",
+          "documentation":"<p> The name of the CloudFormation parameter. </p>"
+        },
+        "Value":{
+          "shape":"CfnStackParameterValue",
+          "documentation":"<p> The value of the CloudFormation parameter. </p>"
+        }
+      },
+      "documentation":"<p> A key-value pair representing a parameter used in the CloudFormation stack. </p>"
+    },
+    "CfnStackUpdateParameters":{
+      "type":"list",
+      "member":{"shape":"CfnStackUpdateParameter"},
+      "max":180,
+      "min":0
+    },
+    "CfnTemplateName":{
+      "type":"string",
+      "max":32,
+      "min":1,
+      "pattern":"(?=.{1,32}$)[a-zA-Z0-9](-*[a-zA-Z0-9])*"
+    },
+    "CfnTemplateProviderDetail":{
+      "type":"structure",
+      "required":[
+        "TemplateName",
+        "TemplateURL"
+      ],
+      "members":{
+        "TemplateName":{
+          "shape":"CfnTemplateName",
+          "documentation":"<p> The unique identifier of the template within the project. </p>"
+        },
+        "TemplateURL":{
+          "shape":"CfnTemplateURL",
+          "documentation":"<p> The Amazon S3 URL of the CloudFormation template. </p>"
+        },
+        "RoleARN":{
+          "shape":"RoleArn",
+          "documentation":"<p> The IAM role used by CloudFormation to create the stack. </p>"
+        },
+        "Parameters":{
+          "shape":"CfnStackParameters",
+          "documentation":"<p> An array of CloudFormation stack parameters.</p>"
+        },
+        "StackDetail":{
+          "shape":"CfnStackDetail",
+          "documentation":"<p> Information about the CloudFormation stack created by the template provider. </p>"
+        }
+      },
+      "documentation":"<p> Details about a CloudFormation template provider configuration and associated provisioning information. </p>"
+    },
+    "CfnTemplateURL":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"(?=.{1,1024}$)(https)://([^/]+)/(.+)"
+    },
+    "CfnUpdateTemplateProvider":{
+      "type":"structure",
+      "required":[
+        "TemplateName",
+        "TemplateURL"
+      ],
+      "members":{
+        "TemplateName":{
+          "shape":"CfnTemplateName",
+          "documentation":"<p> The unique identifier of the template to update within the project. </p>"
+        },
+        "TemplateURL":{
+          "shape":"CfnTemplateURL",
+          "documentation":"<p> The Amazon S3 URL of the CloudFormation template.</p>"
+        },
+        "Parameters":{
+          "shape":"CfnStackUpdateParameters",
+          "documentation":"<p> An array of CloudFormation stack parameters. </p>"
+        }
+      },
+      "documentation":"<p> Contains configuration details for updating an existing CloudFormation template provider in the project. </p>"
+    },
     "Channel":{
       "type":"structure",
       "required":[
@@ -7983,6 +8227,7 @@
         "ml.g6e.48xlarge",
         "ml.p5e.48xlarge",
         "ml.p5en.48xlarge",
+        "ml.p6-b200.48xlarge",
         "ml.trn2.48xlarge",
         "ml.c6i.large",
         "ml.c6i.xlarge",
@@ -9504,10 +9749,7 @@
     },
     "CreateClusterRequest":{
       "type":"structure",
-      "required":[
-        "ClusterName",
-        "InstanceGroups"
-      ],
+      "required":["ClusterName"],
       "members":{
         "ClusterName":{
           "shape":"ClusterName",
@@ -9867,9 +10109,7 @@
       "required":[
         "DomainName",
         "AuthMode",
-        "DefaultUserSettings",
-        "SubnetIds",
-        "VpcId"
+        "DefaultUserSettings"
       ],
       "members":{
         "DomainName":{
@@ -10271,6 +10511,58 @@
         "FlowDefinitionArn":{
           "shape":"FlowDefinitionArn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the flow definition you create.</p>"
+        }
+      }
+    },
+    "CreateHubContentPresignedUrlsRequest":{
+      "type":"structure",
+      "required":[
+        "HubName",
+        "HubContentType",
+        "HubContentName"
+      ],
+      "members":{
+        "HubName":{
+          "shape":"HubNameOrArn",
+          "documentation":"<p>The name or Amazon Resource Name (ARN) of the hub that contains the content. For public content, use <code>SageMakerPublicHub</code>.</p>"
+        },
+        "HubContentType":{
+          "shape":"HubContentType",
+          "documentation":"<p>The type of hub content to access. Valid values include <code>Model</code>, <code>Notebook</code>, and <code>ModelReference</code>.</p>"
+        },
+        "HubContentName":{
+          "shape":"HubContentName",
+          "documentation":"<p>The name of the hub content for which to generate presigned URLs. This identifies the specific model or content within the hub.</p>"
+        },
+        "HubContentVersion":{
+          "shape":"HubContentVersion",
+          "documentation":"<p>The version of the hub content. If not specified, the latest version is used.</p>"
+        },
+        "AccessConfig":{
+          "shape":"PresignedUrlAccessConfig",
+          "documentation":"<p>Configuration settings for accessing the hub content, including end-user license agreement acceptance for gated models and expected S3 URL validation.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of presigned URLs to return in the response. Default value is 100. Large models may contain hundreds of files, requiring pagination to retrieve all URLs.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p> A token for pagination. Use this token to retrieve the next set of presigned URLs when the response is truncated.</p>"
+        }
+      }
+    },
+    "CreateHubContentPresignedUrlsResponse":{
+      "type":"structure",
+      "required":["AuthorizedUrlConfigs"],
+      "members":{
+        "AuthorizedUrlConfigs":{
+          "shape":"AuthorizedUrlConfigs",
+          "documentation":"<p>An array of authorized URL configurations, each containing a presigned URL and its corresponding local file path for proper file organization during download.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token for pagination. If present, indicates that more presigned URLs are available. Use this token in a subsequent request to retrieve additional URLs.</p>"
         }
       }
     },
@@ -11771,6 +12063,10 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>"
+        },
+        "TemplateProviders":{
+          "shape":"CreateTemplateProviderList",
+          "documentation":"<p> An array of template provider configurations for creating infrastructure resources for the project. </p>"
         }
       }
     },
@@ -11871,6 +12167,22 @@
           "documentation":"<p>The ARN of your created Lifecycle Configuration.</p>"
         }
       }
+    },
+    "CreateTemplateProvider":{
+      "type":"structure",
+      "members":{
+        "CfnTemplateProvider":{
+          "shape":"CfnCreateTemplateProvider",
+          "documentation":"<p> The CloudFormation template provider configuration for creating infrastructure resources. </p>"
+        }
+      },
+      "documentation":"<p> Contains configuration details for a template provider. Only one type of template provider can be specified. </p>"
+    },
+    "CreateTemplateProviderList":{
+      "type":"list",
+      "member":{"shape":"CreateTemplateProvider"},
+      "max":1,
+      "min":1
     },
     "CreateTrainingJobRequest":{
       "type":"structure",
@@ -13198,8 +13510,7 @@
     },
     "DeleteFlowDefinitionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteHubContentReferenceRequest":{
       "type":"structure",
@@ -13272,8 +13583,7 @@
     },
     "DeleteHumanTaskUiResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteHyperParameterTuningJobRequest":{
       "type":"structure",
@@ -13297,8 +13607,7 @@
     },
     "DeleteImageResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteImageVersionRequest":{
       "type":"structure",
@@ -13320,8 +13629,7 @@
     },
     "DeleteImageVersionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteInferenceComponentInput":{
       "type":"structure",
@@ -13599,8 +13907,7 @@
     },
     "DeleteTagsOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteTrialComponentRequest":{
       "type":"structure",
@@ -13669,8 +13976,7 @@
     },
     "DeleteWorkforceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteWorkteamRequest":{
       "type":"structure",
@@ -17842,6 +18148,10 @@
           "shape":"ProjectStatus",
           "documentation":"<p>The status of the project.</p>"
         },
+        "TemplateProviderDetails":{
+          "shape":"TemplateProviderDetailList",
+          "documentation":"<p> An array of template providers associated with the project. </p>"
+        },
         "CreatedBy":{"shape":"UserContext"},
         "CreationTime":{
           "shape":"Timestamp",
@@ -18953,13 +19263,11 @@
     "DisableProfiler":{"type":"boolean"},
     "DisableSagemakerServicecatalogPortfolioInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DisableSagemakerServicecatalogPortfolioOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DisassociateAdditionalCodeRepositories":{"type":"boolean"},
     "DisassociateDefaultCodeRepository":{"type":"boolean"},
@@ -19806,13 +20114,11 @@
     },
     "EnableSagemakerServicecatalogPortfolioInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EnableSagemakerServicecatalogPortfolioOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EnableSessionTagChaining":{
       "type":"boolean",
@@ -21329,8 +21635,7 @@
     },
     "GetSagemakerServicecatalogPortfolioStatusInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "GetSagemakerServicecatalogPortfolioStatusOutput":{
       "type":"structure",
@@ -25422,7 +25727,7 @@
         },
         "MaxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>Set the maximum number of SageMaker HyperPod clusters to list.</p>"
+          "documentation":"<p>Specifies the maximum number of clusters to evaluate for the operation (not necessarily the number of matching items). After SageMaker processes the number of clusters up to <code>MaxResults</code>, it stops the operation and returns the matching clusters up to that point. If all the matching clusters are desired, SageMaker will go through all the clusters until <code>NextToken</code> is empty.</p>"
         },
         "NameContains":{
           "shape":"NameContains",
@@ -29044,7 +29349,19 @@
         "CreateDate"
       ]
     },
+    "LocalPath":{
+      "type":"string",
+      "max":1024,
+      "min":0,
+      "pattern":"\\/.*"
+    },
     "Long":{"type":"long"},
+    "LongS3Uri":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"(https|s3)://([^/]+)/?(.*)"
+    },
     "MLFramework":{
       "type":"string",
       "max":128,
@@ -31630,8 +31947,7 @@
     },
     "MonitoringParquetDatasetFormat":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>Represents the Parquet dataset format used when running a monitoring job.</p>"
     },
     "MonitoringProblemType":{
@@ -33697,6 +34013,21 @@
       ]
     },
     "PresignedDomainUrl":{"type":"string"},
+    "PresignedUrlAccessConfig":{
+      "type":"structure",
+      "members":{
+        "AcceptEula":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates acceptance of the End User License Agreement (EULA) for gated models. Set to true to acknowledge acceptance of the license terms required for accessing gated content.</p>",
+          "box":true
+        },
+        "ExpectedS3Url":{
+          "shape":"S3ModelUri",
+          "documentation":"<p>The expected S3 URL prefix for validation purposes. This parameter helps ensure consistency between the resolved S3 URIs and the deployment configuration, reducing potential compatibility issues.</p>"
+        }
+      },
+      "documentation":"<p>Configuration for accessing hub content through presigned URLs, including license agreement acceptance and URL validation settings.</p>"
+    },
     "PriorityClass":{
       "type":"structure",
       "required":[
@@ -33927,7 +34258,34 @@
         "ml.c6i.12xlarge",
         "ml.c6i.16xlarge",
         "ml.c6i.24xlarge",
-        "ml.c6i.32xlarge"
+        "ml.c6i.32xlarge",
+        "ml.m7i.large",
+        "ml.m7i.xlarge",
+        "ml.m7i.2xlarge",
+        "ml.m7i.4xlarge",
+        "ml.m7i.8xlarge",
+        "ml.m7i.12xlarge",
+        "ml.m7i.16xlarge",
+        "ml.m7i.24xlarge",
+        "ml.m7i.48xlarge",
+        "ml.c7i.large",
+        "ml.c7i.xlarge",
+        "ml.c7i.2xlarge",
+        "ml.c7i.4xlarge",
+        "ml.c7i.8xlarge",
+        "ml.c7i.12xlarge",
+        "ml.c7i.16xlarge",
+        "ml.c7i.24xlarge",
+        "ml.c7i.48xlarge",
+        "ml.r7i.large",
+        "ml.r7i.xlarge",
+        "ml.r7i.2xlarge",
+        "ml.r7i.4xlarge",
+        "ml.r7i.8xlarge",
+        "ml.r7i.12xlarge",
+        "ml.r7i.16xlarge",
+        "ml.r7i.24xlarge",
+        "ml.r7i.48xlarge"
       ]
     },
     "ProcessingJob":{
@@ -34661,7 +35019,46 @@
         "ml.r7i.12xlarge",
         "ml.r7i.16xlarge",
         "ml.r7i.24xlarge",
-        "ml.r7i.48xlarge"
+        "ml.r7i.48xlarge",
+        "ml.c8g.medium",
+        "ml.c8g.large",
+        "ml.c8g.xlarge",
+        "ml.c8g.2xlarge",
+        "ml.c8g.4xlarge",
+        "ml.c8g.8xlarge",
+        "ml.c8g.12xlarge",
+        "ml.c8g.16xlarge",
+        "ml.c8g.24xlarge",
+        "ml.c8g.48xlarge",
+        "ml.r7gd.medium",
+        "ml.r7gd.large",
+        "ml.r7gd.xlarge",
+        "ml.r7gd.2xlarge",
+        "ml.r7gd.4xlarge",
+        "ml.r7gd.8xlarge",
+        "ml.r7gd.12xlarge",
+        "ml.r7gd.16xlarge",
+        "ml.m8g.medium",
+        "ml.m8g.large",
+        "ml.m8g.xlarge",
+        "ml.m8g.2xlarge",
+        "ml.m8g.4xlarge",
+        "ml.m8g.8xlarge",
+        "ml.m8g.12xlarge",
+        "ml.m8g.16xlarge",
+        "ml.m8g.24xlarge",
+        "ml.m8g.48xlarge",
+        "ml.c6in.large",
+        "ml.c6in.xlarge",
+        "ml.c6in.2xlarge",
+        "ml.c6in.4xlarge",
+        "ml.c6in.8xlarge",
+        "ml.c6in.12xlarge",
+        "ml.c6in.16xlarge",
+        "ml.c6in.24xlarge",
+        "ml.c6in.32xlarge",
+        "ml.p6-b200.48xlarge",
+        "ml.p6e-gb200.36xlarge"
       ]
     },
     "ProductionVariantList":{
@@ -35015,6 +35412,10 @@
         "CreationTime":{
           "shape":"Timestamp",
           "documentation":"<p>A timestamp specifying when the project was created.</p>"
+        },
+        "TemplateProviderDetails":{
+          "shape":"TemplateProviderDetailList",
+          "documentation":"<p> An array of template providers associated with the project. </p>"
         },
         "Tags":{
           "shape":"TagList",
@@ -36384,7 +36785,7 @@
       "members":{
         "InstanceType":{
           "shape":"TrainingInstanceType",
-          "documentation":"<p>The ML compute instance type. </p> <note> <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022. </p> <p> <a href=\"http://aws.amazon.com/ec2/instance-types/p4/\">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions. </p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West (Oregon) (us-west-2)</p> </li> </ul> <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p> </note>"
+          "documentation":"<p>The ML compute instance type. </p>"
         },
         "InstanceCount":{
           "shape":"TrainingInstanceCount",
@@ -36430,6 +36831,12 @@
       "type":"string",
       "max":32,
       "min":0
+    },
+    "ResourceIdentifier":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:.*\\/.*"
     },
     "ResourceInUse":{
       "type":"structure",
@@ -36735,7 +37142,7 @@
       "members":{
         "S3DataType":{
           "shape":"S3DataType",
-          "documentation":"<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>"
+          "documentation":"<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p> <p>If you choose <code>Converse</code>, <code>S3Uri</code> identifies an Amazon S3 location that contains data formatted according to Converse format. This format structures conversational messages with specific roles and content types used for training and fine-tuning foundational models.</p>"
         },
         "S3Uri":{
           "shape":"S3Uri",
@@ -36766,7 +37173,8 @@
       "enum":[
         "ManifestFile",
         "S3Prefix",
-        "AugmentedManifestFile"
+        "AugmentedManifestFile",
+        "Converse"
       ]
     },
     "S3ModelDataSource":{
@@ -37492,6 +37900,11 @@
       "max":43200,
       "min":1800
     },
+    "SessionId":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
     "ShadowModeConfig":{
       "type":"structure",
       "required":[
@@ -37911,6 +38324,10 @@
         "CustomFileSystems":{
           "shape":"CustomFileSystems",
           "documentation":"<p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>"
+        },
+        "RemoteAccess":{
+          "shape":"FeatureStatus",
+          "documentation":"<p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>"
         }
       },
       "documentation":"<p>A collection of space settings.</p>"
@@ -37921,6 +38338,10 @@
         "AppType":{
           "shape":"AppType",
           "documentation":"<p>The type of app created within the space.</p>"
+        },
+        "RemoteAccess":{
+          "shape":"FeatureStatus",
+          "documentation":"<p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>"
         },
         "SpaceStorageSettings":{
           "shape":"SpaceStorageSettings",
@@ -38150,6 +38571,33 @@
         "PipelineExecutionArn":{
           "shape":"PipelineExecutionArn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the pipeline execution.</p>"
+        }
+      }
+    },
+    "StartSessionRequest":{
+      "type":"structure",
+      "required":["ResourceIdentifier"],
+      "members":{
+        "ResourceIdentifier":{
+          "shape":"ResourceIdentifier",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource to which the remote connection will be established. For example, this identifies the specific ARN space application you want to connect to from your local IDE.</p>"
+        }
+      }
+    },
+    "StartSessionResponse":{
+      "type":"structure",
+      "members":{
+        "SessionId":{
+          "shape":"SessionId",
+          "documentation":"<p>A unique identifier for the established remote connection session.</p>"
+        },
+        "StreamUrl":{
+          "shape":"StreamUrl",
+          "documentation":"<p>A WebSocket URL used to establish a SSH connection between the local IDE and remote SageMaker space.</p>"
+        },
+        "TokenValue":{
+          "shape":"TokenValue",
+          "documentation":"<p>An encrypted token value containing session and caller information. </p>"
         }
       }
     },
@@ -38447,6 +38895,7 @@
         "InMemory"
       ]
     },
+    "StreamUrl":{"type":"string"},
     "String":{"type":"string"},
     "String1024":{
       "type":"string",
@@ -38932,6 +39381,22 @@
       "max":128000,
       "min":1
     },
+    "TemplateProviderDetail":{
+      "type":"structure",
+      "members":{
+        "CfnTemplateProviderDetail":{
+          "shape":"CfnTemplateProviderDetail",
+          "documentation":"<p> Details about a CloudFormation template provider configuration and associated provisioning information. </p>"
+        }
+      },
+      "documentation":"<p> Details about a template provider configuration and associated provisioning information. </p>"
+    },
+    "TemplateProviderDetailList":{
+      "type":"list",
+      "member":{"shape":"TemplateProviderDetail"},
+      "max":1,
+      "min":1
+    },
     "TemplateUrl":{
       "type":"string",
       "max":2048,
@@ -39213,6 +39678,11 @@
       "type":"string",
       "max":256,
       "min":1
+    },
+    "TokenValue":{
+      "type":"string",
+      "max":1024,
+      "min":0
     },
     "TotalHits":{
       "type":"structure",
@@ -39575,7 +40045,34 @@
         "ml.r5.12xlarge",
         "ml.r5.16xlarge",
         "ml.r5.24xlarge",
-        "ml.p6-b200.48xlarge"
+        "ml.p6-b200.48xlarge",
+        "ml.m7i.large",
+        "ml.m7i.xlarge",
+        "ml.m7i.2xlarge",
+        "ml.m7i.4xlarge",
+        "ml.m7i.8xlarge",
+        "ml.m7i.12xlarge",
+        "ml.m7i.16xlarge",
+        "ml.m7i.24xlarge",
+        "ml.m7i.48xlarge",
+        "ml.c7i.large",
+        "ml.c7i.xlarge",
+        "ml.c7i.2xlarge",
+        "ml.c7i.4xlarge",
+        "ml.c7i.8xlarge",
+        "ml.c7i.12xlarge",
+        "ml.c7i.16xlarge",
+        "ml.c7i.24xlarge",
+        "ml.c7i.48xlarge",
+        "ml.r7i.large",
+        "ml.r7i.xlarge",
+        "ml.r7i.2xlarge",
+        "ml.r7i.4xlarge",
+        "ml.r7i.8xlarge",
+        "ml.r7i.12xlarge",
+        "ml.r7i.16xlarge",
+        "ml.r7i.24xlarge",
+        "ml.r7i.48xlarge"
       ]
     },
     "TrainingInstanceTypes":{
@@ -41359,10 +41856,7 @@
     },
     "UpdateClusterRequest":{
       "type":"structure",
-      "required":[
-        "ClusterName",
-        "InstanceGroups"
-      ],
+      "required":["ClusterName"],
       "members":{
         "ClusterName":{
           "shape":"ClusterNameOrArn",
@@ -42453,13 +42947,11 @@
     },
     "UpdateNotebookInstanceLifecycleConfigOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateNotebookInstanceOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdatePartnerAppRequest":{
       "type":"structure",
@@ -42599,6 +43091,10 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href=\"https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html\">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>"
+        },
+        "TemplateProvidersToUpdate":{
+          "shape":"UpdateTemplateProviderList",
+          "documentation":"<p> The template providers to update in the project. </p>"
         }
       }
     },
@@ -42645,6 +43141,22 @@
           "documentation":"<p>The space's Amazon Resource Name (ARN).</p>"
         }
       }
+    },
+    "UpdateTemplateProvider":{
+      "type":"structure",
+      "members":{
+        "CfnTemplateProvider":{
+          "shape":"CfnUpdateTemplateProvider",
+          "documentation":"<p> The CloudFormation template provider configuration to update. </p>"
+        }
+      },
+      "documentation":"<p> Contains configuration details for updating an existing template provider in the project. </p>"
+    },
+    "UpdateTemplateProviderList":{
+      "type":"list",
+      "member":{"shape":"UpdateTemplateProvider"},
+      "max":1,
+      "min":1
     },
     "UpdateTrainingJobRequest":{
       "type":"structure",

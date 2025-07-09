@@ -114,12 +114,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OutsideIpAddressType. 
         /// <para>
-        /// The type of IPv4 address assigned to the outside interface of the customer gateway
-        /// device.
+        /// The type of IP address assigned to the outside interface of the customer gateway device.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>PrivateIpv4</c> | <c>PublicIpv4</c> 
+        /// Valid values: <c>PrivateIpv4</c> | <c>PublicIpv4</c> | <c>Ipv6</c> 
         /// </para>
         ///  
         /// <para>

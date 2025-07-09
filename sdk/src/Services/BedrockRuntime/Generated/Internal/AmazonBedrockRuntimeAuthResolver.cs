@@ -72,7 +72,11 @@ namespace Amazon.BedrockRuntime.Internal
             {
                 default:
                     // Default for the service, applies to all remaining operations.
-                    return AuthSchemeOption.DEFAULT_SIGV4;
+                    return new List<IAuthSchemeOption> 
+                    {
+                        new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+                        new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" },
+                    };
             }
         }
     }

@@ -46,6 +46,7 @@ namespace Amazon.MediaPackageV2.Model
         private List<GetHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<GetHlsManifestConfiguration>() : null;
         private List<GetLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<GetLowLatencyHlsManifestConfiguration>() : null;
         private DateTime? _modifiedAt;
+        private List<GetMssManifestConfiguration> _mssManifests = AWSConfigs.InitializeCollections ? new List<GetMssManifestConfiguration>() : null;
         private string _originEndpointName;
         private Segment _segment;
         private int? _startoverWindowSeconds;
@@ -291,6 +292,30 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetModifiedAt()
         {
             return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MssManifests. 
+        /// <para>
+        /// The updated Microsoft Smooth Streaming (MSS) manifest configurations for this origin
+        /// endpoint.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<GetMssManifestConfiguration> MssManifests
+        {
+            get { return this._mssManifests; }
+            set { this._mssManifests = value; }
+        }
+
+        // Check to see if MssManifests property is set
+        internal bool IsSetMssManifests()
+        {
+            return this._mssManifests != null && (this._mssManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

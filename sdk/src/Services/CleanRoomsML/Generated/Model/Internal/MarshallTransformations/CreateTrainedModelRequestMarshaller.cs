@@ -132,6 +132,22 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetIncrementalTrainingDataChannels())
+            {
+                context.Writer.WritePropertyName("incrementalTrainingDataChannels");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIncrementalTrainingDataChannelsListValue in publicRequest.IncrementalTrainingDataChannels)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = IncrementalTrainingDataChannelMarshaller.Instance;
+                    marshaller.Marshall(publicRequestIncrementalTrainingDataChannelsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
@@ -178,6 +194,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestTagsValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTrainingInputMode())
+            {
+                context.Writer.WritePropertyName("trainingInputMode");
+                context.Writer.WriteStringValue(publicRequest.TrainingInputMode);
             }
 
             writer.WriteEndObject();

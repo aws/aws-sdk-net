@@ -76,6 +76,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAmazonManagedKafkaEventSourceConfig())
+            {
+                context.Writer.WritePropertyName("AmazonManagedKafkaEventSourceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AmazonManagedKafkaEventSourceConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AmazonManagedKafkaEventSourceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("BatchSize");
@@ -203,6 +214,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
                 var marshaller = ScalingConfigMarshaller.Instance;
                 marshaller.Marshall(publicRequest.ScalingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSelfManagedKafkaEventSourceConfig())
+            {
+                context.Writer.WritePropertyName("SelfManagedKafkaEventSourceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SelfManagedKafkaEventSourceConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SelfManagedKafkaEventSourceConfig, context);
 
                 context.Writer.WriteEndObject();
             }

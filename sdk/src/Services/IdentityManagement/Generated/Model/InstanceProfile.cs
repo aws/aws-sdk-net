@@ -38,19 +38,23 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateInstanceProfile</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html">CreateInstanceProfile</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetInstanceProfile</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html">GetInstanceProfile</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListInstanceProfiles</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfiles.html">ListInstanceProfiles</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListInstanceProfilesForRole</a> 
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html">ListInstanceProfilesForRole</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -33,7 +33,7 @@ namespace Amazon.CodeGuruProfiler
     public partial class AmazonCodeGuruProfilerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeGuruProfiler", "4.0.0.8");
+            InternalSDKUtils.BuildUserAgentString("CodeGuruProfiler", "4.0.0.12");
 
         private static readonly AmazonCodeGuruProfilerEndpointResolver EndpointResolver =
             new AmazonCodeGuruProfilerEndpointResolver();

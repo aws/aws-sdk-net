@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetTrafficPolicyInstance Request Marshaller
     /// </summary>       
-    public class GetTrafficPolicyInstanceRequestMarshaller : IMarshaller<IRequest, GetTrafficPolicyInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetTrafficPolicyInstanceRequestMarshaller : IMarshaller<IRequest, GetTrafficPolicyInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/trafficpolicyinstance/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetTrafficPolicyInstanceRequestMarshaller _instance = new GetTrafficPolicyInstanceRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetTrafficPolicyInstanceRequest publicRequest);
     }    
 }

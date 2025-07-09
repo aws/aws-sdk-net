@@ -37,6 +37,7 @@ namespace Amazon.Inspector2.Model
         private AccountAggregationResponse _accountAggregation;
         private AmiAggregationResponse _amiAggregation;
         private AwsEcrContainerAggregationResponse _awsEcrContainerAggregation;
+        private CodeRepositoryAggregationResponse _codeRepositoryAggregation;
         private Ec2InstanceAggregationResponse _ec2InstanceAggregation;
         private FindingTypeAggregationResponse _findingTypeAggregation;
         private ImageLayerAggregationResponse _imageLayerAggregation;
@@ -101,6 +102,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAwsEcrContainerAggregation()
         {
             return this._awsEcrContainerAggregation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeRepositoryAggregation. 
+        /// <para>
+        /// An object that contains details about an aggregation response based on code repositories.
+        /// </para>
+        /// </summary>
+        public CodeRepositoryAggregationResponse CodeRepositoryAggregation
+        {
+            get { return this._codeRepositoryAggregation; }
+            set { this._codeRepositoryAggregation = value; }
+        }
+
+        // Check to see if CodeRepositoryAggregation property is set
+        internal bool IsSetCodeRepositoryAggregation()
+        {
+            return this._codeRepositoryAggregation != null;
         }
 
         /// <summary>

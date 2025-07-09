@@ -37,6 +37,7 @@ namespace Amazon.CleanRoomsML.Model
     {
         private string _channelName;
         private string _mlInputChannelArn;
+        private S3DataDistributionType _s3DataDistributionType;
 
         /// <summary>
         /// Gets and sets the property ChannelName. 
@@ -75,6 +76,39 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetMlInputChannelArn()
         {
             return this._mlInputChannelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DataDistributionType. 
+        /// <para>
+        /// Specifies how the training data stored in Amazon S3 should be distributed to training
+        /// instances. This parameter controls the data distribution strategy for the training
+        /// job:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FullyReplicated</c> - The entire dataset is replicated on each training instance.
+        /// This is suitable for smaller datasets and algorithms that require access to the complete
+        /// dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ShardedByS3Key</c> - The dataset is distributed across training instances based
+        /// on Amazon S3 key names. This is suitable for larger datasets and distributed training
+        /// scenarios where each instance processes a subset of the data.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public S3DataDistributionType S3DataDistributionType
+        {
+            get { return this._s3DataDistributionType; }
+            set { this._s3DataDistributionType = value; }
+        }
+
+        // Check to see if S3DataDistributionType property is set
+        internal bool IsSetS3DataDistributionType()
+        {
+            return this._s3DataDistributionType != null;
         }
 
     }

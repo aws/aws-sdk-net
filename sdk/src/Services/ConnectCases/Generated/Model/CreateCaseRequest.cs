@@ -35,7 +35,7 @@ namespace Amazon.ConnectCases.Model
     /// <para>
     /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
     /// permission on the User ARN resource that you provide
-    /// </para>
+    /// 
     ///  </note> 
     /// <para>
     /// Creates a case in the specified Cases domain. Case system and custom fields are taken
@@ -56,6 +56,7 @@ namespace Amazon.ConnectCases.Model
     ///  <c>title</c> 
     /// </para>
     ///  </li> </ul>
+    /// </para>
     /// </summary>
     public partial class CreateCaseRequest : AmazonConnectCasesRequest
     {

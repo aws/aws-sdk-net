@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole
-        /// | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes
+        /// | InstanceIds | PingStatus | PlatformType | ResourceType | SourceIds | SourceTypes
         /// | "tag-key" | "tag:<c>{keyname}</c> 
         /// </para>
         ///  <ul> <li> 

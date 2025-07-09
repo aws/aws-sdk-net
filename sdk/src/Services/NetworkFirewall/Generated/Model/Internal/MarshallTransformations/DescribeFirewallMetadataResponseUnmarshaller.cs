@@ -82,6 +82,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     response.SupportedAvailabilityZones = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TransitGatewayAttachmentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

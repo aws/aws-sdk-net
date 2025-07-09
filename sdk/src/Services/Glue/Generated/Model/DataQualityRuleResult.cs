@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private string _evaluationMessage;
         private string _name;
         private DataQualityRuleResultStatus _result;
+        private Dictionary<string, double> _ruleMetrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -157,6 +158,31 @@ namespace Amazon.Glue.Model
         internal bool IsSetResult()
         {
             return this._result != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleMetrics. 
+        /// <para>
+        /// A map containing metrics associated with the evaluation of the rule based on row-level
+        /// results. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Dictionary<string, double> RuleMetrics
+        {
+            get { return this._ruleMetrics; }
+            set { this._ruleMetrics = value; }
+        }
+
+        // Check to see if RuleMetrics property is set
+        internal bool IsSetRuleMetrics()
+        {
+            return this._ruleMetrics != null && (this._ruleMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

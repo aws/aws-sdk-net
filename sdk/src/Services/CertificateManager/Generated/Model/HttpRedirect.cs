@@ -31,8 +31,8 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Contains information for HTTP-based domain validation of certificates requested through
-    /// CloudFront and issued by ACM. This field exists only when the certificate type is
-    /// <c>AMAZON_ISSUED</c> and the validation method is <c>HTTP</c>.
+    /// Amazon CloudFront and issued by ACM. This field exists only when the certificate type
+    /// is <c>AMAZON_ISSUED</c> and the validation method is <c>HTTP</c>.
     /// </summary>
     public partial class HttpRedirect
     {

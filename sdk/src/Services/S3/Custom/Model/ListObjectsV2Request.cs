@@ -191,6 +191,9 @@ namespace Amazon.S3.Model
         /// <para>
         /// A delimiter is a character that you use to group keys.
         /// </para>
+        /// <para>
+        /// <c>CommonPrefixes</c> is filtered out from results if it is not lexicographically greater than the <c>StartAfter</c> value.
+        /// </para>
         ///  <note> <ul> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, <c>/</c> is the only supported

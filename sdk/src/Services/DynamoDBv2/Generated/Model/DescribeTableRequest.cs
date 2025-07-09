@@ -34,12 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     /// Returns information about the table, including the current status of the table, when
     /// it was created, the primary key schema, and any indexes on the table.
     /// 
-    ///  <important> 
-    /// <para>
-    /// For global tables, this operation only applies to global tables using Version 2019.11.21
-    /// (Current version). 
-    /// </para>
-    ///  </important> <note> 
+    ///  <note> 
     /// <para>
     /// If you issue a <c>DescribeTable</c> request immediately after a <c>CreateTable</c>
     /// request, DynamoDB might return a <c>ResourceNotFoundException</c>. This is because

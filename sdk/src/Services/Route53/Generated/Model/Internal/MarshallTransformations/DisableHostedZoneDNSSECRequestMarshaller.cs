@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// DisableHostedZoneDNSSEC Request Marshaller
     /// </summary>       
-    public class DisableHostedZoneDNSSECRequestMarshaller : IMarshaller<IRequest, DisableHostedZoneDNSSECRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DisableHostedZoneDNSSECRequestMarshaller : IMarshaller<IRequest, DisableHostedZoneDNSSECRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}/disable-dnssec";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DisableHostedZoneDNSSECRequestMarshaller _instance = new DisableHostedZoneDNSSECRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DisableHostedZoneDNSSECRequest publicRequest);
     }    
 }

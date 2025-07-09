@@ -56,6 +56,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("CmafExcludeSegmentDrmMetadata", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.CmafExcludeSegmentDrmMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ConstantInitializationVector", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

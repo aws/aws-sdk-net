@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Derivation data used to derive an ECDH key.
+    /// The shared information used when deriving a key using ECDH.
     /// </summary>
     public partial class DiffieHellmanDerivationData
     {
@@ -39,14 +39,15 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property SharedInformation. 
         /// <para>
-        /// A byte string containing information that binds the ECDH derived key to the two parties
+        /// A string containing information that binds the ECDH derived key to the two parties
         /// involved or to the context of the key.
         /// </para>
         ///  
         /// <para>
         /// It may include details like identities of the two parties deriving the key, context
-        /// of the operation, session IDs, and optionally a nonce. It must not contain zero bytes,
-        /// and re-using shared information for multiple ECDH key derivations is not recommended.
+        /// of the operation, session IDs, and optionally a nonce. It must not contain zero bytes.
+        /// It is not recommended to reuse shared information for multiple ECDH key derivations,
+        /// as it could result in derived key material being the same across different derivations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2048)]

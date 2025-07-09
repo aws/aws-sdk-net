@@ -119,7 +119,7 @@ namespace Amazon.GeoPlaces.Model
         /// The display title that should be used when presenting this option to the end user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=200)]
         public string Title
         {
             get { return this._title; }

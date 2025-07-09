@@ -75,8 +75,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// For more information about configuring certificates for outbound inspection, see <a
         /// href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
-        /// SSL/TLS certificates with certificates with TLS inspection configurations</a> in the
-        /// <i>Network Firewall Developer Guide</i>. 
+        /// SSL/TLS certificates with TLS inspection configurations</a> in the <i>Network Firewall
+        /// Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>

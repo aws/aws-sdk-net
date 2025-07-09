@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListRealtimeLogConfigs Request Marshaller
     /// </summary>       
-    public class ListRealtimeLogConfigsRequestMarshaller : IMarshaller<IRequest, ListRealtimeLogConfigsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListRealtimeLogConfigsRequestMarshaller : IMarshaller<IRequest, ListRealtimeLogConfigsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/realtime-log-config";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListRealtimeLogConfigsRequestMarshaller _instance = new ListRealtimeLogConfigsRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListRealtimeLogConfigsRequest publicRequest);
     }    
 }

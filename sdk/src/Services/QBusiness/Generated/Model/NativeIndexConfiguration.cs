@@ -36,6 +36,7 @@ namespace Amazon.QBusiness.Model
     {
         private Dictionary<string, DocumentAttributeBoostingConfiguration> _boostingOverride = AWSConfigs.InitializeCollections ? new Dictionary<string, DocumentAttributeBoostingConfiguration>() : null;
         private string _indexId;
+        private long? _version;
 
         /// <summary>
         /// Gets and sets the property BoostingOverride. 
@@ -79,6 +80,54 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIndexId()
         {
             return this._indexId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// A read-only field that specifies the version of the <c>NativeIndexConfiguration</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Q Business introduces enhanced document retrieval capabilities in version 2
+        /// of <c>NativeIndexConfiguration</c>, focusing on streamlined metadata boosting that
+        /// prioritizes recency and source relevance to deliver more accurate responses to your
+        /// queries. Version 2 has the following differences from version 1:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Version 2 supports a single Date field (created_at OR last_updated_at) for recency
+        /// boosting
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Version 2 supports a single String field with an ordered list of up to 5 values
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Version 2 introduces number-based boost levels (ONE, TWO) alongside the text-based
+        /// levels
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Version 2 allows specifying prioritization between Date and String fields
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Version 2 maintains backward compatibility with existing configurations
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public long? Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
     }

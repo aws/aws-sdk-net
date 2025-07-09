@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ChangeResourceRecordSets Request Marshaller
     /// </summary>       
-    public class ChangeResourceRecordSetsRequestMarshaller : IMarshaller<IRequest, ChangeResourceRecordSetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ChangeResourceRecordSetsRequestMarshaller : IMarshaller<IRequest, ChangeResourceRecordSetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -61,6 +61,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.HostedZoneId));
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}/rrset/";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -195,7 +196,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ChangeResourceRecordSetsRequestMarshaller _instance = new ChangeResourceRecordSetsRequestMarshaller();        
@@ -216,5 +217,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ChangeResourceRecordSetsRequest publicRequest);
     }    
 }

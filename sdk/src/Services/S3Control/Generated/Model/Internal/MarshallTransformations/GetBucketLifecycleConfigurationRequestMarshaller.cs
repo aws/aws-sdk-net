@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetBucketLifecycleConfiguration Request Marshaller
     /// </summary>       
-    public class GetBucketLifecycleConfigurationRequestMarshaller : IMarshaller<IRequest, GetBucketLifecycleConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetBucketLifecycleConfigurationRequestMarshaller : IMarshaller<IRequest, GetBucketLifecycleConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/bucket/{name}/lifecycleconfiguration";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetBucketLifecycleConfigurationRequestMarshaller _instance = new GetBucketLifecycleConfigurationRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketLifecycleConfigurationRequest publicRequest);
     }    
 }

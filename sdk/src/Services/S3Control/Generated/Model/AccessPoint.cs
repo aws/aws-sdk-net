@@ -38,6 +38,8 @@ namespace Amazon.S3Control.Model
         private string _alias;
         private string _bucket;
         private string _bucketAccountId;
+        private string _dataSourceId;
+        private string _dataSourceType;
         private string _name;
         private NetworkOrigin _networkOrigin;
         private VpcConfiguration _vpcConfiguration;
@@ -86,7 +88,7 @@ namespace Amazon.S3Control.Model
         /// The name of the bucket associated with this access point.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Max=255)]
         public string Bucket
         {
             get { return this._bucket; }
@@ -117,6 +119,43 @@ namespace Amazon.S3Control.Model
         internal bool IsSetBucketAccountId()
         {
             return this._bucketAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// A unique identifier for the data source of the access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=191)]
+        public string DataSourceId
+        {
+            get { return this._dataSourceId; }
+            set { this._dataSourceId = value; }
+        }
+
+        // Check to see if DataSourceId property is set
+        internal bool IsSetDataSourceId()
+        {
+            return this._dataSourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceType. 
+        /// <para>
+        /// The type of the data source that the access point is attached to.
+        /// </para>
+        /// </summary>
+        public string DataSourceType
+        {
+            get { return this._dataSourceType; }
+            set { this._dataSourceType = value; }
+        }
+
+        // Check to see if DataSourceType property is set
+        internal bool IsSetDataSourceType()
+        {
+            return this._dataSourceType != null;
         }
 
         /// <summary>

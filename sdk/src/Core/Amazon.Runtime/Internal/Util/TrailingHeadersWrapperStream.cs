@@ -21,10 +21,8 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -98,14 +96,9 @@ namespace Amazon.Runtime.Internal.Util
         /// that many bytes are not currently available, or zero (0) if the end of the stream has been reached.</returns>
         public override int Read(byte[] buffer, int offset, int count)
         {
-#if AWS_ASYNC_API
             return ReadInternal(buffer, offset, count, false, CancellationToken.None).GetAwaiter().GetResult();
-#else
-            return ReadInternal(buffer, offset, count, false);
-#endif
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Asynchronously reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.
         /// </summary>
@@ -120,13 +113,8 @@ namespace Amazon.Runtime.Internal.Util
         {
             return await ReadInternal(buffer, offset, count, true, cancellationToken).ConfigureAwait(false);
         }
-#endif
 
-#if AWS_ASYNC_API
         private async Task<int> ReadInternal(byte[] buffer, int offset, int count, bool useAsyncRead, CancellationToken cancellationToken)
-#else
-        private int ReadInternal(byte[] buffer, int offset, int count, bool useAsyncRead)
-#endif
         {
             var countRemainingForThisRead = count;
             var countFromPrefix = 0;
@@ -151,11 +139,7 @@ namespace Amazon.Runtime.Internal.Util
                 }
                 else
                 {
-#if AWS_ASYNC_API
                     countFromStream = await base.ReadAsync(thisBuffer, 0, countRemainingForThisRead, cancellationToken).ConfigureAwait(false);
-#else
-                    throw new AmazonClientException($"Attempted to call {nameof(TrailingHeadersWrapperStream)}.ReadAsync from an unsupported target platform.");
-#endif
                 }
 
                 // Update rolling checksum for that content, and copy it to the output buffer

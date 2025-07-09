@@ -174,9 +174,9 @@ namespace Amazon.SimpleEmailV2.Model
         ///  <c>RENDERING_FAILURE</c> - The email wasn't sent because of a template rendering
         /// issue. This event type can occur when template data is missing, or when there is a
         /// mismatch between template parameters and data. (This event type only occurs when you
-        /// send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
-        /// <c>SendTemplatedEmail</c> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
-        /// <c>SendBulkTemplatedEmail</c> </a> API operations.) 
+        /// send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendEmail.html">
+        /// <c>SendEmail</c> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendBulkEmail.html">
+        /// <c>SendBulkEmail</c> </a> API operations.) 
         /// </para>
         ///  </li> <li> 
         /// <para>

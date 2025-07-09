@@ -59,6 +59,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCredentialAgeDays())
+                {
+                    request.Parameters.Add("CredentialAgeDays", StringUtils.FromInt(publicRequest.CredentialAgeDays));
+                }
                 if(publicRequest.IsSetServiceName())
                 {
                     request.Parameters.Add("ServiceName", StringUtils.FromString(publicRequest.ServiceName));

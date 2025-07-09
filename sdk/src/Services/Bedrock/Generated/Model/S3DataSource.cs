@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// The Amazon S3 data source of the imported job.
+    /// The Amazon S3 data source of the model to import.
     /// </summary>
     public partial class S3DataSource
     {

@@ -243,6 +243,11 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.CreateServiceSpecificCredentialRequest.CredentialAgeDays</property>
+    <min>1</min>
+    <max>36600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateServiceSpecificCredentialRequest.UserName</property>
     <min>1</min>
     <max>64</max>
@@ -1311,6 +1316,17 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListServiceSpecificCredentialsRequest.UserName</property>
@@ -2462,6 +2478,12 @@
     <pattern>[\w-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ServiceSpecificCredential.ServiceCredentialAlias</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredential.ServiceSpecificCredentialId</property>
     <min>20</min>
     <max>128</max>
@@ -2469,14 +2491,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredential.ServiceUserName</property>
-    <min>17</min>
+    <min>0</min>
     <max>200</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredential.UserName</property>
     <min>1</min>
     <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ServiceSpecificCredentialMetadata.ServiceCredentialAlias</property>
+    <min>0</min>
+    <max>200</max>
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2487,9 +2515,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredentialMetadata.ServiceUserName</property>
-    <min>17</min>
+    <min>0</min>
     <max>200</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredentialMetadata.UserName</property>

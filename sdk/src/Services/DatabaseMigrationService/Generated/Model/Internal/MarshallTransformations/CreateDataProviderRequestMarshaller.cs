@@ -120,6 +120,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetVirtual())
+            {
+                context.Writer.WritePropertyName("Virtual");
+                context.Writer.WriteBooleanValue(publicRequest.Virtual.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

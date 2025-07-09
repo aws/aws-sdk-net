@@ -313,12 +313,13 @@ namespace Amazon.ECS.Model
         /// You can set a default <c>mode</c> for all containers in a specific Amazon Web Services
         /// Region by using the <c>defaultLogDriverMode</c> account setting. If you don't specify
         /// the <c>mode</c> option or configure the account setting, Amazon ECS will default to
-        /// the <c>blocking</c> mode. For more information about the account setting, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default
+        /// the <c>non-blocking</c> mode. For more information about the account setting, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#default-log-driver-mode">Default
         /// log driver mode</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// On June 25, 2025, Amazon ECS is changing the default log driver mode from <c>blocking</c>
+        /// On June 25, 2025, Amazon ECS changed the default log driver mode from <c>blocking</c>
         /// to <c>non-blocking</c> to prioritize task availability over logging. To continue using
         /// the <c>blocking</c> mode after this change, do one of the following:
         /// </para>

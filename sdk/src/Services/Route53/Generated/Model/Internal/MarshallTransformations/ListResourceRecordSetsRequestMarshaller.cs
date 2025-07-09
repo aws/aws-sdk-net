@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListResourceRecordSets Request Marshaller
     /// </summary>       
-    public class ListResourceRecordSetsRequestMarshaller : IMarshaller<IRequest, ListResourceRecordSetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListResourceRecordSetsRequestMarshaller : IMarshaller<IRequest, ListResourceRecordSetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -74,8 +74,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}/rrset";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListResourceRecordSetsRequestMarshaller _instance = new ListResourceRecordSetsRequestMarshaller();        
@@ -96,5 +97,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListResourceRecordSetsRequest publicRequest);
     }    
 }

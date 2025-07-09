@@ -114,7 +114,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The ciphertext to decrypt.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4224)]
         public string CipherText
         {
             get { return this._cipherText; }

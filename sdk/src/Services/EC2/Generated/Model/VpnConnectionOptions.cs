@@ -106,7 +106,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>PrivateIpv4</c> | <c>PublicIpv4</c> 
+        /// Valid values: <c>PrivateIpv4</c> | <c>PublicIpv4</c> | <c>Ipv6</c> 
         /// </para>
         ///  
         /// <para>

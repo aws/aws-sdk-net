@@ -35,7 +35,9 @@ namespace Amazon.BedrockRuntime.Model
     public partial class DocumentSource
     {
         private MemoryStream _bytes;
+        private List<DocumentContentBlock> _content = AWSConfigs.InitializeCollections ? new List<DocumentContentBlock>() : null;
         private S3Location _s3Location;
+        private string _text;
 
         /// <summary>
         /// Gets and sets the property Bytes. 
@@ -58,6 +60,30 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// The structured content of the document source, which may include various content blocks
+        /// such as text, images, or other document elements.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DocumentContentBlock> Content
+        {
+            get { return this._content; }
+            set { this._content = value; }
+        }
+
+        // Check to see if Content property is set
+        internal bool IsSetContent()
+        {
+            return this._content != null && (this._content.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property S3Location. 
         /// <para>
         /// The location of a document object in an Amazon S3 bucket. To see which models support
@@ -75,6 +101,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetS3Location()
         {
             return this._s3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The text content of the document source.
+        /// </para>
+        /// </summary>
+        public string Text
+        {
+            get { return this._text; }
+            set { this._text = value; }
+        }
+
+        // Check to see if Text property is set
+        internal bool IsSetText()
+        {
+            return this._text != null;
         }
 
     }

@@ -32,13 +32,6 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the DescribeTableReplicaAutoScaling operation.
     /// Describes auto scaling settings across replicas of the global table at once.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// For global tables, this operation only applies to global tables using Version 2019.11.21
-    /// (Current version).
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class DescribeTableReplicaAutoScalingRequest : AmazonDynamoDBRequest
     {

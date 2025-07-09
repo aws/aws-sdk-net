@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// IgnoreQueryParamsInResponse Request Marshaller
     /// </summary>       
-    public class IgnoreQueryParamsInResponseRequestMarshaller : IMarshaller<IRequest, IgnoreQueryParamsInResponseRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class IgnoreQueryParamsInResponseRequestMarshaller : IMarshaller<IRequest, IgnoreQueryParamsInResponseRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/IgnoreQueryParamsInResponse";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static IgnoreQueryParamsInResponseRequestMarshaller _instance = new IgnoreQueryParamsInResponseRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, IgnoreQueryParamsInResponseRequest publicRequest);
     }    
 }

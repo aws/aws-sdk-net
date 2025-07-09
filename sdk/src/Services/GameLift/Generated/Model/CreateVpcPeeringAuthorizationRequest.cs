@@ -32,36 +32,36 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreateVpcPeeringAuthorization operation.
     /// Requests authorization to create or delete a peer connection between the VPC for your
-    /// Amazon GameLift fleet and a virtual private cloud (VPC) in your Amazon Web Services
-    /// account. VPC peering enables the game servers on your fleet to communicate directly
-    /// with other Amazon Web Services resources. After you've received authorization, use
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html">CreateVpcPeeringConnection</a>
+    /// Amazon GameLift Servers fleet and a virtual private cloud (VPC) in your Amazon Web
+    /// Services account. VPC peering enables the game servers on your fleet to communicate
+    /// directly with other Amazon Web Services resources. After you've received authorization,
+    /// use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html">CreateVpcPeeringConnection</a>
     /// to establish the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-    /// Peering with Amazon GameLift Fleets</a>.
+    /// Peering with Amazon GameLift Servers Fleets</a>.
     /// 
     ///  
     /// <para>
     /// You can peer with VPCs that are owned by any Amazon Web Services account you have
-    /// access to, including the account that you use to manage your Amazon GameLift fleets.
-    /// You cannot peer with VPCs that are in different Regions.
+    /// access to, including the account that you use to manage your Amazon GameLift Servers
+    /// fleets. You cannot peer with VPCs that are in different Regions.
     /// </para>
     ///  
     /// <para>
     /// To request authorization to create a connection, call this operation from the Amazon
-    /// Web Services account with the VPC that you want to peer to your Amazon GameLift fleet.
-    /// For example, to enable your game servers to retrieve data from a DynamoDB table, use
-    /// the account that manages that DynamoDB resource. Identify the following values: (1)
-    /// The ID of the VPC that you want to peer with, and (2) the ID of the Amazon Web Services
-    /// account that you use to manage Amazon GameLift. If successful, VPC peering is authorized
-    /// for the specified VPC. 
+    /// Web Services account with the VPC that you want to peer to your Amazon GameLift Servers
+    /// fleet. For example, to enable your game servers to retrieve data from a DynamoDB table,
+    /// use the account that manages that DynamoDB resource. Identify the following values:
+    /// (1) The ID of the VPC that you want to peer with, and (2) the ID of the Amazon Web
+    /// Services account that you use to manage Amazon GameLift Servers. If successful, VPC
+    /// peering is authorized for the specified VPC. 
     /// </para>
     ///  
     /// <para>
     /// To request authorization to delete a connection, call this operation from the Amazon
-    /// Web Services account with the VPC that is peered with your Amazon GameLift fleet.
-    /// Identify the following values: (1) VPC ID that you want to delete the peering connection
-    /// for, and (2) ID of the Amazon Web Services account that you use to manage Amazon GameLift.
-    /// 
+    /// Web Services account with the VPC that is peered with your Amazon GameLift Servers
+    /// fleet. Identify the following values: (1) VPC ID that you want to delete the peering
+    /// connection for, and (2) ID of the Amazon Web Services account that you use to manage
+    /// Amazon GameLift Servers. 
     /// </para>
     ///  
     /// <para>
@@ -87,8 +87,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameLiftAwsAccountId. 
         /// <para>
         /// A unique identifier for the Amazon Web Services account that you use to manage your
-        /// Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management
-        /// Console under account settings.
+        /// Amazon GameLift Servers fleet. You can find your Account ID in the Amazon Web Services
+        /// Management Console under account settings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -108,10 +108,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PeerVpcId. 
         /// <para>
         /// A unique identifier for a VPC with resources to be accessed by your Amazon GameLift
-        /// fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use
-        /// the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon
-        /// Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon GameLift Fleets</a>.
+        /// Servers fleet. The VPC must be in the same Region as your fleet. To look up a VPC
+        /// ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
+        /// Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Servers Fleets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

@@ -1338,6 +1338,79 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateUploadJob
+
+
+        /// <summary>
+        /// Creates an Upload job to ingest data for segment imports. The metadata is created
+        /// for the job with the provided field mapping and unique key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUploadJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateUploadJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateUploadJob">REST API Reference for CreateUploadJob Operation</seealso>
+        public virtual CreateUploadJobResponse CreateUploadJob(CreateUploadJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUploadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUploadJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUploadJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Upload job to ingest data for segment imports. The metadata is created
+        /// for the job with the provided field mapping and unique key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUploadJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUploadJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateUploadJob">REST API Reference for CreateUploadJob Operation</seealso>
+        public virtual Task<CreateUploadJobResponse> CreateUploadJobAsync(CreateUploadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUploadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUploadJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUploadJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCalculatedAttributeDefinition
 
 
@@ -3702,6 +3775,150 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetUploadJob
+
+
+        /// <summary>
+        /// This API retrieves the details of a specific upload job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUploadJob service method.</param>
+        /// 
+        /// <returns>The response from the GetUploadJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJob">REST API Reference for GetUploadJob Operation</seealso>
+        public virtual GetUploadJobResponse GetUploadJob(GetUploadJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUploadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUploadJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetUploadJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API retrieves the details of a specific upload job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUploadJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUploadJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJob">REST API Reference for GetUploadJob Operation</seealso>
+        public virtual Task<GetUploadJobResponse> GetUploadJobAsync(GetUploadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUploadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUploadJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetUploadJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUploadJobPath
+
+
+        /// <summary>
+        /// This API retrieves the pre-signed URL and client token for uploading the file associated
+        /// with the upload job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUploadJobPath service method.</param>
+        /// 
+        /// <returns>The response from the GetUploadJobPath service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJobPath">REST API Reference for GetUploadJobPath Operation</seealso>
+        public virtual GetUploadJobPathResponse GetUploadJobPath(GetUploadJobPathRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUploadJobPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUploadJobPathResponseUnmarshaller.Instance;
+
+            return Invoke<GetUploadJobPathResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API retrieves the pre-signed URL and client token for uploading the file associated
+        /// with the upload job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUploadJobPath service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUploadJobPath service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJobPath">REST API Reference for GetUploadJobPath Operation</seealso>
+        public virtual Task<GetUploadJobPathResponse> GetUploadJobPathAsync(GetUploadJobPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUploadJobPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUploadJobPathResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetUploadJobPathResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetWorkflow
 
 
@@ -5047,6 +5264,77 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  ListUploadJobs
+
+
+        /// <summary>
+        /// This API retrieves a list of upload jobs for the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUploadJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListUploadJobs service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListUploadJobs">REST API Reference for ListUploadJobs Operation</seealso>
+        public virtual ListUploadJobsResponse ListUploadJobs(ListUploadJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUploadJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUploadJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUploadJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API retrieves a list of upload jobs for the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUploadJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUploadJobs service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListUploadJobs">REST API Reference for ListUploadJobs Operation</seealso>
+        public virtual Task<ListUploadJobsResponse> ListUploadJobsAsync(ListUploadJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUploadJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUploadJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListUploadJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListWorkflows
 
 
@@ -5643,6 +5931,148 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = SearchProfilesResponseUnmarshaller.Instance;
             
             return InvokeAsync<SearchProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartUploadJob
+
+
+        /// <summary>
+        /// This API starts the processing of an upload job to ingest profile data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartUploadJob service method.</param>
+        /// 
+        /// <returns>The response from the StartUploadJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartUploadJob">REST API Reference for StartUploadJob Operation</seealso>
+        public virtual StartUploadJobResponse StartUploadJob(StartUploadJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartUploadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartUploadJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartUploadJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API starts the processing of an upload job to ingest profile data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartUploadJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartUploadJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartUploadJob">REST API Reference for StartUploadJob Operation</seealso>
+        public virtual Task<StartUploadJobResponse> StartUploadJobAsync(StartUploadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartUploadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartUploadJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartUploadJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopUploadJob
+
+
+        /// <summary>
+        /// This API stops the processing of an upload job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopUploadJob service method.</param>
+        /// 
+        /// <returns>The response from the StopUploadJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopUploadJob">REST API Reference for StopUploadJob Operation</seealso>
+        public virtual StopUploadJobResponse StopUploadJob(StopUploadJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopUploadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopUploadJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopUploadJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API stops the processing of an upload job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopUploadJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopUploadJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopUploadJob">REST API Reference for StopUploadJob Operation</seealso>
+        public virtual Task<StopUploadJobResponse> StopUploadJobAsync(StopUploadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopUploadJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopUploadJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopUploadJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

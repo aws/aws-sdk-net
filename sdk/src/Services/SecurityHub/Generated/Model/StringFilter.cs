@@ -146,7 +146,9 @@ namespace Amazon.SecurityHub.Model
         ///  </li> </ul> 
         /// <para>
         ///  <c>CONTAINS</c> and <c>NOT_CONTAINS</c> operators can be used only with automation
-        /// rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation
+        /// rules V1. <c>CONTAINS_WORD</c> operator is only supported in <c>GetFindingsV2</c>,
+        /// <c>GetFindingStatisticsV2</c>, <c>GetResourcesV2</c>, and <c>GetResourceStatisticsV2</c>
+        /// APIs. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation
         /// rules</a> in the <i>Security Hub User Guide</i>.
         /// </para>
         /// </summary>

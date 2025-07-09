@@ -35,6 +35,7 @@ namespace Amazon.CleanRoomsML.Model
     public partial class CreateTrainedModelResponse : AmazonWebServiceResponse
     {
         private string _trainedModelArn;
+        private string _versionIdentifier;
 
         /// <summary>
         /// Gets and sets the property TrainedModelArn. 
@@ -53,6 +54,31 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetTrainedModelArn()
         {
             return this._trainedModelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionIdentifier. 
+        /// <para>
+        /// The unique version identifier assigned to the newly created trained model. This identifier
+        /// can be used to reference this specific version of the trained model in subsequent
+        /// operations such as inference jobs or incremental training.
+        /// </para>
+        ///  
+        /// <para>
+        /// The initial version identifier for the base version of the trained model is "NULL".
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string VersionIdentifier
+        {
+            get { return this._versionIdentifier; }
+            set { this._versionIdentifier = value; }
+        }
+
+        // Check to see if VersionIdentifier property is set
+        internal bool IsSetVersionIdentifier()
+        {
+            return this._versionIdentifier != null;
         }
 
     }

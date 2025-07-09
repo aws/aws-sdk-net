@@ -25,6 +25,64 @@ namespace Amazon.Bedrock
 {
 
     /// <summary>
+    /// Constants used for properties of type AgreementStatus.
+    /// </summary>
+    public class AgreementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for AgreementStatus
+        /// </summary>
+        public static readonly AgreementStatus AVAILABLE = new AgreementStatus("AVAILABLE");
+        /// <summary>
+        /// Constant ERROR for AgreementStatus
+        /// </summary>
+        public static readonly AgreementStatus ERROR = new AgreementStatus("ERROR");
+        /// <summary>
+        /// Constant NOT_AVAILABLE for AgreementStatus
+        /// </summary>
+        public static readonly AgreementStatus NOT_AVAILABLE = new AgreementStatus("NOT_AVAILABLE");
+        /// <summary>
+        /// Constant PENDING for AgreementStatus
+        /// </summary>
+        public static readonly AgreementStatus PENDING = new AgreementStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgreementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgreementStatus FindValue(string value)
+        {
+            return FindValue<AgreementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgreementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplicationType.
     /// </summary>
     public class ApplicationType : ConstantClass
@@ -68,6 +126,114 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ApplicationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AttributeType.
+    /// </summary>
+    public class AttributeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOOLEAN for AttributeType
+        /// </summary>
+        public static readonly AttributeType BOOLEAN = new AttributeType("BOOLEAN");
+        /// <summary>
+        /// Constant NUMBER for AttributeType
+        /// </summary>
+        public static readonly AttributeType NUMBER = new AttributeType("NUMBER");
+        /// <summary>
+        /// Constant STRING for AttributeType
+        /// </summary>
+        public static readonly AttributeType STRING = new AttributeType("STRING");
+        /// <summary>
+        /// Constant STRING_LIST for AttributeType
+        /// </summary>
+        public static readonly AttributeType STRING_LIST = new AttributeType("STRING_LIST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttributeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttributeType FindValue(string value)
+        {
+            return FindValue<AttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthorizationStatus.
+    /// </summary>
+    public class AuthorizationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZED for AuthorizationStatus
+        /// </summary>
+        public static readonly AuthorizationStatus AUTHORIZED = new AuthorizationStatus("AUTHORIZED");
+        /// <summary>
+        /// Constant NOT_AUTHORIZED for AuthorizationStatus
+        /// </summary>
+        public static readonly AuthorizationStatus NOT_AUTHORIZED = new AuthorizationStatus("NOT_AUTHORIZED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthorizationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthorizationStatus FindValue(string value)
+        {
+            return FindValue<AuthorizationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthorizationStatus(string value)
         {
             return FindValue(value);
         }
@@ -142,6 +308,10 @@ namespace Amazon.Bedrock
         /// Constant FINE_TUNING for CustomizationType
         /// </summary>
         public static readonly CustomizationType FINE_TUNING = new CustomizationType("FINE_TUNING");
+        /// <summary>
+        /// Constant IMPORTED for CustomizationType
+        /// </summary>
+        public static readonly CustomizationType IMPORTED = new CustomizationType("IMPORTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -172,6 +342,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CustomizationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EntitlementAvailability.
+    /// </summary>
+    public class EntitlementAvailability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for EntitlementAvailability
+        /// </summary>
+        public static readonly EntitlementAvailability AVAILABLE = new EntitlementAvailability("AVAILABLE");
+        /// <summary>
+        /// Constant NOT_AVAILABLE for EntitlementAvailability
+        /// </summary>
+        public static readonly EntitlementAvailability NOT_AVAILABLE = new EntitlementAvailability("NOT_AVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntitlementAvailability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntitlementAvailability FindValue(string value)
+        {
+            return FindValue<EntitlementAvailability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntitlementAvailability(string value)
         {
             return FindValue(value);
         }
@@ -562,6 +782,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailContentFilterAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContentFiltersTierName.
+    /// </summary>
+    public class GuardrailContentFiltersTierName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASSIC for GuardrailContentFiltersTierName
+        /// </summary>
+        public static readonly GuardrailContentFiltersTierName CLASSIC = new GuardrailContentFiltersTierName("CLASSIC");
+        /// <summary>
+        /// Constant STANDARD for GuardrailContentFiltersTierName
+        /// </summary>
+        public static readonly GuardrailContentFiltersTierName STANDARD = new GuardrailContentFiltersTierName("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentFiltersTierName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentFiltersTierName FindValue(string value)
+        {
+            return FindValue<GuardrailContentFiltersTierName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentFiltersTierName(string value)
         {
             return FindValue(value);
         }
@@ -1218,6 +1488,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailTopicAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailTopicsTierName.
+    /// </summary>
+    public class GuardrailTopicsTierName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASSIC for GuardrailTopicsTierName
+        /// </summary>
+        public static readonly GuardrailTopicsTierName CLASSIC = new GuardrailTopicsTierName("CLASSIC");
+        /// <summary>
+        /// Constant STANDARD for GuardrailTopicsTierName
+        /// </summary>
+        public static readonly GuardrailTopicsTierName STANDARD = new GuardrailTopicsTierName("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailTopicsTierName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailTopicsTierName FindValue(string value)
+        {
+            return FindValue<GuardrailTopicsTierName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailTopicsTierName(string value)
         {
             return FindValue(value);
         }
@@ -1893,6 +2213,110 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type ModelStatus.
+    /// </summary>
+    public class ModelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus Active = new ModelStatus("Active");
+        /// <summary>
+        /// Constant Creating for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus Creating = new ModelStatus("Creating");
+        /// <summary>
+        /// Constant Failed for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus Failed = new ModelStatus("Failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelStatus FindValue(string value)
+        {
+            return FindValue<ModelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OfferType.
+    /// </summary>
+    public class OfferType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for OfferType
+        /// </summary>
+        public static readonly OfferType ALL = new OfferType("ALL");
+        /// <summary>
+        /// Constant PUBLIC for OfferType
+        /// </summary>
+        public static readonly OfferType PUBLIC = new OfferType("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferType FindValue(string value)
+        {
+            return FindValue<OfferType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PerformanceConfigLatency.
     /// </summary>
     public class PerformanceConfigLatency : ConstantClass
@@ -2136,6 +2560,106 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueryTransformationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegionAvailability.
+    /// </summary>
+    public class RegionAvailability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for RegionAvailability
+        /// </summary>
+        public static readonly RegionAvailability AVAILABLE = new RegionAvailability("AVAILABLE");
+        /// <summary>
+        /// Constant NOT_AVAILABLE for RegionAvailability
+        /// </summary>
+        public static readonly RegionAvailability NOT_AVAILABLE = new RegionAvailability("NOT_AVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegionAvailability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegionAvailability FindValue(string value)
+        {
+            return FindValue<RegionAvailability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegionAvailability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RerankingMetadataSelectionMode.
+    /// </summary>
+    public class RerankingMetadataSelectionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for RerankingMetadataSelectionMode
+        /// </summary>
+        public static readonly RerankingMetadataSelectionMode ALL = new RerankingMetadataSelectionMode("ALL");
+        /// <summary>
+        /// Constant SELECTIVE for RerankingMetadataSelectionMode
+        /// </summary>
+        public static readonly RerankingMetadataSelectionMode SELECTIVE = new RerankingMetadataSelectionMode("SELECTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RerankingMetadataSelectionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RerankingMetadataSelectionMode FindValue(string value)
+        {
+            return FindValue<RerankingMetadataSelectionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RerankingMetadataSelectionMode(string value)
         {
             return FindValue(value);
         }
@@ -2520,6 +3044,52 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VectorSearchRerankingConfigurationType.
+    /// </summary>
+    public class VectorSearchRerankingConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEDROCK_RERANKING_MODEL for VectorSearchRerankingConfigurationType
+        /// </summary>
+        public static readonly VectorSearchRerankingConfigurationType BEDROCK_RERANKING_MODEL = new VectorSearchRerankingConfigurationType("BEDROCK_RERANKING_MODEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VectorSearchRerankingConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VectorSearchRerankingConfigurationType FindValue(string value)
+        {
+            return FindValue<VectorSearchRerankingConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VectorSearchRerankingConfigurationType(string value)
         {
             return FindValue(value);
         }

@@ -89,7 +89,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DetailedStatus. 
         /// <para>
-        /// An optional field containing information about the detailed status of the stack event.
+        /// An optional field that contains information about the detailed status of the stack
+        /// event.
         /// </para>
         ///  <ul> <li> 
         /// <para>

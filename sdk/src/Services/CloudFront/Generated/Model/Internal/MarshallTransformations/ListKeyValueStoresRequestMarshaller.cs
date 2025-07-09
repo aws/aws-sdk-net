@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListKeyValueStores Request Marshaller
     /// </summary>       
-    public class ListKeyValueStoresRequestMarshaller : IMarshaller<IRequest, ListKeyValueStoresRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListKeyValueStoresRequestMarshaller : IMarshaller<IRequest, ListKeyValueStoresRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,8 +68,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/2020-05-31/key-value-store";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListKeyValueStoresRequestMarshaller _instance = new ListKeyValueStoresRequestMarshaller();        
@@ -90,5 +91,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListKeyValueStoresRequest publicRequest);
     }    
 }

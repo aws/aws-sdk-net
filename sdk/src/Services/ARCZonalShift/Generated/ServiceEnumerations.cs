@@ -235,6 +235,10 @@ namespace Amazon.ARCZonalShift
         /// </summary>
         public static readonly ConflictExceptionReason AutoShiftEnabled = new ConflictExceptionReason("AutoShiftEnabled");
         /// <summary>
+        /// Constant PracticeBlockingAlarmsRed for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PracticeBlockingAlarmsRed = new ConflictExceptionReason("PracticeBlockingAlarmsRed");
+        /// <summary>
         /// Constant PracticeConfigurationAlreadyExists for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason PracticeConfigurationAlreadyExists = new ConflictExceptionReason("PracticeConfigurationAlreadyExists");
@@ -242,6 +246,18 @@ namespace Amazon.ARCZonalShift
         /// Constant PracticeConfigurationDoesNotExist for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason PracticeConfigurationDoesNotExist = new ConflictExceptionReason("PracticeConfigurationDoesNotExist");
+        /// <summary>
+        /// Constant PracticeInBlockedDates for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PracticeInBlockedDates = new ConflictExceptionReason("PracticeInBlockedDates");
+        /// <summary>
+        /// Constant PracticeInBlockedWindows for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PracticeInBlockedWindows = new ConflictExceptionReason("PracticeInBlockedWindows");
+        /// <summary>
+        /// Constant PracticeOutcomeAlarmsRed for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PracticeOutcomeAlarmsRed = new ConflictExceptionReason("PracticeOutcomeAlarmsRed");
         /// <summary>
         /// Constant SimultaneousZonalShiftsConflict for ConflictExceptionReason
         /// </summary>
@@ -346,6 +362,10 @@ namespace Amazon.ARCZonalShift
     public class PracticeRunOutcome : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CAPACITY_CHECK_FAILED for PracticeRunOutcome
+        /// </summary>
+        public static readonly PracticeRunOutcome CAPACITY_CHECK_FAILED = new PracticeRunOutcome("CAPACITY_CHECK_FAILED");
         /// <summary>
         /// Constant FAILED for PracticeRunOutcome
         /// </summary>
@@ -510,6 +530,10 @@ namespace Amazon.ARCZonalShift
         /// Constant UnsupportedAz for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason UnsupportedAz = new ValidationExceptionReason("UnsupportedAz");
+        /// <summary>
+        /// Constant UnsupportedPracticeCancelShiftType for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnsupportedPracticeCancelShiftType = new ValidationExceptionReason("UnsupportedPracticeCancelShiftType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

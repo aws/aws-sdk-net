@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetConnectionGroupByRoutingEndpoint Request Marshaller
     /// </summary>       
-    public class GetConnectionGroupByRoutingEndpointRequestMarshaller : IMarshaller<IRequest, GetConnectionGroupByRoutingEndpointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetConnectionGroupByRoutingEndpointRequestMarshaller : IMarshaller<IRequest, GetConnectionGroupByRoutingEndpointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -62,8 +62,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("RoutingEndpoint", StringUtils.FromString(publicRequest.RoutingEndpoint));
             request.ResourcePath = "/2020-05-31/connection-group";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetConnectionGroupByRoutingEndpointRequestMarshaller _instance = new GetConnectionGroupByRoutingEndpointRequestMarshaller();        
@@ -84,5 +85,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetConnectionGroupByRoutingEndpointRequest publicRequest);
     }    
 }

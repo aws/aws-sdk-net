@@ -58,6 +58,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
+            if(requestObject.IsSetS3AccessRoleArn())
+            {
+                context.Writer.WritePropertyName("S3AccessRoleArn");
+                context.Writer.WriteStringValue(requestObject.S3AccessRoleArn);
+            }
+
+            if(requestObject.IsSetS3Path())
+            {
+                context.Writer.WritePropertyName("S3Path");
+                context.Writer.WriteStringValue(requestObject.S3Path);
+            }
+
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");

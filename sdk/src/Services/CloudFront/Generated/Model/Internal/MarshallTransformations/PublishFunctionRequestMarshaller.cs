@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// PublishFunction Request Marshaller
     /// </summary>       
-    public class PublishFunctionRequestMarshaller : IMarshaller<IRequest, PublishFunctionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class PublishFunctionRequestMarshaller : IMarshaller<IRequest, PublishFunctionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/function/{Name}/publish";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PublishFunctionRequestMarshaller _instance = new PublishFunctionRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PublishFunctionRequest publicRequest);
     }    
 }

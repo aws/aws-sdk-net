@@ -30,5 +30,10 @@ namespace Amazon.FSx.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeSnapshotsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Snapshots
+        /// </summary>
+        IPaginatedEnumerable<Snapshot> Snapshots { get; }
     }
 }

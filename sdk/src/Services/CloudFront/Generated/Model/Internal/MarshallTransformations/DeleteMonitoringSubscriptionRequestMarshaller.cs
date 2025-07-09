@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteMonitoringSubscription Request Marshaller
     /// </summary>       
-    public class DeleteMonitoringSubscriptionRequestMarshaller : IMarshaller<IRequest, DeleteMonitoringSubscriptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteMonitoringSubscriptionRequestMarshaller : IMarshaller<IRequest, DeleteMonitoringSubscriptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/distributions/{DistributionId}/monitoring-subscription";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteMonitoringSubscriptionRequestMarshaller _instance = new DeleteMonitoringSubscriptionRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteMonitoringSubscriptionRequest publicRequest);
     }    
 }

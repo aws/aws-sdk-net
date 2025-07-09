@@ -48,6 +48,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         {
             HttpPayloadWithUnionResponse response = new HttpPayloadWithUnionResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = UnionPayloadUnmarshaller.Instance;
             response.Nested = unmarshaller.Unmarshall(context, ref reader);
 

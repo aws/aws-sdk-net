@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class SpaceSettingsSummary
     {
         private AppType _appType;
+        private FeatureStatus _remoteAccess;
         private SpaceStorageSettings _spaceStorageSettings;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAppType()
         {
             return this._appType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteAccess. 
+        /// <para>
+        /// A setting that enables or disables remote access for a SageMaker space. When enabled,
+        /// this allows you to connect to the remote space from your local IDE.
+        /// </para>
+        /// </summary>
+        public FeatureStatus RemoteAccess
+        {
+            get { return this._remoteAccess; }
+            set { this._remoteAccess = value; }
+        }
+
+        // Check to see if RemoteAccess property is set
+        internal bool IsSetRemoteAccess()
+        {
+            return this._remoteAccess != null;
         }
 
         /// <summary>

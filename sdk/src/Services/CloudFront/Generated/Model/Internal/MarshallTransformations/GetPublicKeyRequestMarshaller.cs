@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetPublicKey Request Marshaller
     /// </summary>       
-    public class GetPublicKeyRequestMarshaller : IMarshaller<IRequest, GetPublicKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetPublicKeyRequestMarshaller : IMarshaller<IRequest, GetPublicKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/public-key/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetPublicKeyRequestMarshaller _instance = new GetPublicKeyRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetPublicKeyRequest publicRequest);
     }    
 }

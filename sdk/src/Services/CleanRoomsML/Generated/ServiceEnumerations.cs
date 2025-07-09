@@ -1525,6 +1525,56 @@ namespace Amazon.CleanRoomsML
 
 
     /// <summary>
+    /// Constants used for properties of type S3DataDistributionType.
+    /// </summary>
+    public class S3DataDistributionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FullyReplicated for S3DataDistributionType
+        /// </summary>
+        public static readonly S3DataDistributionType FullyReplicated = new S3DataDistributionType("FullyReplicated");
+        /// <summary>
+        /// Constant ShardedByS3Key for S3DataDistributionType
+        /// </summary>
+        public static readonly S3DataDistributionType ShardedByS3Key = new S3DataDistributionType("ShardedByS3Key");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3DataDistributionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3DataDistributionType FindValue(string value)
+        {
+            return FindValue<S3DataDistributionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3DataDistributionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SharedAudienceMetrics.
     /// </summary>
     public class SharedAudienceMetrics : ConstantClass
@@ -1618,6 +1668,52 @@ namespace Amazon.CleanRoomsML
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TagOnCreatePolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrainedModelArtifactMaxSizeUnitType.
+    /// </summary>
+    public class TrainedModelArtifactMaxSizeUnitType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GB for TrainedModelArtifactMaxSizeUnitType
+        /// </summary>
+        public static readonly TrainedModelArtifactMaxSizeUnitType GB = new TrainedModelArtifactMaxSizeUnitType("GB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrainedModelArtifactMaxSizeUnitType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrainedModelArtifactMaxSizeUnitType FindValue(string value)
+        {
+            return FindValue<TrainedModelArtifactMaxSizeUnitType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrainedModelArtifactMaxSizeUnitType(string value)
         {
             return FindValue(value);
         }
@@ -2024,6 +2120,60 @@ namespace Amazon.CleanRoomsML
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TrainingDatasetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrainingInputMode.
+    /// </summary>
+    public class TrainingInputMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FastFile for TrainingInputMode
+        /// </summary>
+        public static readonly TrainingInputMode FastFile = new TrainingInputMode("FastFile");
+        /// <summary>
+        /// Constant File for TrainingInputMode
+        /// </summary>
+        public static readonly TrainingInputMode File = new TrainingInputMode("File");
+        /// <summary>
+        /// Constant Pipe for TrainingInputMode
+        /// </summary>
+        public static readonly TrainingInputMode Pipe = new TrainingInputMode("Pipe");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrainingInputMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrainingInputMode FindValue(string value)
+        {
+            return FindValue<TrainingInputMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrainingInputMode(string value)
         {
             return FindValue(value);
         }

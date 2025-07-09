@@ -45,7 +45,6 @@ namespace Amazon.QBusiness.Model
         /// action group or the JSON or YAML-formatted payload defining the schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public APISchema ApiSchema
         {
             get { return this._apiSchema; }

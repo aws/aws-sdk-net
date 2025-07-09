@@ -66,7 +66,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// Structure containing the template body.
+        /// Structure that contains the template body.
         /// </para>
         ///  
         /// <para>

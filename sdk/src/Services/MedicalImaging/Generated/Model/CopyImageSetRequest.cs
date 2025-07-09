@@ -38,6 +38,7 @@ namespace Amazon.MedicalImaging.Model
         private CopyImageSetInformation _copyImageSetInformation;
         private string _datastoreId;
         private bool? _force;
+        private bool? _promoteToPrimary;
         private string _sourceImageSetId;
 
         /// <summary>
@@ -81,8 +82,9 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// Setting this flag will force the <c>CopyImageSet</c> operation, even if Patient, Study,
-        /// or Series level metadata are mismatched across the <c>sourceImageSet</c> and <c>destinationImageSet</c>.
+        /// Providing this parameter will force completion of the <c>CopyImageSet</c> operation,
+        /// even if there are inconsistent Patient, Study, and/or Series level metadata elements
+        /// between the <c>sourceImageSet</c> and <c>destinationImageSet</c>.
         /// </para>
         /// </summary>
         public bool? Force
@@ -95,6 +97,26 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetForce()
         {
             return this._force.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromoteToPrimary. 
+        /// <para>
+        /// Providing this parameter will configure the <c>CopyImageSet</c> operation to promote
+        /// the given image set to the primary DICOM hierarchy. If successful, a new primary image
+        /// set ID will be returned as the destination image set.
+        /// </para>
+        /// </summary>
+        public bool? PromoteToPrimary
+        {
+            get { return this._promoteToPrimary; }
+            set { this._promoteToPrimary = value; }
+        }
+
+        // Check to see if PromoteToPrimary property is set
+        internal bool IsSetPromoteToPrimary()
+        {
+            return this._promoteToPrimary.HasValue; 
         }
 
         /// <summary>

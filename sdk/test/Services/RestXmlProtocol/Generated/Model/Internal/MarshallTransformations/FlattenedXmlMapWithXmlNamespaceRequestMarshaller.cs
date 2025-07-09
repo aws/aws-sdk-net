@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// FlattenedXmlMapWithXmlNamespace Request Marshaller
     /// </summary>       
-    public class FlattenedXmlMapWithXmlNamespaceRequestMarshaller : IMarshaller<IRequest, FlattenedXmlMapWithXmlNamespaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class FlattenedXmlMapWithXmlNamespaceRequestMarshaller : IMarshaller<IRequest, FlattenedXmlMapWithXmlNamespaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/FlattenedXmlMapWithXmlNamespace";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static FlattenedXmlMapWithXmlNamespaceRequestMarshaller _instance = new FlattenedXmlMapWithXmlNamespaceRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, FlattenedXmlMapWithXmlNamespaceRequest publicRequest);
     }    
 }

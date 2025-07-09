@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Structure containing the rollback triggers for CloudFormation to monitor during stack
-    /// creation and updating operations, and for the specified monitoring period afterwards.
+    /// Structure that contains the rollback triggers for CloudFormation to monitor during
+    /// stack creation and updating operations, and for the specified monitoring period afterwards.
     /// 
     ///  
     /// <para>

@@ -36,8 +36,8 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// An IAM user can also have managed policies attached to it. To list the managed policies
-    /// that are attached to a user, use <a>ListAttachedUserPolicies</a>. For more information
-    /// about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// that are attached to a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html">ListAttachedUserPolicies</a>.
+    /// For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
     /// policies and inline policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  

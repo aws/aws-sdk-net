@@ -53,6 +53,7 @@ namespace Amazon.NetworkFirewall.Model
         private string _ruleGroupName;
         private string _rules;
         private SourceMetadata _sourceMetadata;
+        private SummaryConfiguration _summaryConfiguration;
         private RuleGroupType _type;
         private string _updateToken;
 
@@ -269,6 +270,28 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetSourceMetadata()
         {
             return this._sourceMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SummaryConfiguration. 
+        /// <para>
+        /// Updates the selected summary configuration for a rule group.
+        /// </para>
+        ///  
+        /// <para>
+        /// Changes affect subsequent responses from <a>DescribeRuleGroupSummary</a>.
+        /// </para>
+        /// </summary>
+        public SummaryConfiguration SummaryConfiguration
+        {
+            get { return this._summaryConfiguration; }
+            set { this._summaryConfiguration = value; }
+        }
+
+        // Check to see if SummaryConfiguration property is set
+        internal bool IsSetSummaryConfiguration()
+        {
+            return this._summaryConfiguration != null;
         }
 
         /// <summary>

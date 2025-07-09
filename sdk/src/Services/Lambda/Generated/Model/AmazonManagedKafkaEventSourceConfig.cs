@@ -36,6 +36,7 @@ namespace Amazon.Lambda.Model
     public partial class AmazonManagedKafkaEventSourceConfig
     {
         private string _consumerGroupId;
+        private KafkaSchemaRegistryConfig _schemaRegistryConfig;
 
         /// <summary>
         /// Gets and sets the property ConsumerGroupId. 
@@ -58,6 +59,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetConsumerGroupId()
         {
             return this._consumerGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaRegistryConfig. 
+        /// <para>
+        /// Specific configuration settings for a Kafka schema registry.
+        /// </para>
+        /// </summary>
+        public KafkaSchemaRegistryConfig SchemaRegistryConfig
+        {
+            get { return this._schemaRegistryConfig; }
+            set { this._schemaRegistryConfig = value; }
+        }
+
+        // Check to see if SchemaRegistryConfig property is set
+        internal bool IsSetSchemaRegistryConfig()
+        {
+            return this._schemaRegistryConfig != null;
         }
 
     }

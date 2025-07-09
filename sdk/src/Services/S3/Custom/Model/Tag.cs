@@ -21,89 +21,20 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Tag is a key-value pair of metadata associated with an S3Object
     /// </summary>
-    public class Tag
+    public partial class Tag
     {
-        private string key;
-        private string value;
-
-        /// <summary>
-        /// Name of the object key.
-        /// </summary>
-        public string Key
-        {
-            get { return this.key; }
-            set { this.key = value; }
-        }
-
-        // Check to see if Key property is set
-        internal bool IsSetKey()
-        {
-            return this.key != null;
-        }
-
-        /// <summary>
-        /// Value of the tag.
-        /// </summary>
-        public string Value
-        {
-            get { return this.value; }
-            set { this.value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this.value != null;
-        }
-
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);
             {
                 if (IsSetKey())
                 {
-                    xmlWriter.WriteElementString("Key", S3Transforms.ToXmlStringValue(key));
+                    xmlWriter.WriteElementString("Key", S3Transforms.ToXmlStringValue(_key));
                 }
                 if (IsSetValue())
                 {
-                    xmlWriter.WriteElementString("Value", S3Transforms.ToXmlStringValue(value));
+                    xmlWriter.WriteElementString("Value", S3Transforms.ToXmlStringValue(_value));
                 }
-            }
-            xmlWriter.WriteEndElement();
-        }
-    }
-
-    /// <summary>
-    /// Structure that contains list of Tags
-    /// </summary>
-    public class Tagging
-    {
-        private List<Tag> tagSet = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
-
-        /// <summary>
-        /// TagSet
-        /// </summary>
-        public List<Tag> TagSet
-        {
-            get { return this.tagSet; }
-            set { this.tagSet = value; }
-        }
-
-        internal void Marshall(string memberName, XmlWriter xmlWriter)
-        {
-            xmlWriter.WriteStartElement(memberName);
-            {
-                xmlWriter.WriteStartElement("TagSet");
-                {
-                    if (this.tagSet != null)
-                    {
-                        foreach (var tag in tagSet)
-                        {
-                            tag.Marshall("Tag", xmlWriter);
-                        }
-                    }
-                }
-                xmlWriter.WriteEndElement();
             }
             xmlWriter.WriteEndElement();
         }

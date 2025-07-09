@@ -52,6 +52,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Content);
             }
 
+            if(requestObject.IsSetInteractions())
+            {
+                context.Writer.WritePropertyName("Interactions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TextBoxInteractionOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Interactions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSheetTextBoxId())
             {
                 context.Writer.WritePropertyName("SheetTextBoxId");

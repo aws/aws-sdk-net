@@ -117,6 +117,12 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Call the <c>UpdateServer</c> API to set or change this parameter.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't set address allocation IDs for servers that have an <c>IpAddressType</c>
+        /// set to <c>DUALSTACK</c> You can only set this property if <c>IpAddressType</c> is
+        /// set to <c>IPV4</c>.
+        /// </para>
         ///  </li> </ul> </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

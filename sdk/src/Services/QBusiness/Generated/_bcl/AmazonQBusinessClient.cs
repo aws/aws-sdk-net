@@ -1153,6 +1153,105 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  CreateChatResponseConfiguration
+
+
+        /// <summary>
+        /// Creates a new chat response configuration for an Amazon Q Business application. This
+        /// operation establishes a set of parameters that define how the system generates and
+        /// formats responses to user queries in chat interactions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChatResponseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateChatResponseConfiguration">REST API Reference for CreateChatResponseConfiguration Operation</seealso>
+        public virtual CreateChatResponseConfigurationResponse CreateChatResponseConfiguration(CreateChatResponseConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChatResponseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChatResponseConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateChatResponseConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new chat response configuration for an Amazon Q Business application. This
+        /// operation establishes a set of parameters that define how the system generates and
+        /// formats responses to user queries in chat interactions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChatResponseConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateChatResponseConfiguration">REST API Reference for CreateChatResponseConfiguration Operation</seealso>
+        public virtual Task<CreateChatResponseConfigurationResponse> CreateChatResponseConfigurationAsync(CreateChatResponseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChatResponseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChatResponseConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateChatResponseConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDataAccessor
 
 
@@ -2232,6 +2331,95 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = DeleteChatControlsConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteChatControlsConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteChatResponseConfiguration
+
+
+        /// <summary>
+        /// Deletes a specified chat response configuration from an Amazon Q Business application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChatResponseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatResponseConfiguration">REST API Reference for DeleteChatResponseConfiguration Operation</seealso>
+        public virtual DeleteChatResponseConfigurationResponse DeleteChatResponseConfiguration(DeleteChatResponseConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChatResponseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChatResponseConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteChatResponseConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a specified chat response configuration from an Amazon Q Business application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChatResponseConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatResponseConfiguration">REST API Reference for DeleteChatResponseConfiguration Operation</seealso>
+        public virtual Task<DeleteChatResponseConfigurationResponse> DeleteChatResponseConfigurationAsync(DeleteChatResponseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteChatResponseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteChatResponseConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteChatResponseConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3324,6 +3512,91 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  GetChatResponseConfiguration
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific chat response configuration from an
+        /// Amazon Q Business application. This operation returns the complete configuration settings
+        /// and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChatResponseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatResponseConfiguration">REST API Reference for GetChatResponseConfiguration Operation</seealso>
+        public virtual GetChatResponseConfigurationResponse GetChatResponseConfiguration(GetChatResponseConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChatResponseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChatResponseConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetChatResponseConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific chat response configuration from an
+        /// Amazon Q Business application. This operation returns the complete configuration settings
+        /// and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChatResponseConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatResponseConfiguration">REST API Reference for GetChatResponseConfiguration Operation</seealso>
+        public virtual Task<GetChatResponseConfigurationResponse> GetChatResponseConfigurationAsync(GetChatResponseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChatResponseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChatResponseConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetChatResponseConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDataAccessor
 
 
@@ -4372,6 +4645,91 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = ListAttachmentsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListAttachmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListChatResponseConfigurations
+
+
+        /// <summary>
+        /// Retrieves a list of all chat response configurations available in a specified Amazon
+        /// Q Business application. This operation returns summary information about each configuration
+        /// to help administrators manage and select appropriate response settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChatResponseConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListChatResponseConfigurations service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListChatResponseConfigurations">REST API Reference for ListChatResponseConfigurations Operation</seealso>
+        public virtual ListChatResponseConfigurationsResponse ListChatResponseConfigurations(ListChatResponseConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChatResponseConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChatResponseConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChatResponseConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of all chat response configurations available in a specified Amazon
+        /// Q Business application. This operation returns summary information about each configuration
+        /// to help administrators manage and select appropriate response settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChatResponseConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChatResponseConfigurations service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListChatResponseConfigurations">REST API Reference for ListChatResponseConfigurations Operation</seealso>
+        public virtual Task<ListChatResponseConfigurationsResponse> ListChatResponseConfigurationsAsync(ListChatResponseConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChatResponseConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChatResponseConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListChatResponseConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6583,6 +6941,99 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = UpdateChatControlsConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateChatControlsConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateChatResponseConfiguration
+
+
+        /// <summary>
+        /// Updates an existing chat response configuration in an Amazon Q Business application.
+        /// This operation allows administrators to modify configuration settings, display name,
+        /// and response parameters to refine how the system generates responses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChatResponseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatResponseConfiguration">REST API Reference for UpdateChatResponseConfiguration Operation</seealso>
+        public virtual UpdateChatResponseConfigurationResponse UpdateChatResponseConfiguration(UpdateChatResponseConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChatResponseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChatResponseConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChatResponseConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing chat response configuration in an Amazon Q Business application.
+        /// This operation allows administrators to modify configuration settings, display name,
+        /// and response parameters to refine how the system generates responses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChatResponseConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateChatResponseConfiguration service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatResponseConfiguration">REST API Reference for UpdateChatResponseConfiguration Operation</seealso>
+        public virtual Task<UpdateChatResponseConfigurationResponse> UpdateChatResponseConfigurationAsync(UpdateChatResponseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChatResponseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChatResponseConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateChatResponseConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

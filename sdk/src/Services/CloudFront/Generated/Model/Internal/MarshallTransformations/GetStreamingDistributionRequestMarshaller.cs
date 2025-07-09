@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetStreamingDistribution Request Marshaller
     /// </summary>       
-    public class GetStreamingDistributionRequestMarshaller : IMarshaller<IRequest, GetStreamingDistributionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetStreamingDistributionRequestMarshaller : IMarshaller<IRequest, GetStreamingDistributionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/streaming-distribution/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetStreamingDistributionRequestMarshaller _instance = new GetStreamingDistributionRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetStreamingDistributionRequest publicRequest);
     }    
 }

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>CreateOpenIDConnectProvider</a> request.
+    /// Contains the response to a successful <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>
+    /// request.
     /// </summary>
     public partial class CreateOpenIDConnectProviderResponse : AmazonWebServiceResponse
     {
@@ -41,7 +42,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property OpenIDConnectProviderArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created.
-        /// For more information, see <a>OpenIDConnectProviderListEntry</a>. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_OpenIDConnectProviderListEntry.html">OpenIDConnectProviderListEntry</a>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

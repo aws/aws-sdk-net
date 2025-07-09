@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the GetDataQualityRuleset operation.
+    /// Returns the data quality ruleset response.
     /// </summary>
     public partial class GetDataQualityRulesetResponse : AmazonWebServiceResponse
     {

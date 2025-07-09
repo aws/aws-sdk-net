@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetAccessPointForObjectLambda Request Marshaller
     /// </summary>       
-    public class GetAccessPointForObjectLambdaRequestMarshaller : IMarshaller<IRequest, GetAccessPointForObjectLambdaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetAccessPointForObjectLambdaRequestMarshaller : IMarshaller<IRequest, GetAccessPointForObjectLambdaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accesspointforobjectlambda/{name}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetAccessPointForObjectLambdaRequestMarshaller _instance = new GetAccessPointForObjectLambdaRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetAccessPointForObjectLambdaRequest publicRequest);
     }    
 }

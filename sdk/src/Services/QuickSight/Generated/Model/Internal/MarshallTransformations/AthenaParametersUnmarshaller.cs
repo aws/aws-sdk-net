@@ -56,6 +56,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("IdentityCenterConfiguration", targetDepth))
+                {
+                    var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IdentityCenterConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

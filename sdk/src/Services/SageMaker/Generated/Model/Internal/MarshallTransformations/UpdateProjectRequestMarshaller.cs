@@ -114,6 +114,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetTemplateProvidersToUpdate())
+            {
+                context.Writer.WritePropertyName("TemplateProvidersToUpdate");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTemplateProvidersToUpdateListValue in publicRequest.TemplateProvidersToUpdate)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = UpdateTemplateProviderMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTemplateProvidersToUpdateListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

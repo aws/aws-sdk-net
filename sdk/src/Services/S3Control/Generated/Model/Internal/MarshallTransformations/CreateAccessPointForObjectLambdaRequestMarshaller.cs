@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateAccessPointForObjectLambda Request Marshaller
     /// </summary>       
-    public class CreateAccessPointForObjectLambdaRequestMarshaller : IMarshaller<IRequest, CreateAccessPointForObjectLambdaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class CreateAccessPointForObjectLambdaRequestMarshaller : IMarshaller<IRequest, CreateAccessPointForObjectLambdaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonS3ControlException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/v20180820/accesspointforobjectlambda/{name}";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -146,7 +147,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateAccessPointForObjectLambdaRequestMarshaller _instance = new CreateAccessPointForObjectLambdaRequestMarshaller();        
@@ -167,5 +168,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateAccessPointForObjectLambdaRequest publicRequest);
     }    
 }

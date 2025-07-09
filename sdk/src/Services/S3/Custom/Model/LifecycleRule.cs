@@ -106,6 +106,10 @@ namespace Amazon.S3.Model
         /// <c>Prefix</c>, <c>Tag</c>, <c>ObjectSizeGreaterThan</c>, <c>ObjectSizeLessThan</c>, or <c>And</c> specified.
         /// <c>Filter</c> is required if the <c>LifecycleRule</c> does not contain a <c>Prefix</c> element.
         /// </para>
+        /// <para>
+        /// For more information about <c>Tag</c> filters, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-filters.html">Adding
+        /// filters to Lifecycle rules</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// <note>
         /// <para>
         /// <c>Tag</c> filters are not supported for directory buckets.

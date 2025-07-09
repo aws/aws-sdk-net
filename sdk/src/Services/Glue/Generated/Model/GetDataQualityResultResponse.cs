@@ -30,10 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the GetDataQualityResult operation.
+    /// The response for the data quality result.
     /// </summary>
     public partial class GetDataQualityResultResponse : AmazonWebServiceResponse
     {
+        private DataQualityAggregatedMetrics _aggregatedMetrics;
         private List<DataQualityAnalyzerResult> _analyzerResults = AWSConfigs.InitializeCollections ? new List<DataQualityAnalyzerResult>() : null;
         private DateTime? _completedOn;
         private DataSource _dataSource;
@@ -48,6 +49,26 @@ namespace Amazon.Glue.Model
         private string _rulesetName;
         private double? _score;
         private DateTime? _startedOn;
+
+        /// <summary>
+        /// Gets and sets the property AggregatedMetrics. 
+        /// <para>
+        ///  A summary of <c>DataQualityAggregatedMetrics</c> objects showing the total counts
+        /// of processed rows and rules, including their pass/fail statistics based on row-level
+        /// results. 
+        /// </para>
+        /// </summary>
+        public DataQualityAggregatedMetrics AggregatedMetrics
+        {
+            get { return this._aggregatedMetrics; }
+            set { this._aggregatedMetrics = value; }
+        }
+
+        // Check to see if AggregatedMetrics property is set
+        internal bool IsSetAggregatedMetrics()
+        {
+            return this._aggregatedMetrics != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AnalyzerResults. 

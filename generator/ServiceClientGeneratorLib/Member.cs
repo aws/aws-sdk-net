@@ -579,11 +579,13 @@ namespace ServiceClientGenerator
                     }
                     return typeName;
                 case "map":
-                    var keyType = DetermineType(memberShape["key"], true, false);
-                    var valueType = DetermineType(memberShape["value"], true, false);
+                    bool overrideMapTreatEnumsAsString = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ?? true;
+                    var keyType = DetermineType(memberShape["key"], overrideMapTreatEnumsAsString, false);
+                    var valueType = DetermineType(memberShape["value"], overrideMapTreatEnumsAsString, false);
                     return string.Format("Dictionary<{0}, {1}>", keyType, valueType);
                 case "list":
-                    var listType = DetermineType(memberShape["member"], true, false);
+                    bool overrideListTreatEnumsAsString = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ?? true;
+                    var listType = DetermineType(memberShape["member"], overrideListTreatEnumsAsString, false);
                     return string.Format("List<{0}>", listType);
 
                 case "decimal":
@@ -992,6 +994,15 @@ namespace ServiceClientGenerator
             {
                 string message = this.model.Customizations.GetPropertyModifier(this.OwningShape.Name, this._name)?.DeprecationMessage ??
                                  this.data[DeprecatedMessageKey].CastToString();
+                if (message == null)
+                {
+                    var shapeModifier = this.model.Customizations.GetShapeModifier(this.OwningShape.Name);
+                    if (shapeModifier != null && shapeModifier.PropertyModifier(this._name) != null)
+                    {
+                        var propertyModifier = shapeModifier.PropertyModifier(this._name);
+                        message = propertyModifier.DeprecationMessage;
+                    }
+                }
                 // TODO: Fill in s3 deprecation messages
                 if (message == null)
                     throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for member {0}.{1}.\nFor example: \"MemberName\":{{ ... \"deprecated\":true, \"deprecatedMessage\":\"This property is deprecated, use XXX instead.\"}}", this.OwningShape.Name, this._name));

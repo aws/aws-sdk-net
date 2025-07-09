@@ -111,6 +111,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [Obsolete("Tags has been deprecated from this api")]
         [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {

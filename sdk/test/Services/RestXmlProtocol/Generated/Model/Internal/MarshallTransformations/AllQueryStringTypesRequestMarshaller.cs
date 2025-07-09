@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// AllQueryStringTypes Request Marshaller
     /// </summary>       
-    public class AllQueryStringTypesRequestMarshaller : IMarshaller<IRequest, AllQueryStringTypesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class AllQueryStringTypesRequestMarshaller : IMarshaller<IRequest, AllQueryStringTypesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -195,8 +195,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             request.ResourcePath = "/AllQueryStringTypesInput";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static AllQueryStringTypesRequestMarshaller _instance = new AllQueryStringTypesRequestMarshaller();        
@@ -217,5 +218,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, AllQueryStringTypesRequest publicRequest);
     }    
 }

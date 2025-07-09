@@ -68,14 +68,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {
-                Client.PutBucketReplication(new PutBucketReplicationRequest { 
+                Client.PutBucketReplication(new PutBucketReplicationRequest 
+                { 
                     BucketName = bucketName,
                     Configuration = new ReplicationConfiguration
                     {
                         Role = roleArn,
-                        Rules =
+                        Rules = new List<ReplicationRule>
                         {
-                            new ReplicationRule 
+                            new ReplicationRule
                             {
                                 Id = UtilityMethods.GenerateName(),
                                 Filter = new ReplicationRuleFilter
@@ -87,8 +88,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                                 {
                                     BucketArn = destinationBucketArn,
                                     StorageClass = storageClass
+                                },
+                                Priority = 1,
+                                DeleteMarkerReplication = new DeleteMarkerReplication
+                                {
+                                    Status = DeleteMarkerReplicationStatus.Enabled
                                 }
-                                
                             }
                         }
                     }
@@ -113,9 +118,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 Assert.IsNotNull(rule);
                 Assert.IsNotNull(rule.Id);
-                Assert.IsNotNull(rule.Filter.Prefix);
                 if (string.IsNullOrEmpty(prefix))
-                    Assert.AreEqual(string.Empty, rule.Filter.Prefix);
+                    Assert.AreEqual(null, rule.Filter.Prefix);
                 else
                     Assert.AreEqual(prefix, rule.Filter.Prefix);
                 Assert.AreEqual(destinationBucketArn, rule.Destination.BucketArn);

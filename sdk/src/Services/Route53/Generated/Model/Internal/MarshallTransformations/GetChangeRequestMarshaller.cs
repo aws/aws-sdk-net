@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetChange Request Marshaller
     /// </summary>       
-    public class GetChangeRequestMarshaller : IMarshaller<IRequest, GetChangeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetChangeRequestMarshaller : IMarshaller<IRequest, GetChangeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/change/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetChangeRequestMarshaller _instance = new GetChangeRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetChangeRequest publicRequest);
     }    
 }

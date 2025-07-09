@@ -68,6 +68,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.LocationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PingBeacon", targetDepth))
+                {
+                    var unmarshaller = PingBeaconUnmarshaller.Instance;
+                    unmarshalledObject.PingBeacon = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

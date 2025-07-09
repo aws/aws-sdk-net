@@ -67,7 +67,13 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property BoostingLevel. 
         /// <para>
-        /// Specifies how much a document attribute is boosted.
+        /// Specifies the priority tier ranking of boosting applied to document attributes. For
+        /// version 2, this parameter indicates the relative ranking between boosted fields (ONE
+        /// being highest priority, TWO being second highest, etc.) and determines the order in
+        /// which attributes influence document ranking in search results. For version 1, this
+        /// parameter specifies the boosting intensity. For version 2, boosting intensity (VERY
+        /// HIGH, HIGH, MEDIUM, LOW, NONE) are not supported. Note that in version 2, you are
+        /// not allowed to boost on only one field and make this value TWO.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

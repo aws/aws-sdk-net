@@ -114,15 +114,26 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		private static void UnmarshallResult(XmlUnmarshallerContext context, <#=this.Operation.Name #>Response response)
         {
             int originalDepth = context.CurrentDepth;
+<#
+    if (this.Config.ServiceId == "S3" && this.Operation.Name == "GetBucketLocation")
+    {
+#>
+            int targetDepth = 1;
+<#
+    }
+    else
+    {
+#>
             int targetDepth = originalDepth + 1;
 <#
-	if (payload == null)
-	{
+        if (payload == null)
+        {
 #>
 			if (context.IsStartOfDocument) 
 				   targetDepth += 1;
 <#
-	}
+        }
+    }
 #>
             if (context.IsEmptyResponse)
             {
@@ -135,106 +146,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#    
         foreach (var member in this.Operation.ResponseBodyMembers)
         {
-			if (member.Shape.IsList)
-			{
-				var listMarshallName = member.Shape.ListMarshallName ?? "member";
-
-                if (member.IsFlattened || member.Shape.IsFlattened)
-                {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
-					{
-                        if (response.<#=member.PropertyName#> == null)
-                        {
-                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
-                        }
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-						continue;
-					}
-<#              
-                }
-
-
-                else
-                {
-#>
-				    if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>/<#=listMarshallName#>", targetDepth))
-				    {
-                        if (response.<#=member.PropertyName#> == null)
-                        {
-                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
-                        }
-					    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-					    response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-					    continue;
-				    }
-<#
-			    }
-            }
-            else if(member.Shape.IsMap)
-			{
-                if(member.IsFlattened)
-                {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
-					{
-                        if (response.<#=member.PropertyName#> == null)
-                        {
-                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
-                        }
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-						continue;
-					}
-<#
-                }
-                else
-                {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
-					{
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
-						continue;
-					}
-<#
-                }                  
-			}
-			else
-			{
-                if (!member.IsXmlAttribute)
-                {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
-<#
-                }
-                else
-                {
-#>
-                    if (context.TestExpression("@<#=DetermineXmlMarshallName(member, false)#>", targetDepth - 1))
-<#
-                }
-#>
-					{
-						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
-						continue;
-					}
-<#
-			}
+            ProcessResponseBodyOrStructureMembers(member, false);
         }
 
         if (shouldMarshallPayload)
         {
-#>
-					if (context.TestExpression("<#=DetermineXmlMarshallName(payload)#>", targetDepth))
-					{
-						var unmarshaller = <#=payload.DetermineTypeUnmarshallerInstantiate()#>;
-						response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
-						continue;
-					}
-<#
+            ProcessResponseBodyOrStructureMembers(payload, false);
         }
 #>
 				}

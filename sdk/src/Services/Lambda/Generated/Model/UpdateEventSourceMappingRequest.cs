@@ -107,8 +107,9 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue, Amazon
-    /// SNS topic, or Amazon S3 bucket.
+    ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+    /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+    /// a destination</a>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -154,6 +155,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateEventSourceMappingRequest : AmazonLambdaRequest
     {
+        private AmazonManagedKafkaEventSourceConfig _amazonManagedKafkaEventSourceConfig;
         private int? _batchSize;
         private bool? _bisectBatchOnFunctionError;
         private DestinationConfig _destinationConfig;
@@ -170,9 +172,25 @@ namespace Amazon.Lambda.Model
         private int? _parallelizationFactor;
         private ProvisionedPollerConfig _provisionedPollerConfig;
         private ScalingConfig _scalingConfig;
+        private SelfManagedKafkaEventSourceConfig _selfManagedKafkaEventSourceConfig;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = AWSConfigs.InitializeCollections ? new List<SourceAccessConfiguration>() : null;
         private int? _tumblingWindowInSeconds;
         private string _uuid;
+
+        /// <summary>
+        /// Gets and sets the property AmazonManagedKafkaEventSourceConfig.
+        /// </summary>
+        public AmazonManagedKafkaEventSourceConfig AmazonManagedKafkaEventSourceConfig
+        {
+            get { return this._amazonManagedKafkaEventSourceConfig; }
+            set { this._amazonManagedKafkaEventSourceConfig = value; }
+        }
+
+        // Check to see if AmazonManagedKafkaEventSourceConfig property is set
+        internal bool IsSetAmazonManagedKafkaEventSourceConfig()
+        {
+            return this._amazonManagedKafkaEventSourceConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BatchSize. 
@@ -569,6 +587,21 @@ namespace Amazon.Lambda.Model
         internal bool IsSetScalingConfig()
         {
             return this._scalingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedKafkaEventSourceConfig.
+        /// </summary>
+        public SelfManagedKafkaEventSourceConfig SelfManagedKafkaEventSourceConfig
+        {
+            get { return this._selfManagedKafkaEventSourceConfig; }
+            set { this._selfManagedKafkaEventSourceConfig = value; }
+        }
+
+        // Check to see if SelfManagedKafkaEventSourceConfig property is set
+        internal bool IsSetSelfManagedKafkaEventSourceConfig()
+        {
+            return this._selfManagedKafkaEventSourceConfig != null;
         }
 
         /// <summary>

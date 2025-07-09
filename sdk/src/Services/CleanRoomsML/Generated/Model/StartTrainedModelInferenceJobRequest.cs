@@ -47,6 +47,7 @@ namespace Amazon.CleanRoomsML.Model
         private InferenceResourceConfig _resourceConfig;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _trainedModelArn;
+        private string _trainedModelVersionIdentifier;
 
         /// <summary>
         /// Gets and sets the property ConfiguredModelAlgorithmAssociationArn. 
@@ -329,6 +330,26 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetTrainedModelArn()
         {
             return this._trainedModelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainedModelVersionIdentifier. 
+        /// <para>
+        /// The version identifier of the trained model to use for inference. This specifies which
+        /// version of the trained model should be used to generate predictions on the input data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string TrainedModelVersionIdentifier
+        {
+            get { return this._trainedModelVersionIdentifier; }
+            set { this._trainedModelVersionIdentifier = value; }
+        }
+
+        // Check to see if TrainedModelVersionIdentifier property is set
+        internal bool IsSetTrainedModelVersionIdentifier()
+        {
+            return this._trainedModelVersionIdentifier != null;
         }
 
     }

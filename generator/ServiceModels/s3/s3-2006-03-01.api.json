@@ -1229,6 +1229,18 @@
         "UseS3ExpressControlEndpoint":{"value":true}
       }
     },
+    "RenameObject":{
+      "name":"RenameObject",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/{Bucket}/{Key+}?renameObject"
+      },
+      "input":{"shape":"RenameObjectRequest"},
+      "output":{"shape":"RenameObjectOutput"},
+      "errors":[
+        {"shape":"IdempotencyParameterMismatch"}
+      ]
+    },
     "RestoreObject":{
       "name":"RestoreObject",
       "http":{
@@ -1488,7 +1500,8 @@
       "members":{
         "Name":{"shape":"BucketName"},
         "CreationDate":{"shape":"CreationDate"},
-        "BucketRegion":{"shape":"BucketRegion"}
+        "BucketRegion":{"shape":"BucketRegion"},
+        "BucketArn":{"shape":"S3RegionalOrS3ExpressBucketArnString"}
       }
     },
     "BucketAccelerateStatus":{
@@ -1736,6 +1749,7 @@
         "FULL_OBJECT"
       ]
     },
+    "ClientToken":{"type":"string"},
     "CloudFunction":{"type":"string"},
     "CloudFunctionConfiguration":{
       "type":"structure",
@@ -2293,7 +2307,8 @@
       "members":{
         "LocationConstraint":{"shape":"BucketLocationConstraint"},
         "Location":{"shape":"LocationInfo"},
-        "Bucket":{"shape":"BucketInfo"}
+        "Bucket":{"shape":"BucketInfo"},
+        "Tags":{"shape":"TagSet"}
       }
     },
     "CreateBucketMetadataTableConfigurationRequest":{
@@ -2339,6 +2354,11 @@
           "shape":"Location",
           "location":"header",
           "locationName":"Location"
+        },
+        "BucketArn":{
+          "shape":"S3RegionalOrS3ExpressBucketArnString",
+          "location":"header",
+          "locationName":"x-amz-bucket-arn"
         }
       }
     },
@@ -2814,6 +2834,11 @@
           "shape":"IntelligentTieringId",
           "location":"querystring",
           "locationName":"id"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"AccountId",
+          "location":"header",
+          "locationName":"x-amz-expected-bucket-owner"
         }
       }
     },
@@ -3615,6 +3640,11 @@
           "shape":"IntelligentTieringId",
           "location":"querystring",
           "locationName":"id"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"AccountId",
+          "location":"header",
+          "locationName":"x-amz-expected-bucket-owner"
         }
       }
     },
@@ -4791,6 +4821,11 @@
     "HeadBucketOutput":{
       "type":"structure",
       "members":{
+        "BucketArn":{
+          "shape":"S3RegionalOrS3ExpressBucketArnString",
+          "location":"header",
+          "locationName":"x-amz-bucket-arn"
+        },
         "BucketLocationType":{
           "shape":"LocationType",
           "location":"header",
@@ -5003,6 +5038,11 @@
           "location":"header",
           "locationName":"x-amz-mp-parts-count"
         },
+        "TagCount":{
+          "shape":"TagCount",
+          "location":"header",
+          "locationName":"x-amz-tagging-count"
+        },
         "ObjectLockMode":{
           "shape":"ObjectLockMode",
           "location":"header",
@@ -5140,6 +5180,12 @@
     "HttpErrorCodeReturnedEquals":{"type":"string"},
     "HttpRedirectCode":{"type":"string"},
     "ID":{"type":"string"},
+    "IdempotencyParameterMismatch":{
+      "type":"structure",
+      "members":{},
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
     "IfMatch":{"type":"string"},
     "IfMatchInitiatedTime":{
       "type":"timestamp",
@@ -5586,6 +5632,11 @@
           "shape":"Token",
           "location":"querystring",
           "locationName":"continuation-token"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"AccountId",
+          "location":"header",
+          "locationName":"x-amz-expected-bucket-owner"
         }
       }
     },
@@ -6576,7 +6627,8 @@
         "OUTPOSTS",
         "GLACIER_IR",
         "SNOW",
-        "EXPRESS_ONEZONE"
+        "EXPRESS_ONEZONE",
+        "FSX_OPENZFS"
       ]
     },
     "ObjectVersion":{
@@ -7001,6 +7053,11 @@
           "shape":"IntelligentTieringId",
           "location":"querystring",
           "locationName":"id"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"AccountId",
+          "location":"header",
+          "locationName":"x-amz-expected-bucket-owner"
         },
         "IntelligentTieringConfiguration":{
           "shape":"IntelligentTieringConfiguration",
@@ -8280,6 +8337,97 @@
       "max":20,
       "min":0
     },
+    "RenameObjectOutput":{
+      "type":"structure",
+      "members":{}
+    },
+    "RenameObjectRequest":{
+      "type":"structure",
+      "required":[
+        "Bucket",
+        "Key",
+        "RenameSource"
+      ],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "contextParam":{"name":"Bucket"},
+          "location":"uri",
+          "locationName":"Bucket"
+        },
+        "Key":{
+          "shape":"ObjectKey",
+          "contextParam":{"name":"Key"},
+          "location":"uri",
+          "locationName":"Key"
+        },
+        "RenameSource":{
+          "shape":"RenameSource",
+          "location":"header",
+          "locationName":"x-amz-rename-source"
+        },
+        "DestinationIfMatch":{
+          "shape":"IfMatch",
+          "location":"header",
+          "locationName":"If-Match"
+        },
+        "DestinationIfNoneMatch":{
+          "shape":"IfNoneMatch",
+          "location":"header",
+          "locationName":"If-None-Match"
+        },
+        "DestinationIfModifiedSince":{
+          "shape":"IfModifiedSince",
+          "location":"header",
+          "locationName":"If-Modified-Since"
+        },
+        "DestinationIfUnmodifiedSince":{
+          "shape":"IfUnmodifiedSince",
+          "location":"header",
+          "locationName":"If-Unmodified-Since"
+        },
+        "SourceIfMatch":{
+          "shape":"RenameSourceIfMatch",
+          "location":"header",
+          "locationName":"x-amz-rename-source-if-match"
+        },
+        "SourceIfNoneMatch":{
+          "shape":"RenameSourceIfNoneMatch",
+          "location":"header",
+          "locationName":"x-amz-rename-source-if-none-match"
+        },
+        "SourceIfModifiedSince":{
+          "shape":"RenameSourceIfModifiedSince",
+          "location":"header",
+          "locationName":"x-amz-rename-source-if-modified-since"
+        },
+        "SourceIfUnmodifiedSince":{
+          "shape":"RenameSourceIfUnmodifiedSince",
+          "location":"header",
+          "locationName":"x-amz-rename-source-if-unmodified-since"
+        },
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "location":"header",
+          "locationName":"x-amz-client-token"
+        }
+      }
+    },
+    "RenameSource":{
+      "type":"string",
+      "pattern":"\\/?.+\\/.+"
+    },
+    "RenameSourceIfMatch":{"type":"string"},
+    "RenameSourceIfModifiedSince":{
+      "type":"timestamp",
+      "timestampFormat":"rfc822"
+    },
+    "RenameSourceIfNoneMatch":{"type":"string"},
+    "RenameSourceIfUnmodifiedSince":{
+      "type":"timestamp",
+      "timestampFormat":"rfc822"
+    },
     "ReplaceKeyPrefixWith":{"type":"string"},
     "ReplaceKeyWith":{"type":"string"},
     "ReplicaKmsKeyID":{"type":"string"},
@@ -8580,6 +8728,12 @@
         "StorageClass":{"shape":"StorageClass"}
       }
     },
+    "S3RegionalOrS3ExpressBucketArnString":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"arn:[^:]+:(s3|s3express):.*"
+    },
     "S3TablesArn":{"type":"string"},
     "S3TablesBucketArn":{"type":"string"},
     "S3TablesDestination":{
@@ -8731,6 +8885,7 @@
       "type":"string",
       "enum":[
         "AES256",
+        "aws:fsx",
         "aws:kms",
         "aws:kms:dsse"
       ]
@@ -8878,7 +9033,8 @@
         "OUTPOSTS",
         "GLACIER_IR",
         "SNOW",
-        "EXPRESS_ONEZONE"
+        "EXPRESS_ONEZONE",
+        "FSX_OPENZFS"
       ]
     },
     "StorageClassAnalysis":{

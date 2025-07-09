@@ -65,7 +65,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.GetPlaceRequest.PlaceId</property>
     <min>0</min>
-    <max>200</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.GetPlaceRequest.PoliticalView</property>
@@ -76,7 +76,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.GetPlaceResponse.PlaceId</property>
     <min>0</min>
-    <max>200</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.GetPlaceResponse.PoliticalView</property>
@@ -180,7 +180,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SearchTextRequest.QueryId</property>
     <min>1</min>
-    <max>400</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SearchTextRequest.QueryText</property>
@@ -341,7 +341,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.AutocompleteResultItem.PlaceId</property>
     <min>0</min>
-    <max>200</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.AutocompleteResultItem.PoliticalView</property>
@@ -482,7 +482,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.GeocodeResultItem.PlaceId</property>
     <min>0</min>
-    <max>200</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.GeocodeResultItem.PoliticalView</property>
@@ -509,6 +509,26 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.Intersection.Distance</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.Intersection.PlaceId</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.Intersection.RouteDistance</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.Intersection.Title</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GeoPlaces.Model.MatchScoreDetails.Overall</property>
     <min>0</min>
     <max>1</max>
@@ -525,6 +545,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.OpeningHoursComponents.Recurrence</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.ParsedQueryComponent.EndIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.ParsedQueryComponent.QueryComponent</property>
+    <min>0</min>
+    <max>11</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.ParsedQueryComponent.StartIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.ParsedQueryComponent.Value</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.ParsedQuerySecondaryAddressComponent.Designator</property>
+    <min>0</min>
+    <max>4</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.ParsedQuerySecondaryAddressComponent.EndIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.ParsedQuerySecondaryAddressComponent.Number</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.ParsedQuerySecondaryAddressComponent.StartIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.ParsedQuerySecondaryAddressComponent.Value</property>
     <min>0</min>
     <max>200</max>
   </property-value-rule>
@@ -572,6 +633,16 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.RelatedPlace.PlaceId</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.RelatedPlace.Title</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GeoPlaces.Model.ReverseGeocodeResultItem.Distance</property>
     <min>0</min>
     <max>4294967295</max>
@@ -579,7 +650,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.ReverseGeocodeResultItem.PlaceId</property>
     <min>0</min>
-    <max>200</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.ReverseGeocodeResultItem.PoliticalView</property>
@@ -600,7 +671,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SearchNearbyResultItem.PlaceId</property>
     <min>0</min>
-    <max>200</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SearchNearbyResultItem.PoliticalView</property>
@@ -621,7 +692,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SearchTextResultItem.PlaceId</property>
     <min>0</min>
-    <max>200</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SearchTextResultItem.PoliticalView</property>
@@ -633,6 +704,16 @@
     <property>Amazon.GeoPlaces.Model.SearchTextResultItem.Title</property>
     <min>0</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.SecondaryAddressComponent.Number</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.SecondaryAddressComponentMatchScore.Number</property>
+    <min>0</min>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.StreetComponents.BaseName</property>
@@ -688,7 +769,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SuggestPlaceResult.PlaceId</property>
     <min>1</min>
-    <max>200</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SuggestPlaceResult.PoliticalView</property>
@@ -699,7 +780,7 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SuggestQueryResult.QueryId</property>
     <min>0</min>
-    <max>400</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.SuggestResultItem.Title</property>

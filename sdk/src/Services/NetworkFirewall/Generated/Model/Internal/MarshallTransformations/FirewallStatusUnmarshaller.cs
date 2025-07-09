@@ -80,6 +80,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.SyncStates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TransitGatewayAttachmentSyncState", targetDepth))
+                {
+                    var unmarshaller = TransitGatewayAttachmentSyncStateUnmarshaller.Instance;
+                    unmarshalledObject.TransitGatewayAttachmentSyncState = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

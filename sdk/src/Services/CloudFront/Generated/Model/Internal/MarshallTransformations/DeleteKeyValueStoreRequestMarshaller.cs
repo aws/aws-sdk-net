@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteKeyValueStore Request Marshaller
     /// </summary>       
-    public class DeleteKeyValueStoreRequestMarshaller : IMarshaller<IRequest, DeleteKeyValueStoreRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteKeyValueStoreRequestMarshaller : IMarshaller<IRequest, DeleteKeyValueStoreRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/key-value-store/{Name}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteKeyValueStoreRequestMarshaller _instance = new DeleteKeyValueStoreRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteKeyValueStoreRequest publicRequest);
     }    
 }

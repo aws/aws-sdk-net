@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListGeoLocations Request Marshaller
     /// </summary>       
-    public class ListGeoLocationsRequestMarshaller : IMarshaller<IRequest, ListGeoLocationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListGeoLocationsRequestMarshaller : IMarshaller<IRequest, ListGeoLocationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -71,8 +71,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/geolocations";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListGeoLocationsRequestMarshaller _instance = new ListGeoLocationsRequestMarshaller();        
@@ -93,5 +94,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListGeoLocationsRequest publicRequest);
     }    
 }

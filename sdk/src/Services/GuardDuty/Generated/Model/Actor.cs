@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     public partial class Actor
     {
         private string _id;
+        private ActorProcess _process;
         private Session _session;
         private User _user;
 
@@ -55,6 +56,26 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Process. 
+        /// <para>
+        /// Contains information about the process associated with the threat actor. This includes
+        /// details such as process name, path, execution time, and unique identifiers that help
+        /// track the actor's activities within the system.
+        /// </para>
+        /// </summary>
+        public ActorProcess Process
+        {
+            get { return this._process; }
+            set { this._process = value; }
+        }
+
+        // Check to see if Process property is set
+        internal bool IsSetProcess()
+        {
+            return this._process != null;
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetAccessPointPolicyStatusForObjectLambda Request Marshaller
     /// </summary>       
-    public class GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller : IMarshaller<IRequest, GetAccessPointPolicyStatusForObjectLambdaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller : IMarshaller<IRequest, GetAccessPointPolicyStatusForObjectLambdaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accesspointforobjectlambda/{name}/policyStatus";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller _instance = new GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetAccessPointPolicyStatusForObjectLambdaRequest publicRequest);
     }    
 }

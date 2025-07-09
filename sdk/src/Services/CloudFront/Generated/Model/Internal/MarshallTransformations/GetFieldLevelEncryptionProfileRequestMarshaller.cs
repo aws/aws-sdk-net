@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetFieldLevelEncryptionProfile Request Marshaller
     /// </summary>       
-    public class GetFieldLevelEncryptionProfileRequestMarshaller : IMarshaller<IRequest, GetFieldLevelEncryptionProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetFieldLevelEncryptionProfileRequestMarshaller : IMarshaller<IRequest, GetFieldLevelEncryptionProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/field-level-encryption-profile/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetFieldLevelEncryptionProfileRequestMarshaller _instance = new GetFieldLevelEncryptionProfileRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetFieldLevelEncryptionProfileRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// HttpResponseCode Request Marshaller
     /// </summary>       
-    public class HttpResponseCodeRequestMarshaller : IMarshaller<IRequest, HttpResponseCodeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class HttpResponseCodeRequestMarshaller : IMarshaller<IRequest, HttpResponseCodeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -60,6 +60,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/HttpResponseCode";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpResponseCodeRequestMarshaller _instance = new HttpResponseCodeRequestMarshaller();        
@@ -80,5 +81,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpResponseCodeRequest publicRequest);
     }    
 }

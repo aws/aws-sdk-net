@@ -83,8 +83,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>HomeDirectory</c> parameter is only used if <c>HomeDirectoryType</c> is set
-        /// to <c>PATH</c>.
+        /// You can use the <c>HomeDirectory</c> parameter for <c>HomeDirectoryType</c> when it
+        /// is set to either <c>PATH</c> or <c>LOGICAL</c>.
         /// </para>
         ///  </note>
         /// </summary>

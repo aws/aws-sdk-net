@@ -34,7 +34,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used by a member of the <a>EvaluationResult</a> data type.
+    /// This data type is used by a member of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_EvaluationResult.html">EvaluationResult</a>
+    /// data type.
     /// </para>
     /// </summary>
     public partial class ResourceSpecificResult
@@ -146,7 +147,8 @@ namespace Amazon.IdentityManagement.Model
         /// individual resources, by setting <c>ResourceArns</c> to "*" or by not including the
         /// <c>ResourceArns</c> parameter, then any missing context values are instead included
         /// under the <c>EvaluationResults</c> section. To discover the context keys used by a
-        /// set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.
+        /// set of policies, you can call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
+        /// or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

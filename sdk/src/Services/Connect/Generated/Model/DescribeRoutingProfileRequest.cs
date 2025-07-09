@@ -32,6 +32,15 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the DescribeRoutingProfile operation.
     /// Describes the specified routing profile.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <c>DescribeRoutingProfile</c> does not populate AssociatedQueueIds in its response.
+    /// The example Response Syntax shown on this page is incorrect; we are working to update
+    /// it. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html">SearchRoutingProfiles</a>
+    /// does include AssociatedQueueIds.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeRoutingProfileRequest : AmazonConnectRequest
     {

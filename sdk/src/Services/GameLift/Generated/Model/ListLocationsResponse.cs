@@ -40,7 +40,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Locations. 
         /// <para>
-        /// A collection of locations.
+        /// A collection of locations, including both Amazon Web Services and custom locations.
+        /// Each location includes a name and ping beacon information that can be used to measure
+        /// network latency between player devices and the location.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

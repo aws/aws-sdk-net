@@ -64,7 +64,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// version.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=7, Max=128)]
         public string SchemaVersionedId
         {
             get { return this._schemaVersionedId; }

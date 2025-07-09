@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteConnectionGroup Request Marshaller
     /// </summary>       
-    public class DeleteConnectionGroupRequestMarshaller : IMarshaller<IRequest, DeleteConnectionGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteConnectionGroupRequestMarshaller : IMarshaller<IRequest, DeleteConnectionGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/connection-group/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteConnectionGroupRequestMarshaller _instance = new DeleteConnectionGroupRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteConnectionGroupRequest publicRequest);
     }    
 }

@@ -46,6 +46,7 @@ namespace Amazon.Backup.Model
         private string _iamRoleArn;
         private IndexStatus _indexStatus;
         private string _indexStatusMessage;
+        private DateTime? _initiationDate;
         private bool? _isEncrypted;
         private bool? _isParent;
         private DateTime? _lastRestoreTime;
@@ -299,6 +300,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetIndexStatusMessage()
         {
             return this._indexStatusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitiationDate. 
+        /// <para>
+        /// The date and time when the backup job that created this recovery point was initiated,
+        /// in Unix format and Coordinated Universal Time (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime? InitiationDate
+        {
+            get { return this._initiationDate; }
+            set { this._initiationDate = value; }
+        }
+
+        // Check to see if InitiationDate property is set
+        internal bool IsSetInitiationDate()
+        {
+            return this._initiationDate.HasValue; 
         }
 
         /// <summary>

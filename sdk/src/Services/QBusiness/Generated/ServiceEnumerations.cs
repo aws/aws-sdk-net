@@ -649,6 +649,64 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type ChatResponseConfigurationStatus.
+    /// </summary>
+    public class ChatResponseConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ChatResponseConfigurationStatus
+        /// </summary>
+        public static readonly ChatResponseConfigurationStatus ACTIVE = new ChatResponseConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ChatResponseConfigurationStatus
+        /// </summary>
+        public static readonly ChatResponseConfigurationStatus CREATING = new ChatResponseConfigurationStatus("CREATING");
+        /// <summary>
+        /// Constant FAILED for ChatResponseConfigurationStatus
+        /// </summary>
+        public static readonly ChatResponseConfigurationStatus FAILED = new ChatResponseConfigurationStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for ChatResponseConfigurationStatus
+        /// </summary>
+        public static readonly ChatResponseConfigurationStatus UPDATING = new ChatResponseConfigurationStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChatResponseConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChatResponseConfigurationStatus FindValue(string value)
+        {
+            return FindValue<ChatResponseConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChatResponseConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentType.
     /// </summary>
     public class ContentType : ConstantClass
@@ -782,6 +840,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CreatorModeControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataAccessorAuthenticationType.
+    /// </summary>
+    public class DataAccessorAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_IAM_IDC_AUTH_CODE for DataAccessorAuthenticationType
+        /// </summary>
+        public static readonly DataAccessorAuthenticationType AWS_IAM_IDC_AUTH_CODE = new DataAccessorAuthenticationType("AWS_IAM_IDC_AUTH_CODE");
+        /// <summary>
+        /// Constant AWS_IAM_IDC_TTI for DataAccessorAuthenticationType
+        /// </summary>
+        public static readonly DataAccessorAuthenticationType AWS_IAM_IDC_TTI = new DataAccessorAuthenticationType("AWS_IAM_IDC_TTI");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataAccessorAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataAccessorAuthenticationType FindValue(string value)
+        {
+            return FindValue<DataAccessorAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataAccessorAuthenticationType(string value)
         {
             return FindValue(value);
         }
@@ -946,6 +1054,14 @@ namespace Amazon.QBusiness
         /// Constant NONE for DocumentAttributeBoostingLevel
         /// </summary>
         public static readonly DocumentAttributeBoostingLevel NONE = new DocumentAttributeBoostingLevel("NONE");
+        /// <summary>
+        /// Constant ONE for DocumentAttributeBoostingLevel
+        /// </summary>
+        public static readonly DocumentAttributeBoostingLevel ONE = new DocumentAttributeBoostingLevel("ONE");
+        /// <summary>
+        /// Constant TWO for DocumentAttributeBoostingLevel
+        /// </summary>
+        public static readonly DocumentAttributeBoostingLevel TWO = new DocumentAttributeBoostingLevel("TWO");
         /// <summary>
         /// Constant VERY_HIGH for DocumentAttributeBoostingLevel
         /// </summary>
@@ -1977,6 +2093,52 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type PermissionConditionOperator.
+    /// </summary>
+    public class PermissionConditionOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant StringEquals for PermissionConditionOperator
+        /// </summary>
+        public static readonly PermissionConditionOperator StringEquals = new PermissionConditionOperator("StringEquals");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionConditionOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionConditionOperator FindValue(string value)
+        {
+            return FindValue<PermissionConditionOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionConditionOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PersonalizationControlMode.
     /// </summary>
     public class PersonalizationControlMode : ConstantClass
@@ -2419,6 +2581,52 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type ResponseConfigurationType.
+    /// </summary>
+    public class ResponseConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ResponseConfigurationType
+        /// </summary>
+        public static readonly ResponseConfigurationType ALL = new ResponseConfigurationType("ALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponseConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseConfigurationType FindValue(string value)
+        {
+            return FindValue<ResponseConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseConfigurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResponseScope.
     /// </summary>
     public class ResponseScope : ConstantClass
@@ -2741,6 +2949,14 @@ namespace Amazon.QBusiness
     {
 
         /// <summary>
+        /// Constant FIVE for StringAttributeValueBoostingLevel
+        /// </summary>
+        public static readonly StringAttributeValueBoostingLevel FIVE = new StringAttributeValueBoostingLevel("FIVE");
+        /// <summary>
+        /// Constant FOUR for StringAttributeValueBoostingLevel
+        /// </summary>
+        public static readonly StringAttributeValueBoostingLevel FOUR = new StringAttributeValueBoostingLevel("FOUR");
+        /// <summary>
         /// Constant HIGH for StringAttributeValueBoostingLevel
         /// </summary>
         public static readonly StringAttributeValueBoostingLevel HIGH = new StringAttributeValueBoostingLevel("HIGH");
@@ -2752,6 +2968,18 @@ namespace Amazon.QBusiness
         /// Constant MEDIUM for StringAttributeValueBoostingLevel
         /// </summary>
         public static readonly StringAttributeValueBoostingLevel MEDIUM = new StringAttributeValueBoostingLevel("MEDIUM");
+        /// <summary>
+        /// Constant ONE for StringAttributeValueBoostingLevel
+        /// </summary>
+        public static readonly StringAttributeValueBoostingLevel ONE = new StringAttributeValueBoostingLevel("ONE");
+        /// <summary>
+        /// Constant THREE for StringAttributeValueBoostingLevel
+        /// </summary>
+        public static readonly StringAttributeValueBoostingLevel THREE = new StringAttributeValueBoostingLevel("THREE");
+        /// <summary>
+        /// Constant TWO for StringAttributeValueBoostingLevel
+        /// </summary>
+        public static readonly StringAttributeValueBoostingLevel TWO = new StringAttributeValueBoostingLevel("TWO");
         /// <summary>
         /// Constant VERY_HIGH for StringAttributeValueBoostingLevel
         /// </summary>

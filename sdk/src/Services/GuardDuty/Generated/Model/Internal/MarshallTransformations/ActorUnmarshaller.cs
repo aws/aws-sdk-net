@@ -62,6 +62,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("process", targetDepth))
+                {
+                    var unmarshaller = ActorProcessUnmarshaller.Instance;
+                    unmarshalledObject.Process = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("session", targetDepth))
                 {
                     var unmarshaller = SessionUnmarshaller.Instance;

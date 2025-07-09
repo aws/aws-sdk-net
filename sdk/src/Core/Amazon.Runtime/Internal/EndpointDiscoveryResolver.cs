@@ -79,20 +79,11 @@ namespace Amazon.Runtime.Internal
             {
                 if (refreshCache)
                 {
-                    //Async fetch new endpoints because one or more of the endpoints in the cache have expired.
-#if AWS_ASYNC_API
-                    // Task only exists in framework 4.5 and up, and Standard.
+                    //Async fetch new endpoints because one or more of the endpoints in the cache have expired.                    
                     System.Threading.Tasks.Task.Run(() =>
                     {
                         ProcessInvokeEndpointOperation(cacheKey, InvokeEndpointOperation, false);
                     });
-#else
-                    // ThreadPool only exists in 3.5 and below. These implementations do not have the Task library.
-                    System.Threading.ThreadPool.QueueUserWorkItem((state) =>
-                    {
-                        ProcessInvokeEndpointOperation(cacheKey, InvokeEndpointOperation, false);
-                    });
-#endif
                 }
 
                 return endpoints;
@@ -112,19 +103,11 @@ namespace Amazon.Runtime.Internal
             else if (_config.EndpointDiscoveryEnabled)
             {
                 //Optionally find and endpoint for this supported operation async
-#if AWS_ASYNC_API
-                // Task only exists in framework 4.5 and up, and Standard.
                 System.Threading.Tasks.Task.Run(() =>
                 {
                     ProcessInvokeEndpointOperation(cacheKey, InvokeEndpointOperation, false);
                 });
-#else
-                // ThreadPool only exists in 3.5 and below. These implementations do not have the Task library.
-                System.Threading.ThreadPool.QueueUserWorkItem((state) =>
-                {
-                    ProcessInvokeEndpointOperation(cacheKey, InvokeEndpointOperation, false);
-                });
-#endif
+
                 return null;
             }
             //else not required or endpoint discovery has been disabled so fall through to normal regional endpoint

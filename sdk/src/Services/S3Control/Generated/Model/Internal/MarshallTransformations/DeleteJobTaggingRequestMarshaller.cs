@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteJobTagging Request Marshaller
     /// </summary>       
-    public class DeleteJobTaggingRequestMarshaller : IMarshaller<IRequest, DeleteJobTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteJobTaggingRequestMarshaller : IMarshaller<IRequest, DeleteJobTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/jobs/{id}/tagging";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteJobTaggingRequestMarshaller _instance = new DeleteJobTaggingRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteJobTaggingRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// QueryIdempotencyTokenAutoFill Request Marshaller
     /// </summary>       
-    public class QueryIdempotencyTokenAutoFillRequestMarshaller : IMarshaller<IRequest, QueryIdempotencyTokenAutoFillRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class QueryIdempotencyTokenAutoFillRequestMarshaller : IMarshaller<IRequest, QueryIdempotencyTokenAutoFillRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 
             request.ResourcePath = "/QueryIdempotencyTokenAutoFill";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static QueryIdempotencyTokenAutoFillRequestMarshaller _instance = new QueryIdempotencyTokenAutoFillRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, QueryIdempotencyTokenAutoFillRequest publicRequest);
     }    
 }

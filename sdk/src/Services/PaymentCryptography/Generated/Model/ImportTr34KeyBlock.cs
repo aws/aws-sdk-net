@@ -66,7 +66,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property ImportToken. 
         /// <para>
         /// The import token that initiates key import using the asymmetric TR-34 key exchange
-        /// method into Amazon Web Services Payment Cryptography. It expires after 7 days. You
+        /// method into Amazon Web Services Payment Cryptography. It expires after 30 days. You
         /// can use the same import token to import multiple keys to the same service account.
         /// </para>
         /// </summary>

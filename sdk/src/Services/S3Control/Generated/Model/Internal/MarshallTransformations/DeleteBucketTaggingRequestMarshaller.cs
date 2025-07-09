@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteBucketTagging Request Marshaller
     /// </summary>       
-    public class DeleteBucketTaggingRequestMarshaller : IMarshaller<IRequest, DeleteBucketTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteBucketTaggingRequestMarshaller : IMarshaller<IRequest, DeleteBucketTaggingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/bucket/{name}/tagging";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteBucketTaggingRequestMarshaller _instance = new DeleteBucketTaggingRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketTaggingRequest publicRequest);
     }    
 }

@@ -44,8 +44,8 @@ namespace Amazon.ARCZonalShift.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html">
-    /// Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application
-    /// Recovery Controller Developer Guide.
+    /// Considerations when you configure zonal autoshift</a> in the Amazon Application Recovery
+    /// Controller Developer Guide.
     /// </para>
     /// </summary>
     public partial class ControlCondition

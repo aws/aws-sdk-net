@@ -48,6 +48,68 @@ namespace Amazon.Backup
         IBackupPaginatorFactory Paginators { get; }
 
         
+        #region  AssociateBackupVaultMpaApprovalTeam
+
+
+        /// <summary>
+        /// Associates an MPA approval team with a backup vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateBackupVaultMpaApprovalTeam service method.</param>
+        /// 
+        /// <returns>The response from the AssociateBackupVaultMpaApprovalTeam service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AssociateBackupVaultMpaApprovalTeam">REST API Reference for AssociateBackupVaultMpaApprovalTeam Operation</seealso>
+        AssociateBackupVaultMpaApprovalTeamResponse AssociateBackupVaultMpaApprovalTeam(AssociateBackupVaultMpaApprovalTeamRequest request);
+
+
+
+        /// <summary>
+        /// Associates an MPA approval team with a backup vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateBackupVaultMpaApprovalTeam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateBackupVaultMpaApprovalTeam service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AssociateBackupVaultMpaApprovalTeam">REST API Reference for AssociateBackupVaultMpaApprovalTeam Operation</seealso>
+        Task<AssociateBackupVaultMpaApprovalTeamResponse> AssociateBackupVaultMpaApprovalTeamAsync(AssociateBackupVaultMpaApprovalTeamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CancelLegalHold
 
 
@@ -631,6 +693,84 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateReportPlan">REST API Reference for CreateReportPlan Operation</seealso>
         Task<CreateReportPlanResponse> CreateReportPlanAsync(CreateReportPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateRestoreAccessBackupVault
+
+
+        /// <summary>
+        /// Creates a restore access backup vault that provides temporary access to recovery points
+        /// in a logically air-gapped backup vault, subject to MPA approval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreAccessBackupVault service method.</param>
+        /// 
+        /// <returns>The response from the CreateRestoreAccessBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreAccessBackupVault">REST API Reference for CreateRestoreAccessBackupVault Operation</seealso>
+        CreateRestoreAccessBackupVaultResponse CreateRestoreAccessBackupVault(CreateRestoreAccessBackupVaultRequest request);
+
+
+
+        /// <summary>
+        /// Creates a restore access backup vault that provides temporary access to recovery points
+        /// in a logically air-gapped backup vault, subject to MPA approval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreAccessBackupVault service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRestoreAccessBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreAccessBackupVault">REST API Reference for CreateRestoreAccessBackupVault Operation</seealso>
+        Task<CreateRestoreAccessBackupVaultResponse> CreateRestoreAccessBackupVaultAsync(CreateRestoreAccessBackupVaultRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2151,6 +2291,70 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRestoreJob">REST API Reference for DescribeRestoreJob Operation</seealso>
         Task<DescribeRestoreJobResponse> DescribeRestoreJobAsync(DescribeRestoreJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateBackupVaultMpaApprovalTeam
+
+
+        /// <summary>
+        /// Removes the association between an MPA approval team and a backup vault, disabling
+        /// the MPA approval workflow for restore operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateBackupVaultMpaApprovalTeam service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateBackupVaultMpaApprovalTeam service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateBackupVaultMpaApprovalTeam">REST API Reference for DisassociateBackupVaultMpaApprovalTeam Operation</seealso>
+        DisassociateBackupVaultMpaApprovalTeamResponse DisassociateBackupVaultMpaApprovalTeam(DisassociateBackupVaultMpaApprovalTeamRequest request);
+
+
+
+        /// <summary>
+        /// Removes the association between an MPA approval team and a backup vault, disabling
+        /// the MPA approval workflow for restore operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateBackupVaultMpaApprovalTeam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateBackupVaultMpaApprovalTeam service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateBackupVaultMpaApprovalTeam">REST API Reference for DisassociateBackupVaultMpaApprovalTeam Operation</seealso>
+        Task<DisassociateBackupVaultMpaApprovalTeamResponse> DisassociateBackupVaultMpaApprovalTeamAsync(DisassociateBackupVaultMpaApprovalTeamRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4078,6 +4282,62 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListRestoreAccessBackupVaults
+
+
+        /// <summary>
+        /// Returns a list of restore access backup vaults associated with a specified backup
+        /// vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreAccessBackupVaults service method.</param>
+        /// 
+        /// <returns>The response from the ListRestoreAccessBackupVaults service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreAccessBackupVaults">REST API Reference for ListRestoreAccessBackupVaults Operation</seealso>
+        ListRestoreAccessBackupVaultsResponse ListRestoreAccessBackupVaults(ListRestoreAccessBackupVaultsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of restore access backup vaults associated with a specified backup
+        /// vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreAccessBackupVaults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRestoreAccessBackupVaults service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreAccessBackupVaults">REST API Reference for ListRestoreAccessBackupVaults Operation</seealso>
+        Task<ListRestoreAccessBackupVaultsResponse> ListRestoreAccessBackupVaultsAsync(ListRestoreAccessBackupVaultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListRestoreJobs
 
 
@@ -4713,6 +4973,70 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutRestoreValidationResult">REST API Reference for PutRestoreValidationResult Operation</seealso>
         Task<PutRestoreValidationResultResponse> PutRestoreValidationResultAsync(PutRestoreValidationResultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RevokeRestoreAccessBackupVault
+
+
+        /// <summary>
+        /// Revokes access to a restore access backup vault, removing the ability to restore from
+        /// its recovery points and permanently deleting the vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeRestoreAccessBackupVault service method.</param>
+        /// 
+        /// <returns>The response from the RevokeRestoreAccessBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RevokeRestoreAccessBackupVault">REST API Reference for RevokeRestoreAccessBackupVault Operation</seealso>
+        RevokeRestoreAccessBackupVaultResponse RevokeRestoreAccessBackupVault(RevokeRestoreAccessBackupVaultRequest request);
+
+
+
+        /// <summary>
+        /// Revokes access to a restore access backup vault, removing the ability to restore from
+        /// its recovery points and permanently deleting the vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeRestoreAccessBackupVault service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeRestoreAccessBackupVault service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RevokeRestoreAccessBackupVault">REST API Reference for RevokeRestoreAccessBackupVault Operation</seealso>
+        Task<RevokeRestoreAccessBackupVaultResponse> RevokeRestoreAccessBackupVaultAsync(RevokeRestoreAccessBackupVaultRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

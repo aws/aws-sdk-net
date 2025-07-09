@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This release enables customers to create Multi-party approval teams and approval requests to protect supported operations.",
+  "generate-client-constructors": true
+}

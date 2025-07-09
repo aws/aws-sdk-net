@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private ProjectStatus _projectStatus;
         private ServiceCatalogProvisionedProductDetails _serviceCatalogProvisionedProductDetails;
         private ServiceCatalogProvisioningDetails _serviceCatalogProvisioningDetails;
+        private List<TemplateProviderDetail> _templateProviderDetails = AWSConfigs.InitializeCollections ? new List<TemplateProviderDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedBy.
@@ -243,6 +244,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetServiceCatalogProvisioningDetails()
         {
             return this._serviceCatalogProvisioningDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateProviderDetails. 
+        /// <para>
+        ///  An array of template providers associated with the project. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<TemplateProviderDetail> TemplateProviderDetails
+        {
+            get { return this._templateProviderDetails; }
+            set { this._templateProviderDetails = value; }
+        }
+
+        // Check to see if TemplateProviderDetails property is set
+        internal bool IsSetTemplateProviderDetails()
+        {
+            return this._templateProviderDetails != null && (this._templateProviderDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

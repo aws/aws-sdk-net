@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Campaign _campaign;
         private Channel _channel;
+        private ChatMetrics _chatMetrics;
         private DateTime? _connectedToSystemTimestamp;
         private string _contactAssociationId;
         private ContactDetails _contactDetails;
@@ -204,6 +205,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetChannel()
         {
             return this._channel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChatMetrics. 
+        /// <para>
+        /// Information about how agent, bot, and customer interact in a chat contact.
+        /// </para>
+        /// </summary>
+        public ChatMetrics ChatMetrics
+        {
+            get { return this._chatMetrics; }
+            set { this._chatMetrics = value; }
+        }
+
+        // Check to see if ChatMetrics property is set
+        internal bool IsSetChatMetrics()
+        {
+            return this._chatMetrics != null;
         }
 
         /// <summary>

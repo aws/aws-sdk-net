@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// ConstantQueryString Request Marshaller
     /// </summary>       
-    public class ConstantQueryStringRequestMarshaller : IMarshaller<IRequest, ConstantQueryStringRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ConstantQueryStringRequestMarshaller : IMarshaller<IRequest, ConstantQueryStringRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,6 +65,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/ConstantQueryString/{hello}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ConstantQueryStringRequestMarshaller _instance = new ConstantQueryStringRequestMarshaller();        
@@ -85,5 +86,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ConstantQueryStringRequest publicRequest);
     }    
 }

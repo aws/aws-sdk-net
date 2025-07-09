@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// CopyDistribution Request Marshaller
     /// </summary>       
-    public class CopyDistributionRequestMarshaller : IMarshaller<IRequest, CopyDistributionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class CopyDistributionRequestMarshaller : IMarshaller<IRequest, CopyDistributionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -71,6 +71,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonCloudFrontException("Request object does not have required field PrimaryDistributionId set");
             request.AddPathResource("{PrimaryDistributionId}", StringUtils.FromString(publicRequest.PrimaryDistributionId));
             request.ResourcePath = "/2020-05-31/distribution/{PrimaryDistributionId}/copy";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -96,7 +97,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CopyDistributionRequestMarshaller _instance = new CopyDistributionRequestMarshaller();        
@@ -117,5 +118,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, CopyDistributionRequest publicRequest);
     }    
 }

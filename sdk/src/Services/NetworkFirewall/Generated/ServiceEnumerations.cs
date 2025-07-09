@@ -825,6 +825,10 @@ namespace Amazon.NetworkFirewall
     {
 
         /// <summary>
+        /// Constant ACTIVE_THREAT_DEFENSE for ResourceManagedType
+        /// </summary>
+        public static readonly ResourceManagedType ACTIVE_THREAT_DEFENSE = new ResourceManagedType("ACTIVE_THREAT_DEFENSE");
+        /// <summary>
         /// Constant AWS_MANAGED_DOMAIN_LISTS for ResourceManagedType
         /// </summary>
         public static readonly ResourceManagedType AWS_MANAGED_DOMAIN_LISTS = new ResourceManagedType("AWS_MANAGED_DOMAIN_LISTS");
@@ -1211,6 +1215,10 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         public static readonly StatefulRuleProtocol HTTP = new StatefulRuleProtocol("HTTP");
         /// <summary>
+        /// Constant HTTP2 for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol HTTP2 = new StatefulRuleProtocol("HTTP2");
+        /// <summary>
         /// Constant ICMP for StatefulRuleProtocol
         /// </summary>
         public static readonly StatefulRuleProtocol ICMP = new StatefulRuleProtocol("ICMP");
@@ -1238,6 +1246,10 @@ namespace Amazon.NetworkFirewall
         /// Constant NTP for StatefulRuleProtocol
         /// </summary>
         public static readonly StatefulRuleProtocol NTP = new StatefulRuleProtocol("NTP");
+        /// <summary>
+        /// Constant QUIC for StatefulRuleProtocol
+        /// </summary>
+        public static readonly StatefulRuleProtocol QUIC = new StatefulRuleProtocol("QUIC");
         /// <summary>
         /// Constant SMB for StatefulRuleProtocol
         /// </summary>
@@ -1350,6 +1362,60 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StreamExceptionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SummaryRuleOption.
+    /// </summary>
+    public class SummaryRuleOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant METADATA for SummaryRuleOption
+        /// </summary>
+        public static readonly SummaryRuleOption METADATA = new SummaryRuleOption("METADATA");
+        /// <summary>
+        /// Constant MSG for SummaryRuleOption
+        /// </summary>
+        public static readonly SummaryRuleOption MSG = new SummaryRuleOption("MSG");
+        /// <summary>
+        /// Constant SID for SummaryRuleOption
+        /// </summary>
+        public static readonly SummaryRuleOption SID = new SummaryRuleOption("SID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SummaryRuleOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SummaryRuleOption FindValue(string value)
+        {
+            return FindValue<SummaryRuleOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SummaryRuleOption(string value)
         {
             return FindValue(value);
         }
@@ -1474,6 +1540,84 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TCPFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayAttachmentStatus.
+    /// </summary>
+    public class TransitGatewayAttachmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus CREATING = new TransitGatewayAttachmentStatus("CREATING");
+        /// <summary>
+        /// Constant DELETED for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus DELETED = new TransitGatewayAttachmentStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus DELETING = new TransitGatewayAttachmentStatus("DELETING");
+        /// <summary>
+        /// Constant ERROR for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus ERROR = new TransitGatewayAttachmentStatus("ERROR");
+        /// <summary>
+        /// Constant FAILED for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus FAILED = new TransitGatewayAttachmentStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING_ACCEPTANCE for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus PENDING_ACCEPTANCE = new TransitGatewayAttachmentStatus("PENDING_ACCEPTANCE");
+        /// <summary>
+        /// Constant READY for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus READY = new TransitGatewayAttachmentStatus("READY");
+        /// <summary>
+        /// Constant REJECTED for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus REJECTED = new TransitGatewayAttachmentStatus("REJECTED");
+        /// <summary>
+        /// Constant REJECTING for TransitGatewayAttachmentStatus
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatus REJECTING = new TransitGatewayAttachmentStatus("REJECTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayAttachmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayAttachmentStatus FindValue(string value)
+        {
+            return FindValue<TransitGatewayAttachmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayAttachmentStatus(string value)
         {
             return FindValue(value);
         }

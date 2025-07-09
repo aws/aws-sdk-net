@@ -144,6 +144,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetSummaryConfiguration())
+            {
+                context.Writer.WritePropertyName("SummaryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SummaryConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SummaryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListHostedZonesByName Request Marshaller
     /// </summary>       
-    public class ListHostedZonesByNameRequestMarshaller : IMarshaller<IRequest, ListHostedZonesByNameRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListHostedZonesByNameRequestMarshaller : IMarshaller<IRequest, ListHostedZonesByNameRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,8 +68,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxitems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2013-04-01/hostedzonesbyname";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListHostedZonesByNameRequestMarshaller _instance = new ListHostedZonesByNameRequestMarshaller();        
@@ -90,5 +91,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListHostedZonesByNameRequest publicRequest);
     }    
 }

@@ -34,8 +34,28 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class IcebergInput
     {
+        private CreateIcebergTableInput _createIcebergTableInput;
         private MetadataOperation _metadataOperation;
         private string _version;
+
+        /// <summary>
+        /// Gets and sets the property CreateIcebergTableInput. 
+        /// <para>
+        /// The configuration parameters required to create a new Iceberg table in the Glue Data
+        /// Catalog, including table properties and metadata specifications.
+        /// </para>
+        /// </summary>
+        public CreateIcebergTableInput CreateIcebergTableInput
+        {
+            get { return this._createIcebergTableInput; }
+            set { this._createIcebergTableInput = value; }
+        }
+
+        // Check to see if CreateIcebergTableInput property is set
+        internal bool IsSetCreateIcebergTableInput()
+        {
+            return this._createIcebergTableInput != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MetadataOperation. 

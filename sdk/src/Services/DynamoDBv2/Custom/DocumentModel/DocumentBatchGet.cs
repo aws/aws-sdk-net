@@ -17,9 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 
@@ -181,7 +179,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiBatchGet resultsObject = new MultiBatchGet
@@ -201,7 +198,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Results = new List<Document>();
             }
         }
-#endif
 
         internal void AddKey(Document document)
         {
@@ -324,7 +320,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             var errMsg = $"All {nameof(IDocumentBatchGet)} objects must be of type {nameof(DocumentBatchGet)}";
@@ -349,7 +344,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
         }
-#endif
 
         #endregion
 
@@ -391,7 +385,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return GetItemsHelper();
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Gets items configured in Batches from the server asynchronously
         /// </summary>
@@ -421,7 +414,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return itemsAsDocuments;
         }
-#endif
 
         internal Dictionary<string, List<Document>> GetItemsHelper()
         {
@@ -444,7 +436,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return itemsAsDocuments;
         }
 
-#if AWS_ASYNC_API 
         private async Task<Results> GetAttributeItemsAsync(CancellationToken cancellationToken)
         {
             var results = new Results(Batches);
@@ -471,7 +462,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return results;
         }
-#endif
 
         private Results GetAttributeItems()
         {
@@ -528,7 +518,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             } while (request.RequestItems.Count > 0);
         }
 
-#if AWS_ASYNC_API
         private static async Task CallUntilCompletionAsync(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults, CancellationToken cancellationToken)
         {
             do
@@ -545,7 +534,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 request.RequestItems = serviceResponse.UnprocessedKeys;
             } while (request.RequestItems.Count > 0);
         }
-#endif
 
         private static BatchGetItemRequest CreateRequest(Dictionary<string, RequestSet> set)
         {

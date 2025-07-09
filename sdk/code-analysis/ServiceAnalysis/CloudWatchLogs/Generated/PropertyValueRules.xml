@@ -198,7 +198,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DeleteQueryDefinitionRequest.QueryDefinitionId</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -710,7 +710,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.QueryId</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -810,7 +810,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ListLogGroupsForQueryRequest.QueryId</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -971,7 +971,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionRequest.QueryDefinitionId</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -981,7 +981,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutQueryDefinitionResponse.QueryDefinitionId</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1057,12 +1057,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.StartQueryResponse.QueryId</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.StopQueryRequest.QueryId</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1803,6 +1803,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ParseToOCSF.Source</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ParseVPC.Source</property>
     <min>1</min>
     <max>128</max>
@@ -1836,7 +1841,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.QueryDefinition.QueryDefinitionId</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -1856,7 +1861,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.QueryInfo.QueryId</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

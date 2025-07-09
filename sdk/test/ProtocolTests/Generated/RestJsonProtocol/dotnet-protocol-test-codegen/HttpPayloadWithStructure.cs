@@ -110,5 +110,34 @@ namespace AWSSDK.ProtocolTests.RestJson
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
+        /// <summary>
+        /// Serializes a structure in the payload
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonHttpPayloadWithStructureAndEmptyResponseBodyResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            byte[] bytes = Encoding.ASCII.GetBytes("");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new HttpPayloadWithStructureResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new HttpPayloadWithStructureResponse
+            {
+                Nested = null,
+            };
+
+            // Assert
+            var actualResponse = (HttpPayloadWithStructureResponse)unmarshalledResponse;
+            Comparer.CompareObjects<HttpPayloadWithStructureResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
     }
 }

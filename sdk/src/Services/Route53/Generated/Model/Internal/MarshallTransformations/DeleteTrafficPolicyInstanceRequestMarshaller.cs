@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteTrafficPolicyInstance Request Marshaller
     /// </summary>       
-    public class DeleteTrafficPolicyInstanceRequestMarshaller : IMarshaller<IRequest, DeleteTrafficPolicyInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteTrafficPolicyInstanceRequestMarshaller : IMarshaller<IRequest, DeleteTrafficPolicyInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/trafficpolicyinstance/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteTrafficPolicyInstanceRequestMarshaller _instance = new DeleteTrafficPolicyInstanceRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteTrafficPolicyInstanceRequest publicRequest);
     }    
 }

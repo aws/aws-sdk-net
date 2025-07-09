@@ -31,7 +31,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRoleDescription operation.
-    /// Use <a>UpdateRole</a> instead.
+    /// Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html">UpdateRole</a>
+    /// instead.
     /// 
     ///  
     /// <para>

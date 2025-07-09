@@ -66,7 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the document for which you are the owner.
+        /// The name of the document for which you are the owner. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

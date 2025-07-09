@@ -36,7 +36,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
     /// <summary>
     /// TestOperation Request Marshaller
     /// </summary>       
-    public class TestOperationRequestMarshaller : IMarshaller<IRequest, TestOperationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class TestOperationRequestMarshaller : IMarshaller<IRequest, TestOperationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -70,6 +70,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static TestOperationRequestMarshaller _instance = new TestOperationRequestMarshaller();        
@@ -90,5 +91,6 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, TestOperationRequest publicRequest);
     }    
 }

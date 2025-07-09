@@ -112,7 +112,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// length is 4096 bytes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4224)]
         public string CipherText
         {
             get { return this._cipherText; }

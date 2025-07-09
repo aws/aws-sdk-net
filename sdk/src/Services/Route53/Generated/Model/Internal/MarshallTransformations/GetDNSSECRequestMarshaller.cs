@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetDNSSEC Request Marshaller
     /// </summary>       
-    public class GetDNSSECRequestMarshaller : IMarshaller<IRequest, GetDNSSECRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetDNSSECRequestMarshaller : IMarshaller<IRequest, GetDNSSECRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}/dnssec";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetDNSSECRequestMarshaller _instance = new GetDNSSECRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetDNSSECRequest publicRequest);
     }    
 }

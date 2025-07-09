@@ -176,6 +176,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void GetBucketLocation()
+        {
+            using (var runner = new BucketRegionTestRunner())
+            {
+                var nonUsEast1Bucket = S3TestUtils.CreateBucketWithWait(runner.USWest1Client);
+                try
+                {
+                    var nonNullocationResponse = runner.USWest1Client.GetBucketLocation(nonUsEast1Bucket);
+                    Assert.IsNotNull(nonNullocationResponse.Location);
+                    Assert.AreEqual(RegionEndpoint.USWest1.SystemName, nonNullocationResponse.Location.ToString());
+                }
+                finally
+                {
+                    runner.USWest1Client.DeleteBucket(new DeleteBucketRequest
+                    {
+                        BucketName = nonUsEast1Bucket
+                    });
+                }
+
+                // Buckets in us-east-1 have a LocationConstraint of null.
+                var usEast1Bucket = S3TestUtils.CreateBucketWithWait(runner.USEast1Client);
+                try
+                {
+                    var nullLocationResponse = runner.USEast1Client.GetBucketLocation(usEast1Bucket);
+                    Assert.IsTrue(string.IsNullOrEmpty(nullLocationResponse.Location));
+                }
+                finally
+                {
+                    runner.USEast1Client.DeleteBucket(new DeleteBucketRequest
+                    {
+                        BucketName = usEast1Bucket
+                    });
+                }
+            }
+        }
+
 
         private HttpStatusCode GetHttpStatusCode(string url)
         {

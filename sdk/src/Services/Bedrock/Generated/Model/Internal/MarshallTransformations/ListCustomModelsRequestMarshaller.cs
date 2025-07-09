@@ -81,6 +81,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
+            if (publicRequest.IsSetModelStatus())
+                request.Parameters.Add("modelStatus", StringUtils.FromString(publicRequest.ModelStatus));
+            
             if (publicRequest.IsSetNameContains())
                 request.Parameters.Add("nameContains", StringUtils.FromString(publicRequest.NameContains));
             

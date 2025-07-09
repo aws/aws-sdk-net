@@ -97,6 +97,17 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetCdcSpecification())
+            {
+                context.Writer.WritePropertyName("cdcSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CdcSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CdcSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientSideTimestamps())
             {
                 context.Writer.WritePropertyName("clientSideTimestamps");

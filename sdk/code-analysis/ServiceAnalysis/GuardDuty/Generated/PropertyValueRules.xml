@@ -583,8 +583,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.AccountDetail.Email</property>
-    <min>1</min>
+    <min>6</min>
     <max>64</max>
+    <pattern>See rules in parameter description</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ActorProcess.Name</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ActorProcess.Path</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ActorProcess.Sha256</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.AdminAccount.AdminStatus</property>
@@ -600,6 +616,11 @@
     <property>Amazon.GuardDuty.Model.CloudTrailConfigurationResult.Status</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ContainerFindingResource.ImageUid</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.CoverageResource.AccountId</property>
@@ -678,8 +699,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.Member.Email</property>
-    <min>1</min>
+    <min>6</min>
     <max>64</max>
+    <pattern>See rules in parameter description</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.MemberDataSourceConfiguration.AccountId</property>

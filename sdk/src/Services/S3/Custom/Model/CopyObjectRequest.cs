@@ -811,6 +811,16 @@ namespace Amazon.S3.Model
         /// encryption-related request headers, you must ensure the encryption key is the same customer managed key that you specified for the directory bucket's default encryption configuration. 
         /// </para>
         /// </li>
+        /// <li> 
+        /// <para>
+        /// <b>S3 access points for Amazon FSx </b> - When accessing data stored in Amazon FSx
+        /// file systems using S3 access points, the only valid server side encryption option
+        /// is <c>aws:fsx</c>. All Amazon FSx file systems have encryption configured by default
+        /// and are encrypted at rest. Data is automatically encrypted before being written to
+        /// the file system, and automatically decrypted as it is read. These processes are handled
+        /// transparently by Amazon FSx.
+        /// </para>
+        /// </li>
         /// </ul>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod

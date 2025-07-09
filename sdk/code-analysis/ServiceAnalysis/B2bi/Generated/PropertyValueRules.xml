@@ -808,6 +808,25 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.B2bi.Model.WrapOptions.LineLength</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12ControlNumbers.StartingFunctionalGroupControlNumber</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12ControlNumbers.StartingInterchangeControlNumber</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12ControlNumbers.StartingTransactionSetControlNumber</property>
+    <min>1</min>
+    <max>999999999</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.B2bi.Model.X12Delimiters.ComponentSeparator</property>
     <min>1</min>
     <max>1</max>

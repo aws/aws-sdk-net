@@ -52,6 +52,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CmafEncryptionMethod);
             }
 
+            if(requestObject.IsSetIsmEncryptionMethod())
+            {
+                context.Writer.WritePropertyName("IsmEncryptionMethod");
+                context.Writer.WriteStringValue(requestObject.IsmEncryptionMethod);
+            }
+
             if(requestObject.IsSetTsEncryptionMethod())
             {
                 context.Writer.WritePropertyName("TsEncryptionMethod");

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteAccessPointPolicyForObjectLambda Request Marshaller
     /// </summary>       
-    public class DeleteAccessPointPolicyForObjectLambdaRequestMarshaller : IMarshaller<IRequest, DeleteAccessPointPolicyForObjectLambdaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteAccessPointPolicyForObjectLambdaRequestMarshaller : IMarshaller<IRequest, DeleteAccessPointPolicyForObjectLambdaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accesspointforobjectlambda/{name}/policy";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteAccessPointPolicyForObjectLambdaRequestMarshaller _instance = new DeleteAccessPointPolicyForObjectLambdaRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteAccessPointPolicyForObjectLambdaRequest publicRequest);
     }    
 }

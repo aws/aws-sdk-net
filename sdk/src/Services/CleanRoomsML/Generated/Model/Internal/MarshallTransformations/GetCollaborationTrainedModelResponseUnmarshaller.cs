@@ -82,6 +82,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("incrementalTrainingDataChannels", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<IncrementalTrainingDataChannelOutput, IncrementalTrainingDataChannelOutputUnmarshaller>(IncrementalTrainingDataChannelOutputUnmarshaller.Instance);
+                    response.IncrementalTrainingDataChannels = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("logsStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -154,10 +160,22 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.TrainingContainerImageDigest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("trainingInputMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TrainingInputMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("updateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdateTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("versionIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -192,6 +210,10 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                {
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {

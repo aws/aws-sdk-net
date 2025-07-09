@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ChangeCidrCollection Request Marshaller
     /// </summary>       
-    public class ChangeCidrCollectionRequestMarshaller : IMarshaller<IRequest, ChangeCidrCollectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ChangeCidrCollectionRequestMarshaller : IMarshaller<IRequest, ChangeCidrCollectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -61,6 +61,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonRoute53Exception("Request object does not have required field Id set");
             request.AddPathResource("{CidrCollectionId}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/2013-04-01/cidrcollection/{CidrCollectionId}";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -113,7 +114,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ChangeCidrCollectionRequestMarshaller _instance = new ChangeCidrCollectionRequestMarshaller();        
@@ -134,5 +135,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ChangeCidrCollectionRequest publicRequest);
     }    
 }

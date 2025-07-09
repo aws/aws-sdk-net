@@ -1104,12 +1104,20 @@ namespace Amazon.ECR
         /// 
         ///  <note> 
         /// <para>
-        /// Beginning with Docker version 1.9, the Docker client compresses image layers before
+        /// Starting with Docker version 1.9, the Docker client compresses image layers before
         /// pushing them to a V2 Docker registry. The output of the <c>docker images</c> command
-        /// shows the uncompressed image size, so it may return a larger image size than the image
-        /// sizes returned by <a>DescribeImages</a>.
+        /// shows the uncompressed image size. Therefore, Docker might return a larger image than
+        /// the image shown in the Amazon Web Services Management Console.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// The new version of Amazon ECR <i>Basic Scanning</i> doesn't use the <a>ImageDetail$imageScanFindingsSummary</a>
+        /// and <a>ImageDetail$imageScanStatus</a> attributes from the API response to return
+        /// scan results. Use the <a>DescribeImageScanFindings</a> API instead. For more information
+        /// about Amazon Web Services native basic scanning, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">
+        /// Scan images for software vulnerabilities in Amazon ECR</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
         /// <param name="cancellationToken">

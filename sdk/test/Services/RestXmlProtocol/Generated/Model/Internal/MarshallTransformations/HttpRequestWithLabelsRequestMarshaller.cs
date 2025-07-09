@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// HttpRequestWithLabels Request Marshaller
     /// </summary>       
-    public class HttpRequestWithLabelsRequestMarshaller : IMarshaller<IRequest, HttpRequestWithLabelsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class HttpRequestWithLabelsRequestMarshaller : IMarshaller<IRequest, HttpRequestWithLabelsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -84,6 +84,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/HttpRequestWithLabels/{string}/{short}/{integer}/{long}/{float}/{double}/{boolean}/{timestamp}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpRequestWithLabelsRequestMarshaller _instance = new HttpRequestWithLabelsRequestMarshaller();        
@@ -104,5 +105,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithLabelsRequest publicRequest);
     }    
 }

@@ -34,6 +34,46 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class EnableOrganizationAdminAccountResponse : AmazonWebServiceResponse
     {
+        private string _adminAccountId;
+        private SecurityHubFeature _feature;
+
+        /// <summary>
+        /// Gets and sets the property AdminAccountId. 
+        /// <para>
+        /// The Amazon Web Services account identifier of the account to designate as the Security
+        /// Hub administrator account.
+        /// </para>
+        /// </summary>
+        public string AdminAccountId
+        {
+            get { return this._adminAccountId; }
+            set { this._adminAccountId = value; }
+        }
+
+        // Check to see if AdminAccountId property is set
+        internal bool IsSetAdminAccountId()
+        {
+            return this._adminAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Feature. 
+        /// <para>
+        /// The feature where the delegated administrator is enabled. The default is Security
+        /// Hub CSPM if no delegated administrator is specified in the request.
+        /// </para>
+        /// </summary>
+        public SecurityHubFeature Feature
+        {
+            get { return this._feature; }
+            set { this._feature = value; }
+        }
+
+        // Check to see if Feature property is set
+        internal bool IsSetFeature()
+        {
+            return this._feature != null;
+        }
 
     }
 }

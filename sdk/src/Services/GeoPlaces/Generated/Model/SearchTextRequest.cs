@@ -31,9 +31,8 @@ namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchText operation.
-    /// Use the <c>SearchText</c> operation to search for geocode and place information. You
-    /// can then complete a follow-up query suggested from the <c>Suggest</c> API via a query
-    /// id.
+    /// <c>SearchText</c> searches for geocode and place information. You can then complete
+    /// a follow-up query suggested from the <c>Suggest</c> API via a query id.
     /// </summary>
     public partial class SearchTextRequest : AmazonGeoPlacesRequest
     {
@@ -110,7 +109,7 @@ namespace Amazon.GeoPlaces.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// A structure which contains a set of inclusion/exclusion properties that results must
-        /// posses in order to be returned as a result.
+        /// possess in order to be returned as a result.
         /// </para>
         /// </summary>
         public SearchTextFilter Filter
@@ -130,6 +129,14 @@ namespace Amazon.GeoPlaces.Model
         /// <para>
         /// Indicates if the results will be stored. Defaults to <c>SingleUse</c>, if left empty.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Storing the response of an SearchText query is required to comply with service terms,
+        /// but charged at a higher cost per request. Please review the <a href="https://aws.amazon.com/location/sla/">user
+        /// agreement</a> and <a href="https://aws.amazon.com/location/pricing/">service pricing
+        /// structure</a> to determine the correct setting for your use case.
+        /// </para>
+        ///  </note>
         /// </summary>
         public SearchTextIntendedUse IntendedUse
         {
@@ -231,7 +238,7 @@ namespace Amazon.GeoPlaces.Model
         /// through the point of view of the specified country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Sensitive=true, Min=2, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -247,10 +254,17 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The query Id.
+        /// The query Id returned by the suggest API. If passed in the request, the SearchText
+        /// API will preform a SearchText query with the improved query terms for the original
+        /// query made to the suggest API.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=400)]
+        [AWSProperty(Sensitive=true, Min=1, Max=500)]
         public string QueryId
         {
             get { return this._queryId; }
@@ -269,6 +283,11 @@ namespace Amazon.GeoPlaces.Model
         /// The free-form text query to match addresses against. This is usually a partially typed
         /// address from an end user in an address box or form.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The fields <c>QueryText</c>, and <c>QueryID</c> are mutually exclusive.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
         public string QueryText

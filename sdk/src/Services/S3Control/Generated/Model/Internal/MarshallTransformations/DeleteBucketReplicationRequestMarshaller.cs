@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteBucketReplication Request Marshaller
     /// </summary>       
-    public class DeleteBucketReplicationRequestMarshaller : IMarshaller<IRequest, DeleteBucketReplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteBucketReplicationRequestMarshaller : IMarshaller<IRequest, DeleteBucketReplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/bucket/{name}/replication";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteBucketReplicationRequestMarshaller _instance = new DeleteBucketReplicationRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketReplicationRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetDistributionTenantByDomain Request Marshaller
     /// </summary>       
-    public class GetDistributionTenantByDomainRequestMarshaller : IMarshaller<IRequest, GetDistributionTenantByDomainRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetDistributionTenantByDomainRequestMarshaller : IMarshaller<IRequest, GetDistributionTenantByDomainRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -62,8 +62,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
             request.ResourcePath = "/2020-05-31/distribution-tenant";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetDistributionTenantByDomainRequestMarshaller _instance = new GetDistributionTenantByDomainRequestMarshaller();        
@@ -84,5 +85,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetDistributionTenantByDomainRequest publicRequest);
     }    
 }

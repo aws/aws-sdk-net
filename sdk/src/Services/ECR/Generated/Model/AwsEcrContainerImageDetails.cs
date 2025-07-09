@@ -38,6 +38,8 @@ namespace Amazon.ECR.Model
         private string _author;
         private string _imageHash;
         private List<string> _imageTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private long? _inUseCount;
+        private DateTime? _lastInUseAt;
         private string _platform;
         private DateTime? _pushedAt;
         private string _registry;
@@ -118,6 +120,43 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageTags()
         {
             return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InUseCount. 
+        /// <para>
+        /// The number of Amazon ECS or Amazon EKS clusters currently running the image.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long? InUseCount
+        {
+            get { return this._inUseCount; }
+            set { this._inUseCount = value; }
+        }
+
+        // Check to see if InUseCount property is set
+        internal bool IsSetInUseCount()
+        {
+            return this._inUseCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastInUseAt. 
+        /// <para>
+        /// The most recent date and time a cluster was running the image.
+        /// </para>
+        /// </summary>
+        public DateTime? LastInUseAt
+        {
+            get { return this._lastInUseAt; }
+            set { this._lastInUseAt = value; }
+        }
+
+        // Check to see if LastInUseAt property is set
+        internal bool IsSetLastInUseAt()
+        {
+            return this._lastInUseAt.HasValue; 
         }
 
         /// <summary>

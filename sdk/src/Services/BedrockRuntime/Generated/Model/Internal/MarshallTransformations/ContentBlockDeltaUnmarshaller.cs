@@ -56,6 +56,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("citation", targetDepth))
+                {
+                    var unmarshaller = CitationsDeltaUnmarshaller.Instance;
+                    unmarshalledObject.Citation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("reasoningContent", targetDepth))
                 {
                     var unmarshaller = ReasoningContentBlockDeltaUnmarshaller.Instance;

@@ -14,10 +14,8 @@
  */
 
 using Amazon.Runtime.Internal.Auth;
-#if AWS_ASYNC_API 
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime
 {
@@ -39,7 +37,6 @@ namespace Amazon.Runtime
         bool TryResolveToken(out AWSToken token);
 #endif
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Attempts to load an <see cref="AWSToken"/>.
         /// <para />
@@ -47,6 +44,5 @@ namespace Amazon.Runtime
         /// exception.
         /// </summary>
         Task<TryResponse<AWSToken>> TryResolveTokenAsync(CancellationToken cancellationToken = default);
-#endif
     }
 }

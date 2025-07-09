@@ -239,6 +239,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ContainerType CMAF = new ContainerType("CMAF");
         /// <summary>
+        /// Constant ISM for ContainerType
+        /// </summary>
+        public static readonly ContainerType ISM = new ContainerType("ISM");
+        /// <summary>
         /// Constant TS for ContainerType
         /// </summary>
         public static readonly ContainerType TS = new ContainerType("TS");
@@ -873,6 +877,102 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type IsmEncryptionMethod.
+    /// </summary>
+    public class IsmEncryptionMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CENC for IsmEncryptionMethod
+        /// </summary>
+        public static readonly IsmEncryptionMethod CENC = new IsmEncryptionMethod("CENC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IsmEncryptionMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IsmEncryptionMethod FindValue(string value)
+        {
+            return FindValue<IsmEncryptionMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IsmEncryptionMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MssManifestLayout.
+    /// </summary>
+    public class MssManifestLayout : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPACT for MssManifestLayout
+        /// </summary>
+        public static readonly MssManifestLayout COMPACT = new MssManifestLayout("COMPACT");
+        /// <summary>
+        /// Constant FULL for MssManifestLayout
+        /// </summary>
+        public static readonly MssManifestLayout FULL = new MssManifestLayout("FULL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MssManifestLayout(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MssManifestLayout FindValue(string value)
+        {
+            return FindValue<MssManifestLayout>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MssManifestLayout(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PresetSpeke20Audio.
     /// </summary>
     public class PresetSpeke20Audio : ConstantClass
@@ -1217,6 +1317,14 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType CLIP_START_TIME_WITH_START_OR_END = new ValidationExceptionType("CLIP_START_TIME_WITH_START_OR_END");
         /// <summary>
+        /// Constant CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST = new ValidationExceptionType("CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST");
+        /// <summary>
+        /// Constant CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE = new ValidationExceptionType("CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE");
+        /// <summary>
         /// Constant CONTAINER_TYPE_IMMUTABLE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType CONTAINER_TYPE_IMMUTABLE = new ValidationExceptionType("CONTAINER_TYPE_IMMUTABLE");
@@ -1244,6 +1352,10 @@ namespace Amazon.MediaPackageV2
         /// Constant ENCRYPTION_CONTRACT_UNENCRYPTED for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType ENCRYPTION_CONTRACT_UNENCRYPTED = new ValidationExceptionType("ENCRYPTION_CONTRACT_UNENCRYPTED");
+        /// <summary>
+        /// Constant ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE = new ValidationExceptionType("ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE");
         /// <summary>
         /// Constant ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE for ValidationExceptionType
         /// </summary>
@@ -1320,6 +1432,26 @@ namespace Amazon.MediaPackageV2
         /// Constant INVALID_TIME_DELAY_SECONDS for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType INVALID_TIME_DELAY_SECONDS = new ValidationExceptionType("INVALID_TIME_DELAY_SECONDS");
+        /// <summary>
+        /// Constant ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST = new ValidationExceptionType("ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST");
+        /// <summary>
+        /// Constant ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST = new ValidationExceptionType("ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST");
+        /// <summary>
+        /// Constant ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST = new ValidationExceptionType("ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST");
+        /// <summary>
+        /// Constant ISM_CONTAINER_TYPE_WITH_SCTE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_TYPE_WITH_SCTE = new ValidationExceptionType("ISM_CONTAINER_TYPE_WITH_SCTE");
+        /// <summary>
+        /// Constant ISM_CONTAINER_WITH_KEY_ROTATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_WITH_KEY_ROTATION = new ValidationExceptionType("ISM_CONTAINER_WITH_KEY_ROTATION");
         /// <summary>
         /// Constant MANIFEST_DRM_SYSTEMS_INCOMPATIBLE for ValidationExceptionType
         /// </summary>
@@ -1420,6 +1552,10 @@ namespace Amazon.MediaPackageV2
         /// Constant TS_CONTAINER_TYPE_WITH_DASH_MANIFEST for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType TS_CONTAINER_TYPE_WITH_DASH_MANIFEST = new ValidationExceptionType("TS_CONTAINER_TYPE_WITH_DASH_MANIFEST");
+        /// <summary>
+        /// Constant TS_CONTAINER_TYPE_WITH_MSS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType TS_CONTAINER_TYPE_WITH_MSS_MANIFEST = new ValidationExceptionType("TS_CONTAINER_TYPE_WITH_MSS_MANIFEST");
         /// <summary>
         /// Constant UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION for ValidationExceptionType
         /// </summary>

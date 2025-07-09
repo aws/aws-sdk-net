@@ -127,6 +127,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("odbNetworkArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OdbNetworkArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("origin", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

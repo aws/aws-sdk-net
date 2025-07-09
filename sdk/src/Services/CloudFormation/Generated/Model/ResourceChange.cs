@@ -72,8 +72,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AfterContext. 
         /// <para>
-        /// An encoded JSON string containing the context of the resource after the change is
-        /// executed.
+        /// An encoded JSON string that contains the context of the resource after the change
+        /// is executed.
         /// </para>
         /// </summary>
         public string AfterContext
@@ -91,8 +91,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property BeforeContext. 
         /// <para>
-        /// An encoded JSON string containing the context of the resource before the change is
-        /// executed.
+        /// An encoded JSON string that contains the context of the resource before the change
+        /// is executed.
         /// </para>
         /// </summary>
         public string BeforeContext

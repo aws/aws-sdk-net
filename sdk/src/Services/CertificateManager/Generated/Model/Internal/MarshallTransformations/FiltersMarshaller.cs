@@ -46,6 +46,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetExportOption())
+            {
+                context.Writer.WritePropertyName("exportOption");
+                context.Writer.WriteStringValue(requestObject.ExportOption);
+            }
+
             if(requestObject.IsSetExtendedKeyUsage())
             {
                 context.Writer.WritePropertyName("extendedKeyUsage");

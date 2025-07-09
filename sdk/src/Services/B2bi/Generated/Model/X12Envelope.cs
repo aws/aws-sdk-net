@@ -55,6 +55,7 @@ namespace Amazon.B2bi.Model
     public partial class X12Envelope
     {
         private X12OutboundEdiHeaders _common;
+        private WrapOptions _wrapOptions;
 
         /// <summary>
         /// Gets and sets the property Common. 
@@ -72,6 +73,21 @@ namespace Amazon.B2bi.Model
         internal bool IsSetCommon()
         {
             return this._common != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WrapOptions.
+        /// </summary>
+        public WrapOptions WrapOptions
+        {
+            get { return this._wrapOptions; }
+            set { this._wrapOptions = value; }
+        }
+
+        // Check to see if WrapOptions property is set
+        internal bool IsSetWrapOptions()
+        {
+            return this._wrapOptions != null;
         }
 
     }

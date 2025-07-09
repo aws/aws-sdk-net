@@ -37,6 +37,7 @@ namespace Amazon.CleanRoomsML.Model
     {
         private string _membershipIdentifier;
         private string _trainedModelArn;
+        private string _versionIdentifier;
 
         /// <summary>
         /// Gets and sets the property MembershipIdentifier. 
@@ -74,6 +75,31 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetTrainedModelArn()
         {
             return this._trainedModelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionIdentifier. 
+        /// <para>
+        /// The version identifier of the trained model to cancel. This parameter allows you to
+        /// specify which version of the trained model you want to cancel when multiple versions
+        /// exist.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>versionIdentifier</c> is not specified, the base model will be cancelled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string VersionIdentifier
+        {
+            get { return this._versionIdentifier; }
+            set { this._versionIdentifier = value; }
+        }
+
+        // Check to see if VersionIdentifier property is set
+        internal bool IsSetVersionIdentifier()
+        {
+            return this._versionIdentifier != null;
         }
 
     }

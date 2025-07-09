@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             DeleteRecommenderConfigurationResponse response = new DeleteRecommenderConfigurationResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = RecommenderConfigurationResponseUnmarshaller.Instance;
             response.RecommenderConfigurationResponse = unmarshaller.Unmarshall(context, ref reader);
 

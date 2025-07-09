@@ -32,6 +32,13 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the DescribeStackSet operation.
     /// Returns the description of the specified StackSet.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API provides <i>strongly consistent</i> reads meaning it will always return the
+    /// most up-to-date data.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeStackSetRequest : AmazonCloudFormationRequest
     {

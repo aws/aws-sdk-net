@@ -91,5 +91,13 @@ namespace Amazon.CustomerProfiles.Model
         {
             return new ListSegmentDefinitionsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListUploadJobs operation
+        ///</summary>
+        public IListUploadJobsPaginator ListUploadJobs(ListUploadJobsRequest request) 
+        {
+            return new ListUploadJobsPaginator(this.client, request);
+        }
     }
 }

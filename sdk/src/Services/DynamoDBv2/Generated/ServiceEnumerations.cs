@@ -1507,6 +1507,14 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         public static readonly ReplicaStatus ACTIVE = new ReplicaStatus("ACTIVE");
         /// <summary>
+        /// Constant ARCHIVED for ReplicaStatus
+        /// </summary>
+        public static readonly ReplicaStatus ARCHIVED = new ReplicaStatus("ARCHIVED");
+        /// <summary>
+        /// Constant ARCHIVING for ReplicaStatus
+        /// </summary>
+        public static readonly ReplicaStatus ARCHIVING = new ReplicaStatus("ARCHIVING");
+        /// <summary>
         /// Constant CREATING for ReplicaStatus
         /// </summary>
         public static readonly ReplicaStatus CREATING = new ReplicaStatus("CREATING");
@@ -1526,6 +1534,10 @@ namespace Amazon.DynamoDBv2
         /// Constant REGION_DISABLED for ReplicaStatus
         /// </summary>
         public static readonly ReplicaStatus REGION_DISABLED = new ReplicaStatus("REGION_DISABLED");
+        /// <summary>
+        /// Constant REPLICATION_NOT_AUTHORIZED for ReplicaStatus
+        /// </summary>
+        public static readonly ReplicaStatus REPLICATION_NOT_AUTHORIZED = new ReplicaStatus("REPLICATION_NOT_AUTHORIZED");
         /// <summary>
         /// Constant UPDATING for ReplicaStatus
         /// </summary>
@@ -2195,6 +2207,10 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         public static readonly TableStatus INACCESSIBLE_ENCRYPTION_CREDENTIALS = new TableStatus("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
         /// <summary>
+        /// Constant REPLICATION_NOT_AUTHORIZED for TableStatus
+        /// </summary>
+        public static readonly TableStatus REPLICATION_NOT_AUTHORIZED = new TableStatus("REPLICATION_NOT_AUTHORIZED");
+        /// <summary>
         /// Constant UPDATING for TableStatus
         /// </summary>
         public static readonly TableStatus UPDATING = new TableStatus("UPDATING");
@@ -2286,6 +2302,60 @@ namespace Amazon.DynamoDBv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimeToLiveStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WitnessStatus.
+    /// </summary>
+    public class WitnessStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for WitnessStatus
+        /// </summary>
+        public static readonly WitnessStatus ACTIVE = new WitnessStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for WitnessStatus
+        /// </summary>
+        public static readonly WitnessStatus CREATING = new WitnessStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for WitnessStatus
+        /// </summary>
+        public static readonly WitnessStatus DELETING = new WitnessStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WitnessStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WitnessStatus FindValue(string value)
+        {
+            return FindValue<WitnessStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WitnessStatus(string value)
         {
             return FindValue(value);
         }

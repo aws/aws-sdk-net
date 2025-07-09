@@ -38,8 +38,9 @@ namespace Amazon.GameLift.Model
     /// If the game session placement status is <c>PENDING</c>, the properties for game session
     /// ID/ARN, region, IP address/DNS, and port aren't final. A game session is not active
     /// and ready to accept players until placement status reaches <c>FULFILLED</c>. When
-    /// the placement is in <c>PENDING</c> status, Amazon GameLift may attempt to place a
-    /// game session multiple times before succeeding. With each attempt it creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession</a>
+    /// the placement is in <c>PENDING</c> status, Amazon GameLift Servers may attempt to
+    /// place a game session multiple times before succeeding. With each attempt it creates
+    /// a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession</a>
     /// object and updates this placement object with the new game session properties.
     /// </para>
     ///  </note>
@@ -268,8 +269,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the game session. To connect to a Amazon GameLift game server, an
-        /// app needs both the IP address and port number. This value isn't final until placement
+        /// The IP address of the game session. To connect to a Amazon GameLift Servers game server,
+        /// an app needs both the IP address and port number. This value isn't final until placement
         /// status is <c>FULFILLED</c>. 
         /// </para>
         /// </summary>
@@ -401,9 +402,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number for the game session. To connect to a Amazon GameLift game server,
-        /// an app needs both the IP address and port number. This value isn't final until placement
-        /// status is <c>FULFILLED</c>.
+        /// The port number for the game session. To connect to a Amazon GameLift Servers game
+        /// server, an app needs both the IP address and port number. This value isn't final until
+        /// placement status is <c>FULFILLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=60000)]
@@ -426,8 +427,8 @@ namespace Amazon.GameLift.Model
         /// request. When provided, the list overrides a queue's location order list for this
         /// game session placement request only. The list might include Amazon Web Services Regions,
         /// local zones, and custom locations (for Anywhere fleets). The fallback strategy tells
-        /// Amazon GameLift what action to take (if any) in the event that it failed to place
-        /// a new game session. 
+        /// Amazon GameLift Servers what action to take (if any) in the event that it failed to
+        /// place a new game session. 
         /// </para>
         /// </summary>
         public PriorityConfigurationOverride PriorityConfigurationOverride
@@ -487,8 +488,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FAILED</b> -- Amazon GameLift is not able to complete the process of placing the
-        /// game session. Common reasons are the game session terminated before the placement
+        ///  <b>FAILED</b> -- Amazon GameLift Servers is not able to complete the process of placing
+        /// the game session. Common reasons are the game session terminated before the placement
         /// process was completed, or an unexpected internal error.
         /// </para>
         ///  </li> </ul>

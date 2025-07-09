@@ -56,6 +56,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AggregatedMetrics", targetDepth))
+                {
+                    var unmarshaller = DataQualityAggregatedMetricsUnmarshaller.Instance;
+                    unmarshalledObject.AggregatedMetrics = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AnalyzerResults", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataQualityAnalyzerResult, DataQualityAnalyzerResultUnmarshaller>(DataQualityAnalyzerResultUnmarshaller.Instance);

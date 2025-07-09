@@ -41,7 +41,8 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// An array of objects that provide details on the activation status of Amazon Inspector
-        /// deep inspection for each of the requested accounts. <pre><c> &lt;/p&gt; </c></pre>
+        /// deep inspection for each of the requested accounts. 
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -65,7 +66,8 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property FailedAccountIds. 
         /// <para>
         /// An array of objects that provide details on any accounts that failed to activate Amazon
-        /// Inspector deep inspection and why. <pre><c> &lt;/p&gt; </c></pre>
+        /// Inspector deep inspection and why. 
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

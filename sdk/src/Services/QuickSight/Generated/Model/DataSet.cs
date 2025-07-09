@@ -162,7 +162,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// The ID of the dataset.
+        /// The ID of the dataset. Limited to 96 characters.
         /// </para>
         /// </summary>
         public string DataSetId

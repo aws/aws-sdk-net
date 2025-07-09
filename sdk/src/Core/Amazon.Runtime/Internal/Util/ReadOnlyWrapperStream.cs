@@ -22,10 +22,8 @@
 
 using System;
 using System.IO;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -102,7 +100,6 @@ namespace Amazon.Runtime.Internal.Util
             throw new NotSupportedException();
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Asynchronously clears all buffers for this stream and causes any buffered data
         /// to be written to the underlying device.
@@ -140,7 +137,6 @@ namespace Amazon.Runtime.Internal.Util
         {
             throw new NotSupportedException();
         }
-#endif
 
         #endregion
     }
@@ -182,7 +178,6 @@ namespace Amazon.Runtime.Internal.Util
             return result;
         }
 
-#if AWS_ASYNC_API
         public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             int bytesToRead = count < this.RemainingSize ? count : (int)this.RemainingSize;
@@ -193,7 +188,6 @@ namespace Amazon.Runtime.Internal.Util
             _currentPosition += result;
             return result;
         }
-#endif
 
         public override long Length
         {

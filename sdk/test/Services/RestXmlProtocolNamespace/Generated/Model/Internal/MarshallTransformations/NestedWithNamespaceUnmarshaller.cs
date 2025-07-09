@@ -57,6 +57,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("@someName", targetDepth - 1))
+
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AttrField = unmarshaller.Unmarshall(context);

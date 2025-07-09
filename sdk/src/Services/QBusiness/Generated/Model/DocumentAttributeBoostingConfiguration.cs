@@ -35,6 +35,12 @@ namespace Amazon.QBusiness.Model
     /// Q Business prioritizes generating responses from content that matches the boosted
     /// document attributes.
     /// 
+    ///  
+    /// <para>
+    /// In version 2, boosting uses numeric values (ONE, TWO) to indicate priority tiers that
+    /// establish clear hierarchical relationships between boosted attributes. This allows
+    /// for more precise control over how different attributes influence search results.
+    /// </para>
     ///  <note> 
     /// <para>
     /// For <c>STRING</c> and <c>STRING_LIST</c> type document attributes to be used for boosting
@@ -62,6 +68,11 @@ namespace Amazon.QBusiness.Model
         /// <para>
         /// Provides information on boosting <c>DATE</c> type document attributes.
         /// </para>
+        ///  
+        /// <para>
+        /// Version 2 assigns priority tiers to <c>DATE</c> attributes, establishing clear hierarchical
+        /// relationships with other boosted attributes.
+        /// </para>
         /// </summary>
         public DateAttributeBoostingConfiguration DateConfiguration
         {
@@ -79,6 +90,12 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property NumberConfiguration. 
         /// <para>
         /// Provides information on boosting <c>NUMBER</c> type document attributes.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>NUMBER</c> attributes are not supported when using <c>NativeIndexConfiguration</c>
+        /// version 2, which focuses on <c>DATE</c> attributes for recency and <c>STRING</c> attributes
+        /// for source prioritization.
         /// </para>
         /// </summary>
         public NumberAttributeBoostingConfiguration NumberConfiguration
@@ -98,6 +115,11 @@ namespace Amazon.QBusiness.Model
         /// <para>
         /// Provides information on boosting <c>STRING</c> type document attributes.
         /// </para>
+        ///  
+        /// <para>
+        /// Version 2 assigns priority tiers to <c>STRING</c> attributes, establishing clear hierarchical
+        /// relationships with other boosted attributes.
+        /// </para>
         /// </summary>
         public StringAttributeBoostingConfiguration StringConfiguration
         {
@@ -115,6 +137,12 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property StringListConfiguration. 
         /// <para>
         /// Provides information on boosting <c>STRING_LIST</c> type document attributes.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>STRING_LIST</c> attributes are not supported when using <c>NativeIndexConfiguration</c>
+        /// version 2, which focuses on <c>DATE</c> attributes for recency and <c>STRING</c> attributes
+        /// for source prioritization.
         /// </para>
         /// </summary>
         public StringListAttributeBoostingConfiguration StringListConfiguration

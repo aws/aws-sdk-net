@@ -21,48 +21,11 @@ using Amazon.S3.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    public class GetBucketReplicationRequestMarshaller : IMarshaller<IRequest, GetBucketReplicationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class GetBucketReplicationRequestMarshaller : IMarshaller<IRequest, GetBucketReplicationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
     {
-        public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketReplicationRequest publicRequest)
         {
-            return this.Marshall((GetBucketReplicationRequest)input);
-        }
-
-        public IRequest Marshall(GetBucketReplicationRequest getBucketReplicationConfigurationRequest)
-        {
-            IRequest request = new DefaultRequest(getBucketReplicationConfigurationRequest, "AmazonS3");
-
-            request.Suppress404Exceptions = true;
-            request.HttpMethod = "GET";
-
-            if (getBucketReplicationConfigurationRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getBucketReplicationConfigurationRequest.ExpectedBucketOwner));
-
-            if (string.IsNullOrEmpty(getBucketReplicationConfigurationRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketReplicationRequest.BucketName");
-
-            request.ResourcePath = "/";
-            request.AddSubResource("replication");
-            request.UseQueryString = true;
-
-            return request;
-        }
-
-        private static GetBucketReplicationRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static GetBucketReplicationRequestMarshaller Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new GetBucketReplicationRequestMarshaller();
-                }
-                return _instance;
-            }
+            defaultRequest.Suppress404Exceptions = true;
         }
     }
 }

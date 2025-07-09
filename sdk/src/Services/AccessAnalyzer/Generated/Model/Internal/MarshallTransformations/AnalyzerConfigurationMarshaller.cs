@@ -46,6 +46,17 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetInternalAccess())
+            {
+                context.Writer.WritePropertyName("internalAccess");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InternalAccessConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.InternalAccess, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetUnusedAccess())
             {
                 context.Writer.WritePropertyName("unusedAccess");

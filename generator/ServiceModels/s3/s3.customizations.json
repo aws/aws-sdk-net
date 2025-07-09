@@ -113,6 +113,44 @@
                 }
             ]
         },
+        "ReplicationDestination" : {
+            "modify": [
+                {
+                    "Account" : {"emitPropertyName": "AccountId"}
+                },
+                {
+                    "Bucket" : { "emitPropertyName": "BucketArn"}
+                }
+            ]
+        },
+        "GetBucketLocationOutput":{
+            "modify":[
+                {
+                    "LocationConstraint":{"emitPropertyName": "Location"}
+                }
+            ]
+        },
+        "GetBucketReplicationOutput":{
+            "modify":[
+                {
+                    "ReplicationConfiguration":{"emitPropertyName": "Configuration"}
+                }
+            ]
+        },
+        "GetObjectTaggingOutput":{
+            "modify":[
+                {
+                    "TagSet": {"emitPropertyName": "Tagging"}
+                }
+            ]
+        },
+        "Initiator": {
+            "modify":[
+                {
+                    "ID": {"emitPropertyName" : "Id"}
+                }
+            ]
+        },
         "LifecycleRule": {
             "modify": [
                 {
@@ -165,10 +203,27 @@
                 }
             ]
         },
+        "PutBucketReplicationRequest": {
+            "modify": [
+                {
+                    "ReplicationConfiguration" : {"emitPropertyName": "Configuration"}
+                }
+            ]
+        },
         "QueueConfigurationDeprecated": {
             "modify": [
                 {
                     "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
+                }
+            ]
+        },
+        "ReplicationRule":{
+            "modify":[
+                {
+                    "Prefix" : {"deprecatedMessage" : "This property is deprecated. Use Filter instead."}
+                },
+                {
+                    "ID": { "emitPropertyName": "Id" }
                 }
             ]
         },
@@ -194,6 +249,37 @@
             "modify":[
                 {
                     "Name" : {"emitPropertyName": "BucketName"}
+                }
+            ]
+        },
+        "ServerSideEncryptionRule":{
+            "modify":[
+                {
+                    "ApplyServerSideEncryptionByDefault": { "emitPropertyName": "ServerSideEncryptionByDefault"}
+                }
+            ]
+        },
+        "ServerSideEncryptionConfiguration":{
+            "modify":[
+                {
+                    "Rules" : { "emitPropertyName": "ServerSideEncryptionRules" }
+                }
+            ]
+        },
+        "ServerSideEncryptionByDefault":{
+            "modify": [
+                {
+                    "KMSMasterKeyID": {"emitPropertyName": "ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "SSEAlgorithm": {"emitPropertyName": "ServerSideEncryptionAlgorithm"}
+                }
+            ]
+        },
+        "SseKmsEncryptedObjects":{
+            "modify":[
+                {
+                    "Status": {"emitPropertyName" : "SseKmsEncryptedObjectsStatus"}
                 }
             ]
         },
@@ -297,6 +383,55 @@
     "shapeSubstitutions":{
         "Bucket":{
             "renameShape":"S3Bucket"
+        },
+        "ServerSideEncryption":{
+            "renameShape":"ServerSideEncryptionMethod"
+        },
+        "BucketLocationConstraint":{
+            "renameShape": "S3Region"
+        },
+        "Destination" :{
+            "renameShape" : "ReplicationDestination"
+        },
+        "StorageClass":{
+            "renameShape": "S3StorageClass"
+        },
+        "Payer":{
+            "renameShape": "string"
+        },
+        "Part":{
+            "renameShape": "PartDetail"
         }
+
+    },
+    "overrideTreatEnumsAsString":{
+        "ObjectAttributesList": false
+    },
+    "dataTypeSwap":{
+        "ListPartsRequest":{
+            "PartNumberMarker":{
+                "Type" : "string",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "ListPartsOutput":{
+            "StorageClass":{
+                "Type": "string",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        }
+    },
+    "excludeMembers":{
+        "PartDetail":[
+            "ChecksumCRC32",
+            "ChecksumCRC32C",
+            "ChecksumCRC64NVME",
+            "ChecksumSHA1",
+            "ChecksumSHA256",
+            "ETag",
+            "PartNumber",
+        ]
     }
 }

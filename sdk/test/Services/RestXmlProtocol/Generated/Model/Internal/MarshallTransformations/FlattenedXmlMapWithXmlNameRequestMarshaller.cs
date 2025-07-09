@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// FlattenedXmlMapWithXmlName Request Marshaller
     /// </summary>       
-    public class FlattenedXmlMapWithXmlNameRequestMarshaller : IMarshaller<IRequest, FlattenedXmlMapWithXmlNameRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class FlattenedXmlMapWithXmlNameRequestMarshaller : IMarshaller<IRequest, FlattenedXmlMapWithXmlNameRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,6 +58,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
             request.HttpMethod = "POST";
             request.ResourcePath = "/FlattenedXmlMapWithXmlName";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -87,7 +88,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static FlattenedXmlMapWithXmlNameRequestMarshaller _instance = new FlattenedXmlMapWithXmlNameRequestMarshaller();        
@@ -108,5 +109,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, FlattenedXmlMapWithXmlNameRequest publicRequest);
     }    
 }

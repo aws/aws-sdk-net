@@ -69,7 +69,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Describe the capability with an id.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=7, Max=128)]
         public string Id
         {
             get { return this._id; }

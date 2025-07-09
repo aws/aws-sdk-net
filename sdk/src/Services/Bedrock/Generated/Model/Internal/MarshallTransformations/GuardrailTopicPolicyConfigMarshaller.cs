@@ -46,6 +46,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetTierConfig())
+            {
+                context.Writer.WritePropertyName("tierConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GuardrailTopicsTierConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TierConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTopicsConfig())
             {
                 context.Writer.WritePropertyName("topicsConfig");

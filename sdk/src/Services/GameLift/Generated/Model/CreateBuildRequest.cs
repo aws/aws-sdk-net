@@ -31,16 +31,17 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBuild operation.
-    /// Creates a new Amazon GameLift build resource for your game server binary files. Combine
-    /// game server binaries into a zip file for use with Amazon GameLift. 
+    /// Creates a new Amazon GameLift Servers build resource for your game server binary files.
+    /// Combine game server binaries into a zip file for use with Amazon GameLift Servers.
+    /// 
     /// 
     ///  <important> 
     /// <para>
-    /// When setting up a new game build for Amazon GameLift, we recommend using the CLI command
-    /// <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+    /// When setting up a new game build for Amazon GameLift Servers, we recommend using the
+    /// CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
     /// </b>. This helper command combines two tasks: (1) it uploads your build files from
-    /// a file directory to an Amazon GameLift Amazon S3 location, and (2) it creates a new
-    /// build resource.
+    /// a file directory to an Amazon GameLift Servers Amazon S3 location, and (2) it creates
+    /// a new build resource.
     /// </para>
     ///  </important> 
     /// <para>
@@ -50,18 +51,18 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Create a new game build with build files that are in an Amazon S3 location under an
     /// Amazon Web Services account that you control. To use this option, you give Amazon
-    /// GameLift access to the Amazon S3 bucket. With permissions in place, specify a build
-    /// name, operating system, and the Amazon S3 storage location of your game build.
+    /// GameLift Servers access to the Amazon S3 bucket. With permissions in place, specify
+    /// a build name, operating system, and the Amazon S3 storage location of your game build.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Upload your build files to a Amazon GameLift Amazon S3 location. To use this option,
-    /// specify a build name and operating system. This operation creates a new build resource
-    /// and also returns an Amazon S3 location with temporary access credentials. Use the
-    /// credentials to manually upload your build files to the specified Amazon S3 location.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+    /// Upload your build files to a Amazon GameLift Servers Amazon S3 location. To use this
+    /// option, specify a build name and operating system. This operation creates a new build
+    /// resource and also returns an Amazon S3 location with temporary access credentials.
+    /// Use the credentials to manually upload your build files to the specified Amazon S3
+    /// location. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
     /// Objects</a> in the <i>Amazon S3 Developer Guide</i>. After you upload build files
-    /// to the Amazon GameLift Amazon S3 location, you can't update them. 
+    /// to the Amazon GameLift Servers Amazon S3 location, you can't update them. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -130,10 +131,10 @@ namespace Amazon.GameLift.Model
         ///  <note> 
         /// <para>
         /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
-        /// <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-        /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift,
-        /// first update the game server build to server SDK 5.x, and then deploy to AL2023 instances.
-        /// See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
+        /// <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
+        /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift
+        /// Servers, first update the game server build to server SDK 5.x, and then deploy to
+        /// AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
         /// Migrate to server SDK version 5.</a> 
         /// </para>
         ///  </note>
@@ -154,9 +155,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ServerSdkVersion. 
         /// <para>
         /// A server SDK version you used when integrating your game server build with Amazon
-        /// GameLift. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-        /// games with custom game servers</a>. By default Amazon GameLift sets this value to
-        /// <c>4.0.2</c>.
+        /// GameLift Servers. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
+        /// games with custom game servers</a>. By default Amazon GameLift Servers sets this value
+        /// to <c>4.0.2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -178,13 +179,13 @@ namespace Amazon.GameLift.Model
         /// Information indicating where your game build files are stored. Use this parameter
         /// only when creating a build with files stored in an Amazon S3 bucket that you own.
         /// The storage location must specify an Amazon S3 bucket name and key. The location must
-        /// also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon
-        /// S3 bucket. The S3 bucket and your new build must be in the same Region.
+        /// also specify a role ARN that you set up to allow Amazon GameLift Servers to access
+        /// your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.
         /// </para>
         ///  
         /// <para>
         /// If a <c>StorageLocation</c> is specified, the size of your file can be found in your
-        /// Amazon S3 bucket. Amazon GameLift will report a <c>SizeOnDisk</c> of 0. 
+        /// Amazon S3 bucket. Amazon GameLift Servers will report a <c>SizeOnDisk</c> of 0. 
         /// </para>
         /// </summary>
         public S3Location StorageLocation

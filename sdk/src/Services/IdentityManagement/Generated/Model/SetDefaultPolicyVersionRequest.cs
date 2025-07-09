@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// This operation affects all users, groups, and roles that the policy is attached to.
-    /// To list the users, groups, and roles that the policy is attached to, use <a>ListEntitiesForPolicy</a>.
+    /// To list the users, groups, and roles that the policy is attached to, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html">ListEntitiesForPolicy</a>.
     /// </para>
     ///  
     /// <para>

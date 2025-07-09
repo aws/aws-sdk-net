@@ -59,8 +59,8 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that Clean Rooms ML can assume to read the data referred to
-        /// in the <c>dataSource</c> field the input channel.
+        /// The Amazon Resource Name (ARN) of the role used to run the query specified in the
+        /// <c>dataSource</c> field of the input channel.
         /// </para>
         ///  
         /// <para>

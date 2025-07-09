@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Represents a peering connection between a VPC on one of your Amazon Web Services accounts
-    /// and the VPC for your Amazon GameLift fleets. This record may be for an active peering
-    /// connection or a pending connection that has not yet been established.
+    /// and the VPC for your Amazon GameLift Servers fleets. This record may be for an active
+    /// peering connection or a pending connection that has not yet been established.
     /// 
     ///  
     /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetId. 
         /// <para>
         /// A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift
-        /// VPC for your fleet.
+        /// Servers VPC for your fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -97,9 +97,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameLiftVpcId. 
         /// <para>
-        /// A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection.
-        /// This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services
-        /// account. 
+        /// A unique identifier for the VPC that contains the Amazon GameLift Servers fleet for
+        /// this connection. This VPC is managed by Amazon GameLift Servers and does not appear
+        /// in your Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -140,10 +140,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PeerVpcId. 
         /// <para>
         /// A unique identifier for a VPC with resources to be accessed by your Amazon GameLift
-        /// fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use
-        /// the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon
-        /// Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon GameLift Fleets</a>.
+        /// Servers fleet. The VPC must be in the same Region as your fleet. To look up a VPC
+        /// ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
+        /// Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Servers Fleets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

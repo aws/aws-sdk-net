@@ -378,6 +378,10 @@ namespace Amazon.PaymentCryptographyData
         /// Constant CMAC for KeyCheckValueAlgorithm
         /// </summary>
         public static readonly KeyCheckValueAlgorithm CMAC = new KeyCheckValueAlgorithm("CMAC");
+        /// <summary>
+        /// Constant HMAC for KeyCheckValueAlgorithm
+        /// </summary>
+        public static readonly KeyCheckValueAlgorithm HMAC = new KeyCheckValueAlgorithm("HMAC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -984,6 +988,22 @@ namespace Amazon.PaymentCryptographyData
         /// Constant AES_256 for SymmetricKeyAlgorithm
         /// </summary>
         public static readonly SymmetricKeyAlgorithm AES_256 = new SymmetricKeyAlgorithm("AES_256");
+        /// <summary>
+        /// Constant HMAC_SHA224 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm HMAC_SHA224 = new SymmetricKeyAlgorithm("HMAC_SHA224");
+        /// <summary>
+        /// Constant HMAC_SHA256 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm HMAC_SHA256 = new SymmetricKeyAlgorithm("HMAC_SHA256");
+        /// <summary>
+        /// Constant HMAC_SHA384 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm HMAC_SHA384 = new SymmetricKeyAlgorithm("HMAC_SHA384");
+        /// <summary>
+        /// Constant HMAC_SHA512 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm HMAC_SHA512 = new SymmetricKeyAlgorithm("HMAC_SHA512");
         /// <summary>
         /// Constant TDES_2KEY for SymmetricKeyAlgorithm
         /// </summary>

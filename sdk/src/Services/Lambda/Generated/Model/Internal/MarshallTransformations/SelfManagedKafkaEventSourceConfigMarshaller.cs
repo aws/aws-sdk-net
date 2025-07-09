@@ -52,6 +52,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ConsumerGroupId);
             }
 
+            if(requestObject.IsSetSchemaRegistryConfig())
+            {
+                context.Writer.WritePropertyName("SchemaRegistryConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KafkaSchemaRegistryConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.SchemaRegistryConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

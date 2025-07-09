@@ -44,7 +44,7 @@ namespace Amazon.CleanRoomsML.Model
         /// The number of resources that are used to train the model.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=5)]
         public int? InstanceCount
         {
             get { return this._instanceCount; }

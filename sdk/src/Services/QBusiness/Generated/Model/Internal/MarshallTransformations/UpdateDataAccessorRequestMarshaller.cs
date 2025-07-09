@@ -95,6 +95,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetAuthenticationDetail())
+            {
+                context.Writer.WritePropertyName("authenticationDetail");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataAccessorAuthenticationDetailMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AuthenticationDetail, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDisplayName())
             {
                 context.Writer.WritePropertyName("displayName");

@@ -48,6 +48,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         {
             GetThemeResponse response = new GetThemeResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = ThemeUnmarshaller.Instance;
             response.Theme = unmarshaller.Unmarshall(context, ref reader);
 

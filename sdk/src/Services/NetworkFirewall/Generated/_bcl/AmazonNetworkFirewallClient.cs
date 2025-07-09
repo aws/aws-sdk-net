@@ -386,6 +386,280 @@ namespace Amazon.NetworkFirewall
         #endregion
 
 
+        #region  AcceptNetworkFirewallTransitGatewayAttachment
+
+
+        /// <summary>
+        /// Accepts a transit gateway attachment request for Network Firewall. When you accept
+        /// the attachment request, Network Firewall creates the necessary routing components
+        /// to enable traffic flow between the transit gateway and firewall endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// You must accept a transit gateway attachment to complete the creation of a transit
+        /// gateway-attached firewall, unless auto-accept is enabled on the transit gateway. After
+        /// acceptance, use <a>DescribeFirewall</a> to verify the firewall status.
+        /// </para>
+        ///  
+        /// <para>
+        /// To reject an attachment instead of accepting it, use <a>RejectNetworkFirewallTransitGatewayAttachment</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// It can take several minutes for the attachment acceptance to complete and the firewall
+        /// to become available.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptNetworkFirewallTransitGatewayAttachment service method.</param>
+        /// 
+        /// <returns>The response from the AcceptNetworkFirewallTransitGatewayAttachment service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AcceptNetworkFirewallTransitGatewayAttachment">REST API Reference for AcceptNetworkFirewallTransitGatewayAttachment Operation</seealso>
+        public virtual AcceptNetworkFirewallTransitGatewayAttachmentResponse AcceptNetworkFirewallTransitGatewayAttachment(AcceptNetworkFirewallTransitGatewayAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptNetworkFirewallTransitGatewayAttachmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Accepts a transit gateway attachment request for Network Firewall. When you accept
+        /// the attachment request, Network Firewall creates the necessary routing components
+        /// to enable traffic flow between the transit gateway and firewall endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// You must accept a transit gateway attachment to complete the creation of a transit
+        /// gateway-attached firewall, unless auto-accept is enabled on the transit gateway. After
+        /// acceptance, use <a>DescribeFirewall</a> to verify the firewall status.
+        /// </para>
+        ///  
+        /// <para>
+        /// To reject an attachment instead of accepting it, use <a>RejectNetworkFirewallTransitGatewayAttachment</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// It can take several minutes for the attachment acceptance to complete and the firewall
+        /// to become available.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptNetworkFirewallTransitGatewayAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptNetworkFirewallTransitGatewayAttachment service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AcceptNetworkFirewallTransitGatewayAttachment">REST API Reference for AcceptNetworkFirewallTransitGatewayAttachment Operation</seealso>
+        public virtual Task<AcceptNetworkFirewallTransitGatewayAttachmentResponse> AcceptNetworkFirewallTransitGatewayAttachmentAsync(AcceptNetworkFirewallTransitGatewayAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcceptNetworkFirewallTransitGatewayAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateAvailabilityZones
+
+
+        /// <summary>
+        /// Associates the specified Availability Zones with a transit gateway-attached firewall.
+        /// For each Availability Zone, Network Firewall creates a firewall endpoint to process
+        /// traffic. You can specify one or more Availability Zones where you want to deploy the
+        /// firewall.
+        /// 
+        ///  
+        /// <para>
+        /// After adding Availability Zones, you must update your transit gateway route tables
+        /// to direct traffic through the new firewall endpoints. Use <a>DescribeFirewall</a>
+        /// to monitor the status of the new endpoints.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAvailabilityZones service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAvailabilityZones service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateAvailabilityZones">REST API Reference for AssociateAvailabilityZones Operation</seealso>
+        public virtual AssociateAvailabilityZonesResponse AssociateAvailabilityZones(AssociateAvailabilityZonesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAvailabilityZonesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAvailabilityZonesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateAvailabilityZonesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates the specified Availability Zones with a transit gateway-attached firewall.
+        /// For each Availability Zone, Network Firewall creates a firewall endpoint to process
+        /// traffic. You can specify one or more Availability Zones where you want to deploy the
+        /// firewall.
+        /// 
+        ///  
+        /// <para>
+        /// After adding Availability Zones, you must update your transit gateway route tables
+        /// to direct traffic through the new firewall endpoints. Use <a>DescribeFirewall</a>
+        /// to monitor the status of the new endpoints.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAvailabilityZones service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateAvailabilityZones service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateAvailabilityZones">REST API Reference for AssociateAvailabilityZones Operation</seealso>
+        public virtual Task<AssociateAvailabilityZonesResponse> AssociateAvailabilityZonesAsync(AssociateAvailabilityZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateAvailabilityZonesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateAvailabilityZonesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateAvailabilityZonesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateFirewallPolicy
 
 
@@ -1607,6 +1881,127 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = DeleteFirewallPolicyResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteFirewallPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNetworkFirewallTransitGatewayAttachment
+
+
+        /// <summary>
+        /// Deletes a transit gateway attachment from a Network Firewall. Either the firewall
+        /// owner or the transit gateway owner can delete the attachment.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// After you delete a transit gateway attachment, raffic will no longer flow through
+        /// the firewall endpoints.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// After you initiate the delete operation, use <a>DescribeFirewall</a> to monitor the
+        /// deletion status.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkFirewallTransitGatewayAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkFirewallTransitGatewayAttachment service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteNetworkFirewallTransitGatewayAttachment">REST API Reference for DeleteNetworkFirewallTransitGatewayAttachment Operation</seealso>
+        public virtual DeleteNetworkFirewallTransitGatewayAttachmentResponse DeleteNetworkFirewallTransitGatewayAttachment(DeleteNetworkFirewallTransitGatewayAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkFirewallTransitGatewayAttachmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a transit gateway attachment from a Network Firewall. Either the firewall
+        /// owner or the transit gateway owner can delete the attachment.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// After you delete a transit gateway attachment, raffic will no longer flow through
+        /// the firewall endpoints.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// After you initiate the delete operation, use <a>DescribeFirewall</a> to monitor the
+        /// deletion status.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkFirewallTransitGatewayAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNetworkFirewallTransitGatewayAttachment service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteNetworkFirewallTransitGatewayAttachment">REST API Reference for DeleteNetworkFirewallTransitGatewayAttachment Operation</seealso>
+        public virtual Task<DeleteNetworkFirewallTransitGatewayAttachmentResponse> DeleteNetworkFirewallTransitGatewayAttachmentAsync(DeleteNetworkFirewallTransitGatewayAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteNetworkFirewallTransitGatewayAttachmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2839,6 +3234,129 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  DescribeRuleGroupSummary
+
+
+        /// <summary>
+        /// Returns detailed information for a stateful rule group.
+        /// 
+        ///  
+        /// <para>
+        /// For active threat defense Amazon Web Services managed rule groups, this operation
+        /// provides insight into the protections enabled by the rule group, based on Suricata
+        /// rule metadata fields. Summaries are available for rule groups you manage and for active
+        /// threat defense Amazon Web Services managed rule groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// To modify how threat information appears in summaries, use the <c>SummaryConfiguration</c>
+        /// parameter in <a>UpdateRuleGroup</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupSummary service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRuleGroupSummary service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupSummary">REST API Reference for DescribeRuleGroupSummary Operation</seealso>
+        public virtual DescribeRuleGroupSummaryResponse DescribeRuleGroupSummary(DescribeRuleGroupSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRuleGroupSummaryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns detailed information for a stateful rule group.
+        /// 
+        ///  
+        /// <para>
+        /// For active threat defense Amazon Web Services managed rule groups, this operation
+        /// provides insight into the protections enabled by the rule group, based on Suricata
+        /// rule metadata fields. Summaries are available for rule groups you manage and for active
+        /// threat defense Amazon Web Services managed rule groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// To modify how threat information appears in summaries, use the <c>SummaryConfiguration</c>
+        /// parameter in <a>UpdateRuleGroup</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRuleGroupSummary service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupSummary">REST API Reference for DescribeRuleGroupSummary Operation</seealso>
+        public virtual Task<DescribeRuleGroupSummaryResponse> DescribeRuleGroupSummaryAsync(DescribeRuleGroupSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupSummaryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRuleGroupSummaryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTLSInspectionConfiguration
 
 
@@ -3029,6 +3547,143 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = DescribeVpcEndpointAssociationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeVpcEndpointAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateAvailabilityZones
+
+
+        /// <summary>
+        /// Removes the specified Availability Zone associations from a transit gateway-attached
+        /// firewall. This removes the firewall endpoints from these Availability Zones and stops
+        /// traffic filtering in those zones. Before removing an Availability Zone, ensure you've
+        /// updated your transit gateway route tables to redirect traffic appropriately.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If <c>AvailabilityZoneChangeProtection</c> is enabled, you must first disable it using
+        /// <a>UpdateAvailabilityZoneChangeProtection</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To verify the status of your Availability Zone changes, use <a>DescribeFirewall</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAvailabilityZones service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateAvailabilityZones service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DisassociateAvailabilityZones">REST API Reference for DisassociateAvailabilityZones Operation</seealso>
+        public virtual DisassociateAvailabilityZonesResponse DisassociateAvailabilityZones(DisassociateAvailabilityZonesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAvailabilityZonesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAvailabilityZonesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateAvailabilityZonesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the specified Availability Zone associations from a transit gateway-attached
+        /// firewall. This removes the firewall endpoints from these Availability Zones and stops
+        /// traffic filtering in those zones. Before removing an Availability Zone, ensure you've
+        /// updated your transit gateway route tables to redirect traffic appropriately.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If <c>AvailabilityZoneChangeProtection</c> is enabled, you must first disable it using
+        /// <a>UpdateAvailabilityZoneChangeProtection</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To verify the status of your Availability Zone changes, use <a>DescribeFirewall</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAvailabilityZones service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateAvailabilityZones service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DisassociateAvailabilityZones">REST API Reference for DisassociateAvailabilityZones Operation</seealso>
+        public virtual Task<DisassociateAvailabilityZonesResponse> DisassociateAvailabilityZonesAsync(DisassociateAvailabilityZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateAvailabilityZonesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateAvailabilityZonesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateAvailabilityZonesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4387,6 +5042,141 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  RejectNetworkFirewallTransitGatewayAttachment
+
+
+        /// <summary>
+        /// Rejects a transit gateway attachment request for Network Firewall. When you reject
+        /// the attachment request, Network Firewall cancels the creation of routing components
+        /// between the transit gateway and firewall endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// Only the firewall owner can reject the attachment. After rejection, no traffic will
+        /// flow through the firewall endpoints for this attachment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a>DescribeFirewall</a> to monitor the rejection status. To accept the attachment
+        /// instead of rejecting it, use <a>AcceptNetworkFirewallTransitGatewayAttachment</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Once rejected, you cannot reverse this action. To establish connectivity, you must
+        /// create a new transit gateway-attached firewall.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectNetworkFirewallTransitGatewayAttachment service method.</param>
+        /// 
+        /// <returns>The response from the RejectNetworkFirewallTransitGatewayAttachment service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RejectNetworkFirewallTransitGatewayAttachment">REST API Reference for RejectNetworkFirewallTransitGatewayAttachment Operation</seealso>
+        public virtual RejectNetworkFirewallTransitGatewayAttachmentResponse RejectNetworkFirewallTransitGatewayAttachment(RejectNetworkFirewallTransitGatewayAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<RejectNetworkFirewallTransitGatewayAttachmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Rejects a transit gateway attachment request for Network Firewall. When you reject
+        /// the attachment request, Network Firewall cancels the creation of routing components
+        /// between the transit gateway and firewall endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// Only the firewall owner can reject the attachment. After rejection, no traffic will
+        /// flow through the firewall endpoints for this attachment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a>DescribeFirewall</a> to monitor the rejection status. To accept the attachment
+        /// instead of rejecting it, use <a>AcceptNetworkFirewallTransitGatewayAttachment</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Once rejected, you cannot reverse this action. To establish connectivity, you must
+        /// create a new transit gateway-attached firewall.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectNetworkFirewallTransitGatewayAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectNetworkFirewallTransitGatewayAttachment service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RejectNetworkFirewallTransitGatewayAttachment">REST API Reference for RejectNetworkFirewallTransitGatewayAttachment Operation</seealso>
+        public virtual Task<RejectNetworkFirewallTransitGatewayAttachmentResponse> RejectNetworkFirewallTransitGatewayAttachmentAsync(RejectNetworkFirewallTransitGatewayAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RejectNetworkFirewallTransitGatewayAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartAnalysisReport
 
 
@@ -4972,6 +5762,135 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAvailabilityZoneChangeProtection
+
+
+        /// <summary>
+        /// Modifies the <c>AvailabilityZoneChangeProtection</c> setting for a transit gateway-attached
+        /// firewall. When enabled, this setting prevents accidental changes to the firewall's
+        /// Availability Zone configuration. This helps protect against disrupting traffic flow
+        /// in production environments.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, you must disable this protection before using <a>AssociateAvailabilityZones</a>
+        /// or <a>DisassociateAvailabilityZones</a> to modify the firewall's Availability Zone
+        /// configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityZoneChangeProtection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAvailabilityZoneChangeProtection service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceOwnerCheckException">
+        /// Unable to change the resource because your account doesn't own it.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateAvailabilityZoneChangeProtection">REST API Reference for UpdateAvailabilityZoneChangeProtection Operation</seealso>
+        public virtual UpdateAvailabilityZoneChangeProtectionResponse UpdateAvailabilityZoneChangeProtection(UpdateAvailabilityZoneChangeProtectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAvailabilityZoneChangeProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAvailabilityZoneChangeProtectionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the <c>AvailabilityZoneChangeProtection</c> setting for a transit gateway-attached
+        /// firewall. When enabled, this setting prevents accidental changes to the firewall's
+        /// Availability Zone configuration. This helps protect against disrupting traffic flow
+        /// in production environments.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, you must disable this protection before using <a>AssociateAvailabilityZones</a>
+        /// or <a>DisassociateAvailabilityZones</a> to modify the firewall's Availability Zone
+        /// configuration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityZoneChangeProtection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAvailabilityZoneChangeProtection service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceOwnerCheckException">
+        /// Unable to change the resource because your account doesn't own it.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateAvailabilityZoneChangeProtection">REST API Reference for UpdateAvailabilityZoneChangeProtection Operation</seealso>
+        public virtual Task<UpdateAvailabilityZoneChangeProtectionResponse> UpdateAvailabilityZoneChangeProtectionAsync(UpdateAvailabilityZoneChangeProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAvailabilityZoneChangeProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAvailabilityZoneChangeProtectionResponse>(request, options, cancellationToken);
         }
 
         #endregion

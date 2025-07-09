@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// PutBucketVersioning Request Marshaller
     /// </summary>       
-    public class PutBucketVersioningRequestMarshaller : IMarshaller<IRequest, PutBucketVersioningRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class PutBucketVersioningRequestMarshaller : IMarshaller<IRequest, PutBucketVersioningRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -71,6 +71,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonS3ControlException("Request object does not have required field Bucket set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Bucket));
             request.ResourcePath = "/v20180820/bucket/{name}/versioning";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -100,7 +101,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutBucketVersioningRequestMarshaller _instance = new PutBucketVersioningRequestMarshaller();        
@@ -121,5 +122,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketVersioningRequest publicRequest);
     }    
 }

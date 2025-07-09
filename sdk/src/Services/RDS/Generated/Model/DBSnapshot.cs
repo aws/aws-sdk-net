@@ -62,6 +62,7 @@ namespace Amazon.RDS.Model
         private int? _percentProgress;
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = AWSConfigs.InitializeCollections ? new List<ProcessorFeature>() : null;
+        private string _snapshotAvailabilityZone;
         private DateTime? _snapshotCreateTime;
         private DateTime? _snapshotDatabaseTime;
         private string _snapshotTarget;
@@ -512,6 +513,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SnapshotAvailabilityZone. 
+        /// <para>
+        /// Specifies the name of the Availability Zone where RDS stores the DB snapshot. This
+        /// value is valid only for snapshots that RDS stores on a Dedicated Local Zone.
+        /// </para>
+        /// </summary>
+        public string SnapshotAvailabilityZone
+        {
+            get { return this._snapshotAvailabilityZone; }
+            set { this._snapshotAvailabilityZone = value; }
+        }
+
+        // Check to see if SnapshotAvailabilityZone property is set
+        internal bool IsSetSnapshotAvailabilityZone()
+        {
+            return this._snapshotAvailabilityZone != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 
         /// <para>
         /// Specifies when the snapshot was taken in Coordinated Universal Time (UTC). Changes
@@ -560,8 +580,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotTarget. 
         /// <para>
-        /// Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon
-        /// Web Services Region.
+        /// Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services
+        /// Outposts or the Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string SnapshotTarget

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListCidrBlocks Request Marshaller
     /// </summary>       
-    public class ListCidrBlocksRequestMarshaller : IMarshaller<IRequest, ListCidrBlocksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListCidrBlocksRequestMarshaller : IMarshaller<IRequest, ListCidrBlocksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -71,8 +71,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("maxresults", StringUtils.FromString(publicRequest.MaxResults));
             request.ResourcePath = "/2013-04-01/cidrcollection/{CidrCollectionId}/cidrblocks";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListCidrBlocksRequestMarshaller _instance = new ListCidrBlocksRequestMarshaller();        
@@ -93,5 +94,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListCidrBlocksRequest publicRequest);
     }    
 }

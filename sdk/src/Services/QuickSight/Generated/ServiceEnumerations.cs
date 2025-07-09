@@ -10849,6 +10849,10 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant ATHENA for ServiceType
+        /// </summary>
+        public static readonly ServiceType ATHENA = new ServiceType("ATHENA");
+        /// <summary>
         /// Constant QBUSINESS for ServiceType
         /// </summary>
         public static readonly ServiceType QBUSINESS = new ServiceType("QBUSINESS");

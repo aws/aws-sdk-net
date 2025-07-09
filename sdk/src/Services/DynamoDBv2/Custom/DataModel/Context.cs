@@ -19,10 +19,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-
-#endif
 using Amazon.DynamoDBv2.DocumentModel;
 using ThirdParty.RuntimeBackports;
 using Expression = Amazon.DynamoDBv2.DocumentModel.Expression;
@@ -417,7 +414,6 @@ namespace Amazon.DynamoDBv2.DataModel
             PopulateInstance(storage, value, flatConfig);
         }
 
-#if AWS_ASYNC_API 
         private async Task SaveHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             await SaveHelperAsync(typeof(T), value, flatConfig, cancellationToken).ConfigureAwait(false);
@@ -476,7 +472,6 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             PopulateInstance(storage, value, flatConfig);
         }
-#endif
 
         /// <inheritdoc/>
         public Document ToDocument<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value)
@@ -520,14 +515,12 @@ namespace Amazon.DynamoDBv2.DataModel
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
-#if AWS_ASYNC_API
         private Task<T> LoadHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
             return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
         }
-#endif
 
         private T LoadHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T keyObject, DynamoDBFlatConfig flatConfig)
         {
@@ -536,15 +529,12 @@ namespace Amazon.DynamoDBv2.DataModel
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
-#if AWS_ASYNC_API
-
         private Task<T> LoadHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T keyObject, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey<T>(keyObject, storageConfig, flatConfig);
             return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
         }
-#endif
 
         private T LoadHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
         {
@@ -562,8 +552,6 @@ namespace Amazon.DynamoDBv2.DataModel
             return instance;
         }
 
-#if AWS_ASYNC_API
-
         private async Task<T> LoadHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, CancellationToken cancellationToken)
         {
             GetItemOperationConfig getConfig = new GetItemOperationConfig
@@ -579,7 +567,6 @@ namespace Amazon.DynamoDBv2.DataModel
             T instance = DocumentToObject<T>(storage, flatConfig);
             return instance;
         }
-#endif
 
         /// <inheritdoc/>
         public T FromDocument<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Document document)
@@ -660,7 +647,6 @@ namespace Amazon.DynamoDBv2.DataModel
             table.DeleteHelper(key, null);
         }
 
-#if AWS_ASYNC_API
         private Task DeleteHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
@@ -669,7 +655,6 @@ namespace Amazon.DynamoDBv2.DataModel
             Table table = GetTargetTable(storageConfig, flatConfig);
             return table.DeleteHelperAsync(key, null, cancellationToken);
         }
-#endif
 
         private void DeleteHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig)
         {
@@ -692,8 +677,6 @@ namespace Amazon.DynamoDBv2.DataModel
                     new DeleteItemOperationConfig { Expected = expectedDocument });
             }
         }
-
-#if AWS_ASYNC_API
 
         private static readonly Task CompletedTask = Task.FromResult<object>(null);
 
@@ -719,7 +702,6 @@ namespace Amazon.DynamoDBv2.DataModel
                     cancellationToken);
             }
         }
-#endif
 
         #endregion
     }

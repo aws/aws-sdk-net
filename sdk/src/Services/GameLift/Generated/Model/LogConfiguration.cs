@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// A method for collecting container logs for the fleet. Amazon GameLift saves all standard
-    /// output for each container in logs, including game session logs. You can select from
-    /// the following methods:
+    /// A method for collecting container logs for the fleet. Amazon GameLift Servers saves
+    /// all standard output for each container in logs, including game session logs. You can
+    /// select from the following methods:
     /// </summary>
     public partial class LogConfiguration
     {

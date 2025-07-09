@@ -64,6 +64,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.ApplicationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("authenticationDetail", targetDepth))
+                {
+                    var unmarshaller = DataAccessorAuthenticationDetailUnmarshaller.Instance;
+                    response.AuthenticationDetail = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

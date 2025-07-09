@@ -53,7 +53,6 @@ namespace Amazon.WorkSpacesThinClient.Model
         private SoftwareSetUpdateSchedule _softwareSetUpdateSchedule;
         private SoftwareSetUpdateStatus _softwareSetUpdateStatus;
         private DeviceStatus _status;
-        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -400,31 +399,6 @@ namespace Amazon.WorkSpacesThinClient.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tag keys and optional values for the resource.
-        /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
-        /// </summary>
-        [Obsolete("This field will be removed in future releases. Use ListTagsForResource API instead.")]
-        [AWSProperty(Sensitive=true)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

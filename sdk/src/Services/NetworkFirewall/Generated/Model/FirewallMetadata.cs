@@ -37,6 +37,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private string _firewallArn;
         private string _firewallName;
+        private string _transitGatewayAttachmentId;
 
         /// <summary>
         /// Gets and sets the property FirewallArn. 
@@ -75,6 +76,26 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetFirewallName()
         {
             return this._firewallName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayAttachmentId. 
+        /// <para>
+        /// The unique identifier of the transit gateway attachment associated with this firewall.
+        /// This field is only present for transit gateway-attached firewalls.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string TransitGatewayAttachmentId
+        {
+            get { return this._transitGatewayAttachmentId; }
+            set { this._transitGatewayAttachmentId = value; }
+        }
+
+        // Check to see if TransitGatewayAttachmentId property is set
+        internal bool IsSetTransitGatewayAttachmentId()
+        {
+            return this._transitGatewayAttachmentId != null;
         }
 
     }

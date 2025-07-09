@@ -48,6 +48,7 @@ namespace Amazon.NetworkFirewall.Model
         private ResourceStatus _ruleGroupStatus;
         private string _snsTopic;
         private SourceMetadata _sourceMetadata;
+        private SummaryConfiguration _summaryConfiguration;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private RuleGroupType _type;
 
@@ -283,7 +284,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property SnsTopic. 
         /// <para>
-        /// The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service SNS topic
         /// that's used to record changes to the managed rule group. You can subscribe to the
         /// SNS topic to receive notifications when the managed rule group is modified, such as
         /// for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
@@ -321,6 +322,34 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetSourceMetadata()
         {
             return this._sourceMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SummaryConfiguration. 
+        /// <para>
+        /// A complex type containing the currently selected rule option fields that will be displayed
+        /// for rule summarization returned by <a>DescribeRuleGroupSummary</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RuleOptions</c> specified in <a>SummaryConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Rule metadata organization preferences
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SummaryConfiguration SummaryConfiguration
+        {
+            get { return this._summaryConfiguration; }
+            set { this._summaryConfiguration = value; }
+        }
+
+        // Check to see if SummaryConfiguration property is set
+        internal bool IsSetSummaryConfiguration()
+        {
+            return this._summaryConfiguration != null;
         }
 
         /// <summary>

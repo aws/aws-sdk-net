@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// AssociateAlias Request Marshaller
     /// </summary>       
-    public class AssociateAliasRequestMarshaller : IMarshaller<IRequest, AssociateAliasRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class AssociateAliasRequestMarshaller : IMarshaller<IRequest, AssociateAliasRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Alias", StringUtils.FromString(publicRequest.Alias));
             request.ResourcePath = "/2020-05-31/distribution/{TargetDistributionId}/associate-alias";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static AssociateAliasRequestMarshaller _instance = new AssociateAliasRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, AssociateAliasRequest publicRequest);
     }    
 }

@@ -34,8 +34,9 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>UploadSigningCertificate</a>
-    /// and <a>ListSigningCertificates</a> operations. 
+    /// This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSigningCertificate.html">UploadSigningCertificate</a>
+    /// and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSigningCertificates.html">ListSigningCertificates</a>
+    /// operations. 
     /// </para>
     /// </summary>
     public partial class SigningCertificate

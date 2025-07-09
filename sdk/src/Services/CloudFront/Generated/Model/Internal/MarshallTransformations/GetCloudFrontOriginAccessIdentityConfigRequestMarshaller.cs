@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetCloudFrontOriginAccessIdentityConfig Request Marshaller
     /// </summary>       
-    public class GetCloudFrontOriginAccessIdentityConfigRequestMarshaller : IMarshaller<IRequest, GetCloudFrontOriginAccessIdentityConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetCloudFrontOriginAccessIdentityConfigRequestMarshaller : IMarshaller<IRequest, GetCloudFrontOriginAccessIdentityConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/origin-access-identity/cloudfront/{Id}/config";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetCloudFrontOriginAccessIdentityConfigRequestMarshaller _instance = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetCloudFrontOriginAccessIdentityConfigRequest publicRequest);
     }    
 }

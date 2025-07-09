@@ -40,6 +40,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _name;
         private TrainedModelExportOutputConfiguration _outputConfiguration;
         private string _trainedModelArn;
+        private string _trainedModelVersionIdentifier;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -134,6 +135,26 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetTrainedModelArn()
         {
             return this._trainedModelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainedModelVersionIdentifier. 
+        /// <para>
+        /// The version identifier of the trained model to export. This specifies which version
+        /// of the trained model should be exported to the specified destination.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string TrainedModelVersionIdentifier
+        {
+            get { return this._trainedModelVersionIdentifier; }
+            set { this._trainedModelVersionIdentifier = value; }
+        }
+
+        // Check to see if TrainedModelVersionIdentifier property is set
+        internal bool IsSetTrainedModelVersionIdentifier()
+        {
+            return this._trainedModelVersionIdentifier != null;
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateJobPriority Request Marshaller
     /// </summary>       
-    public class UpdateJobPriorityRequestMarshaller : IMarshaller<IRequest, UpdateJobPriorityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class UpdateJobPriorityRequestMarshaller : IMarshaller<IRequest, UpdateJobPriorityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -70,8 +70,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("priority", StringUtils.FromInt(publicRequest.Priority));
             request.ResourcePath = "/v20180820/jobs/{id}/priority";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateJobPriorityRequestMarshaller _instance = new UpdateJobPriorityRequestMarshaller();        
@@ -92,5 +93,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateJobPriorityRequest publicRequest);
     }    
 }

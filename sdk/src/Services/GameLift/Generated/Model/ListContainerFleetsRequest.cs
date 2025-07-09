@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To get a list of all Amazon GameLift Realtime fleets with a specific configuration
+    /// To get a list of all Amazon GameLift Servers Realtime fleets with a specific configuration
     /// script, provide the script ID. 
     /// </para>
     ///  </li> </ul> 

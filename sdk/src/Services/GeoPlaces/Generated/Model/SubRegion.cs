@@ -43,7 +43,7 @@ namespace Amazon.GeoPlaces.Model
         /// Abbreviated code for the county or sub-region.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3)]
+        [AWSProperty(Sensitive=true, Min=0, Max=3)]
         public string Code
         {
             get { return this._code; }
@@ -62,7 +62,7 @@ namespace Amazon.GeoPlaces.Model
         /// Name for the county or sub-region.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string Name
         {
             get { return this._name; }

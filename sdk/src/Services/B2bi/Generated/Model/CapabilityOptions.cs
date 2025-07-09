@@ -34,7 +34,26 @@ namespace Amazon.B2bi.Model
     /// </summary>
     public partial class CapabilityOptions
     {
+        private InboundEdiOptions _inboundEdi;
         private OutboundEdiOptions _outboundEdi;
+
+        /// <summary>
+        /// Gets and sets the property InboundEdi. 
+        /// <para>
+        /// A structure that contains the inbound EDI options for the capability.
+        /// </para>
+        /// </summary>
+        public InboundEdiOptions InboundEdi
+        {
+            get { return this._inboundEdi; }
+            set { this._inboundEdi = value; }
+        }
+
+        // Check to see if InboundEdi property is set
+        internal bool IsSetInboundEdi()
+        {
+            return this._inboundEdi != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OutboundEdi. 

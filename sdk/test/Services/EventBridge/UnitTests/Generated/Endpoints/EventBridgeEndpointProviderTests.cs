@@ -542,21 +542,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new EventBridgeEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://events.us-gov-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("EventBridge")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
         public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
@@ -566,36 +551,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://events.us-gov-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("EventBridge")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new EventBridgeEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://events.us-gov-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("EventBridge")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new EventBridgeEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://events-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -940,16 +895,120 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
-        [Description("Valid EndpointId with DualStack enabled and partition does not support DualStack")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void Valid_EndpointId_with_DualStack_enabled_and_partition_does_not_support_DualStack_Test()
+        [Description("legacy fips endpoint @ us-gov-east-1")]
+        public void Legacy_fips_endpoint_usgoveast1_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
-            parameters["EndpointId"] = "abc123.456def";
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://events.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EventBridge")]
+        [Description("legacy non-fips endpoint @ us-gov-east-1")]
+        public void Legacy_nonfips_endpoint_usgoveast1_Test()
+        {
+            var parameters = new EventBridgeEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://events.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EventBridge")]
+        [Description("Dualstack fips endpoint @ us-gov-east-1")]
+        public void Dualstack_fips_endpoint_usgoveast1_Test()
+        {
+            var parameters = new EventBridgeEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://events.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EventBridge")]
+        [Description("Dualstack non-fips endpoint @ us-gov-east-1")]
+        public void Dualstack_nonfips_endpoint_usgoveast1_Test()
+        {
+            var parameters = new EventBridgeEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://events.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EventBridge")]
+        [Description("legacy fips endpoint @ us-gov-west-1")]
+        public void Legacy_fips_endpoint_usgovwest1_Test()
+        {
+            var parameters = new EventBridgeEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://events.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EventBridge")]
+        [Description("legacy non-fips endpoint @ us-gov-west-1")]
+        public void Legacy_nonfips_endpoint_usgovwest1_Test()
+        {
+            var parameters = new EventBridgeEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://events.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EventBridge")]
+        [Description("Dualstack fips endpoint @ us-gov-west-1")]
+        public void Dualstack_fips_endpoint_usgovwest1_Test()
+        {
+            var parameters = new EventBridgeEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://events.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EventBridge")]
+        [Description("Dualstack non-fips endpoint @ us-gov-west-1")]
+        public void Dualstack_nonfips_endpoint_usgovwest1_Test()
+        {
+            var parameters = new EventBridgeEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://events.us-gov-west-1.api.aws", endpoint.URL);
         }
 
     }

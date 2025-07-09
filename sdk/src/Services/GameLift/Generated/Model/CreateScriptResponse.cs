@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model
         /// an S3 bucket under your account, the storage location reflects the information that
         /// was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded
         /// from a local zip file, the storage location reflects an S3 location controls by the
-        /// Amazon GameLift service.
+        /// Amazon GameLift Servers service.
         /// </para>
         /// </summary>
         public Script Script

@@ -79,6 +79,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PreSignedUrl", StringUtils.FromString(publicRequest.PreSignedUrl));
                 }
+                if(publicRequest.IsSetSnapshotAvailabilityZone())
+                {
+                    request.Parameters.Add("SnapshotAvailabilityZone", StringUtils.FromString(publicRequest.SnapshotAvailabilityZone));
+                }
+                if(publicRequest.IsSetSnapshotTarget())
+                {
+                    request.Parameters.Add("SnapshotTarget", StringUtils.FromString(publicRequest.SnapshotTarget));
+                }
                 if(publicRequest.IsSetSourceDBSnapshotIdentifier())
                 {
                     request.Parameters.Add("SourceDBSnapshotIdentifier", StringUtils.FromString(publicRequest.SourceDBSnapshotIdentifier));

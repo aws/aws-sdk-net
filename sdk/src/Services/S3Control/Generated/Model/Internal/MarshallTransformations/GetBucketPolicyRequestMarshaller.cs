@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetBucketPolicy Request Marshaller
     /// </summary>       
-    public class GetBucketPolicyRequestMarshaller : IMarshaller<IRequest, GetBucketPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetBucketPolicyRequestMarshaller : IMarshaller<IRequest, GetBucketPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/bucket/{name}/policy";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetBucketPolicyRequestMarshaller _instance = new GetBucketPolicyRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketPolicyRequest publicRequest);
     }    
 }

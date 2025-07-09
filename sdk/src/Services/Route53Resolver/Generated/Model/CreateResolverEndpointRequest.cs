@@ -88,12 +88,17 @@ namespace Amazon.Route53Resolver.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>INBOUND</c>: Resolver forwards DNS queries to the DNS service for a VPC from your
-        /// network
+        /// network.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>OUTBOUND</c>: Resolver forwards DNS queries from the DNS service for a VPC to
-        /// your network
+        /// your network.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INBOUND_DELEGATION</c>: Resolver delegates queries to Route 53 private hosted
+        /// zones from your network.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -203,12 +208,12 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Protocols. 
         /// <para>
-        ///  The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound
-        /// endpoints only. 
+        ///  The protocols you want to use for the endpoint. DoH-FIPS is applicable for default
+        /// inbound endpoints only. 
         /// </para>
         ///  
         /// <para>
-        /// For an inbound endpoint you can apply the protocols as follows:
+        /// For a default inbound endpoint you can apply the protocols as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -235,6 +240,10 @@ namespace Amazon.Route53Resolver.Model
         /// None, which is treated as Do53.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// For a delegation inbound endpoint you can use Do53 only.
+        /// </para>
+        ///  
         /// <para>
         /// For an outbound endpoint you can apply the protocols as follows:
         /// </para>

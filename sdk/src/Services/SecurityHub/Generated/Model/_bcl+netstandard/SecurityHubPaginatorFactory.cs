@@ -53,6 +53,14 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeProductsV2 operation
+        ///</summary>
+        public IDescribeProductsV2Paginator DescribeProductsV2(DescribeProductsV2Request request) 
+        {
+            return new DescribeProductsV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeStandards operation
         ///</summary>
         public IDescribeStandardsPaginator DescribeStandards(DescribeStandardsRequest request) 
@@ -93,11 +101,35 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for GetFindingsV2 operation
+        ///</summary>
+        public IGetFindingsV2Paginator GetFindingsV2(GetFindingsV2Request request) 
+        {
+            return new GetFindingsV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetInsights operation
         ///</summary>
         public IGetInsightsPaginator GetInsights(GetInsightsRequest request) 
         {
             return new GetInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetResourcesV2 operation
+        ///</summary>
+        public IGetResourcesV2Paginator GetResourcesV2(GetResourcesV2Request request) 
+        {
+            return new GetResourcesV2Paginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAggregatorsV2 operation
+        ///</summary>
+        public IListAggregatorsV2Paginator ListAggregatorsV2(ListAggregatorsV2Request request) 
+        {
+            return new ListAggregatorsV2Paginator(this.client, request);
         }
 
         /// <summary>

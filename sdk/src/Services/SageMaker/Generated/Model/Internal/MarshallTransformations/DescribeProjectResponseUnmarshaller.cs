@@ -118,6 +118,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ServiceCatalogProvisioningDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TemplateProviderDetails", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TemplateProviderDetail, TemplateProviderDetailUnmarshaller>(TemplateProviderDetailUnmarshaller.Instance);
+                    response.TemplateProviderDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

@@ -36,6 +36,8 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _certificateArn;
         private int? _port;
+        private string _s3AccessRoleArn;
+        private string _s3Path;
         private string _serverName;
         private DmsSslModeValue _sslMode;
 
@@ -73,6 +75,43 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3AccessRoleArn. 
+        /// <para>
+        /// The ARN for the role the application uses to access its Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        public string S3AccessRoleArn
+        {
+            get { return this._s3AccessRoleArn; }
+            set { this._s3AccessRoleArn = value; }
+        }
+
+        // Check to see if S3AccessRoleArn property is set
+        internal bool IsSetS3AccessRoleArn()
+        {
+            return this._s3AccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Path. 
+        /// <para>
+        /// The path for the Amazon S3 bucket that the application uses for accessing the user-defined
+        /// schema.
+        /// </para>
+        /// </summary>
+        public string S3Path
+        {
+            get { return this._s3Path; }
+            set { this._s3Path = value; }
+        }
+
+        // Check to see if S3Path property is set
+        internal bool IsSetS3Path()
+        {
+            return this._s3Path != null;
         }
 
         /// <summary>

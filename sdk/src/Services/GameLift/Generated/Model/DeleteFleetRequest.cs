@@ -53,7 +53,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up Amazon GameLift Fleets</a> 
+    /// up Amazon GameLift Servers Fleets</a> 
     /// </para>
     /// </summary>
     public partial class DeleteFleetRequest : AmazonGameLiftRequest

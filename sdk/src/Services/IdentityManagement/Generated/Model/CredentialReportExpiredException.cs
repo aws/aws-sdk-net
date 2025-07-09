@@ -31,8 +31,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// The request was rejected because the most recent credential report has expired. To
-    /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
-    /// about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+    /// generate a new credential report, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html">GenerateCredentialReport</a>.
+    /// For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
     /// credential reports</a> in the <i>IAM User Guide</i>.
     /// </summary>
     #if !NETSTANDARD

@@ -80,6 +80,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.BucketAccountId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DataSourceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DataSourceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DataSourceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DataSourceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Name", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

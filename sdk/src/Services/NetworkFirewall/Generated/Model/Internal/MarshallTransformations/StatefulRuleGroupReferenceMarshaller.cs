@@ -46,6 +46,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDeepThreatInspection())
+            {
+                context.Writer.WritePropertyName("DeepThreatInspection");
+                context.Writer.WriteBooleanValue(requestObject.DeepThreatInspection.Value);
+            }
+
             if(requestObject.IsSetOverride())
             {
                 context.Writer.WritePropertyName("Override");

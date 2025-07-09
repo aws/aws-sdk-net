@@ -34,6 +34,13 @@ namespace Amazon.QBusiness.Model
     /// 
     ///  
     /// <para>
+    /// In the current boosting implementation, boosting focuses primarily on <c>DATE</c>
+    /// attributes for recency and <c>STRING</c> attributes for source prioritization. <c>NUMBER</c>
+    /// attributes can serve as additional boosting factors when needed, but are not supported
+    /// when using <c>NativeIndexConfiguration</c> version 2.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information on how boosting document attributes work in Amazon Q Business,
     /// see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
     /// using document attributes</a>.
@@ -47,8 +54,11 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property BoostingLevel. 
         /// <para>
-        /// Specifies the duration, in seconds, of a boost applies to a <c>NUMBER</c> type document
-        /// attribute.
+        /// Specifies the priority of boosted document attributes in relation to other boosted
+        /// attributes. This parameter determines how strongly the attribute influences document
+        /// ranking in search results. <c>NUMBER</c> attributes can serve as additional boosting
+        /// factors when needed, but are not supported when using <c>NativeIndexConfiguration</c>
+        /// version 2.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,7 +77,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property BoostingType. 
         /// <para>
-        /// Specifies how much a document attribute is boosted.
+        /// Specifies whether higher or lower numeric values should be prioritized when boosting.
+        /// Valid values are ASCENDING (higher numbers are more important) and DESCENDING (lower
+        /// numbers are more important).
         /// </para>
         /// </summary>
         public NumberAttributeBoostingType BoostingType

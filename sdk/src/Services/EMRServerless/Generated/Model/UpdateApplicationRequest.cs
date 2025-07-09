@@ -41,6 +41,7 @@ namespace Amazon.EMRServerless.Model
         private AutoStartConfig _autoStartConfiguration;
         private AutoStopConfig _autoStopConfiguration;
         private string _clientToken;
+        private IdentityCenterConfigurationInput _identityCenterConfiguration;
         private ImageConfigurationInput _imageConfiguration;
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = AWSConfigs.InitializeCollections ? new Dictionary<string, InitialCapacityConfig>() : null;
         private InteractiveConfiguration _interactiveConfiguration;
@@ -144,6 +145,26 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterConfiguration. 
+        /// <para>
+        /// Specifies the IAM Identity Center configuration used to enable or disable trusted
+        /// identity propagation. When provided, this configuration determines how the application
+        /// interacts with IAM Identity Center for user authentication and access control.
+        /// </para>
+        /// </summary>
+        public IdentityCenterConfigurationInput IdentityCenterConfiguration
+        {
+            get { return this._identityCenterConfiguration; }
+            set { this._identityCenterConfiguration = value; }
+        }
+
+        // Check to see if IdentityCenterConfiguration property is set
+        internal bool IsSetIdentityCenterConfiguration()
+        {
+            return this._identityCenterConfiguration != null;
         }
 
         /// <summary>

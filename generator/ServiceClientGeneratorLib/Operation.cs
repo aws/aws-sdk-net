@@ -302,6 +302,35 @@ namespace ServiceClientGenerator
                 if (this.RequestStructure != null)
                 {
                     var payload = this.RequestStructure.PayloadMemberName;
+                    // check to see if the payload member has been overridden by another member defined in the service customizations
+                    // file. For example, the payload member could've been included in the "exclude" array and another member
+                    // could've been injected.
+                    // For example:
+                    //        "RestoreObjectRequest": {
+                    //          "exclude": ["RestoreRequest"],
+                    //          "inject": [
+                    //          {
+                    //            "Days": {
+                    //                "shape": "Days",
+                    //            "originalMember": "RestoreRequest"
+                    //            }
+                    //          }
+                    //      ]
+                    //  },
+                    // The payload is "RestoreRequest" but it has been excluded via a customization. so we check for 
+                    // that scenario here. 
+                    if (this.model.Customizations.ShapeModifiers.TryGetValue(this.RequestStructure.Name, out var customization) && customization.IsExcludedProperty(payload))
+                    {
+                        foreach (var injectedProperty in customization.InjectedPropertyNames)
+                        {
+                            var propertyInjector = customization.InjectedPropertyData(injectedProperty);
+                            if (string.Equals(propertyInjector.Data[CustomizationsModel.OriginalMemberKey].ToString(), payload, StringComparison.OrdinalIgnoreCase))
+                            {
+                                payload = injectedProperty;
+                                break;
+                            }
+                        }
+                    }
                     if (!string.IsNullOrWhiteSpace(payload))
                     {
                         return this.RequestStructure.Members.Single(m =>
@@ -324,6 +353,33 @@ namespace ServiceClientGenerator
                 if (this.ResponseStructure != null)
                 {
                     var payload = this.ResponseStructure.PayloadMemberName;
+                    // check to see if the payload member has been overridden by another member defined in the service customizations
+                    // file. For example, the payload member could've been included in the "exclude" array and another member
+                    // could've been injected or the member could've been renamed
+                    if (this.model.Customizations.ShapeModifiers.ContainsKey(this.ResponseStructure.Name))
+                    {
+                        var customization = this.model.Customizations.ShapeModifiers[this.ResponseStructure.Name];
+                        if (customization.IsExcludedProperty(payload))
+                        {
+                            foreach (var injectedProperty in customization.InjectedPropertyNames)
+                            {
+                                var propertyInjector = customization.InjectedPropertyData(injectedProperty);
+                                if (string.Equals(propertyInjector.Data[CustomizationsModel.OriginalMemberKey].ToString(), payload, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    payload = injectedProperty;
+                                    break;
+                                }
+
+                            }
+                        }
+                        
+                    }
+                    // has the payload's property been modified via an "emitPropertyName" customization?
+                    if (payload != null && this.model.Customizations.GetPropertyModifier(this.ResponseStructure.Name, payload) != null)
+                    {
+                        var propertyModifier = this.model.Customizations.GetPropertyModifier(this.ResponseStructure.Name, payload);
+                        payload = propertyModifier.EmitName;
+                    }
                     if (!string.IsNullOrWhiteSpace(payload))
                     {
                         return this.ResponseStructure.Members.Single(m => m.ModeledName.Equals(payload, StringComparison.InvariantCultureIgnoreCase));

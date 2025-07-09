@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public List<ClusterInstanceGroupSpecification> InstanceGroups
         {
             get { return this._instanceGroups; }

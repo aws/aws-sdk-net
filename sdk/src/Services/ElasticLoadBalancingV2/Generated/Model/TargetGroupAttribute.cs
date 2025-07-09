@@ -91,7 +91,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// number of targets that must be healthy. If the number of healthy targets is below
         /// this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy
         /// zones. The possible values are <c>off</c> or an integer from 1 to the maximum number
-        /// of targets. The default is <c>off</c>.
+        /// of targets. The default is 1.
         /// </para>
         ///  </li> <li> 
         /// <para>

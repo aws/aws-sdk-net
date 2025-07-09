@@ -36,8 +36,28 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ListOrganizationAdminAccountsRequest : AmazonSecurityHubRequest
     {
+        private SecurityHubFeature _feature;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Feature. 
+        /// <para>
+        /// The feature where the delegated administrator account is listed. Defaults to Security
+        /// Hub if not specified.
+        /// </para>
+        /// </summary>
+        public SecurityHubFeature Feature
+        {
+            get { return this._feature; }
+            set { this._feature = value; }
+        }
+
+        // Check to see if Feature property is set
+        internal bool IsSetFeature()
+        {
+            return this._feature != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

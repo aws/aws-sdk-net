@@ -36,8 +36,10 @@ namespace Amazon.Bedrock.Model
     public partial class KnowledgeBaseVectorSearchConfiguration
     {
         private RetrievalFilter _filter;
+        private ImplicitFilterConfiguration _implicitFilterConfiguration;
         private int? _numberOfResults;
         private SearchType _overrideSearchType;
+        private VectorSearchRerankingConfiguration _rerankingConfiguration;
 
         /// <summary>
         /// Gets and sets the property Filter. 
@@ -57,6 +59,26 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetFilter()
         {
             return this._filter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImplicitFilterConfiguration. 
+        /// <para>
+        /// Configuration for implicit filtering in Knowledge Base vector searches. This allows
+        /// the system to automatically apply filters based on the query context without requiring
+        /// explicit filter expressions.
+        /// </para>
+        /// </summary>
+        public ImplicitFilterConfiguration ImplicitFilterConfiguration
+        {
+            get { return this._implicitFilterConfiguration; }
+            set { this._implicitFilterConfiguration = value; }
+        }
+
+        // Check to see if ImplicitFilterConfiguration property is set
+        internal bool IsSetImplicitFilterConfiguration()
+        {
+            return this._implicitFilterConfiguration != null;
         }
 
         /// <summary>
@@ -98,6 +120,26 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetOverrideSearchType()
         {
             return this._overrideSearchType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RerankingConfiguration. 
+        /// <para>
+        /// Configuration for reranking search results in Knowledge Base vector searches. Reranking
+        /// improves search relevance by reordering initial vector search results using more sophisticated
+        /// relevance models.
+        /// </para>
+        /// </summary>
+        public VectorSearchRerankingConfiguration RerankingConfiguration
+        {
+            get { return this._rerankingConfiguration; }
+            set { this._rerankingConfiguration = value; }
+        }
+
+        // Check to see if RerankingConfiguration property is set
+        internal bool IsSetRerankingConfiguration()
+        {
+            return this._rerankingConfiguration != null;
         }
 
     }

@@ -31,10 +31,11 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Assigns a tag to an Amazon GameLift resource. You can use tags to organize resources,
-    /// create IAM permissions policies to manage access to groups of resources, customize
-    /// Amazon Web Services cost breakdowns, and more. This operation handles the permissions
-    /// necessary to manage tags for Amazon GameLift resources that support tagging.
+    /// Assigns a tag to an Amazon GameLift Servers resource. You can use tags to organize
+    /// resources, create IAM permissions policies to manage access to groups of resources,
+    /// customize Amazon Web Services cost breakdowns, and more. This operation handles the
+    /// permissions necessary to manage tags for Amazon GameLift Servers resources that support
+    /// tagging.
     /// 
     ///  
     /// <para>
@@ -76,10 +77,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ResourceARN. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that uniquely identifies the Amazon GameLift resource that you want to assign tags
-        /// to. Amazon GameLift includes resource ARNs in the data object for the resource. You
-        /// can retrieve the ARN by calling a <c>List</c> or <c>Describe</c> operation for the
-        /// resource type. 
+        /// that uniquely identifies the Amazon GameLift Servers resource that you want to assign
+        /// tags to. Amazon GameLift Servers includes resource ARNs in the data object for the
+        /// resource. You can retrieve the ARN by calling a <c>List</c> or <c>Describe</c> operation
+        /// for the resource type. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -98,9 +99,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of one or more tags to assign to the specified Amazon GameLift resource. Tags
-        /// are developer-defined and structured as key-value pairs. The maximum tag limit may
-        /// be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// A list of one or more tags to assign to the specified Amazon GameLift Servers resource.
+        /// Tags are developer-defined and structured as key-value pairs. The maximum tag limit
+        /// may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
         /// Tagging Amazon Web Services Resources</a> for tagging limits.
         /// </para>
         /// <para />

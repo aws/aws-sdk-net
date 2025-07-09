@@ -43,6 +43,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class WebACL
     {
+        private ApplicationConfig _applicationConfig;
         private string _arn;
         private AssociationConfig _associationConfig;
         private long? _capacity;
@@ -63,6 +64,24 @@ namespace Amazon.WAFV2.Model
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
         private List<string> _tokenDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VisibilityConfig _visibilityConfig;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationConfig. 
+        /// <para>
+        /// Returns a list of <c>ApplicationAttribute</c>s.
+        /// </para>
+        /// </summary>
+        public ApplicationConfig ApplicationConfig
+        {
+            get { return this._applicationConfig; }
+            set { this._applicationConfig = value; }
+        }
+
+        // Check to see if ApplicationConfig property is set
+        internal bool IsSetApplicationConfig()
+        {
+            return this._applicationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ARN. 

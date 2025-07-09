@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetPublicAccessBlock Request Marshaller
     /// </summary>       
-    public class GetPublicAccessBlockRequestMarshaller : IMarshaller<IRequest, GetPublicAccessBlockRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetPublicAccessBlockRequestMarshaller : IMarshaller<IRequest, GetPublicAccessBlockRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,6 +65,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/configuration/publicAccessBlock";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetPublicAccessBlockRequestMarshaller _instance = new GetPublicAccessBlockRequestMarshaller();        
@@ -85,5 +86,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetPublicAccessBlockRequest publicRequest);
     }    
 }

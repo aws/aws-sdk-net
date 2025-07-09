@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
-    /// Lists information about zonal shifts in Amazon Route 53 Application Recovery Controller,
-    /// including zonal shifts that you start yourself and zonal shifts that ARC starts on
-    /// your behalf for practice runs with zonal autoshift.
+    /// Lists information about zonal shifts in Amazon Application Recovery Controller, including
+    /// zonal shifts that you start yourself and zonal shifts that ARC starts on your behalf
+    /// for practice runs with zonal autoshift.
     /// 
     ///  
     /// <para>
@@ -153,11 +153,16 @@ namespace Amazon.ARCZonalShift.Model
         /// configuration goes into an <c>ALARM</c> state during the practice run, and the practice
         /// run was not interrupted before it completed.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CAPACITY_CHECK_FAILED:</b> The check for balanced capacity across Availability
+        /// Zones for your load balancing and Auto Scaling group resources failed.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html">
-        /// Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application
-        /// Recovery Controller Developer Guide.
+        /// Considerations when you configure zonal autoshift</a> in the Amazon Application Recovery
+        /// Controller Developer Guide.
         /// </para>
         /// </summary>
         public PracticeRunOutcome PracticeRunOutcome
@@ -180,9 +185,30 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         ///  
         /// <para>
-        /// At this time, you can only start a zonal shift for Network Load Balancers and Application
-        /// Load Balancers with cross-zone load balancing turned off.
+        /// Amazon Application Recovery Controller currently supports enabling the following resources
+        /// for zonal shift and zonal autoshift:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html">Amazon
+        /// EC2 Auto Scaling groups</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html">Amazon
+        /// Elastic Kubernetes Service</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html">Application
+        /// Load Balancers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html">Network
+        /// Load Balancers</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=1024)]
         public string ResourceIdentifier
@@ -245,7 +271,7 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>ACTIVE:</b> The zonal shift has been started and active.
+        ///  <b>ACTIVE:</b> The zonal shift has been started and is active.
         /// </para>
         ///  </li> <li> 
         /// <para>

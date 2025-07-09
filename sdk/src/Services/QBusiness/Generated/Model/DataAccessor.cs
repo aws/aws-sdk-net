@@ -34,6 +34,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class DataAccessor
     {
+        private DataAccessorAuthenticationDetail _authenticationDetail;
         private DateTime? _createdAt;
         private string _dataAccessorArn;
         private string _dataAccessorId;
@@ -41,6 +42,25 @@ namespace Amazon.QBusiness.Model
         private string _idcApplicationArn;
         private string _principal;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationDetail. 
+        /// <para>
+        /// The authentication configuration details for the data accessor. This specifies how
+        /// the ISV authenticates when accessing data through this data accessor.
+        /// </para>
+        /// </summary>
+        public DataAccessorAuthenticationDetail AuthenticationDetail
+        {
+            get { return this._authenticationDetail; }
+            set { this._authenticationDetail = value; }
+        }
+
+        // Check to see if AuthenticationDetail property is set
+        internal bool IsSetAuthenticationDetail()
+        {
+            return this._authenticationDetail != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,80 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
+using System;
+using System.Net;
+using System.Collections.Generic;
+using Amazon.S3.Model;
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.S3.Util;
-
-#pragma warning disable 1591
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    /// <summary>
-    /// Delete Bucket Request Marshaller
-    /// </summary>       
-    public class DeleteBucketRequestMarshaller : IMarshaller<IRequest, DeleteBucketRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+	/// <summary>
+	/// DeleteBucket Request Marshaller
+	/// </summary>       
+	public partial class DeleteBucketRequestMarshaller : IMarshaller<IRequest, DeleteBucketRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
 	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((DeleteBucketRequest)input);
-		}
-
-        public IRequest Marshall(DeleteBucketRequest deleteBucketRequest)
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteBucketRequest, "AmazonS3");
-
-            request.HttpMethod = "DELETE";
-
-            if (deleteBucketRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(deleteBucketRequest.ExpectedBucketOwner));
-
-            if (string.IsNullOrEmpty(deleteBucketRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketRequest.BucketName");
-
-            request.ResourcePath = "/";
-
-            if (deleteBucketRequest.BucketRegion != null)
-            {
-                RegionEndpoint regionEndpoint;
+			if (publicRequest.BucketRegion != null)
+			{
+				RegionEndpoint regionEndpoint;
 #pragma warning disable CR1004
-                if (deleteBucketRequest.BucketRegion == S3Region.USEast1)
-                {
-                    regionEndpoint = RegionEndpoint.USEast1;
-                }
-                else if (deleteBucketRequest.BucketRegion == S3Region.EUWest1)
-                {
-                    regionEndpoint = RegionEndpoint.EUWest1;
-                }
-                else
-                {
-                    regionEndpoint = RegionEndpoint.GetBySystemName(deleteBucketRequest.BucketRegion.Value);
-                }
+				if (publicRequest.BucketRegion == S3Region.USEast1)
+				{
+					regionEndpoint = RegionEndpoint.USEast1;
+				}
+				else if (publicRequest.BucketRegion == S3Region.EUWest1)
+				{
+					regionEndpoint = RegionEndpoint.EUWest1;
+				}
+				else
+				{
+					regionEndpoint = RegionEndpoint.GetBySystemName(publicRequest.BucketRegion.Value);
+				}
 #pragma warning restore CR1004
-                request.AlternateEndpoint = regionEndpoint;
-            }
-                
-            request.UseQueryString = true;
-            
-            return request;
-        }
-
-	    private static DeleteBucketRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static DeleteBucketRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new DeleteBucketRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
+				defaultRequest.AlternateEndpoint = regionEndpoint;
+			}
+		}
     }
 }
-    

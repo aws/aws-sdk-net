@@ -57,6 +57,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetImplicitFilterConfiguration())
+            {
+                context.Writer.WritePropertyName("implicitFilterConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImplicitFilterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImplicitFilterConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetNumberOfResults())
             {
                 context.Writer.WritePropertyName("numberOfResults");
@@ -67,6 +78,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("overrideSearchType");
                 context.Writer.WriteStringValue(requestObject.OverrideSearchType);
+            }
+
+            if(requestObject.IsSetRerankingConfiguration())
+            {
+                context.Writer.WritePropertyName("rerankingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VectorSearchRerankingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RerankingConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

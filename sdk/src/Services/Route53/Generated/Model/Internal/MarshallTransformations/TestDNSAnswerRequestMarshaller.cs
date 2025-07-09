@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// TestDNSAnswer Request Marshaller
     /// </summary>       
-    public class TestDNSAnswerRequestMarshaller : IMarshaller<IRequest, TestDNSAnswerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class TestDNSAnswerRequestMarshaller : IMarshaller<IRequest, TestDNSAnswerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -77,8 +77,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 request.Parameters.Add("edns0clientsubnetmask", StringUtils.FromString(publicRequest.EDNS0ClientSubnetMask));
             request.ResourcePath = "/2013-04-01/testdnsanswer";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static TestDNSAnswerRequestMarshaller _instance = new TestDNSAnswerRequestMarshaller();        
@@ -99,5 +100,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, TestDNSAnswerRequest publicRequest);
     }    
 }

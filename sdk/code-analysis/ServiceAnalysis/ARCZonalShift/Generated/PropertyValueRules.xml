@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.CancelPracticeRunRequest.ZonalShiftId</property>
+    <min>6</min>
+    <max>36</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.CancelPracticeRunResponse.AwayFrom</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.CancelPracticeRunResponse.Comment</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.CancelPracticeRunResponse.ResourceIdentifier</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.CancelPracticeRunResponse.ZonalShiftId</property>
+    <min>6</min>
+    <max>36</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.CancelZonalShiftRequest.ZonalShiftId</property>
     <min>6</min>
     <max>36</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.CancelZonalShiftResponse.AwayFrom</property>
@@ -25,7 +52,7 @@
     <property>Amazon.ARCZonalShift.Model.CancelZonalShiftResponse.ZonalShiftId</property>
     <min>6</min>
     <max>36</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.CreatePracticeRunConfigurationRequest.ResourceIdentifier</property>
@@ -36,7 +63,7 @@
     <property>Amazon.ARCZonalShift.Model.CreatePracticeRunConfigurationResponse.Arn</property>
     <min>8</min>
     <max>1024</max>
-    <pattern>^arn:.*$</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.CreatePracticeRunConfigurationResponse.Name</property>
@@ -52,7 +79,7 @@
     <property>Amazon.ARCZonalShift.Model.DeletePracticeRunConfigurationResponse.Arn</property>
     <min>8</min>
     <max>1024</max>
-    <pattern>^arn:.*$</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.DeletePracticeRunConfigurationResponse.Name</property>
@@ -68,7 +95,7 @@
     <property>Amazon.ARCZonalShift.Model.GetManagedResourceResponse.Arn</property>
     <min>8</min>
     <max>1024</max>
-    <pattern>^arn:.*$</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.GetManagedResourceResponse.Name</property>
@@ -96,6 +123,42 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.StartPracticeRunRequest.AwayFrom</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.StartPracticeRunRequest.Comment</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.StartPracticeRunRequest.ResourceIdentifier</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.StartPracticeRunResponse.AwayFrom</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.StartPracticeRunResponse.Comment</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.StartPracticeRunResponse.ResourceIdentifier</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCZonalShift.Model.StartPracticeRunResponse.ZonalShiftId</property>
+    <min>6</min>
+    <max>36</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.StartZonalShiftRequest.AwayFrom</property>
     <min>0</min>
     <max>20</max>
@@ -109,7 +172,7 @@
     <property>Amazon.ARCZonalShift.Model.StartZonalShiftRequest.ExpiresIn</property>
     <min>2</min>
     <max>5</max>
-    <pattern>^([1-9][0-9]*)(m|h)$</pattern>
+    <pattern>([1-9][0-9]*)(m|h)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.StartZonalShiftRequest.ResourceIdentifier</property>
@@ -135,7 +198,7 @@
     <property>Amazon.ARCZonalShift.Model.StartZonalShiftResponse.ZonalShiftId</property>
     <min>6</min>
     <max>36</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.UpdatePracticeRunConfigurationRequest.ResourceIdentifier</property>
@@ -146,7 +209,7 @@
     <property>Amazon.ARCZonalShift.Model.UpdatePracticeRunConfigurationResponse.Arn</property>
     <min>8</min>
     <max>1024</max>
-    <pattern>^arn:.*$</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.UpdatePracticeRunConfigurationResponse.Name</property>
@@ -172,13 +235,13 @@
     <property>Amazon.ARCZonalShift.Model.UpdateZonalShiftRequest.ExpiresIn</property>
     <min>2</min>
     <max>5</max>
-    <pattern>^([1-9][0-9]*)(m|h)$</pattern>
+    <pattern>([1-9][0-9]*)(m|h)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.UpdateZonalShiftRequest.ZonalShiftId</property>
     <min>6</min>
     <max>36</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.UpdateZonalShiftResponse.AwayFrom</property>
@@ -199,7 +262,7 @@
     <property>Amazon.ARCZonalShift.Model.UpdateZonalShiftResponse.ZonalShiftId</property>
     <min>6</min>
     <max>36</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.AutoshiftInResource.AwayFrom</property>
@@ -215,13 +278,13 @@
     <property>Amazon.ARCZonalShift.Model.ControlCondition.AlarmIdentifier</property>
     <min>8</min>
     <max>1024</max>
-    <pattern>^.*$</pattern>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.ManagedResourceSummary.Arn</property>
     <min>8</min>
     <max>1024</max>
-    <pattern>^arn:.*$</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.ManagedResourceSummary.Name</property>
@@ -247,7 +310,7 @@
     <property>Amazon.ARCZonalShift.Model.ZonalShiftInResource.ZonalShiftId</property>
     <min>6</min>
     <max>36</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCZonalShift.Model.ZonalShiftSummary.AwayFrom</property>
@@ -268,6 +331,6 @@
     <property>Amazon.ARCZonalShift.Model.ZonalShiftSummary.ZonalShiftId</property>
     <min>6</min>
     <max>36</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
 </property-value-rules>

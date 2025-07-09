@@ -62,6 +62,54 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetCodeRepositoryProjectName())
+            {
+                context.Writer.WritePropertyName("codeRepositoryProjectName");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCodeRepositoryProjectNameListValue in requestObject.CodeRepositoryProjectName)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CoverageStringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeRepositoryProjectNameListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCodeRepositoryProviderType())
+            {
+                context.Writer.WritePropertyName("codeRepositoryProviderType");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCodeRepositoryProviderTypeListValue in requestObject.CodeRepositoryProviderType)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CoverageStringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeRepositoryProviderTypeListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCodeRepositoryProviderTypeVisibility())
+            {
+                context.Writer.WritePropertyName("codeRepositoryProviderTypeVisibility");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCodeRepositoryProviderTypeVisibilityListValue in requestObject.CodeRepositoryProviderTypeVisibility)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CoverageStringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeRepositoryProviderTypeVisibilityListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetEc2InstanceTags())
             {
                 context.Writer.WritePropertyName("ec2InstanceTags");
@@ -216,6 +264,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
                     var marshaller = CoverageDateFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectLastScannedAtListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetLastScannedCommitId())
+            {
+                context.Writer.WritePropertyName("lastScannedCommitId");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectLastScannedCommitIdListValue in requestObject.LastScannedCommitId)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CoverageStringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLastScannedCommitIdListValue, context);
 
                     context.Writer.WriteEndObject();
                 }

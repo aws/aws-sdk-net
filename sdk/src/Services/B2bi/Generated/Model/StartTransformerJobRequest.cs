@@ -40,6 +40,14 @@ namespace Amazon.B2bi.Model
     /// need to create profiles, partnerships or capabilities. Just create and configure a
     /// transformer, and then run the <c>StartTransformerJob</c> API to process your files.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The system stores transformer jobs for 30 days. During that period, you can run <a
+    /// href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_GetTransformerJob.html">GetTransformerJob</a>
+    /// and supply its <c>transformerId</c> and <c>transformerJobId</c> to return details
+    /// of the job.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class StartTransformerJobRequest : AmazonB2biRequest
     {

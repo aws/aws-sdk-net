@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteAccessGrantsLocation Request Marshaller
     /// </summary>       
-    public class DeleteAccessGrantsLocationRequestMarshaller : IMarshaller<IRequest, DeleteAccessGrantsLocationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteAccessGrantsLocationRequestMarshaller : IMarshaller<IRequest, DeleteAccessGrantsLocationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accessgrantsinstance/location/{id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteAccessGrantsLocationRequestMarshaller _instance = new DeleteAccessGrantsLocationRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteAccessGrantsLocationRequest publicRequest);
     }    
 }

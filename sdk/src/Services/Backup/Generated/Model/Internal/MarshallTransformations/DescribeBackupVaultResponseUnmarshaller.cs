@@ -82,6 +82,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.EncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LatestMpaApprovalTeamUpdate", targetDepth))
+                {
+                    var unmarshaller = LatestMpaApprovalTeamUpdateUnmarshaller.Instance;
+                    response.LatestMpaApprovalTeamUpdate = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LockDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -106,10 +112,28 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.MinRetentionDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MpaApprovalTeamArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MpaApprovalTeamArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MpaSessionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MpaSessionArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("NumberOfRecoveryPoints", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumberOfRecoveryPoints = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SourceBackupVaultArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceBackupVaultArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VaultState", targetDepth))

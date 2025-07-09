@@ -169,7 +169,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>UNKNOWN</c>: This value is reserved for future use.
+        ///  <c>UNKNOWN</c>: CloudFormation could not run drift detection for a resource in the
+        /// stack. See the <c>DetectionStatusReason</c> for details.
         /// </para>
         ///  </li> </ul>
         /// </summary>

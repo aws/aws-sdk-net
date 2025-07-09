@@ -46,6 +46,22 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetProductCodes())
+            {
+                context.Writer.WritePropertyName("ProductCodes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectProductCodesListValue in requestObject.ProductCodes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProductCodeListItemMarshaller.Instance;
+                    marshaller.Marshall(requestObjectProductCodesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetUsageOperation())
             {
                 context.Writer.WritePropertyName("UsageOperation");

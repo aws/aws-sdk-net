@@ -1595,13 +1595,34 @@ namespace Amazon.Connect
         /// <summary>
         /// <important> 
         /// <para>
-        /// Only the EMAIL and VOICE channels are supported. The supported initiation methods
-        /// for EMAIL are: OUTBOUND, AGENT_REPLY, and FLOW. For VOICE the supported initiation
-        /// methods are TRANSFER and the subtype connect:ExternalAudio. 
+        /// Only the VOICE, EMAIL, and TASK channels are supported. 
         /// </para>
-        ///  </important> 
+        ///  <ul> <li> 
         /// <para>
-        /// Creates a new EMAIL or VOICE contact. 
+        /// For VOICE: The supported initiation method is <c>TRANSFER</c>. The contacts created
+        /// with this initiation method have a subtype <c>connect:ExternalAudio</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For EMAIL: The supported initiation methods are <c>OUTBOUND</c>, <c>AGENT_REPLY</c>,
+        /// and <c>FLOW</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For TASK: The supported initiation method is <c>API</c>. Contacts created with this
+        /// API have a sub-type of <c>connect:ExternalTask</c>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Creates a new VOICE, EMAIL, or TASK contact. 
+        /// </para>
+        ///  
+        /// <para>
+        /// After a contact is created, you can move it to the desired state by using the <c>InitiateAs</c>
+        /// parameter. While you can use API to create task contacts that are in the <c>COMPLETED</c>
+        /// state, you must contact Amazon Web Services Support before using it for bulk import
+        /// use cases. Bulk import causes your requests to be throttled or fail if your CreateContact
+        /// limits aren't high enough. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
@@ -5717,6 +5738,15 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Describes the specified routing profile.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>DescribeRoutingProfile</c> does not populate AssociatedQueueIds in its response.
+        /// The example Response Syntax shown on this page is incorrect; we are working to update
+        /// it. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html">SearchRoutingProfiles</a>
+        /// does include AssociatedQueueIds.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRoutingProfile service method.</param>
         /// <param name="cancellationToken">
@@ -11252,6 +11282,15 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>SearchRoutingProfiles</c> does not populate LastModifiedRegion, LastModifiedTime,
+        /// MediaConcurrencies.CrossChannelBehavior, and AgentAvailabilityTimer in its response,
+        /// but <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a>
+        /// does.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchRoutingProfiles service method.</param>
         /// <param name="cancellationToken">

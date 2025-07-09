@@ -760,6 +760,39 @@ namespace Amazon.RestXmlProtocol
         }
         #endregion
         
+        #region  HttpEmptyPrefixHeaders
+
+        internal virtual HttpEmptyPrefixHeadersResponse HttpEmptyPrefixHeaders(HttpEmptyPrefixHeadersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = HttpEmptyPrefixHeadersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HttpEmptyPrefixHeadersResponseUnmarshaller.Instance;
+
+            return Invoke<HttpEmptyPrefixHeadersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Clients that perform this test extract all headers from the response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpEmptyPrefixHeaders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the HttpEmptyPrefixHeaders service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">REST API Reference for HttpEmptyPrefixHeaders Operation</seealso>
+        public virtual Task<HttpEmptyPrefixHeadersResponse> HttpEmptyPrefixHeadersAsync(HttpEmptyPrefixHeadersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = HttpEmptyPrefixHeadersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HttpEmptyPrefixHeadersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<HttpEmptyPrefixHeadersResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  HttpEnumPayload
 
         internal virtual HttpEnumPayloadResponse HttpEnumPayload(HttpEnumPayloadRequest request)

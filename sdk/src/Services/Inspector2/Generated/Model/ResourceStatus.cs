@@ -34,10 +34,29 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ResourceStatus
     {
+        private Status _codeRepository;
         private Status _ec2;
         private Status _ecr;
         private Status _lambda;
         private Status _lambdaCode;
+
+        /// <summary>
+        /// Gets and sets the property CodeRepository. 
+        /// <para>
+        /// The status of Amazon Inspector scanning for code repositories.
+        /// </para>
+        /// </summary>
+        public Status CodeRepository
+        {
+            get { return this._codeRepository; }
+            set { this._codeRepository = value; }
+        }
+
+        // Check to see if CodeRepository property is set
+        internal bool IsSetCodeRepository()
+        {
+            return this._codeRepository != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2. 

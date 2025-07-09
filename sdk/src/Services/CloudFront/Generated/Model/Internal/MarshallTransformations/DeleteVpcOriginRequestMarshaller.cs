@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteVpcOrigin Request Marshaller
     /// </summary>       
-    public class DeleteVpcOriginRequestMarshaller : IMarshaller<IRequest, DeleteVpcOriginRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteVpcOriginRequestMarshaller : IMarshaller<IRequest, DeleteVpcOriginRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/vpc-origin/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteVpcOriginRequestMarshaller _instance = new DeleteVpcOriginRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteVpcOriginRequest publicRequest);
     }    
 }

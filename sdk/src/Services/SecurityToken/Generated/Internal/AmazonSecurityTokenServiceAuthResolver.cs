@@ -70,6 +70,10 @@ namespace Amazon.SecurityToken.Internal
         {
             switch (authParameters.Operation)
             {
+                case "AssumeRoleWithSAMLRequest":
+                    return AuthSchemeOption.DEFAULT_NOAUTH;
+                case "AssumeRoleWithWebIdentityRequest":
+                    return AuthSchemeOption.DEFAULT_NOAUTH;
                 default:
                     // Default for the service, applies to all remaining operations.
                     return AuthSchemeOption.DEFAULT_SIGV4;

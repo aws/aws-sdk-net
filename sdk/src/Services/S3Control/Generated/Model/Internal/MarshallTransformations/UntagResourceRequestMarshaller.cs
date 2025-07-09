@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// UntagResource Request Marshaller
     /// </summary>       
-    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -70,8 +70,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/v20180820/tags/{resourceArn+}";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
@@ -92,5 +93,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UntagResourceRequest publicRequest);
     }    
 }

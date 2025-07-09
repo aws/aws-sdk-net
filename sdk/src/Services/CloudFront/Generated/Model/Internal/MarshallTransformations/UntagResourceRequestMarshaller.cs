@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// UntagResource Request Marshaller
     /// </summary>       
-    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -62,6 +62,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResource())
                 request.Parameters.Add("Resource", StringUtils.FromString(publicRequest.Resource));
             request.ResourcePath = "/2020-05-31/tagging";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -97,7 +98,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
 
             request.UseQueryString = true;
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
@@ -118,5 +119,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UntagResourceRequest publicRequest);
     }    
 }

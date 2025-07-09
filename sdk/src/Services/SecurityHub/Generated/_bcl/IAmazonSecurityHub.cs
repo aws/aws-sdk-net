@@ -1151,20 +1151,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Used by Security Hub customers to update information about their investigation into
-        /// a finding. Requested by administrator accounts or member accounts. Administrator accounts
-        /// can update findings for their account and their member accounts. Member accounts can
-        /// update findings for their account.
+        /// one or more findings. Requested by administrator accounts or member accounts. Administrator
+        /// accounts can update findings for their account and their member accounts. A member
+        /// account can update findings only for their own account. Administrator and member accounts
+        /// can use this operation to update the following fields and objects for one or more
+        /// findings: 
         /// 
-        ///  
-        /// <para>
-        /// Updates from <c>BatchUpdateFindings</c> don't affect the value of <c>UpdatedAt</c>
-        /// for a finding.
-        /// </para>
-        ///  
-        /// <para>
-        /// Administrator and member accounts can use <c>BatchUpdateFindings</c> to update the
-        /// following finding fields and objects.
-        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>Confidence</c> 
@@ -1203,10 +1195,17 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can configure IAM policies to restrict access to fields and field values. For
+        ///  If you use this operation to update a finding, your updates don’t affect the value
+        /// for the <c>UpdatedAt</c> field of the finding. Also note that it can take several
+        /// minutes for Security Hub to process your request and update each finding specified
+        /// in the request. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can configure IAM policies to restrict access to fields and field values. For
         /// example, you might not want member accounts to be able to suppress findings or change
-        /// the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-        /// access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>.
+        /// the finding severity. For more information see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
+        /// access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings service method.</param>
@@ -1234,20 +1233,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Used by Security Hub customers to update information about their investigation into
-        /// a finding. Requested by administrator accounts or member accounts. Administrator accounts
-        /// can update findings for their account and their member accounts. Member accounts can
-        /// update findings for their account.
+        /// one or more findings. Requested by administrator accounts or member accounts. Administrator
+        /// accounts can update findings for their account and their member accounts. A member
+        /// account can update findings only for their own account. Administrator and member accounts
+        /// can use this operation to update the following fields and objects for one or more
+        /// findings: 
         /// 
-        ///  
-        /// <para>
-        /// Updates from <c>BatchUpdateFindings</c> don't affect the value of <c>UpdatedAt</c>
-        /// for a finding.
-        /// </para>
-        ///  
-        /// <para>
-        /// Administrator and member accounts can use <c>BatchUpdateFindings</c> to update the
-        /// following finding fields and objects.
-        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>Confidence</c> 
@@ -1286,10 +1277,17 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can configure IAM policies to restrict access to fields and field values. For
+        ///  If you use this operation to update a finding, your updates don’t affect the value
+        /// for the <c>UpdatedAt</c> field of the finding. Also note that it can take several
+        /// minutes for Security Hub to process your request and update each finding specified
+        /// in the request. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can configure IAM policies to restrict access to fields and field values. For
         /// example, you might not want member accounts to be able to suppress findings or change
-        /// the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-        /// access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>.
+        /// the finding severity. For more information see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
+        /// access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings service method.</param>
@@ -1315,6 +1313,82 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
         Task<BatchUpdateFindingsResponse> BatchUpdateFindingsAsync(BatchUpdateFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchUpdateFindingsV2
+
+
+        /// <summary>
+        /// Used by customers to update information about their investigation into a finding.
+        /// Requested by delegated administrator accounts or member accounts. Delegated administrator
+        /// accounts can update findings for their account and their member accounts. Member accounts
+        /// can update findings for their account. <c>BatchUpdateFindings</c> and <c>BatchUpdateFindingV2</c>
+        /// both use <c>securityhub:BatchUpdateFindings</c> in the <c>Action</c> element of an
+        /// IAM policy statement. You must have permission to perform the <c>securityhub:BatchUpdateFindings</c>
+        /// action. Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of f<c>inding_info.modified_time</c>,
+        /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>. This
+        /// API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindingsV2 service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateFindingsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsV2">REST API Reference for BatchUpdateFindingsV2 Operation</seealso>
+        BatchUpdateFindingsV2Response BatchUpdateFindingsV2(BatchUpdateFindingsV2Request request);
+
+
+
+        /// <summary>
+        /// Used by customers to update information about their investigation into a finding.
+        /// Requested by delegated administrator accounts or member accounts. Delegated administrator
+        /// accounts can update findings for their account and their member accounts. Member accounts
+        /// can update findings for their account. <c>BatchUpdateFindings</c> and <c>BatchUpdateFindingV2</c>
+        /// both use <c>securityhub:BatchUpdateFindings</c> in the <c>Action</c> element of an
+        /// IAM policy statement. You must have permission to perform the <c>securityhub:BatchUpdateFindings</c>
+        /// action. Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of f<c>inding_info.modified_time</c>,
+        /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>. This
+        /// API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindingsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateFindingsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsV2">REST API Reference for BatchUpdateFindingsV2 Operation</seealso>
+        Task<BatchUpdateFindingsV2Response> BatchUpdateFindingsV2Async(BatchUpdateFindingsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1381,6 +1455,74 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateStandardsControlAssociations">REST API Reference for BatchUpdateStandardsControlAssociations Operation</seealso>
         Task<BatchUpdateStandardsControlAssociationsResponse> BatchUpdateStandardsControlAssociationsAsync(BatchUpdateStandardsControlAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ConnectorRegistrationsV2
+
+
+        /// <summary>
+        /// Grants permission to complete the authorization based on input parameters. This API
+        /// is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConnectorRegistrationsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ConnectorRegistrationsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">REST API Reference for ConnectorRegistrationsV2 Operation</seealso>
+        ConnectorRegistrationsV2Response ConnectorRegistrationsV2(ConnectorRegistrationsV2Request request);
+
+
+
+        /// <summary>
+        /// Grants permission to complete the authorization based on input parameters. This API
+        /// is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConnectorRegistrationsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ConnectorRegistrationsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">REST API Reference for ConnectorRegistrationsV2 Operation</seealso>
+        Task<ConnectorRegistrationsV2Response> ConnectorRegistrationsV2Async(ConnectorRegistrationsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1460,6 +1602,74 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  CreateAggregatorV2
+
+
+        /// <summary>
+        /// Enables aggregation across Amazon Web Services Regions. This API is in private preview
+        /// and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAggregatorV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAggregatorV2">REST API Reference for CreateAggregatorV2 Operation</seealso>
+        CreateAggregatorV2Response CreateAggregatorV2(CreateAggregatorV2Request request);
+
+
+
+        /// <summary>
+        /// Enables aggregation across Amazon Web Services Regions. This API is in private preview
+        /// and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAggregatorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAggregatorV2">REST API Reference for CreateAggregatorV2 Operation</seealso>
+        Task<CreateAggregatorV2Response> CreateAggregatorV2Async(CreateAggregatorV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateAutomationRule
 
 
@@ -1521,6 +1731,66 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">REST API Reference for CreateAutomationRule Operation</seealso>
         Task<CreateAutomationRuleResponse> CreateAutomationRuleAsync(CreateAutomationRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAutomationRuleV2
+
+
+        /// <summary>
+        /// Creates a V2 automation rule. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRuleV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRuleV2">REST API Reference for CreateAutomationRuleV2 Operation</seealso>
+        CreateAutomationRuleV2Response CreateAutomationRuleV2(CreateAutomationRuleV2Request request);
+
+
+
+        /// <summary>
+        /// Creates a V2 automation rule. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRuleV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRuleV2">REST API Reference for CreateAutomationRuleV2 Operation</seealso>
+        Task<CreateAutomationRuleV2Response> CreateAutomationRuleV2Async(CreateAutomationRuleV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1593,6 +1863,74 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConfigurationPolicy">REST API Reference for CreateConfigurationPolicy Operation</seealso>
         Task<CreateConfigurationPolicyResponse> CreateConfigurationPolicyAsync(CreateConfigurationPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateConnectorV2
+
+
+        /// <summary>
+        /// Grants permission to create a connectorV2 based on input parameters. This API is in
+        /// preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnectorV2">REST API Reference for CreateConnectorV2 Operation</seealso>
+        CreateConnectorV2Response CreateConnectorV2(CreateConnectorV2Request request);
+
+
+
+        /// <summary>
+        /// Grants permission to create a connectorV2 based on input parameters. This API is in
+        /// preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnectorV2">REST API Reference for CreateConnectorV2 Operation</seealso>
+        Task<CreateConnectorV2Response> CreateConnectorV2Async(CreateConnectorV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1958,6 +2296,76 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  CreateTicketV2
+
+
+        /// <summary>
+        /// Grants permission to create a ticket in the chosen ITSM based on finding information
+        /// for the provided finding metadata UID. This API is in preview release and subject
+        /// to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTicketV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateTicketV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateTicketV2">REST API Reference for CreateTicketV2 Operation</seealso>
+        CreateTicketV2Response CreateTicketV2(CreateTicketV2Request request);
+
+
+
+        /// <summary>
+        /// Grants permission to create a ticket in the chosen ITSM based on finding information
+        /// for the provided finding metadata UID. This API is in preview release and subject
+        /// to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTicketV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTicketV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateTicketV2">REST API Reference for CreateTicketV2 Operation</seealso>
+        Task<CreateTicketV2Response> CreateTicketV2Async(CreateTicketV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeclineInvitations
 
 
@@ -2118,6 +2526,138 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  DeleteAggregatorV2
+
+
+        /// <summary>
+        /// Deletes the Aggregator V2. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAggregatorV2 service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAggregatorV2">REST API Reference for DeleteAggregatorV2 Operation</seealso>
+        DeleteAggregatorV2Response DeleteAggregatorV2(DeleteAggregatorV2Request request);
+
+
+
+        /// <summary>
+        /// Deletes the Aggregator V2. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAggregatorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAggregatorV2">REST API Reference for DeleteAggregatorV2 Operation</seealso>
+        Task<DeleteAggregatorV2Response> DeleteAggregatorV2Async(DeleteAggregatorV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAutomationRuleV2
+
+
+        /// <summary>
+        /// Deletes a V2 automation rule. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomationRuleV2 service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAutomationRuleV2">REST API Reference for DeleteAutomationRuleV2 Operation</seealso>
+        DeleteAutomationRuleV2Response DeleteAutomationRuleV2(DeleteAutomationRuleV2Request request);
+
+
+
+        /// <summary>
+        /// Deletes a V2 automation rule. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomationRuleV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAutomationRuleV2">REST API Reference for DeleteAutomationRuleV2 Operation</seealso>
+        Task<DeleteAutomationRuleV2Response> DeleteAutomationRuleV2Async(DeleteAutomationRuleV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteConfigurationPolicy
 
 
@@ -2197,6 +2737,74 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConfigurationPolicy">REST API Reference for DeleteConfigurationPolicy Operation</seealso>
         Task<DeleteConfigurationPolicyResponse> DeleteConfigurationPolicyAsync(DeleteConfigurationPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteConnectorV2
+
+
+        /// <summary>
+        /// Grants permission to delete a connectorV2. This API is in preview release and subject
+        /// to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorV2 service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnectorV2">REST API Reference for DeleteConnectorV2 Operation</seealso>
+        DeleteConnectorV2Response DeleteConnectorV2(DeleteConnectorV2Request request);
+
+
+
+        /// <summary>
+        /// Grants permission to delete a connectorV2. This API is in preview release and subject
+        /// to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnectorV2">REST API Reference for DeleteConnectorV2 Operation</seealso>
+        Task<DeleteConnectorV2Response> DeleteConnectorV2Async(DeleteConnectorV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2806,6 +3414,124 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  DescribeProductsV2
+
+
+        /// <summary>
+        /// Gets information about the product integration. This API is in private preview and
+        /// subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProductsV2 service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProductsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProductsV2">REST API Reference for DescribeProductsV2 Operation</seealso>
+        DescribeProductsV2Response DescribeProductsV2(DescribeProductsV2Request request);
+
+
+
+        /// <summary>
+        /// Gets information about the product integration. This API is in private preview and
+        /// subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProductsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProductsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProductsV2">REST API Reference for DescribeProductsV2 Operation</seealso>
+        Task<DescribeProductsV2Response> DescribeProductsV2Async(DescribeProductsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeSecurityHubV2
+
+
+        /// <summary>
+        /// Returns details about the service resource in your account. This API is in private
+        /// preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityHubV2 service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecurityHubV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeSecurityHubV2">REST API Reference for DescribeSecurityHubV2 Operation</seealso>
+        DescribeSecurityHubV2Response DescribeSecurityHubV2(DescribeSecurityHubV2Request request);
+
+
+
+        /// <summary>
+        /// Returns details about the service resource in your account. This API is in private
+        /// preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityHubV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSecurityHubV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeSecurityHubV2">REST API Reference for DescribeSecurityHubV2 Operation</seealso>
+        Task<DescribeSecurityHubV2Response> DescribeSecurityHubV2Async(DescribeSecurityHubV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeStandards
 
 
@@ -3171,6 +3897,62 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">REST API Reference for DisableSecurityHub Operation</seealso>
         Task<DisableSecurityHubResponse> DisableSecurityHubAsync(DisableSecurityHubRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisableSecurityHubV2
+
+
+        /// <summary>
+        /// Disable the service for the current Amazon Web Services Region or specified Amazon
+        /// Web Services Region. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHubV2 service method.</param>
+        /// 
+        /// <returns>The response from the DisableSecurityHubV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubV2">REST API Reference for DisableSecurityHubV2 Operation</seealso>
+        DisableSecurityHubV2Response DisableSecurityHubV2(DisableSecurityHubV2Request request);
+
+
+
+        /// <summary>
+        /// Disable the service for the current Amazon Web Services Region or specified Amazon
+        /// Web Services Region. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHubV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableSecurityHubV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubV2">REST API Reference for DisableSecurityHubV2 Operation</seealso>
+        Task<DisableSecurityHubV2Response> DisableSecurityHubV2Async(DisableSecurityHubV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3722,6 +4504,62 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  EnableSecurityHubV2
+
+
+        /// <summary>
+        /// Enables the service in account for the current Amazon Web Services Region or specified
+        /// Amazon Web Services Region. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHubV2 service method.</param>
+        /// 
+        /// <returns>The response from the EnableSecurityHubV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubV2">REST API Reference for EnableSecurityHubV2 Operation</seealso>
+        EnableSecurityHubV2Response EnableSecurityHubV2(EnableSecurityHubV2Request request);
+
+
+
+        /// <summary>
+        /// Enables the service in account for the current Amazon Web Services Region or specified
+        /// Amazon Web Services Region. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHubV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableSecurityHubV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubV2">REST API Reference for EnableSecurityHubV2 Operation</seealso>
+        Task<EnableSecurityHubV2Response> EnableSecurityHubV2Async(EnableSecurityHubV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAdministratorAccount
 
 
@@ -3797,6 +4635,142 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
         Task<GetAdministratorAccountResponse> GetAdministratorAccountAsync(GetAdministratorAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAggregatorV2
+
+
+        /// <summary>
+        /// Returns the configuration of the specified Aggregator V2. This API is in private preview
+        /// and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregatorV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAggregatorV2">REST API Reference for GetAggregatorV2 Operation</seealso>
+        GetAggregatorV2Response GetAggregatorV2(GetAggregatorV2Request request);
+
+
+
+        /// <summary>
+        /// Returns the configuration of the specified Aggregator V2. This API is in private preview
+        /// and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregatorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAggregatorV2">REST API Reference for GetAggregatorV2 Operation</seealso>
+        Task<GetAggregatorV2Response> GetAggregatorV2Async(GetAggregatorV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAutomationRuleV2
+
+
+        /// <summary>
+        /// Returns an automation rule for the V2 service. This API is in private preview and
+        /// subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomationRuleV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAutomationRuleV2">REST API Reference for GetAutomationRuleV2 Operation</seealso>
+        GetAutomationRuleV2Response GetAutomationRuleV2(GetAutomationRuleV2Request request);
+
+
+
+        /// <summary>
+        /// Returns an automation rule for the V2 service. This API is in private preview and
+        /// subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomationRuleV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAutomationRuleV2">REST API Reference for GetAutomationRuleV2 Operation</seealso>
+        Task<GetAutomationRuleV2Response> GetAutomationRuleV2Async(GetAutomationRuleV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3945,6 +4919,74 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicyAssociation">REST API Reference for GetConfigurationPolicyAssociation Operation</seealso>
         Task<GetConfigurationPolicyAssociationResponse> GetConfigurationPolicyAssociationAsync(GetConfigurationPolicyAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetConnectorV2
+
+
+        /// <summary>
+        /// Grants permission to retrieve details for a connectorV2 based on connector id. This
+        /// API is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnectorV2">REST API Reference for GetConnectorV2 Operation</seealso>
+        GetConnectorV2Response GetConnectorV2(GetConnectorV2Request request);
+
+
+
+        /// <summary>
+        /// Grants permission to retrieve details for a connectorV2 based on connector id. This
+        /// API is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnectorV2">REST API Reference for GetConnectorV2 Operation</seealso>
+        Task<GetConnectorV2Response> GetConnectorV2Async(GetConnectorV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4098,8 +5140,21 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns history for a Security Hub finding in the last 90 days. The history includes
-        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF).
+        /// Returns the history of a Security Hub finding for the past 90 days. The history includes
+        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF)
+        /// except top-level timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c>
+        /// fields. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation might return fewer results than the maximum number of results (<c>MaxResults</c>)
+        /// specified in a request, even when more results are available. If this occurs, the
+        /// response includes a <c>NextToken</c> value, which you should use to retrieve the next
+        /// set of results in the response. The presence of a <c>NextToken</c> value in a response
+        /// doesn't necessarily indicate that the results are incomplete. However, you should
+        /// continue to specify a <c>NextToken</c> value until you receive a response that doesn't
+        /// include this value.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingHistory service method.</param>
         /// 
@@ -4125,8 +5180,21 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns history for a Security Hub finding in the last 90 days. The history includes
-        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF).
+        /// Returns the history of a Security Hub finding for the past 90 days. The history includes
+        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF)
+        /// except top-level timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c>
+        /// fields. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation might return fewer results than the maximum number of results (<c>MaxResults</c>)
+        /// specified in a request, even when more results are available. If this occurs, the
+        /// response includes a <c>NextToken</c> value, which you should use to retrieve the next
+        /// set of results in the response. The presence of a <c>NextToken</c> value in a response
+        /// doesn't necessarily indicate that the results are incomplete. However, you should
+        /// continue to specify a <c>NextToken</c> value until you receive a response that doesn't
+        /// include this value.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingHistory service method.</param>
         /// <param name="cancellationToken">
@@ -4223,6 +5291,138 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">REST API Reference for GetFindings Operation</seealso>
         Task<GetFindingsResponse> GetFindingsAsync(GetFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetFindingStatisticsV2
+
+
+        /// <summary>
+        /// Returns aggregated statistical data about findings. <c>GetFindingStatisticsV2</c>
+        /// use <c>securityhub:GetAdhocInsightResults</c> in the <c>Action</c> element of an IAM
+        /// policy statement. You must have permission to perform the <c>s</c> action. This API
+        /// is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingStatisticsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingStatisticsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">REST API Reference for GetFindingStatisticsV2 Operation</seealso>
+        GetFindingStatisticsV2Response GetFindingStatisticsV2(GetFindingStatisticsV2Request request);
+
+
+
+        /// <summary>
+        /// Returns aggregated statistical data about findings. <c>GetFindingStatisticsV2</c>
+        /// use <c>securityhub:GetAdhocInsightResults</c> in the <c>Action</c> element of an IAM
+        /// policy statement. You must have permission to perform the <c>s</c> action. This API
+        /// is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingStatisticsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFindingStatisticsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">REST API Reference for GetFindingStatisticsV2 Operation</seealso>
+        Task<GetFindingStatisticsV2Response> GetFindingStatisticsV2Async(GetFindingStatisticsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetFindingsV2
+
+
+        /// <summary>
+        /// Return a list of findings that match the specified criteria. <c>GetFindings</c> and
+        /// <c>GetFindingsV2</c> both use <c>securityhub:GetFindings</c> in the <c>Action</c>
+        /// element of an IAM policy statement. You must have permission to perform the <c>securityhub:GetFindings</c>
+        /// action. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsV2">REST API Reference for GetFindingsV2 Operation</seealso>
+        GetFindingsV2Response GetFindingsV2(GetFindingsV2Request request);
+
+
+
+        /// <summary>
+        /// Return a list of findings that match the specified criteria. <c>GetFindings</c> and
+        /// <c>GetFindingsV2</c> both use <c>securityhub:GetFindings</c> in the <c>Action</c>
+        /// element of an IAM policy statement. You must have permission to perform the <c>securityhub:GetFindings</c>
+        /// action. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFindingsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsV2">REST API Reference for GetFindingsV2 Operation</seealso>
+        Task<GetFindingsV2Response> GetFindingsV2Async(GetFindingsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4626,6 +5826,140 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  GetResourcesStatisticsV2
+
+
+        /// <summary>
+        /// Retrieves statistical information about Amazon Web Services resources and their associated
+        /// security findings. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcesStatisticsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">REST API Reference for GetResourcesStatisticsV2 Operation</seealso>
+        GetResourcesStatisticsV2Response GetResourcesStatisticsV2(GetResourcesStatisticsV2Request request);
+
+
+
+        /// <summary>
+        /// Retrieves statistical information about Amazon Web Services resources and their associated
+        /// security findings. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcesStatisticsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">REST API Reference for GetResourcesStatisticsV2 Operation</seealso>
+        Task<GetResourcesStatisticsV2Response> GetResourcesStatisticsV2Async(GetResourcesStatisticsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetResourcesV2
+
+
+        /// <summary>
+        /// Returns a list of resources. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">REST API Reference for GetResourcesV2 Operation</seealso>
+        GetResourcesV2Response GetResourcesV2(GetResourcesV2Request request);
+
+
+
+        /// <summary>
+        /// Returns a list of resources. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">REST API Reference for GetResourcesV2 Operation</seealso>
+        Task<GetResourcesV2Response> GetResourcesV2Async(GetResourcesV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetSecurityControlDefinition
 
 
@@ -4810,6 +6144,74 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  ListAggregatorsV2
+
+
+        /// <summary>
+        /// Retrieves a list of V2 aggregators. This API is in private preview and subject to
+        /// change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregatorsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListAggregatorsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAggregatorsV2">REST API Reference for ListAggregatorsV2 Operation</seealso>
+        ListAggregatorsV2Response ListAggregatorsV2(ListAggregatorsV2Request request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of V2 aggregators. This API is in private preview and subject to
+        /// change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregatorsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAggregatorsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAggregatorsV2">REST API Reference for ListAggregatorsV2 Operation</seealso>
+        Task<ListAggregatorsV2Response> ListAggregatorsV2Async(ListAggregatorsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAutomationRules
 
 
@@ -4871,6 +6273,68 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">REST API Reference for ListAutomationRules Operation</seealso>
         Task<ListAutomationRulesResponse> ListAutomationRulesAsync(ListAutomationRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAutomationRulesV2
+
+
+        /// <summary>
+        /// Returns a list of automation rules and metadata for the calling account. This API
+        /// is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRulesV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomationRulesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRulesV2">REST API Reference for ListAutomationRulesV2 Operation</seealso>
+        ListAutomationRulesV2Response ListAutomationRulesV2(ListAutomationRulesV2Request request);
+
+
+
+        /// <summary>
+        /// Returns a list of automation rules and metadata for the calling account. This API
+        /// is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRulesV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutomationRulesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRulesV2">REST API Reference for ListAutomationRulesV2 Operation</seealso>
+        Task<ListAutomationRulesV2Response> ListAutomationRulesV2Async(ListAutomationRulesV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5007,6 +6471,74 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicyAssociations">REST API Reference for ListConfigurationPolicyAssociations Operation</seealso>
         Task<ListConfigurationPolicyAssociationsResponse> ListConfigurationPolicyAssociationsAsync(ListConfigurationPolicyAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListConnectorsV2
+
+
+        /// <summary>
+        /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
+        /// account. This API is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectorsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectorsV2">REST API Reference for ListConnectorsV2 Operation</seealso>
+        ListConnectorsV2Response ListConnectorsV2(ListConnectorsV2Request request);
+
+
+
+        /// <summary>
+        /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
+        /// account. This API is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectorsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectorsV2">REST API Reference for ListConnectorsV2 Operation</seealso>
+        Task<ListConnectorsV2Response> ListConnectorsV2Async(ListConnectorsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5834,6 +7366,140 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  UpdateAggregatorV2
+
+
+        /// <summary>
+        /// Udpates the configuration for the Aggregator V2. This API is in private preview and
+        /// subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAggregatorV2 service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAggregatorV2">REST API Reference for UpdateAggregatorV2 Operation</seealso>
+        UpdateAggregatorV2Response UpdateAggregatorV2(UpdateAggregatorV2Request request);
+
+
+
+        /// <summary>
+        /// Udpates the configuration for the Aggregator V2. This API is in private preview and
+        /// subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAggregatorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAggregatorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAggregatorV2">REST API Reference for UpdateAggregatorV2 Operation</seealso>
+        Task<UpdateAggregatorV2Response> UpdateAggregatorV2Async(UpdateAggregatorV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAutomationRuleV2
+
+
+        /// <summary>
+        /// Updates a V2 automation rule. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomationRuleV2 service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAutomationRuleV2">REST API Reference for UpdateAutomationRuleV2 Operation</seealso>
+        UpdateAutomationRuleV2Response UpdateAutomationRuleV2(UpdateAutomationRuleV2Request request);
+
+
+
+        /// <summary>
+        /// Updates a V2 automation rule. This API is in private preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomationRuleV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAutomationRuleV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAutomationRuleV2">REST API Reference for UpdateAutomationRuleV2 Operation</seealso>
+        Task<UpdateAutomationRuleV2Response> UpdateAutomationRuleV2Async(UpdateAutomationRuleV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateConfigurationPolicy
 
 
@@ -5909,6 +7575,74 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConfigurationPolicy">REST API Reference for UpdateConfigurationPolicy Operation</seealso>
         Task<UpdateConfigurationPolicyResponse> UpdateConfigurationPolicyAsync(UpdateConfigurationPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateConnectorV2
+
+
+        /// <summary>
+        /// Grants permission to update a connectorV2 based on its id and input parameters. This
+        /// API is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorV2 service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnectorV2">REST API Reference for UpdateConnectorV2 Operation</seealso>
+        UpdateConnectorV2Response UpdateConnectorV2(UpdateConnectorV2Request request);
+
+
+
+        /// <summary>
+        /// Grants permission to update a connectorV2 based on its id and input parameters. This
+        /// API is in preview release and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnectorV2">REST API Reference for UpdateConnectorV2 Operation</seealso>
+        Task<UpdateConnectorV2Response> UpdateConnectorV2Async(UpdateConnectorV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

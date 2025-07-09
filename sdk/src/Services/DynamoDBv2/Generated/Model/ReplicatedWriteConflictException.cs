@@ -39,6 +39,8 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ReplicatedWriteConflictException : AmazonDynamoDBException
     {
 
+        private RetryableDetails _retryableDetails = new RetryableDetails(false);
+
         /// <summary>
         /// Constructs a new ReplicatedWriteConflictException with the specified error
         /// message.
@@ -117,5 +119,16 @@ namespace Amazon.DynamoDBv2.Model
         }
 #endif
 
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
     }
 }

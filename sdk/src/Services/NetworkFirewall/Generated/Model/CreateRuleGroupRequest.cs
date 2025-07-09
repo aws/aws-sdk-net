@@ -51,6 +51,7 @@ namespace Amazon.NetworkFirewall.Model
         private string _ruleGroupName;
         private string _rules;
         private SourceMetadata _sourceMetadata;
+        private SummaryConfiguration _summaryConfiguration;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private RuleGroupType _type;
 
@@ -317,6 +318,39 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetSourceMetadata()
         {
             return this._sourceMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SummaryConfiguration. 
+        /// <para>
+        /// An object that contains a <c>RuleOptions</c> array of strings. You use <c>RuleOptions</c>
+        /// to determine which of the following <a>RuleSummary</a> values are returned in response
+        /// to <c>DescribeRuleGroupSummary</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Metadata</c> - returns
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Msg</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SID</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SummaryConfiguration SummaryConfiguration
+        {
+            get { return this._summaryConfiguration; }
+            set { this._summaryConfiguration = value; }
+        }
+
+        // Check to see if SummaryConfiguration property is set
+        internal bool IsSetSummaryConfiguration()
+        {
+            return this._summaryConfiguration != null;
         }
 
         /// <summary>

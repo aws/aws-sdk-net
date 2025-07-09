@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// XmlNamespaces Request Marshaller
     /// </summary>       
-    public class XmlNamespacesRequestMarshaller : IMarshaller<IRequest, XmlNamespacesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class XmlNamespacesRequestMarshaller : IMarshaller<IRequest, XmlNamespacesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,6 +58,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
             request.HttpMethod = "POST";
             request.ResourcePath = "/XmlNamespaces";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -97,7 +98,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static XmlNamespacesRequestMarshaller _instance = new XmlNamespacesRequestMarshaller();        
@@ -118,5 +119,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlNamespacesRequest publicRequest);
     }    
 }

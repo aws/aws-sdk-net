@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetInvalidation Request Marshaller
     /// </summary>       
-    public class GetInvalidationRequestMarshaller : IMarshaller<IRequest, GetInvalidationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetInvalidationRequestMarshaller : IMarshaller<IRequest, GetInvalidationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/distribution/{DistributionId}/invalidation/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetInvalidationRequestMarshaller _instance = new GetInvalidationRequestMarshaller();        
@@ -86,5 +87,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetInvalidationRequest publicRequest);
     }    
 }

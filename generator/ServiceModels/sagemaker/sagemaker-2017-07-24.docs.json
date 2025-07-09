@@ -32,6 +32,7 @@
     "CreateFeatureGroup": "<p>Create a new <code>FeatureGroup</code>. A <code>FeatureGroup</code> is a group of <code>Features</code> defined in the <code>FeatureStore</code> to describe a <code>Record</code>. </p> <p>The <code>FeatureGroup</code> defines the schema and features contained in the <code>FeatureGroup</code>. A <code>FeatureGroup</code> definition is composed of a list of <code>Features</code>, a <code>RecordIdentifierFeatureName</code>, an <code>EventTimeFeatureName</code> and configurations for its <code>OnlineStore</code> and <code>OfflineStore</code>. Check <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">Amazon Web Services service quotas</a> to see the <code>FeatureGroup</code>s quota for your Amazon Web Services account.</p> <p>Note that it can take approximately 10-15 minutes to provision an <code>OnlineStore</code> <code>FeatureGroup</code> with the <code>InMemory</code> <code>StorageType</code>.</p> <important> <p>You must include at least one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to create a <code>FeatureGroup</code>.</p> </important>",
     "CreateFlowDefinition": "<p>Creates a flow definition.</p>",
     "CreateHub": "<p>Create a hub.</p>",
+    "CreateHubContentPresignedUrls": "<p>Creates presigned URLs for accessing hub content artifacts. This operation generates time-limited, secure URLs that allow direct download of model artifacts and associated files from Amazon SageMaker hub content, including gated models that require end-user license agreement acceptance.</p>",
     "CreateHubContentReference": "<p>Create a hub content reference in order to add a model in the JumpStart public hub to a private hub.</p>",
     "CreateHumanTaskUi": "<p>Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel interface with an instruction area, the item to review, and an input area.</p>",
     "CreateHyperParameterTuningJob": "<p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the best version of a model by running many training jobs on your dataset using the algorithm you choose and values for hyperparameters within ranges that you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured by an objective metric that you choose.</p> <p>A hyperparameter tuning job automatically creates Amazon SageMaker experiments, trials, and trial components for each training job that it runs. You can view these entities in Amazon SageMaker Studio. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view\">View Experiments, Trials, and Trial Components</a>.</p> <important> <p>Do not include any security-sensitive information including account access IDs, secrets, or tokens in any hyperparameter fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by any security-sensitive information included in the request hyperparameter variable or plain text fields..</p> </important>",
@@ -301,6 +302,7 @@
     "StartMonitoringSchedule": "<p>Starts a previously stopped monitoring schedule.</p> <note> <p>By default, when you successfully create a new schedule, the status of a monitoring schedule is <code>scheduled</code>.</p> </note>",
     "StartNotebookInstance": "<p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, SageMaker AI sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook. </p>",
     "StartPipelineExecution": "<p>Starts a pipeline execution.</p>",
+    "StartSession": "<p>Initiates a remote connection session between a local integrated development environments (IDEs) and a remote SageMaker space.</p>",
     "StopAutoMLJob": "<p>A method for forcing a running job to shut down.</p>",
     "StopCompilationJob": "<p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker AI sends the algorithm the SIGTERM signal. This gracefully shuts the job down. If the job hasn't stopped, it sends the SIGKILL signal.</p> <p>When it receives a <code>StopCompilationJob</code> request, Amazon SageMaker AI changes the <code>CompilationJobStatus</code> of the job to <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the <code>CompilationJobStatus</code> to <code>Stopped</code>. </p>",
     "StopEdgeDeploymentStage": "<p>Stops a stage in an edge deployment plan.</p>",
@@ -432,23 +434,19 @@
     },
     "AddAssociationRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AddAssociationResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AddTagsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AddTagsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AdditionalCodeRepositoryNamesOrUrls": {
       "base": null,
@@ -895,13 +893,11 @@
     },
     "AssociateTrialComponentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AssociateTrialComponentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AssociationEdgeType": {
       "base": null,
@@ -1067,6 +1063,18 @@
       "base": null,
       "refs": {
         "AuthenticationRequestExtraParams$value": null
+      }
+    },
+    "AuthorizedUrl": {
+      "base": "<p>Contains a presigned URL and its associated local file path for downloading hub content artifacts.</p>",
+      "refs": {
+        "AuthorizedUrlConfigs$member": null
+      }
+    },
+    "AuthorizedUrlConfigs": {
+      "base": null,
+      "refs": {
+        "CreateHubContentPresignedUrlsResponse$AuthorizedUrlConfigs": "<p>An array of authorized URL configurations, each containing a presigned URL and its corresponding local file path for proper file organization during download.</p>"
       }
     },
     "AutoGenerateEndpointName": {
@@ -1552,13 +1560,11 @@
     },
     "BatchDeleteClusterNodesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "BatchDeleteClusterNodesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "BatchDescribeModelPackageError": {
       "base": "<p>The error code and error description associated with the resource.</p>",
@@ -1574,13 +1580,11 @@
     },
     "BatchDescribeModelPackageInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "BatchDescribeModelPackageOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "BatchDescribeModelPackageSummary": {
       "base": "<p>Provides summary information about the model package.</p>",
@@ -1680,6 +1684,7 @@
         "NetworkConfig$EnableNetworkIsolation": "<p>Whether to allow inbound and outbound network calls to and from the containers used for the processing job.</p>",
         "OfflineStoreConfig$DisableGlueTableCreation": "<p>Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when configuring an <code>OfflineStore</code>. If set to <code>False</code>, Feature Store will name the <code>OfflineStore</code> Glue table following <a href=\"https://docs.aws.amazon.com/athena/latest/ug/tables-databases-columns-names.html\">Athena's naming recommendations</a>.</p> <p>The default value is <code>False</code>.</p>",
         "OnlineStoreConfig$EnableOnlineStore": "<p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p> <p>The default value is <code>False</code>.</p>",
+        "PresignedUrlAccessConfig$AcceptEula": "<p>Indicates acceptance of the End User License Agreement (EULA) for gated models. Set to true to acknowledge acceptance of the license terms required for accessing gated content.</p>",
         "QualityCheckStepMetadata$SkipCheck": "<p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>",
         "QualityCheckStepMetadata$RegisterNewBaseline": "<p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> and <code> BaselineUsedForDriftCheckStatistics</code> properties. </p>",
         "QueryLineageRequest$IncludeEdges": "<p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html\">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>",
@@ -1946,6 +1951,116 @@
         "DescribeAlgorithmOutput$CertifyForMarketplace": "<p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>",
         "DescribeModelPackageOutput$CertifyForMarketplace": "<p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>",
         "ModelPackage$CertifyForMarketplace": "<p>Whether the model package is to be certified to be listed on Amazon Web Services Marketplace. For information about listing model packages on Amazon Web Services Marketplace, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html\">List Your Algorithm or Model Package on Amazon Web Services Marketplace</a>.</p>"
+      }
+    },
+    "CfnCreateTemplateProvider": {
+      "base": "<p> The CloudFormation template provider configuration for creating infrastructure resources. </p>",
+      "refs": {
+        "CreateTemplateProvider$CfnTemplateProvider": "<p> The CloudFormation template provider configuration for creating infrastructure resources. </p>"
+      }
+    },
+    "CfnStackCreateParameter": {
+      "base": "<p> A key-value pair that represents a parameter for the CloudFormation stack. </p>",
+      "refs": {
+        "CfnStackCreateParameters$member": null
+      }
+    },
+    "CfnStackCreateParameters": {
+      "base": null,
+      "refs": {
+        "CfnCreateTemplateProvider$Parameters": "<p> An array of CloudFormation stack parameters.</p>"
+      }
+    },
+    "CfnStackDetail": {
+      "base": "<p> Details about the CloudFormation stack. </p>",
+      "refs": {
+        "CfnTemplateProviderDetail$StackDetail": "<p> Information about the CloudFormation stack created by the template provider. </p>"
+      }
+    },
+    "CfnStackId": {
+      "base": null,
+      "refs": {
+        "CfnStackDetail$Id": "<p> The unique identifier of the CloudFormation stack. </p>"
+      }
+    },
+    "CfnStackName": {
+      "base": null,
+      "refs": {
+        "CfnStackDetail$Name": "<p> The name of the CloudFormation stack. </p>"
+      }
+    },
+    "CfnStackParameter": {
+      "base": "<p> A key-value pair representing a parameter used in the CloudFormation stack. </p>",
+      "refs": {
+        "CfnStackParameters$member": null
+      }
+    },
+    "CfnStackParameterKey": {
+      "base": null,
+      "refs": {
+        "CfnStackCreateParameter$Key": "<p> The name of the CloudFormation parameter. </p>",
+        "CfnStackParameter$Key": "<p> The name of the CloudFormation parameter. </p>",
+        "CfnStackUpdateParameter$Key": "<p> The name of the CloudFormation parameter. </p>"
+      }
+    },
+    "CfnStackParameterValue": {
+      "base": null,
+      "refs": {
+        "CfnStackCreateParameter$Value": "<p> The value of the CloudFormation parameter. </p>",
+        "CfnStackParameter$Value": "<p> The value of the CloudFormation parameter. </p>",
+        "CfnStackUpdateParameter$Value": "<p> The value of the CloudFormation parameter. </p>"
+      }
+    },
+    "CfnStackParameters": {
+      "base": null,
+      "refs": {
+        "CfnTemplateProviderDetail$Parameters": "<p> An array of CloudFormation stack parameters.</p>"
+      }
+    },
+    "CfnStackStatusMessage": {
+      "base": null,
+      "refs": {
+        "CfnStackDetail$StatusMessage": "<p> A human-readable message about the stack's current status. </p>"
+      }
+    },
+    "CfnStackUpdateParameter": {
+      "base": "<p> A key-value pair representing a parameter used in the CloudFormation stack. </p>",
+      "refs": {
+        "CfnStackUpdateParameters$member": null
+      }
+    },
+    "CfnStackUpdateParameters": {
+      "base": null,
+      "refs": {
+        "CfnUpdateTemplateProvider$Parameters": "<p> An array of CloudFormation stack parameters. </p>"
+      }
+    },
+    "CfnTemplateName": {
+      "base": null,
+      "refs": {
+        "CfnCreateTemplateProvider$TemplateName": "<p> A unique identifier for the template within the project. </p>",
+        "CfnTemplateProviderDetail$TemplateName": "<p> The unique identifier of the template within the project. </p>",
+        "CfnUpdateTemplateProvider$TemplateName": "<p> The unique identifier of the template to update within the project. </p>"
+      }
+    },
+    "CfnTemplateProviderDetail": {
+      "base": "<p> Details about a CloudFormation template provider configuration and associated provisioning information. </p>",
+      "refs": {
+        "TemplateProviderDetail$CfnTemplateProviderDetail": "<p> Details about a CloudFormation template provider configuration and associated provisioning information. </p>"
+      }
+    },
+    "CfnTemplateURL": {
+      "base": null,
+      "refs": {
+        "CfnCreateTemplateProvider$TemplateURL": "<p> The Amazon S3 URL of the CloudFormation template. </p>",
+        "CfnTemplateProviderDetail$TemplateURL": "<p> The Amazon S3 URL of the CloudFormation template. </p>",
+        "CfnUpdateTemplateProvider$TemplateURL": "<p> The Amazon S3 URL of the CloudFormation template.</p>"
+      }
+    },
+    "CfnUpdateTemplateProvider": {
+      "base": "<p> Contains configuration details for updating an existing CloudFormation template provider in the project. </p>",
+      "refs": {
+        "UpdateTemplateProvider$CfnTemplateProvider": "<p> The CloudFormation template provider configuration to update. </p>"
       }
     },
     "Channel": {
@@ -2807,8 +2922,7 @@
     },
     "ConflictException": {
       "base": "<p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ContainerArgument": {
       "base": null,
@@ -3010,638 +3124,531 @@
     },
     "CreateActionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateActionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAlgorithmInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAlgorithmOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAppImageConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAppImageConfigResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAppRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAppResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateArtifactRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateArtifactResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAutoMLJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAutoMLJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAutoMLJobV2Request": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAutoMLJobV2Response": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateClusterRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateClusterResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateClusterSchedulerConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateClusterSchedulerConfigResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateCodeRepositoryInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateCodeRepositoryOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateCompilationJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateCompilationJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateComputeQuotaRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateComputeQuotaResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateContextRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateContextResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateDataQualityJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateDataQualityJobDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateDeviceFleetRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateDomainRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateDomainResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateEdgeDeploymentPlanRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateEdgeDeploymentPlanResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateEdgeDeploymentStageRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateEdgePackagingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateEndpointConfigInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateEndpointConfigOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateEndpointInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateEndpointOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFeatureGroupRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFeatureGroupResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFlowDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFlowDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
+    },
+    "CreateHubContentPresignedUrlsRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "CreateHubContentPresignedUrlsResponse": {
+      "base": null,
+      "refs": {}
     },
     "CreateHubContentReferenceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateHubContentReferenceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateHubRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateHubResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateHumanTaskUiRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateHumanTaskUiResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateHyperParameterTuningJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateHyperParameterTuningJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateImageRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateImageResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateImageVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateImageVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateInferenceComponentInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateInferenceComponentOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateInferenceExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateInferenceExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateInferenceRecommendationsJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateInferenceRecommendationsJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateLabelingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateLabelingJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateMlflowTrackingServerRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateMlflowTrackingServerResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelBiasJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelBiasJobDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelCardExportJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelCardExportJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelCardRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelCardResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelExplainabilityJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelExplainabilityJobDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelPackageGroupInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelPackageGroupOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelPackageInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelPackageOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelQualityJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateModelQualityJobDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateMonitoringScheduleRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateMonitoringScheduleResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateNotebookInstanceInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateNotebookInstanceLifecycleConfigInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateNotebookInstanceLifecycleConfigOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateNotebookInstanceOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateOptimizationJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateOptimizationJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePartnerAppPresignedUrlRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePartnerAppPresignedUrlResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePartnerAppRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePartnerAppResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePipelineRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePipelineResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePresignedDomainUrlRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePresignedDomainUrlResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePresignedMlflowTrackingServerUrlRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePresignedMlflowTrackingServerUrlResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePresignedNotebookInstanceUrlInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePresignedNotebookInstanceUrlOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateProcessingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateProcessingJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateProjectInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateProjectOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateSpaceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateSpaceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateStudioLifecycleConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateStudioLifecycleConfigResponse": {
       "base": null,
+      "refs": {}
+    },
+    "CreateTemplateProvider": {
+      "base": "<p> Contains configuration details for a template provider. Only one type of template provider can be specified. </p>",
       "refs": {
+        "CreateTemplateProviderList$member": null
+      }
+    },
+    "CreateTemplateProviderList": {
+      "base": null,
+      "refs": {
+        "CreateProjectInput$TemplateProviders": "<p> An array of template provider configurations for creating infrastructure resources for the project. </p>"
       }
     },
     "CreateTrainingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateTrainingJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateTrainingPlanRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateTrainingPlanResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateTransformJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateTransformJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateTrialComponentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateTrialComponentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateTrialRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateTrialResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateUserProfileRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateUserProfileResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateWorkforceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateWorkforceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateWorkteamRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateWorkteamResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreationTime": {
       "base": null,
@@ -4001,373 +4008,299 @@
     },
     "DeleteActionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteActionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAlgorithmInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAppImageConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAppRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteArtifactRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteArtifactResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAssociationRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAssociationResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteClusterRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteClusterResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteClusterSchedulerConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteCodeRepositoryInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteCompilationJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteComputeQuotaRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteContextRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteContextResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteDataQualityJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteDeviceFleetRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteDomainRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteEdgeDeploymentPlanRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteEdgeDeploymentStageRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteEndpointConfigInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteEndpointInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteFeatureGroupRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteFlowDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteFlowDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteHubContentReferenceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteHubContentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteHubRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteHumanTaskUiRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteHumanTaskUiResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteHyperParameterTuningJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteImageRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteImageResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteImageVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteImageVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteInferenceComponentInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteInferenceExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteInferenceExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteMlflowTrackingServerRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteMlflowTrackingServerResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteModelBiasJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteModelCardRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteModelExplainabilityJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteModelInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteModelPackageGroupInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteModelPackageGroupPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteModelPackageInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteModelQualityJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteMonitoringScheduleRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteNotebookInstanceInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteNotebookInstanceLifecycleConfigInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteOptimizationJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeletePartnerAppRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeletePartnerAppResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeletePipelineRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeletePipelineResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteProjectInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteSpaceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteStudioLifecycleConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteTagsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteTagsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteTrialComponentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteTrialComponentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteTrialRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteTrialResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteUserProfileRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteWorkforceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteWorkforceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteWorkteamRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteWorkteamResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DependencyCopyPath": {
       "base": null,
@@ -4450,8 +4383,7 @@
     },
     "DeregisterDevicesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DerivedInformation": {
       "base": "<p>Information that SageMaker Neo automatically derived about the model.</p>",
@@ -4461,673 +4393,539 @@
     },
     "DescribeActionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeActionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAlgorithmInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAlgorithmOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAppImageConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAppImageConfigResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAppRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAppResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeArtifactRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeArtifactResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAutoMLJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAutoMLJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAutoMLJobV2Request": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeAutoMLJobV2Response": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeClusterNodeRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeClusterNodeResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeClusterRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeClusterResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeClusterSchedulerConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeClusterSchedulerConfigResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeCodeRepositoryInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeCodeRepositoryOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeCompilationJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeCompilationJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeComputeQuotaRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeComputeQuotaResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeContextRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeContextResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeDataQualityJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeDataQualityJobDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeDeviceFleetRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeDeviceFleetResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeDeviceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeDeviceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeDomainRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeDomainResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeEdgeDeploymentPlanRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeEdgeDeploymentPlanResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeEdgePackagingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeEdgePackagingJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeEndpointConfigInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeEndpointConfigOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeEndpointInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeEndpointOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeFeatureGroupRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeFeatureGroupResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeFeatureMetadataRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeFeatureMetadataResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeFlowDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeFlowDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeHubContentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeHubContentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeHubRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeHubResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeHumanTaskUiRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeHumanTaskUiResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeHyperParameterTuningJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeHyperParameterTuningJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeImageRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeImageResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeImageVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeImageVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeInferenceComponentInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeInferenceComponentOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeInferenceExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeInferenceExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeInferenceRecommendationsJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeInferenceRecommendationsJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeLabelingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeLabelingJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeLineageGroupRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeLineageGroupResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeMlflowTrackingServerRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeMlflowTrackingServerResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelBiasJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelBiasJobDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelCardExportJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelCardExportJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelCardRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelCardResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelExplainabilityJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelExplainabilityJobDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelPackageGroupInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelPackageGroupOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelPackageInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelPackageOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelQualityJobDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeModelQualityJobDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeMonitoringScheduleRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeMonitoringScheduleResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeNotebookInstanceInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeNotebookInstanceLifecycleConfigInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeNotebookInstanceLifecycleConfigOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeNotebookInstanceOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeOptimizationJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeOptimizationJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePartnerAppRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePartnerAppResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePipelineDefinitionForExecutionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePipelineDefinitionForExecutionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePipelineExecutionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePipelineExecutionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePipelineRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePipelineResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeProcessingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeProcessingJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeProjectInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeProjectOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeSpaceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeSpaceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeStudioLifecycleConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeStudioLifecycleConfigResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeSubscribedWorkteamRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeSubscribedWorkteamResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTrainingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTrainingJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTrainingPlanRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTrainingPlanResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTransformJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTransformJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTrialComponentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTrialComponentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTrialRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeTrialResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeUserProfileRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeUserProfileResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeWorkforceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeWorkforceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeWorkteamRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeWorkteamResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Description": {
       "base": null,
@@ -5342,13 +5140,11 @@
     },
     "DisableSagemakerServicecatalogPortfolioInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DisableSagemakerServicecatalogPortfolioOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DisassociateAdditionalCodeRepositories": {
       "base": null,
@@ -5376,13 +5172,11 @@
     },
     "DisassociateTrialComponentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DisassociateTrialComponentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DockerSettings": {
       "base": "<p>A collection of settings that configure the domain's Docker interaction.</p>",
@@ -5819,13 +5613,11 @@
     },
     "EnableSagemakerServicecatalogPortfolioInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "EnableSagemakerServicecatalogPortfolioOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "EnableSessionTagChaining": {
       "base": null,
@@ -6759,6 +6551,8 @@
         "KendraSettings$Status": "<p>Describes whether the document querying feature is enabled or disabled in the Canvas application.</p>",
         "ModelRegisterSettings$Status": "<p>Describes whether the integration to the model registry is enabled or disabled in the Canvas application.</p>",
         "SpaceSettings$SpaceManagedResources": "<p>If you enable this option, SageMaker AI creates the following resources on your behalf when you create the space:</p> <ul> <li> <p>The user profile that possesses the space.</p> </li> <li> <p>The app that the space contains.</p> </li> </ul>",
+        "SpaceSettings$RemoteAccess": "<p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>",
+        "SpaceSettingsSummary$RemoteAccess": "<p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>",
         "TimeSeriesForecastingSettings$Status": "<p>Describes whether time series forecasting is enabled or disabled in the Canvas application.</p>",
         "UnifiedStudioSettings$StudioWebPortalAccess": "<p>Sets whether you can access the domain in Amazon SageMaker Studio:</p> <dl> <dt>ENABLED</dt> <dd> <p>You can access the domain in Amazon SageMaker Studio. If you migrate the domain to Amazon SageMaker Unified Studio, you can access it in both studio interfaces.</p> </dd> <dt>DISABLED</dt> <dd> <p>You can't access the domain in Amazon SageMaker Studio. If you migrate the domain to Amazon SageMaker Unified Studio, you can access it only in that studio interface.</p> </dd> </dl> <p>To migrate a domain to Amazon SageMaker Unified Studio, you specify the UnifiedStudioSettings data type when you use the UpdateDomain action.</p>"
       }
@@ -7036,63 +6830,51 @@
     },
     "GetDeviceFleetReportRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetDeviceFleetReportResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetLineageGroupPolicyRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetLineageGroupPolicyResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetModelPackageGroupPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetModelPackageGroupPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetSagemakerServicecatalogPortfolioStatusInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetSagemakerServicecatalogPortfolioStatusOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetScalingConfigurationRecommendationRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetScalingConfigurationRecommendationResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetSearchSuggestionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetSearchSuggestionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Gid": {
       "base": null,
@@ -7294,6 +7076,7 @@
     "HubContentName": {
       "base": null,
       "refs": {
+        "CreateHubContentPresignedUrlsRequest$HubContentName": "<p>The name of the hub content for which to generate presigned URLs. This identifies the specific model or content within the hub.</p>",
         "CreateHubContentReferenceRequest$HubContentName": "<p>The name of the hub content to reference.</p>",
         "DeleteHubContentReferenceRequest$HubContentName": "<p>The name of the hub content to delete.</p>",
         "DeleteHubContentRequest$HubContentName": "<p>The name of the content that you want to delete from a hub.</p>",
@@ -7341,6 +7124,7 @@
     "HubContentType": {
       "base": null,
       "refs": {
+        "CreateHubContentPresignedUrlsRequest$HubContentType": "<p>The type of hub content to access. Valid values include <code>Model</code>, <code>Notebook</code>, and <code>ModelReference</code>.</p>",
         "DeleteHubContentReferenceRequest$HubContentType": "<p>The type of hub content reference to delete. The only supported type of hub content reference to delete is <code>ModelReference</code>.</p>",
         "DeleteHubContentRequest$HubContentType": "<p>The type of content that you want to delete from a hub.</p>",
         "DescribeHubContentRequest$HubContentType": "<p>The type of content in the hub.</p>",
@@ -7356,6 +7140,7 @@
     "HubContentVersion": {
       "base": null,
       "refs": {
+        "CreateHubContentPresignedUrlsRequest$HubContentVersion": "<p>The version of the hub content. If not specified, the latest version is used.</p>",
         "CreateHubContentReferenceRequest$MinVersion": "<p>The minimum version of the hub content to reference.</p>",
         "DeleteHubContentRequest$HubContentVersion": "<p>The version of the content that you want to delete from a hub.</p>",
         "DescribeHubContentRequest$HubContentVersion": "<p>The version of the content to describe.</p>",
@@ -7409,6 +7194,7 @@
     "HubNameOrArn": {
       "base": null,
       "refs": {
+        "CreateHubContentPresignedUrlsRequest$HubName": "<p>The name or Amazon Resource Name (ARN) of the hub that contains the content. For public content, use <code>SageMakerPublicHub</code>.</p>",
         "CreateHubContentReferenceRequest$HubName": "<p>The name of the hub to add the hub content reference to.</p>",
         "DeleteHubContentReferenceRequest$HubName": "<p>The name of the hub to delete the hub content reference from.</p>",
         "DeleteHubContentRequest$HubName": "<p>The name of the hub that you want to delete content in.</p>",
@@ -8081,13 +7867,11 @@
     },
     "ImportHubContentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ImportHubContentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "InUseInstanceCount": {
       "base": null,
@@ -9137,143 +8921,115 @@
     },
     "ListActionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListActionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAlgorithmsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAlgorithmsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAliasesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAliasesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAppImageConfigsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAppImageConfigsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAppsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAppsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListArtifactsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListArtifactsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAssociationsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAssociationsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAutoMLJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAutoMLJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListCandidatesForAutoMLJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListCandidatesForAutoMLJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListClusterNodesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListClusterNodesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListClusterSchedulerConfigsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListClusterSchedulerConfigsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListClustersRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListClustersResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListCodeRepositoriesInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListCodeRepositoriesOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListCompilationJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListCompilationJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListCompilationJobsSortBy": {
       "base": null,
@@ -9283,43 +9039,35 @@
     },
     "ListComputeQuotasRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListComputeQuotasResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListContextsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListContextsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDataQualityJobDefinitionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDataQualityJobDefinitionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDeviceFleetsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDeviceFleetsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDeviceFleetsSortBy": {
       "base": null,
@@ -9329,33 +9077,27 @@
     },
     "ListDevicesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDevicesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDomainsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDomainsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListEdgeDeploymentPlansRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListEdgeDeploymentPlansResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListEdgeDeploymentPlansSortBy": {
       "base": null,
@@ -9365,13 +9107,11 @@
     },
     "ListEdgePackagingJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListEdgePackagingJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListEdgePackagingJobsSortBy": {
       "base": null,
@@ -9381,163 +9121,131 @@
     },
     "ListEndpointConfigsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListEndpointConfigsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListEndpointsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListEndpointsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListExperimentsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListExperimentsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFeatureGroupsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFeatureGroupsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFlowDefinitionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFlowDefinitionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHubContentVersionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHubContentVersionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHubContentsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHubContentsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHubsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHubsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHumanTaskUisRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHumanTaskUisResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHyperParameterTuningJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListHyperParameterTuningJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListImageVersionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListImageVersionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListImagesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListImagesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInferenceComponentsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInferenceComponentsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInferenceExperimentsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInferenceExperimentsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInferenceRecommendationsJobStepsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInferenceRecommendationsJobStepsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInferenceRecommendationsJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInferenceRecommendationsJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInferenceRecommendationsJobsSortBy": {
       "base": null,
@@ -9547,13 +9255,11 @@
     },
     "ListLabelingJobsForWorkteamRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListLabelingJobsForWorkteamResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListLabelingJobsForWorkteamSortByOptions": {
       "base": null,
@@ -9563,13 +9269,11 @@
     },
     "ListLabelingJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListLabelingJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListLineageEntityParameterKey": {
       "base": null,
@@ -9581,13 +9285,11 @@
     },
     "ListLineageGroupsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListLineageGroupsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMaxResults": {
       "base": null,
@@ -9601,183 +9303,147 @@
     },
     "ListMlflowTrackingServersRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMlflowTrackingServersResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelBiasJobDefinitionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelBiasJobDefinitionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelCardExportJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelCardExportJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelCardVersionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelCardVersionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelCardsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelCardsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelExplainabilityJobDefinitionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelExplainabilityJobDefinitionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelMetadataRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelMetadataResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelPackageGroupsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelPackageGroupsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelPackagesInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelPackagesOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelQualityJobDefinitionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelQualityJobDefinitionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListModelsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMonitoringAlertHistoryRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMonitoringAlertHistoryResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMonitoringAlertsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMonitoringAlertsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMonitoringExecutionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMonitoringExecutionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMonitoringSchedulesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListMonitoringSchedulesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListNotebookInstanceLifecycleConfigsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListNotebookInstanceLifecycleConfigsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListNotebookInstancesInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListNotebookInstancesOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListOptimizationJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListOptimizationJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListOptimizationJobsSortBy": {
       "base": null,
@@ -9787,128 +9453,103 @@
     },
     "ListPartnerAppsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPartnerAppsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPipelineExecutionStepsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPipelineExecutionStepsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPipelineExecutionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPipelineExecutionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPipelineParametersForExecutionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPipelineParametersForExecutionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPipelinesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPipelinesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListProcessingJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListProcessingJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListProjectsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListProjectsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListResourceCatalogsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListResourceCatalogsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSpacesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSpacesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStageDevicesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStageDevicesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStudioLifecycleConfigsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStudioLifecycleConfigsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSubscribedWorkteamsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSubscribedWorkteamsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTagsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTagsMaxResults": {
       "base": null,
@@ -9918,48 +9559,39 @@
     },
     "ListTagsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrainingJobsForHyperParameterTuningJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrainingJobsForHyperParameterTuningJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrainingJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrainingJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrainingPlansRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrainingPlansResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTransformJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTransformJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrialComponentKey256": {
       "base": null,
@@ -9971,43 +9603,35 @@
     },
     "ListTrialComponentsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrialComponentsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrialsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTrialsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListUserProfilesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListUserProfilesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListWorkforcesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListWorkforcesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListWorkforcesSortByOptions": {
       "base": null,
@@ -10017,18 +9641,22 @@
     },
     "ListWorkteamsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListWorkteamsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListWorkteamsSortByOptions": {
       "base": null,
       "refs": {
         "ListWorkteamsRequest$SortBy": "<p>The field to sort results by. The default is <code>CreationTime</code>.</p>"
+      }
+    },
+    "LocalPath": {
+      "base": null,
+      "refs": {
+        "AuthorizedUrl$LocalPath": "<p>The recommended local file path where the downloaded file should be stored to maintain proper directory structure and file organization.</p>"
       }
     },
     "Long": {
@@ -10042,6 +9670,12 @@
         "EdgeModelStat$ActiveDeviceCount": "<p>The number of devices that have this model version, a heart beat, and are currently running.</p>",
         "EdgeModelStat$SamplingDeviceCount": "<p>The number of devices with this model version and are producing sample data.</p>",
         "TotalHits$Value": "<p>The total number of matching results. This value may be exact or an estimate, depending on the <code>Relation</code> field.</p>"
+      }
+    },
+    "LongS3Uri": {
+      "base": null,
+      "refs": {
+        "AuthorizedUrl$Url": "<p>The presigned S3 URL that provides temporary, secure access to download the file. URLs expire within 15 minutes for security purposes.</p>"
       }
     },
     "MLFramework": {
@@ -10169,6 +9803,7 @@
     "MaxResults": {
       "base": null,
       "refs": {
+        "CreateHubContentPresignedUrlsRequest$MaxResults": "<p>The maximum number of presigned URLs to return in the response. Default value is 100. Large models may contain hundreds of files, requiring pagination to retrieve all URLs.</p>",
         "ListActionsRequest$MaxResults": "<p>The maximum number of actions to return in the response. The default value is 10.</p>",
         "ListAlgorithmsInput$MaxResults": "<p>The maximum number of algorithms to return in the response.</p>",
         "ListAliasesRequest$MaxResults": "<p>The maximum number of aliases to return.</p>",
@@ -10178,7 +9813,7 @@
         "ListAssociationsRequest$MaxResults": "<p>The maximum number of associations to return in the response. The default value is 10.</p>",
         "ListClusterNodesRequest$MaxResults": "<p>The maximum number of nodes to return in the response.</p>",
         "ListClusterSchedulerConfigsRequest$MaxResults": "<p>The maximum number of cluster policies to list.</p>",
-        "ListClustersRequest$MaxResults": "<p>Set the maximum number of SageMaker HyperPod clusters to list.</p>",
+        "ListClustersRequest$MaxResults": "<p>Specifies the maximum number of clusters to evaluate for the operation (not necessarily the number of matching items). After SageMaker processes the number of clusters up to <code>MaxResults</code>, it stops the operation and returns the matching clusters up to that point. If all the matching clusters are desired, SageMaker will go through all the clusters until <code>NextToken</code> is empty.</p>",
         "ListCodeRepositoriesInput$MaxResults": "<p>The maximum number of Git repositories to return in the response.</p>",
         "ListCompilationJobsRequest$MaxResults": "<p>The maximum number of model compilation jobs to return in the response.</p>",
         "ListComputeQuotasRequest$MaxResults": "<p>The maximum number of compute allocation definitions to list.</p>",
@@ -11811,6 +11446,8 @@
     "NextToken": {
       "base": null,
       "refs": {
+        "CreateHubContentPresignedUrlsRequest$NextToken": "<p> A token for pagination. Use this token to retrieve the next set of presigned URLs when the response is truncated.</p>",
+        "CreateHubContentPresignedUrlsResponse$NextToken": "<p>A token for pagination. If present, indicates that more presigned URLs are available. Use this token in a subsequent request to retrieve additional URLs.</p>",
         "DescribeDeviceRequest$NextToken": "<p>Next token of device description.</p>",
         "DescribeDeviceResponse$NextToken": "<p>The response from the last list when returning a list large enough to need tokening.</p>",
         "DescribeEdgeDeploymentPlanRequest$NextToken": "<p>If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.</p>",
@@ -13050,6 +12687,12 @@
         "CreatePresignedDomainUrlResponse$AuthorizedUrl": "<p>The presigned URL.</p>"
       }
     },
+    "PresignedUrlAccessConfig": {
+      "base": "<p>Configuration for accessing hub content through presigned URLs, including license agreement acceptance and URL validation settings.</p>",
+      "refs": {
+        "CreateHubContentPresignedUrlsRequest$AccessConfig": "<p>Configuration settings for accessing the hub content, including end-user license agreement acceptance for gated models and expected S3 URL validation.</p>"
+      }
+    },
     "PriorityClass": {
       "base": "<p>Priority class configuration. When included in <code>PriorityClasses</code>, these class configurations define how tasks are queued.</p>",
       "refs": {
@@ -13686,13 +13329,11 @@
     },
     "PutModelPackageGroupPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PutModelPackageGroupPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "QProfileArn": {
       "base": null,
@@ -13726,13 +13367,11 @@
     },
     "QueryLineageRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "QueryLineageResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "QueryLineageStartArns": {
       "base": null,
@@ -14095,8 +13734,7 @@
     },
     "RegisterDevicesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RegisterModelStepMetadata": {
       "base": "<p>Metadata for a register model job step.</p>",
@@ -14133,13 +13771,11 @@
     },
     "RenderUiTemplateRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RenderUiTemplateResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RenderableTask": {
       "base": "<p>Contains input values for a task.</p>",
@@ -14328,15 +13964,19 @@
         "DescribeDomainResponse$HomeEfsFileSystemId": "<p>The ID of the Amazon Elastic File System managed by this Domain.</p>"
       }
     },
+    "ResourceIdentifier": {
+      "base": null,
+      "refs": {
+        "StartSessionRequest$ResourceIdentifier": "<p>The Amazon Resource Name (ARN) of the resource to which the remote connection will be established. For example, this identifies the specific ARN space application you want to connect to from your local IDE.</p>"
+      }
+    },
     "ResourceInUse": {
       "base": "<p>Resource being accessed is in use.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ResourceLimitExceeded": {
       "base": "<p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ResourceLimits": {
       "base": "<p>Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.</p>",
@@ -14347,8 +13987,7 @@
     },
     "ResourceNotFound": {
       "base": "<p>Resource being access is not found.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ResourcePolicyString": {
       "base": null,
@@ -14435,13 +14074,11 @@
     },
     "RetryPipelineExecutionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RetryPipelineExecutionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RetryStrategy": {
       "base": "<p>The retry strategy to use when a training job fails due to an <code>InternalServerError</code>. <code>RetryStrategy</code> is specified as part of the <code>CreateTrainingJob</code> and <code>CreateHyperParameterTuningJob</code> requests. You can add the <code>StoppingCondition</code> parameter to the request to limit the training time for the complete job.</p>",
@@ -14457,6 +14094,8 @@
       "refs": {
         "AlgorithmValidationSpecification$ValidationRole": "<p>The IAM roles that SageMaker uses to run the training jobs.</p>",
         "AssumableRoleArns$member": null,
+        "CfnCreateTemplateProvider$RoleARN": "<p> The IAM role that CloudFormation assumes when creating the stack. </p>",
+        "CfnTemplateProviderDetail$RoleARN": "<p> The IAM role used by CloudFormation to create the stack. </p>",
         "ClusterInstanceGroupDetails$ExecutionRole": "<p>The execution role for the instance group to assume.</p>",
         "ClusterInstanceGroupSpecification$ExecutionRole": "<p>Specifies an IAM execution role to be assumed by the instance group.</p>",
         "CreateAutoMLJobRequest$RoleArn": "<p>The ARN of the role that is used to access the data.</p>",
@@ -14600,7 +14239,7 @@
     "S3DataType": {
       "base": null,
       "refs": {
-        "S3DataSource$S3DataType": "<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>",
+        "S3DataSource$S3DataType": "<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p> <p>If you choose <code>Converse</code>, <code>S3Uri</code> identifies an Amazon S3 location that contains data formatted according to Converse format. This format structures conversational messages with specific roles and content types used for training and fine-tuning foundational models.</p>",
         "TransformS3DataSource$S3DataType": "<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for batch transform. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for batch transform. </p> <p>The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code> </p> <p>The following value is not compatible: <code>AugmentedManifestFile</code> </p>"
       }
     },
@@ -14620,6 +14259,7 @@
     "S3ModelUri": {
       "base": null,
       "refs": {
+        "PresignedUrlAccessConfig$ExpectedS3Url": "<p>The expected S3 URL prefix for validation purposes. This parameter helps ensure consistency between the resolved S3 URIs and the deployment configuration, reducing potential compatibility issues.</p>",
         "S3ModelDataSource$S3Uri": "<p>Specifies the S3 path of ML model data to deploy.</p>",
         "S3ModelDataSource$ManifestS3Uri": "<p>The Amazon S3 URI of the manifest file. The manifest file is a CSV file that stores the artifact locations.</p>"
       }
@@ -14879,13 +14519,11 @@
     },
     "SearchRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SearchResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SearchResultsList": {
       "base": null,
@@ -14901,13 +14539,11 @@
     },
     "SearchTrainingPlanOfferingsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SearchTrainingPlanOfferingsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SecondaryStatus": {
       "base": null,
@@ -14991,23 +14627,19 @@
     },
     "SendPipelineExecutionStepFailureRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SendPipelineExecutionStepFailureResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SendPipelineExecutionStepSuccessRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SendPipelineExecutionStepSuccessResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ServerlessMaxConcurrency": {
       "base": null,
@@ -15073,6 +14705,12 @@
         "CreatePresignedDomainUrlRequest$SessionExpirationDurationInSeconds": "<p>The session expiration duration in seconds. This value defaults to 43200.</p>",
         "CreatePresignedMlflowTrackingServerUrlRequest$SessionExpirationDurationInSeconds": "<p>The duration in seconds that your MLflow UI session is valid.</p>",
         "CreatePresignedNotebookInstanceUrlInput$SessionExpirationDurationInSeconds": "<p>The duration of the session, in seconds. The default is 12 hours.</p>"
+      }
+    },
+    "SessionId": {
+      "base": null,
+      "refs": {
+        "StartSessionResponse$SessionId": "<p>A unique identifier for the established remote connection session.</p>"
       }
     },
     "ShadowModeConfig": {
@@ -15493,48 +15131,47 @@
     },
     "StartEdgeDeploymentStageRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartInferenceExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartInferenceExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartMlflowTrackingServerRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartMlflowTrackingServerResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartMonitoringScheduleRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartNotebookInstanceInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartPipelineExecutionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartPipelineExecutionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
+    },
+    "StartSessionRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "StartSessionResponse": {
+      "base": null,
+      "refs": {}
     },
     "Statistic": {
       "base": null,
@@ -15581,98 +15218,79 @@
     },
     "StopAutoMLJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopCompilationJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopEdgeDeploymentStageRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopEdgePackagingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopHyperParameterTuningJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopInferenceExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopInferenceExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopInferenceRecommendationsJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopLabelingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopMlflowTrackingServerRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopMlflowTrackingServerResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopMonitoringScheduleRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopNotebookInstanceInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopOptimizationJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopPipelineExecutionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopPipelineExecutionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopProcessingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopTrainingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopTransformJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StoppingCondition": {
       "base": "<p>Specifies a limit to how long a job can run. When the job reaches the time limit, SageMaker ends the job. Use this API to cap costs.</p> <p>To stop a training job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>",
@@ -15692,6 +15310,12 @@
       "base": null,
       "refs": {
         "OnlineStoreConfig$StorageType": "<p>Option for different tiers of low latency storage for real-time data retrieval.</p> <ul> <li> <p> <code>Standard</code>: A managed low latency data store for feature groups.</p> </li> <li> <p> <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval. </p> </li> </ul>"
+      }
+    },
+    "StreamUrl": {
+      "base": null,
+      "refs": {
+        "StartSessionResponse$StreamUrl": "<p>A WebSocket URL used to establish a SSH connection between the local IDE and remote SageMaker space.</p>"
       }
     },
     "String": {
@@ -16310,6 +15934,19 @@
         "UiTemplateInfo$ContentSha256": "<p>The SHA-256 digest of the contents of the template.</p>"
       }
     },
+    "TemplateProviderDetail": {
+      "base": "<p> Details about a template provider configuration and associated provisioning information. </p>",
+      "refs": {
+        "TemplateProviderDetailList$member": null
+      }
+    },
+    "TemplateProviderDetailList": {
+      "base": null,
+      "refs": {
+        "DescribeProjectOutput$TemplateProviderDetails": "<p> An array of template providers associated with the project. </p>",
+        "Project$TemplateProviderDetails": "<p> An array of template providers associated with the project. </p>"
+      }
+    },
     "TemplateUrl": {
       "base": null,
       "refs": {
@@ -16897,6 +16534,12 @@
         "TimeSeriesConfig$TimestampAttributeName": "<p>The name of the column indicating a point in time at which the target value of a given item is recorded.</p>"
       }
     },
+    "TokenValue": {
+      "base": null,
+      "refs": {
+        "StartSessionResponse$TokenValue": "<p>An encrypted token value containing session and caller information. </p>"
+      }
+    },
     "TotalHits": {
       "base": "<p>Represents the total number of matching results and indicates how accurate that count is.</p> <p>The <code>Value</code> field provides the count, which may be exact or estimated. The <code>Relation</code> field indicates whether it's an exact figure or a lower bound. This helps understand the full scope of search results, especially when dealing with large result sets.</p>",
       "refs": {
@@ -17084,7 +16727,7 @@
         "HyperParameterTuningInstanceConfig$InstanceType": "<p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html\">instance type descriptions</a>.</p>",
         "HyperParameterTuningResourceConfig$InstanceType": "<p>The instance type used to run hyperparameter optimization tuning jobs. See <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html\"> descriptions of instance types</a> for more information.</p>",
         "InstanceGroup$InstanceType": "<p>Specifies the instance type of the instance group.</p>",
-        "ResourceConfig$InstanceType": "<p>The ML compute instance type. </p> <note> <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022. </p> <p> <a href=\"http://aws.amazon.com/ec2/instance-types/p4/\">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions. </p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West (Oregon) (us-west-2)</p> </li> </ul> <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p> </note>",
+        "ResourceConfig$InstanceType": "<p>The ML compute instance type. </p>",
         "TrainingInstanceTypes$member": null
       }
     },
@@ -17809,53 +17452,43 @@
     },
     "UpdateActionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateActionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAppImageConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAppImageConfigResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateArtifactRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateArtifactResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateClusterRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateClusterResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateClusterSchedulerConfigRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateClusterSchedulerConfigResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateClusterSoftwareInstanceGroupSpecification": {
       "base": "<p>The configuration that describes specifications of the instance groups to update.</p>",
@@ -17871,368 +17504,307 @@
     },
     "UpdateClusterSoftwareRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateClusterSoftwareResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateCodeRepositoryInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateCodeRepositoryOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateComputeQuotaRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateComputeQuotaResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateContextRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateContextResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateDeviceFleetRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateDevicesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateDomainRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateDomainResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateEndpointInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateEndpointOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateEndpointWeightsAndCapacitiesInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateEndpointWeightsAndCapacitiesOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateFeatureGroupRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateFeatureGroupResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateFeatureMetadataRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateHubContentReferenceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateHubContentReferenceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateHubContentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateHubContentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateHubRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateHubResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateImageRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateImageResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateImageVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateImageVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateInferenceComponentInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateInferenceComponentOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateInferenceComponentRuntimeConfigInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateInferenceComponentRuntimeConfigOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateInferenceExperimentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateInferenceExperimentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateMlflowTrackingServerRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateMlflowTrackingServerResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateModelCardRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateModelCardResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateModelPackageInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateModelPackageOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateMonitoringAlertRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateMonitoringAlertResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateMonitoringScheduleRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateMonitoringScheduleResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateNotebookInstanceInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateNotebookInstanceLifecycleConfigInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateNotebookInstanceLifecycleConfigOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateNotebookInstanceOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdatePartnerAppRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdatePartnerAppResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdatePipelineExecutionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdatePipelineExecutionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdatePipelineRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdatePipelineResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateProjectInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateProjectOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateSpaceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateSpaceResponse": {
       "base": null,
+      "refs": {}
+    },
+    "UpdateTemplateProvider": {
+      "base": "<p> Contains configuration details for updating an existing template provider in the project. </p>",
       "refs": {
+        "UpdateTemplateProviderList$member": null
+      }
+    },
+    "UpdateTemplateProviderList": {
+      "base": null,
+      "refs": {
+        "UpdateProjectInput$TemplateProvidersToUpdate": "<p> The template providers to update in the project. </p>"
       }
     },
     "UpdateTrainingJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateTrainingJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateTrialComponentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateTrialComponentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateTrialRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateTrialResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateUserProfileRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateUserProfileResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateWorkforceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateWorkforceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateWorkteamRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateWorkteamResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Url": {
       "base": null,

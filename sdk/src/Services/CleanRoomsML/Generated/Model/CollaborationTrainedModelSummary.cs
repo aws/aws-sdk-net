@@ -39,11 +39,13 @@ namespace Amazon.CleanRoomsML.Model
         private DateTime? _createTime;
         private string _creatorAccountId;
         private string _description;
+        private List<IncrementalTrainingDataChannelOutput> _incrementalTrainingDataChannels = AWSConfigs.InitializeCollections ? new List<IncrementalTrainingDataChannelOutput>() : null;
         private string _membershipIdentifier;
         private string _name;
         private TrainedModelStatus _status;
         private string _trainedModelArn;
         private DateTime? _updateTime;
+        private string _versionIdentifier;
 
         /// <summary>
         /// Gets and sets the property CollaborationIdentifier. 
@@ -142,6 +144,31 @@ namespace Amazon.CleanRoomsML.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IncrementalTrainingDataChannels. 
+        /// <para>
+        /// Information about the incremental training data channels used to create this version
+        /// of the trained model.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<IncrementalTrainingDataChannelOutput> IncrementalTrainingDataChannels
+        {
+            get { return this._incrementalTrainingDataChannels; }
+            set { this._incrementalTrainingDataChannels = value; }
+        }
+
+        // Check to see if IncrementalTrainingDataChannels property is set
+        internal bool IsSetIncrementalTrainingDataChannels()
+        {
+            return this._incrementalTrainingDataChannels != null && (this._incrementalTrainingDataChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property MembershipIdentifier. 
         /// <para>
         /// The membership ID of the member that created the trained model.
@@ -234,6 +261,25 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetUpdateTime()
         {
             return this._updateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionIdentifier. 
+        /// <para>
+        /// The version identifier of this trained model version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string VersionIdentifier
+        {
+            get { return this._versionIdentifier; }
+            set { this._versionIdentifier = value; }
+        }
+
+        // Check to see if VersionIdentifier property is set
+        internal bool IsSetVersionIdentifier()
+        {
+            return this._versionIdentifier != null;
         }
 
     }

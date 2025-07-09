@@ -200,6 +200,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetParseToOCSF())
+            {
+                context.Writer.WritePropertyName("parseToOCSF");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ParseToOCSFMarshaller.Instance;
+                marshaller.Marshall(requestObject.ParseToOCSF, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetParseVPC())
             {
                 context.Writer.WritePropertyName("parseVPC");

@@ -41,7 +41,6 @@ namespace Amazon.ElasticFileSystem.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -55,7 +54,6 @@ namespace Amazon.ElasticFileSystem.Internal
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);                        
         }
-#endif
 
         /// <summary>
         /// PreInvoke that sets the CreationToken for the CreateFileSystemRequest

@@ -62,6 +62,38 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetCodeRepositoryProjectName())
+            {
+                context.Writer.WritePropertyName("codeRepositoryProjectName");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCodeRepositoryProjectNameListValue in requestObject.CodeRepositoryProjectName)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeRepositoryProjectNameListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCodeRepositoryProviderType())
+            {
+                context.Writer.WritePropertyName("codeRepositoryProviderType");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCodeRepositoryProviderTypeListValue in requestObject.CodeRepositoryProviderType)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeRepositoryProviderTypeListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetCodeVulnerabilityDetectorName())
             {
                 context.Writer.WritePropertyName("codeVulnerabilityDetectorName");

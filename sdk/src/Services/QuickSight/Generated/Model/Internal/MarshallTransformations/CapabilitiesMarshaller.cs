@@ -100,10 +100,46 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ExportToCsv);
             }
 
+            if(requestObject.IsSetExportToCsvInScheduledReports())
+            {
+                context.Writer.WritePropertyName("ExportToCsvInScheduledReports");
+                context.Writer.WriteStringValue(requestObject.ExportToCsvInScheduledReports);
+            }
+
             if(requestObject.IsSetExportToExcel())
             {
                 context.Writer.WritePropertyName("ExportToExcel");
                 context.Writer.WriteStringValue(requestObject.ExportToExcel);
+            }
+
+            if(requestObject.IsSetExportToExcelInScheduledReports())
+            {
+                context.Writer.WritePropertyName("ExportToExcelInScheduledReports");
+                context.Writer.WriteStringValue(requestObject.ExportToExcelInScheduledReports);
+            }
+
+            if(requestObject.IsSetExportToPdf())
+            {
+                context.Writer.WritePropertyName("ExportToPdf");
+                context.Writer.WriteStringValue(requestObject.ExportToPdf);
+            }
+
+            if(requestObject.IsSetExportToPdfInScheduledReports())
+            {
+                context.Writer.WritePropertyName("ExportToPdfInScheduledReports");
+                context.Writer.WriteStringValue(requestObject.ExportToPdfInScheduledReports);
+            }
+
+            if(requestObject.IsSetIncludeContentInScheduledReportsEmail())
+            {
+                context.Writer.WritePropertyName("IncludeContentInScheduledReportsEmail");
+                context.Writer.WriteStringValue(requestObject.IncludeContentInScheduledReportsEmail);
+            }
+
+            if(requestObject.IsSetPrintReports())
+            {
+                context.Writer.WritePropertyName("PrintReports");
+                context.Writer.WriteStringValue(requestObject.PrintReports);
             }
 
             if(requestObject.IsSetRenameSharedFolders())

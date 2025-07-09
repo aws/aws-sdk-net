@@ -43,7 +43,13 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createSharedFolders;
         private CapabilityState _createSPICEDataset;
         private CapabilityState _exportToCsv;
+        private CapabilityState _exportToCsvInScheduledReports;
         private CapabilityState _exportToExcel;
+        private CapabilityState _exportToExcelInScheduledReports;
+        private CapabilityState _exportToPdf;
+        private CapabilityState _exportToPdfInScheduledReports;
+        private CapabilityState _includeContentInScheduledReportsEmail;
+        private CapabilityState _printReports;
         private CapabilityState _renameSharedFolders;
         private CapabilityState _shareAnalyses;
         private CapabilityState _shareDashboards;
@@ -199,7 +205,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExportToCsv. 
         /// <para>
-        /// The ability to export to CSV files.
+        /// The ability to export to CSV files from the UI.
         /// </para>
         /// </summary>
         public CapabilityState ExportToCsv
@@ -215,9 +221,27 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExportToCsvInScheduledReports. 
+        /// <para>
+        /// The ability to export to CSV files in scheduled email reports.
+        /// </para>
+        /// </summary>
+        public CapabilityState ExportToCsvInScheduledReports
+        {
+            get { return this._exportToCsvInScheduledReports; }
+            set { this._exportToCsvInScheduledReports = value; }
+        }
+
+        // Check to see if ExportToCsvInScheduledReports property is set
+        internal bool IsSetExportToCsvInScheduledReports()
+        {
+            return this._exportToCsvInScheduledReports != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExportToExcel. 
         /// <para>
-        /// The ability to export to Excel files.
+        /// The ability to export to Excel files from the UI.
         /// </para>
         /// </summary>
         public CapabilityState ExportToExcel
@@ -230,6 +254,96 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetExportToExcel()
         {
             return this._exportToExcel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportToExcelInScheduledReports. 
+        /// <para>
+        /// The ability to export to Excel files in scheduled email reports.
+        /// </para>
+        /// </summary>
+        public CapabilityState ExportToExcelInScheduledReports
+        {
+            get { return this._exportToExcelInScheduledReports; }
+            set { this._exportToExcelInScheduledReports = value; }
+        }
+
+        // Check to see if ExportToExcelInScheduledReports property is set
+        internal bool IsSetExportToExcelInScheduledReports()
+        {
+            return this._exportToExcelInScheduledReports != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportToPdf. 
+        /// <para>
+        /// The ability to export to PDF files from the UI.
+        /// </para>
+        /// </summary>
+        public CapabilityState ExportToPdf
+        {
+            get { return this._exportToPdf; }
+            set { this._exportToPdf = value; }
+        }
+
+        // Check to see if ExportToPdf property is set
+        internal bool IsSetExportToPdf()
+        {
+            return this._exportToPdf != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportToPdfInScheduledReports. 
+        /// <para>
+        /// The ability to export to PDF files in scheduled email reports.
+        /// </para>
+        /// </summary>
+        public CapabilityState ExportToPdfInScheduledReports
+        {
+            get { return this._exportToPdfInScheduledReports; }
+            set { this._exportToPdfInScheduledReports = value; }
+        }
+
+        // Check to see if ExportToPdfInScheduledReports property is set
+        internal bool IsSetExportToPdfInScheduledReports()
+        {
+            return this._exportToPdfInScheduledReports != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeContentInScheduledReportsEmail. 
+        /// <para>
+        /// The ability to include content in scheduled email reports.
+        /// </para>
+        /// </summary>
+        public CapabilityState IncludeContentInScheduledReportsEmail
+        {
+            get { return this._includeContentInScheduledReportsEmail; }
+            set { this._includeContentInScheduledReportsEmail = value; }
+        }
+
+        // Check to see if IncludeContentInScheduledReportsEmail property is set
+        internal bool IsSetIncludeContentInScheduledReportsEmail()
+        {
+            return this._includeContentInScheduledReportsEmail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrintReports. 
+        /// <para>
+        /// The ability to print reports.
+        /// </para>
+        /// </summary>
+        public CapabilityState PrintReports
+        {
+            get { return this._printReports; }
+            set { this._printReports = value; }
+        }
+
+        // Check to see if PrintReports property is set
+        internal bool IsSetPrintReports()
+        {
+            return this._printReports != null;
         }
 
         /// <summary>

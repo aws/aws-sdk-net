@@ -34,10 +34,63 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class Encryption
     {
+        private bool? _cmafExcludeSegmentDrmMetadata;
         private string _constantInitializationVector;
         private EncryptionMethod _encryptionMethod;
         private int? _keyRotationIntervalSeconds;
         private SpekeKeyProvider _spekeKeyProvider;
+
+        /// <summary>
+        /// Gets and sets the property CmafExcludeSegmentDrmMetadata. 
+        /// <para>
+        /// Excludes SEIG and SGPD boxes from segment metadata in CMAF containers.
+        /// </para>
+        ///  
+        /// <para>
+        /// When set to <c>true</c>, MediaPackage omits these DRM metadata boxes from CMAF segments,
+        /// which can improve compatibility with certain devices and players that don't support
+        /// these boxes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Important considerations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This setting only affects CMAF container formats
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key rotation can still be handled through media playlist signaling
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PSSH and TENC boxes remain unaffected
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default behavior is preserved when this setting is disabled
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Valid values: <c>true</c> | <c>false</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool? CmafExcludeSegmentDrmMetadata
+        {
+            get { return this._cmafExcludeSegmentDrmMetadata; }
+            set { this._cmafExcludeSegmentDrmMetadata = value; }
+        }
+
+        // Check to see if CmafExcludeSegmentDrmMetadata property is set
+        internal bool IsSetCmafExcludeSegmentDrmMetadata()
+        {
+            return this._cmafExcludeSegmentDrmMetadata.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConstantInitializationVector. 

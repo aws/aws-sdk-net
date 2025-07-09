@@ -129,11 +129,81 @@ namespace Amazon.IoTManagedIntegrations
 
 
     /// <summary>
+    /// Constants used for properties of type AssociationState.
+    /// </summary>
+    public class AssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATION_DELETING for AssociationState
+        /// </summary>
+        public static readonly AssociationState ASSOCIATION_DELETING = new AssociationState("ASSOCIATION_DELETING");
+        /// <summary>
+        /// Constant ASSOCIATION_FAILED for AssociationState
+        /// </summary>
+        public static readonly AssociationState ASSOCIATION_FAILED = new AssociationState("ASSOCIATION_FAILED");
+        /// <summary>
+        /// Constant ASSOCIATION_IN_PROGRESS for AssociationState
+        /// </summary>
+        public static readonly AssociationState ASSOCIATION_IN_PROGRESS = new AssociationState("ASSOCIATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant ASSOCIATION_SUCCEEDED for AssociationState
+        /// </summary>
+        public static readonly AssociationState ASSOCIATION_SUCCEEDED = new AssociationState("ASSOCIATION_SUCCEEDED");
+        /// <summary>
+        /// Constant REFRESH_TOKEN_EXPIRED for AssociationState
+        /// </summary>
+        public static readonly AssociationState REFRESH_TOKEN_EXPIRED = new AssociationState("REFRESH_TOKEN_EXPIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationState FindValue(string value)
+        {
+            return FindValue<AssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthMaterialType.
     /// </summary>
     public class AuthMaterialType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CUSTOM_PROTOCOL_QR_BAR_CODE for AuthMaterialType
+        /// </summary>
+        public static readonly AuthMaterialType CUSTOM_PROTOCOL_QR_BAR_CODE = new AuthMaterialType("CUSTOM_PROTOCOL_QR_BAR_CODE");
+        /// <summary>
+        /// Constant DISCOVERED_DEVICE for AuthMaterialType
+        /// </summary>
+        public static readonly AuthMaterialType DISCOVERED_DEVICE = new AuthMaterialType("DISCOVERED_DEVICE");
         /// <summary>
         /// Constant WIFI_SETUP_QR_BAR_CODE for AuthMaterialType
         /// </summary>
@@ -176,6 +246,102 @@ namespace Amazon.IoTManagedIntegrations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AuthMaterialType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthType.
+    /// </summary>
+    public class AuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OAUTH for AuthType
+        /// </summary>
+        public static readonly AuthType OAUTH = new AuthType("OAUTH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthType FindValue(string value)
+        {
+            return FindValue<AuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CloudConnectorType.
+    /// </summary>
+    public class CloudConnectorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LISTED for CloudConnectorType
+        /// </summary>
+        public static readonly CloudConnectorType LISTED = new CloudConnectorType("LISTED");
+        /// <summary>
+        /// Constant UNLISTED for CloudConnectorType
+        /// </summary>
+        public static readonly CloudConnectorType UNLISTED = new CloudConnectorType("UNLISTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudConnectorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudConnectorType FindValue(string value)
+        {
+            return FindValue<CloudConnectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudConnectorType(string value)
         {
             return FindValue(value);
         }
@@ -230,6 +396,64 @@ namespace Amazon.IoTManagedIntegrations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorEventOperation.
+    /// </summary>
+    public class ConnectorEventOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEVICE_COMMAND_REQUEST for ConnectorEventOperation
+        /// </summary>
+        public static readonly ConnectorEventOperation DEVICE_COMMAND_REQUEST = new ConnectorEventOperation("DEVICE_COMMAND_REQUEST");
+        /// <summary>
+        /// Constant DEVICE_COMMAND_RESPONSE for ConnectorEventOperation
+        /// </summary>
+        public static readonly ConnectorEventOperation DEVICE_COMMAND_RESPONSE = new ConnectorEventOperation("DEVICE_COMMAND_RESPONSE");
+        /// <summary>
+        /// Constant DEVICE_DISCOVERY for ConnectorEventOperation
+        /// </summary>
+        public static readonly ConnectorEventOperation DEVICE_DISCOVERY = new ConnectorEventOperation("DEVICE_DISCOVERY");
+        /// <summary>
+        /// Constant DEVICE_EVENT for ConnectorEventOperation
+        /// </summary>
+        public static readonly ConnectorEventOperation DEVICE_EVENT = new ConnectorEventOperation("DEVICE_EVENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorEventOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorEventOperation FindValue(string value)
+        {
+            return FindValue<ConnectorEventOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorEventOperation(string value)
         {
             return FindValue(value);
         }
@@ -485,6 +709,60 @@ namespace Amazon.IoTManagedIntegrations
 
 
     /// <summary>
+    /// Constants used for properties of type DiscoveryModification.
+    /// </summary>
+    public class DiscoveryModification : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISCOVERED for DiscoveryModification
+        /// </summary>
+        public static readonly DiscoveryModification DISCOVERED = new DiscoveryModification("DISCOVERED");
+        /// <summary>
+        /// Constant NO_CHANGE for DiscoveryModification
+        /// </summary>
+        public static readonly DiscoveryModification NO_CHANGE = new DiscoveryModification("NO_CHANGE");
+        /// <summary>
+        /// Constant UPDATED for DiscoveryModification
+        /// </summary>
+        public static readonly DiscoveryModification UPDATED = new DiscoveryModification("UPDATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiscoveryModification(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiscoveryModification FindValue(string value)
+        {
+            return FindValue<DiscoveryModification>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiscoveryModification(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DiscoveryType.
     /// </summary>
     public class DiscoveryType : ConstantClass
@@ -494,6 +772,10 @@ namespace Amazon.IoTManagedIntegrations
         /// Constant CLOUD for DiscoveryType
         /// </summary>
         public static readonly DiscoveryType CLOUD = new DiscoveryType("CLOUD");
+        /// <summary>
+        /// Constant CUSTOM for DiscoveryType
+        /// </summary>
+        public static readonly DiscoveryType CUSTOM = new DiscoveryType("CUSTOM");
         /// <summary>
         /// Constant ZIGBEE for DiscoveryType
         /// </summary>
@@ -589,11 +871,61 @@ namespace Amazon.IoTManagedIntegrations
 
 
     /// <summary>
+    /// Constants used for properties of type EndpointType.
+    /// </summary>
+    public class EndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LAMBDA for EndpointType
+        /// </summary>
+        public static readonly EndpointType LAMBDA = new EndpointType("LAMBDA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointType FindValue(string value)
+        {
+            return FindValue<EndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventType.
     /// </summary>
     public class EventType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ACCOUNT_ASSOCIATION for EventType
+        /// </summary>
+        public static readonly EventType ACCOUNT_ASSOCIATION = new EventType("ACCOUNT_ASSOCIATION");
         /// <summary>
         /// Constant CONNECTOR_ASSOCIATION for EventType
         /// </summary>
@@ -610,6 +942,10 @@ namespace Amazon.IoTManagedIntegrations
         /// Constant DEVICE_COMMAND_REQUEST for EventType
         /// </summary>
         public static readonly EventType DEVICE_COMMAND_REQUEST = new EventType("DEVICE_COMMAND_REQUEST");
+        /// <summary>
+        /// Constant DEVICE_DISCOVERY_STATUS for EventType
+        /// </summary>
+        public static readonly EventType DEVICE_DISCOVERY_STATUS = new EventType("DEVICE_DISCOVERY_STATUS");
         /// <summary>
         /// Constant DEVICE_EVENT for EventType
         /// </summary>
@@ -1478,6 +1814,56 @@ namespace Amazon.IoTManagedIntegrations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SchemaVersionVisibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TokenEndpointAuthenticationScheme.
+    /// </summary>
+    public class TokenEndpointAuthenticationScheme : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTP_BASIC for TokenEndpointAuthenticationScheme
+        /// </summary>
+        public static readonly TokenEndpointAuthenticationScheme HTTP_BASIC = new TokenEndpointAuthenticationScheme("HTTP_BASIC");
+        /// <summary>
+        /// Constant REQUEST_BODY_CREDENTIALS for TokenEndpointAuthenticationScheme
+        /// </summary>
+        public static readonly TokenEndpointAuthenticationScheme REQUEST_BODY_CREDENTIALS = new TokenEndpointAuthenticationScheme("REQUEST_BODY_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TokenEndpointAuthenticationScheme(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TokenEndpointAuthenticationScheme FindValue(string value)
+        {
+            return FindValue<TokenEndpointAuthenticationScheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TokenEndpointAuthenticationScheme(string value)
         {
             return FindValue(value);
         }

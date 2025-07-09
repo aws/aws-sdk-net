@@ -31,7 +31,7 @@ namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
     /// Geocode structure which contains a set of inclusion/exclusion properties that results
-    /// must posses in order to be returned as a result.
+    /// must possess in order to be returned as a result.
     /// </summary>
     public partial class GeocodeFilter
     {

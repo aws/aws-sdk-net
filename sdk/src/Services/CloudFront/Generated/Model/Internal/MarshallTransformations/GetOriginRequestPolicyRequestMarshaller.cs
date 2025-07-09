@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetOriginRequestPolicy Request Marshaller
     /// </summary>       
-    public class GetOriginRequestPolicyRequestMarshaller : IMarshaller<IRequest, GetOriginRequestPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetOriginRequestPolicyRequestMarshaller : IMarshaller<IRequest, GetOriginRequestPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/origin-request-policy/{Id}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetOriginRequestPolicyRequestMarshaller _instance = new GetOriginRequestPolicyRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetOriginRequestPolicyRequest publicRequest);
     }    
 }

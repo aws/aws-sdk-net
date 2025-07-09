@@ -41,8 +41,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerData. 
         /// <para>
-        /// Developer-defined information related to a player. Amazon GameLift does not use this
-        /// data, so it can be formatted as needed for use in the game.
+        /// Developer-defined information related to a player. Amazon GameLift Servers does not
+        /// use this data, so it can be formatted as needed for use in the game.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

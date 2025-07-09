@@ -81,7 +81,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.
+        /// The email address, including the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]

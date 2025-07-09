@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a>
+    /// This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>
     /// operation.
     /// </para>
     /// </summary>
@@ -209,7 +209,7 @@ namespace Amazon.IdentityManagement.Model
         /// tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
         /// period</a>. This field is also null if the report was generated at the service level
         /// and not the action level. For more information, see the <c>Granularity</c> field in
-        /// <a>GenerateServiceLastAccessedDetails</a>.
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateServiceLastAccessedDetails.html">GenerateServiceLastAccessedDetails</a>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

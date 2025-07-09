@@ -52,12 +52,12 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up Amazon GameLift fleets</a> 
+    /// up Amazon GameLift Servers fleets</a> 
     /// </para>
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
-    /// Amazon GameLift service locations</a> for managed hosting
+    /// Amazon GameLift Servers service locations</a> for managed hosting
     /// </para>
     ///  
     /// <para>

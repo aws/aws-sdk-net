@@ -37,6 +37,30 @@ namespace Amazon.IoTManagedIntegrations.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccountAssociations operation
+        ///</summary>
+        public IListAccountAssociationsPaginator ListAccountAssociations(ListAccountAssociationsRequest request) 
+        {
+            return new ListAccountAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCloudConnectors operation
+        ///</summary>
+        public IListCloudConnectorsPaginator ListCloudConnectors(ListCloudConnectorsRequest request) 
+        {
+            return new ListCloudConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConnectorDestinations operation
+        ///</summary>
+        public IListConnectorDestinationsPaginator ListConnectorDestinations(ListConnectorDestinationsRequest request) 
+        {
+            return new ListConnectorDestinationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCredentialLockers operation
         ///</summary>
         public IListCredentialLockersPaginator ListCredentialLockers(ListCredentialLockersRequest request) 
@@ -53,11 +77,35 @@ namespace Amazon.IoTManagedIntegrations.Model
         }
 
         /// <summary>
+        /// Paginator for ListDeviceDiscoveries operation
+        ///</summary>
+        public IListDeviceDiscoveriesPaginator ListDeviceDiscoveries(ListDeviceDiscoveriesRequest request) 
+        {
+            return new ListDeviceDiscoveriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDiscoveredDevices operation
+        ///</summary>
+        public IListDiscoveredDevicesPaginator ListDiscoveredDevices(ListDiscoveredDevicesRequest request) 
+        {
+            return new ListDiscoveredDevicesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEventLogConfigurations operation
         ///</summary>
         public IListEventLogConfigurationsPaginator ListEventLogConfigurations(ListEventLogConfigurationsRequest request) 
         {
             return new ListEventLogConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListManagedThingAccountAssociations operation
+        ///</summary>
+        public IListManagedThingAccountAssociationsPaginator ListManagedThingAccountAssociations(ListManagedThingAccountAssociationsRequest request) 
+        {
+            return new ListManagedThingAccountAssociationsPaginator(this.client, request);
         }
 
         /// <summary>

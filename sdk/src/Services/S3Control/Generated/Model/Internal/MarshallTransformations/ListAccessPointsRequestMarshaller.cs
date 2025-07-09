@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListAccessPoints Request Marshaller
     /// </summary>       
-    public class ListAccessPointsRequestMarshaller : IMarshaller<IRequest, ListAccessPointsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListAccessPointsRequestMarshaller : IMarshaller<IRequest, ListAccessPointsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetBucket())
                 request.Parameters.Add("bucket", StringUtils.FromString(publicRequest.Bucket));
             
+            if (publicRequest.IsSetDataSourceId())
+                request.Parameters.Add("dataSourceId", StringUtils.FromString(publicRequest.DataSourceId));
+            
+            if (publicRequest.IsSetDataSourceType())
+                request.Parameters.Add("dataSourceType", StringUtils.FromString(publicRequest.DataSourceType));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
@@ -73,8 +79,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/v20180820/accesspoint";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListAccessPointsRequestMarshaller _instance = new ListAccessPointsRequestMarshaller();        
@@ -95,5 +102,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListAccessPointsRequest publicRequest);
     }    
 }

@@ -42,6 +42,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </summary>
         public IPaginatedEnumerable<DescribeTrustStoreRevocationsResponse> Responses => new PaginatedResponse<DescribeTrustStoreRevocationsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the TrustStoreRevocations
+        /// </summary>
+        public IPaginatedEnumerable<DescribeTrustStoreRevocation> TrustStoreRevocations => 
+            new PaginatedResultKeyResponse<DescribeTrustStoreRevocationsResponse, DescribeTrustStoreRevocation>(this, (i) => i.TrustStoreRevocations ?? new List<DescribeTrustStoreRevocation>());
+
         internal DescribeTrustStoreRevocationsPaginator(IAmazonElasticLoadBalancingV2 client, DescribeTrustStoreRevocationsRequest request)
         {
             this._client = client;

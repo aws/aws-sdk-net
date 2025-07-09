@@ -24,49 +24,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Get BucketName Policy Request Marshaller
     /// </summary>       
-    public class GetBucketPolicyRequestMarshaller : IMarshaller<IRequest, GetBucketPolicyRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class GetBucketPolicyRequestMarshaller : IMarshaller<IRequest, GetBucketPolicyRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((GetBucketPolicyRequest)input);
-		}
-
-        public IRequest Marshall(GetBucketPolicyRequest getBucketPolicyRequest)
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketPolicyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getBucketPolicyRequest, "AmazonS3");
-
-            request.Suppress404Exceptions = true;
-            request.HttpMethod = "GET";
-
-            if (getBucketPolicyRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getBucketPolicyRequest.ExpectedBucketOwner));
-
-            if (string.IsNullOrEmpty(getBucketPolicyRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketPolicyRequest.BucketName");
-
-            request.ResourcePath = "/";
-            request.AddSubResource("policy");
-            request.UseQueryString = true;
-            
-            return request;
+            defaultRequest.Suppress404Exceptions = true;
         }
-
-	    private static GetBucketPolicyRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static GetBucketPolicyRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new GetBucketPolicyRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
     }
 }
     

@@ -28,6 +28,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeAccountLimits operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IDescribeAccountLimitsPaginator DescribeAccountLimits(DescribeAccountLimitsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeListenerCertificates operation
         ///</summary>
         [AWSPaginator(

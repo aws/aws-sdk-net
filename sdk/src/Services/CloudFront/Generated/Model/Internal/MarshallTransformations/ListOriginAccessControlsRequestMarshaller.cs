@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListOriginAccessControls Request Marshaller
     /// </summary>       
-    public class ListOriginAccessControlsRequestMarshaller : IMarshaller<IRequest, ListOriginAccessControlsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListOriginAccessControlsRequestMarshaller : IMarshaller<IRequest, ListOriginAccessControlsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/origin-access-control";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListOriginAccessControlsRequestMarshaller _instance = new ListOriginAccessControlsRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListOriginAccessControlsRequest publicRequest);
     }    
 }

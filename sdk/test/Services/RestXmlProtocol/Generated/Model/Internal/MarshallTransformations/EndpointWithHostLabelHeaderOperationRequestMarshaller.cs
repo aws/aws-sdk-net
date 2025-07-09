@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// EndpointWithHostLabelHeaderOperation Request Marshaller
     /// </summary>       
-    public class EndpointWithHostLabelHeaderOperationRequestMarshaller : IMarshaller<IRequest, EndpointWithHostLabelHeaderOperationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class EndpointWithHostLabelHeaderOperationRequestMarshaller : IMarshaller<IRequest, EndpointWithHostLabelHeaderOperationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,6 +65,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/EndpointWithHostLabelHeaderOperation";
 
 
+
             var hostPrefixLabels = new
             {
                 accountId = StringUtils.FromString(publicRequest.AccountId),
@@ -74,7 +75,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 throw new AmazonRestXmlProtocolException("accountId can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
             
             request.HostPrefix = $"{hostPrefixLabels.accountId}.";
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static EndpointWithHostLabelHeaderOperationRequestMarshaller _instance = new EndpointWithHostLabelHeaderOperationRequestMarshaller();        
@@ -95,5 +96,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, EndpointWithHostLabelHeaderOperationRequest publicRequest);
     }    
 }

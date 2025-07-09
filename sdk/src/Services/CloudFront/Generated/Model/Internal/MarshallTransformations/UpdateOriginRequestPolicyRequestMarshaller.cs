@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// UpdateOriginRequestPolicy Request Marshaller
     /// </summary>       
-    public class UpdateOriginRequestPolicyRequestMarshaller : IMarshaller<IRequest, UpdateOriginRequestPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class UpdateOriginRequestPolicyRequestMarshaller : IMarshaller<IRequest, UpdateOriginRequestPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonCloudFrontException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/2020-05-31/origin-request-policy/{Id}";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -172,7 +173,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateOriginRequestPolicyRequestMarshaller _instance = new UpdateOriginRequestPolicyRequestMarshaller();        
@@ -193,5 +194,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateOriginRequestPolicyRequest publicRequest);
     }    
 }

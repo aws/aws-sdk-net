@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             GetApnsChannelResponse response = new GetApnsChannelResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = APNSChannelResponseUnmarshaller.Instance;
             response.APNSChannelResponse = unmarshaller.Unmarshall(context, ref reader);
 

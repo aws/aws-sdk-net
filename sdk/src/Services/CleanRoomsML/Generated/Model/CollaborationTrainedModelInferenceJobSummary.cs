@@ -49,6 +49,7 @@ namespace Amazon.CleanRoomsML.Model
         private TrainedModelInferenceJobStatus _status;
         private string _trainedModelArn;
         private string _trainedModelInferenceJobArn;
+        private string _trainedModelVersionIdentifier;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -333,6 +334,25 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetTrainedModelInferenceJobArn()
         {
             return this._trainedModelInferenceJobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainedModelVersionIdentifier. 
+        /// <para>
+        /// The version identifier of the trained model that was used for inference in this job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string TrainedModelVersionIdentifier
+        {
+            get { return this._trainedModelVersionIdentifier; }
+            set { this._trainedModelVersionIdentifier = value; }
+        }
+
+        // Check to see if TrainedModelVersionIdentifier property is set
+        internal bool IsSetTrainedModelVersionIdentifier()
+        {
+            return this._trainedModelVersionIdentifier != null;
         }
 
         /// <summary>

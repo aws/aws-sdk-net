@@ -361,7 +361,6 @@ namespace Amazon.CognitoIdentity
             return new IdentityState(identityId, isCached);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Gets the Identity Id corresponding to the credentials retrieved from Cognito.
         /// Note: this setting may change during execution. To be notified of its
@@ -409,8 +408,6 @@ namespace Amazon.CognitoIdentity
             }
             return new IdentityState(identityId, isCached);
         }
-
-#endif
 
         /// <summary>
         /// Checks the exception from a call that used an identity id and determines if the 
@@ -539,8 +536,6 @@ namespace Amazon.CognitoIdentity
 
         #region Overrides
 
-#if AWS_ASYNC_API
-
         /// <summary>
         /// Retrieves credentials from Cognito Identity and optionally STS
         /// </summary>
@@ -656,8 +651,6 @@ namespace Amazon.CognitoIdentity
             credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration.GetValueOrDefault());
             return credentialsState;
         }
-
-#endif
 
         /// <summary>
         /// Retrieves credentials from Cognito Identity and optionally STS

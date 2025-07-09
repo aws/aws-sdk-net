@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -66,6 +66,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/tags/{ResourceType}/{ResourceId}";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
@@ -86,5 +87,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListTagsForResourceRequest publicRequest);
     }    
 }

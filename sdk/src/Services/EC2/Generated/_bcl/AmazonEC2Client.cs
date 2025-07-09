@@ -2094,7 +2094,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must own the security group and the VPC that it was created in.
+        /// You must own the security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2136,7 +2136,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must own the security group and the VPC that it was created in.
+        /// You must own the security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5222,6 +5222,21 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// The location of the source instance determines where you can create the snapshots
+        /// of the AMI:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the source instance is in a Region, you must create the snapshots in the same Region
+        /// as the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source instance is in a Local Zone, you can create the snapshots in the same
+        /// Local Zone or in its parent Region.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
         /// an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
@@ -5252,6 +5267,21 @@ namespace Amazon.EC2
         /// launches with those additional volumes.
         /// </para>
         ///  
+        /// <para>
+        /// The location of the source instance determines where you can create the snapshots
+        /// of the AMI:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the source instance is in a Region, you must create the snapshots in the same Region
+        /// as the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source instance is in a Local Zone, you can create the snapshots in the same
+        /// Local Zone or in its parent Region.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
         /// an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -5285,8 +5315,8 @@ namespace Amazon.EC2
         /// <para>
         /// An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring
         /// the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
-        /// to your instances without requiring a public IPv4 address using EC2 Instance Connect
-        /// Endpoint</a> in the <i>Amazon EC2 User Guide</i>.
+        /// to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceConnectEndpoint service method.</param>
@@ -5310,8 +5340,8 @@ namespace Amazon.EC2
         /// <para>
         /// An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring
         /// the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
-        /// to your instances without requiring a public IPv4 address using EC2 Instance Connect
-        /// Endpoint</a> in the <i>Amazon EC2 User Guide</i>.
+        /// to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceConnectEndpoint service method.</param>
@@ -41634,7 +41664,7 @@ namespace Amazon.EC2
         /// An S3 bucket must be available before generating the report (you can create a new
         /// one or use an existing one), it must be in the same Region where the report generation
         /// request is made, and it must have an appropriate bucket policy. For a sample S3 policy,
-        /// see <i>Sample Amazon S3 policy</i> under .
+        /// see <i>Sample Amazon S3 policy</i> under <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartDeclarativePoliciesReport.html#API_StartDeclarativePoliciesReport_Examples">Examples</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -41710,7 +41740,7 @@ namespace Amazon.EC2
         /// An S3 bucket must be available before generating the report (you can create a new
         /// one or use an existing one), it must be in the same Region where the report generation
         /// request is made, and it must have an appropriate bucket policy. For a sample S3 policy,
-        /// see <i>Sample Amazon S3 policy</i> under .
+        /// see <i>Sample Amazon S3 policy</i> under <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartDeclarativePoliciesReport.html#API_StartDeclarativePoliciesReport_Examples">Examples</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -42012,12 +42042,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Stops an Amazon EBS-backed instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
+        /// Stops an Amazon EBS-backed instance. You can restart your instance at any time using
+        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartInstances.html">StartInstances</a>
+        /// API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
         /// and start Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// When you stop an instance, we shut it down. You can restart your instance at any time.
+        /// When you stop an instance, we shut it down.
         /// </para>
         ///  
         /// <para>
@@ -42072,12 +42104,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Stops an Amazon EBS-backed instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
+        /// Stops an Amazon EBS-backed instance. You can restart your instance at any time using
+        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartInstances.html">StartInstances</a>
+        /// API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
         /// and start Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// When you stop an instance, we shut it down. You can restart your instance at any time.
+        /// When you stop an instance, we shut it down.
         /// </para>
         ///  
         /// <para>

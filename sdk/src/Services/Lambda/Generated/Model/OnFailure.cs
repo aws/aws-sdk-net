@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// A destination for events that failed processing.
+    /// A destination for events that failed processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+    /// a destination</a>.
     /// </summary>
     public partial class OnFailure
     {

@@ -104,8 +104,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <c>FailureToleranceCount</c> or <c>FailureTolerancePercentage</c>
-        /// (but not both).
+        /// You can specify either <c>FailureToleranceCount</c> or <c>FailureTolerancePercentage</c>,
+        /// but not both.
         /// </para>
         ///  
         /// <para>
@@ -139,7 +139,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <c>FailureToleranceCount</c> or <c>FailureTolerancePercentage</c>,
+        /// You can specify either <c>FailureToleranceCount</c> or <c>FailureTolerancePercentage</c>,
         /// but not both.
         /// </para>
         ///  
@@ -176,7 +176,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <c>MaxConcurrentCount</c> or <c>MaxConcurrentPercentage</c>,
+        /// You can specify either <c>MaxConcurrentCount</c> or <c>MaxConcurrentPercentage</c>,
         /// but not both.
         /// </para>
         ///  
@@ -216,7 +216,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <c>MaxConcurrentCount</c> or <c>MaxConcurrentPercentage</c>,
+        /// You can specify either <c>MaxConcurrentCount</c> or <c>MaxConcurrentPercentage</c>,
         /// but not both.
         /// </para>
         ///  

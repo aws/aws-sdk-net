@@ -52,6 +52,7 @@ namespace Amazon.AutoScaling.Model
     {
         private List<string> _autoScalingGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private bool? _includeInstances;
         private int? _maxRecords;
         private string _nextToken;
 
@@ -104,6 +105,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeInstances. 
+        /// <para>
+        ///  Specifies whether to include information about Amazon EC2 instances in the response.
+        /// When set to <c>true</c> (default), the response includes instance details. 
+        /// </para>
+        /// </summary>
+        public bool? IncludeInstances
+        {
+            get { return this._includeInstances; }
+            set { this._includeInstances = value; }
+        }
+
+        // Check to see if IncludeInstances property is set
+        internal bool IsSetIncludeInstances()
+        {
+            return this._includeInstances.HasValue; 
         }
 
         /// <summary>

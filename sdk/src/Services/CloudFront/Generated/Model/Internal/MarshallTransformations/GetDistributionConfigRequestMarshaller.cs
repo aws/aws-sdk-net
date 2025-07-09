@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetDistributionConfig Request Marshaller
     /// </summary>       
-    public class GetDistributionConfigRequestMarshaller : IMarshaller<IRequest, GetDistributionConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetDistributionConfigRequestMarshaller : IMarshaller<IRequest, GetDistributionConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/distribution/{Id}/config";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetDistributionConfigRequestMarshaller _instance = new GetDistributionConfigRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetDistributionConfigRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// XmlEmptyMaps Request Marshaller
     /// </summary>       
-    public class XmlEmptyMapsRequestMarshaller : IMarshaller<IRequest, XmlEmptyMapsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class XmlEmptyMapsRequestMarshaller : IMarshaller<IRequest, XmlEmptyMapsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -58,6 +58,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
             request.HttpMethod = "POST";
             request.ResourcePath = "/XmlEmptyMaps";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -96,7 +97,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static XmlEmptyMapsRequestMarshaller _instance = new XmlEmptyMapsRequestMarshaller();        
@@ -117,5 +118,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlEmptyMapsRequest publicRequest);
     }    
 }

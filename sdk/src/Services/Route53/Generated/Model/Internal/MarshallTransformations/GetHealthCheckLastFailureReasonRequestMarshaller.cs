@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetHealthCheckLastFailureReason Request Marshaller
     /// </summary>       
-    public class GetHealthCheckLastFailureReasonRequestMarshaller : IMarshaller<IRequest, GetHealthCheckLastFailureReasonRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetHealthCheckLastFailureReasonRequestMarshaller : IMarshaller<IRequest, GetHealthCheckLastFailureReasonRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}/lastfailurereason";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetHealthCheckLastFailureReasonRequestMarshaller _instance = new GetHealthCheckLastFailureReasonRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetHealthCheckLastFailureReasonRequest publicRequest);
     }    
 }

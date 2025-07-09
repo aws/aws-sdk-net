@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListAnycastIpLists Request Marshaller
     /// </summary>       
-    public class ListAnycastIpListsRequestMarshaller : IMarshaller<IRequest, ListAnycastIpListsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListAnycastIpListsRequestMarshaller : IMarshaller<IRequest, ListAnycastIpListsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -65,8 +65,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
             request.ResourcePath = "/2020-05-31/anycast-ip-list";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListAnycastIpListsRequestMarshaller _instance = new ListAnycastIpListsRequestMarshaller();        
@@ -87,5 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListAnycastIpListsRequest publicRequest);
     }    
 }

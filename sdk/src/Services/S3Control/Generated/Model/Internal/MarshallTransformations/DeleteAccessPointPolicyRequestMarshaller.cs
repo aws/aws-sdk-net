@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteAccessPointPolicy Request Marshaller
     /// </summary>       
-    public class DeleteAccessPointPolicyRequestMarshaller : IMarshaller<IRequest, DeleteAccessPointPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DeleteAccessPointPolicyRequestMarshaller : IMarshaller<IRequest, DeleteAccessPointPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accesspoint/{name}/policy";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteAccessPointPolicyRequestMarshaller _instance = new DeleteAccessPointPolicyRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteAccessPointPolicyRequest publicRequest);
     }    
 }

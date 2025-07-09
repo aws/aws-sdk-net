@@ -18,9 +18,7 @@ using System.Globalization;
 using System.Net;
 using System.Text;
 
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -142,8 +140,6 @@ namespace Amazon.S3
             return signingResult.Result;
         }
 
-
-#if AWS_ASYNC_API
         /// <summary>
         /// Asynchronously create a signed URL allowing access to a resource that would 
         /// usually require authentication.
@@ -206,7 +202,7 @@ namespace Amazon.S3
             var signingResult = ReturnSigningResult(signatureVersionToUse, irequest, Config, metrics, immutableCredentials, arn);
             return signingResult.Result;
         }
-#endif
+
         /// <summary>
         /// Marshalls the parameters for a presigned url for a preferred signing protocol.
         /// </summary>
@@ -539,7 +535,7 @@ namespace Amazon.S3
         {
             return GetPreSignedURLInternal(request);
         }
-#if AWS_ASYNC_API
+
         /// <summary>
         /// Asynchronously create a signed URL allowing access to a resource that would 
         /// usually require authentication.
@@ -566,8 +562,6 @@ namespace Amazon.S3
             return await GetPreSignedURLInternalAsync(request).ConfigureAwait(false);
             
         }
-
-#endif
 #endregion
 
         #region ICoreAmazonS3 Implementation

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetKeyGroupConfig Request Marshaller
     /// </summary>       
-    public class GetKeyGroupConfigRequestMarshaller : IMarshaller<IRequest, GetKeyGroupConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetKeyGroupConfigRequestMarshaller : IMarshaller<IRequest, GetKeyGroupConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/key-group/{Id}/config";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetKeyGroupConfigRequestMarshaller _instance = new GetKeyGroupConfigRequestMarshaller();        
@@ -83,5 +84,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetKeyGroupConfigRequest publicRequest);
     }    
 }

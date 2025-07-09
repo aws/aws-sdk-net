@@ -4476,8 +4476,8 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must have permissions to list the entire Amazon S3 bucket associated with the
-        /// specified file share.
+        /// You must have <c>s3:PutObject</c> and <c>s3:AbortMultipartUpload</c> permissions for
+        /// the Amazon S3 bucket where you want to store the cache report.
         /// </para>
         ///  </li> <li> 
         /// <para>

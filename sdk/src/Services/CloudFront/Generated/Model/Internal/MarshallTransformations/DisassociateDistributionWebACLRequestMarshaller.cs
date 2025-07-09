@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// DisassociateDistributionWebACL Request Marshaller
     /// </summary>       
-    public class DisassociateDistributionWebACLRequestMarshaller : IMarshaller<IRequest, DisassociateDistributionWebACLRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class DisassociateDistributionWebACLRequestMarshaller : IMarshaller<IRequest, DisassociateDistributionWebACLRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/distribution/{Id}/disassociate-web-acl";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DisassociateDistributionWebACLRequestMarshaller _instance = new DisassociateDistributionWebACLRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DisassociateDistributionWebACLRequest publicRequest);
     }    
 }

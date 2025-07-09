@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetMultiRegionAccessPointPolicyStatus Request Marshaller
     /// </summary>       
-    public class GetMultiRegionAccessPointPolicyStatusRequestMarshaller : IMarshaller<IRequest, GetMultiRegionAccessPointPolicyStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class GetMultiRegionAccessPointPolicyStatusRequestMarshaller : IMarshaller<IRequest, GetMultiRegionAccessPointPolicyStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,6 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/mrap/instances/{name+}/policystatus";
 
 
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static GetMultiRegionAccessPointPolicyStatusRequestMarshaller _instance = new GetMultiRegionAccessPointPolicyStatusRequestMarshaller();        
@@ -88,5 +89,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetMultiRegionAccessPointPolicyStatusRequest publicRequest);
     }    
 }

@@ -45,6 +45,7 @@ namespace Amazon.MediaPackageV2.Model
         private List<ListHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<ListHlsManifestConfiguration>() : null;
         private List<ListLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<ListLowLatencyHlsManifestConfiguration>() : null;
         private DateTime? _modifiedAt;
+        private List<ListMssManifestConfiguration> _mssManifests = AWSConfigs.InitializeCollections ? new List<ListMssManifestConfiguration>() : null;
         private string _originEndpointName;
 
         /// <summary>
@@ -268,6 +269,31 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetModifiedAt()
         {
             return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MssManifests. 
+        /// <para>
+        /// A list of Microsoft Smooth Streaming (MSS) manifest configurations associated with
+        /// the origin endpoint. Each configuration represents a different MSS streaming option
+        /// available from this endpoint.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ListMssManifestConfiguration> MssManifests
+        {
+            get { return this._mssManifests; }
+            set { this._mssManifests = value; }
+        }
+
+        // Check to see if MssManifests property is set
+        internal bool IsSetMssManifests()
+        {
+            return this._mssManifests != null && (this._mssManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// EndpointOperation Request Marshaller
     /// </summary>       
-    public class EndpointOperationRequestMarshaller : IMarshaller<IRequest, EndpointOperationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class EndpointOperationRequestMarshaller : IMarshaller<IRequest, EndpointOperationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -59,9 +59,10 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
             request.ResourcePath = "/EndpointOperation";
 
+
             
             request.HostPrefix = $"foo.";
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static EndpointOperationRequestMarshaller _instance = new EndpointOperationRequestMarshaller();        
@@ -82,5 +83,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, EndpointOperationRequest publicRequest);
     }    
 }

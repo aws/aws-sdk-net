@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Interactions", targetDepth))
+                {
+                    var unmarshaller = TextBoxInteractionOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SheetTextBoxId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

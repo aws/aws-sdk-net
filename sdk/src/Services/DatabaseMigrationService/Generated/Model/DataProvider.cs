@@ -40,6 +40,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _description;
         private string _engine;
         private DataProviderSettings _settings;
+        private bool? _virtual;
 
         /// <summary>
         /// Gets and sets the property DataProviderArn. 
@@ -152,6 +153,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetSettings()
         {
             return this._settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Virtual. 
+        /// <para>
+        /// Indicates whether the data provider is virtual.
+        /// </para>
+        /// </summary>
+        public bool? Virtual
+        {
+            get { return this._virtual; }
+            set { this._virtual = value; }
+        }
+
+        // Check to see if Virtual property is set
+        internal bool IsSetVirtual()
+        {
+            return this._virtual.HasValue; 
         }
 
     }

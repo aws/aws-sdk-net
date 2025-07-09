@@ -32,14 +32,14 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreateContainerGroupDefinition operation.
     /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
-    /// your game server with Amazon GameLift managed containers hosting. An Amazon GameLift
-    /// container group is similar to a container task or pod. Use container group definitions
-    /// when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
+    /// your game server with Amazon GameLift Servers managed containers hosting. An Amazon
+    /// GameLift Servers container group is similar to a container task or pod. Use container
+    /// group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
     /// 
     /// 
     ///  
     /// <para>
-    /// A container group definition determines how Amazon GameLift deploys your containers
+    /// A container group definition determines how Amazon GameLift Servers deploys your containers
     /// to each instance in a container fleet. You can maintain multiple versions of a container
     /// group definition.
     /// </para>
@@ -88,7 +88,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// This operation requires Identity and Access Management (IAM) permissions to access
     /// container images in Amazon ECR repositories. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
-    /// IAM permissions for Amazon GameLift</a> for help setting the appropriate permissions.
+    /// IAM permissions for Amazon GameLift Servers</a> for help setting the appropriate permissions.
     /// </para>
     ///  </note> 
     /// <para>
@@ -209,7 +209,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ContainerGroupType. 
         /// <para>
         /// The type of container group being defined. Container group type determines how Amazon
-        /// GameLift deploys the container group on each fleet instance.
+        /// GameLift Servers deploys the container group on each fleet instance.
         /// </para>
         ///  
         /// <para>
@@ -282,10 +282,10 @@ namespace Amazon.GameLift.Model
         ///  <note> 
         /// <para>
         /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
-        /// <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-        /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift,
-        /// first update the game server build to server SDK 5.x, and then deploy to AL2023 instances.
-        /// See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
+        /// <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
+        /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift
+        /// Servers, first update the game server build to server SDK 5.x, and then deploy to
+        /// AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
         /// Migrate to server SDK version 5.</a> 
         /// </para>
         ///  </note>

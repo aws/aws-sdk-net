@@ -42,6 +42,7 @@ namespace Amazon.GeoPlaces.Model
         /// The ZIP Classification Code, or in other words what type of postal code is it. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ZipClassificationCode ZipClassificationCode
         {
             get { return this._zipClassificationCode; }

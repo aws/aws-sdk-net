@@ -2,6 +2,120 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.CreateCloudConnector(Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.CreateCloudConnector(Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateCloudConnector happy path for TP Link"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.CreateCloudConnector(Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.CreateCloudConnector(Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateCloudConnector happy path for Ring"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.CreateCloudConnector(Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.CreateCloudConnector(Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateCloudConnector error path for Ring connector which already exists"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.GetCloudConnector(Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.GetCloudConnector(Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetCloudConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetCloudConnector happy path for TP Link to get connector resource"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.GetCloudConnector(Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.GetCloudConnector(Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetCloudConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetCloudConnector happy path for Ring to pending status"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.GetCloudConnector(Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.GetCloudConnector(Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetCloudConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetCloudConnector error Id for Ring connector which does not exist"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
             <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
             <member name="T:Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest" />
@@ -59,6 +173,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.ListCloudConnectors(Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.ListCloudConnectors(Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListCloudConnectors happy path to get a list of connector resources"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.ListCloudConnectors(Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.ListCloudConnectors(Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListCloudConnectors error path for unauthorized user"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.ListSchemaVersions(Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest)" />
             <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.ListSchemaVersions(Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest)" />
             <member name="T:Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest" />
@@ -111,6 +263,101 @@
                     title="ListSchemaVersions error  for invalid input."
                     source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
                     region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.SendConnectorEvent(Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.SendConnectorEvent(Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.SendConnectorEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="SendConnectorEvent happy path for device discovery"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.SendConnectorEvent(Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.SendConnectorEvent(Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.SendConnectorEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="SendConnectorEvent happy path for device command response"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.SendConnectorEvent(Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.SendConnectorEvent(Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.SendConnectorEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="SendConnectorEvent happy path for device event"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.UpdateCloudConnector(Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.UpdateCloudConnector(Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UpdateCloudConnector happy path for TP Link to update display name"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.UpdateCloudConnector(Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.UpdateCloudConnector(Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UpdateCloudConnector error Id for Ring connector which does not exist"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>

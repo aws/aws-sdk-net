@@ -73,6 +73,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountAssociationId())
+            {
+                context.Writer.WritePropertyName("AccountAssociationId");
+                context.Writer.WriteStringValue(publicRequest.AccountAssociationId);
+            }
+
             if(publicRequest.IsSetAuthenticationMaterial())
             {
                 context.Writer.WritePropertyName("AuthenticationMaterial");
@@ -101,6 +107,20 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ControllerIdentifier");
                 context.Writer.WriteStringValue(publicRequest.ControllerIdentifier);
+            }
+
+            if(publicRequest.IsSetCustomProtocolDetail())
+            {
+                context.Writer.WritePropertyName("CustomProtocolDetail");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestCustomProtocolDetailKvp in publicRequest.CustomProtocolDetail)
+                {
+                    context.Writer.WritePropertyName(publicRequestCustomProtocolDetailKvp.Key);
+                    var publicRequestCustomProtocolDetailValue = publicRequestCustomProtocolDetailKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestCustomProtocolDetailValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetDiscoveryType())

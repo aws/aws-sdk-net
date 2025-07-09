@@ -699,6 +699,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type CompactionStrategy.
+    /// </summary>
+    public class CompactionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Binpack for CompactionStrategy
+        /// </summary>
+        public static readonly CompactionStrategy Binpack = new CompactionStrategy("binpack");
+        /// <summary>
+        /// Constant Sort for CompactionStrategy
+        /// </summary>
+        public static readonly CompactionStrategy Sort = new CompactionStrategy("sort");
+        /// <summary>
+        /// Constant ZOrder for CompactionStrategy
+        /// </summary>
+        public static readonly CompactionStrategy ZOrder = new CompactionStrategy("z-order");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CompactionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CompactionStrategy FindValue(string value)
+        {
+            return FindValue<CompactionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CompactionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Comparator.
     /// </summary>
     public class Comparator : ConstantClass
@@ -3284,6 +3338,152 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HyperTargetCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IcebergNullOrder.
+    /// </summary>
+    public class IcebergNullOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NullsFirst for IcebergNullOrder
+        /// </summary>
+        public static readonly IcebergNullOrder NullsFirst = new IcebergNullOrder("nulls-first");
+        /// <summary>
+        /// Constant NullsLast for IcebergNullOrder
+        /// </summary>
+        public static readonly IcebergNullOrder NullsLast = new IcebergNullOrder("nulls-last");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IcebergNullOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IcebergNullOrder FindValue(string value)
+        {
+            return FindValue<IcebergNullOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IcebergNullOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IcebergSortDirection.
+    /// </summary>
+    public class IcebergSortDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Asc for IcebergSortDirection
+        /// </summary>
+        public static readonly IcebergSortDirection Asc = new IcebergSortDirection("asc");
+        /// <summary>
+        /// Constant Desc for IcebergSortDirection
+        /// </summary>
+        public static readonly IcebergSortDirection Desc = new IcebergSortDirection("desc");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IcebergSortDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IcebergSortDirection FindValue(string value)
+        {
+            return FindValue<IcebergSortDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IcebergSortDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IcebergStructTypeEnum.
+    /// </summary>
+    public class IcebergStructTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Struct for IcebergStructTypeEnum
+        /// </summary>
+        public static readonly IcebergStructTypeEnum Struct = new IcebergStructTypeEnum("struct");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IcebergStructTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IcebergStructTypeEnum FindValue(string value)
+        {
+            return FindValue<IcebergStructTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IcebergStructTypeEnum(string value)
         {
             return FindValue(value);
         }

@@ -128,6 +128,7 @@ namespace Amazon.S3.Internal
             typeof(PutObjectRetentionRequest),
             typeof(PutObjectTaggingRequest),
             typeof(PutPublicAccessBlockRequest),
+            typeof(RenameObjectRequest),
             typeof(RestoreObjectRequest),
             typeof(SelectObjectContentRequest),
             typeof(UploadPartRequest),

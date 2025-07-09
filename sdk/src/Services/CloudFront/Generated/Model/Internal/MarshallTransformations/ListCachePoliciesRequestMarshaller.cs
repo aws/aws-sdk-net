@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// ListCachePolicies Request Marshaller
     /// </summary>       
-    public class ListCachePoliciesRequestMarshaller : IMarshaller<IRequest, ListCachePoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class ListCachePoliciesRequestMarshaller : IMarshaller<IRequest, ListCachePoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -68,8 +68,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/2020-05-31/cache-policy";
 
-            request.UseQueryString = true;
 
+            request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListCachePoliciesRequestMarshaller _instance = new ListCachePoliciesRequestMarshaller();        
@@ -90,5 +91,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListCachePoliciesRequest publicRequest);
     }    
 }

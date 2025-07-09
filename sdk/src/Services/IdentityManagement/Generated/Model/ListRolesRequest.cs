@@ -55,7 +55,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To view all of the information for a role, see <a>GetRole</a>.
+    /// To view all of the information for a role, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html">GetRole</a>.
     /// </para>
     ///  </note> 
     /// <para>

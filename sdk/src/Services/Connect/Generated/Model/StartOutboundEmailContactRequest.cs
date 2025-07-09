@@ -47,7 +47,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AdditionalRecipients. 
         /// <para>
-        /// The addtional recipients address of email in CC.
+        /// The additional recipients address of email in CC.
         /// </para>
         /// </summary>
         public OutboundAdditionalRecipients AdditionalRecipients
@@ -144,7 +144,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property FromEmailAddress. 
         /// <para>
-        /// The email address associated with the instance.
+        /// The email address associated with the Amazon Connect instance.
         /// </para>
         /// </summary>
         public EmailAddressInfo FromEmailAddress

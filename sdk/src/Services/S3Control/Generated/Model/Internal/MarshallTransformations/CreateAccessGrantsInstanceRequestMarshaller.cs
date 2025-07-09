@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateAccessGrantsInstance Request Marshaller
     /// </summary>       
-    public class CreateAccessGrantsInstanceRequestMarshaller : IMarshaller<IRequest, CreateAccessGrantsInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class CreateAccessGrantsInstanceRequestMarshaller : IMarshaller<IRequest, CreateAccessGrantsInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -63,6 +63,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
             }
             request.ResourcePath = "/v20180820/accessgrantsinstance";
+
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -104,7 +105,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateAccessGrantsInstanceRequestMarshaller _instance = new CreateAccessGrantsInstanceRequestMarshaller();        
@@ -125,5 +126,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateAccessGrantsInstanceRequest publicRequest);
     }    
 }

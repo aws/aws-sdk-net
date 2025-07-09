@@ -469,56 +469,57 @@ namespace ServiceClientGenerator
                 {
                     _s3AllowListOperations = new List<Operation>()
                     {
-                        //new Operation(this,"AbortMultipartUpload", DocumentRoot[OperationsKey]["AbortMultipartUpload"]),
-                        //new Operation(this,"CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
+                        new Operation(this,"AbortMultipartUpload", DocumentRoot[OperationsKey]["AbortMultipartUpload"]),
+                        new Operation(this,"CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
                         //new Operation(this, "CreateSession", DocumentRoot[OperationsKey]["CreateSession"]),
-                        //new Operation(this, "DeleteBucket", DocumentRoot[OperationsKey]["DeleteBucket"]),
-                        //new Operation(this, "DeleteBucketEncryption", DocumentRoot[OperationsKey]["DeleteBucketEncryption"]),
-                        //new Operation(this, "DeleteBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetadataTableConfiguration"]),
-                        //new Operation(this, "DeleteBucketOwnershipControls", DocumentRoot[OperationsKey]["DeleteBucketOwnershipControls"]),
-                        //new Operation(this, "DeleteBucketPolicy", DocumentRoot[OperationsKey]["DeleteBucketPolicy"]),
-                        //new Operation(this, "DeleteBucketReplication", DocumentRoot[OperationsKey]["DeleteBucketReplication"]),
-                        //new Operation(this, "DeleteBucketTagging", DocumentRoot[OperationsKey]["DeleteBucketTagging"]),
-                        //new Operation(this, "DeletePublicAccessBlock", DocumentRoot[OperationsKey]["DeletePublicAccessBlock"]),
-                        //new Operation(this, "GetBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["GetBucketAccelerateConfiguration"]),
+                        new Operation(this, "DeleteBucket", DocumentRoot[OperationsKey]["DeleteBucket"]),
+                        new Operation(this, "DeleteBucketEncryption", DocumentRoot[OperationsKey]["DeleteBucketEncryption"]),
+                        new Operation(this, "DeleteBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetadataTableConfiguration"]),
+                        new Operation(this, "DeleteBucketOwnershipControls", DocumentRoot[OperationsKey]["DeleteBucketOwnershipControls"]),
+                        new Operation(this, "DeleteBucketPolicy", DocumentRoot[OperationsKey]["DeleteBucketPolicy"]),
+                        new Operation(this, "DeleteBucketReplication", DocumentRoot[OperationsKey]["DeleteBucketReplication"]),
+                        new Operation(this, "DeleteBucketTagging", DocumentRoot[OperationsKey]["DeleteBucketTagging"]),
+                        new Operation(this, "DeletePublicAccessBlock", DocumentRoot[OperationsKey]["DeletePublicAccessBlock"]),
+                        new Operation(this, "GetBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["GetBucketAccelerateConfiguration"]),
                         //new Operation(this, "GetBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["GetBucketAnalyticsConfiguration"]),
-                        //new Operation(this, "GetBucketEncryption", DocumentRoot[OperationsKey]["GetBucketEncryption"]),
+                        new Operation(this, "GetBucketEncryption", DocumentRoot[OperationsKey]["GetBucketEncryption"]),
                         //new Operation(this, "GetBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["GetBucketIntelligentTieringConfiguration"]),
                         //new Operation(this, "GetBucketInventoryConfiguration", DocumentRoot[OperationsKey]["GetBucketInventoryConfiguration"]),
-                        //new Operation(this, "GetBucketLocation", DocumentRoot[OperationsKey]["GetBucketLocation"]),
+                        new Operation(this, "GetBucketLocation", DocumentRoot[OperationsKey]["GetBucketLocation"]),
                         //new Operation(this, "GetBucketLogging", DocumentRoot[OperationsKey]["GetBucketLogging"]),
-                        //new Operation(this, "GetBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["GetBucketMetadataTableConfiguration"]),
+                        new Operation(this, "GetBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["GetBucketMetadataTableConfiguration"]),
                         //new Operation(this, "GetBucketMetricsConfiguration", DocumentRoot[OperationsKey]["GetBucketMetricsConfiguration"]),
-                        //new Operation(this, "GetBucketOwnershipControls", DocumentRoot[OperationsKey]["GetBucketOwnershipControls"]),
-                        //new Operation(this, "GetBucketPolicy", DocumentRoot[OperationsKey]["GetBucketPolicy"]),
-                        //new Operation(this, "GetBucketPolicyStatus", DocumentRoot[OperationsKey]["GetBucketPolicyStatus"]),
-                        //new Operation(this, "GetBucketReplication", DocumentRoot[OperationsKey]["GetBucketReplication"]),
-                        //new Operation(this, "GetBucketRequestPayment", DocumentRoot[OperationsKey]["GetBucketRequestPayment"]),
-                        //new Operation(this, "GetBucketTagging", DocumentRoot[OperationsKey]["GetBucketTagging"]),
+                        new Operation(this, "GetBucketOwnershipControls", DocumentRoot[OperationsKey]["GetBucketOwnershipControls"]),
+                        new Operation(this, "GetBucketPolicy", DocumentRoot[OperationsKey]["GetBucketPolicy"]),
+                        new Operation(this, "GetBucketPolicyStatus", DocumentRoot[OperationsKey]["GetBucketPolicyStatus"]),
+                        new Operation(this, "GetBucketReplication", DocumentRoot[OperationsKey]["GetBucketReplication"]),
+                        new Operation(this, "GetBucketRequestPayment", DocumentRoot[OperationsKey]["GetBucketRequestPayment"]),
+                        new Operation(this, "GetBucketTagging", DocumentRoot[OperationsKey]["GetBucketTagging"]),
                         //new Operation(this, "GetBucketVersioning", DocumentRoot[OperationsKey]["GetBucketVersioning"]),
                         //new Operation(this, "GetBucketWebsite", DocumentRoot[OperationsKey]["GetBucketWebsite"]),
-                        //new Operation(this, "GetObjectAttributes", DocumentRoot[OperationsKey]["GetObjectAttributes"]),
-                        //new Operation(this, "GetObjectLegalHold", DocumentRoot[OperationsKey]["GetObjectLegalHold"]),
-                        //new Operation(this, "GetObjectLockConfiguration", DocumentRoot[OperationsKey]["GetObjectLockConfiguration"]),
-                        //new Operation(this, "GetObjectRetention", DocumentRoot[OperationsKey]["GetObjectRetention"]),
-                        //new Operation(this, "GetObjectTagging", DocumentRoot[OperationsKey]["GetObjectTagging"]),
-                        //new Operation(this, "GetPublicAccessBlock", DocumentRoot[OperationsKey]["GetPublicAccessBlock"]),
-                        //new Operation(this, "HeadBucket", DocumentRoot[OperationsKey]["HeadBucket"]),
+                        new Operation(this, "GetObjectAttributes", DocumentRoot[OperationsKey]["GetObjectAttributes"]),
+                        new Operation(this, "GetObjectLegalHold", DocumentRoot[OperationsKey]["GetObjectLegalHold"]),
+                        new Operation(this, "GetObjectLockConfiguration", DocumentRoot[OperationsKey]["GetObjectLockConfiguration"]),
+                        new Operation(this, "GetObjectRetention", DocumentRoot[OperationsKey]["GetObjectRetention"]),
+                        new Operation(this, "GetObjectTagging", DocumentRoot[OperationsKey]["GetObjectTagging"]),
+                        new Operation(this, "GetPublicAccessBlock", DocumentRoot[OperationsKey]["GetPublicAccessBlock"]),
+                        new Operation(this, "HeadBucket", DocumentRoot[OperationsKey]["HeadBucket"]),
                         //new Operation(this, "ListBucketAnalyticsConfigurations", DocumentRoot[OperationsKey]["ListBucketAnalyticsConfigurations"]),
                         //new Operation(this, "ListBucketIntelligentTieringConfigurations", DocumentRoot[OperationsKey]["ListBucketIntelligentTieringConfigurations"]),
                         //new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
                         //new Operation(this, "ListBucketMetricsConfigurations", DocumentRoot[OperationsKey]["ListBucketMetricsConfigurations"]),
                         new Operation(this, "ListBuckets", DocumentRoot[OperationsKey]["ListBuckets"]),
                         new Operation(this, "ListDirectoryBuckets", DocumentRoot[OperationsKey]["ListDirectoryBuckets"]),
-                        //new Operation(this, "ListParts", DocumentRoot[OperationsKey]["ListParts"]),
+                        new Operation(this, "ListParts", DocumentRoot[OperationsKey]["ListParts"]),
                         //new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
-                        //new Operation(this, "PutBucketEncryption", DocumentRoot[OperationsKey]["PutBucketEncryption"]),
-                        //new Operation(this, "PutBucketPolicy", DocumentRoot[OperationsKey]["PutBucketPolicy"]),
-                        //new Operation(this, "PutObjectLegalHold", DocumentRoot[OperationsKey]["PutObjectLegalHold"]),
-                        //new Operation(this, "PutObjectLockConfiguration", DocumentRoot[OperationsKey]["PutObjectLockConfiguration"]),
-                        //new Operation(this, "PutObjectRetention", DocumentRoot[OperationsKey]["PutObjectRetention"]),
-                        //new Operation(this, "PutObjectTagging", DocumentRoot[OperationsKey]["PutObjectTagging"]),
-                        //new Operation(this, "PutPublicAccessBlock", DocumentRoot[OperationsKey]["PutPublicAccessBlock"]),
+                        new Operation(this, "PutBucketEncryption", DocumentRoot[OperationsKey]["PutBucketEncryption"]),
+                        new Operation(this, "PutBucketReplication", DocumentRoot[OperationsKey]["PutBucketReplication"]),
+                        new Operation(this, "PutBucketPolicy", DocumentRoot[OperationsKey]["PutBucketPolicy"]),
+                        new Operation(this, "PutObjectLegalHold", DocumentRoot[OperationsKey]["PutObjectLegalHold"]),
+                        new Operation(this, "PutObjectLockConfiguration", DocumentRoot[OperationsKey]["PutObjectLockConfiguration"]),
+                        new Operation(this, "PutObjectRetention", DocumentRoot[OperationsKey]["PutObjectRetention"]),
+                        new Operation(this, "PutObjectTagging", DocumentRoot[OperationsKey]["PutObjectTagging"]),
+                        new Operation(this, "PutPublicAccessBlock", DocumentRoot[OperationsKey]["PutPublicAccessBlock"]),
                         //new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
                         //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"])
                     };
@@ -541,7 +542,10 @@ namespace ServiceClientGenerator
                     _s3AddParametersList = new List<string>
                     {
                         "ListBuckets",
-                        "ListDirectoryBuckets"
+                        "ListDirectoryBuckets",
+                        "GetObjectLegalHold",
+                        "GetObjectRetention",
+                        "PutObjectRetention"
                     };
                 }
                 return _s3AddParametersList;
@@ -566,7 +570,8 @@ namespace ServiceClientGenerator
                 {
                     _s3RequestMarshallerThrowAmazonS3ExceptionList = new List<string>()
                     {
-                        "CreateSession"
+                        "CreateSession",
+                        "GetObjectAttributes"
                     };
                 }
                 return _s3RequestMarshallerThrowAmazonS3ExceptionList;

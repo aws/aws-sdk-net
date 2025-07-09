@@ -62,6 +62,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("implicitFilterConfiguration", targetDepth))
+                {
+                    var unmarshaller = ImplicitFilterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ImplicitFilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("numberOfResults", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -72,6 +78,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverrideSearchType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("rerankingConfiguration", targetDepth))
+                {
+                    var unmarshaller = VectorSearchRerankingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RerankingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

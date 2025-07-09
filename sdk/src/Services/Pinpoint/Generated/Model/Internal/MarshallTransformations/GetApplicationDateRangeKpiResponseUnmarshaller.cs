@@ -48,6 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             GetApplicationDateRangeKpiResponse response = new GetApplicationDateRangeKpiResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            if (reader.Reader.IsFinalBlock) return response;
             var unmarshaller = ApplicationDateRangeKpiResponseUnmarshaller.Instance;
             response.ApplicationDateRangeKpiResponse = unmarshaller.Unmarshall(context, ref reader);
 
