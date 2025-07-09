@@ -30,17 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the PurchaseCapacityBlock operation.
+    /// This is the response object from the DescribeCapacityBlockStatus operation.
     /// </summary>
-    public partial class PurchaseCapacityBlockResponse : AmazonWebServiceResponse
+    public partial class DescribeCapacityBlockStatusResponse : AmazonWebServiceResponse
     {
-        private List<CapacityBlock> _capacityBlocks = AWSConfigs.InitializeCollections ? new List<CapacityBlock>() : null;
-        private CapacityReservation _capacityReservation;
+        private List<CapacityBlockStatus> _capacityBlockStatuses = AWSConfigs.InitializeCollections ? new List<CapacityBlockStatus>() : null;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CapacityBlocks. 
+        /// Gets and sets the property CapacityBlockStatuses. 
         /// <para>
-        /// The Capacity Block.
+        /// The availability of capacity for a Capacity Block.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -48,34 +48,35 @@ namespace Amazon.EC2.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<CapacityBlock> CapacityBlocks
+        public List<CapacityBlockStatus> CapacityBlockStatuses
         {
-            get { return this._capacityBlocks; }
-            set { this._capacityBlocks = value; }
+            get { return this._capacityBlockStatuses; }
+            set { this._capacityBlockStatuses = value; }
         }
 
-        // Check to see if CapacityBlocks property is set
-        internal bool IsSetCapacityBlocks()
+        // Check to see if CapacityBlockStatuses property is set
+        internal bool IsSetCapacityBlockStatuses()
         {
-            return this._capacityBlocks != null && (this._capacityBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._capacityBlockStatuses != null && (this._capacityBlockStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property CapacityReservation. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The Capacity Reservation.
+        /// The token to use to retrieve the next page of results. This value is <c>null</c> when
+        /// there are no more results to return.
         /// </para>
         /// </summary>
-        public CapacityReservation CapacityReservation
+        public string NextToken
         {
-            get { return this._capacityReservation; }
-            set { this._capacityReservation = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if CapacityReservation property is set
-        internal bool IsSetCapacityReservation()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._capacityReservation != null;
+            return this._nextToken != null;
         }
 
     }

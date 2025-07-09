@@ -30,17 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the PurchaseCapacityBlock operation.
+    /// This is the response object from the DescribeCapacityBlocks operation.
     /// </summary>
-    public partial class PurchaseCapacityBlockResponse : AmazonWebServiceResponse
+    public partial class DescribeCapacityBlocksResponse : AmazonWebServiceResponse
     {
         private List<CapacityBlock> _capacityBlocks = AWSConfigs.InitializeCollections ? new List<CapacityBlock>() : null;
-        private CapacityReservation _capacityReservation;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property CapacityBlocks. 
         /// <para>
-        /// The Capacity Block.
+        /// The Capacity Blocks.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -61,21 +61,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CapacityReservation. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The Capacity Reservation.
+        /// The token to use to retrieve the next page of results. This value is <c>null</c> when
+        /// there are no more results to return.
         /// </para>
         /// </summary>
-        public CapacityReservation CapacityReservation
+        public string NextToken
         {
-            get { return this._capacityReservation; }
-            set { this._capacityReservation = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if CapacityReservation property is set
-        internal bool IsSetCapacityReservation()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._capacityReservation != null;
+            return this._nextToken != null;
         }
 
     }

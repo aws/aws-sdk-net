@@ -91,6 +91,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("StartDateRange", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDateRange));
                 }
+                if(publicRequest.IsSetUltraserverCount())
+                {
+                    request.Parameters.Add("UltraserverCount", StringUtils.FromInt(publicRequest.UltraserverCount));
+                }
+                if(publicRequest.IsSetUltraserverType())
+                {
+                    request.Parameters.Add("UltraserverType", StringUtils.FromString(publicRequest.UltraserverType));
+                }
             }
             return request;
         }

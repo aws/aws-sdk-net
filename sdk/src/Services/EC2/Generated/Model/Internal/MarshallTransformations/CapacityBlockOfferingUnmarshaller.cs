@@ -115,6 +115,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ultraserverCount", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.UltraserverCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ultraserverType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UltraserverType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("upfrontFee", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

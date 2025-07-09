@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// You can't detach or force detach volumes that are attached to Amazon ECS or Fargate
-    /// tasks. Attempting to do this results in the <c>UnsupportedOperationException</c> exception
-    /// with the <c>Unable to detach volume attached to ECS tasks</c> error message.
+    /// You can't detach or force detach volumes that are attached to Amazon Web Services-managed
+    /// resources. Attempting to do this results in the <c>UnsupportedOperationException</c>
+    /// exception.
     /// </para>
     ///  
     /// <para>

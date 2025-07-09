@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceTopology Object
+    /// Response Unmarshaller for CapacityBlockStatus Object
     /// </summary>  
-    public class InstanceTopologyUnmarshaller : IXmlUnmarshaller<InstanceTopology, XmlUnmarshallerContext>
+    public class CapacityBlockStatusUnmarshaller : IXmlUnmarshaller<CapacityBlockStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InstanceTopology Unmarshall(XmlUnmarshallerContext context)
+        public CapacityBlockStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceTopology unmarshalledObject = new InstanceTopology();
+            CapacityBlockStatus unmarshalledObject = new CapacityBlockStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,51 +55,45 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("availabilityZone", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("capacityBlockId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.CapacityBlockId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("groupName", targetDepth))
+                    if (context.TestExpression("capacityReservationStatusSet/item", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("networkNodeSet/item", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.NetworkNodes == null)
+                        var unmarshaller = CapacityReservationStatusUnmarshaller.Instance;
+                        if (unmarshalledObject.CapacityReservationStatuses == null)
                         {
-                            unmarshalledObject.NetworkNodes = new List<string>();
+                            unmarshalledObject.CapacityReservationStatuses = new List<CapacityReservationStatus>();
                         }
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.NetworkNodes.Add(item);
+                        unmarshalledObject.CapacityReservationStatuses.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("zoneId", targetDepth))
+                    if (context.TestExpression("interconnectStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ZoneId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.InterconnectStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("totalAvailableCapacity", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.TotalAvailableCapacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("totalCapacity", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.TotalCapacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("totalUnavailableCapacity", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.TotalUnavailableCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -112,12 +106,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static InstanceTopologyUnmarshaller _instance = new InstanceTopologyUnmarshaller();        
+        private static CapacityBlockStatusUnmarshaller _instance = new CapacityBlockStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceTopologyUnmarshaller Instance
+        public static CapacityBlockStatusUnmarshaller Instance
         {
             get
             {

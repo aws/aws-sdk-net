@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceTopology Object
+    /// Response Unmarshaller for CapacityBlock Object
     /// </summary>  
-    public class InstanceTopologyUnmarshaller : IXmlUnmarshaller<InstanceTopology, XmlUnmarshallerContext>
+    public class CapacityBlockUnmarshaller : IXmlUnmarshaller<CapacityBlock, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InstanceTopology Unmarshall(XmlUnmarshallerContext context)
+        public CapacityBlock Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceTopology unmarshalledObject = new InstanceTopology();
+            CapacityBlock unmarshalledObject = new CapacityBlock();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -61,45 +61,68 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("availabilityZoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("capacityBlockId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.CapacityBlockId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("groupName", targetDepth))
+                    if (context.TestExpression("capacityReservationIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("networkNodeSet/item", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.NetworkNodes == null)
+                        if (unmarshalledObject.CapacityReservationIds == null)
                         {
-                            unmarshalledObject.NetworkNodes = new List<string>();
+                            unmarshalledObject.CapacityReservationIds = new List<string>();
                         }
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.NetworkNodes.Add(item);
+                        unmarshalledObject.CapacityReservationIds.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("zoneId", targetDepth))
+                    if (context.TestExpression("createDate", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("endDate", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("startDate", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ZoneId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ultraserverType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UltraserverType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -112,12 +135,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static InstanceTopologyUnmarshaller _instance = new InstanceTopologyUnmarshaller();        
+        private static CapacityBlockUnmarshaller _instance = new CapacityBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceTopologyUnmarshaller Instance
+        public static CapacityBlockUnmarshaller Instance
         {
             get
             {
