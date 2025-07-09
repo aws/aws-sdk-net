@@ -1,3 +1,20 @@
+### 4.0.46.0 (2025-07-09 18:20 UTC)
+* EC2 (4.0.19.0)
+	* Adds support to Capacity Blocks for ML for purchasing EC2 P6e-GB200 UltraServers. Customers can now purchase u-p6e-gb200x72 and u-p6e-gb200x36 UltraServers. Adds new DescribeCapacityBlocks andDescribeCapacityBlockStatus APIs. Adds support for CapacityBlockId to DescribeInstanceTopology.
+* FreeTier (4.0.1.0)
+	* This release introduces four new APIs: GetAccountPlanState and UpgradeAccountPlan for AWS account plan management; ListAccountActivities and GetAccountActivity that provide activity tracking capabilities.
+* OpsWorksCM (4.0.0.13)
+	* Removing content that refers to an S3 bucket that is no longer in use.
+* S3 (4.0.4.2)
+	* Move S3PostUploadSignedPolicy out of _bcl folder
+	* Update ExceptionUnmarshallers and add S3 Exception t4 file. Generate PutBucketPolicy, PutObjectLegalHold, PutObjectLockConfiguration, PutObjectRetention, PutPublicAccessBlock, HeadBucket, ListParts, PutObjectTagging
+	* [Breaking Change] `LastModified` in `Amazon.S3.Model.PartDetail` is `DateTime?` instead of `DateTime` to follow v4 pattern of nullable types
+	* [Breaking Change] `Tagging` in `PutBucketPolicyRequest` is no longer automatically initialized if null. You must initialize the object.
+	* Fix GetSignedPolicyFromJson error handling exception message
+* Core 4.0.0.15
+	* Remove and adjust unused targets NET35 and NET45 from codebase.
+	* All services packages updated to require new Core
+
 ### 4.0.45.0 (2025-07-03 18:22 UTC)
 * CustomerProfiles (4.0.2.0)
 	* This release introduces capability of create Segments via importing a CSV file directly. This consumes the CSV file and creates/updates corresponding profiles for the particular domain.
