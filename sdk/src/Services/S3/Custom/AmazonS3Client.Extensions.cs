@@ -789,6 +789,13 @@ namespace Amazon.S3
                 if (request.Key.EndsWith("${filename}", StringComparison.Ordinal))
                 {
                     // Extract the prefix before ${filename}
+                    // https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-HTTPPOSTForms.html#sigv4-HTTPPOSTFormFields
+                    /*
+                    The variable ${filename} is automatically replaced with the name of the file provided by the user and is recognized by all form fields.
+                    If the browser or client provides a full or partial path to the file,
+                    only the text following the last slash (/) or backslash (\) is used (for example, C:\Program Files\directory1\file.txt is interpreted as file.txt). 
+                    If no file or file name is provided, the variable is replaced with an empty string.
+                    */
                     string keyPrefix = request.Key.Substring(0, request.Key.LastIndexOf("${filename}", StringComparison.Ordinal));
                     
                     // Add a starts-with condition instead of exact match
