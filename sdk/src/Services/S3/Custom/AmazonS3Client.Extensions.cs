@@ -759,7 +759,6 @@ namespace Amazon.S3
 
         /// <summary>
         /// Builds the policy document JSON string from the request using Utf8JsonWriter.
-        /// This approach follows AWS SDK patterns and is Native AOT compatible.
         /// </summary>
         /// <param name="request">The CreatePresignedPostRequest containing the policy conditions.</param>
         /// <returns>A JSON string representing the policy document.</returns>
