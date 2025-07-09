@@ -31,7 +31,7 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes specified tags from an AWS OpsWorks-CM server or backup.
+    /// Removes specified tags from an OpsWorks CM server or backup.
     /// </summary>
     public partial class UntagResourceRequest : AmazonOpsWorksCMRequest
     {

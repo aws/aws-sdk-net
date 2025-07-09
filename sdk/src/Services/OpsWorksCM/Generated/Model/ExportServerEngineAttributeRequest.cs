@@ -88,7 +88,7 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate
+        ///  <b>OrganizationName</b> In Chef, an organization name. OpsWorks for Chef Automate
         /// always creates the organization <c>default</c>. In Puppet, this parameter is ignored.
         /// </para>
         ///  </li> <li> 
