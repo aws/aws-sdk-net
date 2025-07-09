@@ -49,11 +49,7 @@ namespace Amazon.FreeTier
     /// <para>
     /// The Free Tier API provides the following endpoint:
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// https://freetier.us-east-1.api.aws
-    /// </para>
-    ///  </li> </ul> 
+    ///  <ul/> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-free-tier.html">Using
     /// the Amazon Web Services Free Tier</a> in the <i>Billing User Guide</i>.
@@ -67,6 +63,118 @@ namespace Amazon.FreeTier
         /// </summary>
         IFreeTierPaginatorFactory Paginators { get; }
 
+        
+        #region  GetAccountActivity
+
+
+        /// <summary>
+        /// Returns a specific activity record that is available to the customer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountActivity service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountActivity service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ResourceNotFoundException">
+        /// This exception is thrown when the requested resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountActivity">REST API Reference for GetAccountActivity Operation</seealso>
+        GetAccountActivityResponse GetAccountActivity(GetAccountActivityRequest request);
+
+
+
+        /// <summary>
+        /// Returns a specific activity record that is available to the customer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountActivity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountActivity service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ResourceNotFoundException">
+        /// This exception is thrown when the requested resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountActivity">REST API Reference for GetAccountActivity Operation</seealso>
+        Task<GetAccountActivityResponse> GetAccountActivityAsync(GetAccountActivityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAccountPlanState
+
+
+        /// <summary>
+        /// This returns all of the information related to the state of the account plan related
+        /// to Free Tier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountPlanState service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountPlanState service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ResourceNotFoundException">
+        /// This exception is thrown when the requested resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountPlanState">REST API Reference for GetAccountPlanState Operation</seealso>
+        GetAccountPlanStateResponse GetAccountPlanState(GetAccountPlanStateRequest request);
+
+
+
+        /// <summary>
+        /// This returns all of the information related to the state of the account plan related
+        /// to Free Tier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountPlanState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountPlanState service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ResourceNotFoundException">
+        /// This exception is thrown when the requested resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountPlanState">REST API Reference for GetAccountPlanState Operation</seealso>
+        Task<GetAccountPlanStateResponse> GetAccountPlanStateAsync(GetAccountPlanStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  GetFreeTierUsage
 
@@ -84,7 +192,7 @@ namespace Amazon.FreeTier
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.FreeTier.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetFreeTierUsage">REST API Reference for GetFreeTierUsage Operation</seealso>
         GetFreeTierUsageResponse GetFreeTierUsage(GetFreeTierUsageRequest request);
@@ -107,10 +215,116 @@ namespace Amazon.FreeTier
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.FreeTier.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetFreeTierUsage">REST API Reference for GetFreeTierUsage Operation</seealso>
         Task<GetFreeTierUsageResponse> GetFreeTierUsageAsync(GetFreeTierUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAccountActivities
+
+
+        /// <summary>
+        /// Returns a list of activities that are available. This operation supports pagination
+        /// and filtering by status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountActivities service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountActivities service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/ListAccountActivities">REST API Reference for ListAccountActivities Operation</seealso>
+        ListAccountActivitiesResponse ListAccountActivities(ListAccountActivitiesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of activities that are available. This operation supports pagination
+        /// and filtering by status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountActivities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccountActivities service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/ListAccountActivities">REST API Reference for ListAccountActivities Operation</seealso>
+        Task<ListAccountActivitiesResponse> ListAccountActivitiesAsync(ListAccountActivitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpgradeAccountPlan
+
+
+        /// <summary>
+        /// The account plan type for the Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeAccountPlan service method.</param>
+        /// 
+        /// <returns>The response from the UpgradeAccountPlan service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ResourceNotFoundException">
+        /// This exception is thrown when the requested resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/UpgradeAccountPlan">REST API Reference for UpgradeAccountPlan Operation</seealso>
+        UpgradeAccountPlanResponse UpgradeAccountPlan(UpgradeAccountPlanRequest request);
+
+
+
+        /// <summary>
+        /// The account plan type for the Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeAccountPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpgradeAccountPlan service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ResourceNotFoundException">
+        /// This exception is thrown when the requested resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/UpgradeAccountPlan">REST API Reference for UpgradeAccountPlan Operation</seealso>
+        Task<UpgradeAccountPlanResponse> UpgradeAccountPlanAsync(UpgradeAccountPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

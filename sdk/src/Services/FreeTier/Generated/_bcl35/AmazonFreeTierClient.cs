@@ -53,11 +53,7 @@ namespace Amazon.FreeTier
     /// <para>
     /// The Free Tier API provides the following endpoint:
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// https://freetier.us-east-1.api.aws
-    /// </para>
-    ///  </li> </ul> 
+    ///  <ul/> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-free-tier.html">Using
     /// the Amazon Web Services Free Tier</a> in the <i>Billing User Guide</i>.
@@ -289,6 +285,142 @@ namespace Amazon.FreeTier
         #endregion
 
 
+        #region  GetAccountActivity
+
+        /// <summary>
+        /// Returns a specific activity record that is available to the customer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountActivity service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountActivity service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ResourceNotFoundException">
+        /// This exception is thrown when the requested resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountActivity">REST API Reference for GetAccountActivity Operation</seealso>
+        public virtual GetAccountActivityResponse GetAccountActivity(GetAccountActivityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountActivityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountActivityResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountActivityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountActivity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountActivity operation on AmazonFreeTierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountActivity
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountActivity">REST API Reference for GetAccountActivity Operation</seealso>
+        public virtual IAsyncResult BeginGetAccountActivity(GetAccountActivityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountActivityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountActivityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountActivity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountActivity.</param>
+        /// 
+        /// <returns>Returns a  GetAccountActivityResult from FreeTier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountActivity">REST API Reference for GetAccountActivity Operation</seealso>
+        public virtual GetAccountActivityResponse EndGetAccountActivity(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountActivityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccountPlanState
+
+        /// <summary>
+        /// This returns all of the information related to the state of the account plan related
+        /// to Free Tier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountPlanState service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountPlanState service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ResourceNotFoundException">
+        /// This exception is thrown when the requested resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountPlanState">REST API Reference for GetAccountPlanState Operation</seealso>
+        public virtual GetAccountPlanStateResponse GetAccountPlanState(GetAccountPlanStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountPlanStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountPlanStateResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountPlanStateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountPlanState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountPlanState operation on AmazonFreeTierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountPlanState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountPlanState">REST API Reference for GetAccountPlanState Operation</seealso>
+        public virtual IAsyncResult BeginGetAccountPlanState(GetAccountPlanStateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountPlanStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountPlanStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountPlanState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountPlanState.</param>
+        /// 
+        /// <returns>Returns a  GetAccountPlanStateResult from FreeTier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountPlanState">REST API Reference for GetAccountPlanState Operation</seealso>
+        public virtual GetAccountPlanStateResponse EndGetAccountPlanState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountPlanStateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetFreeTierUsage
 
         /// <summary>
@@ -304,7 +436,7 @@ namespace Amazon.FreeTier
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.FreeTier.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetFreeTierUsage">REST API Reference for GetFreeTierUsage Operation</seealso>
         public virtual GetFreeTierUsageResponse GetFreeTierUsage(GetFreeTierUsageRequest request)
@@ -348,6 +480,139 @@ namespace Amazon.FreeTier
         public virtual GetFreeTierUsageResponse EndGetFreeTierUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFreeTierUsageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAccountActivities
+
+        /// <summary>
+        /// Returns a list of activities that are available. This operation supports pagination
+        /// and filtering by status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountActivities service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountActivities service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/ListAccountActivities">REST API Reference for ListAccountActivities Operation</seealso>
+        public virtual ListAccountActivitiesResponse ListAccountActivities(ListAccountActivitiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountActivitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountActivitiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccountActivitiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccountActivities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountActivities operation on AmazonFreeTierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccountActivities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/ListAccountActivities">REST API Reference for ListAccountActivities Operation</seealso>
+        public virtual IAsyncResult BeginListAccountActivities(ListAccountActivitiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountActivitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountActivitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccountActivities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccountActivities.</param>
+        /// 
+        /// <returns>Returns a  ListAccountActivitiesResult from FreeTier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/ListAccountActivities">REST API Reference for ListAccountActivities Operation</seealso>
+        public virtual ListAccountActivitiesResponse EndListAccountActivities(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccountActivitiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpgradeAccountPlan
+
+        /// <summary>
+        /// The account plan type for the Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeAccountPlan service method.</param>
+        /// 
+        /// <returns>The response from the UpgradeAccountPlan service method, as returned by FreeTier.</returns>
+        /// <exception cref="Amazon.FreeTier.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ResourceNotFoundException">
+        /// This exception is thrown when the requested resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FreeTier.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/UpgradeAccountPlan">REST API Reference for UpgradeAccountPlan Operation</seealso>
+        public virtual UpgradeAccountPlanResponse UpgradeAccountPlan(UpgradeAccountPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpgradeAccountPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpgradeAccountPlanResponseUnmarshaller.Instance;
+
+            return Invoke<UpgradeAccountPlanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradeAccountPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeAccountPlan operation on AmazonFreeTierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpgradeAccountPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/UpgradeAccountPlan">REST API Reference for UpgradeAccountPlan Operation</seealso>
+        public virtual IAsyncResult BeginUpgradeAccountPlan(UpgradeAccountPlanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpgradeAccountPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpgradeAccountPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpgradeAccountPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpgradeAccountPlan.</param>
+        /// 
+        /// <returns>Returns a  UpgradeAccountPlanResult from FreeTier.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/UpgradeAccountPlan">REST API Reference for UpgradeAccountPlan Operation</seealso>
+        public virtual UpgradeAccountPlanResponse EndUpgradeAccountPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpgradeAccountPlanResponse>(asyncResult);
         }
 
         #endregion

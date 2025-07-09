@@ -16,35 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the freetier-2023-09-07.normal.json service model.
  */
-using Amazon.Runtime.Internal;
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FreeTier.Model
 {
     /// <summary>
-    /// Paginators for the FreeTier service
+    /// Paginator for the ListAccountActivities operation
     ///</summary>
-    public interface IFreeTierPaginatorFactory
+    public interface IListAccountActivitiesPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListAccountActivitiesResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for GetFreeTierUsage operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IGetFreeTierUsagePaginator GetFreeTierUsage(GetFreeTierUsageRequest request);
-
-        /// <summary>
-        /// Paginator for ListAccountActivities operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListAccountActivitiesPaginator ListAccountActivities(ListAccountActivitiesRequest request);
+        /// Enumerable containing all of the Activities
+        /// </summary>
+        IPaginatedEnumerable<ActivitySummary> Activities { get; }
     }
 }
