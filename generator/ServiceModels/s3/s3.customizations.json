@@ -431,7 +431,10 @@
             "ChecksumSHA1",
             "ChecksumSHA256",
             "ETag",
-            "PartNumber",
+            "PartNumber"
         ]
+    },
+    "unwrapXmlOutput":{
+        "GetBucketLocationOutput": true
     }
 }
