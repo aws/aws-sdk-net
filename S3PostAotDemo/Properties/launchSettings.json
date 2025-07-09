@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "S3PostAotDemo": {
+      "commandName": "Project",
+      "environmentVariables": {
+      }
+    }
+  }
+}

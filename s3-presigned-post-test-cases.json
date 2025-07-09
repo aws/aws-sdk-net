@@ -1,0 +1,169 @@
+{
+  "testCases": [
+    {
+      "name": "End-to-End Demo",
+      "bucketName": "{BUCKET_NAME}",
+      "key": "test-uploads/demo-{TIMESTAMP}.txt",
+      "expiresIn": 600,
+      "fields": {
+        "Content-Type": "text/plain"
+      },
+      "additionalConditions": [
+        {"type": "contentLengthRange", "min": 1, "max": 1048576}
+      ],
+      "description": "End-to-end demo with text file upload and verification",
+      "performUpload": true,
+      "testContent": "Hello from S3 Presigned POST Demo!\nGenerated at: {TIMESTAMP} UTC\nBucket: {BUCKET_NAME}\nKey: {KEY}\nThis file was uploaded using AWS SDK presigned POST functionality."
+    },
+    
+    {
+      "name": "JSON Upload Test", 
+      "bucketName": "{BUCKET_NAME}",
+      "key": "form-uploads/data-{TIMESTAMP}.json",
+      "expiresIn": 600,
+      "fields": {
+        "Content-Type": "application/json"
+      },
+      "additionalConditions": [
+        {"type": "contentLengthRange", "min": 1, "max": 1048576}
+      ],
+      "description": "Form-based JSON file upload with exact Content-Type validation",
+      "performUpload": true,
+      "testContent": {
+        "testName": "S3 Presigned POST Form Upload",
+        "timestamp": "{TIMESTAMP}",
+        "bucket": "{BUCKET_NAME}",
+        "uploadMethod": "multipart/form-data",
+        "contentType": "application/json",
+        "success": true,
+        "metadata": {
+          "fileSize": "small",
+          "uploadedVia": "AWS SDK",
+          "testScenario": "JSON file upload"
+        }
+      }
+    },
+    {
+      "name": "Binary Upload Test",
+      "bucketName": "{BUCKET_NAME}",
+      "key": "form-uploads/image-{TIMESTAMP}.png",
+      "expiresIn": 600,
+      "fields": {
+        "Content-Type": "image/png"
+      },
+      "additionalConditions": [
+        {"type": "contentLengthRange", "min": 1, "max": 5242880}
+      ],
+      "description": "Form-based binary file upload with exact Content-Type validation",
+      "performUpload": true,
+      "testContent": "BINARY_PNG_DATA"
+    },
+    {
+      "name": "Text Upload Test",
+      "bucketName": "{BUCKET_NAME}",
+      "key": "form-uploads/text-{TIMESTAMP}.txt",
+      "expiresIn": 600,
+      "fields": {
+        "Content-Type": "text/plain"
+      },
+      "additionalConditions": [
+        {"type": "startsWith", "field": "Content-Type", "value": "text/"},
+        {"type": "contentLengthRange", "min": 1, "max": 1048576}
+      ],
+      "description": "Form-based text file upload with starts-with Content-Type validation",
+      "performUpload": true,
+      "testContent": "Form Upload Test - Text File\nGenerated: {TIMESTAMP} UTC\nContent-Type: text/plain\nUpload Method: Multipart Form Data"
+    },
+    
+    {
+      "name": "Metadata Test",
+      "bucketName": "{BUCKET_NAME}",
+      "key": "metadata/file-{TIMESTAMP}.txt",
+      "expiresIn": 600,
+      "fields": {
+        "Content-Type": "text/plain",
+        "x-amz-meta-user": "test-user",
+        "x-amz-meta-purpose": "sdk-testing",
+        "x-amz-meta-created": "{TIMESTAMP}"
+      },
+      "additionalConditions": [
+        {"type": "contentLengthRange", "min": 1, "max": 1048576}
+      ],
+      "description": "Upload with custom metadata fields",
+      "performUpload": true,
+      "testContent": "File with custom metadata fields\nGenerated: {TIMESTAMP}\nMetadata fields: user, purpose, created"
+    },
+    
+    {
+      "name": "Success Action Redirect Test",
+      "bucketName": "{BUCKET_NAME}",
+      "key": "redirect/file-{TIMESTAMP}.txt",
+      "expiresIn": 600,
+      "fields": {
+        "Content-Type": "text/plain",
+        "success_action_redirect": "https://example.com/success"
+      },
+      "additionalConditions": [
+        {"type": "contentLengthRange", "min": 1, "max": 1048576}
+      ],
+      "description": "Upload with success_action_redirect parameter",
+      "performUpload": true,
+      "testContent": "Testing success_action_redirect parameter\nThis parameter tells the browser where to redirect after a successful upload."
+    },
+  
+    
+    {
+      "name": "Server-Side Encryption Test",
+      "bucketName": "{BUCKET_NAME}",
+      "key": "encrypted/file-{TIMESTAMP}.txt",
+      "expiresIn": 600,
+      "fields": {
+        "Content-Type": "text/plain",
+        "x-amz-server-side-encryption": "AES256"
+      },
+      "additionalConditions": [
+        {"type": "exactMatch", "field": "x-amz-server-side-encryption", "value": "AES256"},
+        {"type": "contentLengthRange", "min": 1, "max": 1048576}
+      ],
+      "description": "Upload with server-side encryption (SSE-S3)",
+      "performUpload": true,
+      "testContent": "This file is encrypted at rest using SSE-S3 (AES256).\nGenerated: {TIMESTAMP}"
+    },
+    
+    {
+      "name": "Multiple Starts-With Conditions",
+      "bucketName": "{BUCKET_NAME}",
+      "key": "flexible/file-{TIMESTAMP}.txt",
+      "expiresIn": 600,
+      "fields": {
+        "Content-Type": "text/plain",
+        "x-amz-meta-category": "testing-docs"
+      },
+      "additionalConditions": [
+        {"type": "startsWith", "field": "key", "value": "flexible/"},
+        {"type": "startsWith", "field": "Content-Type", "value": "text/"},
+        {"type": "startsWith", "field": "x-amz-meta-category", "value": "testing"},
+        {"type": "contentLengthRange", "min": 1, "max": 1048576}
+      ],
+      "description": "Upload with multiple starts-with conditions",
+      "performUpload": true,
+      "testContent": "Testing multiple starts-with conditions.\nKey must start with: flexible/\nContent-Type must start with: text/\nCategory metadata must start with: testing"
+    },
+    
+    {
+      "name": "Short Expiration Test",
+      "bucketName": "{BUCKET_NAME}",
+      "key": "quick-expire/file-{TIMESTAMP}.txt",
+      "expiresIn": 30,
+      "fields": {
+        "Content-Type": "text/plain"
+      },
+      "additionalConditions": [
+        {"type": "contentLengthRange", "min": 1, "max": 1048576}
+      ],
+      "description": "Upload with very short expiration time (30s)",
+      "performUpload": true,
+      "testContent": "This presigned POST URL expires very quickly (30 seconds).\nGenerated: {TIMESTAMP}"
+    }
+  ]
+}
