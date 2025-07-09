@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Extensions.Bedrock.MEAI</id>
     <title>AWSSDK - Bedrock integration with Microsoft.Extensions.AI.</title>
-    <version>4.0.1.1</version>
+    <version>4.0.2.0</version>
     <authors>Amazon Web Services</authors>
     <description>Implementations of Microsoft.Extensions.AI's abstractions for Bedrock.</description>
     <language>en-US</language>
@@ -15,17 +15,17 @@
       <group targetFramework="net472">
         <dependency id="AWSSDK.Core" version="4.0.0.4" />
         <dependency id="AWSSDK.BedrockRuntime" version="4.0.0.3" />
-        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.5.0" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.7.0" />
       </group>
       <group targetFramework="netstandard2.0">
         <dependency id="AWSSDK.Core" version="4.0.0.4" />
         <dependency id="AWSSDK.BedrockRuntime" version="4.0.0.3" />
-        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.5.0" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.7.0" />
       </group>
       <group targetFramework="net8.0">
         <dependency id="AWSSDK.Core" version="4.0.0.4" />
         <dependency id="AWSSDK.BedrockRuntime" version="4.0.0.3" />
-        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.5.0" />
+        <dependency id="Microsoft.Extensions.AI.Abstractions" version="9.7.0" />
       </group>
     </dependencies>
   </metadata> 

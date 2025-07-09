@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.BedrockRuntime.Model;
 using Microsoft.Extensions.AI;
 using System;
 using System.Collections.Generic;
@@ -89,17 +90,17 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
 
         foreach (string value in values)
         {
-            var response = await _runtime.InvokeModelAsync(new()
+            InvokeModelRequest request = options?.RawRepresentationFactory?.Invoke(this) as InvokeModelRequest ?? new();
+            request.ModelId ??= options?.ModelId ?? _modelId;
+            request.Accept ??= "application/json";
+            request.ContentType ??= "application/json";
+            request.Body ??= new MemoryStream(JsonSerializer.SerializeToUtf8Bytes(new()
             {
-                ModelId = options?.ModelId ?? _modelId,
-                Accept = "application/json",
-                ContentType = "application/json",
-                Body = new MemoryStream(JsonSerializer.SerializeToUtf8Bytes(new EmbeddingRequest()
-                {
-                    InputText = value,
-                    Dimensions = options?.Dimensions ?? _dimensions,
-                }, BedrockJsonContext.Default.EmbeddingRequest)),
-            }, cancellationToken).ConfigureAwait(false);
+                InputText = value,
+                Dimensions = options?.Dimensions ?? _dimensions,
+            }, BedrockJsonContext.Default.EmbeddingRequest));
+
+            var response = await _runtime.InvokeModelAsync(request, cancellationToken).ConfigureAwait(false);
 
             var er = JsonSerializer.Deserialize(response.Body, BedrockJsonContext.Default.EmbeddingResponse);
             if (er?.Embedding is not null)
