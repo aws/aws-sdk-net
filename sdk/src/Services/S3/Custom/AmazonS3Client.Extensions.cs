@@ -585,7 +585,6 @@ namespace Amazon.S3
             return CreatePresignedPostInternal(request);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Asynchronously create a presigned POST request that can be used to upload a file directly to S3 from a web browser.
         /// </summary>
@@ -597,7 +596,6 @@ namespace Amazon.S3
         {
             return await CreatePresignedPostInternalAsync(request).ConfigureAwait(false);
         }
-#endif
 
         /// <summary>
         /// Validates the CreatePresignedPostRequest parameters.
