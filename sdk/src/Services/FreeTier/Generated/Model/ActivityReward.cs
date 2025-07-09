@@ -16,40 +16,43 @@
 /*
  * Do not modify this file. This file is generated from the freetier-2023-09-07.normal.json service model.
  */
-
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
-#pragma warning disable CS0612,CS0618
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FreeTier.Model
 {
     /// <summary>
-    /// Paginators for the FreeTier service
-    ///</summary>
-    public class FreeTierPaginatorFactory : IFreeTierPaginatorFactory
+    /// The summary of the rewards granted as a result of activities completed.
+    /// </summary>
+    public partial class ActivityReward
     {
-        private readonly IAmazonFreeTier client;
-
-        internal FreeTierPaginatorFactory(IAmazonFreeTier client) 
-        {
-            this.client = client;
-        }
+        private MonetaryAmount _credit;
 
         /// <summary>
-        /// Paginator for GetFreeTierUsage operation
-        ///</summary>
-        public IGetFreeTierUsagePaginator GetFreeTierUsage(GetFreeTierUsageRequest request) 
+        /// Gets and sets the property Credit. 
+        /// <para>
+        ///  The credits gained by activity rewards. 
+        /// </para>
+        /// </summary>
+        public MonetaryAmount Credit
         {
-            return new GetFreeTierUsagePaginator(this.client, request);
+            get { return this._credit; }
+            set { this._credit = value; }
         }
 
-        /// <summary>
-        /// Paginator for ListAccountActivities operation
-        ///</summary>
-        public IListAccountActivitiesPaginator ListAccountActivities(ListAccountActivitiesRequest request) 
+        // Check to see if Credit property is set
+        internal bool IsSetCredit()
         {
-            return new ListAccountActivitiesPaginator(this.client, request);
+            return this._credit != null;
         }
+
     }
 }

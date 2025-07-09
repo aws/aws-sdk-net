@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.GetAccountActivity(Amazon.FreeTier.Model.GetAccountActivityRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.GetAccountActivity(Amazon.FreeTier.Model.GetAccountActivityRequest)" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountActivityRequest" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountActivityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Fetching an Account activity by id"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateRequest" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Fetching account plan state by id"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateRequest" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Attempt to fetch account plan state by id with insufficient permissions"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateRequest" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Internal service error"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateRequest" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Attempt to fetch plan state by id for an account without account plan"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.GetAccountPlanState(Amazon.FreeTier.Model.GetAccountPlanStateRequest)" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateRequest" />
+            <member name="T:Amazon.FreeTier.Model.GetAccountPlanStateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Request rate exceeds limits"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.ListAccountActivities(Amazon.FreeTier.Model.ListAccountActivitiesRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.ListAccountActivities(Amazon.FreeTier.Model.ListAccountActivitiesRequest)" />
+            <member name="T:Amazon.FreeTier.Model.ListAccountActivitiesRequest" />
+            <member name="T:Amazon.FreeTier.Model.ListAccountActivitiesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Fetching a page of completed activities"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanRequest" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Upgrading an account plan to PAID"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanRequest" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Attempt to upgrade an account with insufficient permissions"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanRequest" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Attempt to downgrade an account from PAID to FREE"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanRequest" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Internal service error"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanRequest" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Attempt to upgrade a non-existent account plan"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FreeTier.IAmazonFreeTier.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="M:Amazon.FreeTier.AmazonFreeTierClient.UpgradeAccountPlan(Amazon.FreeTier.Model.UpgradeAccountPlanRequest)" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanRequest" />
+            <member name="T:Amazon.FreeTier.Model.UpgradeAccountPlanResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Request rate exceeds limits"
+                    source=".\AWSSDKDocSamples\FreeTier\FreeTier.GeneratedSamples.cs"
+                    region="example-6" />
+            </example>
+        </value>
+    </doc>
+</docs>

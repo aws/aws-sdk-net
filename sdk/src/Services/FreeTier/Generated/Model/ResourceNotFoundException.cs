@@ -30,41 +30,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FreeTier.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+    /// This exception is thrown when the requested resource cannot be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ValidationException : AmazonFreeTierException
+    public partial class ResourceNotFoundException : AmazonFreeTierException
     {
 
         /// <summary>
-        /// Constructs a new ValidationException with the specified error
+        /// Constructs a new ResourceNotFoundException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ValidationException(string message) 
+        public ResourceNotFoundException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of ResourceNotFoundException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ValidationException(string message, Exception innerException) 
+        public ResourceNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of ResourceNotFoundException
         /// </summary>
         /// <param name="innerException"></param>
-        public ValidationException(Exception innerException) 
+        public ResourceNotFoundException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of ResourceNotFoundException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,30 +72,30 @@ namespace Amazon.FreeTier.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ResourceNotFoundException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of ResourceNotFoundException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ResourceNotFoundException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ValidationException class with serialized data.
+        /// Constructs a new instance of the ResourceNotFoundException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }
