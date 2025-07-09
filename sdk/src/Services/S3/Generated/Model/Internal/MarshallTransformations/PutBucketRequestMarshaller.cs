@@ -63,31 +63,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-acl"] = publicRequest.CannedACL;
             }
         
-            if (publicRequest.IsSetGrantFullControl()) 
-            {
-                request.Headers["x-amz-grant-full-control"] = publicRequest.GrantFullControl;
-            }
-        
-            if (publicRequest.IsSetGrantRead()) 
-            {
-                request.Headers["x-amz-grant-read"] = publicRequest.GrantRead;
-            }
-        
-            if (publicRequest.IsSetGrantReadACP()) 
-            {
-                request.Headers["x-amz-grant-read-acp"] = publicRequest.GrantReadACP;
-            }
-        
-            if (publicRequest.IsSetGrantWrite()) 
-            {
-                request.Headers["x-amz-grant-write"] = publicRequest.GrantWrite;
-            }
-        
-            if (publicRequest.IsSetGrantWriteACP()) 
-            {
-                request.Headers["x-amz-grant-write-acp"] = publicRequest.GrantWriteACP;
-            }
-        
             if (publicRequest.IsSetObjectLockEnabledForBucket()) 
             {
                 request.Headers["x-amz-bucket-object-lock-enabled"] = StringUtils.FromBool(publicRequest.ObjectLockEnabledForBucket);
@@ -105,7 +80,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetPutBucketConfiguration())
                 {
-                    xmlWriter.WriteStartElement("PutBucketConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("CreateBucketConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
                     if (publicRequest.PutBucketConfiguration.BucketInfo != null)
                     {
                         xmlWriter.WriteStartElement("Bucket");
@@ -149,6 +124,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -160,8 +136,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutBucketRequestMarshaller _instance = new PutBucketRequestMarshaller();        
