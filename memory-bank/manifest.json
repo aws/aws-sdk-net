@@ -1,6 +1,6 @@
 {
     "start-file": "start.md",
-    "additional-files": [
+    "core-files": [
         "projectBrief.md",
         "productContext.md",
         "activeContext.md",
