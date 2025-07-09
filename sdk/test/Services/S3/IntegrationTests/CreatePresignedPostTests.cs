@@ -151,6 +151,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             TestPresignedPostWithMixedContentType(testParams);
         }
+        
+        [TestMethod]
+        [TestCategory("S3")]
+        [TestCategory("RequiresIAMUser")]
+        public void FilenameVariableHandling()
+        {
+            var testParams = new PresignedPostTestParameters
+            {
+                Region = RegionEndpoint.USEast1,
+                Expiration = AWSSDKUtils.CorrectedUtcNow.AddHours(1)
+            };
+
+            TestPresignedPostWithFilenameVariable(testParams);
+        }
 
         private void TestPresignedPost(PresignedPostTestParameters testParams)
         {
@@ -537,6 +551,115 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                                     headObjectResponse.Metadata["original-filename"]);
                 }
 
+            }
+        }
+
+        private UploadResult PerformUploadWithActualFilename(
+            string url, 
+            Dictionary<string, string> fields, 
+            string content,
+            string filename)
+        {
+            var formData = new MultipartFormDataContent();
+
+            foreach (var field in fields)
+            {
+                formData.Add(new StringContent(field.Value), field.Key);
+            }
+
+            // Add file content with the actual filename
+            var fileContent = new ByteArrayContent(Encoding.UTF8.GetBytes(content));
+            fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
+            formData.Add(fileContent, "file", filename);
+
+            using (var httpClient = new System.Net.Http.HttpClient())
+            {
+                var httpResponse = httpClient.PostAsync(url, formData).Result;
+                
+                return new UploadResult
+                {
+                    IsSuccessful = httpResponse.IsSuccessStatusCode,
+                    StatusCode = httpResponse.StatusCode,
+                    ResponseText = httpResponse.Content.ReadAsStringAsync().Result
+                };
+            }
+        }
+
+        private void TestPresignedPostWithFilenameVariable(PresignedPostTestParameters testParams)
+        {
+            var client = new AmazonS3Client(testParams.Region);
+            try
+            {
+                // Create test bucket
+                testParams.BucketName = S3TestUtils.CreateBucketWithWait(client);
+                
+                // Create a presigned POST with key ending in ${filename}
+                string keyPrefix = "uploads/";
+                string objectKey = keyPrefix + "${filename}";
+                string actualFilename = "test-file-" + DateTime.UtcNow.Ticks + ".txt";
+                
+                var response = GeneratePresignedPostRequest(
+                    client, 
+                    testParams.BucketName, 
+                    objectKey, 
+                    testParams.Expiration);
+                
+                // Verify policy contains starts-with condition
+                var policyBytes = Convert.FromBase64String(response.Fields["Policy"]);
+                var policyJson = Encoding.UTF8.GetString(policyBytes);
+                var policyDoc = JsonDocument.Parse(policyJson);
+                
+                bool hasStartsWithCondition = false;
+                foreach (var condition in policyDoc.RootElement.GetProperty("conditions").EnumerateArray())
+                {
+                    if (condition.ValueKind == JsonValueKind.Array && 
+                        condition.GetArrayLength() == 3 && 
+                        condition[0].GetString() == "starts-with" &&
+                        condition[1].GetString() == "$key")
+                    {
+                        string foundPrefix = condition[2].GetString();
+                        Assert.AreEqual(keyPrefix, foundPrefix, "Policy should contain starts-with condition with correct prefix");
+                        hasStartsWithCondition = true;
+                        break;
+                    }
+                }
+                
+                Assert.IsTrue(hasStartsWithCondition, "Policy should contain a starts-with condition for the key");
+                
+                // Perform upload with actual filename
+                string expectedFinalKey = keyPrefix + actualFilename;
+                var uploadResult = PerformUploadWithActualFilename(
+                    response.Url,
+                    response.Fields,
+                    TestContent,
+                    actualFilename);
+                
+                // Verify upload success
+                Assert.IsTrue(uploadResult.IsSuccessful, $"Upload failed with status {uploadResult.StatusCode}: {uploadResult.ResponseText}");
+                
+                // Verify the object exists with the expected key (prefix + actual filename)
+                try
+                {
+                    var objectMetadata = client.GetObjectMetadata(testParams.BucketName, expectedFinalKey);
+                    Assert.IsNotNull(objectMetadata, "Object should exist with the expected key");
+                    
+                    // Verify content
+                    var getObjectResponse = client.GetObject(testParams.BucketName, expectedFinalKey);
+                    using (var reader = new StreamReader(getObjectResponse.ResponseStream))
+                    {
+                        var content = reader.ReadToEnd();
+                        Assert.AreEqual(TestContent, content, "Object content should match the uploaded content");
+                    }
+                }
+                catch (AmazonS3Exception ex)
+                {
+                    Assert.Fail($"Failed to get object with key '{expectedFinalKey}': {ex.Message}");
+                }
+            }
+            finally
+            {
+                if (testParams.BucketName != null)
+                    AmazonS3Util.DeleteS3BucketWithObjects(client, testParams.BucketName);
             }
         }
 

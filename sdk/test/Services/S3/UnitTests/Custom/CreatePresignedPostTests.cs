@@ -795,6 +795,132 @@ namespace AWSSDK.UnitTests
         }
 
         #endregion
+        
+        #region ${filename} Special Handling Tests
+        
+        [TestMethod]
+        [TestCategory("S3")]
+        public void CreatePresignedPost_KeyWithFilenameVariable_UsesStartsWithCondition()
+        {
+            // Arrange
+            var request = new CreatePresignedPostRequest
+            {
+                BucketName = "test-bucket",
+                Key = "uploads/${filename}", // Key with ${filename}
+                Expires = DateTime.UtcNow.AddHours(1)
+            };
+            
+            // Act
+            var response = _s3Client.CreatePresignedPost(request);
+            
+            // Decode and analyze the policy
+            var policyJson = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(response.Fields["Policy"]));
+            var policy = JsonDocument.Parse(policyJson);
+            
+            // Assert
+            bool hasStartsWithCondition = false;
+            
+            foreach (var condition in policy.RootElement.GetProperty("conditions").EnumerateArray())
+            {
+                // Look for a starts-with condition for the key field
+                if (condition.ValueKind == JsonValueKind.Array && 
+                    condition.GetArrayLength() == 3 && 
+                    condition[0].GetString() == "starts-with" &&
+                    condition[1].GetString() == "$key")
+                {
+                    string keyPrefix = condition[2].GetString();
+                    
+                    // Verify that the key prefix is correct
+                    Assert.AreEqual("uploads/", keyPrefix);
+                    hasStartsWithCondition = true;
+                    break;
+                }
+            }
+            
+            Assert.IsTrue(hasStartsWithCondition, "Policy should contain a starts-with condition for the key");
+        }
+        
+        [TestMethod]
+        [TestCategory("S3")]
+        public void CreatePresignedPost_KeyWithoutFilenameVariable_UsesExactMatchCondition()
+        {
+            // Arrange
+            var request = new CreatePresignedPostRequest
+            {
+                BucketName = "test-bucket",
+                Key = "uploads/regular-file.txt", // Regular key without ${filename}
+                Expires = DateTime.UtcNow.AddHours(1)
+            };
+            
+            // Act
+            var response = _s3Client.CreatePresignedPost(request);
+            
+            // Decode and analyze the policy
+            var policyJson = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(response.Fields["Policy"]));
+            var policy = JsonDocument.Parse(policyJson);
+            
+            // Assert
+            bool hasExactMatchCondition = false;
+            
+            foreach (var condition in policy.RootElement.GetProperty("conditions").EnumerateArray())
+            {
+                // Look for an exact match condition for the key field
+                if (condition.ValueKind == JsonValueKind.Object && 
+                    condition.TryGetProperty("key", out var keyValue))
+                {
+                    string key = keyValue.GetString();
+                    
+                    // Verify that the key is exactly what we specified
+                    Assert.AreEqual("uploads/regular-file.txt", key);
+                    hasExactMatchCondition = true;
+                    break;
+                }
+            }
+            
+            Assert.IsTrue(hasExactMatchCondition, "Policy should contain an exact match condition for the key");
+        }
+        
+        [TestMethod]
+        [TestCategory("S3")]
+        public void CreatePresignedPost_KeyWithFilenameVariableInMiddle_UsesExactMatchCondition()
+        {
+            // Arrange
+            var request = new CreatePresignedPostRequest
+            {
+                BucketName = "test-bucket",
+                Key = "uploads/${filename}/preview.jpg", // ${filename} not at the end
+                Expires = DateTime.UtcNow.AddHours(1)
+            };
+            
+            // Act
+            var response = _s3Client.CreatePresignedPost(request);
+            
+            // Decode and analyze the policy
+            var policyJson = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(response.Fields["Policy"]));
+            var policy = JsonDocument.Parse(policyJson);
+            
+            // Assert
+            bool hasExactMatchCondition = false;
+            
+            foreach (var condition in policy.RootElement.GetProperty("conditions").EnumerateArray())
+            {
+                // Look for an exact match condition for the key field
+                if (condition.ValueKind == JsonValueKind.Object && 
+                    condition.TryGetProperty("key", out var keyValue))
+                {
+                    string key = keyValue.GetString();
+                    
+                    // Verify that the key is exactly what we specified
+                    Assert.AreEqual("uploads/${filename}/preview.jpg", key);
+                    hasExactMatchCondition = true;
+                    break;
+                }
+            }
+            
+            Assert.IsTrue(hasExactMatchCondition, "Policy should contain an exact match condition for the key");
+        }
+
+        #endregion
 
         #region Comprehensive Integration Test
 

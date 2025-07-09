@@ -787,9 +787,26 @@ namespace Amazon.S3
             // Add key condition if specified
             if (!string.IsNullOrEmpty(request.Key))
             {
-                writer.WriteStartObject();
-                writer.WriteString("key", request.Key);
-                writer.WriteEndObject();
+                // Check if key ends with ${filename} and add special handling
+                if (request.Key.EndsWith("${filename}", StringComparison.Ordinal))
+                {
+                    // Extract the prefix before ${filename}
+                    string keyPrefix = request.Key.Substring(0, request.Key.LastIndexOf("${filename}", StringComparison.Ordinal));
+                    
+                    // Add a starts-with condition instead of exact match
+                    writer.WriteStartArray();
+                    writer.WriteStringValue("starts-with");
+                    writer.WriteStringValue("$key");
+                    writer.WriteStringValue(keyPrefix);
+                    writer.WriteEndArray();
+                }
+                else
+                {
+                    // Regular exact match condition for keys without ${filename}
+                    writer.WriteStartObject();
+                    writer.WriteString("key", request.Key);
+                    writer.WriteEndObject();
+                }
             }
             
             // Track field conditions to avoid duplicates
