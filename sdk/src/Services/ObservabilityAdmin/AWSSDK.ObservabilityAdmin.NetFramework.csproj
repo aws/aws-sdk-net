@@ -2,7 +2,7 @@
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net472</TargetFramework>
-    <DefineConstants>$(DefineConstants);BCL;AWS_ASYNC_API;CODE_ANALYSIS</DefineConstants>
+    <DefineConstants>$(DefineConstants);BCL;CODE_ANALYSIS</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.ObservabilityAdmin</AssemblyName>
