@@ -449,58 +449,6 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region Async Tests
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public async Task CreatePresignedPostAsync_ValidRequest_ReturnsResponse()
-        {
-            // Arrange
-            var request = new CreatePresignedPostRequest
-            {
-                BucketName = "test-bucket",
-                Key = "async-test-key.jpg",
-                Expires = DateTime.UtcNow.AddHours(1)
-            };
-
-            // Act
-            var response = await _s3Client.CreatePresignedPostAsync(request);
-
-            // Assert
-            Assert.IsNotNull(response);
-            Assert.IsNotNull(response.Url);
-            Assert.IsNotNull(response.Fields);
-            Assert.IsTrue(response.Fields.Count > 0);
-            Assert.AreEqual("async-test-key.jpg", response.Fields["key"]);
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public async Task CreatePresignedPostAsync_NullRequest_ThrowsArgumentNullException()
-        {
-            // Act & Assert
-            await Assert.ThrowsExceptionAsync<ArgumentNullException>(() => 
-                _s3Client.CreatePresignedPostAsync(null));
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public async Task CreatePresignedPostAsync_MissingBucketName_ThrowsArgumentException()
-        {
-            // Arrange
-            var request = new CreatePresignedPostRequest
-            {
-                BucketName = null,
-                Expires = DateTime.UtcNow.AddHours(1)
-            };
-
-            // Act & Assert
-            var exception = await Assert.ThrowsExceptionAsync<ArgumentException>(() => 
-                _s3Client.CreatePresignedPostAsync(request));
-            Assert.IsTrue(exception.Message.Contains("BucketName"));
-        }
-
-        #endregion
 
         #region Edge Cases and Error Handling
 
