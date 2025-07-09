@@ -217,7 +217,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property EngineAttributes. 
         /// <para>
         /// The response of a createServer() request returns the master credential to access the
-        /// server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they
+        /// server in EngineAttributes. These credentials are not stored by OpsWorks CM; they
         /// are returned only as part of the result of createServer(). 
         /// </para>
         ///  
@@ -227,8 +227,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>CHEF_AUTOMATE_PIVOTAL_KEY</c>: A base64-encoded RSA private key that is generated
-        /// by AWS OpsWorks for Chef Automate. This private key is required to access the Chef
-        /// API.
+        /// by OpsWorks for Chef Automate. This private key is required to access the Chef API.
         /// </para>
         ///  </li> <li> 
         /// <para>

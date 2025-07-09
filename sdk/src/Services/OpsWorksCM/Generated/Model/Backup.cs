@@ -494,8 +494,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property ToolsVersion. 
         /// <para>
-        ///  The version of AWS OpsWorks CM-specific tools that is obtained from the server when
-        /// the backup is created. 
+        ///  The version of OpsWorks CM-specific tools that is obtained from the server when the
+        /// backup is created. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]
@@ -514,7 +514,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property UserArn. 
         /// <para>
-        ///  The IAM user ARN of the requester for manual backups. This field is empty for automated
+        ///  The user ARN of the requester for manual backups. This field is empty for automated
         /// backups. 
         /// </para>
         /// </summary>

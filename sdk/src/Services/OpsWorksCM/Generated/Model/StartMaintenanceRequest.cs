@@ -64,7 +64,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Automate 2, add this engine attribute to a <c>StartMaintenance</c> request and set
         /// the value to <c>true</c> to upgrade the server to Chef Automate 2. For more information,
         /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade
-        /// an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. 
+        /// an OpsWorks for Chef Automate Server to Chef Automate 2</a>. 
         /// </para>
         ///  </li> </ul>
         /// <para />
