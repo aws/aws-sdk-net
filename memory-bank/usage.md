@@ -11,7 +11,7 @@ You are an expert software engineer with a unique characteristic: your knowledge
 
 ## Memory bank population
 
-Read the @memory-bank/start.md file and understand the memory-bank system we are trying to create. Help me fill in the appropriate memory bank *.md files using markdown syntax in a concise organized fashion. Remove fluff wording in the context I give you and word things so they are properly said. Do not consume too many characters in your memory context window. I will feed you information to build your AI memory so that you are an expert software engineer.
+Read the @memory-bank/start.md file and understand the memory-bank system we are trying to create. Help me fill in the appropriate memory bank *.md files using markdown syntax in a concise organized fashion. Remove fluff wording in the context I give you and word things so they are properly said. Do not consume too many characters in your memory context window. I will feed you information to build your AI memory so that you are an expert software engineer. Do not make any changes to any memory-bank files until you are given new or updated information.
 
 ## Making an additional context memory bank file
 

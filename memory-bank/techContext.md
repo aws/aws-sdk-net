@@ -22,6 +22,13 @@
 - Git for source control
 - CI/CD pipeline for automated builds and testing
 
+### Generator Tooling
+- Java/Gradle for Protocol Test Generator (uses gradlew wrapper)
+- T4 Text Templates for service code generation
+- Coral-to-JSON (C2J) model files for service definitions
+- Smithy models for protocol test generation
+- Custom MSBuild tasks in buildtools/
+
 ## Technical Constraints
 - Backward compatibility requirements
 - Cross-platform support
@@ -39,6 +46,12 @@
 - OpenTelemetry.Instrumentation.AWS for tracing and metrics
 - System.Buffers, System.Memory, System.Text.Json (for .NET Framework 4.7.2 and .NET Standard 2.0)
 - BouncyCastle.Cryptography (for specific cryptographic operations)
+
+### Build Dependencies
+- Gradle wrapper for Protocol Test Generator
+- T4 Text Template engine for code generation
+- MSBuild for .NET compilation
+- Custom build tools in buildtools/ directory
 
 ## Performance Optimizations in V4
 - Reduced AWSSDK.Core assembly size (900KB vs 2MB in V3)

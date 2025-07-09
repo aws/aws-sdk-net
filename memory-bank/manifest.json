@@ -1,0 +1,45 @@
+{
+    "start-file": "start.md",
+    "additional-files": [
+        "projectBrief.md",
+        "productContext.md",
+        "activeContext.md",
+        "systemPatterns.md",
+        "techContext.md",
+        "progress.md"
+    ],
+    "partitions": [
+        {
+            "name": "dualsupport",
+            "files": [
+                "partitionBrief.md",
+                "dualSupport.md"
+            ]
+        },
+        {
+            "name": "v3v4-upgrade",
+            "files": [
+                "partitionBrief.md",
+                "upgradeGuide.md",
+                "breakingChanges.md"
+            ]
+        },
+        {
+            "name": "sdkdeveloper",
+            "files": [
+                "partitionBrief.md",
+                "codeStructure.md",
+                "buildSystem.md",
+                "devConfig.md"
+            ]
+        },
+        {
+            "name": "sdkhelper",
+            "files": [
+                "partitionBrief.md",
+                "credentialsAuth.md",
+                "usagePatterns.md"
+            ]
+        }
+    ]
+}

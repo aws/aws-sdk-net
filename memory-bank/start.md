@@ -59,27 +59,53 @@ flowchart TD
    - Known issues
    - Evolution of project decisions
 
-### Additional Context
-Create additional files/folders within memory-bank/ when they help organize:
+### Additional Context Partitions
+Partitions contain additional files/folders within memory-bank/partitions/ to help organize additional information that is not core memory-bank information:
 - Complex feature documentation
 - Integration specifications
 - API documentation
 - Testing strategies
 - Deployment procedures
 
-7. `devConfig.md`
-   - DevConfig file purpose and structure
-   - When DevConfig files are required
-   - File creation process
-   - Core and service section specifications
-   - Version numbering and handling
+Each partition starts with a `partitionBrief.md` file to help determine if the full partition is needed:
 
-8. `dualSupport.md`
+flowchart TD
+    Task[Task/Question] --> Brief[Read partitionBrief.md]
+    Brief --> Relevant{Partition Relevant?}
+    Relevant -->|Yes| Full[Read Full Partition]
+    Relevant -->|No| Skip[Skip Partition]
+    Full --> Apply[Apply Knowledge]
+    Skip --> Next[Next Partition]
+
+1. `dualsupport/partitionBrief.md` → `dualsupport/dualSupport.md`
    - GitHub branch structure for V3/V4 support
    - Issue and PR management across versions
    - Branch naming conventions
    - Build system considerations
    - Developer guidelines for dual version support
+
+2. `v3v4-upgrade/partitionBrief.md` → `v3v4-upgrade/upgradeGuide.md`, `breakingChanges.md`
+   - Step-by-step V3 to V4 migration process
+   - Package update procedures
+   - Collection and nullable type handling
+   - Migration strategies and testing
+   - Comprehensive breaking changes catalog
+   - Before/after code examples for each change
+
+3. `sdkdeveloper/partitionBrief.md` → `sdkdeveloper/codeStructure.md`, `buildSystem.md`, `devConfig.md`
+   - Advanced guidance for SDK source code contributions
+   - Repository organization and project structure
+   - Code generation patterns and service models
+   - Build system processes and testing frameworks
+   - Internal architecture and development patterns
+   - DevConfig file creation and version management
+
+4. `sdkhelper/partitionBrief.md` → `sdkhelper/credentialsAuth.md`, `usagePatterns.md`
+   - Advanced SDK usage patterns for customer applications
+   - Credential management and authentication strategies
+   - Service client configuration and best practices
+   - Error handling, retry logic, and performance optimization
+   - Testing patterns and async/await implementations
 
 ## Core Workflows
 
