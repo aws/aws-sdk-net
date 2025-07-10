@@ -426,11 +426,8 @@ namespace ServiceClientGenerator
         public const string OriginalMemberKey = "originalMember";
         public const string OverrideTreatEnumsAsStringKey = "overrideTreatEnumsAsString";
         public const string ExcludeMembersKey = "excludeMembers";
-<<<<<<< HEAD
         public const string UnwrapXmlOutputKey = "unwrapXmlOutput";
-=======
         public const string InheritAlternateBaseClassKey = "inheritAlternateBaseClass";
->>>>>>> 4396e606cbff (PutBucket generation commit)
 
         JsonData _documentRoot;
 

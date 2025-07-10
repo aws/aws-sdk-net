@@ -470,14 +470,12 @@
             "PartNumber"
         ]
     },
-<<<<<<< HEAD
     "unwrapXmlOutput":{
         "GetBucketLocationOutput": true
-=======
+    },
     "inheritAlternateBaseClass":{
         "PutBucketRequest": {
             "alternateBaseClass" : "PutWithACLRequest"
         }
->>>>>>> 4396e606cbff (PutBucket generation commit)
     }
 }
