@@ -298,6 +298,16 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+        public IEnumerable<T> Scan<T>(ContextExpression filterExpression)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(Scan)))
+            {
+                var scan = ConvertScan<T>(filterExpression, null);
+                return FromSearch<T>(scan);
+            }
+        }
+
+        /// <inheritdoc/>
         [Obsolete("Use the Scan overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Scan.")]
         public IEnumerable<T> Scan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {
@@ -314,6 +324,16 @@ namespace Amazon.DynamoDBv2.DataModel
             using (DynamoDBTelemetry.CreateSpan(this, nameof(Scan)))
             {
                 var scan = ConvertScan<T>(conditions, scanConfig?.ToDynamoDBOperationConfig());
+                return FromSearch<T>(scan);
+            }
+        }
+
+        /// <inheritdoc/>
+        public IEnumerable<T> Scan<T>(ContextExpression filterExpression, ScanConfig scanConfig)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(Scan)))
+            {
+                var scan = ConvertScan<T>(filterExpression, scanConfig?.ToDynamoDBOperationConfig());
                 return FromSearch<T>(scan);
             }
         }

@@ -15,7 +15,7 @@
 
 using System;
 using System.Collections.Generic;
-
+using System.Linq.Expressions;
 using Amazon.DynamoDBv2.DocumentModel;
 
 namespace Amazon.DynamoDBv2.DataModel
@@ -414,6 +414,20 @@ namespace Amazon.DynamoDBv2.DataModel
         IEnumerable<T> Scan<T>(params ScanCondition[] conditions);
 
         /// <summary>
+        /// Executes a Scan operation against DynamoDB,
+        /// returning items that match the specified filter expression.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="filterExpression">
+        /// A <see cref="ContextExpression"/> representing a LINQ expression tree used to filter the results.
+        /// The expression is translated to a DynamoDB filter expression and applied server-side.
+        /// </param>
+        /// <returns>
+        /// A lazy-loaded collection of results of type <typeparamref name="T"/> that match the filter expression.
+        /// </returns>
+        IEnumerable<T> Scan<T>(ContextExpression filterExpression);
+
+        /// <summary>
         /// Executes a Scan operation against DynamoDB, finding items
         /// that match the specified conditions.
         /// </summary>
@@ -438,6 +452,19 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="scanConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Lazy-loaded collection of results.</returns>
         IEnumerable<T> Scan<T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig);
+
+        /// <summary>
+        /// Executes a Scan operation against DynamoDB, finding items
+        /// that match the specified filter expression.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="filterExpression">
+        /// A <see cref="ContextExpression"/> representing a LINQ expression tree used to filter the results.
+        /// The expression is translated to a DynamoDB filter expression and applied server-side.
+        /// </param>
+        /// <param name="scanConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>Lazy-loaded collection of results.</returns>
+        IEnumerable<T> Scan<T>(ContextExpression filterExpression, ScanConfig scanConfig);
 
         /// <summary>
         /// Executes a Scan operation against DynamoDB, finding items
