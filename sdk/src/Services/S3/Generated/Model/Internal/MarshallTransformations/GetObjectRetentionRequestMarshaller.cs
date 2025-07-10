@@ -78,8 +78,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static GetObjectRetentionRequestMarshaller _instance = new GetObjectRetentionRequestMarshaller();        

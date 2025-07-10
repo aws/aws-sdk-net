@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,9 +63,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 id2 = s3ErrorResponse.Id2;
                 amzCfId = s3ErrorResponse.AmzCfId;
             }
-
             BucketAlreadyOwnedByYouException response = new BucketAlreadyOwnedByYouException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
+
 
             while (context.Read())
             {
@@ -76,7 +76,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static BucketAlreadyOwnedByYouExceptionUnmarshaller _instance = new BucketAlreadyOwnedByYouExceptionUnmarshaller();
+        private static BucketAlreadyOwnedByYouExceptionUnmarshaller _instance = new BucketAlreadyOwnedByYouExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
