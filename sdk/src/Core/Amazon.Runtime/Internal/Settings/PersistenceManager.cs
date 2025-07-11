@@ -88,27 +88,26 @@ namespace Amazon.Runtime.Internal.Settings
 
             try
             {
-#if BCL
+#if NETFRAMEWORK
                 SettingsStoreFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
 #else
                 SettingsStoreFolder = System.Environment.GetEnvironmentVariable("HOME");
                 if (string.IsNullOrEmpty(SettingsStoreFolder))
                     SettingsStoreFolder = System.Environment.GetEnvironmentVariable("USERPROFILE");
 
-                SettingsStoreFolder = Path.Combine(SettingsStoreFolder, "AppData/Local/AWSToolkit");
+                SettingsStoreFolder = Path.Combine(SettingsStoreFolder, "AppData", "Local", "AWSToolkit");
 #endif
                 if (!Directory.Exists(SettingsStoreFolder))
                     Directory.CreateDirectory(SettingsStoreFolder);
 
                 Instance = new PersistenceManager();
             }
-            catch (UnauthorizedAccessException ex)
+            catch (Exception ex) when (ex is UnauthorizedAccessException || ex is IOException)
             {
                 _logger.Error(ex, $"Unable to initialize '{nameof(PersistenceManager)}'. Falling back to '{nameof(InMemoryPersistenceManager)}'.");
-
                 Instance = new InMemoryPersistenceManager();
             }
-        }
+       }
 
         #endregion
 

@@ -52,6 +52,8 @@ namespace Amazon.Util.Internal
 
         public List<DefaultAWSCredentialsIdentityResolver.CredentialsGenerator> AWSCredentialsGenerators { get; set; }
 
+        public bool DisableLegacyPersistenceStore { get; set; }
+
         private const string _rootAwsSectionName = "aws";
         public RootConfig()
         {
@@ -65,6 +67,7 @@ namespace Amazon.Util.Internal
             UseSdkCache = AWSConfigs._useSdkCache;
             InitializeCollections = AWSConfigs._initializeCollections;
             CorrectForClockSkew = true;
+            DisableLegacyPersistenceStore = AWSConfigs._disableLegacyPersistenceStore;
 
 #if NET8_0_OR_GREATER
             DisableDangerousDisablePathAndQueryCanonicalization = AWSConfigs._disableDangerousDisablePathAndQueryCanonicalization;
@@ -105,5 +108,4 @@ namespace Amazon.Util.Internal
             return null;
         }
     }
-
 }

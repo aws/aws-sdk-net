@@ -1,0 +1,10 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Update `PersistenceManager` not to throw an exception when the SDK is used with a read-only file system (https://github.com/aws/aws-sdk-net/issues/3801)",
+            "Add `AWSConfigs.DisableLegacyPersistenceStore` option to instruct the SDK not to use the [SDK Store](https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/sdk-store.html) in its default profile resolution search"
+        ]
+    }
+}
