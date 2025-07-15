@@ -123,6 +123,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetS3VectorsConfiguration())
+            {
+                context.Writer.WritePropertyName("s3VectorsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3VectorsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3VectorsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
