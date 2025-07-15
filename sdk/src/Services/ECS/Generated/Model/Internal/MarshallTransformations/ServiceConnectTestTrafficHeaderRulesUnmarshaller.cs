@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LoadBalancer Object
+    /// Response Unmarshaller for ServiceConnectTestTrafficHeaderRules Object
     /// </summary>  
-    public class LoadBalancerUnmarshaller : IJsonUnmarshaller<LoadBalancer, JsonUnmarshallerContext>
+    public class ServiceConnectTestTrafficHeaderRulesUnmarshaller : IJsonUnmarshaller<ServiceConnectTestTrafficHeaderRules, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoadBalancer Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServiceConnectTestTrafficHeaderRules Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            LoadBalancer unmarshalledObject = new LoadBalancer();
+            ServiceConnectTestTrafficHeaderRules unmarshalledObject = new ServiceConnectTestTrafficHeaderRules();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("advancedConfiguration", targetDepth))
-                {
-                    var unmarshaller = AdvancedConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("containerName", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerPort", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("loadBalancerName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoadBalancerName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("targetGroupArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetGroupArn = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ServiceConnectTestTrafficHeaderMatchRulesUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static LoadBalancerUnmarshaller _instance = new LoadBalancerUnmarshaller();        
+        private static ServiceConnectTestTrafficHeaderRulesUnmarshaller _instance = new ServiceConnectTestTrafficHeaderRulesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LoadBalancerUnmarshaller Instance
+        public static ServiceConnectTestTrafficHeaderRulesUnmarshaller Instance
         {
             get
             {

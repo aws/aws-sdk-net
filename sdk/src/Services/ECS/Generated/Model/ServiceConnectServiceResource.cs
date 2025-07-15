@@ -50,7 +50,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DiscoveryArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the namespace in Cloud Map that matches the discovery
+        /// The Amazon Resource Name (ARN) for the service in Cloud Map that matches the discovery
         /// name for this Service Connect resource. You can use this ARN in other integrations
         /// with Cloud Map. However, Service Connect can't ensure connectivity outside of Amazon
         /// ECS.

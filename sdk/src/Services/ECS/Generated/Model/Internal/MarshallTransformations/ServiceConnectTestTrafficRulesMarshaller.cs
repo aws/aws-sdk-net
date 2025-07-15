@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LoadBalancer Marshaller
+    /// ServiceConnectTestTrafficRules Marshaller
     /// </summary>
-    public class LoadBalancerMarshaller : IRequestMarshaller<LoadBalancer, JsonMarshallerContext> 
+    public class ServiceConnectTestTrafficRulesMarshaller : IRequestMarshaller<ServiceConnectTestTrafficRules, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,43 +42,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LoadBalancer requestObject, JsonMarshallerContext context)
+        public void Marshall(ServiceConnectTestTrafficRules requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAdvancedConfiguration())
+            if(requestObject.IsSetHeader())
             {
-                context.Writer.WritePropertyName("advancedConfiguration");
+                context.Writer.WritePropertyName("header");
                 context.Writer.WriteStartObject();
 
-                var marshaller = AdvancedConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AdvancedConfiguration, context);
+                var marshaller = ServiceConnectTestTrafficHeaderRulesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Header, context);
 
                 context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetContainerName())
-            {
-                context.Writer.WritePropertyName("containerName");
-                context.Writer.WriteStringValue(requestObject.ContainerName);
-            }
-
-            if(requestObject.IsSetContainerPort())
-            {
-                context.Writer.WritePropertyName("containerPort");
-                context.Writer.WriteNumberValue(requestObject.ContainerPort.Value);
-            }
-
-            if(requestObject.IsSetLoadBalancerName())
-            {
-                context.Writer.WritePropertyName("loadBalancerName");
-                context.Writer.WriteStringValue(requestObject.LoadBalancerName);
-            }
-
-            if(requestObject.IsSetTargetGroupArn())
-            {
-                context.Writer.WritePropertyName("targetGroupArn");
-                context.Writer.WriteStringValue(requestObject.TargetGroupArn);
             }
 
         }
@@ -86,7 +62,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LoadBalancerMarshaller Instance = new LoadBalancerMarshaller();
+        public readonly static ServiceConnectTestTrafficRulesMarshaller Instance = new ServiceConnectTestTrafficRulesMarshaller();
 
     }
 }

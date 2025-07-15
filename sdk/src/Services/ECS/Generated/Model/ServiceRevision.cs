@@ -55,6 +55,7 @@ namespace Amazon.ECS.Model
         private NetworkConfiguration _networkConfiguration;
         private string _platformFamily;
         private string _platformVersion;
+        private ResolvedConfiguration _resolvedConfiguration;
         private string _serviceArn;
         private ServiceConnectConfiguration _serviceConnectConfiguration;
         private List<ServiceRegistry> _serviceRegistries = AWSConfigs.InitializeCollections ? new List<ServiceRegistry>() : null;
@@ -268,6 +269,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetPlatformVersion()
         {
             return this._platformVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedConfiguration. 
+        /// <para>
+        /// The resolved configuration for the service revision which contains the actual resources
+        /// your service revision uses, such as which target groups serve traffic.
+        /// </para>
+        /// </summary>
+        public ResolvedConfiguration ResolvedConfiguration
+        {
+            get { return this._resolvedConfiguration; }
+            set { this._resolvedConfiguration = value; }
+        }
+
+        // Check to see if ResolvedConfiguration property is set
+        internal bool IsSetResolvedConfiguration()
+        {
+            return this._resolvedConfiguration != null;
         }
 
         /// <summary>

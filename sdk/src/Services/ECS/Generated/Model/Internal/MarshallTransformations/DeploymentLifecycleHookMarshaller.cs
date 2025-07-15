@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LoadBalancer Marshaller
+    /// DeploymentLifecycleHook Marshaller
     /// </summary>
-    public class LoadBalancerMarshaller : IRequestMarshaller<LoadBalancer, JsonMarshallerContext> 
+    public class DeploymentLifecycleHookMarshaller : IRequestMarshaller<DeploymentLifecycleHook, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,43 +42,37 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LoadBalancer requestObject, JsonMarshallerContext context)
+        public void Marshall(DeploymentLifecycleHook requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAdvancedConfiguration())
+            if(requestObject.IsSetHookDetails())
             {
-                context.Writer.WritePropertyName("advancedConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AdvancedConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AdvancedConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("hookDetails");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.HookDetails);
             }
 
-            if(requestObject.IsSetContainerName())
+            if(requestObject.IsSetHookTargetArn())
             {
-                context.Writer.WritePropertyName("containerName");
-                context.Writer.WriteStringValue(requestObject.ContainerName);
+                context.Writer.WritePropertyName("hookTargetArn");
+                context.Writer.WriteStringValue(requestObject.HookTargetArn);
             }
 
-            if(requestObject.IsSetContainerPort())
+            if(requestObject.IsSetLifecycleStages())
             {
-                context.Writer.WritePropertyName("containerPort");
-                context.Writer.WriteNumberValue(requestObject.ContainerPort.Value);
+                context.Writer.WritePropertyName("lifecycleStages");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectLifecycleStagesListValue in requestObject.LifecycleStages)
+                {
+                        context.Writer.WriteStringValue(requestObjectLifecycleStagesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetLoadBalancerName())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("loadBalancerName");
-                context.Writer.WriteStringValue(requestObject.LoadBalancerName);
-            }
-
-            if(requestObject.IsSetTargetGroupArn())
-            {
-                context.Writer.WritePropertyName("targetGroupArn");
-                context.Writer.WriteStringValue(requestObject.TargetGroupArn);
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }
@@ -86,7 +80,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LoadBalancerMarshaller Instance = new LoadBalancerMarshaller();
+        public readonly static DeploymentLifecycleHookMarshaller Instance = new DeploymentLifecycleHookMarshaller();
 
     }
 }

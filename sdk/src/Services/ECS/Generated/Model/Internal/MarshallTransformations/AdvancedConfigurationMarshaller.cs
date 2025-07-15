@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LoadBalancer Marshaller
+    /// AdvancedConfiguration Marshaller
     /// </summary>
-    public class LoadBalancerMarshaller : IRequestMarshaller<LoadBalancer, JsonMarshallerContext> 
+    public class AdvancedConfigurationMarshaller : IRequestMarshaller<AdvancedConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,43 +42,32 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LoadBalancer requestObject, JsonMarshallerContext context)
+        public void Marshall(AdvancedConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAdvancedConfiguration())
+            if(requestObject.IsSetAlternateTargetGroupArn())
             {
-                context.Writer.WritePropertyName("advancedConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AdvancedConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AdvancedConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("alternateTargetGroupArn");
+                context.Writer.WriteStringValue(requestObject.AlternateTargetGroupArn);
             }
 
-            if(requestObject.IsSetContainerName())
+            if(requestObject.IsSetProductionListenerRule())
             {
-                context.Writer.WritePropertyName("containerName");
-                context.Writer.WriteStringValue(requestObject.ContainerName);
+                context.Writer.WritePropertyName("productionListenerRule");
+                context.Writer.WriteStringValue(requestObject.ProductionListenerRule);
             }
 
-            if(requestObject.IsSetContainerPort())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("containerPort");
-                context.Writer.WriteNumberValue(requestObject.ContainerPort.Value);
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
-            if(requestObject.IsSetLoadBalancerName())
+            if(requestObject.IsSetTestListenerRule())
             {
-                context.Writer.WritePropertyName("loadBalancerName");
-                context.Writer.WriteStringValue(requestObject.LoadBalancerName);
-            }
-
-            if(requestObject.IsSetTargetGroupArn())
-            {
-                context.Writer.WritePropertyName("targetGroupArn");
-                context.Writer.WriteStringValue(requestObject.TargetGroupArn);
+                context.Writer.WritePropertyName("testListenerRule");
+                context.Writer.WriteStringValue(requestObject.TestListenerRule);
             }
 
         }
@@ -86,7 +75,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LoadBalancerMarshaller Instance = new LoadBalancerMarshaller();
+        public readonly static AdvancedConfigurationMarshaller Instance = new AdvancedConfigurationMarshaller();
 
     }
 }

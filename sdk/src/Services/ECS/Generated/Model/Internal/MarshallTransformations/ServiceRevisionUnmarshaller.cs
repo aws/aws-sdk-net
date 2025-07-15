@@ -122,6 +122,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("resolvedConfiguration", targetDepth))
+                {
+                    var unmarshaller = ResolvedConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ResolvedConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("serviceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
