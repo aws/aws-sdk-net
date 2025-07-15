@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdatePipeline operation
+    /// Response Unmarshaller for ListPipelineVersions operation
     /// </summary>  
-    public class UpdatePipelineResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListPipelineVersionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdatePipelineResponse response = new UpdatePipelineResponse();
+            ListPipelineVersionsResponse response = new ListPipelineVersionsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PipelineArn", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PipelineArn = unmarshaller.Unmarshall(context, ref reader);
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PipelineVersionId", targetDepth))
+                if (context.TestExpression("PipelineVersionSummaries", targetDepth))
                 {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.PipelineVersionId = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<PipelineVersionSummary, PipelineVersionSummaryUnmarshaller>(PipelineVersionSummaryUnmarshaller.Instance);
+                    response.PipelineVersionSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -89,10 +89,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -101,9 +97,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdatePipelineResponseUnmarshaller _instance = new UpdatePipelineResponseUnmarshaller();        
+        private static ListPipelineVersionsResponseUnmarshaller _instance = new ListPipelineVersionsResponseUnmarshaller();        
 
-        internal static UpdatePipelineResponseUnmarshaller GetInstance()
+        internal static ListPipelineVersionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +107,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdatePipelineResponseUnmarshaller Instance
+        public static ListPipelineVersionsResponseUnmarshaller Instance
         {
             get
             {

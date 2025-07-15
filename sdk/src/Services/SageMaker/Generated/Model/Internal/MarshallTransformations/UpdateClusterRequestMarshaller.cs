@@ -114,6 +114,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NodeRecovery);
             }
 
+            if(publicRequest.IsSetRestrictedInstanceGroups())
+            {
+                context.Writer.WritePropertyName("RestrictedInstanceGroups");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRestrictedInstanceGroupsListValue in publicRequest.RestrictedInstanceGroups)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ClusterRestrictedInstanceGroupSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRestrictedInstanceGroupsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

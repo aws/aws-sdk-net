@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private List<ClusterInstanceGroupDetails> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupDetails>() : null;
         private ClusterNodeRecovery _nodeRecovery;
         private ClusterOrchestrator _orchestrator;
+        private List<ClusterRestrictedInstanceGroupDetails> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupDetails>() : null;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -195,6 +196,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOrchestrator()
         {
             return this._orchestrator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestrictedInstanceGroups. 
+        /// <para>
+        /// The specialized instance groups for training models like Amazon Nova to be created
+        /// in the SageMaker HyperPod cluster.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ClusterRestrictedInstanceGroupDetails> RestrictedInstanceGroups
+        {
+            get { return this._restrictedInstanceGroups; }
+            set { this._restrictedInstanceGroups = value; }
+        }
+
+        // Check to see if RestrictedInstanceGroups property is set
+        internal bool IsSetRestrictedInstanceGroups()
+        {
+            return this._restrictedInstanceGroups != null && (this._restrictedInstanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

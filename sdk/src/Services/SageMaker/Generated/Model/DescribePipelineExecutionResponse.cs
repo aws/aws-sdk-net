@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private string _pipelineExecutionDisplayName;
         private PipelineExecutionStatus _pipelineExecutionStatus;
         private PipelineExperimentConfig _pipelineExperimentConfig;
+        private long? _pipelineVersionId;
         private SelectiveExecutionConfig _selectiveExecutionConfig;
 
         /// <summary>
@@ -258,6 +259,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineExperimentConfig()
         {
             return this._pipelineExperimentConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionId. 
+        /// <para>
+        /// The ID of the pipeline version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long? PipelineVersionId
+        {
+            get { return this._pipelineVersionId; }
+            set { this._pipelineVersionId = value; }
+        }
+
+        // Check to see if PipelineVersionId property is set
+        internal bool IsSetPipelineVersionId()
+        {
+            return this._pipelineVersionId.HasValue; 
         }
 
         /// <summary>

@@ -114,6 +114,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetRestrictedInstanceGroups())
+            {
+                context.Writer.WritePropertyName("RestrictedInstanceGroups");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRestrictedInstanceGroupsListValue in publicRequest.RestrictedInstanceGroups)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ClusterRestrictedInstanceGroupSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRestrictedInstanceGroupsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

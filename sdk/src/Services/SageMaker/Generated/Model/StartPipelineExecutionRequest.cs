@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _pipelineExecutionDisplayName;
         private string _pipelineName;
         private List<Parameter> _pipelineParameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
+        private long? _pipelineVersionId;
         private SelectiveExecutionConfig _selectiveExecutionConfig;
 
         /// <summary>
@@ -161,6 +162,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineParameters()
         {
             return this._pipelineParameters != null && (this._pipelineParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionId. 
+        /// <para>
+        /// The ID of the pipeline version to start execution from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long? PipelineVersionId
+        {
+            get { return this._pipelineVersionId; }
+            set { this._pipelineVersionId = value; }
+        }
+
+        // Check to see if PipelineVersionId property is set
+        internal bool IsSetPipelineVersionId()
+        {
+            return this._pipelineVersionId.HasValue; 
         }
 
         /// <summary>

@@ -30,37 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePipeline operation.
-    /// Describes the details of a pipeline.
+    /// This is the response object from the UpdatePipelineVersion operation.
     /// </summary>
-    public partial class DescribePipelineRequest : AmazonSageMakerRequest
+    public partial class UpdatePipelineVersionResponse : AmazonWebServiceResponse
     {
-        private string _pipelineName;
+        private string _pipelineArn;
         private long? _pipelineVersionId;
 
         /// <summary>
-        /// Gets and sets the property PipelineName. 
+        /// Gets and sets the property PipelineArn. 
         /// <para>
-        /// The name or Amazon Resource Name (ARN) of the pipeline to describe.
+        /// The Amazon Resource Name (ARN) of the pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string PipelineName
+        [AWSProperty(Min=0, Max=2048)]
+        public string PipelineArn
         {
-            get { return this._pipelineName; }
-            set { this._pipelineName = value; }
+            get { return this._pipelineArn; }
+            set { this._pipelineArn = value; }
         }
 
-        // Check to see if PipelineName property is set
-        internal bool IsSetPipelineName()
+        // Check to see if PipelineArn property is set
+        internal bool IsSetPipelineArn()
         {
-            return this._pipelineName != null;
+            return this._pipelineArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property PipelineVersionId. 
         /// <para>
-        /// The ID of the pipeline version to describe.
+        /// The ID of the pipeline version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
