@@ -41,6 +41,7 @@ namespace Amazon.EventBridge.Model
         private string _description;
         private string _eventSourceName;
         private string _kmsKeyIdentifier;
+        private LogConfig _logConfig;
         private string _name;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -160,6 +161,29 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetKmsKeyIdentifier()
         {
             return this._kmsKeyIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogConfig. 
+        /// <para>
+        /// The logging configuration settings for the event bus.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring
+        /// logs for event buses</a> in the <i>EventBridge User Guide</i>.
+        /// </para>
+        /// </summary>
+        public LogConfig LogConfig
+        {
+            get { return this._logConfig; }
+            set { this._logConfig = value; }
+        }
+
+        // Check to see if LogConfig property is set
+        internal bool IsSetLogConfig()
+        {
+            return this._logConfig != null;
         }
 
         /// <summary>
