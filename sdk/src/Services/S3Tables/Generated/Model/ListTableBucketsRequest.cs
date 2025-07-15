@@ -46,6 +46,7 @@ namespace Amazon.S3Tables.Model
         private string _continuationToken;
         private int? _maxBuckets;
         private string _prefix;
+        private TableBucketType _type;
 
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
@@ -104,6 +105,24 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetPrefix()
         {
             return this._prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of table buckets to filter by in the list.
+        /// </para>
+        /// </summary>
+        public TableBucketType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
