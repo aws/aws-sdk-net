@@ -40,6 +40,7 @@ namespace Amazon.S3.Model
         
         /// <summary>
         /// Gets or sets the expiration time for the presigned POST.
+        /// Defaults to one hour from the time the request is created.
         /// </summary>
         public DateTime? Expires { get; set; }
         
