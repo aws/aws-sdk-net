@@ -98,7 +98,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.addImport(serviceName, "System.Xml");
             writer.addImport(serviceName, "System.Xml.Linq");
         } else if (this.serviceName.toLowerCase().contains("rpcv2")) {
-            writer.addImport(serviceName, "AWSSDK.Extensions.CborProtocol.Internal");
+            writer.addImport(serviceName, "Amazon.Extensions.CborProtocol.Internal.Transform");
         }
     }
 
@@ -151,7 +151,10 @@ public final class HttpProtocolTestGenerator implements Runnable {
         for (var header : httpResponseTestCase.getHeaders().keySet()) {
             writer.write("webResponseData.Headers[$S] = $S;", header, httpResponseTestCase.getHeaders().get(header));
         }
-        writer.write("byte[] bytes = Encoding.ASCII.GetBytes($S);", httpResponseTestCase.getBody());
+        if (this.marshallerType.equals("Cbor"))
+            writer.write("byte[] bytes = Convert.FromBase64String($S);", httpResponseTestCase.getBody());
+        else
+            writer.write("byte[] bytes = Encoding.ASCII.GetBytes($S);", httpResponseTestCase.getBody());
         writer.write("var stream = new MemoryStream(bytes);");
         writer.write("var context = new $LUnmarshallerContext(stream,true,webResponseData);", marshallerType);
     }
@@ -311,8 +314,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()) || httpResponseTestCase.hasTag("defaults")
-                || trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName().toLowerCase().contains("cbor")) // Skip CBOR response tests until the unmarshallers are ready
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()) || httpResponseTestCase.hasTag("defaults"))
                     continue;
                 generateResponseTest(operation, httpResponseTestCase);
             }

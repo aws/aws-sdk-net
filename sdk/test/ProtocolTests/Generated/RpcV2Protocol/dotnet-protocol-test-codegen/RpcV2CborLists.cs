@@ -16,10 +16,10 @@
 /*
  * Do not modify this file. This file is generated.
  */
-using AWSSDK.Extensions.CborProtocol.Internal;
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 using Amazon.RpcV2Protocol;
 using Amazon.RpcV2Protocol.Model;
 using Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations;
@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.RpcV2Protocol
@@ -207,6 +208,209 @@ namespace AWSSDK.ProtocolTests.RpcV2Protocol
             Assert.AreEqual("application/cbor".Replace(" ",""), marshalledRequest.Headers["Accept"].Replace(" ",""));
             Assert.AreEqual("application/cbor".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
             Assert.AreEqual("rpc-v2-cbor".Replace(" ",""), marshalledRequest.Headers["smithy-protocol"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// Serializes RpcV2 Cbor lists
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborListsResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("v2pzdHJpbmdMaXN0n2Nmb29jYmFy/2lzdHJpbmdTZXSfY2Zvb2NiYXL/a2ludGVnZXJMaXN0nwEC/2tib29sZWFuTGlzdJ/19P9tdGltZXN0YW1wTGlzdJ/B+0HU1/vzgAAAwftB1Nf784AAAP9oZW51bUxpc3SfY0Zvb2Ew/2tpbnRFbnVtTGlzdJ8BAv9wbmVzdGVkU3RyaW5nTGlzdJ+fY2Zvb2NiYXL/n2NiYXpjcXV4//9tc3RydWN0dXJlTGlzdJ+/YWFhMWFiYTL/v2FhYTNhYmE0//9oYmxvYkxpc3SfQ2Zvb0NiYXL//w==");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new RpcV2CborListsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new RpcV2CborListsResponse
+            {
+                StringList =  new List<string>()
+                {
+                    "foo",
+                    "bar",
+                },
+                StringSet =  new List<string>()
+                {
+                    "foo",
+                    "bar",
+                },
+                IntegerList =  new List<int>()
+                {
+                    1,
+                    2,
+                },
+                BooleanList =  new List<bool>()
+                {
+                    true,
+                    false,
+                },
+                TimestampList =  new List<DateTime>()
+                {
+                    ProtocolTestConstants.epoch.AddSeconds(1398796238),
+                    ProtocolTestConstants.epoch.AddSeconds(1398796238),
+                },
+                EnumList =  new List<string>()
+                {
+                    "Foo",
+                    "0",
+                },
+                IntEnumList =  new List<int>()
+                {
+                    1,
+                    2,
+                },
+                NestedStringList =  new List<List<string>>()
+                {
+                     new List<string>()
+                    {
+                        "foo",
+                        "bar",
+                    },
+                     new List<string>()
+                    {
+                        "baz",
+                        "qux",
+                    },
+                },
+                StructureList =  new List<StructureListMember>()
+                {
+                    new StructureListMember
+                    {
+                        A = "1",
+                        B = "2",
+                    },
+                    new StructureListMember
+                    {
+                        A = "3",
+                        B = "4",
+                    },
+                },
+                BlobList =  new List<MemoryStream>()
+                {
+                    new MemoryStream(Encoding.UTF8.GetBytes("foo")),
+                    new MemoryStream(Encoding.UTF8.GetBytes("bar")),
+                },
+            };
+
+            // Assert
+            var actualResponse = (RpcV2CborListsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<RpcV2CborListsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Serializes empty RpcV2 Cbor lists
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborListsEmptyResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("v2pzdHJpbmdMaXN0n///");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new RpcV2CborListsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new RpcV2CborListsResponse
+            {
+                StringList =  new List<string>()
+                {
+                },
+            };
+
+            // Assert
+            var actualResponse = (RpcV2CborListsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<RpcV2CborListsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Can deserialize indefinite length text strings inside an
+        /// indefinite length list
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborIndefiniteStringInsideIndefiniteListCanDeserializeResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("v2pzdHJpbmdMaXN0n394HUFuIGV4YW1wbGUgaW5kZWZpbml0ZSBzdHJpbmcsdyB3aGljaCB3aWxsIGJlIGNodW5rZWQsbiBvbiBlYWNoIGNvbW1h/394NUFub3RoZXIgZXhhbXBsZSBpbmRlZmluaXRlIHN0cmluZyB3aXRoIG9ubHkgb25lIGNodW5r/3ZUaGlzIGlzIGEgcGxhaW4gc3RyaW5n//8=");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new RpcV2CborListsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new RpcV2CborListsResponse
+            {
+                StringList =  new List<string>()
+                {
+                    "An example indefinite string, which will be chunked, on each comma",
+                    "Another example indefinite string with only one chunk",
+                    "This is a plain string",
+                },
+            };
+
+            // Assert
+            var actualResponse = (RpcV2CborListsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<RpcV2CborListsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Can deserialize indefinite length text strings inside a definite
+        /// length list
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborIndefiniteStringInsideDefiniteListCanDeserializeResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("oWpzdHJpbmdMaXN0g394HUFuIGV4YW1wbGUgaW5kZWZpbml0ZSBzdHJpbmcsdyB3aGljaCB3aWxsIGJlIGNodW5rZWQsbiBvbiBlYWNoIGNvbW1h/394NUFub3RoZXIgZXhhbXBsZSBpbmRlZmluaXRlIHN0cmluZyB3aXRoIG9ubHkgb25lIGNodW5r/3ZUaGlzIGlzIGEgcGxhaW4gc3RyaW5n");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new RpcV2CborListsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new RpcV2CborListsResponse
+            {
+                StringList =  new List<string>()
+                {
+                    "An example indefinite string, which will be chunked, on each comma",
+                    "Another example indefinite string with only one chunk",
+                    "This is a plain string",
+                },
+            };
+
+            // Assert
+            var actualResponse = (RpcV2CborListsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<RpcV2CborListsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
     }

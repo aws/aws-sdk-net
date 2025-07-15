@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Formats.Cbor;
 using Xunit;
-using AWSSDK.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol;
 
 namespace Amazon.CborProtocol.Tests;
 

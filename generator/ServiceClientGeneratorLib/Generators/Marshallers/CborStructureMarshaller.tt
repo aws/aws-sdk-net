@@ -8,8 +8,8 @@
 
 	AddCommonUsingStatements();
 #>
-using AWSSDK.Extensions.CborProtocol;
-using AWSSDK.Extensions.CborProtocol.Internal.Transform;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformations

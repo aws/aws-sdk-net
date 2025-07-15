@@ -29,90 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
 using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SimpleScalarProperties operation
     /// </summary>  
-    public class SimpleScalarPropertiesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class SimpleScalarPropertiesResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             SimpleScalarPropertiesResponse response = new SimpleScalarPropertiesResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            context.AddPathSegment("SimpleScalarProperties");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("blobValue", targetDepth))
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    response.BlobValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("byteValue", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.ByteValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("doubleValue", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    response.DoubleValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("falseBooleanValue", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.FalseBooleanValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("floatValue", targetDepth))
-                {
-                    var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    response.FloatValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("integerValue", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.IntegerValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("longValue", targetDepth))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.LongValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("shortValue", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.ShortValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("stringValue", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StringValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("trueBooleanValue", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.TrueBooleanValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "blobValue":
+                        {
+                            context.AddPathSegment("BlobValue");
+                            var unmarshaller = CborMemoryStreamUnmarshaller.Instance;
+                            response.BlobValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "byteValue":
+                        {
+                            context.AddPathSegment("ByteValue");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            response.ByteValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "doubleValue":
+                        {
+                            context.AddPathSegment("DoubleValue");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            response.DoubleValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "falseBooleanValue":
+                        {
+                            context.AddPathSegment("FalseBooleanValue");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            response.FalseBooleanValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "floatValue":
+                        {
+                            context.AddPathSegment("FloatValue");
+                            var unmarshaller = CborNullableFloatUnmarshaller.Instance;
+                            response.FloatValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "integerValue":
+                        {
+                            context.AddPathSegment("IntegerValue");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            response.IntegerValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "longValue":
+                        {
+                            context.AddPathSegment("LongValue");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            response.LongValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "shortValue":
+                        {
+                            context.AddPathSegment("ShortValue");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            response.ShortValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "stringValue":
+                        {
+                            context.AddPathSegment("StringValue");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.StringValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "trueBooleanValue":
+                        {
+                            context.AddPathSegment("TrueBooleanValue");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            response.TrueBooleanValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return response;
         }
@@ -124,19 +155,17 @@ namespace Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
-                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
             }
             return new AmazonRpcV2ProtocolException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

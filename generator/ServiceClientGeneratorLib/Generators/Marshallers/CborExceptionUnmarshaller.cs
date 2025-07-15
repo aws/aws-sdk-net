@@ -38,7 +38,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("using Amazon.Util;\r\nusing System.Formats.Cbor;\r\nusing AWSSDK.Extensions.CborProto" +
+            this.Write("using Amazon.Util;\r\nusing System.Formats.Cbor;\r\nusing Amazon.Extensions.CborProto" +
                     "col.Internal.Transform;\r\n#pragma warning disable CS0612,CS0618\r\nnamespace ");
             
             #line 15 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborExceptionUnmarshaller.tt"

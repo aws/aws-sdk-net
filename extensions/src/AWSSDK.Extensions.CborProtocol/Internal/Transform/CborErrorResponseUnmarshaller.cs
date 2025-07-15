@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Formats.Cbor;
 using System.IO;
 
-namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
+namespace Amazon.Extensions.CborProtocol.Internal.Transform
 {
     /// <summary>
     /// Class for unmarshalling CBOR service responses.

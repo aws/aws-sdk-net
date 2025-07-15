@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
+namespace Amazon.Extensions.CborProtocol.Internal.Transform
 {
     /// <summary>
     /// Interface for unmarshallers which unmarshall objects from response data.

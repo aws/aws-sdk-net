@@ -17,7 +17,7 @@ using System;
 using System.Formats.Cbor;
 using Amazon.Util;
 
-namespace AWSSDK.Extensions.CborProtocol
+namespace Amazon.Extensions.CborProtocol
 {
     public static class CborWriterExtensions
     {
