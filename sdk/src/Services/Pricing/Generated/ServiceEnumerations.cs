@@ -31,6 +31,22 @@ namespace Amazon.Pricing
     {
 
         /// <summary>
+        /// Constant ANY_OF for FilterType
+        /// </summary>
+        public static readonly FilterType ANY_OF = new FilterType("ANY_OF");
+        /// <summary>
+        /// Constant CONTAINS for FilterType
+        /// </summary>
+        public static readonly FilterType CONTAINS = new FilterType("CONTAINS");
+        /// <summary>
+        /// Constant EQUALS for FilterType
+        /// </summary>
+        public static readonly FilterType EQUALS = new FilterType("EQUALS");
+        /// <summary>
+        /// Constant NONE_OF for FilterType
+        /// </summary>
+        public static readonly FilterType NONE_OF = new FilterType("NONE_OF");
+        /// <summary>
         /// Constant TERM_MATCH for FilterType
         /// </summary>
         public static readonly FilterType TERM_MATCH = new FilterType("TERM_MATCH");
