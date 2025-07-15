@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ServiceConnectClientAlias Marshaller
+    /// ServiceConnectTestTrafficRules Marshaller
     /// </summary>
-    public class ServiceConnectClientAliasMarshaller : IRequestMarshaller<ServiceConnectClientAlias, JsonMarshallerContext> 
+    public class ServiceConnectTestTrafficRulesMarshaller : IRequestMarshaller<ServiceConnectTestTrafficRules, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,29 +44,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ServiceConnectClientAlias requestObject, JsonMarshallerContext context)
+        public void Marshall(ServiceConnectTestTrafficRules requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDnsName())
+            if(requestObject.IsSetHeader())
             {
-                context.Writer.WritePropertyName("dnsName");
-                context.Writer.Write(requestObject.DnsName);
-            }
-
-            if(requestObject.IsSetPort())
-            {
-                context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port);
-            }
-
-            if(requestObject.IsSetTestTrafficRules())
-            {
-                context.Writer.WritePropertyName("testTrafficRules");
+                context.Writer.WritePropertyName("header");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ServiceConnectTestTrafficRulesMarshaller.Instance;
-                marshaller.Marshall(requestObject.TestTrafficRules, context);
+                var marshaller = ServiceConnectTestTrafficHeaderRulesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Header, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -76,7 +64,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ServiceConnectClientAliasMarshaller Instance = new ServiceConnectClientAliasMarshaller();
+        public readonly static ServiceConnectTestTrafficRulesMarshaller Instance = new ServiceConnectTestTrafficRulesMarshaller();
 
     }
 }

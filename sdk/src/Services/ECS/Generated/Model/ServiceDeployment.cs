@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
         private ServiceDeploymentCircuitBreaker _deploymentCircuitBreaker;
         private DeploymentConfiguration _deploymentConfiguration;
         private DateTime? _finishedAt;
+        private ServiceDeploymentLifecycleStage _lifecycleStage;
         private Rollback _rollback;
         private string _serviceArn;
         private string _serviceDeploymentArn;
@@ -162,6 +163,48 @@ namespace Amazon.ECS.Model
         internal bool IsSetFinishedAt()
         {
             return this._finishedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleStage. 
+        /// <para>
+        /// The current lifecycle stage of the deployment. Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SCALE_UP_IN_PROGRESS</c> - Creating the new (green) tasks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TEST_TRAFFIC_SHIFT_IN_PROGRESS</c> - Shifting test traffic to the new (green)
+        /// tasks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PRODUCTION_TRAFFIC_SHIFT_IN_PROGRESS</c> - Shifting production traffic to the
+        /// new (green) tasks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BAKE_TIME_IN_PROGRESS</c> - The duration when both blue and green service revisions
+        /// are running simultaneously after the production traffic has shifted
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CLEAN_UP_IN_PROGRESS</c> - Stopping the old (blue) tasks
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ServiceDeploymentLifecycleStage LifecycleStage
+        {
+            get { return this._lifecycleStage; }
+            set { this._lifecycleStage = value; }
+        }
+
+        // Check to see if LifecycleStage property is set
+        internal bool IsSetLifecycleStage()
+        {
+            return this._lifecycleStage != null;
         }
 
         /// <summary>

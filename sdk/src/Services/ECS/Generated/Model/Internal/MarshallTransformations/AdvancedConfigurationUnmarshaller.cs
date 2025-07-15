@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceConnectClientAlias Object
+    /// Response Unmarshaller for AdvancedConfiguration Object
     /// </summary>  
-    public class ServiceConnectClientAliasUnmarshaller : IUnmarshaller<ServiceConnectClientAlias, XmlUnmarshallerContext>, IUnmarshaller<ServiceConnectClientAlias, JsonUnmarshallerContext>
+    public class AdvancedConfigurationUnmarshaller : IUnmarshaller<AdvancedConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AdvancedConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceConnectClientAlias IUnmarshaller<ServiceConnectClientAlias, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AdvancedConfiguration IUnmarshaller<AdvancedConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceConnectClientAlias Unmarshall(JsonUnmarshallerContext context)
+        public AdvancedConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            ServiceConnectClientAlias unmarshalledObject = new ServiceConnectClientAlias();
+            AdvancedConfiguration unmarshalledObject = new AdvancedConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,28 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dnsName", targetDepth))
+                if (context.TestExpression("alternateTargetGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlternateTargetGroupArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("port", targetDepth))
+                if (context.TestExpression("productionListenerRule", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProductionListenerRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("testTrafficRules", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth))
                 {
-                    var unmarshaller = ServiceConnectTestTrafficRulesUnmarshaller.Instance;
-                    unmarshalledObject.TestTrafficRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("testListenerRule", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestListenerRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +95,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceConnectClientAliasUnmarshaller _instance = new ServiceConnectClientAliasUnmarshaller();        
+        private static AdvancedConfigurationUnmarshaller _instance = new AdvancedConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceConnectClientAliasUnmarshaller Instance
+        public static AdvancedConfigurationUnmarshaller Instance
         {
             get
             {

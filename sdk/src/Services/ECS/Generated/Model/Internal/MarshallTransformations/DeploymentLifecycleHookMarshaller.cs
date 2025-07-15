@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ServiceConnectClientAlias Marshaller
+    /// DeploymentLifecycleHook Marshaller
     /// </summary>
-    public class ServiceConnectClientAliasMarshaller : IRequestMarshaller<ServiceConnectClientAlias, JsonMarshallerContext> 
+    public class DeploymentLifecycleHookMarshaller : IRequestMarshaller<DeploymentLifecycleHook, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,37 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ServiceConnectClientAlias requestObject, JsonMarshallerContext context)
+        public void Marshall(DeploymentLifecycleHook requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDnsName())
+            if(requestObject.IsSetHookDetails())
             {
-                context.Writer.WritePropertyName("dnsName");
-                context.Writer.Write(requestObject.DnsName);
+                context.Writer.WritePropertyName("hookDetails");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.HookDetails);
             }
 
-            if(requestObject.IsSetPort())
+            if(requestObject.IsSetHookTargetArn())
             {
-                context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.WritePropertyName("hookTargetArn");
+                context.Writer.Write(requestObject.HookTargetArn);
             }
 
-            if(requestObject.IsSetTestTrafficRules())
+            if(requestObject.IsSetLifecycleStages())
             {
-                context.Writer.WritePropertyName("testTrafficRules");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("lifecycleStages");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLifecycleStagesListValue in requestObject.LifecycleStages)
+                {
+                        context.Writer.Write(requestObjectLifecycleStagesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
 
-                var marshaller = ServiceConnectTestTrafficRulesMarshaller.Instance;
-                marshaller.Marshall(requestObject.TestTrafficRules, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.Write(requestObject.RoleArn);
             }
 
         }
@@ -76,7 +82,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ServiceConnectClientAliasMarshaller Instance = new ServiceConnectClientAliasMarshaller();
+        public readonly static DeploymentLifecycleHookMarshaller Instance = new DeploymentLifecycleHookMarshaller();
 
     }
 }

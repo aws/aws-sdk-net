@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceConnectClientAlias Object
+    /// Response Unmarshaller for ServiceRevisionLoadBalancer Object
     /// </summary>  
-    public class ServiceConnectClientAliasUnmarshaller : IUnmarshaller<ServiceConnectClientAlias, XmlUnmarshallerContext>, IUnmarshaller<ServiceConnectClientAlias, JsonUnmarshallerContext>
+    public class ServiceRevisionLoadBalancerUnmarshaller : IUnmarshaller<ServiceRevisionLoadBalancer, XmlUnmarshallerContext>, IUnmarshaller<ServiceRevisionLoadBalancer, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceConnectClientAlias IUnmarshaller<ServiceConnectClientAlias, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ServiceRevisionLoadBalancer IUnmarshaller<ServiceRevisionLoadBalancer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceConnectClientAlias Unmarshall(JsonUnmarshallerContext context)
+        public ServiceRevisionLoadBalancer Unmarshall(JsonUnmarshallerContext context)
         {
-            ServiceConnectClientAlias unmarshalledObject = new ServiceConnectClientAlias();
+            ServiceRevisionLoadBalancer unmarshalledObject = new ServiceRevisionLoadBalancer();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dnsName", targetDepth))
+                if (context.TestExpression("productionListenerRule", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProductionListenerRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("port", targetDepth))
+                if (context.TestExpression("targetGroupArn", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("testTrafficRules", targetDepth))
-                {
-                    var unmarshaller = ServiceConnectTestTrafficRulesUnmarshaller.Instance;
-                    unmarshalledObject.TestTrafficRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetGroupArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceConnectClientAliasUnmarshaller _instance = new ServiceConnectClientAliasUnmarshaller();        
+        private static ServiceRevisionLoadBalancerUnmarshaller _instance = new ServiceRevisionLoadBalancerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceConnectClientAliasUnmarshaller Instance
+        public static ServiceRevisionLoadBalancerUnmarshaller Instance
         {
             get
             {

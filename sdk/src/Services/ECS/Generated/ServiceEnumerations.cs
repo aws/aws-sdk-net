@@ -893,6 +893,76 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type DeploymentLifecycleHookStage.
+    /// </summary>
+    public class DeploymentLifecycleHookStage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POST_PRODUCTION_TRAFFIC_SHIFT for DeploymentLifecycleHookStage
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStage POST_PRODUCTION_TRAFFIC_SHIFT = new DeploymentLifecycleHookStage("POST_PRODUCTION_TRAFFIC_SHIFT");
+        /// <summary>
+        /// Constant POST_SCALE_UP for DeploymentLifecycleHookStage
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStage POST_SCALE_UP = new DeploymentLifecycleHookStage("POST_SCALE_UP");
+        /// <summary>
+        /// Constant POST_TEST_TRAFFIC_SHIFT for DeploymentLifecycleHookStage
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStage POST_TEST_TRAFFIC_SHIFT = new DeploymentLifecycleHookStage("POST_TEST_TRAFFIC_SHIFT");
+        /// <summary>
+        /// Constant PRE_SCALE_UP for DeploymentLifecycleHookStage
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStage PRE_SCALE_UP = new DeploymentLifecycleHookStage("PRE_SCALE_UP");
+        /// <summary>
+        /// Constant PRODUCTION_TRAFFIC_SHIFT for DeploymentLifecycleHookStage
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStage PRODUCTION_TRAFFIC_SHIFT = new DeploymentLifecycleHookStage("PRODUCTION_TRAFFIC_SHIFT");
+        /// <summary>
+        /// Constant RECONCILE_SERVICE for DeploymentLifecycleHookStage
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStage RECONCILE_SERVICE = new DeploymentLifecycleHookStage("RECONCILE_SERVICE");
+        /// <summary>
+        /// Constant TEST_TRAFFIC_SHIFT for DeploymentLifecycleHookStage
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStage TEST_TRAFFIC_SHIFT = new DeploymentLifecycleHookStage("TEST_TRAFFIC_SHIFT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentLifecycleHookStage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentLifecycleHookStage FindValue(string value)
+        {
+            return FindValue<DeploymentLifecycleHookStage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentLifecycleHookStage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentRolloutState.
     /// </summary>
     public class DeploymentRolloutState : ConstantClass
@@ -940,6 +1010,56 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeploymentRolloutState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentStrategy.
+    /// </summary>
+    public class DeploymentStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLUE_GREEN for DeploymentStrategy
+        /// </summary>
+        public static readonly DeploymentStrategy BLUE_GREEN = new DeploymentStrategy("BLUE_GREEN");
+        /// <summary>
+        /// Constant ROLLING for DeploymentStrategy
+        /// </summary>
+        public static readonly DeploymentStrategy ROLLING = new DeploymentStrategy("ROLLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentStrategy FindValue(string value)
+        {
+            return FindValue<DeploymentStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentStrategy(string value)
         {
             return FindValue(value);
         }
@@ -2516,6 +2636,88 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Scope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceDeploymentLifecycleStage.
+    /// </summary>
+    public class ServiceDeploymentLifecycleStage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BAKE_TIME for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage BAKE_TIME = new ServiceDeploymentLifecycleStage("BAKE_TIME");
+        /// <summary>
+        /// Constant CLEAN_UP for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage CLEAN_UP = new ServiceDeploymentLifecycleStage("CLEAN_UP");
+        /// <summary>
+        /// Constant POST_PRODUCTION_TRAFFIC_SHIFT for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage POST_PRODUCTION_TRAFFIC_SHIFT = new ServiceDeploymentLifecycleStage("POST_PRODUCTION_TRAFFIC_SHIFT");
+        /// <summary>
+        /// Constant POST_SCALE_UP for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage POST_SCALE_UP = new ServiceDeploymentLifecycleStage("POST_SCALE_UP");
+        /// <summary>
+        /// Constant POST_TEST_TRAFFIC_SHIFT for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage POST_TEST_TRAFFIC_SHIFT = new ServiceDeploymentLifecycleStage("POST_TEST_TRAFFIC_SHIFT");
+        /// <summary>
+        /// Constant PRE_SCALE_UP for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage PRE_SCALE_UP = new ServiceDeploymentLifecycleStage("PRE_SCALE_UP");
+        /// <summary>
+        /// Constant PRODUCTION_TRAFFIC_SHIFT for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage PRODUCTION_TRAFFIC_SHIFT = new ServiceDeploymentLifecycleStage("PRODUCTION_TRAFFIC_SHIFT");
+        /// <summary>
+        /// Constant RECONCILE_SERVICE for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage RECONCILE_SERVICE = new ServiceDeploymentLifecycleStage("RECONCILE_SERVICE");
+        /// <summary>
+        /// Constant SCALE_UP for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage SCALE_UP = new ServiceDeploymentLifecycleStage("SCALE_UP");
+        /// <summary>
+        /// Constant TEST_TRAFFIC_SHIFT for ServiceDeploymentLifecycleStage
+        /// </summary>
+        public static readonly ServiceDeploymentLifecycleStage TEST_TRAFFIC_SHIFT = new ServiceDeploymentLifecycleStage("TEST_TRAFFIC_SHIFT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceDeploymentLifecycleStage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceDeploymentLifecycleStage FindValue(string value)
+        {
+            return FindValue<ServiceDeploymentLifecycleStage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceDeploymentLifecycleStage(string value)
         {
             return FindValue(value);
         }

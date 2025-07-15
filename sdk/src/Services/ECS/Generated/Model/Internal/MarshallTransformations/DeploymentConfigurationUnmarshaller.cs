@@ -72,10 +72,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Alarms = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("bakeTimeInMinutes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.BakeTimeInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deploymentCircuitBreaker", targetDepth))
                 {
                     var unmarshaller = DeploymentCircuitBreakerUnmarshaller.Instance;
                     unmarshalledObject.DeploymentCircuitBreaker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lifecycleHooks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DeploymentLifecycleHook, DeploymentLifecycleHookUnmarshaller>(DeploymentLifecycleHookUnmarshaller.Instance);
+                    unmarshalledObject.LifecycleHooks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maximumPercent", targetDepth))
@@ -88,6 +100,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MinimumHealthyPercent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("strategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Strategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

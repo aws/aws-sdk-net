@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ServiceConnectClientAlias Marshaller
+    /// AdvancedConfiguration Marshaller
     /// </summary>
-    public class ServiceConnectClientAliasMarshaller : IRequestMarshaller<ServiceConnectClientAlias, JsonMarshallerContext> 
+    public class AdvancedConfigurationMarshaller : IRequestMarshaller<AdvancedConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,32 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ServiceConnectClientAlias requestObject, JsonMarshallerContext context)
+        public void Marshall(AdvancedConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDnsName())
+            if(requestObject.IsSetAlternateTargetGroupArn())
             {
-                context.Writer.WritePropertyName("dnsName");
-                context.Writer.Write(requestObject.DnsName);
+                context.Writer.WritePropertyName("alternateTargetGroupArn");
+                context.Writer.Write(requestObject.AlternateTargetGroupArn);
             }
 
-            if(requestObject.IsSetPort())
+            if(requestObject.IsSetProductionListenerRule())
             {
-                context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.WritePropertyName("productionListenerRule");
+                context.Writer.Write(requestObject.ProductionListenerRule);
             }
 
-            if(requestObject.IsSetTestTrafficRules())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("testTrafficRules");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.Write(requestObject.RoleArn);
+            }
 
-                var marshaller = ServiceConnectTestTrafficRulesMarshaller.Instance;
-                marshaller.Marshall(requestObject.TestTrafficRules, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetTestListenerRule())
+            {
+                context.Writer.WritePropertyName("testListenerRule");
+                context.Writer.Write(requestObject.TestListenerRule);
             }
 
         }
@@ -76,7 +77,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ServiceConnectClientAliasMarshaller Instance = new ServiceConnectClientAliasMarshaller();
+        public readonly static AdvancedConfigurationMarshaller Instance = new AdvancedConfigurationMarshaller();
 
     }
 }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceConnectClientAlias Object
+    /// Response Unmarshaller for ServiceConnectTestTrafficHeaderMatchRules Object
     /// </summary>  
-    public class ServiceConnectClientAliasUnmarshaller : IUnmarshaller<ServiceConnectClientAlias, XmlUnmarshallerContext>, IUnmarshaller<ServiceConnectClientAlias, JsonUnmarshallerContext>
+    public class ServiceConnectTestTrafficHeaderMatchRulesUnmarshaller : IUnmarshaller<ServiceConnectTestTrafficHeaderMatchRules, XmlUnmarshallerContext>, IUnmarshaller<ServiceConnectTestTrafficHeaderMatchRules, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceConnectClientAlias IUnmarshaller<ServiceConnectClientAlias, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ServiceConnectTestTrafficHeaderMatchRules IUnmarshaller<ServiceConnectTestTrafficHeaderMatchRules, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceConnectClientAlias Unmarshall(JsonUnmarshallerContext context)
+        public ServiceConnectTestTrafficHeaderMatchRules Unmarshall(JsonUnmarshallerContext context)
         {
-            ServiceConnectClientAlias unmarshalledObject = new ServiceConnectClientAlias();
+            ServiceConnectTestTrafficHeaderMatchRules unmarshalledObject = new ServiceConnectTestTrafficHeaderMatchRules();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dnsName", targetDepth))
+                if (context.TestExpression("exact", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("port", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("testTrafficRules", targetDepth))
-                {
-                    var unmarshaller = ServiceConnectTestTrafficRulesUnmarshaller.Instance;
-                    unmarshalledObject.TestTrafficRules = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Exact = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceConnectClientAliasUnmarshaller _instance = new ServiceConnectClientAliasUnmarshaller();        
+        private static ServiceConnectTestTrafficHeaderMatchRulesUnmarshaller _instance = new ServiceConnectTestTrafficHeaderMatchRulesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceConnectClientAliasUnmarshaller Instance
+        public static ServiceConnectTestTrafficHeaderMatchRulesUnmarshaller Instance
         {
             get
             {
