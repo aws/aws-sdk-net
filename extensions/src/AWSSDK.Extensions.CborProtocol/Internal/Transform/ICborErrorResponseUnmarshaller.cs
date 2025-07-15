@@ -15,7 +15,7 @@
 
 using Amazon.Runtime.Internal;
 
-namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
+namespace Amazon.Extensions.CborProtocol.Internal.Transform
 {
     /// <summary>
     /// The interface for unmarshalling a cbor error response.

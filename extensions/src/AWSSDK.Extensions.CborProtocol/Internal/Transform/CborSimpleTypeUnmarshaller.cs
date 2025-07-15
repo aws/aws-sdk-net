@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
-namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
+namespace Amazon.Extensions.CborProtocol.Internal.Transform
 {
     static class CborSimpleTypeUnmarshaller<T>
     {
@@ -45,7 +45,7 @@ namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
             )
             {
                 reader.ReadNull();
-                value = null;
+                value = default(T);
             }
             else if (typeof(T) == typeof(string))
                 value = reader.ReadTextString();
