@@ -31,7 +31,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIngestions operation.
-    /// Lists the history of SPICE ingestions for a dataset.
+    /// Lists the history of SPICE ingestions for a dataset. Limited to 5 TPS per user and
+    /// 25 TPS per account.
     /// </summary>
     public partial class ListIngestionsRequest : AmazonQuickSightRequest
     {

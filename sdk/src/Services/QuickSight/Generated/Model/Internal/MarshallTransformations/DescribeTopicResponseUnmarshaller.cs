@@ -58,6 +58,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomInstructions", targetDepth))
+                {
+                    var unmarshaller = CustomInstructionsUnmarshaller.Instance;
+                    response.CustomInstructions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
