@@ -92,6 +92,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3Properties())
+            {
+                context.Writer.WritePropertyName("s3Properties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3PropertiesPatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Properties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSparkEmrProperties())
             {
                 context.Writer.WritePropertyName("sparkEmrProperties");
