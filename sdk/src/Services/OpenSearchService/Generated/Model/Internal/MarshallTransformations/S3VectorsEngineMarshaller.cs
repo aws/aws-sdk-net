@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AIMLOptionsInput Marshaller
+    /// S3VectorsEngine Marshaller
     /// </summary>
-    public class AIMLOptionsInputMarshaller : IRequestMarshaller<AIMLOptionsInput, JsonMarshallerContext> 
+    public class S3VectorsEngineMarshaller : IRequestMarshaller<S3VectorsEngine, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,14 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AIMLOptionsInput requestObject, JsonMarshallerContext context)
+        public void Marshall(S3VectorsEngine requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetNaturalLanguageQueryGenerationOptions())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("NaturalLanguageQueryGenerationOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = NaturalLanguageQueryGenerationOptionsInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.NaturalLanguageQueryGenerationOptions, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetS3VectorsEngine())
-            {
-                context.Writer.WritePropertyName("S3VectorsEngine");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3VectorsEngineMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3VectorsEngine, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Enabled");
+                context.Writer.Write(requestObject.Enabled);
             }
 
         }
@@ -75,7 +59,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AIMLOptionsInputMarshaller Instance = new AIMLOptionsInputMarshaller();
+        public readonly static S3VectorsEngineMarshaller Instance = new S3VectorsEngineMarshaller();
 
     }
 }

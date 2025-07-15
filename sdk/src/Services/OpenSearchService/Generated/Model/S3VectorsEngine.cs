@@ -30,46 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Data sources that are associated with an OpenSearch application.
+    /// Options for enabling S3 vectors engine features on the specified domain.
     /// </summary>
-    public partial class DataSource
+    public partial class S3VectorsEngine
     {
-        private string _dataSourceArn;
-        private string _dataSourceDescription;
+        private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property DataSourceArn.
-        /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string DataSourceArn
-        {
-            get { return this._dataSourceArn; }
-            set { this._dataSourceArn = value; }
-        }
-
-        // Check to see if DataSourceArn property is set
-        internal bool IsSetDataSourceArn()
-        {
-            return this._dataSourceArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DataSourceDescription. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// Detailed description of a data source.
+        /// Enables S3 vectors engine features.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
-        public string DataSourceDescription
+        public bool Enabled
         {
-            get { return this._dataSourceDescription; }
-            set { this._dataSourceDescription = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if DataSourceDescription property is set
-        internal bool IsSetDataSourceDescription()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._dataSourceDescription != null;
+            return this._enabled.HasValue; 
         }
 
     }

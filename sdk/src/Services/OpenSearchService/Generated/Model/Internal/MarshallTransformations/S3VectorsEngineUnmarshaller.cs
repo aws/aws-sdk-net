@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AIMLOptionsOutput Object
+    /// Response Unmarshaller for S3VectorsEngine Object
     /// </summary>  
-    public class AIMLOptionsOutputUnmarshaller : IUnmarshaller<AIMLOptionsOutput, XmlUnmarshallerContext>, IUnmarshaller<AIMLOptionsOutput, JsonUnmarshallerContext>
+    public class S3VectorsEngineUnmarshaller : IUnmarshaller<S3VectorsEngine, XmlUnmarshallerContext>, IUnmarshaller<S3VectorsEngine, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AIMLOptionsOutput IUnmarshaller<AIMLOptionsOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3VectorsEngine IUnmarshaller<S3VectorsEngine, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AIMLOptionsOutput Unmarshall(JsonUnmarshallerContext context)
+        public S3VectorsEngine Unmarshall(JsonUnmarshallerContext context)
         {
-            AIMLOptionsOutput unmarshalledObject = new AIMLOptionsOutput();
+            S3VectorsEngine unmarshalledObject = new S3VectorsEngine();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NaturalLanguageQueryGenerationOptions", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth))
                 {
-                    var unmarshaller = NaturalLanguageQueryGenerationOptionsOutputUnmarshaller.Instance;
-                    unmarshalledObject.NaturalLanguageQueryGenerationOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3VectorsEngine", targetDepth))
-                {
-                    var unmarshaller = S3VectorsEngineUnmarshaller.Instance;
-                    unmarshalledObject.S3VectorsEngine = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static AIMLOptionsOutputUnmarshaller _instance = new AIMLOptionsOutputUnmarshaller();        
+        private static S3VectorsEngineUnmarshaller _instance = new S3VectorsEngineUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AIMLOptionsOutputUnmarshaller Instance
+        public static S3VectorsEngineUnmarshaller Instance
         {
             get
             {
