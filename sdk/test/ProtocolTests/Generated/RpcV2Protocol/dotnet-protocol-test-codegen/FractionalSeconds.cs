@@ -16,10 +16,10 @@
 /*
  * Do not modify this file. This file is generated.
  */
-using AWSSDK.Extensions.CborProtocol.Internal;
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 using Amazon.RpcV2Protocol;
 using Amazon.RpcV2Protocol.Model;
 using Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations;
@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.RpcV2Protocol
@@ -38,5 +39,37 @@ namespace AWSSDK.ProtocolTests.RpcV2Protocol
     [TestClass]
     public class FractionalSeconds
     {
+        /// <summary>
+        /// Ensures that clients can correctly parse timestamps with
+        /// fractional seconds
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborDateTimeWithFractionalSecondsResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("v2hkYXRldGltZcH7Qcw32zgPvnf/");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new FractionalSecondsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new FractionalSecondsResponse
+            {
+                Datetime = ProtocolTestConstants.epoch.AddSeconds(9.46845296123E8),
+            };
+
+            // Assert
+            var actualResponse = (FractionalSecondsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<FractionalSecondsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
     }
 }

@@ -16,10 +16,10 @@
 /*
  * Do not modify this file. This file is generated.
  */
-using AWSSDK.Extensions.CborProtocol.Internal;
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 using Amazon.RpcV2Protocol;
 using Amazon.RpcV2Protocol.Model;
 using Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations;
@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.RpcV2Protocol
@@ -170,6 +171,174 @@ namespace AWSSDK.ProtocolTests.RpcV2Protocol
             Assert.AreEqual("application/cbor".Replace(" ",""), marshalledRequest.Headers["Accept"].Replace(" ",""));
             Assert.AreEqual("application/cbor".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
             Assert.AreEqual("rpc-v2-cbor".Replace(" ",""), marshalledRequest.Headers["smithy-protocol"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// Deserializes maps
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborMapsResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("oW5kZW5zZVN0cnVjdE1hcKJjZm9voWJoaWV0aGVyZWNiYXqhYmhpY2J5ZQ==");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new RpcV2CborDenseMapsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new RpcV2CborDenseMapsResponse
+            {
+                DenseStructMap = new Dictionary<string, GreetingStruct>()
+                {
+
+                    { "foo", new GreetingStruct
+                    {
+                        Hi = "there",
+                    } },
+                    { "baz", new GreetingStruct
+                    {
+                        Hi = "bye",
+                    } },
+                },
+            };
+
+            // Assert
+            var actualResponse = (RpcV2CborDenseMapsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<RpcV2CborDenseMapsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Ensure that 0 and false are sent over the wire in all maps and
+        /// lists
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborDeserializesZeroValuesInMapsResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("om5kZW5zZU51bWJlck1hcKFheABvZGVuc2VCb29sZWFuTWFwoWF49A==");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new RpcV2CborDenseMapsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new RpcV2CborDenseMapsResponse
+            {
+                DenseNumberMap = new Dictionary<string, int>()
+                {
+
+                    { "x", 0 },
+                },
+                DenseBooleanMap = new Dictionary<string, bool>()
+                {
+
+                    { "x", false },
+                },
+            };
+
+            // Assert
+            var actualResponse = (RpcV2CborDenseMapsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<RpcV2CborDenseMapsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// A response that contains a dense map of sets
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborDeserializesDenseSetMapResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("oWtkZW5zZVNldE1hcKJheIBheYJhYWFi");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new RpcV2CborDenseMapsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new RpcV2CborDenseMapsResponse
+            {
+                DenseSetMap = new Dictionary<string, List<string>>()
+                {
+
+                    { "x",  new List<string>()
+                    {
+                    } },
+                    { "y",  new List<string>()
+                    {
+                        "a",
+                        "b",
+                    } },
+                },
+            };
+
+            // Assert
+            var actualResponse = (RpcV2CborDenseMapsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<RpcV2CborDenseMapsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Clients SHOULD tolerate seeing a null value in a dense map, and
+        /// they SHOULD drop the null key-value pair.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborDeserializesDenseSetMapAndSkipsNullResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("oWtkZW5zZVNldE1hcKNheIBheYJhYWFiYXr2");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new RpcV2CborDenseMapsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new RpcV2CborDenseMapsResponse
+            {
+                DenseSetMap = new Dictionary<string, List<string>>()
+                {
+
+                    { "x",  new List<string>()
+                    {
+                    } },
+                    { "y",  new List<string>()
+                    {
+                        "a",
+                        "b",
+                    } },
+                },
+            };
+
+            // Assert
+            var actualResponse = (RpcV2CborDenseMapsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<RpcV2CborDenseMapsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
     }
