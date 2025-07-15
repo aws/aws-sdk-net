@@ -30,19 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Repostspace.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchAddRole operation.
-    /// Add a role to multiple users or groups in a private re:Post.
+    /// This is the response object from the ListChannels operation.
     /// </summary>
-    public partial class BatchAddRoleRequest : AmazonRepostspaceRequest
+    public partial class ListChannelsResponse : AmazonWebServiceResponse
     {
-        private List<string> _accessorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private Role _role;
-        private string _spaceId;
+        private List<ChannelData> _channels = AWSConfigs.InitializeCollections ? new List<ChannelData>() : null;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property AccessorIds. 
+        /// Gets and sets the property Channels. 
         /// <para>
-        /// The user or group accessor identifiers to add the role to.
+        /// An array of structures that contain some information about the channels in the private
+        /// re:Post.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -50,55 +49,35 @@ namespace Amazon.Repostspace.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1000)]
-        public List<string> AccessorIds
+        [AWSProperty(Required=true)]
+        public List<ChannelData> Channels
         {
-            get { return this._accessorIds; }
-            set { this._accessorIds = value; }
+            get { return this._channels; }
+            set { this._channels = value; }
         }
 
-        // Check to see if AccessorIds property is set
-        internal bool IsSetAccessorIds()
+        // Check to see if Channels property is set
+        internal bool IsSetChannels()
         {
-            return this._accessorIds != null && (this._accessorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property Role. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The role to add to the users or groups.
+        /// The token that you use when you request the next set of channels.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Role Role
+        public string NextToken
         {
-            get { return this._role; }
-            set { this._role = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Role property is set
-        internal bool IsSetRole()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._role != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SpaceId. 
-        /// <para>
-        /// The unique ID of the private re:Post.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string SpaceId
-        {
-            get { return this._spaceId; }
-            set { this._spaceId = value; }
-        }
-
-        // Check to see if SpaceId property is set
-        internal bool IsSetSpaceId()
-        {
-            return this._spaceId != null;
+            return this._nextToken != null;
         }
 
     }

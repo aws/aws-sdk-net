@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateSpace Request Marshaller
+    /// BatchRemoveChannelRoleFromAccessors Request Marshaller
     /// </summary>       
-    public class UpdateSpaceRequestMarshaller : IMarshaller<IRequest, UpdateSpaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchRemoveChannelRoleFromAccessorsRequestMarshaller : IMarshaller<IRequest, BatchRemoveChannelRoleFromAccessorsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateSpaceRequest)input);
+            return this.Marshall((BatchRemoveChannelRoleFromAccessorsRequest)input);
         }
 
         /// <summary>
@@ -56,17 +56,20 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateSpaceRequest publicRequest)
+        public IRequest Marshall(BatchRemoveChannelRoleFromAccessorsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Repostspace");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-05-13";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "PATCH";
 
+            if (!publicRequest.IsSetChannelId())
+                throw new AmazonRepostspaceException("Request object does not have required field ChannelId set");
+            request.AddPathResource("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
             if (!publicRequest.IsSetSpaceId())
                 throw new AmazonRepostspaceException("Request object does not have required field SpaceId set");
             request.AddPathResource("{spaceId}", StringUtils.FromString(publicRequest.SpaceId));
-            request.ResourcePath = "/spaces/{spaceId}";
+            request.ResourcePath = "/spaces/{spaceId}/channels/{channelId}/roles";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -76,33 +79,21 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDescription())
+            if(publicRequest.IsSetAccessorIds())
             {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(publicRequest.Description);
+                context.Writer.WritePropertyName("accessorIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAccessorIdsListValue in publicRequest.AccessorIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestAccessorIdsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(publicRequest.IsSetRoleArn())
+            if(publicRequest.IsSetChannelRole())
             {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.WriteStringValue(publicRequest.RoleArn);
-            }
-
-            if(publicRequest.IsSetSupportedEmailDomains())
-            {
-                context.Writer.WritePropertyName("supportedEmailDomains");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SupportedEmailDomainsParametersMarshaller.Instance;
-                marshaller.Marshall(publicRequest.SupportedEmailDomains, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetTier())
-            {
-                context.Writer.WritePropertyName("tier");
-                context.Writer.WriteStringValue(publicRequest.Tier);
+                context.Writer.WritePropertyName("channelRole");
+                context.Writer.WriteStringValue(publicRequest.ChannelRole);
             }
 
             writer.WriteEndObject();
@@ -118,9 +109,9 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateSpaceRequestMarshaller _instance = new UpdateSpaceRequestMarshaller();        
+        private static BatchRemoveChannelRoleFromAccessorsRequestMarshaller _instance = new BatchRemoveChannelRoleFromAccessorsRequestMarshaller();        
 
-        internal static UpdateSpaceRequestMarshaller GetInstance()
+        internal static BatchRemoveChannelRoleFromAccessorsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +119,7 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateSpaceRequestMarshaller Instance
+        public static BatchRemoveChannelRoleFromAccessorsRequestMarshaller Instance
         {
             get
             {

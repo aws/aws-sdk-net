@@ -38,6 +38,7 @@ namespace Amazon.Repostspace.Model
         private string _description;
         private string _roleArn;
         private string _spaceId;
+        private SupportedEmailDomainsParameters _supportedEmailDomains;
         private TierLevel _tier;
 
         /// <summary>
@@ -97,6 +98,21 @@ namespace Amazon.Repostspace.Model
         internal bool IsSetSpaceId()
         {
             return this._spaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEmailDomains.
+        /// </summary>
+        public SupportedEmailDomainsParameters SupportedEmailDomains
+        {
+            get { return this._supportedEmailDomains; }
+            set { this._supportedEmailDomains = value; }
+        }
+
+        // Check to see if SupportedEmailDomains property is set
+        internal bool IsSetSupportedEmailDomains()
+        {
+            return this._supportedEmailDomains != null;
         }
 
         /// <summary>

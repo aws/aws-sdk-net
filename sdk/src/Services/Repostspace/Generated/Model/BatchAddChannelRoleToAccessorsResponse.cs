@@ -30,19 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Repostspace.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchAddRole operation.
-    /// Add a role to multiple users or groups in a private re:Post.
+    /// This is the response object from the BatchAddChannelRoleToAccessors operation.
     /// </summary>
-    public partial class BatchAddRoleRequest : AmazonRepostspaceRequest
+    public partial class BatchAddChannelRoleToAccessorsResponse : AmazonWebServiceResponse
     {
-        private List<string> _accessorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private Role _role;
-        private string _spaceId;
+        private List<string> _addedAccessorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<BatchError> _errors = AWSConfigs.InitializeCollections ? new List<BatchError>() : null;
 
         /// <summary>
-        /// Gets and sets the property AccessorIds. 
+        /// Gets and sets the property AddedAccessorIds. 
         /// <para>
-        /// The user or group accessor identifiers to add the role to.
+        /// An array of successfully updated identifiers.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -51,54 +49,40 @@ namespace Amazon.Repostspace.Model
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
-        public List<string> AccessorIds
+        public List<string> AddedAccessorIds
         {
-            get { return this._accessorIds; }
-            set { this._accessorIds = value; }
+            get { return this._addedAccessorIds; }
+            set { this._addedAccessorIds = value; }
         }
 
-        // Check to see if AccessorIds property is set
-        internal bool IsSetAccessorIds()
+        // Check to see if AddedAccessorIds property is set
+        internal bool IsSetAddedAccessorIds()
         {
-            return this._accessorIds != null && (this._accessorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Role. 
-        /// <para>
-        /// The role to add to the users or groups.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Role Role
-        {
-            get { return this._role; }
-            set { this._role = value; }
-        }
-
-        // Check to see if Role property is set
-        internal bool IsSetRole()
-        {
-            return this._role != null;
+            return this._addedAccessorIds != null && (this._addedAccessorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property SpaceId. 
+        /// Gets and sets the property Errors. 
         /// <para>
-        /// The unique ID of the private re:Post.
+        /// An array of errors that occurred when roles were added.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
-        public string SpaceId
+        public List<BatchError> Errors
         {
-            get { return this._spaceId; }
-            set { this._spaceId = value; }
+            get { return this._errors; }
+            set { this._errors = value; }
         }
 
-        // Check to see if SpaceId property is set
-        internal bool IsSetSpaceId()
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
         {
-            return this._spaceId != null;
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

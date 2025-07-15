@@ -16,40 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the repostspace-2022-05-13.normal.json service model.
  */
-
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Repostspace.Model
 {
     /// <summary>
-    /// Paginators for the Repostspace service
+    /// Paginator for the ListChannels operation
     ///</summary>
-    public class RepostspacePaginatorFactory : IRepostspacePaginatorFactory
+    public interface IListChannelsPaginator
     {
-        private readonly IAmazonRepostspace client;
-
-        internal RepostspacePaginatorFactory(IAmazonRepostspace client) 
-        {
-            this.client = client;
-        }
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListChannelsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListChannels operation
-        ///</summary>
-        public IListChannelsPaginator ListChannels(ListChannelsRequest request) 
-        {
-            return new ListChannelsPaginator(this.client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListSpaces operation
-        ///</summary>
-        public IListSpacesPaginator ListSpaces(ListSpacesRequest request) 
-        {
-            return new ListSpacesPaginator(this.client, request);
-        }
+        /// Enumerable containing all of the Channels
+        /// </summary>
+        IPaginatedEnumerable<ChannelData> Channels { get; }
     }
 }

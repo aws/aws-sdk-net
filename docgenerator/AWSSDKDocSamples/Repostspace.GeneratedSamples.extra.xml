@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Repostspace.IAmazonRepostspace.BatchAddChannelRoleToAccessors(Amazon.Repostspace.Model.BatchAddChannelRoleToAccessorsRequest)" />
+            <member name="M:Amazon.Repostspace.AmazonRepostspaceClient.BatchAddChannelRoleToAccessors(Amazon.Repostspace.Model.BatchAddChannelRoleToAccessorsRequest)" />
+            <member name="T:Amazon.Repostspace.Model.BatchAddChannelRoleToAccessorsRequest" />
+            <member name="T:Amazon.Repostspace.Model.BatchAddChannelRoleToAccessorsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="BatchAddChannelRoleToAccessors"
+                    source=".\AWSSDKDocSamples\Repostspace\Repostspace.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Repostspace.IAmazonRepostspace.BatchAddRole(Amazon.Repostspace.Model.BatchAddRoleRequest)" />
+            <member name="M:Amazon.Repostspace.AmazonRepostspaceClient.BatchAddRole(Amazon.Repostspace.Model.BatchAddRoleRequest)" />
+            <member name="T:Amazon.Repostspace.Model.BatchAddRoleRequest" />
+            <member name="T:Amazon.Repostspace.Model.BatchAddRoleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="BatchAddRole"
+                    source=".\AWSSDKDocSamples\Repostspace\Repostspace.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Repostspace.IAmazonRepostspace.BatchRemoveChannelRoleFromAccessors(Amazon.Repostspace.Model.BatchRemoveChannelRoleFromAccessorsRequest)" />
+            <member name="M:Amazon.Repostspace.AmazonRepostspaceClient.BatchRemoveChannelRoleFromAccessors(Amazon.Repostspace.Model.BatchRemoveChannelRoleFromAccessorsRequest)" />
+            <member name="T:Amazon.Repostspace.Model.BatchRemoveChannelRoleFromAccessorsRequest" />
+            <member name="T:Amazon.Repostspace.Model.BatchRemoveChannelRoleFromAccessorsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="BatchRemoveChannelRoleFromAccessors"
+                    source=".\AWSSDKDocSamples\Repostspace\Repostspace.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Repostspace.IAmazonRepostspace.BatchRemoveRole(Amazon.Repostspace.Model.BatchRemoveRoleRequest)" />
+            <member name="M:Amazon.Repostspace.AmazonRepostspaceClient.BatchRemoveRole(Amazon.Repostspace.Model.BatchRemoveRoleRequest)" />
+            <member name="T:Amazon.Repostspace.Model.BatchRemoveRoleRequest" />
+            <member name="T:Amazon.Repostspace.Model.BatchRemoveRoleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="BatchRemoveRole"
+                    source=".\AWSSDKDocSamples\Repostspace\Repostspace.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Repostspace.IAmazonRepostspace.CreateChannel(Amazon.Repostspace.Model.CreateChannelRequest)" />
+            <member name="M:Amazon.Repostspace.AmazonRepostspaceClient.CreateChannel(Amazon.Repostspace.Model.CreateChannelRequest)" />
+            <member name="T:Amazon.Repostspace.Model.CreateChannelRequest" />
+            <member name="T:Amazon.Repostspace.Model.CreateChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateChannel"
+                    source=".\AWSSDKDocSamples\Repostspace\Repostspace.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Repostspace.IAmazonRepostspace.GetChannel(Amazon.Repostspace.Model.GetChannelRequest)" />
+            <member name="M:Amazon.Repostspace.AmazonRepostspaceClient.GetChannel(Amazon.Repostspace.Model.GetChannelRequest)" />
+            <member name="T:Amazon.Repostspace.Model.GetChannelRequest" />
+            <member name="T:Amazon.Repostspace.Model.GetChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetChannel"
+                    source=".\AWSSDKDocSamples\Repostspace\Repostspace.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Repostspace.IAmazonRepostspace.ListChannels(Amazon.Repostspace.Model.ListChannelsRequest)" />
+            <member name="M:Amazon.Repostspace.AmazonRepostspaceClient.ListChannels(Amazon.Repostspace.Model.ListChannelsRequest)" />
+            <member name="T:Amazon.Repostspace.Model.ListChannelsRequest" />
+            <member name="T:Amazon.Repostspace.Model.ListChannelsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListChannels"
+                    source=".\AWSSDKDocSamples\Repostspace\Repostspace.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Repostspace.IAmazonRepostspace.UpdateChannel(Amazon.Repostspace.Model.UpdateChannelRequest)" />
+            <member name="M:Amazon.Repostspace.AmazonRepostspaceClient.UpdateChannel(Amazon.Repostspace.Model.UpdateChannelRequest)" />
+            <member name="T:Amazon.Repostspace.Model.UpdateChannelRequest" />
+            <member name="T:Amazon.Repostspace.Model.UpdateChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UpdateChannel"
+                    source=".\AWSSDKDocSamples\Repostspace\Repostspace.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>
