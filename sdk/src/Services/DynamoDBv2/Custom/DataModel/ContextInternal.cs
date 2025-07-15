@@ -137,12 +137,6 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        internal static bool HasCreateOnlyProperties(ItemStorage storage)
-        {
-            return storage.Config.BaseTypeStorageConfig.AllPropertyStorage
-                .Any(propertyStorage => propertyStorage.UpdateBehaviorMode == UpdateBehavior.IfNotExists);
-        }
-
         private static PropertyStorage[] GetTimestampProperties(ItemStorage storage)
         {
             //todo : adapt this to work with polymorphic types

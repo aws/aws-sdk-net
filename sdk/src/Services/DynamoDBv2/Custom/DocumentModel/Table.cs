@@ -1364,7 +1364,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
             return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
         }
-#endif
+
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, 
             List<string> ifNotExistAttributeNames = null)
         {
@@ -1542,7 +1542,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             return ret;
         }
-
+#endif
         // Checks if key attributes have been updated
         internal bool HaveKeysChanged(Document doc)
         {
