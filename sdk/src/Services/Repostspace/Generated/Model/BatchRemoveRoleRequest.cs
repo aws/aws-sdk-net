@@ -31,7 +31,7 @@ namespace Amazon.Repostspace.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchRemoveRole operation.
-    /// Remove role from multiple users or groups in a private re:Post.
+    /// Remove a role from multiple users or groups in a private re:Post.
     /// </summary>
     public partial class BatchRemoveRoleRequest : AmazonRepostspaceRequest
     {

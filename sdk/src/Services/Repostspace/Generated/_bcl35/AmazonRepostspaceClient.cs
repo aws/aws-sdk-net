@@ -271,10 +271,79 @@ namespace Amazon.Repostspace
         #endregion
 
 
+        #region  BatchAddChannelRoleToAccessors
+
+        /// <summary>
+        /// Add role to multiple users or groups in a private re:Post channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddChannelRoleToAccessors service method.</param>
+        /// 
+        /// <returns>The response from the BatchAddChannelRoleToAccessors service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddChannelRoleToAccessors">REST API Reference for BatchAddChannelRoleToAccessors Operation</seealso>
+        public virtual BatchAddChannelRoleToAccessorsResponse BatchAddChannelRoleToAccessors(BatchAddChannelRoleToAccessorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddChannelRoleToAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddChannelRoleToAccessorsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAddChannelRoleToAccessorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAddChannelRoleToAccessors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddChannelRoleToAccessors operation on AmazonRepostspaceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchAddChannelRoleToAccessors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddChannelRoleToAccessors">REST API Reference for BatchAddChannelRoleToAccessors Operation</seealso>
+        public virtual IAsyncResult BeginBatchAddChannelRoleToAccessors(BatchAddChannelRoleToAccessorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddChannelRoleToAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddChannelRoleToAccessorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchAddChannelRoleToAccessors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchAddChannelRoleToAccessors.</param>
+        /// 
+        /// <returns>Returns a  BatchAddChannelRoleToAccessorsResult from Repostspace.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddChannelRoleToAccessors">REST API Reference for BatchAddChannelRoleToAccessors Operation</seealso>
+        public virtual BatchAddChannelRoleToAccessorsResponse EndBatchAddChannelRoleToAccessors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchAddChannelRoleToAccessorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchAddRole
 
         /// <summary>
-        /// Add role to multiple users or groups in a private re:Post.
+        /// Add a role to multiple users or groups in a private re:Post.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAddRole service method.</param>
         /// 
@@ -340,10 +409,79 @@ namespace Amazon.Repostspace
 
         #endregion
         
+        #region  BatchRemoveChannelRoleFromAccessors
+
+        /// <summary>
+        /// Remove a role from multiple users or groups in a private re:Post channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchRemoveChannelRoleFromAccessors service method.</param>
+        /// 
+        /// <returns>The response from the BatchRemoveChannelRoleFromAccessors service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveChannelRoleFromAccessors">REST API Reference for BatchRemoveChannelRoleFromAccessors Operation</seealso>
+        public virtual BatchRemoveChannelRoleFromAccessorsResponse BatchRemoveChannelRoleFromAccessors(BatchRemoveChannelRoleFromAccessorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchRemoveChannelRoleFromAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchRemoveChannelRoleFromAccessorsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchRemoveChannelRoleFromAccessorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchRemoveChannelRoleFromAccessors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchRemoveChannelRoleFromAccessors operation on AmazonRepostspaceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchRemoveChannelRoleFromAccessors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveChannelRoleFromAccessors">REST API Reference for BatchRemoveChannelRoleFromAccessors Operation</seealso>
+        public virtual IAsyncResult BeginBatchRemoveChannelRoleFromAccessors(BatchRemoveChannelRoleFromAccessorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchRemoveChannelRoleFromAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchRemoveChannelRoleFromAccessorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchRemoveChannelRoleFromAccessors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchRemoveChannelRoleFromAccessors.</param>
+        /// 
+        /// <returns>Returns a  BatchRemoveChannelRoleFromAccessorsResult from Repostspace.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveChannelRoleFromAccessors">REST API Reference for BatchRemoveChannelRoleFromAccessors Operation</seealso>
+        public virtual BatchRemoveChannelRoleFromAccessorsResponse EndBatchRemoveChannelRoleFromAccessors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchRemoveChannelRoleFromAccessorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchRemoveRole
 
         /// <summary>
-        /// Remove role from multiple users or groups in a private re:Post.
+        /// Remove a role from multiple users or groups in a private re:Post.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchRemoveRole service method.</param>
         /// 
@@ -405,6 +543,81 @@ namespace Amazon.Repostspace
         public virtual BatchRemoveRoleResponse EndBatchRemoveRole(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchRemoveRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateChannel
+
+        /// <summary>
+        /// Creates a channel in an AWS re:Post Private private re:Post.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
+        /// 
+        /// <returns>The response from the CreateChannel service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel operation on AmazonRepostspaceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        public virtual IAsyncResult BeginCreateChannel(CreateChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateChannel.</param>
+        /// 
+        /// <returns>Returns a  CreateChannelResult from Repostspace.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        public virtual CreateChannelResponse EndCreateChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateChannelResponse>(asyncResult);
         }
 
         #endregion
@@ -622,6 +835,75 @@ namespace Amazon.Repostspace
 
         #endregion
         
+        #region  GetChannel
+
+        /// <summary>
+        /// Displays information about a channel in a private re:Post.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetChannel service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/GetChannel">REST API Reference for GetChannel Operation</seealso>
+        public virtual GetChannelResponse GetChannel(GetChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannel operation on AmazonRepostspaceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/GetChannel">REST API Reference for GetChannel Operation</seealso>
+        public virtual IAsyncResult BeginGetChannel(GetChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChannel.</param>
+        /// 
+        /// <returns>Returns a  GetChannelResult from Repostspace.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/GetChannel">REST API Reference for GetChannel Operation</seealso>
+        public virtual GetChannelResponse EndGetChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSpace
 
         /// <summary>
@@ -687,6 +969,73 @@ namespace Amazon.Repostspace
         public virtual GetSpaceResponse EndGetSpace(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSpaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListChannels
+
+        /// <summary>
+        /// Returns the list of channel within a private re:Post with some information about each
+        /// channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChannelsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels operation on AmazonRepostspaceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        public virtual IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannels.</param>
+        /// 
+        /// <returns>Returns a  ListChannelsResult from Repostspace.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        public virtual ListChannelsResponse EndListChannels(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListChannelsResponse>(asyncResult);
         }
 
         #endregion
@@ -1104,6 +1453,78 @@ namespace Amazon.Repostspace
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateChannel
+
+        /// <summary>
+        /// Modifies an existing channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChannel service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChannelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel operation on AmazonRepostspaceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual IAsyncResult BeginUpdateChannel(UpdateChannelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateChannelResult from Repostspace.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual UpdateChannelResponse EndUpdateChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateChannelResponse>(asyncResult);
         }
 
         #endregion

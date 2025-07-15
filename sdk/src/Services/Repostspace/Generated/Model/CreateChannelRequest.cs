@@ -30,51 +30,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Repostspace.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchAddRole operation.
-    /// Add a role to multiple users or groups in a private re:Post.
+    /// Container for the parameters to the CreateChannel operation.
+    /// Creates a channel in an AWS re:Post Private private re:Post.
     /// </summary>
-    public partial class BatchAddRoleRequest : AmazonRepostspaceRequest
+    public partial class CreateChannelRequest : AmazonRepostspaceRequest
     {
-        private List<string> _accessorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private Role _role;
+        private string _channelDescription;
+        private string _channelName;
         private string _spaceId;
 
         /// <summary>
-        /// Gets and sets the property AccessorIds. 
+        /// Gets and sets the property ChannelDescription. 
         /// <para>
-        /// The user or group accessor identifiers to add the role to.
+        /// A description for the channel. This is used only to help you identify this channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1000)]
-        public List<string> AccessorIds
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
+        public string ChannelDescription
         {
-            get { return this._accessorIds; }
-            set { this._accessorIds = value; }
+            get { return this._channelDescription; }
+            set { this._channelDescription = value; }
         }
 
-        // Check to see if AccessorIds property is set
-        internal bool IsSetAccessorIds()
+        // Check to see if ChannelDescription property is set
+        internal bool IsSetChannelDescription()
         {
-            return this._accessorIds != null && (this._accessorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._channelDescription != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Role. 
+        /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The role to add to the users or groups.
+        /// The name for the channel. This must be unique per private re:Post.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Role Role
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
+        public string ChannelName
         {
-            get { return this._role; }
-            set { this._role = value; }
+            get { return this._channelName; }
+            set { this._channelName = value; }
         }
 
-        // Check to see if Role property is set
-        internal bool IsSetRole()
+        // Check to see if ChannelName property is set
+        internal bool IsSetChannelName()
         {
-            return this._role != null;
+            return this._channelName != null;
         }
 
         /// <summary>

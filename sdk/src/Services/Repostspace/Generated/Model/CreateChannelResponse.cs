@@ -16,40 +16,44 @@
 /*
  * Do not modify this file. This file is generated from the repostspace-2022-05-13.normal.json service model.
  */
-
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
-#pragma warning disable CS0612,CS0618
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Repostspace.Model
 {
     /// <summary>
-    /// Paginators for the Repostspace service
-    ///</summary>
-    public class RepostspacePaginatorFactory : IRepostspacePaginatorFactory
+    /// This is the response object from the CreateChannel operation.
+    /// </summary>
+    public partial class CreateChannelResponse : AmazonWebServiceResponse
     {
-        private readonly IAmazonRepostspace client;
-
-        internal RepostspacePaginatorFactory(IAmazonRepostspace client) 
-        {
-            this.client = client;
-        }
+        private string _channelId;
 
         /// <summary>
-        /// Paginator for ListChannels operation
-        ///</summary>
-        public IListChannelsPaginator ListChannels(ListChannelsRequest request) 
+        /// Gets and sets the property ChannelId. 
+        /// <para>
+        /// The unique ID of the private re:Post channel.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=24, Max=24)]
+        public string ChannelId
         {
-            return new ListChannelsPaginator(this.client, request);
+            get { return this._channelId; }
+            set { this._channelId = value; }
         }
 
-        /// <summary>
-        /// Paginator for ListSpaces operation
-        ///</summary>
-        public IListSpacesPaginator ListSpaces(ListSpacesRequest request) 
+        // Check to see if ChannelId property is set
+        internal bool IsSetChannelId()
         {
-            return new ListSpacesPaginator(this.client, request);
+            return this._channelId != null;
         }
+
     }
 }

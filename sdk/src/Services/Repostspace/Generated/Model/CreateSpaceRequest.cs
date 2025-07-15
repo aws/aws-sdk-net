@@ -39,6 +39,7 @@ namespace Amazon.Repostspace.Model
         private string _name;
         private string _roleArn;
         private string _subdomain;
+        private SupportedEmailDomainsParameters _supportedEmailDomains;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TierLevel _tier;
         private string _userkmsKey;
@@ -121,6 +122,21 @@ namespace Amazon.Repostspace.Model
         internal bool IsSetSubdomain()
         {
             return this._subdomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEmailDomains.
+        /// </summary>
+        public SupportedEmailDomainsParameters SupportedEmailDomains
+        {
+            get { return this._supportedEmailDomains; }
+            set { this._supportedEmailDomains = value; }
+        }
+
+        // Check to see if SupportedEmailDomains property is set
+        internal bool IsSetSupportedEmailDomains()
+        {
+            return this._supportedEmailDomains != null;
         }
 
         /// <summary>

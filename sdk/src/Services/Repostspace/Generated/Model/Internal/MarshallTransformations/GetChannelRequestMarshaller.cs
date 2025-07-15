@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateSpace Request Marshaller
+    /// GetChannel Request Marshaller
     /// </summary>       
-    public class UpdateSpaceRequestMarshaller : IMarshaller<IRequest, UpdateSpaceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetChannelRequestMarshaller : IMarshaller<IRequest, GetChannelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateSpaceRequest)input);
+            return this.Marshall((GetChannelRequest)input);
         }
 
         /// <summary>
@@ -53,63 +53,25 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateSpaceRequest publicRequest)
+        public IRequest Marshall(GetChannelRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Repostspace");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-05-13";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "GET";
 
+            if (!publicRequest.IsSetChannelId())
+                throw new AmazonRepostspaceException("Request object does not have required field ChannelId set");
+            request.AddPathResource("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
             if (!publicRequest.IsSetSpaceId())
                 throw new AmazonRepostspaceException("Request object does not have required field SpaceId set");
             request.AddPathResource("{spaceId}", StringUtils.FromString(publicRequest.SpaceId));
-            request.ResourcePath = "/spaces/{spaceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSupportedEmailDomains())
-                {
-                    context.Writer.WritePropertyName("supportedEmailDomains");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SupportedEmailDomainsParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SupportedEmailDomains, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTier())
-                {
-                    context.Writer.WritePropertyName("tier");
-                    context.Writer.Write(publicRequest.Tier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.ResourcePath = "/spaces/{spaceId}/channels/{channelId}";
 
             return request;
         }
-        private static UpdateSpaceRequestMarshaller _instance = new UpdateSpaceRequestMarshaller();        
+        private static GetChannelRequestMarshaller _instance = new GetChannelRequestMarshaller();        
 
-        internal static UpdateSpaceRequestMarshaller GetInstance()
+        internal static GetChannelRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +79,7 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateSpaceRequestMarshaller Instance
+        public static GetChannelRequestMarshaller Instance
         {
             get
             {

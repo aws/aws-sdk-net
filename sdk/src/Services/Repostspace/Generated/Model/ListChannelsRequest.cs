@@ -30,51 +30,52 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Repostspace.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchAddRole operation.
-    /// Add a role to multiple users or groups in a private re:Post.
+    /// Container for the parameters to the ListChannels operation.
+    /// Returns the list of channel within a private re:Post with some information about each
+    /// channel.
     /// </summary>
-    public partial class BatchAddRoleRequest : AmazonRepostspaceRequest
+    public partial class ListChannelsRequest : AmazonRepostspaceRequest
     {
-        private List<string> _accessorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private Role _role;
+        private int? _maxResults;
+        private string _nextToken;
         private string _spaceId;
 
         /// <summary>
-        /// Gets and sets the property AccessorIds. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The user or group accessor identifiers to add the role to.
+        /// The maximum number of channels to include in the results.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1000)]
-        public List<string> AccessorIds
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._accessorIds; }
-            set { this._accessorIds = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if AccessorIds property is set
-        internal bool IsSetAccessorIds()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._accessorIds != null && (this._accessorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Role. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The role to add to the users or groups.
+        /// The token for the next set of channel to return. You receive this token from a previous
+        /// ListChannels operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Role Role
+        public string NextToken
         {
-            get { return this._role; }
-            set { this._role = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Role property is set
-        internal bool IsSetRole()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._role != null;
+            return this._nextToken != null;
         }
 
         /// <summary>

@@ -30,51 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Repostspace.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchAddRole operation.
-    /// Add a role to multiple users or groups in a private re:Post.
+    /// Container for the parameters to the GetChannel operation.
+    /// Displays information about a channel in a private re:Post.
     /// </summary>
-    public partial class BatchAddRoleRequest : AmazonRepostspaceRequest
+    public partial class GetChannelRequest : AmazonRepostspaceRequest
     {
-        private List<string> _accessorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private Role _role;
+        private string _channelId;
         private string _spaceId;
 
         /// <summary>
-        /// Gets and sets the property AccessorIds. 
+        /// Gets and sets the property ChannelId. 
         /// <para>
-        /// The user or group accessor identifiers to add the role to.
+        /// The unique ID of the private re:Post channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1000)]
-        public List<string> AccessorIds
+        [AWSProperty(Required=true, Min=24, Max=24)]
+        public string ChannelId
         {
-            get { return this._accessorIds; }
-            set { this._accessorIds = value; }
+            get { return this._channelId; }
+            set { this._channelId = value; }
         }
 
-        // Check to see if AccessorIds property is set
-        internal bool IsSetAccessorIds()
+        // Check to see if ChannelId property is set
+        internal bool IsSetChannelId()
         {
-            return this._accessorIds != null && (this._accessorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Role. 
-        /// <para>
-        /// The role to add to the users or groups.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Role Role
-        {
-            get { return this._role; }
-            set { this._role = value; }
-        }
-
-        // Check to see if Role property is set
-        internal bool IsSetRole()
-        {
-            return this._role != null;
+            return this._channelId != null;
         }
 
         /// <summary>

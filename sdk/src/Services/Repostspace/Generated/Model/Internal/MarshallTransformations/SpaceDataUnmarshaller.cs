@@ -132,6 +132,12 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
                     unmarshalledObject.StorageLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supportedEmailDomains", targetDepth))
+                {
+                    var unmarshaller = SupportedEmailDomainsStatusUnmarshaller.Instance;
+                    unmarshalledObject.SupportedEmailDomains = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

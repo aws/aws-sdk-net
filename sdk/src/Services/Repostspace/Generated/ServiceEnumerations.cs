@@ -25,6 +25,130 @@ namespace Amazon.Repostspace
 {
 
     /// <summary>
+    /// Constants used for properties of type ChannelRole.
+    /// </summary>
+    public class ChannelRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASKER for ChannelRole
+        /// </summary>
+        public static readonly ChannelRole ASKER = new ChannelRole("ASKER");
+        /// <summary>
+        /// Constant EXPERT for ChannelRole
+        /// </summary>
+        public static readonly ChannelRole EXPERT = new ChannelRole("EXPERT");
+        /// <summary>
+        /// Constant MODERATOR for ChannelRole
+        /// </summary>
+        public static readonly ChannelRole MODERATOR = new ChannelRole("MODERATOR");
+        /// <summary>
+        /// Constant SUPPORTREQUESTOR for ChannelRole
+        /// </summary>
+        public static readonly ChannelRole SUPPORTREQUESTOR = new ChannelRole("SUPPORTREQUESTOR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelRole FindValue(string value)
+        {
+            return FindValue<ChannelRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelStatus.
+    /// </summary>
+    public class ChannelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus CREATE_FAILED = new ChannelStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATED for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus CREATED = new ChannelStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus CREATING = new ChannelStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus DELETE_FAILED = new ChannelStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETED for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus DELETED = new ChannelStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus DELETING = new ChannelStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelStatus FindValue(string value)
+        {
+            return FindValue<ChannelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfigurationStatus.
     /// </summary>
     public class ConfigurationStatus : ConstantClass
@@ -68,6 +192,110 @@ namespace Amazon.Repostspace
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeatureEnableParameter.
+    /// </summary>
+    public class FeatureEnableParameter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for FeatureEnableParameter
+        /// </summary>
+        public static readonly FeatureEnableParameter DISABLED = new FeatureEnableParameter("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for FeatureEnableParameter
+        /// </summary>
+        public static readonly FeatureEnableParameter ENABLED = new FeatureEnableParameter("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureEnableParameter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureEnableParameter FindValue(string value)
+        {
+            return FindValue<FeatureEnableParameter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureEnableParameter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeatureEnableStatus.
+    /// </summary>
+    public class FeatureEnableStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for FeatureEnableStatus
+        /// </summary>
+        public static readonly FeatureEnableStatus DISABLED = new FeatureEnableStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for FeatureEnableStatus
+        /// </summary>
+        public static readonly FeatureEnableStatus ENABLED = new FeatureEnableStatus("ENABLED");
+        /// <summary>
+        /// Constant NOT_ALLOWED for FeatureEnableStatus
+        /// </summary>
+        public static readonly FeatureEnableStatus NOT_ALLOWED = new FeatureEnableStatus("NOT_ALLOWED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureEnableStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureEnableStatus FindValue(string value)
+        {
+            return FindValue<FeatureEnableStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureEnableStatus(string value)
         {
             return FindValue(value);
         }

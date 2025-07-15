@@ -91,6 +91,17 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Subdomain);
                 }
 
+                if(publicRequest.IsSetSupportedEmailDomains())
+                {
+                    context.Writer.WritePropertyName("supportedEmailDomains");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SupportedEmailDomainsParametersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SupportedEmailDomains, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

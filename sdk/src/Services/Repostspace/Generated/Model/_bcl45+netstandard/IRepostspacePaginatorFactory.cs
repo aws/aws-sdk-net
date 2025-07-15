@@ -28,6 +28,16 @@ namespace Amazon.Repostspace.Model
     {
 
         /// <summary>
+        /// Paginator for ListChannels operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListChannelsPaginator ListChannels(ListChannelsRequest request);
+
+        /// <summary>
         /// Paginator for ListSpaces operation
         ///</summary>
         [AWSPaginator(
