@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdatePipeline operation
+    /// Response Unmarshaller for ListPipelineVersions operation
     /// </summary>  
-    public class UpdatePipelineResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListPipelineVersionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdatePipelineResponse response = new UpdatePipelineResponse();
+            ListPipelineVersionsResponse response = new ListPipelineVersionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("PipelineArn", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PipelineArn = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PipelineVersionId", targetDepth))
+                if (context.TestExpression("PipelineVersionSummaries", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.PipelineVersionId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<PipelineVersionSummary, PipelineVersionSummaryUnmarshaller>(PipelineVersionSummaryUnmarshaller.Instance);
+                    response.PipelineVersionSummaries = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,10 +87,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -99,9 +95,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdatePipelineResponseUnmarshaller _instance = new UpdatePipelineResponseUnmarshaller();        
+        private static ListPipelineVersionsResponseUnmarshaller _instance = new ListPipelineVersionsResponseUnmarshaller();        
 
-        internal static UpdatePipelineResponseUnmarshaller GetInstance()
+        internal static ListPipelineVersionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +105,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdatePipelineResponseUnmarshaller Instance
+        public static ListPipelineVersionsResponseUnmarshaller Instance
         {
             get
             {

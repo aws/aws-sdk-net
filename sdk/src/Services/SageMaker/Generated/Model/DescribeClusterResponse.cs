@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private List<ClusterInstanceGroupDetails> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupDetails>() : null;
         private ClusterNodeRecovery _nodeRecovery;
         private ClusterOrchestrator _orchestrator;
+        private List<ClusterRestrictedInstanceGroupDetails> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupDetails>() : null;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -190,6 +191,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOrchestrator()
         {
             return this._orchestrator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestrictedInstanceGroups. 
+        /// <para>
+        /// The specialized instance groups for training models like Amazon Nova to be created
+        /// in the SageMaker HyperPod cluster.
+        /// </para>
+        /// </summary>
+        public List<ClusterRestrictedInstanceGroupDetails> RestrictedInstanceGroups
+        {
+            get { return this._restrictedInstanceGroups; }
+            set { this._restrictedInstanceGroups = value; }
+        }
+
+        // Check to see if RestrictedInstanceGroups property is set
+        internal bool IsSetRestrictedInstanceGroups()
+        {
+            return this._restrictedInstanceGroups != null && (this._restrictedInstanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
         private List<string> _instanceGroupsToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterNodeRecovery _nodeRecovery;
+        private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -114,6 +115,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNodeRecovery()
         {
             return this._nodeRecovery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestrictedInstanceGroups. 
+        /// <para>
+        /// The specialized instance groups for training models like Amazon Nova to be created
+        /// in the SageMaker HyperPod cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<ClusterRestrictedInstanceGroupSpecification> RestrictedInstanceGroups
+        {
+            get { return this._restrictedInstanceGroups; }
+            set { this._restrictedInstanceGroups = value; }
+        }
+
+        // Check to see if RestrictedInstanceGroups property is set
+        internal bool IsSetRestrictedInstanceGroups()
+        {
+            return this._restrictedInstanceGroups != null && (this._restrictedInstanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

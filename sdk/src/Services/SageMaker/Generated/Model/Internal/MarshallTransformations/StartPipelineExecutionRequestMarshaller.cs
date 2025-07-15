@@ -125,6 +125,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetPipelineVersionId())
+                {
+                    context.Writer.WritePropertyName("PipelineVersionId");
+                    context.Writer.Write(publicRequest.PipelineVersionId);
+                }
+
                 if(publicRequest.IsSetSelectiveExecutionConfig())
                 {
                     context.Writer.WritePropertyName("SelectiveExecutionConfig");

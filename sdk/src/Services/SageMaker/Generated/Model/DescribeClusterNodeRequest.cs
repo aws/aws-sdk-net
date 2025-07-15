@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the SageMaker HyperPod cluster node.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string NodeId
         {
             get { return this._nodeId; }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PipelineExecution Object
+    /// Response Unmarshaller for PipelineVersion Object
     /// </summary>  
-    public class PipelineExecutionUnmarshaller : IUnmarshaller<PipelineExecution, XmlUnmarshallerContext>, IUnmarshaller<PipelineExecution, JsonUnmarshallerContext>
+    public class PipelineVersionUnmarshaller : IUnmarshaller<PipelineVersion, XmlUnmarshallerContext>, IUnmarshaller<PipelineVersion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PipelineExecution IUnmarshaller<PipelineExecution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PipelineVersion IUnmarshaller<PipelineVersion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipelineExecution Unmarshall(JsonUnmarshallerContext context)
+        public PipelineVersion Unmarshall(JsonUnmarshallerContext context)
         {
-            PipelineExecution unmarshalledObject = new PipelineExecution();
+            PipelineVersion unmarshalledObject = new PipelineVersion();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -78,10 +78,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("LastExecutedPipelineExecutionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastExecutedPipelineExecutionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastExecutedPipelineExecutionDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastExecutedPipelineExecutionDisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastExecutedPipelineExecutionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastExecutedPipelineExecutionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedBy", targetDepth))
@@ -96,52 +108,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ParallelismConfiguration", targetDepth))
-                {
-                    var unmarshaller = ParallelismConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ParallelismConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("PipelineArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PipelineExecutionArn", targetDepth))
+                if (context.TestExpression("PipelineVersionDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineExecutionDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineExecutionDisplayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionDisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineExecutionStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineExperimentConfig", targetDepth))
-                {
-                    var unmarshaller = PipelineExperimentConfigUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExperimentConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PipelineParameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Parameter, ParameterUnmarshaller>(ParameterUnmarshaller.Instance);
-                    unmarshalledObject.PipelineParameters = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineVersionDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PipelineVersionDisplayName", targetDepth))
@@ -156,23 +132,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.PipelineVersionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SelectiveExecutionConfig", targetDepth))
-                {
-                    var unmarshaller = SelectiveExecutionConfigUnmarshaller.Instance;
-                    unmarshalledObject.SelectiveExecutionConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static PipelineExecutionUnmarshaller _instance = new PipelineExecutionUnmarshaller();        
+        private static PipelineVersionUnmarshaller _instance = new PipelineVersionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PipelineExecutionUnmarshaller Instance
+        public static PipelineVersionUnmarshaller Instance
         {
             get
             {

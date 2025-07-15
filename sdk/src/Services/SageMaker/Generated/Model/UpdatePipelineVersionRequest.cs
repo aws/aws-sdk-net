@@ -30,20 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// This is the response object from the UpdatePipeline operation.
+    /// Container for the parameters to the UpdatePipelineVersion operation.
+    /// Updates a pipeline version.
     /// </summary>
-    public partial class UpdatePipelineResponse : AmazonWebServiceResponse
+    public partial class UpdatePipelineVersionRequest : AmazonSageMakerRequest
     {
         private string _pipelineArn;
+        private string _pipelineVersionDescription;
+        private string _pipelineVersionDisplayName;
         private long? _pipelineVersionId;
 
         /// <summary>
         /// Gets and sets the property PipelineArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the updated pipeline.
+        /// The Amazon Resource Name (ARN) of the pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string PipelineArn
         {
             get { return this._pipelineArn; }
@@ -57,12 +60,50 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PipelineVersionId. 
+        /// Gets and sets the property PipelineVersionDescription. 
         /// <para>
-        /// The ID of the pipeline version.
+        /// The description of the pipeline version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0, Max=3072)]
+        public string PipelineVersionDescription
+        {
+            get { return this._pipelineVersionDescription; }
+            set { this._pipelineVersionDescription = value; }
+        }
+
+        // Check to see if PipelineVersionDescription property is set
+        internal bool IsSetPipelineVersionDescription()
+        {
+            return this._pipelineVersionDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionDisplayName. 
+        /// <para>
+        /// The display name of the pipeline version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=82)]
+        public string PipelineVersionDisplayName
+        {
+            get { return this._pipelineVersionDisplayName; }
+            set { this._pipelineVersionDisplayName = value; }
+        }
+
+        // Check to see if PipelineVersionDisplayName property is set
+        internal bool IsSetPipelineVersionDisplayName()
+        {
+            return this._pipelineVersionDisplayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionId. 
+        /// <para>
+        /// The pipeline version ID to update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public long PipelineVersionId
         {
             get { return this._pipelineVersionId.GetValueOrDefault(); }

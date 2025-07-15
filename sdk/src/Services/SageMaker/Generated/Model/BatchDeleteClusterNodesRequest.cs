@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3000)]
+        [AWSProperty(Min=1, Max=3000)]
         public List<string> NodeIds
         {
             get { return this._nodeIds; }

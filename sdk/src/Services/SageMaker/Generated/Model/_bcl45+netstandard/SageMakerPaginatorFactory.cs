@@ -533,6 +533,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListPipelineVersions operation
+        ///</summary>
+        public IListPipelineVersionsPaginator ListPipelineVersions(ListPipelineVersionsRequest request) 
+        {
+            return new ListPipelineVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProcessingJobs operation
         ///</summary>
         public IListProcessingJobsPaginator ListProcessingJobs(ListProcessingJobsRequest request) 

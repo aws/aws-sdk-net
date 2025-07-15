@@ -30,49 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// This is the response object from the UpdatePipeline operation.
+    /// The configuration details for the restricted instance groups (RIG) environment.
     /// </summary>
-    public partial class UpdatePipelineResponse : AmazonWebServiceResponse
+    public partial class EnvironmentConfigDetails
     {
-        private string _pipelineArn;
-        private long? _pipelineVersionId;
+        private FSxLustreConfig _fSxLustreConfig;
+        private string _s3OutputPath;
 
         /// <summary>
-        /// Gets and sets the property PipelineArn. 
+        /// Gets and sets the property FSxLustreConfig. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the updated pipeline.
+        /// Configuration settings for an Amazon FSx for Lustre file system to be used with the
+        /// cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
-        public string PipelineArn
+        public FSxLustreConfig FSxLustreConfig
         {
-            get { return this._pipelineArn; }
-            set { this._pipelineArn = value; }
+            get { return this._fSxLustreConfig; }
+            set { this._fSxLustreConfig = value; }
         }
 
-        // Check to see if PipelineArn property is set
-        internal bool IsSetPipelineArn()
+        // Check to see if FSxLustreConfig property is set
+        internal bool IsSetFSxLustreConfig()
         {
-            return this._pipelineArn != null;
+            return this._fSxLustreConfig != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PipelineVersionId. 
+        /// Gets and sets the property S3OutputPath. 
         /// <para>
-        /// The ID of the pipeline version.
+        /// The Amazon S3 path where output data from the restricted instance group (RIG) environment
+        /// will be stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public long PipelineVersionId
+        [AWSProperty(Min=0, Max=1024)]
+        public string S3OutputPath
         {
-            get { return this._pipelineVersionId.GetValueOrDefault(); }
-            set { this._pipelineVersionId = value; }
+            get { return this._s3OutputPath; }
+            set { this._s3OutputPath = value; }
         }
 
-        // Check to see if PipelineVersionId property is set
-        internal bool IsSetPipelineVersionId()
+        // Check to see if S3OutputPath property is set
+        internal bool IsSetS3OutputPath()
         {
-            return this._pipelineVersionId.HasValue; 
+            return this._s3OutputPath != null;
         }
 
     }

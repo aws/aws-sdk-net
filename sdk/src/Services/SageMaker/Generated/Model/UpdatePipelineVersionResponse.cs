@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// This is the response object from the UpdatePipeline operation.
+    /// This is the response object from the UpdatePipelineVersion operation.
     /// </summary>
-    public partial class UpdatePipelineResponse : AmazonWebServiceResponse
+    public partial class UpdatePipelineVersionResponse : AmazonWebServiceResponse
     {
         private string _pipelineArn;
         private long? _pipelineVersionId;
@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PipelineArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the updated pipeline.
+        /// The Amazon Resource Name (ARN) of the pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

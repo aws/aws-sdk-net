@@ -12979,6 +12979,49 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListPipelineVersions
+
+
+        /// <summary>
+        /// Gets a list of all versions of the pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListPipelineVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineVersions">REST API Reference for ListPipelineVersions Operation</seealso>
+        ListPipelineVersionsResponse ListPipelineVersions(ListPipelineVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPipelineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineVersions operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPipelineVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineVersions">REST API Reference for ListPipelineVersions Operation</seealso>
+        IAsyncResult BeginListPipelineVersions(ListPipelineVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPipelineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPipelineVersions.</param>
+        /// 
+        /// <returns>Returns a  ListPipelineVersionsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineVersions">REST API Reference for ListPipelineVersions Operation</seealso>
+        ListPipelineVersionsResponse EndListPipelineVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListProcessingJobs
 
 
@@ -17035,6 +17078,53 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  UpdatePipelineExecutionResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution">REST API Reference for UpdatePipelineExecution Operation</seealso>
         UpdatePipelineExecutionResponse EndUpdatePipelineExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePipelineVersion
+
+
+        /// <summary>
+        /// Updates a pipeline version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePipelineVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineVersion">REST API Reference for UpdatePipelineVersion Operation</seealso>
+        UpdatePipelineVersionResponse UpdatePipelineVersion(UpdatePipelineVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePipelineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineVersion operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePipelineVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineVersion">REST API Reference for UpdatePipelineVersion Operation</seealso>
+        IAsyncResult BeginUpdatePipelineVersion(UpdatePipelineVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePipelineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePipelineVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdatePipelineVersionResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineVersion">REST API Reference for UpdatePipelineVersion Operation</seealso>
+        UpdatePipelineVersionResponse EndUpdatePipelineVersion(IAsyncResult asyncResult);
 
         #endregion
         

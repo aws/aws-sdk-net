@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribePipeline Request Marshaller
+    /// UpdatePipelineVersion Request Marshaller
     /// </summary>       
-    public class DescribePipelineRequestMarshaller : IMarshaller<IRequest, DescribePipelineRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdatePipelineVersionRequestMarshaller : IMarshaller<IRequest, UpdatePipelineVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribePipelineRequest)input);
+            return this.Marshall((UpdatePipelineVersionRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribePipelineRequest publicRequest)
+        public IRequest Marshall(UpdatePipelineVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.DescribePipeline";
+            string target = "SageMaker.UpdatePipelineVersion";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
@@ -69,10 +69,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPipelineName())
+                if(publicRequest.IsSetPipelineArn())
                 {
-                    context.Writer.WritePropertyName("PipelineName");
-                    context.Writer.Write(publicRequest.PipelineName);
+                    context.Writer.WritePropertyName("PipelineArn");
+                    context.Writer.Write(publicRequest.PipelineArn);
+                }
+
+                if(publicRequest.IsSetPipelineVersionDescription())
+                {
+                    context.Writer.WritePropertyName("PipelineVersionDescription");
+                    context.Writer.Write(publicRequest.PipelineVersionDescription);
+                }
+
+                if(publicRequest.IsSetPipelineVersionDisplayName())
+                {
+                    context.Writer.WritePropertyName("PipelineVersionDisplayName");
+                    context.Writer.Write(publicRequest.PipelineVersionDisplayName);
                 }
 
                 if(publicRequest.IsSetPipelineVersionId())
@@ -89,9 +101,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribePipelineRequestMarshaller _instance = new DescribePipelineRequestMarshaller();        
+        private static UpdatePipelineVersionRequestMarshaller _instance = new UpdatePipelineVersionRequestMarshaller();        
 
-        internal static DescribePipelineRequestMarshaller GetInstance()
+        internal static UpdatePipelineVersionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +111,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribePipelineRequestMarshaller Instance
+        public static UpdatePipelineVersionRequestMarshaller Instance
         {
             get
             {

@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.Orchestrator = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RestrictedInstanceGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ClusterRestrictedInstanceGroupDetails, ClusterRestrictedInstanceGroupDetailsUnmarshaller>(ClusterRestrictedInstanceGroupDetailsUnmarshaller.Instance);
+                    response.RestrictedInstanceGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VpcConfig", targetDepth))
                 {
                     var unmarshaller = VpcConfigUnmarshaller.Instance;
