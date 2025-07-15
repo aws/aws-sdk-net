@@ -79,6 +79,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCustomInstructions())
+            {
+                context.Writer.WritePropertyName("CustomInstructions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomInstructionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomInstructions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTopic())
             {
                 context.Writer.WritePropertyName("Topic");

@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     public partial class UpdateTopicRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
+        private CustomInstructions _customInstructions;
         private TopicDetails _topic;
         private string _topicId;
 
@@ -57,6 +58,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomInstructions. 
+        /// <para>
+        /// Custom instructions for the topic.
+        /// </para>
+        /// </summary>
+        public CustomInstructions CustomInstructions
+        {
+            get { return this._customInstructions; }
+            set { this._customInstructions = value; }
+        }
+
+        // Check to see if CustomInstructions property is set
+        internal bool IsSetCustomInstructions()
+        {
+            return this._customInstructions != null;
         }
 
         /// <summary>

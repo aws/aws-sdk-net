@@ -11029,7 +11029,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists the history of SPICE ingestions for a dataset.
+        /// Lists the history of SPICE ingestions for a dataset. Limited to 5 TPS per user and
+        /// 25 TPS per account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIngestions service method.</param>
         /// 
@@ -11064,7 +11065,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists the history of SPICE ingestions for a dataset.
+        /// Lists the history of SPICE ingestions for a dataset. Limited to 5 TPS per user and
+        /// 25 TPS per account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIngestions service method.</param>
         /// <param name="cancellationToken">
