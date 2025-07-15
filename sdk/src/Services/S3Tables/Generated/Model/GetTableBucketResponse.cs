@@ -39,6 +39,7 @@ namespace Amazon.S3Tables.Model
         private string _name;
         private string _ownerAccountId;
         private string _tableBucketId;
+        private TableBucketType _type;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -132,6 +133,24 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetTableBucketId()
         {
             return this._tableBucketId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the table bucket.
+        /// </para>
+        /// </summary>
+        public TableBucketType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

@@ -71,6 +71,9 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPrefix())
                 request.Parameters.Add("prefix", StringUtils.FromString(publicRequest.Prefix));
+            
+            if (publicRequest.IsSetType())
+                request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/buckets";
             request.UseQueryString = true;
 
