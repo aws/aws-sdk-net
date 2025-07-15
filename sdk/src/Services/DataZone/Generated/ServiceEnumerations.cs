@@ -461,6 +461,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly ConnectionType REDSHIFT = new ConnectionType("REDSHIFT");
         /// <summary>
+        /// Constant S3 for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType S3 = new ConnectionType("S3");
+        /// <summary>
         /// Constant SAPHANA for ConnectionType
         /// </summary>
         public static readonly ConnectionType SAPHANA = new ConnectionType("SAPHANA");

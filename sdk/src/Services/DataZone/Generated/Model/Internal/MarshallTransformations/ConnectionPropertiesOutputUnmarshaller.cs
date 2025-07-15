@@ -86,6 +86,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.RedshiftProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("s3Properties", targetDepth))
+                {
+                    var unmarshaller = S3PropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.S3Properties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("sparkEmrProperties", targetDepth))
                 {
                     var unmarshaller = SparkEmrPropertiesOutputUnmarshaller.Instance;
