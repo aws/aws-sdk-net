@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
+                if(publicRequest.IsSetIpAddressType())
+                {
+                    request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
+                }
                 if(publicRequest.IsSetPreserveClientIp())
                 {
                     request.Parameters.Add("PreserveClientIp", StringUtils.FromBool(publicRequest.PreserveClientIp));

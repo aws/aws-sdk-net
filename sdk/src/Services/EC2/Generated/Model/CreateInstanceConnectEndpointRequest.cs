@@ -36,7 +36,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring
-    /// the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
+    /// the instance to have a public IPv4 or public IPv6 address. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
     /// to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User
     /// Guide</i>.
     /// </para>
@@ -45,6 +46,7 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private bool? _dryRun;
+        private IpAddressType _ipAddressType;
         private bool? _preserveClientIp;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
@@ -90,6 +92,47 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type of the endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no value is specified, the default value is determined by the IP address type of
+        /// the subnet:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>dualstack</c> - If the subnet has both IPv4 and IPv6 CIDRs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv4</c> - If the subnet has only IPv4 CIDRs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv6</c> - If the subnet has only IPv6 CIDRs
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  <c>PreserveClientIp</c> is only supported on IPv4 EC2 Instance Connect Endpoints.
+        /// To use <c>PreserveClientIp</c>, the value for <c>IpAddressType</c> must be <c>ipv4</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PreserveClientIp. 
         /// <para>
         /// Indicates whether the client IP address is preserved as the source. The following
@@ -103,7 +146,12 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>false</c> - Use the network interface IP address as the source.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  <c>PreserveClientIp</c> is only supported on IPv4 EC2 Instance Connect Endpoints.
+        /// To use <c>PreserveClientIp</c>, the value for <c>IpAddressType</c> must be <c>ipv4</c>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <c>false</c> 
         /// </para>
