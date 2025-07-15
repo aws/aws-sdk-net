@@ -30,7 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The metadata table configuration for a general purpose bucket.
+    /// The V1 S3 Metadata configuration for a general purpose bucket. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you created your S3 Metadata configuration before July 15, 2025, we recommend that
+    /// you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+    /// so that you can expire journal table records and create a live inventory table.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetBucketMetadataTableConfigurationResult
     {
@@ -61,7 +69,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property MetadataTableConfigurationResult. 
         /// <para>
-        ///  The metadata table configuration for a general purpose bucket. 
+        ///  The V1 S3 Metadata configuration for a general purpose bucket. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,7 +97,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ACTIVE</c> - The metadata table has been created successfully and records are
+        ///  <c>ACTIVE</c> - The metadata table has been created successfully, and records are
         /// being delivered to the table. 
         /// </para>
         ///  </li> <li> 

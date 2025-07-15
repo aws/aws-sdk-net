@@ -3231,4 +3231,229 @@ namespace Amazon.S3
             return FindValue(value);
         }
     }
+
+    /// <summary>
+    /// The configuration state for inventory tables.
+    /// </summary>
+    public sealed class InventoryConfigurationState : ConstantClass
+    {
+        /// <summary>
+        /// Inventory configuration is enabled.
+        /// </summary>
+        public static readonly InventoryConfigurationState Enabled = new InventoryConfigurationState("ENABLED");
+
+        /// <summary>
+        /// Inventory configuration is disabled.
+        /// </summary>
+        public static readonly InventoryConfigurationState Disabled = new InventoryConfigurationState("DISABLED");
+
+        /// <summary>
+        /// Construct instance of InventoryConfigurationState.
+        /// </summary>
+        /// <param name="value"></param>
+        public InventoryConfigurationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InventoryConfigurationState FindValue(string value)
+        {
+            return FindValue<InventoryConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InventoryConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// The configuration state for journal tables.
+    /// </summary>
+    public sealed class JournalConfigurationState : ConstantClass
+    {
+        /// <summary>
+        /// Journal configuration is enabled.
+        /// </summary>
+        public static readonly JournalConfigurationState Enabled = new JournalConfigurationState("ENABLED");
+
+        /// <summary>
+        /// Journal configuration is disabled.
+        /// </summary>
+        public static readonly JournalConfigurationState Disabled = new JournalConfigurationState("DISABLED");
+
+        /// <summary>
+        /// Construct instance of JournalConfigurationState.
+        /// </summary>
+        /// <param name="value"></param>
+        public JournalConfigurationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JournalConfigurationState FindValue(string value)
+        {
+            return FindValue<JournalConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JournalConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// The type of S3 Tables bucket.
+    /// </summary>
+    public sealed class S3TablesBucketType : ConstantClass
+    {
+        /// <summary>
+        /// AWS-managed S3 Tables bucket.
+        /// </summary>
+        public static readonly S3TablesBucketType Aws = new S3TablesBucketType("aws");
+
+        /// <summary>
+        /// Customer-managed S3 Tables bucket.
+        /// </summary>
+        public static readonly S3TablesBucketType Customer = new S3TablesBucketType("customer");
+
+        /// <summary>
+        /// Construct instance of S3TablesBucketType.
+        /// </summary>
+        /// <param name="value"></param>
+        public S3TablesBucketType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3TablesBucketType FindValue(string value)
+        {
+            return FindValue<S3TablesBucketType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3TablesBucketType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// The SSE algorithm for table encryption.
+    /// </summary>
+    public sealed class TableSseAlgorithm : ConstantClass
+    {
+        /// <summary>
+        /// SSE-KMS encryption.
+        /// </summary>
+        public static readonly TableSseAlgorithm AwsKms = new TableSseAlgorithm("aws:kms");
+
+        /// <summary>
+        /// AES256 encryption.
+        /// </summary>
+        public static readonly TableSseAlgorithm AES256 = new TableSseAlgorithm("AES256");
+
+        /// <summary>
+        /// Construct instance of TableSseAlgorithm.
+        /// </summary>
+        /// <param name="value"></param>
+        public TableSseAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableSseAlgorithm FindValue(string value)
+        {
+            return FindValue<TableSseAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableSseAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// The expiration state for journal records.
+    /// </summary>
+    public sealed class ExpirationState : ConstantClass
+    {
+        /// <summary>
+        /// Record expiration is enabled.
+        /// </summary>
+        public static readonly ExpirationState Enabled = new ExpirationState("ENABLED");
+
+        /// <summary>
+        /// Record expiration is disabled.
+        /// </summary>
+        public static readonly ExpirationState Disabled = new ExpirationState("DISABLED");
+
+        /// <summary>
+        /// Construct instance of ExpirationState.
+        /// </summary>
+        /// <param name="value"></param>
+        public ExpirationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExpirationState FindValue(string value)
+        {
+            return FindValue<ExpirationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExpirationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
 }
