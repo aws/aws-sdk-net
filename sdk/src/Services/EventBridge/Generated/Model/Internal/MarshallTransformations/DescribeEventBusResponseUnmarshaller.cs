@@ -88,6 +88,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LogConfig", targetDepth))
+                {
+                    var unmarshaller = LogConfigUnmarshaller.Instance;
+                    response.LogConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -571,6 +571,56 @@ namespace Amazon.EventBridge
 
 
     /// <summary>
+    /// Constants used for properties of type IncludeDetail.
+    /// </summary>
+    public class IncludeDetail : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL for IncludeDetail
+        /// </summary>
+        public static readonly IncludeDetail FULL = new IncludeDetail("FULL");
+        /// <summary>
+        /// Constant NONE for IncludeDetail
+        /// </summary>
+        public static readonly IncludeDetail NONE = new IncludeDetail("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncludeDetail(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncludeDetail FindValue(string value)
+        {
+            return FindValue<IncludeDetail>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncludeDetail(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LaunchType.
     /// </summary>
     public class LaunchType : ConstantClass
@@ -618,6 +668,64 @@ namespace Amazon.EventBridge
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LaunchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Level.
+    /// </summary>
+    public class Level : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for Level
+        /// </summary>
+        public static readonly Level ERROR = new Level("ERROR");
+        /// <summary>
+        /// Constant INFO for Level
+        /// </summary>
+        public static readonly Level INFO = new Level("INFO");
+        /// <summary>
+        /// Constant OFF for Level
+        /// </summary>
+        public static readonly Level OFF = new Level("OFF");
+        /// <summary>
+        /// Constant TRACE for Level
+        /// </summary>
+        public static readonly Level TRACE = new Level("TRACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Level(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Level FindValue(string value)
+        {
+            return FindValue<Level>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Level(string value)
         {
             return FindValue(value);
         }
