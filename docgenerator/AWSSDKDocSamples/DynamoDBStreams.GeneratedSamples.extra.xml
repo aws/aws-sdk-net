@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.DynamoDBStreams.IAmazonDynamoDBStreams.DescribeStream(Amazon.DynamoDBStreams.Model.DescribeStreamRequest)" />
+            <member name="M:Amazon.DynamoDBStreams.AmazonDynamoDBStreamsClient.DescribeStream(Amazon.DynamoDBStreams.Model.DescribeStreamRequest)" />
+            <member name="T:Amazon.DynamoDBStreams.Model.DescribeStreamRequest" />
+            <member name="T:Amazon.DynamoDBStreams.Model.DescribeStreamResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example describes a stream with a given stream ARN.
+                </para>
+                <code
+                    title="To describe a stream with a given stream ARN"
+                    source=".\AWSSDKDocSamples\DynamoDBStreams\DynamoDBStreams.GeneratedSamples.cs"
+                    region="to-describe-a-stream-with-a-given-stream-arn-1473457835200" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DynamoDBStreams.IAmazonDynamoDBStreams.GetRecords(Amazon.DynamoDBStreams.Model.GetRecordsRequest)" />
+            <member name="M:Amazon.DynamoDBStreams.AmazonDynamoDBStreamsClient.GetRecords(Amazon.DynamoDBStreams.Model.GetRecordsRequest)" />
+            <member name="T:Amazon.DynamoDBStreams.Model.GetRecordsRequest" />
+            <member name="T:Amazon.DynamoDBStreams.Model.GetRecordsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves all the stream records from a shard.
+                </para>
+                <code
+                    title="To retrieve all the stream records from a shard"
+                    source=".\AWSSDKDocSamples\DynamoDBStreams\DynamoDBStreams.GeneratedSamples.cs"
+                    region="to-retrieve-all-the-stream-records-from-a-shard-1473707781419" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DynamoDBStreams.IAmazonDynamoDBStreams.GetShardIterator(Amazon.DynamoDBStreams.Model.GetShardIteratorRequest)" />
+            <member name="M:Amazon.DynamoDBStreams.AmazonDynamoDBStreamsClient.GetShardIterator(Amazon.DynamoDBStreams.Model.GetShardIteratorRequest)" />
+            <member name="T:Amazon.DynamoDBStreams.Model.GetShardIteratorRequest" />
+            <member name="T:Amazon.DynamoDBStreams.Model.GetShardIteratorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a shard iterator for the provided stream ARN and shard ID.
+                </para>
+                <code
+                    title="To obtain a shard iterator for the provided stream ARN and shard ID"
+                    source=".\AWSSDKDocSamples\DynamoDBStreams\DynamoDBStreams.GeneratedSamples.cs"
+                    region="to-obtain-a-shard-iterator-for-the-provided-stream-arn-and-shard-id-1473459941476" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DynamoDBStreams.IAmazonDynamoDBStreams.ListStreams(Amazon.DynamoDBStreams.Model.ListStreamsRequest)" />
+            <member name="M:Amazon.DynamoDBStreams.AmazonDynamoDBStreamsClient.ListStreams(Amazon.DynamoDBStreams.Model.ListStreamsRequest)" />
+            <member name="T:Amazon.DynamoDBStreams.Model.ListStreamsRequest" />
+            <member name="T:Amazon.DynamoDBStreams.Model.ListStreamsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all of the stream ARNs.
+                </para>
+                <code
+                    title="To list all of the stream ARNs "
+                    source=".\AWSSDKDocSamples\DynamoDBStreams\DynamoDBStreams.GeneratedSamples.cs"
+                    region="to-list-all-of-the-stream-arns--1473459534285" />
+            </example>
+        </value>
+    </doc>
+</docs>
