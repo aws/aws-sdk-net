@@ -108,6 +108,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.RedisEnterpriseCloudConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3VectorsConfiguration", targetDepth))
+                {
+                    var unmarshaller = S3VectorsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3VectorsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
