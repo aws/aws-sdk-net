@@ -24,10 +24,12 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
-namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
+namespace Amazon.Extensions.CborProtocol.Internal.Transform
 {
     public class CborUnmarshallerContext : UnmarshallerContext
     {
+        private bool disposed = false;
+        private byte[] rentedBuffer = null;
         private readonly Stack<string> _pathStack = new Stack<string>();
 
         // There isn't a direct way to check if the reader is at the start of the document,
@@ -119,17 +121,18 @@ namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
             );
         }
 
-        public static CborReader CreateCborReaderFromStream(Stream stream, long? streamSize = null)
+        private CborReader CreateCborReaderFromStream(Stream stream, long? streamSize = null)
         {
+            int totalRead = 0;
             if (streamSize.HasValue)
             {
+                // TODO: update this method to read the stream in chunks incase the stream is larger than int.MaxValue
                 // If we know the size, we can read directly into a buffer of exact size
-                var buffer = new byte[streamSize.Value];
-                int totalRead = 0;
+                rentedBuffer = ArrayPool<byte>.Shared.Rent((int)streamSize.Value);
 
                 while (totalRead < streamSize.Value)
                 {
-                    int bytesRead = stream.Read(buffer, totalRead, (int)(streamSize.Value - totalRead));
+                    int bytesRead = stream.Read(rentedBuffer, totalRead, (int)(streamSize.Value - totalRead));
                     if (bytesRead == 0)
                     {
                         // If no bytes are read, it means we've reached the end of the stream before reading the whole streamSize.
@@ -138,53 +141,43 @@ namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
 
                     totalRead += bytesRead;
                 }
-
-                return new CborReader(buffer);
             }
-
-            const int InitialBufferSize = 1024 * 8; // 8kb
-            var tempBuffer = ArrayPool<byte>.Shared.Rent(InitialBufferSize);
-
-            try
+            else
             {
-                int totalRead = 0;
+                const int InitialBufferSize = 1024 * 8; // 8kb
+                rentedBuffer = ArrayPool<byte>.Shared.Rent(InitialBufferSize);
+
                 while (true)
                 {
-                    int read = stream.Read(tempBuffer, totalRead, tempBuffer.Length - totalRead);
+                    int read = stream.Read(rentedBuffer, totalRead, rentedBuffer.Length - totalRead);
                     if (read == 0)
                         break;
 
                     totalRead += read;
 
-                    if (totalRead == tempBuffer.Length)
+                    if (totalRead == rentedBuffer.Length)
                     {
                         // Expand the buffer size by doubling it
-                        var newBuffer = ArrayPool<byte>.Shared.Rent(tempBuffer.Length * 2);
+                        var newBuffer = ArrayPool<byte>.Shared.Rent(rentedBuffer.Length * 2);
                         try
                         {
-                            Buffer.BlockCopy(tempBuffer, 0, newBuffer, 0, totalRead);
+                            Buffer.BlockCopy(rentedBuffer, 0, newBuffer, 0, totalRead);
                         }
                         catch
                         {
                             ArrayPool<byte>.Shared.Return(newBuffer);
+                            ArrayPool<byte>.Shared.Return(rentedBuffer);
+                            rentedBuffer = null;
                             throw;
                         }
-                        ArrayPool<byte>.Shared.Return(tempBuffer);
-                        tempBuffer = newBuffer;
+                        ArrayPool<byte>.Shared.Return(rentedBuffer);
+                        rentedBuffer = newBuffer;
                     }
                 }
-
-                // Create a new byte array to hold only the read data.
-                var actualBytes = new byte[totalRead];
-                Buffer.BlockCopy(tempBuffer, 0, actualBytes, 0, totalRead);
-
-                return new CborReader(actualBytes);
             }
-            finally
-            {
-                // Return the buffer to the pool when done
-                ArrayPool<byte>.Shared.Return(tempBuffer);
-            }
+
+            var actualBytes = new ReadOnlyMemory<byte>(rentedBuffer, 0, totalRead);
+            return new CborReader(actualBytes);
         }
 
         /// <summary>
@@ -205,6 +198,19 @@ namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
         public string PopPathSegment()
         {
             return _pathStack.Pop();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing && rentedBuffer != null)
+                {
+                    ArrayPool<byte>.Shared.Return(rentedBuffer);
+                }
+                disposed = true;
+            }
+            base.Dispose(disposing);
         }
     }
 }

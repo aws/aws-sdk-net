@@ -29,25 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
 using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ComplexErrorException Object
     /// </summary>  
-    public class ComplexErrorExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ComplexErrorException, JsonUnmarshallerContext>
+    public class ComplexErrorExceptionUnmarshaller : ICborErrorResponseUnmarshaller<ComplexErrorException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns></returns>
-        public ComplexErrorException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ComplexErrorException Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -55,37 +55,42 @@ namespace Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
-        /// <param name="reader"></param>
         /// <returns></returns>
-        public ComplexErrorException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public ComplexErrorException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            if (context.Stream.Length > 0)
-            {
-                context.Read(ref reader);
-            }
-
             ComplexErrorException unmarshalledObject = new ComplexErrorException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-        
-            int targetDepth = context.CurrentDepth;
-            if (context.Stream.Length > 0)
+            var reader = context.Reader;
+            context.AddPathSegment("ComplexErrorException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                while (context.ReadAtDepth(targetDepth, ref reader))
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    if (context.TestExpression("Nested", targetDepth))
-                    {
-                        var unmarshaller = ComplexNestedErrorDataUnmarshaller.Instance;
-                        unmarshalledObject.Nested = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
-                    if (context.TestExpression("TopLevel", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TopLevel = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "Nested":
+                        {
+                            context.AddPathSegment("Nested");
+                            var unmarshaller = ComplexNestedErrorDataUnmarshaller.Instance;
+                            unmarshalledObject.Nested = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "TopLevel":
+                        {
+                            context.AddPathSegment("TopLevel");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.TopLevel = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
           
             return unmarshalledObject;
         }

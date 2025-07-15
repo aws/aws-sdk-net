@@ -24,7 +24,7 @@ using System.Formats.Cbor;
 using System.IO;
 using System.Net;
 
-namespace AWSSDK.Extensions.CborProtocol.Internal.Transform
+namespace Amazon.Extensions.CborProtocol.Internal.Transform
 {
     public abstract class CborResponseUnmarshaller : ResponseUnmarshaller
     {

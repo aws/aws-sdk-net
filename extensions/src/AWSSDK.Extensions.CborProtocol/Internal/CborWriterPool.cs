@@ -17,7 +17,7 @@ using System.Collections.Concurrent;
 using System.Formats.Cbor;
 using System.Threading;
 
-namespace AWSSDK.Extensions.CborProtocol.Internal
+namespace Amazon.Extensions.CborProtocol.Internal
 {
     public static class CborWriterPool
     {
