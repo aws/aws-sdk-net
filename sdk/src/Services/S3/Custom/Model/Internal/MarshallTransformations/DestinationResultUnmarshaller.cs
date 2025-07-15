@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3TablesDestinationResult Object
+    /// Response Unmarshaller for DestinationResult Object
     /// </summary>  
-    public class S3TablesDestinationResultUnmarshaller : IUnmarshaller<S3TablesDestinationResult, XmlUnmarshallerContext>, IUnmarshaller<S3TablesDestinationResult, JsonUnmarshallerContext>
+    public class DestinationResultUnmarshaller : IUnmarshaller<DestinationResult, XmlUnmarshallerContext>, IUnmarshaller<DestinationResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3TablesDestinationResult Unmarshall(XmlUnmarshallerContext context)
+        public DestinationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            S3TablesDestinationResult unmarshalledObject = new S3TablesDestinationResult();
+            DestinationResult unmarshalledObject = new DestinationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,22 +56,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("TableArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("TableBucketArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TableBucketArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TableName", targetDepth))
+                    if (context.TestExpression("TableBucketType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TableBucketType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TableNamespace", targetDepth))
@@ -94,17 +88,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3TablesDestinationResult Unmarshall(JsonUnmarshallerContext context)
+        public DestinationResult Unmarshall(JsonUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        private static S3TablesDestinationResultUnmarshaller _instance = new S3TablesDestinationResultUnmarshaller();        
+        private static DestinationResultUnmarshaller _instance = new DestinationResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3TablesDestinationResultUnmarshaller Instance
+        public static DestinationResultUnmarshaller Instance
         {
             get
             {

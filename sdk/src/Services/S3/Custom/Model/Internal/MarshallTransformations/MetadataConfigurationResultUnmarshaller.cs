@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3TablesDestinationResult Object
+    /// Response Unmarshaller for MetadataConfigurationResult Object
     /// </summary>  
-    public class S3TablesDestinationResultUnmarshaller : IUnmarshaller<S3TablesDestinationResult, XmlUnmarshallerContext>, IUnmarshaller<S3TablesDestinationResult, JsonUnmarshallerContext>
+    public class MetadataConfigurationResultUnmarshaller : IUnmarshaller<MetadataConfigurationResult, XmlUnmarshallerContext>, IUnmarshaller<MetadataConfigurationResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3TablesDestinationResult Unmarshall(XmlUnmarshallerContext context)
+        public MetadataConfigurationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            S3TablesDestinationResult unmarshalledObject = new S3TablesDestinationResult();
+            MetadataConfigurationResult unmarshalledObject = new MetadataConfigurationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,28 +56,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("TableArn", targetDepth))
+                    if (context.TestExpression("DestinationResult", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DestinationResultUnmarshaller.Instance;
+                        unmarshalledObject.DestinationResult = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TableBucketArn", targetDepth))
+                    if (context.TestExpression("InventoryTableConfigurationResult", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableBucketArn = unmarshaller.Unmarshall(context);
+                        var unmarshaller = InventoryTableConfigurationResultUnmarshaller.Instance;
+                        unmarshalledObject.InventoryTableConfigurationResult = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TableName", targetDepth))
+                    if (context.TestExpression("JournalTableConfigurationResult", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TableNamespace", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableNamespace = unmarshaller.Unmarshall(context);
+                        var unmarshaller = JournalTableConfigurationResultUnmarshaller.Instance;
+                        unmarshalledObject.JournalTableConfigurationResult = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -94,17 +88,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3TablesDestinationResult Unmarshall(JsonUnmarshallerContext context)
+        public MetadataConfigurationResult Unmarshall(JsonUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        private static S3TablesDestinationResultUnmarshaller _instance = new S3TablesDestinationResultUnmarshaller();        
+        private static MetadataConfigurationResultUnmarshaller _instance = new MetadataConfigurationResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3TablesDestinationResultUnmarshaller Instance
+        public static MetadataConfigurationResultUnmarshaller Instance
         {
             get
             {

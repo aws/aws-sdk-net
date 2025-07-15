@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3TablesDestinationResult Object
+    /// Response Unmarshaller for JournalTableConfigurationResult Object
     /// </summary>  
-    public class S3TablesDestinationResultUnmarshaller : IUnmarshaller<S3TablesDestinationResult, XmlUnmarshallerContext>, IUnmarshaller<S3TablesDestinationResult, JsonUnmarshallerContext>
+    public class JournalTableConfigurationResultUnmarshaller : IUnmarshaller<JournalTableConfigurationResult, XmlUnmarshallerContext>, IUnmarshaller<JournalTableConfigurationResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3TablesDestinationResult Unmarshall(XmlUnmarshallerContext context)
+        public JournalTableConfigurationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            S3TablesDestinationResult unmarshalledObject = new S3TablesDestinationResult();
+            JournalTableConfigurationResult unmarshalledObject = new JournalTableConfigurationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,16 +56,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("Error", targetDepth))
+                    {
+                        var unmarshaller = ErrorUnmarshaller.Instance;
+                        unmarshalledObject.Error = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RecordExpiration", targetDepth))
+                    {
+                        var unmarshaller = RecordExpirationUnmarshaller.Instance;
+                        unmarshalledObject.RecordExpiration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TableArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TableBucketArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableBucketArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TableName", targetDepth))
@@ -74,10 +80,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TableNamespace", targetDepth))
+                    if (context.TestExpression("TableStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableNamespace = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -94,17 +100,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3TablesDestinationResult Unmarshall(JsonUnmarshallerContext context)
+        public JournalTableConfigurationResult Unmarshall(JsonUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        private static S3TablesDestinationResultUnmarshaller _instance = new S3TablesDestinationResultUnmarshaller();        
+        private static JournalTableConfigurationResultUnmarshaller _instance = new JournalTableConfigurationResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3TablesDestinationResultUnmarshaller Instance
+        public static JournalTableConfigurationResultUnmarshaller Instance
         {
             get
             {

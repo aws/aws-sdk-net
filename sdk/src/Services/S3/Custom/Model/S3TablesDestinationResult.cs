@@ -16,12 +16,10 @@
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// <para>
-    /// The destination information for the metadata table configuration. The destination table bucket
-    /// must be in the same Region and Amazon Web Services account as the general purpose bucket. The specified metadata
-    /// table name must be unique within the <c>aws_s3_metadata</c> namespace in the destination 
-    /// table bucket.
-    /// </para>
+    /// The destination information for the metadata table configuration. The destination
+    /// table bucket must be in the same Region and Amazon Web Services account as the general
+    /// purpose bucket. The specified metadata table name must be unique within the <c>aws_s3_metadata</c>
+    /// namespace in the destination table bucket.
     /// </summary>
     public class S3TablesDestinationResult
     {
@@ -32,9 +30,9 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
-        /// The Amazon Resource Name(ARN) for the table bucket that's specified as the
-        /// destination in the metadata table configuration. The destination table bucket
-        /// must be in the same Region and Amazon Web Services account as the general purpose bucket.
+        ///  The Amazon Resource Name (ARN) for the metadata table in the metadata table configuration.
+        /// The specified metadata table name must be unique within the <c>aws_s3_metadata</c>
+        /// namespace in the destination table bucket. 
         /// </para>
         /// </summary>
         public string TableBucketArn
@@ -45,9 +43,9 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
-        /// The Amazon Resource Name(ARN) for the metadata table in the metadata table configuration.The 
-        /// specified metadata table name must be unique within the <c>aws_s3_metadata</c> namespace 
-        /// in the destination table bucket.
+        ///  The Amazon Resource Name (ARN) for the table bucket that's specified as the destination
+        /// in the metadata table configuration. The destination table bucket must be in the same
+        /// Region and Amazon Web Services account as the general purpose bucket. 
         /// </para>
         /// </summary>
         public string TableArn
@@ -58,21 +56,21 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
-        /// The name for the metadata table in your metadata table configuration.The specified metadata
-        /// table name must be unique within the <c>aws_s3_metadata</c> namespace in the destination
-        /// table bucket.
+        ///  The name for the metadata table in your metadata table configuration. The specified
+        /// metadata table name must be unique within the <c>aws_s3_metadata</c> namespace in
+        /// the destination table bucket. 
         /// </para>
         /// </summary>
         public string TableName
-    {
+        {
         get { return this.tableName; }
         set { this.tableName = value; }
-    }
+        }
 
         /// <summary>
         /// <para>
-        /// The table bucket namespace for the metadata table in your metadata table configuration.This value 
-        /// is always<c> aws_s3_metadata</c>.
+        ///  The table bucket namespace for the metadata table in your metadata table configuration.
+        /// This value is always <c>aws_s3_metadata</c>. 
         /// </para>
         /// </summary>
         public string TableNamespace

@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3TablesDestinationResult Object
+    /// Response Unmarshaller for RecordExpiration Object
     /// </summary>  
-    public class S3TablesDestinationResultUnmarshaller : IUnmarshaller<S3TablesDestinationResult, XmlUnmarshallerContext>, IUnmarshaller<S3TablesDestinationResult, JsonUnmarshallerContext>
+    public class RecordExpirationUnmarshaller : IUnmarshaller<RecordExpiration, XmlUnmarshallerContext>, IUnmarshaller<RecordExpiration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3TablesDestinationResult Unmarshall(XmlUnmarshallerContext context)
+        public RecordExpiration Unmarshall(XmlUnmarshallerContext context)
         {
-            S3TablesDestinationResult unmarshalledObject = new S3TablesDestinationResult();
+            RecordExpiration unmarshalledObject = new RecordExpiration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,28 +56,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("TableArn", targetDepth))
+                    if (context.TestExpression("Days", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Days = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TableBucketArn", targetDepth))
+                    if (context.TestExpression("Expiration", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableBucketArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TableName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TableNamespace", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableNamespace = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -94,17 +82,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3TablesDestinationResult Unmarshall(JsonUnmarshallerContext context)
+        public RecordExpiration Unmarshall(JsonUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        private static S3TablesDestinationResultUnmarshaller _instance = new S3TablesDestinationResultUnmarshaller();        
+        private static RecordExpirationUnmarshaller _instance = new RecordExpirationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3TablesDestinationResultUnmarshaller Instance
+        public static RecordExpirationUnmarshaller Instance
         {
             get
             {

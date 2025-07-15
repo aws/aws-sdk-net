@@ -145,6 +145,12 @@ namespace Amazon.S3.Internal
                 result.Bucket = request.DestinationBucket;
                 return result;
             }
+            if (requestContext.RequestName == "CreateBucketMetadataConfigurationRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (CreateBucketMetadataConfigurationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
             if (requestContext.RequestName == "CreateBucketMetadataTableConfigurationRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (CreateBucketMetadataTableConfigurationRequest)requestContext.OriginalRequest;
@@ -184,6 +190,12 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "DeleteBucketInventoryConfigurationRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (DeleteBucketInventoryConfigurationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteBucketMetadataConfigurationRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (DeleteBucketMetadataConfigurationRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }
@@ -308,6 +320,12 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "GetBucketLoggingRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (GetBucketLoggingRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "GetBucketMetadataConfigurationRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (GetBucketMetadataConfigurationRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }
@@ -665,6 +683,18 @@ namespace Amazon.S3.Internal
             }
             if (requestContext.RequestName == "SelectObjectContentRequest") {
                 var request = (SelectObjectContentRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateBucketMetadataInventoryTableConfigurationRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (UpdateBucketMetadataInventoryTableConfigurationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateBucketMetadataJournalTableConfigurationRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (UpdateBucketMetadataJournalTableConfigurationRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }
