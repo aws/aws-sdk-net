@@ -267,30 +267,6 @@ namespace Amazon.DynamoDBv2.DataModel
         }
     }
 
-    //internal class ConstantExtractor : ExpressionVisitor
-    //{
-    //    public object ConstantValue { get; private set; }
-
-    //    protected override Expression VisitBinary(BinaryExpression node)
-    //    {
-    //        if (TryResolveValue(node.Right, out var value))
-    //        {
-    //            ConstantValue = value;
-    //        }
-
-    //        return base.VisitBinary(node);
-    //    }
-
-    //    private bool TryResolveValue(Expression expr, out object value)
-    //    {
-    //        value = EvaluateExpression(expr);
-    //        return true;
-    //    }
-
-       
-
-    //}
-
     /// <summary>
     /// Represents a node in a path expression for DynamoDB operations.
     /// </summary>
