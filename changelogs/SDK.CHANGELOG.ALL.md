@@ -1,3 +1,37 @@
+### 4.0.47.0 (2025-07-15 18:41 UTC)
+* BedrockAgent (4.0.4.0)
+	* Add support for S3 Vectors as a vector store.
+* DataZone (4.0.3.0)
+	* Removing restriction of environment profile identifier as required field, S3 feature release
+* DynamoDBStreams (4.0.1.0)
+	* Added support for optional shard filter parameter in DescribeStream api that allows customers to fetch child shards of a read_only parent shard.
+* EC2 (4.0.20.0)
+	* This release adds support for volume initialization status, which enables you to monitor when the initialization process for an EBS volume is completed. This release also adds IPv6 support to EC2 Instance Connect Endpoints, allowing you to connect to your EC2 Instance via a private IPv6 address.
+* ECS (4.0.3.0)
+	* Amazon ECS supports native blue/green deployments, allowing you to validate new service revisions before directing production traffic to them.
+* EventBridge (4.0.3.0)
+	* Add customer-facing logging for the EventBridge Event Bus, enabling customers to better observe their events and extract insights about their EventBridge usage.
+* OpenSearchService (4.0.1.0)
+	* AWS Opensearch adds support for enabling s3 vector engine options. After enabling this option, customers will be able to create indices with s3 vector engine.
+* Pricing (4.0.1.0)
+	* This release adds support for new filter types in GetProducts API, including EQUALS, CONTAINS, ANY_OF, and NONE_OF.
+* QuickSight (4.0.2.0)
+	* Introduced custom instructions for topics.
+* Repostspace (4.0.1.0)
+	* This release introduces Channels functionality with CreateChannel, GetChannel, ListChannels, and UpdateChannel operations. Channels provide dedicated collaboration spaces where teams can organize discussions and knowledge by projects, business units, or areas of responsibility.
+* S3 (4.0.5.0)
+	* Amazon S3 Metadata live inventory tables provide a queryable inventory of all the objects in your general purpose bucket so that you can determine the latest state of your data. To help minimize your storage costs, use journal table record expiration to set a retention period for your records.
+* S3Tables (4.0.3.0)
+	* Adds table bucket type to ListTableBucket and GetTableBucket API operations
+* S3Vectors (4.0.0.0)
+	* Amazon S3 Vectors provides cost-effective, elastic, and durable vector storage for queries based on semantic meaning and similarity.
+* SageMaker (4.0.13.0)
+	* This release adds support for a new Restricted instance group type to enable a specialized environment for running Nova customization jobs on SageMaker HyperPod clusters. This release also adds support for SageMaker pipeline versioning.
+* Core 4.0.0.16
+	* Add `AWSConfigs.DisableLegacyPersistenceStore` option to instruct the SDK not to use the [SDK Store](https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/sdk-store.html) in its default profile resolution search
+	* Update `PersistenceManager` not to throw an exception when the SDK is used with a read-only file system (https://github.com/aws/aws-sdk-net/issues/3801)
+	* All services packages updated to require new Core
+
 ### 4.0.46.0 (2025-07-09 18:20 UTC)
 * EC2 (4.0.19.0)
 	* Adds support to Capacity Blocks for ML for purchasing EC2 P6e-GB200 UltraServers. Customers can now purchase u-p6e-gb200x72 and u-p6e-gb200x36 UltraServers. Adds new DescribeCapacityBlocks andDescribeCapacityBlockStatus APIs. Adds support for CapacityBlockId to DescribeInstanceTopology.

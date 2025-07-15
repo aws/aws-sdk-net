@@ -33,7 +33,7 @@ namespace Amazon.AppTest
     public partial class AmazonAppTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppTest", "4.0.0.13");
+            InternalSDKUtils.BuildUserAgentString("AppTest", "4.0.0.14");
 
         private static readonly AmazonAppTestEndpointResolver EndpointResolver =
             new AmazonAppTestEndpointResolver();
