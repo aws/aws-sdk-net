@@ -15712,6 +15712,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -22993,6 +22994,8 @@
             "ap-southeast-2": {},
             "ap-southeast-3": {},
             "ap-southeast-4": {},
+            "ap-southeast-5": {},
+            "ap-southeast-7": {},
             "ca-central-1": {},
             "eu-central-1": {},
             "eu-central-2": {},
@@ -23286,6 +23289,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-northeast-3": {},
@@ -53708,6 +53712,12 @@
           }
         },
         "route53resolver": {
+          "endpoints": {
+            "us-isof-east-1": {},
+            "us-isof-south-1": {}
+          }
+        },
+        "runtime.sagemaker": {
           "endpoints": {
             "us-isof-east-1": {},
             "us-isof-south-1": {}
