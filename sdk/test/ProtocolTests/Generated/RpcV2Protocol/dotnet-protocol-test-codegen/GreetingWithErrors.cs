@@ -16,10 +16,10 @@
 /*
  * Do not modify this file. This file is generated.
  */
-using AWSSDK.Extensions.CborProtocol.Internal;
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 using Amazon.RpcV2Protocol;
 using Amazon.RpcV2Protocol.Model;
 using Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations;

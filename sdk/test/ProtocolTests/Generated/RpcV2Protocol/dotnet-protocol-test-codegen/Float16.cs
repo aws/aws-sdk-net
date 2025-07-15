@@ -16,10 +16,10 @@
 /*
  * Do not modify this file. This file is generated.
  */
-using AWSSDK.Extensions.CborProtocol.Internal;
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 using Amazon.RpcV2Protocol;
 using Amazon.RpcV2Protocol.Model;
 using Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations;
@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.RpcV2Protocol
@@ -38,5 +39,162 @@ namespace AWSSDK.ProtocolTests.RpcV2Protocol
     [TestClass]
     public class Float16
     {
+        /// <summary>
+        /// Ensures that clients can correctly parse float16 +Inf.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborFloat16InfResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("oWV2YWx1Zfl8AA==");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new Float16ResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new Float16Response
+            {
+                Value = double.PositiveInfinity,
+            };
+
+            // Assert
+            var actualResponse = (Float16Response)unmarshalledResponse;
+            Comparer.CompareObjects<Float16Response>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Ensures that clients can correctly parse float16 -Inf.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborFloat16NegInfResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("oWV2YWx1Zfn8AA==");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new Float16ResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new Float16Response
+            {
+                Value = double.NegativeInfinity,
+            };
+
+            // Assert
+            var actualResponse = (Float16Response)unmarshalledResponse;
+            Comparer.CompareObjects<Float16Response>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Ensures that clients can correctly parse float16 NaN with high
+        /// LSB.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborFloat16LSBNaNResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("oWV2YWx1Zfl8AQ==");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new Float16ResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new Float16Response
+            {
+                Value = double.NaN,
+            };
+
+            // Assert
+            var actualResponse = (Float16Response)unmarshalledResponse;
+            Comparer.CompareObjects<Float16Response>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Ensures that clients can correctly parse float16 NaN with high
+        /// MSB.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborFloat16MSBNaNResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("oWV2YWx1Zfl+AA==");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new Float16ResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new Float16Response
+            {
+                Value = double.NaN,
+            };
+
+            // Assert
+            var actualResponse = (Float16Response)unmarshalledResponse;
+            Comparer.CompareObjects<Float16Response>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Ensures that clients can correctly parse a subnormal float16.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborFloat16SubnormalResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("oWV2YWx1ZfkAUA==");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new Float16ResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new Float16Response
+            {
+                Value = 4.76837158203125E-6,
+            };
+
+            // Assert
+            var actualResponse = (Float16Response)unmarshalledResponse;
+            Comparer.CompareObjects<Float16Response>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
     }
 }
