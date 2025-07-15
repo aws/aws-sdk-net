@@ -7697,6 +7697,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InitializationType.
+    /// </summary>
+    public class InitializationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for InitializationType
+        /// </summary>
+        public static readonly InitializationType Default = new InitializationType("default");
+        /// <summary>
+        /// Constant ProvisionedRate for InitializationType
+        /// </summary>
+        public static readonly InitializationType ProvisionedRate = new InitializationType("provisioned-rate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InitializationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InitializationType FindValue(string value)
+        {
+            return FindValue<InitializationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InitializationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceAttributeName.
     /// </summary>
     public class InstanceAttributeName : ConstantClass
@@ -24766,6 +24816,10 @@ namespace Amazon.EC2
     public class VolumeStatusName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant InitializationState for VolumeStatusName
+        /// </summary>
+        public static readonly VolumeStatusName InitializationState = new VolumeStatusName("initialization-state");
         /// <summary>
         /// Constant IoEnabled for VolumeStatusName
         /// </summary>

@@ -5323,7 +5323,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring
-        /// the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
+        /// the instance to have a public IPv4 or public IPv6 address. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
         /// to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User
         /// Guide</i>.
         /// </para>
@@ -5348,7 +5349,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring
-        /// the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
+        /// the instance to have a public IPv4 or public IPv6 address. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
         /// to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User
         /// Guide</i>.
         /// </para>

@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _fipsDnsName;
         private string _instanceConnectEndpointArn;
         private string _instanceConnectEndpointId;
+        private IpAddressType _ipAddressType;
         private List<string> _networkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ownerId;
         private bool? _preserveClientIp;
@@ -105,7 +106,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FipsDnsName.
+        /// Gets and sets the property FipsDnsName. 
+        /// <para>
+        /// The Federal Information Processing Standards (FIPS) compliant DNS name of the EC2
+        /// Instance Connect Endpoint.
+        /// </para>
         /// </summary>
         public string FipsDnsName
         {
@@ -154,6 +159,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceConnectEndpointId()
         {
             return this._instanceConnectEndpointId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type of the endpoint.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>
