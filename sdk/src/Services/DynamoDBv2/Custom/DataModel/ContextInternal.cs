@@ -1570,7 +1570,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 keyExpression.ExpressionAttributeNames.Add("#rangeKey", rangeKeyPropertyName);
                 var valuesList = values?.ToList();
                 var rangeKeyProperty = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(rangeKeyPropertyName);
-                if (op == QueryOperator.Between && valuesList != null && valuesList.Count() == 2)
+                if (op == QueryOperator.Between && valuesList is { Count: 2 })
                 {
                     keyExpression.ExpressionAttributeValues.Add(":rangeKey0", ToDynamoDBEntry(
                         rangeKeyProperty,

@@ -11,10 +11,6 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
-using Amazon.S3.Model;
-using Amazon.Runtime.Internal.Transform;
-using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
