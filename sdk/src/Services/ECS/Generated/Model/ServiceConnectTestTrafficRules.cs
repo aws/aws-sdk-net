@@ -34,6 +34,13 @@ namespace Amazon.ECS.Model
     /// configuration allows you to define rules for routing specific traffic to the new service
     /// revision during the deployment process, allowing for safe testing before full production
     /// traffic shift.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect-blue-green.html">Service
+    /// Connect for Amazon ECS blue/green deployments</a> in the <i> Amazon Elastic Container
+    /// Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ServiceConnectTestTrafficRules
     {

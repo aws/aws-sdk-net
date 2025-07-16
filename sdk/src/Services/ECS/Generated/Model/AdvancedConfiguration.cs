@@ -47,7 +47,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property AlternateTargetGroupArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the alternate target group for Amazon ECS blue/green
-        /// deployments. 
+        /// deployments.
         /// </para>
         /// </summary>
         public string AlternateTargetGroupArn
@@ -65,8 +65,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ProductionListenerRule. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the production listener rule for routing
-        /// production traffic.
+        /// The Amazon Resource Name (ARN) that that identifies the production listener rule (in
+        /// the case of an Application Load Balancer) or listener (in the case for an Network
+        /// Load Balancer) for routing production traffic.
         /// </para>
         /// </summary>
         public string ProductionListenerRule
@@ -103,8 +104,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TestListenerRule. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the test listener rule or listener
-        /// for routing test traffic.
+        /// The Amazon Resource Name (ARN) that identifies ) that identifies the test listener
+        /// rule (in the case of an Application Load Balancer) or listener (in the case for an
+        /// Network Load Balancer) for routing test traffic.
         /// </para>
         /// </summary>
         public string TestListenerRule

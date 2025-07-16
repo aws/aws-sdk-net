@@ -32,32 +32,19 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// A deployment lifecycle hook runs custom logic at specific stages of the deployment
     /// process. Currently, you can use Lambda functions as hook targets.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-lifecycle-hooks.html">Lifecycle
+    /// hooks for Amazon ECS service deployments</a> in the <i> Amazon Elastic Container Service
+    /// Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeploymentLifecycleHook
     {
-        private Amazon.Runtime.Documents.Document _hookDetails;
         private string _hookTargetArn;
         private List<string> _lifecycleStages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
-
-        /// <summary>
-        /// Gets and sets the property HookDetails. 
-        /// <para>
-        /// Optionally provide details about the hook. Use this field to pass custom parameters
-        /// to your hook target (such as a Lambda function).
-        /// </para>
-        /// </summary>
-        public Amazon.Runtime.Documents.Document HookDetails
-        {
-            get { return this._hookDetails; }
-            set { this._hookDetails = value; }
-        }
-
-        // Check to see if HookDetails property is set
-        internal bool IsSetHookDetails()
-        {
-            return !this._hookDetails.IsNull();
-        }
 
         /// <summary>
         /// Gets and sets the property HookTargetArn. 
@@ -93,8 +80,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// This stage only happens when you start a new service deployment with more than 1 service
-        /// revision in an ACTIVE state.
+        /// The reconciliation stage that only happens when you start a new service deployment
+        /// with more than 1 service revision in an ACTIVE state.
         /// </para>
         ///  
         /// <para>
@@ -112,19 +99,6 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// You can use a lifecycle hook for this stage.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SCALE_UP
-        /// </para>
-        ///  
-        /// <para>
-        /// The time when the green service revision scales up to 100% and launches new tasks.
-        /// The green service revision is not serving any traffic at this point.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can't use a lifecycle hook for this stage.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -189,32 +163,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// Yes
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// BAKE_TIME
-        /// </para>
-        ///  
-        /// <para>
-        /// The duration when both blue and green service revisions are running simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can't use a lifecycle hook for this stage.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CLEAN_UP
-        /// </para>
-        ///  
-        /// <para>
-        /// The blue service revision has completely scaled down to 0 running tasks. The green
-        /// service revision is now the production service revision after this stage.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can't use a lifecycle hook for this stage.
+        /// You can use a lifecycle hook for this stage.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -247,8 +196,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-permissions.html">Permissions
-        /// required for Lambda functions in Amazon ECS blue/green deployments</a> in the<i> Amazon
-        /// Elastic Container Service Developer Guide</i>.
+        /// required for Lambda functions in Amazon ECS blue/green deployments</a> in the <i>
+        /// Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string RoleArn

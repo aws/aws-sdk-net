@@ -64,7 +64,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property BakeTimeInMinutes. 
         /// <para>
-        /// The duration when both blue and green service revisions are running simultaneously
+        /// The time period when both blue and green service revisions are running simultaneously
         /// after the production traffic has shifted.
         /// </para>
         ///  
@@ -117,8 +117,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property LifecycleHooks. 
         /// <para>
         /// An array of deployment lifecycle hook objects to run custom logic at specific stages
-        /// of the deployment lifecycle. These hooks allow you to run custom logic at key points
-        /// during the deployment process.
+        /// of the deployment lifecycle.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
