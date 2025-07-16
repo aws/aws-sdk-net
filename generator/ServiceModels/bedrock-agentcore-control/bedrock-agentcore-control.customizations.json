@@ -1,0 +1,13 @@
+{
+  "shapeModifiers": {
+    "ModifyMemoryStrategies": {
+      "modify": [
+        {
+          "modifyMemoryStrategies": {
+            "emitPropertyName": "updateMemoryStrategies"
+          }
+        }
+      ]
+    }
+  }
+}
