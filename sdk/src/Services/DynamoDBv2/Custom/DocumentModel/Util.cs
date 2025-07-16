@@ -329,7 +329,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private const string AwsVariablePrefix = "awsavar";
         
         public static void ConvertAttributeUpdatesToUpdateExpression(
-            Dictionary<string, AttributeValueUpdate> attributesToUpdates, Expression updateExpression,
+            Dictionary<string, AttributeValueUpdate> attributesToUpdates, List<string> ifNotExistAttributeNames,
+            Expression updateExpression,
             Table table,
             out string statement,
             out Dictionary<string, AttributeValue> expressionAttributeValues,
@@ -358,11 +359,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                 var update = kvp.Value;
 
+                var createOnly = ifNotExistAttributeNames?.Contains(attribute) ?? false;
+
                 string variableName = GetVariableName(ref attributeCount);
                 var attributeReference = GetAttributeReference(variableName);
                 var attributeValueReference = GetAttributeValueReference(variableName);
 
-                if (update.Action == AttributeAction.DELETE)
+                if (update.Action == AttributeAction.DELETE && !createOnly)
                 {
                     if (removes.Length > 0)
                         removes.Append(", ");
@@ -372,7 +375,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     if (sets.Length > 0)
                         sets.Append(", ");
-                    sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
+                    switch (createOnly)
+                    {
+                        case true:
+                            sets.AppendFormat("{0} = if_not_exists({0}, {1})", attributeReference, attributeValueReference);
+                            break;
+                        default:
+                            sets.AppendFormat("{0} = {1}", attributeReference, attributeValueReference);
+                            break;
+                    }
 
                     // Add the attribute value for the variable in the added in the expression
                     expressionAttributeValues.Add(attributeValueReference, update.Value);
@@ -387,7 +398,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (sets.Length > 0)
             {
                 var setStatement= updateExpression!=null ? updateExpression.ExpressionStatement + "," : "SET";
-                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} {1}", setStatement, sets.ToString());
+                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} {1} ", setStatement, sets.ToString());
+            }
+            else
+            {
+                var setStatement = updateExpression != null ? updateExpression.ExpressionStatement : "";
+                statementBuilder.AppendFormat(CultureInfo.InvariantCulture, "{0} ", setStatement);
             }
             if (removes.Length > 0)
             {
