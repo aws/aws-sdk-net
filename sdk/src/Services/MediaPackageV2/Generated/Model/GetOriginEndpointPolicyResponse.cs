@@ -34,10 +34,35 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class GetOriginEndpointPolicyResponse : AmazonWebServiceResponse
     {
+        private CdnAuthConfiguration _cdnAuthConfiguration;
         private string _channelGroupName;
         private string _channelName;
         private string _originEndpointName;
         private string _policy;
+
+        /// <summary>
+        /// Gets and sets the property CdnAuthConfiguration. 
+        /// <para>
+        /// The settings for using authorization headers between the MediaPackage endpoint and
+        /// your CDN. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about CDN authorization, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/cdn-auth.html">CDN
+        /// authorization in Elemental MediaPackage</a> in the MediaPackage user guide.
+        /// </para>
+        /// </summary>
+        public CdnAuthConfiguration CdnAuthConfiguration
+        {
+            get { return this._cdnAuthConfiguration; }
+            set { this._cdnAuthConfiguration = value; }
+        }
+
+        // Check to see if CdnAuthConfiguration property is set
+        internal bool IsSetCdnAuthConfiguration()
+        {
+            return this._cdnAuthConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelGroupName. 

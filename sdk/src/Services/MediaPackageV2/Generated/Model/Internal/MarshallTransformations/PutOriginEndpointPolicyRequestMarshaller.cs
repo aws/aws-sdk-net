@@ -76,6 +76,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCdnAuthConfiguration())
+                {
+                    context.Writer.WritePropertyName("CdnAuthConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CdnAuthConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CdnAuthConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPolicy())
                 {
                     context.Writer.WritePropertyName("Policy");
