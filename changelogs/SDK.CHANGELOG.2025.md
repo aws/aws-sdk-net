@@ -1,3 +1,7 @@
+### 4.0.48.0 (2025-07-16 00:41 UTC)
+* ECS (4.0.4.0)
+	* This release removes hookDetails for the Amazon ECS native blue/green deployments.
+
 ### 4.0.47.0 (2025-07-15 18:41 UTC)
 * BedrockAgent (4.0.4.0)
 	* Add support for S3 Vectors as a vector store.
