@@ -1,3 +1,33 @@
+### 4.0.49.0 (2025-07-16 15:39 UTC)
+* Bedrock (4.0.8.0)
+	* This release adds support for on-demand custom model inference through CustomModelDeployment APIs for Amazon Bedrock.
+* BedrockAgentCore (4.0.0.0)
+	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
+* BedrockAgentCoreControl (4.0.0.0)
+	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
+* BedrockRuntime (4.0.2.0)
+	* document update to support on demand custom model.
+* CloudWatchLogs (4.0.6.0)
+	* CloudWatch Logs updates: Added X-Ray tracing for Amazon Bedrock Agent resources. Logs introduced Log Group level resource policies (managed through Put/Delete/Describe Resource Policy APIs). For more information, see CloudWatch Logs API documentation.
+* DataSync (4.0.3.0)
+	* AWS DataSync now supports IPv6 address inputs and outputs in create, update, and describe operations for NFS, SMB, and Object Storage locations
+* DynamoDBv2 (4.0.3.0)
+	* Add native support for LINQ expression trees in the IDynamoDBContext API for ScanAsync<T>() and QueryAsync<T>()
+* Glue (4.0.9.0)
+	* AWS Glue now supports schema, partition and sort management of Apache Iceberg tables using Glue SDK
+* GuardDuty (4.0.3.0)
+	* Add expectedBucketOwner parameter to ThreatIntel and IPSet APIs.
+* IoTWireless (4.0.1.0)
+	* FuotaTaskId is not a valid IdentifierType for EventConfiguration and is being removed from possible IdentifierType values.
+* MediaPackageV2 (4.0.3.0)
+	* This release adds support for CDN Authentication using Static Headers in MediaPackage v2.
+* NetworkFlowMonitor (4.0.2.0)
+	* Introducing 2 new scope status types - DEACTIVATING and DEACTIVATED.
+* PaymentCryptographyData (4.0.2.0)
+	* Expand length of message data field for Mac generation and validation to 8192 characters.
+* StepFunctions (4.0.0.15)
+	* Doc-only update to introduction, and edits to clarify input parameter and the set of control characters.
+
 ### 4.0.48.0 (2025-07-16 00:41 UTC)
 * ECS (4.0.4.0)
 	* This release removes hookDetails for the Amazon ECS native blue/green deployments.
