@@ -1,3 +1,10 @@
+### 3.7.1080.0 (2025-07-16 00:42 UTC)
+* ECS (3.7.414.0)
+	* This release removes hookDetails for the Amazon ECS native blue/green deployments.
+* Core 3.7.402.82
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1079.0 (2025-07-15 18:34 UTC)
 * BedrockAgent (3.7.428.0)
 	* Add support for S3 Vectors as a vector store.

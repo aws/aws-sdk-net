@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache
     public partial class AmazonElastiCacheConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ElastiCache", "3.7.403.43");
+            InternalSDKUtils.BuildUserAgentString("ElastiCache", "3.7.403.44");
 
         private string _userAgent = UserAgentString;
         ///<summary>
