@@ -132,6 +132,11 @@ namespace Amazon.IoTWireless.Model
         /// <para>
         /// The name of the new resource.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The following special characters aren't accepted: <c>&lt;&gt;^#~$</c> 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=256)]
         public string Name
