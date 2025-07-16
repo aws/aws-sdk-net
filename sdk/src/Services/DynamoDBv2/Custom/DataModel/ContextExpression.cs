@@ -48,7 +48,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="lower">The inclusive lower bound.</param>
         /// <param name="upper">The inclusive upper bound.</param>
         /// <returns>This method is intended to be used only within expression definitions (such as LINQ expression trees) and should not be called at runtime.</returns>
-        public static bool Between<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, T lower, T upper) => throw null!;
+        public static bool Between<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, T lower, T upper) 
+        {
+            throw new NotSupportedException("The method 'Between' is intended for use only in LINQ expression trees and should not be called at runtime.");
+        }
 
         /// <summary>
         /// Indicates that the attribute exists in the DynamoDB item.
@@ -57,7 +60,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="_">The object representing the attribute to check.</param>
         /// <returns>True if the attribute exists; otherwise, false.</returns>
-        public static bool AttributeExists(object _) => throw null!;
+        public static bool AttributeExists(object _) => throw new NotSupportedException("This method is only intended for use in LINQ expression trees and should not be called at runtime.");
 
         /// <summary>
         /// Indicates that the attribute does not exist in the DynamoDB item.
@@ -66,7 +69,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="_">The object representing the attribute to check.</param>
         /// <returns>This method is intended to be used only within expression definitions (such as LINQ expression trees) and should not be called at runtime.</returns>
-        public static bool AttributeNotExists(object _) => throw null!;
+        public static bool AttributeNotExists(object _) => throw new NotSupportedException("This method is intended to be used only within expression definitions (such as LINQ expression trees) and should not be called at runtime.");
 
         /// <summary>
         /// Indicates that the attribute is of the specified DynamoDB type.
@@ -76,7 +79,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="_">The object representing the attribute to check.</param>
         /// <param name="dynamoDbType">The DynamoDB attribute type to compare against.</param>
         /// <returns>This method is intended to be used only within expression definitions (such as LINQ expression trees) and should not be called at runtime.</returns>
-        public static bool AttributeType(object _, string dynamoDbType) => throw null!;
+        public static bool AttributeType(object _, string dynamoDbType) => throw new NotSupportedException("The method AttributeType is intended for use only in expression trees and should not be called at runtime.");
     }
 
 
