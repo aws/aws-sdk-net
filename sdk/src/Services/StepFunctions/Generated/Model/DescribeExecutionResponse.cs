@@ -193,7 +193,15 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// control characters (<c>U+0000-001F</c>, <c>U+007F-009F</c>)
+        /// control characters (<c>U+0000-001F</c>, <c>U+007F-009F</c>, <c>U+FFFE-FFFF</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// surrogates (<c>U+D800-DFFF</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// invalid characters (<c> U+10FFFF</c>)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -533,6 +541,16 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The X-Ray trace header that was passed to the execution.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  For X-Ray traces, all Amazon Web Services services use the <c>X-Amzn-Trace-Id</c>
+        /// header from the HTTP request. Using the header is the preferred mechanism to identify
+        /// a trace. <c>StartExecution</c> and <c>StartSyncExecution</c> API operations can also
+        /// use <c>traceHeader</c> from the body of the request payload. If <b>both</b> sources
+        /// are provided, Step Functions will use the <b>header value</b> (preferred) over the
+        /// value in the request body. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string TraceHeader
