@@ -101,8 +101,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerHostname. 
         /// <para>
-        /// Specifies the DNS name or IP version 4 (IPv4) address of the NFS file server that
-        /// your DataSync agent connects to.
+        /// Specifies the DNS name or IP address (IPv4 or IPv6) of the NFS file server that your
+        /// DataSync agent connects to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

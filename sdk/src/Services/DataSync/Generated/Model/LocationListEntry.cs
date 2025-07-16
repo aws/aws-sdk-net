@@ -79,8 +79,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// GLOBAL_ID is the globally unique identifier of the resource that backs the location.
         /// An example for EFS is <c>us-east-2.fs-abcd1234</c>. An example for Amazon S3 is the
-        /// bucket name, such as <c>myBucket</c>. An example for NFS is a valid IPv4 address or
-        /// a hostname that is compliant with Domain Name Service (DNS).
+        /// bucket name, such as <c>myBucket</c>. An example for NFS is a valid IPv4 or IPv6 address
+        /// or a hostname that is compliant with DNS.
         /// </para>
         ///  
         /// <para>
