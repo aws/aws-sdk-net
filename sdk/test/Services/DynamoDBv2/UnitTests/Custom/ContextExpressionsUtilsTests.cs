@@ -101,10 +101,12 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void GetConstant_ThrowsForUnsupportedNewExpression()
+        public void GetConstant_ReturnsInstanceOfType()
         {
             Expression expr = Expression.New(typeof(TestClass));
-            ContextExpressionsUtils.GetConstant(expr);
+            var result=ContextExpressionsUtils.GetConstant(expr);
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(TestClass));
         }
 
         [TestMethod]

@@ -1,13 +1,10 @@
 ﻿using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
-using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
 using System.Linq.Expressions;
-using System.Reflection;
-using System.Runtime.Remoting.Contexts;
 
 namespace AWSSDK_DotNet.UnitTests
 {
