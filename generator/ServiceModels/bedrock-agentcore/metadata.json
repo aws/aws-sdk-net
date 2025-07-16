@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.",
+  "generate-client-constructors": true
+}
