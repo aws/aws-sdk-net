@@ -108,8 +108,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property DnsIpAddresses. 
         /// <para>
-        /// The IPv4 addresses for the DNS servers that your SMB file server belongs to. This
-        /// element applies only if <c>AuthenticationType</c> is set to <c>KERBEROS</c>.
+        /// The IPv4 or IPv6 addresses for the DNS servers that your SMB file server belongs to.
+        /// This element applies only if <c>AuthenticationType</c> is set to <c>KERBEROS</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

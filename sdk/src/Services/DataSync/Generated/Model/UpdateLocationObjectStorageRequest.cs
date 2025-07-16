@@ -171,6 +171,13 @@ namespace Amazon.DataSync.Model
         /// Specifies the secret key (for example, a password) if credentials are required to
         /// authenticate with the object storage server.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you provide a secret using <c>SecretKey</c>, but do not provide secret configuration
+        /// details using <c>CmkSecretConfig</c> or <c>CustomSecretConfig</c>, then DataSync stores
+        /// the token using your Amazon Web Services account's Secrets Manager secret.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string SecretKey
@@ -245,7 +252,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerHostname. 
         /// <para>
-        /// Specifies the domain name or IP version 4 (IPv4) address of the object storage server
+        /// Specifies the domain name or IP address (IPv4 or IPv6) of the object storage server
         /// that your DataSync agent connects to.
         /// </para>
         /// </summary>
