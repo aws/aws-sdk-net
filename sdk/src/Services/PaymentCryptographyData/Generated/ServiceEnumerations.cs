@@ -382,6 +382,10 @@ namespace Amazon.PaymentCryptographyData
         /// Constant HMAC for KeyCheckValueAlgorithm
         /// </summary>
         public static readonly KeyCheckValueAlgorithm HMAC = new KeyCheckValueAlgorithm("HMAC");
+        /// <summary>
+        /// Constant SHA_1 for KeyCheckValueAlgorithm
+        /// </summary>
+        public static readonly KeyCheckValueAlgorithm SHA_1 = new KeyCheckValueAlgorithm("SHA_1");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -532,6 +536,10 @@ namespace Amazon.PaymentCryptographyData
         /// Constant CMAC for MacAlgorithm
         /// </summary>
         public static readonly MacAlgorithm CMAC = new MacAlgorithm("CMAC");
+        /// <summary>
+        /// Constant HMAC for MacAlgorithm
+        /// </summary>
+        public static readonly MacAlgorithm HMAC = new MacAlgorithm("HMAC");
         /// <summary>
         /// Constant HMAC_SHA224 for MacAlgorithm
         /// </summary>
