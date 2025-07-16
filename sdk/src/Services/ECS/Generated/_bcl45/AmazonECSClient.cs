@@ -587,8 +587,9 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// When you create a service which uses the <c>ECS</c> deployment controller, you can
-        /// choose between the following deployment strategies:
+        ///  When you create a service which uses the <c>ECS</c> deployment controller, you can
+        /// choose between the following deployment strategies (which you can set in the “<c>strategy</c>”
+        /// field in “<c>deploymentConfiguration</c>”): :
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -842,8 +843,9 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// When you create a service which uses the <c>ECS</c> deployment controller, you can
-        /// choose between the following deployment strategies:
+        ///  When you create a service which uses the <c>ECS</c> deployment controller, you can
+        /// choose between the following deployment strategies (which you can set in the “<c>strategy</c>”
+        /// field in “<c>deploymentConfiguration</c>”): :
         /// </para>
         ///  <ul> <li> 
         /// <para>

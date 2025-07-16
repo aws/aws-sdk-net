@@ -33,6 +33,13 @@ namespace Amazon.ECS.Model
     /// The HTTP header rules used to identify and route test traffic during Amazon ECS blue/green
     /// deployments. These rules specify which HTTP headers to examine and what values to
     /// match for routing decisions.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect-blue-green.html">Service
+    /// Connect for Amazon ECS blue/green deployments</a> in the <i> Amazon Elastic Container
+    /// Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ServiceConnectTestTrafficHeaderRules
     {

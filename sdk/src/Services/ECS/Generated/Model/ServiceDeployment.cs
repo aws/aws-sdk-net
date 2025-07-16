@@ -172,26 +172,93 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>SCALE_UP_IN_PROGRESS</c> - Creating the new (green) tasks
+        /// RECONCILE_SERVICE
+        /// </para>
+        ///  
+        /// <para>
+        /// The reconciliation stage that only happens when you start a new service deployment
+        /// with more than 1 service revision in an ACTIVE state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TEST_TRAFFIC_SHIFT_IN_PROGRESS</c> - Shifting test traffic to the new (green)
-        /// tasks
+        /// PRE_SCALE_UP
+        /// </para>
+        ///  
+        /// <para>
+        /// The green service revision has not started. The blue service revision is handling
+        /// 100% of the production traffic. There is no test traffic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PRODUCTION_TRAFFIC_SHIFT_IN_PROGRESS</c> - Shifting production traffic to the
-        /// new (green) tasks
+        /// SCALE_UP
+        /// </para>
+        ///  
+        /// <para>
+        /// The stage when the green service revision scales up to 100% and launches new tasks.
+        /// The green service revision is not serving any traffic at this point.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BAKE_TIME_IN_PROGRESS</c> - The duration when both blue and green service revisions
-        /// are running simultaneously after the production traffic has shifted
+        /// POST_SCALE_UP
+        /// </para>
+        ///  
+        /// <para>
+        /// The green service revision has started. The blue service revision is handling 100%
+        /// of the production traffic. There is no test traffic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CLEAN_UP_IN_PROGRESS</c> - Stopping the old (blue) tasks
+        /// TEST_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// The blue and green service revisions are running. The blue service revision handles
+        /// 100% of the production traffic. The green service revision is migrating from 0% to
+        /// 100% of test traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POST_TEST_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// The test traffic shift is complete. The green service revision handles 100% of the
+        /// test traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PRODUCTION_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// Production traffic is shifting to the green service revision. The green service revision
+        /// is migrating from 0% to 100% of production traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POST_PRODUCTION_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// The production traffic shift is complete.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BAKE_TIME
+        /// </para>
+        ///  
+        /// <para>
+        /// The stage when both blue and green service revisions are running simultaneously after
+        /// the production traffic has shifted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLEAN_UP
+        /// </para>
+        ///  
+        /// <para>
+        /// The stage when the blue service revision has completely scaled down to 0 running tasks.
+        /// The green service revision is now the production service revision after this stage.
         /// </para>
         ///  </li> </ul>
         /// </summary>
