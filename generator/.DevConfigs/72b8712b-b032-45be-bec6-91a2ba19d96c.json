@@ -1,0 +1,9 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [ "Decorated AnalyticsConfiguration property in PutBucketAnalyticsConfigurationRequest class with [AWSProperty(Required = true)] attribute per S3 service API model." ]
+    }
+  ]
+}
