@@ -69,6 +69,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExpectedRevisionId())
+                {
+                    context.Writer.WritePropertyName("expectedRevisionId");
+                    context.Writer.Write(publicRequest.ExpectedRevisionId);
+                }
+
                 if(publicRequest.IsSetPolicyDocument())
                 {
                     context.Writer.WritePropertyName("policyDocument");
@@ -79,6 +85,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("policyName");
                     context.Writer.Write(publicRequest.PolicyName);
+                }
+
+                if(publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WritePropertyName("resourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 writer.WriteObjectEnd();

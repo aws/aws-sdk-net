@@ -80,6 +80,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDeliveryDestinationType())
+                {
+                    context.Writer.WritePropertyName("deliveryDestinationType");
+                    context.Writer.Write(publicRequest.DeliveryDestinationType);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

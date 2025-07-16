@@ -202,6 +202,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeleteResourcePolicyRequest.ExpectedRevisionId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DeleteRetentionPolicyRequest.LogGroupName</property>
     <min>1</min>
     <max>512</max>
@@ -985,9 +989,17 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutResourcePolicyRequest.ExpectedRevisionId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutResourcePolicyRequest.PolicyDocument</property>
     <min>1</min>
     <max>5120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutResourcePolicyResponse.RevisionId</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutRetentionPolicyRequest.LogGroupName</property>
@@ -1892,6 +1904,10 @@
     <property>Amazon.CloudWatchLogs.Model.ResourcePolicy.PolicyDocument</property>
     <min>1</min>
     <max>5120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ResourcePolicy.RevisionId</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.S3DeliveryConfiguration.SuffixPath</property>

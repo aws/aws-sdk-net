@@ -594,7 +594,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3
-        /// bucket, or a delivery stream in Firehose.
+        /// bucket, a delivery stream in Firehose, or X-Ray.
         /// </para>
         ///  
         /// <para>
@@ -682,7 +682,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3
-        /// bucket, or a delivery stream in Firehose.
+        /// bucket, a delivery stream in Firehose, or X-Ray.
         /// </para>
         ///  
         /// <para>
@@ -2509,6 +2509,9 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// A parameter is specified incorrectly.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
@@ -2538,6 +2541,9 @@ namespace Amazon.CloudWatchLogs
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -2991,9 +2997,9 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// A delivery source represents an Amazon Web Services resource that sends logs to an
-        /// logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.
-        /// Only some Amazon Web Services services support being configured as a delivery source.
-        /// These services are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
+        /// logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, Firehose
+        /// or X-Ray. Only some Amazon Web Services services support being configured as a delivery
+        /// source. These services are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         /// </summary>
@@ -3035,9 +3041,9 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// A delivery source represents an Amazon Web Services resource that sends logs to an
-        /// logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.
-        /// Only some Amazon Web Services services support being configured as a delivery source.
-        /// These services are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
+        /// logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, Firehose
+        /// or X-Ray. Only some Amazon Web Services services support being configured as a delivery
+        /// source. These services are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         /// </summary>
@@ -5939,7 +5945,7 @@ namespace Amazon.CloudWatchLogs
         ///  </li> <li> 
         /// <para>
         /// To create a subscription filter policy, you must have the <c>logs:PutSubscriptionFilter</c>
-        /// and <c>logs:PutccountPolicy</c> permissions.
+        /// and <c>logs:PutAccountPolicy</c> permissions.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6210,7 +6216,7 @@ namespace Amazon.CloudWatchLogs
         ///  </li> <li> 
         /// <para>
         /// To create a subscription filter policy, you must have the <c>logs:PutSubscriptionFilter</c>
-        /// and <c>logs:PutccountPolicy</c> permissions.
+        /// and <c>logs:PutAccountPolicy</c> permissions.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6618,7 +6624,7 @@ namespace Amazon.CloudWatchLogs
         /// Creates or updates a logical <i>delivery destination</i>. A delivery destination is
         /// an Amazon Web Services resource that represents an Amazon Web Services service that
         /// logs can be sent to. CloudWatch Logs, Amazon S3, and Firehose are supported as logs
-        /// delivery destinations.
+        /// delivery destinations and X-Ray as the trace delivery destination.
         /// 
         ///  
         /// <para>
@@ -6704,7 +6710,7 @@ namespace Amazon.CloudWatchLogs
         /// Creates or updates a logical <i>delivery destination</i>. A delivery destination is
         /// an Amazon Web Services resource that represents an Amazon Web Services service that
         /// logs can be sent to. CloudWatch Logs, Amazon S3, and Firehose are supported as logs
-        /// delivery destinations.
+        /// delivery destinations and X-Ray as the trace delivery destination.
         /// 
         ///  
         /// <para>
@@ -6935,7 +6941,7 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a logical <i>delivery source</i>. A delivery source represents
         /// an Amazon Web Services resource that sends logs to an logs delivery destination. The
-        /// destination can be CloudWatch Logs, Amazon S3, or Firehose.
+        /// destination can be CloudWatch Logs, Amazon S3, Firehose or X-Ray for sending traces.
         /// 
         ///  
         /// <para>
@@ -7019,7 +7025,7 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a logical <i>delivery source</i>. A delivery source represents
         /// an Amazon Web Services resource that sends logs to an logs delivery destination. The
-        /// destination can be CloudWatch Logs, Amazon S3, or Firehose.
+        /// destination can be CloudWatch Logs, Amazon S3, Firehose or X-Ray for sending traces.
         /// 
         ///  
         /// <para>
@@ -8054,6 +8060,12 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
@@ -8084,6 +8096,12 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
         /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.

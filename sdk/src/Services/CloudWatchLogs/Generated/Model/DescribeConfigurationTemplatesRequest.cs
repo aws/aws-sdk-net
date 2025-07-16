@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// that apply to the delivery destination types that you specify here.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=3)]
+        [AWSProperty(Min=1, Max=4)]
         public List<string> DeliveryDestinationTypes
         {
             get { return this._deliveryDestinationTypes; }

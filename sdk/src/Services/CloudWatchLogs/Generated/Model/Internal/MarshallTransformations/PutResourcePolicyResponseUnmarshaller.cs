@@ -58,6 +58,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     response.ResourcePolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("revisionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RevisionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -88,6 +94,14 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationAbortedException"))
+                {
+                    return OperationAbortedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {

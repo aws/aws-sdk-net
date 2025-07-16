@@ -50,7 +50,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the delivery destination that you want to delete. You can find a list
-        /// of delivery destionation names by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveryDestinations.html">DescribeDeliveryDestinations</a>
+        /// of delivery destination names by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveryDestinations.html">DescribeDeliveryDestinations</a>
         /// operation.
         /// </para>
         /// </summary>
