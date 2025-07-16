@@ -151,7 +151,6 @@ namespace Amazon.Glue.Model
         /// The <c>TableInput</c> object that defines the metadata table to create in the catalog.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TableInput TableInput
         {
             get { return this._tableInput; }
