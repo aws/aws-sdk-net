@@ -74,6 +74,24 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("policyScope", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyScope = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("resourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("revisionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

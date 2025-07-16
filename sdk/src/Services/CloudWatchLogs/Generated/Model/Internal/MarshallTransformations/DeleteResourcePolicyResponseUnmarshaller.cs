@@ -75,6 +75,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationAbortedException"))
+                {
+                    return OperationAbortedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

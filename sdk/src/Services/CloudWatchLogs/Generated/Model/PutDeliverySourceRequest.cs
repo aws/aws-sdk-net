@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutDeliverySource operation.
     /// Creates or updates a logical <i>delivery source</i>. A delivery source represents
     /// an Amazon Web Services resource that sends logs to an logs delivery destination. The
-    /// destination can be CloudWatch Logs, Amazon S3, or Firehose.
+    /// destination can be CloudWatch Logs, Amazon S3, Firehose or X-Ray for sending traces.
     /// 
     ///  
     /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For Amazon Bedrock, the valid value is <c>APPLICATION_LOGS</c>.
+        /// For Amazon Bedrock, the valid value is <c>APPLICATION_LOGS</c> and <c>TRACES</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -125,6 +125,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c> and <c>PCS_JOBCOMP_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Amazon Q, the valid value is <c>EVENT_LOGS</c>.
         /// </para>
         ///  </li> <li> 
@@ -136,6 +140,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// For Amazon WorkMail, the valid values are <c>ACCESS_CONTROL_LOGS</c>, <c>AUTHENTICATION_LOGS</c>,
         /// <c>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</c>, <c>WORKMAIL_MAILBOX_ACCESS_LOGS</c>, and
         /// <c>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon VPC Route Server, the valid value is <c>EVENT_LOGS</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class PutResourcePolicyResponse : AmazonWebServiceResponse
     {
         private ResourcePolicy _resourcePolicy;
+        private string _revisionId;
 
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
@@ -52,6 +53,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetResourcePolicy()
         {
             return this._resourcePolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The revision ID of the created or updated resource policy. Only returned for resource-scoped
+        /// policies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
         }
 
     }

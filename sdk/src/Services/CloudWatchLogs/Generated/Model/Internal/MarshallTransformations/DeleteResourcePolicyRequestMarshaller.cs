@@ -75,10 +75,22 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExpectedRevisionId())
+            {
+                context.Writer.WritePropertyName("expectedRevisionId");
+                context.Writer.WriteStringValue(publicRequest.ExpectedRevisionId);
+            }
+
             if(publicRequest.IsSetPolicyName())
             {
                 context.Writer.WritePropertyName("policyName");
                 context.Writer.WriteStringValue(publicRequest.PolicyName);
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
             }
 
             writer.WriteEndObject();

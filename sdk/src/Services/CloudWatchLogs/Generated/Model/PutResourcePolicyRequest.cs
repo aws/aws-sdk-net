@@ -37,8 +37,31 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonCloudWatchLogsRequest
     {
+        private string _expectedRevisionId;
         private string _policyDocument;
         private string _policyName;
+        private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property ExpectedRevisionId. 
+        /// <para>
+        /// The expected revision ID of the resource policy. Required when <c>resourceArn</c>
+        /// is provided to prevent concurrent modifications. Use <c>null</c> when creating a resource
+        /// policy for the first time.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ExpectedRevisionId
+        {
+            get { return this._expectedRevisionId; }
+            set { this._expectedRevisionId = value; }
+        }
+
+        // Check to see if ExpectedRevisionId property is set
+        internal bool IsSetExpectedRevisionId()
+        {
+            return this._expectedRevisionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
@@ -104,6 +127,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetPolicyName()
         {
             return this._policyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the CloudWatch Logs resource to which the resource policy needs to be added
+        /// or attached. Currently only supports LogGroup ARN.
+        /// </para>
+        /// </summary>
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
         }
 
     }

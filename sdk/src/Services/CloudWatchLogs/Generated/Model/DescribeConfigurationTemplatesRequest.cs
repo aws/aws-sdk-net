@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=3)]
+        [AWSProperty(Min=1, Max=4)]
         public List<string> DeliveryDestinationTypes
         {
             get { return this._deliveryDestinationTypes; }

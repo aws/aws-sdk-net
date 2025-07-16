@@ -36,7 +36,29 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DeleteResourcePolicyRequest : AmazonCloudWatchLogsRequest
     {
+        private string _expectedRevisionId;
         private string _policyName;
+        private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property ExpectedRevisionId. 
+        /// <para>
+        /// The expected revision ID of the resource policy. Required when deleting a resource-scoped
+        /// policy to prevent concurrent modifications.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ExpectedRevisionId
+        {
+            get { return this._expectedRevisionId; }
+            set { this._expectedRevisionId = value; }
+        }
+
+        // Check to see if ExpectedRevisionId property is set
+        internal bool IsSetExpectedRevisionId()
+        {
+            return this._expectedRevisionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyName. 
@@ -54,6 +76,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetPolicyName()
         {
             return this._policyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the CloudWatch Logs resource for which the resource policy needs to be
+        /// deleted
+        /// </para>
+        /// </summary>
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
         }
 
     }

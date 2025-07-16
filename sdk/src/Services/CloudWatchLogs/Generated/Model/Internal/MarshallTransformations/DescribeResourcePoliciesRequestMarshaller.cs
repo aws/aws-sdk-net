@@ -87,6 +87,18 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetPolicyScope())
+            {
+                context.Writer.WritePropertyName("policyScope");
+                context.Writer.WriteStringValue(publicRequest.PolicyScope);
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array
