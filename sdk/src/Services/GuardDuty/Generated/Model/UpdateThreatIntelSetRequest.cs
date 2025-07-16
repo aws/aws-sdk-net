@@ -37,6 +37,7 @@ namespace Amazon.GuardDuty.Model
     {
         private bool? _activate;
         private string _detectorId;
+        private string _expectedBucketOwner;
         private string _location;
         private string _name;
         private string _threatIntelSetId;
@@ -84,6 +85,26 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDetectorId()
         {
             return this._detectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the
+        /// <b>location</b> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ExpectedBucketOwner
+        {
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return this._expectedBucketOwner != null;
         }
 
         /// <summary>

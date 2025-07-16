@@ -87,6 +87,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetExpectedBucketOwner())
+                {
+                    context.Writer.WritePropertyName("expectedBucketOwner");
+                    context.Writer.Write(publicRequest.ExpectedBucketOwner);
+                }
+
                 if(publicRequest.IsSetFormat())
                 {
                     context.Writer.WritePropertyName("format");

@@ -71,6 +71,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateIPSetRequest.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.CreateIPSetRequest.Format</property>
     <min>1</min>
     <max>300</max>
@@ -124,6 +129,11 @@
     <property>Amazon.GuardDuty.Model.CreateThreatIntelSetRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateThreatIntelSetRequest.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.CreateThreatIntelSetRequest.Format</property>
@@ -286,6 +296,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetIPSetResponse.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetIPSetResponse.Format</property>
     <min>1</min>
     <max>300</max>
@@ -334,6 +349,11 @@
     <property>Amazon.GuardDuty.Model.GetThreatIntelSetRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetThreatIntelSetResponse.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetThreatIntelSetResponse.Format</property>
@@ -532,6 +552,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateIPSetRequest.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.UpdateIPSetRequest.Location</property>
     <min>1</min>
     <max>300</max>
@@ -565,6 +590,11 @@
     <property>Amazon.GuardDuty.Model.UpdateThreatIntelSetRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateThreatIntelSetRequest.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.UpdateThreatIntelSetRequest.Location</property>
