@@ -85,6 +85,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.Activate.Value);
             }
 
+            if(publicRequest.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("expectedBucketOwner");
+                context.Writer.WriteStringValue(publicRequest.ExpectedBucketOwner);
+            }
+
             if(publicRequest.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");

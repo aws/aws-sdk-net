@@ -647,6 +647,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the CreateIPSet service method.</param>
         /// 
         /// <returns>The response from the CreateIPSet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -677,6 +680,9 @@ namespace Amazon.GuardDuty
         /// </param>
         /// 
         /// <returns>The response from the CreateIPSet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -1016,6 +1022,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the CreateThreatIntelSet service method.</param>
         /// 
         /// <returns>The response from the CreateThreatIntelSet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -1044,6 +1053,9 @@ namespace Amazon.GuardDuty
         /// </param>
         /// 
         /// <returns>The response from the CreateThreatIntelSet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -4647,6 +4659,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the UpdateIPSet service method.</param>
         /// 
         /// <returns>The response from the UpdateIPSet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -4673,6 +4688,9 @@ namespace Amazon.GuardDuty
         /// </param>
         /// 
         /// <returns>The response from the UpdateIPSet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -5061,6 +5079,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the UpdateThreatIntelSet service method.</param>
         /// 
         /// <returns>The response from the UpdateThreatIntelSet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -5087,6 +5108,9 @@ namespace Amazon.GuardDuty
         /// </param>
         /// 
         /// <returns>The response from the UpdateThreatIntelSet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>

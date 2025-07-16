@@ -34,11 +34,33 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class GetThreatIntelSetResponse : AmazonWebServiceResponse
     {
+        private string _expectedBucketOwner;
         private ThreatIntelSetFormat _format;
         private string _location;
         private string _name;
         private ThreatIntelSetStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the
+        /// <b>location</b> parameter. This field appears in the response only if it was provided
+        /// during ThreatIntelSet creation or update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ExpectedBucketOwner
+        {
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return this._expectedBucketOwner != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Format. 
