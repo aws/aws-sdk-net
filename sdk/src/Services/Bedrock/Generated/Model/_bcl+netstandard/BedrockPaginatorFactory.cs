@@ -37,6 +37,14 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListCustomModelDeployments operation
+        ///</summary>
+        public IListCustomModelDeploymentsPaginator ListCustomModelDeployments(ListCustomModelDeploymentsRequest request) 
+        {
+            return new ListCustomModelDeploymentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCustomModels operation
         ///</summary>
         public IListCustomModelsPaginator ListCustomModels(ListCustomModelsRequest request) 

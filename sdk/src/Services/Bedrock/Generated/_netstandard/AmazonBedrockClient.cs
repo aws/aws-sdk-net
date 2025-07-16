@@ -425,6 +425,92 @@ namespace Amazon.Bedrock
         }
         #endregion
         
+        #region  CreateCustomModelDeployment
+
+        internal virtual CreateCustomModelDeploymentResponse CreateCustomModelDeployment(CreateCustomModelDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomModelDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomModelDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomModelDeploymentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deploys a custom model for on-demand inference in Amazon Bedrock. After you deploy
+        /// your custom model, you use the deployment's Amazon Resource Name (ARN) as the <c>modelId</c>
+        /// parameter when you submit prompts and generate responses with model inference.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about setting up on-demand inference for custom models, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Set
+        /// up inference for a custom model</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to the <c>CreateCustomModelDeployment</c> operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html">GetCustomModelDeployment</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html">ListCustomModelDeployments</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html">DeleteCustomModelDeployment</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomModelDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomModelDeployment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateCustomModelDeployment">REST API Reference for CreateCustomModelDeployment Operation</seealso>
+        public virtual Task<CreateCustomModelDeploymentResponse> CreateCustomModelDeploymentAsync(CreateCustomModelDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomModelDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomModelDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomModelDeploymentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateEvaluationJob
 
         internal virtual CreateEvaluationJobResponse CreateEvaluationJob(CreateEvaluationJobRequest request)
@@ -1252,6 +1338,81 @@ namespace Amazon.Bedrock
         }
         #endregion
         
+        #region  DeleteCustomModelDeployment
+
+        internal virtual DeleteCustomModelDeploymentResponse DeleteCustomModelDeployment(DeleteCustomModelDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomModelDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomModelDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomModelDeploymentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a custom model deployment. This operation stops the deployment and removes
+        /// it from your account. After deletion, the deployment ARN can no longer be used for
+        /// inference requests.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to the <c>DeleteCustomModelDeployment</c> operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html">CreateCustomModelDeployment</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html">GetCustomModelDeployment</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html">ListCustomModelDeployments</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomModelDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomModelDeployment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteCustomModelDeployment">REST API Reference for DeleteCustomModelDeployment Operation</seealso>
+        public virtual Task<DeleteCustomModelDeploymentResponse> DeleteCustomModelDeploymentAsync(DeleteCustomModelDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomModelDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomModelDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomModelDeploymentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteFoundationModelAgreement
 
         internal virtual DeleteFoundationModelAgreementResponse DeleteFoundationModelAgreement(DeleteFoundationModelAgreementRequest request)
@@ -1774,6 +1935,78 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = GetCustomModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCustomModelResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetCustomModelDeployment
+
+        internal virtual GetCustomModelDeploymentResponse GetCustomModelDeployment(GetCustomModelDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomModelDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomModelDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomModelDeploymentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a custom model deployment, including its status, configuration,
+        /// and metadata. Use this operation to monitor the deployment status and retrieve details
+        /// needed for inference requests.
+        /// 
+        ///  
+        /// <para>
+        /// The following actions are related to the <c>GetCustomModelDeployment</c> operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html">CreateCustomModelDeployment</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html">ListCustomModelDeployments</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html">DeleteCustomModelDeployment</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomModelDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomModelDeployment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetCustomModelDeployment">REST API Reference for GetCustomModelDeployment Operation</seealso>
+        public virtual Task<GetCustomModelDeploymentResponse> GetCustomModelDeploymentAsync(GetCustomModelDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomModelDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomModelDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCustomModelDeploymentResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2513,6 +2746,78 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = GetUseCaseForModelAccessResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetUseCaseForModelAccessResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListCustomModelDeployments
+
+        internal virtual ListCustomModelDeploymentsResponse ListCustomModelDeployments(ListCustomModelDeploymentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomModelDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomModelDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomModelDeploymentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists custom model deployments in your account. You can filter the results by creation
+        /// time, name, status, and associated model. Use this operation to manage and monitor
+        /// your custom model deployments.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend using pagination to ensure that the operation returns quickly and successfully.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following actions are related to the <c>ListCustomModelDeployments</c> operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html">CreateCustomModelDeployment</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html">GetCustomModelDeployment</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html">DeleteCustomModelDeployment</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomModelDeployments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomModelDeployments service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListCustomModelDeployments">REST API Reference for ListCustomModelDeployments Operation</seealso>
+        public virtual Task<ListCustomModelDeploymentsResponse> ListCustomModelDeploymentsAsync(ListCustomModelDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomModelDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomModelDeploymentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCustomModelDeploymentsResponse>(request, options, cancellationToken);
         }
         #endregion
         
