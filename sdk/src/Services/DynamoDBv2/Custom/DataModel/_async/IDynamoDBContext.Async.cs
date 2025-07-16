@@ -17,6 +17,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
@@ -501,6 +502,18 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Configures an async Scan operation against DynamoDB, finding items
+        /// that match the specified filter expression.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="filterExpression">
+        /// A <see cref="ContextExpression"/> representing a LINQ expression tree used to filter the results.
+        /// The expression is translated to a DynamoDB filter expression and applied server-side.
+        /// </param>
+        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextExpression filterExpression);
+
+        /// <summary>
+        /// Configures an async Scan operation against DynamoDB, finding items
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
@@ -524,6 +537,20 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="scanConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig);
+
+        /// <summary>
+        /// Configures an async Scan operation against DynamoDB, finding items
+        /// that match the specified conditions.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="filterExpression">
+        /// A <see cref="ContextExpression"/> representing a LINQ expression tree used to filter the results.
+        /// The expression is translated to a DynamoDB filter expression and applied server-side.
+        /// </param>
+        /// <param name="scanConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextExpression filterExpression, ScanConfig scanConfig);
+
 
         /// <summary>
         /// Configures an async Scan operation against DynamoDB, finding items
@@ -631,7 +658,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="values">
         /// Value(s) of the condition.
         /// For all operations except QueryOperator.Between, values should be one value.
-        /// For QueryOperator.Betwee, values should be two values.
+        /// For QueryOperator.Between, values should be two values.
         /// </param>
         /// <param name="queryConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
@@ -639,7 +666,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB using a mid-level document model 
-        /// query configration, finding items that match the specified conditions. 
+        /// query configuration, finding items that match the specified conditions. 
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="queryConfig">Mid-level, document model query request object.</param>

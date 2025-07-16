@@ -65,6 +65,14 @@ namespace Amazon.DynamoDBv2.DataModel
         public List<ScanCondition> QueryFilter { get; set; }
 
         /// <summary>
+        /// Represents a filter expression that can be used to filter results in DynamoDB operations.
+        /// </summary>
+        /// <remarks>
+        /// Note: Expression filters must be against non-key properties.
+        /// </remarks>
+        public ContextExpression Expression { get; set; }
+
+        /// <summary>
         /// Property that directs <see cref="DynamoDBContext" /> to use consistent reads.
         /// If property is not set, behavior defaults to non-consistent reads.
         /// </summary>
@@ -91,6 +99,7 @@ namespace Amazon.DynamoDBv2.DataModel
             config.IndexName = IndexName;
             config.ConditionalOperator = ConditionalOperator;
             config.QueryFilter = QueryFilter;
+            config.Expression = Expression;
             config.ConsistentRead = ConsistentRead;
             config.RetrieveDateTimeInUtc = RetrieveDateTimeInUtc;
 
