@@ -84,8 +84,14 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a scope. The status can be one of the following: <c>SUCCEEDED</c>, <c>IN_PROGRESS</c>,
-        /// or <c>FAILED</c>.
+        /// The status for a scope. The status can be one of the following: <c>SUCCEEDED</c>,
+        /// <c>IN_PROGRESS</c>, <c>FAILED</c>, <c>DEACTIVATING</c>, or <c>DEACTIVATED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A status of <c>DEACTIVATING</c> means that you've requested a scope to be deactivated
+        /// and Network Flow Monitor is in the process of deactivating the scope. A status of
+        /// <c>DEACTIVATED</c> means that the deactivating process is complete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
