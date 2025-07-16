@@ -1,3 +1,31 @@
+### 3.7.1081.0 (2025-07-16 15:37 UTC)
+* Bedrock (3.7.427.0)
+	* This release adds support for on-demand custom model inference through CustomModelDeployment APIs for Amazon Bedrock.
+* BedrockAgentCore (3.7.400.0)
+	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
+* BedrockAgentCoreControl (3.7.400.0)
+	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
+* BedrockRuntime (3.7.422.0)
+	* document update to support on demand custom model.
+* CloudWatchLogs (3.7.416.0)
+	* CloudWatch Logs updates: Added X-Ray tracing for Amazon Bedrock Agent resources. Logs introduced Log Group level resource policies (managed through Put/Delete/Describe Resource Policy APIs). For more information, see CloudWatch Logs API documentation.
+* DataSync (3.7.407.0)
+	* AWS DataSync now supports IPv6 address inputs and outputs in create, update, and describe operations for NFS, SMB, and Object Storage locations
+* Glue (3.7.425.0)
+	* AWS Glue now supports schema, partition and sort management of Apache Iceberg tables using Glue SDK
+* GuardDuty (3.7.409.0)
+	* Add expectedBucketOwner parameter to ThreatIntel and IPSet APIs.
+* IoTWireless (3.7.403.0)
+	* FuotaTaskId is not a valid IdentifierType for EventConfiguration and is being removed from possible IdentifierType values.
+* MediaPackageV2 (3.7.407.0)
+	* This release adds support for CDN Authentication using Static Headers in MediaPackage v2.
+* NetworkFlowMonitor (3.7.403.0)
+	* Introducing 2 new scope status types - DEACTIVATING and DEACTIVATED.
+* PaymentCryptographyData (3.7.404.0)
+	* Expand length of message data field for Mac generation and validation to 8192 characters.
+* StepFunctions (3.7.403.120)
+	* Doc-only update to introduction, and edits to clarify input parameter and the set of control characters.
+
 ### 3.7.1080.0 (2025-07-16 00:42 UTC)
 * ECS (3.7.414.0)
 	* This release removes hookDetails for the Amazon ECS native blue/green deployments.
