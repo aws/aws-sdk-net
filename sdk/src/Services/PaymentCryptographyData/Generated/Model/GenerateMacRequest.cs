@@ -144,7 +144,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The data for which a MAC is under generation. This value must be hexBinary.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=8192)]
         public string MessageData
         {
             get { return this._messageData; }
