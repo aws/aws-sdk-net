@@ -194,6 +194,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This release introduces Agents for Amazon Bedrock
 * [AWSSDK.BedrockAgentCore](https://www.nuget.org/packages/AWSSDK.BedrockAgentCore/)
 	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
+* [AWSSDK.BedrockAgentCoreControl](https://www.nuget.org/packages/AWSSDK.BedrockAgentCoreControl/)
+	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
 * [AWSSDK.BedrockAgentRuntime](https://www.nuget.org/packages/AWSSDK.BedrockAgentRuntime/)
 	* This release introduces Agents for Amazon Bedrock Runtime
 * [AWSSDK.BedrockDataAutomation](https://www.nuget.org/packages/AWSSDK.BedrockDataAutomation/)
