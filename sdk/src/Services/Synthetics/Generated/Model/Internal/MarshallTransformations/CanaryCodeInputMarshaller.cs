@@ -48,6 +48,22 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDependencies())
+            {
+                context.Writer.WritePropertyName("Dependencies");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDependenciesListValue in requestObject.Dependencies)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DependencyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDependenciesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetHandler())
             {
                 context.Writer.WritePropertyName("Handler");

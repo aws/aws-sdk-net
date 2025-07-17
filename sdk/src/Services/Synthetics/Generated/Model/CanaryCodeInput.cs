@@ -58,11 +58,33 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class CanaryCodeInput
     {
+        private List<Dependency> _dependencies = AWSConfigs.InitializeCollections ? new List<Dependency>() : null;
         private string _handler;
         private string _s3Bucket;
         private string _s3Key;
         private string _s3Version;
         private MemoryStream _zipFile;
+
+        /// <summary>
+        /// Gets and sets the property Dependencies. 
+        /// <para>
+        /// A list of dependencies that should be used for running this canary. Specify the dependencies
+        /// as a key-value pair, where the key is the type of dependency and the value is the
+        /// dependency reference.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<Dependency> Dependencies
+        {
+            get { return this._dependencies; }
+            set { this._dependencies = value; }
+        }
+
+        // Check to see if Dependencies property is set
+        internal bool IsSetDependencies()
+        {
+            return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Handler. 

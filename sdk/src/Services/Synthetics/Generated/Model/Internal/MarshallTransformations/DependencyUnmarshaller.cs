@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CanaryCodeOutput Object
+    /// Response Unmarshaller for Dependency Object
     /// </summary>  
-    public class CanaryCodeOutputUnmarshaller : IUnmarshaller<CanaryCodeOutput, XmlUnmarshallerContext>, IUnmarshaller<CanaryCodeOutput, JsonUnmarshallerContext>
+    public class DependencyUnmarshaller : IUnmarshaller<Dependency, XmlUnmarshallerContext>, IUnmarshaller<Dependency, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CanaryCodeOutput IUnmarshaller<CanaryCodeOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Dependency IUnmarshaller<Dependency, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CanaryCodeOutput Unmarshall(JsonUnmarshallerContext context)
+        public Dependency Unmarshall(JsonUnmarshallerContext context)
         {
-            CanaryCodeOutput unmarshalledObject = new CanaryCodeOutput();
+            Dependency unmarshalledObject = new Dependency();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Dependencies", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Dependency, DependencyUnmarshaller>(DependencyUnmarshaller.Instance);
-                    unmarshalledObject.Dependencies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Handler", targetDepth))
+                if (context.TestExpression("Reference", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Handler = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Reference = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SourceLocationArn", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceLocationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         }
 
 
-        private static CanaryCodeOutputUnmarshaller _instance = new CanaryCodeOutputUnmarshaller();        
+        private static DependencyUnmarshaller _instance = new DependencyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CanaryCodeOutputUnmarshaller Instance
+        public static DependencyUnmarshaller Instance
         {
             get
             {
