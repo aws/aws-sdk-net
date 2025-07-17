@@ -48,7 +48,7 @@ namespace Amazon.KeyspacesStreams.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         ///  The maximum number of shard objects to return in a single <c>GetStream</c> request.
-        /// Default value is 100. The minimum value is 1 and the maximum value is 1000. 
+        /// Default value is 100. The minimum value is 1 and the maximum value is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
