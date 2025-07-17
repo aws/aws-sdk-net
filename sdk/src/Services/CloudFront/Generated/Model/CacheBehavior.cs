@@ -158,6 +158,15 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DefaultTTL. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// This field is deprecated. We recommend that you use the <c>DefaultTTL</c> field in
         /// a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
         /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
@@ -172,6 +181,8 @@ namespace Amazon.CloudFront.Model
         /// and <c>Expires</c> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
         /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
         /// Developer Guide</i>.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use CachePolicy instead.")]
@@ -311,6 +322,15 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxTTL. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// This field is deprecated. We recommend that you use the <c>MaxTTL</c> field in a cache
         /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
         /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
@@ -325,6 +345,8 @@ namespace Amazon.CloudFront.Model
         /// to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
         /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
         /// Developer Guide</i>.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use CachePolicy instead.")]
@@ -342,6 +364,15 @@ namespace Amazon.CloudFront.Model
 
         /// <summary>
         /// Gets and sets the property MinTTL. 
+        /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This field is deprecated. We recommend that you use the <c>MinTTL</c> field in a cache
         /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
@@ -361,6 +392,8 @@ namespace Amazon.CloudFront.Model
         /// You must specify <c>0</c> for <c>MinTTL</c> if you configure CloudFront to forward
         /// all headers to your origin (under <c>Headers</c>, if you specify <c>1</c> for <c>Quantity</c>
         /// and <c>*</c> for <c>Name</c>).
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use CachePolicy instead.")]
@@ -477,11 +510,22 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property SmoothStreaming. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Indicates whether you want to distribute media files in the Microsoft Smooth Streaming
         /// format using the origin that is associated with this cache behavior. If so, specify
         /// <c>true</c>; if not, specify <c>false</c>. If you specify <c>true</c> for <c>SmoothStreaming</c>,
         /// you can still distribute other content using this cache behavior if the content matches
         /// the value of <c>PathPattern</c>.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public bool? SmoothStreaming
@@ -550,7 +594,14 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// We recommend using <c>TrustedKeyGroups</c> instead of <c>TrustedSigners</c>.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A list of Amazon Web Services account IDs whose public keys CloudFront can use to
         /// validate signed URLs or signed cookies.

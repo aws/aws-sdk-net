@@ -31,31 +31,44 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConflictingAliases operation.
-    /// Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict
-    /// or overlap with the provided alias, and the associated CloudFront distributions and
-    /// Amazon Web Services accounts for each conflicting alias. In the returned list, the
-    /// distribution and account IDs are partially hidden, which allows you to identify the
-    /// distributions and accounts that you own, but helps to protect the information of ones
-    /// that you don't own.
+    /// <note> 
+    /// <para>
+    /// The <c>ListConflictingAliases</c> API operation only supports standard distributions.
+    /// To list domain conflicts for both standard distributions and distribution tenants,
+    /// we recommend that you use the <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDomainConflicts.html">ListDomainConflicts</a>
+    /// API operation instead.
     /// 
+    ///  </note> 
+    /// <para>
+    /// Gets a list of aliases that conflict or overlap with the provided alias, and the associated
+    /// CloudFront standard distribution and Amazon Web Services accounts for each conflicting
+    /// alias. An alias is commonly known as a custom domain or vanity domain. It can also
+    /// be called a CNAME or alternate domain name.
+    /// </para>
+    ///  
+    /// <para>
+    /// In the returned list, the standard distribution and account IDs are partially hidden,
+    /// which allows you to identify the standard distribution and accounts that you own,
+    /// and helps to protect the information of ones that you don't own.
+    /// </para>
     ///  
     /// <para>
     /// Use this operation to find aliases that are in use in CloudFront that conflict or
     /// overlap with the provided alias. For example, if you provide <c>www.example.com</c>
     /// as input, the returned list can include <c>www.example.com</c> and the overlapping
-    /// wildcard alternate domain name (<c>*.example.com</c>), if they exist. If you provide
-    /// <c>*.example.com</c> as input, the returned list can include <c>*.example.com</c>
+    /// wildcard alternate domain name (<c><em>.example.com</c>), if they exist. If you provide
+    /// <c></em>.example.com</c> as input, the returned list can include <c>*.example.com</c>
     /// and any alternate domain names covered by that wildcard (for example, <c>www.example.com</c>,
     /// <c>test.example.com</c>, <c>dev.example.com</c>, and so on), if they exist.
     /// </para>
     ///  
     /// <para>
-    /// To list conflicting aliases, you provide the alias to search and the ID of a distribution
-    /// in your account that has an attached SSL/TLS certificate that includes the provided
-    /// alias. For more information, including how to set up the distribution and certificate,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
-    /// an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront
-    /// Developer Guide</i>.
+    /// To list conflicting aliases, specify the alias to search and the ID of a standard
+    /// distribution in your account that has an attached TLS certificate that includes the
+    /// provided alias. For more information, including how to set up the standard distribution
+    /// and certificate, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+    /// an alternate domain name to a different standard distribution or distribution tenant</a>
+    /// in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -64,6 +77,8 @@ namespace Amazon.CloudFront.Model
     /// the default maximum, the response is paginated. To get the next page of items, send
     /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
     /// as the <c>Marker</c> value in the subsequent request.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class ListConflictingAliasesRequest : AmazonCloudFrontRequest
@@ -95,7 +110,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DistributionId. 
         /// <para>
-        /// The ID of a distribution in your account that has an attached SSL/TLS certificate
+        /// The ID of a standard distribution in your account that has an attached TLS certificate
         /// that includes the provided alias.
         /// </para>
         /// </summary>
