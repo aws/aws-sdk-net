@@ -30,9 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// This field only supports standard distributions. You can't specify this field for
+    /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+    /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+    /// Guide</i>.
+    /// 
+    ///  </note> 
+    /// <para>
     /// This field is deprecated. We recommend that you use a cache policy or an origin request
     /// policy instead of this field.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// If you want to include values in the cache key, use a cache policy. For more information,
@@ -49,6 +58,8 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// A complex type that specifies how CloudFront handles query strings, cookies, and HTTP
     /// headers.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class ForwardedValues

@@ -31,7 +31,35 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDomainAssociation operation.
-    /// Moves a domain from its current distribution or distribution tenant to another one.
+    /// <note> 
+    /// <para>
+    /// We recommend that you use the <c>UpdateDomainAssociation</c> API operation to move
+    /// a domain association, as it supports both standard distributions and distribution
+    /// tenants. <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateAlias.html">AssociateAlias</a>
+    /// performs similar checks but only supports standard distributions.
+    /// 
+    ///  </note> 
+    /// <para>
+    /// Moves a domain from its current standard distribution or distribution tenant to another
+    /// one.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must first disable the source distribution (standard distribution or distribution
+    /// tenant) and then separately call this operation to move the domain to another target
+    /// distribution (standard distribution or distribution tenant).
+    /// </para>
+    ///  
+    /// <para>
+    /// To use this operation, specify the domain and the ID of the target resource (standard
+    /// distribution or distribution tenant). For more information, including how to set up
+    /// the target resource, prerequisites that you must complete, and other restrictions,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+    /// an alternate domain name to a different standard distribution or distribution tenant</a>
+    /// in the <i>Amazon CloudFront Developer Guide</i>.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class UpdateDomainAssociationRequest : AmazonCloudFrontRequest
     {
@@ -61,8 +89,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The value of the <c>ETag</c> identifier for the distribution or distribution tenant
-        /// that will be associated with the domain.
+        /// The value of the <c>ETag</c> identifier for the standard distribution or distribution
+        /// tenant that will be associated with the domain.
         /// </para>
         /// </summary>
         public string IfMatch
@@ -80,8 +108,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property TargetResource. 
         /// <para>
-        /// The target distribution resource for the domain. You can specify either <c>DistributionId</c>
-        /// or <c>DistributionTenantId</c>, but not both.
+        /// The target standard distribution or distribution tenant resource for the domain. You
+        /// can specify either <c>DistributionId</c> or <c>DistributionTenantId</c>, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

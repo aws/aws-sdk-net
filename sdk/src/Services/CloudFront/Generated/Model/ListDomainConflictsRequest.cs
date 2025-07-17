@@ -31,12 +31,61 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDomainConflicts operation.
-    /// Lists existing domain associations that conflict with the domain that you specify.
+    /// <note> 
+    /// <para>
+    /// We recommend that you use the <c>ListDomainConflicts</c> API operation to check for
+    /// domain conflicts, as it supports both standard distributions and distribution tenants.
+    /// <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConflictingAliases.html">ListConflictingAliases</a>
+    /// performs similar checks but only supports standard distributions.
     /// 
+    ///  </note> 
+    /// <para>
+    /// Lists existing domain associations that conflict with the domain that you specify.
+    /// </para>
     ///  
     /// <para>
-    /// You can use this API operation when transferring domains to identify potential domain
-    /// conflicts. Domain conflicts must be resolved first before they can be moved.
+    /// You can use this API operation to identify potential domain conflicts when moving
+    /// domains between standard distributions and/or distribution tenants. Domain conflicts
+    /// must be resolved first before they can be moved. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For example, if you provide <c>www.example.com</c> as input, the returned list can
+    /// include <c>www.example.com</c> and the overlapping wildcard alternate domain name
+    /// (<c><em>.example.com</c>), if they exist. If you provide <c></em>.example.com</c>
+    /// as input, the returned list can include <c>*.example.com</c> and any alternate domain
+    /// names covered by that wildcard (for example, <c>www.example.com</c>, <c>test.example.com</c>,
+    /// <c>dev.example.com</c>, and so on), if they exist.
+    /// </para>
+    ///  
+    /// <para>
+    /// To list conflicting domains, specify the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The domain to search for
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The ID of a standard distribution or distribution tenant in your account that has
+    /// an attached TLS certificate, which covers the specified domain
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, including how to set up the standard distribution or distribution
+    /// tenant, and the certificate, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+    /// an alternate domain name to a different standard distribution or distribution tenant</a>
+    /// in the <i>Amazon CloudFront Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can optionally specify the maximum number of items to receive in the response.
+    /// If the total number of items in the list exceeds the maximum that you specify, or
+    /// the default maximum, the response is paginated. To get the next page of items, send
+    /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+    /// as the <c>Marker</c> value in the subsequent request.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class ListDomainConflictsRequest : AmazonCloudFrontRequest
@@ -68,7 +117,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainControlValidationResource. 
         /// <para>
-        /// The distribution resource identifier. This can be the distribution or distribution
+        /// The distribution resource identifier. This can be the standard distribution or distribution
         /// tenant that has a valid certificate, which covers the domain that you specify.
         /// </para>
         /// </summary>

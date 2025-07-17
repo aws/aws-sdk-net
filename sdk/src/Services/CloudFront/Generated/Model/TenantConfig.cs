@@ -30,7 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// This field only supports multi-tenant distributions. You can't specify this field
+    /// for standard distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+    /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+    /// Guide</i>.
+    /// 
+    ///  </note> 
+    /// <para>
     /// The configuration for a distribution tenant.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class TenantConfig
     {

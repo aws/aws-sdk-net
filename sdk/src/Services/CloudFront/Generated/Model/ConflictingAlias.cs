@@ -30,10 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// An alias (also called a CNAME) and the CloudFront distribution and Amazon Web Services
-    /// account ID that it's associated with. The distribution and account IDs are partially
-    /// hidden, which allows you to identify the distributions and accounts that you own,
-    /// but helps to protect the information of ones that you don't own.
+    /// An alias (also called a CNAME) and the CloudFront standard distribution and Amazon
+    /// Web Services account ID that it's associated with. The standard distribution and account
+    /// IDs are partially hidden, which allows you to identify the standard distributions
+    /// and accounts that you own, and helps to protect the information of ones that you don't
+    /// own.
     /// </summary>
     public partial class ConflictingAlias
     {
@@ -44,8 +45,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The (partially hidden) ID of the Amazon Web Services account that owns the distribution
-        /// that's associated with the alias.
+        /// The (partially hidden) ID of the Amazon Web Services account that owns the standard
+        /// distribution that's associated with the alias.
         /// </para>
         /// </summary>
         public string AccountId
@@ -81,7 +82,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DistributionId. 
         /// <para>
-        /// The (partially hidden) ID of the CloudFront distribution associated with the alias.
+        /// The (partially hidden) ID of the CloudFront standard distribution associated with
+        /// the alias.
         /// </para>
         /// </summary>
         public string DistributionId
