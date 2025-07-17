@@ -1,3 +1,24 @@
+### 4.0.50.0 (2025-07-17 18:22 UTC)
+* CleanRoomsML (4.0.2.0)
+	* This release introduces Parquet result format support for ML Input Channel models in AWS Clean Rooms ML.
+* CloudFront (4.0.0.16)
+	* Doc only update for CloudFront that fixes some customer-reported issues
+* EC2 (4.0.21.0)
+	* AWS Free Tier Version2 Support
+* KeyspacesStreams (4.0.0.4)
+	* Doc only update for the Amazon Keyspaces Streams API.
+* MailManager (4.0.2.0)
+	* Allow underscores in the local part of the input of the "Email recipients rewrite" action in rule sets.
+* MediaConvert (4.0.5.0)
+	* This release expands the range of supported audio outputs to include xHE, 192khz FLAC and the deprecation of dual mono for AC3.
+* S3 (4.0.5.1)
+	* Decorated AnalyticsId and StorageClassAnalysis properties in AnalyticsConfiguration class with [AWSProperty(Required = true)] attribute per S3 service API model.
+	* Decorated AnalyticsConfiguration property in PutBucketAnalyticsConfigurationRequest class with [AWSProperty(Required = true)] attribute per S3 service API model.
+* StepFunctions (4.0.0.16)
+	* Align input with style guidelines.
+* Synthetics (4.0.5.0)
+	* This feature allows AWS Synthetics customers to provide code dependencies using lambda layer while creating a canary
+
 ### 4.0.49.0 (2025-07-16 15:39 UTC)
 * Bedrock (4.0.8.0)
 	* This release adds support for on-demand custom model inference through CustomModelDeployment APIs for Amazon Bedrock.
