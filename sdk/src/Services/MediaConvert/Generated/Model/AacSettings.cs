@@ -42,10 +42,13 @@ namespace Amazon.MediaConvert.Model
         private int? _bitrate;
         private AacCodecProfile _codecProfile;
         private AacCodingMode _codingMode;
+        private AacLoudnessMeasurementMode _loudnessMeasurementMode;
+        private int? _rapInterval;
         private AacRateControlMode _rateControlMode;
         private AacRawFormat _rawFormat;
         private int? _sampleRate;
         private AacSpecification _specification;
+        private int? _targetLoudnessRange;
         private AacVbrQuality _vbrQuality;
 
         /// <summary>
@@ -136,6 +139,47 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LoudnessMeasurementMode. Choose the loudness measurement
+        /// mode for your audio content. For music or advertisements: We recommend that you keep
+        /// the default value, Program. For speech or other content: We recommend that you choose
+        /// Anchor. When you do, MediaConvert optimizes the loudness of your output for clarify
+        /// by applying speech gates.
+        /// </summary>
+        public AacLoudnessMeasurementMode LoudnessMeasurementMode
+        {
+            get { return this._loudnessMeasurementMode; }
+            set { this._loudnessMeasurementMode = value; }
+        }
+
+        // Check to see if LoudnessMeasurementMode property is set
+        internal bool IsSetLoudnessMeasurementMode()
+        {
+            return this._loudnessMeasurementMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RapInterval. Specify the RAP (Random Access Point) interval
+        /// for your xHE-AAC audio output. A RAP allows a decoder to decode audio data mid-stream,
+        /// without the need to reference previous audio frames, and perform adaptive audio bitrate
+        /// switching. To specify the RAP interval: Enter an integer from 2000 to 30000, in milliseconds.
+        /// Smaller values allow for better seeking and more frequent stream switching, while
+        /// large values improve compression efficiency. To have MediaConvert automatically determine
+        /// the RAP interval: Leave blank.
+        /// </summary>
+        [AWSProperty(Min=2000, Max=30000)]
+        public int? RapInterval
+        {
+            get { return this._rapInterval; }
+            set { this._rapInterval = value; }
+        }
+
+        // Check to see if RapInterval property is set
+        internal bool IsSetRapInterval()
+        {
+            return this._rapInterval.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RateControlMode. Specify the AAC rate control mode. For
         /// a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value
         /// that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate
@@ -202,6 +246,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSpecification()
         {
             return this._specification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLoudnessRange. Specify the xHE-AAC loudness target.
+        /// Enter an integer from 6 to 16, representing "loudness units". For more information,
+        /// see the following specification: Supplementary information for R 128 EBU Tech 3342-2023.
+        /// </summary>
+        [AWSProperty(Min=6, Max=16)]
+        public int? TargetLoudnessRange
+        {
+            get { return this._targetLoudnessRange; }
+            set { this._targetLoudnessRange = value; }
+        }
+
+        // Check to see if TargetLoudnessRange property is set
+        internal bool IsSetTargetLoudnessRange()
+        {
+            return this._targetLoudnessRange.HasValue; 
         }
 
         /// <summary>

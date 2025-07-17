@@ -56,8 +56,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Format. The format of your media file. For example: MP4,
-        /// QuickTime (MOV), Matroska (MKV), or WebM. Note that this will be blank if your media
-        /// file has a format that the MediaConvert Probe operation does not recognize.
+        /// QuickTime (MOV), Matroska (MKV), WebM or MXF. Note that this will be blank if your
+        /// media file has a format that the MediaConvert Probe operation does not recognize.
         /// </summary>
         public Format Format
         {
