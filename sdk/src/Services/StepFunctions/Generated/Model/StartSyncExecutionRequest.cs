@@ -83,7 +83,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>"{\"first_name\" : \"Tim\"}"</c> 
+        ///  <c>"{\"first_name\" : \"Alejandro\"}"</c> 
         /// </para>
         ///  <note> 
         /// <para>
