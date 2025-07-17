@@ -90,6 +90,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("loudnessMeasurementMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LoudnessMeasurementMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rapInterval", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RapInterval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rateControlMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,6 +124,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Specification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetLoudnessRange", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TargetLoudnessRange = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vbrQuality", targetDepth))

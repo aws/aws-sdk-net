@@ -51,9 +51,19 @@
     <max>1024000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AacSettings.RapInterval</property>
+    <min>2000</min>
+    <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.AacSettings.SampleRate</property>
     <min>8000</min>
     <max>96000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AacSettings.TargetLoudnessRange</property>
+    <min>6</min>
+    <max>16</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Ac3Settings.Bitrate</property>
@@ -714,7 +724,7 @@
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.FlacSettings.SampleRate</property>
     <min>22050</min>
-    <max>48000</max>
+    <max>192000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.ForceIncludeRenditionSize.Height</property>
