@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _deregistrationProtection;
         private string _description;
         private bool? _enaSupport;
+        private bool? _freeTierEligible;
         private HypervisorType _hypervisor;
         private bool? _imageAllowed;
         private string _imageId;
@@ -221,6 +222,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnaSupport()
         {
             return this._enaSupport.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FreeTierEligible. 
+        /// <para>
+        /// Indicates whether the image is eligible for Amazon Web Services Free Tier.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <c>true</c>, the AMI is eligible for Free Tier and can be used to launch instances
+        /// under the Free Tier limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>false</c>, the AMI is not eligible for Free Tier.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool? FreeTierEligible
+        {
+            get { return this._freeTierEligible; }
+            set { this._freeTierEligible = value; }
+        }
+
+        // Check to see if FreeTierEligible property is set
+        internal bool IsSetFreeTierEligible()
+        {
+            return this._freeTierEligible.HasValue; 
         }
 
         /// <summary>

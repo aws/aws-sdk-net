@@ -108,6 +108,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EnaSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("freeTierEligible", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.FreeTierEligible = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("hypervisor", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
