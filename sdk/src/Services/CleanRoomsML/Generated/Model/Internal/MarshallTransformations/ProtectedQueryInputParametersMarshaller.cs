@@ -59,6 +59,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetResultFormat())
+            {
+                context.Writer.WritePropertyName("resultFormat");
+                context.Writer.Write(requestObject.ResultFormat);
+            }
+
             if(requestObject.IsSetSqlParameters())
             {
                 context.Writer.WritePropertyName("sqlParameters");

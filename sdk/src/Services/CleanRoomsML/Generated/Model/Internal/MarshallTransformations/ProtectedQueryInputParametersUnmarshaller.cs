@@ -72,6 +72,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resultFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResultFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sqlParameters", targetDepth))
                 {
                     var unmarshaller = ProtectedQuerySQLParametersUnmarshaller.Instance;
