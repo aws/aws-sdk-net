@@ -4,7 +4,7 @@
     <property>Amazon.MailManager.Model.CreateAddonInstanceRequest.AddonSubscriptionId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^as-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>as-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateAddonInstanceRequest.ClientToken</property>
@@ -15,7 +15,7 @@
     <property>Amazon.MailManager.Model.CreateAddonInstanceResponse.AddonInstanceId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^ai-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>ai-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateAddonSubscriptionRequest.ClientToken</property>
@@ -26,13 +26,13 @@
     <property>Amazon.MailManager.Model.CreateAddonSubscriptionResponse.AddonSubscriptionId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^as-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>as-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateAddressListRequest.AddressListName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateAddressListRequest.ClientToken</property>
@@ -43,13 +43,13 @@
     <property>Amazon.MailManager.Model.CreateAddressListResponse.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateAddressListImportJobRequest.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateAddressListImportJobRequest.ClientToken</property>
@@ -60,19 +60,19 @@
     <property>Amazon.MailManager.Model.CreateAddressListImportJobRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateAddressListImportJobResponse.JobId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateArchiveRequest.ArchiveName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*[a-zA-Z0-9]$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateArchiveRequest.ClientToken</property>
@@ -81,7 +81,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateArchiveRequest.KmsKeyArn</property>
-    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-z0-9-]{1,20}:[0-9]{12}:(key|alias)/.+$</pattern>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-z0-9-]{1,20}:[0-9]{12}:(key|alias)/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateArchiveResponse.ArchiveId</property>
@@ -97,7 +97,7 @@
     <property>Amazon.MailManager.Model.CreateIngressPointRequest.IngressPointName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[A-Za-z0-9_\-]+$</pattern>
+    <pattern>[A-Za-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateIngressPointRequest.RuleSetId</property>
@@ -123,13 +123,13 @@
     <property>Amazon.MailManager.Model.CreateRelayRequest.RelayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateRelayRequest.ServerName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-\.]+$</pattern>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateRelayRequest.ServerPort</property>
@@ -140,7 +140,7 @@
     <property>Amazon.MailManager.Model.CreateRelayResponse.RelayId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateRuleSetRequest.ClientToken</property>
@@ -151,7 +151,7 @@
     <property>Amazon.MailManager.Model.CreateRuleSetRequest.RuleSetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateRuleSetResponse.RuleSetId</property>
@@ -171,7 +171,7 @@
     <property>Amazon.MailManager.Model.CreateTrafficPolicyRequest.TrafficPolicyName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[A-Za-z0-9_\-]+$</pattern>
+    <pattern>[A-Za-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateTrafficPolicyResponse.TrafficPolicyId</property>
@@ -182,19 +182,19 @@
     <property>Amazon.MailManager.Model.DeleteAddonInstanceRequest.AddonInstanceId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^ai-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>ai-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.DeleteAddonSubscriptionRequest.AddonSubscriptionId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^as-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>as-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.DeleteAddressListRequest.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.DeleteArchiveRequest.ArchiveId</property>
@@ -210,7 +210,7 @@
     <property>Amazon.MailManager.Model.DeleteRelayRequest.RelayId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.DeleteRuleSetRequest.RuleSetId</property>
@@ -231,67 +231,67 @@
     <property>Amazon.MailManager.Model.DeregisterMemberFromAddressListRequest.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddonInstanceRequest.AddonInstanceId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^ai-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>ai-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddonInstanceResponse.AddonSubscriptionId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^as-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>as-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddonSubscriptionRequest.AddonSubscriptionId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^as-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>as-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddressListRequest.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddressListResponse.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddressListResponse.AddressListName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddressListImportJobRequest.JobId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddressListImportJobResponse.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddressListImportJobResponse.JobId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetAddressListImportJobResponse.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetArchiveRequest.ArchiveId</property>
@@ -307,11 +307,11 @@
     <property>Amazon.MailManager.Model.GetArchiveResponse.ArchiveName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*[a-zA-Z0-9]$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetArchiveResponse.KmsKeyArn</property>
-    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-z0-9-]{1,20}:[0-9]{12}:(key|alias)/.+$</pattern>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-z0-9-]{1,20}:[0-9]{12}:(key|alias)/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetArchiveExportRequest.ExportId</property>
@@ -322,7 +322,7 @@
     <property>Amazon.MailManager.Model.GetArchiveExportResponse.ArchiveId</property>
     <min>3</min>
     <max>66</max>
-    <pattern>^a-[\w]{1,64}$</pattern>
+    <pattern>a-[\w]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetArchiveSearchRequest.SearchId</property>
@@ -333,7 +333,7 @@
     <property>Amazon.MailManager.Model.GetArchiveSearchResponse.ArchiveId</property>
     <min>3</min>
     <max>66</max>
-    <pattern>^a-[\w]{1,64}$</pattern>
+    <pattern>a-[\w]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetArchiveSearchResponse.MaxResults</property>
@@ -359,7 +359,7 @@
     <property>Amazon.MailManager.Model.GetIngressPointResponse.IngressPointName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[A-Za-z0-9_\-]+$</pattern>
+    <pattern>[A-Za-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetIngressPointResponse.RuleSetId</property>
@@ -380,7 +380,7 @@
     <property>Amazon.MailManager.Model.GetMemberOfAddressListRequest.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetMemberOfAddressListResponse.Address</property>
@@ -391,25 +391,25 @@
     <property>Amazon.MailManager.Model.GetRelayRequest.RelayId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetRelayResponse.RelayId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetRelayResponse.RelayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetRelayResponse.ServerName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-\.]+$</pattern>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetRelayResponse.ServerPort</property>
@@ -430,7 +430,7 @@
     <property>Amazon.MailManager.Model.GetRuleSetResponse.RuleSetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetTrafficPolicyRequest.TrafficPolicyId</property>
@@ -450,7 +450,7 @@
     <property>Amazon.MailManager.Model.GetTrafficPolicyResponse.TrafficPolicyName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[A-Za-z0-9_\-]+$</pattern>
+    <pattern>[A-Za-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ListAddonInstancesRequest.NextToken</property>
@@ -486,7 +486,7 @@
     <property>Amazon.MailManager.Model.ListAddressListImportJobsRequest.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ListAddressListImportJobsRequest.NextToken</property>
@@ -522,7 +522,7 @@
     <property>Amazon.MailManager.Model.ListArchiveExportsRequest.ArchiveId</property>
     <min>3</min>
     <max>66</max>
-    <pattern>^a-[\w]{1,64}$</pattern>
+    <pattern>a-[\w]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ListArchiveExportsRequest.NextToken</property>
@@ -558,7 +558,7 @@
     <property>Amazon.MailManager.Model.ListArchiveSearchesRequest.ArchiveId</property>
     <min>3</min>
     <max>66</max>
-    <pattern>^a-[\w]{1,64}$</pattern>
+    <pattern>a-[\w]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ListArchiveSearchesRequest.NextToken</property>
@@ -594,7 +594,7 @@
     <property>Amazon.MailManager.Model.ListMembersOfAddressListRequest.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ListMembersOfAddressListRequest.NextToken</property>
@@ -640,7 +640,7 @@
     <property>Amazon.MailManager.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>^arn:aws(|-cn|-us-gov):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+$</pattern>
+    <pattern>arn:aws(|-cn|-us-gov):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ListTrafficPoliciesRequest.NextToken</property>
@@ -666,19 +666,19 @@
     <property>Amazon.MailManager.Model.RegisterMemberToAddressListRequest.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.StartAddressListImportJobRequest.JobId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.StartArchiveExportRequest.ArchiveId</property>
     <min>3</min>
     <max>66</max>
-    <pattern>^a-[\w]{1,64}$</pattern>
+    <pattern>a-[\w]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.StartArchiveExportResponse.ExportId</property>
@@ -689,7 +689,7 @@
     <property>Amazon.MailManager.Model.StartArchiveSearchRequest.ArchiveId</property>
     <min>3</min>
     <max>66</max>
-    <pattern>^a-[\w]{1,64}$</pattern>
+    <pattern>a-[\w]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.StartArchiveSearchRequest.MaxResults</property>
@@ -705,7 +705,7 @@
     <property>Amazon.MailManager.Model.StopAddressListImportJobRequest.JobId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.StopArchiveExportRequest.ExportId</property>
@@ -721,13 +721,13 @@
     <property>Amazon.MailManager.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>^arn:aws(|-cn|-us-gov):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+$</pattern>
+    <pattern>arn:aws(|-cn|-us-gov):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>^arn:aws(|-cn|-us-gov):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+$</pattern>
+    <pattern>arn:aws(|-cn|-us-gov):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UpdateArchiveRequest.ArchiveId</property>
@@ -738,7 +738,7 @@
     <property>Amazon.MailManager.Model.UpdateArchiveRequest.ArchiveName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*[a-zA-Z0-9]$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UpdateIngressPointRequest.IngressPointId</property>
@@ -749,7 +749,7 @@
     <property>Amazon.MailManager.Model.UpdateIngressPointRequest.IngressPointName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[A-Za-z0-9_\-]+$</pattern>
+    <pattern>[A-Za-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UpdateIngressPointRequest.RuleSetId</property>
@@ -765,19 +765,19 @@
     <property>Amazon.MailManager.Model.UpdateRelayRequest.RelayId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UpdateRelayRequest.RelayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UpdateRelayRequest.ServerName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-\.]+$</pattern>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UpdateRelayRequest.ServerPort</property>
@@ -793,7 +793,7 @@
     <property>Amazon.MailManager.Model.UpdateRuleSetRequest.RuleSetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UpdateTrafficPolicyRequest.MaxMessageSizeBytes</property>
@@ -808,13 +808,13 @@
     <property>Amazon.MailManager.Model.UpdateTrafficPolicyRequest.TrafficPolicyName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[A-Za-z0-9_\-]+$</pattern>
+    <pattern>[A-Za-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.AddHeaderAction.HeaderName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[xX]\-[a-zA-Z0-9\-]+$</pattern>
+    <pattern>[xX]\-[a-zA-Z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.AddHeaderAction.HeaderValue</property>
@@ -825,19 +825,19 @@
     <property>Amazon.MailManager.Model.AddonInstance.AddonInstanceId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^ai-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>ai-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.AddonInstance.AddonSubscriptionId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^as-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>as-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.AddonSubscription.AddonSubscriptionId</property>
     <min>4</min>
     <max>67</max>
-    <pattern>^as-[a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>as-[a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.AddressFilter.AddressPrefix</property>
@@ -848,23 +848,23 @@
     <property>Amazon.MailManager.Model.AddressList.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.AddressList.AddressListName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Analysis.Analyzer</property>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Analysis.ResultField</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^(addon\.)?[\sa-zA-Z0-9_]+$</pattern>
+    <pattern>(addon\.)?[\sa-zA-Z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Archive.ArchiveId</property>
@@ -875,43 +875,43 @@
     <property>Amazon.MailManager.Model.Archive.ArchiveName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*[a-zA-Z0-9]$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ArchiveAction.TargetArchive</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.DeliverToMailboxAction.MailboxArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.DeliverToMailboxAction.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.DeliverToQBusinessAction.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-z0-9-]+$</pattern>
+    <pattern>[a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.DeliverToQBusinessAction.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-z0-9-]+$</pattern>
+    <pattern>[a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.DeliverToQBusinessAction.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ExportSummary.ExportId</property>
@@ -922,29 +922,29 @@
     <property>Amazon.MailManager.Model.ImportJob.AddressListId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ImportJob.JobId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ImportJob.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressAnalysis.Analyzer</property>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressAnalysis.ResultField</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^(addon\.)?[\sa-zA-Z0-9_]+$</pattern>
+    <pattern>(addon\.)?[\sa-zA-Z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressPoint.IngressPointId</property>
@@ -955,21 +955,21 @@
     <property>Amazon.MailManager.Model.IngressPoint.IngressPointName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[A-Za-z0-9_\-]+$</pattern>
+    <pattern>[A-Za-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressPointAuthConfiguration.SecretArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressPointConfiguration.SecretArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressPointConfiguration.SmtpPassword</property>
     <min>8</min>
     <max>64</max>
-    <pattern>^[A-Za-z0-9!@#$%^&amp;*()_+\-=\[\]{}|.,?]+$</pattern>
+    <pattern>[A-Za-z0-9!@#$%^&amp;*()_+\-=\[\]{}|.,?]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Metadata.IngressPointId</property>
@@ -988,29 +988,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.PrivateNetworkConfiguration.VpcEndpointId</property>
-    <pattern>^vpce-[a-zA-Z0-9]{17}$</pattern>
+    <pattern>vpce-[a-zA-Z0-9]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Relay.RelayId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Relay.RelayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.RelayAction.Relay</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.RelayAuthentication.SecretArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Row.IngressPointId</property>
@@ -1021,7 +1021,7 @@
     <property>Amazon.MailManager.Model.Rule.Name</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.RuleSet.RuleSetId</property>
@@ -1032,39 +1032,39 @@
     <property>Amazon.MailManager.Model.RuleSet.RuleSetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.RuleStringToEvaluate.MimeHeaderAttribute</property>
-    <pattern>^X-[a-zA-Z0-9-]{1,256}$</pattern>
+    <pattern>X-[a-zA-Z0-9-]{1,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.S3Action.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.S3Action.S3Bucket</property>
     <min>1</min>
     <max>62</max>
-    <pattern>^[a-zA-Z0-9.-]+$</pattern>
+    <pattern>[a-zA-Z0-9.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.S3Action.S3Prefix</property>
     <min>1</min>
     <max>62</max>
-    <pattern>^[a-zA-Z0-9!_.*'()/-]+$</pattern>
+    <pattern>[a-zA-Z0-9!_.*'()/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.S3Action.S3SseKmsKeyId</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^[a-zA-Z0-9-:/]+$</pattern>
+    <pattern>[a-zA-Z0-9-:/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.S3ExportDestinationConfiguration.S3Location</property>
-    <pattern>^s3://[a-zA-Z0-9.-]{3,63}(/[a-zA-Z0-9!_.*'()/-]*)*$</pattern>
+    <pattern>s3://[a-zA-Z0-9.-]{3,63}(/[a-zA-Z0-9!_.*'()/-]*)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.SavedAddress.Address</property>
@@ -1080,31 +1080,31 @@
     <property>Amazon.MailManager.Model.SendAction.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.SnsAction.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^[a-zA-Z0-9:_/+=,@.#-]+$</pattern>
+    <pattern>[a-zA-Z0-9:_/+=,@.#-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.SnsAction.TopicArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):sns:[a-z]{2}-[a-z]+-\d{1}:\d{12}:[\w\-]{1,256}$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):sns:[a-z]{2}-[a-z]+-\d{1}:\d{12}:[\w\-]{1,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9/_\+=\.:@\-]+$</pattern>
+    <pattern>[a-zA-Z0-9/_\+=\.:@\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9/_\+=\.:@\-]*$</pattern>
+    <pattern>[a-zA-Z0-9/_\+=\.:@\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.TrafficPolicy.TrafficPolicyId</property>
@@ -1115,6 +1115,6 @@
     <property>Amazon.MailManager.Model.TrafficPolicy.TrafficPolicyName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[A-Za-z0-9_\-]+$</pattern>
+    <pattern>[A-Za-z0-9_\-]+</pattern>
   </property-value-rule>
 </property-value-rules>
