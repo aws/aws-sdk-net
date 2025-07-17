@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.CreateIngressPoint(Amazon.MailManager.Model.CreateIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.CreateIngressPoint(Amazon.MailManager.Model.CreateIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.CreateIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.CreateIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create Open IngressPoint"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.CreateIngressPoint(Amazon.MailManager.Model.CreateIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.CreateIngressPoint(Amazon.MailManager.Model.CreateIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.CreateIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.CreateIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create Auth IngressPoint with Password"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.CreateIngressPoint(Amazon.MailManager.Model.CreateIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.CreateIngressPoint(Amazon.MailManager.Model.CreateIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.CreateIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.CreateIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create Auth IngressPoint with SecretsManager Secret"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.CreateTrafficPolicy(Amazon.MailManager.Model.CreateTrafficPolicyRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.CreateTrafficPolicy(Amazon.MailManager.Model.CreateTrafficPolicyRequest)" />
+            <member name="T:Amazon.MailManager.Model.CreateTrafficPolicyRequest" />
+            <member name="T:Amazon.MailManager.Model.CreateTrafficPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create TrafficPolicy"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.DeleteIngressPoint(Amazon.MailManager.Model.DeleteIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.DeleteIngressPoint(Amazon.MailManager.Model.DeleteIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.DeleteIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.DeleteIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete IngressPoint"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.DeleteTrafficPolicy(Amazon.MailManager.Model.DeleteTrafficPolicyRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.DeleteTrafficPolicy(Amazon.MailManager.Model.DeleteTrafficPolicyRequest)" />
+            <member name="T:Amazon.MailManager.Model.DeleteTrafficPolicyRequest" />
+            <member name="T:Amazon.MailManager.Model.DeleteTrafficPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete TrafficPolicy"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.GetIngressPoint(Amazon.MailManager.Model.GetIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.GetIngressPoint(Amazon.MailManager.Model.GetIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.GetIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.GetIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get Open IngressPoint"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.GetIngressPoint(Amazon.MailManager.Model.GetIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.GetIngressPoint(Amazon.MailManager.Model.GetIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.GetIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.GetIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get Auth IngressPoint"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.GetTrafficPolicy(Amazon.MailManager.Model.GetTrafficPolicyRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.GetTrafficPolicy(Amazon.MailManager.Model.GetTrafficPolicyRequest)" />
+            <member name="T:Amazon.MailManager.Model.GetTrafficPolicyRequest" />
+            <member name="T:Amazon.MailManager.Model.GetTrafficPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get TrafficPolicy"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.ListIngressPoints(Amazon.MailManager.Model.ListIngressPointsRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.ListIngressPoints(Amazon.MailManager.Model.ListIngressPointsRequest)" />
+            <member name="T:Amazon.MailManager.Model.ListIngressPointsRequest" />
+            <member name="T:Amazon.MailManager.Model.ListIngressPointsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List IngressPoints"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.ListIngressPoints(Amazon.MailManager.Model.ListIngressPointsRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.ListIngressPoints(Amazon.MailManager.Model.ListIngressPointsRequest)" />
+            <member name="T:Amazon.MailManager.Model.ListIngressPointsRequest" />
+            <member name="T:Amazon.MailManager.Model.ListIngressPointsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List IngressPoints with PageSize"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.ListIngressPoints(Amazon.MailManager.Model.ListIngressPointsRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.ListIngressPoints(Amazon.MailManager.Model.ListIngressPointsRequest)" />
+            <member name="T:Amazon.MailManager.Model.ListIngressPointsRequest" />
+            <member name="T:Amazon.MailManager.Model.ListIngressPointsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List IngressPoints with NextToken"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.ListTrafficPolicies(Amazon.MailManager.Model.ListTrafficPoliciesRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.ListTrafficPolicies(Amazon.MailManager.Model.ListTrafficPoliciesRequest)" />
+            <member name="T:Amazon.MailManager.Model.ListTrafficPoliciesRequest" />
+            <member name="T:Amazon.MailManager.Model.ListTrafficPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List TrafficPolicies"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.ListTrafficPolicies(Amazon.MailManager.Model.ListTrafficPoliciesRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.ListTrafficPolicies(Amazon.MailManager.Model.ListTrafficPoliciesRequest)" />
+            <member name="T:Amazon.MailManager.Model.ListTrafficPoliciesRequest" />
+            <member name="T:Amazon.MailManager.Model.ListTrafficPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List TrafficPolicies with PageSize"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.ListTrafficPolicies(Amazon.MailManager.Model.ListTrafficPoliciesRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.ListTrafficPolicies(Amazon.MailManager.Model.ListTrafficPoliciesRequest)" />
+            <member name="T:Amazon.MailManager.Model.ListTrafficPoliciesRequest" />
+            <member name="T:Amazon.MailManager.Model.ListTrafficPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List TrafficPolicies with NextToken"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.UpdateIngressPoint(Amazon.MailManager.Model.UpdateIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.UpdateIngressPoint(Amazon.MailManager.Model.UpdateIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.UpdateIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.UpdateIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update Open/Auth IngressPoint with new Name"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.UpdateIngressPoint(Amazon.MailManager.Model.UpdateIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.UpdateIngressPoint(Amazon.MailManager.Model.UpdateIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.UpdateIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.UpdateIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update Open/Auth IngressPoint with new RuleSetId / TrafficPolicyId"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.UpdateIngressPoint(Amazon.MailManager.Model.UpdateIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.UpdateIngressPoint(Amazon.MailManager.Model.UpdateIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.UpdateIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.UpdateIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update Auth IngressPoint with new SmtpPassword"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.UpdateIngressPoint(Amazon.MailManager.Model.UpdateIngressPointRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.UpdateIngressPoint(Amazon.MailManager.Model.UpdateIngressPointRequest)" />
+            <member name="T:Amazon.MailManager.Model.UpdateIngressPointRequest" />
+            <member name="T:Amazon.MailManager.Model.UpdateIngressPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update Auth IngressPoint with new SecretArn"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.UpdateTrafficPolicy(Amazon.MailManager.Model.UpdateTrafficPolicyRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.UpdateTrafficPolicy(Amazon.MailManager.Model.UpdateTrafficPolicyRequest)" />
+            <member name="T:Amazon.MailManager.Model.UpdateTrafficPolicyRequest" />
+            <member name="T:Amazon.MailManager.Model.UpdateTrafficPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update TrafficPolicy with new Name"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.UpdateTrafficPolicy(Amazon.MailManager.Model.UpdateTrafficPolicyRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.UpdateTrafficPolicy(Amazon.MailManager.Model.UpdateTrafficPolicyRequest)" />
+            <member name="T:Amazon.MailManager.Model.UpdateTrafficPolicyRequest" />
+            <member name="T:Amazon.MailManager.Model.UpdateTrafficPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update TrafficPolicy with new PolicyStatements"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MailManager.IAmazonMailManager.UpdateTrafficPolicy(Amazon.MailManager.Model.UpdateTrafficPolicyRequest)" />
+            <member name="M:Amazon.MailManager.AmazonMailManagerClient.UpdateTrafficPolicy(Amazon.MailManager.Model.UpdateTrafficPolicyRequest)" />
+            <member name="T:Amazon.MailManager.Model.UpdateTrafficPolicyRequest" />
+            <member name="T:Amazon.MailManager.Model.UpdateTrafficPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update TrafficPolicy with new DefaultAction"
+                    source=".\AWSSDKDocSamples\MailManager\MailManager.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+</docs>
