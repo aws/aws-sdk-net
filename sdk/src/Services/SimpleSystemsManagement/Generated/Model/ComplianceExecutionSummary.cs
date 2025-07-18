@@ -66,6 +66,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time the execution ran as a datetime object that is saved in the following format:
         /// <c>yyyy-MM-dd'T'HH:mm:ss'Z'</c> 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// For State Manager associations, this timestamp represents when the compliance status
+        /// was captured and reported by the Systems Manager service, not when the underlying
+        /// association was actually executed on the managed node. To track actual association
+        /// execution times, use the <a>DescribeAssociationExecutionTargets</a> command or check
+        /// the association execution history in the Systems Manager console.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? ExecutionTime
