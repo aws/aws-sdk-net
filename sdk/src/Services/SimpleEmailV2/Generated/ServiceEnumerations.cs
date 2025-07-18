@@ -2552,6 +2552,10 @@ namespace Amazon.SimpleEmailV2
         /// Constant IN_PROGRESS for WarmupStatus
         /// </summary>
         public static readonly WarmupStatus IN_PROGRESS = new WarmupStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_APPLICABLE for WarmupStatus
+        /// </summary>
+        public static readonly WarmupStatus NOT_APPLICABLE = new WarmupStatus("NOT_APPLICABLE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
