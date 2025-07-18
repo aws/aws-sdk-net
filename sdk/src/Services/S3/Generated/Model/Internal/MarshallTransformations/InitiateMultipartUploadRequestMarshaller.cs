@@ -64,11 +64,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-server-side-encryption-bucket-key-enabled"] = StringUtils.FromBool(publicRequest.BucketKeyEnabled);
             }
         
-            if (publicRequest.IsSetCacheControl()) 
-            {
-                request.Headers["Cache-Control"] = publicRequest.CacheControl;
-            }
-        
             if (publicRequest.IsSetCannedACL()) 
             {
                 request.Headers["x-amz-acl"] = StringUtils.FromString(publicRequest.CannedACL);

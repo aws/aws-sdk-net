@@ -313,7 +313,6 @@ namespace Amazon.S3.Model
     {
         private bool? _bucketKeyEnabled;
         private string _bucketName;
-        private string _cacheControl;
         private S3CannedACL _cannedACL;
         private ChecksumAlgorithm _checksumAlgorithm;
         private ChecksumType _checksumType;
@@ -425,24 +424,6 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property CacheControl. 
-        /// <para>
-        /// Specifies caching behavior along the request/reply chain.
-        /// </para>
-        /// </summary>
-        public string CacheControl
-        {
-            get { return this._cacheControl; }
-            set { this._cacheControl = value; }
-        }
-
-        // Check to see if CacheControl property is set
-        internal bool IsSetCacheControl()
-        {
-            return this._cacheControl != null;
         }
 
         /// <summary>

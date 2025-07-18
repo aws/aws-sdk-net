@@ -238,7 +238,8 @@
                 "ContentLanguage",
                 "ContentType",
                 "Expires",
-                "Metadata"
+                "Metadata",
+                "CacheControl"
             ],
             "modify":[
                 {
