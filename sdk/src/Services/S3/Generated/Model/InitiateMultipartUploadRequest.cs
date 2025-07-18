@@ -323,7 +323,7 @@ namespace Amazon.S3.Model
         private ObjectLockMode _objectLockMode;
         private DateTime? _objectLockRetainUntilDate;
         private RequestPayer _requestPayer;
-        private string _serverSideEncryptionCustomerMethod;
+        private ServerSideEncryptionCustomerMethod _serverSideEncryptionCustomerMethod;
         private string _serverSideEncryptionCustomerProvidedKey;
         private string _serverSideEncryptionCustomerProvidedKeyMD5;
         private string _serverSideEncryptionKeyManagementServiceEncryptionContext;
@@ -659,7 +659,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public string ServerSideEncryptionCustomerMethod
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
         {
             get { return this._serverSideEncryptionCustomerMethod; }
             set { this._serverSideEncryptionCustomerMethod = value; }

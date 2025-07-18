@@ -524,7 +524,7 @@
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller":"StringUnmarshaller"
             },
-            "ServerSideCustomerEncryption":{
+            "ServerSideEncryptionCustomerMethod":{
                 "Type": "ServerSideEncryptionCustomerMethod",
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller": "StringUnmarshaller"
@@ -536,7 +536,7 @@
             }
         },
         "CreateMultipartUploadOutput":{
-            "ServerSideCustomerEncryption" : {
+            "ServerSideEncryptionCustomerMethod" : {
                 "Type": "ServerSideEncryptionCustomerMethod",
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller": "StringUnmarshaller"

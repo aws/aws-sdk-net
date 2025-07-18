@@ -111,7 +111,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetServerSideEncryptionCustomerMethod()) 
             {
-                request.Headers["x-amz-server-side-encryption-customer-algorithm"] = publicRequest.ServerSideEncryptionCustomerMethod;
+                request.Headers["x-amz-server-side-encryption-customer-algorithm"] = StringUtils.FromString(publicRequest.ServerSideEncryptionCustomerMethod);
             }
         
             if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKey()) 

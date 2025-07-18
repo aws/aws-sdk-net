@@ -42,7 +42,7 @@ namespace Amazon.S3.Model
         private ChecksumType _checksumType;
         private string _key;
         private RequestCharged _requestCharged;
-        private string _serverSideEncryptionCustomerMethod;
+        private ServerSideEncryptionCustomerMethod _serverSideEncryptionCustomerMethod;
         private string _serverSideEncryptionCustomerProvidedKeyMD5;
         private string _serverSideEncryptionKeyManagementServiceEncryptionContext;
         private string _serverSideEncryptionKeyManagementServiceKeyId;
@@ -234,7 +234,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public string ServerSideEncryptionCustomerMethod
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
         {
             get { return this._serverSideEncryptionCustomerMethod; }
             set { this._serverSideEncryptionCustomerMethod = value; }
