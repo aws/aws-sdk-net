@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListCatalogItems operation
+    /// Response Unmarshaller for GetOutpostBillingInformation operation
     /// </summary>  
-    public class ListCatalogItemsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetOutpostBillingInformationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,28 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListCatalogItemsResponse response = new ListCatalogItemsResponse();
+            GetOutpostBillingInformationResponse response = new GetOutpostBillingInformationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CatalogItems", targetDepth))
+                if (context.TestExpression("ContractEndDate", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CatalogItem, CatalogItemUnmarshaller>(CatalogItemUnmarshaller.Instance);
-                    response.CatalogItems = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ContractEndDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Subscriptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Subscription, SubscriptionUnmarshaller>(SubscriptionUnmarshaller.Instance);
+                    response.Subscriptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -99,17 +105,13 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-                {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonOutpostsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListCatalogItemsResponseUnmarshaller _instance = new ListCatalogItemsResponseUnmarshaller();        
+        private static GetOutpostBillingInformationResponseUnmarshaller _instance = new GetOutpostBillingInformationResponseUnmarshaller();        
 
-        internal static ListCatalogItemsResponseUnmarshaller GetInstance()
+        internal static GetOutpostBillingInformationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +119,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListCatalogItemsResponseUnmarshaller Instance
+        public static GetOutpostBillingInformationResponseUnmarshaller Instance
         {
             get
             {

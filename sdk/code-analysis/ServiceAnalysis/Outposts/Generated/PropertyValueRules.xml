@@ -151,6 +151,35 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.GetOutpostBillingInformationRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.GetOutpostBillingInformationRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.GetOutpostBillingInformationRequest.OutpostIdentifier</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.GetOutpostBillingInformationResponse.ContractEndDate</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[\S \n]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.GetOutpostBillingInformationResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostInstanceTypesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -962,5 +991,11 @@
     <min>1</min>
     <max>255</max>
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.Subscription.SubscriptionId</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[\S \n]+$</pattern>
   </property-value-rule>
 </property-value-rules>

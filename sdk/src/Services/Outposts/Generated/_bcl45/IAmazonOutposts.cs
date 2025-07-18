@@ -537,6 +537,9 @@ namespace Amazon.Outposts
         /// <param name="request">Container for the necessary parameters to execute the GetCatalogItem service method.</param>
         /// 
         /// <returns>The response from the GetCatalogItem service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Outposts.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
@@ -560,6 +563,9 @@ namespace Amazon.Outposts
         /// </param>
         /// 
         /// <returns>The response from the GetCatalogItem service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Outposts.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
@@ -751,6 +757,52 @@ namespace Amazon.Outposts
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpost">REST API Reference for GetOutpost Operation</seealso>
         Task<GetOutpostResponse> GetOutpostAsync(GetOutpostRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetOutpostBillingInformation
+
+
+        /// <summary>
+        /// Gets current and historical billing information about the specified Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOutpostBillingInformation service method.</param>
+        /// 
+        /// <returns>The response from the GetOutpostBillingInformation service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostBillingInformation">REST API Reference for GetOutpostBillingInformation Operation</seealso>
+        GetOutpostBillingInformationResponse GetOutpostBillingInformation(GetOutpostBillingInformationRequest request);
+
+
+
+        /// <summary>
+        /// Gets current and historical billing information about the specified Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOutpostBillingInformation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOutpostBillingInformation service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostBillingInformation">REST API Reference for GetOutpostBillingInformation Operation</seealso>
+        Task<GetOutpostBillingInformationResponse> GetOutpostBillingInformationAsync(GetOutpostBillingInformationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1229,6 +1281,9 @@ namespace Amazon.Outposts
         /// <param name="request">Container for the necessary parameters to execute the ListCatalogItems service method.</param>
         /// 
         /// <returns>The response from the ListCatalogItems service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Outposts.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
@@ -1260,6 +1315,9 @@ namespace Amazon.Outposts
         /// </param>
         /// 
         /// <returns>The response from the ListCatalogItems service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Outposts.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>

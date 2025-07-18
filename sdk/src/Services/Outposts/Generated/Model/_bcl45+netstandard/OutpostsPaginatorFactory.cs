@@ -37,6 +37,14 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Paginator for GetOutpostBillingInformation operation
+        ///</summary>
+        public IGetOutpostBillingInformationPaginator GetOutpostBillingInformation(GetOutpostBillingInformationRequest request) 
+        {
+            return new GetOutpostBillingInformationPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetOutpostInstanceTypes operation
         ///</summary>
         public IGetOutpostInstanceTypesPaginator GetOutpostInstanceTypes(GetOutpostInstanceTypesRequest request) 

@@ -507,6 +507,9 @@ namespace Amazon.Outposts
         /// <param name="request">Container for the necessary parameters to execute the GetCatalogItem service method.</param>
         /// 
         /// <returns>The response from the GetCatalogItem service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Outposts.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
@@ -712,6 +715,55 @@ namespace Amazon.Outposts
         /// <returns>Returns a  GetOutpostResult from Outposts.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpost">REST API Reference for GetOutpost Operation</seealso>
         GetOutpostResponse EndGetOutpost(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetOutpostBillingInformation
+
+
+        /// <summary>
+        /// Gets current and historical billing information about the specified Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOutpostBillingInformation service method.</param>
+        /// 
+        /// <returns>The response from the GetOutpostBillingInformation service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostBillingInformation">REST API Reference for GetOutpostBillingInformation Operation</seealso>
+        GetOutpostBillingInformationResponse GetOutpostBillingInformation(GetOutpostBillingInformationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOutpostBillingInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOutpostBillingInformation operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOutpostBillingInformation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostBillingInformation">REST API Reference for GetOutpostBillingInformation Operation</seealso>
+        IAsyncResult BeginGetOutpostBillingInformation(GetOutpostBillingInformationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOutpostBillingInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOutpostBillingInformation.</param>
+        /// 
+        /// <returns>Returns a  GetOutpostBillingInformationResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostBillingInformation">REST API Reference for GetOutpostBillingInformation Operation</seealso>
+        GetOutpostBillingInformationResponse EndGetOutpostBillingInformation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1169,6 +1221,9 @@ namespace Amazon.Outposts
         /// <param name="request">Container for the necessary parameters to execute the ListCatalogItems service method.</param>
         /// 
         /// <returns>The response from the ListCatalogItems service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Outposts.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
