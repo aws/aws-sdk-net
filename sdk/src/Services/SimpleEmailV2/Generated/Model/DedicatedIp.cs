@@ -86,9 +86,19 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property WarmupPercentage. 
         /// <para>
-        /// Indicates how complete the dedicated IP warm-up process is. When this value equals
-        /// 1, the address has completed the warm-up process and is ready for use.
+        /// Indicates the progress of your dedicated IP warm-up:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>0-100</c> – For standard dedicated IP addresses, this shows the warm-up completion
+        /// percentage. A value of 100 means the IP address is fully warmed up and ready for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>-1</c> – Appears for IP addresses in managed dedicated pools where Amazon SES
+        /// automatically handles the warm-up process, making the percentage not applicable.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public int? WarmupPercentage
@@ -118,6 +128,12 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         ///  <c>DONE</c> – The dedicated IP warm-up process is complete, and the IP address is
         /// ready to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOT_APPLICABLE</c> – The warm-up status doesn't apply to this IP address. This
+        /// status is used for IP addresses in managed dedicated IP pools, where Amazon SES automatically
+        /// handles the warm-up process.
         /// </para>
         ///  </li> </ul>
         /// </summary>
