@@ -4471,6 +4471,85 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  GetLogObject
+
+        /// <summary>
+        /// Retrieves a large logging object (LLO) and streams it back. This API is used to fetch
+        /// the content of large portions of log events that have been ingested through the PutOpenTelemetryLogs
+        /// API. When log events contain fields that would cause the total event size to exceed
+        /// 1MB, CloudWatch Logs automatically processes up to 10 fields, starting with the largest
+        /// fields. Each field is truncated as needed to keep the total event size as close to
+        /// 1MB as possible. The excess portions are stored as Large Log Objects (LLOs) and these
+        /// fields are processed separately and LLO reference system fields (in the format <c>@ptr.$[path.to.field]</c>)
+        /// are added. The path in the reference field reflects the original JSON structure where
+        /// the large field was located. For example, this could be <c>@ptr.$['input']['message']</c>,
+        /// <c>@ptr.$['AAA']['BBB']['CCC']['DDD']</c>, <c>@ptr.$['AAA']</c>, or any other path
+        /// matching your log structure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLogObject service method.</param>
+        /// 
+        /// <returns>The response from the GetLogObject service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogObject">REST API Reference for GetLogObject Operation</seealso>
+        public virtual GetLogObjectResponse GetLogObject(GetLogObjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogObjectResponseUnmarshaller.Instance;
+
+            return Invoke<GetLogObjectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLogObject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLogObject operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLogObject
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogObject">REST API Reference for GetLogObject Operation</seealso>
+        public virtual IAsyncResult BeginGetLogObject(GetLogObjectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogObjectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLogObject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLogObject.</param>
+        /// 
+        /// <returns>Returns a  GetLogObjectResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogObject">REST API Reference for GetLogObject Operation</seealso>
+        public virtual GetLogObjectResponse EndGetLogObject(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLogObjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetLogRecord
 
         /// <summary>
@@ -5193,8 +5272,9 @@ namespace Amazon.CloudWatchLogs
         #region  PutAccountPolicy
 
         /// <summary>
-        /// Creates an account-level data protection policy, subscription filter policy, or field
-        /// index policy that applies to all log groups or a subset of log groups in the account.
+        /// Creates an account-level data protection policy, subscription filter policy, field
+        /// index policy, transformer policy, or metric extraction policy that applies to all
+        /// log groups or a subset of log groups in the account.
         /// 
         ///  
         /// <para>
@@ -5220,6 +5300,11 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// To create a field index policy, you must have the <c>logs:PutIndexPolicy</c> and <c>logs:PutAccountPolicy</c>
         /// permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a metric extraction policy, you must have the <c>logs:PutMetricExtractionPolicy</c>
+        /// and <c>logs:PutAccountPolicy</c> permissions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5436,6 +5521,87 @@ namespace Amazon.CloudWatchLogs
         /// log-group level policy, and will ignore the account-level policy that you create with
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Metric extraction policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A metric extraction policy controls whether CloudWatch Metrics can be created through
+        /// the Embedded Metrics Format (EMF) for log groups in your account. By default, EMF
+        /// metric creation is enabled for all log groups. You can use metric extraction policies
+        /// to disable EMF metric creation for your entire account or specific log groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a policy disables EMF metric creation for a log group, log events in the EMF
+        /// format are still ingested, but no CloudWatch Metrics are created from them.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Creating a policy disables metrics for AWS features that use EMF to create metrics,
+        /// such as CloudWatch Container Insights and CloudWatch Application Signals. To prevent
+        /// turning off those features by accident, we recommend that you exclude the underlying
+        /// log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT IN ["/aws/containerinsights",
+        /// "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Each account can have either one account-level metric extraction policy that applies
+        /// to all log groups, or up to 5 policies that are each scoped to a subset of log groups
+        /// with the <c>selectionCriteria</c> parameter. The selection criteria supports filtering
+        /// by <c>LogGroupName</c> and <c>LogGroupNamePrefix</c> using the operators <c>IN</c>
+        /// and <c>NOT IN</c>. You can specify up to 50 values in each <c>IN</c> or <c>NOT IN</c>
+        /// list.
+        /// </para>
+        ///  
+        /// <para>
+        /// The selection criteria can be specified in these formats:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>LogGroupName IN ["log-group-1", "log-group-2"]</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>LogGroupNamePrefix NOT IN ["/aws/prefix1", "/aws/prefix2"]</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have multiple account-level metric extraction policies with selection criteria,
+        /// no two of them can have overlapping criteria. For example, if you have one policy
+        /// with selection criteria <c>LogGroupNamePrefix IN ["my-log"]</c>, you can't have another
+        /// metric extraction policy with selection criteria <c>LogGroupNamePrefix IN ["/my-log-prod"]</c>
+        /// or <c>LogGroupNamePrefix IN ["/my-logging"]</c>, as the set of log groups matching
+        /// these prefixes would be a subset of the log groups matching the first policy's prefix,
+        /// creating an overlap.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <c>NOT IN</c>, only one policy with this operator is allowed per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// When combining policies with <c>IN</c> and <c>NOT IN</c> operators, the overlap check
+        /// ensures that policies don't have conflicting effects. Two policies with <c>IN</c>
+        /// and <c>NOT IN</c> operators do not overlap if and only if every value in the <c>IN
+        /// </c>policy is completely contained within some value in the <c>NOT IN</c> policy.
+        /// For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you have a <c>NOT IN</c> policy for prefix <c>"/aws/lambda"</c>, you can create
+        /// an <c>IN</c> policy for the exact log group name <c>"/aws/lambda/function1"</c> because
+        /// the set of log groups matching <c>"/aws/lambda/function1"</c> is a subset of the log
+        /// groups matching <c>"/aws/lambda"</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you have a <c>NOT IN</c> policy for prefix <c>"/aws/lambda"</c>, you cannot create
+        /// an <c>IN</c> policy for prefix <c>"/aws"</c> because the set of log groups matching
+        /// <c>"/aws"</c> is not a subset of the log groups matching <c>"/aws/lambda"</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPolicy service method.</param>
         /// 
@@ -7717,9 +7883,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// CloudWatch Logs doesn't support IAM policies that prevent users from assigning specified
-        /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
-        /// condition keys. 
+        /// When using IAM policies to control tag management for CloudWatch Logs log groups,
+        /// the condition keys <c>aws:Resource/key-name</c> and <c>aws:TagKeys</c> cannot be used
+        /// to restrict which tags users can assign. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagLogGroup service method.</param>
