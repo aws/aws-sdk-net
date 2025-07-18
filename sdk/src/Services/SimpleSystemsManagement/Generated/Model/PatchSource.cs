@@ -42,7 +42,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The value of the yum repo configuration. For example:
+        /// The value of the repo configuration.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Example for yum repositories</b> 
         /// </para>
         ///  
         /// <para>
@@ -60,12 +64,32 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         ///  <c>enabled=1</c> 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// For information about other options available for your yum repository configuration,
-        /// see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.
+        /// see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>
+        /// on the <i>man7.org</i> website.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        ///  <b>Examples for Ubuntu Server and Debian Server</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>deb http://security.ubuntu.com/ubuntu jammy main</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>deb https://site.example.com/debian distribution component1 component2 component3</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Repo information for Ubuntu Server repositories must be specifed in a single line.
+        /// For more examples and information, see <a href="https://manpages.ubuntu.com/manpages/jammy/man5/sources.list.5.html">jammy
+        /// (5) sources.list.5.gz</a> on the <i>Ubuntu Server Manuals</i> website and <a href="https://wiki.debian.org/SourcesList#sources.list_format">sources.list
+        /// format</a> on the <i>Debian Wiki</i>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string Configuration

@@ -33,6 +33,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the GetParameterHistory operation.
     /// Retrieves the history of all changes to a parameter.
     /// 
+    ///  
+    /// <para>
+    /// Parameter names can't contain spaces. The service removes any spaces specified for
+    /// the beginning or end of a parameter name. If the specified name for a parameter contains
+    /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+    /// </para>
     ///  <important> 
     /// <para>
     /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then

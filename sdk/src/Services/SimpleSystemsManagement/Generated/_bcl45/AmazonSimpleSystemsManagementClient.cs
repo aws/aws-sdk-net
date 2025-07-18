@@ -62,7 +62,7 @@ namespace Amazon.SimpleSystemsManagement
     /// <para>
     /// For details about predefined runbooks for Automation, a tool in Amazon Web Services
     /// Systems Manager, see the <i> <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html">Systems
-    /// Manager Automation runbook reference</a> </i>.
+    /// Manager Automation Runbook Reference</a> </i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -6149,6 +6149,12 @@ namespace Amazon.SimpleSystemsManagement
         /// operation and returns the matching values up to that point and a <c>NextToken</c>.
         /// You can specify the <c>NextToken</c> in a subsequent call to get the next set of results.
         /// </para>
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         ///  <important> 
         /// <para>
         /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then
@@ -6200,6 +6206,12 @@ namespace Amazon.SimpleSystemsManagement
         /// If the service reaches an internal limit while processing the results, it stops the
         /// operation and returns the matching values up to that point and a <c>NextToken</c>.
         /// You can specify the <c>NextToken</c> in a subsequent call to get the next set of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
         /// </para>
         ///  <important> 
         /// <para>
@@ -8197,6 +8209,12 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about a single parameter by specifying the parameter name.
         /// 
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         ///  <note> 
         /// <para>
         /// To get information about more than one parameter at a time, use the <a>GetParameters</a>
@@ -8242,6 +8260,12 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Get information about a single parameter by specifying the parameter name.
         /// 
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         ///  <note> 
         /// <para>
         /// To get information about more than one parameter at a time, use the <a>GetParameters</a>
@@ -8294,6 +8318,12 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Retrieves the history of all changes to a parameter.
         /// 
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         ///  <important> 
         /// <para>
         /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then
@@ -8339,6 +8369,12 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Retrieves the history of all changes to a parameter.
         /// 
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         ///  <important> 
         /// <para>
         /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then
@@ -8396,7 +8432,12 @@ namespace Amazon.SimpleSystemsManagement
         /// To get information about a single parameter, you can use the <a>GetParameter</a> operation
         /// instead.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// 
@@ -8426,7 +8467,12 @@ namespace Amazon.SimpleSystemsManagement
         /// To get information about a single parameter, you can use the <a>GetParameter</a> operation
         /// instead.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// <param name="cancellationToken">
@@ -8467,6 +8513,12 @@ namespace Amazon.SimpleSystemsManagement
         /// If the service reaches an internal limit while processing the results, it stops the
         /// operation and returns the matching values up to that point and a <c>NextToken</c>.
         /// You can specify the <c>NextToken</c> in a subsequent call to get the next set of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParametersByPath service method.</param>
@@ -8514,6 +8566,12 @@ namespace Amazon.SimpleSystemsManagement
         /// If the service reaches an internal limit while processing the results, it stops the
         /// operation and returns the matching values up to that point and a <c>NextToken</c>.
         /// You can specify the <c>NextToken</c> in a subsequent call to get the next set of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParametersByPath service method.</param>
@@ -8883,6 +8941,12 @@ namespace Amazon.SimpleSystemsManagement
         /// If a label fails to meet these requirements, then the label isn't associated with
         /// a parameter and the system displays it in the list of InvalidLabels.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LabelParameterVersion service method.</param>
@@ -8971,6 +9035,12 @@ namespace Amazon.SimpleSystemsManagement
         /// Labels can't begin with a number, "<c>aws</c>" or "<c>ssm</c>" (not case sensitive).
         /// If a label fails to meet these requirements, then the label isn't associated with
         /// a parameter and the system displays it in the list of InvalidLabels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -10964,7 +11034,16 @@ namespace Amazon.SimpleSystemsManagement
         /// ExecutionTime. The time the patch, association, or custom compliance item was applied
         /// to the managed node.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// For State Manager associations, this represents the time when compliance status was
+        /// captured by the Systems Manager service during its internal compliance aggregation
+        /// workflow, not necessarily when the association was executed on the managed node. State
+        /// Manager updates compliance information for all associations on an instance whenever
+        /// any association executes, which may result in multiple associations showing the same
+        /// execution time.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// Id: The patch, association, or custom compliance ID.
         /// </para>
@@ -11078,7 +11157,16 @@ namespace Amazon.SimpleSystemsManagement
         /// ExecutionTime. The time the patch, association, or custom compliance item was applied
         /// to the managed node.
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// For State Manager associations, this represents the time when compliance status was
+        /// captured by the Systems Manager service during its internal compliance aggregation
+        /// workflow, not necessarily when the association was executed on the managed node. State
+        /// Manager updates compliance information for all associations on an instance whenever
+        /// any association executes, which may result in multiple associations showing the same
+        /// execution time.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         /// Id: The patch, association, or custom compliance ID.
         /// </para>
@@ -13368,6 +13456,13 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Remove a label or labels from a parameter.
+        /// 
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnlabelParameterVersion service method.</param>
         /// 
@@ -13406,6 +13501,13 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Remove a label or labels from a parameter.
+        /// 
+        ///  
+        /// <para>
+        /// Parameter names can't contain spaces. The service removes any spaces specified for
+        /// the beginning or end of a parameter name. If the specified name for a parameter contains
+        /// spaces between characters, the request fails with a <c>ValidationException</c> error.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnlabelParameterVersion service method.</param>
         /// <param name="cancellationToken">
