@@ -28,6 +28,16 @@ namespace Amazon.Outposts.Model
     {
 
         /// <summary>
+        /// Paginator for GetOutpostBillingInformation operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetOutpostBillingInformationPaginator GetOutpostBillingInformation(GetOutpostBillingInformationRequest request);
+
+        /// <summary>
         /// Paginator for GetOutpostInstanceTypes operation
         ///</summary>
         [AWSPaginator(
