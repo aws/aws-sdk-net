@@ -663,9 +663,9 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="request">The CreatePresignedPostRequest.</param>
         /// <param name="irequest">The processed IRequest object.</param>
-        /// <param name="credentials">The AWS credentials.</param>
+        /// <param name="credentials">The immutable AWS credentials.</param>
         /// <returns>A CreatePresignedPostResponse containing the URL and form fields for the POST request.</returns>
-        private CreatePresignedPostResponse BuildPresignedPostResponse(CreatePresignedPostRequest request, IRequest irequest, AWSCredentials credentials)
+        private CreatePresignedPostResponse BuildPresignedPostResponse(CreatePresignedPostRequest request, IRequest irequest, ImmutableCredentials credentials)
         {
             // Build the policy document
             var policyDocument = BuildPolicyDocument(request);
@@ -713,8 +713,9 @@ namespace Amazon.S3
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
 
+            var immutableCredentials = credentials.GetCredentials();
             var irequest = CreateAndProcessRequest(request);
-            return BuildPresignedPostResponse(request, irequest, credentials);
+            return BuildPresignedPostResponse(request, irequest, immutableCredentials);
         }
 
         /// <summary>
@@ -737,7 +738,7 @@ namespace Amazon.S3
             var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
 
             var irequest = CreateAndProcessRequest(request);
-            return BuildPresignedPostResponse(request, irequest, credentials);
+            return BuildPresignedPostResponse(request, irequest, immutableCredentials);
         }
 
         /// <summary>
