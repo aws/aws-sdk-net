@@ -21713,6 +21713,60 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type TamsGapHandling.
+    /// </summary>
+    public class TamsGapHandling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILL_WITH_BLACK for TamsGapHandling
+        /// </summary>
+        public static readonly TamsGapHandling FILL_WITH_BLACK = new TamsGapHandling("FILL_WITH_BLACK");
+        /// <summary>
+        /// Constant HOLD_LAST_FRAME for TamsGapHandling
+        /// </summary>
+        public static readonly TamsGapHandling HOLD_LAST_FRAME = new TamsGapHandling("HOLD_LAST_FRAME");
+        /// <summary>
+        /// Constant SKIP_GAPS for TamsGapHandling
+        /// </summary>
+        public static readonly TamsGapHandling SKIP_GAPS = new TamsGapHandling("SKIP_GAPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TamsGapHandling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TamsGapHandling FindValue(string value)
+        {
+            return FindValue<TamsGapHandling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TamsGapHandling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TeletextPageType.
     /// </summary>
     public class TeletextPageType : ConstantClass

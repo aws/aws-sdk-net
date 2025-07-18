@@ -264,6 +264,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTamsSettings())
+            {
+                context.Writer.WritePropertyName("tamsSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InputTamsSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TamsSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTimecodeSource())
             {
                 context.Writer.WritePropertyName("timecodeSource");

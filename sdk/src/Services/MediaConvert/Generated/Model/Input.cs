@@ -58,6 +58,7 @@ namespace Amazon.MediaConvert.Model
         private int? _programNumber;
         private InputPsiControl _psiControl;
         private List<string> _supplementalImps = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private InputTamsSettings _tamsSettings;
         private InputTimecodeSource _timecodeSource;
         private string _timecodeStart;
         private InputVideoGenerator _videoGenerator;
@@ -293,10 +294,16 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FileInput. Specify the source file for your transcoding
         /// job. You can use multiple inputs in a single job. The service concatenates these inputs,
-        /// in the order that you specify them in the job, to create the outputs. If your input
-        /// format is IMF, specify your input by providing the path to your CPL. For example,
-        /// "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental
-        /// IMPs* to specify any supplemental IMPs that contain assets referenced by the CPL.
+        /// in the order that you specify them in the job, to create the outputs. For standard
+        /// inputs, provide the path to your S3, HTTP, or HTTPS source file. For example, s3://amzn-s3-demo-bucket/input.mp4
+        /// for an Amazon S3 input or https://example.com/input.mp4 for an HTTPS input. For TAMS
+        /// inputs, specify the HTTPS endpoint of your TAMS server. For example, https://tams-server.example.com
+        /// . When you do, also specify Source ID, Timerange, GAP handling, and the Authorization
+        /// connection ARN under TAMS settings. (Don't include these parameters in the Input file
+        /// URL.) For IMF inputs, specify your input by providing the path to your CPL. For example,
+        /// s3://amzn-s3-demo-bucket/vf/cpl.xml . If the CPL is in an incomplete IMP, make sure
+        /// to use Supplemental IMPsto specify any supplemental IMPs that contain assets referenced
+        /// by the CPL.
         /// </summary>
         [AWSProperty(Max=2048)]
         public string FileInput
@@ -493,6 +500,30 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSupplementalImps()
         {
             return this._supplementalImps != null && (this._supplementalImps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TamsSettings. Specify a Time Addressable Media Store (TAMS)
+        /// server as an input source. TAMS is an open-source API specification that provides
+        /// access to time-segmented media content. Use TAMS to retrieve specific time ranges
+        /// from live or archived media streams. When you specify TAMS settings, MediaConvert
+        /// connects to your TAMS server, retrieves the media segments for your specified time
+        /// range, and processes them as a single input. This enables workflows like extracting
+        /// clips from live streams or processing specific portions of archived content. To use
+        /// TAMS, you must: 1. Have access to a TAMS-compliant server 2. Specify the server URL
+        /// in the Input file URL field 3. Provide the required SourceId and Timerange parameters
+        /// 4. Configure authentication, if your TAMS server requires it
+        /// </summary>
+        public InputTamsSettings TamsSettings
+        {
+            get { return this._tamsSettings; }
+            set { this._tamsSettings = value; }
+        }
+
+        // Check to see if TamsSettings property is set
+        internal bool IsSetTamsSettings()
+        {
+            return this._tamsSettings != null;
         }
 
         /// <summary>
