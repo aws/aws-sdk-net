@@ -192,6 +192,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.SupplementalImps = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tamsSettings", targetDepth))
+                {
+                    var unmarshaller = InputTamsSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TamsSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timecodeSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

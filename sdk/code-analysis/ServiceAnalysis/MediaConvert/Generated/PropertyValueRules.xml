@@ -1147,6 +1147,14 @@
     <pattern>^[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputTamsSettings.AuthConnectionArn</property>
+    <pattern>^arn:aws[a-z0-9-]*:events:[a-z0-9-]+:[0-9]{12}:connection/[a-zA-Z0-9-]+/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputTamsSettings.Timerange</property>
+    <pattern>^(\[|\()?(-?(0|[1-9][0-9]*):(0|[1-9][0-9]{0,8}))?(_(-?(0|[1-9][0-9]*):(0|[1-9][0-9]{0,8}))?)?(\]|\))?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.InputTemplate.DolbyVisionMetadataXml</property>
     <min>14</min>
     <pattern>^((s3://(.*?)\.(xml|XML))|(https?://(.*?)\.(xml|XML)(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
