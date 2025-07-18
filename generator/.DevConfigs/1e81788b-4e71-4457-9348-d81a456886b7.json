@@ -1,0 +1,8 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Skip unknown properties when mapping EndpointTests"
+    ],
+    "type": "patch"
+  }
+}
