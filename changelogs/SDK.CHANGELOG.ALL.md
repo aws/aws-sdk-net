@@ -1,3 +1,20 @@
+### 3.7.1083.0 (2025-07-18 18:22 UTC)
+* AuditManager (3.7.402.0)
+	* Updated error handling for RegisterOrganizationAdminAccount API to properly translate TooManyExceptions to HTTP 429 status code. This enhancement improves error handling consistency and provides clearer feedback when request limits are exceeded.
+* CloudWatchLogs (3.7.417.0)
+	* CloudWatchLogs launches GetLogObject API with streaming support for efficient log data retrieval. Logs added support for new AccountPolicy type METRIC_EXTRACTION_POLICY. For more information, see CloudWatch Logs API documentation
+* MediaConvert (3.7.417.0)
+	* This release adds support for TAMS server integration with MediaConvert inputs.
+* Outposts (3.7.408.0)
+	* Add AWS Outposts API to surface customer billing information
+* SimpleEmailV2 (3.7.412.0)
+	* Added IP Visibility support for managed dedicated pools. Enhanced GetDedicatedIp and GetDedicatedIps APIs to return managed IP addresses.
+* SimpleSystemsManagement (3.7.406.7)
+	* July 2025 doc-only updates for Systems Manager.
+* Core 3.7.402.84
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1082.0 (2025-07-17 18:23 UTC)
 * CleanRoomsML (3.7.404.0)
 	* This release introduces Parquet result format support for ML Input Channel models in AWS Clean Rooms ML.
