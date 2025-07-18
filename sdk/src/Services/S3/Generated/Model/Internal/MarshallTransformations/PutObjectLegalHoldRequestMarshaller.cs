@@ -92,7 +92,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetLegalHold())
                 {
-                    xmlWriter.WriteStartElement("ObjectLockLegalHold", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("LegalHold", "http://s3.amazonaws.com/doc/2006-03-01/");
                     if(publicRequest.LegalHold.IsSetStatus())
                         xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequest.LegalHold.Status));
 
@@ -100,6 +100,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -120,9 +121,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
             request.UseQueryString = true;
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutObjectLegalHoldRequestMarshaller _instance = new PutObjectLegalHoldRequestMarshaller();        
