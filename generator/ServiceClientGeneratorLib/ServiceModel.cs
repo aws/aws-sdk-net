@@ -525,8 +525,7 @@ namespace ServiceClientGenerator
                         
                         // PHASE 2
                         new Operation(this, "CreateBucket", DocumentRoot[OperationsKey]["CreateBucket"]),
-                        //new Operation(this, "CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
-                        //new Operation(this, "CreateMultipartUpload", DocumentRoot[OperationsKey]["CreateMultipartUpload"]),
+                        new Operation(this, "CreateMultipartUpload", DocumentRoot[OperationsKey]["CreateMultipartUpload"]),
                         //new Operation(this, "DeleteBucketCors", DocumentRoot[OperationsKey]["DeleteBucketCors"]),
                         //new Operation(this, "DeleteBucketLifecycle", DocumentRoot[OperationsKey]["DeleteBucketLifecycle"]),
                         //new Operation(this, "GetBucketAcl", DocumentRoot[OperationsKey]["GetBucketAcl"]),
