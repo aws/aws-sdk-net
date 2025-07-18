@@ -308,7 +308,7 @@ namespace Json.LitJson
             return op;
         }
 
-        private static object ReadValue (Type inst_type, JsonReader reader)
+        private static object ReadValue (Type inst_type, JsonReader reader, bool skipUnknownProperties = false)
         {
             reader.Read ();
 
@@ -398,7 +398,7 @@ namespace Json.LitJson
                 }
 
                 while (true) {
-                    object item = ReadValue (elem_type, reader);
+                    object item = ReadValue (elem_type, reader, skipUnknownProperties);
                     if (reader.Token == JsonToken.ArrayEnd)
                         break;
 
@@ -435,7 +435,7 @@ namespace Json.LitJson
 
                         if (prop_data.IsField) {
                             ((FieldInfo) prop_data.Info).SetValue (
-                                instance, ReadValue (prop_data.Type, reader));
+                                instance, ReadValue (prop_data.Type, reader, skipUnknownProperties));
                         } else {
                             PropertyInfo p_info =
                                 (PropertyInfo) prop_data.Info;
@@ -443,21 +443,26 @@ namespace Json.LitJson
                             if (p_info.CanWrite)
                                 p_info.SetValue (
                                     instance,
-                                    ReadValue (prop_data.Type, reader),
+                                    ReadValue (prop_data.Type, reader, skipUnknownProperties),
                                     null);
                             else
-                                ReadValue (prop_data.Type, reader);
+                                ReadValue (prop_data.Type, reader, skipUnknownProperties);
                         }
 
                     } else {
                         if (! t_data.IsDictionary)
+                        {
+                            if (skipUnknownProperties)
+                                continue;
+
                             throw new JsonException (String.Format (
                                     "The type {0} doesn't have the " +
                                     "property '{1}'", inst_type, property));
+                        }
 
                         ((IDictionary) instance).Add (
                             property, ReadValue (
-                                t_data.ElementType, reader));
+                                t_data.ElementType, reader, skipUnknownProperties));
                     }
 
                 }
@@ -862,11 +867,11 @@ namespace Json.LitJson
             return (T) ReadValue (typeof (T), json_reader);
         }
 
-        public static T ToObject<T> (string json)
+        public static T ToObject<T> (string json, bool skipUnknownProperties = false)
         {
             JsonReader reader = new JsonReader (json);
 
-            return (T) ReadValue (typeof (T), reader);
+            return (T) ReadValue (typeof (T), reader, skipUnknownProperties);
         }
 
         public static IJsonWrapper ToWrapper (WrapperFactory factory,
