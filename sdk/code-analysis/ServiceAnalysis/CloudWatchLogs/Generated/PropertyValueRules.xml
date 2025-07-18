@@ -713,6 +713,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLogObjectRequest.LogObjectPointer</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.QueryId</property>
     <min>1</min>
     <max>256</max>
