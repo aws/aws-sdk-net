@@ -89,8 +89,8 @@
     <PackageReference Include="System.Text.Json" Version="6.0.11" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'net8.0'">
-	<!-- Version 8.x emits a warning about being unsupported on .NET Core 3.1, so we use 6.x.
-	Also, 6.0.0 has a vulnerability. -->
+    <!-- Version 8.x emits a warning about being unsupported on .NET Core 3.1, so we use 6.x.
+    Also, 6.0.0 has a vulnerability. -->
     <PackageReference Include="System.Formats.Asn1" Version="6.0.1" />
   </ItemGroup>
   <Import Project="overrides.targets" />
