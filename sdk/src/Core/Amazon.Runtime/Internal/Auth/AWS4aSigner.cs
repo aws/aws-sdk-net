@@ -410,42 +410,12 @@ namespace Amazon.Runtime.Internal.Auth
     /// <summary>
     /// AWS4a protocol signer for Amazon S3 presigned urls.
     /// </summary>
-    public class AWS4aPreSignedUrlSigner : AWS4aSigner
+    public static class AWS4aPreSignedUrlSigner
     {
         // 7 days is the maximum period for presigned url expiry with AWS4a
         public const Int64 MaxAWS4aPreSignedUrlExpiry = 7 * 24 * 60 * 60;
 
         public static readonly IEnumerable<string> ServicesUsingUnsignedPayload = AWS4PreSignedUrlSigner.ServicesUsingUnsignedPayload;
-
-        /// <summary>
-        /// Calculates and signs the specified request using the AWS4a signing protocol by using the
-        /// AWS account credentials given in the method parameters. The resulting signature is added
-        /// to the request headers as 'Authorization'.
-        /// </summary>
-        /// <param name="request">
-        /// The request to compute the signature for. Additional headers mandated by the AWS4a protocol 
-        /// ('host' and 'x-amz-date') will be added to the request before signing.
-        /// </param>
-        /// <param name="clientConfig">
-        /// Adding supporting data for the service call required by the signer (notably authentication
-        /// region, endpoint and service name).
-        /// </param>
-        /// <param name="metrics">
-        /// Metrics for the request
-        /// </param>
-        /// <param name="identity">
-        /// The AWS credentials for the account making the service call.
-        /// </param>
-        /// <exception cref="Amazon.Runtime.SignatureException">
-        /// If any problems are encountered while signing the request.
-        /// </exception>
-        public override void Sign(IRequest request,
-                                  IClientConfig clientConfig,
-                                  RequestMetrics metrics,
-                                  BaseIdentity identity)
-        {
-            throw new InvalidOperationException("PreSignedUrl signature computation is not supported by this method; use SignRequest instead.");
-        }
 
         /// <summary>
         /// Calculates the AWS4a signature for a presigned url.
@@ -474,7 +444,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// be not be encoded; encoding will be done for these parameters as part of the 
         /// construction of the canonical request.
         /// </remarks>
-        public static new AWS4aSigningResult SignRequest(IRequest request,
+        public static AWS4aSigningResult SignRequest(IRequest request,
                                                          IClientConfig clientConfig,
                                                          RequestMetrics metrics,
                                                          ImmutableCredentials credentials)
@@ -582,13 +552,13 @@ namespace Amazon.Runtime.Internal.Auth
                                                        request.UseDoubleEncoding);
             metrics?.AddProperty(Metric.CanonicalRequest, canonicalRequest);
 
-            return ComputeSignature(credentials,
-                                    regionSet,
-                                    signedAt,
-                                    service,
-                                    canonicalizedHeaderNames,
-                                    canonicalRequest,
-                                    metrics);
+            return AWS4aSigner.ComputeSignature(credentials,
+                                                regionSet,
+                                                signedAt,
+                                                service,
+                                                canonicalizedHeaderNames,
+                                                canonicalRequest,
+                                                metrics);
         }
     }
 }
