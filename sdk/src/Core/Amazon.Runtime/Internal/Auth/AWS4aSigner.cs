@@ -18,11 +18,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Identity;
-using System.Security.Cryptography;
-using System.Runtime.CompilerServices;
+
+#if !NET7_0_OR_GREATER
+using System.Formats.Asn1;
+#endif
 
 using static Amazon.Runtime.Internal.Auth.AWS4Signer;
 
@@ -382,8 +386,24 @@ namespace Amazon.Runtime.Internal.Auth
         public static byte[] SignBlob(ImmutableCredentials credentials, byte[] data)
         {
             var key = credentials.AWS4aSigningKey ??= ComputeSigningKey(credentials.AccessKey, credentials.SecretKey);
-            return key.SignData(data, HashAlgorithmName.SHA256);
+#if NET7_0_OR_GREATER
+            return key.SignData(data, HashAlgorithmName.SHA256, DSASignatureFormat.Rfc3279DerSequence);
+#else
+            return ConvertToRfc3279DerSequence(key.SignData(data, HashAlgorithmName.SHA256));
+#endif
         }
+
+#if !NET7_0_OR_GREATER
+        private static byte[] ConvertToRfc3279DerSequence(byte[] signature)
+        {
+            var writer = new AsnWriter(AsnEncodingRules.DER);
+            writer.PushSequence();
+            writer.WriteIntegerUnsigned(signature.AsSpan(0, signature.Length / 2)); // R value
+            writer.WriteIntegerUnsigned(signature.AsSpan(signature.Length / 2)); // S value
+            writer.PopSequence();
+            return writer.Encode();
+        }
+#endif
         #endregion
     }
 
