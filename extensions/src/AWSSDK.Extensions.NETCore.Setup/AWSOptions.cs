@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
-
+using AWSSDK.Extensions.NETCore.Setup;
 using Microsoft.Extensions.Logging;
 
 namespace Amazon.Extensions.NETCore.Setup
@@ -91,18 +91,6 @@ namespace Amazon.Extensions.NETCore.Setup
         /// the service client through this package.
         /// </summary>
         public LoggingSetting Logging { get; set; }
-
-        /// <summary>
-        /// Create a service client for the specified service interface using the options set in this instance.
-        /// For example if T is set to IAmazonS3 then the AmazonS3ServiceClient which implements IAmazonS3 is created
-        /// and returned.
-        /// </summary>
-        /// <typeparam name="T">The service interface that a service client will be created for.</typeparam>
-        /// <returns>The service client that implements the service interface.</returns>
-        public T CreateServiceClient<T>() where T : class, IAmazonService
-        {
-            return new ClientFactory<T>(this).CreateServiceClient((ILogger)null, this) as T;
-        }
 
         /// <summary>
         /// Container for logging settings of the SDK

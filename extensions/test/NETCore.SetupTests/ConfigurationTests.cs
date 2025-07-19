@@ -10,6 +10,7 @@ using Xunit;
 using Amazon;
 using Amazon.S3;
 using Amazon.Runtime;
+using AWSSDK.Extensions.NETCore.Setup;
 
 namespace NETCore.SetupTests
 {
