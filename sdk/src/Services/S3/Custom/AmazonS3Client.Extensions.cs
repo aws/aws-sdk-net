@@ -388,7 +388,8 @@ namespace Amazon.S3
                                                             immutableCredentials,
                                                             "s3",
                                                             arn.IsMRAPArn() ? "*" : "");
-                    signingResult.Result = signingResult4a.PresignedUri;
+                    signingResult.Authorization = "&" + signingResult4a.ForQueryParameters;
+                    signingResult.Result = ComposeUrl(iRequest).AbsoluteUri + signingResult.Authorization;
                     break;
                 case SignatureVersion.SigV4:
                     var aws4Signer = new AWS4PreSignedUrlSigner();

@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Util;
 using System;
+using System.Globalization;
 using System.Text;
 
 namespace Amazon.Runtime.Internal.Auth
@@ -38,7 +40,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="awsAccessKeyId">The access key that was included in the signature</param>
         /// <param name="signedAt">Date/time (UTC) that the signature was computed</param>
         /// <param name="signedHeaders">The collection of headers names that were included in the signature</param>
-        /// <param name="scope">Formatted 'scope' value for signing (YYYYMMDD/region/service/aws4_request)</param>
+        /// <param name="scope">Formatted 'scope' value for signing (YYYYMMDD/service/aws4_request)</param>
         /// <param name="regionSet">The set of AWS regions this signature is valid for</param>
         /// <param name="signature">Computed signature</param>
         /// <param name="service">Service the request was signed for</param>
@@ -88,6 +90,25 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         /// <summary>
+        /// Returns the signature in a form usable as a set of query string parameters.
+        /// </summary>
+        public string ForQueryParameters
+        {
+            get
+            {
+                var authParams = new StringBuilder()
+                    .AppendFormat("{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzAlgorithm, false), AWSSDKUtils.UrlEncode(AWS4Signer.AWS4aAlgorithmTag, false))
+                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzRegionSetHeader, false), AWSSDKUtils.UrlEncode(RegionSet, false))
+                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzCredential, false), AWSSDKUtils.UrlEncode(string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope), false))
+                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzDateHeader, false), AWSSDKUtils.UrlEncode(ISO8601DateTime, false))
+                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzSignedHeadersHeader, false), AWSSDKUtils.UrlEncode(SignedHeaders, false))
+                    .AppendFormat("&{0}={1}", AWSSDKUtils.UrlEncode(HeaderKeys.XAmzSignature, false), AWSSDKUtils.UrlEncode(Signature, false));
+
+                return authParams.ToString();
+            }
+        }
+
+        /// <summary>
         /// Returns the set of regions this signature is valid for
         /// </summary>
         public string RegionSet
@@ -99,6 +120,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Returns the full presigned Uri
         /// </summary>
+        [Obsolete("This property is always empty in objects returned by AWS4aSigner. Use the ForQueryParameters property instead, to get the query parameters for a presigned URL.")]
         public string PresignedUri
         { 
             get { return _presignedUri; }
