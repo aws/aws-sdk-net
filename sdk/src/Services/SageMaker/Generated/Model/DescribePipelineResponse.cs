@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model
         private string _pipelineDisplayName;
         private string _pipelineName;
         private PipelineStatus _pipelineStatus;
+        private string _pipelineVersionDescription;
+        private string _pipelineVersionDisplayName;
         private string _roleArn;
 
         /// <summary>
@@ -261,6 +263,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineStatus()
         {
             return this._pipelineStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionDescription. 
+        /// <para>
+        /// The description of the pipeline version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3072)]
+        public string PipelineVersionDescription
+        {
+            get { return this._pipelineVersionDescription; }
+            set { this._pipelineVersionDescription = value; }
+        }
+
+        // Check to see if PipelineVersionDescription property is set
+        internal bool IsSetPipelineVersionDescription()
+        {
+            return this._pipelineVersionDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionDisplayName. 
+        /// <para>
+        /// The display name of the pipeline version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=82)]
+        public string PipelineVersionDisplayName
+        {
+            get { return this._pipelineVersionDisplayName; }
+            set { this._pipelineVersionDisplayName = value; }
+        }
+
+        // Check to see if PipelineVersionDisplayName property is set
+        internal bool IsSetPipelineVersionDisplayName()
+        {
+            return this._pipelineVersionDisplayName != null;
         }
 
         /// <summary>

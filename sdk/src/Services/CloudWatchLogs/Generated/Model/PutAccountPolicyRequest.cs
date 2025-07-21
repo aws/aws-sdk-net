@@ -31,8 +31,9 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAccountPolicy operation.
-    /// Creates an account-level data protection policy, subscription filter policy, or field
-    /// index policy that applies to all log groups or a subset of log groups in the account.
+    /// Creates an account-level data protection policy, subscription filter policy, field
+    /// index policy, transformer policy, or metric extraction policy that applies to all
+    /// log groups or a subset of log groups in the account.
     /// 
     ///  
     /// <para>
@@ -47,7 +48,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///  </li> <li> 
     /// <para>
     /// To create a subscription filter policy, you must have the <c>logs:PutSubscriptionFilter</c>
-    /// and <c>logs:PutccountPolicy</c> permissions.
+    /// and <c>logs:PutAccountPolicy</c> permissions.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -58,6 +59,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// To create a field index policy, you must have the <c>logs:PutIndexPolicy</c> and <c>logs:PutAccountPolicy</c>
     /// permissions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To create a metric extraction policy, you must have the <c>logs:PutMetricExtractionPolicy</c>
+    /// and <c>logs:PutAccountPolicy</c> permissions.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -274,6 +280,87 @@ namespace Amazon.CloudWatchLogs.Model
     /// log-group level policy, and will ignore the account-level policy that you create with
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Metric extraction policy</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// A metric extraction policy controls whether CloudWatch Metrics can be created through
+    /// the Embedded Metrics Format (EMF) for log groups in your account. By default, EMF
+    /// metric creation is enabled for all log groups. You can use metric extraction policies
+    /// to disable EMF metric creation for your entire account or specific log groups.
+    /// </para>
+    ///  
+    /// <para>
+    /// When a policy disables EMF metric creation for a log group, log events in the EMF
+    /// format are still ingested, but no CloudWatch Metrics are created from them.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// Creating a policy disables metrics for AWS features that use EMF to create metrics,
+    /// such as CloudWatch Container Insights and CloudWatch Application Signals. To prevent
+    /// turning off those features by accident, we recommend that you exclude the underlying
+    /// log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT IN ["/aws/containerinsights",
+    /// "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// Each account can have either one account-level metric extraction policy that applies
+    /// to all log groups, or up to 5 policies that are each scoped to a subset of log groups
+    /// with the <c>selectionCriteria</c> parameter. The selection criteria supports filtering
+    /// by <c>LogGroupName</c> and <c>LogGroupNamePrefix</c> using the operators <c>IN</c>
+    /// and <c>NOT IN</c>. You can specify up to 50 values in each <c>IN</c> or <c>NOT IN</c>
+    /// list.
+    /// </para>
+    ///  
+    /// <para>
+    /// The selection criteria can be specified in these formats:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>LogGroupName IN ["log-group-1", "log-group-2"]</c> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>LogGroupNamePrefix NOT IN ["/aws/prefix1", "/aws/prefix2"]</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you have multiple account-level metric extraction policies with selection criteria,
+    /// no two of them can have overlapping criteria. For example, if you have one policy
+    /// with selection criteria <c>LogGroupNamePrefix IN ["my-log"]</c>, you can't have another
+    /// metric extraction policy with selection criteria <c>LogGroupNamePrefix IN ["/my-log-prod"]</c>
+    /// or <c>LogGroupNamePrefix IN ["/my-logging"]</c>, as the set of log groups matching
+    /// these prefixes would be a subset of the log groups matching the first policy's prefix,
+    /// creating an overlap.
+    /// </para>
+    ///  
+    /// <para>
+    /// When using <c>NOT IN</c>, only one policy with this operator is allowed per account.
+    /// </para>
+    ///  
+    /// <para>
+    /// When combining policies with <c>IN</c> and <c>NOT IN</c> operators, the overlap check
+    /// ensures that policies don't have conflicting effects. Two policies with <c>IN</c>
+    /// and <c>NOT IN</c> operators do not overlap if and only if every value in the <c>IN
+    /// </c>policy is completely contained within some value in the <c>NOT IN</c> policy.
+    /// For example:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you have a <c>NOT IN</c> policy for prefix <c>"/aws/lambda"</c>, you can create
+    /// an <c>IN</c> policy for the exact log group name <c>"/aws/lambda/function1"</c> because
+    /// the set of log groups matching <c>"/aws/lambda/function1"</c> is a subset of the log
+    /// groups matching <c>"/aws/lambda"</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you have a <c>NOT IN</c> policy for prefix <c>"/aws/lambda"</c>, you cannot create
+    /// an <c>IN</c> policy for prefix <c>"/aws"</c> because the set of log groups matching
+    /// <c>"/aws"</c> is not a subset of the log groups matching <c>"/aws/lambda"</c>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PutAccountPolicyRequest : AmazonCloudWatchLogsRequest
     {
@@ -509,7 +596,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// Specifing <c>selectionCriteria</c> is valid only when you specify <c>SUBSCRIPTION_FILTER_POLICY</c>,
+        /// Specifying <c>selectionCriteria</c> is valid only when you specify <c>SUBSCRIPTION_FILTER_POLICY</c>,
         /// <c>FIELD_INDEX_POLICY</c> or <c>TRANSFORMER_POLICY</c>for <c>policyType</c>.
         /// </para>
         ///  

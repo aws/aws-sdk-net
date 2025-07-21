@@ -37,6 +37,14 @@ namespace Amazon.Repostspace.Model
         }
 
         /// <summary>
+        /// Paginator for ListChannels operation
+        ///</summary>
+        public IListChannelsPaginator ListChannels(ListChannelsRequest request) 
+        {
+            return new ListChannelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSpaces operation
         ///</summary>
         public IListSpacesPaginator ListSpaces(ListSpacesRequest request) 

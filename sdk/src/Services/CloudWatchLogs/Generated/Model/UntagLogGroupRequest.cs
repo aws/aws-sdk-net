@@ -48,9 +48,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// CloudWatch Logs doesn't support IAM policies that prevent users from assigning specified
-    /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
-    /// condition keys. 
+    /// When using IAM policies to control tag management for CloudWatch Logs log groups,
+    /// the condition keys <c>aws:Resource/key-name</c> and <c>aws:TagKeys</c> cannot be used
+    /// to restrict which tags users can assign. 
     /// </para>
     /// </summary>
     [Obsolete("Please use the generic tagging API model UntagResourceRequest")]

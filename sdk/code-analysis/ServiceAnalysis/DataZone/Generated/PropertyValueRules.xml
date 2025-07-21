@@ -5709,6 +5709,42 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesInput.S3AccessGrantLocationId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesInput.S3Uri</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^s3://.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesOutput.S3AccessGrantLocationId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesOutput.S3Uri</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^s3://.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesPatch.S3AccessGrantLocationId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesPatch.S3Uri</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^s3://.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.SageMakerRunConfigurationOutput.AccountId</property>
     <min>12</min>
     <max>12</max>

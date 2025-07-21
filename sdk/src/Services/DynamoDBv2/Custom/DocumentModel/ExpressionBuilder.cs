@@ -646,7 +646,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private ExpressionNode NotBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "NOT (#c)";
+            node.FormatedExpression = ExpressionFormatConstants.Not;
             return node;
         }
 
@@ -670,27 +670,27 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 case ConditionMode.Equal:
                     node.FormatedExpression =
-                        $"#c = #c";
+                        ExpressionFormatConstants.Equal;
                     break;
                 case ConditionMode.NotEqual:
                     node.FormatedExpression =
-                        $"#c <> #c";
+                        ExpressionFormatConstants.NotEqual;
                     break;
                 case ConditionMode.LessThan:
                     node.FormatedExpression =
-                        $"#c < #c";
+                        ExpressionFormatConstants.LessThan;
                     break;
                 case ConditionMode.LessThanOrEqual:
                     node.FormatedExpression =
-                        $"#c <= #c";
+                        ExpressionFormatConstants.LessThanOrEqual;
                     break;
                 case ConditionMode.GreaterThan:
                     node.FormatedExpression =
-                        $"#c > #c";
+                        ExpressionFormatConstants.GreaterThan;
                     break;
                 case ConditionMode.GreaterThanOrEqual:
                     node.FormatedExpression =
-                        $"#c >= #c";
+                        ExpressionFormatConstants.GreaterThanOrEqual;
                     break;
                 default:
                     throw new InvalidOperationException($"Unsupported mode: {conditionMode}");
@@ -701,37 +701,37 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private ExpressionNode ContainsBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "contains (#c, #c)";
+            node.FormatedExpression = ExpressionFormatConstants.Contains;
             return node;
         }
 
         private ExpressionNode BeginsWithBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "begins_with (#c, #c)";
+            node.FormatedExpression = ExpressionFormatConstants.BeginsWith;
             return node;
         }
 
         private ExpressionNode AttributeTypeBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "attribute_type (#c, #c)";
+            node.FormatedExpression = ExpressionFormatConstants.AttributeType;
             return node;
         }
 
         private ExpressionNode AttributeNotExistsBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "attribute_not_exists (#c)";
+            node.FormatedExpression = ExpressionFormatConstants.AttributeNotExists;
             return node;
         }
 
         private ExpressionNode AttributeExistsBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "attribute_exists (#c)";
+            node.FormatedExpression = ExpressionFormatConstants.AttributeExists;
             return node;
         }
 
         private ExpressionNode InBuildCondition(ConditionExpressionBuilder conditionBuilder, ExpressionNode node)
         {
-            node.FormatedExpression = "#c IN (";
+            node.FormatedExpression = ExpressionFormatConstants.In;
 
             for(int i = 1; i < node.Children.Count; i++){
                 node.FormatedExpression += "#c, ";
@@ -747,7 +747,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private ExpressionNode BetweenBuildCondition(ExpressionNode node)
         {
-            node.FormatedExpression = "#c BETWEEN #c AND #c";
+            node.FormatedExpression = ExpressionFormatConstants.Between;
             return node;
         }
 
@@ -1184,7 +1184,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new ExpressionNode
             {
                 Values = values,
-                FormatedExpression = "#v"
+                FormatedExpression = ExpressionFormatConstants.Value
             };
         }
     }
@@ -1487,10 +1487,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             node.FormatedExpression = _mode switch
             {
-                SetValueMode.Plus => "#c + #c",
-                SetValueMode.Minus => "#c - #c",
-                SetValueMode.ListAppend=> "list_append(#c, #c)",
-                SetValueMode.IfNotExists => "if_not_exists(#c, #c)",
+                SetValueMode.Plus => ExpressionFormatConstants.Plus,
+                SetValueMode.Minus => ExpressionFormatConstants.Minus,
+                SetValueMode.ListAppend=> ExpressionFormatConstants.ListAppend,
+                SetValueMode.IfNotExists => ExpressionFormatConstants.IfNotExists,
                 _ => throw new InvalidOperationException($"Unsupported SetValueMode: '{_mode}'.")
             };
 
@@ -1613,5 +1613,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// List of attribute values aliases used in the expression.
         /// </summary>
         public List<DynamoDBEntry> ValuesList { get; set; } = new();
+    }
+
+
+    /// <summary>
+    /// Contains constants for formatted DynamoDB expression templates.
+    /// </summary>
+    internal static class ExpressionFormatConstants
+    {
+        public const string Equal = "#c = #c";
+        public const string NotEqual = "#c <> #c";
+        public const string LessThan = "#c < #c";
+        public const string LessThanOrEqual = "#c <= #c";
+        public const string GreaterThan = "#c > #c";
+        public const string GreaterThanOrEqual = "#c >= #c";
+        public const string AttributeType = "attribute_type (#c, #c)";
+        public const string AttributeNotExists = "attribute_not_exists (#c)";
+        public const string AttributeExists = "attribute_exists (#c)";
+        public const string In = "#c IN (";
+        public const string Between = "#c BETWEEN #c AND #c";
+        public const string BeginsWith = "begins_with (#c, #c)";
+        public const string Contains = "contains (#c, #c)";
+        public const string Not = "NOT (#c)";
+        public const string Value = "#v";
+        public const string Plus = "#c + #c";
+        public const string Minus = "#c - #c";
+        public const string ListAppend = "list_append(#c, #c)";
+        public const string IfNotExists = "if_not_exists(#c, #c)";
     }
 }

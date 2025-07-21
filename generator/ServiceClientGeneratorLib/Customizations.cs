@@ -426,6 +426,7 @@ namespace ServiceClientGenerator
         public const string OriginalMemberKey = "originalMember";
         public const string OverrideTreatEnumsAsStringKey = "overrideTreatEnumsAsString";
         public const string ExcludeMembersKey = "excludeMembers";
+        public const string UnwrapXmlOutputKey = "unwrapXmlOutput";
 
         JsonData _documentRoot;
 
@@ -594,6 +595,29 @@ namespace ServiceClientGenerator
             }
             return excludedMembers;
 
+        }
+
+        /// <summary>
+        /// This customization is used to unwrap the response, and is only used for Xml services.
+        /// This is currently only used for GetBucketLocation
+        /// where the output is not wrapped in a top-level output xml tag and only includes the member at the root level
+        /// example usage:
+        /// "unwrapOutput:{
+        ///   "GetBucketLocationOutput": true
+        /// }
+        /// </summary>
+        /// <param name="shapeName">The shape to unwrap</param>
+        /// <returns></returns>
+        /// <exception cref="InvalidCastException"></exception>
+        public bool UnwrapXmlOutput(string shapeName)
+        {
+            var data = _documentRoot[UnwrapXmlOutputKey];
+            // if the customization doesn't exist, the default is false
+            if (data == null || data[shapeName] == null) return false;
+            if (!data[shapeName].IsBoolean)
+                throw new InvalidCastException("The value for the UnwrapOutput customization must be a boolean");
+
+            return (bool)data[shapeName];
         }
 
         /// <summary>

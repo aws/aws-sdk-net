@@ -12,12 +12,12 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
 using System.Text;
-
-using Amazon.Runtime;
+using System.Xml.Serialization;
 
 namespace Amazon.S3.Model
 {
@@ -162,6 +162,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The configuration and any analyses for the analytics filter.
         /// </summary>
+        [AWSProperty(Required = true)]
         public AnalyticsConfiguration AnalyticsConfiguration
         {
             get { return this.analyticsConfiguration; }

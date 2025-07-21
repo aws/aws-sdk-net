@@ -648,6 +648,16 @@ namespace Amazon.SageMaker.Model
         IListPipelinesPaginator ListPipelines(ListPipelinesRequest request);
 
         /// <summary>
+        /// Paginator for ListPipelineVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPipelineVersionsPaginator ListPipelineVersions(ListPipelineVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListProcessingJobs operation
         ///</summary>
         [AWSPaginator(

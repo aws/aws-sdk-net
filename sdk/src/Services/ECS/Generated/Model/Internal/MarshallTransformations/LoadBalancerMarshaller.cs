@@ -46,6 +46,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdvancedConfiguration())
+            {
+                context.Writer.WritePropertyName("advancedConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AdvancedConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetContainerName())
             {
                 context.Writer.WritePropertyName("containerName");

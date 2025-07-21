@@ -76,9 +76,33 @@ namespace Amazon.Pricing.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are: <c>TERM_MATCH</c>. <c>TERM_MATCH</c> returns only products that
-        /// match both the given filter field and the given value.
+        /// Valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>TERM_MATCH</c>: Returns only products that match both the given filter field and
+        /// the given value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EQUALS</c>: Returns products that have a field value exactly matching the provided
+        /// value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CONTAINS</c>: Returns products where the field value contains the provided value
+        /// as a substring.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ANY_OF</c>: Returns products where the field value is any of the provided values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE_OF</c>: Returns products where the field value is not any of the provided
+        /// values.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public FilterType Type
@@ -100,6 +124,12 @@ namespace Amazon.Pricing.Model
         /// by service code this is the actual service code, such as <c>AmazonEC2</c>. If you're
         /// filtering by attribute name, this is the attribute value that you want the returned
         /// products to match, such as a <c>Provisioned IOPS</c> volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <c>ANY_OF</c> and <c>NONE_OF</c> filter types, you can provide multiple values
+        /// as a comma-separated string. For example, <c>t2.micro,t2.small,t2.medium</c> or <c>Compute
+        /// optimized, GPU instance, Micro instances</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

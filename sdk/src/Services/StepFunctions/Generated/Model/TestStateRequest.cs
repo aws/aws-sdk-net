@@ -47,7 +47,7 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-third-party-apis.html">HTTP
+    /// An <a href="https://docs.aws.amazon.com/step-functions/latest/dg/call-https-apis.html">HTTP
     /// Task</a> request and response
     /// </para>
     ///  </li> </ul> 

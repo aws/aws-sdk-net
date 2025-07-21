@@ -93,6 +93,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCapacityBlocks operation
+        ///</summary>
+        public IDescribeCapacityBlocksPaginator DescribeCapacityBlocks(DescribeCapacityBlocksRequest request) 
+        {
+            return new DescribeCapacityBlocksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeCapacityBlockStatus operation
+        ///</summary>
+        public IDescribeCapacityBlockStatusPaginator DescribeCapacityBlockStatus(DescribeCapacityBlockStatusRequest request) 
+        {
+            return new DescribeCapacityBlockStatusPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationBillingRequests operation
         ///</summary>
         public IDescribeCapacityReservationBillingRequestsPaginator DescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request) 

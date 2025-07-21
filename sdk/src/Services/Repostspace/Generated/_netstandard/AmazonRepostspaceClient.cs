@@ -270,6 +270,54 @@ namespace Amazon.Repostspace
         #endregion
 
 
+        #region  BatchAddChannelRoleToAccessors
+
+        internal virtual BatchAddChannelRoleToAccessorsResponse BatchAddChannelRoleToAccessors(BatchAddChannelRoleToAccessorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddChannelRoleToAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddChannelRoleToAccessorsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAddChannelRoleToAccessorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Add role to multiple users or groups in a private re:Post channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddChannelRoleToAccessors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchAddChannelRoleToAccessors service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddChannelRoleToAccessors">REST API Reference for BatchAddChannelRoleToAccessors Operation</seealso>
+        public virtual Task<BatchAddChannelRoleToAccessorsResponse> BatchAddChannelRoleToAccessorsAsync(BatchAddChannelRoleToAccessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddChannelRoleToAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddChannelRoleToAccessorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchAddChannelRoleToAccessorsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  BatchAddRole
 
         internal virtual BatchAddRoleResponse BatchAddRole(BatchAddRoleRequest request)
@@ -284,7 +332,7 @@ namespace Amazon.Repostspace
 
 
         /// <summary>
-        /// Add role to multiple users or groups in a private re:Post.
+        /// Add a role to multiple users or groups in a private re:Post.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAddRole service method.</param>
         /// <param name="cancellationToken">
@@ -318,6 +366,54 @@ namespace Amazon.Repostspace
         }
         #endregion
         
+        #region  BatchRemoveChannelRoleFromAccessors
+
+        internal virtual BatchRemoveChannelRoleFromAccessorsResponse BatchRemoveChannelRoleFromAccessors(BatchRemoveChannelRoleFromAccessorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchRemoveChannelRoleFromAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchRemoveChannelRoleFromAccessorsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchRemoveChannelRoleFromAccessorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Remove a role from multiple users or groups in a private re:Post channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchRemoveChannelRoleFromAccessors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchRemoveChannelRoleFromAccessors service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveChannelRoleFromAccessors">REST API Reference for BatchRemoveChannelRoleFromAccessors Operation</seealso>
+        public virtual Task<BatchRemoveChannelRoleFromAccessorsResponse> BatchRemoveChannelRoleFromAccessorsAsync(BatchRemoveChannelRoleFromAccessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchRemoveChannelRoleFromAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchRemoveChannelRoleFromAccessorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchRemoveChannelRoleFromAccessorsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  BatchRemoveRole
 
         internal virtual BatchRemoveRoleResponse BatchRemoveRole(BatchRemoveRoleRequest request)
@@ -332,7 +428,7 @@ namespace Amazon.Repostspace
 
 
         /// <summary>
-        /// Remove role from multiple users or groups in a private re:Post.
+        /// Remove a role from multiple users or groups in a private re:Post.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchRemoveRole service method.</param>
         /// <param name="cancellationToken">
@@ -363,6 +459,60 @@ namespace Amazon.Repostspace
             options.ResponseUnmarshaller = BatchRemoveRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchRemoveRoleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateChannel
+
+        internal virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateChannelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a channel in an AWS re:Post Private private re:Post.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateChannel service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        public virtual Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -516,6 +666,54 @@ namespace Amazon.Repostspace
         }
         #endregion
         
+        #region  GetChannel
+
+        internal virtual GetChannelResponse GetChannel(GetChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetChannelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Displays information about a channel in a private re:Post.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetChannel service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/GetChannel">REST API Reference for GetChannel Operation</seealso>
+        public virtual Task<GetChannelResponse> GetChannelAsync(GetChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetChannelResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetSpace
 
         internal virtual GetSpaceResponse GetSpace(GetSpaceRequest request)
@@ -561,6 +759,52 @@ namespace Amazon.Repostspace
             options.ResponseUnmarshaller = GetSpaceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSpaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListChannels
+
+        internal virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChannelsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the list of channel within a private re:Post with some information about each
+        /// channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -852,6 +1096,57 @@ namespace Amazon.Repostspace
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateChannel
+
+        internal virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChannelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies an existing channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateChannel service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
         }
         #endregion
         

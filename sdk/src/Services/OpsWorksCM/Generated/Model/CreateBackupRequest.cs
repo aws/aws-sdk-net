@@ -99,8 +99,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server
-        /// backup.
+        /// A map that contains tag keys and tag values to attach to an OpsWorks CM server backup.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -123,7 +122,7 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+        /// A maximum of 50 user-applied tags is allowed for tag-supported OpsWorks CM resources.
         /// </para>
         ///  </li> </ul>
         /// <para />

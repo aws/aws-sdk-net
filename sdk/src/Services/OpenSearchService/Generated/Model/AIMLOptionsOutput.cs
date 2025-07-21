@@ -36,6 +36,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class AIMLOptionsOutput
     {
         private NaturalLanguageQueryGenerationOptionsOutput _naturalLanguageQueryGenerationOptions;
+        private S3VectorsEngine _s3VectorsEngine;
 
         /// <summary>
         /// Gets and sets the property NaturalLanguageQueryGenerationOptions. 
@@ -54,6 +55,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetNaturalLanguageQueryGenerationOptions()
         {
             return this._naturalLanguageQueryGenerationOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3VectorsEngine. 
+        /// <para>
+        /// Container for parameters representing the state of S3 vectors engine features on the
+        /// specified domain.
+        /// </para>
+        /// </summary>
+        public S3VectorsEngine S3VectorsEngine
+        {
+            get { return this._s3VectorsEngine; }
+            set { this._s3VectorsEngine = value; }
+        }
+
+        // Check to see if S3VectorsEngine property is set
+        internal bool IsSetS3VectorsEngine()
+        {
+            return this._s3VectorsEngine != null;
         }
 
     }

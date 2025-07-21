@@ -30,8 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// If the <c>CreateBucketMetadataTableConfiguration</c> request succeeds, but S3 Metadata
-    /// was unable to create the table, this structure contains the error code and error message.
+    /// If an S3 Metadata V1 <c>CreateBucketMetadataTableConfiguration</c> or V2 <c>CreateBucketMetadataConfiguration</c>
+    /// request succeeds, but S3 Metadata was unable to create the table, this structure contains
+    /// the error code and error message. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you created your S3 Metadata configuration before July 15, 2025, we recommend that
+    /// you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+    /// so that you can expire journal table records and create a live inventory table.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ErrorDetails
     {
@@ -41,9 +50,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        ///  If the <c>CreateBucketMetadataTableConfiguration</c> request succeeds, but S3 Metadata
-        /// was unable to create the table, this structure contains the error code. The possible
-        /// error codes and error messages are as follows: 
+        ///  If the V1 <c>CreateBucketMetadataTableConfiguration</c> request succeeds, but S3
+        /// Metadata was unable to create the table, this structure contains the error code. The
+        /// possible error codes and error messages are as follows: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -85,6 +94,69 @@ namespace Amazon.S3.Model
         /// this Amazon Web Services Region and account. Create or choose a different table bucket.
         /// To create a new metadata table, you must delete the metadata configuration for this
         /// bucket, and then create a new metadata configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If the V2 <c>CreateBucketMetadataConfiguration</c> request succeeds, but S3 Metadata
+        /// was unable to create the table, this structure contains the error code. The possible
+        /// error codes and error messages are as follows: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AccessDeniedCreatingResources</c> - You don't have sufficient permissions to create
+        /// the required resources. Make sure that you have <c>s3tables:CreateTableBucket</c>,
+        /// <c>s3tables:CreateNamespace</c>, <c>s3tables:CreateTable</c>, <c>s3tables:GetTable</c>,
+        /// <c>s3tables:PutTablePolicy</c>, <c>kms:DescribeKey</c>, and <c>s3tables:PutTableEncryption</c>
+        /// permissions. Additionally, ensure that the KMS key used to encrypt the table still
+        /// exists, is active and has a resource policy granting access to the S3 service principals
+        /// '<c>maintenance.s3tables.amazonaws.com</c>' and '<c>metadata.s3.amazonaws.com</c>'.
+        /// To create a new metadata table, you must delete the metadata configuration for this
+        /// bucket, and then create a new metadata configuration. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AccessDeniedWritingToTable</c> - Unable to write to the metadata table because
+        /// of missing resource permissions. To fix the resource policy, Amazon S3 needs to create
+        /// a new metadata table. To create a new metadata table, you must delete the metadata
+        /// configuration for this bucket, and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DestinationTableNotFound</c> - The destination table doesn't exist. To create
+        /// a new metadata table, you must delete the metadata configuration for this bucket,
+        /// and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ServerInternalError</c> - An internal error has occurred. To create a new metadata
+        /// table, you must delete the metadata configuration for this bucket, and then create
+        /// a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>JournalTableAlreadyExists</c> - A journal table already exists in the Amazon Web
+        /// Services managed table bucket's namespace. Delete the journal table, and then try
+        /// again. To create a new metadata table, you must delete the metadata configuration
+        /// for this bucket, and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InventoryTableAlreadyExists</c> - An inventory table already exists in the Amazon
+        /// Web Services managed table bucket's namespace. Delete the inventory table, and then
+        /// try again. To create a new metadata table, you must delete the metadata configuration
+        /// for this bucket, and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>JournalTableNotAvailable</c> - The journal table that the inventory table relies
+        /// on has a <c>FAILED</c> status. An inventory table requires a journal table with an
+        /// <c>ACTIVE</c> status. To create a new journal or inventory table, you must delete
+        /// the metadata configuration for this bucket, along with any journal or inventory tables,
+        /// and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NoSuchBucket</c> - The specified general purpose bucket does not exist.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -103,9 +175,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  If the <c>CreateBucketMetadataTableConfiguration</c> request succeeds, but S3 Metadata
-        /// was unable to create the table, this structure contains the error message. The possible
-        /// error codes and error messages are as follows: 
+        ///  If the V1 <c>CreateBucketMetadataTableConfiguration</c> request succeeds, but S3
+        /// Metadata was unable to create the table, this structure contains the error message.
+        /// The possible error codes and error messages are as follows: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -147,6 +219,69 @@ namespace Amazon.S3.Model
         /// this Amazon Web Services Region and account. Create or choose a different table bucket.
         /// To create a new metadata table, you must delete the metadata configuration for this
         /// bucket, and then create a new metadata configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If the V2 <c>CreateBucketMetadataConfiguration</c> request succeeds, but S3 Metadata
+        /// was unable to create the table, this structure contains the error code. The possible
+        /// error codes and error messages are as follows: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AccessDeniedCreatingResources</c> - You don't have sufficient permissions to create
+        /// the required resources. Make sure that you have <c>s3tables:CreateTableBucket</c>,
+        /// <c>s3tables:CreateNamespace</c>, <c>s3tables:CreateTable</c>, <c>s3tables:GetTable</c>,
+        /// <c>s3tables:PutTablePolicy</c>, <c>kms:DescribeKey</c>, and <c>s3tables:PutTableEncryption</c>
+        /// permissions. Additionally, ensure that the KMS key used to encrypt the table still
+        /// exists, is active and has a resource policy granting access to the S3 service principals
+        /// '<c>maintenance.s3tables.amazonaws.com</c>' and '<c>metadata.s3.amazonaws.com</c>'.
+        /// To create a new metadata table, you must delete the metadata configuration for this
+        /// bucket, and then create a new metadata configuration. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AccessDeniedWritingToTable</c> - Unable to write to the metadata table because
+        /// of missing resource permissions. To fix the resource policy, Amazon S3 needs to create
+        /// a new metadata table. To create a new metadata table, you must delete the metadata
+        /// configuration for this bucket, and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DestinationTableNotFound</c> - The destination table doesn't exist. To create
+        /// a new metadata table, you must delete the metadata configuration for this bucket,
+        /// and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ServerInternalError</c> - An internal error has occurred. To create a new metadata
+        /// table, you must delete the metadata configuration for this bucket, and then create
+        /// a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>JournalTableAlreadyExists</c> - A journal table already exists in the Amazon Web
+        /// Services managed table bucket's namespace. Delete the journal table, and then try
+        /// again. To create a new metadata table, you must delete the metadata configuration
+        /// for this bucket, and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InventoryTableAlreadyExists</c> - An inventory table already exists in the Amazon
+        /// Web Services managed table bucket's namespace. Delete the inventory table, and then
+        /// try again. To create a new metadata table, you must delete the metadata configuration
+        /// for this bucket, and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>JournalTableNotAvailable</c> - The journal table that the inventory table relies
+        /// on has a <c>FAILED</c> status. An inventory table requires a journal table with an
+        /// <c>ACTIVE</c> status. To create a new journal or inventory table, you must delete
+        /// the metadata configuration for this bucket, along with any journal or inventory tables,
+        /// and then create a new metadata configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NoSuchBucket</c> - The specified general purpose bucket does not exist.
         /// </para>
         ///  </li> </ul>
         /// </summary>

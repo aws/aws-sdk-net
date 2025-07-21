@@ -76,8 +76,19 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Aliases. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// A complex type that contains information about CNAMEs (alternate domain names), if
         /// any, for this distribution.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public Aliases Aliases
@@ -95,7 +106,16 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AnycastIpListId. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// To use this field for a multi-tenant distribution, use a connection group instead.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionGroup.html">ConnectionGroup</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// ID of the Anycast static IP list that is associated with the distribution.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public string AnycastIpListId
@@ -180,7 +200,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ConnectionMode. 
         /// <para>
-        /// The connection mode to filter distributions by.
+        /// This field specifies whether the connection mode is through a standard distribution
+        /// (direct) or a multi-tenant distribution with distribution tenants(tenant-only).
         /// </para>
         /// </summary>
         public ConnectionMode ConnectionMode
@@ -198,7 +219,18 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ContinuousDeploymentPolicyId. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// The identifier of a continuous deployment policy. For more information, see <c>CreateContinuousDeploymentPolicy</c>.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public string ContinuousDeploymentPolicyId
@@ -373,6 +405,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IsIPV6Enabled. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// To use this field for a multi-tenant distribution, use a connection group instead.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ConnectionGroup.html">ConnectionGroup</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your
         /// distribution, specify <c>true</c>. If you specify <c>false</c>, CloudFront responds
         /// to IPv6 DNS requests with the DNS response code <c>NOERROR</c> and with no IP addresses.
@@ -415,6 +454,8 @@ namespace Amazon.CloudFront.Model
         /// Integration or with another DNS service, you don't need to make any changes. A CNAME
         /// record will route traffic to your distribution regardless of the IP address format
         /// of the viewer request.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public bool? IsIPV6Enabled
@@ -492,6 +533,15 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property PriceClass. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// The price class that corresponds with the maximum price that you want to pay for CloudFront
         /// service. If you specify <c>PriceClass_All</c>, CloudFront responds to requests for
         /// your objects from all CloudFront edge locations.
@@ -510,6 +560,8 @@ namespace Amazon.CloudFront.Model
         /// Guide</i>. For information about CloudFront pricing, including how price classes (such
         /// as Price Class 100) map to CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon
         /// CloudFront Pricing</a>.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public PriceClass PriceClass
@@ -546,9 +598,20 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Staging. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// A Boolean that indicates whether this is a staging distribution. When this value is
         /// <c>true</c>, this is a staging distribution. When this value is <c>false</c>, this
         /// is not a staging distribution.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public bool? Staging
@@ -566,7 +629,18 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property TenantConfig. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports multi-tenant distributions. You can't specify this field
+        /// for standard distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// A distribution tenant configuration.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public TenantConfig TenantConfig
@@ -603,6 +677,12 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property WebACLId. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// Multi-tenant distributions only support WAF V2 web ACLs.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// A unique identifier that specifies the WAF web ACL, if any, to associate with this
         /// distribution. To specify a web ACL created using the latest version of WAF, use the
         /// ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
@@ -618,6 +698,8 @@ namespace Amazon.CloudFront.Model
         /// to return a custom error page when a request is blocked. For more information about
         /// WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
         /// Developer Guide</a>.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public string WebACLId

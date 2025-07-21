@@ -58,6 +58,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.PipelineArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PipelineVersionId", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.PipelineVersionId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

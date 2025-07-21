@@ -142,9 +142,9 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// Describes <c>usageType</c> more granularly with the specific Amazon Web Service API
-        /// operation. For example, this can be the <c>RunInstances</c> API operation for Amazon
-        /// Elastic Compute Cloud.
+        /// Describes <c>usageType</c> more granularly with the specific Amazon Web Services service
+        /// API operation. For example, this can be the <c>RunInstances</c> API operation for
+        /// Amazon Elastic Compute Cloud.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -182,8 +182,8 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The name of the Amazon Web Service providing the Free Tier offer. For example, this
-        /// can be Amazon Elastic Compute Cloud.
+        /// The name of the Amazon Web Services service providing the Free Tier offer. For example,
+        /// this can be Amazon Elastic Compute Cloud.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

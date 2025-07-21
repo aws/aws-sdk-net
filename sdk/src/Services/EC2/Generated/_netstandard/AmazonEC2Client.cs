@@ -3794,7 +3794,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring
-        /// the instance to have a public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
+        /// the instance to have a public IPv4 or public IPv6 address. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html">Connect
         /// to your instances using EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User
         /// Guide</i>.
         /// </para>
@@ -11163,8 +11164,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes Capacity Block offerings available for purchase in the Amazon Web Services
-        /// Region that you're currently using. With Capacity Blocks, you purchase a specific
-        /// instance type for a period of time.
+        /// Region that you're currently using. With Capacity Blocks, you can purchase a specific
+        /// GPU instance type or EC2 UltraServer for a period of time.
         /// 
         ///  
         /// <para>
@@ -11186,6 +11187,74 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeCapacityBlockOfferingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCapacityBlockOfferingsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeCapacityBlocks
+
+        internal virtual DescribeCapacityBlocksResponse DescribeCapacityBlocks(DescribeCapacityBlocksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlocksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlocksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityBlocksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes details about Capacity Blocks in the Amazon Web Services Region that you're
+        /// currently using.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlocks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityBlocks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlocks">REST API Reference for DescribeCapacityBlocks Operation</seealso>
+        public virtual Task<DescribeCapacityBlocksResponse> DescribeCapacityBlocksAsync(DescribeCapacityBlocksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlocksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlocksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCapacityBlocksResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeCapacityBlockStatus
+
+        internal virtual DescribeCapacityBlockStatusResponse DescribeCapacityBlockStatus(DescribeCapacityBlockStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlockStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlockStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityBlockStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the availability of capacity for the specified Capacity blocks, or all of
+        /// your Capacity Blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityBlockStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockStatus">REST API Reference for DescribeCapacityBlockStatus Operation</seealso>
+        public virtual Task<DescribeCapacityBlockStatusResponse> DescribeCapacityBlockStatusAsync(DescribeCapacityBlockStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlockStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlockStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCapacityBlockStatusResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -13374,53 +13443,20 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        ///  <b>Limitations</b> 
+        /// Instance topology is supported for specific instance types only. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">
+        /// Prerequisites for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
         /// <para>
-        /// Supported zones
+        /// The Amazon EC2 API follows an eventual consistency model due to the distributed nature
+        /// of the system supporting it. As a result, when you call the DescribeInstanceTopology
+        /// API command immediately after launching instances, the response might return a <c>null</c>
+        /// value for <c>capacityBlockId</c> because the data might not have fully propagated
+        /// across all subsystems. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
+        /// consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Availability Zone
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Local Zone
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Supported instance types
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Returns 3 network nodes in the response
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>hpc6a.48xlarge</c> | <c>hpc6id.32xlarge</c> | <c>hpc7a.12xlarge</c> | <c>hpc7a.24xlarge</c>
-        /// | <c>hpc7a.48xlarge</c> | <c>hpc7a.96xlarge</c> | <c>hpc7g.4xlarge</c> | <c>hpc7g.8xlarge</c>
-        /// | <c>hpc7g.16xlarge</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-        /// | <c>p5e.48xlarge</c> | <c>p5en.48xlarge</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
-        /// | <c>trn2u.48xlarge</c> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Returns 4 network nodes in the response
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>p6-b200.48xlarge</c> 
-        /// </para>
-        ///  </li> </ul> </li> </ul> </li> </ul> 
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
         /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
@@ -18705,9 +18741,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can't detach or force detach volumes that are attached to Amazon ECS or Fargate
-        /// tasks. Attempting to do this results in the <c>UnsupportedOperationException</c> exception
-        /// with the <c>Unable to detach volume attached to ECS tasks</c> error message.
+        /// You can't detach or force detach volumes that are attached to Amazon Web Services-managed
+        /// resources. Attempting to do this results in the <c>UnsupportedOperationException</c>
+        /// exception.
         /// </para>
         ///  
         /// <para>

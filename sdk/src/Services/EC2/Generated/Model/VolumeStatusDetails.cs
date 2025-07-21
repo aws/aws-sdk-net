@@ -42,6 +42,25 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The name of the volume status.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>io-enabled</c> - Indicates the volume I/O status. For more information, see <a
+        /// href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-checks.html">Amazon
+        /// EBS volume status checks</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>io-performance</c> - Indicates the volume performance status. For more information,
+        /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-checks.html">Amazon
+        /// EBS volume status checks</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>initialization-state</c> - Indicates the status of the volume initialization process.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">Initialize
+        /// Amazon EBS volumes</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public VolumeStatusName Name
         {

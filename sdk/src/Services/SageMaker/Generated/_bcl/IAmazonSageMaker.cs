@@ -11959,6 +11959,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListPipelineVersions
+
+
+        /// <summary>
+        /// Gets a list of all versions of the pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListPipelineVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineVersions">REST API Reference for ListPipelineVersions Operation</seealso>
+        ListPipelineVersionsResponse ListPipelineVersions(ListPipelineVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of all versions of the pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelineVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineVersions">REST API Reference for ListPipelineVersions Operation</seealso>
+        Task<ListPipelineVersionsResponse> ListPipelineVersionsAsync(ListPipelineVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListProcessingJobs
 
 
@@ -15706,6 +15740,48 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution">REST API Reference for UpdatePipelineExecution Operation</seealso>
         Task<UpdatePipelineExecutionResponse> UpdatePipelineExecutionAsync(UpdatePipelineExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdatePipelineVersion
+
+
+        /// <summary>
+        /// Updates a pipeline version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePipelineVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineVersion">REST API Reference for UpdatePipelineVersion Operation</seealso>
+        UpdatePipelineVersionResponse UpdatePipelineVersion(UpdatePipelineVersionRequest request);
+
+
+
+        /// <summary>
+        /// Updates a pipeline version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePipelineVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineVersion">REST API Reference for UpdatePipelineVersion Operation</seealso>
+        Task<UpdatePipelineVersionResponse> UpdatePipelineVersionAsync(UpdatePipelineVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -44,6 +44,8 @@ namespace Amazon.EC2.Model
         private string _instanceType;
         private DateTime? _startDate;
         private CapacityReservationTenancy _tenancy;
+        private int? _ultraserverCount;
+        private string _ultraserverType;
         private string _upfrontFee;
 
         /// <summary>
@@ -228,6 +230,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetTenancy()
         {
             return this._tenancy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraserverCount. 
+        /// <para>
+        /// The number of EC2 UltraServers in the offering.
+        /// </para>
+        /// </summary>
+        public int? UltraserverCount
+        {
+            get { return this._ultraserverCount; }
+            set { this._ultraserverCount = value; }
+        }
+
+        // Check to see if UltraserverCount property is set
+        internal bool IsSetUltraserverCount()
+        {
+            return this._ultraserverCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraserverType. 
+        /// <para>
+        /// The EC2 UltraServer type of the Capacity Block offering.
+        /// </para>
+        /// </summary>
+        public string UltraserverType
+        {
+            get { return this._ultraserverType; }
+            set { this._ultraserverType = value; }
+        }
+
+        // Check to see if UltraserverType property is set
+        internal bool IsSetUltraserverType()
+        {
+            return this._ultraserverType != null;
         }
 
         /// <summary>

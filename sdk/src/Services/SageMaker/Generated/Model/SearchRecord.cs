@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private ModelPackageGroup _modelPackageGroup;
         private Pipeline _pipeline;
         private PipelineExecution _pipelineExecution;
+        private PipelineVersion _pipelineVersion;
         private Project _project;
         private TrainingJob _trainingJob;
         private Trial _trial;
@@ -226,6 +227,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineExecution()
         {
             return this._pipelineExecution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersion. 
+        /// <para>
+        /// The version of the pipeline.
+        /// </para>
+        /// </summary>
+        public PipelineVersion PipelineVersion
+        {
+            get { return this._pipelineVersion; }
+            set { this._pipelineVersion = value; }
+        }
+
+        // Check to see if PipelineVersion property is set
+        internal bool IsSetPipelineVersion()
+        {
+            return this._pipelineVersion != null;
         }
 
         /// <summary>

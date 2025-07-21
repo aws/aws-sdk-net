@@ -57,6 +57,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetS3VectorsEngine())
+            {
+                context.Writer.WritePropertyName("S3VectorsEngine");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3VectorsEngineMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3VectorsEngine, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

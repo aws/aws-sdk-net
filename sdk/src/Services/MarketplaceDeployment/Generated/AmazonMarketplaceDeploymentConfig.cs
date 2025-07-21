@@ -33,7 +33,7 @@ namespace Amazon.MarketplaceDeployment
     public partial class AmazonMarketplaceDeploymentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Deployment", "4.0.0.12");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Deployment", "4.0.0.14");
 
         private static readonly AmazonMarketplaceDeploymentEndpointResolver EndpointResolver =
             new AmazonMarketplaceDeploymentEndpointResolver();

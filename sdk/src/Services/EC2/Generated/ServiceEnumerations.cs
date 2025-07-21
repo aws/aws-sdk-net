@@ -2513,6 +2513,134 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityBlockInterconnectStatus.
+    /// </summary>
+    public class CapacityBlockInterconnectStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Impaired for CapacityBlockInterconnectStatus
+        /// </summary>
+        public static readonly CapacityBlockInterconnectStatus Impaired = new CapacityBlockInterconnectStatus("impaired");
+        /// <summary>
+        /// Constant InsufficientData for CapacityBlockInterconnectStatus
+        /// </summary>
+        public static readonly CapacityBlockInterconnectStatus InsufficientData = new CapacityBlockInterconnectStatus("insufficient-data");
+        /// <summary>
+        /// Constant Ok for CapacityBlockInterconnectStatus
+        /// </summary>
+        public static readonly CapacityBlockInterconnectStatus Ok = new CapacityBlockInterconnectStatus("ok");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityBlockInterconnectStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityBlockInterconnectStatus FindValue(string value)
+        {
+            return FindValue<CapacityBlockInterconnectStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityBlockInterconnectStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityBlockResourceState.
+    /// </summary>
+    public class CapacityBlockResourceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for CapacityBlockResourceState
+        /// </summary>
+        public static readonly CapacityBlockResourceState Active = new CapacityBlockResourceState("active");
+        /// <summary>
+        /// Constant Cancelled for CapacityBlockResourceState
+        /// </summary>
+        public static readonly CapacityBlockResourceState Cancelled = new CapacityBlockResourceState("cancelled");
+        /// <summary>
+        /// Constant Expired for CapacityBlockResourceState
+        /// </summary>
+        public static readonly CapacityBlockResourceState Expired = new CapacityBlockResourceState("expired");
+        /// <summary>
+        /// Constant Failed for CapacityBlockResourceState
+        /// </summary>
+        public static readonly CapacityBlockResourceState Failed = new CapacityBlockResourceState("failed");
+        /// <summary>
+        /// Constant PaymentFailed for CapacityBlockResourceState
+        /// </summary>
+        public static readonly CapacityBlockResourceState PaymentFailed = new CapacityBlockResourceState("payment-failed");
+        /// <summary>
+        /// Constant PaymentPending for CapacityBlockResourceState
+        /// </summary>
+        public static readonly CapacityBlockResourceState PaymentPending = new CapacityBlockResourceState("payment-pending");
+        /// <summary>
+        /// Constant Scheduled for CapacityBlockResourceState
+        /// </summary>
+        public static readonly CapacityBlockResourceState Scheduled = new CapacityBlockResourceState("scheduled");
+        /// <summary>
+        /// Constant Unavailable for CapacityBlockResourceState
+        /// </summary>
+        public static readonly CapacityBlockResourceState Unavailable = new CapacityBlockResourceState("unavailable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityBlockResourceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityBlockResourceState FindValue(string value)
+        {
+            return FindValue<CapacityBlockResourceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityBlockResourceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityReservationBillingRequestStatus.
     /// </summary>
     public class CapacityReservationBillingRequestStatus : ConstantClass
@@ -2920,6 +3048,10 @@ namespace Amazon.EC2
         /// Constant Scheduled for CapacityReservationState
         /// </summary>
         public static readonly CapacityReservationState Scheduled = new CapacityReservationState("scheduled");
+        /// <summary>
+        /// Constant Unavailable for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Unavailable = new CapacityReservationState("unavailable");
         /// <summary>
         /// Constant Unsupported for CapacityReservationState
         /// </summary>
@@ -7558,6 +7690,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImdsSupportValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InitializationType.
+    /// </summary>
+    public class InitializationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for InitializationType
+        /// </summary>
+        public static readonly InitializationType Default = new InitializationType("default");
+        /// <summary>
+        /// Constant ProvisionedRate for InitializationType
+        /// </summary>
+        public static readonly InitializationType ProvisionedRate = new InitializationType("provisioned-rate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InitializationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InitializationType FindValue(string value)
+        {
+            return FindValue<InitializationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InitializationType(string value)
         {
             return FindValue(value);
         }
@@ -18633,6 +18815,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant CapacityBlock for ResourceType
+        /// </summary>
+        public static readonly ResourceType CapacityBlock = new ResourceType("capacity-block");
+        /// <summary>
         /// Constant CapacityReservation for ResourceType
         /// </summary>
         public static readonly ResourceType CapacityReservation = new ResourceType("capacity-reservation");
@@ -24630,6 +24816,10 @@ namespace Amazon.EC2
     public class VolumeStatusName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant InitializationState for VolumeStatusName
+        /// </summary>
+        public static readonly VolumeStatusName InitializationState = new VolumeStatusName("initialization-state");
         /// <summary>
         /// Constant IoEnabled for VolumeStatusName
         /// </summary>

@@ -422,7 +422,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        private Expression CreateConditionExpressionForVersion(ItemStorage storage)
+        private DocumentModel.Expression CreateConditionExpressionForVersion(ItemStorage storage)
         {
             if (!ShouldUseVersioning()) return null;
             var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(

@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [        
-        "Remove and adjust unused targets NET35 and NET45 from codebase."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }

@@ -31,7 +31,7 @@ namespace Amazon.Repostspace.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchAddRole operation.
-    /// Add role to multiple users or groups in a private re:Post.
+    /// Add a role to multiple users or groups in a private re:Post.
     /// </summary>
     public partial class BatchAddRoleRequest : AmazonRepostspaceRequest
     {

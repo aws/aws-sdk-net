@@ -108,8 +108,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property DnsIpAddresses. 
         /// <para>
-        /// Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs
-        /// to. This parameter applies only if <c>AuthenticationType</c> is set to <c>KERBEROS</c>.
+        /// Specifies the IP addresses (IPv4 or IPv6) for the DNS servers that your SMB file server
+        /// belongs to. This parameter applies only if <c>AuthenticationType</c> is set to <c>KERBEROS</c>.
         /// </para>
         ///  
         /// <para>
@@ -298,22 +298,14 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerHostname. 
         /// <para>
-        /// Specifies the domain name or IP address of the SMB file server that your DataSync
-        /// agent connects to.
+        /// Specifies the domain name or IP address (IPv4 or IPv6) of the SMB file server that
+        /// your DataSync agent connects to.
         /// </para>
-        ///  
-        /// <para>
-        /// Remember the following when configuring this parameter:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// You can't specify an IP version 6 (IPv6) address.
-        /// </para>
-        ///  </li> <li> 
+        ///  <note> 
         /// <para>
         /// If you're using Kerberos authentication, you must specify a domain name.
         /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=255)]
         public string ServerHostname

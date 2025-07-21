@@ -52,10 +52,31 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class LoadBalancer
     {
+        private AdvancedConfiguration _advancedConfiguration;
         private string _containerName;
         private int? _containerPort;
         private string _loadBalancerName;
         private string _targetGroupArn;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedConfiguration. 
+        /// <para>
+        /// The advanced settings for the load balancer used in blue/green deployments. Specify
+        /// the alternate target group, listener rules, and IAM role required for traffic shifting
+        /// during blue/green deployments.
+        /// </para>
+        /// </summary>
+        public AdvancedConfiguration AdvancedConfiguration
+        {
+            get { return this._advancedConfiguration; }
+            set { this._advancedConfiguration = value; }
+        }
+
+        // Check to see if AdvancedConfiguration property is set
+        internal bool IsSetAdvancedConfiguration()
+        {
+            return this._advancedConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContainerName. 

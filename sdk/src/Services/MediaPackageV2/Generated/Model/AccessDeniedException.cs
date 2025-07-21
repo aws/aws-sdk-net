@@ -30,10 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
-    /// You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that
-    /// grants the required permissions. For more information, see Access Management in the
-    /// IAM User Guide.
+    /// Access is denied because either you don't have permissions to perform the requested
+    /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+    /// user or role that is making the request must have at least one IAM permissions policy
+    /// attached that grants the required permissions. For more information, see Access Management
+    /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+    /// exception if MediaPackage receives a throttling error from Secrets Manager.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -47,6 +47,8 @@ namespace Amazon.SageMaker.Model
         private PipelineExecutionStatus _pipelineExecutionStatus;
         private PipelineExperimentConfig _pipelineExperimentConfig;
         private List<Parameter> _pipelineParameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
+        private string _pipelineVersionDisplayName;
+        private long? _pipelineVersionId;
         private SelectiveExecutionConfig _selectiveExecutionConfig;
 
         /// <summary>
@@ -283,6 +285,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineParameters()
         {
             return this._pipelineParameters != null && (this._pipelineParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionDisplayName. 
+        /// <para>
+        /// The display name of the pipeline version that started this execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=82)]
+        public string PipelineVersionDisplayName
+        {
+            get { return this._pipelineVersionDisplayName; }
+            set { this._pipelineVersionDisplayName = value; }
+        }
+
+        // Check to see if PipelineVersionDisplayName property is set
+        internal bool IsSetPipelineVersionDisplayName()
+        {
+            return this._pipelineVersionDisplayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionId. 
+        /// <para>
+        /// The ID of the pipeline version that started this execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long? PipelineVersionId
+        {
+            get { return this._pipelineVersionId; }
+            set { this._pipelineVersionId = value; }
+        }
+
+        // Check to see if PipelineVersionId property is set
+        internal bool IsSetPipelineVersionId()
+        {
+            return this._pipelineVersionId.HasValue; 
         }
 
         /// <summary>

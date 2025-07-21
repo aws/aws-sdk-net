@@ -47,8 +47,8 @@ namespace Amazon.MediaConvert.Model
         /// rectangle. To use the same height as your overlay input video: Keep blank, or enter
         /// 0. To specify a different height for the cropping rectangle: Enter an integer representing
         /// the Unit type that you choose, either Pixels or Percentage. For example, when you
-        /// enter 100 and choose Pixels, the cropping rectangle will 100 pixels high. When you
-        /// enter 10, choose Percentage, and your overlay input video is 1920x1080, the cropping
+        /// enter 100 and choose Pixels, the cropping rectangle will be 100 pixels high. When
+        /// you enter 10, choose Percentage, and your overlay input video is 1920x1080, the cropping
         /// rectangle will be 108 pixels high.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
@@ -86,8 +86,8 @@ namespace Amazon.MediaConvert.Model
         /// rectangle. To use the same width as your overlay input video: Keep blank, or enter
         /// 0. To specify a different width for the cropping rectangle: Enter an integer representing
         /// the Unit type that you choose, either Pixels or Percentage. For example, when you
-        /// enter 100 and choose Pixels, the cropping rectangle will 100 pixels wide. When you
-        /// enter 10, choose Percentage, and your overlay input video is 1920x1080, the cropping
+        /// enter 100 and choose Pixels, the cropping rectangle will be 100 pixels wide. When
+        /// you enter 10, choose Percentage, and your overlay input video is 1920x1080, the cropping
         /// rectangle will be 192 pixels wide.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]

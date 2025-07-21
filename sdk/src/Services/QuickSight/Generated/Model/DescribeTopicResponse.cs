@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class DescribeTopicResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private CustomInstructions _customInstructions;
         private string _requestId;
         private int? _status;
         private TopicDetails _topic;
@@ -56,6 +57,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomInstructions. 
+        /// <para>
+        /// Custom instructions for the topic.
+        /// </para>
+        /// </summary>
+        public CustomInstructions CustomInstructions
+        {
+            get { return this._customInstructions; }
+            set { this._customInstructions = value; }
+        }
+
+        // Check to see if CustomInstructions property is set
+        internal bool IsSetCustomInstructions()
+        {
+            return this._customInstructions != null;
         }
 
         /// <summary>

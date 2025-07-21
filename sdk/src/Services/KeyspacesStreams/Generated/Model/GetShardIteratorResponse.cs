@@ -41,7 +41,7 @@ namespace Amazon.KeyspacesStreams.Model
         /// <para>
         ///  The unique identifier for the shard iterator. This value is used in the <c>GetRecords</c>
         /// operation to retrieve data records from the specified shard. Each shard iterator expires
-        /// 5 minutes after it is returned to the requester. 
+        /// 15 minutes after it is returned to the requester. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

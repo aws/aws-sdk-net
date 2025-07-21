@@ -33,7 +33,7 @@ namespace Amazon.CloudHSM
     public partial class AmazonCloudHSMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudHSM", "4.0.0.12");
+            InternalSDKUtils.BuildUserAgentString("CloudHSM", "4.0.0.14");
 
         private static readonly AmazonCloudHSMEndpointResolver EndpointResolver =
             new AmazonCloudHSMEndpointResolver();

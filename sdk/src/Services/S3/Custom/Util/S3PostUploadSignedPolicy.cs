@@ -102,9 +102,21 @@ namespace Amazon.S3.Util
         /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
         public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials, RegionEndpoint region)
         {
+            ImmutableCredentials iCreds = credentials.GetCredentials();
+            return GetSignedPolicy(policy, iCreds, region);
+        }
+
+        /// <summary>
+        /// Given a policy and immutable credentials, produce a S3PostUploadSignedPolicy.
+        /// </summary>
+        /// <param name="policy">JSON string representing the policy to sign</param>
+        /// <param name="iCreds">Immutable credentials to sign the policy with</param>
+        /// <param name="region">Service region endpoint.</param>
+        /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
+        internal static S3PostUploadSignedPolicy GetSignedPolicy(string policy, ImmutableCredentials iCreds, RegionEndpoint region)
+        {
             var signedAt = AWSSDKUtils.CorrectedUtcNow;
 
-            ImmutableCredentials iCreds = credentials.GetCredentials();
             var algorithm = "AWS4-HMAC-SHA256";
             var dateStamp = Runtime.Internal.Auth.AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
             var dateTimeStamp = Runtime.Internal.Auth.AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat);

@@ -94,6 +94,11 @@
     <max>65</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBStreams.Model.ShardFilter.ShardId</property>
+    <min>28</min>
+    <max>65</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBStreams.Model.StreamDescription.LastEvaluatedShardId</property>
     <min>28</min>
     <max>65</max>

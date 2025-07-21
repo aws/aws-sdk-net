@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Configuration settings for IAM Identity Center in an OpenSearch Application.
+    /// Configuration settings for IAM Identity Center in an OpenSearch application.
     /// </summary>
     public partial class IamIdentityCenterOptions
     {
@@ -42,7 +42,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether IAM Identity Center is enabled for the OpenSearch Application.
+        /// Indicates whether IAM Identity Center is enabled for the OpenSearch application.
         /// </para>
         /// </summary>
         public bool? Enabled
@@ -93,7 +93,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property IamRoleForIdentityCenterApplicationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role assigned to the IAM Identity Center
-        /// application for the OpenSearch Application.
+        /// application for the OpenSearch application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

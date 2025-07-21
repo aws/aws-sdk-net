@@ -57,6 +57,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetBakeTimeInMinutes())
+            {
+                context.Writer.WritePropertyName("bakeTimeInMinutes");
+                context.Writer.WriteNumberValue(requestObject.BakeTimeInMinutes.Value);
+            }
+
             if(requestObject.IsSetDeploymentCircuitBreaker())
             {
                 context.Writer.WritePropertyName("deploymentCircuitBreaker");
@@ -66,6 +72,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.DeploymentCircuitBreaker, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetLifecycleHooks())
+            {
+                context.Writer.WritePropertyName("lifecycleHooks");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectLifecycleHooksListValue in requestObject.LifecycleHooks)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DeploymentLifecycleHookMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLifecycleHooksListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaximumPercent())
@@ -78,6 +100,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("minimumHealthyPercent");
                 context.Writer.WriteNumberValue(requestObject.MinimumHealthyPercent.Value);
+            }
+
+            if(requestObject.IsSetStrategy())
+            {
+                context.Writer.WritePropertyName("strategy");
+                context.Writer.WriteStringValue(requestObject.Strategy);
             }
 
         }

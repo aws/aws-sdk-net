@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class DescribePipelineRequest : AmazonSageMakerRequest
     {
         private string _pipelineName;
+        private long? _pipelineVersionId;
 
         /// <summary>
         /// Gets and sets the property PipelineName. 
@@ -54,6 +55,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineName()
         {
             return this._pipelineName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionId. 
+        /// <para>
+        /// The ID of the pipeline version to describe.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long? PipelineVersionId
+        {
+            get { return this._pipelineVersionId; }
+            set { this._pipelineVersionId = value; }
+        }
+
+        // Check to see if PipelineVersionId property is set
+        internal bool IsSetPipelineVersionId()
+        {
+            return this._pipelineVersionId.HasValue; 
         }
 
     }

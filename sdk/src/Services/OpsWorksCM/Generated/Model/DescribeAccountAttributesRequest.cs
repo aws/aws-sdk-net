@@ -31,7 +31,7 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountAttributes operation.
-    /// Describes your OpsWorks-CM account attributes. 
+    /// Describes your OpsWorks CM account attributes. 
     /// 
     ///  
     /// <para>

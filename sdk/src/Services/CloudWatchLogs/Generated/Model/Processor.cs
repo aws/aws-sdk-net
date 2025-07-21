@@ -339,8 +339,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ParseToOCSF. 
         /// <para>
-        /// Use this processor to convert logs into Open Cybersecurity Schema Framework (OCSF)
-        /// format
+        /// Use this parameter to convert logs into Open Cybersecurity Schema (OCSF) format.
         /// </para>
         /// </summary>
         public ParseToOCSF ParseToOCSF

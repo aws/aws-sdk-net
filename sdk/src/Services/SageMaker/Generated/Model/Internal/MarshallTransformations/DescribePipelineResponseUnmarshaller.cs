@@ -124,6 +124,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.PipelineStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PipelineVersionDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PipelineVersionDescription = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PipelineVersionDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PipelineVersionDisplayName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

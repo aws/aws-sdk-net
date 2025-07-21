@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociatedResource. 
         /// <para>
-        /// The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+        /// The ARN of the Amazon Web Services-managed resource to which the volume is attached.
         /// </para>
         /// </summary>
         public string AssociatedResource
@@ -104,7 +104,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the volume is attached to a Fargate task, this parameter returns <c>null</c>.
+        /// If the volume is attached to an Amazon Web Services-managed resource, this parameter
+        /// returns <c>null</c>.
         /// </para>
         /// </summary>
         public string Device
@@ -126,7 +127,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the volume is attached to a Fargate task, this parameter returns <c>null</c>.
+        /// If the volume is attached to an Amazon Web Services-managed resource, this parameter
+        /// returns <c>null</c>.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -144,12 +146,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceOwningService. 
         /// <para>
-        /// The service principal of Amazon Web Services service that owns the underlying instance
-        /// to which the volume is attached.
+        /// The service principal of the Amazon Web Services service that owns the underlying
+        /// resource to which the volume is attached.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is returned only for volumes that are attached to Fargate tasks.
+        /// This parameter is returned only for volumes that are attached to Amazon Web Services-managed
+        /// resources.
         /// </para>
         /// </summary>
         public string InstanceOwningService

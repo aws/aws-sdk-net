@@ -41,6 +41,7 @@ namespace Amazon.BedrockAgent.Model
         private PineconeConfiguration _pineconeConfiguration;
         private RdsConfiguration _rdsConfiguration;
         private RedisEnterpriseCloudConfiguration _redisEnterpriseCloudConfiguration;
+        private S3VectorsConfiguration _s3VectorsConfiguration;
         private KnowledgeBaseStorageType _type;
 
         /// <summary>
@@ -173,6 +174,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetRedisEnterpriseCloudConfiguration()
         {
             return this._redisEnterpriseCloudConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3VectorsConfiguration. 
+        /// <para>
+        /// The configuration settings for storing knowledge base data using S3 vectors. This
+        /// includes vector index information and S3 bucket details for vector storage.
+        /// </para>
+        /// </summary>
+        public S3VectorsConfiguration S3VectorsConfiguration
+        {
+            get { return this._s3VectorsConfiguration; }
+            set { this._s3VectorsConfiguration = value; }
+        }
+
+        // Check to see if S3VectorsConfiguration property is set
+        internal bool IsSetS3VectorsConfiguration()
+        {
+            return this._s3VectorsConfiguration != null;
         }
 
         /// <summary>

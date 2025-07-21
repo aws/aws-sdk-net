@@ -35,6 +35,7 @@ namespace Amazon.CleanRoomsML.Model
     public partial class ProtectedQueryInputParameters
     {
         private ComputeConfiguration _computeConfiguration;
+        private ResultFormat _resultFormat;
         private ProtectedQuerySQLParameters _sqlParameters;
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetComputeConfiguration()
         {
             return this._computeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultFormat. 
+        /// <para>
+        /// The format in which the query results should be returned. If not specified, defaults
+        /// to <c>CSV</c>. 
+        /// </para>
+        /// </summary>
+        public ResultFormat ResultFormat
+        {
+            get { return this._resultFormat; }
+            set { this._resultFormat = value; }
+        }
+
+        // Check to see if ResultFormat property is set
+        internal bool IsSetResultFormat()
+        {
+            return this._resultFormat != null;
         }
 
         /// <summary>

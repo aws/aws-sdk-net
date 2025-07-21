@@ -36,9 +36,12 @@ namespace Amazon.ECS.Model
     public partial class DeploymentConfiguration
     {
         private DeploymentAlarms _alarms;
+        private int? _bakeTimeInMinutes;
         private DeploymentCircuitBreaker _deploymentCircuitBreaker;
+        private List<DeploymentLifecycleHook> _lifecycleHooks = AWSConfigs.InitializeCollections ? new List<DeploymentLifecycleHook>() : null;
         private int? _maximumPercent;
         private int? _minimumHealthyPercent;
+        private DeploymentStrategy _strategy;
 
         /// <summary>
         /// Gets and sets the property Alarms. 
@@ -56,6 +59,29 @@ namespace Amazon.ECS.Model
         internal bool IsSetAlarms()
         {
             return this._alarms != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BakeTimeInMinutes. 
+        /// <para>
+        /// The time period when both blue and green service revisions are running simultaneously
+        /// after the production traffic has shifted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must provide this parameter when you use the <c>BLUE_GREEN</c> deployment strategy.
+        /// </para>
+        /// </summary>
+        public int? BakeTimeInMinutes
+        {
+            get { return this._bakeTimeInMinutes; }
+            set { this._bakeTimeInMinutes = value; }
+        }
+
+        // Check to see if BakeTimeInMinutes property is set
+        internal bool IsSetBakeTimeInMinutes()
+        {
+            return this._bakeTimeInMinutes.HasValue; 
         }
 
         /// <summary>
@@ -85,6 +111,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetDeploymentCircuitBreaker()
         {
             return this._deploymentCircuitBreaker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleHooks. 
+        /// <para>
+        /// An array of deployment lifecycle hook objects to run custom logic at specific stages
+        /// of the deployment lifecycle.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DeploymentLifecycleHook> LifecycleHooks
+        {
+            get { return this._lifecycleHooks; }
+            set { this._lifecycleHooks = value; }
+        }
+
+        // Check to see if LifecycleHooks property is set
+        internal bool IsSetLifecycleHooks()
+        {
+            return this._lifecycleHooks != null && (this._lifecycleHooks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,6 +300,40 @@ namespace Amazon.ECS.Model
         internal bool IsSetMinimumHealthyPercent()
         {
             return this._minimumHealthyPercent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Strategy. 
+        /// <para>
+        /// The deployment strategy for the service. Choose from these valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ROLLING</c> - When you create a service which uses the rolling update (<c>ROLLING</c>)
+        /// deployment strategy, the Amazon ECS service scheduler replaces the currently running
+        /// tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the
+        /// service during a rolling update is controlled by the service deployment configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BLUE_GREEN</c> - A blue/green deployment strategy (<c>BLUE_GREEN</c>) is a release
+        /// methodology that reduces downtime and risk by running two identical production environments
+        /// called blue and green. With Amazon ECS blue/green deployments, you can validate new
+        /// service revisions before directing production traffic to them. This approach provides
+        /// a safer way to deploy changes with the ability to quickly roll back if needed.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DeploymentStrategy Strategy
+        {
+            get { return this._strategy; }
+            set { this._strategy = value; }
+        }
+
+        // Check to see if Strategy property is set
+        internal bool IsSetStrategy()
+        {
+            return this._strategy != null;
         }
 
     }

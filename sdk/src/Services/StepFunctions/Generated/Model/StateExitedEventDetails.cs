@@ -108,7 +108,15 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// control characters (<c>U+0000-001F</c>, <c>U+007F-009F</c>)
+        /// control characters (<c>U+0000-001F</c>, <c>U+007F-009F</c>, <c>U+FFFE-FFFF</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// surrogates (<c>U+D800-DFFF</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// invalid characters (<c> U+10FFFF</c>)
         /// </para>
         ///  </li> </ul> 
         /// <para>

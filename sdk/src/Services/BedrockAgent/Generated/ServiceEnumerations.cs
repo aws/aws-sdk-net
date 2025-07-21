@@ -2398,6 +2398,10 @@ namespace Amazon.BedrockAgent
         /// Constant REDIS_ENTERPRISE_CLOUD for KnowledgeBaseStorageType
         /// </summary>
         public static readonly KnowledgeBaseStorageType REDIS_ENTERPRISE_CLOUD = new KnowledgeBaseStorageType("REDIS_ENTERPRISE_CLOUD");
+        /// <summary>
+        /// Constant S3_VECTORS for KnowledgeBaseStorageType
+        /// </summary>
+        public static readonly KnowledgeBaseStorageType S3_VECTORS = new KnowledgeBaseStorageType("S3_VECTORS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

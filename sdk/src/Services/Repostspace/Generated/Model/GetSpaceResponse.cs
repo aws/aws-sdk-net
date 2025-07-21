@@ -34,6 +34,7 @@ namespace Amazon.Repostspace.Model
     /// </summary>
     public partial class GetSpaceResponse : AmazonWebServiceResponse
     {
+        private string _applicationArn;
         private string _arn;
         private string _clientId;
         private ConfigurationStatus _configurationStatus;
@@ -43,18 +44,36 @@ namespace Amazon.Repostspace.Model
         private DateTime? _deleteDateTime;
         private string _description;
         private List<string> _groupAdmins = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _identityStoreId;
         private string _name;
         private string _randomDomain;
         private Dictionary<string, List<string>> _roles = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _spaceId;
         private string _status;
         private long? _storageLimit;
+        private SupportedEmailDomainsStatus _supportedEmailDomains;
         private TierLevel _tier;
         private List<string> _userAdmins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _userCount;
         private string _userkmsKey;
         private string _vanityDomain;
         private VanityDomainStatus _vanityDomainStatus;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationArn.
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ApplicationArn
+        {
+            get { return this._applicationArn; }
+            set { this._applicationArn = value; }
+        }
+
+        // Check to see if ApplicationArn property is set
+        internal bool IsSetApplicationArn()
+        {
+            return this._applicationArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -232,6 +251,21 @@ namespace Amazon.Repostspace.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentityStoreId.
+        /// </summary>
+        public string IdentityStoreId
+        {
+            get { return this._identityStoreId; }
+            set { this._identityStoreId = value; }
+        }
+
+        // Check to see if IdentityStoreId property is set
+        internal bool IsSetIdentityStoreId()
+        {
+            return this._identityStoreId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the private re:Post.
@@ -347,6 +381,21 @@ namespace Amazon.Repostspace.Model
         internal bool IsSetStorageLimit()
         {
             return this._storageLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEmailDomains.
+        /// </summary>
+        public SupportedEmailDomainsStatus SupportedEmailDomains
+        {
+            get { return this._supportedEmailDomains; }
+            set { this._supportedEmailDomains = value; }
+        }
+
+        // Check to see if SupportedEmailDomains property is set
+        internal bool IsSetSupportedEmailDomains()
+        {
+            return this._supportedEmailDomains != null;
         }
 
         /// <summary>

@@ -194,6 +194,7 @@ namespace Amazon.ECS.Model
         private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
+        private DeploymentController _deploymentController;
         private int? _desiredCount;
         private bool? _enableecsManagedTags;
         private bool? _enableExecuteCommand;
@@ -345,6 +346,21 @@ namespace Amazon.ECS.Model
         internal bool IsSetDeploymentConfiguration()
         {
             return this._deploymentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentController.
+        /// </summary>
+        public DeploymentController DeploymentController
+        {
+            get { return this._deploymentController; }
+            set { this._deploymentController = value; }
+        }
+
+        // Check to see if DeploymentController property is set
+        internal bool IsSetDeploymentController()
+        {
+            return this._deploymentController != null;
         }
 
         /// <summary>

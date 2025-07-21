@@ -12,7 +12,6 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 using System.Threading.Tasks;
-using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
@@ -272,7 +271,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         /// <summary>
         /// Tests that the DynamoDB operations can retrieve <see cref="DateTime"/> attributes in UTC and local timezone.
-        /// </summary>
+        /// </summary>  
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         [DataRow(true)]
@@ -567,6 +566,557 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_ScanWithExpression_NestedPaths()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            var product1 = new Product
+            {
+                Id = 1,
+                Name = "Widget",
+                CompanyInfo = new CompanyInfo
+                {
+                    Name = "Acme",
+                    Founded = new DateTime(2000, 1, 1),
+                    AllProducts = new List<Product>
+                    {
+                        new Product { Id = 2, Name = "Gadget" }
+                    },
+                    FeaturedBrands = new[] { "Acme", "Contoso" }
+                },
+                Price = 100
+            };
+
+            var product2 = new Product
+            {
+                Id = 3,
+                Name = "Thing",
+                CompanyInfo = new CompanyInfo
+                {
+                    Name = "Contoso",
+                    Founded = new DateTime(2010, 5, 5),
+                    AllProducts = new List<Product>
+                    {
+                        new Product { Id = 4, Name = "Device" }
+                    },
+                    FeaturedBrands = new[] { "Contoso" }
+                },
+                Price = 200
+            };
+
+            var product3 = new Product
+            {
+                Id = 5,
+                Name = "CloudSpotter",
+                CompanyInfo = new CompanyInfo
+                {
+                    Name = "Contoso",
+                    Founded = new DateTime(2010, 5, 5),
+                    AllProducts = new List<Product>
+                    {
+                        new Product
+                        {
+                            Id = 6, Name = "Service", Components = new List<string>
+                            {
+                                "Code",
+                                "Storage",
+                                "Network"
+                            }
+                        }
+                    },
+                    CompetitorProducts = new Dictionary<string, List<Product>>()
+                    {
+                        {
+                            "CloudsAreOK", new List<Product>()
+                            {
+                                new Product()
+                                {
+                                    Id = 8, Name = "CloudSpotter RipOff"
+                                }
+                            }
+                        }
+                    },
+                    FeaturedBrands = new[] { "Contoso" }
+                },
+                Price = 200
+            };
+
+            Context.Save(product1);
+            Context.Save(product2);
+            Context.Save(product3);
+
+            // 1. Filter on a nested property (CompanyInfo.Name)
+            var expr1 = new ContextExpression();
+            expr1.SetFilter<Product>(p => p.CompanyInfo.Name == "Acme");
+            var byCompanyName = Context.Scan<Product>(expr1).ToList();
+            Assert.AreEqual(1, byCompanyName.Count);
+            Assert.AreEqual("Widget", byCompanyName[0].Name);
+
+            // 2. Filter on a nested array property (FeaturedBrands contains "Acme")
+            var expr2 = new ContextExpression();
+            expr2.SetFilter<Product>(p => p.CompanyInfo.FeaturedBrands.Contains("Acme"));
+            var byFeaturedBrand = Context.Scan<Product>(expr2).ToList();
+            Assert.AreEqual(1, byFeaturedBrand.Count);
+            Assert.AreEqual("Widget", byFeaturedBrand[0].Name);
+
+            // 3. Filter on a double-nested property 
+            var expr3 = new ContextExpression();
+            expr3.SetFilter<Product>(p => p.CompanyInfo.AllProducts.First().Name == "Device");
+            var byDoubleNested = Context.Scan<Product>(expr3).ToList();
+            Assert.AreEqual(1, byDoubleNested.Count);
+            Assert.AreEqual("Thing", byDoubleNested[0].Name);
+
+            var expr4 = new ContextExpression();
+            expr4.SetFilter<Product>(p => p.CompanyInfo.AllProducts[0].Name == "Device");
+            var byDoubleNested1 = Context.Scan<Product>(expr4).ToList();
+            Assert.AreEqual(1, byDoubleNested1.Count);
+            Assert.AreEqual("Thing", byDoubleNested1[0].Name);
+
+            // 4. Filter on a value inside a dictionary of lists
+            var expr5 = new ContextExpression();
+            expr5.SetFilter<Product>(p => p.CompanyInfo.CompetitorProducts["CloudsAreOK"][0].Name == "CloudSpotter RipOff");
+            var byDictionaryNested = Context.Scan<Product>(expr5).ToList();
+            Assert.AreEqual(1, byDictionaryNested.Count);
+            Assert.AreEqual("CloudSpotter", byDictionaryNested[0].Name);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_ScanConfigFilter()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            var employee = new Employee()
+            {
+                Name = "Bob",
+                Age = 45,
+                CurrentStatus = Status.Active,
+                CompanyName = "test",
+            };
+
+            var employee3 = new Employee
+            {
+                Name = "Cob",
+                Age = 45,
+                CurrentStatus = Status.Inactive,
+                CompanyName = "test1",
+            };
+
+
+            Context.Save(employee);
+            Context.Save(employee3);
+
+            var ageEqResultScan = Context.Scan<Employee>(new List<ScanCondition>(), new ScanConfig()
+            {
+                QueryFilter = new List<ScanCondition>()
+                {
+                    new ScanCondition("Age", ScanOperator.GreaterThan,50)
+                },
+                ConditionalOperator = ConditionalOperatorValues.And
+            }).ToList();
+            Assert.AreEqual(0, ageEqResultScan.Count);
+
+            var ageAndCompanyResultScan = Context.Scan<Employee>(new List<ScanCondition>()
+            {
+                new ScanCondition("Age", ScanOperator.Equal,45)
+            }, new ScanConfig()
+            {
+                QueryFilter = new List<ScanCondition>()
+                {
+                    new ScanCondition("CompanyName", ScanOperator.Equal, "test")
+                },
+                ConditionalOperator = ConditionalOperatorValues.And
+            }).ToList();
+            Assert.AreEqual(1, ageAndCompanyResultScan.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_Scan_WithExpressionFilter()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            var employee = new Employee()
+            {
+                Name = "Bob",
+                Age = 45,
+                CurrentStatus = Status.Active,
+                CompanyName = "test",
+            };
+
+            var employee3 = new Employee
+            {
+                Name = "Cob",
+                Age = 45,
+                CurrentStatus = Status.Inactive,
+                CompanyName = "test1",
+            };
+
+            var employee2 = new Employee
+            {
+                Name = "Rob",
+                Age = 35,
+                CurrentStatus = Status.Active,
+                CompanyName = "test",
+            };
+
+            var employee4 = new Employee
+            {
+                Name = "Sam",
+                Age = 20,
+                CurrentStatus = Status.Upcoming,
+                CompanyName = "test2",
+            };
+
+            Context.Save(employee);
+            Context.Save(employee2);
+            Context.Save(employee3);
+            Context.Save(employee4);
+
+            // Numeric equality
+            int age = 45;
+            var exprAgeEq = new ContextExpression();
+            exprAgeEq.SetFilter<Employee>(e => e.Age == age);
+            var ageEqResult = Context.Scan<Employee>(exprAgeEq).ToList();
+            Assert.AreEqual(2, ageEqResult.Count);
+
+            var exprAgeEqM = new ContextExpression();
+            exprAgeEqM.SetFilter<Employee>(e => Equals(e.Age, 45));
+            var ageEqMResult = Context.Scan<Employee>(exprAgeEqM).ToList();
+            Assert.AreEqual(2, ageEqMResult.Count);
+
+            // AND expression with BinaryComparisons 
+            var exprAnd = new ContextExpression();
+            exprAnd.SetFilter<Employee>(e => e.Age > 40 && e.CompanyName == "test");
+            var andResults = Context.Scan<Employee>(exprAnd).ToList();
+
+            var s1 = Context.Scan<Employee>(new List<ScanCondition>()
+            {
+                new ScanCondition("Age", ScanOperator.GreaterThan, 40),
+                new ScanCondition("CompanyName", ScanOperator.Equal, "test")
+            }, new ScanConfig { RetrieveDateTimeInUtc = true }).ToList();
+
+            Assert.IsNotNull(s1);
+            Assert.AreEqual(s1.Count, 1);
+            Assert.AreEqual(s1.FirstOrDefault().Name, "Bob");
+
+            Assert.IsNotNull(andResults);
+            Assert.AreEqual(andResults.Count, 1);
+            Assert.AreEqual(andResults.FirstOrDefault().Name, "Bob");
+
+            // NOT expression
+            var exprNot = new ContextExpression();
+            exprNot.SetFilter<Employee>(e => !(e.CompanyName == "test1"));
+            var notResult = Context.Scan<Employee>(exprNot).ToList();
+            Assert.AreEqual(3, notResult.Count);
+            Assert.IsTrue(notResult.All(e => e.CompanyName != "test1"));
+
+            // OR expression
+            var exprOr = new ContextExpression();
+            exprOr.SetFilter<Employee>(e => e.Name == "Bob" || e.Name == "Rob");
+            var orResult = Context.Scan<Employee>(exprOr).ToList();
+            Assert.AreEqual(2, orResult.Count);
+            Assert.IsTrue(orResult.Any(e => e.Name == "Bob"));
+            Assert.IsTrue(orResult.Any(e => e.Name == "Rob"));
+
+            // Contains on list property (Aliases)
+            var empWithAliases = new Employee
+            {
+                Name = "Ali",
+                Age = 50,
+                CurrentStatus = Status.Active,
+                MiddleName = "MiddleName",
+                CompanyName = "test",
+                Aliases = new List<string> { "Al", "A", "B" }
+            };
+            Context.Save(empWithAliases);
+
+            var exprContains = new ContextExpression();
+            exprContains.SetFilter<Employee>(e => e.Aliases.Contains("Al"));
+            var containsResult = Context.Scan<Employee>(exprContains).ToList();
+            Assert.IsTrue(containsResult.Any(e => e.Name == "Ali"));
+
+            var exprContainsEnumerable = new ContextExpression();
+            exprContainsEnumerable.SetFilter<Employee>(e => Enumerable.Contains(e.Aliases, "Al"));
+            var containsEnumerableResult = Context.Scan<Employee>(exprContainsEnumerable).ToList();
+            Assert.IsTrue(containsEnumerableResult.Any(e => e.Name == "Ali"));
+
+            // String.StartsWith
+            var exprStartsWith = new ContextExpression();
+            exprStartsWith.SetFilter<Employee>(e => e.Name.StartsWith("B"));
+            var startsWithResult = Context.Scan<Employee>(exprStartsWith).ToList();
+            Assert.IsTrue(startsWithResult.Any(e => e.Name == "Bob"));
+
+            // Between
+            var exprBetween = new ContextExpression();
+            exprBetween.SetFilter<Employee>(e => ContextExpression.Between(e.Age, 40, 50));
+            var betweenResult = Context.Scan<Employee>(exprBetween).ToList();
+            Assert.AreEqual(3, betweenResult.Count);
+            Assert.IsTrue(betweenResult.All(e => e.Age >= 40 && e.Age <= 50));
+
+            // String.Contains
+            var exprStringContains = new ContextExpression();
+            exprStringContains.SetFilter<Employee>(e => e.Name.Contains("o"));
+            var stringContainsResult = Context.Scan<Employee>(exprStringContains).ToList();
+            Assert.IsTrue(stringContainsResult.Any(e => e.Name == "Bob" || e.Name == "Rob" || e.Name == "Cob"));
+
+            var exprNullCheck = new ContextExpression();
+            exprNullCheck.SetFilter<Employee>(e => ContextExpression.AttributeExists(e.MiddleName));
+            var nullCheckResult = Context.Scan<Employee>(exprNullCheck).ToList();
+            Assert.IsTrue(nullCheckResult.Count == 1);
+
+            var exprNull = new ContextExpression();
+            exprNull.SetFilter<Employee>(e => ContextExpression.AttributeNotExists(e.MiddleName));
+            var nullResult = Context.Scan<Employee>(exprNull).ToList();
+            Assert.IsTrue(nullResult.Count == 4);
+
+            //AttributeType scenario: filter for employees where MiddleName is a DynamoDB String
+            var empWithStringMiddleName = new Employee
+            {
+                Name = "TypeTest",
+                Age = 55,
+                CurrentStatus = Status.Inactive,
+                MiddleName = "StringType",
+                CompanyName = "test"
+            };
+            Context.Save(empWithStringMiddleName);
+
+            var attributeType = DynamoDBAttributeType.S.Value;
+            var exprAttributeType = new ContextExpression();
+            exprAttributeType.SetFilter<Employee>(e => ContextExpression.AttributeType(e.MiddleName, attributeType));
+            var attributeTypeResult = Context.Scan<Employee>(exprAttributeType).ToList();
+            Assert.IsTrue(attributeTypeResult.Any(e => e.Name == "TypeTest"));
+
+            // --- Enum scenario ---
+            // Scan for employees with CurrentStatus == Status.Active
+            var exprActiveEnum = new ContextExpression();
+            exprActiveEnum.SetFilter<Employee>(e => e.CurrentStatus == Status.Active);
+            var activeEnumResult = Context.Scan<Employee>(exprActiveEnum).ToList();
+            Assert.AreEqual(3, activeEnumResult.Count);
+            Assert.IsTrue(activeEnumResult.All(e => e.CurrentStatus == Status.Active));
+
+            // Scan for employees with CurrentStatus == Status.Upcoming
+            var exprUpcomingEnum = new ContextExpression();
+            exprUpcomingEnum.SetFilter<Employee>(e => e.CurrentStatus == Status.Upcoming);
+            var upcomingEnumResult = Context.Scan<Employee>(exprUpcomingEnum).ToList();
+            Assert.AreEqual(1, upcomingEnumResult.Count);
+            Assert.AreEqual("Sam", upcomingEnumResult[0].Name);
+        }
+
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_Query_WithExpressionFilter()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            // Seed data
+            var employee1 = new Employee
+            {
+                Name = "Alice",
+                Age = 30,
+                CompanyName = "Contoso",
+                CurrentStatus = Status.Active
+            };
+            var employee11 = new Employee
+            {
+                Name = "Alice",
+                Age = 35,
+                CompanyName = "ContosoTest",
+                CurrentStatus = Status.Active
+            };
+            var employee2 = new Employee
+            {
+                Name = "Bob",
+                Age = 40,
+                CompanyName = "Acme",
+                CurrentStatus = Status.Inactive
+            };
+            var employee3 = new Employee
+            {
+                Name = "Charlie",
+                Age = 35,
+                CompanyName = "Contoso",
+                CurrentStatus = Status.Active
+            };
+
+            Context.Save(employee1);
+            Context.Save(employee2);
+            Context.Save(employee3);
+
+            var contextExpression = new ContextExpression();
+            contextExpression.SetFilter<Employee>(e => e.CompanyName == "Contoso");
+
+            var employees = Context.Query<Employee>(
+                "Alice", 
+                new QueryConfig
+                {
+                    Expression = contextExpression
+                }).ToList();
+
+            Assert.AreEqual(1, employees.Count);
+            Assert.AreEqual("Alice", employees[0].Name);
+
+            employees = Context.Query<Employee>(
+                "Charlie",
+                new QueryConfig
+                {
+                    Expression = contextExpression
+                }).ToList();
+
+            Assert.AreEqual(1, employees.Count);
+            Assert.AreEqual("Charlie", employees[0].Name);
+
+            employees = Context.Query<Employee>(
+                "Bob",
+                new QueryConfig
+                {
+                    Expression = contextExpression
+                }).ToList();
+
+            Assert.AreEqual(0, employees.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_Query_QueryFilter_vs_ExpressionFilter()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            // Seed data
+            var employee1 = new Employee
+            {
+                Name = "Diane",
+                Age = 40,
+                CompanyName = "Big River",
+                CurrentStatus = Status.Active,
+                Score = 140,
+                ManagerName = "Eva"
+            };
+            var employee2 = new Employee
+            {
+                Name = "Diane",
+                Age = 24,
+                CompanyName = "Big River",
+                CurrentStatus = Status.Inactive,
+                Score = 101,
+                ManagerName = "Eva"
+            };
+            var employee3 = new Employee
+            {
+                Name = "Diane",
+                Age = 31,
+                CompanyName = "Small River",
+                CurrentStatus = Status.Active,
+                Score = 120,
+                ManagerName = "Barbara"
+            };
+            Context.Save(employee1);
+            Context.Save(employee2);
+            Context.Save(employee3);
+
+            // 1. QueryFilter only: filter by ManagerName == "Eva"
+            var queryFilter = new List<ScanCondition>
+            {
+                new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
+            };
+            var resultQueryFilter = Context.Query<Employee>("Diane", new QueryConfig
+            {
+                QueryFilter = queryFilter
+            }).ToList();
+
+            // 2. ExpressionFilter only: filter by ManagerName == "Eva"
+            var contextExpression = new ContextExpression();
+            contextExpression.SetFilter<Employee>(e => e.ManagerName == "Eva");
+            var resultExpressionFilter = Context.Query<Employee>("Diane", new QueryConfig
+            {
+                Expression = contextExpression
+            }).ToList();
+
+            // Assert both results are equivalent
+            Assert.AreEqual(resultQueryFilter.Count, resultExpressionFilter.Count, "Result counts should match between QueryFilter and ExpressionFilter.");
+            CollectionAssert.AreEquivalent(
+                resultQueryFilter.Select(e => e.Age).ToList(),
+                resultExpressionFilter.Select(e => e.Age).ToList(),
+                "Result items should match between QueryFilter and ExpressionFilter."
+            );
+
+            // 3. Simulate combined filter: CurrentStatus == Inactive AND ManagerName == "Barbara"
+            var inactiveFilter = new List<ScanCondition>
+            {
+                new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active),
+                new ScanCondition("ManagerName", ScanOperator.Equal, "Barbara")
+            };
+            var contextExpressionBarbara = new ContextExpression();
+            contextExpressionBarbara.SetFilter<Employee>(e => e.ManagerName == "Barbara" && e.CurrentStatus == Status.Active);
+
+            // Run each filter separately and take intersection
+            var resultActive = Context.Query<Employee>("Diane", new QueryConfig
+            {
+                QueryFilter = inactiveFilter,
+                ConditionalOperator = ConditionalOperatorValues.And
+            }).ToList();
+            var resultBarbara = Context.Query<Employee>("Diane", new QueryConfig
+            {
+                Expression = contextExpressionBarbara
+            }).ToList();
+
+            Assert.AreEqual(resultActive.Count, resultBarbara.Count, "Result counts should match between QueryFilter and ExpressionFilter.");
+            CollectionAssert.AreEquivalent(
+                resultActive.Select(e => e.Age).ToList(),
+                resultBarbara.Select(e => e.Age).ToList(),
+                "Result items should match between QueryFilter and ExpressionFilter."
+            );
+            // 4. QueryFilter with ConditionalOperator.Or (CurrentStatus == Active OR Score == 101)
+            var orFilter = new List<ScanCondition>
+            {
+                new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active),
+                new ScanCondition("Score", ScanOperator.Equal, 101)
+            };
+            var resultOrQueryFilter = Context.Query<Employee>("Diane", new QueryConfig
+            {
+                QueryFilter = orFilter,
+                ConditionalOperator = ConditionalOperatorValues.Or
+            }).ToList();
+
+            var contextExpressionOr = new ContextExpression();
+            contextExpressionOr.SetFilter<Employee>(e => e.CurrentStatus == Status.Active || e.Score == 101);
+
+            var resultOrExpressionFilter = Context.Query<Employee>("Diane", new QueryConfig
+            {
+                Expression = contextExpressionOr
+            }).ToList();
+
+            // Assert both results are equivalent
+            Assert.AreEqual(resultOrQueryFilter.Count, resultOrExpressionFilter.Count, "Result counts should match between QueryFilter (OR) and ExpressionFilter (OR).");
+            CollectionAssert.AreEquivalent(
+                resultOrQueryFilter.Select(e => e.Age).ToList(),
+                resultOrExpressionFilter.Select(e => e.Age).ToList(),
+                "Result items should match between QueryFilter (OR) and ExpressionFilter (OR)."
+            );
+
+            // 5. ExpressionFilter with index
+            var resultIndex = Context.Query<Employee>("Big River", new QueryConfig
+            {
+                IndexName = "GlobalIndex",
+                Expression = contextExpression
+            }).ToList();
+            Assert.AreEqual(2, resultIndex.Count);
+            Assert.IsTrue(resultIndex.All(e => e.ManagerName == "Eva"));
         }
 
         /// <summary>

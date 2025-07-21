@@ -1,3 +1,125 @@
+### 4.0.51.0 (2025-07-18 18:20 UTC)
+* AuditManager (4.0.2.0)
+	* Updated error handling for RegisterOrganizationAdminAccount API to properly translate TooManyExceptions to HTTP 429 status code. This enhancement improves error handling consistency and provides clearer feedback when request limits are exceeded.
+* CloudWatchLogs (4.0.7.0)
+	* CloudWatchLogs launches GetLogObject API with streaming support for efficient log data retrieval. Logs added support for new AccountPolicy type METRIC_EXTRACTION_POLICY. For more information, see CloudWatch Logs API documentation
+* MediaConvert (4.0.6.0)
+	* This release adds support for TAMS server integration with MediaConvert inputs.
+* Outposts (4.0.2.0)
+	* Add AWS Outposts API to surface customer billing information
+* S3 (4.0.6.0)
+	* Implement presigned POST urls
+* SimpleEmailV2 (4.0.2.0)
+	* Added IP Visibility support for managed dedicated pools. Enhanced GetDedicatedIp and GetDedicatedIps APIs to return managed IP addresses.
+* SimpleSystemsManagement (4.0.2.4)
+	* July 2025 doc-only updates for Systems Manager.
+
+### 4.0.50.0 (2025-07-17 18:22 UTC)
+* CleanRoomsML (4.0.2.0)
+	* This release introduces Parquet result format support for ML Input Channel models in AWS Clean Rooms ML.
+* CloudFront (4.0.0.16)
+	* Doc only update for CloudFront that fixes some customer-reported issues
+* EC2 (4.0.21.0)
+	* AWS Free Tier Version2 Support
+* KeyspacesStreams (4.0.0.4)
+	* Doc only update for the Amazon Keyspaces Streams API.
+* MailManager (4.0.2.0)
+	* Allow underscores in the local part of the input of the "Email recipients rewrite" action in rule sets.
+* MediaConvert (4.0.5.0)
+	* This release expands the range of supported audio outputs to include xHE, 192khz FLAC and the deprecation of dual mono for AC3.
+* S3 (4.0.5.1)
+	* Decorated AnalyticsId and StorageClassAnalysis properties in AnalyticsConfiguration class with [AWSProperty(Required = true)] attribute per S3 service API model.
+	* Decorated AnalyticsConfiguration property in PutBucketAnalyticsConfigurationRequest class with [AWSProperty(Required = true)] attribute per S3 service API model.
+* StepFunctions (4.0.0.16)
+	* Align input with style guidelines.
+* Synthetics (4.0.5.0)
+	* This feature allows AWS Synthetics customers to provide code dependencies using lambda layer while creating a canary
+
+### 4.0.49.0 (2025-07-16 15:39 UTC)
+* Bedrock (4.0.8.0)
+	* This release adds support for on-demand custom model inference through CustomModelDeployment APIs for Amazon Bedrock.
+* BedrockAgentCore (4.0.0.0)
+	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
+* BedrockAgentCoreControl (4.0.0.0)
+	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
+* BedrockRuntime (4.0.2.0)
+	* document update to support on demand custom model.
+* CloudWatchLogs (4.0.6.0)
+	* CloudWatch Logs updates: Added X-Ray tracing for Amazon Bedrock Agent resources. Logs introduced Log Group level resource policies (managed through Put/Delete/Describe Resource Policy APIs). For more information, see CloudWatch Logs API documentation.
+* DataSync (4.0.3.0)
+	* AWS DataSync now supports IPv6 address inputs and outputs in create, update, and describe operations for NFS, SMB, and Object Storage locations
+* DynamoDBv2 (4.0.3.0)
+	* Add native support for LINQ expression trees in the IDynamoDBContext API for ScanAsync<T>() and QueryAsync<T>()
+* Glue (4.0.9.0)
+	* AWS Glue now supports schema, partition and sort management of Apache Iceberg tables using Glue SDK
+* GuardDuty (4.0.3.0)
+	* Add expectedBucketOwner parameter to ThreatIntel and IPSet APIs.
+* IoTWireless (4.0.1.0)
+	* FuotaTaskId is not a valid IdentifierType for EventConfiguration and is being removed from possible IdentifierType values.
+* MediaPackageV2 (4.0.3.0)
+	* This release adds support for CDN Authentication using Static Headers in MediaPackage v2.
+* NetworkFlowMonitor (4.0.2.0)
+	* Introducing 2 new scope status types - DEACTIVATING and DEACTIVATED.
+* PaymentCryptographyData (4.0.2.0)
+	* Expand length of message data field for Mac generation and validation to 8192 characters.
+* StepFunctions (4.0.0.15)
+	* Doc-only update to introduction, and edits to clarify input parameter and the set of control characters.
+
+### 4.0.48.0 (2025-07-16 00:41 UTC)
+* ECS (4.0.4.0)
+	* This release removes hookDetails for the Amazon ECS native blue/green deployments.
+
+### 4.0.47.0 (2025-07-15 18:41 UTC)
+* BedrockAgent (4.0.4.0)
+	* Add support for S3 Vectors as a vector store.
+* DataZone (4.0.3.0)
+	* Removing restriction of environment profile identifier as required field, S3 feature release
+* DynamoDBStreams (4.0.1.0)
+	* Added support for optional shard filter parameter in DescribeStream api that allows customers to fetch child shards of a read_only parent shard.
+* EC2 (4.0.20.0)
+	* This release adds support for volume initialization status, which enables you to monitor when the initialization process for an EBS volume is completed. This release also adds IPv6 support to EC2 Instance Connect Endpoints, allowing you to connect to your EC2 Instance via a private IPv6 address.
+* ECS (4.0.3.0)
+	* Amazon ECS supports native blue/green deployments, allowing you to validate new service revisions before directing production traffic to them.
+* EventBridge (4.0.3.0)
+	* Add customer-facing logging for the EventBridge Event Bus, enabling customers to better observe their events and extract insights about their EventBridge usage.
+* OpenSearchService (4.0.1.0)
+	* AWS Opensearch adds support for enabling s3 vector engine options. After enabling this option, customers will be able to create indices with s3 vector engine.
+* Pricing (4.0.1.0)
+	* This release adds support for new filter types in GetProducts API, including EQUALS, CONTAINS, ANY_OF, and NONE_OF.
+* QuickSight (4.0.2.0)
+	* Introduced custom instructions for topics.
+* Repostspace (4.0.1.0)
+	* This release introduces Channels functionality with CreateChannel, GetChannel, ListChannels, and UpdateChannel operations. Channels provide dedicated collaboration spaces where teams can organize discussions and knowledge by projects, business units, or areas of responsibility.
+* S3 (4.0.5.0)
+	* Amazon S3 Metadata live inventory tables provide a queryable inventory of all the objects in your general purpose bucket so that you can determine the latest state of your data. To help minimize your storage costs, use journal table record expiration to set a retention period for your records.
+* S3Tables (4.0.3.0)
+	* Adds table bucket type to ListTableBucket and GetTableBucket API operations
+* S3Vectors (4.0.0.0)
+	* Amazon S3 Vectors provides cost-effective, elastic, and durable vector storage for queries based on semantic meaning and similarity.
+* SageMaker (4.0.13.0)
+	* This release adds support for a new Restricted instance group type to enable a specialized environment for running Nova customization jobs on SageMaker HyperPod clusters. This release also adds support for SageMaker pipeline versioning.
+* Core 4.0.0.16
+	* Add `AWSConfigs.DisableLegacyPersistenceStore` option to instruct the SDK not to use the [SDK Store](https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/sdk-store.html) in its default profile resolution search
+	* Update `PersistenceManager` not to throw an exception when the SDK is used with a read-only file system (https://github.com/aws/aws-sdk-net/issues/3801)
+	* All services packages updated to require new Core
+
+### 4.0.46.0 (2025-07-09 18:20 UTC)
+* EC2 (4.0.19.0)
+	* Adds support to Capacity Blocks for ML for purchasing EC2 P6e-GB200 UltraServers. Customers can now purchase u-p6e-gb200x72 and u-p6e-gb200x36 UltraServers. Adds new DescribeCapacityBlocks andDescribeCapacityBlockStatus APIs. Adds support for CapacityBlockId to DescribeInstanceTopology.
+* FreeTier (4.0.1.0)
+	* This release introduces four new APIs: GetAccountPlanState and UpgradeAccountPlan for AWS account plan management; ListAccountActivities and GetAccountActivity that provide activity tracking capabilities.
+* OpsWorksCM (4.0.0.13)
+	* Removing content that refers to an S3 bucket that is no longer in use.
+* S3 (4.0.4.2)
+	* Move S3PostUploadSignedPolicy out of _bcl folder
+	* Update ExceptionUnmarshallers and add S3 Exception t4 file. Generate PutBucketPolicy, PutObjectLegalHold, PutObjectLockConfiguration, PutObjectRetention, PutPublicAccessBlock, HeadBucket, ListParts, PutObjectTagging
+	* [Breaking Change] `LastModified` in `Amazon.S3.Model.PartDetail` is `DateTime?` instead of `DateTime` to follow v4 pattern of nullable types
+	* [Breaking Change] `Tagging` in `PutBucketPolicyRequest` is no longer automatically initialized if null. You must initialize the object.
+	* Fix GetSignedPolicyFromJson error handling exception message
+* Core 4.0.0.15
+	* Remove and adjust unused targets NET35 and NET45 from codebase.
+	* All services packages updated to require new Core
+
 ### 4.0.45.0 (2025-07-03 18:22 UTC)
 * CustomerProfiles (4.0.2.0)
 	* This release introduces capability of create Segments via importing a CSV file directly. This consumes the CSV file and creates/updates corresponding profiles for the particular domain.

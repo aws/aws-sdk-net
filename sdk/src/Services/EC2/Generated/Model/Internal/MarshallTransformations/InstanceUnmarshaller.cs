@@ -84,6 +84,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BootMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("capacityBlockId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("capacityReservationId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

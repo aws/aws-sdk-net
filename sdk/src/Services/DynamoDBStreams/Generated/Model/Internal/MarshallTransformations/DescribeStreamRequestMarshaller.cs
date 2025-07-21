@@ -87,6 +87,17 @@ namespace Amazon.DynamoDBStreams.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.Limit.Value);
             }
 
+            if(publicRequest.IsSetShardFilter())
+            {
+                context.Writer.WritePropertyName("ShardFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ShardFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ShardFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetStreamArn())
             {
                 context.Writer.WritePropertyName("StreamArn");

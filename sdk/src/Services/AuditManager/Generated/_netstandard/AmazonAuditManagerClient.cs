@@ -2892,6 +2892,9 @@ namespace Amazon.AuditManager
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
         /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>

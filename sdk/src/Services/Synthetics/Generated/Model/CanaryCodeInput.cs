@@ -58,11 +58,38 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class CanaryCodeInput
     {
+        private List<Dependency> _dependencies = AWSConfigs.InitializeCollections ? new List<Dependency>() : null;
         private string _handler;
         private string _s3Bucket;
         private string _s3Key;
         private string _s3Version;
         private MemoryStream _zipFile;
+
+        /// <summary>
+        /// Gets and sets the property Dependencies. 
+        /// <para>
+        /// A list of dependencies that should be used for running this canary. Specify the dependencies
+        /// as a key-value pair, where the key is the type of dependency and the value is the
+        /// dependency reference.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<Dependency> Dependencies
+        {
+            get { return this._dependencies; }
+            set { this._dependencies = value; }
+        }
+
+        // Check to see if Dependencies property is set
+        internal bool IsSetDependencies()
+        {
+            return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Handler. 

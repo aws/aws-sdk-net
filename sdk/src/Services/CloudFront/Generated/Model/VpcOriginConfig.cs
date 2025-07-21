@@ -42,12 +42,12 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property OriginKeepaliveTimeout. 
         /// <para>
         /// Specifies how long, in seconds, CloudFront persists its connection to the origin.
-        /// The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you
+        /// The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you
         /// don't specify otherwise) is 5 seconds.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive
         /// timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -68,12 +68,12 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// Specifies how long, in seconds, CloudFront waits for a response from the origin. This
         /// is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second,
-        /// the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30
+        /// the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30
         /// seconds.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Response
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response
         /// timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>

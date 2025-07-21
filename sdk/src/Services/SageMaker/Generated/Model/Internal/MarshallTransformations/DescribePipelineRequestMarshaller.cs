@@ -81,6 +81,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.PipelineName);
             }
 
+            if(publicRequest.IsSetPipelineVersionId())
+            {
+                context.Writer.WritePropertyName("PipelineVersionId");
+                context.Writer.WriteNumberValue(publicRequest.PipelineVersionId.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

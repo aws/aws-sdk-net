@@ -31,8 +31,8 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns a list of tags that are applied to the specified AWS OpsWorks for Chef Automate
-    /// or AWS OpsWorks for Puppet Enterprise servers or backups.
+    /// Returns a list of tags that are applied to the specified OpsWorks for Chef Automate
+    /// or OpsWorks for Puppet Enterprise servers or backups.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonOpsWorksCMRequest
     {
@@ -90,9 +90,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks
-        /// for Puppet Enterprise server for which you want to show applied tags. For example,
-        /// <c>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</c>.
+        /// The Amazon Resource Number (ARN) of an OpsWorks for Chef Automate or OpsWorks for
+        /// Puppet Enterprise server for which you want to show applied tags. For example, <c>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

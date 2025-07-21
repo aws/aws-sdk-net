@@ -33,7 +33,7 @@ namespace Amazon.GeoRoutes
     public partial class AmazonGeoRoutesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Geo Routes", "4.0.0.12");
+            InternalSDKUtils.BuildUserAgentString("Geo Routes", "4.0.0.14");
 
         private static readonly AmazonGeoRoutesEndpointResolver EndpointResolver =
             new AmazonGeoRoutesEndpointResolver();

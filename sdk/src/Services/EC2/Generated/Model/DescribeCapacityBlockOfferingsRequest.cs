@@ -32,8 +32,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeCapacityBlockOfferings operation.
     /// Describes Capacity Block offerings available for purchase in the Amazon Web Services
-    /// Region that you're currently using. With Capacity Blocks, you purchase a specific
-    /// instance type for a period of time.
+    /// Region that you're currently using. With Capacity Blocks, you can purchase a specific
+    /// GPU instance type or EC2 UltraServer for a period of time.
     /// 
     ///  
     /// <para>
@@ -51,6 +51,8 @@ namespace Amazon.EC2.Model
         private int? _maxResults;
         private string _nextToken;
         private DateTime? _startDateRange;
+        private int? _ultraserverCount;
+        private string _ultraserverType;
 
         /// <summary>
         /// Gets and sets the property CapacityDurationHours. 
@@ -202,6 +204,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetStartDateRange()
         {
             return this._startDateRange.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraserverCount. 
+        /// <para>
+        /// The number of EC2 UltraServers in the offerings.
+        /// </para>
+        /// </summary>
+        public int? UltraserverCount
+        {
+            get { return this._ultraserverCount; }
+            set { this._ultraserverCount = value; }
+        }
+
+        // Check to see if UltraserverCount property is set
+        internal bool IsSetUltraserverCount()
+        {
+            return this._ultraserverCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraserverType. 
+        /// <para>
+        /// The EC2 UltraServer type of the Capacity Block offerings.
+        /// </para>
+        /// </summary>
+        public string UltraserverType
+        {
+            get { return this._ultraserverType; }
+            set { this._ultraserverType = value; }
+        }
+
+        // Check to see if UltraserverType property is set
+        internal bool IsSetUltraserverType()
+        {
+            return this._ultraserverType != null;
         }
 
     }

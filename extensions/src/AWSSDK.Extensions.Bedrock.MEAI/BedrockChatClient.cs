@@ -71,15 +71,13 @@ internal sealed partial class BedrockChatClient : IChatClient
             throw new ArgumentNullException(nameof(messages));
         }
 
-        ConverseRequest request = new()
-        {
-            ModelId = options?.ModelId ?? _modelId,
-            Messages = CreateMessages(messages),
-            System = CreateSystem(messages),
-            ToolConfig = CreateToolConfig(options),
-            InferenceConfig = CreateInferenceConfiguration(options),
-            AdditionalModelRequestFields = CreateAdditionalModelRequestFields(options),
-        };
+        ConverseRequest request = options?.RawRepresentationFactory?.Invoke(this) as ConverseRequest ?? new();
+        request.ModelId ??= options?.ModelId ?? _modelId;
+        request.Messages = CreateMessages(request.Messages, messages);
+        request.System = CreateSystem(request.System, messages, options);
+        request.ToolConfig = CreateToolConfig(request.ToolConfig, options);
+        request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
+        request.AdditionalModelRequestFields = CreateAdditionalModelRequestFields(request.AdditionalModelRequestFields, options);
 
         var response = await _runtime.ConverseAsync(request, cancellationToken).ConfigureAwait(false);
 
@@ -162,15 +160,13 @@ internal sealed partial class BedrockChatClient : IChatClient
             throw new ArgumentNullException(nameof(messages));
         }
 
-        ConverseStreamRequest request = new()
-        {
-            ModelId = options?.ModelId ?? _modelId,
-            Messages = CreateMessages(messages),
-            System = CreateSystem(messages),
-            ToolConfig = CreateToolConfig(options),
-            InferenceConfig = CreateInferenceConfiguration(options),
-            AdditionalModelRequestFields = CreateAdditionalModelRequestFields(options),
-        };
+        ConverseStreamRequest request = options?.RawRepresentationFactory?.Invoke(this) as ConverseStreamRequest ?? new();
+        request.ModelId ??= options?.ModelId ?? _modelId;
+        request.Messages = CreateMessages(request.Messages, messages);
+        request.System = CreateSystem(request.System, messages, options);
+        request.ToolConfig = CreateToolConfig(request.ToolConfig, options);
+        request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
+        request.AdditionalModelRequestFields = CreateAdditionalModelRequestFields(request.AdditionalModelRequestFields, options);
 
         var result = await _runtime.ConverseStreamAsync(request, cancellationToken).ConfigureAwait(false);
 
@@ -356,11 +352,21 @@ internal sealed partial class BedrockChatClient : IChatClient
         };
 
     /// <summary>Creates a list of <see cref="SystemContentBlock"/> from the system messages in the provided <paramref name="messages"/>.</summary>
-    private static List<SystemContentBlock> CreateSystem(IEnumerable<ChatMessage> messages) =>
-        messages
+    private static List<SystemContentBlock> CreateSystem(List<SystemContentBlock>? rawMessages, IEnumerable<ChatMessage> messages, ChatOptions? options)
+    {
+        List<SystemContentBlock> system = rawMessages ?? [];
+
+        if (options?.Instructions is { } instructions)
+        {
+            system.Add(new SystemContentBlock() { Text = instructions });
+        }
+
+        system.AddRange(messages
             .Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent))
-            .Select(m => new SystemContentBlock() { Text = string.Concat(m.Contents.OfType<TextContent>()) })
-            .ToList();
+            .Select(m => new SystemContentBlock() { Text = string.Concat(m.Contents.OfType<TextContent>()) }));
+
+        return system;
+    }
 
     /// <summary>Parses JSON tool input into a <see cref="Dictionary{String, Object}"/>.</summary>
     private static Dictionary<string, object?>? ParseToolInputs(string? jsonInput, out Exception? parseError)
@@ -382,9 +388,9 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <summary>Creates a list of <see cref="Message"/> from the provided <paramref name="chatMessages"/>.</summary>
-    private static List<Message> CreateMessages(IEnumerable<ChatMessage> chatMessages)
+    private static List<Message> CreateMessages(List<Message>? rawMessages, IEnumerable<ChatMessage> chatMessages)
     {
-        List<Message> messages = [];
+        List<Message> messages = rawMessages ?? [];
 
         foreach (ChatMessage chatMessage in chatMessages)
         {
@@ -681,100 +687,110 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <summary>Creates an <see cref="ToolConfiguration"/> from the specified options.</summary>
-    private static ToolConfiguration? CreateToolConfig(ChatOptions? options)
+    private static ToolConfiguration? CreateToolConfig(ToolConfiguration? toolConfig, ChatOptions? options)
     {
-        List<Tool>? tools = options?.Tools?.OfType<AIFunction>().Select(f =>
+        if (options?.Tools is { Count: > 0 } tools)
         {
-            Document inputs = default;
-            List<Document> required = [];
-
-            if (f.JsonSchema.TryGetProperty("properties", out JsonElement properties))
+            foreach (AITool tool in tools)
             {
-                foreach (JsonProperty parameter in properties.EnumerateObject())
+                if (tool is not AIFunction f)
                 {
-                    inputs.Add(parameter.Name, ToDocument(parameter.Value));
+                    continue;
                 }
-            }
 
-            if (f.JsonSchema.TryGetProperty("required", out JsonElement requiredProperties))
-            {
-                foreach (JsonElement requiredProperty in requiredProperties.EnumerateArray())
+                Document inputs = default;
+                List<Document> required = [];
+
+                if (f.JsonSchema.TryGetProperty("properties", out JsonElement properties))
                 {
-                    required.Add(requiredProperty.GetString());
-                }
-            }
-
-            var schemaDictionary = new Dictionary<string, Document>()
-            {
-                ["type"] = new Document("object"),
-            };
-
-            if (inputs != default)
-            {
-                schemaDictionary["properties"] = inputs;
-            }
-
-            if (required.Count > 0)
-            {
-                schemaDictionary["required"] = new Document(required);
-            }
-
-            return new Tool()
-            {
-                ToolSpec = new ToolSpecification()
-                {
-                    Name = f.Name,
-                    Description = !string.IsNullOrEmpty(f.Description) ? f.Description : f.Name,
-                    InputSchema = new()
+                    foreach (JsonProperty parameter in properties.EnumerateObject())
                     {
-                        Json = new(schemaDictionary)
-                    },
-                },
-            };
-        }).ToList();
+                        inputs.Add(parameter.Name, ToDocument(parameter.Value));
+                    }
+                }
 
-        ToolChoice? choice = null;
-        if (tools is { Count: > 0 })
+                if (f.JsonSchema.TryGetProperty("required", out JsonElement requiredProperties))
+                {
+                    foreach (JsonElement requiredProperty in requiredProperties.EnumerateArray())
+                    {
+                        required.Add(requiredProperty.GetString());
+                    }
+                }
+
+                Dictionary<string, Document> schemaDictionary = new()
+                {
+                    ["type"] = new Document("object"),
+                };
+
+                if (inputs != default)
+                {
+                    schemaDictionary["properties"] = inputs;
+                }
+
+                if (required.Count > 0)
+                {
+                    schemaDictionary["required"] = new Document(required);
+                }
+
+                toolConfig ??= new();
+                toolConfig.Tools ??= [];
+                toolConfig.Tools.Add(new()
+                {
+                    ToolSpec = new ToolSpecification()
+                    {
+                        Name = f.Name,
+                        Description = !string.IsNullOrEmpty(f.Description) ? f.Description : f.Name,
+                        InputSchema = new()
+                        {
+                            Json = new(schemaDictionary)
+                        },
+                    },
+                });
+            }
+        }
+
+        if (toolConfig?.Tools is { Count: > 0 } && toolConfig.ToolChoice is null)
         {
             switch (options!.ToolMode)
             {
-                case AutoChatToolMode:
-                case null:
-                    choice = new ToolChoice() { Auto = new() };
-                    break;
-
                 case RequiredChatToolMode r:
-                    choice = !string.IsNullOrWhiteSpace(r.RequiredFunctionName) ?
+                    toolConfig.ToolChoice = !string.IsNullOrWhiteSpace(r.RequiredFunctionName) ?
                         new ToolChoice() { Tool = new() { Name = r.RequiredFunctionName } } :
                         new ToolChoice() { Any = new() };
                     break;
             }
-
-            return new()
-            {
-                ToolChoice = choice,
-                Tools = tools,
-            };
         }
 
-        return null;
+        return toolConfig;
     }
 
     /// <summary>Creates an <see cref="InferenceConfiguration"/> from the specified options.</summary>
-    private static InferenceConfiguration CreateInferenceConfiguration(ChatOptions? options) =>
-        new()
+    private static InferenceConfiguration CreateInferenceConfiguration(InferenceConfiguration config, ChatOptions? options)
+    {
+        config ??= new();
+        
+        config.MaxTokens ??= options?.MaxOutputTokens;
+        config.Temperature ??= options?.Temperature;
+        config.TopP ??= options?.TopP;
+
+        if (options?.StopSequences is { Count: > 0 } stopOptions)
         {
-            MaxTokens = options?.MaxOutputTokens,
-            StopSequences = options?.StopSequences?.ToList(),
-            Temperature = options?.Temperature,
-            TopP = options?.TopP,
-        };
+            if (config.StopSequences is null)
+            {
+                config.StopSequences = stopOptions.ToList();
+            }
+            else
+            {
+                config.StopSequences.AddRange(stopOptions);
+            }
+        }
+
+        return config;
+    }
 
     /// <summary>Creates a <see cref="Document"/> from the specified options to use as the additional model request options.</summary>
-    private static Document CreateAdditionalModelRequestFields(ChatOptions? options)
+    private static Document CreateAdditionalModelRequestFields(Document d, ChatOptions? options)
     {
-        Document d = default;
-
         if (options is not null)
         {
             if (options.TopK is int topK)

@@ -99,12 +99,15 @@ namespace Amazon.Runtime.CredentialManagement
         /// <returns>True if the profile was found, false otherwise.</returns>
         public bool TryGetProfile(string profileName, out CredentialProfile profile)
         {
-            if (string.IsNullOrEmpty(ProfilesLocation) && UserCrypto.IsUserCryptAvailable)
+            if (!AWSConfigs.DisableLegacyPersistenceStore)
             {
-                var netCredentialsFile = new NetSDKCredentialsFile();
-                if (netCredentialsFile.TryGetProfile(profileName, out profile))
+                if (string.IsNullOrEmpty(ProfilesLocation) && UserCrypto.IsUserCryptAvailable)
                 {
-                    return true;
+                    var netCredentialsFile = new NetSDKCredentialsFile();
+                    if (netCredentialsFile.TryGetProfile(profileName, out profile))
+                    {
+                        return true;
+                    }
                 }
             }
 
@@ -140,11 +143,15 @@ namespace Amazon.Runtime.CredentialManagement
         {
             var profiles = new List<CredentialProfile>();
 
-            if (string.IsNullOrEmpty(ProfilesLocation) && UserCrypto.IsUserCryptAvailable)
+            if (!AWSConfigs.DisableLegacyPersistenceStore)
             {
-                var netSdkFile = new NetSDKCredentialsFile();
-                profiles.AddRange(netSdkFile.ListProfiles());
+                if (string.IsNullOrEmpty(ProfilesLocation) && UserCrypto.IsUserCryptAvailable)
+                {
+                    var netSdkFile = new NetSDKCredentialsFile();
+                    profiles.AddRange(netSdkFile.ListProfiles());
+                }
             }
+
             var sharedFile = new SharedCredentialsFile(ProfilesLocation);
             profiles.AddRange(sharedFile.ListProfiles());
 
@@ -171,7 +178,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// <param name="profile">The profile to register.</param>
         public void RegisterProfile(CredentialProfile profile)
         {
-            if (string.IsNullOrEmpty(ProfilesLocation) && UserCrypto.IsUserCryptAvailable)
+            if (!AWSConfigs.DisableLegacyPersistenceStore && string.IsNullOrEmpty(ProfilesLocation) && UserCrypto.IsUserCryptAvailable)
             {
                 new NetSDKCredentialsFile().RegisterProfile(profile);
             }

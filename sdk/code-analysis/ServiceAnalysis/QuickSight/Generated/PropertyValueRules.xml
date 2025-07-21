@@ -3829,6 +3829,10 @@
     <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.CustomInstructions.CustomInstructionsString</property>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CustomNarrativeOptions.Narrative</property>
     <max>150000</max>
   </property-value-rule>

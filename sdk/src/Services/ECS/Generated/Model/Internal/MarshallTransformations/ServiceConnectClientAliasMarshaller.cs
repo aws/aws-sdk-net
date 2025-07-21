@@ -58,6 +58,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
+            if(requestObject.IsSetTestTrafficRules())
+            {
+                context.Writer.WritePropertyName("testTrafficRules");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServiceConnectTestTrafficRulesMarshaller.Instance;
+                marshaller.Marshall(requestObject.TestTrafficRules, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

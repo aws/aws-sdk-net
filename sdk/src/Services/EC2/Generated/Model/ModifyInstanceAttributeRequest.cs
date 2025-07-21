@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         /// The volume must be owned by the caller. If no value is specified for <c>DeleteOnTermination</c>,
         /// the default is <c>true</c> and the volume is deleted when the instance is terminated.
         /// You can't modify the <c>DeleteOnTermination</c> attribute for volumes that are attached
-        /// to Fargate tasks.
+        /// to Amazon Web Services-managed resources.
         /// </para>
         ///  
         /// <para>

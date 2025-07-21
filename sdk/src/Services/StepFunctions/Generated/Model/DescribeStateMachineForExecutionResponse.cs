@@ -89,7 +89,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property Label. 
         /// <para>
         /// A user-defined or an auto-generated string that identifies a <c>Map</c> state. This
-        /// ﬁeld is returned only if the <c>executionArn</c> is a child workflow execution that
+        /// field is returned only if the <c>executionArn</c> is a child workflow execution that
         /// was started by a Distributed Map state.
         /// </para>
         /// </summary>

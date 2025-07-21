@@ -42,7 +42,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// You can only use the <c>DeploymentAlarms</c> method to detect failures when the <c>DeploymentController</c>
-    /// is set to <c>ECS</c> (rolling update).
+    /// is set to <c>ECS</c>.
     /// </para>
     ///  
     /// <para>
