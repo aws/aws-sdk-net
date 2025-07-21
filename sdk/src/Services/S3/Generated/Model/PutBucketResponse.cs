@@ -12,38 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the  PutBucket response and response metadata.
+    /// This is the response object from the PutBucket operation.
     /// </summary>
-    public class PutBucketResponse : AmazonWebServiceResponse
+    public partial class PutBucketResponse : AmazonWebServiceResponse
     {
-        private string _location;
         private string _bucketArn;
-
-        /// <summary>
-        /// Gets and sets the property Location.
-        /// </summary>
-        public string Location
-        {
-            get { return this._location; }
-            set { this._location = value; }
-        }
-
-        // Check to see if Location property is set
-        internal bool IsSetLocation()
-        {
-            return this._location != null;
-        }
+        private string _location;
 
         /// <summary>
         /// Gets and sets the property BucketArn. 
@@ -71,6 +63,24 @@ namespace Amazon.S3.Model
         {
             return this._bucketArn != null;
         }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// A forward slash followed by the name of the bucket.
+        /// </para>
+        /// </summary>
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
     }
 }
-
