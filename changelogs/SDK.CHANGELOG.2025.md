@@ -1,3 +1,15 @@
+### 4.0.52.0 (2025-07-21 18:18 UTC)
+* CloudFront (4.0.1.0)
+	* Add dualstack endpoint support
+* Deadline (4.0.6.0)
+	* Add support for VPC resource endpoints in Service Managed Fleets
+* EC2 (4.0.22.0)
+	* This release adds support for C8gn, F2 and P6e-GB200 Instance types
+* SageMaker (4.0.14.0)
+	* This release adds 1/ Support for S3FileSystem in CustomFileSystems 2/ The ability for a customer to select their preferred IpAddressType for use with private Workforces 3/ Support for p4de instance type in SageMaker Training Plans
+* TimestreamInfluxDB (4.0.1.0)
+	* Timestream for InfluxDB adds support for db.influx.24xlarge instance type. This enhancement enables higher compute capacity for demanding workloads through CreateDbInstance, CreateDbCluster, UpdateDbInstance, and UpdateDbCluster APIs.
+
 ### 4.0.51.0 (2025-07-18 18:20 UTC)
 * AuditManager (4.0.2.0)
 	* Updated error handling for RegisterOrganizationAdminAccount API to properly translate TooManyExceptions to HTTP 429 status code. This enhancement improves error handling consistency and provides clearer feedback when request limits are exceeded.
