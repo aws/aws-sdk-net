@@ -126,6 +126,18 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("updatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updatedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdatedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
