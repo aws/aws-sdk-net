@@ -226,8 +226,6 @@ namespace Amazon.DynamoDBv2.DataModel
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
 
-            SetNewTimestamps(storage);
-
             AddDocumentTransaction(storage, conditionExpression);
             
             var objectItem = new DynamoDBContext.ObjectWithItemStorage
@@ -472,11 +470,6 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (!ShouldUseVersioning()) return;
             DynamoDBContext.SetNewVersion(storage);
-        }
-
-        private void SetNewTimestamps(ItemStorage storage)
-        {
-            DynamoDBContext.SetNewTimestamps(storage);
         }
     }
 

@@ -376,8 +376,6 @@ namespace Amazon.DynamoDBv2.DataModel
             Document updateDocument;
             Expression versionExpression = null;
 
-            SetNewTimestamps(storage);
-
             var updateIfNotExists = GetUpdateIfNotExistsAttributeNames(storage);
 
             var returnValues = counterConditionExpression == null && !updateIfNotExists.Any()
@@ -433,9 +431,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Document updateDocument;
             Expression versionExpression = null;
-
-            SetNewTimestamps(storage);
-
+            
             var updateIfNotExistsAttributeName = GetUpdateIfNotExistsAttributeNames(storage);
 
             var returnValues = counterConditionExpression == null && !updateIfNotExistsAttributeName.Any()
