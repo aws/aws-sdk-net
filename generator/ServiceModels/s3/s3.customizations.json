@@ -210,30 +210,6 @@
                 }
             ]
         },
-        "CreateBucketRequest":{
-            "exclude":[
-                "GrantFullControl",
-                "GrantRead",
-                "GrantReadACP",
-                "GrantWrite",
-                "GrantWriteACP"
-            ],
-            "modify":[
-                {
-                    "ACL": {"emitPropertyName": "CannedACL"}
-                },
-                {
-                    "CreateBucketConfiguration" : {"emitPropertyName" : "PutBucketConfiguration"}
-                }
-            ]
-        },
-        "PutBucketConfiguration":{
-            "modify":[
-                {
-                    "BucketName" : {"emitPropertyName" : "BucketInfo"}
-                }
-            ]
-        },
         "QueueConfigurationDeprecated": {
             "modify": [
                 {
@@ -425,13 +401,8 @@
         },
         "Part":{
             "renameShape": "PartDetail"
-        },
-        "CreateBucketConfiguration":{
-            "renameShape":"PutBucketConfiguration"
-        },
-        "BucketCannedACL":{
-            "renameShape":"S3CannedACL"
         }
+
     },
     "overrideTreatEnumsAsString":{
         "ObjectAttributesList": false
@@ -450,13 +421,6 @@
                 "Marshaller" : "StringUtils.FromString",
                 "Unmarshaller" : "StringUnmarshaller"
             }
-        },
-        "PutBucketConfiguration":{
-            "LocationConstraint":{
-                "Type": "BucketLocationConstraint",
-                "Marshaller": "StringUtils.FromString",
-                "Unmarshaller": "StringUnmarshaller"
-            }
         }
     },
     "excludeMembers":{
@@ -472,10 +436,5 @@
     },
     "unwrapXmlOutput":{
         "GetBucketLocationOutput": true
-    },
-    "inheritAlternateBaseClass":{
-        "PutBucketRequest": {
-            "alternateBaseClass" : "PutWithACLRequest"
-        }
     }
 }

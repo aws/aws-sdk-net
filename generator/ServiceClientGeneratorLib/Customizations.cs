@@ -427,7 +427,6 @@ namespace ServiceClientGenerator
         public const string OverrideTreatEnumsAsStringKey = "overrideTreatEnumsAsString";
         public const string ExcludeMembersKey = "excludeMembers";
         public const string UnwrapXmlOutputKey = "unwrapXmlOutput";
-        public const string InheritAlternateBaseClassKey = "inheritAlternateBaseClass";
 
         JsonData _documentRoot;
 
@@ -703,27 +702,6 @@ namespace ServiceClientGenerator
 
                 return _resultGenerationSuppressions;
             }
-        }
-
-        /// <summary>
-        /// Overrides the base class that structures inherit from.
-        /// Here is an example of the usage
-        ///     "inheritAlternateBaseClass":{
-        ///        "CreateBucketRequest": {
-        ///          "alternateBaseClass" : "PutWithAclRequest"
-        ///        }
-        ///    }
-        /// </summary>
-        /// <param name="shapeName"></param>
-        /// <returns></returns>
-        public string InheritAlternateBaseClass(string shapeName)
-        {
-            var data = _documentRoot[InheritAlternateBaseClassKey];
-            if (data == null || data[shapeName] == null)  return null;
-
-            if (data[shapeName]["alternateBaseClass"] == null)
-                throw new InvalidDataException("You must specify \"alternateBaseClass\" as the key for this customization");
-            return data[shapeName]["alternateBaseClass"].ToString();
         }
 
         public bool GenerateCustomUnmarshaller

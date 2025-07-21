@@ -12,30 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-/*
- * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
- */
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Net;
-using System.Text;
-using System.Xml.Serialization;
-
+using System.Collections.Generic;
 using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
+using System.Net.Sockets;
+using System.IO;
 
-#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutBucket operation
-    /// </summary>  
+    ///    Response Unmarshaller for PutBucket operation
+    /// </summary>
     public class PutBucketResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
@@ -46,14 +37,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             PutBucketResponse response = new PutBucketResponse();
-            if (context.ResponseData.IsHeaderPresent("x-amz-bucket-arn"))
-                response.BucketArn = context.ResponseData.GetHeaderValue("x-amz-bucket-arn");
-            if (context.ResponseData.IsHeaderPresent("Location"))
-                response.Location = context.ResponseData.GetHeaderValue("Location");
-            
+            UnmarshallResult(context, response);
+
             return response;
-        }        
-  
+        }
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, PutBucketResponse response)
+        {
+            IWebResponseData responseData = context.ResponseData;
+
+            if (responseData.IsHeaderPresent("Location"))
+                response.Location = BucketLocationConstraint.FindValue(responseData.GetHeaderValue("Location"));
+
+            if (responseData.IsHeaderPresent("x-amz-bucket-arn"))
+                response.BucketArn = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-bucket-arn"));
+
+            return;
+        }
 
         /// <summary>
         /// Unmarshaller error response to exception.
@@ -64,7 +64,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            var errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -82,26 +82,27 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return BucketAlreadyOwnedByYouExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
+
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
-        private static PutBucketResponseUnmarshaller _instance = new PutBucketResponseUnmarshaller();        
-
-        internal static PutBucketResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+        private static PutBucketResponseUnmarshaller _instance;
 
         /// <summary>
-        /// Gets the singleton.
-        /// </summary>  
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static PutBucketResponseUnmarshaller Instance
         {
             get
             {
+                if (_instance == null)
+                {
+                    _instance = new PutBucketResponseUnmarshaller();
+                }
                 return _instance;
             }
         }
-
+    
     }
 }
+    

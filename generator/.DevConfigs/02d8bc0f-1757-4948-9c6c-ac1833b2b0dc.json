@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Generate PutBucketRequest and move PostMarshallCustomization for some operations"
-    ]
-  }
-}

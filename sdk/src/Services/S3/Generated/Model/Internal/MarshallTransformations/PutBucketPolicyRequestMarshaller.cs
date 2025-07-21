@@ -83,7 +83,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Policy));
             request.Headers["Content-Type"] = "text/plain";
-            PostMarshallCustomization(request, publicRequest);
                 if (publicRequest.IsSetContentMD5())
                     request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
@@ -93,6 +92,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     isRequestChecksumRequired: true,
                     headerName: "x-amz-sdk-checksum-algorithm"
                 );
+
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutBucketPolicyRequestMarshaller _instance = new PutBucketPolicyRequestMarshaller();        

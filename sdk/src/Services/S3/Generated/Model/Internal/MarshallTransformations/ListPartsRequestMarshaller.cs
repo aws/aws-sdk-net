@@ -98,8 +98,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.AddSubResource("uploadId", StringUtils.FromString(publicRequest.UploadId));
             request.ResourcePath = "/{Key+}";
 
-            PostMarshallCustomization(request, publicRequest);
             request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListPartsRequestMarshaller _instance = new ListPartsRequestMarshaller();        

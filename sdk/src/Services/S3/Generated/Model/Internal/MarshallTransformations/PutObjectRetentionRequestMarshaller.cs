@@ -97,7 +97,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetRetention())
                 {
-                    xmlWriter.WriteStartElement("Retention", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("ObjectLockRetention", "http://s3.amazonaws.com/doc/2006-03-01/");
                     if(publicRequest.Retention.IsSetMode())
                         xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));
 
@@ -108,7 +108,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
-            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -129,7 +128,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
+
             request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutObjectRetentionRequestMarshaller _instance = new PutObjectRetentionRequestMarshaller();        
