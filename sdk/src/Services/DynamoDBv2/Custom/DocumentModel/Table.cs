@@ -1359,12 +1359,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return UpdateHelper(doc, key, config,null);
         }
 
-        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, Expression expression, CancellationToken cancellationToken)
-        {
-            Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
-        }
-
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, 
             List<string> ifNotExistAttributeNames = null)
         {
@@ -1459,7 +1453,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-#if AWS_ASYNC_API
+        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, Expression expression, CancellationToken cancellationToken)
+        {
+            Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
+            return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
+        }
+
         internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression,
             CancellationToken cancellationToken, List<string> ifNotExistAttributeNames = null)
         {
@@ -1542,7 +1541,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             return ret;
         }
-#endif
+
         // Checks if key attributes have been updated
         internal bool HaveKeysChanged(Document doc)
         {
