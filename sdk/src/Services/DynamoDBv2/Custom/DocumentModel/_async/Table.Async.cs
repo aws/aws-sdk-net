@@ -24,6 +24,7 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Amazon.DynamoDBv2.DataModel;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Telemetry.Tracing;
 
@@ -188,6 +189,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateItem operation using a DocumentUpdateRequest object.
+        /// </summary>
+        /// <param name="request">The UpdateItemDocumentOperationRequest object containing all parameters for the update.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> UpdateItemAsync(UpdateItemDocumentOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
 
 
         #endregion
@@ -441,6 +451,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+        /// <inheritdoc/>
+        public async Task<Document> UpdateItemAsync(UpdateItemDocumentOperationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         #endregion
 
