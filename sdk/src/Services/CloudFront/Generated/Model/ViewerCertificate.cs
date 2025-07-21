@@ -259,6 +259,7 @@ namespace Amazon.CloudFront.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32)]
         public string IAMCertificateId
         {
             get { return this._iamCertificateId; }

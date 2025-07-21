@@ -179,7 +179,7 @@ namespace Amazon.CloudFront.Model
         /// The comment originally specified when this distribution was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Comment
         {
             get { return this._comment; }
