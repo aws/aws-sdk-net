@@ -128,6 +128,16 @@ namespace Amazon.CloudFront.Model
         IListKeyValueStoresPaginator ListKeyValueStores(ListKeyValueStoresRequest request);
 
         /// <summary>
+        /// Paginator for ListOriginAccessControls operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "OriginAccessControlList.NextMarker" }
+        )]
+        IListOriginAccessControlsPaginator ListOriginAccessControls(ListOriginAccessControlsRequest request);
+
+        /// <summary>
         /// Paginator for ListPublicKeys operation
         ///</summary>
         [AWSPaginator(

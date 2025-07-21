@@ -32,30 +32,43 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For custom endpoint with region not set and fips disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "aws-global";
+            parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://example.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For region aws-global with FIPS enabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("For custom endpoint with fips enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_enabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "aws-global";
+            parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront-fips.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CloudFront")]
+        [Description("For custom endpoint with fips disabled and dualstack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        {
+            var parameters = new CloudFrontEndpointParameters();
+            parameters["Endpoint"] = "https://example.com";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -70,7 +83,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront-fips.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://cloudfront-fips.global.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -100,7 +113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://cloudfront.global.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -122,11 +135,56 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For region aws-cn-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "aws-cn-global";
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://cloudfront-fips.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CloudFront")]
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new CloudFrontEndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://cloudfront-fips.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CloudFront")]
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new CloudFrontEndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://cloudfront.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CloudFront")]
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new CloudFrontEndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
@@ -137,120 +195,60 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://cloudfront-fips.api.aws", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
+            Assert.AreEqual("https://cloudfront-fips.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://cloudfront.api.aws", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CloudFront")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront-fips.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CloudFront")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CloudFront")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CloudFront")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront.us-gov-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://cloudfront.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -280,7 +278,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+            Assert.AreEqual("https://cloudfront-fips.c2s.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -310,7 +308,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+            Assert.AreEqual("https://cloudfront.c2s.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -340,7 +338,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+            Assert.AreEqual("https://cloudfront-fips.sc2s.sgov.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -370,53 +368,51 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cloudfront.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+            Assert.AreEqual("https://cloudfront.sc2s.sgov.gov", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CloudFront")]
-        [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "eu-isoe-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://cloudfront-fips.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CloudFront")]
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new CloudFrontEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -424,16 +420,75 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
-        [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://cloudfront.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CloudFront")]
+        [Description("For region us-isof-south-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new CloudFrontEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CloudFront")]
+        [Description("For region us-isof-south-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new CloudFrontEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://cloudfront-fips.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CloudFront")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new CloudFrontEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CloudFront")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new CloudFrontEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonCloudFrontEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://cloudfront.csp.hci.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
