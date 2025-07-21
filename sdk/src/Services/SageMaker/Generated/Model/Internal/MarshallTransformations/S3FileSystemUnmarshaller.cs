@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomFileSystem Object
+    /// Response Unmarshaller for S3FileSystem Object
     /// </summary>  
-    public class CustomFileSystemUnmarshaller : IJsonUnmarshaller<CustomFileSystem, JsonUnmarshallerContext>
+    public class S3FileSystemUnmarshaller : IJsonUnmarshaller<S3FileSystem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomFileSystem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public S3FileSystem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CustomFileSystem unmarshalledObject = new CustomFileSystem();
+            S3FileSystem unmarshalledObject = new S3FileSystem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EFSFileSystem", targetDepth))
+                if (context.TestExpression("S3Uri", targetDepth))
                 {
-                    var unmarshaller = EFSFileSystemUnmarshaller.Instance;
-                    unmarshalledObject.EFSFileSystem = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FSxLustreFileSystem", targetDepth))
-                {
-                    var unmarshaller = FSxLustreFileSystemUnmarshaller.Instance;
-                    unmarshalledObject.FSxLustreFileSystem = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("S3FileSystem", targetDepth))
-                {
-                    var unmarshaller = S3FileSystemUnmarshaller.Instance;
-                    unmarshalledObject.S3FileSystem = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static CustomFileSystemUnmarshaller _instance = new CustomFileSystemUnmarshaller();        
+        private static S3FileSystemUnmarshaller _instance = new S3FileSystemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomFileSystemUnmarshaller Instance
+        public static S3FileSystemUnmarshaller Instance
         {
             get
             {

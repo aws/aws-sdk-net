@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomFileSystem Marshaller
+    /// S3FileSystemConfig Marshaller
     /// </summary>
-    public class CustomFileSystemMarshaller : IRequestMarshaller<CustomFileSystem, JsonMarshallerContext> 
+    public class S3FileSystemConfigMarshaller : IRequestMarshaller<S3FileSystemConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomFileSystem requestObject, JsonMarshallerContext context)
+        public void Marshall(S3FileSystemConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEFSFileSystem())
+            if(requestObject.IsSetMountPath())
             {
-                context.Writer.WritePropertyName("EFSFileSystem");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EFSFileSystemMarshaller.Instance;
-                marshaller.Marshall(requestObject.EFSFileSystem, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("MountPath");
+                context.Writer.WriteStringValue(requestObject.MountPath);
             }
 
-            if(requestObject.IsSetFSxLustreFileSystem())
+            if(requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("FSxLustreFileSystem");
-                context.Writer.WriteStartObject();
-
-                var marshaller = FSxLustreFileSystemMarshaller.Instance;
-                marshaller.Marshall(requestObject.FSxLustreFileSystem, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetS3FileSystem())
-            {
-                context.Writer.WritePropertyName("S3FileSystem");
-                context.Writer.WriteStartObject();
-
-                var marshaller = S3FileSystemMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3FileSystem, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("S3Uri");
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
         }
@@ -84,7 +63,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomFileSystemMarshaller Instance = new CustomFileSystemMarshaller();
+        public readonly static S3FileSystemConfigMarshaller Instance = new S3FileSystemConfigMarshaller();
 
     }
 }

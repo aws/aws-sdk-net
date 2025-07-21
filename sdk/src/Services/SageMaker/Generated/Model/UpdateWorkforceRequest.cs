@@ -84,10 +84,30 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateWorkforceRequest : AmazonSageMakerRequest
     {
+        private WorkforceIpAddressType _ipAddressType;
         private OidcConfig _oidcConfig;
         private SourceIpConfig _sourceIpConfig;
         private string _workforceName;
         private WorkforceVpcConfigRequest _workforceVpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// Use this parameter to specify whether you want <c>IPv4</c> only or <c>dualstack</c>
+        /// (<c>IPv4</c> and <c>IPv6</c>) to support your labeling workforce.
+        /// </para>
+        /// </summary>
+        public WorkforceIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OidcConfig. 

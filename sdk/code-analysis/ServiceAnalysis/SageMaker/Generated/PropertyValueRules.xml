@@ -9114,7 +9114,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ComputeQuotaResourceConfig.Count</property>
-    <min>1</min>
+    <min>0</min>
+    <max>10000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ComputeQuotaSummary.ClusterArn</property>
@@ -13233,7 +13234,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceSharingConfig.BorrowLimit</property>
-    <min>1</min>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -13292,6 +13293,23 @@
     <min>0</min>
     <max>1024</max>
     <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.S3FileSystem.S3Uri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(s3)://([^/]+)/?(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.S3FileSystemConfig.MountPath</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.S3FileSystemConfig.S3Uri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(s3)://([^/]+)/?(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.S3ModelDataSource.ManifestS3Uri</property>
