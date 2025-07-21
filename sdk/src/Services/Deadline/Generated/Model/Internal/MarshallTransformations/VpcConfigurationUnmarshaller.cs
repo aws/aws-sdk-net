@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceManagedEc2FleetConfiguration Object
+    /// Response Unmarshaller for VpcConfiguration Object
     /// </summary>  
-    public class ServiceManagedEc2FleetConfigurationUnmarshaller : IJsonUnmarshaller<ServiceManagedEc2FleetConfiguration, JsonUnmarshallerContext>
+    public class VpcConfigurationUnmarshaller : IJsonUnmarshaller<VpcConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceManagedEc2FleetConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VpcConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ServiceManagedEc2FleetConfiguration unmarshalledObject = new ServiceManagedEc2FleetConfiguration();
+            VpcConfiguration unmarshalledObject = new VpcConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instanceCapabilities", targetDepth))
+                if (context.TestExpression("resourceConfigurationArns", targetDepth))
                 {
-                    var unmarshaller = ServiceManagedEc2InstanceCapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.InstanceCapabilities = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("instanceMarketOptions", targetDepth))
-                {
-                    var unmarshaller = ServiceManagedEc2InstanceMarketOptionsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceMarketOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("storageProfileId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageProfileId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("vpcConfiguration", targetDepth))
-                {
-                    var unmarshaller = VpcConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ResourceConfigurationArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceManagedEc2FleetConfigurationUnmarshaller _instance = new ServiceManagedEc2FleetConfigurationUnmarshaller();        
+        private static VpcConfigurationUnmarshaller _instance = new VpcConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceManagedEc2FleetConfigurationUnmarshaller Instance
+        public static VpcConfigurationUnmarshaller Instance
         {
             get
             {

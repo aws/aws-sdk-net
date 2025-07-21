@@ -37,6 +37,7 @@ namespace Amazon.Deadline.Model
         private ServiceManagedEc2InstanceCapabilities _instanceCapabilities;
         private ServiceManagedEc2InstanceMarketOptions _instanceMarketOptions;
         private string _storageProfileId;
+        private VpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property InstanceCapabilities. 
@@ -92,6 +93,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStorageProfileId()
         {
             return this._storageProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The VPC configuration details for a service managed Amazon EC2 fleet.
+        /// </para>
+        /// </summary>
+        public VpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }
