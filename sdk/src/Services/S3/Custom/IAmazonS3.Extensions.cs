@@ -74,5 +74,27 @@ namespace Amazon.S3
         Task<string> GetPreSignedURLAsync(GetPreSignedUrlRequest request);
 
         #endregion
+
+        #region CreatePresignedPost
+
+        /// <summary>
+        /// Create a presigned POST request that can be used to upload a file directly to S3 from a web browser.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest that defines the parameters of the operation.</param>
+        /// <returns>A CreatePresignedPostResponse containing the URL and form fields for the POST request.</returns>
+        /// <exception cref="T:System.ArgumentException" />
+        /// <exception cref="T:System.ArgumentNullException" />
+        CreatePresignedPostResponse CreatePresignedPost(CreatePresignedPostRequest request);
+
+        /// <summary>
+        /// Asynchronously create a presigned POST request that can be used to upload a file directly to S3 from a web browser.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest that defines the parameters of the operation.</param>
+        /// <returns>A CreatePresignedPostResponse containing the URL and form fields for the POST request.</returns>
+        /// <exception cref="T:System.ArgumentException" />
+        /// <exception cref="T:System.ArgumentNullException" />
+        Task<CreatePresignedPostResponse> CreatePresignedPostAsync(CreatePresignedPostRequest request);
+
+        #endregion
     }
 }
