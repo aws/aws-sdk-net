@@ -71,8 +71,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Parameters.Add("prefix", StringUtils.FromString(publicRequest.Prefix));
             request.ResourcePath = "/";
 
-            PostMarshallCustomization(request, publicRequest);
             request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListBucketsRequestMarshaller _instance = new ListBucketsRequestMarshaller();        

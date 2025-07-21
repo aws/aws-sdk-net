@@ -32,8 +32,124 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Put Bucket Request Marshaller
     /// </summary>       
-    public partial class PutBucketRequestMarshaller : IMarshaller<IRequest, PutBucketRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public class PutBucketRequestMarshaller : IMarshaller<IRequest, PutBucketRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
+		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+		{
+			return this.Marshall((PutBucketRequest)input);
+		}
+
+        public IRequest Marshall(PutBucketRequest putBucketRequest)
+        {
+            IRequest request = new DefaultRequest(putBucketRequest, "AmazonS3");
+
+            request.HttpMethod = "PUT";
+
+            if (putBucketRequest.IsSetCannedACL())
+                request.Headers.Add(HeaderKeys.XAmzAclHeader, putBucketRequest.CannedACL.Value);
+            else if (putBucketRequest.Grants != null && putBucketRequest.Grants.Count > 0)
+                ConvertPutWithACLRequest(putBucketRequest, request);
+
+            if(putBucketRequest.IsSetObjectLockEnabledForBucket())
+                request.Headers.Add("x-amz-bucket-object-lock-enabled", S3Transforms.ToStringValue(putBucketRequest.ObjectLockEnabledForBucket.Value));
+
+            if (putBucketRequest.IsSetObjectOwnership())
+                request.Headers["x-amz-object-ownership"] = putBucketRequest.ObjectOwnership;
+
+            if (string.IsNullOrEmpty(putBucketRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketRequest.BucketName");
+
+            request.ResourcePath = "/";
+
+            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            {
+                string regionCode = null;
+                var region = putBucketRequest.BucketRegion;
+                if (region != null && !string.IsNullOrEmpty(region.Value))
+                {
+                    regionCode = region.Value;
+                }
+                else if (!string.IsNullOrEmpty(putBucketRequest.BucketRegionName))
+                {
+                    if (putBucketRequest.BucketRegionName == "eu-west-1")
+                        regionCode = "EU";
+                    else if (putBucketRequest.BucketRegionName != "us-east-1")
+                        regionCode = putBucketRequest.BucketRegionName;
+                }
+
+                if (regionCode != null)
+                {
+                    xmlWriter.WriteStartElement("CreateBucketConfiguration", S3Constants.S3RequestXmlNamespace);
+                    xmlWriter.WriteElementString("LocationConstraint", regionCode);
+                }
+                if (putBucketRequest.IsSetPutBucketConfiguration())
+                {
+                    if(regionCode == null)
+                        xmlWriter.WriteStartElement("CreateBucketConfiguration", S3Constants.S3RequestXmlNamespace);
+                    if (putBucketRequest.PutBucketConfiguration.IsSetLocationConstraint())
+                    {
+                        xmlWriter.WriteElementString("LocationConstraint", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.LocationConstraint));
+                    }
+                    if (putBucketRequest.PutBucketConfiguration.BucketInfo != null)
+                    {
+                        xmlWriter.WriteStartElement("Bucket", S3Constants.S3RequestXmlNamespace);
+                        if (putBucketRequest.PutBucketConfiguration.BucketInfo.IsSetDataRedundancy())
+                        {
+                            xmlWriter.WriteElementString("DataRedundancy", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.BucketInfo.DataRedundancy));
+                        }
+                        if (putBucketRequest.PutBucketConfiguration.BucketInfo.IsSetType())
+                        {
+                            xmlWriter.WriteElementString("Type", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.BucketInfo.Type));
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
+                    if(putBucketRequest.PutBucketConfiguration.Location != null)
+                    {
+                        xmlWriter.WriteStartElement("Location", S3Constants.S3RequestXmlNamespace);
+                        if(putBucketRequest.PutBucketConfiguration.Location.IsSetName())
+                        {
+                            xmlWriter.WriteElementString("Name", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.Location.Name));
+                        }
+                        if (putBucketRequest.PutBucketConfiguration.Location.IsSetType())
+                        {
+                            xmlWriter.WriteElementString("Type", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.Location.Type));
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
+                    if (putBucketRequest.PutBucketConfiguration.IsSetTags())
+                    {
+                        xmlWriter.WriteStartElement("Tags", S3Constants.S3RequestXmlNamespace);
+                        foreach (var tag in putBucketRequest.PutBucketConfiguration.Tags)
+                        {
+                            tag.Marshall("Tag", xmlWriter);
+                        }
+                        xmlWriter.WriteEndElement();
+                    }
+                }
+                if(regionCode != null || putBucketRequest.IsSetPutBucketConfiguration())
+                {
+                    xmlWriter.WriteEndElement();
+                }
+            }
+
+            try
+            {
+                var content = stringWriter.ToString();
+                request.Content = Encoding.UTF8.GetBytes(content);
+                request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
+
+                ChecksumUtils.SetChecksumData(request);
+
+            }
+            catch (EncoderFallbackException e)
+            {
+                throw new AmazonServiceException("Unable to marshall request to XML", e);
+            }
+
+            return request;
+        }
+
         protected internal static void ConvertPutWithACLRequest(PutWithACLRequest request, IRequest irequest)
         {
             Dictionary<S3Permission, string> protoHeaders = new Dictionary<S3Permission, string>();
@@ -75,17 +191,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketRequest publicRequest)
-        {
-            // the NoAcl logic exists because it was originally a part of the IsSetCannedACL()
-            // method https://github.com/aws/aws-sdk-net/blob/623dc261499331cb38bfec47789ddc4ef456222c/sdk/src/Services/S3/Custom/Model/PutBucketRequest.cs#L195-L198
-            if (publicRequest.IsSetCannedACL() && publicRequest.CannedACL == S3CannedACL.NoACL)
-                defaultRequest.Headers.Remove("x-amz-acl");
-            if (publicRequest.IsSetCannedACL())
-                return;
-            else if (publicRequest.Grants != null && publicRequest.Grants.Count > 0)
-                ConvertPutWithACLRequest(publicRequest, defaultRequest);
-        }
+	    private static PutBucketRequestMarshaller _instance;
+
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static PutBucketRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutBucketRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

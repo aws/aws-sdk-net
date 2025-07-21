@@ -65,8 +65,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Parameters.Add("max-directory-buckets", StringUtils.FromInt(publicRequest.MaxDirectoryBuckets));
             request.ResourcePath = "/";
 
-            PostMarshallCustomization(request, publicRequest);
             request.UseQueryString = true;
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListDirectoryBucketsRequestMarshaller _instance = new ListDirectoryBucketsRequestMarshaller();        
