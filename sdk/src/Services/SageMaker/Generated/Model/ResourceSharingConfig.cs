@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// Default is <c>50</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Min=0, Max=500)]
         public int BorrowLimit
         {
             get { return this._borrowLimit.GetValueOrDefault(); }

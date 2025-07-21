@@ -30,49 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration of the resources used for the compute allocation definition.
+    /// Configuration for the custom Amazon S3 file system.
     /// </summary>
-    public partial class ComputeQuotaResourceConfig
+    public partial class S3FileSystemConfig
     {
-        private int? _count;
-        private ClusterInstanceType _instanceType;
+        private string _mountPath;
+        private string _s3Uri;
 
         /// <summary>
-        /// Gets and sets the property Count. 
+        /// Gets and sets the property MountPath. 
         /// <para>
-        /// The number of instances to add to the instance group of a SageMaker HyperPod cluster.
+        /// The file system path where the Amazon S3 storage location will be mounted within the
+        /// Amazon SageMaker Studio environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10000000)]
-        public int Count
+        [AWSProperty(Min=0, Max=1024)]
+        public string MountPath
         {
-            get { return this._count.GetValueOrDefault(); }
-            set { this._count = value; }
+            get { return this._mountPath; }
+            set { this._mountPath = value; }
         }
 
-        // Check to see if Count property is set
-        internal bool IsSetCount()
+        // Check to see if MountPath property is set
+        internal bool IsSetMountPath()
         {
-            return this._count.HasValue; 
+            return this._mountPath != null;
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType. 
+        /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The instance type of the instance group for the cluster.
+        /// The Amazon S3 URI of the S3 file system configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ClusterInstanceType InstanceType
+        [AWSProperty(Min=0, Max=1024)]
+        public string S3Uri
         {
-            get { return this._instanceType; }
-            set { this._instanceType = value; }
+            get { return this._s3Uri; }
+            set { this._s3Uri = value; }
         }
 
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
+        // Check to see if S3Uri property is set
+        internal bool IsSetS3Uri()
         {
-            return this._instanceType != null;
+            return this._s3Uri != null;
         }
 
     }

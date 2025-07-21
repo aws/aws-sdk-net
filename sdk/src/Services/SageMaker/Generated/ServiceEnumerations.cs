@@ -16133,6 +16133,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP4d24xlarge = new ReservedCapacityInstanceType("ml.p4d.24xlarge");
         /// <summary>
+        /// Constant MlP4de24xlarge for ReservedCapacityInstanceType
+        /// </summary>
+        public static readonly ReservedCapacityInstanceType MlP4de24xlarge = new ReservedCapacityInstanceType("ml.p4de.24xlarge");
+        /// <summary>
         /// Constant MlP548xlarge for ReservedCapacityInstanceType
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP548xlarge = new ReservedCapacityInstanceType("ml.p5.48xlarge");
@@ -21852,6 +21856,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WarmPoolResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkforceIpAddressType.
+    /// </summary>
+    public class WorkforceIpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dualstack for WorkforceIpAddressType
+        /// </summary>
+        public static readonly WorkforceIpAddressType Dualstack = new WorkforceIpAddressType("dualstack");
+        /// <summary>
+        /// Constant Ipv4 for WorkforceIpAddressType
+        /// </summary>
+        public static readonly WorkforceIpAddressType Ipv4 = new WorkforceIpAddressType("ipv4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkforceIpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkforceIpAddressType FindValue(string value)
+        {
+            return FindValue<WorkforceIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkforceIpAddressType(string value)
         {
             return FindValue(value);
         }

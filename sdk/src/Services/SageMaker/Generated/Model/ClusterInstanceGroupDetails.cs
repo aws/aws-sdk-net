@@ -114,7 +114,7 @@ namespace Amazon.SageMaker.Model
         /// cluster instance group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=2)]
         public List<ClusterInstanceStorageConfig> InstanceStorageConfigs
         {
             get { return this._instanceStorageConfigs; }

@@ -305,6 +305,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The VPC subnets that the domain uses for communication.
         /// </para>
+        ///  
+        /// <para>
+        /// The field is optional when the <c>AppNetworkAccessType</c> parameter is set to <c>PublicInternetOnly</c>
+        /// for domains created from Amazon SageMaker Unified Studio.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
         public List<string> SubnetIds
@@ -367,6 +372,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property VpcId. 
         /// <para>
         /// The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
+        /// </para>
+        ///  
+        /// <para>
+        /// The field is optional when the <c>AppNetworkAccessType</c> parameter is set to <c>PublicInternetOnly</c>
+        /// for domains created from Amazon SageMaker Unified Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=32)]
