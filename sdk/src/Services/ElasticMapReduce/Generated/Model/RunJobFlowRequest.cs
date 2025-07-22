@@ -80,6 +80,7 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _ebsRootVolumeIops;
         private int? _ebsRootVolumeSize;
         private int? _ebsRootVolumeThroughput;
+        private bool? _extendedSupport;
         private JobFlowInstancesConfig _instances;
         private string _jobFlowRole;
         private KerberosAttributes _kerberosAttributes;
@@ -352,6 +353,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetEbsRootVolumeThroughput()
         {
             return this._ebsRootVolumeThroughput.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtendedSupport. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public bool? ExtendedSupport
+        {
+            get { return this._extendedSupport; }
+            set { this._extendedSupport = value; }
+        }
+
+        // Check to see if ExtendedSupport property is set
+        internal bool IsSetExtendedSupport()
+        {
+            return this._extendedSupport.HasValue; 
         }
 
         /// <summary>
