@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -30,47 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// This is the response object from the GetBucketAcl operation.
+    /// Container for grant information.
     /// </summary>
-    public partial class GetBucketAclResponse : AmazonWebServiceResponse
+    public partial class S3Grant
     {
-        private List<S3Grant> _grants = AWSConfigs.InitializeCollections ? new List<S3Grant>() : null;
-        private Owner _owner;
+        private S3Grantee _grantee;
+        private S3Permission _permission;
 
         /// <summary>
-        /// Gets and sets the property Grants. 
+        /// Gets and sets the property Grantee. 
         /// <para>
-        /// A list of grants.
+        /// The person being granted permissions.
         /// </para>
         /// </summary>
-        public List<S3Grant> Grants
+        public S3Grantee Grantee
         {
-            get { return this._grants; }
-            set { this._grants = value; }
+            get { return this._grantee; }
+            set { this._grantee = value; }
         }
 
-        // Check to see if Grants property is set
-        internal bool IsSetGrants()
+        // Check to see if Grantee property is set
+        internal bool IsSetGrantee()
         {
-            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections);
+            return this._grantee != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Owner. 
+        /// Gets and sets the property Permission. 
         /// <para>
-        /// Container for the bucket owner's display name and ID.
+        /// Specifies the permission given to the grantee.
         /// </para>
         /// </summary>
-        public Owner Owner
+        public S3Permission Permission
         {
-            get { return this._owner; }
-            set { this._owner = value; }
+            get { return this._permission; }
+            set { this._permission = value; }
         }
 
-        // Check to see if Owner property is set
-        internal bool IsSetOwner()
+        // Check to see if Permission property is set
+        internal bool IsSetPermission()
         {
-            return this._owner != null;
+            return this._permission != null;
         }
 
     }

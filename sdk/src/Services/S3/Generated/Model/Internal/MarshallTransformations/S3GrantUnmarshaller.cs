@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Grant Unmarshaller
-     /// </summary>
-    public class GrantUnmarshaller : IXmlUnmarshaller<S3Grant, XmlUnmarshallerContext>
+    /// <summary>
+    /// Response Unmarshaller for S3Grant Object
+    /// </summary>  
+    public class S3GrantUnmarshaller : IXmlUnmarshaller<S3Grant, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3Grant Unmarshall(XmlUnmarshallerContext context) 
+        public S3Grant Unmarshall(XmlUnmarshallerContext context)
         {
-            S3Grant grant = new S3Grant();
+            S3Grant unmarshalledObject = new S3Grant();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -44,45 +58,35 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Grantee", targetDepth))
                     {
-                        grant.Grantee = GranteeUnmarshaller.Instance.Unmarshall(context);
-                            
+                        var unmarshaller = S3GranteeUnmarshaller.Instance;
+                        unmarshalledObject.Grantee = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Permission", targetDepth))
                     {
-                        grant.Permission = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Permission = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return grant;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return grant;
+            }          
+            return unmarshalledObject;
         }
-
-
-        private static GrantUnmarshaller _instance;
+        private static S3GrantUnmarshaller _instance = new S3GrantUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static GrantUnmarshaller Instance
+        /// Gets the singleton.
+        /// </summary>  
+        public static S3GrantUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new GrantUnmarshaller();
-                }
                 return _instance;
             }
         }
     }
 }
-    

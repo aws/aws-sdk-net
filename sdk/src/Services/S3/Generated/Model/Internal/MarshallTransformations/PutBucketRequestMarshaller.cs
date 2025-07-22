@@ -73,7 +73,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-object-ownership"] = publicRequest.ObjectOwnership;
             }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "CreateBucketRequest.BucketName");
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketRequest.BucketName");
             request.ResourcePath = "/";
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
