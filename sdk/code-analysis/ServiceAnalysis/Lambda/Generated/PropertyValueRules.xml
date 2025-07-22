@@ -2,6 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddLayerVersionPermissionRequest.Action</property>
+    <min>0</min>
     <max>22</max>
     <pattern>lambda:GetLayerVersion</pattern>
   </property-value-rule>
@@ -13,6 +14,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddLayerVersionPermissionRequest.OrganizationId</property>
+    <min>0</min>
     <max>34</max>
     <pattern>o-[a-z0-9]{10,32}</pattern>
   </property-value-rule>
@@ -50,7 +52,7 @@
     <property>Amazon.Lambda.Model.AddPermissionRequest.PrincipalOrgID</property>
     <min>12</min>
     <max>34</max>
-    <pattern>^o-[a-z0-9]{10,32}$</pattern>
+    <pattern>o-[a-z0-9]{10,32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.Qualifier</property>
@@ -60,6 +62,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.SourceAccount</property>
+    <min>0</min>
     <max>12</max>
     <pattern>\d{12}</pattern>
   </property-value-rule>
@@ -216,6 +219,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.CodeSigningConfigArn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
   </property-value-rule>
@@ -232,6 +236,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.Handler</property>
+    <min>0</min>
     <max>128</max>
     <pattern>[^\s]+</pattern>
   </property-value-rule>
@@ -269,6 +274,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.Handler</property>
+    <min>0</min>
     <max>128</max>
     <pattern>[^\s]+</pattern>
   </property-value-rule>
@@ -342,6 +348,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteCodeSigningConfigRequest.CodeSigningConfigArn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
   </property-value-rule>
@@ -494,6 +501,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetCodeSigningConfigRequest.CodeSigningConfigArn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
   </property-value-rule>
@@ -565,6 +573,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionCodeSigningConfigResponse.CodeSigningConfigArn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
   </property-value-rule>
@@ -613,6 +622,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.Handler</property>
+    <min>0</min>
     <max>128</max>
     <pattern>[^\s]+</pattern>
   </property-value-rule>
@@ -729,6 +739,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetLayerVersionResponse.LicenseInfo</property>
+    <min>0</min>
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
@@ -756,6 +767,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetLayerVersionByArnResponse.LicenseInfo</property>
+    <min>0</min>
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
@@ -820,7 +832,7 @@
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigResponse.RuntimeVersionArn</property>
     <min>26</min>
     <max>2048</max>
-    <pattern>^arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+$</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeRequest.FunctionName</property>
@@ -917,6 +929,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListFunctionsByCodeSigningConfigRequest.CodeSigningConfigArn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
   </property-value-rule>
@@ -993,6 +1006,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishLayerVersionRequest.LicenseInfo</property>
+    <min>0</min>
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
@@ -1014,6 +1028,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishLayerVersionResponse.LicenseInfo</property>
+    <min>0</min>
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
@@ -1044,6 +1059,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.Handler</property>
+    <min>0</min>
     <max>128</max>
     <pattern>[^\s]+</pattern>
   </property-value-rule>
@@ -1084,6 +1100,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionCodeSigningConfigRequest.CodeSigningConfigArn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
   </property-value-rule>
@@ -1095,6 +1112,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionCodeSigningConfigResponse.CodeSigningConfigArn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
   </property-value-rule>
@@ -1204,7 +1222,7 @@
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigRequest.RuntimeVersionArn</property>
     <min>26</min>
     <max>2048</max>
-    <pattern>^arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+$</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigResponse.FunctionArn</property>
@@ -1214,7 +1232,7 @@
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigResponse.RuntimeVersionArn</property>
     <min>26</min>
     <max>2048</max>
-    <pattern>^arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+$</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.RemoveLayerVersionPermissionRequest.LayerName</property>
@@ -1304,6 +1322,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateCodeSigningConfigRequest.CodeSigningConfigArn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
   </property-value-rule>
@@ -1410,7 +1429,7 @@
     <property>Amazon.Lambda.Model.UpdateFunctionCodeRequest.S3Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[0-9A-Za-z\.\-_]*(?&lt;!\.)$</pattern>
+    <pattern>[0-9A-Za-z\.\-_]*(?&lt;!\.)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeRequest.S3Key</property>
@@ -1443,6 +1462,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.Handler</property>
+    <min>0</min>
     <max>128</max>
     <pattern>[^\s]+</pattern>
   </property-value-rule>
@@ -1494,6 +1514,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.Handler</property>
+    <min>0</min>
     <max>128</max>
     <pattern>[^\s]+</pattern>
   </property-value-rule>
@@ -1531,6 +1552,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.Handler</property>
+    <min>0</min>
     <max>128</max>
     <pattern>[^\s]+</pattern>
   </property-value-rule>
@@ -1638,6 +1660,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CodeSigningConfig.CodeSigningConfigArn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:code-signing-config:csc-[a-z0-9]{17}</pattern>
   </property-value-rule>
@@ -1678,13 +1701,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.FileSystemConfig.Arn</property>
+    <min>0</min>
     <max>200</max>
     <pattern>arn:aws[a-zA-Z-]*:elasticfilesystem:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:access-point/fsap-[a-f0-9]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.FileSystemConfig.LocalMountPath</property>
+    <min>0</min>
     <max>160</max>
-    <pattern>^/mnt/[a-zA-Z0-9-_.]+$</pattern>
+    <pattern>/mnt/[a-zA-Z0-9-_.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.Filter.Pattern</property>
@@ -1708,7 +1733,7 @@
     <property>Amazon.Lambda.Model.FunctionCode.S3Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[0-9A-Za-z\.\-_]*(?&lt;!\.)$</pattern>
+    <pattern>[0-9A-Za-z\.\-_]*(?&lt;!\.)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.FunctionCode.S3Key</property>
@@ -1735,6 +1760,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ImageConfig.WorkingDirectory</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1783,7 +1809,7 @@
     <property>Amazon.Lambda.Model.LayerVersionContentInput.S3Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[0-9A-Za-z\.\-_]*(?&lt;!\.)$</pattern>
+    <pattern>[0-9A-Za-z\.\-_]*(?&lt;!\.)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.LayerVersionContentInput.S3Key</property>
@@ -1808,6 +1834,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.LayerVersionsListItem.LicenseInfo</property>
+    <min>0</min>
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
@@ -1820,13 +1847,13 @@
     <property>Amazon.Lambda.Model.OnFailure.Destination</property>
     <min>0</min>
     <max>350</max>
-    <pattern>^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.OnSuccess.Destination</property>
     <min>0</min>
     <max>350</max>
-    <pattern>^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ProvisionedConcurrencyConfigListItem.AllocatedProvisionedConcurrentExecutions</property>
@@ -1858,7 +1885,7 @@
     <property>Amazon.Lambda.Model.RuntimeVersionConfig.RuntimeVersionArn</property>
     <min>26</min>
     <max>2048</max>
-    <pattern>^arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+$</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}::runtime:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ScalingConfig.MaximumConcurrency</property>
@@ -1887,6 +1914,6 @@
     <property>Amazon.Lambda.Model.TagsError.Message</property>
     <min>84</min>
     <max>1000</max>
-    <pattern>^.*$</pattern>
+    <pattern>.*</pattern>
   </property-value-rule>
 </property-value-rules>

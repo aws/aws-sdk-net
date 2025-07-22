@@ -184,7 +184,7 @@ namespace Amazon.Lambda.Model
         /// trusted publishers for this function.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Min=0, Max=200)]
         public string CodeSigningConfigArn
         {
             get { return this._codeSigningConfigArn; }
@@ -286,7 +286,7 @@ namespace Amazon.Lambda.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<FileSystemConfig> FileSystemConfigs
         {
             get { return this._fileSystemConfigs; }
@@ -349,7 +349,7 @@ namespace Amazon.Lambda.Model
         /// programming model</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string Handler
         {
             get { return this._handler; }

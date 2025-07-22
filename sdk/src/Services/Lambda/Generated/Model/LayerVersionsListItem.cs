@@ -55,7 +55,7 @@ namespace Amazon.Lambda.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Min=0, Max=2)]
         public List<string> CompatibleArchitectures
         {
             get { return this._compatibleArchitectures; }
@@ -89,7 +89,7 @@ namespace Amazon.Lambda.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=15)]
+        [AWSProperty(Min=0, Max=15)]
         public List<string> CompatibleRuntimes
         {
             get { return this._compatibleRuntimes; }
@@ -164,7 +164,7 @@ namespace Amazon.Lambda.Model
         /// The layer's open-source license.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Min=0, Max=512)]
         public string LicenseInfo
         {
             get { return this._licenseInfo; }
