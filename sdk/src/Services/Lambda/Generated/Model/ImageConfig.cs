@@ -46,7 +46,7 @@ namespace Amazon.Lambda.Model
         /// Specifies parameters that you want to pass in with ENTRYPOINT.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1500)]
+        [AWSProperty(Min=0, Max=1500)]
         public List<string> Command
         {
             get { return this._command; }
@@ -88,7 +88,7 @@ namespace Amazon.Lambda.Model
         /// the runtime executable.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1500)]
+        [AWSProperty(Min=0, Max=1500)]
         public List<string> EntryPoint
         {
             get { return this._entryPoint; }
@@ -129,7 +129,7 @@ namespace Amazon.Lambda.Model
         /// Specifies the working directory.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string WorkingDirectory
         {
             get { return this._workingDirectory; }

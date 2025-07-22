@@ -39,7 +39,7 @@ namespace Amazon.Lambda
     /// Lambda 
     /// <para>
     ///  <b>Overview</b> 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Lambda is a compute service that lets you run code without provisioning or managing
@@ -133,6 +133,8 @@ namespace Amazon.Lambda
     /// trust services</a>, but keeping your computer up-to-date is the more straightforward
     /// solution. To learn more about ACM-provided certificates, see <a href="http://aws.amazon.com/certificate-manager/faqs/#certificates">Amazon
     /// Web Services Certificate Manager FAQs.</a> 
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda
@@ -3341,7 +3343,7 @@ namespace Amazon.Lambda
         /// <important> 
         /// <para>
         /// For asynchronous function invocation, use <a>Invoke</a>.
-        /// </para>
+        /// 
         ///  </important> 
         /// <para>
         /// Invokes a function asynchronously.
@@ -3353,6 +3355,7 @@ namespace Amazon.Lambda
         /// is turned on.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAsync service method.</param>
         /// 

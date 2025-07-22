@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model
     /// <important> 
     /// <para>
     /// For asynchronous function invocation, use <a>Invoke</a>.
-    /// </para>
+    /// 
     ///  </important> 
     /// <para>
     /// Invokes a function asynchronously.
@@ -46,6 +46,7 @@ namespace Amazon.Lambda.Model
     /// is turned on.
     /// </para>
     ///  </note>
+    /// </para>
     /// </summary>
     [Obsolete("For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
     public partial class InvokeAsyncRequest : AmazonLambdaRequest

@@ -260,7 +260,7 @@ namespace Amazon.Lambda.Model
         /// its owner and recreated by another account.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=12)]
+        [AWSProperty(Min=0, Max=12)]
         public string SourceAccount
         {
             get { return this._sourceAccount; }

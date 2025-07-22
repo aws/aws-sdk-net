@@ -163,7 +163,7 @@ namespace Amazon.Lambda.Model
         /// Connection settings for an Amazon EFS file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<FileSystemConfig> FileSystemConfigs
         {
             get { return this._fileSystemConfigs; }
@@ -248,7 +248,7 @@ namespace Amazon.Lambda.Model
         /// programming model</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string Handler
         {
             get { return this._handler; }

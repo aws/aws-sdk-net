@@ -70,7 +70,7 @@ namespace Amazon.Lambda.Model
         /// <c>Date</c>, <c>Keep-Alive</c>, <c>X-Custom-Header</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public List<string> AllowHeaders
         {
             get { return this._allowHeaders; }
@@ -90,7 +90,7 @@ namespace Amazon.Lambda.Model
         /// <c>POST</c>, <c>DELETE</c>, or the wildcard character (<c>*</c>).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=6)]
+        [AWSProperty(Min=0, Max=6)]
         public List<string> AllowMethods
         {
             get { return this._allowMethods; }
@@ -114,7 +114,7 @@ namespace Amazon.Lambda.Model
         /// Alternatively, you can grant access to all origins using the wildcard character (<c>*</c>).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public List<string> AllowOrigins
         {
             get { return this._allowOrigins; }
@@ -134,7 +134,7 @@ namespace Amazon.Lambda.Model
         /// call your function URL. For example: <c>Date</c>, <c>Keep-Alive</c>, <c>X-Custom-Header</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public List<string> ExposeHeaders
         {
             get { return this._exposeHeaders; }

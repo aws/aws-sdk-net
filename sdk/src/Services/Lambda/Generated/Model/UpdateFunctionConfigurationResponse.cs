@@ -211,7 +211,7 @@ namespace Amazon.Lambda.Model
         /// EFS file system</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<FileSystemConfig> FileSystemConfigs
         {
             get { return this._fileSystemConfigs; }
@@ -267,7 +267,7 @@ namespace Amazon.Lambda.Model
         /// The function that Lambda calls to begin running your function.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string Handler
         {
             get { return this._handler; }

@@ -64,7 +64,7 @@ namespace Amazon.Lambda.Model
         /// A list of VPC security group IDs.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -105,7 +105,7 @@ namespace Amazon.Lambda.Model
         /// A list of VPC subnet IDs.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Min=0, Max=16)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }

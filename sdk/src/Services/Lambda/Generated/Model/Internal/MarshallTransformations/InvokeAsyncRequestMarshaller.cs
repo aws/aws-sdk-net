@@ -63,7 +63,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetFunctionName())
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
             request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
-            request.ResourcePath = "/2014-11-13/functions/{FunctionName}/invoke-async/";
+            request.ResourcePath = "/2014-11-13/functions/{FunctionName}/invoke-async";
             request.ContentStream =  publicRequest.InvokeArgsStream ?? new MemoryStream();
             if(request.ContentStream.CanSeek)
             {

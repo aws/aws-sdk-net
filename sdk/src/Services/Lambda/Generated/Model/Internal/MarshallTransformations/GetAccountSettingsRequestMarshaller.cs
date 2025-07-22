@@ -59,7 +59,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";
             request.HttpMethod = "GET";
 
-            request.ResourcePath = "/2016-08-19/account-settings/";
+            request.ResourcePath = "/2016-08-19/account-settings";
 
             return request;
         }
