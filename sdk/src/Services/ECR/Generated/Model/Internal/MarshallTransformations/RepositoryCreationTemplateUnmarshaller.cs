@@ -102,6 +102,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageTagMutability = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageTagMutabilityExclusionFilters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ImageTagMutabilityExclusionFilter, ImageTagMutabilityExclusionFilterUnmarshaller>(ImageTagMutabilityExclusionFilterUnmarshaller.Instance);
+                    unmarshalledObject.ImageTagMutabilityExclusionFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lifecyclePolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

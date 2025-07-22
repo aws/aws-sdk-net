@@ -39,6 +39,7 @@ namespace Amazon.ECR.Model
         private EncryptionConfiguration _encryptionConfiguration;
         private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTagMutability _imageTagMutability;
+        private List<ImageTagMutabilityExclusionFilter> _imageTagMutabilityExclusionFilters = AWSConfigs.InitializeCollections ? new List<ImageTagMutabilityExclusionFilter>() : null;
         private string _registryId;
         private string _repositoryName;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -100,6 +101,26 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageTagMutability()
         {
             return this._imageTagMutability != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageTagMutabilityExclusionFilters. 
+        /// <para>
+        /// Creates a repository with a list of filters that define which image tags can override
+        /// the default image tag mutability setting.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<ImageTagMutabilityExclusionFilter> ImageTagMutabilityExclusionFilters
+        {
+            get { return this._imageTagMutabilityExclusionFilters; }
+            set { this._imageTagMutabilityExclusionFilters = value; }
+        }
+
+        // Check to see if ImageTagMutabilityExclusionFilters property is set
+        internal bool IsSetImageTagMutabilityExclusionFilters()
+        {
+            return this._imageTagMutabilityExclusionFilters != null && (this._imageTagMutabilityExclusionFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

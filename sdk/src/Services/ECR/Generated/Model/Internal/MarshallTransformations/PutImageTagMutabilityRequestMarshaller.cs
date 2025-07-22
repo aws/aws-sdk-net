@@ -75,6 +75,22 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ImageTagMutability);
                 }
 
+                if(publicRequest.IsSetImageTagMutabilityExclusionFilters())
+                {
+                    context.Writer.WritePropertyName("imageTagMutabilityExclusionFilters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestImageTagMutabilityExclusionFiltersListValue in publicRequest.ImageTagMutabilityExclusionFilters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ImageTagMutabilityExclusionFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestImageTagMutabilityExclusionFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetRegistryId())
                 {
                     context.Writer.WritePropertyName("registryId");

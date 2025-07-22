@@ -35,6 +35,7 @@ namespace Amazon.ECR.Model
     public partial class PutImageTagMutabilityResponse : AmazonWebServiceResponse
     {
         private ImageTagMutability _imageTagMutability;
+        private List<ImageTagMutabilityExclusionFilter> _imageTagMutabilityExclusionFilters = AWSConfigs.InitializeCollections ? new List<ImageTagMutabilityExclusionFilter>() : null;
         private string _registryId;
         private string _repositoryName;
 
@@ -54,6 +55,26 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageTagMutability()
         {
             return this._imageTagMutability != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageTagMutabilityExclusionFilters. 
+        /// <para>
+        /// Returns a list of filters that were defined for a repository. These filters determine
+        /// which image tags can override the default image tag mutability setting of the repository.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<ImageTagMutabilityExclusionFilter> ImageTagMutabilityExclusionFilters
+        {
+            get { return this._imageTagMutabilityExclusionFilters; }
+            set { this._imageTagMutabilityExclusionFilters = value; }
+        }
+
+        // Check to see if ImageTagMutabilityExclusionFilters property is set
+        internal bool IsSetImageTagMutabilityExclusionFilters()
+        {
+            return this._imageTagMutabilityExclusionFilters != null && (this._imageTagMutabilityExclusionFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
