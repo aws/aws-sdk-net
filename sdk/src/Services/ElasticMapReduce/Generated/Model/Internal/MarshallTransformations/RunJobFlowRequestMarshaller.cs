@@ -170,6 +170,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EbsRootVolumeThroughput);
                 }
 
+                if(publicRequest.IsSetExtendedSupport())
+                {
+                    context.Writer.WritePropertyName("ExtendedSupport");
+                    context.Writer.Write(publicRequest.ExtendedSupport);
+                }
+
                 if(publicRequest.IsSetInstances())
                 {
                     context.Writer.WritePropertyName("Instances");

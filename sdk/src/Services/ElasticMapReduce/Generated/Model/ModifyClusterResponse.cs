@@ -34,7 +34,26 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ModifyClusterResponse : AmazonWebServiceResponse
     {
+        private bool? _extendedSupport;
         private int? _stepConcurrencyLevel;
+
+        /// <summary>
+        /// Gets and sets the property ExtendedSupport. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public bool ExtendedSupport
+        {
+            get { return this._extendedSupport.GetValueOrDefault(); }
+            set { this._extendedSupport = value; }
+        }
+
+        // Check to see if ExtendedSupport property is set
+        internal bool IsSetExtendedSupport()
+        {
+            return this._extendedSupport.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property StepConcurrencyLevel. 

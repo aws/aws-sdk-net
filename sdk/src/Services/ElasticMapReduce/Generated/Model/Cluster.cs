@@ -44,6 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _ebsRootVolumeSize;
         private int? _ebsRootVolumeThroughput;
         private Ec2InstanceAttributes _ec2InstanceAttributes;
+        private bool? _extendedSupport;
         private string _id;
         private InstanceCollectionType _instanceCollectionType;
         private KerberosAttributes _kerberosAttributes;
@@ -259,6 +260,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetEc2InstanceAttributes()
         {
             return this._ec2InstanceAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtendedSupport. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public bool ExtendedSupport
+        {
+            get { return this._extendedSupport.GetValueOrDefault(); }
+            set { this._extendedSupport = value; }
+        }
+
+        // Check to see if ExtendedSupport property is set
+        internal bool IsSetExtendedSupport()
+        {
+            return this._extendedSupport.HasValue; 
         }
 
         /// <summary>
