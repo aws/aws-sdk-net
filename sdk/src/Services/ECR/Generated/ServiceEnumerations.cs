@@ -283,9 +283,17 @@ namespace Amazon.ECR
         /// </summary>
         public static readonly ImageTagMutability IMMUTABLE = new ImageTagMutability("IMMUTABLE");
         /// <summary>
+        /// Constant IMMUTABLE_WITH_EXCLUSION for ImageTagMutability
+        /// </summary>
+        public static readonly ImageTagMutability IMMUTABLE_WITH_EXCLUSION = new ImageTagMutability("IMMUTABLE_WITH_EXCLUSION");
+        /// <summary>
         /// Constant MUTABLE for ImageTagMutability
         /// </summary>
         public static readonly ImageTagMutability MUTABLE = new ImageTagMutability("MUTABLE");
+        /// <summary>
+        /// Constant MUTABLE_WITH_EXCLUSION for ImageTagMutability
+        /// </summary>
+        public static readonly ImageTagMutability MUTABLE_WITH_EXCLUSION = new ImageTagMutability("MUTABLE_WITH_EXCLUSION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -316,6 +324,52 @@ namespace Amazon.ECR
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageTagMutability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageTagMutabilityExclusionFilterType.
+    /// </summary>
+    public class ImageTagMutabilityExclusionFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WILDCARD for ImageTagMutabilityExclusionFilterType
+        /// </summary>
+        public static readonly ImageTagMutabilityExclusionFilterType WILDCARD = new ImageTagMutabilityExclusionFilterType("WILDCARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageTagMutabilityExclusionFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageTagMutabilityExclusionFilterType FindValue(string value)
+        {
+            return FindValue<ImageTagMutabilityExclusionFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageTagMutabilityExclusionFilterType(string value)
         {
             return FindValue(value);
         }
