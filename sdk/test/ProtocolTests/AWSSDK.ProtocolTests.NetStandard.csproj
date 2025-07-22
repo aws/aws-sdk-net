@@ -42,7 +42,9 @@
 	  <ProjectReference Include="../Services/RestXmlProtocolNamespace/AWSSDK.RestXmlProtocolNamespace.Netstandard.csproj" />
 	  <ProjectReference Include="../Services/RpcV2Protocol/AWSSDK.RpcV2Protocol.NetStandard.csproj" />
 	  <ProjectReference Include="../UnitTests/Custom/AWSSDK.UnitTestUtilities.Netstandard.csproj" />
-	  <ProjectReference Include="..\Services\QueryCompatibleJSONRPC10\AWSSDK.QueryCompatibleJSONRPC10.NetStandard.csproj" />
+	  <ProjectReference Include="../Services/NonQueryCompatibleRpcV2Protocol/AWSSDK.NonQueryCompatibleRpcV2Protocol.NetStandard.csproj" />
+	  <ProjectReference Include="../Services/QueryCompatibleJSONRPC10/AWSSDK.QueryCompatibleJSONRPC10.NetStandard.csproj" />
+	  <ProjectReference Include="../Services/QueryCompatibleRpcV2Protocol/AWSSDK.QueryCompatibleRpcV2Protocol.NetStandard.csproj" />
     </ItemGroup>
     <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
     </ItemGroup>
