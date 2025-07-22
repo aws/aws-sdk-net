@@ -1,3 +1,16 @@
+### 3.7.1085.0 (2025-07-22 18:24 UTC)
+* ECR (3.7.413.0)
+	* Add support for Image Tag Mutability Exception feature, allowing repositories to define wildcard-based patterns that override the default image tag mutability settings.
+* ElasticMapReduce (3.7.405.0)
+	* This release adds new parameter 'ExtendedSupport' in AWS EMR RunJobFlow, ModifyCluster and DescribeCluster API.
+* Lambda (3.7.414.0)
+	* This release migrated the model to Smithy keeping all features unchanged.
+* Neptunedata (3.7.401.0)
+	* This release updates the supported regions for Neptune API to include current AWS regions.
+* Core 3.7.402.86
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1084.0 (2025-07-21 18:18 UTC)
 * CloudFront (3.7.406.0)
 	* Add dualstack endpoint support

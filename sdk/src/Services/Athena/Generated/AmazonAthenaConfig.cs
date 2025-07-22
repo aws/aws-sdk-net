@@ -32,7 +32,7 @@ namespace Amazon.Athena
     public partial class AmazonAthenaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Athena", "3.7.404.20");
+            InternalSDKUtils.BuildUserAgentString("Athena", "3.7.404.21");
 
         private string _userAgent = UserAgentString;
         ///<summary>
