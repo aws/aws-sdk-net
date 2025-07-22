@@ -54,7 +54,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             loggingEnabled.Grants = new List<S3Grant>();
                         }
-                        loggingEnabled.Grants.Add(GrantUnmarshaller.Instance.Unmarshall(context));
+                        loggingEnabled.Grants.Add(S3GrantUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("TargetObjectKeyFormat", targetDepth))

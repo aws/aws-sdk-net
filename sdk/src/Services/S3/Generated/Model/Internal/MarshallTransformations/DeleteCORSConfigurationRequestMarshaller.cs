@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -31,9 +34,9 @@ using System.Xml;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetBucketAcl Request Marshaller
+    /// DeleteCORSConfiguration Request Marshaller
     /// </summary>       
-    public class GetBucketAclRequestMarshaller : IMarshaller<IRequest, GetBucketAclRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    public partial class DeleteCORSConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteCORSConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetBucketAclRequest)input);
+            return this.Marshall((DeleteCORSConfigurationRequest)input);
         }
 
         /// <summary>
@@ -50,25 +53,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetBucketAclRequest publicRequest)
+        public IRequest Marshall(DeleteCORSConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
-            request.HttpMethod = "GET";
-            request.AddSubResource("acl");
-
-            if (publicRequest.IsSetExpectedBucketOwner())
+            request.HttpMethod = "DELETE";
+            request.AddSubResource("cors");
+        
+            if (publicRequest.IsSetExpectedBucketOwner()) 
             {
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
-            if (!publicRequest.IsSetBucketName())
-                throw new AmazonS3Exception("Request object does not have required field BucketName set");
+            if (string.IsNullOrEmpty(publicRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteCORSConfigurationRequest.BucketName");
+            request.ResourcePath = "/";
 
-
+            PostMarshallCustomization(request, publicRequest);
             return request;
         }
-        private static GetBucketAclRequestMarshaller _instance = new GetBucketAclRequestMarshaller();
+        private static DeleteCORSConfigurationRequestMarshaller _instance = new DeleteCORSConfigurationRequestMarshaller();        
 
-        internal static GetBucketAclRequestMarshaller GetInstance()
+        internal static DeleteCORSConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -76,7 +80,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetBucketAclRequestMarshaller Instance
+        public static DeleteCORSConfigurationRequestMarshaller Instance
         {
             get
             {
@@ -84,5 +88,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-    }
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteCORSConfigurationRequest publicRequest);
+    }    
 }

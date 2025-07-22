@@ -12,35 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the  InitiateMultipartUpload response and response metadata.
+    /// This is the response object from the InitiateMultipartUpload operation.
     /// </summary>
-    public class InitiateMultipartUploadResponse : AmazonWebServiceResponse
+    public partial class InitiateMultipartUploadResponse : AmazonWebServiceResponse
     {
-        private DateTime? abortDate;
-        private string abortRuleId;
-        private bool? bucketKeyEnabled;
-        private string bucketName;
+        private DateTime? _abortDate;
+        private string _abortRuleId;
+        private bool? _bucketKeyEnabled;
+        private string _bucketName;
         private ChecksumAlgorithm _checksumAlgorithm;
         private ChecksumType _checksumType;
-        private string key;
-        private RequestCharged requestCharged;
-        private ServerSideEncryptionMethod serverSideEncryption;
-        private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
-        private string serverSideEncryptionCustomerProvidedKeyMD5;
-        private string serverSideEncryptionKeyManagementServiceKeyId;
-        private string serverSideEncryptionKeyManagementServiceEncryptionContext;
-        private string uploadId;
+        private string _key;
+        private RequestCharged _requestCharged;
+        private ServerSideEncryptionCustomerMethod _serverSideEncryptionCustomerMethod;
+        private string _serverSideEncryptionCustomerProvidedKeyMD5;
+        private string _serverSideEncryptionKeyManagementServiceEncryptionContext;
+        private string _serverSideEncryptionKeyManagementServiceKeyId;
+        private ServerSideEncryptionMethod _serverSideEncryptionMethod;
+        private string _uploadId;
 
         /// <summary>
         /// Gets and sets the property AbortDate. 
@@ -54,8 +61,8 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// The response also includes the <code>x-amz-abort-rule-id</code> header that provides
-        /// the ID of the lifecycle configuration rule that defines the abort action.
+        /// The response also includes the <c>x-amz-abort-rule-id</c> header that provides the
+        /// ID of the lifecycle configuration rule that defines the abort action.
         /// </para>
         ///  <note> 
         /// <para>
@@ -65,20 +72,20 @@ namespace Amazon.S3.Model
         /// </summary>
         public DateTime? AbortDate
         {
-            get { return this.abortDate; }
-            set { this.abortDate = value; }
+            get { return this._abortDate; }
+            set { this._abortDate = value; }
         }
 
         // Check to see if AbortDate property is set
         internal bool IsSetAbortDate()
         {
-            return this.abortDate.HasValue;
+            return this._abortDate.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property AbortRuleId. 
         /// <para>
-        /// This header is returned along with the <code>x-amz-abort-date</code> header. It identifies
+        /// This header is returned along with the <c>x-amz-abort-date</c> header. It identifies
         /// the applicable lifecycle configuration rule that defines the action to abort incomplete
         /// multipart uploads.
         /// </para>
@@ -90,33 +97,33 @@ namespace Amazon.S3.Model
         /// </summary>
         public string AbortRuleId
         {
-            get { return this.abortRuleId; }
-            set { this.abortRuleId = value; }
+            get { return this._abortRuleId; }
+            set { this._abortRuleId = value; }
         }
 
         // Check to see if AbortRuleId property is set
         internal bool IsSetAbortRuleId()
         {
-            return this.abortRuleId != null;
+            return this._abortRuleId != null;
         }
 
         /// <summary>
         /// Gets and sets the property BucketKeyEnabled. 
         /// <para>
-        /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption 
+        /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption
         /// with Key Management Service (KMS) keys (SSE-KMS).
         /// </para>
         /// </summary>
         public bool? BucketKeyEnabled
         {
-            get { return this.bucketKeyEnabled; }
-            set { this.bucketKeyEnabled = value; }
+            get { return this._bucketKeyEnabled; }
+            set { this._bucketKeyEnabled = value; }
         }
 
         // Check to see if BucketKeyEnabled property is set
         internal bool IsSetBucketKeyEnabled()
         {
-            return bucketKeyEnabled.HasValue;
+            return this._bucketKeyEnabled.HasValue; 
         }
 
         /// <summary>
@@ -133,14 +140,14 @@ namespace Amazon.S3.Model
         /// </summary>
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.bucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -164,9 +171,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumType. 
         /// <para>
-        /// Indicates the checksum type that you want Amazon S3 to use to calculate the object's checksum value.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity in the Amazon S3 User Guide</a>.
+        ///  Indicates the checksum type that you want Amazon S3 to use to calculate the object’s
+        /// checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
         /// </para>
         /// </summary>
         public ChecksumType ChecksumType
@@ -187,55 +194,36 @@ namespace Amazon.S3.Model
         /// Object key for which the multipart upload was initiated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Key
         {
-            get { return this.key; }
-            set { this.key = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// If present, indicates that the requester was successfully charged for the request.
+        /// Gets and sets the property RequestCharged.
         /// </summary>
         public RequestCharged RequestCharged
         {
-            get { return this.requestCharged; }
-            set { this.requestCharged = value; }
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
         }
 
-        /// <summary>
-        /// Checks to see if RequestCharged is set.
-        /// </summary>
-        /// <returns>true, if RequestCharged property is set.</returns>
+        // Check to see if RequestCharged property is set
         internal bool IsSetRequestCharged()
         {
-            return requestCharged != null;
+            return this._requestCharged != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ServerSideEncryptionMethod. 
-        /// <para>
-        /// The server-side encryption algorithm used when you store this object in Amazon S3 or Amazon FSx.
-        /// </para> 
-        /// <note>
-        /// <para>
-        /// When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is <c>aws:fsx</c>.
-        /// </para>
-        /// </note>
-        /// </summary>
-        public ServerSideEncryptionMethod ServerSideEncryptionMethod
-        {
-            get { return this.serverSideEncryption; }
-            set { this.serverSideEncryption = value; }
-        }
-
-        /// <summary>
-        /// The Server-side encryption algorithm to be used with the customer provided key.
+        /// Gets and sets the property ServerSideEncryptionCustomerMethod. 
         /// <para>
         /// If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header to confirm the encryption algorithm that's used.
@@ -248,13 +236,18 @@ namespace Amazon.S3.Model
         /// </summary>
         public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
         {
-            get { return this.serverSideCustomerEncryption; }
-            set { this.serverSideCustomerEncryption = value; }
+            get { return this._serverSideEncryptionCustomerMethod; }
+            set { this._serverSideEncryptionCustomerMethod = value; }
+        }
+
+        // Check to see if ServerSideEncryptionCustomerMethod property is set
+        internal bool IsSetServerSideEncryptionCustomerMethod()
+        {
+            return this._serverSideEncryptionCustomerMethod != null;
         }
 
         /// <summary>
-        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
-        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        /// Gets and sets the property ServerSideEncryptionCustomerProvidedKeyMD5. 
         /// <para>
         /// If server-side encryption with a customer-provided encryption key was requested, the
         /// response will include this header to provide the round-trip message integrity verification
@@ -268,11 +261,40 @@ namespace Amazon.S3.Model
         /// </summary>
         public string ServerSideEncryptionCustomerProvidedKeyMD5
         {
-            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
-            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+            get { return this._serverSideEncryptionCustomerProvidedKeyMD5; }
+            set { this._serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
+
+        // Check to see if ServerSideEncryptionCustomerProvidedKeyMD5 property is set
+        internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5()
+        {
+            return this._serverSideEncryptionCustomerProvidedKeyMD5 != null;
         }
 
         /// <summary>
+        /// Gets and sets the property ServerSideEncryptionKeyManagementServiceEncryptionContext.
+        /// 
+        /// <para>
+        /// If present, indicates the Amazon Web Services KMS Encryption Context to use for object
+        /// encryption. The value of this header is a Base64 encoded string of a UTF-8 encoded
+        /// JSON, which contains the encryption context as key-value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ServerSideEncryptionKeyManagementServiceEncryptionContext
+        {
+            get { return this._serverSideEncryptionKeyManagementServiceEncryptionContext; }
+            set { this._serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
+        }
+
+        // Check to see if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set
+        internal bool IsSetServerSideEncryptionKeyManagementServiceEncryptionContext()
+        {
+            return this._serverSideEncryptionKeyManagementServiceEncryptionContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerSideEncryptionKeyManagementServiceKeyId. 
         /// <para>
         /// If present, indicates the ID of the KMS key that was used for object encryption.
         /// </para>
@@ -280,30 +302,39 @@ namespace Amazon.S3.Model
         [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
-            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
-            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
+            get { return this._serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this._serverSideEncryptionKeyManagementServiceKeyId = value; }
         }
 
-        /// <summary>
-        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
+        // Check to see if ServerSideEncryptionKeyManagementServiceKeyId property is set
         internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+            return this._serverSideEncryptionKeyManagementServiceKeyId != null;
         }
 
         /// <summary>
+        /// Gets and sets the property ServerSideEncryptionMethod. 
         /// <para>
-        /// If present, indicates the Amazon Web Services KMS Encryption Context to use for object encryption. 
-        /// The value of this header is a Base64 encoded string of a UTF-8 encoded JSON, which contains the encryption context as key-value pairs.
+        /// The server-side encryption algorithm used when you store this object in Amazon S3
+        /// or Amazon FSx.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When accessing data stored in Amazon FSx file systems using S3 access points, the
+        /// only valid server side encryption option is <c>aws:fsx</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ServerSideEncryptionKeyManagementServiceEncryptionContext
+        public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
-            get { return this.serverSideEncryptionKeyManagementServiceEncryptionContext; }
-            set { this.serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
+            get { return this._serverSideEncryptionMethod; }
+            set { this._serverSideEncryptionMethod = value; }
+        }
+
+        // Check to see if ServerSideEncryptionMethod property is set
+        internal bool IsSetServerSideEncryptionMethod()
+        {
+            return this._serverSideEncryptionMethod != null;
         }
 
         /// <summary>
@@ -314,16 +345,15 @@ namespace Amazon.S3.Model
         /// </summary>
         public string UploadId
         {
-            get { return this.uploadId; }
-            set { this.uploadId = value; }
+            get { return this._uploadId; }
+            set { this._uploadId = value; }
         }
 
         // Check to see if UploadId property is set
         internal bool IsSetUploadId()
         {
-            return this.uploadId != null;
+            return this._uploadId != null;
         }
 
     }
 }
-    
