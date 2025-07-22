@@ -1120,7 +1120,7 @@ if(structureIsEvent || structureIsEventStream)
 
                         }
                     }
-                    else if (member.IsMap || member.IsList)
+                    else if (member.IsMap || member.IsList || ( (this.Config.ServiceModel.Customizations.OverrideDataType(this.Structure.Name, member.ModeledName) != null) && (this.Config.ServiceModel.Customizations.OverrideDataType(this.Structure.Name, member.ModeledName).DataType.Contains("List") || this.Config.ServiceModel.Customizations.OverrideDataType(this.Structure.Name, member.ModeledName).DataType.Contains("Dictionary"))))
                     {
 
             

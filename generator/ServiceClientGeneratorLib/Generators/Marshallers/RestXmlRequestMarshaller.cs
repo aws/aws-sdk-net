@@ -146,7 +146,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 
     // This block adds members of the request object to the actual request
 	ProcessRequestUri(this.Operation);	
-	ProcessHeaderMembers("publicRequest", this.Operation.RequestHeaderMembers);		
+	ProcessHeaderMembers("publicRequest", this.Operation.RequestHeaderMembers, requestStructure);		
 	ProcessUriMembers("publicRequest", this.Operation);	
 	ProcessQueryStringMembers("publicRequest", this.Operation);
 	if (this.Config.ServiceId == "S3")

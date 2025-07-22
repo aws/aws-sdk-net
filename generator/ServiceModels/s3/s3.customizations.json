@@ -227,6 +227,72 @@
                 }
             ]
         },
+        "CreateMultipartUploadRequest":{
+            "exclude":[
+                "GrantFullControl",
+                "GrantRead",
+                "GrantReadACP",
+                "GrantWriteACP",
+                "ContentDisposition",
+                "ContentEncoding",
+                "ContentLanguage",
+                "ContentType",
+                "Expires",
+                "Metadata",
+                "CacheControl"
+            ],
+            "modify":[
+                {
+                    "ACL": { "emitPropertyName": "CannedACL"}
+                },
+                {
+                    "SSECustomerAlgorithm" : {"emitPropertyName": "ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "SSECustomerKey" : {"emitPropertyName" : "ServerSideEncryptionCustomerProvidedKey"}
+                },
+                {
+
+                    "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "SSEKMSEncryptionContext" : {"emitPropertyName":"ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "SSEKMSKeyId" : {"emitPropertyName" : "ServerSideEncryptionKeyManagementServiceEncryptionContext"}
+                },
+                {
+                    "Tagging" : {"emitPropertyName" : "TagSet"}
+                },
+                {
+                    "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
+                }
+            ],
+            "excludeFromMarshalling":[
+                "ServerSideEncryptionCustomerProvidedKey",
+                "ServerSideEncryptionCustomerProvidedKeyMD5",
+                "Metadata"
+            ]
+        },
+        "CreateMultipartUploadOutput":{
+            "modify": [
+                {
+                    "SSECustomerKeyMD5" : { "emitPropertyName": "ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "SSEKMSKeyId" : { "emitPropertyName": "ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "SSEKMSEncryptionContext" : {"emitPropertyName": "ServerSideEncryptionKeyManagementServiceEncryptionContext"}
+                },
+                {
+                    "SSECustomerAlgorithm" : {"emitPropertyName" : "ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
+                }
+            ]
+        },
         "PutBucketConfiguration":{
             "modify":[
                 {
@@ -346,6 +412,16 @@
                     }
                 }
             ]
+        },
+        "S3Grantee":{
+            "modify":[
+                {
+                    "ID": {"emitPropertyName": "CanonicalUser"}
+                }
+            ],
+            "exclude":[
+                "Type"
+            ]
         }
     },
     "operationModifiers": {
@@ -431,6 +507,9 @@
         },
         "BucketCannedACL":{
             "renameShape":"S3CannedACL"
+        },
+        "Grantee": {
+            "renameShape": "S3Grantee"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -457,12 +536,40 @@
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller": "StringUnmarshaller"
             }
+        },
+        "CreateMultipartUploadRequest":{
+            "CannedACL":{
+                "Type": "S3CannedACL"
+            },
+            "ServerSideEncryptionCustomerMethod":{
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            },
+            "TagSet" : {
+                "Type" : "List<Tag>",
+                "Marshaller": "Amazon.S3.Util.AmazonS3Util.TagSetToQueryString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "CreateMultipartUploadOutput":{
+            "ServerSideEncryptionCustomerMethod" : {
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "S3Grant":{
+            "Permission":{
+                "Type": "S3Permission",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
         }
     },
     "excludeMembers":{
         "PartDetail":[
             "ChecksumCRC32",
-            "ChecksumCRC32C",
             "ChecksumCRC64NVME",
             "ChecksumSHA1",
             "ChecksumSHA256",
@@ -476,6 +583,9 @@
     "inheritAlternateBaseClass":{
         "PutBucketRequest": {
             "alternateBaseClass" : "PutWithACLRequest"
+        },
+        "InitiateMultipartUploadRequest":{
+            "alternateBaseClass": "PutWithACLRequest"
         }
     }
 }

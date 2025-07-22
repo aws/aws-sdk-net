@@ -31,10 +31,12 @@ using Amazon.Runtime.Internal.Util;
 	// Only applicable for rest-json and rest-xml
     // Generates code to add members to the header of the request
     // If it's a custom marshaller then it calls the custom marshaller first
-	protected void ProcessHeaderMembers(string variableName, IEnumerable<Member> members)
+	protected void ProcessHeaderMembers(string variableName, IEnumerable<Member> members, Shape structure)
 	{
 		foreach(var member in members)
 		{
+            if (structure != null && this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(structure.Name, out var modifier) && modifier.ExcludedMarshallingProperties.Contains(member.ModeledName))
+                continue;
 #>		
             if (<#=variableName#>.IsSet<#=member.PropertyName#>()) 
             {
@@ -116,11 +118,15 @@ using Amazon.Runtime.Internal.Util;
 <#+
                 }
             }
-            #>
+#>
             }
 <#+
         }
 	}
+    protected void ProcessHeaderMembers(string variableName, IEnumerable<Member> members)
+    {
+        ProcessHeaderMembers(variableName, members, null);
+    }
 
 	// Only applicable for rest-json and rest-xml
     // Generates code to add the operation's requestURIMembers to the PathResources request dictionary
@@ -160,7 +166,7 @@ using Amazon.Runtime.Internal.Util;
                 {
 #>
             if (string.IsNullOrEmpty(<#=variableName#>.<#=member.PropertyName#>))
-                throw new System.ArgumentException("<#=member.PropertyName#> is a required property and must be set before making this call.", "<#=operation.RequestStructure.Name#>.<#=member.PropertyName#>");
+                throw new System.ArgumentException("<#=member.PropertyName#> is a required property and must be set before making this call.", "<#=operation.Name#>Request.<#=member.PropertyName#>");
 <#+
                 }
                 else

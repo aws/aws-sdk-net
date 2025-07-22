@@ -525,11 +525,10 @@ namespace ServiceClientGenerator
                         
                         // PHASE 2
                         new Operation(this, "CreateBucket", DocumentRoot[OperationsKey]["CreateBucket"]),
-                        //new Operation(this, "CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
-                        //new Operation(this, "CreateMultipartUpload", DocumentRoot[OperationsKey]["CreateMultipartUpload"]),
-                        //new Operation(this, "DeleteBucketCors", DocumentRoot[OperationsKey]["DeleteBucketCors"]),
-                        //new Operation(this, "DeleteBucketLifecycle", DocumentRoot[OperationsKey]["DeleteBucketLifecycle"]),
-                        //new Operation(this, "GetBucketAcl", DocumentRoot[OperationsKey]["GetBucketAcl"]),
+                        new Operation(this, "CreateMultipartUpload", DocumentRoot[OperationsKey]["CreateMultipartUpload"]),
+                        new Operation(this, "DeleteBucketCors", DocumentRoot[OperationsKey]["DeleteBucketCors"]),
+                        new Operation(this, "DeleteBucketLifecycle", DocumentRoot[OperationsKey]["DeleteBucketLifecycle"]),
+                        new Operation(this, "GetBucketAcl", DocumentRoot[OperationsKey]["GetBucketAcl"]),
                         //new Operation(this, "GetBucketCors", DocumentRoot[OperationsKey]["GetBucketCors"]),
                         //new Operation(this, "GetBucketLifecycle", DocumentRoot[OperationsKey]["GetBucketLifecycle"]),
                         //new Operation(this, "GetBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["GetBucketLifecycleConfiguration"]),
@@ -594,7 +593,8 @@ namespace ServiceClientGenerator
                     _s3RequestMarshallerThrowAmazonS3ExceptionList = new List<string>()
                     {
                         "CreateSession",
-                        "GetObjectAttributes"
+                        "GetObjectAttributes",
+                        "GetBucketAcl"
                     };
                 }
                 return _s3RequestMarshallerThrowAmazonS3ExceptionList;
