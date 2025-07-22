@@ -3,7 +3,16 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Generate PutBucketRequest and move PostMarshallCustomization for some operations"
+      "Move PostMarshallCustomization for restXml services to right before setting request.Content"
     ]
-  }
+  },
+  "services":[
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+          "Generate PutBucket operation."
+      ]
+    }
+  ]
 }
