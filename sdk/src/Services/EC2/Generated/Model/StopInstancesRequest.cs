@@ -38,12 +38,14 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// When you stop an instance, we shut it down.
+    /// When you stop or hibernate an instance, we shut it down. By default, this includes
+    /// a graceful operating system (OS) shutdown. To bypass the graceful shutdown, use the
+    /// <c>skipOsShutdown</c> parameter; however, this might risk data integrity.
     /// </para>
     ///  
     /// <para>
-    /// You can use the Stop operation together with the Hibernate parameter to hibernate
-    /// an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
+    /// You can use the StopInstances operation together with the <c>Hibernate</c> parameter
+    /// to hibernate an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
     /// for hibernation</a> and meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
     /// prerequisites</a>. Stopping an instance doesn't preserve data stored in RAM, while
     /// hibernation does. If hibernation fails, a normal shutdown occurs. For more information,
@@ -53,8 +55,9 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// If your instance appears stuck in the <c>stopping</c> state, there might be an issue
-    /// with the underlying host computer. You can use the Stop operation together with the
-    /// Force parameter to force stop your instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
+    /// with the underlying host computer. You can use the StopInstances operation together
+    /// with the Force parameter to force stop your instance. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
     /// Amazon EC2 instance stop issues</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
@@ -84,6 +87,7 @@ namespace Amazon.EC2.Model
         private bool? _force;
         private bool? _hibernate;
         private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _skipOsShutdown;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -157,7 +161,7 @@ namespace Amazon.EC2.Model
         /// Hibernates the instance if the instance was enabled for hibernation at launch. If
         /// the instance cannot hibernate successfully, a normal shutdown occurs. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -198,6 +202,35 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceIds()
         {
             return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipOsShutdown. 
+        /// <para>
+        /// Specifies whether to bypass the graceful OS shutdown process when the instance is
+        /// stopped.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Bypassing the graceful OS shutdown might result in data loss or corruption (for example,
+        /// memory contents not flushed to disk or loss of in-flight IOs) or skipped shutdown
+        /// scripts.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Default: <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool? SkipOsShutdown
+        {
+            get { return this._skipOsShutdown; }
+            set { this._skipOsShutdown = value; }
+        }
+
+        // Check to see if SkipOsShutdown property is set
+        internal bool IsSetSkipOsShutdown()
+        {
+            return this._skipOsShutdown.HasValue; 
         }
 
     }

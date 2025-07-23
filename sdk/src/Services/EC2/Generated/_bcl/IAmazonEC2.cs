@@ -32512,11 +32512,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The report is saved to your specified S3 bucket, using the following path structure
-        /// (with the <i>italicized placeholders</i> representing your specific values):
+        /// (with the capitalized placeholders representing your specific values):
         /// </para>
         ///  
         /// <para>
-        ///  <c>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</c>
+        ///  <c>s3://AMZN-S3-DEMO-BUCKET/YOUR-OPTIONAL-S3-PREFIX/ec2_TARGETID_REPORTID_YYYYMMDDTHHMMZ.csv</c>
         /// 
         /// </para>
         ///  
@@ -32582,11 +32582,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The report is saved to your specified S3 bucket, using the following path structure
-        /// (with the <i>italicized placeholders</i> representing your specific values):
+        /// (with the capitalized placeholders representing your specific values):
         /// </para>
         ///  
         /// <para>
-        ///  <c>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</c>
+        ///  <c>s3://AMZN-S3-DEMO-BUCKET/YOUR-OPTIONAL-S3-PREFIX/ec2_TARGETID_REPORTID_YYYYMMDDTHHMMZ.csv</c>
         /// 
         /// </para>
         ///  
@@ -32853,12 +32853,14 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When you stop an instance, we shut it down.
+        /// When you stop or hibernate an instance, we shut it down. By default, this includes
+        /// a graceful operating system (OS) shutdown. To bypass the graceful shutdown, use the
+        /// <c>skipOsShutdown</c> parameter; however, this might risk data integrity.
         /// </para>
         ///  
         /// <para>
-        /// You can use the Stop operation together with the Hibernate parameter to hibernate
-        /// an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
+        /// You can use the StopInstances operation together with the <c>Hibernate</c> parameter
+        /// to hibernate an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
         /// for hibernation</a> and meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
         /// prerequisites</a>. Stopping an instance doesn't preserve data stored in RAM, while
         /// hibernation does. If hibernation fails, a normal shutdown occurs. For more information,
@@ -32868,8 +32870,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If your instance appears stuck in the <c>stopping</c> state, there might be an issue
-        /// with the underlying host computer. You can use the Stop operation together with the
-        /// Force parameter to force stop your instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
+        /// with the underlying host computer. You can use the StopInstances operation together
+        /// with the Force parameter to force stop your instance. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
         /// Amazon EC2 instance stop issues</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -32909,12 +32912,14 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When you stop an instance, we shut it down.
+        /// When you stop or hibernate an instance, we shut it down. By default, this includes
+        /// a graceful operating system (OS) shutdown. To bypass the graceful shutdown, use the
+        /// <c>skipOsShutdown</c> parameter; however, this might risk data integrity.
         /// </para>
         ///  
         /// <para>
-        /// You can use the Stop operation together with the Hibernate parameter to hibernate
-        /// an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
+        /// You can use the StopInstances operation together with the <c>Hibernate</c> parameter
+        /// to hibernate an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
         /// for hibernation</a> and meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
         /// prerequisites</a>. Stopping an instance doesn't preserve data stored in RAM, while
         /// hibernation does. If hibernation fails, a normal shutdown occurs. For more information,
@@ -32924,8 +32929,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If your instance appears stuck in the <c>stopping</c> state, there might be an issue
-        /// with the underlying host computer. You can use the Stop operation together with the
-        /// Force parameter to force stop your instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
+        /// with the underlying host computer. You can use the StopInstances operation together
+        /// with the Force parameter to force stop your instance. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
         /// Amazon EC2 instance stop issues</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -33066,18 +33072,28 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// By default, the TerminateInstances operation includes a graceful operating system
+        /// (OS) shutdown. To bypass the graceful shutdown, use the <c>skipOsShutdown</c> parameter;
+        /// however, this might risk data integrity.
+        /// </para>
+        ///  
+        /// <para>
         /// You can stop, start, and terminate EBS-backed instances. You can only terminate instance
         /// store-backed instances. What happens to an instance differs if you stop or terminate
         /// it. For example, when you stop an instance, the root device and any other devices
         /// attached to the instance persist. When you terminate an instance, any attached EBS
         /// volumes with the <c>DeleteOnTermination</c> block device mapping parameter set to
         /// <c>true</c> are automatically deleted. For more information about the differences
-        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
+        /// EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+        /// When you terminate an instance, we attempt to terminate it forcibly after a short
+        /// while. If your instance appears stuck in the shutting-down state after a period of
+        /// time, there might be an issue with the underlying host computer. For more information
+        /// about terminating and troubleshooting terminating your instances, see <a href="https://docs.aws.amazon.com/">Terminate
+        /// Amazon EC2 instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
         /// terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -33160,18 +33176,28 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// By default, the TerminateInstances operation includes a graceful operating system
+        /// (OS) shutdown. To bypass the graceful shutdown, use the <c>skipOsShutdown</c> parameter;
+        /// however, this might risk data integrity.
+        /// </para>
+        ///  
+        /// <para>
         /// You can stop, start, and terminate EBS-backed instances. You can only terminate instance
         /// store-backed instances. What happens to an instance differs if you stop or terminate
         /// it. For example, when you stop an instance, the root device and any other devices
         /// attached to the instance persist. When you terminate an instance, any attached EBS
         /// volumes with the <c>DeleteOnTermination</c> block device mapping parameter set to
         /// <c>true</c> are automatically deleted. For more information about the differences
-        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+        /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
+        /// EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+        /// When you terminate an instance, we attempt to terminate it forcibly after a short
+        /// while. If your instance appears stuck in the shutting-down state after a period of
+        /// time, there might be an issue with the underlying host computer. For more information
+        /// about terminating and troubleshooting terminating your instances, see <a href="https://docs.aws.amazon.com/">Terminate
+        /// Amazon EC2 instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
         /// terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
