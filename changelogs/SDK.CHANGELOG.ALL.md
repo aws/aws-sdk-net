@@ -1,3 +1,16 @@
+### 4.0.54.0 (2025-07-23 18:16 UTC)
+* EC2 (4.0.23.0)
+	* Added support for skip-os-shutdown option for the EC2 instance stop and terminate operations. This feature enables customers to bypass the graceful OS shutdown, supporting faster state transitions when instance data preservation isn't critical.
+* Glue (4.0.10.0)
+	* AWS Glue now supports dynamic session policies for job executions. This feature allows you to specify custom, fine-grained permissions for each job run without creating multiple IAM roles.
+* S3 (4.0.6.2)
+	* Generate PutBucket operation.
+* WorkSpacesThinClient (4.0.3.0)
+	* Added the lastUserId parameter to the ListDevices and GetDevice API.
+* Core 4.0.0.17
+	* Move PostMarshallCustomization for restXml services to right before setting request.Content
+	* All services packages updated to require new Core
+
 ### 4.0.53.0 (2025-07-22 18:25 UTC)
 * ECR (4.0.3.0)
 	* Add support for Image Tag Mutability Exception feature, allowing repositories to define wildcard-based patterns that override the default image tag mutability settings.
