@@ -66,8 +66,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/origin-access-identity/cloudfront";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListCloudFrontOriginAccessIdentitiesRequestMarshaller _instance = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();        

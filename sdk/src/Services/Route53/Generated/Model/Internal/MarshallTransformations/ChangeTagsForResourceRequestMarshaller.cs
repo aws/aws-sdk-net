@@ -102,6 +102,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -113,8 +114,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ChangeTagsForResourceRequestMarshaller _instance = new ChangeTagsForResourceRequestMarshaller();        

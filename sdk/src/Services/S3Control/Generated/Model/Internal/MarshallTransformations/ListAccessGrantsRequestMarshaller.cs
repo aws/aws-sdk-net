@@ -86,8 +86,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accessgrantsinstance/grants";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListAccessGrantsRequestMarshaller _instance = new ListAccessGrantsRequestMarshaller();        

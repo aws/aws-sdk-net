@@ -69,6 +69,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -81,7 +82,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
             var hostPrefixLabels = new
             {
                 label = StringUtils.FromString(publicRequest.Label),
@@ -91,7 +91,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 throw new AmazonRestXmlProtocolException("label can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
             
             request.HostPrefix = $"foo.{hostPrefixLabels.label}.";
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static EndpointWithHostLabelOperationRequestMarshaller _instance = new EndpointWithHostLabelOperationRequestMarshaller();        

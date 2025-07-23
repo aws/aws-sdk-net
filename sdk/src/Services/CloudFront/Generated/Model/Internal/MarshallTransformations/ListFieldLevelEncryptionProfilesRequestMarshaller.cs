@@ -66,8 +66,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/field-level-encryption-profile";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListFieldLevelEncryptionProfilesRequestMarshaller _instance = new ListFieldLevelEncryptionProfilesRequestMarshaller();        

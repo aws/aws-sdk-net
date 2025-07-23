@@ -68,8 +68,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/storagelens";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListStorageLensConfigurationsRequestMarshaller _instance = new ListStorageLensConfigurationsRequestMarshaller();        

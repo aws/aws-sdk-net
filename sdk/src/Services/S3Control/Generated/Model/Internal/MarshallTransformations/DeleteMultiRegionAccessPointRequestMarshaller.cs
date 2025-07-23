@@ -83,6 +83,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -95,8 +96,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static DeleteMultiRegionAccessPointRequestMarshaller _instance = new DeleteMultiRegionAccessPointRequestMarshaller();        

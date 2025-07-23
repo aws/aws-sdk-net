@@ -66,7 +66,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 
             request.ContentStream = publicRequest.Blob;
             request.Headers["Content-Type"] = "application/octet-stream";
-
             PostMarshallCustomization(request, publicRequest);
             return request;
         }

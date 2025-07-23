@@ -66,8 +66,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/delegationset";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListReusableDelegationSetsRequestMarshaller _instance = new ListReusableDelegationSetsRequestMarshaller();        

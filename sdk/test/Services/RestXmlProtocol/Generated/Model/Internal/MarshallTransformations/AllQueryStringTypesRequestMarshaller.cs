@@ -196,8 +196,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/AllQueryStringTypesInput";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static AllQueryStringTypesRequestMarshaller _instance = new AllQueryStringTypesRequestMarshaller();        

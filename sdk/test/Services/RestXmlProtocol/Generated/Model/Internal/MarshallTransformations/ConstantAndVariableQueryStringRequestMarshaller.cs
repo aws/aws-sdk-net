@@ -67,8 +67,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/ConstantAndVariableQueryString";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ConstantAndVariableQueryStringRequestMarshaller _instance = new ConstantAndVariableQueryStringRequestMarshaller();        
