@@ -114,6 +114,12 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastPostureAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastUserId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastUserId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("model", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
