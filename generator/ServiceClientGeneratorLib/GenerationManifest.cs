@@ -288,7 +288,7 @@ namespace ServiceClientGenerator
                     throw new FileNotFoundException($"Endpoints tests are missing. Expected file suffix is .{EndpointRuleSetTestsFile}");
                 }
                 json = File.ReadAllText(testsFileName);
-                config.EndpointTests = JsonMapper.ToObject<EndpointTests>(json);
+                config.EndpointTests = JsonMapper.ToObject<EndpointTests>(json, true);
             }
 
             if (modelNode[ModelsSectionKeys.NugetPackageTitleSuffix] != null)
