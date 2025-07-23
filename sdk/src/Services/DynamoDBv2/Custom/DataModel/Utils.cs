@@ -399,6 +399,133 @@ namespace Amazon.DynamoDBv2.DataModel
             return CanInstantiateHelper(objectType, validConstructorInputs);
         }
 
+        /// <summary>
+        /// Deeply checks if a type and all its non-primitive properties can be instantiated.
+        /// This does a recursive traversal of the entire object graph.
+        /// </summary>
+        /// <param name="objectType">The type to check</param>
+        /// <param name="failedType">If validation fails, contains the specific type that failed</param>
+        /// <param name="visitedTypes">Set of types already checked (to prevent circular reference issues)</param>
+        /// <returns>True if the type and all its properties can be instantiated, false otherwise</returns>
+        public static bool CanInstantiateDeep(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.PublicProperties)] Type objectType, 
+            out Type failedType,
+            HashSet<Type> visitedTypes = null)
+        {
+            // Initialize visited types set if this is the root call
+            if (visitedTypes == null)
+                visitedTypes = new HashSet<Type>();
+                
+            // Check for circular references
+            if (visitedTypes.Contains(objectType))
+            {
+                failedType = null;
+                return true;
+            }
+                
+            // Mark as visited
+            visitedTypes.Add(objectType);
+            
+            // Check basic instantiation
+            if (!CanInstantiate(objectType))
+            {
+                failedType = objectType;
+                return false;
+            }
+
+            // Handle different type categories based on the type
+            return HandleTypeDeep(objectType, out failedType, visitedTypes);
+        }
+        
+        // Determine type category and delegate to appropriate validation method
+        private static bool HandleTypeDeep(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.PublicProperties)] Type objectType, 
+            out Type failedType, 
+            HashSet<Type> visitedTypes)
+        {
+            // Handle primitives and enums
+            if (IsPrimitive(objectType) || objectType.IsEnum)
+            {
+                failedType = null;
+                return true;
+            }
+            
+            // Handle collections
+            if (IsCollectionType(objectType))
+            {
+                return ValidateCollectionTypeDeep(objectType, out failedType, visitedTypes);
+            }
+            
+            // Handle regular objects with properties
+            return ValidateObjectPropertiesDeep(objectType, out failedType, visitedTypes);
+        }
+        
+        private static bool ValidateCollectionTypeDeep(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type collectionType, 
+            out Type failedType, 
+            HashSet<Type> visitedTypes)
+        {
+            Type elementType = GetElementType(collectionType);
+            failedType = null;
+            
+            if (elementType != null && !IsPrimitive(elementType) && !elementType.IsEnum)
+            {
+                if (!CanInstantiateDeep(elementType, out failedType, visitedTypes))
+                {
+                    failedType ??= collectionType;
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+        
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2072", 
+            Justification = "'objectType' argument does not satisfy 'DynamicallyAccessedMemberTypes.PublicConstructors', 'DynamicallyAccessedMemberTypes.PublicProperties' because we are checking ourselves")]
+        private static bool ValidateObjectPropertiesDeep(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.PublicProperties)] Type objectType, 
+            out Type failedType, 
+            HashSet<Type> visitedTypes)
+        {
+            failedType = null;
+            
+            try
+            {
+                foreach (var prop in objectType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+                {
+                    Type propType = prop.PropertyType;
+                    
+                    // Skip primitive types as they don't need instantiation
+                    if (IsPrimitive(propType) || propType.IsEnum)
+                        continue;
+                        
+                    // Check this property type recursively
+                    if (!CanInstantiateDeep(propType, out failedType, visitedTypes))
+                    {
+                        // failedType is already set by the recursive call
+                        return false;
+                    }
+                }
+                
+                return true;
+            }
+            catch (TypeLoadException ex) { return HandleReflectionException(ex, objectType, out failedType); }
+            catch (MissingMethodException ex) { return HandleReflectionException(ex, objectType, out failedType); }
+            catch (MethodAccessException ex) { return HandleReflectionException(ex, objectType, out failedType); }
+            catch (AmbiguousMatchException ex) { return HandleReflectionException(ex, objectType, out failedType); }
+            catch (InvalidOperationException ex) { return HandleReflectionException(ex, objectType, out failedType); }
+            catch (ArgumentException ex) { return HandleReflectionException(ex, objectType, out failedType); }
+        }
+        
+        private static bool HandleReflectionException(
+            Exception ex, 
+            Type objectType, 
+            out Type failedType)
+        {
+            failedType = objectType;
+            return false;
+        }
+
         public static bool CanInstantiateArray([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType)
         {
             return objectType.IsArray && CanInstantiateHelper(objectType, validArrayConstructorInputs);
@@ -411,28 +538,102 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private static bool CanInstantiateHelper([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, Type[][] validConstructorInputs)
         {
-            var objectTypeWrapper = objectType;
-
-            bool candidate =
-                //objectType.IsPublic &&
-                objectTypeWrapper.IsClass &&
-                !objectTypeWrapper.IsInterface &&
-                !objectTypeWrapper.IsAbstract &&
-                !objectTypeWrapper.IsGenericTypeDefinition &&
-                !objectTypeWrapper.ContainsGenericParameters;
-
-            if (!candidate)
+            // Check if type meets basic requirements
+            if (!IsValidTypeCandidate(objectType))
                 return false;
 
-            // check valid constructor inputs
-            var constructors = GetConstructors(objectTypeWrapper, validConstructorInputs).ToList();
-            if (constructors.Count == 0)
-                return false;
+            bool isAotRuntime = InternalSDKUtils.IsRunningNativeAot();
+
+            // Special handling for generic types in AOT mode
+            if (isAotRuntime && objectType.IsGenericType)
+            {
+                // Check generic collections
+                if (!CheckGenericCollectionInAot(objectType, validConstructorInputs))
+                    return false;
+                    
+                // Check generic arguments
+                if (!CheckGenericArgumentsInAot(objectType, validConstructorInputs))
+                    return false;
+            }
+            
+            // Check constructor availability
+            return HasValidConstructors(objectType, validConstructorInputs);
+        }
+        
+        // Check if type meets basic requirements
+        private static bool IsValidTypeCandidate([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type type)
+        {
+            return type.IsClass && 
+                  !type.IsInterface && 
+                  !type.IsAbstract && 
+                  !type.IsGenericTypeDefinition && 
+                  !type.ContainsGenericParameters;
+        }
+        
+        // Check generic collection in AOT mode
+        private static bool CheckGenericCollectionInAot(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, 
+            Type[][] validConstructorInputs)
+        {
+            Type genericTypeDef = objectType.GetGenericTypeDefinition();
+            if (genericTypeDef == typeof(List<>) || genericTypeDef == typeof(HashSet<>))
+            {
+                // Explicitly check if the generic collection itself has valid constructors
+                if (!HasValidConstructors(objectType, validConstructorInputs))
+                {
+                    return false;
+                }
+            
+            }
+            
+            return true;
+        }
+
+        // Check generic arguments in AOT mode
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2072", 
+            Justification = "Argument does not satisfy DynamicallyAccessedMembers requirements")]
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2062", 
+            Justification = "Argument does not satisfy DynamicallyAccessedMembers requirements")]
+        private static bool CheckGenericArgumentsInAot(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType,
+            Type[][] validConstructorInputs)
+        {
+            foreach (var genericArgType in objectType.GetGenericArguments())
+            {
+                // Skip primitive types as they don't need instantiation
+                if (IsPrimitive(genericArgType) || genericArgType.IsArray)
+                {
+                    continue;
+                }
+
+                // Skip checking for any type that implements IEnumerable directly
+                // to avoid infinite recursion with nested collection types
+                bool isEnumerable = typeof(IEnumerable).IsAssignableFrom(genericArgType);
+                bool isNotString = genericArgType != typeof(string);
+                if (isEnumerable && isNotString)
+                {
+                    continue;
+                }
+
+                // Check if the generic argument type has valid constructors
+                if (!HasValidConstructors(genericArgType, validConstructorInputs))
+                {
+                    return false;
+                }
+            }
 
             return true;
         }
 
-        
+        // Check if type has valid constructors
+        private static bool HasValidConstructors(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType,
+            Type[][] validConstructorInputs)
+        {
+            var constructors = GetConstructors(objectType, validConstructorInputs).ToList();
+            return constructors.Count > 0;
+        }
+
         internal static Type GetType(MemberInfo member)
         {
             var pi = member as PropertyInfo;

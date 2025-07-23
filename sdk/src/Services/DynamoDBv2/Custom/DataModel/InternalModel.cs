@@ -408,23 +408,55 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 
-
         // constructor
         internal StorageConfig([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType)
         {
-            if (!Utils.CanInstantiate(targetType))
+            bool isAotRuntime = InternalSDKUtils.IsRunningNativeAot();
+            bool basicCheck = Utils.CanInstantiate(targetType);
+            
+            // For AOT environments, do deeper validation
+            Type specificFailedType = null;
+            bool deepCheck = !isAotRuntime || Utils.CanInstantiateDeep(targetType, out specificFailedType);
+            
+            if (!basicCheck || (isAotRuntime && !deepCheck))
             {
                 string errorMessage;
-                if (InternalSDKUtils.IsRunningNativeAot())
+                string failedTypeString;
+                
+                // Determine the exact type that failed
+                if (!basicCheck)
                 {
-                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated. Since the application is running in Native AOT mode the type could possibly be trimmed. " + 
-                        "This can happen if the type being created is a nested type of a type being used for saving and loading DynamoDB items. " +
-                        $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({targetType.FullName}))]\" attribute to the constructor of the parent type." + 
-                        "If the parent type can not be modified the attribute can also be used on the method invoking the DynamoDB sdk or some other method that you are sure is not being trimmed.";
+                    failedTypeString = targetType.FullName;
+                }
+                else if (specificFailedType != null)
+                {
+                    // We have a specific failed type from the deep check
+                    failedTypeString = specificFailedType.ToString();
                 }
                 else
                 {
-                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated";
+                    // Fallback if we don't have a specific type
+                    failedTypeString = "a property or nested collection within " + targetType.FullName;
+                }
+                
+                if (isAotRuntime)
+                {
+                    errorMessage = $"Type {failedTypeString} is unsupported, it cannot be instantiated. Since the application is running in Native AOT mode the type could possibly be trimmed. " + 
+                        "This can happen if the type being created is a nested type of a type being used for saving and loading DynamoDB items. " +
+                        $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({failedTypeString}))]\" attribute to the constructor of the parent type." + 
+                        " If the parent type can not be modified the attribute can also be used on the method invoking the DynamoDB sdk or some other method that you are sure is not being trimmed.";
+                    
+                    // Add specific guidance for generic collections if this is a deep check failure
+                    if (basicCheck && !deepCheck && specificFailedType != null && specificFailedType.IsGenericType)
+                    {
+                        // For generic types, provide very specific guidance
+                        errorMessage += "\nFor generic collections, add: " +
+                            $"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({specificFailedType}))]";
+                    }
+                }
+                else
+                {
+                    errorMessage = $"Type {failedTypeString} is unsupported, it cannot be instantiated";
                 }
 
                 throw new InvalidOperationException(errorMessage);
