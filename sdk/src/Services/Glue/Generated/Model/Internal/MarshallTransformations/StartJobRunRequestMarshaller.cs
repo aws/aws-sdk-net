@@ -95,6 +95,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExecutionClass);
                 }
 
+                if(publicRequest.IsSetExecutionRoleSessionPolicy())
+                {
+                    context.Writer.WritePropertyName("ExecutionRoleSessionPolicy");
+                    context.Writer.Write(publicRequest.ExecutionRoleSessionPolicy);
+                }
+
                 if(publicRequest.IsSetJobName())
                 {
                     context.Writer.WritePropertyName("JobName");

@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         private double? _dpuSeconds;
         private string _errorMessage;
         private ExecutionClass _executionClass;
+        private string _executionRoleSessionPolicy;
         private int? _executionTime;
         private string _glueVersion;
         private string _id;
@@ -247,6 +248,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetExecutionClass()
         {
             return this._executionClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleSessionPolicy. 
+        /// <para>
+        /// This inline session policy to the StartJobRun API allows you to dynamically restrict
+        /// the permissions of the specified execution role for the scope of the job, without
+        /// requiring the creation of additional IAM roles.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=2048)]
+        public string ExecutionRoleSessionPolicy
+        {
+            get { return this._executionRoleSessionPolicy; }
+            set { this._executionRoleSessionPolicy = value; }
+        }
+
+        // Check to see if ExecutionRoleSessionPolicy property is set
+        internal bool IsSetExecutionRoleSessionPolicy()
+        {
+            return this._executionRoleSessionPolicy != null;
         }
 
         /// <summary>

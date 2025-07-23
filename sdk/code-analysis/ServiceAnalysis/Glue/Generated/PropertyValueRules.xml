@@ -2892,6 +2892,11 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.StartJobRunRequest.ExecutionRoleSessionPolicy</property>
+    <min>2</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.StartJobRunRequest.JobName</property>
     <min>1</min>
     <max>255</max>
@@ -5202,6 +5207,11 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.ExecutionClass</property>
     <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.JobRun.ExecutionRoleSessionPolicy</property>
+    <min>2</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.GlueVersion</property>

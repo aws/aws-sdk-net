@@ -108,6 +108,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionClass = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExecutionRoleSessionPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionRoleSessionPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExecutionTime", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
