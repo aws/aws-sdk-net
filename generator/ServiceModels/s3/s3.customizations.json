@@ -422,6 +422,36 @@
             "exclude":[
                 "Type"
             ]
+        },
+        "CORSRule":{
+            "modify": [
+                {
+                    "ID" : {"emitPropertyName" : "Id"}
+                }
+            ]
+        },
+        "GetBucketCorsOutput":{
+            "exclude":[
+                "CORSRules"
+            ],
+            "inject":[
+                {
+                    "Configuration" : {
+                        "shape": "CORSConfiguration",
+                        "originalMember": "CORSRules"
+                    }
+                }
+            ],
+            "skipXmlTestExpression":[
+                "Configuration"
+            ]
+        },
+        "CORSConfiguration" : {
+            "modify" : [
+                {
+                    "CORSRules" : {"emitPropertyName": "Rules"}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -510,6 +540,9 @@
         },
         "Grantee": {
             "renameShape": "S3Grantee"
+        },
+        "Grant": {
+            "renameShape": "S3Grant"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -539,7 +572,9 @@
         },
         "CreateMultipartUploadRequest":{
             "CannedACL":{
-                "Type": "S3CannedACL"
+                "Type": "S3CannedACL",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
             },
             "ServerSideEncryptionCustomerMethod":{
                 "Type": "ServerSideEncryptionCustomerMethod",
@@ -570,6 +605,7 @@
     "excludeMembers":{
         "PartDetail":[
             "ChecksumCRC32",
+            "ChecksumCRC32C",
             "ChecksumCRC64NVME",
             "ChecksumSHA1",
             "ChecksumSHA256",

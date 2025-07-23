@@ -958,11 +958,13 @@ namespace ServiceClientGenerator
             public const string CustomMarshallKey = "customMarshall";
             public const string DeprecatedMessageKey = "deprecatedMessage";
             public const string ExcludeFromMarshallingKey = "excludeFromMarshalling";
+            public const string SkipXmlTestExpressionKey = "skipXmlTestExpression";
 
             private readonly HashSet<string> _excludedProperties;
             private readonly Dictionary<string, JsonData> _modifiedProperties;
             private readonly Dictionary<string, JsonData> _injectedProperties;
             private readonly HashSet<string> _excludedMarshallingProperties;
+            private readonly HashSet<string> _skipXmlTestExpressionProperties;
 
             public string DeprecationMessage { get; private set; }
 
@@ -977,6 +979,8 @@ namespace ServiceClientGenerator
                 // the same name as an original (and now renamed) member.
                 _injectedProperties = ParseInjections(data);
                 _excludedMarshallingProperties = ParseExcludedMarshallingProperties(data);
+                _skipXmlTestExpressionProperties = ParseSkipXmlTestExpressionProperties(data);
+
                 Validate(data);
             }
 
@@ -1133,7 +1137,41 @@ namespace ServiceClientGenerator
                 return new HashSet<string>(excludedMarshallingPropertiesHashSet ?? new string[0]);
             }
 
+            /// <summary>
+            /// Use this customization when you want to exclude certain members from marshalling but still want
+            /// to generate these members as part of the structure. Usually this is the case when you have custom logic
+            /// around certain properties. See the entry for CreateMultipartUploadRequest in s3.customizations.json as an example.
+            ///    "excludeFromMarshalling":[
+            ///      "ServerSideEncryptionCustomerProvidedKey",
+            ///      "ServerSideEncryptionCustomerProvidedKeyMD5",
+            ///      "Metadata"
+            /// ]
+            /// </summary>
             public HashSet<string> ExcludedMarshallingProperties { get { return _excludedMarshallingProperties; } }
+            #endregion
+
+            #region SkipXmlTestExpression
+
+            private static HashSet<string> ParseSkipXmlTestExpressionProperties(JsonData data)
+            {
+                var customData = data[ShapeModifier.SkipXmlTestExpressionKey];
+
+                var skipXmlTestExpressionHashSet = customData?.Cast<object>()
+                    .Select(skipMember => skipMember.ToString());
+
+                return new HashSet<string>(skipXmlTestExpressionHashSet ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you want to omit the "context.TestExpression(location_name, targetDepth)"
+            /// for rest-xml services. 
+            /// "skipXmlTestExpression":[
+            ///    "Configuration"
+            ///  ]
+            /// </summary>
+
+            public HashSet<string> SkipXmlTestExpressionProperties { get { return _skipXmlTestExpressionProperties; } }
+
             #endregion
         }
 

@@ -529,7 +529,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "DeleteBucketCors", DocumentRoot[OperationsKey]["DeleteBucketCors"]),
                         new Operation(this, "DeleteBucketLifecycle", DocumentRoot[OperationsKey]["DeleteBucketLifecycle"]),
                         new Operation(this, "GetBucketAcl", DocumentRoot[OperationsKey]["GetBucketAcl"]),
-                        //new Operation(this, "GetBucketCors", DocumentRoot[OperationsKey]["GetBucketCors"]),
+                        new Operation(this, "GetBucketCors", DocumentRoot[OperationsKey]["GetBucketCors"]),
                         //new Operation(this, "GetBucketLifecycle", DocumentRoot[OperationsKey]["GetBucketLifecycle"]),
                         //new Operation(this, "GetBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["GetBucketLifecycleConfiguration"]),
                         //new Operation(this, "GetBucketNotificationConfiguration", DocumentRoot[OperationsKey]["GetBucketNotificationConfiguration"]),
