@@ -101,24 +101,35 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// By default, the TerminateInstances operation includes a graceful operating system
+    /// (OS) shutdown. To bypass the graceful shutdown, use the <c>skipOsShutdown</c> parameter;
+    /// however, this might risk data integrity.
+    /// </para>
+    ///  
+    /// <para>
     /// You can stop, start, and terminate EBS-backed instances. You can only terminate instance
     /// store-backed instances. What happens to an instance differs if you stop or terminate
     /// it. For example, when you stop an instance, the root device and any other devices
     /// attached to the instance persist. When you terminate an instance, any attached EBS
     /// volumes with the <c>DeleteOnTermination</c> block device mapping parameter set to
     /// <c>true</c> are automatically deleted. For more information about the differences
-    /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-    /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+    /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
+    /// EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+    /// When you terminate an instance, we attempt to terminate it forcibly after a short
+    /// while. If your instance appears stuck in the shutting-down state after a period of
+    /// time, there might be an issue with the underlying host computer. For more information
+    /// about terminating and troubleshooting terminating your instances, see <a href="https://docs.aws.amazon.com/">Terminate
+    /// Amazon EC2 instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
     /// terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class TerminateInstancesRequest : AmazonEC2Request
     {
         private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _skipOsShutdown;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -156,6 +167,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceIds()
         {
             return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipOsShutdown. 
+        /// <para>
+        /// Specifies whether to bypass the graceful OS shutdown process when the instance is
+        /// terminated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool SkipOsShutdown
+        {
+            get { return this._skipOsShutdown.GetValueOrDefault(); }
+            set { this._skipOsShutdown = value; }
+        }
+
+        // Check to see if SkipOsShutdown property is set
+        internal bool IsSetSkipOsShutdown()
+        {
+            return this._skipOsShutdown.HasValue; 
         }
 
     }

@@ -118,8 +118,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>free-tier-eligible</c> - Indicates whether the instance type is eligible to use
-        /// in the free tier (<c>true</c> | <c>false</c>).
+        ///  <c>free-tier-eligible</c> - A Boolean that indicates whether this instance type can
+        /// be used under the Amazon Web Services Free Tier (<c>true</c> | <c>false</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

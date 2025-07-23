@@ -68,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetSkipOsShutdown())
+                {
+                    request.Parameters.Add("SkipOsShutdown", StringUtils.FromBool(publicRequest.SkipOsShutdown));
+                }
             }
             return request;
         }

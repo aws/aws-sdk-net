@@ -236,8 +236,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// Idempotency</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
+        /// idempotency in Amazon EC2 API requests</a>.
         /// </para>
         ///  
         /// <para>
@@ -309,8 +309,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DisableApiStop. 
         /// <para>
         /// Indicates whether an instance is enabled for stop protection. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-        /// protection</a>. 
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
+        /// stop protection for your EC2 instances</a>.
         /// </para>
         /// </summary>
         public bool DisableApiStop
@@ -450,9 +450,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EnclaveOptions. 
         /// <para>
         /// Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
-        /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
-        /// is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves
-        /// User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/">Amazon
+        /// Web Services Nitro Enclaves User Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -582,8 +581,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Amazon
-        /// EC2 instance types</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-types.html">Amazon
+        /// EC2 Instance Types Guide</a>.
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -676,8 +675,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KeyName. 
         /// <para>
-        /// The name of the key pair. You can create a key pair using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
-        /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.
+        /// The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html">Create
+        /// a key pair for your EC2 instance</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -783,8 +782,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MetadataOptions. 
         /// <para>
-        /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// metadata and user data</a>.
+        /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+        /// the Instance Metadata Service options</a>.
         /// </para>
         /// </summary>
         public InstanceMetadataOptionsRequest MetadataOptions
@@ -996,7 +995,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+        /// The IDs of the security groups.
         /// </para>
         ///  
         /// <para>
@@ -1113,8 +1112,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The user data to make available to the instance. User data must be base64-encoded.
         /// Depending on the tool or SDK that you're using, the base64-encoding might be performed
-        /// for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work
-        /// with instance user data</a>.
+        /// for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+        /// commands at launch using instance user data</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
