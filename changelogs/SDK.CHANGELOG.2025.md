@@ -1,3 +1,14 @@
+### 3.7.1086.0 (2025-07-23 18:17 UTC)
+* EC2 (3.7.461.0)
+	* Added support for skip-os-shutdown option for the EC2 instance stop and terminate operations. This feature enables customers to bypass the graceful OS shutdown, supporting faster state transitions when instance data preservation isn't critical.
+* Glue (3.7.426.0)
+	* AWS Glue now supports dynamic session policies for job executions. This feature allows you to specify custom, fine-grained permissions for each job run without creating multiple IAM roles.
+* WorkSpacesThinClient (3.7.406.0)
+	* Added the lastUserId parameter to the ListDevices and GetDevice API.
+* Core 3.7.402.87
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1085.0 (2025-07-22 18:24 UTC)
 * ECR (3.7.413.0)
 	* Add support for Image Tag Mutability Exception feature, allowing repositories to define wildcard-based patterns that override the default image tag mutability settings.
