@@ -30,30 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The additional attributes of the asset of the data product.
+    /// The additional attributes of an Amazon DataZone glossary.
     /// </summary>
-    public partial class DataProductListingItemAdditionalAttributes
+    public partial class GlossaryItemAdditionalAttributes
     {
-        private string _forms;
         private List<MatchRationaleItem> _matchRationale = AWSConfigs.InitializeCollections ? new List<MatchRationaleItem>() : null;
-
-        /// <summary>
-        /// Gets and sets the property Forms. 
-        /// <para>
-        /// The metadata forms of the asset of the data product. 
-        /// </para>
-        /// </summary>
-        public string Forms
-        {
-            get { return this._forms; }
-            set { this._forms = value; }
-        }
-
-        // Check to see if Forms property is set
-        internal bool IsSetForms()
-        {
-            return this._forms != null;
-        }
 
         /// <summary>
         /// Gets and sets the property MatchRationale. 

@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private string _forms;
         private List<TimeSeriesDataPointSummaryFormOutput> _latestTimeSeriesDataPointForms = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPointSummaryFormOutput>() : null;
+        private List<MatchRationaleItem> _matchRationale = AWSConfigs.InitializeCollections ? new List<MatchRationaleItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Forms. 
@@ -72,6 +73,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetLatestTimeSeriesDataPointForms()
         {
             return this._latestTimeSeriesDataPointForms != null && (this._latestTimeSeriesDataPointForms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchRationale. 
+        /// <para>
+        /// List of rationales indicating why this item was matched by search.
+        /// </para>
+        /// </summary>
+        public List<MatchRationaleItem> MatchRationale
+        {
+            get { return this._matchRationale; }
+            set { this._matchRationale = value; }
+        }
+
+        // Check to see if MatchRationale property is set
+        internal bool IsSetMatchRationale()
+        {
+            return this._matchRationale != null && (this._matchRationale.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

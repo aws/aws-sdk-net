@@ -191,7 +191,7 @@ namespace Amazon.DataZone.Model
         /// Specifies the text for which to search.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Min=1, Max=512)]
         public string SearchText
         {
             get { return this._searchText; }

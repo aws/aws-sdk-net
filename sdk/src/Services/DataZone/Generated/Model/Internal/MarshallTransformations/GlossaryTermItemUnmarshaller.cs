@@ -66,6 +66,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalAttributes", targetDepth))
+                {
+                    var unmarshaller = GlossaryTermItemAdditionalAttributesUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -30,47 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The additional attributes of the asset of the data product.
+    /// The offset of a matched term.
     /// </summary>
-    public partial class DataProductListingItemAdditionalAttributes
+    public partial class MatchOffset
     {
-        private string _forms;
-        private List<MatchRationaleItem> _matchRationale = AWSConfigs.InitializeCollections ? new List<MatchRationaleItem>() : null;
+        private int? _endOffset;
+        private int? _startOffset;
 
         /// <summary>
-        /// Gets and sets the property Forms. 
+        /// Gets and sets the property EndOffset. 
         /// <para>
-        /// The metadata forms of the asset of the data product. 
+        /// The 0-indexed number indicating the end position (exclusive) of a matched term.
         /// </para>
         /// </summary>
-        public string Forms
+        public int EndOffset
         {
-            get { return this._forms; }
-            set { this._forms = value; }
+            get { return this._endOffset.GetValueOrDefault(); }
+            set { this._endOffset = value; }
         }
 
-        // Check to see if Forms property is set
-        internal bool IsSetForms()
+        // Check to see if EndOffset property is set
+        internal bool IsSetEndOffset()
         {
-            return this._forms != null;
+            return this._endOffset.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property MatchRationale. 
+        /// Gets and sets the property StartOffset. 
         /// <para>
-        /// List of rationales indicating why this item was matched by search.
+        /// The 0-indexed number indicating the start position (inclusive) of a matched term.
         /// </para>
         /// </summary>
-        public List<MatchRationaleItem> MatchRationale
+        public int StartOffset
         {
-            get { return this._matchRationale; }
-            set { this._matchRationale = value; }
+            get { return this._startOffset.GetValueOrDefault(); }
+            set { this._startOffset = value; }
         }
 
-        // Check to see if MatchRationale property is set
-        internal bool IsSetMatchRationale()
+        // Check to see if StartOffset property is set
+        internal bool IsSetStartOffset()
         {
-            return this._matchRationale != null && (this._matchRationale.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._startOffset.HasValue; 
         }
 
     }

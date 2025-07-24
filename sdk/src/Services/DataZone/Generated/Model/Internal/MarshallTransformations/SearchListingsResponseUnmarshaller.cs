@@ -52,6 +52,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("aggregates", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AggregationOutput, AggregationOutputUnmarshaller>(AggregationOutputUnmarshaller.Instance);
+                    response.Aggregates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("items", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<SearchResultItem, SearchResultItemUnmarshaller>(SearchResultItemUnmarshaller.Instance);

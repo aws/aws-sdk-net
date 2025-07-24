@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssetItemAdditionalAttributes Object
+    /// Response Unmarshaller for MatchOffset Object
     /// </summary>  
-    public class AssetItemAdditionalAttributesUnmarshaller : IUnmarshaller<AssetItemAdditionalAttributes, XmlUnmarshallerContext>, IUnmarshaller<AssetItemAdditionalAttributes, JsonUnmarshallerContext>
+    public class MatchOffsetUnmarshaller : IUnmarshaller<MatchOffset, XmlUnmarshallerContext>, IUnmarshaller<MatchOffset, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AssetItemAdditionalAttributes IUnmarshaller<AssetItemAdditionalAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MatchOffset IUnmarshaller<MatchOffset, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AssetItemAdditionalAttributes Unmarshall(JsonUnmarshallerContext context)
+        public MatchOffset Unmarshall(JsonUnmarshallerContext context)
         {
-            AssetItemAdditionalAttributes unmarshalledObject = new AssetItemAdditionalAttributes();
+            MatchOffset unmarshalledObject = new MatchOffset();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("formsOutput", targetDepth))
+                if (context.TestExpression("endOffset", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
-                    unmarshalledObject.FormsOutput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("latestTimeSeriesDataPointFormsOutput", targetDepth))
+                if (context.TestExpression("startOffset", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);
-                    unmarshalledObject.LatestTimeSeriesDataPointFormsOutput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("matchRationale", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MatchRationaleItem, MatchRationaleItemUnmarshaller>(MatchRationaleItemUnmarshaller.Instance);
-                    unmarshalledObject.MatchRationale = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("readOnlyFormsOutput", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
-                    unmarshalledObject.ReadOnlyFormsOutput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StartOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static AssetItemAdditionalAttributesUnmarshaller _instance = new AssetItemAdditionalAttributesUnmarshaller();        
+        private static MatchOffsetUnmarshaller _instance = new MatchOffsetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssetItemAdditionalAttributesUnmarshaller Instance
+        public static MatchOffsetUnmarshaller Instance
         {
             get
             {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssetItemAdditionalAttributes Object
+    /// Response Unmarshaller for GlossaryItemAdditionalAttributes Object
     /// </summary>  
-    public class AssetItemAdditionalAttributesUnmarshaller : IUnmarshaller<AssetItemAdditionalAttributes, XmlUnmarshallerContext>, IUnmarshaller<AssetItemAdditionalAttributes, JsonUnmarshallerContext>
+    public class GlossaryItemAdditionalAttributesUnmarshaller : IUnmarshaller<GlossaryItemAdditionalAttributes, XmlUnmarshallerContext>, IUnmarshaller<GlossaryItemAdditionalAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AssetItemAdditionalAttributes IUnmarshaller<AssetItemAdditionalAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GlossaryItemAdditionalAttributes IUnmarshaller<GlossaryItemAdditionalAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AssetItemAdditionalAttributes Unmarshall(JsonUnmarshallerContext context)
+        public GlossaryItemAdditionalAttributes Unmarshall(JsonUnmarshallerContext context)
         {
-            AssetItemAdditionalAttributes unmarshalledObject = new AssetItemAdditionalAttributes();
+            GlossaryItemAdditionalAttributes unmarshalledObject = new GlossaryItemAdditionalAttributes();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("formsOutput", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
-                    unmarshalledObject.FormsOutput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestTimeSeriesDataPointFormsOutput", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);
-                    unmarshalledObject.LatestTimeSeriesDataPointFormsOutput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("matchRationale", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<MatchRationaleItem, MatchRationaleItemUnmarshaller>(MatchRationaleItemUnmarshaller.Instance);
                     unmarshalledObject.MatchRationale = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("readOnlyFormsOutput", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
-                    unmarshalledObject.ReadOnlyFormsOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static AssetItemAdditionalAttributesUnmarshaller _instance = new AssetItemAdditionalAttributesUnmarshaller();        
+        private static GlossaryItemAdditionalAttributesUnmarshaller _instance = new GlossaryItemAdditionalAttributesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssetItemAdditionalAttributesUnmarshaller Instance
+        public static GlossaryItemAdditionalAttributesUnmarshaller Instance
         {
             get
             {

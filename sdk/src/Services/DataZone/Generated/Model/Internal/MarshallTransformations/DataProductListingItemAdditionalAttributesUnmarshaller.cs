@@ -72,6 +72,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.Forms = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("matchRationale", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MatchRationaleItem, MatchRationaleItemUnmarshaller>(MatchRationaleItemUnmarshaller.Instance);
+                    unmarshalledObject.MatchRationale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

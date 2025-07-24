@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     public partial class SearchListingsRequest : AmazonDataZoneRequest
     {
         private List<string> _additionalAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<AggregationListItem> _aggregations = AWSConfigs.InitializeCollections ? new List<AggregationListItem>() : null;
         private string _domainIdentifier;
         private FilterClause _filters;
         private int? _maxResults;
@@ -60,6 +61,26 @@ namespace Amazon.DataZone.Model
         internal bool IsSetAdditionalAttributes()
         {
             return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Aggregations. 
+        /// <para>
+        /// Enables you to specify one or more attributes to compute and return counts grouped
+        /// by field values.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<AggregationListItem> Aggregations
+        {
+            get { return this._aggregations; }
+            set { this._aggregations = value; }
+        }
+
+        // Check to see if Aggregations property is set
+        internal bool IsSetAggregations()
+        {
+            return this._aggregations != null && (this._aggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,6 +190,7 @@ namespace Amazon.DataZone.Model
         /// Specifies the text for which to search.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=512)]
         public string SearchText
         {
             get { return this._searchText; }

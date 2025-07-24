@@ -110,6 +110,11 @@ namespace Amazon.DataZone.Model
         /// <para>
         /// The external identifier of the asset.
         /// </para>
+        ///  
+        /// <para>
+        /// If the value for the <c>externalIdentifier</c> parameter is specified, it must be
+        /// a unique value.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=600)]
         public string ExternalIdentifier

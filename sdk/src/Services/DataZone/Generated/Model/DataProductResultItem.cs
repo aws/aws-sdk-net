@@ -34,6 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class DataProductResultItem
     {
+        private DataProductItemAdditionalAttributes _additionalAttributes;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _description;
@@ -44,6 +45,24 @@ namespace Amazon.DataZone.Model
         private string _id;
         private string _name;
         private string _owningProjectId;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAttributes. 
+        /// <para>
+        /// The additional attributes of an Amazon DataZone data product.
+        /// </para>
+        /// </summary>
+        public DataProductItemAdditionalAttributes AdditionalAttributes
+        {
+            get { return this._additionalAttributes; }
+            set { this._additionalAttributes = value; }
+        }
+
+        // Check to see if AdditionalAttributes property is set
+        internal bool IsSetAdditionalAttributes()
+        {
+            return this._additionalAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

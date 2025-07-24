@@ -30,47 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The additional attributes of the asset of the data product.
+    /// An aggregation list item.
     /// </summary>
-    public partial class DataProductListingItemAdditionalAttributes
+    public partial class AggregationListItem
     {
-        private string _forms;
-        private List<MatchRationaleItem> _matchRationale = AWSConfigs.InitializeCollections ? new List<MatchRationaleItem>() : null;
+        private string _attribute;
+        private string _displayValue;
 
         /// <summary>
-        /// Gets and sets the property Forms. 
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// The metadata forms of the asset of the data product. 
+        /// An attribute on which to compute aggregations.
         /// </para>
         /// </summary>
-        public string Forms
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Attribute
         {
-            get { return this._forms; }
-            set { this._forms = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
-        // Check to see if Forms property is set
-        internal bool IsSetForms()
+        // Check to see if Attribute property is set
+        internal bool IsSetAttribute()
         {
-            return this._forms != null;
+            return this._attribute != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MatchRationale. 
+        /// Gets and sets the property DisplayValue. 
         /// <para>
-        /// List of rationales indicating why this item was matched by search.
+        /// The display value of the aggregation list item. Supported values include <c>value</c>
+        /// and <c>glossaryTerm.name</c>.
         /// </para>
         /// </summary>
-        public List<MatchRationaleItem> MatchRationale
+        [AWSProperty(Min=1, Max=100)]
+        public string DisplayValue
         {
-            get { return this._matchRationale; }
-            set { this._matchRationale = value; }
+            get { return this._displayValue; }
+            set { this._displayValue = value; }
         }
 
-        // Check to see if MatchRationale property is set
-        internal bool IsSetMatchRationale()
+        // Check to see if DisplayValue property is set
+        internal bool IsSetDisplayValue()
         {
-            return this._matchRationale != null && (this._matchRationale.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._displayValue != null;
         }
 
     }

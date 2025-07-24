@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssetListingItemAdditionalAttributes Object
+    /// Response Unmarshaller for MatchRationaleItem Object
     /// </summary>  
-    public class AssetListingItemAdditionalAttributesUnmarshaller : IUnmarshaller<AssetListingItemAdditionalAttributes, XmlUnmarshallerContext>, IUnmarshaller<AssetListingItemAdditionalAttributes, JsonUnmarshallerContext>
+    public class MatchRationaleItemUnmarshaller : IUnmarshaller<MatchRationaleItem, XmlUnmarshallerContext>, IUnmarshaller<MatchRationaleItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AssetListingItemAdditionalAttributes IUnmarshaller<AssetListingItemAdditionalAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MatchRationaleItem IUnmarshaller<MatchRationaleItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AssetListingItemAdditionalAttributes Unmarshall(JsonUnmarshallerContext context)
+        public MatchRationaleItem Unmarshall(JsonUnmarshallerContext context)
         {
-            AssetListingItemAdditionalAttributes unmarshalledObject = new AssetListingItemAdditionalAttributes();
+            MatchRationaleItem unmarshalledObject = new MatchRationaleItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("forms", targetDepth))
+                if (context.TestExpression("textMatches", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Forms = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestTimeSeriesDataPointForms", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);
-                    unmarshalledObject.LatestTimeSeriesDataPointForms = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("matchRationale", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MatchRationaleItem, MatchRationaleItemUnmarshaller>(MatchRationaleItemUnmarshaller.Instance);
-                    unmarshalledObject.MatchRationale = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<TextMatchItem, TextMatchItemUnmarshaller>(TextMatchItemUnmarshaller.Instance);
+                    unmarshalledObject.TextMatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static AssetListingItemAdditionalAttributesUnmarshaller _instance = new AssetListingItemAdditionalAttributesUnmarshaller();        
+        private static MatchRationaleItemUnmarshaller _instance = new MatchRationaleItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssetListingItemAdditionalAttributesUnmarshaller Instance
+        public static MatchRationaleItemUnmarshaller Instance
         {
             get
             {
