@@ -1,3 +1,9 @@
+### 4.0.55.0 (2025-07-24 18:14 UTC)
+* DataZone (4.0.4.0)
+	* This release adds support for 1) highlighting relevant text in returned results for Search and SearchListings APIs and 2) returning aggregated counts of values for specified attributes for SearchListings API.
+* Omics (4.0.1.0)
+	* Add Git integration and README support for HealthOmics workflows
+
 ### 4.0.54.0 (2025-07-23 18:16 UTC)
 * EC2 (4.0.23.0)
 	* Added support for skip-os-shutdown option for the EC2 instance stop and terminate operations. This feature enables customers to bypass the graceful OS shutdown, supporting faster state transitions when instance data preservation isn't critical.
