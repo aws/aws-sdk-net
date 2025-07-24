@@ -2025,6 +2025,60 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type SourceReferenceType.
+    /// </summary>
+    public class SourceReferenceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BRANCH for SourceReferenceType
+        /// </summary>
+        public static readonly SourceReferenceType BRANCH = new SourceReferenceType("BRANCH");
+        /// <summary>
+        /// Constant COMMIT for SourceReferenceType
+        /// </summary>
+        public static readonly SourceReferenceType COMMIT = new SourceReferenceType("COMMIT");
+        /// <summary>
+        /// Constant TAG for SourceReferenceType
+        /// </summary>
+        public static readonly SourceReferenceType TAG = new SourceReferenceType("TAG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceReferenceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceReferenceType FindValue(string value)
+        {
+            return FindValue<SourceReferenceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceReferenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StorageType.
     /// </summary>
     public class StorageType : ConstantClass
@@ -2436,6 +2490,10 @@ namespace Amazon.Omics
         /// Constant DEFINITION for WorkflowExport
         /// </summary>
         public static readonly WorkflowExport DEFINITION = new WorkflowExport("DEFINITION");
+        /// <summary>
+        /// Constant README for WorkflowExport
+        /// </summary>
+        public static readonly WorkflowExport README = new WorkflowExport("README");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

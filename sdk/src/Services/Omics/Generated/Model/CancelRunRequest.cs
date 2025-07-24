@@ -31,7 +31,9 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelRun operation.
-    /// Cancels a run.
+    /// Cancels a run using its ID and returns a response with no body if the operation is
+    /// successful. To confirm that the run has been cancelled, use the <c>ListRuns</c> API
+    /// operation to check that it is no longer listed.
     /// </summary>
     public partial class CancelRunRequest : AmazonOmicsRequest
     {

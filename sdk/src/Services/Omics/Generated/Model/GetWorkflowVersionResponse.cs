@@ -38,12 +38,15 @@ namespace Amazon.Omics.Model
         private string _arn;
         private DateTime? _creationTime;
         private string _definition;
+        private DefinitionRepositoryDetails _definitionRepositoryDetails;
         private string _description;
         private string _digest;
         private WorkflowEngine _engine;
         private string _main;
         private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Dictionary<string, WorkflowParameter> _parameterTemplate = AWSConfigs.InitializeCollections ? new Dictionary<string, WorkflowParameter>() : null;
+        private string _readme;
+        private string _readmePath;
         private WorkflowStatus _status;
         private string _statusMessage;
         private int? _storageCapacity;
@@ -80,7 +83,7 @@ namespace Amazon.Omics.Model
         /// ARN of the workflow version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=150)]
         public string Arn
         {
             get { return this._arn; }
@@ -128,6 +131,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefinitionRepositoryDetails. 
+        /// <para>
+        /// Details about the source code repository that hosts the workflow version definition
+        /// files.
+        /// </para>
+        /// </summary>
+        public DefinitionRepositoryDetails DefinitionRepositoryDetails
+        {
+            get { return this._definitionRepositoryDetails; }
+            set { this._definitionRepositoryDetails = value; }
+        }
+
+        // Check to see if DefinitionRepositoryDetails property is set
+        internal bool IsSetDefinitionRepositoryDetails()
+        {
+            return this._definitionRepositoryDetails != null;
         }
 
         /// <summary>
@@ -251,6 +273,47 @@ namespace Amazon.Omics.Model
         internal bool IsSetParameterTemplate()
         {
             return this._parameterTemplate != null && (this._parameterTemplate.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Readme. 
+        /// <para>
+        /// The README content for the workflow version, providing documentation and usage information
+        /// specific to this version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Readme
+        {
+            get { return this._readme; }
+            set { this._readme = value; }
+        }
+
+        // Check to see if Readme property is set
+        internal bool IsSetReadme()
+        {
+            return this._readme != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadmePath. 
+        /// <para>
+        /// The path to the workflow version README markdown file within the repository. This
+        /// file provides documentation and usage information for the workflow. If not specified,
+        /// the <c>README.md</c> file from the root directory of the repository will be used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ReadmePath
+        {
+            get { return this._readmePath; }
+            set { this._readmePath = value; }
+        }
+
+        // Check to see if ReadmePath property is set
+        internal bool IsSetReadmePath()
+        {
+            return this._readmePath != null;
         }
 
         /// <summary>

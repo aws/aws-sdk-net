@@ -31,8 +31,8 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRunGroup operation.
-    /// You can optionally create a run group to limit the compute resources for the runs
-    /// that you add to the group.
+    /// Creates a run group to limit the compute resources for the runs that are added to
+    /// the group. Returns an ARN, ID, and tags for the run group.
     /// </summary>
     public partial class CreateRunGroupRequest : AmazonOmicsRequest
     {

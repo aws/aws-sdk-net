@@ -30,51 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListRunCaches operation.
-    /// Retrieves a list of your run caches and the metadata for each cache.
+    /// Contains information about the source reference in a code repository, such as a branch,
+    /// tag, or commit.
     /// </summary>
-    public partial class ListRunCachesRequest : AmazonOmicsRequest
+    public partial class SourceReference
     {
-        private int? _maxResults;
-        private string _startingToken;
+        private SourceReferenceType _type;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The maximum number of results to return.
+        /// The type of source reference, such as branch, tag, or commit.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int? MaxResults
+        [AWSProperty(Required=true)]
+        public SourceReferenceType Type
         {
-            get { return this._maxResults; }
-            set { this._maxResults = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._maxResults.HasValue; 
+            return this._type != null;
         }
 
         /// <summary>
-        /// Gets and sets the property StartingToken. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// Optional pagination token returned from a prior call to the <c>ListRunCaches</c> API
-        /// operation.
+        /// The value of the source reference, such as the branch name, tag name, or commit ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string StartingToken
+        [AWSProperty(Required=true)]
+        public string Value
         {
-            get { return this._startingToken; }
-            set { this._startingToken = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if StartingToken property is set
-        internal bool IsSetStartingToken()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._startingToken != null;
+            return this._value != null;
         }
 
     }

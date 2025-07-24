@@ -464,6 +464,22 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowRequest.ParameterTemplatePath</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowRequest.ReadmePath</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowRequest.ReadmeUri</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/((.{1,1024}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowRequest.RequestId</property>
     <min>1</min>
     <max>128</max>
@@ -478,6 +494,10 @@
     <property>Amazon.Omics.Model.CreateWorkflowRequest.StorageType</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowRequest.WorkflowBucketOwnerId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowResponse.Arn</property>
@@ -529,6 +549,22 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowVersionRequest.ParameterTemplatePath</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowVersionRequest.ReadmePath</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowVersionRequest.ReadmeUri</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/((.{1,1024}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowVersionRequest.RequestId</property>
     <min>1</min>
     <max>128</max>
@@ -563,7 +599,7 @@
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowVersionResponse.Arn</property>
     <min>1</min>
-    <max>128</max>
+    <max>150</max>
     <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1554,6 +1590,18 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetWorkflowResponse.Readme</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetWorkflowResponse.ReadmePath</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.Status</property>
     <min>1</min>
     <max>64</max>
@@ -1610,7 +1658,7 @@
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowVersionResponse.Arn</property>
     <min>1</min>
-    <max>128</max>
+    <max>150</max>
     <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1637,6 +1685,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowVersionResponse.Main</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetWorkflowVersionResponse.Readme</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetWorkflowVersionResponse.ReadmePath</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
@@ -2044,7 +2104,7 @@
   <property-value-rule>
     <property>Amazon.Omics.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>150</max>
     <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2447,13 +2507,13 @@
   <property-value-rule>
     <property>Amazon.Omics.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>150</max>
     <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>150</max>
     <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2814,6 +2874,26 @@
     <property>Amazon.Omics.Model.CompleteReadSetUploadPartListItem.PartNumber</property>
     <min>1</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefinitionRepository.ConnectionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefinitionRepository.FullRepositoryId</property>
+    <pattern>.+/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefinitionRepositoryDetails.ConnectionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefinitionRepositoryDetails.FullRepositoryId</property>
+    <pattern>.+/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ExportReadSet.ReadSetId</property>
@@ -3635,7 +3715,7 @@
   <property-value-rule>
     <property>Amazon.Omics.Model.WorkflowVersionListItem.Arn</property>
     <min>1</min>
-    <max>128</max>
+    <max>150</max>
     <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>

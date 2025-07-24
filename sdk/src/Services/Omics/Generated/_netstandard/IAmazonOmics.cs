@@ -32,9 +32,17 @@ namespace Amazon.Omics
     /// <summary>
     /// <para>Interface for accessing Omics</para>
     ///
-    /// This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the service,
-    /// see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS HealthOmics?</a>
-    /// in the <i>AWS HealthOmics User Guide</i>.
+    /// Amazon Web Services HealthOmics is a service that helps users such as bioinformaticians,
+    /// researchers, and scientists to store, query, analyze, and generate insights from genomics
+    /// and other biological data. It simplifies and accelerates the process of storing and
+    /// analyzing genomic information for Amazon Web Services.
+    /// 
+    ///  
+    /// <para>
+    /// For an introduction to the service, see <a href="https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html">What
+    /// is Amazon Web Services HealthOmics?</a> in the <i>Amazon Web Services HealthOmics
+    /// User Guide</i>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonOmics : IAmazonService, IDisposable
     {
@@ -200,7 +208,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Cancels a run.
+        /// Cancels a run using its ID and returns a response with no body if the operation is
+        /// successful. To confirm that the run has been cancelled, use the <c>ListRuns</c> API
+        /// operation to check that it is no longer listed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelRun service method.</param>
         /// <param name="cancellationToken">
@@ -473,16 +483,17 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// You can create a run cache to save the task outputs from completed tasks in a run
-        /// for a private workflow. Subsequent runs use the task outputs from the cache, rather
-        /// than computing the task outputs again. You specify an Amazon S3 location where Amazon
-        /// Web Services HealthOmics saves the cached data. This data must be immediately accessible
-        /// (not in an archived state).
+        /// Creates a run cache to store and reference task outputs from completed private runs.
+        /// Specify an Amazon S3 location where Amazon Web Services HealthOmics saves the cached
+        /// data. This data must be immediately accessible and not in an archived state. You can
+        /// save intermediate task files to a run cache if they are declared as task outputs in
+        /// the workflow definition file.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html">Creating
-        /// a run cache</a> in the Amazon Web Services HealthOmics User Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-call-caching.html">Call
+        /// caching</a> and <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html">Creating
+        /// a run cache</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRunCache service method.</param>
@@ -525,8 +536,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// You can optionally create a run group to limit the compute resources for the runs
-        /// that you add to the group.
+        /// Creates a run group to limit the compute resources for the runs that are added to
+        /// the group. Returns an ARN, ID, and tags for the run group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRunGroup service method.</param>
         /// <param name="cancellationToken">
@@ -702,25 +713,22 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Creates a private workflow.Private workflows depend on a variety of resources that
-        /// you create and configure before creating the workflow:
+        /// Creates a private workflow. Before you create a private workflow, you must create
+        /// and configure these required resources:
         /// 
         ///  <ul> <li> 
-        /// <para>
-        ///  <i>Input data</i>: Input data for the workflow, stored in an S3 bucket or a Amazon
-        /// Web Services HealthOmics sequence store. 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <i>Workflow definition files</i>: Define your workflow in one or more workflow definition
         /// files, written in WDL, Nextflow, or CWL. The workflow definition specifies the inputs
         /// and outputs for runs that use the workflow. It also includes specifications for the
-        /// runs and run tasks for your workflow, including compute and memory requirements.
+        /// runs and run tasks for your workflow, including compute and memory requirements. The
+        /// workflow definition file must be in .zip format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Parameter template files</i>: Define run parameters using a parameter template
-        /// file (written in JSON). 
+        /// (Optional) <i>Parameter template</i>: You can create a parameter template file that
+        /// defines the run parameters, or Amazon Web Services HealthOmics can generate the parameter
+        /// template for you.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -729,14 +737,14 @@ namespace Amazon.Omics
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) <i>Sentieon licenses</i>: Request a Sentieon license if you plan to use
-        /// Sentieon software in a private workflow.
+        /// (Optional) <i>Sentieon licenses</i>: Request a Sentieon license if using the Sentieon
+        /// software in a private workflow.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/creating-private-workflows.html">Creating
-        /// or updating a private workflow in Amazon Web Services HealthOmics</a> in the Amazon
-        /// Web Services HealthOmics User Guide.
+        /// or updating a private workflow in Amazon Web Services HealthOmics</a> in the <i>Amazon
+        /// Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
@@ -800,8 +808,8 @@ namespace Amazon.Omics
         ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
-        /// User Guide.
+        /// versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkflowVersion service method.</param>
@@ -994,7 +1002,25 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a workflow run.
+        /// Deletes a run and returns a response with no body if the operation is successful.
+        /// You can only delete a run that has reached a <c>COMPLETED</c>, <c>FAILED</c>, or <c>CANCELLED</c>
+        /// stage. A completed run has delivered an output, or was cancelled and resulted in no
+        /// output. When you delete a run, only the metadata associated with the run is deleted.
+        /// The run outputs remain in Amazon S3 and logs remain in CloudWatch.
+        /// 
+        ///  
+        /// <para>
+        /// To verify that the workflow is deleted:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use <c>ListRuns</c> to confirm the workflow no longer appears in the list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>GetRun</c> to verify the workflow cannot be found.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRun service method.</param>
         /// <param name="cancellationToken">
@@ -1036,15 +1062,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Delete a run cache. This action removes the cache metadata stored in the service account,
-        /// but doesn't delete the data in Amazon S3. You can access the cache data in Amazon
-        /// S3, for inspection or to troubleshoot issues. You can remove old cache data using
-        /// standard S3 <c>Delete</c> operations. 
+        /// Deletes a run cache and returns a response with no body if the operation is successful.
+        /// This action removes the cache metadata stored in the service account, but does not
+        /// delete the data in Amazon S3. You can access the cache data in Amazon S3, for inspection
+        /// or to troubleshoot issues. You can remove old cache data using standard S3 <c>Delete</c>
+        /// operations. 
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-delete.html">Deleting
-        /// a run cache</a> in the Amazon Web Services HealthOmics User Guide.
+        /// a run cache</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRunCache service method.</param>
@@ -1087,7 +1114,21 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a workflow run group.
+        /// Deletes a run group and returns a response with no body if the operation is successful.
+        /// 
+        ///  
+        /// <para>
+        /// To verify that the run group is deleted:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use <c>ListRunGroups</c> to confirm the workflow no longer appears in the list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>GetRunGroup</c> to verify the workflow cannot be found.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRunGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1284,7 +1325,22 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a workflow.
+        /// Deletes a workflow by specifying its ID. No response is returned if the deletion is
+        /// successful.
+        /// 
+        ///  
+        /// <para>
+        /// To verify that the workflow is deleted:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use <c>ListWorkflows</c> to confirm the workflow no longer appears in the list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>GetWorkflow</c> to verify the workflow cannot be found.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -1332,8 +1388,8 @@ namespace Amazon.Omics
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
-        /// User Guide.
+        /// versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflowVersion service method.</param>
@@ -1808,19 +1864,15 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a workflow run.
+        /// Gets detailed information about a specific run using its ID.
         /// 
         ///  
         /// <para>
-        /// If a workflow is shared with you, you cannot export information about the run.
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Web Services HealthOmics stores a fixed number of runs that are available to
-        /// the console and API. If GetRun doesn't return the requested run, you can find run
-        /// logs for all runs in the CloudWatch logs. For more information about viewing the run
-        /// logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
-        /// logs</a> in the <i>in the Amazon Web Services HealthOmics User Guide</i>.
+        /// Amazon Web Services HealthOmics stores a configurable number of runs, as determined
+        /// by service limits, that are available to the console and API. If <c>GetRun</c> does
+        /// not return the requested run, you can find all run logs in the CloudWatch logs. For
+        /// more information about viewing the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/monitoring-cloudwatch-logs.html">CloudWatch
+        /// logs</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRun service method.</param>
@@ -1863,13 +1915,13 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieve the details for the specified run cache.
+        /// Retrieves detailed information about the specified run cache using its ID.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call
-        /// caching for Amazon Web Services HealthOmics runs</a> in the Amazon Web Services HealthOmics
-        /// User Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-call-caching.html">Call
+        /// caching for Amazon Web Services HealthOmics runs</a> in the <i>Amazon Web Services
+        /// HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRunCache service method.</param>
@@ -1912,7 +1964,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a workflow run group.
+        /// Gets information about a run group and returns its metadata.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRunGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1954,7 +2006,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a workflow run task.
+        /// Gets detailed information about a run task using its ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRunTask service method.</param>
         /// <param name="cancellationToken">
@@ -2179,11 +2231,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a workflow.
+        /// Gets all information about a workflow using its ID.
         /// 
         ///  
         /// <para>
         /// If a workflow is shared with you, you cannot export the workflow.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about your workflow status, see <a href="https://docs.aws.amazon.com/omics/latest/dev/using-get-workflow.html">Verify
+        /// the workflow status</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
@@ -2227,8 +2284,8 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Gets information about a workflow version. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
-        /// User Guide.
+        /// versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowVersion service method.</param>
         /// <param name="cancellationToken">
@@ -2704,7 +2761,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of your run caches.
+        /// Retrieves a list of your run caches and the metadata for each cache.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRunCaches service method.</param>
         /// <param name="cancellationToken">
@@ -2746,7 +2803,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of run groups.
+        /// Retrieves a list of all run groups and returns the metadata for each run group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRunGroups service method.</param>
         /// <param name="cancellationToken">
@@ -2788,14 +2845,14 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of runs.
+        /// Retrieves a list of runs and returns each run's metadata and status.
         /// 
         ///  
         /// <para>
-        /// Amazon Web Services HealthOmics stores a fixed number of runs that are available to
-        /// the console and API. If the ListRuns response doesn't include specific runs that you
-        /// expected, you can find run logs for all runs in the CloudWatch logs. For more information
-        /// about viewing the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
+        /// Amazon Web Services HealthOmics stores a configurable number of runs, as determined
+        /// by service limits, that are available to the console and API. If the <c>ListRuns</c>
+        /// response doesn't include specific runs that you expected, you can find all run logs
+        /// in the CloudWatch logs. For more information about viewing the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/monitoring-cloudwatch-logs.html">CloudWatch
         /// logs</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
@@ -2839,7 +2896,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of tasks for a run.
+        /// Returns a list of tasks and status information within their specified run. Use this
+        /// operation to monitor runs and to identify which specific tasks have failed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRunTasks service method.</param>
         /// <param name="cancellationToken">
@@ -3062,7 +3120,11 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of workflows.
+        /// Retrieves a list of existing workflows. You can filter for specific workflows by their
+        /// name and type. Using the type parameter, specify <c>PRIVATE</c> to retrieve a list
+        /// of private workflows or specify <c>READY2RUN</c> for a list of all Ready2Run workflows.
+        /// If you do not specify the type of workflow, this operation returns a list of existing
+        /// workflows.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
         /// <param name="cancellationToken">
@@ -3106,8 +3168,8 @@ namespace Amazon.Omics
         /// <summary>
         /// Lists the workflow versions for the specified workflow. For more information, see
         /// <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
-        /// User Guide.
+        /// versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflowVersions service method.</param>
         /// <param name="cancellationToken">
@@ -3381,23 +3443,85 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Starts a new run or duplicates an existing run.
+        /// Starts a new run and returns details about the run, or duplicates an existing run.
+        /// A run is a single invocation of a workflow. If you provide request IDs, Amazon Web
+        /// Services HealthOmics identifies duplicate requests and starts the run only once. Monitor
+        /// the progress of the run by calling the <c>GetRun</c> API operation.
         /// 
         ///  
         /// <para>
-        /// For a new run, specify a unique <c>requestId</c>, the <c>workflowId</c>, and a role
-        /// ARN. If you're using static run storage (the default), specify the required <c>storageCapacity</c>.
+        /// To start a new run, the following inputs are required:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A service role ARN (<c>roleArn</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The run's workflow ID (<c>workflowId</c>, not the <c>uuid</c> or <c>runId</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon S3 location (<c>outputUri</c>) where the run outputs will be saved.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All required workflow parameters (<c>parameter</c>), which can include optional parameters
+        /// from the parameter template. The run cannot include any parameters that are not defined
+        /// in the parameter template. To see all possible parameters, use the <c>GetRun</c> API
+        /// operation. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For runs with a <c>STATIC</c> (default) storage type, specify the required storage
+        /// capacity (in gibibytes). A storage capacity value is not required for runs that use
+        /// <c>DYNAMIC</c> storage.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>StartRun</c> can also duplicate an existing run using the run's default values.
+        /// You can modify these default values and/or add other optional inputs. To duplicate
+        /// a run, the following inputs are required:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A service role ARN (<c>roleArn</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ID of the run to duplicate (<c>runId</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon S3 location where the run outputs will be saved (<c>outputUri</c>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To learn more about the optional parameters for <c>StartRun</c>, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Starting
+        /// a run</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You duplicate a run by specifing a unique <c>requestId</c>, the <c>runID</c> of the
-        /// run to duplicate, and a role ARN.
+        /// Use the <c>retentionMode</c> input to control how long the metadata for each run is
+        /// stored in CloudWatch. There are two retention modes:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For more information about the optional parameters in the StartRun request, see <a
-        /// href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Starting a
-        /// run</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// Specify <c>REMOVE</c> to automatically remove the oldest runs when you reach the maximum
+        /// service retention limit for runs. It is recommended that you use the <c>REMOVE</c>
+        /// mode to initiate major run requests so that your runs do not fail when you reach the
+        /// limit.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>retentionMode</c> is set to the <c>RETAIN</c> mode by default, which allows
+        /// you to manually remove runs after reaching the maximum service retention limit. Under
+        /// this setting, you cannot create additional runs until you remove the excess runs.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To learn more about the retention modes, see <a href="https://docs.aws.amazon.com/omics/latest/dev/run-retention.html">Run
+        /// retention mode</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRun service method.</param>
@@ -3626,7 +3750,17 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Update a run cache.
+        /// Updates a run cache using its ID and returns a response with no body if the operation
+        /// is successful. You can update the run cache description, name, or the default run
+        /// cache behavior with <c>CACHE_ON_FAILURE</c> or <c>CACHE_ALWAYS</c>. To confirm that
+        /// your run cache settings have been properly updated, use the <c>GetRunCache</c> API
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html">How
+        /// call caching works</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRunCache service method.</param>
         /// <param name="cancellationToken">
@@ -3668,7 +3802,39 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Updates a run group.
+        /// Updates the settings of a run group and returns a response with no body if the operation
+        /// is successful.
+        /// 
+        ///  
+        /// <para>
+        /// You can update the following settings with <c>UpdateRunGroup</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum number of CPUs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Run time (measured in minutes)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number of GPUs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number of concurrent runs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Group name
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To confirm that the settings have been successfully updated, use the <c>ListRunGroups</c>
+        /// or <c>GetRunGroup</c> API operations to verify that the desired changes have been
+        /// made.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRunGroup service method.</param>
         /// <param name="cancellationToken">
@@ -3782,8 +3948,38 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Updates information about a workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html">Update
-        /// a private workflow</a> in the Amazon Web Services HealthOmics User Guide.
+        /// Updates information about a workflow.
+        /// 
+        ///  
+        /// <para>
+        /// You can update the following workflow information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default storage type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default storage capacity (with workflow ID)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This operation returns a response with no body if the operation is successful. You
+        /// can check the workflow updates by calling the <c>GetWorkflow</c> API operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html">Update
+        /// a private workflow</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -3826,8 +4022,8 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Updates information about the workflow version. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-        /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
-        /// User Guide.
+        /// versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkflowVersion service method.</param>
         /// <param name="cancellationToken">
