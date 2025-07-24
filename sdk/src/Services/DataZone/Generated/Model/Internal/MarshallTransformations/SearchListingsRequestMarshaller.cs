@@ -87,6 +87,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetAggregations())
+            {
+                context.Writer.WritePropertyName("aggregations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAggregationsListValue in publicRequest.Aggregations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AggregationListItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAggregationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetFilters())
             {
                 context.Writer.WritePropertyName("filters");

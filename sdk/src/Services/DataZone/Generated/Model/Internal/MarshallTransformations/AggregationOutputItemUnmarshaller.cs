@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataProductListingItemAdditionalAttributes Object
+    /// Response Unmarshaller for AggregationOutputItem Object
     /// </summary>  
-    public class DataProductListingItemAdditionalAttributesUnmarshaller : IJsonUnmarshaller<DataProductListingItemAdditionalAttributes, JsonUnmarshallerContext>
+    public class AggregationOutputItemUnmarshaller : IJsonUnmarshaller<AggregationOutputItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataProductListingItemAdditionalAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AggregationOutputItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DataProductListingItemAdditionalAttributes unmarshalledObject = new DataProductListingItemAdditionalAttributes();
+            AggregationOutputItem unmarshalledObject = new AggregationOutputItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("forms", targetDepth))
+                if (context.TestExpression("count", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Forms = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Count = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("matchRationale", targetDepth))
+                if (context.TestExpression("displayValue", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<MatchRationaleItem, MatchRationaleItemUnmarshaller>(MatchRationaleItemUnmarshaller.Instance);
-                    unmarshalledObject.MatchRationale = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayValue = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("value", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataProductListingItemAdditionalAttributesUnmarshaller _instance = new DataProductListingItemAdditionalAttributesUnmarshaller();        
+        private static AggregationOutputItemUnmarshaller _instance = new AggregationOutputItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataProductListingItemAdditionalAttributesUnmarshaller Instance
+        public static AggregationOutputItemUnmarshaller Instance
         {
             get
             {

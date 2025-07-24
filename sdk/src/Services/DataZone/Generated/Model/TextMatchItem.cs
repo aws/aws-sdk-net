@@ -30,35 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The additional attributes of the asset of the data product.
+    /// A structure indicating matched terms for an attribute.
     /// </summary>
-    public partial class DataProductListingItemAdditionalAttributes
+    public partial class TextMatchItem
     {
-        private string _forms;
-        private List<MatchRationaleItem> _matchRationale = AWSConfigs.InitializeCollections ? new List<MatchRationaleItem>() : null;
+        private string _attribute;
+        private List<MatchOffset> _matchOffsets = AWSConfigs.InitializeCollections ? new List<MatchOffset>() : null;
+        private string _text;
 
         /// <summary>
-        /// Gets and sets the property Forms. 
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// The metadata forms of the asset of the data product. 
+        /// The name of the attribute.
         /// </para>
         /// </summary>
-        public string Forms
+        [AWSProperty(Min=1, Max=128)]
+        public string Attribute
         {
-            get { return this._forms; }
-            set { this._forms = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
-        // Check to see if Forms property is set
-        internal bool IsSetForms()
+        // Check to see if Attribute property is set
+        internal bool IsSetAttribute()
         {
-            return this._forms != null;
+            return this._attribute != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MatchRationale. 
+        /// Gets and sets the property MatchOffsets. 
         /// <para>
-        /// List of rationales indicating why this item was matched by search.
+        /// List of offsets indicating matching terms in the TextMatchItem text.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,16 +68,34 @@ namespace Amazon.DataZone.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<MatchRationaleItem> MatchRationale
+        public List<MatchOffset> MatchOffsets
         {
-            get { return this._matchRationale; }
-            set { this._matchRationale = value; }
+            get { return this._matchOffsets; }
+            set { this._matchOffsets = value; }
         }
 
-        // Check to see if MatchRationale property is set
-        internal bool IsSetMatchRationale()
+        // Check to see if MatchOffsets property is set
+        internal bool IsSetMatchOffsets()
         {
-            return this._matchRationale != null && (this._matchRationale.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._matchOffsets != null && (this._matchOffsets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// Snippet of attribute text containing highlighted content.
+        /// </para>
+        /// </summary>
+        public string Text
+        {
+            get { return this._text; }
+            set { this._text = value; }
+        }
+
+        // Check to see if Text property is set
+        internal bool IsSetText()
+        {
+            return this._text != null;
         }
 
     }

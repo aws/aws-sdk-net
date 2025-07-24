@@ -34,6 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class GlossaryTermItem
     {
+        private GlossaryTermItemAdditionalAttributes _additionalAttributes;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _domainId;
@@ -46,6 +47,24 @@ namespace Amazon.DataZone.Model
         private TermRelations _termRelations;
         private DateTime? _updatedAt;
         private string _updatedBy;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAttributes. 
+        /// <para>
+        /// The additional attributes of an Amazon DataZone glossary term.
+        /// </para>
+        /// </summary>
+        public GlossaryTermItemAdditionalAttributes AdditionalAttributes
+        {
+            get { return this._additionalAttributes; }
+            set { this._additionalAttributes = value; }
+        }
+
+        // Check to see if AdditionalAttributes property is set
+        internal bool IsSetAdditionalAttributes()
+        {
+            return this._additionalAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

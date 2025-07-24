@@ -30,35 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The additional attributes of the asset of the data product.
+    /// A rationale indicating why this item was matched by search.
     /// </summary>
-    public partial class DataProductListingItemAdditionalAttributes
+    public partial class MatchRationaleItem
     {
-        private string _forms;
-        private List<MatchRationaleItem> _matchRationale = AWSConfigs.InitializeCollections ? new List<MatchRationaleItem>() : null;
+        private List<TextMatchItem> _textMatches = AWSConfigs.InitializeCollections ? new List<TextMatchItem>() : null;
 
         /// <summary>
-        /// Gets and sets the property Forms. 
+        /// Gets and sets the property TextMatches. 
         /// <para>
-        /// The metadata forms of the asset of the data product. 
-        /// </para>
-        /// </summary>
-        public string Forms
-        {
-            get { return this._forms; }
-            set { this._forms = value; }
-        }
-
-        // Check to see if Forms property is set
-        internal bool IsSetForms()
-        {
-            return this._forms != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MatchRationale. 
-        /// <para>
-        /// List of rationales indicating why this item was matched by search.
+        /// A list of TextMatchItems.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,16 +47,16 @@ namespace Amazon.DataZone.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<MatchRationaleItem> MatchRationale
+        public List<TextMatchItem> TextMatches
         {
-            get { return this._matchRationale; }
-            set { this._matchRationale = value; }
+            get { return this._textMatches; }
+            set { this._textMatches = value; }
         }
 
-        // Check to see if MatchRationale property is set
-        internal bool IsSetMatchRationale()
+        // Check to see if TextMatches property is set
+        internal bool IsSetTextMatches()
         {
-            return this._matchRationale != null && (this._matchRationale.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._textMatches != null && (this._textMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

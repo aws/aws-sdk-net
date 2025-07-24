@@ -3545,6 +3545,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly SearchOutputAdditionalAttribute FORMS = new SearchOutputAdditionalAttribute("FORMS");
         /// <summary>
+        /// Constant TEXT_MATCH_RATIONALE for SearchOutputAdditionalAttribute
+        /// </summary>
+        public static readonly SearchOutputAdditionalAttribute TEXT_MATCH_RATIONALE = new SearchOutputAdditionalAttribute("TEXT_MATCH_RATIONALE");
+        /// <summary>
         /// Constant TIME_SERIES_DATA_POINT_FORMS for SearchOutputAdditionalAttribute
         /// </summary>
         public static readonly SearchOutputAdditionalAttribute TIME_SERIES_DATA_POINT_FORMS = new SearchOutputAdditionalAttribute("TIME_SERIES_DATA_POINT_FORMS");

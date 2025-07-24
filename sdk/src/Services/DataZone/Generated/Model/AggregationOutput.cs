@@ -30,35 +30,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The additional attributes of the asset of the data product.
+    /// The aggregation for an attribute.
     /// </summary>
-    public partial class DataProductListingItemAdditionalAttributes
+    public partial class AggregationOutput
     {
-        private string _forms;
-        private List<MatchRationaleItem> _matchRationale = AWSConfigs.InitializeCollections ? new List<MatchRationaleItem>() : null;
+        private string _attribute;
+        private string _displayValue;
+        private List<AggregationOutputItem> _items = AWSConfigs.InitializeCollections ? new List<AggregationOutputItem>() : null;
 
         /// <summary>
-        /// Gets and sets the property Forms. 
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// The metadata forms of the asset of the data product. 
+        /// The attribute for this aggregation.
         /// </para>
         /// </summary>
-        public string Forms
+        [AWSProperty(Min=1, Max=128)]
+        public string Attribute
         {
-            get { return this._forms; }
-            set { this._forms = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
-        // Check to see if Forms property is set
-        internal bool IsSetForms()
+        // Check to see if Attribute property is set
+        internal bool IsSetAttribute()
         {
-            return this._forms != null;
+            return this._attribute != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MatchRationale. 
+        /// Gets and sets the property DisplayValue. 
         /// <para>
-        /// List of rationales indicating why this item was matched by search.
+        /// The display value of the aggregation output item.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string DisplayValue
+        {
+            get { return this._displayValue; }
+            set { this._displayValue = value; }
+        }
+
+        // Check to see if DisplayValue property is set
+        internal bool IsSetDisplayValue()
+        {
+            return this._displayValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A list of aggregation output items.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,16 +87,16 @@ namespace Amazon.DataZone.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<MatchRationaleItem> MatchRationale
+        public List<AggregationOutputItem> Items
         {
-            get { return this._matchRationale; }
-            set { this._matchRationale = value; }
+            get { return this._items; }
+            set { this._items = value; }
         }
 
-        // Check to see if MatchRationale property is set
-        internal bool IsSetMatchRationale()
+        // Check to see if Items property is set
+        internal bool IsSetItems()
         {
-            return this._matchRationale != null && (this._matchRationale.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

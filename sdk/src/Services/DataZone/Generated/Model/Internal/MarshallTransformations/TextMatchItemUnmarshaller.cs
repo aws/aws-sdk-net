@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataProductListingItemAdditionalAttributes Object
+    /// Response Unmarshaller for TextMatchItem Object
     /// </summary>  
-    public class DataProductListingItemAdditionalAttributesUnmarshaller : IJsonUnmarshaller<DataProductListingItemAdditionalAttributes, JsonUnmarshallerContext>
+    public class TextMatchItemUnmarshaller : IJsonUnmarshaller<TextMatchItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataProductListingItemAdditionalAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TextMatchItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DataProductListingItemAdditionalAttributes unmarshalledObject = new DataProductListingItemAdditionalAttributes();
+            TextMatchItem unmarshalledObject = new TextMatchItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("forms", targetDepth))
+                if (context.TestExpression("attribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Forms = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Attribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("matchRationale", targetDepth))
+                if (context.TestExpression("matchOffsets", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<MatchRationaleItem, MatchRationaleItemUnmarshaller>(MatchRationaleItemUnmarshaller.Instance);
-                    unmarshalledObject.MatchRationale = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<MatchOffset, MatchOffsetUnmarshaller>(MatchOffsetUnmarshaller.Instance);
+                    unmarshalledObject.MatchOffsets = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("text", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataProductListingItemAdditionalAttributesUnmarshaller _instance = new DataProductListingItemAdditionalAttributesUnmarshaller();        
+        private static TextMatchItemUnmarshaller _instance = new TextMatchItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataProductListingItemAdditionalAttributesUnmarshaller Instance
+        public static TextMatchItemUnmarshaller Instance
         {
             get
             {
