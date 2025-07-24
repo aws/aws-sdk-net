@@ -76,6 +76,17 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Accelerators);
                 }
 
+                if(publicRequest.IsSetDefinitionRepository())
+                {
+                    context.Writer.WritePropertyName("definitionRepository");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DefinitionRepositoryMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefinitionRepository, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDefinitionUri())
                 {
                     context.Writer.WritePropertyName("definitionUri");
@@ -123,6 +134,30 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetParameterTemplatePath())
+                {
+                    context.Writer.WritePropertyName("parameterTemplatePath");
+                    context.Writer.Write(publicRequest.ParameterTemplatePath);
+                }
+
+                if(publicRequest.IsSetReadmeMarkdown())
+                {
+                    context.Writer.WritePropertyName("readmeMarkdown");
+                    context.Writer.Write(publicRequest.ReadmeMarkdown);
+                }
+
+                if(publicRequest.IsSetReadmePath())
+                {
+                    context.Writer.WritePropertyName("readmePath");
+                    context.Writer.Write(publicRequest.ReadmePath);
+                }
+
+                if(publicRequest.IsSetReadmeUri())
+                {
+                    context.Writer.WritePropertyName("readmeUri");
+                    context.Writer.Write(publicRequest.ReadmeUri);
                 }
 
                 if(publicRequest.IsSetRequestId())

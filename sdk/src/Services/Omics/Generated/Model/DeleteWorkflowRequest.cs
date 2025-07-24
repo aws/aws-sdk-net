@@ -31,7 +31,22 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWorkflow operation.
-    /// Deletes a workflow.
+    /// Deletes a workflow by specifying its ID. No response is returned if the deletion is
+    /// successful.
+    /// 
+    ///  
+    /// <para>
+    /// To verify that the workflow is deleted:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Use <c>ListWorkflows</c> to confirm the workflow no longer appears in the list.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <c>GetWorkflow</c> to verify the workflow cannot be found.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteWorkflowRequest : AmazonOmicsRequest
     {

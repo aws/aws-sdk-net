@@ -76,6 +76,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Definition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("definitionRepositoryDetails", targetDepth))
+                {
+                    var unmarshaller = DefinitionRepositoryDetailsUnmarshaller.Instance;
+                    response.DefinitionRepositoryDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,18 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, WorkflowParameter, StringUnmarshaller, WorkflowParameterUnmarshaller>(StringUnmarshaller.Instance, WorkflowParameterUnmarshaller.Instance);
                     response.ParameterTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("readme", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Readme = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("readmePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReadmePath = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

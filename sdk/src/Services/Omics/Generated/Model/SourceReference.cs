@@ -30,50 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// Container for the parameters to the UntagResource operation.
-    /// Removes tags from a resource.
+    /// Contains information about the source reference in a code repository, such as a branch,
+    /// tag, or commit.
     /// </summary>
-    public partial class UntagResourceRequest : AmazonOmicsRequest
+    public partial class SourceReference
     {
-        private string _resourceArn;
-        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SourceReferenceType _type;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The resource's ARN.
+        /// The type of source reference, such as branch, tag, or commit.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=150)]
-        public string ResourceArn
+        [AWSProperty(Required=true)]
+        public SourceReferenceType Type
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._resourceArn != null;
+            return this._type != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// Keys of tags to remove.
+        /// The value of the source reference, such as the branch name, tag name, or commit ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
-        public List<string> TagKeys
+        [AWSProperty(Required=true)]
+        public string Value
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._value != null;
         }
 
     }

@@ -82,6 +82,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetReadmeMarkdown())
+                {
+                    context.Writer.WritePropertyName("readmeMarkdown");
+                    context.Writer.Write(publicRequest.ReadmeMarkdown);
+                }
+
                 if(publicRequest.IsSetStorageCapacity())
                 {
                     context.Writer.WritePropertyName("storageCapacity");

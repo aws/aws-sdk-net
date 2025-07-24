@@ -52,19 +52,24 @@ namespace Amazon.Omics.Model
     ///  </note> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-    /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
-    /// User Guide.
+    /// versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateWorkflowVersionRequest : AmazonOmicsRequest
     {
         private Accelerators _accelerators;
+        private DefinitionRepository _definitionRepository;
         private string _definitionUri;
         private MemoryStream _definitionZip;
         private string _description;
         private WorkflowEngine _engine;
         private string _main;
         private Dictionary<string, WorkflowParameter> _parameterTemplate = AWSConfigs.InitializeCollections ? new Dictionary<string, WorkflowParameter>() : null;
+        private string _parameterTemplatePath;
+        private string _readmeMarkdown;
+        private string _readmePath;
+        private string _readmeUri;
         private string _requestId;
         private int? _storageCapacity;
         private StorageType _storageType;
@@ -90,6 +95,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetAccelerators()
         {
             return this._accelerators != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefinitionRepository. 
+        /// <para>
+        /// The repository information for the workflow version definition. This allows you to
+        /// source your workflow version definition directly from a code repository.
+        /// </para>
+        /// </summary>
+        public DefinitionRepository DefinitionRepository
+        {
+            get { return this._definitionRepository; }
+            set { this._definitionRepository = value; }
+        }
+
+        // Check to see if DefinitionRepository property is set
+        internal bool IsSetDefinitionRepository()
+        {
+            return this._definitionRepository != null;
         }
 
         /// <summary>
@@ -204,6 +228,99 @@ namespace Amazon.Omics.Model
         internal bool IsSetParameterTemplate()
         {
             return this._parameterTemplate != null && (this._parameterTemplate.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterTemplatePath. 
+        /// <para>
+        /// The path to the workflow version parameter template JSON file within the repository.
+        /// This file defines the input parameters for runs that use this workflow version. If
+        /// not specified, the workflow version will be created without a parameter template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ParameterTemplatePath
+        {
+            get { return this._parameterTemplatePath; }
+            set { this._parameterTemplatePath = value; }
+        }
+
+        // Check to see if ParameterTemplatePath property is set
+        internal bool IsSetParameterTemplatePath()
+        {
+            return this._parameterTemplatePath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadmeMarkdown. 
+        /// <para>
+        /// The markdown content for the workflow version's README file. This provides documentation
+        /// and usage information for users of this specific workflow version.
+        /// </para>
+        /// </summary>
+        public string ReadmeMarkdown
+        {
+            get { return this._readmeMarkdown; }
+            set { this._readmeMarkdown = value; }
+        }
+
+        // Check to see if ReadmeMarkdown property is set
+        internal bool IsSetReadmeMarkdown()
+        {
+            return this._readmeMarkdown != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadmePath. 
+        /// <para>
+        /// The path to the workflow version README markdown file within the repository. This
+        /// file provides documentation and usage information for the workflow. If not specified,
+        /// the <c>README.md</c> file from the root directory of the repository will be used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ReadmePath
+        {
+            get { return this._readmePath; }
+            set { this._readmePath = value; }
+        }
+
+        // Check to see if ReadmePath property is set
+        internal bool IsSetReadmePath()
+        {
+            return this._readmePath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadmeUri. 
+        /// <para>
+        /// The S3 URI of the README file for the workflow version. This file provides documentation
+        /// and usage information for the workflow version. Requirements include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The S3 URI must begin with <c>s3://USER-OWNED-BUCKET/</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requester must have access to the S3 bucket and object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The max README content length is 500 KiB.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ReadmeUri
+        {
+            get { return this._readmeUri; }
+            set { this._readmeUri = value; }
+        }
+
+        // Check to see if ReadmeUri property is set
+        internal bool IsSetReadmeUri()
+        {
+            return this._readmeUri != null;
         }
 
         /// <summary>
