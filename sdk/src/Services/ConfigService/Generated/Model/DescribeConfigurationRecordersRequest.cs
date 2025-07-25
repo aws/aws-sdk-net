@@ -74,6 +74,11 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// A list of names of the configuration recorders that you want to specify.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When making a request to this operation, you can only specify one configuration recorder.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> ConfigurationRecorderNames
         {

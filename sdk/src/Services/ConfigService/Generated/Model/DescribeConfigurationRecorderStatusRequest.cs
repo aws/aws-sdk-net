@@ -78,7 +78,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationRecorderNames. 
         /// <para>
-        /// The name of the configuration recorder. If the name is not specified, the opertation
+        /// The name of the configuration recorder. If the name is not specified, the operation
         /// returns the status for the customer managed configuration recorder configured for
         /// the account, if applicable.
         /// </para>

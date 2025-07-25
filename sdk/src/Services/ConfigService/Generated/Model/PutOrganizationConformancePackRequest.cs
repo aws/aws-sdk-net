@@ -42,7 +42,21 @@ namespace Amazon.ConfigService.Model
     /// this API with a delegated administrator, you must ensure Organizations <c>ListDelegatedAdministrator</c>
     /// permissions are added. An organization can have up to 3 delegated administrators.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// When you use <c>PutOrganizationConformancePack</c> to deploy conformance packs across
+    /// member accounts, the operation can create Config rules and remediation actions without
+    /// requiring <c>config:PutConfigRule</c> or <c>config:PutRemediationConfigurations</c>
+    /// permissions in member account IAM policies.
+    /// </para>
     ///  
+    /// <para>
+    /// This API uses the <c>AWSServiceRoleForConfigConforms</c> service-linked role in each
+    /// member account to create conformance pack resources. This service-linked role includes
+    /// the permissions to create Config rules and remediation configurations, even if member
+    /// account IAM policies explicitly deny these actions.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// This API enables organization service access for <c>config-multiaccountsetup.amazonaws.com</c>
     /// through the <c>EnableAWSServiceAccess</c> action and creates a service-linked role
@@ -190,8 +204,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// A string containing full conformance pack template body. Structure containing the
-        /// template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.
+        /// A string that contains the full conformance pack template body. Structure containing
+        /// the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=51200)]
