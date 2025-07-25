@@ -181,8 +181,7 @@ namespace Amazon.SQS.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>MessageGroupId</c> – Returns the value provided by the producer that calls the
-        /// <c> <a>SendMessage</a> </c> action. Messages with the same <c>MessageGroupId</c> are
-        /// returned in sequence.
+        /// <c> <a>SendMessage</a> </c> action. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -328,8 +327,7 @@ namespace Amazon.SQS.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>MessageGroupId</c> – Returns the value provided by the producer that calls the
-        /// <c> <a>SendMessage</a> </c> action. Messages with the same <c>MessageGroupId</c> are
-        /// returned in sequence.
+        /// <c> <a>SendMessage</a> </c> action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -424,8 +422,8 @@ namespace Amazon.SQS.Model
         /// <para>
         /// While messages with a particular <c>MessageGroupId</c> are invisible, no more messages
         /// belonging to the same <c>MessageGroupId</c> are returned until the visibility timeout
-        /// expires. You can still receive messages with another <c>MessageGroupId</c> as long
-        /// as it is also visible.
+        /// expires. You can still receive messages with another <c>MessageGroupId</c> from your
+        /// FIFO queue as long as they are visible.
         /// </para>
         ///  </li> <li> 
         /// <para>

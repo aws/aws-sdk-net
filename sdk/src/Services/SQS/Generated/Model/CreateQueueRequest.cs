@@ -45,7 +45,7 @@ namespace Amazon.SQS.Model
     /// standard queue into a FIFO queue. You must either create a new FIFO queue for your
     /// application or delete your existing standard queue and recreate it as a FIFO queue.
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
-    /// From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
+    /// From a standard queue to a FIFO queue</a> in the <i>Amazon SQS Developer Guide</i>.
     /// 
     /// </para>
     ///  </note> </li> <li> 

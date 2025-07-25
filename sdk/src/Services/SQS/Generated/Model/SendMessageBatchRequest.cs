@@ -64,9 +64,9 @@ namespace Amazon.SQS.Model
     ///  
     /// <para>
     /// Amazon SQS does not throw an exception or completely reject the message if it contains
-    /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
-    /// before storing the message in the queue, as long as the message body contains at least
-    /// one valid character.
+    /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
+    /// storing the message in the queue, as long as the message body contains at least one
+    /// valid character.
     /// </para>
     ///  </important> 
     /// <para>
