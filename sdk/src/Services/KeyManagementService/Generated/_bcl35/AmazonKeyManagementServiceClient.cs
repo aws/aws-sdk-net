@@ -45,9 +45,9 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  <note> 
     /// <para>
-    /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
-    /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
-    /// some variations of this term.
+    /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>Key Management
+    /// Service key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking
+    /// changes, KMS is keeping some variations of this term.
     /// </para>
     ///  
     /// <para>
@@ -992,8 +992,8 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">Specifies the alias name. This value must begin with <c>alias/</c> followed by a name, such as <c>alias/ExampleAlias</c>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <c>AliasName</c> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
-        /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <c>alias/</c> followed by a name, such as <c>alias/ExampleAlias</c>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <c>AliasName</c> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed keys</a>.</param>
+        /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.AlreadyExistsException">
@@ -1767,9 +1767,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
-        /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
-        /// some variations of this term.
+        /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>Key Management
+        /// Service key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking
+        /// changes, KMS is keeping some variations of this term.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3471,8 +3471,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Provides detailed information about a KMS key. You can run <c>DescribeKey</c> on a
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed key</a>.
         /// 
         ///  
@@ -3520,7 +3520,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// In general, <c>DescribeKey</c> is a non-mutating operation. It returns data about
         /// KMS keys, but doesn't change them. However, Amazon Web Services services use <c>DescribeKey</c>
-        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
         /// no key ID.
         /// </para>
@@ -3574,7 +3574,7 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <c>KeyId</c> and <c>Arn</c> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Alias name: <c>alias/ExampleAlias</c>  </li> <li> Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
+        /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed key</a> and returns its <c>KeyId</c> and <c>Arn</c> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Alias name: <c>alias/ExampleAlias</c>  </li> <li> Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -3602,8 +3602,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Provides detailed information about a KMS key. You can run <c>DescribeKey</c> on a
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed key</a>.
         /// 
         ///  
@@ -3651,7 +3651,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// In general, <c>DescribeKey</c> is a non-mutating operation. It returns data about
         /// KMS keys, but doesn't change them. However, Amazon Web Services services use <c>DescribeKey</c>
-        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
         /// no key ID.
         /// </para>
@@ -3994,10 +3994,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> varies.
         /// </para>
         ///  <note> 
@@ -4124,10 +4124,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> varies.
         /// </para>
         ///  <note> 
@@ -4677,7 +4677,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can use the optional
         /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
@@ -4704,9 +4704,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -4840,7 +4840,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can use the optional
         /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
@@ -4867,9 +4867,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -6960,7 +6960,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
-        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
@@ -7112,7 +7112,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
-        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
@@ -10436,9 +10436,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -11253,7 +11253,7 @@ namespace Amazon.KeyManagementService
         #region  TagResource
 
         /// <summary>
-        /// Adds or edits tags on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// Adds or edits tags on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed key</a>.
         /// 
         ///  <note> 
@@ -11270,9 +11270,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You can use this operation to tag a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a>, but you cannot tag an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-        /// Web Services managed key</a>, an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// You can use this operation to tag a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a>, but you cannot tag an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
+        /// Web Services managed key</a>, an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned key</a>, a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>, or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">alias</a>.
         /// </para>
@@ -11428,7 +11428,7 @@ namespace Amazon.KeyManagementService
         #region  UntagResource
 
         /// <summary>
-        /// Deletes tags from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// Deletes tags from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed key</a>. To delete a tag, specify the tag key and the KMS key.
         /// 
         ///  <note> 
@@ -11676,7 +11676,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <c>alias/</c> followed by the alias name, such as <c>alias/ExampleAlias</c>. You cannot use <c>UpdateAlias</c> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
-        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
+        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">

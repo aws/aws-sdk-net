@@ -47,10 +47,10 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-    /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-    /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+    /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+    /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
     /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-    /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+    /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
     /// Web Services owned KMS keys</a> varies.
     /// </para>
     ///  <note> 
