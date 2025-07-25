@@ -30,50 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SocialMessaging.Model
 {
     /// <summary>
-    /// Contains the <c>accessToken</c> provided by Meta during signup.
+    /// Container for the parameters to the GetWhatsAppMessageTemplate operation.
+    /// Retrieves a specific WhatsApp message template.
     /// </summary>
-    public partial class WhatsAppSignupCallback
+    public partial class GetWhatsAppMessageTemplateRequest : AmazonSocialMessagingRequest
     {
-        private string _accessToken;
-        private string _callbackUrl;
+        private string _id;
+        private string _metaTemplateId;
 
         /// <summary>
-        /// Gets and sets the property AccessToken. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The access token for your WhatsApp Business Account. The <c>accessToken</c> value
-        /// is provided by Meta.
+        /// The ID of the WhatsApp Business Account associated with this template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1000)]
-        public string AccessToken
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string Id
         {
-            get { return this._accessToken; }
-            set { this._accessToken = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if AccessToken property is set
-        internal bool IsSetAccessToken()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._accessToken != null;
+            return this._id != null;
         }
 
         /// <summary>
-        /// Gets and sets the property CallbackUrl. 
+        /// Gets and sets the property MetaTemplateId. 
         /// <para>
-        /// The URL where WhatsApp will send callback notifications for this account.
+        /// The numeric ID of the template assigned by Meta.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public string CallbackUrl
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string MetaTemplateId
         {
-            get { return this._callbackUrl; }
-            set { this._callbackUrl = value; }
+            get { return this._metaTemplateId; }
+            set { this._metaTemplateId = value; }
         }
 
-        // Check to see if CallbackUrl property is set
-        internal bool IsSetCallbackUrl()
+        // Check to see if MetaTemplateId property is set
+        internal bool IsSetMetaTemplateId()
         {
-            return this._callbackUrl != null;
+            return this._metaTemplateId != null;
         }
 
     }

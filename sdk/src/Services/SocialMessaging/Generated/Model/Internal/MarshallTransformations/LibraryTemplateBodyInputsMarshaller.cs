@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// WhatsAppSignupCallback Marshaller
+    /// LibraryTemplateBodyInputs Marshaller
     /// </summary>
-    public class WhatsAppSignupCallbackMarshaller : IRequestMarshaller<WhatsAppSignupCallback, JsonMarshallerContext> 
+    public class LibraryTemplateBodyInputsMarshaller : IRequestMarshaller<LibraryTemplateBodyInputs, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,20 +44,38 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WhatsAppSignupCallback requestObject, JsonMarshallerContext context)
+        public void Marshall(LibraryTemplateBodyInputs requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAccessToken())
+            if(requestObject.IsSetAddContactNumber())
             {
-                context.Writer.WritePropertyName("accessToken");
-                context.Writer.Write(requestObject.AccessToken);
+                context.Writer.WritePropertyName("addContactNumber");
+                context.Writer.Write(requestObject.AddContactNumber);
             }
 
-            if(requestObject.IsSetCallbackUrl())
+            if(requestObject.IsSetAddLearnMoreLink())
             {
-                context.Writer.WritePropertyName("callbackUrl");
-                context.Writer.Write(requestObject.CallbackUrl);
+                context.Writer.WritePropertyName("addLearnMoreLink");
+                context.Writer.Write(requestObject.AddLearnMoreLink);
+            }
+
+            if(requestObject.IsSetAddSecurityRecommendation())
+            {
+                context.Writer.WritePropertyName("addSecurityRecommendation");
+                context.Writer.Write(requestObject.AddSecurityRecommendation);
+            }
+
+            if(requestObject.IsSetAddTrackPackageLink())
+            {
+                context.Writer.WritePropertyName("addTrackPackageLink");
+                context.Writer.Write(requestObject.AddTrackPackageLink);
+            }
+
+            if(requestObject.IsSetCodeExpirationMinutes())
+            {
+                context.Writer.WritePropertyName("codeExpirationMinutes");
+                context.Writer.Write(requestObject.CodeExpirationMinutes);
             }
 
         }
@@ -65,7 +83,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static WhatsAppSignupCallbackMarshaller Instance = new WhatsAppSignupCallbackMarshaller();
+        public readonly static LibraryTemplateBodyInputsMarshaller Instance = new LibraryTemplateBodyInputsMarshaller();
 
     }
 }

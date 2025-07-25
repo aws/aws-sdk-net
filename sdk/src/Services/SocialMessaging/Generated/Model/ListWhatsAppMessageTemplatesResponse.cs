@@ -30,50 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SocialMessaging.Model
 {
     /// <summary>
-    /// Contains the <c>accessToken</c> provided by Meta during signup.
+    /// This is the response object from the ListWhatsAppMessageTemplates operation.
     /// </summary>
-    public partial class WhatsAppSignupCallback
+    public partial class ListWhatsAppMessageTemplatesResponse : AmazonWebServiceResponse
     {
-        private string _accessToken;
-        private string _callbackUrl;
+        private string _nextToken;
+        private List<TemplateSummary> _templates = AWSConfigs.InitializeCollections ? new List<TemplateSummary>() : null;
 
         /// <summary>
-        /// Gets and sets the property AccessToken. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The access token for your WhatsApp Business Account. The <c>accessToken</c> value
-        /// is provided by Meta.
+        /// The token to retrieve the next page of results, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1000)]
-        public string AccessToken
+        [AWSProperty(Min=1, Max=600)]
+        public string NextToken
         {
-            get { return this._accessToken; }
-            set { this._accessToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if AccessToken property is set
-        internal bool IsSetAccessToken()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._accessToken != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property CallbackUrl. 
+        /// Gets and sets the property Templates. 
         /// <para>
-        /// The URL where WhatsApp will send callback notifications for this account.
+        /// A list of template summaries.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public string CallbackUrl
+        public List<TemplateSummary> Templates
         {
-            get { return this._callbackUrl; }
-            set { this._callbackUrl = value; }
+            get { return this._templates; }
+            set { this._templates = value; }
         }
 
-        // Check to see if CallbackUrl property is set
-        internal bool IsSetCallbackUrl()
+        // Check to see if Templates property is set
+        internal bool IsSetTemplates()
         {
-            return this._callbackUrl != null;
+            return this._templates != null && (this._templates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

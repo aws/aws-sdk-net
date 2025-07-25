@@ -35,6 +35,7 @@ namespace Amazon.SocialMessaging.Model
     public partial class WhatsAppPhoneNumberSummary
     {
         private string _arn;
+        private string _dataLocalizationRegion;
         private string _displayPhoneNumber;
         private string _displayPhoneNumberName;
         private string _metaPhoneNumberId;
@@ -59,6 +60,24 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataLocalizationRegion. 
+        /// <para>
+        /// The geographic region where the WhatsApp phone number's data is stored and processed.
+        /// </para>
+        /// </summary>
+        public string DataLocalizationRegion
+        {
+            get { return this._dataLocalizationRegion; }
+            set { this._dataLocalizationRegion = value; }
+        }
+
+        // Check to see if DataLocalizationRegion property is set
+        internal bool IsSetDataLocalizationRegion()
+        {
+            return this._dataLocalizationRegion != null;
         }
 
         /// <summary>

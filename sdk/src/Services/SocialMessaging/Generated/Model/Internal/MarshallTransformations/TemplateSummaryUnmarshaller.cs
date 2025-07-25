@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WhatsAppPhoneNumberDetail Object
+    /// Response Unmarshaller for TemplateSummary Object
     /// </summary>  
-    public class WhatsAppPhoneNumberDetailUnmarshaller : IUnmarshaller<WhatsAppPhoneNumberDetail, XmlUnmarshallerContext>, IUnmarshaller<WhatsAppPhoneNumberDetail, JsonUnmarshallerContext>
+    public class TemplateSummaryUnmarshaller : IUnmarshaller<TemplateSummary, XmlUnmarshallerContext>, IUnmarshaller<TemplateSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WhatsAppPhoneNumberDetail IUnmarshaller<WhatsAppPhoneNumberDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TemplateSummary IUnmarshaller<TemplateSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public WhatsAppPhoneNumberDetail Unmarshall(JsonUnmarshallerContext context)
+        public TemplateSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            WhatsAppPhoneNumberDetail unmarshalledObject = new WhatsAppPhoneNumberDetail();
+            TemplateSummary unmarshalledObject = new TemplateSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,52 +66,40 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("metaTemplateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetaTemplateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("dataLocalizationRegion", targetDepth))
+                if (context.TestExpression("templateCategory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataLocalizationRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TemplateCategory = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("displayPhoneNumber", targetDepth))
+                if (context.TestExpression("templateLanguage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayPhoneNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TemplateLanguage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("displayPhoneNumberName", targetDepth))
+                if (context.TestExpression("templateName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayPhoneNumberName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("metaPhoneNumberId", targetDepth))
+                if (context.TestExpression("templateQualityScore", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetaPhoneNumberId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TemplateQualityScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("phoneNumber", targetDepth))
+                if (context.TestExpression("templateStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("phoneNumberId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PhoneNumberId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("qualityRating", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QualityRating = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TemplateStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -119,12 +107,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         }
 
 
-        private static WhatsAppPhoneNumberDetailUnmarshaller _instance = new WhatsAppPhoneNumberDetailUnmarshaller();        
+        private static TemplateSummaryUnmarshaller _instance = new TemplateSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WhatsAppPhoneNumberDetailUnmarshaller Instance
+        public static TemplateSummaryUnmarshaller Instance
         {
             get
             {
