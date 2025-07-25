@@ -883,8 +883,7 @@ namespace Amazon.MediaPackageV2
 
 
         /// <summary>
-        /// Retrieves the specified channel that's configured in AWS Elemental MediaPackage, including
-        /// the origin endpoints that are associated with it.
+        /// Retrieves the specified channel that's configured in AWS Elemental MediaPackage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
         /// <param name="cancellationToken">
@@ -937,8 +936,7 @@ namespace Amazon.MediaPackageV2
 
 
         /// <summary>
-        /// Retrieves the specified channel group that's configured in AWS Elemental MediaPackage,
-        /// including the channels and origin endpoints that are associated with it.
+        /// Retrieves the specified channel group that's configured in AWS Elemental MediaPackage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannelGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1259,7 +1257,7 @@ namespace Amazon.MediaPackageV2
 
         /// <summary>
         /// Retrieves all channels in a specific channel group that are configured in AWS Elemental
-        /// MediaPackage, including the origin endpoints that are associated with it.
+        /// MediaPackage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// <param name="cancellationToken">
