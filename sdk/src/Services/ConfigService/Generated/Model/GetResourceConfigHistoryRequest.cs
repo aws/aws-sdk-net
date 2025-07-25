@@ -34,16 +34,31 @@ namespace Amazon.ConfigService.Model
     /// <important> 
     /// <para>
     /// For accurate reporting on the compliance status, you must record the <c>AWS::Config::ResourceCompliance</c>
-    /// resource type. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
-    /// Which Resources Config Records</a>.
+    /// resource type.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Recording
+    /// Amazon Web Services Resources</a> in the <i>Config Resources Developer Guide</i>.
     /// </para>
     ///  </important> 
     /// <para>
-    /// Returns a list of <c>ConfigurationItems</c> for the specified resource. The list contains
-    /// details about each state of the resource during the specified time interval. If you
-    /// specified a retention period to retain your <c>ConfigurationItems</c> between a minimum
-    /// of 30 days and a maximum of 7 years (2557 days), Config returns the <c>ConfigurationItems</c>
-    /// for the specified retention period. 
+    /// Returns a list of configurations items (CIs) for the specified resource.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Contents</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The list contains details about each state of the resource during the specified time
+    /// interval. If you specified a retention period to retain your CIs between a minimum
+    /// of 30 days and a maximum of 7 years (2557 days), Config returns the CIs for the specified
+    /// retention period. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Pagination</b> 
     /// </para>
     ///  
     /// <para>
