@@ -49,9 +49,9 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
-    /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
-    /// some variations of this term.
+    /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>Key Management
+    /// Service key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking
+    /// changes, KMS is keeping some variations of this term.
     /// </para>
     ///  </note> 
     /// <para>
