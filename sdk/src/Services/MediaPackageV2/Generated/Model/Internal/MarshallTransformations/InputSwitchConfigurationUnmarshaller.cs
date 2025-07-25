@@ -72,6 +72,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.MQCSInputSwitching = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreferredInput", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PreferredInput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -1044,6 +1044,11 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.InputSwitchConfiguration.PreferredInput</property>
+    <min>1</min>
+    <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.ListDashManifestConfiguration.ManifestName</property>
     <min>1</min>
     <max>256</max>
