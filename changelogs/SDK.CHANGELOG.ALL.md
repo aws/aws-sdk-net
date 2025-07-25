@@ -1,3 +1,21 @@
+### 3.7.1088.0 (2025-07-25 18:31 UTC)
+* AppIntegrationsService (3.7.402.0)
+	* Amazon AppIntegrations introduces new configuration capabilities to enable customers to manage iframe permissions, control application refresh behavior (per contact or per browser/cross-contact), and run background applications (service).
+* Budgets (3.7.404.0)
+	* Adds IPv6 and PrivateLink support for AWS Budgets in IAD.
+* ConfigService (3.7.403.12)
+	* Documentation improvements have been made to the EvaluationModel and DescribeConfigurationRecorders APIs.
+* EC2 (3.7.462.0)
+	* Transit Gateway native integration with AWS Network Firewall. Adding new enum value for the new Transit Gateway Attachment type.
+* KeyManagementService (3.7.403.18)
+	* Doc only update: fixed grammatical errors.
+* MediaPackageV2 (3.7.408.0)
+	* This release adds support for specifying a preferred input for channels using CMAF ingest.
+* SocialMessaging (3.7.402.0)
+	* This release introduces new WhatsApp template management APIs that enable customers to programmatically create and submit templates for approval, monitor approval status, and manage the complete template lifecycle
+* SQS (3.7.400.183)
+	* Documentation updates for Amazon SQS fair queues feature.
+
 ### 3.7.1087.0 (2025-07-24 18:14 UTC)
 * DataZone (3.7.416.0)
 	* This release adds support for 1) highlighting relevant text in returned results for Search and SearchListings APIs and 2) returning aggregated counts of values for specified attributes for SearchListings API.
