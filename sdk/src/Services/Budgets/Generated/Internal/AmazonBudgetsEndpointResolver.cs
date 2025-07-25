@@ -50,10 +50,10 @@ namespace Amazon.Budgets.Internal
         {
             var config = (AmazonBudgetsConfig)requestContext.ClientConfig;
             var result = new BudgetsEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = config.RegionEndpoint?.SystemName;
 
 
             // The region needs to be determined from the ServiceURL if not set.
