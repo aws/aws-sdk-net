@@ -52,6 +52,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ApplicationConfig", targetDepth))
+                {
+                    var unmarshaller = ApplicationConfigUnmarshaller.Instance;
+                    response.ApplicationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ApplicationSourceConfig", targetDepth))
                 {
                     var unmarshaller = ApplicationSourceConfigUnmarshaller.Instance;
@@ -80,6 +86,24 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IframeConfig", targetDepth))
+                {
+                    var unmarshaller = IframeConfigUnmarshaller.Instance;
+                    response.IframeConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InitializationTimeout", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.InitializationTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsService", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsService = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))

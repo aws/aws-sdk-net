@@ -67,6 +67,17 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationConfig())
+                {
+                    context.Writer.WritePropertyName("ApplicationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ApplicationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ApplicationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetApplicationSourceConfig())
                 {
                     context.Writer.WritePropertyName("ApplicationSourceConfig");
@@ -93,6 +104,29 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetIframeConfig())
+                {
+                    context.Writer.WritePropertyName("IframeConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IframeConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IframeConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetInitializationTimeout())
+                {
+                    context.Writer.WritePropertyName("InitializationTimeout");
+                    context.Writer.Write(publicRequest.InitializationTimeout);
+                }
+
+                if(publicRequest.IsSetIsService())
+                {
+                    context.Writer.WritePropertyName("IsService");
+                    context.Writer.Write(publicRequest.IsService);
                 }
 
                 if(publicRequest.IsSetName())
