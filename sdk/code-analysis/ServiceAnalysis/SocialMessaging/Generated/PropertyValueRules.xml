@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateRequest.TemplateDefinition</property>
+    <min>1</min>
+    <max>6000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateResponse.Category</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateResponse.MetaTemplateId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateFromLibraryRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateFromLibraryResponse.Category</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateFromLibraryResponse.MetaTemplateId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateMediaRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.DeleteWhatsAppMessageMediaRequest.MediaId</property>
     <min>1</min>
     <max>100</max>
@@ -11,6 +56,23 @@
     <min>1</min>
     <max>100</max>
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.DeleteWhatsAppMessageTemplateRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.DeleteWhatsAppMessageTemplateRequest.MetaTemplateId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.DeleteWhatsAppMessageTemplateRequest.TemplateName</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.DisassociateWhatsAppBusinessAccountRequest.Id</property>
@@ -49,6 +111,23 @@
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.GetWhatsAppMessageTemplateRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.GetWhatsAppMessageTemplateRequest.MetaTemplateId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.GetWhatsAppMessageTemplateResponse.Template</property>
+    <min>1</min>
+    <max>6000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.ListLinkedWhatsAppBusinessAccountsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -68,6 +147,48 @@
     <min>0</min>
     <max>2048</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.ListWhatsAppMessageTemplatesRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.ListWhatsAppMessageTemplatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.ListWhatsAppMessageTemplatesRequest.NextToken</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.ListWhatsAppMessageTemplatesResponse.NextToken</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.ListWhatsAppTemplateLibraryRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.ListWhatsAppTemplateLibraryRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.ListWhatsAppTemplateLibraryRequest.NextToken</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.ListWhatsAppTemplateLibraryResponse.NextToken</property>
+    <min>1</min>
+    <max>600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.PostWhatsAppMessageMediaRequest.OriginationPhoneNumberId</property>
@@ -109,6 +230,68 @@
     <min>0</min>
     <max>2048</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.UpdateWhatsAppMessageTemplateRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.UpdateWhatsAppMessageTemplateRequest.MetaTemplateId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.UpdateWhatsAppMessageTemplateRequest.TemplateCategory</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.UpdateWhatsAppMessageTemplateRequest.TemplateComponents</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LibraryTemplateButtonInput.OtpType</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LibraryTemplateButtonInput.PhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LibraryTemplateButtonInput.Type</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LibraryTemplateButtonList.OtpType</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LibraryTemplateButtonList.PhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LibraryTemplateButtonList.Text</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LibraryTemplateButtonList.Type</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LibraryTemplateButtonList.Url</property>
+    <min>1</min>
+    <max>400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccount.Arn</property>
@@ -166,6 +349,67 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplate.LibraryTemplateName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplate.TemplateCategory</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplate.TemplateLanguage</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplate.TemplateName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplateDefinition.TemplateBody</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplateDefinition.TemplateCategory</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplateDefinition.TemplateHeader</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplateDefinition.TemplateId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplateDefinition.TemplateLanguage</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplateDefinition.TemplateName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplateDefinition.TemplateTopic</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.MetaLibraryTemplateDefinition.TemplateUseCase</property>
+    <min>1</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.S3File.BucketName</property>
     <min>3</min>
     <max>63</max>
@@ -191,6 +435,37 @@
     <property>Amazon.SocialMessaging.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.TemplateSummary.MetaTemplateId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.TemplateSummary.TemplateCategory</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.TemplateSummary.TemplateLanguage</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.TemplateSummary.TemplateName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.TemplateSummary.TemplateQualityScore</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.TemplateSummary.TemplateStatus</property>
+    <min>1</min>
+    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WabaPhoneNumberSetupFinalization.DataLocalizationRegion</property>
@@ -228,6 +503,10 @@
     <pattern>arn:.*:phone-number-id/[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppPhoneNumberDetail.DataLocalizationRegion</property>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppPhoneNumberDetail.DisplayPhoneNumber</property>
     <min>0</min>
     <max>20</max>
@@ -263,6 +542,10 @@
     <min>0</min>
     <max>2048</max>
     <pattern>arn:.*:phone-number-id/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppPhoneNumberSummary.DataLocalizationRegion</property>
+    <pattern>[A-Z]{2}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppPhoneNumberSummary.DisplayPhoneNumber</property>
@@ -310,6 +593,11 @@
     <property>Amazon.SocialMessaging.Model.WhatsAppSignupCallback.AccessToken</property>
     <min>0</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppSignupCallback.CallbackUrl</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppSignupCallbackResult.AssociateInProgressToken</property>

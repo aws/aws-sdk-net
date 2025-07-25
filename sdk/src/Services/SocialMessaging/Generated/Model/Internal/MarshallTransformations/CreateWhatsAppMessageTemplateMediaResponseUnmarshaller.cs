@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssociateWhatsAppBusinessAccount operation
+    /// Response Unmarshaller for CreateWhatsAppMessageTemplateMedia operation
     /// </summary>  
-    public class AssociateWhatsAppBusinessAccountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateWhatsAppMessageTemplateMediaResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,16 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AssociateWhatsAppBusinessAccountResponse response = new AssociateWhatsAppBusinessAccountResponse();
+            CreateWhatsAppMessageTemplateMediaResponse response = new CreateWhatsAppMessageTemplateMediaResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("signupCallbackResult", targetDepth))
+                if (context.TestExpression("metaHeaderHandle", targetDepth))
                 {
-                    var unmarshaller = WhatsAppSignupCallbackResultUnmarshaller.Instance;
-                    response.SignupCallbackResult = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("statusCode", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.StatusCode = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MetaHeaderHandle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,13 +91,17 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                 {
                     return DependencyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
+                {
+                    return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParametersException"))
                 {
                     return InvalidParametersExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottledRequestException"))
                 {
@@ -117,9 +115,9 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             return new AmazonSocialMessagingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static AssociateWhatsAppBusinessAccountResponseUnmarshaller _instance = new AssociateWhatsAppBusinessAccountResponseUnmarshaller();        
+        private static CreateWhatsAppMessageTemplateMediaResponseUnmarshaller _instance = new CreateWhatsAppMessageTemplateMediaResponseUnmarshaller();        
 
-        internal static AssociateWhatsAppBusinessAccountResponseUnmarshaller GetInstance()
+        internal static CreateWhatsAppMessageTemplateMediaResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -127,7 +125,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateWhatsAppBusinessAccountResponseUnmarshaller Instance
+        public static CreateWhatsAppMessageTemplateMediaResponseUnmarshaller Instance
         {
             get
             {

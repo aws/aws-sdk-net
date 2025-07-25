@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WhatsAppPhoneNumberSummary Object
+    /// Response Unmarshaller for MetaLibraryTemplateDefinition Object
     /// </summary>  
-    public class WhatsAppPhoneNumberSummaryUnmarshaller : IJsonUnmarshaller<WhatsAppPhoneNumberSummary, JsonUnmarshallerContext>
+    public class MetaLibraryTemplateDefinitionUnmarshaller : IJsonUnmarshaller<MetaLibraryTemplateDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WhatsAppPhoneNumberSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MetaLibraryTemplateDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            WhatsAppPhoneNumberSummary unmarshalledObject = new WhatsAppPhoneNumberSummary();
+            MetaLibraryTemplateDefinition unmarshalledObject = new MetaLibraryTemplateDefinition();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,52 +56,64 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("templateBody", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TemplateBody = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataLocalizationRegion", targetDepth))
+                if (context.TestExpression("templateButtons", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataLocalizationRegion = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<LibraryTemplateButtonList, LibraryTemplateButtonListUnmarshaller>(LibraryTemplateButtonListUnmarshaller.Instance);
+                    unmarshalledObject.TemplateButtons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("displayPhoneNumber", targetDepth))
+                if (context.TestExpression("templateCategory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayPhoneNumber = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TemplateCategory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("displayPhoneNumberName", targetDepth))
+                if (context.TestExpression("templateHeader", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayPhoneNumberName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TemplateHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metaPhoneNumberId", targetDepth))
+                if (context.TestExpression("templateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetaPhoneNumberId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TemplateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("phoneNumber", targetDepth))
+                if (context.TestExpression("templateIndustry", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TemplateIndustry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("phoneNumberId", targetDepth))
+                if (context.TestExpression("templateLanguage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PhoneNumberId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TemplateLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("qualityRating", targetDepth))
+                if (context.TestExpression("templateName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QualityRating = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("templateTopic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemplateTopic = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("templateUseCase", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemplateUseCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -109,12 +121,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         }
 
 
-        private static WhatsAppPhoneNumberSummaryUnmarshaller _instance = new WhatsAppPhoneNumberSummaryUnmarshaller();        
+        private static MetaLibraryTemplateDefinitionUnmarshaller _instance = new MetaLibraryTemplateDefinitionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WhatsAppPhoneNumberSummaryUnmarshaller Instance
+        public static MetaLibraryTemplateDefinitionUnmarshaller Instance
         {
             get
             {
