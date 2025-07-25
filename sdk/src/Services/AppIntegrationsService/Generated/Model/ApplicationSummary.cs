@@ -37,6 +37,7 @@ namespace Amazon.AppIntegrationsService.Model
         private string _arn;
         private DateTime? _createdTime;
         private string _id;
+        private bool? _isService;
         private DateTime? _lastModifiedTime;
         private string _name;
         private string _awsNamespace;
@@ -94,6 +95,24 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsService. 
+        /// <para>
+        /// Indicates whether the application is a service.
+        /// </para>
+        /// </summary>
+        public bool? IsService
+        {
+            get { return this._isService; }
+            set { this._isService = value; }
+        }
+
+        // Check to see if IsService property is set
+        internal bool IsSetIsService()
+        {
+            return this._isService.HasValue; 
         }
 
         /// <summary>

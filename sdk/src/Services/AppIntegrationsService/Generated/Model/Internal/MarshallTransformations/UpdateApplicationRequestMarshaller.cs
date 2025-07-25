@@ -76,6 +76,17 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicationConfig())
+            {
+                context.Writer.WritePropertyName("ApplicationConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ApplicationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ApplicationConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetApplicationSourceConfig())
             {
                 context.Writer.WritePropertyName("ApplicationSourceConfig");
@@ -91,6 +102,29 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Description");
                 context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetIframeConfig())
+            {
+                context.Writer.WritePropertyName("IframeConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IframeConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IframeConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInitializationTimeout())
+            {
+                context.Writer.WritePropertyName("InitializationTimeout");
+                context.Writer.WriteNumberValue(publicRequest.InitializationTimeout.Value);
+            }
+
+            if(publicRequest.IsSetIsService())
+            {
+                context.Writer.WritePropertyName("IsService");
+                context.Writer.WriteBooleanValue(publicRequest.IsService.Value);
             }
 
             if(publicRequest.IsSetName())

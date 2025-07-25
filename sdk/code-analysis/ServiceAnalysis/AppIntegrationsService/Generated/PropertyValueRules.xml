@@ -13,6 +13,11 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.CreateApplicationRequest.InitializationTimeout</property>
+    <min>1</min>
+    <max>600000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateApplicationRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -207,6 +212,11 @@
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetApplicationResponse.Id</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.GetApplicationResponse.InitializationTimeout</property>
+    <min>1</min>
+    <max>600000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetApplicationResponse.Name</property>
@@ -439,6 +449,11 @@
     <min>0</min>
     <max>1000</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.UpdateApplicationRequest.InitializationTimeout</property>
+    <min>1</min>
+    <max>600000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.UpdateApplicationRequest.Name</property>
