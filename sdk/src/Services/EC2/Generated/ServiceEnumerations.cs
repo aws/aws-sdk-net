@@ -22983,6 +22983,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly TransitGatewayAttachmentResourceType DirectConnectGateway = new TransitGatewayAttachmentResourceType("direct-connect-gateway");
         /// <summary>
+        /// Constant NetworkFunction for TransitGatewayAttachmentResourceType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentResourceType NetworkFunction = new TransitGatewayAttachmentResourceType("network-function");
+        /// <summary>
         /// Constant Peering for TransitGatewayAttachmentResourceType
         /// </summary>
         public static readonly TransitGatewayAttachmentResourceType Peering = new TransitGatewayAttachmentResourceType("peering");
