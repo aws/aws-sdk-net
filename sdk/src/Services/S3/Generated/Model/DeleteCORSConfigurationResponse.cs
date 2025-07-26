@@ -12,35 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// A collection of up to 100 cross-origin resource sharing (CORS) rules.
+    /// This is the response object from the DeleteCORSConfiguration operation.
     /// </summary>
-    public class CORSConfiguration
+    public partial class DeleteCORSConfigurationResponse : AmazonWebServiceResponse
     {
-        
-        private List<CORSRule> rules = AWSConfigs.InitializeCollections ? new List<CORSRule>() : null;
 
-        /// <summary>
-        /// The collection of rules in this configuration.
-        /// </summary>
-        public List<CORSRule> Rules
-        {
-            get { return this.rules; }
-            set { this.rules = value; }
-        }
-
-        // Check to see if Rules property is set
-        internal bool IsSetRules()
-        {
-            return this.rules != null && (this.rules.Count > 0 || !AWSConfigs.InitializeCollections);
-        }
     }
 }

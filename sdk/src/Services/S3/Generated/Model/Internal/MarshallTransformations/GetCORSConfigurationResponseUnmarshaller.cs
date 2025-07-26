@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,11 +34,10 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetBucketAcl operation
+    /// Response Unmarshaller for GetCORSConfiguration operation
     /// </summary>  
-    public class GetBucketAclResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetCORSConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
-
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
@@ -46,32 +45,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            GetBucketAclResponse response = new GetBucketAclResponse();
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {
-                    UnmarshallResult(context, response);
-                    continue;
-                }
-            }
-
+            GetCORSConfigurationResponse response = new GetCORSConfigurationResponse();
+            UnmarshallResult(context,response);
+            
             return response;
-        }
+        }        
 
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <param name="response"></param>
-        /// <returns></returns>
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetBucketAclResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetCORSConfigurationResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            if (context.IsStartOfDocument)
-                targetDepth += 1;
+            if (context.IsStartOfDocument) 
+                   targetDepth += 1;
             if (context.IsEmptyResponse)
             {
                 return;
@@ -80,46 +65,56 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AccessControlList/Grant", targetDepth))
-                    {
-                        if (response.Grants == null)
-                        {
-                            response.Grants = new List<S3Grant>();
-                        }
-                        var unmarshaller = GrantUnmarshaller.Instance;
-                        response.Grants.Add(unmarshaller.Unmarshall(context));
+                        var unmarshaller = CORSConfigurationUnmarshaller.Instance;
+                        response.Configuration = unmarshaller.Unmarshall(context);
                         continue;
-                    }
-                    if (context.TestExpression("Owner", targetDepth))
-                    {
-                        var unmarshaller = OwnerUnmarshaller.Instance;
-                        response.Owner = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
                     return;
                 }
             }
-
+          
             return;
         }
+  
 
-        private static GetBucketAclResponseUnmarshaller _instance = new GetBucketAclResponseUnmarshaller();
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
 
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            {
+            }
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
+        }
+
+        private static GetCORSConfigurationResponseUnmarshaller _instance = new GetCORSConfigurationResponseUnmarshaller();        
+
+        internal static GetCORSConfigurationResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetBucketAclResponseUnmarshaller Instance
+        public static GetCORSConfigurationResponseUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new GetBucketAclResponseUnmarshaller();
-                }
                 return _instance;
             }
         }

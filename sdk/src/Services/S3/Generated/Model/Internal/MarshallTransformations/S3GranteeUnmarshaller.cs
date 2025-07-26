@@ -12,26 +12,40 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Grantee Unmarshaller
-     /// </summary>
-    public class GranteeUnmarshaller : IXmlUnmarshaller<S3Grantee, XmlUnmarshallerContext>
+    /// <summary>
+    /// Response Unmarshaller for S3Grantee Object
+    /// </summary>  
+    public class S3GranteeUnmarshaller : IXmlUnmarshaller<S3Grantee, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3Grantee Unmarshall(XmlUnmarshallerContext context) 
+        public S3Grantee Unmarshall(XmlUnmarshallerContext context)
         {
-            S3Grantee grantee = new S3Grantee();
+            S3Grantee unmarshalledObject = new S3Grantee();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -42,63 +56,49 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("@Type", targetDepth - 1))
+                    if (context.TestExpression("ID", targetDepth))
                     {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CanonicalUser = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DisplayName", targetDepth))
                     {
-                        grantee.DisplayName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EmailAddress", targetDepth))
                     {
-                        grantee.EmailAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ID", targetDepth))
-                    {
-                        grantee.CanonicalUser = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("URI", targetDepth))
                     {
-                        grantee.URI = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.URI = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return grantee;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return grantee;
+            }          
+            return unmarshalledObject;
         }
-
-
-        private static GranteeUnmarshaller _instance;
+        private static S3GranteeUnmarshaller _instance = new S3GranteeUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static GranteeUnmarshaller Instance
+        /// Gets the singleton.
+        /// </summary>  
+        public static S3GranteeUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new GranteeUnmarshaller();
-                }
                 return _instance;
             }
         }
     }
 }
-    

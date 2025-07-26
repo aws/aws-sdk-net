@@ -177,7 +177,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         // For every member, generate code to add the unmarshalled member to the response object
         foreach (var member in this.Structure.Members)
         {
-            ProcessResponseBodyOrStructureMembers(member, true);
+            ProcessResponseBodyOrStructureMembers(member, true, this.Structure);
 
             
             #line default

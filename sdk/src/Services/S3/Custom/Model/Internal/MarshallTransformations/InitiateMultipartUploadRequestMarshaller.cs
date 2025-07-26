@@ -26,110 +26,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Create Multipart Upload Request Marshaller
     /// </summary>       
-    public class InitiateMultipartUploadRequestMarshaller : IMarshaller<IRequest, InitiateMultipartUploadRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class InitiateMultipartUploadRequestMarshaller : IMarshaller<IRequest, InitiateMultipartUploadRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((InitiateMultipartUploadRequest)input);
-		}
-
-        public IRequest Marshall(InitiateMultipartUploadRequest initiateMultipartUploadRequest)
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, InitiateMultipartUploadRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(initiateMultipartUploadRequest, "AmazonS3");
-
-            request.HttpMethod = "POST";
-
-            if (initiateMultipartUploadRequest.IsSetCannedACL())
-                request.Headers.Add(HeaderKeys.XAmzAclHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.CannedACL));
-
-            if (initiateMultipartUploadRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ExpectedBucketOwner));
-
-            var headers = initiateMultipartUploadRequest.Headers;
+            var headers = publicRequest.Headers;
             foreach (var key in headers.Keys)
-                request.Headers.Add(key, headers[key]);
+                defaultRequest.Headers.Add(key, headers[key]);
 
-            HeaderACLRequestMarshaller.Marshall(request, initiateMultipartUploadRequest);
-
-            if (initiateMultipartUploadRequest.IsSetServerSideEncryptionMethod())
-                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ServerSideEncryptionMethod));
-            if (initiateMultipartUploadRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, initiateMultipartUploadRequest.ServerSideEncryptionCustomerMethod);
-            if (initiateMultipartUploadRequest.IsSetServerSideEncryptionCustomerProvidedKey())
+            HeaderACLRequestMarshaller.Marshall(defaultRequest, publicRequest);
+            AmazonS3Util.SetMetadataHeaders(defaultRequest, publicRequest.Metadata);
+            if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
-                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKey);
-                if (initiateMultipartUploadRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                defaultRequest.Headers[HeaderKeys.XAmzSSECustomerKeyHeader] =  publicRequest.ServerSideEncryptionCustomerProvidedKey;
+                if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
+                    defaultRequest.Headers[HeaderKeys.XAmzSSECustomerKeyMD5Header] = publicRequest.ServerSideEncryptionCustomerProvidedKeyMD5;
                 else
-                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKey));
+                    defaultRequest.Headers[HeaderKeys.XAmzSSECustomerKeyMD5Header] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(publicRequest.ServerSideEncryptionCustomerProvidedKey);
             }
 
-            if (initiateMultipartUploadRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
-                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, initiateMultipartUploadRequest.ServerSideEncryptionKeyManagementServiceKeyId);
-
-            if (initiateMultipartUploadRequest.IsSetServerSideEncryptionKeyManagementServiceEncryptionContext())
-                request.Headers.Add("x-amz-server-side-encryption-context", initiateMultipartUploadRequest.ServerSideEncryptionKeyManagementServiceEncryptionContext);
-
-            if (initiateMultipartUploadRequest.IsSetStorageClass())
-                request.Headers.Add(HeaderKeys.XAmzStorageClassHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.StorageClass));
-
-            if (initiateMultipartUploadRequest.IsSetWebsiteRedirectLocation())
-                request.Headers.Add(HeaderKeys.XAmzWebsiteRedirectLocationHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.WebsiteRedirectLocation));
-            if (initiateMultipartUploadRequest.IsSetRequestPayer())
-                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(initiateMultipartUploadRequest.RequestPayer.ToString()));
-
-            if(initiateMultipartUploadRequest.IsSetObjectLockLegalHoldStatus())
-                request.Headers.Add("x-amz-object-lock-legal-hold", S3Transforms.ToStringValue(initiateMultipartUploadRequest.ObjectLockLegalHoldStatus));        
-            if(initiateMultipartUploadRequest.IsSetObjectLockMode())
-                request.Headers.Add("x-amz-object-lock-mode", S3Transforms.ToStringValue(initiateMultipartUploadRequest.ObjectLockMode));        
-            if(initiateMultipartUploadRequest.IsSetObjectLockRetainUntilDate())
-                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(initiateMultipartUploadRequest.ObjectLockRetainUntilDate.Value, AWSSDKUtils.ISO8601DateFormat));
-
-            if (initiateMultipartUploadRequest.IsSetTagSet())
-                request.Headers.Add(S3Constants.AmzHeaderTagging, AmazonS3Util.TagSetToQueryString(initiateMultipartUploadRequest.TagSet));
-
-            if (initiateMultipartUploadRequest.IsSetBucketKeyEnabled())
-                request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(initiateMultipartUploadRequest.BucketKeyEnabled.Value));
-
-            if (initiateMultipartUploadRequest.IsSetChecksumAlgorithm())
-                request.Headers.Add(S3Constants.AmzHeaderChecksumAlgorithm, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ChecksumAlgorithm));
-
-            if (initiateMultipartUploadRequest.IsSetChecksumType())
-                request.Headers.Add(S3Constants.AmzHeaderChecksumType, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ChecksumType));
-
-            AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
-
-            if (string.IsNullOrEmpty(initiateMultipartUploadRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "InitiateMultipartUploadRequest.BucketName");
-            if (string.IsNullOrEmpty(initiateMultipartUploadRequest.Key))
-                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "InitiateMultipartUploadRequest.Key");
-
-            request.ResourcePath = "/{Key+}";
-            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(initiateMultipartUploadRequest.Key));
-
-            request.AddSubResource("uploads");
-
-            request.UseQueryString = true;
-
-            return request;
         }
-
-	    private static InitiateMultipartUploadRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static InitiateMultipartUploadRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new InitiateMultipartUploadRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
     }
 }
 

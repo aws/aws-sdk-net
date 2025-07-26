@@ -27,43 +27,8 @@ namespace Amazon.S3.Model
     /// server access log delivery</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     /// </summary>
-    public class S3Grant
+    public partial class S3Grant
     {
-        
-        private S3Grantee grantee;
-        private S3Permission permission;
-
-        /// <summary>
-        /// The grantee details.
-        /// </summary>
-        public S3Grantee Grantee
-        {
-            get { return this.grantee; }
-            set { this.grantee = value; }
-        }
-
-        // Check to see if Grantee property is set
-        internal bool IsSetGrantee()
-        {
-            return this.grantee != null;
-        }
-
-        /// <summary>
-        /// Specifies the permission given to the grantee.
-        ///  
-        /// </summary>
-        public S3Permission Permission
-        {
-            get { return this.permission; }
-            set { this.permission = value; }
-        }
-
-        // Check to see if Permission property is set
-        internal bool IsSetPermission()
-        {
-            return this.permission != null;
-        }
-
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);
