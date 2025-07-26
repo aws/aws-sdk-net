@@ -95,7 +95,7 @@ namespace Amazon.Runtime
                     var newExpiryTime = AWSSDKUtils.CorrectedUtcNow + TimeSpan.FromMinutes(2);
 #pragma warning restore CS0612,CS0618 // Type or member is obsolete
 
-                    _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials.Copy(), newExpiryTime);
+                    _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials, newExpiryTime);
                     return _currentRefreshState;
                 }
             }
@@ -111,7 +111,7 @@ namespace Amazon.Runtime
                 var newExpiryTime = AWSSDKUtils.CorrectedUtcNow + TimeSpan.FromMinutes(new Random().Next(5, 11));
 #pragma warning restore CS0612, CS0618 // Type or member is obsolete
 
-                _currentRefreshState = new CredentialsRefreshState(newState.Credentials.Copy(), newExpiryTime);
+                _currentRefreshState = new CredentialsRefreshState(newState.Credentials, newExpiryTime);
 
                 return _currentRefreshState;
             }
@@ -176,7 +176,7 @@ namespace Amazon.Runtime
                 if (null != _currentRefreshState)
                 {
                     var newExpiryTime = AWSSDKUtils.CorrectedUtcNow + TimeSpan.FromMinutes(2);
-                    _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials.Copy(), newExpiryTime);
+                    _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials, newExpiryTime);
                     return _currentRefreshState;
                 }
             }
@@ -188,7 +188,7 @@ namespace Amazon.Runtime
 
                 // use a custom refresh time
                 var newExpiryTime = AWSSDKUtils.CorrectedUtcNow + TimeSpan.FromMinutes(new Random().Next(5, 11));
-                _currentRefreshState = new CredentialsRefreshState(newState.Credentials.Copy(), newExpiryTime);
+                _currentRefreshState = new CredentialsRefreshState(newState.Credentials, newExpiryTime);
 
                 return _currentRefreshState;
             }
@@ -402,7 +402,7 @@ namespace Amazon.Runtime
             if (newExpiryTime > state.Expiration)
                 newExpiryTime = state.Expiration;
 
-            return new CredentialsRefreshState(state.Credentials.Copy(), newExpiryTime);
+            return new CredentialsRefreshState(state.Credentials, newExpiryTime);
         }
 
         private CredentialsRefreshState GetRefreshState(string token)
