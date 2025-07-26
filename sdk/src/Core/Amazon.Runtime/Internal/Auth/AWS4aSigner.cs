@@ -23,6 +23,7 @@ using System.Security.Cryptography;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Identity;
+using System.Threading;
 
 #if !NET7_0_OR_GREATER
 using System.Formats.Asn1;
@@ -368,6 +369,26 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
+        private static ECDsa GetCachedSigningKey(ImmutableCredentials credentials)
+        {
+            // First, check if the credentials already have a cached signing key.
+            if (credentials.AWS4aSigningKey is { } key)
+            {
+                return key;
+            }
+
+            // Otherwise, compute one and try setting it in a thread-safe manner.
+            ECDsa newKey = ComputeSigningKey(credentials.AccessKey, credentials.SecretKey);
+            ECDsa existingKey = Interlocked.CompareExchange(ref credentials.AWS4aSigningKey, newKey, null);
+            if (existingKey != null)
+            {
+                // If another thread beat us to setting the key, use that, and dispose the one we generated, to save resources.
+                newKey.Dispose();
+                return existingKey;
+            }
+            return newKey;
+        }
+
         /// <summary>
         /// Returns the ECDSA signature for an arbitrary blob using the specified credentials.
         /// </summary>
@@ -385,7 +406,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="data">The data to sign.</param>
         public static byte[] SignBlob(ImmutableCredentials credentials, byte[] data)
         {
-            var key = credentials.AWS4aSigningKey ??= ComputeSigningKey(credentials.AccessKey, credentials.SecretKey);
+            var key = GetCachedSigningKey(credentials);
 #if NET7_0_OR_GREATER
             return key.SignData(data, HashAlgorithmName.SHA256, DSASignatureFormat.Rfc3279DerSequence);
 #else

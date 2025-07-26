@@ -58,12 +58,13 @@ namespace Amazon.Runtime
         public string AccountId { get; private set; }
 
         /// <summary>
-        /// Gets a cached AWS4a signing key for the current credentials.
+        /// Contains a cached AWS4a signing key for the current credentials. Do
+        /// not access this property directly; use <see cref="Internal.Auth.AWS4aSigner.GetCachedSigningKey"/> instead.
         /// </summary>
         /// <remarks>
         /// The key must not be disposed, and must not be returned to the user.
         /// </remarks>
-        internal ECDsa AWS4aSigningKey { get; set; }
+        internal ECDsa AWS4aSigningKey;
         #endregion
 
 
