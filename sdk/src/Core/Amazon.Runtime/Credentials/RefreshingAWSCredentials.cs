@@ -150,7 +150,7 @@ namespace Amazon.Runtime
                 tempState = GenerateCredentialsAndUpdateState();
             }
 
-            return tempState.Credentials.Copy();
+            return tempState.Credentials;
 
             CredentialsRefreshState GenerateCredentialsAndUpdateState()
             {
@@ -202,7 +202,7 @@ namespace Amazon.Runtime
                 tempState = await GenerateCredentialsAndUpdateStateAsync().ConfigureAwait(false);
             }
 
-            return tempState.Credentials.Copy();
+            return tempState.Credentials;
 
             async System.Threading.Tasks.Task<CredentialsRefreshState> GenerateCredentialsAndUpdateStateAsync()
             {

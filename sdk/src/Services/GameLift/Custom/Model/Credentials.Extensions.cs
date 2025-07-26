@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model
         {
             if (_credentials == null)
                 _credentials = new ImmutableCredentials(AccessKeyId, SecretAccessKey, SessionToken);
-            return _credentials.Copy();
+            return _credentials;
         }
     }
 }
