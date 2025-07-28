@@ -128,6 +128,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PipelineName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PipelineRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipelineRoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ServiceVpcEndpoints", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceVpcEndpoint, ServiceVpcEndpointUnmarshaller>(ServiceVpcEndpointUnmarshaller.Instance);
