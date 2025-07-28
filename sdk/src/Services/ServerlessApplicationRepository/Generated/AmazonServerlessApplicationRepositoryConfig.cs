@@ -32,7 +32,7 @@ namespace Amazon.ServerlessApplicationRepository
     public partial class AmazonServerlessApplicationRepositoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ServerlessApplicationRepository", "3.7.400.182");
+            InternalSDKUtils.BuildUserAgentString("ServerlessApplicationRepository", "3.7.400.183");
 
         private string _userAgent = UserAgentString;
         ///<summary>

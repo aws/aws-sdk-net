@@ -1,3 +1,14 @@
+### 3.7.1089.0 (2025-07-28 19:48 UTC)
+* DirectConnect (3.7.403.0)
+	* Enable MACSec support and features on Interconnects.
+* IoTSiteWise (3.7.405.0)
+	* Add support for native anomaly detection in IoT SiteWise using new Computation Model APIs
+* OSIS (3.7.401.0)
+	* Add Pipeline Role Arn as an optional parameter to the create / update pipeline APIs as an alternative to passing in the pipeline configuration body
+* Core 3.7.402.89
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1088.0 (2025-07-25 18:31 UTC)
 * AppIntegrationsService (3.7.402.0)
 	* Amazon AppIntegrations introduces new configuration capabilities to enable customers to manage iframe permissions, control application refresh behavior (per contact or per browser/cross-contact), and run background applications (service).

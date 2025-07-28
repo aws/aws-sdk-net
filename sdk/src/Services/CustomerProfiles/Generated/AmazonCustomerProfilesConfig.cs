@@ -32,7 +32,7 @@ namespace Amazon.CustomerProfiles
     public partial class AmazonCustomerProfilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Customer Profiles", "3.7.405.9");
+            InternalSDKUtils.BuildUserAgentString("Customer Profiles", "3.7.405.10");
 
         private string _userAgent = UserAgentString;
         ///<summary>
