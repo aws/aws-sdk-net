@@ -17,10 +17,12 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Credentials.Internal;
+using Amazon.Util;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -295,10 +297,6 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.FastFailRequests = defaultConfig.FastFailRequests.Value;
             }
-            if (defaultConfig.HttpClientCacheSize.HasValue)
-            {
-                config.HttpClientCacheSize = defaultConfig.HttpClientCacheSize.Value;
-            }
             if (defaultConfig.IgnoreConfiguredEndpointUrls.HasValue)
             {
                 config.IgnoreConfiguredEndpointUrls = defaultConfig.IgnoreConfiguredEndpointUrls.Value;
@@ -367,7 +365,26 @@ namespace Amazon.Extensions.NETCore.Setup
                 ProcessServiceSpecificSettings(config, defaultConfig.ServiceSpecificSettings);
             }
 
+            // It is possible that this library might be used in .NET Framework application. In that
+            // case the SDK used at runtime will be the .NET Framework variant. To avoid getting
+            // MissingMethodException exceptions for config properties that don't exist in 
+            // .NET Framework variant put the set calls in a separate method only called
+            // if the SDK is not the .NET Framework variant.
+            if (!AWSSDKUtils.IsNETFramework())
+            {
+                SetNETStandardAndAboveSettings(defaultConfig, config);
+            }
+
             return config;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void SetNETStandardAndAboveSettings(DefaultClientConfig defaultConfig, ClientConfig config)
+        {
+            if (defaultConfig.HttpClientCacheSize.HasValue)
+            {
+                config.HttpClientCacheSize = defaultConfig.HttpClientCacheSize.Value;
+            }
         }
 
 #if NET8_0_OR_GREATER
