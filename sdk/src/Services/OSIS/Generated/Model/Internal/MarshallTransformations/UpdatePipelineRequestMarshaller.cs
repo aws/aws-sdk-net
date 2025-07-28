@@ -121,6 +121,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PipelineConfigurationBody);
                 }
 
+                if(publicRequest.IsSetPipelineRoleArn())
+                {
+                    context.Writer.WritePropertyName("PipelineRoleArn");
+                    context.Writer.Write(publicRequest.PipelineRoleArn);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

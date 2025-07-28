@@ -20,6 +20,12 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OSIS.Model.CreatePipelineRequest.PipelineRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b|aws\-iso\-e|aws\-iso\-f):iam::[0-9]+:role\/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OSIS.Model.DeletePipelineRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
@@ -108,6 +114,12 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OSIS.Model.UpdatePipelineRequest.PipelineRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b|aws\-iso\-e|aws\-iso\-f):iam::[0-9]+:role\/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OSIS.Model.ValidatePipelineRequest.PipelineConfigurationBody</property>
     <min>1</min>
     <max>24000</max>
@@ -122,6 +134,12 @@
     <property>Amazon.OSIS.Model.EncryptionAtRestOptions.KmsKeyArn</property>
     <min>7</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.Pipeline.PipelineRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b|aws\-iso\-e|aws\-iso\-f):iam::[0-9]+:role\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.PipelineSummary.MaxUnits</property>
