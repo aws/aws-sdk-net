@@ -887,6 +887,114 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type ComputationModelState.
+    /// </summary>
+    public class ComputationModelState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ComputationModelState
+        /// </summary>
+        public static readonly ComputationModelState ACTIVE = new ComputationModelState("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ComputationModelState
+        /// </summary>
+        public static readonly ComputationModelState CREATING = new ComputationModelState("CREATING");
+        /// <summary>
+        /// Constant DELETING for ComputationModelState
+        /// </summary>
+        public static readonly ComputationModelState DELETING = new ComputationModelState("DELETING");
+        /// <summary>
+        /// Constant FAILED for ComputationModelState
+        /// </summary>
+        public static readonly ComputationModelState FAILED = new ComputationModelState("FAILED");
+        /// <summary>
+        /// Constant UPDATING for ComputationModelState
+        /// </summary>
+        public static readonly ComputationModelState UPDATING = new ComputationModelState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputationModelState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputationModelState FindValue(string value)
+        {
+            return FindValue<ComputationModelState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputationModelState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComputationModelType.
+    /// </summary>
+    public class ComputationModelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANOMALY_DETECTION for ComputationModelType
+        /// </summary>
+        public static readonly ComputationModelType ANOMALY_DETECTION = new ComputationModelType("ANOMALY_DETECTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputationModelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputationModelType FindValue(string value)
+        {
+            return FindValue<ComputationModelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputationModelType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComputeLocation.
     /// </summary>
     public class ComputeLocation : ConstantClass
@@ -1392,6 +1500,60 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionState.
+    /// </summary>
+    public class ExecutionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ExecutionState
+        /// </summary>
+        public static readonly ExecutionState COMPLETED = new ExecutionState("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ExecutionState
+        /// </summary>
+        public static readonly ExecutionState FAILED = new ExecutionState("FAILED");
+        /// <summary>
+        /// Constant RUNNING for ExecutionState
+        /// </summary>
+        public static readonly ExecutionState RUNNING = new ExecutionState("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionState FindValue(string value)
+        {
+            return FindValue<ExecutionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionState(string value)
         {
             return FindValue(value);
         }
@@ -2387,6 +2549,52 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type ResolveToResourceType.
+    /// </summary>
+    public class ResolveToResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET for ResolveToResourceType
+        /// </summary>
+        public static readonly ResolveToResourceType ASSET = new ResolveToResourceType("ASSET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolveToResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolveToResourceType FindValue(string value)
+        {
+            return FindValue<ResolveToResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolveToResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -2558,6 +2766,10 @@ namespace Amazon.IoTSiteWise
         /// Constant ASSET for TargetResourceType
         /// </summary>
         public static readonly TargetResourceType ASSET = new TargetResourceType("ASSET");
+        /// <summary>
+        /// Constant COMPUTATION_MODEL for TargetResourceType
+        /// </summary>
+        public static readonly TargetResourceType COMPUTATION_MODEL = new TargetResourceType("COMPUTATION_MODEL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
