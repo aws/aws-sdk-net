@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
@@ -377,6 +378,7 @@ namespace Amazon.Extensions.NETCore.Setup
             return config;
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
         private void SetNETStandardAndAboveSettings(DefaultClientConfig defaultConfig, ClientConfig config)
         {
             if (defaultConfig.HttpClientCacheSize.HasValue)
