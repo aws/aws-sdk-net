@@ -161,9 +161,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// MAC Security (MACsec) is only available on dedicated connections. For information
-        /// about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
-        /// prerequisties</a> in the <i>Direct Connect User Guide</i>.
+        /// MAC Security (MACsec) is unavailable on hosted connections. For information about
+        /// MAC Security (MACsec) prerequisites, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/MACSec.html">MAC
+        /// Security in Direct Connect</a> in the <i>Direct Connect User Guide</i>.
         /// </para>
         /// </summary>
         public bool RequestMACSec

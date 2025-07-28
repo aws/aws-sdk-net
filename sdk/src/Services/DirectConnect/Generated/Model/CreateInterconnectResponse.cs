@@ -38,6 +38,7 @@ namespace Amazon.DirectConnect.Model
         private string _awsDeviceV2;
         private string _awsLogicalDeviceId;
         private string _bandwidth;
+        private string _encryptionMode;
         private HasLogicalRedundancy _hasLogicalRedundancy;
         private string _interconnectId;
         private string _interconnectName;
@@ -46,6 +47,9 @@ namespace Amazon.DirectConnect.Model
         private string _lagId;
         private DateTime? _loaIssueTime;
         private string _location;
+        private bool? _macSecCapable;
+        private List<MacSecKey> _macSecKeys = AWSConfigs.InitializeCollections ? new List<MacSecKey>() : null;
+        private string _portEncryptionStatus;
         private string _providerName;
         private string _region;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -121,6 +125,28 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetBandwidth()
         {
             return this._bandwidth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionMode. 
+        /// <para>
+        /// The MAC Security (MACsec) encryption mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <c>no_encrypt</c>, <c>should_encrypt</c>, and <c>must_encrypt</c>.
+        /// </para>
+        /// </summary>
+        public string EncryptionMode
+        {
+            get { return this._encryptionMode; }
+            set { this._encryptionMode = value; }
+        }
+
+        // Check to see if EncryptionMode property is set
+        internal bool IsSetEncryptionMode()
+        {
+            return this._encryptionMode != null;
         }
 
         /// <summary>
@@ -296,6 +322,65 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MacSecCapable. 
+        /// <para>
+        /// Indicates whether the interconnect supports MAC Security (MACsec).
+        /// </para>
+        /// </summary>
+        public bool MacSecCapable
+        {
+            get { return this._macSecCapable.GetValueOrDefault(); }
+            set { this._macSecCapable = value; }
+        }
+
+        // Check to see if MacSecCapable property is set
+        internal bool IsSetMacSecCapable()
+        {
+            return this._macSecCapable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MacSecKeys. 
+        /// <para>
+        /// The MAC Security (MACsec) security keys.
+        /// </para>
+        /// </summary>
+        public List<MacSecKey> MacSecKeys
+        {
+            get { return this._macSecKeys; }
+            set { this._macSecKeys = value; }
+        }
+
+        // Check to see if MacSecKeys property is set
+        internal bool IsSetMacSecKeys()
+        {
+            return this._macSecKeys != null && (this._macSecKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortEncryptionStatus. 
+        /// <para>
+        /// The MAC Security (MACsec) port link status.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are <c>Encryption Up</c>, which means that there is an active Connection
+        /// Key Name, or <c>Encryption Down</c>.
+        /// </para>
+        /// </summary>
+        public string PortEncryptionStatus
+        {
+            get { return this._portEncryptionStatus; }
+            set { this._portEncryptionStatus = value; }
+        }
+
+        // Check to see if PortEncryptionStatus property is set
+        internal bool IsSetPortEncryptionStatus()
+        {
+            return this._portEncryptionStatus != null;
         }
 
         /// <summary>

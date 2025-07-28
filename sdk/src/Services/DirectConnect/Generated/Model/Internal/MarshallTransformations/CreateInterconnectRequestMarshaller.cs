@@ -99,6 +99,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProviderName);
                 }
 
+                if(publicRequest.IsSetRequestMACSec())
+                {
+                    context.Writer.WritePropertyName("requestMACSec");
+                    context.Writer.Write(publicRequest.RequestMACSec);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

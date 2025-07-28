@@ -162,6 +162,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnerAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("partnerInterconnectMacSecCapable", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PartnerInterconnectMacSecCapable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("partnerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

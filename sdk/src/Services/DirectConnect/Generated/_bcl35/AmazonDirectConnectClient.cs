@@ -867,7 +867,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association
-        /// Key (CAK) pair with an Direct Connect dedicated connection.
+        /// Key (CAK) pair with a Direct Connect connection.
         /// 
         ///  
         /// <para>
@@ -4088,8 +4088,8 @@ namespace Amazon.DirectConnect
         #region  DisassociateMacSecKey
 
         /// <summary>
-        /// Removes the association between a MAC Security (MACsec) security key and an Direct
-        /// Connect dedicated connection.
+        /// Removes the association between a MAC Security (MACsec) security key and a Direct
+        /// Connect connection.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMacSecKey service method.</param>
         /// 
@@ -4478,7 +4478,7 @@ namespace Amazon.DirectConnect
         #region  UpdateConnection
 
         /// <summary>
-        /// Updates the Direct Connect dedicated connection configuration.
+        /// Updates the Direct Connect connection configuration.
         /// 
         ///  
         /// <para>

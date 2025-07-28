@@ -40,7 +40,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).
+        /// The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG
+        /// (dxlag-xxxx).
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -58,7 +59,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property MacSecKeys. 
         /// <para>
-        /// The MAC Security (MACsec) security keys no longer associated with the dedicated connection.
+        /// The MAC Security (MACsec) security keys no longer associated with the connection.
         /// </para>
         /// </summary>
         public List<MacSecKey> MacSecKeys
