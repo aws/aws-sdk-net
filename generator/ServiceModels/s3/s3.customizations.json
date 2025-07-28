@@ -227,6 +227,13 @@
                 }
             ]
         },
+        "GetObjectAclRequest":{
+            "modify":[
+              {
+                "ExpectedBucketOwner": { "emitPropertyName": "ExpectedBucketOwnerRenamed" }
+              }
+            ]
+        },
         "PutBucketConfiguration":{
             "modify":[
                 {

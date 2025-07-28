@@ -58,7 +58,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (publicRequest.IsSetExpectedBucketOwner())
             {
-                request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
+                request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwnerRenamed;
             }
 
             if (publicRequest.IsSetRequestPayer())

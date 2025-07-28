@@ -129,7 +129,7 @@ namespace Amazon.S3.Model
         /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
-        public string ExpectedBucketOwner
+        public string ExpectedBucketOwnerRenamed
         {
             get { return this._expectedBucketOwner; }
             set { this._expectedBucketOwner = value; }
