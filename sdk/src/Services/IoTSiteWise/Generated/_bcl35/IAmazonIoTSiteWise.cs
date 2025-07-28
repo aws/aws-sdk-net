@@ -73,7 +73,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -213,7 +213,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -574,7 +574,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -651,7 +651,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -728,7 +728,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -829,7 +829,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -936,7 +936,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1013,10 +1013,22 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  
         /// <para>
-        /// Bulk import is designed to store historical data to IoT SiteWise. It does not trigger
-        /// computations or notifications on IoT SiteWise warm or cold tier storage.
+        /// Bulk import is designed to store historical data to IoT SiteWise.
         /// </para>
-        ///  </important>
+        ///  <ul> <li> 
+        /// <para>
+        /// Newly ingested data in the hot tier triggers notifications and computations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After data moves from the hot tier to the warm or cold tier based on retention settings,
+        /// it does not trigger computations or notifications.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data older than 7 days does not trigger computations or notifications.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBulkImportJob service method.</param>
         /// 
@@ -1033,7 +1045,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1091,6 +1103,85 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  CreateComputationModel
+
+
+        /// <summary>
+        /// Create a computation model with a configuration and data binding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputationModel service method.</param>
+        /// 
+        /// <returns>The response from the CreateComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateComputationModel">REST API Reference for CreateComputationModel Operation</seealso>
+        CreateComputationModelResponse CreateComputationModel(CreateComputationModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateComputationModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputationModel operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateComputationModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateComputationModel">REST API Reference for CreateComputationModel Operation</seealso>
+        IAsyncResult BeginCreateComputationModel(CreateComputationModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateComputationModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateComputationModel.</param>
+        /// 
+        /// <returns>Returns a  CreateComputationModelResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateComputationModel">REST API Reference for CreateComputationModel Operation</seealso>
+        CreateComputationModelResponse EndCreateComputationModel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDashboard
 
 
@@ -1108,7 +1199,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1184,7 +1275,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1261,7 +1352,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1342,7 +1433,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1420,7 +1511,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1753,6 +1844,71 @@ namespace Amazon.IoTSiteWise
         /// <returns>Returns a  DeleteAssetModelCompositeModelResult from IoTSiteWise.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel">REST API Reference for DeleteAssetModelCompositeModel Operation</seealso>
         DeleteAssetModelCompositeModelResponse EndDeleteAssetModelCompositeModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteComputationModel
+
+
+        /// <summary>
+        /// Deletes a computation model. This action can't be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComputationModel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteComputationModel">REST API Reference for DeleteComputationModel Operation</seealso>
+        DeleteComputationModelResponse DeleteComputationModel(DeleteComputationModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteComputationModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComputationModel operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteComputationModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteComputationModel">REST API Reference for DeleteComputationModel Operation</seealso>
+        IAsyncResult BeginDeleteComputationModel(DeleteComputationModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteComputationModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteComputationModel.</param>
+        /// 
+        /// <returns>Returns a  DeleteComputationModelResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteComputationModel">REST API Reference for DeleteComputationModel Operation</seealso>
+        DeleteComputationModelResponse EndDeleteComputationModel(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2672,6 +2828,128 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  DescribeComputationModel
+
+
+        /// <summary>
+        /// Retrieves information about a computation model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputationModel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModel">REST API Reference for DescribeComputationModel Operation</seealso>
+        DescribeComputationModelResponse DescribeComputationModel(DescribeComputationModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComputationModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputationModel operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeComputationModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModel">REST API Reference for DescribeComputationModel Operation</seealso>
+        IAsyncResult BeginDescribeComputationModel(DescribeComputationModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeComputationModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeComputationModel.</param>
+        /// 
+        /// <returns>Returns a  DescribeComputationModelResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModel">REST API Reference for DescribeComputationModel Operation</seealso>
+        DescribeComputationModelResponse EndDescribeComputationModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeComputationModelExecutionSummary
+
+
+        /// <summary>
+        /// Retrieves information about the execution summary of a computation model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputationModelExecutionSummary service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComputationModelExecutionSummary service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModelExecutionSummary">REST API Reference for DescribeComputationModelExecutionSummary Operation</seealso>
+        DescribeComputationModelExecutionSummaryResponse DescribeComputationModelExecutionSummary(DescribeComputationModelExecutionSummaryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComputationModelExecutionSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputationModelExecutionSummary operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeComputationModelExecutionSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModelExecutionSummary">REST API Reference for DescribeComputationModelExecutionSummary Operation</seealso>
+        IAsyncResult BeginDescribeComputationModelExecutionSummary(DescribeComputationModelExecutionSummaryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeComputationModelExecutionSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeComputationModelExecutionSummary.</param>
+        /// 
+        /// <returns>Returns a  DescribeComputationModelExecutionSummaryResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModelExecutionSummary">REST API Reference for DescribeComputationModelExecutionSummary Operation</seealso>
+        DescribeComputationModelExecutionSummaryResponse EndDescribeComputationModelExecutionSummary(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDashboard
 
 
@@ -2855,6 +3133,67 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  DescribeExecution
+
+
+        /// <summary>
+        /// Retrieves information about the execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExecution service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
+        DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExecution operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
+        IAsyncResult BeginDescribeExecution(DescribeExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExecution.</param>
+        /// 
+        /// <returns>Returns a  DescribeExecutionResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
+        DescribeExecutionResponse EndDescribeExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeGateway
 
 
@@ -2920,11 +3259,37 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves information about a gateway capability configuration. Each gateway capability
-        /// defines data sources for a gateway. A capability configuration can contain multiple
-        /// data source configurations. If you define OPC-UA sources for a gateway in the IoT
-        /// SiteWise console, all of your OPC-UA sources are stored in one capability configuration.
-        /// To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
+        /// Each gateway capability defines data sources for a gateway. This is the namespace
+        /// of the gateway capability.
+        /// 
+        ///  
+        /// <para>
+        /// . The namespace follows the format <c>service:capability:version</c>, where:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>service</c> - The service providing the capability, or <c>iotsitewise</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>capability</c> - The specific capability type. Options include: <c>opcuacollector</c>
+        /// for the OPC UA data source collector, or <c>publisher</c> for data publisher capability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>version</c> - The version number of the capability. Option include <c>2</c> for
+        /// Classic streams, V2 gateways, and <c>3</c> for MQTT-enabled, V3 gateways.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After updating a capability configuration, the sync status becomes <c>OUT_OF_SYNC</c>
+        /// until the gateway processes the configuration.Use <c>DescribeGatewayCapabilityConfiguration</c>
+        /// to check the sync status and verify the configuration was applied.
+        /// </para>
+        ///  
+        /// <para>
+        /// A gateway can have multiple capability configurations with different namespaces.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayCapabilityConfiguration service method.</param>
         /// 
@@ -3185,7 +3550,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -3477,7 +3842,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -3953,7 +4318,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -4718,6 +5083,186 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  ListComputationModelDataBindingUsages
+
+
+        /// <summary>
+        /// Lists all data binding usages for computation models. This allows to identify where
+        /// specific data bindings are being utilized across the computation models. This track
+        /// dependencies between data sources and computation models.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModelDataBindingUsages service method.</param>
+        /// 
+        /// <returns>The response from the ListComputationModelDataBindingUsages service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelDataBindingUsages">REST API Reference for ListComputationModelDataBindingUsages Operation</seealso>
+        ListComputationModelDataBindingUsagesResponse ListComputationModelDataBindingUsages(ListComputationModelDataBindingUsagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComputationModelDataBindingUsages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModelDataBindingUsages operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComputationModelDataBindingUsages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelDataBindingUsages">REST API Reference for ListComputationModelDataBindingUsages Operation</seealso>
+        IAsyncResult BeginListComputationModelDataBindingUsages(ListComputationModelDataBindingUsagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComputationModelDataBindingUsages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComputationModelDataBindingUsages.</param>
+        /// 
+        /// <returns>Returns a  ListComputationModelDataBindingUsagesResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelDataBindingUsages">REST API Reference for ListComputationModelDataBindingUsages Operation</seealso>
+        ListComputationModelDataBindingUsagesResponse EndListComputationModelDataBindingUsages(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListComputationModelResolveToResources
+
+
+        /// <summary>
+        /// Lists all distinct resources that are resolved from the executed actions of the computation
+        /// model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModelResolveToResources service method.</param>
+        /// 
+        /// <returns>The response from the ListComputationModelResolveToResources service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelResolveToResources">REST API Reference for ListComputationModelResolveToResources Operation</seealso>
+        ListComputationModelResolveToResourcesResponse ListComputationModelResolveToResources(ListComputationModelResolveToResourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComputationModelResolveToResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModelResolveToResources operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComputationModelResolveToResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelResolveToResources">REST API Reference for ListComputationModelResolveToResources Operation</seealso>
+        IAsyncResult BeginListComputationModelResolveToResources(ListComputationModelResolveToResourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComputationModelResolveToResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComputationModelResolveToResources.</param>
+        /// 
+        /// <returns>Returns a  ListComputationModelResolveToResourcesResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelResolveToResources">REST API Reference for ListComputationModelResolveToResources Operation</seealso>
+        ListComputationModelResolveToResourcesResponse EndListComputationModelResolveToResources(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListComputationModels
+
+
+        /// <summary>
+        /// Retrieves a paginated list of summaries of all computation models.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModels service method.</param>
+        /// 
+        /// <returns>The response from the ListComputationModels service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModels">REST API Reference for ListComputationModels Operation</seealso>
+        ListComputationModelsResponse ListComputationModels(ListComputationModelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComputationModels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModels operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComputationModels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModels">REST API Reference for ListComputationModels Operation</seealso>
+        IAsyncResult BeginListComputationModels(ListComputationModelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComputationModels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComputationModels.</param>
+        /// 
+        /// <returns>Returns a  ListComputationModelsResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModels">REST API Reference for ListComputationModels Operation</seealso>
+        ListComputationModelsResponse EndListComputationModels(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDashboards
 
 
@@ -4831,6 +5376,67 @@ namespace Amazon.IoTSiteWise
         /// <returns>Returns a  ListDatasetsResult from IoTSiteWise.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         ListDatasetsResponse EndListDatasets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListExecutions
+
+
+        /// <summary>
+        /// Retrieves a paginated list of summaries of all executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListExecutions service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
+        ListExecutionsResponse ListExecutions(ListExecutionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutions operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
+        IAsyncResult BeginListExecutions(ListExecutionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListExecutionsResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
+        ListExecutionsResponse EndListExecutions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5087,7 +5693,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -5229,7 +5835,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -5367,7 +5973,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -5447,7 +6053,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -5472,7 +6078,7 @@ namespace Amazon.IoTSiteWise
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.TooManyTagsException">
-        /// You've reached the limit for the number of tags allowed for a resource. For more information,
+        /// You've reached the quota for the number of tags allowed for a resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
         /// naming limits and requirements</a> in the <i>Amazon Web Services General Reference</i>.
         /// </exception>
@@ -5531,7 +6137,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -5766,7 +6372,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -5874,7 +6480,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -6008,6 +6614,85 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  UpdateComputationModel
+
+
+        /// <summary>
+        /// Updates the computation model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComputationModel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateComputationModel">REST API Reference for UpdateComputationModel Operation</seealso>
+        UpdateComputationModelResponse UpdateComputationModel(UpdateComputationModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateComputationModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComputationModel operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateComputationModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateComputationModel">REST API Reference for UpdateComputationModel Operation</seealso>
+        IAsyncResult BeginUpdateComputationModel(UpdateComputationModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateComputationModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateComputationModel.</param>
+        /// 
+        /// <returns>Returns a  UpdateComputationModelResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateComputationModel">REST API Reference for UpdateComputationModel Operation</seealso>
+        UpdateComputationModelResponse EndUpdateComputationModel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateDashboard
 
 
@@ -6090,7 +6775,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -6215,11 +6900,45 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Updates a gateway capability configuration or defines a new capability configuration.
-        /// Each gateway capability defines data sources for a gateway. A capability configuration
-        /// can contain multiple data source configurations. If you define OPC-UA sources for
-        /// a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one
-        /// capability configuration. To list all capability configurations for a gateway, use
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
+        /// Each gateway capability defines data sources for a gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Important workflow notes:
+        /// </para>
+        ///  
+        /// <para>
+        /// Each gateway capability defines data sources for a gateway. This is the namespace
+        /// of the gateway capability.
+        /// </para>
+        ///  
+        /// <para>
+        /// . The namespace follows the format <c>service:capability:version</c>, where:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>service</c> - The service providing the capability, or <c>iotsitewise</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>capability</c> - The specific capability type. Options include: <c>opcuacollector</c>
+        /// for the OPC UA data source collector, or <c>publisher</c> for data publisher capability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>version</c> - The version number of the capability. Option include <c>2</c> for
+        /// Classic streams, V2 gateways, and <c>3</c> for MQTT-enabled, V3 gateways.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After updating a capability configuration, the sync status becomes <c>OUT_OF_SYNC</c>
+        /// until the gateway processes the configuration.Use <c>DescribeGatewayCapabilityConfiguration</c>
+        /// to check the sync status and verify the configuration was applied.
+        /// </para>
+        ///  
+        /// <para>
+        /// A gateway can have multiple capability configurations with different namespaces.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayCapabilityConfiguration service method.</param>
         /// 
@@ -6236,7 +6955,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// You've reached the limit for a resource. For example, this can occur if you're trying
+    /// You've reached the quota for a resource. For example, this can occur if you're trying
     /// to associate more than the allowed number of child assets or attempting to create
     /// more than the allowed number of properties for an asset model.
     /// 

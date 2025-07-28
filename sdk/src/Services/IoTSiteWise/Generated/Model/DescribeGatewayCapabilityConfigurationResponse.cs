@@ -82,31 +82,30 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property CapabilitySyncStatus. 
         /// <para>
-        /// The synchronization status of the capability configuration. The sync status can be
-        /// one of the following:
+        /// The synchronization status of the gateway capability configuration. The sync status
+        /// can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>IN_SYNC</c> – The gateway is running the capability configuration.
+        ///  <c>IN_SYNC</c> - The gateway is running with the latest configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NOT_APPLICABLE</c> – Synchronization is not required for this capability configuration.
-        /// This is most common when integrating partner data sources, because the data integration
-        /// is handled externally by the partner.
+        ///  <c>OUT_OF_SYNC</c> - The gateway hasn't received the latest configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>OUT_OF_SYNC</c> – The gateway hasn't received the capability configuration.
+        ///  <c>SYNC_FAILED</c> - The gateway rejected the latest configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SYNC_FAILED</c> – The gateway rejected the capability configuration.
+        ///  <c>UNKNOWN</c> - The gateway hasn't reported its sync status.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>UNKNOWN</c> – The synchronization status is currently unknown due to an undetermined
-        /// or temporary error.
+        ///  <c>NOT_APPLICABLE</c> - The gateway doesn't support this capability. This is most
+        /// common when integrating partner data sources, because the data integration is handled
+        /// externally by the partner.
         /// </para>
         ///  </li> </ul>
         /// </summary>

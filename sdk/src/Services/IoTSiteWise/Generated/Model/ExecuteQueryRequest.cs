@@ -64,8 +64,21 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return at one time. The default is 25.
+        /// The maximum number of results to return at one time.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Minimum is 1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum is 20000
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default is 250
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1)]
         public int MaxResults

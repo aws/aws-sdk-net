@@ -84,15 +84,19 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property GatewayVersion. 
         /// <para>
         /// The version of the gateway to create. Specify <c>3</c> to create an MQTT-enabled,
-        /// V3 gateway and <c>2</c> To create a Classic streams, V2 gateway. If the version isn't
-        /// specified, a Classic streams, V2 gateway is created by default.
+        /// V3 gateway and <c>2</c> to create a Classic streams, V2 gateway. If not specified,
+        /// the default is <c>2</c> (Classic streams, V2 gateway).
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        ///  We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise
-        /// Edge gateways on Siemens Industrial Edge should use gateway version <c>2</c>. For
-        /// more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html">
-        /// Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.
+        /// When creating a V3 gateway (<c>gatewayVersion=3</c>) with the <c>GreengrassV2</c>
+        /// platform, you must also specify the <c>coreDeviceOperatingSystem</c> parameter.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  We recommend creating an MQTT-enabled gateway for self-hosted gateways and Siemens
+        /// Industrial Edge gateways. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateways.html">Use
+        /// Amazon Web Services IoT SiteWise Edge Edge gateways</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

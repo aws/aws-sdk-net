@@ -43,10 +43,22 @@ namespace Amazon.IoTSiteWise.Model
     /// </para>
     ///  
     /// <para>
-    /// Bulk import is designed to store historical data to IoT SiteWise. It does not trigger
-    /// computations or notifications on IoT SiteWise warm or cold tier storage.
+    /// Bulk import is designed to store historical data to IoT SiteWise.
     /// </para>
-    ///  </important>
+    ///  <ul> <li> 
+    /// <para>
+    /// Newly ingested data in the hot tier triggers notifications and computations.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// After data moves from the hot tier to the warm or cold tier based on retention settings,
+    /// it does not trigger computations or notifications.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Data older than 7 days does not trigger computations or notifications.
+    /// </para>
+    ///  </li> </ul> </important>
     /// </summary>
     public partial class CreateBulkImportJobRequest : AmazonIoTSiteWiseRequest
     {
