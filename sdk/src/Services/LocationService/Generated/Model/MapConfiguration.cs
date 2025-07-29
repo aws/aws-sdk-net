@@ -78,12 +78,12 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+        /// Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political
         /// views</a> for more information.
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Sensitive=true, Min=3, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -103,7 +103,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri
+        /// Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri
         /// map styles</a>:
         /// </para>
         ///  <ul> <li> 
@@ -144,7 +144,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE
         /// Technologies map styles</a>:
         /// </para>
         ///  <ul> <li> 
@@ -189,7 +189,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
-        /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps
+        /// Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps
         /// map styles</a>:
         /// </para>
         ///  <ul> <li> 
@@ -207,12 +207,12 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// Grab provides maps only for countries in Southeast Asia, and is only available in
         /// the Asia Pacific (Singapore) Region (<c>ap-southeast-1</c>). For more information,
-        /// see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+        /// see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps
         /// countries and area covered</a>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+        /// Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open
         /// Data map styles</a>:
         /// </para>
         ///  <ul> <li> 

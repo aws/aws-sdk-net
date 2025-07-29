@@ -43,7 +43,7 @@ namespace Amazon.LocationService.Model
         /// position of a device, along the Earth's surface.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10000000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=10000000)]
         public double Horizontal
         {
             get { return this._horizontal.GetValueOrDefault(); }

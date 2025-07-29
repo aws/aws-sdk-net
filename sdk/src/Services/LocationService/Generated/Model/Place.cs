@@ -84,8 +84,8 @@ namespace Amazon.LocationService.Model
         ///  
         /// <para>
         /// For more information about using categories, including a list of Amazon Location categories,
-        /// see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-        /// and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories
+        /// and filtering</a>, in the <i>Amazon Location Service developer guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

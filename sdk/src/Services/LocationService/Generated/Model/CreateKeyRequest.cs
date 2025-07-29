@@ -36,7 +36,7 @@ namespace Amazon.LocationService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">Using
     /// API keys</a>.
     /// </para>
     ///  </note>
@@ -77,6 +77,7 @@ namespace Amazon.LocationService.Model
         /// must be set.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public DateTime ExpireTime
         {
             get { return this._expireTime.GetValueOrDefault(); }

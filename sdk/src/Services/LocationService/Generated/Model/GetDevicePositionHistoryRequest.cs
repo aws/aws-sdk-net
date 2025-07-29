@@ -85,6 +85,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public DateTime EndTimeExclusive
         {
             get { return this._endTimeExclusive.GetValueOrDefault(); }
@@ -161,6 +162,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public DateTime StartTimeInclusive
         {
             get { return this._startTimeInclusive.GetValueOrDefault(); }

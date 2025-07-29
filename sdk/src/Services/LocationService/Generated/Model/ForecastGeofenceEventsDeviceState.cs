@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// The device's position, IP address, and WiFi access points.
+    /// The device's position and speed.
     /// </summary>
     public partial class ForecastGeofenceEventsDeviceState
     {

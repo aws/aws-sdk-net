@@ -106,15 +106,16 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Geometry. 
         /// <para>
-        /// Contains the details to specify the position of the geofence. Can be a polygon, a
-        /// circle or a polygon encoded in Geobuf format. Including multiple selections will return
-        /// a validation error.
+        /// Contains the details to specify the position of the geofence. Can be a circle, a polygon,
+        /// or a multipolygon. <c>Polygon</c> and <c>MultiPolygon</c> geometries can be defined
+        /// using their respective parameters, or encoded in Geobuf format using the <c>Geobuf</c>
+        /// parameter. Including multiple geometry types in the same request will return a validation
+        /// error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
-        /// geofence polygon</a> format supports a maximum of 1,000 vertices. The <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">Geofence
-        /// Geobuf</a> format supports a maximum of 100,000 vertices.
+        /// The geofence <c>Polygon</c> and <c>MultiPolygon</c> formats support a maximum of 1,000
+        /// total vertices. The <c>Geobuf</c> format supports a maximum of 100,000 vertices.
         /// </para>
         ///  </note>
         /// </summary>

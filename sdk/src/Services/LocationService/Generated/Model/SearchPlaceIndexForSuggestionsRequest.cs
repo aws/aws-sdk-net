@@ -148,8 +148,8 @@ namespace Amazon.LocationService.Model
         ///  
         /// <para>
         /// For more information about using categories, including a list of Amazon Location categories,
-        /// see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-        /// and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories
+        /// and filtering</a>, in the <i>Amazon Location Service developer guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -213,7 +213,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
         /// key</a> to authorize the request.
         /// </para>
         /// </summary>

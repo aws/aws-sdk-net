@@ -57,6 +57,18 @@ namespace Amazon.LocationService.Model
         /// <para>
         ///  <c>geo:GetMap*</c> - Allows all actions needed for map rendering.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-maps:GetTile</c> - Allows retrieving map tiles.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-maps:GetStaticMap</c> - Allows retrieving static map images.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-maps:*</c> - Allows all actions related to map functionalities.
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Place actions</b> 
@@ -77,6 +89,40 @@ namespace Amazon.LocationService.Model
         /// <para>
         ///  <c>GetPlace</c> - Allows finding a place by place ID.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:Geocode</c> - Allows geocoding using place information.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:ReverseGeocode</c> - Allows reverse geocoding from location coordinates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:SearchNearby</c> - Allows searching for places near a location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:SearchText</c> - Allows searching for places based on text input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:Autocomplete</c> - Allows auto-completion of place names based on text
+        /// input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:Suggest</c> - Allows generating suggestions for places based on partial
+        /// input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:GetPlace</c> - Allows finding a place by its ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:*</c> - Allows all actions related to place services.
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Route actions</b> 
@@ -88,6 +134,32 @@ namespace Amazon.LocationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>geo:CalculateRouteMatrix</c> - Allows calculating a matrix of routes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:CalculateRoutes</c> - Allows calculating multiple routes between points.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:CalculateRouteMatrix</c> - Allows calculating a matrix of routes between
+        /// points.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:CalculateIsolines</c> - Allows calculating isolines for a given area.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:OptimizeWaypoints</c> - Allows optimizing the order of waypoints in
+        /// a route.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:SnapToRoads</c> - Allows snapping a route to the nearest roads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:*</c> - Allows all actions related to routing functionalities.
         /// </para>
         ///  </li> </ul> </li> </ul> <note> 
         /// <para>

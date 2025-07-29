@@ -48,7 +48,7 @@ namespace Amazon.LocationService.Model
         /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DateTime CreateTime
         {
             get { return this._createTime.GetValueOrDefault(); }
@@ -107,7 +107,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Geometry. 
         /// <para>
-        /// Contains the geofence geometry details describing a polygon or a circle.
+        /// Contains the geofence geometry details describing the position of the geofence. Can
+        /// be a circle, a polygon, or a multipolygon.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -170,7 +171,7 @@ namespace Amazon.LocationService.Model
         /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DateTime UpdateTime
         {
             get { return this._updateTime.GetValueOrDefault(); }

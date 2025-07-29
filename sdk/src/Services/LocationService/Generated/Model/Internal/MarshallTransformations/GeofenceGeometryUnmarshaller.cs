@@ -78,6 +78,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Geobuf = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MultiPolygon", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<List<List<List<double>>>, ListUnmarshaller<List<List<double>>, ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>>>(new ListUnmarshaller<List<List<double>>, ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>>(new ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>(new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance))));
+                    unmarshalledObject.MultiPolygon = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Polygon", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<List<List<double>>, ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>>(new ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>(new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance)));

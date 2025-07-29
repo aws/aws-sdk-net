@@ -100,7 +100,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DateTime CreateTime
         {
             get { return this._createTime.GetValueOrDefault(); }

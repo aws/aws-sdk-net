@@ -318,7 +318,7 @@ namespace Amazon.LocationService
         /// The resource that you've entered was not found in your AWS account.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
-        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/previous/developerguide/location-quotas.html">quota</a>
         /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
@@ -729,7 +729,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
+        /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
         /// a route</a> given the following required parameters: <c>DeparturePosition</c> and
         /// <c>DestinationPosition</c>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
         /// a route calculator resource</a>.
@@ -745,7 +745,7 @@ namespace Amazon.LocationService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/departure-time.html">Specifying
         /// a departure time</a> using either <c>DepartureTime</c> or <c>DepartNow</c>. This calculates
         /// a route based on predictive traffic data at the given time. 
         /// </para>
@@ -756,7 +756,7 @@ namespace Amazon.LocationService
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/travel-mode.html">Specifying
         /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
         /// the routes. This also lets you specify additional route preferences in <c>CarModeOptions</c>
         /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
@@ -817,7 +817,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">
+        /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html">
         /// Calculates a route matrix</a> given the following required parameters: <c>DeparturePositions</c>
         /// and <c>DestinationPositions</c>. <c>CalculateRouteMatrix</c> calculates routes and
         /// returns the travel time and travel distance from each departure position to each destination
@@ -847,7 +847,7 @@ namespace Amazon.LocationService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/departure-time.html">
         /// Specifying a departure time</a> using either <c>DepartureTime</c> or <c>DepartNow</c>.
         /// This calculates routes based on predictive traffic data at the given time. 
         /// </para>
@@ -858,7 +858,7 @@ namespace Amazon.LocationService
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/travel-mode.html">Specifying
         /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
         /// the routes. This also lets you specify additional route preferences in <c>CarModeOptions</c>
         /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
@@ -934,7 +934,7 @@ namespace Amazon.LocationService
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
-        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/previous/developerguide/location-quotas.html">quota</a>
         /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
@@ -974,7 +974,7 @@ namespace Amazon.LocationService
         /// 
         ///  <note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">Using
         /// API keys</a>.
         /// </para>
         ///  </note>
@@ -997,7 +997,7 @@ namespace Amazon.LocationService
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
-        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/previous/developerguide/location-quotas.html">quota</a>
         /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
@@ -1062,7 +1062,7 @@ namespace Amazon.LocationService
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
-        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/previous/developerguide/location-quotas.html">quota</a>
         /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
@@ -1130,7 +1130,7 @@ namespace Amazon.LocationService
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
-        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/previous/developerguide/location-quotas.html">quota</a>
         /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
@@ -1200,7 +1200,7 @@ namespace Amazon.LocationService
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
-        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/previous/developerguide/location-quotas.html">quota</a>
         /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
@@ -1256,7 +1256,7 @@ namespace Amazon.LocationService
         /// failure.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
-        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/previous/developerguide/location-quotas.html">quota</a>
         /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
@@ -1996,23 +1996,34 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Evaluates device positions against geofence geometries from a given geofence collection.
-        /// The event forecasts three states for which a device can be in relative to a geofence:
+        /// This action forecasts future geofence events that are likely to occur within a specified
+        /// time horizon if a device continues moving at its current speed. Each forecasted event
+        /// is associated with a geofence from a provided geofence collection. A forecast event
+        /// can have one of the following states:
         /// 
         ///  
         /// <para>
-        ///  <c>ENTER</c>: If a device is outside of a geofence, but would breach the fence if
-        /// the device is moving at its current speed within time horizon window.
+        ///  <c>ENTER</c>: The device position is outside the referenced geofence, but the device
+        /// may cross into the geofence during the forecasting time horizon if it maintains its
+        /// current speed.
         /// </para>
         ///  
         /// <para>
-        ///  <c>EXIT</c>: If a device is inside of a geofence, but would breach the fence if the
-        /// device is moving at its current speed within time horizon window.
+        ///  <c>EXIT</c>: The device position is inside the referenced geofence, but the device
+        /// may leave the geofence during the forecasted time horizon if the device maintains
+        /// it's current speed.
         /// </para>
         ///  
         /// <para>
-        ///  <c>IDLE</c>: If a device is inside of a geofence, and the device is not moving.
+        ///  <c>IDLE</c>:The device is inside the geofence, and it will remain inside the geofence
+        /// through the end of the time horizon if the device maintains it's current speed.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Heading direction is not considered in the current version. The API takes a conservative
+        /// approach and includes events that can occur for any heading.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ForecastGeofenceEvents service method.</param>
         /// <param name="cancellationToken">
@@ -2477,7 +2488,13 @@ namespace Amazon.LocationService
         /// <para>
         /// Data provider specified in the place index resource
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> <note> 
+        /// <para>
+        /// If your Place index resource is configured with Grab as your geolocation provider
+        /// and Storage as Intended use, the GetPlace operation is unavailable. For more information,
+        /// see <a href="http://aws.amazon.com/service-terms">AWS service terms</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlace service method.</param>
         /// <param name="cancellationToken">
@@ -3690,6 +3707,14 @@ namespace Amazon.LocationService
         /// Verifies the integrity of the device's position by determining if it was reported
         /// behind a proxy, and by comparing it to an inferred position estimated based on the
         /// device's state.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The Location Integrity SDK provides enhanced features related to device verification,
+        /// and it is available for use by request. To get access to the SDK, contact <a href="https://aws.amazon.com/contact-us/sales-support/?pg=locationprice&amp;cta=herobtn">Sales
+        /// Support</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyDevicePosition service method.</param>
         /// <param name="cancellationToken">

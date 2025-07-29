@@ -48,7 +48,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri</a>
         /// styles: 
         /// </para>
         ///  <ul> <li> 
@@ -78,7 +78,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE
         /// Technologies</a> styles:
         /// </para>
         ///  <ul> <li> 
@@ -93,7 +93,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>
         /// styles:
         /// </para>
         ///  <ul> <li> 
@@ -103,7 +103,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open
         /// Data</a> styles:
         /// </para>
         ///  <ul> <li> 
@@ -164,7 +164,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
         /// key</a> to authorize the request.
         /// </para>
         /// </summary>

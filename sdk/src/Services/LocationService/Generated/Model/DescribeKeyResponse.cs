@@ -51,7 +51,7 @@ namespace Amazon.LocationService.Model
         /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DateTime CreateTime
         {
             get { return this._createTime.GetValueOrDefault(); }
@@ -90,7 +90,7 @@ namespace Amazon.LocationService.Model
         /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DateTime ExpireTime
         {
             get { return this._expireTime.GetValueOrDefault(); }
@@ -208,7 +208,7 @@ namespace Amazon.LocationService.Model
         /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DateTime UpdateTime
         {
             get { return this._updateTime.GetValueOrDefault(); }
