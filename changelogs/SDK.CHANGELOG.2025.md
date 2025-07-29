@@ -1,3 +1,15 @@
+### 4.0.58.0 (2025-07-29 18:20 UTC)
+* Batch (4.0.2.0)
+	* AWS Batch for SageMaker Training jobs feature support.  Includes new APIs for service job submission (e.g., SubmitServiceJob) and managing service environments (e.g., CreateServiceEnvironment) that enable queueing SageMaker Training jobs.
+* CleanRooms (4.0.2.0)
+	* This feature provides the ability to update the table reference and allowed columns on an existing configured table.
+* Deadline (4.0.7.0)
+	* Adds support for tag management on monitors.
+* LocationService (4.0.1.0)
+	* This release 1) adds support for multi-polygon geofences with disconnected territories, and 2) enables polygon exclusion zones within geofences for more accurate representation of real-world boundaries.
+* OpenSearchServerless (4.0.1.0)
+	* This is to support Granular access control support for SAML with IAMFedraton in AOSS
+
 ### 4.0.57.0 (2025-07-28 18:50 UTC)
 * DirectConnect (4.0.1.0)
 	* Enable MACSec support and features on Interconnects.
