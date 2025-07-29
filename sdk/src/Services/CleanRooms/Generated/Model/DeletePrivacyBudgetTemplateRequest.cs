@@ -31,7 +31,7 @@ namespace Amazon.CleanRooms.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePrivacyBudgetTemplate operation.
-    /// Deletes a privacy budget template for a specified membership.
+    /// Deletes a privacy budget template for a specified collaboration.
     /// </summary>
     public partial class DeletePrivacyBudgetTemplateRequest : AmazonCleanRoomsRequest
     {

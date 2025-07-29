@@ -929,10 +929,9 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Creates a privacy budget template for a specified membership. Each membership can
-        /// have only one privacy budget template, but it can be deleted and recreated. If you
-        /// need to change the privacy budget template for a membership, use the <a>UpdatePrivacyBudgetTemplate</a>
-        /// operation.
+        /// Creates a privacy budget template for a specified collaboration. Each collaboration
+        /// can have only one privacy budget template. If you need to change the privacy budget
+        /// template, use the <a>UpdatePrivacyBudgetTemplate</a> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivacyBudgetTemplate service method.</param>
         /// 
@@ -961,10 +960,9 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Creates a privacy budget template for a specified membership. Each membership can
-        /// have only one privacy budget template, but it can be deleted and recreated. If you
-        /// need to change the privacy budget template for a membership, use the <a>UpdatePrivacyBudgetTemplate</a>
-        /// operation.
+        /// Creates a privacy budget template for a specified collaboration. Each collaboration
+        /// can have only one privacy budget template. If you need to change the privacy budget
+        /// template, use the <a>UpdatePrivacyBudgetTemplate</a> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivacyBudgetTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1671,7 +1669,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Deletes a privacy budget template for a specified membership.
+        /// Deletes a privacy budget template for a specified collaboration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePrivacyBudgetTemplate service method.</param>
         /// 
@@ -1697,7 +1695,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Deletes a privacy budget template for a specified membership.
+        /// Deletes a privacy budget template for a specified collaboration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePrivacyBudgetTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -4476,6 +4474,9 @@ namespace Amazon.CleanRooms
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -4507,6 +4508,9 @@ namespace Amazon.CleanRooms
         /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -4895,7 +4899,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Updates the privacy budget template for the specified membership.
+        /// Updates the privacy budget template for the specified collaboration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePrivacyBudgetTemplate service method.</param>
         /// 
@@ -4924,7 +4928,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Updates the privacy budget template for the specified membership.
+        /// Updates the privacy budget template for the specified collaboration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePrivacyBudgetTemplate service method.</param>
         /// <param name="cancellationToken">

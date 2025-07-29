@@ -31,7 +31,7 @@ namespace Amazon.CleanRooms.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePrivacyBudgetTemplate operation.
-    /// Updates the privacy budget template for the specified membership.
+    /// Updates the privacy budget template for the specified collaboration.
     /// </summary>
     public partial class UpdatePrivacyBudgetTemplateRequest : AmazonCleanRoomsRequest
     {
