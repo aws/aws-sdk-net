@@ -35,11 +35,33 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class UpdateConfiguredTableRequest : AmazonCleanRoomsRequest
     {
+        private List<string> _allowedColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalysisMethod _analysisMethod;
         private string _configuredTableIdentifier;
         private string _description;
         private string _name;
         private List<string> _selectedAnalysisMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private TableReference _tableReference;
+
+        /// <summary>
+        /// Gets and sets the property AllowedColumns. 
+        /// <para>
+        /// The columns of the underlying table that can be used by collaborations or analysis
+        /// rules.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> AllowedColumns
+        {
+            get { return this._allowedColumns; }
+            set { this._allowedColumns = value; }
+        }
+
+        // Check to see if AllowedColumns property is set
+        internal bool IsSetAllowedColumns()
+        {
+            return this._allowedColumns != null && (this._allowedColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AnalysisMethod. 
@@ -146,6 +168,21 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetSelectedAnalysisMethods()
         {
             return this._selectedAnalysisMethods != null && (this._selectedAnalysisMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableReference.
+        /// </summary>
+        public TableReference TableReference
+        {
+            get { return this._tableReference; }
+            set { this._tableReference = value; }
+        }
+
+        // Check to see if TableReference property is set
+        internal bool IsSetTableReference()
+        {
+            return this._tableReference != null;
         }
 
     }

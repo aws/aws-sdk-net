@@ -56,6 +56,12 @@ namespace Amazon.CleanRooms.Model
         /// <para>
         ///  The analytics engine for the collaboration.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// After July 16, 2025, the <c>CLEAN_ROOMS_SQL</c> parameter will no longer be available.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public AnalyticsEngine AnalyticsEngine
         {
