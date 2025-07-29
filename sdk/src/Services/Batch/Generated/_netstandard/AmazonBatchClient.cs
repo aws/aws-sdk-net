@@ -633,6 +633,49 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  CreateServiceEnvironment
+
+        internal virtual CreateServiceEnvironmentResponse CreateServiceEnvironment(CreateServiceEnvironmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceEnvironmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a service environment for running service jobs. Service environments define
+        /// capacity limits for specific service types such as SageMaker Training jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateServiceEnvironment">REST API Reference for CreateServiceEnvironment Operation</seealso>
+        public virtual Task<CreateServiceEnvironmentResponse> CreateServiceEnvironmentAsync(CreateServiceEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateServiceEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteComputeEnvironment
 
         internal virtual DeleteComputeEnvironmentResponse DeleteComputeEnvironment(DeleteComputeEnvironmentRequest request)
@@ -821,6 +864,51 @@ namespace Amazon.Batch
             options.ResponseUnmarshaller = DeleteSchedulingPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSchedulingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteServiceEnvironment
+
+        internal virtual DeleteServiceEnvironmentResponse DeleteServiceEnvironment(DeleteServiceEnvironmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceEnvironmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a Service environment. Before you can delete a service environment, you must
+        /// first set its state to <c>DISABLED</c> with the <c>UpdateServiceEnvironment</c> API
+        /// operation and disassociate it from any job queues with the <c>UpdateJobQueue</c> API
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteServiceEnvironment">REST API Reference for DeleteServiceEnvironment Operation</seealso>
+        public virtual Task<DeleteServiceEnvironmentResponse> DeleteServiceEnvironmentAsync(DeleteServiceEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteServiceEnvironmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1128,6 +1216,90 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  DescribeServiceEnvironments
+
+        internal virtual DescribeServiceEnvironmentsResponse DescribeServiceEnvironments(DescribeServiceEnvironmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceEnvironmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceEnvironmentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more of your service environments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceEnvironments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceEnvironments service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceEnvironments">REST API Reference for DescribeServiceEnvironments Operation</seealso>
+        public virtual Task<DescribeServiceEnvironmentsResponse> DescribeServiceEnvironmentsAsync(DescribeServiceEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceEnvironmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeServiceEnvironmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeServiceJob
+
+        internal virtual DescribeServiceJobResponse DescribeServiceJob(DescribeServiceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The details of a service job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceJob">REST API Reference for DescribeServiceJob Operation</seealso>
+        public virtual Task<DescribeServiceJobResponse> DescribeServiceJobAsync(DescribeServiceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeServiceJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetJobQueueSnapshot
 
         internal virtual GetJobQueueSnapshotResponse GetJobQueueSnapshot(GetJobQueueSnapshotRequest request)
@@ -1360,6 +1532,48 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  ListServiceJobs
+
+        internal virtual ListServiceJobsResponse ListServiceJobs(ListServiceJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of service jobs for a specified job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListServiceJobs">REST API Reference for ListServiceJobs Operation</seealso>
+        public virtual Task<ListServiceJobsResponse> ListServiceJobsAsync(ListServiceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListServiceJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1506,6 +1720,49 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  SubmitServiceJob
+
+        internal virtual SubmitServiceJobResponse SubmitServiceJob(SubmitServiceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubmitServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitServiceJobResponseUnmarshaller.Instance;
+
+            return Invoke<SubmitServiceJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Submits a service job to a specified job queue to run on SageMaker AI. A service job
+        /// is a unit of work that you submit to Batch for execution on SageMaker AI.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SubmitServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitServiceJob">REST API Reference for SubmitServiceJob Operation</seealso>
+        public virtual Task<SubmitServiceJobResponse> SubmitServiceJobAsync(SubmitServiceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubmitServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitServiceJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SubmitServiceJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -1593,6 +1850,48 @@ namespace Amazon.Batch
             options.ResponseUnmarshaller = TerminateJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<TerminateJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TerminateServiceJob
+
+        internal virtual TerminateServiceJobResponse TerminateServiceJob(TerminateServiceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateServiceJobResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateServiceJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Terminates a service job in a job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TerminateServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJob">REST API Reference for TerminateServiceJob Operation</seealso>
+        public virtual Task<TerminateServiceJobResponse> TerminateServiceJobAsync(TerminateServiceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateServiceJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TerminateServiceJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1803,6 +2102,50 @@ namespace Amazon.Batch
             options.ResponseUnmarshaller = UpdateSchedulingPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSchedulingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceEnvironment
+
+        internal virtual UpdateServiceEnvironmentResponse UpdateServiceEnvironment(UpdateServiceEnvironmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceEnvironmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a service environment. You can update the state of a service environment from
+        /// <c>ENABLED</c> to <c>DISABLED</c> to prevent new service jobs from being placed in
+        /// the service environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceEnvironment">REST API Reference for UpdateServiceEnvironment Operation</seealso>
+        public virtual Task<UpdateServiceEnvironmentResponse> UpdateServiceEnvironmentAsync(UpdateServiceEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServiceEnvironmentResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -47,9 +47,11 @@ namespace Amazon.Batch.Model
     {
         private List<ComputeEnvironmentOrder> _computeEnvironmentOrder = AWSConfigs.InitializeCollections ? new List<ComputeEnvironmentOrder>() : null;
         private string _jobQueueName;
+        private JobQueueType _jobQueueType;
         private List<JobStateTimeLimitAction> _jobStateTimeLimitActions = AWSConfigs.InitializeCollections ? new List<JobStateTimeLimitAction>() : null;
         private int? _priority;
         private string _schedulingPolicyArn;
+        private List<ServiceEnvironmentOrder> _serviceEnvironmentOrder = AWSConfigs.InitializeCollections ? new List<ServiceEnvironmentOrder>() : null;
         private JQState _state;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -72,7 +74,6 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<ComputeEnvironmentOrder> ComputeEnvironmentOrder
         {
             get { return this._computeEnvironmentOrder; }
@@ -103,6 +104,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetJobQueueName()
         {
             return this._jobQueueName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobQueueType. 
+        /// <para>
+        /// The type of job queue. For service jobs that run on SageMaker Training, this value
+        /// is <c>SAGEMAKER_TRAINING</c>. For regular container jobs, this value is <c>EKS</c>,
+        /// <c>ECS</c>, or <c>ECS_FARGATE</c> depending on the compute environment.
+        /// </para>
+        /// </summary>
+        public JobQueueType JobQueueType
+        {
+            get { return this._jobQueueType; }
+            set { this._jobQueueType = value; }
+        }
+
+        // Check to see if JobQueueType property is set
+        internal bool IsSetJobQueueType()
+        {
+            return this._jobQueueType != null;
         }
 
         /// <summary>
@@ -186,6 +207,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetSchedulingPolicyArn()
         {
             return this._schedulingPolicyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceEnvironmentOrder. 
+        /// <para>
+        /// A list of service environments that this job queue can use to allocate jobs. All serviceEnvironments
+        /// must have the same type. A job queue can't have both a serviceEnvironmentOrder and
+        /// a computeEnvironmentOrder field.
+        /// </para>
+        /// </summary>
+        public List<ServiceEnvironmentOrder> ServiceEnvironmentOrder
+        {
+            get { return this._serviceEnvironmentOrder; }
+            set { this._serviceEnvironmentOrder = value; }
+        }
+
+        // Check to see if ServiceEnvironmentOrder property is set
+        internal bool IsSetServiceEnvironmentOrder()
+        {
+            return this._serviceEnvironmentOrder != null && (this._serviceEnvironmentOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

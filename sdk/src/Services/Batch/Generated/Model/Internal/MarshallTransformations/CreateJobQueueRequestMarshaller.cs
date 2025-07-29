@@ -89,6 +89,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobQueueName);
                 }
 
+                if(publicRequest.IsSetJobQueueType())
+                {
+                    context.Writer.WritePropertyName("jobQueueType");
+                    context.Writer.Write(publicRequest.JobQueueType);
+                }
+
                 if(publicRequest.IsSetJobStateTimeLimitActions())
                 {
                     context.Writer.WritePropertyName("jobStateTimeLimitActions");
@@ -115,6 +121,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("schedulingPolicyArn");
                     context.Writer.Write(publicRequest.SchedulingPolicyArn);
+                }
+
+                if(publicRequest.IsSetServiceEnvironmentOrder())
+                {
+                    context.Writer.WritePropertyName("serviceEnvironmentOrder");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestServiceEnvironmentOrderListValue in publicRequest.ServiceEnvironmentOrder)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServiceEnvironmentOrderMarshaller.Instance;
+                        marshaller.Marshall(publicRequestServiceEnvironmentOrderListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetState())

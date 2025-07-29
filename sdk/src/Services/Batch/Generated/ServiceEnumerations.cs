@@ -715,6 +715,64 @@ namespace Amazon.Batch
 
 
     /// <summary>
+    /// Constants used for properties of type JobQueueType.
+    /// </summary>
+    public class JobQueueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ECS for JobQueueType
+        /// </summary>
+        public static readonly JobQueueType ECS = new JobQueueType("ECS");
+        /// <summary>
+        /// Constant ECS_FARGATE for JobQueueType
+        /// </summary>
+        public static readonly JobQueueType ECS_FARGATE = new JobQueueType("ECS_FARGATE");
+        /// <summary>
+        /// Constant EKS for JobQueueType
+        /// </summary>
+        public static readonly JobQueueType EKS = new JobQueueType("EKS");
+        /// <summary>
+        /// Constant SAGEMAKER_TRAINING for JobQueueType
+        /// </summary>
+        public static readonly JobQueueType SAGEMAKER_TRAINING = new JobQueueType("SAGEMAKER_TRAINING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobQueueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobQueueType FindValue(string value)
+        {
+            return FindValue<JobQueueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobQueueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobStateTimeLimitActionsAction.
     /// </summary>
     public class JobStateTimeLimitActionsAction : ConstantClass
@@ -724,6 +782,10 @@ namespace Amazon.Batch
         /// Constant CANCEL for JobStateTimeLimitActionsAction
         /// </summary>
         public static readonly JobStateTimeLimitActionsAction CANCEL = new JobStateTimeLimitActionsAction("CANCEL");
+        /// <summary>
+        /// Constant TERMINATE for JobStateTimeLimitActionsAction
+        /// </summary>
+        public static readonly JobStateTimeLimitActionsAction TERMINATE = new JobStateTimeLimitActionsAction("TERMINATE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1264,6 +1326,384 @@ namespace Amazon.Batch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RetryAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceEnvironmentState.
+    /// </summary>
+    public class ServiceEnvironmentState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ServiceEnvironmentState
+        /// </summary>
+        public static readonly ServiceEnvironmentState DISABLED = new ServiceEnvironmentState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ServiceEnvironmentState
+        /// </summary>
+        public static readonly ServiceEnvironmentState ENABLED = new ServiceEnvironmentState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceEnvironmentState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceEnvironmentState FindValue(string value)
+        {
+            return FindValue<ServiceEnvironmentState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceEnvironmentState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceEnvironmentStatus.
+    /// </summary>
+    public class ServiceEnvironmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for ServiceEnvironmentStatus
+        /// </summary>
+        public static readonly ServiceEnvironmentStatus CREATING = new ServiceEnvironmentStatus("CREATING");
+        /// <summary>
+        /// Constant DELETED for ServiceEnvironmentStatus
+        /// </summary>
+        public static readonly ServiceEnvironmentStatus DELETED = new ServiceEnvironmentStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for ServiceEnvironmentStatus
+        /// </summary>
+        public static readonly ServiceEnvironmentStatus DELETING = new ServiceEnvironmentStatus("DELETING");
+        /// <summary>
+        /// Constant INVALID for ServiceEnvironmentStatus
+        /// </summary>
+        public static readonly ServiceEnvironmentStatus INVALID = new ServiceEnvironmentStatus("INVALID");
+        /// <summary>
+        /// Constant UPDATING for ServiceEnvironmentStatus
+        /// </summary>
+        public static readonly ServiceEnvironmentStatus UPDATING = new ServiceEnvironmentStatus("UPDATING");
+        /// <summary>
+        /// Constant VALID for ServiceEnvironmentStatus
+        /// </summary>
+        public static readonly ServiceEnvironmentStatus VALID = new ServiceEnvironmentStatus("VALID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceEnvironmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceEnvironmentStatus FindValue(string value)
+        {
+            return FindValue<ServiceEnvironmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceEnvironmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceEnvironmentType.
+    /// </summary>
+    public class ServiceEnvironmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAGEMAKER_TRAINING for ServiceEnvironmentType
+        /// </summary>
+        public static readonly ServiceEnvironmentType SAGEMAKER_TRAINING = new ServiceEnvironmentType("SAGEMAKER_TRAINING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceEnvironmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceEnvironmentType FindValue(string value)
+        {
+            return FindValue<ServiceEnvironmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceEnvironmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceJobRetryAction.
+    /// </summary>
+    public class ServiceJobRetryAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXIT for ServiceJobRetryAction
+        /// </summary>
+        public static readonly ServiceJobRetryAction EXIT = new ServiceJobRetryAction("EXIT");
+        /// <summary>
+        /// Constant RETRY for ServiceJobRetryAction
+        /// </summary>
+        public static readonly ServiceJobRetryAction RETRY = new ServiceJobRetryAction("RETRY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceJobRetryAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceJobRetryAction FindValue(string value)
+        {
+            return FindValue<ServiceJobRetryAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceJobRetryAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceJobStatus.
+    /// </summary>
+    public class ServiceJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ServiceJobStatus
+        /// </summary>
+        public static readonly ServiceJobStatus FAILED = new ServiceJobStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for ServiceJobStatus
+        /// </summary>
+        public static readonly ServiceJobStatus PENDING = new ServiceJobStatus("PENDING");
+        /// <summary>
+        /// Constant RUNNABLE for ServiceJobStatus
+        /// </summary>
+        public static readonly ServiceJobStatus RUNNABLE = new ServiceJobStatus("RUNNABLE");
+        /// <summary>
+        /// Constant RUNNING for ServiceJobStatus
+        /// </summary>
+        public static readonly ServiceJobStatus RUNNING = new ServiceJobStatus("RUNNING");
+        /// <summary>
+        /// Constant SCHEDULED for ServiceJobStatus
+        /// </summary>
+        public static readonly ServiceJobStatus SCHEDULED = new ServiceJobStatus("SCHEDULED");
+        /// <summary>
+        /// Constant STARTING for ServiceJobStatus
+        /// </summary>
+        public static readonly ServiceJobStatus STARTING = new ServiceJobStatus("STARTING");
+        /// <summary>
+        /// Constant SUBMITTED for ServiceJobStatus
+        /// </summary>
+        public static readonly ServiceJobStatus SUBMITTED = new ServiceJobStatus("SUBMITTED");
+        /// <summary>
+        /// Constant SUCCEEDED for ServiceJobStatus
+        /// </summary>
+        public static readonly ServiceJobStatus SUCCEEDED = new ServiceJobStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceJobStatus FindValue(string value)
+        {
+            return FindValue<ServiceJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceJobType.
+    /// </summary>
+    public class ServiceJobType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAGEMAKER_TRAINING for ServiceJobType
+        /// </summary>
+        public static readonly ServiceJobType SAGEMAKER_TRAINING = new ServiceJobType("SAGEMAKER_TRAINING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceJobType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceJobType FindValue(string value)
+        {
+            return FindValue<ServiceJobType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceJobType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceResourceIdName.
+    /// </summary>
+    public class ServiceResourceIdName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TrainingJobArn for ServiceResourceIdName
+        /// </summary>
+        public static readonly ServiceResourceIdName TrainingJobArn = new ServiceResourceIdName("TrainingJobArn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceResourceIdName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceResourceIdName FindValue(string value)
+        {
+            return FindValue<ServiceResourceIdName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceResourceIdName(string value)
         {
             return FindValue(value);
         }

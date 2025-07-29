@@ -729,6 +729,69 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  CreateServiceEnvironment
+
+        /// <summary>
+        /// Creates a service environment for running service jobs. Service environments define
+        /// capacity limits for specific service types such as SageMaker Training jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceEnvironment service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateServiceEnvironment">REST API Reference for CreateServiceEnvironment Operation</seealso>
+        public virtual CreateServiceEnvironmentResponse CreateServiceEnvironment(CreateServiceEnvironmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceEnvironmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceEnvironment operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceEnvironment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateServiceEnvironment">REST API Reference for CreateServiceEnvironment Operation</seealso>
+        public virtual IAsyncResult BeginCreateServiceEnvironment(CreateServiceEnvironmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServiceEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServiceEnvironment.</param>
+        /// 
+        /// <returns>Returns a  CreateServiceEnvironmentResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateServiceEnvironment">REST API Reference for CreateServiceEnvironment Operation</seealso>
+        public virtual CreateServiceEnvironmentResponse EndCreateServiceEnvironment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateServiceEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteComputeEnvironment
 
         /// <summary>
@@ -997,6 +1060,71 @@ namespace Amazon.Batch
         public virtual DeleteSchedulingPolicyResponse EndDeleteSchedulingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSchedulingPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteServiceEnvironment
+
+        /// <summary>
+        /// Deletes a Service environment. Before you can delete a service environment, you must
+        /// first set its state to <c>DISABLED</c> with the <c>UpdateServiceEnvironment</c> API
+        /// operation and disassociate it from any job queues with the <c>UpdateJobQueue</c> API
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceEnvironment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteServiceEnvironment">REST API Reference for DeleteServiceEnvironment Operation</seealso>
+        public virtual DeleteServiceEnvironmentResponse DeleteServiceEnvironment(DeleteServiceEnvironmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceEnvironmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceEnvironment operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceEnvironment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteServiceEnvironment">REST API Reference for DeleteServiceEnvironment Operation</seealso>
+        public virtual IAsyncResult BeginDeleteServiceEnvironment(DeleteServiceEnvironmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServiceEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceEnvironment.</param>
+        /// 
+        /// <returns>Returns a  DeleteServiceEnvironmentResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteServiceEnvironment">REST API Reference for DeleteServiceEnvironment Operation</seealso>
+        public virtual DeleteServiceEnvironmentResponse EndDeleteServiceEnvironment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteServiceEnvironmentResponse>(asyncResult);
         }
 
         #endregion
@@ -1444,6 +1572,130 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  DescribeServiceEnvironments
+
+        /// <summary>
+        /// Describes one or more of your service environments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceEnvironments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceEnvironments service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceEnvironments">REST API Reference for DescribeServiceEnvironments Operation</seealso>
+        public virtual DescribeServiceEnvironmentsResponse DescribeServiceEnvironments(DescribeServiceEnvironmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceEnvironmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceEnvironmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServiceEnvironments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceEnvironments operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServiceEnvironments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceEnvironments">REST API Reference for DescribeServiceEnvironments Operation</seealso>
+        public virtual IAsyncResult BeginDescribeServiceEnvironments(DescribeServiceEnvironmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceEnvironmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeServiceEnvironments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceEnvironments.</param>
+        /// 
+        /// <returns>Returns a  DescribeServiceEnvironmentsResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceEnvironments">REST API Reference for DescribeServiceEnvironments Operation</seealso>
+        public virtual DescribeServiceEnvironmentsResponse EndDescribeServiceEnvironments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeServiceEnvironmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeServiceJob
+
+        /// <summary>
+        /// The details of a service job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceJob">REST API Reference for DescribeServiceJob Operation</seealso>
+        public virtual DescribeServiceJobResponse DescribeServiceJob(DescribeServiceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServiceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceJob operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServiceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceJob">REST API Reference for DescribeServiceJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeServiceJob(DescribeServiceJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeServiceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeServiceJobResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceJob">REST API Reference for DescribeServiceJob Operation</seealso>
+        public virtual DescribeServiceJobResponse EndDescribeServiceJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeServiceJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetJobQueueSnapshot
 
         /// <summary>
@@ -1776,6 +2028,68 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  ListServiceJobs
+
+        /// <summary>
+        /// Returns a list of service jobs for a specified job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListServiceJobs">REST API Reference for ListServiceJobs Operation</seealso>
+        public virtual ListServiceJobsResponse ListServiceJobs(ListServiceJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceJobs operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListServiceJobs">REST API Reference for ListServiceJobs Operation</seealso>
+        public virtual IAsyncResult BeginListServiceJobs(ListServiceJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceJobs.</param>
+        /// 
+        /// <returns>Returns a  ListServiceJobsResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListServiceJobs">REST API Reference for ListServiceJobs Operation</seealso>
+        public virtual ListServiceJobsResponse EndListServiceJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListServiceJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -1982,6 +2296,69 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  SubmitServiceJob
+
+        /// <summary>
+        /// Submits a service job to a specified job queue to run on SageMaker AI. A service job
+        /// is a unit of work that you submit to Batch for execution on SageMaker AI.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitServiceJob service method.</param>
+        /// 
+        /// <returns>The response from the SubmitServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitServiceJob">REST API Reference for SubmitServiceJob Operation</seealso>
+        public virtual SubmitServiceJobResponse SubmitServiceJob(SubmitServiceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubmitServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitServiceJobResponseUnmarshaller.Instance;
+
+            return Invoke<SubmitServiceJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SubmitServiceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SubmitServiceJob operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubmitServiceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitServiceJob">REST API Reference for SubmitServiceJob Operation</seealso>
+        public virtual IAsyncResult BeginSubmitServiceJob(SubmitServiceJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SubmitServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitServiceJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SubmitServiceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubmitServiceJob.</param>
+        /// 
+        /// <returns>Returns a  SubmitServiceJobResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitServiceJob">REST API Reference for SubmitServiceJob Operation</seealso>
+        public virtual SubmitServiceJobResponse EndSubmitServiceJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SubmitServiceJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -2109,6 +2486,68 @@ namespace Amazon.Batch
         public virtual TerminateJobResponse EndTerminateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TerminateServiceJob
+
+        /// <summary>
+        /// Terminates a service job in a job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJob service method.</param>
+        /// 
+        /// <returns>The response from the TerminateServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJob">REST API Reference for TerminateServiceJob Operation</seealso>
+        public virtual TerminateServiceJobResponse TerminateServiceJob(TerminateServiceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateServiceJobResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateServiceJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TerminateServiceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJob operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateServiceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJob">REST API Reference for TerminateServiceJob Operation</seealso>
+        public virtual IAsyncResult BeginTerminateServiceJob(TerminateServiceJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateServiceJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TerminateServiceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateServiceJob.</param>
+        /// 
+        /// <returns>Returns a  TerminateServiceJobResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJob">REST API Reference for TerminateServiceJob Operation</seealso>
+        public virtual TerminateServiceJobResponse EndTerminateServiceJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TerminateServiceJobResponse>(asyncResult);
         }
 
         #endregion
@@ -2419,6 +2858,70 @@ namespace Amazon.Batch
         public virtual UpdateSchedulingPolicyResponse EndUpdateSchedulingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSchedulingPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceEnvironment
+
+        /// <summary>
+        /// Updates a service environment. You can update the state of a service environment from
+        /// <c>ENABLED</c> to <c>DISABLED</c> to prevent new service jobs from being placed in
+        /// the service environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceEnvironment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceEnvironment">REST API Reference for UpdateServiceEnvironment Operation</seealso>
+        public virtual UpdateServiceEnvironmentResponse UpdateServiceEnvironment(UpdateServiceEnvironmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceEnvironmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceEnvironment operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceEnvironment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceEnvironment">REST API Reference for UpdateServiceEnvironment Operation</seealso>
+        public virtual IAsyncResult BeginUpdateServiceEnvironment(UpdateServiceEnvironmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateServiceEnvironment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceEnvironment.</param>
+        /// 
+        /// <returns>Returns a  UpdateServiceEnvironmentResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceEnvironment">REST API Reference for UpdateServiceEnvironment Operation</seealso>
+        public virtual UpdateServiceEnvironmentResponse EndUpdateServiceEnvironment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateServiceEnvironmentResponse>(asyncResult);
         }
 
         #endregion
