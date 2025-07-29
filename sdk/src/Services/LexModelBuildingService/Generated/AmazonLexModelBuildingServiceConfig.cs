@@ -32,7 +32,7 @@ namespace Amazon.LexModelBuildingService
     public partial class AmazonLexModelBuildingServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lex Model Building Service", "3.7.400.183");
+            InternalSDKUtils.BuildUserAgentString("Lex Model Building Service", "3.7.400.184");
 
         private string _userAgent = UserAgentString;
         ///<summary>

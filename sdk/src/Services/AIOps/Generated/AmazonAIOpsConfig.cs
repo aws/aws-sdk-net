@@ -32,7 +32,7 @@ namespace Amazon.AIOps
     public partial class AmazonAIOpsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AIOps", "3.7.401.15");
+            InternalSDKUtils.BuildUserAgentString("AIOps", "3.7.401.16");
 
         private string _userAgent = UserAgentString;
         ///<summary>
