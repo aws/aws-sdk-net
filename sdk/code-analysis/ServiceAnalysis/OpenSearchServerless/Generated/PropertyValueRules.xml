@@ -519,6 +519,18 @@
     <pattern>[a-z][a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IamFederationConfigOptions.GroupAttribute</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z][A-Za-z0-9_.:/=+\-@]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchServerless.Model.IamFederationConfigOptions.UserAttribute</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z][A-Za-z0-9_.:/=+\-@]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.IamIdentityCenterConfigOptions.ApplicationArn</property>
     <min>10</min>
     <max>1224</max>

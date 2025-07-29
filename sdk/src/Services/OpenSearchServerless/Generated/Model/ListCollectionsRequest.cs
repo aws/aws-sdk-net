@@ -50,7 +50,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property CollectionFilters. 
         /// <para>
-        ///  A list of filter names and values that you can use for requests.
+        /// A list of filter names and values that you can use for requests.
         /// </para>
         /// </summary>
         public CollectionFilters CollectionFilters

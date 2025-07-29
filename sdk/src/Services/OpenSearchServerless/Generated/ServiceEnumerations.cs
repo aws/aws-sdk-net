@@ -385,6 +385,10 @@ namespace Amazon.OpenSearchServerless
     {
 
         /// <summary>
+        /// Constant Iamfederation for SecurityConfigType
+        /// </summary>
+        public static readonly SecurityConfigType Iamfederation = new SecurityConfigType("iamfederation");
+        /// <summary>
         /// Constant Iamidentitycenter for SecurityConfigType
         /// </summary>
         public static readonly SecurityConfigType Iamidentitycenter = new SecurityConfigType("iamidentitycenter");

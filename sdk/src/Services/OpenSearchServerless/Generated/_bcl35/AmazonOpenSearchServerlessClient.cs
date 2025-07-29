@@ -49,7 +49,7 @@ namespace Amazon.OpenSearchServerless
     /// </para>
     ///  
     /// <para>
-    ///  To learn more about OpenSearch Serverless, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html">What
+    /// To learn more about OpenSearch Serverless, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html">What
     /// is Amazon OpenSearch Serverless?</a> 
     /// </para>
     /// </summary>

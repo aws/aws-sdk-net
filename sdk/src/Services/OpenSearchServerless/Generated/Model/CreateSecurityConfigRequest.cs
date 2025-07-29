@@ -39,6 +39,7 @@ namespace Amazon.OpenSearchServerless.Model
     {
         private string _clientToken;
         private string _description;
+        private IamFederationConfigOptions _iamFederationOptions;
         private CreateIamIdentityCenterConfigOptions _iamIdentityCenterOptions;
         private string _name;
         private SamlConfigOptions _samlOptions;
@@ -83,6 +84,25 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IamFederationOptions. 
+        /// <para>
+        /// Describes IAM federation options in the form of a key-value map. This field is required
+        /// if you specify <c>iamFederation</c> for the <c>type</c> parameter.
+        /// </para>
+        /// </summary>
+        public IamFederationConfigOptions IamFederationOptions
+        {
+            get { return this._iamFederationOptions; }
+            set { this._iamFederationOptions = value; }
+        }
+
+        // Check to see if IamFederationOptions property is set
+        internal bool IsSetIamFederationOptions()
+        {
+            return this._iamFederationOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IamIdentityCenterOptions. 
         /// <para>
         /// Describes IAM Identity Center options in the form of a key-value map. This field is
@@ -124,7 +144,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property SamlOptions. 
         /// <para>
         /// Describes SAML options in in the form of a key-value map. This field is required if
-        /// you specify <c>saml</c> for the <c>type</c> parameter.
+        /// you specify <c>SAML</c> for the <c>type</c> parameter.
         /// </para>
         /// </summary>
         public SamlConfigOptions SamlOptions

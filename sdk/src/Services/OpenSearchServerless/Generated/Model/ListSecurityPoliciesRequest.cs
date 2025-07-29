@@ -65,7 +65,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <para>
         /// If your initial <c>ListSecurityPolicies</c> operation returns a <c>nextToken</c>,
         /// you can include the returned <c>nextToken</c> in subsequent <c>ListSecurityPolicies</c>
-        /// operations, which returns results in the next page. 
+        /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -83,7 +83,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// Resource filters (can be collection or indexes) that policies can apply to. 
+        /// Resource filters (can be collection or indexes) that policies can apply to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

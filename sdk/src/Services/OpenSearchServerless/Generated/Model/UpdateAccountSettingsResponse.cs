@@ -40,7 +40,6 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property AccountSettingsDetail. 
         /// <para>
         /// OpenSearch Serverless-related settings for the current Amazon Web Services account.
-        /// 
         /// </para>
         /// </summary>
         public AccountSettingsDetail AccountSettingsDetail
