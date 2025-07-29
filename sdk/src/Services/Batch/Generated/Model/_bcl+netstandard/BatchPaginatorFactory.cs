@@ -61,6 +61,14 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeServiceEnvironments operation
+        ///</summary>
+        public IDescribeServiceEnvironmentsPaginator DescribeServiceEnvironments(DescribeServiceEnvironmentsRequest request) 
+        {
+            return new DescribeServiceEnvironmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListConsumableResources operation
         ///</summary>
         public IListConsumableResourcesPaginator ListConsumableResources(ListConsumableResourcesRequest request) 
@@ -90,6 +98,14 @@ namespace Amazon.Batch.Model
         public IListSchedulingPoliciesPaginator ListSchedulingPolicies(ListSchedulingPoliciesRequest request) 
         {
             return new ListSchedulingPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListServiceJobs operation
+        ///</summary>
+        public IListServiceJobsPaginator ListServiceJobs(ListServiceJobsRequest request) 
+        {
+            return new ListServiceJobsPaginator(this.client, request);
         }
     }
 }

@@ -555,6 +555,52 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  CreateServiceEnvironment
+
+
+        /// <summary>
+        /// Creates a service environment for running service jobs. Service environments define
+        /// capacity limits for specific service types such as SageMaker Training jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceEnvironment service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateServiceEnvironment">REST API Reference for CreateServiceEnvironment Operation</seealso>
+        CreateServiceEnvironmentResponse CreateServiceEnvironment(CreateServiceEnvironmentRequest request);
+
+
+
+        /// <summary>
+        /// Creates a service environment for running service jobs. Service environments define
+        /// capacity limits for specific service types such as SageMaker Training jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateServiceEnvironment">REST API Reference for CreateServiceEnvironment Operation</seealso>
+        Task<CreateServiceEnvironmentResponse> CreateServiceEnvironmentAsync(CreateServiceEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteComputeEnvironment
 
 
@@ -776,6 +822,56 @@ namespace Amazon.Batch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">REST API Reference for DeleteSchedulingPolicy Operation</seealso>
         Task<DeleteSchedulingPolicyResponse> DeleteSchedulingPolicyAsync(DeleteSchedulingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteServiceEnvironment
+
+
+        /// <summary>
+        /// Deletes a Service environment. Before you can delete a service environment, you must
+        /// first set its state to <c>DISABLED</c> with the <c>UpdateServiceEnvironment</c> API
+        /// operation and disassociate it from any job queues with the <c>UpdateJobQueue</c> API
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceEnvironment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteServiceEnvironment">REST API Reference for DeleteServiceEnvironment Operation</seealso>
+        DeleteServiceEnvironmentResponse DeleteServiceEnvironment(DeleteServiceEnvironmentRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a Service environment. Before you can delete a service environment, you must
+        /// first set its state to <c>DISABLED</c> with the <c>UpdateServiceEnvironment</c> API
+        /// operation and disassociate it from any job queues with the <c>UpdateJobQueue</c> API
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteServiceEnvironment">REST API Reference for DeleteServiceEnvironment Operation</seealso>
+        Task<DeleteServiceEnvironmentResponse> DeleteServiceEnvironmentAsync(DeleteServiceEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1105,6 +1201,94 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  DescribeServiceEnvironments
+
+
+        /// <summary>
+        /// Describes one or more of your service environments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceEnvironments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceEnvironments service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceEnvironments">REST API Reference for DescribeServiceEnvironments Operation</seealso>
+        DescribeServiceEnvironmentsResponse DescribeServiceEnvironments(DescribeServiceEnvironmentsRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more of your service environments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceEnvironments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceEnvironments service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceEnvironments">REST API Reference for DescribeServiceEnvironments Operation</seealso>
+        Task<DescribeServiceEnvironmentsResponse> DescribeServiceEnvironmentsAsync(DescribeServiceEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeServiceJob
+
+
+        /// <summary>
+        /// The details of a service job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceJob">REST API Reference for DescribeServiceJob Operation</seealso>
+        DescribeServiceJobResponse DescribeServiceJob(DescribeServiceJobRequest request);
+
+
+
+        /// <summary>
+        /// The details of a service job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceJob">REST API Reference for DescribeServiceJob Operation</seealso>
+        Task<DescribeServiceJobResponse> DescribeServiceJobAsync(DescribeServiceJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetJobQueueSnapshot
 
 
@@ -1369,6 +1553,50 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  ListServiceJobs
+
+
+        /// <summary>
+        /// Returns a list of service jobs for a specified job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListServiceJobs">REST API Reference for ListServiceJobs Operation</seealso>
+        ListServiceJobsResponse ListServiceJobs(ListServiceJobsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of service jobs for a specified job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListServiceJobs">REST API Reference for ListServiceJobs Operation</seealso>
+        Task<ListServiceJobsResponse> ListServiceJobsAsync(ListServiceJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1541,6 +1769,52 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  SubmitServiceJob
+
+
+        /// <summary>
+        /// Submits a service job to a specified job queue to run on SageMaker AI. A service job
+        /// is a unit of work that you submit to Batch for execution on SageMaker AI.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitServiceJob service method.</param>
+        /// 
+        /// <returns>The response from the SubmitServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitServiceJob">REST API Reference for SubmitServiceJob Operation</seealso>
+        SubmitServiceJobResponse SubmitServiceJob(SubmitServiceJobRequest request);
+
+
+
+        /// <summary>
+        /// Submits a service job to a specified job queue to run on SageMaker AI. A service job
+        /// is a unit of work that you submit to Batch for execution on SageMaker AI.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SubmitServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitServiceJob">REST API Reference for SubmitServiceJob Operation</seealso>
+        Task<SubmitServiceJobResponse> SubmitServiceJobAsync(SubmitServiceJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -1640,6 +1914,50 @@ namespace Amazon.Batch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         Task<TerminateJobResponse> TerminateJobAsync(TerminateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TerminateServiceJob
+
+
+        /// <summary>
+        /// Terminates a service job in a job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJob service method.</param>
+        /// 
+        /// <returns>The response from the TerminateServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJob">REST API Reference for TerminateServiceJob Operation</seealso>
+        TerminateServiceJobResponse TerminateServiceJob(TerminateServiceJobRequest request);
+
+
+
+        /// <summary>
+        /// Terminates a service job in a job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TerminateServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJob">REST API Reference for TerminateServiceJob Operation</seealso>
+        Task<TerminateServiceJobResponse> TerminateServiceJobAsync(TerminateServiceJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1860,6 +2178,54 @@ namespace Amazon.Batch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">REST API Reference for UpdateSchedulingPolicy Operation</seealso>
         Task<UpdateSchedulingPolicyResponse> UpdateSchedulingPolicyAsync(UpdateSchedulingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateServiceEnvironment
+
+
+        /// <summary>
+        /// Updates a service environment. You can update the state of a service environment from
+        /// <c>ENABLED</c> to <c>DISABLED</c> to prevent new service jobs from being placed in
+        /// the service environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceEnvironment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceEnvironment">REST API Reference for UpdateServiceEnvironment Operation</seealso>
+        UpdateServiceEnvironmentResponse UpdateServiceEnvironment(UpdateServiceEnvironmentRequest request);
+
+
+
+        /// <summary>
+        /// Updates a service environment. You can update the state of a service environment from
+        /// <c>ENABLED</c> to <c>DISABLED</c> to prevent new service jobs from being placed in
+        /// the service environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceEnvironment">REST API Reference for UpdateServiceEnvironment Operation</seealso>
+        Task<UpdateServiceEnvironmentResponse> UpdateServiceEnvironmentAsync(UpdateServiceEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
