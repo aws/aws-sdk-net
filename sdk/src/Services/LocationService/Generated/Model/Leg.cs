@@ -37,7 +37,7 @@ namespace Amazon.LocationService.Model
     ///  
     /// <para>
     /// For example, a route with a departure position and destination position returns one
-    /// leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+    /// leg with the positions <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">snapped
     /// to a nearby road</a>:
     /// </para>
     ///  <ul> <li> 
@@ -128,7 +128,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the <c>EndPosition</c> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
+        /// If the <c>EndPosition</c> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/previous/developerguide/nap-to-nearby-road.html">snapped
         /// to a nearby road</a>. 
         /// </para>
         ///  </note>
@@ -176,7 +176,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the <c>StartPosition</c> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+        /// If the <c>StartPosition</c> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">snapped
         /// to a nearby road</a>. 
         /// </para>
         ///  </note>

@@ -1116,7 +1116,7 @@
   <property-value-rule>
     <property>Amazon.LocationService.Model.GeofenceGeometry.Geobuf</property>
     <min>0</min>
-    <max>600000</max>
+    <max>700000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.Leg.Distance</property>

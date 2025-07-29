@@ -78,12 +78,12 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+        /// Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political
         /// views</a> for more information.
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=0, Max=3)]
+        [AWSProperty(Sensitive=true, Min=0, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
