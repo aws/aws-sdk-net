@@ -42,6 +42,7 @@ namespace Amazon.Deadline.Model
         private string _identityCenterInstanceArn;
         private string _roleArn;
         private string _subdomain;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -146,6 +147,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSubdomain()
         {
             return this._subdomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag
+        /// keys and values are both required, but tag values can be empty strings.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
