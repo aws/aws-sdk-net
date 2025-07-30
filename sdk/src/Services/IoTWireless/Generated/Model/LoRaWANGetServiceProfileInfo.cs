@@ -44,12 +44,16 @@ namespace Amazon.IoTWireless.Model
         private int? _drMin;
         private bool? _hrAllowed;
         private int? _minGwDiversity;
+        private int? _nbTransMax;
+        private int? _nbTransMin;
         private bool? _nwkGeoLoc;
         private bool? _prAllowed;
         private bool? _raAllowed;
         private bool? _reportDevStatusBattery;
         private bool? _reportDevStatusMargin;
         private int? _targetPer;
+        private int? _txPowerIndexMax;
+        private int? _txPowerIndexMin;
         private int? _ulBucketSize;
         private int? _ulRate;
         private string _ulRatePolicy;
@@ -243,6 +247,52 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NbTransMax. 
+        /// <para>
+        /// The maximum number of transmissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>3</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int NbTransMax
+        {
+            get { return this._nbTransMax.GetValueOrDefault(); }
+            set { this._nbTransMax = value; }
+        }
+
+        // Check to see if NbTransMax property is set
+        internal bool IsSetNbTransMax()
+        {
+            return this._nbTransMax.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NbTransMin. 
+        /// <para>
+        /// The minimum number of transmissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>0</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int NbTransMin
+        {
+            get { return this._nbTransMin.GetValueOrDefault(); }
+            set { this._nbTransMin = value; }
+        }
+
+        // Check to see if NbTransMin property is set
+        internal bool IsSetNbTransMin()
+        {
+            return this._nbTransMin.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NwkGeoLoc. 
         /// <para>
         /// The NwkGeoLoc value.
@@ -349,6 +399,52 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetTargetPer()
         {
             return this._targetPer.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TxPowerIndexMax. 
+        /// <para>
+        /// The Transmit Power Index maximum value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>15</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int TxPowerIndexMax
+        {
+            get { return this._txPowerIndexMax.GetValueOrDefault(); }
+            set { this._txPowerIndexMax = value; }
+        }
+
+        // Check to see if TxPowerIndexMax property is set
+        internal bool IsSetTxPowerIndexMax()
+        {
+            return this._txPowerIndexMax.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TxPowerIndexMin. 
+        /// <para>
+        /// The Transmit Power Index minimum value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>0</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int TxPowerIndexMin
+        {
+            get { return this._txPowerIndexMin.GetValueOrDefault(); }
+            set { this._txPowerIndexMin = value; }
+        }
+
+        // Check to see if TxPowerIndexMin property is set
+        internal bool IsSetTxPowerIndexMin()
+        {
+            return this._txPowerIndexMin.HasValue; 
         }
 
         /// <summary>

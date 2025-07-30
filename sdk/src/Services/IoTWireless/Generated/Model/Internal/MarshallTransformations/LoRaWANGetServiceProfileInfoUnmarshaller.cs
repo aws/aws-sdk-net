@@ -126,6 +126,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinGwDiversity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NbTransMax", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NbTransMax = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NbTransMin", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NbTransMin = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NwkGeoLoc", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -160,6 +172,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.TargetPer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TxPowerIndexMax", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TxPowerIndexMax = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TxPowerIndexMin", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TxPowerIndexMin = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UlBucketSize", targetDepth))
