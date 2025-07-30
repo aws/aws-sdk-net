@@ -64,7 +64,14 @@ namespace Amazon.CloudFront.Model
     /// To add, change, or remove one or more cache behaviors, update the distribution configuration
     /// and specify all of the cache behaviors that you want to include in the updated distribution.
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// If your minimum TTL is greater than 0, CloudFront will cache content for at least
+    /// the duration specified in the cache policy's minimum TTL, even if the <c>Cache-Control:
+    /// no-cache</c>, <c>no-store</c>, or <c>private</c> directives are present in the origin
+    /// headers.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// For more information about cache behaviors, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
     /// Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.

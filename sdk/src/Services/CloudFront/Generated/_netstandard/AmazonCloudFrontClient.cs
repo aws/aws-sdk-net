@@ -828,7 +828,14 @@ namespace Amazon.CloudFront
         /// The default, minimum, and maximum time to live (TTL) values that you want objects
         /// to stay in the CloudFront cache.
         /// </para>
-        ///  </li> </ul> 
+        ///  <important> 
+        /// <para>
+        /// If your minimum TTL is greater than 0, CloudFront will cache content for at least
+        /// the duration specified in the cache policy's minimum TTL, even if the <c>Cache-Control:
+        /// no-cache</c>, <c>no-store</c>, or <c>private</c> directives are present in the origin
+        /// headers.
+        /// </para>
+        ///  </important> </li> </ul> 
         /// <para>
         /// The headers, cookies, and query strings that are included in the cache key are also
         /// included in requests that CloudFront sends to the origin. CloudFront sends a request
@@ -7884,7 +7891,14 @@ namespace Amazon.CloudFront
         /// Call <c>UpdateCachePolicy</c> by providing the entire cache policy configuration,
         /// including the fields that you modified and those that you didn't.
         /// </para>
-        ///  </li> </ol>
+        ///  </li> </ol> <important> 
+        /// <para>
+        /// If your minimum TTL is greater than 0, CloudFront will cache content for at least
+        /// the duration specified in the cache policy's minimum TTL, even if the <c>Cache-Control:
+        /// no-cache</c>, <c>no-store</c>, or <c>private</c> directives are present in the origin
+        /// headers.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCachePolicy service method.</param>
         /// <param name="cancellationToken">
