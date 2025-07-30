@@ -40,6 +40,7 @@ namespace Amazon.DocDB.Model
         private string _engine;
         private string _engineVersion;
         private List<string> _exportableLogTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ServerlessV2FeaturesSupport _serverlessV2FeaturesSupport;
         private List<string> _supportedCACertificateIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _supportsCertificateRotationWithoutRestart;
         private bool? _supportsLogExportsToCloudwatchLogs;
@@ -152,6 +153,29 @@ namespace Amazon.DocDB.Model
         internal bool IsSetExportableLogTypes()
         {
             return this._exportableLogTypes != null && (this._exportableLogTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2FeaturesSupport. 
+        /// <para>
+        /// Specifies any Amazon DocumentDB Serverless properties or limits that differ between
+        /// Amazon DocumentDB engine versions. You can test the values of this attribute when
+        /// deciding which Amazon DocumentDB version to use in a new or upgraded cluster. You
+        /// can also retrieve the version of an existing cluster and check whether that version
+        /// supports certain Amazon DocumentDB Serverless features before you attempt to use those
+        /// features.
+        /// </para>
+        /// </summary>
+        public ServerlessV2FeaturesSupport ServerlessV2FeaturesSupport
+        {
+            get { return this._serverlessV2FeaturesSupport; }
+            set { this._serverlessV2FeaturesSupport = value; }
+        }
+
+        // Check to see if ServerlessV2FeaturesSupport property is set
+        internal bool IsSetServerlessV2FeaturesSupport()
+        {
+            return this._serverlessV2FeaturesSupport != null;
         }
 
         /// <summary>

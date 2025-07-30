@@ -96,6 +96,12 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         unmarshalledObject.ExportableLogTypes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ServerlessV2FeaturesSupport", targetDepth))
+                    {
+                        var unmarshaller = ServerlessV2FeaturesSupportUnmarshaller.Instance;
+                        unmarshalledObject.ServerlessV2FeaturesSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportedCACertificateIdentifiers/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

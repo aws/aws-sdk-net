@@ -47,6 +47,7 @@ namespace Amazon.DocDB.Model
         private int? _port;
         private DateTime? _restoreToTime;
         private string _restoreType;
+        private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _sourceDBClusterIdentifier;
         private string _storageType;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -312,6 +313,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetRestoreType()
         {
             return this._restoreType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration. 
+        /// <para>
+        /// Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.
+        /// </para>
+        /// </summary>
+        public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
         }
 
         /// <summary>

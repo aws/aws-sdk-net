@@ -177,7 +177,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterResourceId. 
         /// <para>
-        /// The Amazon Web Services Region-unique, immutable identifier for the global database
+        /// The Amazon Web Services RegionRegion-unique, immutable identifier for the global database
         /// cluster. This identifier is found in CloudTrail log entries whenever the KMS customer
         /// master key (CMK) for the cluster is accessed. 
         /// </para>

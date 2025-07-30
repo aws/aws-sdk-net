@@ -96,6 +96,17 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RestoreType", StringUtils.FromString(publicRequest.RestoreType));
                 }
+                if(publicRequest.IsSetServerlessV2ScalingConfiguration())
+                {
+                    if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMaxCapacity())
+                    {
+                        request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MaxCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MaxCapacity));
+                    }
+                    if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMinCapacity())
+                    {
+                        request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MinCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MinCapacity));
+                    }
+                }
                 if(publicRequest.IsSetSourceDBClusterIdentifier())
                 {
                     request.Parameters.Add("SourceDBClusterIdentifier", StringUtils.FromString(publicRequest.SourceDBClusterIdentifier));

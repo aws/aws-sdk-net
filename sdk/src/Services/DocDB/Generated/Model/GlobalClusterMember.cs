@@ -81,7 +81,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property Readers. 
         /// <para>
         /// The Amazon Resource Name (ARN) for each read-only secondary cluster associated with
-        /// the Aurora global cluster.
+        /// the Amazon DocumentDB global cluster.
         /// </para>
         /// </summary>
         public List<string> Readers
