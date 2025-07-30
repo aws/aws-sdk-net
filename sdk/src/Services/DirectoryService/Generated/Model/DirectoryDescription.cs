@@ -42,6 +42,7 @@ namespace Amazon.DirectoryService.Model
         private string _directoryId;
         private List<string> _dnsIpAddrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DirectoryEdition _edition;
+        private HybridSettingsDescription _hybridSettings;
         private DateTime? _launchTime;
         private string _name;
         private OSVersion _osVersion;
@@ -222,6 +223,25 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetEdition()
         {
             return this._edition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HybridSettings. 
+        /// <para>
+        /// Contains information about the hybrid directory configuration for the directory, including
+        /// Amazon Web Services System Manager managed node identifiers and DNS IPs.
+        /// </para>
+        /// </summary>
+        public HybridSettingsDescription HybridSettings
+        {
+            get { return this._hybridSettings; }
+            set { this._hybridSettings = value; }
+        }
+
+        // Check to see if HybridSettings property is set
+        internal bool IsSetHybridSettings()
+        {
+            return this._hybridSettings != null;
         }
 
         /// <summary>

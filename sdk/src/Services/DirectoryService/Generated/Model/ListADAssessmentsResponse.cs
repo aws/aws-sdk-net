@@ -30,20 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Contains VPC information for the <a>CreateDirectory</a>, <a>CreateMicrosoftAD</a>,
-    /// or <a>CreateHybridAD</a> operation.
+    /// This is the response object from the ListADAssessments operation.
     /// </summary>
-    public partial class DirectoryVpcSettings
+    public partial class ListADAssessmentsResponse : AmazonWebServiceResponse
     {
-        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _vpcId;
+        private List<AssessmentSummary> _assessments = AWSConfigs.InitializeCollections ? new List<AssessmentSummary>() : null;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property SubnetIds. 
+        /// Gets and sets the property Assessments. 
         /// <para>
-        /// The identifiers of the subnets for the directory servers. The two subnets must be
-        /// in different Availability Zones. Directory Service creates a directory server and
-        /// a DNS server in each of these subnets.
+        /// A list of assessment summaries containing basic information about each directory assessment.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -51,36 +48,35 @@ namespace Amazon.DirectoryService.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> SubnetIds
+        public List<AssessmentSummary> Assessments
         {
-            get { return this._subnetIds; }
-            set { this._subnetIds = value; }
+            get { return this._assessments; }
+            set { this._assessments = value; }
         }
 
-        // Check to see if SubnetIds property is set
-        internal bool IsSetSubnetIds()
+        // Check to see if Assessments property is set
+        internal bool IsSetAssessments()
         {
-            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._assessments != null && (this._assessments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property VpcId. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The identifier of the VPC in which to create the directory.
+        /// If not null, more results are available. Pass this value for the <c>NextToken</c>
+        /// parameter in a subsequent request to retrieve the next set of items.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string VpcId
+        public string NextToken
         {
-            get { return this._vpcId; }
-            set { this._vpcId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._vpcId != null;
+            return this._nextToken != null;
         }
 
     }
