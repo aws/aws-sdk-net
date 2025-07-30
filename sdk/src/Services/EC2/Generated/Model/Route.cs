@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private string _gatewayId;
         private string _instanceId;
         private string _instanceOwnerId;
+        private string _ipAddress;
         private string _localGatewayId;
         private string _natGatewayId;
         private string _networkInterfaceId;
@@ -212,6 +213,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceOwnerId()
         {
             return this._instanceOwnerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        /// The next hop IP address for routes propagated by VPC Route Server into VPC route tables.
+        /// </para>
+        /// </summary>
+        public string IpAddress
+        {
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
+        }
+
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
+        {
+            return this._ipAddress != null;
         }
 
         /// <summary>
