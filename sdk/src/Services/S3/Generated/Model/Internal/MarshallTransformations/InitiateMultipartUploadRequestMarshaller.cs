@@ -111,12 +111,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetServerSideEncryptionKeyManagementServiceEncryptionContext()) 
             {
-                request.Headers["x-amz-server-side-encryption-aws-kms-key-id"] = publicRequest.ServerSideEncryptionKeyManagementServiceEncryptionContext;
+                request.Headers["x-amz-server-side-encryption-context"] = publicRequest.ServerSideEncryptionKeyManagementServiceEncryptionContext;
             }
         
             if (publicRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId()) 
             {
-                request.Headers["x-amz-server-side-encryption-context"] = publicRequest.ServerSideEncryptionKeyManagementServiceKeyId;
+                request.Headers["x-amz-server-side-encryption-aws-kms-key-id"] = publicRequest.ServerSideEncryptionKeyManagementServiceKeyId;
             }
         
             if (publicRequest.IsSetServerSideEncryptionMethod()) 

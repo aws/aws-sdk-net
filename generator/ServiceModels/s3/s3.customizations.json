@@ -256,10 +256,10 @@
                     "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
                 },
                 {
-                    "SSEKMSEncryptionContext" : {"emitPropertyName":"ServerSideEncryptionKeyManagementServiceKeyId"}
+                    "SSEKMSEncryptionContext" : {"emitPropertyName":"ServerSideEncryptionKeyManagementServiceEncryptionContext"}
                 },
                 {
-                    "SSEKMSKeyId" : {"emitPropertyName" : "ServerSideEncryptionKeyManagementServiceEncryptionContext"}
+                    "SSEKMSKeyId" : {"emitPropertyName" : "ServerSideEncryptionKeyManagementServiceKeyId"}
                 },
                 {
                     "Tagging" : {"emitPropertyName" : "TagSet"}

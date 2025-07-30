@@ -708,6 +708,33 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ServerSideEncryptionKeyManagementServiceEncryptionContext.
         /// 
         /// <para>
+        /// Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
+        /// The value of this header is a Base64 encoded string of a UTF-8 encoded JSON, which
+        /// contains the encryption context as key-value pairs.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Directory buckets</b> - You can optionally provide an explicit encryption context
+        /// value. The value must match the default encryption context - the bucket Amazon Resource
+        /// Name (ARN). An additional encryption context value is not supported. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ServerSideEncryptionKeyManagementServiceEncryptionContext
+        {
+            get { return this._serverSideEncryptionKeyManagementServiceEncryptionContext; }
+            set { this._serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
+        }
+
+        // Check to see if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set
+        internal bool IsSetServerSideEncryptionKeyManagementServiceEncryptionContext()
+        {
+            return this._serverSideEncryptionKeyManagementServiceEncryptionContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerSideEncryptionKeyManagementServiceKeyId. 
+        /// <para>
         /// Specifies the KMS key ID (Key ID, Key ARN, or Key Alias) to use for object encryption.
         /// If the KMS key doesn't exist in the same account that's issuing the command, you must
         /// use the full Key ARN not the Key ID.
@@ -732,33 +759,6 @@ namespace Amazon.S3.Model
         /// managed key</a> per directory bucket's lifetime. The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
         /// Web Services managed key</a> (<c>aws/s3</c>) isn't supported. Incorrect key specification
         /// results in an HTTP <c>400 Bad Request</c> error. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ServerSideEncryptionKeyManagementServiceEncryptionContext
-        {
-            get { return this._serverSideEncryptionKeyManagementServiceEncryptionContext; }
-            set { this._serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
-        }
-
-        // Check to see if ServerSideEncryptionKeyManagementServiceEncryptionContext property is set
-        internal bool IsSetServerSideEncryptionKeyManagementServiceEncryptionContext()
-        {
-            return this._serverSideEncryptionKeyManagementServiceEncryptionContext != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ServerSideEncryptionKeyManagementServiceKeyId. 
-        /// <para>
-        /// Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
-        /// The value of this header is a Base64 encoded string of a UTF-8 encoded JSON, which
-        /// contains the encryption context as key-value pairs.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Directory buckets</b> - You can optionally provide an explicit encryption context
-        /// value. The value must match the default encryption context - the bucket Amazon Resource
-        /// Name (ARN). An additional encryption context value is not supported. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
