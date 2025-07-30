@@ -126,6 +126,12 @@ namespace Amazon.Runtime.Internal
 
         private static void UpdateUserAgentDetails(IRequestContext requestContext)
         {
+            if (requestContext.Request.Headers.TryGetValue("smithy-protocol", out var smithyProtocol)
+                && smithyProtocol == "rpc-v2-cbor")
+            {
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.PROTOCOL_RPC_V2_CBOR);
+            }
+
             var accountIdMode = requestContext.ClientConfig.AccountIdEndpointMode;
             if (accountIdMode == AccountIdEndpointMode.DISABLED)
                 requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.ACCOUNT_ID_MODE_DISABLED);
