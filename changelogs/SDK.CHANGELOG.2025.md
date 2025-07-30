@@ -1,3 +1,15 @@
+### 4.0.59.0 (2025-07-30 18:24 UTC)
+* CloudFront (4.0.2.0)
+	* This release adds new origin timeout options: 1) ResponseCompletionTimeout and 2) OriginReadTimeout (for S3 origins)
+* DirectoryService (4.0.1.0)
+	* This release adds support for AWS Managed Microsoft AD Hybrid Edition, introducing new operations: StartADAssessment, DescribeADAssessment, ListADAssessments, DeleteADAssessment, CreateHybridAD, UpdateHybridAD, and DescribeHybridADUpdate; and updated existing operation: DescribeDirectories.
+* DocDB (4.0.1.0)
+	* Add support for setting Serverless Scaling Configuration on clusters.
+* EC2 (4.0.25.0)
+	* Release to show the next hop IP address for routes propagated by VPC Route Server into VPC route tables.
+* IoTWireless (4.0.2.0)
+	* Added TxPowerIndexMin, TxPowerIndexMax, NbTransMin and NbTransMax params to ServiceProfile.
+
 ### 4.0.58.0 (2025-07-29 18:20 UTC)
 * Batch (4.0.2.0)
 	* AWS Batch for SageMaker Training jobs feature support.  Includes new APIs for service job submission (e.g., SubmitServiceJob) and managing service environments (e.g., CreateServiceEnvironment) that enable queueing SageMaker Training jobs.
