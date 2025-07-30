@@ -37,8 +37,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You get the full benefit of fast snapshot restores after they enter the <c>enabled</c>
-    /// state. To get the current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>.
-    /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.
+    /// state.
     /// </para>
     ///  
     /// <para>
