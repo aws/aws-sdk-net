@@ -110,6 +110,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginShield = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ResponseCompletionTimeout", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ResponseCompletionTimeout = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("S3OriginConfig", targetDepth))
                     {
                         var unmarshaller = S3OriginConfigUnmarshaller.Instance;

@@ -910,11 +910,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                                     xmlWriter.WriteEndElement();
                                 }
+                                if(publicRequestDistributionConfigOriginsItemsValue.IsSetResponseCompletionTimeout())
+                                    xmlWriter.WriteElementString("ResponseCompletionTimeout", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.ResponseCompletionTimeout));                 
+
                                 if (publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig != null)
                                 {
                                     xmlWriter.WriteStartElement("S3OriginConfig");
                                     if(publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginAccessIdentity())
                                         xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.OriginAccessIdentity));                 
+
+                                    if(publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginReadTimeout())
+                                        xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.OriginReadTimeout));                 
 
                                     xmlWriter.WriteEndElement();
                                 }

@@ -74,7 +74,7 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response
-        /// timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public int OriginReadTimeout
