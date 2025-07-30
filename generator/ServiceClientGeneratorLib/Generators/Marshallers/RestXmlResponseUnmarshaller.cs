@@ -310,12 +310,12 @@ namespace ServiceClientGenerator.Generators.Marshallers
     
         foreach (var member in this.Operation.ResponseBodyMembers)
         {
-            ProcessResponseBodyOrStructureMembers(member, false);
+            ProcessResponseBodyOrStructureMembers(member, false, this.Structure);
         }
 
         if (shouldMarshallPayload)
         {
-            ProcessResponseBodyOrStructureMembers(payload, false);
+            ProcessResponseBodyOrStructureMembers(payload, false, this.Structure);
         }
 
             

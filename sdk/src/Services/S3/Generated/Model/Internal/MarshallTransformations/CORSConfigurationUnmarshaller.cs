@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,91 +34,57 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetObjectAcl operation
+    /// Response Unmarshaller for CORSConfiguration Object
     /// </summary>  
-    public class GetObjectAclResponseUnmarshaller : S3ReponseUnmarshaller
+    public class CORSConfigurationUnmarshaller : IXmlUnmarshaller<CORSConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public CORSConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            GetObjectAclResponse response = new GetObjectAclResponse();
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {
-                    UnmarshallResult(context, response);
-                    continue;
-                }
-            }
-
-            if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
-                response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
-
-            return response;
-        }
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetObjectAclResponse response)
-        {
+            CORSConfiguration unmarshalledObject = new CORSConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            if (context.IsStartOfDocument)
-                targetDepth += 1;
-            if (context.IsEmptyResponse)
-            {
-                return;
-            }
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AccessControlList/Grant", targetDepth))
+                    if (context.TestExpression("CORSRule", targetDepth))
                     {
-                        if (response.Grants == null)
+                        if (unmarshalledObject.Rules == null)
                         {
-                            response.Grants = new List<S3Grant>();
+                            unmarshalledObject.Rules = new List<CORSRule>();
                         }
-                        var unmarshaller = S3GrantUnmarshaller.Instance;
-                        response.Grants.Add(unmarshaller.Unmarshall(context));
-                        continue;
-                    }
-                    if (context.TestExpression("Owner", targetDepth))
-                    {
-                        var unmarshaller = OwnerUnmarshaller.Instance;
-                        response.Owner = unmarshaller.Unmarshall(context);
+                        var unmarshaller = CORSRuleUnmarshaller.Instance;
+                        unmarshalledObject.Rules.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return;
+                    return unmarshalledObject;
                 }
-            }
-
-            return;
+            }          
+            return unmarshalledObject;
         }
-
-
-        private static GetObjectAclResponseUnmarshaller _instance = new GetObjectAclResponseUnmarshaller();
-
-        internal static GetObjectAclResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+        private static CORSConfigurationUnmarshaller _instance = new CORSConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetObjectAclResponseUnmarshaller Instance
+        public static CORSConfigurationUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

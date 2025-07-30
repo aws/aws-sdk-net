@@ -12,22 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCORSConfiguration operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported by directory buckets.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
@@ -36,7 +42,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    ///  To use this operation, you must have permission to perform the <code>s3:GetBucketCORS</code>
+    ///  To use this operation, you must have permission to perform the <c>s3:GetBucketCORS</c>
     /// action. By default, the bucket owner has this permission and can grant it to others.
     /// </para>
     ///  
@@ -48,9 +54,9 @@ namespace Amazon.S3.Model
     /// <para>
     /// When you use this API operation with an Object Lambda access point, provide the alias
     /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
-    /// access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code>
-    /// is returned. For more information about <code>InvalidAccessPointAliasError</code>,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+    /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c>
+    /// is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
     /// of Error Codes</a>.
     /// </para>
     ///  
@@ -60,7 +66,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>GetBucketCors</code>:
+    /// The following operations are related to <c>GetBucketCors</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -76,22 +82,39 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetCORSConfigurationRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
-        private string expectedBucketOwner;
+        private string _bucketName;
+        private string _expectedBucketOwner;
 
         /// <summary>
-        /// Gets and sets the BucketName.
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The bucket name for which to get the cors configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this API operation with an access point, provide the alias of the access
+        /// point in place of the bucket name.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this API operation with an Object Lambda access point, provide the alias
+        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
+        /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c>
+        /// is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+        /// of Error Codes</a>.
+        /// </para>
         /// </summary>
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.bucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -99,23 +122,20 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return this._expectedBucketOwner != null;
         }
+
     }
 }
-    

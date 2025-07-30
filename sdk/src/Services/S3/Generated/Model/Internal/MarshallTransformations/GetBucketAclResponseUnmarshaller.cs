@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,9 +34,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetObjectAcl operation
+    /// Response Unmarshaller for GetBucketAcl operation
     /// </summary>  
-    public class GetObjectAclResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketAclResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            GetObjectAclResponse response = new GetObjectAclResponse();
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {
-                    UnmarshallResult(context, response);
-                    continue;
-                }
-            }
-
-            if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
-                response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
-
+            GetBucketAclResponse response = new GetBucketAclResponse();
+            UnmarshallResult(context,response);
+            
             return response;
-        }
+        }        
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetObjectAclResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetBucketAclResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            if (context.IsStartOfDocument)
-                targetDepth += 1;
+            if (context.IsStartOfDocument) 
+                   targetDepth += 1;
             if (context.IsEmptyResponse)
             {
                 return;
@@ -97,14 +87,36 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-
+          
             return;
         }
+  
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
 
-        private static GetObjectAclResponseUnmarshaller _instance = new GetObjectAclResponseUnmarshaller();
+            var responseBodyBytes = context.GetResponseBodyBytes();
 
-        internal static GetObjectAclResponseUnmarshaller GetInstance()
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            {
+            }
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
+        }
+
+        private static GetBucketAclResponseUnmarshaller _instance = new GetBucketAclResponseUnmarshaller();        
+
+        internal static GetBucketAclResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -112,7 +124,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetObjectAclResponseUnmarshaller Instance
+        public static GetBucketAclResponseUnmarshaller Instance
         {
             get
             {

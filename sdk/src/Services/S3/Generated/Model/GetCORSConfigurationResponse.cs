@@ -12,36 +12,44 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the  GetBucketCors response and response metadata.
+    /// This is the response object from the GetCORSConfiguration operation.
     /// </summary>
-    public class GetCORSConfigurationResponse : AmazonWebServiceResponse
+    public partial class GetCORSConfigurationResponse : AmazonWebServiceResponse
     {
-        private CORSConfiguration configuration;
+        private CORSConfiguration _configuration;
 
         /// <summary>
-        /// The current CORSConfiguration for the bucket.
+        /// Gets and sets the property Configuration.
         /// </summary>
         public CORSConfiguration Configuration
         {
-            get { return this.configuration; }
-            set { this.configuration = value; }
+            get { return this._configuration; }
+            set { this._configuration = value; }
         }
 
         // Check to see if Configuration property is set
         internal bool IsSetConfiguration()
         {
-            return this.configuration != null;
+            return this._configuration != null;
         }
+
     }
 }
-    
