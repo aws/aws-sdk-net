@@ -124,6 +124,18 @@
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateHybridADRequest.AssessmentId</property>
+    <pattern>^da-[0-9a-f]{18}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateHybridADRequest.SecretArn</property>
+    <pattern>^arn:aws:secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=.@-]+-[a-zA-Z0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateHybridADResponse.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateLogSubscriptionRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -188,6 +200,14 @@
     <pattern>^t-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DeleteADAssessmentRequest.AssessmentId</property>
+    <pattern>^da-[0-9a-f]{18}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DeleteADAssessmentResponse.AssessmentId</property>
+    <pattern>^da-[0-9a-f]{18}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DeleteConditionalForwarderRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -243,6 +263,10 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeADAssessmentRequest.AssessmentId</property>
+    <pattern>^da-[0-9a-f]{18}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeCertificateRequest.CertificateId</property>
     <pattern>^c-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -281,6 +305,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeEventTopicsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeHybridADUpdateRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -407,6 +435,15 @@
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ListADAssessmentsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ListADAssessmentsRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.ListCertificatesRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -522,6 +559,14 @@
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.StartADAssessmentRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.StartADAssessmentResponse.AssessmentId</property>
+    <pattern>^da-[0-9a-f]{18}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.StartSchemaExtensionRequest.Description</property>
     <min>0</min>
     <max>128</max>
@@ -559,6 +604,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateDirectorySetupRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateHybridADRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateHybridADResponse.AssessmentId</property>
+    <pattern>^da-[0-9a-f]{18}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateHybridADResponse.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -604,6 +661,46 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.AccessDeniedException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ADAssessmentLimitExceededException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Assessment.AssessmentId</property>
+    <pattern>^da-[0-9a-f]{18}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Assessment.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Assessment.DnsName</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Assessment.VpcId</property>
+    <pattern>^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.AssessmentConfiguration.DnsName</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.AssessmentReport.DomainControllerIp</property>
+    <pattern>^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.AssessmentSummary.AssessmentId</property>
+    <pattern>^da-[0-9a-f]{18}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.AssessmentSummary.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.AssessmentSummary.DnsName</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.Attribute.Name</property>
@@ -827,6 +924,14 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.HybridAdministratorAccountUpdate.SecretArn</property>
+    <pattern>^arn:aws:secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=.@-]+-[a-zA-Z0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.HybridUpdateInfoEntry.AssessmentId</property>
+    <pattern>^da-[0-9a-f]{18}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.IncompatibleSettingsException.RequestId</property>

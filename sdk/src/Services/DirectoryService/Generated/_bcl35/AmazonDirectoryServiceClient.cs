@@ -1046,6 +1046,109 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CreateHybridAD
+
+        /// <summary>
+        /// Creates a hybrid directory that connects your self-managed Active Directory (AD) infrastructure
+        /// and Amazon Web Services.
+        /// 
+        ///  
+        /// <para>
+        /// You must have a successful directory assessment using <a>StartADAssessment</a> to
+        /// validate your environment compatibility before you use this operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates are applied asynchronously. Use <a>DescribeDirectories</a> to monitor the
+        /// progress of directory creation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHybridAD service method.</param>
+        /// 
+        /// <returns>The response from the CreateHybridAD service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ADAssessmentLimitExceededException">
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempt to create a hybrid directory; and you already have 100 <c>CUSTOMER</c>
+        /// directory assessments;, you will encounter an error. Delete assessments to free up
+        /// capacity before trying again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request an increase to your <c>CUSTOMER</c> directory assessment quota by
+        /// contacting customer support or delete existing CUSTOMER directory assessments; to
+        /// free up capacity.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateHybridAD">REST API Reference for CreateHybridAD Operation</seealso>
+        public virtual CreateHybridADResponse CreateHybridAD(CreateHybridADRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHybridADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHybridADResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHybridADResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHybridAD operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHybridAD operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHybridAD
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateHybridAD">REST API Reference for CreateHybridAD Operation</seealso>
+        public virtual IAsyncResult BeginCreateHybridAD(CreateHybridADRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHybridADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHybridADResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHybridAD operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHybridAD.</param>
+        /// 
+        /// <returns>Returns a  CreateHybridADResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateHybridAD">REST API Reference for CreateHybridAD Operation</seealso>
+        public virtual CreateHybridADResponse EndCreateHybridAD(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateHybridADResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLogSubscription
 
         /// <summary>
@@ -1356,6 +1459,82 @@ namespace Amazon.DirectoryService
         public virtual CreateTrustResponse EndCreateTrust(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTrustResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteADAssessment
+
+        /// <summary>
+        /// Deletes a directory assessment and all associated data. This operation permanently
+        /// removes the assessment results, validation reports, and configuration information.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete system-initiated assessments. You can delete customer-created assessments
+        /// even if they are in progress.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteADAssessment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteADAssessment service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteADAssessment">REST API Reference for DeleteADAssessment Operation</seealso>
+        public virtual DeleteADAssessmentResponse DeleteADAssessment(DeleteADAssessmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteADAssessmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteADAssessmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteADAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteADAssessment operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteADAssessment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteADAssessment">REST API Reference for DeleteADAssessment Operation</seealso>
+        public virtual IAsyncResult BeginDeleteADAssessment(DeleteADAssessmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteADAssessmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteADAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteADAssessment.</param>
+        /// 
+        /// <returns>Returns a  DeleteADAssessmentResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteADAssessment">REST API Reference for DeleteADAssessment Operation</seealso>
+        public virtual DeleteADAssessmentResponse EndDeleteADAssessment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteADAssessmentResponse>(asyncResult);
         }
 
         #endregion
@@ -1848,6 +2027,77 @@ namespace Amazon.DirectoryService
         public virtual DeregisterEventTopicResponse EndDeregisterEventTopic(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterEventTopicResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeADAssessment
+
+        /// <summary>
+        /// Retrieves detailed information about a directory assessment, including its current
+        /// status, validation results, and configuration details. Use this operation to monitor
+        /// assessment progress and review results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeADAssessment service method.</param>
+        /// 
+        /// <returns>The response from the DescribeADAssessment service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeADAssessment">REST API Reference for DescribeADAssessment Operation</seealso>
+        public virtual DescribeADAssessmentResponse DescribeADAssessment(DescribeADAssessmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeADAssessmentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeADAssessmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeADAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeADAssessment operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeADAssessment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeADAssessment">REST API Reference for DescribeADAssessment Operation</seealso>
+        public virtual IAsyncResult BeginDescribeADAssessment(DescribeADAssessmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeADAssessmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeADAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeADAssessment.</param>
+        /// 
+        /// <returns>Returns a  DescribeADAssessmentResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeADAssessment">REST API Reference for DescribeADAssessment Operation</seealso>
+        public virtual DescribeADAssessmentResponse EndDescribeADAssessment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeADAssessmentResponse>(asyncResult);
         }
 
         #endregion
@@ -2420,6 +2670,80 @@ namespace Amazon.DirectoryService
         public virtual DescribeEventTopicsResponse EndDescribeEventTopics(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventTopicsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeHybridADUpdate
+
+        /// <summary>
+        /// Retrieves information about update activities for a hybrid directory. This operation
+        /// provides details about configuration changes, administrator account updates, and self-managed
+        /// instance settings (IDs and DNS IPs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHybridADUpdate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHybridADUpdate service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeHybridADUpdate">REST API Reference for DescribeHybridADUpdate Operation</seealso>
+        public virtual DescribeHybridADUpdateResponse DescribeHybridADUpdate(DescribeHybridADUpdateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHybridADUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHybridADUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHybridADUpdateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHybridADUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHybridADUpdate operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHybridADUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeHybridADUpdate">REST API Reference for DescribeHybridADUpdate Operation</seealso>
+        public virtual IAsyncResult BeginDescribeHybridADUpdate(DescribeHybridADUpdateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHybridADUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHybridADUpdateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHybridADUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHybridADUpdate.</param>
+        /// 
+        /// <returns>Returns a  DescribeHybridADUpdateResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeHybridADUpdate">REST API Reference for DescribeHybridADUpdate Operation</seealso>
+        public virtual DescribeHybridADUpdateResponse EndDescribeHybridADUpdate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeHybridADUpdateResponse>(asyncResult);
         }
 
         #endregion
@@ -3822,6 +4146,77 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  ListADAssessments
+
+        /// <summary>
+        /// Retrieves a list of directory assessments for the specified directory or all assessments
+        /// in your account. Use this operation to monitor assessment status and manage multiple
+        /// assessments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListADAssessments service method.</param>
+        /// 
+        /// <returns>The response from the ListADAssessments service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListADAssessments">REST API Reference for ListADAssessments Operation</seealso>
+        public virtual ListADAssessmentsResponse ListADAssessments(ListADAssessmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListADAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListADAssessmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListADAssessmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListADAssessments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListADAssessments operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListADAssessments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListADAssessments">REST API Reference for ListADAssessments Operation</seealso>
+        public virtual IAsyncResult BeginListADAssessments(ListADAssessmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListADAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListADAssessmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListADAssessments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListADAssessments.</param>
+        /// 
+        /// <returns>Returns a  ListADAssessmentsResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListADAssessments">REST API Reference for ListADAssessments Operation</seealso>
+        public virtual ListADAssessmentsResponse EndListADAssessments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListADAssessmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCertificates
 
         /// <summary>
@@ -4880,6 +5275,119 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  StartADAssessment
+
+        /// <summary>
+        /// Initiates a directory assessment to validate your self-managed AD environment for
+        /// hybrid domain join. The assessment checks compatibility and connectivity of the self-managed
+        /// AD environment.
+        /// 
+        ///  
+        /// <para>
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// </para>
+        ///  
+        /// <para>
+        /// The assessment process typically takes 30 minutes or more to complete. The assessment
+        /// process is asynchronous and you can monitor it with <c>DescribeADAssessment</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>InstanceIds</c> must have a one-to-one correspondence with <c>CustomerDnsIps</c>,
+        /// meaning that if the IP address for instance i-10243410 is 10.24.34.100 and the IP
+        /// address for instance i-10243420 is 10.24.34.200, then the input arrays must maintain
+        /// the same order relationship, either [10.24.34.100, 10.24.34.200] paired with [i-10243410,
+        /// i-10243420] or [10.24.34.200, 10.24.34.100] paired with [i-10243420, i-10243410].
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: You must provide exactly one <c>DirectoryId</c> or <c>AssessmentConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartADAssessment service method.</param>
+        /// 
+        /// <returns>The response from the StartADAssessment service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ADAssessmentLimitExceededException">
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempt to create a hybrid directory; and you already have 100 <c>CUSTOMER</c>
+        /// directory assessments;, you will encounter an error. Delete assessments to free up
+        /// capacity before trying again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request an increase to your <c>CUSTOMER</c> directory assessment quota by
+        /// contacting customer support or delete existing CUSTOMER directory assessments; to
+        /// free up capacity.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartADAssessment">REST API Reference for StartADAssessment Operation</seealso>
+        public virtual StartADAssessmentResponse StartADAssessment(StartADAssessmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartADAssessmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartADAssessmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartADAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartADAssessment operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartADAssessment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartADAssessment">REST API Reference for StartADAssessment Operation</seealso>
+        public virtual IAsyncResult BeginStartADAssessment(StartADAssessmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartADAssessmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartADAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartADAssessment.</param>
+        /// 
+        /// <returns>Returns a  StartADAssessmentResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartADAssessment">REST API Reference for StartADAssessment Operation</seealso>
+        public virtual StartADAssessmentResponse EndStartADAssessment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartADAssessmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartSchemaExtension
 
         /// <summary>
@@ -5175,6 +5683,114 @@ namespace Amazon.DirectoryService
         public virtual UpdateDirectorySetupResponse EndUpdateDirectorySetup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDirectorySetupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateHybridAD
+
+        /// <summary>
+        /// Updates the configuration of an existing hybrid directory. You can recover hybrid
+        /// directory administrator account or modify self-managed instance settings.
+        /// 
+        ///  
+        /// <para>
+        /// Updates are applied asynchronously. Use <a>DescribeHybridADUpdate</a> to monitor the
+        /// progress of configuration changes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>InstanceIds</c> must have a one-to-one correspondence with <c>CustomerDnsIps</c>,
+        /// meaning that if the IP address for instance i-10243410 is 10.24.34.100 and the IP
+        /// address for instance i-10243420 is 10.24.34.200, then the input arrays must maintain
+        /// the same order relationship, either [10.24.34.100, 10.24.34.200] paired with [i-10243410,
+        /// i-10243420] or [10.24.34.200, 10.24.34.100] paired with [i-10243420, i-10243410].
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must provide at least one update to <a>UpdateHybridADRequest$HybridAdministratorAccountUpdate</a>
+        /// or <a>UpdateHybridADRequest$SelfManagedInstancesSettings</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHybridAD service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHybridAD service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ADAssessmentLimitExceededException">
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempt to create a hybrid directory; and you already have 100 <c>CUSTOMER</c>
+        /// directory assessments;, you will encounter an error. Delete assessments to free up
+        /// capacity before trying again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request an increase to your <c>CUSTOMER</c> directory assessment quota by
+        /// contacting customer support or delete existing CUSTOMER directory assessments; to
+        /// free up capacity.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateHybridAD">REST API Reference for UpdateHybridAD Operation</seealso>
+        public virtual UpdateHybridADResponse UpdateHybridAD(UpdateHybridADRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHybridADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHybridADResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHybridADResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHybridAD operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHybridAD operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHybridAD
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateHybridAD">REST API Reference for UpdateHybridAD Operation</seealso>
+        public virtual IAsyncResult BeginUpdateHybridAD(UpdateHybridADRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHybridADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHybridADResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateHybridAD operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHybridAD.</param>
+        /// 
+        /// <returns>Returns a  UpdateHybridADResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateHybridAD">REST API Reference for UpdateHybridAD Operation</seealso>
+        public virtual UpdateHybridADResponse EndUpdateHybridAD(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateHybridADResponse>(asyncResult);
         }
 
         #endregion

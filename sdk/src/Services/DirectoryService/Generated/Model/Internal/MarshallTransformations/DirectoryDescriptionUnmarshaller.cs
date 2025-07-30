@@ -114,6 +114,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Edition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HybridSettings", targetDepth))
+                {
+                    var unmarshaller = HybridSettingsDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.HybridSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LaunchTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

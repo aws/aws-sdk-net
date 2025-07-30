@@ -1139,6 +1139,145 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CreateHybridAD
+
+
+        /// <summary>
+        /// Creates a hybrid directory that connects your self-managed Active Directory (AD) infrastructure
+        /// and Amazon Web Services.
+        /// 
+        ///  
+        /// <para>
+        /// You must have a successful directory assessment using <a>StartADAssessment</a> to
+        /// validate your environment compatibility before you use this operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates are applied asynchronously. Use <a>DescribeDirectories</a> to monitor the
+        /// progress of directory creation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHybridAD service method.</param>
+        /// 
+        /// <returns>The response from the CreateHybridAD service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ADAssessmentLimitExceededException">
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempt to create a hybrid directory; and you already have 100 <c>CUSTOMER</c>
+        /// directory assessments;, you will encounter an error. Delete assessments to free up
+        /// capacity before trying again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request an increase to your <c>CUSTOMER</c> directory assessment quota by
+        /// contacting customer support or delete existing CUSTOMER directory assessments; to
+        /// free up capacity.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateHybridAD">REST API Reference for CreateHybridAD Operation</seealso>
+        public virtual CreateHybridADResponse CreateHybridAD(CreateHybridADRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHybridADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHybridADResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHybridADResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a hybrid directory that connects your self-managed Active Directory (AD) infrastructure
+        /// and Amazon Web Services.
+        /// 
+        ///  
+        /// <para>
+        /// You must have a successful directory assessment using <a>StartADAssessment</a> to
+        /// validate your environment compatibility before you use this operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates are applied asynchronously. Use <a>DescribeDirectories</a> to monitor the
+        /// progress of directory creation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHybridAD service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHybridAD service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ADAssessmentLimitExceededException">
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempt to create a hybrid directory; and you already have 100 <c>CUSTOMER</c>
+        /// directory assessments;, you will encounter an error. Delete assessments to free up
+        /// capacity before trying again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request an increase to your <c>CUSTOMER</c> directory assessment quota by
+        /// contacting customer support or delete existing CUSTOMER directory assessments; to
+        /// free up capacity.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateHybridAD">REST API Reference for CreateHybridAD Operation</seealso>
+        public virtual Task<CreateHybridADResponse> CreateHybridADAsync(CreateHybridADRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHybridADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHybridADResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateHybridADResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLogSubscription
 
 
@@ -1495,6 +1634,91 @@ namespace Amazon.DirectoryService
             options.ResponseUnmarshaller = CreateTrustResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateTrustResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteADAssessment
+
+
+        /// <summary>
+        /// Deletes a directory assessment and all associated data. This operation permanently
+        /// removes the assessment results, validation reports, and configuration information.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete system-initiated assessments. You can delete customer-created assessments
+        /// even if they are in progress.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteADAssessment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteADAssessment service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteADAssessment">REST API Reference for DeleteADAssessment Operation</seealso>
+        public virtual DeleteADAssessmentResponse DeleteADAssessment(DeleteADAssessmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteADAssessmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteADAssessmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a directory assessment and all associated data. This operation permanently
+        /// removes the assessment results, validation reports, and configuration information.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete system-initiated assessments. You can delete customer-created assessments
+        /// even if they are in progress.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteADAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteADAssessment service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteADAssessment">REST API Reference for DeleteADAssessment Operation</seealso>
+        public virtual Task<DeleteADAssessmentResponse> DeleteADAssessmentAsync(DeleteADAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteADAssessmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteADAssessmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2010,6 +2234,81 @@ namespace Amazon.DirectoryService
             options.ResponseUnmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeregisterEventTopicResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeADAssessment
+
+
+        /// <summary>
+        /// Retrieves detailed information about a directory assessment, including its current
+        /// status, validation results, and configuration details. Use this operation to monitor
+        /// assessment progress and review results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeADAssessment service method.</param>
+        /// 
+        /// <returns>The response from the DescribeADAssessment service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeADAssessment">REST API Reference for DescribeADAssessment Operation</seealso>
+        public virtual DescribeADAssessmentResponse DescribeADAssessment(DescribeADAssessmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeADAssessmentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeADAssessmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a directory assessment, including its current
+        /// status, validation results, and configuration details. Use this operation to monitor
+        /// assessment progress and review results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeADAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeADAssessment service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeADAssessment">REST API Reference for DescribeADAssessment Operation</seealso>
+        public virtual Task<DescribeADAssessmentResponse> DescribeADAssessmentAsync(DescribeADAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeADAssessmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeADAssessmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2689,6 +2988,87 @@ namespace Amazon.DirectoryService
             options.ResponseUnmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeEventTopicsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeHybridADUpdate
+
+
+        /// <summary>
+        /// Retrieves information about update activities for a hybrid directory. This operation
+        /// provides details about configuration changes, administrator account updates, and self-managed
+        /// instance settings (IDs and DNS IPs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHybridADUpdate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHybridADUpdate service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeHybridADUpdate">REST API Reference for DescribeHybridADUpdate Operation</seealso>
+        public virtual DescribeHybridADUpdateResponse DescribeHybridADUpdate(DescribeHybridADUpdateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHybridADUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHybridADUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHybridADUpdateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about update activities for a hybrid directory. This operation
+        /// provides details about configuration changes, administrator account updates, and self-managed
+        /// instance settings (IDs and DNS IPs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHybridADUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHybridADUpdate service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeHybridADUpdate">REST API Reference for DescribeHybridADUpdate Operation</seealso>
+        public virtual Task<DescribeHybridADUpdateResponse> DescribeHybridADUpdateAsync(DescribeHybridADUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHybridADUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHybridADUpdateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeHybridADUpdateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4220,6 +4600,81 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  ListADAssessments
+
+
+        /// <summary>
+        /// Retrieves a list of directory assessments for the specified directory or all assessments
+        /// in your account. Use this operation to monitor assessment status and manage multiple
+        /// assessments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListADAssessments service method.</param>
+        /// 
+        /// <returns>The response from the ListADAssessments service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListADAssessments">REST API Reference for ListADAssessments Operation</seealso>
+        public virtual ListADAssessmentsResponse ListADAssessments(ListADAssessmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListADAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListADAssessmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListADAssessmentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of directory assessments for the specified directory or all assessments
+        /// in your account. Use this operation to monitor assessment status and manage multiple
+        /// assessments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListADAssessments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListADAssessments service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListADAssessments">REST API Reference for ListADAssessments Operation</seealso>
+        public virtual Task<ListADAssessmentsResponse> ListADAssessmentsAsync(ListADAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListADAssessmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListADAssessmentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListADAssessmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCertificates
 
 
@@ -5398,6 +5853,165 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  StartADAssessment
+
+
+        /// <summary>
+        /// Initiates a directory assessment to validate your self-managed AD environment for
+        /// hybrid domain join. The assessment checks compatibility and connectivity of the self-managed
+        /// AD environment.
+        /// 
+        ///  
+        /// <para>
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// </para>
+        ///  
+        /// <para>
+        /// The assessment process typically takes 30 minutes or more to complete. The assessment
+        /// process is asynchronous and you can monitor it with <c>DescribeADAssessment</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>InstanceIds</c> must have a one-to-one correspondence with <c>CustomerDnsIps</c>,
+        /// meaning that if the IP address for instance i-10243410 is 10.24.34.100 and the IP
+        /// address for instance i-10243420 is 10.24.34.200, then the input arrays must maintain
+        /// the same order relationship, either [10.24.34.100, 10.24.34.200] paired with [i-10243410,
+        /// i-10243420] or [10.24.34.200, 10.24.34.100] paired with [i-10243420, i-10243410].
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: You must provide exactly one <c>DirectoryId</c> or <c>AssessmentConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartADAssessment service method.</param>
+        /// 
+        /// <returns>The response from the StartADAssessment service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ADAssessmentLimitExceededException">
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempt to create a hybrid directory; and you already have 100 <c>CUSTOMER</c>
+        /// directory assessments;, you will encounter an error. Delete assessments to free up
+        /// capacity before trying again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request an increase to your <c>CUSTOMER</c> directory assessment quota by
+        /// contacting customer support or delete existing CUSTOMER directory assessments; to
+        /// free up capacity.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartADAssessment">REST API Reference for StartADAssessment Operation</seealso>
+        public virtual StartADAssessmentResponse StartADAssessment(StartADAssessmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartADAssessmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartADAssessmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates a directory assessment to validate your self-managed AD environment for
+        /// hybrid domain join. The assessment checks compatibility and connectivity of the self-managed
+        /// AD environment.
+        /// 
+        ///  
+        /// <para>
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// </para>
+        ///  
+        /// <para>
+        /// The assessment process typically takes 30 minutes or more to complete. The assessment
+        /// process is asynchronous and you can monitor it with <c>DescribeADAssessment</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>InstanceIds</c> must have a one-to-one correspondence with <c>CustomerDnsIps</c>,
+        /// meaning that if the IP address for instance i-10243410 is 10.24.34.100 and the IP
+        /// address for instance i-10243420 is 10.24.34.200, then the input arrays must maintain
+        /// the same order relationship, either [10.24.34.100, 10.24.34.200] paired with [i-10243410,
+        /// i-10243420] or [10.24.34.200, 10.24.34.100] paired with [i-10243420, i-10243410].
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: You must provide exactly one <c>DirectoryId</c> or <c>AssessmentConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartADAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartADAssessment service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ADAssessmentLimitExceededException">
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempt to create a hybrid directory; and you already have 100 <c>CUSTOMER</c>
+        /// directory assessments;, you will encounter an error. Delete assessments to free up
+        /// capacity before trying again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request an increase to your <c>CUSTOMER</c> directory assessment quota by
+        /// contacting customer support or delete existing CUSTOMER directory assessments; to
+        /// free up capacity.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartADAssessment">REST API Reference for StartADAssessment Operation</seealso>
+        public virtual Task<StartADAssessmentResponse> StartADAssessmentAsync(StartADAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartADAssessmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartADAssessmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartADAssessmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartSchemaExtension
 
 
@@ -5724,6 +6338,155 @@ namespace Amazon.DirectoryService
             options.ResponseUnmarshaller = UpdateDirectorySetupResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateDirectorySetupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateHybridAD
+
+
+        /// <summary>
+        /// Updates the configuration of an existing hybrid directory. You can recover hybrid
+        /// directory administrator account or modify self-managed instance settings.
+        /// 
+        ///  
+        /// <para>
+        /// Updates are applied asynchronously. Use <a>DescribeHybridADUpdate</a> to monitor the
+        /// progress of configuration changes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>InstanceIds</c> must have a one-to-one correspondence with <c>CustomerDnsIps</c>,
+        /// meaning that if the IP address for instance i-10243410 is 10.24.34.100 and the IP
+        /// address for instance i-10243420 is 10.24.34.200, then the input arrays must maintain
+        /// the same order relationship, either [10.24.34.100, 10.24.34.200] paired with [i-10243410,
+        /// i-10243420] or [10.24.34.200, 10.24.34.100] paired with [i-10243420, i-10243410].
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must provide at least one update to <a>UpdateHybridADRequest$HybridAdministratorAccountUpdate</a>
+        /// or <a>UpdateHybridADRequest$SelfManagedInstancesSettings</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHybridAD service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHybridAD service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ADAssessmentLimitExceededException">
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempt to create a hybrid directory; and you already have 100 <c>CUSTOMER</c>
+        /// directory assessments;, you will encounter an error. Delete assessments to free up
+        /// capacity before trying again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request an increase to your <c>CUSTOMER</c> directory assessment quota by
+        /// contacting customer support or delete existing CUSTOMER directory assessments; to
+        /// free up capacity.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateHybridAD">REST API Reference for UpdateHybridAD Operation</seealso>
+        public virtual UpdateHybridADResponse UpdateHybridAD(UpdateHybridADRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHybridADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHybridADResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHybridADResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the configuration of an existing hybrid directory. You can recover hybrid
+        /// directory administrator account or modify self-managed instance settings.
+        /// 
+        ///  
+        /// <para>
+        /// Updates are applied asynchronously. Use <a>DescribeHybridADUpdate</a> to monitor the
+        /// progress of configuration changes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>InstanceIds</c> must have a one-to-one correspondence with <c>CustomerDnsIps</c>,
+        /// meaning that if the IP address for instance i-10243410 is 10.24.34.100 and the IP
+        /// address for instance i-10243420 is 10.24.34.200, then the input arrays must maintain
+        /// the same order relationship, either [10.24.34.100, 10.24.34.200] paired with [i-10243410,
+        /// i-10243420] or [10.24.34.200, 10.24.34.100] paired with [i-10243420, i-10243410].
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must provide at least one update to <a>UpdateHybridADRequest$HybridAdministratorAccountUpdate</a>
+        /// or <a>UpdateHybridADRequest$SelfManagedInstancesSettings</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHybridAD service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHybridAD service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ADAssessmentLimitExceededException">
+        /// A directory assessment is automatically created when you create a hybrid directory.
+        /// There are two types of assessments: <c>CUSTOMER</c> and <c>SYSTEM</c>. Your Amazon
+        /// Web Services account has a limit of 100 <c>CUSTOMER</c> directory assessments.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempt to create a hybrid directory; and you already have 100 <c>CUSTOMER</c>
+        /// directory assessments;, you will encounter an error. Delete assessments to free up
+        /// capacity before trying again.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request an increase to your <c>CUSTOMER</c> directory assessment quota by
+        /// contacting customer support or delete existing CUSTOMER directory assessments; to
+        /// free up capacity.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateHybridAD">REST API Reference for UpdateHybridAD Operation</seealso>
+        public virtual Task<UpdateHybridADResponse> UpdateHybridADAsync(UpdateHybridADRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHybridADRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHybridADResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateHybridADResponse>(request, options, cancellationToken);
         }
 
         #endregion
