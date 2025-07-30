@@ -52,6 +52,11 @@ namespace Amazon.Runtime.Internal.UserAgent
         public static readonly UserAgentFeatureId GZIP_REQUEST_COMPRESSION = new UserAgentFeatureId("L");
 
         /// <summary>
+        /// An operation called using the Smithy RPC v2 CBOR protocol.
+        /// </summary>
+        public static readonly UserAgentFeatureId PROTOCOL_RPC_V2_CBOR = new UserAgentFeatureId("M");
+
+        /// <summary>
         /// An operation called using a user provided endpoint URL.
         /// </summary>
         public static readonly UserAgentFeatureId ENDPOINT_OVERRIDE = new UserAgentFeatureId("N");
