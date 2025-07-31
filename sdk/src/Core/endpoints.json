@@ -5267,6 +5267,7 @@
             "ap-south-2": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "ap-southeast-4": {},
             "bedrock-ap-northeast-1": {
               "credentialScope": {
                 "region": "ap-northeast-1"
@@ -7581,6 +7582,20 @@
               "deprecated": true,
               "hostname": "codedeploy-fips.us-west-2.amazonaws.com"
             }
+          }
+        },
+        "codeguru-profiler": {
+          "endpoints": {
+            "ap-northeast-1": {},
+            "ap-southeast-1": {},
+            "ap-southeast-2": {},
+            "eu-central-1": {},
+            "eu-north-1": {},
+            "eu-west-1": {},
+            "eu-west-2": {},
+            "us-east-1": {},
+            "us-east-2": {},
+            "us-west-2": {}
           }
         },
         "codeguru-reviewer": {
@@ -37712,6 +37727,7 @@
             "ap-southeast-3": {},
             "ap-southeast-4": {},
             "ap-southeast-5": {},
+            "ap-southeast-7": {},
             "ca-central-1": {
               "variants": [
                 {
@@ -49971,7 +49987,8 @@
         },
         "batch": {
           "endpoints": {
-            "us-iso-east-1": {}
+            "us-iso-east-1": {},
+            "us-iso-west-1": {}
           }
         },
         "bedrock": {
