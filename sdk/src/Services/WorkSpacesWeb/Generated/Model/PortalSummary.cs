@@ -48,6 +48,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private string _portalEndpoint;
         private PortalStatus _portalStatus;
         private RendererType _rendererType;
+        private string _sessionLoggerArn;
         private string _trustStoreArn;
         private string _userAccessLoggingSettingsArn;
         private string _userSettingsArn;
@@ -324,6 +325,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetRendererType()
         {
             return this._rendererType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionLoggerArn. 
+        /// <para>
+        /// The ARN of the session logger that is assocaited with the portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string SessionLoggerArn
+        {
+            get { return this._sessionLoggerArn; }
+            set { this._sessionLoggerArn = value; }
+        }
+
+        // Check to see if SessionLoggerArn property is set
+        internal bool IsSetSessionLoggerArn()
+        {
+            return this._sessionLoggerArn != null;
         }
 
         /// <summary>

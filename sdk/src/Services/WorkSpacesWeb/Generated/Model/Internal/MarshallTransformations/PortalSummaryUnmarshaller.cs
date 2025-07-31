@@ -150,6 +150,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.RendererType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sessionLoggerArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SessionLoggerArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trustStoreArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

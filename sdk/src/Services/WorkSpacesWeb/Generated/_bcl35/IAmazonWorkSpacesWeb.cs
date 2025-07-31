@@ -283,6 +283,64 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  AssociateSessionLogger
+
+
+        /// <summary>
+        /// Associates a session logger with a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateSessionLogger">REST API Reference for AssociateSessionLogger Operation</seealso>
+        AssociateSessionLoggerResponse AssociateSessionLogger(AssociateSessionLoggerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSessionLogger operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSessionLogger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateSessionLogger">REST API Reference for AssociateSessionLogger Operation</seealso>
+        IAsyncResult BeginAssociateSessionLogger(AssociateSessionLoggerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSessionLogger.</param>
+        /// 
+        /// <returns>Returns a  AssociateSessionLoggerResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateSessionLogger">REST API Reference for AssociateSessionLogger Operation</seealso>
+        AssociateSessionLoggerResponse EndAssociateSessionLogger(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateTrustStore
 
 
@@ -821,6 +879,64 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  CreateSessionLogger
+
+
+        /// <summary>
+        /// Creates a session logger.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the CreateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateSessionLogger">REST API Reference for CreateSessionLogger Operation</seealso>
+        CreateSessionLoggerResponse CreateSessionLogger(CreateSessionLoggerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSessionLogger operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSessionLogger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateSessionLogger">REST API Reference for CreateSessionLogger Operation</seealso>
+        IAsyncResult BeginCreateSessionLogger(CreateSessionLoggerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSessionLogger.</param>
+        /// 
+        /// <returns>Returns a  CreateSessionLoggerResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateSessionLogger">REST API Reference for CreateSessionLogger Operation</seealso>
+        CreateSessionLoggerResponse EndCreateSessionLogger(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateTrustStore
 
 
@@ -1333,6 +1449,61 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  DeleteSessionLogger
+
+
+        /// <summary>
+        /// Deletes a session logger resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteSessionLogger">REST API Reference for DeleteSessionLogger Operation</seealso>
+        DeleteSessionLoggerResponse DeleteSessionLogger(DeleteSessionLoggerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSessionLogger operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSessionLogger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteSessionLogger">REST API Reference for DeleteSessionLogger Operation</seealso>
+        IAsyncResult BeginDeleteSessionLogger(DeleteSessionLoggerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSessionLogger.</param>
+        /// 
+        /// <returns>Returns a  DeleteSessionLoggerResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteSessionLogger">REST API Reference for DeleteSessionLogger Operation</seealso>
+        DeleteSessionLoggerResponse EndDeleteSessionLogger(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteTrustStore
 
 
@@ -1727,6 +1898,61 @@ namespace Amazon.WorkSpacesWeb
         /// <returns>Returns a  DisassociateNetworkSettingsResult from WorkSpacesWeb.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateNetworkSettings">REST API Reference for DisassociateNetworkSettings Operation</seealso>
         DisassociateNetworkSettingsResponse EndDisassociateNetworkSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateSessionLogger
+
+
+        /// <summary>
+        /// Disassociates a session logger from a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateSessionLogger">REST API Reference for DisassociateSessionLogger Operation</seealso>
+        DisassociateSessionLoggerResponse DisassociateSessionLogger(DisassociateSessionLoggerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSessionLogger operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSessionLogger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateSessionLogger">REST API Reference for DisassociateSessionLogger Operation</seealso>
+        IAsyncResult BeginDisassociateSessionLogger(DisassociateSessionLoggerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSessionLogger.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSessionLoggerResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateSessionLogger">REST API Reference for DisassociateSessionLogger Operation</seealso>
+        DisassociateSessionLoggerResponse EndDisassociateSessionLogger(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2399,6 +2625,61 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  GetSessionLogger
+
+
+        /// <summary>
+        /// Gets details about a specific session logger resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the GetSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetSessionLogger">REST API Reference for GetSessionLogger Operation</seealso>
+        GetSessionLoggerResponse GetSessionLogger(GetSessionLoggerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionLogger operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSessionLogger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetSessionLogger">REST API Reference for GetSessionLogger Operation</seealso>
+        IAsyncResult BeginGetSessionLogger(GetSessionLoggerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSessionLogger.</param>
+        /// 
+        /// <returns>Returns a  GetSessionLoggerResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetSessionLogger">REST API Reference for GetSessionLogger Operation</seealso>
+        GetSessionLoggerResponse EndGetSessionLogger(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetTrustStore
 
 
@@ -2928,6 +3209,58 @@ namespace Amazon.WorkSpacesWeb
         /// <returns>Returns a  ListPortalsResult from WorkSpacesWeb.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListPortals">REST API Reference for ListPortals Operation</seealso>
         ListPortalsResponse EndListPortals(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSessionLoggers
+
+
+        /// <summary>
+        /// Lists all available session logger resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionLoggers service method.</param>
+        /// 
+        /// <returns>The response from the ListSessionLoggers service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListSessionLoggers">REST API Reference for ListSessionLoggers Operation</seealso>
+        ListSessionLoggersResponse ListSessionLoggers(ListSessionLoggersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSessionLoggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionLoggers operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSessionLoggers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListSessionLoggers">REST API Reference for ListSessionLoggers Operation</seealso>
+        IAsyncResult BeginListSessionLoggers(ListSessionLoggersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSessionLoggers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSessionLoggers.</param>
+        /// 
+        /// <returns>Returns a  ListSessionLoggersResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListSessionLoggers">REST API Reference for ListSessionLoggers Operation</seealso>
+        ListSessionLoggersResponse EndListSessionLoggers(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3698,6 +4031,61 @@ namespace Amazon.WorkSpacesWeb
         /// <returns>Returns a  UpdatePortalResult from WorkSpacesWeb.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
         UpdatePortalResponse EndUpdatePortal(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateSessionLogger
+
+
+        /// <summary>
+        /// Updates the details of a session logger.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateSessionLogger">REST API Reference for UpdateSessionLogger Operation</seealso>
+        UpdateSessionLoggerResponse UpdateSessionLogger(UpdateSessionLoggerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSessionLogger operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSessionLogger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateSessionLogger">REST API Reference for UpdateSessionLogger Operation</seealso>
+        IAsyncResult BeginUpdateSessionLogger(UpdateSessionLoggerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSessionLogger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSessionLogger.</param>
+        /// 
+        /// <returns>Returns a  UpdateSessionLoggerResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateSessionLogger">REST API Reference for UpdateSessionLogger Operation</seealso>
+        UpdateSessionLoggerResponse EndUpdateSessionLogger(IAsyncResult asyncResult);
 
         #endregion
         

@@ -171,6 +171,162 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type Event.
+    /// </summary>
+    public class Event : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ContentCopyFromWebsite for Event
+        /// </summary>
+        public static readonly Event ContentCopyFromWebsite = new Event("ContentCopyFromWebsite");
+        /// <summary>
+        /// Constant ContentPasteToWebsite for Event
+        /// </summary>
+        public static readonly Event ContentPasteToWebsite = new Event("ContentPasteToWebsite");
+        /// <summary>
+        /// Constant ContentTransferFromLocalToRemoteClipboard for Event
+        /// </summary>
+        public static readonly Event ContentTransferFromLocalToRemoteClipboard = new Event("ContentTransferFromLocalToRemoteClipboard");
+        /// <summary>
+        /// Constant FileDownloadFromSecureBrowserToRemoteDisk for Event
+        /// </summary>
+        public static readonly Event FileDownloadFromSecureBrowserToRemoteDisk = new Event("FileDownloadFromSecureBrowserToRemoteDisk");
+        /// <summary>
+        /// Constant FileTransferFromLocalToRemoteDisk for Event
+        /// </summary>
+        public static readonly Event FileTransferFromLocalToRemoteDisk = new Event("FileTransferFromLocalToRemoteDisk");
+        /// <summary>
+        /// Constant FileTransferFromRemoteToLocalDisk for Event
+        /// </summary>
+        public static readonly Event FileTransferFromRemoteToLocalDisk = new Event("FileTransferFromRemoteToLocalDisk");
+        /// <summary>
+        /// Constant FileUploadFromRemoteDiskToSecureBrowser for Event
+        /// </summary>
+        public static readonly Event FileUploadFromRemoteDiskToSecureBrowser = new Event("FileUploadFromRemoteDiskToSecureBrowser");
+        /// <summary>
+        /// Constant PrintJobSubmit for Event
+        /// </summary>
+        public static readonly Event PrintJobSubmit = new Event("PrintJobSubmit");
+        /// <summary>
+        /// Constant SessionConnect for Event
+        /// </summary>
+        public static readonly Event SessionConnect = new Event("SessionConnect");
+        /// <summary>
+        /// Constant SessionDisconnect for Event
+        /// </summary>
+        public static readonly Event SessionDisconnect = new Event("SessionDisconnect");
+        /// <summary>
+        /// Constant SessionEnd for Event
+        /// </summary>
+        public static readonly Event SessionEnd = new Event("SessionEnd");
+        /// <summary>
+        /// Constant SessionStart for Event
+        /// </summary>
+        public static readonly Event SessionStart = new Event("SessionStart");
+        /// <summary>
+        /// Constant TabClose for Event
+        /// </summary>
+        public static readonly Event TabClose = new Event("TabClose");
+        /// <summary>
+        /// Constant TabOpen for Event
+        /// </summary>
+        public static readonly Event TabOpen = new Event("TabOpen");
+        /// <summary>
+        /// Constant UrlLoad for Event
+        /// </summary>
+        public static readonly Event UrlLoad = new Event("UrlLoad");
+        /// <summary>
+        /// Constant WebsiteInteract for Event
+        /// </summary>
+        public static readonly Event WebsiteInteract = new Event("WebsiteInteract");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Event(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Event FindValue(string value)
+        {
+            return FindValue<Event>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Event(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FolderStructure.
+    /// </summary>
+    public class FolderStructure : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Flat for FolderStructure
+        /// </summary>
+        public static readonly FolderStructure Flat = new FolderStructure("Flat");
+        /// <summary>
+        /// Constant NestedByDate for FolderStructure
+        /// </summary>
+        public static readonly FolderStructure NestedByDate = new FolderStructure("NestedByDate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FolderStructure(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FolderStructure FindValue(string value)
+        {
+            return FindValue<FolderStructure>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FolderStructure(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IdentityProviderType.
     /// </summary>
     public class IdentityProviderType : ConstantClass
@@ -284,6 +440,56 @@ namespace Amazon.WorkSpacesWeb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogFileFormat.
+    /// </summary>
+    public class LogFileFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Json for LogFileFormat
+        /// </summary>
+        public static readonly LogFileFormat Json = new LogFileFormat("Json");
+        /// <summary>
+        /// Constant JSONLines for LogFileFormat
+        /// </summary>
+        public static readonly LogFileFormat JSONLines = new LogFileFormat("JSONLines");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogFileFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogFileFormat FindValue(string value)
+        {
+            return FindValue<LogFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogFileFormat(string value)
         {
             return FindValue(value);
         }
