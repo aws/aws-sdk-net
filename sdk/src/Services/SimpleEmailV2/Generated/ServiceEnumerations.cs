@@ -1477,6 +1477,52 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type ListTenantResourcesFilterKey.
+    /// </summary>
+    public class ListTenantResourcesFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESOURCE_TYPE for ListTenantResourcesFilterKey
+        /// </summary>
+        public static readonly ListTenantResourcesFilterKey RESOURCE_TYPE = new ListTenantResourcesFilterKey("RESOURCE_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListTenantResourcesFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListTenantResourcesFilterKey FindValue(string value)
+        {
+            return FindValue<ListTenantResourcesFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListTenantResourcesFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MailFromDomainStatus.
     /// </summary>
     public class MailFromDomainStatus : ConstantClass
@@ -1977,6 +2023,10 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         public static readonly RecommendationType BIMI = new RecommendationType("BIMI");
         /// <summary>
+        /// Constant BOUNCE for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType BOUNCE = new RecommendationType("BOUNCE");
+        /// <summary>
         /// Constant COMPLAINT for RecommendationType
         /// </summary>
         public static readonly RecommendationType COMPLAINT = new RecommendationType("COMPLAINT");
@@ -1988,6 +2038,14 @@ namespace Amazon.SimpleEmailV2
         /// Constant DMARC for RecommendationType
         /// </summary>
         public static readonly RecommendationType DMARC = new RecommendationType("DMARC");
+        /// <summary>
+        /// Constant FEEDBACK_3P for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType FEEDBACK_3P = new RecommendationType("FEEDBACK_3P");
+        /// <summary>
+        /// Constant IP_LISTING for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType IP_LISTING = new RecommendationType("IP_LISTING");
         /// <summary>
         /// Constant SPF for RecommendationType
         /// </summary>
@@ -2022,6 +2080,164 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecommendationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReputationEntityFilterKey.
+    /// </summary>
+    public class ReputationEntityFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENTITY_REFERENCE_PREFIX for ReputationEntityFilterKey
+        /// </summary>
+        public static readonly ReputationEntityFilterKey ENTITY_REFERENCE_PREFIX = new ReputationEntityFilterKey("ENTITY_REFERENCE_PREFIX");
+        /// <summary>
+        /// Constant ENTITY_TYPE for ReputationEntityFilterKey
+        /// </summary>
+        public static readonly ReputationEntityFilterKey ENTITY_TYPE = new ReputationEntityFilterKey("ENTITY_TYPE");
+        /// <summary>
+        /// Constant REPUTATION_IMPACT for ReputationEntityFilterKey
+        /// </summary>
+        public static readonly ReputationEntityFilterKey REPUTATION_IMPACT = new ReputationEntityFilterKey("REPUTATION_IMPACT");
+        /// <summary>
+        /// Constant SENDING_STATUS for ReputationEntityFilterKey
+        /// </summary>
+        public static readonly ReputationEntityFilterKey SENDING_STATUS = new ReputationEntityFilterKey("SENDING_STATUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReputationEntityFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReputationEntityFilterKey FindValue(string value)
+        {
+            return FindValue<ReputationEntityFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReputationEntityFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReputationEntityType.
+    /// </summary>
+    public class ReputationEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESOURCE for ReputationEntityType
+        /// </summary>
+        public static readonly ReputationEntityType RESOURCE = new ReputationEntityType("RESOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReputationEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReputationEntityType FindValue(string value)
+        {
+            return FindValue<ReputationEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReputationEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIGURATION_SET for ResourceType
+        /// </summary>
+        public static readonly ResourceType CONFIGURATION_SET = new ResourceType("CONFIGURATION_SET");
+        /// <summary>
+        /// Constant EMAIL_IDENTITY for ResourceType
+        /// </summary>
+        public static readonly ResourceType EMAIL_IDENTITY = new ResourceType("EMAIL_IDENTITY");
+        /// <summary>
+        /// Constant EMAIL_TEMPLATE for ResourceType
+        /// </summary>
+        public static readonly ResourceType EMAIL_TEMPLATE = new ResourceType("EMAIL_TEMPLATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }
@@ -2130,6 +2346,60 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScalingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SendingStatus.
+    /// </summary>
+    public class SendingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for SendingStatus
+        /// </summary>
+        public static readonly SendingStatus DISABLED = new SendingStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for SendingStatus
+        /// </summary>
+        public static readonly SendingStatus ENABLED = new SendingStatus("ENABLED");
+        /// <summary>
+        /// Constant REINSTATED for SendingStatus
+        /// </summary>
+        public static readonly SendingStatus REINSTATED = new SendingStatus("REINSTATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SendingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SendingStatus FindValue(string value)
+        {
+            return FindValue<SendingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SendingStatus(string value)
         {
             return FindValue(value);
         }

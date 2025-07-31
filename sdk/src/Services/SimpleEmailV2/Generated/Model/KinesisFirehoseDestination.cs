@@ -46,7 +46,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Amazon SES API v2 sends email events to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string DeliveryStreamArn
         {
             get { return this._deliveryStreamArn; }
@@ -66,7 +66,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// send email events to the Amazon Kinesis Data Firehose stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }

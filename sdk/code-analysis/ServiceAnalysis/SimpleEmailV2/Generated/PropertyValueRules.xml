@@ -44,6 +44,26 @@
     <pattern>^[\w\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.CreateTenantRequest.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.CreateTenantResponse.TenantArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.CreateTenantResponse.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.CreateTenantResourceAssociationRequest.ResourceArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.CreateTenantResourceAssociationRequest.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.DeleteCustomVerificationEmailTemplateRequest.TemplateName</property>
     <min>1</min>
   </property-value-rule>
@@ -69,6 +89,18 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[\w\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.DeleteTenantRequest.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.DeleteTenantResourceAssociationRequest.ResourceArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.DeleteTenantResourceAssociationRequest.TenantName</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.GetCustomVerificationEmailTemplateRequest.TemplateName</property>
@@ -137,6 +169,14 @@
     <pattern>^[\w\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.GetReputationEntityRequest.ReputationEntityReference</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.GetTenantRequest.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ListMultiRegionEndpointsRequest.NextToken</property>
     <min>1</min>
     <max>5000</max>
@@ -152,6 +192,18 @@
     <min>1</min>
     <max>5000</max>
     <pattern>^^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ListResourceTenantsRequest.ResourceArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ListTenantResourcesRequest.TenantName</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.PutAccountDetailsRequest.UseCaseDescription</property>
@@ -195,7 +247,35 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.SendBulkEmailRequest.FeedbackForwardingEmailAddressIdentityArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.SendBulkEmailRequest.FromEmailAddressIdentityArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.SendBulkEmailRequest.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.SendCustomVerificationEmailRequest.TemplateName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.SendEmailRequest.FeedbackForwardingEmailAddressIdentityArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.SendEmailRequest.FromEmailAddressIdentityArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.SendEmailRequest.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -204,6 +284,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.TestRenderEmailTemplateRequest.TemplateName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -225,6 +309,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.UpdateEmailTemplateRequest.TemplateName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.UpdateReputationEntityCustomerManagedStatusRequest.ReputationEntityReference</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.UpdateReputationEntityPolicyRequest.ReputationEntityPolicy</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.UpdateReputationEntityPolicyRequest.ReputationEntityReference</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -301,6 +397,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.EventBridgeDestination.EventBusArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ExportDestination.S3Url</property>
     <pattern>^s3:\/\/([^\/]+)\/(.*?([^\/]+)\/?)$</pattern>
   </property-value-rule>
@@ -318,6 +418,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ImportJobSummary.JobId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.KinesisFirehoseDestination.DeliveryStreamArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.KinesisFirehoseDestination.IamRoleArn</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -354,8 +462,45 @@
     <pattern>^[\w\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.PinpointDestination.ApplicationArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.Recommendation.ResourceArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ReplacementTemplate.ReplacementTemplateData</property>
     <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ReputationEntity.ReputationEntityReference</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ReputationEntity.ReputationManagementPolicy</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ResourceTenantMetadata.ResourceArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ResourceTenantMetadata.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.SnsDestination.TopicArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.StatusRecord.Cause</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.Template.TemplateArn</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.Template.TemplateData</property>
@@ -363,6 +508,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.Template.TemplateName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.Tenant.TenantArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.Tenant.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.TenantInfo.TenantArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.TenantInfo.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.TenantResource.ResourceArn</property>
     <min>1</min>
   </property-value-rule>
 </property-value-rules>
