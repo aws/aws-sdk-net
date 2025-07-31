@@ -573,6 +573,83 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  AssociateSessionLogger
+
+
+        /// <summary>
+        /// Associates a session logger with a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateSessionLogger">REST API Reference for AssociateSessionLogger Operation</seealso>
+        public virtual AssociateSessionLoggerResponse AssociateSessionLogger(AssociateSessionLoggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSessionLoggerResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSessionLoggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a session logger with a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSessionLogger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateSessionLogger">REST API Reference for AssociateSessionLogger Operation</seealso>
+        public virtual Task<AssociateSessionLoggerResponse> AssociateSessionLoggerAsync(AssociateSessionLoggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSessionLoggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateSessionLoggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateTrustStore
 
 
@@ -1298,6 +1375,83 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  CreateSessionLogger
+
+
+        /// <summary>
+        /// Creates a session logger.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the CreateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateSessionLogger">REST API Reference for CreateSessionLogger Operation</seealso>
+        public virtual CreateSessionLoggerResponse CreateSessionLogger(CreateSessionLoggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSessionLoggerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSessionLoggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a session logger.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSessionLogger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateSessionLogger">REST API Reference for CreateSessionLogger Operation</seealso>
+        public virtual Task<CreateSessionLoggerResponse> CreateSessionLoggerAsync(CreateSessionLoggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSessionLoggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSessionLoggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTrustStore
 
 
@@ -1971,6 +2125,77 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  DeleteSessionLogger
+
+
+        /// <summary>
+        /// Deletes a session logger resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteSessionLogger">REST API Reference for DeleteSessionLogger Operation</seealso>
+        public virtual DeleteSessionLoggerResponse DeleteSessionLogger(DeleteSessionLoggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSessionLoggerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSessionLoggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a session logger resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSessionLogger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteSessionLogger">REST API Reference for DeleteSessionLogger Operation</seealso>
+        public virtual Task<DeleteSessionLoggerResponse> DeleteSessionLoggerAsync(DeleteSessionLoggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSessionLoggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSessionLoggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTrustStore
 
 
@@ -2488,6 +2713,77 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = DisassociateNetworkSettingsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisassociateNetworkSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateSessionLogger
+
+
+        /// <summary>
+        /// Disassociates a session logger from a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateSessionLogger">REST API Reference for DisassociateSessionLogger Operation</seealso>
+        public virtual DisassociateSessionLoggerResponse DisassociateSessionLogger(DisassociateSessionLoggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSessionLoggerResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSessionLoggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates a session logger from a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSessionLogger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateSessionLogger">REST API Reference for DisassociateSessionLogger Operation</seealso>
+        public virtual Task<DisassociateSessionLoggerResponse> DisassociateSessionLoggerAsync(DisassociateSessionLoggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSessionLoggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateSessionLoggerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3362,6 +3658,77 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  GetSessionLogger
+
+
+        /// <summary>
+        /// Gets details about a specific session logger resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the GetSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetSessionLogger">REST API Reference for GetSessionLogger Operation</seealso>
+        public virtual GetSessionLoggerResponse GetSessionLogger(GetSessionLoggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionLoggerResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionLoggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets details about a specific session logger resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionLogger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetSessionLogger">REST API Reference for GetSessionLogger Operation</seealso>
+        public virtual Task<GetSessionLoggerResponse> GetSessionLoggerAsync(GetSessionLoggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionLoggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSessionLoggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTrustStore
 
 
@@ -4032,6 +4399,71 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = ListPortalsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListPortalsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSessionLoggers
+
+
+        /// <summary>
+        /// Lists all available session logger resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionLoggers service method.</param>
+        /// 
+        /// <returns>The response from the ListSessionLoggers service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListSessionLoggers">REST API Reference for ListSessionLoggers Operation</seealso>
+        public virtual ListSessionLoggersResponse ListSessionLoggers(ListSessionLoggersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSessionLoggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionLoggersResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionLoggersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all available session logger resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessionLoggers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSessionLoggers service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListSessionLoggers">REST API Reference for ListSessionLoggers Operation</seealso>
+        public virtual Task<ListSessionLoggersResponse> ListSessionLoggersAsync(ListSessionLoggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSessionLoggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionLoggersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSessionLoggersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5026,6 +5458,77 @@ namespace Amazon.WorkSpacesWeb
             options.ResponseUnmarshaller = UpdatePortalResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdatePortalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSessionLogger
+
+
+        /// <summary>
+        /// Updates the details of a session logger.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSessionLogger service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateSessionLogger">REST API Reference for UpdateSessionLogger Operation</seealso>
+        public virtual UpdateSessionLoggerResponse UpdateSessionLogger(UpdateSessionLoggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSessionLoggerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSessionLoggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the details of a session logger.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSessionLogger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSessionLogger service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateSessionLogger">REST API Reference for UpdateSessionLogger Operation</seealso>
+        public virtual Task<UpdateSessionLoggerResponse> UpdateSessionLoggerAsync(UpdateSessionLoggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSessionLoggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSessionLoggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSessionLoggerResponse>(request, options, cancellationToken);
         }
 
         #endregion
