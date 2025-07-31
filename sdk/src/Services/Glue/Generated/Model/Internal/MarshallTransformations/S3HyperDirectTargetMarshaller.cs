@@ -46,10 +46,27 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAutoDataQuality())
+            {
+                context.Writer.WritePropertyName("AutoDataQuality");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoDataQualityMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoDataQuality, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
                 context.Writer.WriteStringValue(requestObject.Compression);
+            }
+
+            if(requestObject.IsSetFormat())
+            {
+                context.Writer.WritePropertyName("Format");
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetInputs())
@@ -67,6 +84,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(requestObject.Name);
+            }
+
+            if(requestObject.IsSetOutputSchemas())
+            {
+                context.Writer.WritePropertyName("OutputSchemas");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectOutputSchemasListValue in requestObject.OutputSchemas)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GlueSchemaMarshaller.Instance;
+                    marshaller.Marshall(requestObjectOutputSchemasListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPartitionKeys())

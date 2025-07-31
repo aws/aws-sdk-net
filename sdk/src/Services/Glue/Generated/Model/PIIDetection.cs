@@ -34,14 +34,58 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class PIIDetection
     {
+        private string _detectionParameters;
+        private string _detectionSensitivity;
         private List<string> _entityTypesToDetect = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _maskValue;
+        private string _matchPattern;
         private string _name;
+        private int? _numLeftCharsToExclude;
+        private int? _numRightCharsToExclude;
         private string _outputColumnName;
         private PiiType _piiType;
+        private string _redactChar;
+        private string _redactText;
         private double? _sampleFraction;
         private double? _thresholdFraction;
+
+        /// <summary>
+        /// Gets and sets the property DetectionParameters. 
+        /// <para>
+        /// Additional parameters for configuring PII detection behavior and sensitivity settings.
+        /// </para>
+        /// </summary>
+        public string DetectionParameters
+        {
+            get { return this._detectionParameters; }
+            set { this._detectionParameters = value; }
+        }
+
+        // Check to see if DetectionParameters property is set
+        internal bool IsSetDetectionParameters()
+        {
+            return this._detectionParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetectionSensitivity. 
+        /// <para>
+        /// The sensitivity level for PII detection. Higher sensitivity levels detect more potential
+        /// PII but may result in more false positives.
+        /// </para>
+        /// </summary>
+        public string DetectionSensitivity
+        {
+            get { return this._detectionSensitivity; }
+            set { this._detectionSensitivity = value; }
+        }
+
+        // Check to see if DetectionSensitivity property is set
+        internal bool IsSetDetectionSensitivity()
+        {
+            return this._detectionSensitivity != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EntityTypesToDetect. 
@@ -119,6 +163,25 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MatchPattern. 
+        /// <para>
+        /// A regular expression pattern used to identify additional PII content beyond the standard
+        /// detection algorithms.
+        /// </para>
+        /// </summary>
+        public string MatchPattern
+        {
+            get { return this._matchPattern; }
+            set { this._matchPattern = value; }
+        }
+
+        // Check to see if MatchPattern property is set
+        internal bool IsSetMatchPattern()
+        {
+            return this._matchPattern != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the transform node.
@@ -135,6 +198,46 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumLeftCharsToExclude. 
+        /// <para>
+        /// The number of characters to exclude from redaction on the left side of detected PII
+        /// content. This allows preserving context around the sensitive data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? NumLeftCharsToExclude
+        {
+            get { return this._numLeftCharsToExclude; }
+            set { this._numLeftCharsToExclude = value; }
+        }
+
+        // Check to see if NumLeftCharsToExclude property is set
+        internal bool IsSetNumLeftCharsToExclude()
+        {
+            return this._numLeftCharsToExclude.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumRightCharsToExclude. 
+        /// <para>
+        /// The number of characters to exclude from redaction on the right side of detected PII
+        /// content. This allows preserving context around the sensitive data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? NumRightCharsToExclude
+        {
+            get { return this._numRightCharsToExclude; }
+            set { this._numRightCharsToExclude = value; }
+        }
+
+        // Check to see if NumRightCharsToExclude property is set
+        internal bool IsSetNumRightCharsToExclude()
+        {
+            return this._numRightCharsToExclude.HasValue; 
         }
 
         /// <summary>
@@ -173,6 +276,44 @@ namespace Amazon.Glue.Model
         internal bool IsSetPiiType()
         {
             return this._piiType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedactChar. 
+        /// <para>
+        /// The character used to replace detected PII content when redaction is enabled. The
+        /// default redaction character is <c>*</c>.
+        /// </para>
+        /// </summary>
+        public string RedactChar
+        {
+            get { return this._redactChar; }
+            set { this._redactChar = value; }
+        }
+
+        // Check to see if RedactChar property is set
+        internal bool IsSetRedactChar()
+        {
+            return this._redactChar != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedactText. 
+        /// <para>
+        /// Specifies whether to redact the detected PII text. When set to <c>true</c>, PII content
+        /// is replaced with redaction characters.
+        /// </para>
+        /// </summary>
+        public string RedactText
+        {
+            get { return this._redactText; }
+            set { this._redactText = value; }
+        }
+
+        // Check to see if RedactText property is set
+        internal bool IsSetRedactText()
+        {
+            return this._redactText != null;
         }
 
         /// <summary>

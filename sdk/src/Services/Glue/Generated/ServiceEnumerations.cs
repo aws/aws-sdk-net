@@ -31,6 +31,10 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant CompositeRuleEvaluationMethod for AdditionalOptionKeys
+        /// </summary>
+        public static readonly AdditionalOptionKeys CompositeRuleEvaluationMethod = new AdditionalOptionKeys("compositeRuleEvaluation.method");
+        /// <summary>
         /// Constant ObservationsScope for AdditionalOptionKeys
         /// </summary>
         public static readonly AdditionalOptionKeys ObservationsScope = new AdditionalOptionKeys("observations.scope");
@@ -2130,6 +2134,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataQualityRuleResultStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DdbExportType.
+    /// </summary>
+    public class DdbExportType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ddb for DdbExportType
+        /// </summary>
+        public static readonly DdbExportType Ddb = new DdbExportType("ddb");
+        /// <summary>
+        /// Constant S3 for DdbExportType
+        /// </summary>
+        public static readonly DdbExportType S3 = new DdbExportType("s3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DdbExportType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DdbExportType FindValue(string value)
+        {
+            return FindValue<DdbExportType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DdbExportType(string value)
         {
             return FindValue(value);
         }
@@ -4979,6 +5033,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly PiiType ColumnAudit = new PiiType("ColumnAudit");
         /// <summary>
+        /// Constant ColumnHashing for PiiType
+        /// </summary>
+        public static readonly PiiType ColumnHashing = new PiiType("ColumnHashing");
+        /// <summary>
         /// Constant ColumnMasking for PiiType
         /// </summary>
         public static readonly PiiType ColumnMasking = new PiiType("ColumnMasking");
@@ -4987,9 +5045,17 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly PiiType RowAudit = new PiiType("RowAudit");
         /// <summary>
+        /// Constant RowHashing for PiiType
+        /// </summary>
+        public static readonly PiiType RowHashing = new PiiType("RowHashing");
+        /// <summary>
         /// Constant RowMasking for PiiType
         /// </summary>
         public static readonly PiiType RowMasking = new PiiType("RowMasking");
+        /// <summary>
+        /// Constant RowPartialMasking for PiiType
+        /// </summary>
+        public static readonly PiiType RowPartialMasking = new PiiType("RowPartialMasking");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
