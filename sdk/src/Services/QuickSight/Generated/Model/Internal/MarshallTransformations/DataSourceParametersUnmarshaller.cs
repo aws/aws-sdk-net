@@ -120,6 +120,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExasolParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImpalaParameters", targetDepth))
+                {
+                    var unmarshaller = ImpalaParametersUnmarshaller.Instance;
+                    unmarshalledObject.ImpalaParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JiraParameters", targetDepth))
                 {
                     var unmarshaller = JiraParametersUnmarshaller.Instance;
