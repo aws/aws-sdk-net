@@ -45,6 +45,7 @@ namespace Amazon.SimpleEmailV2.Model
         private string _fromEmailAddress;
         private string _fromEmailAddressIdentityArn;
         private List<string> _replyToAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _tenantName;
 
         /// <summary>
         /// Gets and sets the property BulkEmailEntries. 
@@ -178,6 +179,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string FeedbackForwardingEmailAddressIdentityArn
         {
             get { return this._feedbackForwardingEmailAddressIdentityArn; }
@@ -229,6 +231,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string FromEmailAddressIdentityArn
         {
             get { return this._fromEmailAddressIdentityArn; }
@@ -258,6 +261,31 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetReplyToAddresses()
         {
             return this._replyToAddresses != null && (this._replyToAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantName. 
+        /// <para>
+        /// The name of the tenant through which this bulk email will be sent.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  The email sending operation will only succeed if all referenced resources (identities,
+        /// configuration sets, and templates) are associated with this tenant. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string TenantName
+        {
+            get { return this._tenantName; }
+            set { this._tenantName = value; }
+        }
+
+        // Check to see if TenantName property is set
+        internal bool IsSetTenantName()
+        {
+            return this._tenantName != null;
         }
 
     }

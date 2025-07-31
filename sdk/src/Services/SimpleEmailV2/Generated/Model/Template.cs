@@ -90,6 +90,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// The Amazon Resource Name (ARN) of the template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateArn
         {
             get { return this._templateArn; }

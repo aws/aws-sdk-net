@@ -163,6 +163,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTenantName())
+                {
+                    context.Writer.WritePropertyName("TenantName");
+                    context.Writer.Write(publicRequest.TenantName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
