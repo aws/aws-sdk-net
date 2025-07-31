@@ -447,6 +447,9 @@ namespace ServiceClientGenerator
                     operation.ResponseStructure == null ||
                     this.Configuration.ServiceModel.Customizations.ResultGenerationSuppressions.Contains(operation.Name);
 
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Response"))
+                    return;
+
                 if (suppressResultGeneration)
                 {
                     var responseGenerator = new StructureGenerator
@@ -561,6 +564,9 @@ namespace ServiceClientGenerator
             bool hasRequest = operation.RequestStructure != null;
             bool normalizeMarshallers;
 
+            if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Request"))
+                return;
+
             BaseRequestMarshaller generator;
             GetRequestMarshaller(out generator, out normalizeMarshallers);
             generator.Operation = operation;
@@ -627,6 +633,8 @@ namespace ServiceClientGenerator
         void GenerateResponseUnmarshaller(Operation operation)
         {
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Response"))
+                    return;
                 var baseException = string.Format("Amazon{0}Exception",
                         this.Configuration.IsChildConfig ?
                         this.Configuration.ParentConfig.ClassName : this.Configuration.ClassName);
@@ -667,6 +675,8 @@ namespace ServiceClientGenerator
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
+                    if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(nestedStructure.Name))
+                        continue;
                     // Skip structure unmarshallers that have already been generated for the parent model
                     if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
                         continue;
@@ -707,6 +717,8 @@ namespace ServiceClientGenerator
             lookup.SearchForNestedStructures(shape);
             foreach (var nestedStructure in lookup.NestedStructures)
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(nestedStructure.Name))
+                    continue;
                 // Skip structure unmarshallers that have already been generated for the parent model
                 if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
                     continue;
@@ -741,6 +753,8 @@ namespace ServiceClientGenerator
         {
             foreach (var structure in structures)
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(structure))
+                    continue;
                 var shape = this.Configuration.ServiceModel.FindShape(structure);
                 GenerateUnmarshaller(shape);
             }
@@ -1012,6 +1026,9 @@ namespace ServiceClientGenerator
 
             foreach (var definition in this._structuresToProcess)
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(definition.Name))
+                    continue;
+
                 // Skip structures that have already been generated for the parent model
                 if (IsShapePresentInParentModel(this.Configuration, definition.Name))
                     continue;
@@ -1029,6 +1046,7 @@ namespace ServiceClientGenerator
                 }
                 if (!this._processedStructures.Contains(definition.Name))
                 {
+                    var baseClassString = this.Configuration.ServiceModel.Customizations.InheritAlternateBaseClass(definition.Name);
                     // if the shape had a substitution, we can skip generation
                     if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(definition.Name))
                         continue;
@@ -1045,6 +1063,7 @@ namespace ServiceClientGenerator
                         Structure = definition,
                         Config = this.Configuration,
                         Operation = operation,
+                        BaseClass = baseClassString ?? ""
                     };
                     //since eventstream operations can attach exceptions to the request or response objects instead of the "error"
                     //list on the operation, we must account for the case where an exception is included as a member of the response
