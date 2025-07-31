@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AdvancedSecurityOptions Object
+    /// Response Unmarshaller for IAMFederationOptionsOutput Object
     /// </summary>  
-    public class AdvancedSecurityOptionsUnmarshaller : IJsonUnmarshaller<AdvancedSecurityOptions, JsonUnmarshallerContext>
+    public class IAMFederationOptionsOutputUnmarshaller : IJsonUnmarshaller<IAMFederationOptionsOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AdvancedSecurityOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public IAMFederationOptionsOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AdvancedSecurityOptions unmarshalledObject = new AdvancedSecurityOptions();
+            IAMFederationOptionsOutput unmarshalledObject = new IAMFederationOptionsOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,46 +56,22 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnonymousAuthDisableDate", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.AnonymousAuthDisableDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AnonymousAuthEnabled", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AnonymousAuthEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("Enabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IAMFederationOptions", targetDepth))
+                if (context.TestExpression("RolesKey", targetDepth))
                 {
-                    var unmarshaller = IAMFederationOptionsOutputUnmarshaller.Instance;
-                    unmarshalledObject.IAMFederationOptions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RolesKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InternalUserDatabaseEnabled", targetDepth))
+                if (context.TestExpression("SubjectKey", targetDepth))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.InternalUserDatabaseEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("JWTOptions", targetDepth))
-                {
-                    var unmarshaller = JWTOptionsOutputUnmarshaller.Instance;
-                    unmarshalledObject.JWTOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SAMLOptions", targetDepth))
-                {
-                    var unmarshaller = SAMLOptionsOutputUnmarshaller.Instance;
-                    unmarshalledObject.SAMLOptions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubjectKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -103,12 +79,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static AdvancedSecurityOptionsUnmarshaller _instance = new AdvancedSecurityOptionsUnmarshaller();        
+        private static IAMFederationOptionsOutputUnmarshaller _instance = new IAMFederationOptionsOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AdvancedSecurityOptionsUnmarshaller Instance
+        public static IAMFederationOptionsOutputUnmarshaller Instance
         {
             get
             {

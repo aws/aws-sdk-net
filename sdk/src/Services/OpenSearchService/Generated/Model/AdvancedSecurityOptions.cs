@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
         private DateTime? _anonymousAuthDisableDate;
         private bool? _anonymousAuthEnabled;
         private bool? _enabled;
+        private IAMFederationOptionsOutput _iamFederationOptions;
         private bool? _internalUserDatabaseEnabled;
         private JWTOptionsOutput _jwtOptions;
         private SAMLOptionsOutput _samlOptions;
@@ -96,6 +97,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IAMFederationOptions. 
+        /// <para>
+        /// Container for information about the IAM federation configuration for an OpenSearch
+        /// UI application.
+        /// </para>
+        /// </summary>
+        public IAMFederationOptionsOutput IAMFederationOptions
+        {
+            get { return this._iamFederationOptions; }
+            set { this._iamFederationOptions = value; }
+        }
+
+        // Check to see if IAMFederationOptions property is set
+        internal bool IsSetIAMFederationOptions()
+        {
+            return this._iamFederationOptions != null;
         }
 
         /// <summary>
