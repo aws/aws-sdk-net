@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>InputRecords</c>, <c>TotalRecordsProcessed</c>, <c>MatchIDs</c>,
-    /// and <c>RecordsNotProcessed</c>.
+    /// An object containing <c>inputRecords</c>, <c>totalRecordsProcessed</c>, <c>matchIDs</c>,
+    /// and <c>recordsNotProcessed</c>.
     /// </summary>
     public partial class JobMetrics
     {

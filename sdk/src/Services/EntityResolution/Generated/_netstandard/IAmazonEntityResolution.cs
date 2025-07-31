@@ -137,7 +137,7 @@ namespace Amazon.EntityResolution
         /// <summary>
         /// Creates an <c>IdMappingWorkflow</c> object which stores the configuration of the data
         /// processing job to be run. Each <c>IdMappingWorkflow</c> must have a unique workflow
-        /// name. To modify an existing workflow, use the <c>UpdateIdMappingWorkflow</c> API.
+        /// name. To modify an existing workflow, use the UpdateIdMappingWorkflow API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdMappingWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -178,7 +178,7 @@ namespace Amazon.EntityResolution
         /// <summary>
         /// Creates an ID namespace object which will help customers provide metadata explaining
         /// their dataset and how to use it. Each ID namespace must have a unique name. To modify
-        /// an existing ID namespace, use the <c>UpdateIdNamespace</c> API.
+        /// an existing ID namespace, use the UpdateIdNamespace API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdNamespace service method.</param>
         /// <param name="cancellationToken">
@@ -217,10 +217,16 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Creates a <c>MatchingWorkflow</c> object which stores the configuration of the data
-        /// processing job to be run. It is important to note that there should not be a pre-existing
-        /// <c>MatchingWorkflow</c> with the same name. To modify an existing workflow, utilize
-        /// the <c>UpdateMatchingWorkflow</c> API.
+        /// Creates a matching workflow that defines the configuration for a data processing job.
+        /// The workflow name must be unique. To modify an existing workflow, use <c>UpdateMatchingWorkflow</c>.
+        /// 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// For workflows where <c>resolutionType</c> is ML_MATCHING, incremental processing is
+        /// not supported. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMatchingWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -1262,7 +1268,7 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Updates an existing <c>IdMappingWorkflow</c>. This method is identical to <c>CreateIdMappingWorkflow</c>,
+        /// Updates an existing <c>IdMappingWorkflow</c>. This method is identical to CreateIdMappingWorkflow,
         /// except it uses an HTTP <c>PUT</c> request instead of a <c>POST</c> request, and the
         /// <c>IdMappingWorkflow</c> must already exist for the method to succeed.
         /// </summary>
@@ -1330,9 +1336,15 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Updates an existing <c>MatchingWorkflow</c>. This method is identical to <c>CreateMatchingWorkflow</c>,
-        /// except it uses an HTTP <c>PUT</c> request instead of a <c>POST</c> request, and the
-        /// <c>MatchingWorkflow</c> must already exist for the method to succeed.
+        /// Updates an existing matching workflow. The workflow must already exist for this operation
+        /// to succeed.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// For workflows where <c>resolutionType</c> is ML_MATCHING, incremental processing is
+        /// not supported. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMatchingWorkflow service method.</param>
         /// <param name="cancellationToken">

@@ -31,10 +31,16 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMatchingWorkflow operation.
-    /// Creates a <c>MatchingWorkflow</c> object which stores the configuration of the data
-    /// processing job to be run. It is important to note that there should not be a pre-existing
-    /// <c>MatchingWorkflow</c> with the same name. To modify an existing workflow, utilize
-    /// the <c>UpdateMatchingWorkflow</c> API.
+    /// Creates a matching workflow that defines the configuration for a data processing job.
+    /// The workflow name must be unique. To modify an existing workflow, use <c>UpdateMatchingWorkflow</c>.
+    /// 
+    /// 
+    ///  <important> 
+    /// <para>
+    /// For workflows where <c>resolutionType</c> is ML_MATCHING, incremental processing is
+    /// not supported. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateMatchingWorkflowRequest : AmazonEntityResolutionRequest
     {
@@ -69,9 +75,16 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property IncrementalRunConfig. 
         /// <para>
-        /// An object which defines an incremental run type and has only <c>incrementalRunType</c>
-        /// as a field.
+        /// Optional. An object that defines the incremental run type. This object contains only
+        /// the <c>incrementalRunType</c> field, which appears as "Automatic" in the console.
+        /// 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c>, incremental processing
+        /// is not supported. 
+        /// </para>
+        ///  </important>
         /// </summary>
         public IncrementalRunConfig IncrementalRunConfig
         {
@@ -108,8 +121,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property OutputSourceConfig. 
         /// <para>
-        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>OutputS3Path</c>,
-        /// <c>ApplyNormalization</c>, and <c>Output</c>.
+        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>outputS3Path</c>,
+        /// <c>applyNormalization</c>, <c>KMSArn</c>, and <c>output</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

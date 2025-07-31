@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResolutionTechniques Object
+    /// Response Unmarshaller for RuleConditionProperties Object
     /// </summary>  
-    public class ResolutionTechniquesUnmarshaller : IUnmarshaller<ResolutionTechniques, XmlUnmarshallerContext>, IUnmarshaller<ResolutionTechniques, JsonUnmarshallerContext>
+    public class RuleConditionPropertiesUnmarshaller : IUnmarshaller<RuleConditionProperties, XmlUnmarshallerContext>, IUnmarshaller<RuleConditionProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResolutionTechniques IUnmarshaller<ResolutionTechniques, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RuleConditionProperties IUnmarshaller<RuleConditionProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResolutionTechniques Unmarshall(JsonUnmarshallerContext context)
+        public RuleConditionProperties Unmarshall(JsonUnmarshallerContext context)
         {
-            ResolutionTechniques unmarshalledObject = new ResolutionTechniques();
+            RuleConditionProperties unmarshalledObject = new RuleConditionProperties();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("providerProperties", targetDepth))
+                if (context.TestExpression("rules", targetDepth))
                 {
-                    var unmarshaller = ProviderPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ProviderProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resolutionType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResolutionType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ruleBasedProperties", targetDepth))
-                {
-                    var unmarshaller = RuleBasedPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.RuleBasedProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ruleConditionProperties", targetDepth))
-                {
-                    var unmarshaller = RuleConditionPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.RuleConditionProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<RuleCondition, RuleConditionUnmarshaller>(RuleConditionUnmarshaller.Instance);
+                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResolutionTechniquesUnmarshaller _instance = new ResolutionTechniquesUnmarshaller();        
+        private static RuleConditionPropertiesUnmarshaller _instance = new RuleConditionPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResolutionTechniquesUnmarshaller Instance
+        public static RuleConditionPropertiesUnmarshaller Instance
         {
             get
             {

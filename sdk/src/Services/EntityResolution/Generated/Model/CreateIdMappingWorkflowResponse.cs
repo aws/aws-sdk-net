@@ -104,7 +104,7 @@ namespace Amazon.EntityResolution.Model
         /// Gets and sets the property OutputSourceConfig. 
         /// <para>
         /// A list of <c>IdMappingWorkflowOutputSource</c> objects, each of which contains fields
-        /// <c>OutputS3Path</c> and <c>Output</c>.
+        /// <c>outputS3Path</c> and <c>KMSArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
