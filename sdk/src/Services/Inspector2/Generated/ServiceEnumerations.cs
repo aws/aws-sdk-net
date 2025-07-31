@@ -150,6 +150,10 @@ namespace Amazon.Inspector2
         /// Constant AWS_LAMBDA_FUNCTION for AggregationResourceType
         /// </summary>
         public static readonly AggregationResourceType AWS_LAMBDA_FUNCTION = new AggregationResourceType("AWS_LAMBDA_FUNCTION");
+        /// <summary>
+        /// Constant CODE_REPOSITORY for AggregationResourceType
+        /// </summary>
+        public static readonly AggregationResourceType CODE_REPOSITORY = new AggregationResourceType("CODE_REPOSITORY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5998,6 +6002,10 @@ namespace Amazon.Inspector2
         /// Constant CODE_REPOSITORY_SCA for UsageType
         /// </summary>
         public static readonly UsageType CODE_REPOSITORY_SCA = new UsageType("CODE_REPOSITORY_SCA");
+        /// <summary>
+        /// Constant EC2_AGENTLESS_INSTANCE_HOURS for UsageType
+        /// </summary>
+        public static readonly UsageType EC2_AGENTLESS_INSTANCE_HOURS = new UsageType("EC2_AGENTLESS_INSTANCE_HOURS");
         /// <summary>
         /// Constant EC2_INSTANCE_HOURS for UsageType
         /// </summary>
