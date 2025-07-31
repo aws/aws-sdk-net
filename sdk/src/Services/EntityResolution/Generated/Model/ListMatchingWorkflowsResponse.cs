@@ -60,7 +60,8 @@ namespace Amazon.EntityResolution.Model
         /// Gets and sets the property WorkflowSummaries. 
         /// <para>
         /// A list of <c>MatchingWorkflowSummary</c> objects, each of which contain the fields
-        /// <c>WorkflowName</c>, <c>WorkflowArn</c>, <c>CreatedAt</c>, and <c>UpdatedAt</c>.
+        /// <c>workflowName</c>, <c>workflowArn</c>, <c>resolutionType</c>, <c>createdAt</c>,
+        /// and <c>updatedAt</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

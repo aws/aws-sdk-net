@@ -33,7 +33,7 @@ namespace Amazon.EntityResolution.Model
     /// Container for the parameters to the CreateIdMappingWorkflow operation.
     /// Creates an <c>IdMappingWorkflow</c> object which stores the configuration of the data
     /// processing job to be run. Each <c>IdMappingWorkflow</c> must have a unique workflow
-    /// name. To modify an existing workflow, use the <c>UpdateIdMappingWorkflow</c> API.
+    /// name. To modify an existing workflow, use the UpdateIdMappingWorkflow API.
     /// </summary>
     public partial class CreateIdMappingWorkflowRequest : AmazonEntityResolutionRequest
     {
@@ -112,7 +112,7 @@ namespace Amazon.EntityResolution.Model
         /// Gets and sets the property OutputSourceConfig. 
         /// <para>
         /// A list of <c>IdMappingWorkflowOutputSource</c> objects, each of which contains fields
-        /// <c>OutputS3Path</c> and <c>Output</c>.
+        /// <c>outputS3Path</c> and <c>KMSArn</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

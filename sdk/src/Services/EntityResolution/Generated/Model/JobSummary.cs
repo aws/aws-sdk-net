@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing the <c>JobId</c>, <c>Status</c>, <c>StartTime</c>, and <c>EndTime</c>
+    /// An object containing the <c>jobId</c>, <c>status</c>, <c>startTime</c>, and <c>endTime</c>
     /// of a job.
     /// </summary>
     public partial class JobSummary

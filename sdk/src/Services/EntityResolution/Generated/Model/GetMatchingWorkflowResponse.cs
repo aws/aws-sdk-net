@@ -131,8 +131,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property OutputSourceConfig. 
         /// <para>
-        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>OutputS3Path</c>,
-        /// <c>ApplyNormalization</c>, and <c>Output</c>.
+        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>outputS3Path</c>,
+        /// <c>applyNormalization</c>, <c>KMSArn</c>, and <c>output</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

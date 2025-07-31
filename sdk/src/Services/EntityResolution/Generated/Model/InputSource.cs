@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>InputSourceARN</c>, <c>SchemaName</c>, and <c>ApplyNormalization</c>.
+    /// An object containing <c>inputSourceARN</c>, <c>schemaName</c>, and <c>applyNormalization</c>.
     /// </summary>
     public partial class InputSource
     {

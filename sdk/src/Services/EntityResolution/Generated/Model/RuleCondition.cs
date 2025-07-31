@@ -30,43 +30,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing the <c>ruleName</c> and <c>matchingKeys</c>.
+    /// An object that defines the <c>ruleCondition</c> and the <c>ruleName</c> to use in
+    /// a matching workflow.
     /// </summary>
-    public partial class Rule
+    public partial class RuleCondition
     {
-        private List<string> _matchingKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _condition;
         private string _ruleName;
 
         /// <summary>
-        /// Gets and sets the property MatchingKeys. 
+        /// Gets and sets the property Condition. 
         /// <para>
-        /// A list of <c>MatchingKeys</c>. The <c>MatchingKeys</c> must have been defined in the
-        /// <c>SchemaMapping</c>. Two records are considered to match according to this rule if
-        /// all of the <c>MatchingKeys</c> match.
+        /// A statement that specifies the conditions for a matching rule.
         /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        ///  
+        /// <para>
+        /// If your data is accurate, use an Exact matching function: <c>Exact</c> or <c>ExactManyToMany</c>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If your data has variations in spelling or pronunciation, use a Fuzzy matching function:
+        /// <c>Cosine</c>, <c>Levenshtein</c>, or <c>Soundex</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use operators if you want to combine (<c>AND</c>), separate (<c>OR</c>), or group
+        /// matching functions <c>(...)</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example: <c>(Cosine(a, 10) AND Exact(b, true)) OR ExactManyToMany(c, d)</c> 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=15)]
-        public List<string> MatchingKeys
+        [AWSProperty(Required=true, Min=0, Max=2048)]
+        public string Condition
         {
-            get { return this._matchingKeys; }
-            set { this._matchingKeys = value; }
+            get { return this._condition; }
+            set { this._condition = value; }
         }
 
-        // Check to see if MatchingKeys property is set
-        internal bool IsSetMatchingKeys()
+        // Check to see if Condition property is set
+        internal bool IsSetCondition()
         {
-            return this._matchingKeys != null && (this._matchingKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._condition != null;
         }
 
         /// <summary>
         /// Gets and sets the property RuleName. 
         /// <para>
         /// A name for the matching rule.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example: <c>Rule1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=255)]

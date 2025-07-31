@@ -30,19 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing the <c>ruleName</c> and <c>matchingKeys</c>.
+    /// The properties of a rule condition that provides the ability to use more complex syntax.
     /// </summary>
-    public partial class Rule
+    public partial class RuleConditionProperties
     {
-        private List<string> _matchingKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _ruleName;
+        private List<RuleCondition> _rules = AWSConfigs.InitializeCollections ? new List<RuleCondition>() : null;
 
         /// <summary>
-        /// Gets and sets the property MatchingKeys. 
+        /// Gets and sets the property Rules. 
         /// <para>
-        /// A list of <c>MatchingKeys</c>. The <c>MatchingKeys</c> must have been defined in the
-        /// <c>SchemaMapping</c>. Two records are considered to match according to this rule if
-        /// all of the <c>MatchingKeys</c> match.
+        ///  A list of rule objects, each of which have fields <c>ruleName</c> and <c>condition</c>.
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -50,36 +48,17 @@ namespace Amazon.EntityResolution.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=15)]
-        public List<string> MatchingKeys
+        [AWSProperty(Required=true, Min=1, Max=25)]
+        public List<RuleCondition> Rules
         {
-            get { return this._matchingKeys; }
-            set { this._matchingKeys = value; }
+            get { return this._rules; }
+            set { this._rules = value; }
         }
 
-        // Check to see if MatchingKeys property is set
-        internal bool IsSetMatchingKeys()
+        // Check to see if Rules property is set
+        internal bool IsSetRules()
         {
-            return this._matchingKeys != null && (this._matchingKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property RuleName. 
-        /// <para>
-        /// A name for the matching rule.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
-        public string RuleName
-        {
-            get { return this._ruleName; }
-            set { this._ruleName = value; }
-        }
-
-        // Check to see if RuleName property is set
-        internal bool IsSetRuleName()
-        {
-            return this._ruleName != null;
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
