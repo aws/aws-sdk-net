@@ -1,3 +1,37 @@
+### 4.0.60.0 (2025-07-31 18:26 UTC)
+* CognitoIdentity (4.0.0.16)
+	* Avoid cloning `ImmutableCredentials` objects.
+* CustomerProfiles (4.0.3.0)
+	* The release updates standard profile with 2 new fields that supports account-level engagement. Updated APIs include CreateProfile, UpdateProfile, MergeProfiles, SearchProfiles, BatchGetProfile, GetSegmentMembership, CreateSegmentDefinition, CreateSegmentEstimate.
+* EC2 (4.0.26.0)
+	* Added support for the force option for the EC2 instance terminate command. This feature enables customers to recover resources associated with an instance stuck in the shutting-down state as a result of rare issues caused by a frozen operating system or an underlying hardware problem.
+* ElasticLoadBalancingV2 (4.0.1.5)
+	* This release enables secondary IP addresses for Network Load Balancers.
+* EntityResolution (4.0.2.0)
+	* Add support for creating advanced rule-based matching workflows in AWS Entity Resolution.
+* GameLift (4.0.1.5)
+	* Avoid cloning `ImmutableCredentials` objects.
+* Glue (4.0.11.0)
+	* Added support for Route node, S3 Iceberg sources/targets, catalog Iceberg sources, DynamoDB ELT connector, AutoDataQuality evaluation, enhanced PII detection with redaction, Kinesis fan-out support, and new R-series worker types.
+* Inspector2 (4.0.3.0)
+	* Extend usage to include agentless hours and add CODE_REPOSITORY to aggregation resource type
+* IoT (4.0.1.0)
+	* This release allows AWS IoT Core users to use their own AWS KMS keys for data protection
+* OpenSearchService (4.0.2.0)
+	* Granular access control support for NEO-SAML with IAMFederation for AOS data source
+* QuickSight (4.0.3.0)
+	* Added Impala connector support
+* S3Control (4.0.4.0)
+	* Add Tags field to CreateAccessPoint
+* SecurityToken (4.0.1.7)
+	* Avoid cloning `ImmutableCredentials` objects.
+* SimpleEmailV2 (4.0.3.0)
+	* This release introduces support for Multi-tenant management
+* WorkSpacesWeb (4.0.1.0)
+	* Added ability to log session activity on a portal to an S3 bucket.
+* Core 4.0.0.19
+	* Avoid cloning `ImmutableCredentials` objects.
+
 ### 4.0.59.0 (2025-07-30 18:24 UTC)
 * CloudFront (4.0.2.0)
 	* This release adds new origin timeout options: 1) ResponseCompletionTimeout and 2) OriginReadTimeout (for S3 origins)
