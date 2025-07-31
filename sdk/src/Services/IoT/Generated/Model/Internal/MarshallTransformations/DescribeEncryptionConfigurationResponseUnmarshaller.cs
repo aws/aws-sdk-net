@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateTopicRuleDestination operation
+    /// Response Unmarshaller for DescribeEncryptionConfiguration operation
     /// </summary>  
-    public class CreateTopicRuleDestinationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeEncryptionConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,40 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateTopicRuleDestinationResponse response = new CreateTopicRuleDestinationResponse();
+            DescribeEncryptionConfigurationResponse response = new DescribeEncryptionConfigurationResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("topicRuleDestination", targetDepth))
+                if (context.TestExpression("configurationDetails", targetDepth))
                 {
-                    var unmarshaller = TopicRuleDestinationUnmarshaller.Instance;
-                    response.TopicRuleDestination = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ConfigurationDetailsUnmarshaller.Instance;
+                    response.ConfigurationDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("encryptionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EncryptionType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("kmsAccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("kmsKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("lastModifiedDate", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -83,25 +107,21 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictingResourceUpdateException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
-                    return ConflictingResourceUpdateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
-                {
-                    return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
-                {
-                    return ResourceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
                     return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                {
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
                 {
@@ -111,9 +131,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             return new AmazonIoTException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateTopicRuleDestinationResponseUnmarshaller _instance = new CreateTopicRuleDestinationResponseUnmarshaller();        
+        private static DescribeEncryptionConfigurationResponseUnmarshaller _instance = new DescribeEncryptionConfigurationResponseUnmarshaller();        
 
-        internal static CreateTopicRuleDestinationResponseUnmarshaller GetInstance()
+        internal static DescribeEncryptionConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +141,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTopicRuleDestinationResponseUnmarshaller Instance
+        public static DescribeEncryptionConfigurationResponseUnmarshaller Instance
         {
             get
             {
