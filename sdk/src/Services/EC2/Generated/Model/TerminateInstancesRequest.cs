@@ -129,6 +129,7 @@ namespace Amazon.EC2.Model
     public partial class TerminateInstancesRequest : AmazonEC2Request
     {
         private bool? _dryRun;
+        private bool? _force;
         private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _skipOsShutdown;
 
@@ -164,6 +165,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Forces the instances to terminate. The instance will first attempt a graceful shutdown,
+        /// which includes flushing file system caches and metadata. If the graceful shutdown
+        /// fails to complete within the timeout period, the instance shuts down forcibly without
+        /// flushing the file system caches and metadata.
+        /// </para>
+        /// </summary>
+        public bool? Force
+        {
+            get { return this._force; }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
         /// <summary>
