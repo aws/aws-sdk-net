@@ -97,6 +97,7 @@ namespace Amazon.S3Control.Model
         private string _name;
         private PublicAccessBlockConfiguration _publicAccessBlockConfiguration;
         private Scope _scope;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private VpcConfiguration _vpcConfiguration;
 
         /// <summary>
@@ -250,6 +251,29 @@ namespace Amazon.S3Control.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of tags that you can apply to an access point. Tags are key-value pairs of
+        /// metadata used to control access to your access points. For more information about
+        /// tags, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Using
+        /// tags with Amazon S3</a>. For information about tagging access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#using-tags-for-abac">Using
+        /// tags for attribute-based access control (ABAC)</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
