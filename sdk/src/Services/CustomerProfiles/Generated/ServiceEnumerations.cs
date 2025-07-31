@@ -329,6 +329,76 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type ContactType.
+    /// </summary>
+    public class ContactType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BusinessEmailAddress for ContactType
+        /// </summary>
+        public static readonly ContactType BusinessEmailAddress = new ContactType("BusinessEmailAddress");
+        /// <summary>
+        /// Constant BusinessPhoneNumber for ContactType
+        /// </summary>
+        public static readonly ContactType BusinessPhoneNumber = new ContactType("BusinessPhoneNumber");
+        /// <summary>
+        /// Constant EmailAddress for ContactType
+        /// </summary>
+        public static readonly ContactType EmailAddress = new ContactType("EmailAddress");
+        /// <summary>
+        /// Constant HomePhoneNumber for ContactType
+        /// </summary>
+        public static readonly ContactType HomePhoneNumber = new ContactType("HomePhoneNumber");
+        /// <summary>
+        /// Constant MobilePhoneNumber for ContactType
+        /// </summary>
+        public static readonly ContactType MobilePhoneNumber = new ContactType("MobilePhoneNumber");
+        /// <summary>
+        /// Constant PersonalEmailAddress for ContactType
+        /// </summary>
+        public static readonly ContactType PersonalEmailAddress = new ContactType("PersonalEmailAddress");
+        /// <summary>
+        /// Constant PhoneNumber for ContactType
+        /// </summary>
+        public static readonly ContactType PhoneNumber = new ContactType("PhoneNumber");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactType FindValue(string value)
+        {
+            return FindValue<ContactType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataFormat.
     /// </summary>
     public class DataFormat : ConstantClass
@@ -1682,6 +1752,106 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PeriodUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProfileType.
+    /// </summary>
+    public class ProfileType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_PROFILE for ProfileType
+        /// </summary>
+        public static readonly ProfileType ACCOUNT_PROFILE = new ProfileType("ACCOUNT_PROFILE");
+        /// <summary>
+        /// Constant PROFILE for ProfileType
+        /// </summary>
+        public static readonly ProfileType PROFILE = new ProfileType("PROFILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProfileType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProfileType FindValue(string value)
+        {
+            return FindValue<ProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProfileType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProfileTypeDimensionType.
+    /// </summary>
+    public class ProfileTypeDimensionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUSIVE for ProfileTypeDimensionType
+        /// </summary>
+        public static readonly ProfileTypeDimensionType EXCLUSIVE = new ProfileTypeDimensionType("EXCLUSIVE");
+        /// <summary>
+        /// Constant INCLUSIVE for ProfileTypeDimensionType
+        /// </summary>
+        public static readonly ProfileTypeDimensionType INCLUSIVE = new ProfileTypeDimensionType("INCLUSIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProfileTypeDimensionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProfileTypeDimensionType FindValue(string value)
+        {
+            return FindValue<ProfileTypeDimensionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProfileTypeDimensionType(string value)
         {
             return FindValue(value);
         }

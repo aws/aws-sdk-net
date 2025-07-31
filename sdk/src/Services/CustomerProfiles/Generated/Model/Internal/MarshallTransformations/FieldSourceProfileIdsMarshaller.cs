@@ -114,6 +114,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.EmailAddress);
             }
 
+            if(requestObject.IsSetEngagementPreferences())
+            {
+                context.Writer.WritePropertyName("EngagementPreferences");
+                context.Writer.WriteStringValue(requestObject.EngagementPreferences);
+            }
+
             if(requestObject.IsSetFirstName())
             {
                 context.Writer.WritePropertyName("FirstName");
@@ -172,6 +178,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PhoneNumber");
                 context.Writer.WriteStringValue(requestObject.PhoneNumber);
+            }
+
+            if(requestObject.IsSetProfileType())
+            {
+                context.Writer.WritePropertyName("ProfileType");
+                context.Writer.WriteStringValue(requestObject.ProfileType);
             }
 
             if(requestObject.IsSetShippingAddress())

@@ -274,6 +274,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetProfileType())
+            {
+                context.Writer.WritePropertyName("ProfileType");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProfileTypeDimensionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProfileType, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetShippingAddress())
             {
                 context.Writer.WritePropertyName("ShippingAddress");
