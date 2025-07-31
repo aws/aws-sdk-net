@@ -1280,6 +1280,14 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeEncryptionConfigurationResponse.KmsAccessRoleArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeEncryptionConfigurationResponse.KmsKeyArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DescribeEndpointRequest.EndpointType</property>
     <max>128</max>
     <pattern>[\s\S]*</pattern>
@@ -3111,6 +3119,14 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateEncryptionConfigurationRequest.KmsAccessRoleArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateEncryptionConfigurationRequest.KmsKeyArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateFleetMetricRequest.AggregationField</property>
     <min>1</min>
   </property-value-rule>
@@ -3705,6 +3721,10 @@
     <property>Amazon.IoT.Model.CommandSummary.DisplayName</property>
     <max>64</max>
     <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ConfigurationDetails.ErrorMessage</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DetectMitigationActionExecution.ActionName</property>

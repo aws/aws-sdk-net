@@ -3829,6 +3829,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.SqlParseException">
         /// The Rule-SQL expression can't be parsed correctly.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRule">REST API Reference for CreateTopicRule Operation</seealso>
         CreateTopicRuleResponse CreateTopicRule(CreateTopicRuleRequest request);
 
@@ -3890,6 +3893,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateTopicRuleDestination">REST API Reference for CreateTopicRuleDestination Operation</seealso>
         CreateTopicRuleDestinationResponse CreateTopicRuleDestination(CreateTopicRuleDestinationRequest request);
@@ -7405,6 +7411,63 @@ namespace Amazon.IoT
         /// <returns>Returns a  DescribeDomainConfigurationResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDomainConfiguration">REST API Reference for DescribeDomainConfiguration Operation</seealso>
         DescribeDomainConfigurationResponse EndDescribeDomainConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeEncryptionConfiguration
+
+
+        /// <summary>
+        /// Retrieves the encryption configuration for resources and data of your Amazon Web Services
+        /// account in Amazon Web Services IoT Core. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/key-management.html">Key
+        /// management in IoT</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEncryptionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEncryptionConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEncryptionConfiguration">REST API Reference for DescribeEncryptionConfiguration Operation</seealso>
+        DescribeEncryptionConfigurationResponse DescribeEncryptionConfiguration(DescribeEncryptionConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEncryptionConfiguration operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEncryptionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEncryptionConfiguration">REST API Reference for DescribeEncryptionConfiguration Operation</seealso>
+        IAsyncResult BeginDescribeEncryptionConfiguration(DescribeEncryptionConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEncryptionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeEncryptionConfigurationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEncryptionConfiguration">REST API Reference for DescribeEncryptionConfiguration Operation</seealso>
+        DescribeEncryptionConfigurationResponse EndDescribeEncryptionConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -14639,6 +14702,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         ListTopicRulesResponse ListTopicRules(string topic);
 
@@ -14662,6 +14728,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">REST API Reference for ListTopicRules Operation</seealso>
         ListTopicRulesResponse ListTopicRules(ListTopicRulesRequest request);
@@ -16407,19 +16476,51 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account. It is up to the caller
+        /// No notification is sent to the transfer destination's account. It's up to the caller
         /// to notify the transfer target.
         /// </para>
         ///  
         /// <para>
-        /// The certificate being transferred must not be in the ACTIVE state. You can use the
-        /// <a>UpdateCertificate</a> action to deactivate it.
+        /// The certificate being transferred must not be in the <c>ACTIVE</c> state. You can
+        /// use the <a>UpdateCertificate</a> action to deactivate it.
         /// </para>
         ///  
         /// <para>
         /// The certificate must not have any policies attached to it. You can use the <a>DetachPolicy</a>
         /// action to detach them.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to secure
+        /// your data and then transfer the key to a customer in a different account using the
+        /// <a>TransferCertificate</a> operation, the certificates will no longer be protected
+        /// by their customer managed key configuration. During the transfer process, certificates
+        /// are encrypted using IoT owned keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// While a certificate is in the <b>PENDING_TRANSFER</b> state, it's always protected
+        /// by IoT owned keys, regardless of the customer managed key configuration of either
+        /// the source or destination account. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Once the transfer is completed through <a>AcceptCertificateTransfer</a>, <a>RejectCertificateTransfer</a>,
+        /// or <a>CancelCertificateTransfer</a>, the certificate will be protected by the customer
+        /// managed key configuration of the account that owns the certificate after the transfer
+        /// operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the transfer is accepted: The certificate is protected by the destination account's
+        /// customer managed key configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the transfer is rejected or cancelled: The certificate is protected by the source
+        /// account's customer managed key configuration.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="targetAwsAccount">The Amazon Web Services account.</param>
@@ -16466,19 +16567,51 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account. It is up to the caller
+        /// No notification is sent to the transfer destination's account. It's up to the caller
         /// to notify the transfer target.
         /// </para>
         ///  
         /// <para>
-        /// The certificate being transferred must not be in the ACTIVE state. You can use the
-        /// <a>UpdateCertificate</a> action to deactivate it.
+        /// The certificate being transferred must not be in the <c>ACTIVE</c> state. You can
+        /// use the <a>UpdateCertificate</a> action to deactivate it.
         /// </para>
         ///  
         /// <para>
         /// The certificate must not have any policies attached to it. You can use the <a>DetachPolicy</a>
         /// action to detach them.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Customer managed key behavior:</b> When you use a customer managed key to secure
+        /// your data and then transfer the key to a customer in a different account using the
+        /// <a>TransferCertificate</a> operation, the certificates will no longer be protected
+        /// by their customer managed key configuration. During the transfer process, certificates
+        /// are encrypted using IoT owned keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// While a certificate is in the <b>PENDING_TRANSFER</b> state, it's always protected
+        /// by IoT owned keys, regardless of the customer managed key configuration of either
+        /// the source or destination account. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Once the transfer is completed through <a>AcceptCertificateTransfer</a>, <a>RejectCertificateTransfer</a>,
+        /// or <a>CancelCertificateTransfer</a>, the certificate will be protected by the customer
+        /// managed key configuration of the account that owns the certificate after the transfer
+        /// operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the transfer is accepted: The certificate is protected by the destination account's
+        /// customer managed key configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the transfer is rejected or cancelled: The certificate is protected by the source
+        /// account's customer managed key configuration.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TransferCertificate service method.</param>
         /// 
@@ -17390,6 +17523,66 @@ namespace Amazon.IoT
         /// <returns>Returns a  UpdateDynamicThingGroupResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDynamicThingGroup">REST API Reference for UpdateDynamicThingGroup Operation</seealso>
         UpdateDynamicThingGroupResponse EndUpdateDynamicThingGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateEncryptionConfiguration
+
+
+        /// <summary>
+        /// Updates the encryption configuration. By default, all Amazon Web Services IoT Core
+        /// data at rest is encrypted using Amazon Web Services owned keys. Amazon Web Services
+        /// IoT Core also supports symmetric customer managed keys from Amazon Web Services Key
+        /// Management Service (KMS). With customer managed keys, you create, own, and manage
+        /// the KMS keys in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/data-encryption.html">Data
+        /// encryption</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEncryptionConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEncryptionConfiguration">REST API Reference for UpdateEncryptionConfiguration Operation</seealso>
+        UpdateEncryptionConfigurationResponse UpdateEncryptionConfiguration(UpdateEncryptionConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionConfiguration operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEncryptionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEncryptionConfiguration">REST API Reference for UpdateEncryptionConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateEncryptionConfiguration(UpdateEncryptionConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEncryptionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEncryptionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateEncryptionConfigurationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEncryptionConfiguration">REST API Reference for UpdateEncryptionConfiguration Operation</seealso>
+        UpdateEncryptionConfigurationResponse EndUpdateEncryptionConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
