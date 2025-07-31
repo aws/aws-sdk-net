@@ -135,7 +135,7 @@ namespace Amazon.Ep2s3hostlabel
         {
             Name = DefaultConfigurationMode.Legacy,
             RetryMode = RequestRetryMode.Legacy,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Legacy,
+            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Legacy,
             ConnectTimeout = null,
             TlsNegotiationTimeout = null,
