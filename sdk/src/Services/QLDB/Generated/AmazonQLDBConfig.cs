@@ -32,7 +32,7 @@ namespace Amazon.QLDB
     public partial class AmazonQLDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("QLDB", "3.7.400.185");
+            InternalSDKUtils.BuildUserAgentString("QLDB", "3.7.500.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>

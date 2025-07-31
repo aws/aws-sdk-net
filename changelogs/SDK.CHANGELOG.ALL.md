@@ -1,3 +1,33 @@
+### 3.7.1092.0 (2025-07-31 18:27 UTC)
+* CustomerProfiles (3.7.500.0)
+	* The release updates standard profile with 2 new fields that supports account-level engagement. Updated APIs include CreateProfile, UpdateProfile, MergeProfiles, SearchProfiles, BatchGetProfile, GetSegmentMembership, CreateSegmentDefinition, CreateSegmentEstimate.
+* EC2 (3.7.500.0)
+	* Added support for the force option for the EC2 instance terminate command. This feature enables customers to recover resources associated with an instance stuck in the shutting-down state as a result of rare issues caused by a frozen operating system or an underlying hardware problem.
+* ElasticLoadBalancingV2 (3.7.500.0)
+	* This release enables secondary IP addresses for Network Load Balancers.
+* EntityResolution (3.7.500.0)
+	* Add support for creating advanced rule-based matching workflows in AWS Entity Resolution.
+* Glue (3.7.500.0)
+	* Added support for Route node, S3 Iceberg sources/targets, catalog Iceberg sources, DynamoDB ELT connector, AutoDataQuality evaluation, enhanced PII detection with redaction, Kinesis fan-out support, and new R-series worker types.
+* Inspector2 (3.7.500.0)
+	* Extend usage to include agentless hours and add CODE_REPOSITORY to aggregation resource type
+* IoT (3.7.500.0)
+	* This release allows AWS IoT Core users to use their own AWS KMS keys for data protection
+* OpenSearchService (3.7.500.0)
+	* Granular access control support for NEO-SAML with IAMFederation for AOS data source
+* QuickSight (3.7.500.0)
+	* Added Impala connector support
+* S3Control (3.7.500.0)
+	* Add Tags field to CreateAccessPoint
+* SimpleEmailV2 (3.7.500.0)
+	* This release introduces support for Multi-tenant management
+* WorkSpacesWeb (3.7.500.0)
+	* Added ability to log session activity on a portal to an S3 bucket.
+* Core 3.7.500.0
+	* Changed Legacy configuration defaults for StsRegionalEndpoints to StsRegionalEndpointsValue.Regional.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1091.0 (2025-07-30 19:10 UTC)
 * CloudFront (3.7.407.0)
 	* This release adds new origin timeout options: 1) ResponseCompletionTimeout and 2) OriginReadTimeout (for S3 origins)

@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Changed Legacy configuration defaults for StsRegionalEndpoints to StsRegionalEndpointsValue.Regional."
-      ],
-      "updateMinimum": true
-    },
-    "overrideVersion": "3.7.500.0"
-  }

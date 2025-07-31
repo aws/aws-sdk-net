@@ -32,7 +32,7 @@ namespace Amazon.ForecastService
     public partial class AmazonForecastServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("forecast", "3.7.400.185");
+            InternalSDKUtils.BuildUserAgentString("forecast", "3.7.500.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>
