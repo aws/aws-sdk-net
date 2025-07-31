@@ -126,6 +126,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EngagementPreferences", targetDepth))
+                {
+                    var unmarshaller = EngagementPreferencesUnmarshaller.Instance;
+                    unmarshalledObject.EngagementPreferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FirstName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -208,6 +214,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProfileId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfileType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ShippingAddress", targetDepth))

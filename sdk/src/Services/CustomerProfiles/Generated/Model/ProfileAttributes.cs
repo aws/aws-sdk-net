@@ -54,6 +54,7 @@ namespace Amazon.CustomerProfiles.Model
         private ProfileDimension _partyTypeString;
         private ProfileDimension _personalEmailAddress;
         private ProfileDimension _phoneNumber;
+        private ProfileTypeDimension _profileType;
         private AddressDimension _shippingAddress;
 
         /// <summary>
@@ -414,6 +415,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetPhoneNumber()
         {
             return this._phoneNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileType. 
+        /// <para>
+        /// A field to describe values to segment on within profile type.
+        /// </para>
+        /// </summary>
+        public ProfileTypeDimension ProfileType
+        {
+            get { return this._profileType; }
+            set { this._profileType = value; }
+        }
+
+        // Check to see if ProfileType property is set
+        internal bool IsSetProfileType()
+        {
+            return this._profileType != null;
         }
 
         /// <summary>

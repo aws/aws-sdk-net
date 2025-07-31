@@ -44,6 +44,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _businessName;
         private string _businessPhoneNumber;
         private string _emailAddress;
+        private string _engagementPreferences;
         private string _firstName;
         private string _gender;
         private string _homePhoneNumber;
@@ -54,6 +55,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _partyType;
         private string _personalEmailAddress;
         private string _phoneNumber;
+        private string _profileType;
         private string _shippingAddress;
 
         /// <summary>
@@ -237,6 +239,24 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngagementPreferences. 
+        /// <para>
+        /// A unique identifier for the engagement preferences field to be merged.
+        /// </para>
+        /// </summary>
+        public string EngagementPreferences
+        {
+            get { return this._engagementPreferences; }
+            set { this._engagementPreferences = value; }
+        }
+
+        // Check to see if EngagementPreferences property is set
+        internal bool IsSetEngagementPreferences()
+        {
+            return this._engagementPreferences != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
         /// A unique identifier for the first name field to be merged.
@@ -414,6 +434,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetPhoneNumber()
         {
             return this._phoneNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileType. 
+        /// <para>
+        /// A unique identifier for the profile type field to be merged.
+        /// </para>
+        /// </summary>
+        public string ProfileType
+        {
+            get { return this._profileType; }
+            set { this._profileType = value; }
+        }
+
+        // Check to see if ProfileType property is set
+        internal bool IsSetProfileType()
+        {
+            return this._profileType != null;
         }
 
         /// <summary>

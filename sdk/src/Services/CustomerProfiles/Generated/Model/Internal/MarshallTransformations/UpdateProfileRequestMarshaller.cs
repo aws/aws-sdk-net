@@ -148,6 +148,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EmailAddress);
                 }
 
+                if(publicRequest.IsSetEngagementPreferences())
+                {
+                    context.Writer.WritePropertyName("EngagementPreferences");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EngagementPreferencesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EngagementPreferences, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFirstName())
                 {
                     context.Writer.WritePropertyName("FirstName");
@@ -229,6 +240,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ProfileId");
                     context.Writer.Write(publicRequest.ProfileId);
+                }
+
+                if(publicRequest.IsSetProfileType())
+                {
+                    context.Writer.WritePropertyName("ProfileType");
+                    context.Writer.Write(publicRequest.ProfileType);
                 }
 
                 if(publicRequest.IsSetShippingAddress())

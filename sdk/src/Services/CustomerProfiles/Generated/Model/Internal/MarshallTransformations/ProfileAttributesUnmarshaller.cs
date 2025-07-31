@@ -186,6 +186,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProfileType", targetDepth))
+                {
+                    var unmarshaller = ProfileTypeDimensionUnmarshaller.Instance;
+                    unmarshalledObject.ProfileType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ShippingAddress", targetDepth))
                 {
                     var unmarshaller = AddressDimensionUnmarshaller.Instance;
