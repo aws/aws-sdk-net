@@ -34,14 +34,36 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class S3DirectTarget
     {
+        private AutoDataQuality _autoDataQuality;
         private string _compression;
         private TargetFormat _format;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _numberTargetPartitions;
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
         private List<List<string>> _partitionKeys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private string _path;
         private DirectSchemaChangePolicy _schemaChangePolicy;
+
+        /// <summary>
+        /// Gets and sets the property AutoDataQuality. 
+        /// <para>
+        /// Specifies whether to automatically enable data quality evaluation for the S3 direct
+        /// target. When set to <c>true</c>, data quality checks are performed automatically during
+        /// the write operation.
+        /// </para>
+        /// </summary>
+        public AutoDataQuality AutoDataQuality
+        {
+            get { return this._autoDataQuality; }
+            set { this._autoDataQuality = value; }
+        }
+
+        // Check to see if AutoDataQuality property is set
+        internal bool IsSetAutoDataQuality()
+        {
+            return this._autoDataQuality != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Compression. 
@@ -135,6 +157,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetNumberTargetPartitions()
         {
             return this._numberTargetPartitions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputSchemas. 
+        /// <para>
+        /// Specifies the data schema for the S3 direct target.
+        /// </para>
+        /// </summary>
+        public List<GlueSchema> OutputSchemas
+        {
+            get { return this._outputSchemas; }
+            set { this._outputSchemas = value; }
+        }
+
+        // Check to see if OutputSchemas property is set
+        internal bool IsSetOutputSchemas()
+        {
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -90,6 +90,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OutputSchemas", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GlueSchema, GlueSchemaUnmarshaller>(GlueSchemaUnmarshaller.Instance);
+                    unmarshalledObject.OutputSchemas = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RedshiftTmpDir", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

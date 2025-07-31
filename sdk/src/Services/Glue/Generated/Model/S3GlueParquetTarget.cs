@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class S3GlueParquetTarget
     {
+        private AutoDataQuality _autoDataQuality;
         private ParquetCompressionType _compression;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
@@ -41,6 +42,26 @@ namespace Amazon.Glue.Model
         private List<List<string>> _partitionKeys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private string _path;
         private DirectSchemaChangePolicy _schemaChangePolicy;
+
+        /// <summary>
+        /// Gets and sets the property AutoDataQuality. 
+        /// <para>
+        /// Specifies whether to automatically enable data quality evaluation for the S3 Glue
+        /// Parquet target. When set to <c>true</c>, data quality checks are performed automatically
+        /// during the write operation.
+        /// </para>
+        /// </summary>
+        public AutoDataQuality AutoDataQuality
+        {
+            get { return this._autoDataQuality; }
+            set { this._autoDataQuality = value; }
+        }
+
+        // Check to see if AutoDataQuality property is set
+        internal bool IsSetAutoDataQuality()
+        {
+            return this._autoDataQuality != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Compression. 
@@ -103,7 +124,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property NumberTargetPartitions. 
         /// <para>
         /// Specifies the number of target partitions for Parquet files when writing to Amazon
-        /// S3 using AWS Glue.
+        /// S3 using Glue.
         /// </para>
         /// </summary>
         public string NumberTargetPartitions

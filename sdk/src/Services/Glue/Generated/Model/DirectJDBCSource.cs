@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private JDBCConnectionType _connectionType;
         private string _database;
         private string _name;
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
         private string _redshiftTmpDir;
         private string _table;
 
@@ -115,6 +116,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputSchemas. 
+        /// <para>
+        /// Specifies the data schema for the direct JDBC source.
+        /// </para>
+        /// </summary>
+        public List<GlueSchema> OutputSchemas
+        {
+            get { return this._outputSchemas; }
+            set { this._outputSchemas = value; }
+        }
+
+        // Check to see if OutputSchemas property is set
+        internal bool IsSetOutputSchemas()
+        {
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

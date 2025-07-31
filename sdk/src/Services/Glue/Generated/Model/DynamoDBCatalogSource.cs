@@ -34,9 +34,29 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DynamoDBCatalogSource
     {
+        private DDBELTCatalogAdditionalOptions _additionalOptions;
         private string _database;
         private string _name;
+        private bool? _pitrEnabled;
         private string _table;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalOptions. 
+        /// <para>
+        /// Specifies additional connection options for the DynamoDB data source.
+        /// </para>
+        /// </summary>
+        public DDBELTCatalogAdditionalOptions AdditionalOptions
+        {
+            get { return this._additionalOptions; }
+            set { this._additionalOptions = value; }
+        }
+
+        // Check to see if AdditionalOptions property is set
+        internal bool IsSetAdditionalOptions()
+        {
+            return this._additionalOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Database. 
@@ -74,6 +94,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PitrEnabled. 
+        /// <para>
+        /// Specifies whether Point-in-Time Recovery (PITR) is enabled for the DynamoDB table.
+        /// When set to <c>true</c>, allows reading from a specific point in time. The default
+        /// value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool PitrEnabled
+        {
+            get { return this._pitrEnabled.GetValueOrDefault(); }
+            set { this._pitrEnabled = value; }
+        }
+
+        // Check to see if PitrEnabled property is set
+        internal bool IsSetPitrEnabled()
+        {
+            return this._pitrEnabled.HasValue; 
         }
 
         /// <summary>

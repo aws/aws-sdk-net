@@ -693,9 +693,10 @@ namespace Amazon.Glue.Model
         /// for jobs whose workloads contain your most demanding transforms, aggregations, joins,
         /// and queries. This worker type is available only for Glue version 3.0 or later Spark
         /// ETL jobs in the following Amazon Web Services Regions: US East (Ohio), US East (N.
-        /// Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia
-        /// Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe
-        /// (Stockholm).
+        /// Virginia), US West (N. California), US West (Oregon), Asia Pacific (Mumbai), Asia
+        /// Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo),
+        /// Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Spain),
+        /// Europe (Stockholm), and South America (São Paulo).
         /// </para>
         ///  </li> <li> 
         /// <para>

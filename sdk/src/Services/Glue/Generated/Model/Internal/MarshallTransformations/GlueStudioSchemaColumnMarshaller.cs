@@ -48,6 +48,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGlueStudioType())
+            {
+                context.Writer.WritePropertyName("GlueStudioType");
+                context.Writer.Write(requestObject.GlueStudioType);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

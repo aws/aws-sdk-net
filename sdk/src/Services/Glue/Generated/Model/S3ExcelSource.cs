@@ -216,7 +216,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property OutputSchemas. 
         /// <para>
-        /// The AWS Glue schemas to apply to the processed data.
+        /// The Glue schemas to apply to the processed data.
         /// </para>
         /// </summary>
         public List<GlueSchema> OutputSchemas

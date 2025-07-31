@@ -48,6 +48,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDetectionParameters())
+            {
+                context.Writer.WritePropertyName("DetectionParameters");
+                context.Writer.Write(requestObject.DetectionParameters);
+            }
+
+            if(requestObject.IsSetDetectionSensitivity())
+            {
+                context.Writer.WritePropertyName("DetectionSensitivity");
+                context.Writer.Write(requestObject.DetectionSensitivity);
+            }
+
             if(requestObject.IsSetEntityTypesToDetect())
             {
                 context.Writer.WritePropertyName("EntityTypesToDetect");
@@ -76,10 +88,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaskValue);
             }
 
+            if(requestObject.IsSetMatchPattern())
+            {
+                context.Writer.WritePropertyName("MatchPattern");
+                context.Writer.Write(requestObject.MatchPattern);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetNumLeftCharsToExclude())
+            {
+                context.Writer.WritePropertyName("NumLeftCharsToExclude");
+                context.Writer.Write(requestObject.NumLeftCharsToExclude);
+            }
+
+            if(requestObject.IsSetNumRightCharsToExclude())
+            {
+                context.Writer.WritePropertyName("NumRightCharsToExclude");
+                context.Writer.Write(requestObject.NumRightCharsToExclude);
             }
 
             if(requestObject.IsSetOutputColumnName())
@@ -92,6 +122,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PiiType");
                 context.Writer.Write(requestObject.PiiType);
+            }
+
+            if(requestObject.IsSetRedactChar())
+            {
+                context.Writer.WritePropertyName("RedactChar");
+                context.Writer.Write(requestObject.RedactChar);
+            }
+
+            if(requestObject.IsSetRedactText())
+            {
+                context.Writer.WritePropertyName("RedactText");
+                context.Writer.Write(requestObject.RedactText);
             }
 
             if(requestObject.IsSetSampleFraction())

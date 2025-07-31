@@ -62,6 +62,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAutoDataQuality())
+            {
+                context.Writer.WritePropertyName("AutoDataQuality");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoDataQualityMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoDataQuality, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
@@ -95,6 +106,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("NumberTargetPartitions");
                 context.Writer.Write(requestObject.NumberTargetPartitions);
+            }
+
+            if(requestObject.IsSetOutputSchemas())
+            {
+                context.Writer.WritePropertyName("OutputSchemas");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOutputSchemasListValue in requestObject.OutputSchemas)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GlueSchemaMarshaller.Instance;
+                    marshaller.Marshall(requestObjectOutputSchemasListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetPartitionKeys())

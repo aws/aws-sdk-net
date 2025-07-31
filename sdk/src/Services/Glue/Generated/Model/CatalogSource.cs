@@ -36,6 +36,8 @@ namespace Amazon.Glue.Model
     {
         private string _database;
         private string _name;
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
+        private string _partitionPredicate;
         private string _table;
 
         /// <summary>
@@ -74,6 +76,43 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputSchemas. 
+        /// <para>
+        /// Specifies the data schema for the catalog source.
+        /// </para>
+        /// </summary>
+        public List<GlueSchema> OutputSchemas
+        {
+            get { return this._outputSchemas; }
+            set { this._outputSchemas = value; }
+        }
+
+        // Check to see if OutputSchemas property is set
+        internal bool IsSetOutputSchemas()
+        {
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartitionPredicate. 
+        /// <para>
+        ///  Partitions satisfying this predicate are deleted. Files within the retention period
+        /// in these partitions are not deleted. 
+        /// </para>
+        /// </summary>
+        public string PartitionPredicate
+        {
+            get { return this._partitionPredicate; }
+            set { this._partitionPredicate = value; }
+        }
+
+        // Check to see if PartitionPredicate property is set
+        internal bool IsSetPartitionPredicate()
+        {
+            return this._partitionPredicate != null;
         }
 
         /// <summary>

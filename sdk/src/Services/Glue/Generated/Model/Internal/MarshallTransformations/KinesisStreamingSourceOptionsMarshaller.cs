@@ -96,6 +96,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndpointUrl);
             }
 
+            if(requestObject.IsSetFanoutConsumerARN())
+            {
+                context.Writer.WritePropertyName("FanoutConsumerARN");
+                context.Writer.Write(requestObject.FanoutConsumerARN);
+            }
+
             if(requestObject.IsSetIdleTimeBetweenReadsInMs())
             {
                 context.Writer.WritePropertyName("IdleTimeBetweenReadsInMs");

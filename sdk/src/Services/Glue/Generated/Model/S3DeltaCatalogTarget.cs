@@ -35,9 +35,11 @@ namespace Amazon.Glue.Model
     public partial class S3DeltaCatalogTarget
     {
         private Dictionary<string, string> _additionalOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private AutoDataQuality _autoDataQuality;
         private string _database;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
         private List<List<string>> _partitionKeys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private CatalogSchemaChangePolicy _schemaChangePolicy;
         private string _table;
@@ -58,6 +60,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetAdditionalOptions()
         {
             return this._additionalOptions != null && (this._additionalOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoDataQuality. 
+        /// <para>
+        /// Specifies whether to automatically enable data quality evaluation for the S3 Delta
+        /// catalog target. When set to <c>true</c>, data quality checks are performed automatically
+        /// during the write operation.
+        /// </para>
+        /// </summary>
+        public AutoDataQuality AutoDataQuality
+        {
+            get { return this._autoDataQuality; }
+            set { this._autoDataQuality = value; }
+        }
+
+        // Check to see if AutoDataQuality property is set
+        internal bool IsSetAutoDataQuality()
+        {
+            return this._autoDataQuality != null;
         }
 
         /// <summary>
@@ -115,6 +137,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputSchemas. 
+        /// <para>
+        /// Specifies the data schema for the S3 Delta catalog target.
+        /// </para>
+        /// </summary>
+        public List<GlueSchema> OutputSchemas
+        {
+            get { return this._outputSchemas; }
+            set { this._outputSchemas = value; }
+        }
+
+        // Check to see if OutputSchemas property is set
+        internal bool IsSetOutputSchemas()
+        {
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

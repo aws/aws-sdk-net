@@ -108,6 +108,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CatalogHudiSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CatalogIcebergSource", targetDepth))
+                {
+                    var unmarshaller = CatalogIcebergSourceUnmarshaller.Instance;
+                    unmarshalledObject.CatalogIcebergSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CatalogKafkaSource", targetDepth))
                 {
                     var unmarshaller = CatalogKafkaSourceUnmarshaller.Instance;
@@ -196,6 +202,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DynamoDBCatalogSourceUnmarshaller.Instance;
                     unmarshalledObject.DynamoDBCatalogSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DynamoDBELTConnectorSource", targetDepth))
+                {
+                    var unmarshaller = DynamoDBELTConnectorSourceUnmarshaller.Instance;
+                    unmarshalledObject.DynamoDBELTConnectorSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EvaluateDataQuality", targetDepth))
@@ -342,6 +354,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.RenameField = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Route", targetDepth))
+                {
+                    var unmarshaller = RouteUnmarshaller.Instance;
+                    unmarshalledObject.Route = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3CatalogDeltaSource", targetDepth))
                 {
                     var unmarshaller = S3CatalogDeltaSourceUnmarshaller.Instance;
@@ -352,6 +370,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = S3CatalogHudiSourceUnmarshaller.Instance;
                     unmarshalledObject.S3CatalogHudiSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3CatalogIcebergSource", targetDepth))
+                {
+                    var unmarshaller = S3CatalogIcebergSourceUnmarshaller.Instance;
+                    unmarshalledObject.S3CatalogIcebergSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3CatalogSource", targetDepth))
@@ -430,6 +454,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = S3HyperDirectTargetUnmarshaller.Instance;
                     unmarshalledObject.S3HyperDirectTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3IcebergCatalogTarget", targetDepth))
+                {
+                    var unmarshaller = S3IcebergCatalogTargetUnmarshaller.Instance;
+                    unmarshalledObject.S3IcebergCatalogTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3IcebergDirectTarget", targetDepth))

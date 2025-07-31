@@ -72,6 +72,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdditionalOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoDataQuality", targetDepth))
+                {
+                    var unmarshaller = AutoDataQualityUnmarshaller.Instance;
+                    unmarshalledObject.AutoDataQuality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Compression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

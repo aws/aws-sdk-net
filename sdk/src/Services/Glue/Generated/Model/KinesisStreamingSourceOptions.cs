@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         private long? _describeShardInterval;
         private string _emitConsumerLagMetrics;
         private string _endpointUrl;
+        private string _fanoutConsumerARN;
         private long? _idleTimeBetweenReadsInMs;
         private long? _maxFetchRecordsPerShard;
         private long? _maxFetchTimeInMs;
@@ -208,6 +209,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetEndpointUrl()
         {
             return this._endpointUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FanoutConsumerARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Kinesis Data Streams enhanced fan-out consumer.
+        /// When specified, enables enhanced fan-out for dedicated throughput and lower latency
+        /// data consumption.
+        /// </para>
+        /// </summary>
+        public string FanoutConsumerARN
+        {
+            get { return this._fanoutConsumerARN; }
+            set { this._fanoutConsumerARN = value; }
+        }
+
+        // Check to see if FanoutConsumerARN property is set
+        internal bool IsSetFanoutConsumerARN()
+        {
+            return this._fanoutConsumerARN != null;
         }
 
         /// <summary>

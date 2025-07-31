@@ -35,11 +35,13 @@ namespace Amazon.Glue.Model
     public partial class S3IcebergDirectTarget
     {
         private Dictionary<string, string> _additionalOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private AutoDataQuality _autoDataQuality;
         private IcebergTargetCompressionType _compression;
         private TargetFormat _format;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _numberTargetPartitions;
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
         private List<List<string>> _partitionKeys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private string _path;
         private DirectSchemaChangePolicy _schemaChangePolicy;
@@ -60,6 +62,21 @@ namespace Amazon.Glue.Model
         internal bool IsSetAdditionalOptions()
         {
             return this._additionalOptions != null && (this._additionalOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoDataQuality.
+        /// </summary>
+        public AutoDataQuality AutoDataQuality
+        {
+            get { return this._autoDataQuality; }
+            set { this._autoDataQuality = value; }
+        }
+
+        // Check to see if AutoDataQuality property is set
+        internal bool IsSetAutoDataQuality()
+        {
+            return this._autoDataQuality != null;
         }
 
         /// <summary>
@@ -154,6 +171,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetNumberTargetPartitions()
         {
             return this._numberTargetPartitions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputSchemas. 
+        /// <para>
+        /// Specifies the data schema for the S3 Iceberg direct target.
+        /// </para>
+        /// </summary>
+        public List<GlueSchema> OutputSchemas
+        {
+            get { return this._outputSchemas; }
+            set { this._outputSchemas = value; }
+        }
+
+        // Check to see if OutputSchemas property is set
+        internal bool IsSetOutputSchemas()
+        {
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

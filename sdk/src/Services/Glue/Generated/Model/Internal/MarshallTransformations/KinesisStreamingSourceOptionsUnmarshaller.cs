@@ -114,6 +114,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FanoutConsumerARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FanoutConsumerARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IdleTimeBetweenReadsInMs", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

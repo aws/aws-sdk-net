@@ -48,6 +48,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalOptions())
+            {
+                context.Writer.WritePropertyName("AdditionalOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DDBELTCatalogAdditionalOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdditionalOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDatabase())
             {
                 context.Writer.WritePropertyName("Database");
@@ -58,6 +69,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetPitrEnabled())
+            {
+                context.Writer.WritePropertyName("PitrEnabled");
+                context.Writer.Write(requestObject.PitrEnabled);
             }
 
             if(requestObject.IsSetTable())
