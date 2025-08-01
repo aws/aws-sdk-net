@@ -34,6 +34,7 @@ namespace Amazon.Util.Internal
         public bool UseSdkCache { get; set; }
 
         public bool InitializeCollections { get; set; }
+        public int CborReaderInitialBufferSize { get; set; }
 
         public bool CorrectForClockSkew { get; set; }
 
@@ -64,6 +65,7 @@ namespace Amazon.Util.Internal
             ProfilesLocation = AWSConfigs._awsAccountsLocation;
             UseSdkCache = AWSConfigs._useSdkCache;
             InitializeCollections = AWSConfigs._initializeCollections;
+            CborReaderInitialBufferSize = AWSConfigs._cborReaderInitialBufferSize;
             CorrectForClockSkew = true;
 
 #if NET8_0_OR_GREATER
