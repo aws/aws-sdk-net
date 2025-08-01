@@ -211,21 +211,21 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property MessageGroupId. 
         /// <para>
-        /// This parameter applies only to FIFO (first-in-first-out) topics.
-        /// </para>
-        ///  
-        /// <para>
-        /// The tag that specifies that a message belongs to a specific message group. Messages
-        /// that belong to the same message group are processed in a FIFO manner (however, messages
-        /// in different message groups might be processed out of order). To interleave multiple
-        /// ordered streams within a single topic, use <c>MessageGroupId</c> values (for example,
-        /// session data for multiple users). In this scenario, multiple consumers can process
-        /// the topic, but the session data of each user is processed in a FIFO fashion. 
-        /// </para>
-        ///  
-        /// <para>
-        /// You must associate a non-empty <c>MessageGroupId</c> with a message. If you don't
+        /// FIFO topics: The tag that specifies that a message belongs to a specific message group.
+        /// Messages that belong to the same message group are processed in a FIFO manner (however,
+        /// messages in different message groups might be processed out of order). To interleave
+        /// multiple ordered streams within a single topic, use <c>MessageGroupId</c> values (for
+        /// example, session data for multiple users). In this scenario, multiple consumers can
+        /// process the topic, but the session data of each user is processed in a FIFO fashion.
+        /// You must associate a non-empty <c>MessageGroupId</c> with a message. If you do not
         /// provide a <c>MessageGroupId</c>, the action fails. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Standard topics: The <c>MessageGroupId</c> is optional and is forwarded only to Amazon
+        /// SQS standard subscriptions to activate <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fair-queues.html">fair
+        /// queues</a>. The <c>MessageGroupId</c> is not used for, or sent to, any other endpoint
+        /// types.
         /// </para>
         ///  
         /// <para>
@@ -236,12 +236,6 @@ namespace Amazon.SimpleNotificationService.Model
         ///  <c>MessageGroupId</c> can contain alphanumeric characters <c>(a-z, A-Z, 0-9)</c>
         /// and punctuation <c>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</c>.
         /// </para>
-        ///  <important> 
-        /// <para>
-        ///  <c>MessageGroupId</c> is required for FIFO topics. You can't use it for standard
-        /// topics. 
-        /// </para>
-        ///  </important>
         /// </summary>
         public string MessageGroupId
         {
@@ -275,7 +269,7 @@ namespace Amazon.SimpleNotificationService.Model
         ///  </li> </ul> 
         /// <para>
         /// You can define other top-level keys that define the message you want to send to a
-        /// specific transport protocol (e.g. http). 
+        /// specific transport protocol (for example, http). 
         /// </para>
         /// </summary>
         public string MessageStructure
