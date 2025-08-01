@@ -165,6 +165,9 @@ namespace <#=this.Config.Namespace#>.Model
                     if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream))
                         continue;
 
+                    if (this.Config.ServiceModel.Customizations.FlattenShapes(this.Structure.Name).Contains(member.ModeledName))
+                        continue;
+                    
                     // If the shape is an exception then skip adding RequestId and ErrorCode because those properties comes from the base class.
                     if (this.Structure is ExceptionShape && (member.PropertyName == "RequestId" || member.PropertyName == "ErrorCode"))
                         continue;
@@ -214,6 +217,9 @@ namespace <#=this.Config.Namespace#>.Model
                 foreach(var member in this.Structure.Members)
                 {
                     if (member.IsExcluded)
+                        continue;
+
+                    if (this.Config.ServiceModel.Customizations.FlattenShapes(this.Structure.Name).Contains(member.ModeledName))
                         continue;
 
                     // If the shape is an exception then skip adding RequestId and ErrorCode because those properties come from the base class.
@@ -295,7 +301,26 @@ namespace <#=this.Config.Namespace#>.Model
 #>
         <#=member.AccessModifier#> <#=memberModifier#><#=member.DetermineType()#> <#=member.PropertyName#>
         {
+<#
+                    if (this.Structure != null && this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(this.Structure.Name, out var modifier) && modifier.NewObjectIfNullProperties.Contains(member.ModeledName))
+                    {
+#>
+            get 
+            {
+                if (this.<#=member.VariableName#> == null)
+                    this.<#=member.VariableName#> = new <#=member.DetermineType()#>();
+
+                return this.<#=member.VariableName#>; 
+            }
+<#
+                    }
+                    else
+                    {
+#>
             get { return this.<#=member.VariableName#>; }
+<#
+                    }
+#>
             set { this.<#=member.VariableName#> = value; }
         }
 

@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLockRetention Object
     /// </summary>  
-    public class ObjectLockRetentionUnmarshaller : IXmlUnmarshaller<ObjectLockRetention, XmlUnmarshallerContext>
+    public partial class ObjectLockRetentionUnmarshaller : IXmlUnmarshaller<ObjectLockRetention, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.RetainUntilDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ObjectLockRetention unmarshalledObject, int targetDepth);
+
         private static ObjectLockRetentionUnmarshaller _instance = new ObjectLockRetentionUnmarshaller();        
 
         /// <summary>

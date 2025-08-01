@@ -155,6 +155,24 @@
             "modify": [
                 {
                     "Prefix": { "deprecatedMessage": "This property is deprecated. Use Filter instead." }
+                },
+                {
+                    "ID" : {"emitPropertyName" : "Id"}
+                },
+                {
+                    "Transition" : {"emitPropertyName" : "Transitions"}
+                },
+                {
+                    "NoncurrentVersionTransition": {"emitPropertyName": "NoncurrentVersionTransitions"}
+                }
+            ],
+            "predicateListUnmarshallers":[
+                {
+                    "Filter": 
+                    {
+                        "predicateListUnmarshallerName": "LifecycleFilterPredicateListUnmarshaller",
+                        "filterPredicateName": "LifecycleFilterPredicate"
+                    }
                 }
             ]
         },
@@ -191,15 +209,9 @@
             ]
         },
         "PutBucketLifecycleConfigurationRequest": {
-            "exclude": [
-                "LifecycleConfiguration"
-            ],
-            "inject": [
+            "modify":[
                 {
-                    "Configuration": {
-                        "shape": "LifecycleConfiguration",
-                        "originalMember": "LifecycleConfiguration"
-                    }
+                    "LifecycleConfiguration" : {"emitPropertyName":"Configuration"}
                 }
             ]
         },
@@ -452,6 +464,65 @@
                     "CORSRules" : {"emitPropertyName": "Rules"}
                 }
             ]
+        },
+        "GetBucketLifecycleConfigurationOutput":{
+            "exclude":[
+                "Rules"
+            ],
+            "inject":[
+                {
+                    "Configuration" : {
+                        "shape": "LifecycleConfiguration",
+                        "originalMemberIsOutsideContainingShape":true,
+                        "outsideOriginalMember":"PutBucketLifecycleConfigurationRequest,LifecycleConfiguration"
+                    }
+                }
+            ],
+            "skipXmlTestExpression":[
+                "Configuration"
+            ],
+            "newObjectIfNull":[
+                "Configuration"
+            ]
+        },
+        "TopicConfiguration":{
+            "modify":[
+                {
+                    "TopicArn" : {"emitPropertyName" : "Topic"}
+                }
+            ],
+            "shapeDocumentation":[
+                "This class contains the configuration Amazon S3 uses to figure out what events you want to listen and send the event to an Amazon SNS topic.",
+                "The topic's policy must allow S3 to publish messages to it. The utility method Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient.AuthorizeS3ToPublish(string,string) can be used to help setup the topic policy."
+            ]
+        },
+        "QueueConfiguration" : {
+            "modify" : [
+                {
+                    "QueueArn" : {"emitPropertyName" : "Queue"}
+                }
+            ],
+            "shapeDocumentation": [
+                "This class contains the configuration Amazon S3 uses to figure out what events you want to listen and send the event to an Amazon SQS queue.",
+                "<para>The queue's policy must allow S3 to send messages to it. The utility method Amazon.SQS.AmazonSQSClient.AuthorizeS3ToSendMessage(string,string) can be used to help setup the queue policy.</para>"
+            ]
+        },
+        "LambdaFunctionConfiguration":{
+            "modify": [
+                {
+                    "LambdaFunctionArn" : {"emitPropertyName" : "FunctionArn"}
+                }
+            ],
+            "shapeDocumentation":[
+                "This class contains the configuration Amazon S3 uses to figure out what events you want to listen and send the event to an Amazon Lambda cloud function."
+            ]
+        },
+        "Filter" : {
+            "modify":[
+                {
+                    "Key" : { "emitPropertyName" : "S3KeyFilter"}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -543,6 +614,36 @@
         },
         "Grant": {
             "renameShape": "S3Grant"
+        },
+        "NotificationConfigurationFilter" : {
+            "renameShape" : "Filter"
+        },
+        "BucketLifecycleConfiguration":{
+            "renameShape" : "LifecycleConfiguration"
+        },
+        "LifecycleRuleFilter":{
+            "renameShape":"LifecycleFilter"
+        },
+        "AbortIncompleteMultipartUpload" : {
+            "renameShape": "LifecycleRuleAbortIncompleteMultipartUpload"
+        },
+        "LifecycleExpiration":{
+            "renameShape" : "LifecycleRuleExpiration"
+        },
+        "NoncurrentVersionExpiration" : {
+            "renameShape" : "LifecycleRuleNoncurrentVersionExpiration"
+        },
+        "NoncurrentVersionTransition" : {
+            "renameShape": "LifecycleRuleNoncurrentVersionTransition"
+        },
+        "Transition" : {
+            "renameShape" : "LifecycleTransition"
+        },
+        "TransitionStorageClass" : {
+            "renameShape" : "S3StorageClass"
+        },
+        "Rule" :{
+            "renameShape" : "LifecycleRule"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -600,6 +701,40 @@
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller": "StringUnmarshaller"
             }
+        },
+        "FilterRule":{
+            "Name": {
+                "Type": "string",
+                "Marshaller":"StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "TopicConfiguration" :{
+            "Events" : {
+                "Type" : "List<EventType>",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller",
+                "isFlattened": "true",
+                "alternateLocationName": "Event"
+            }
+        },
+        "QueueConfiguration" : {
+            "Events" : {
+                "Type" : "List<EventType>",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller",
+                "isFlattened": "true",
+                "alternateLocationName" : "Event"
+            }
+        },
+        "LambdaFunctionConfiguration":{
+            "Events" : {
+                "Type" : "List<EventType>",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller",
+                "isFlattened": "true",
+                "alternateLocationName" : "Event"
+            }
         }
     },
     "excludeMembers":{
@@ -611,6 +746,21 @@
             "ChecksumSHA256",
             "ETag",
             "PartNumber"
+        ],
+        "LifecycleRule":[
+            "Status"
+        ],
+        "TopicConfiguration":[
+            "Events",
+            "Filter"
+        ],
+        "QueueConfiguration":[
+            "Events",
+            "Filter"
+        ],
+        "LambdaFunctionConfiguration":[
+            "Events",
+            "Filter"
         ]
     },
     "unwrapXmlOutput":{
@@ -622,6 +772,30 @@
         },
         "InitiateMultipartUploadRequest":{
             "alternateBaseClass": "PutWithACLRequest"
+        },
+        "LambdaFunctionConfiguration" : {
+            "alternateBaseClass" : "NotificationConfiguration"
+        },
+        "QueueConfiguration" : {
+            "alternateBaseClass" : "NotificationConfiguration"
+        },
+        "TopicConfiguration": {
+            "alternateBaseClass" : "NotificationConfiguration"
+        }
+    },
+    "flattenShapes" : {
+        "PutBucketNotificationConfigurationRequest" : [
+            "NotificationConfiguration"
+        ]
+    },
+    "excludeShapes":[
+        "NotificationConfiguration"
+    ],
+    "implementsVisitorPattern":{
+        "LifecycleFilter":{
+            "predicateName": "LifecycleFilterPredicate",
+            "visitorName": "LifecycleFilterPredicateMarshallVisitor",
+            "visitorParam": "xmlWriter"
         }
     }
 }

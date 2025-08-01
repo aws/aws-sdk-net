@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MetadataTableConfigurationResult Object
     /// </summary>  
-    public class MetadataTableConfigurationResultUnmarshaller : IXmlUnmarshaller<MetadataTableConfigurationResult, XmlUnmarshallerContext>
+    public partial class MetadataTableConfigurationResultUnmarshaller : IXmlUnmarshaller<MetadataTableConfigurationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3TablesDestinationResult = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, MetadataTableConfigurationResult unmarshalledObject, int targetDepth);
+
         private static MetadataTableConfigurationResultUnmarshaller _instance = new MetadataTableConfigurationResultUnmarshaller();        
 
         /// <summary>

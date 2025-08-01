@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLockConfiguration Object
     /// </summary>  
-    public class ObjectLockConfigurationUnmarshaller : IXmlUnmarshaller<ObjectLockConfiguration, XmlUnmarshallerContext>
+    public partial class ObjectLockConfigurationUnmarshaller : IXmlUnmarshaller<ObjectLockConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.Rule = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ObjectLockConfiguration unmarshalledObject, int targetDepth);
+
         private static ObjectLockConfigurationUnmarshaller _instance = new ObjectLockConfigurationUnmarshaller();        
 
         /// <summary>

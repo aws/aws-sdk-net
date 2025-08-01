@@ -340,6 +340,18 @@ namespace ServiceClientGenerator
                 JsonData members = this.data[MembersKey];
                 if (members != null)
                 {
+                    foreach (var member in this.model.Customizations.FlattenShapes(this.Name))
+                    {
+                        // grab the shape key of the member we want to flatten
+                        JsonData flattenMemberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][this.data[MembersKey][member][ServiceModel.ShapeKey].ToString()];
+                        foreach (KeyValuePair<string, JsonData> kvp in flattenMemberShape[MembersKey])
+                        {
+                            if (this.model.Customizations.IsExcludedProperty(kvp.Key, this.Name))
+                                continue;
+                            map.Add(new Member(this.model, this, kvp.Key, kvp.Key, kvp.Value, null));
+                        }
+                    }
+
                     foreach (KeyValuePair<string, JsonData> kvp in members)
                     {
                         // filter out excluded members and perform any property
@@ -366,9 +378,21 @@ namespace ServiceClientGenerator
                     {
                         var injectedPropertyData = shapeModifier.InjectedPropertyData(p);
                         JsonData originalMember;
+                        //if the injected member is actually a shape from outside the current shape then grab that jsonData from the "shapes" object
+                        if (injectedPropertyData.OriginalMemberIsOutsideContainingShape)
+                        {
+                            if (injectedPropertyData.Data["outsideOriginalMember"] != null)
+                            {
+                                string[] shapePath = injectedPropertyData.Data["outsideOriginalMember"].ToString().Split(',');
+                                string requestResponseShape = shapePath[0];
+                                string memberShape = shapePath[1];
+                                var shapeData = this.model.DocumentRoot["shapes"][requestResponseShape]["members"][memberShape];
+                                map.Add(new Member(this.model, this, p, p, shapeData, null));
+                            }
+                        }
                         // if a modeled property was excluded and replaced by an injected property, then we want to store a copy
                         // of the original property's JSON so we can access data such as the context params.
-                        if (injectedPropertyData.Data[CustomizationsModel.OriginalMemberKey] != null)
+                        else if (injectedPropertyData.Data[CustomizationsModel.OriginalMemberKey] != null)
                         {
                             var shapeData = this.model.FindShape(this.Name).data;
                             originalMember = shapeData["members"][injectedPropertyData.Data[CustomizationsModel.OriginalMemberKey].ToString()];
@@ -914,6 +938,25 @@ namespace ServiceClientGenerator
         public bool HasNoEventPayload()
         {
             return Members == null || Members.All(m => m.IsEventHeader);
+        }
+
+        public override string Documentation
+        {
+            get
+            {
+                var docNode = data[ServiceModel.DocumentationKey];
+
+                if (this.model.Customizations.ShapeModifiers.TryGetValue(this.Name, out var modifier))
+                {
+                    foreach (var doc in modifier.ShapeDocumentation)
+                    {
+                        docNode += (string)doc + " ";
+                    }
+                }
+                if (docNode == null)
+                    return string.Empty;
+                return docNode.ToString();
+            }
         }
     }
 }

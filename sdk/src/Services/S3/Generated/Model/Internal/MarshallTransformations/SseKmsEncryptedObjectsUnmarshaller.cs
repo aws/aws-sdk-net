@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SseKmsEncryptedObjects Object
     /// </summary>  
-    public class SseKmsEncryptedObjectsUnmarshaller : IXmlUnmarshaller<SseKmsEncryptedObjects, XmlUnmarshallerContext>
+    public partial class SseKmsEncryptedObjectsUnmarshaller : IXmlUnmarshaller<SseKmsEncryptedObjects, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.SseKmsEncryptedObjectsStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, SseKmsEncryptedObjects unmarshalledObject, int targetDepth);
+
         private static SseKmsEncryptedObjectsUnmarshaller _instance = new SseKmsEncryptedObjectsUnmarshaller();        
 
         /// <summary>

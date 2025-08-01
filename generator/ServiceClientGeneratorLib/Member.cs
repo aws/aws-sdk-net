@@ -289,6 +289,9 @@ namespace ServiceClientGenerator
                 }
                 else
                 {
+                    // first check if there is a customization overriding
+                    if (this.model.Customizations.OverrideDataType(this.OwningShape.Name, this.ModeledName) != null && this.model.Customizations.OverrideDataType(this.OwningShape.Name, this.ModeledName).AlternateLocationName != null)
+                            return this.model.Customizations.OverrideDataType(this.OwningShape.Name, this.ModeledName).AlternateLocationName;
                     if (ModelShape != null && !string.IsNullOrEmpty(ModelShape.LocationName) && ModelShape.IsFlattened)
                     {
                         _locationName = ModelShape.LocationName;
@@ -352,6 +355,11 @@ namespace ServiceClientGenerator
             {
                 var metadata = data[ServiceModel.MetadataKey];
                 var flattenedMember = data[FlattenedKey];
+                var dataTypeOverride = this.model.Customizations.OverrideDataType(this.OwningShape.Name, this.ModeledName);
+
+                if (dataTypeOverride != null && dataTypeOverride.IsFlattened)
+                    return true;
+
                 if (metadata == null && flattenedMember == null)
                 {
                     return false;
@@ -905,7 +913,6 @@ namespace ServiceClientGenerator
         {
             get
             {
-
                 return this.Shape.IsStructure;
             }
         }
@@ -1045,7 +1052,14 @@ namespace ServiceClientGenerator
         /// </summary>
         public bool IsCollection
         {
-            get { return this.IsMap || this.IsList; }
+            get 
+            {
+                if (this.model.Customizations.OverrideDataType(OwningShape.Name, this._name) != null && (this.model.Customizations.OverrideDataType(OwningShape.Name, this._name).DataType.Contains("List<") || this.model.Customizations.OverrideDataType(OwningShape.Name, this._name).DataType.Contains("Dictionary<")))
+                {
+                    return true;
+                }
+                return this.IsMap || this.IsList; 
+            }
         }
 
         /// <summary>
@@ -1224,6 +1238,23 @@ namespace ServiceClientGenerator
                 parameter = this.OriginalMember == null ? data.SafeGet("contextParam") : this.OriginalMember.SafeGet("contextParam");
                 return parameter == null ? null : new ContextParameter { name = parameter.SafeGetString("name") };
             }
+        }
+
+        public bool HasPredicateListUnmarshaller
+        {
+            get
+            {
+                if (this.model.Customizations.GetShapeModifier(this.OwningShape.Name) != null)
+                {
+                    var modifier = this.model.Customizations.GetShapeModifier(this.OwningShape.Name);
+                    if (modifier.PredicateListUnmarshallers.Keys.Count > 0 && modifier.PredicateListUnmarshallers.TryGetValue(this.ModeledName, out _))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
         }
     }
 }
