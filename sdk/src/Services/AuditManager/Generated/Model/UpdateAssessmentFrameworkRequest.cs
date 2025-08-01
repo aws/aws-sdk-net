@@ -66,6 +66,12 @@ namespace Amazon.AuditManager.Model
         /// <para>
         ///  The control sets that are associated with the framework. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>Controls</c> object returns a partial response when called through Framework
+        /// APIs. For a complete <c>Controls</c> object, use <c>GetControl</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<UpdateAssessmentFrameworkControlSet> ControlSets
