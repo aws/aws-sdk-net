@@ -41,6 +41,12 @@ namespace Amazon.AuditManager.Model
         /// <para>
         ///  The framework that the <c>GetAssessmentFramework</c> API returned. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>Controls</c> object returns a partial response when called through Framework
+        /// APIs. For a complete <c>Controls</c> object, use <c>GetControl</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Framework Framework
         {

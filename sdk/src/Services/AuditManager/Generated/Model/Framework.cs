@@ -93,6 +93,12 @@ namespace Amazon.AuditManager.Model
         /// <para>
         ///  The control sets that are associated with the framework. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>Controls</c> object returns a partial response when called through Framework
+        /// APIs. For a complete <c>Controls</c> object, use <c>GetControl</c>.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -117,7 +123,13 @@ namespace Amazon.AuditManager.Model
         /// <para>
         ///  The control data sources where Audit Manager collects evidence from.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This API parameter is no longer supported.
+        /// </para>
+        ///  </important>
         /// </summary>
+        [Obsolete("Use controlSources from the Control")]
         [AWSProperty(Min=1, Max=100)]
         public string ControlSources
         {
