@@ -1713,8 +1713,8 @@ namespace ServiceClientGenerator
             {
                 if (membersCount != shape.Members.Count)
                 {
-                    throw new InvalidOperationException("A member was added to a shape that the .NET SDK has a custom unmarshaller or marshaller for. Please check and make sure" +
-                        "to add the member to the custom unmarshaller and all related code.");
+                    throw new InvalidOperationException(String.Format("A member was added to {0} that the .NET SDK has a custom unmarshaller or marshaller for. Please check and make sure" +
+                        "to add the member to the custom unmarshaller and all related code.", shape.Name));
                 }
             }
         }
