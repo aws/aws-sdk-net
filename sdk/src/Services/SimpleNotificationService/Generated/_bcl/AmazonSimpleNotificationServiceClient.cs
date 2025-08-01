@@ -556,7 +556,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -602,7 +602,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -646,7 +646,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -696,7 +696,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -745,7 +745,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -792,7 +792,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -865,9 +865,9 @@ namespace Amazon.SimpleNotificationService
         /// <para>
         /// For GCM (Firebase Cloud Messaging) using token credentials, there is no <c>PlatformPrincipal</c>.
         /// The <c>PlatformCredential</c> is a JSON formatted private key file. When using the
-        /// Amazon Web Services CLI, the file must be in string format and special characters
-        /// must be ignored. To format the file correctly, Amazon SNS recommends using the following
-        /// command: <c>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</c>.
+        /// Amazon Web Services CLI or Amazon Web Services SDKs, the file must be in string format
+        /// and special characters must be ignored. To format the file correctly, Amazon SNS recommends
+        /// using the following command: <c>SERVICE_JSON=$(jq @json &lt; service.json)</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -948,9 +948,9 @@ namespace Amazon.SimpleNotificationService
         /// <para>
         /// For GCM (Firebase Cloud Messaging) using token credentials, there is no <c>PlatformPrincipal</c>.
         /// The <c>PlatformCredential</c> is a JSON formatted private key file. When using the
-        /// Amazon Web Services CLI, the file must be in string format and special characters
-        /// must be ignored. To format the file correctly, Amazon SNS recommends using the following
-        /// command: <c>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</c>.
+        /// Amazon Web Services CLI or Amazon Web Services SDKs, the file must be in string format
+        /// and special characters must be ignored. To format the file correctly, Amazon SNS recommends
+        /// using the following command: <c>SERVICE_JSON=$(jq @json &lt; service.json)</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4402,37 +4402,49 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Publishes up to ten messages to the specified topic. This is a batch version of <c>Publish</c>.
+        /// Publishes up to 10 messages to the specified topic in a single batch. This is a batch
+        /// version of the <c>Publish</c> API. If you try to send more than 10 messages in a single
+        /// batch request, you will receive a <c>TooManyEntriesInBatchRequest</c> exception.
+        /// 
+        ///  
+        /// <para>
         /// For FIFO topics, multiple messages within a single batch are published in the order
         /// they are sent, and messages are deduplicated within the batch and across batches for
-        /// 5 minutes.
-        /// 
+        /// five minutes.
+        /// </para>
         ///  
         /// <para>
         /// The result of publishing each message is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
-        /// <c>200</c>.
+        /// 200.
         /// </para>
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
         /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
-        /// bytes). 
+        /// bytes).
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The <c>PublishBatch</c> API can send up to 10 messages at a time. If you attempt to
+        /// send more than 10 messages in one request, you will encounter a <c>TooManyEntriesInBatchRequest</c>
+        /// exception. In such cases, split your messages into multiple requests, each containing
+        /// no more than 10 messages.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Some actions take lists of parameters. These lists are specified using the <c>param.n</c>
-        /// notation. Values of <c>n</c> are integers starting from 1. For example, a parameter
-        /// list with two elements looks like this: 
+        /// notation. Values of <c>n</c> are integers starting from <b>1</b>. For example, a parameter
+        /// list with two elements looks like this:
         /// </para>
         ///  
         /// <para>
-        /// &amp;AttributeName.1=first
+        ///  <c>&amp;AttributeName.1=first</c> 
         /// </para>
         ///  
         /// <para>
-        /// &amp;AttributeName.2=second
+        ///  <c>&amp;AttributeName.2=second</c> 
         /// </para>
         ///  
         /// <para>
@@ -4442,7 +4454,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  
         /// <para>
-        /// When a <c>messageId</c> is returned, the batch message is saved and Amazon SNS immediately
+        /// When a <c>messageId</c> is returned, the batch message is saved, and Amazon SNS immediately
         /// delivers the message to subscribers.
         /// </para>
         /// </summary>
@@ -4510,7 +4522,7 @@ namespace Amazon.SimpleNotificationService
         /// Exception error indicating platform application disabled.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.TooManyEntriesInBatchRequestException">
-        /// The batch request contains more entries than permissible.
+        /// The batch request contains more entries than permissible (more than 10).
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
         /// Indicates that a parameter in the request is invalid.
@@ -4527,37 +4539,49 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Publishes up to ten messages to the specified topic. This is a batch version of <c>Publish</c>.
+        /// Publishes up to 10 messages to the specified topic in a single batch. This is a batch
+        /// version of the <c>Publish</c> API. If you try to send more than 10 messages in a single
+        /// batch request, you will receive a <c>TooManyEntriesInBatchRequest</c> exception.
+        /// 
+        ///  
+        /// <para>
         /// For FIFO topics, multiple messages within a single batch are published in the order
         /// they are sent, and messages are deduplicated within the batch and across batches for
-        /// 5 minutes.
-        /// 
+        /// five minutes.
+        /// </para>
         ///  
         /// <para>
         /// The result of publishing each message is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
-        /// <c>200</c>.
+        /// 200.
         /// </para>
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
         /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
-        /// bytes). 
+        /// bytes).
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The <c>PublishBatch</c> API can send up to 10 messages at a time. If you attempt to
+        /// send more than 10 messages in one request, you will encounter a <c>TooManyEntriesInBatchRequest</c>
+        /// exception. In such cases, split your messages into multiple requests, each containing
+        /// no more than 10 messages.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Some actions take lists of parameters. These lists are specified using the <c>param.n</c>
-        /// notation. Values of <c>n</c> are integers starting from 1. For example, a parameter
-        /// list with two elements looks like this: 
+        /// notation. Values of <c>n</c> are integers starting from <b>1</b>. For example, a parameter
+        /// list with two elements looks like this:
         /// </para>
         ///  
         /// <para>
-        /// &amp;AttributeName.1=first
+        ///  <c>&amp;AttributeName.1=first</c> 
         /// </para>
         ///  
         /// <para>
-        /// &amp;AttributeName.2=second
+        ///  <c>&amp;AttributeName.2=second</c> 
         /// </para>
         ///  
         /// <para>
@@ -4567,7 +4591,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  
         /// <para>
-        /// When a <c>messageId</c> is returned, the batch message is saved and Amazon SNS immediately
+        /// When a <c>messageId</c> is returned, the batch message is saved, and Amazon SNS immediately
         /// delivers the message to subscribers.
         /// </para>
         /// </summary>
@@ -4638,7 +4662,7 @@ namespace Amazon.SimpleNotificationService
         /// Exception error indicating platform application disabled.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.TooManyEntriesInBatchRequestException">
-        /// The batch request contains more entries than permissible.
+        /// The batch request contains more entries than permissible (more than 10).
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
         /// Indicates that a parameter in the request is invalid.
@@ -5148,7 +5172,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5186,7 +5210,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5229,7 +5253,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5270,7 +5294,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5312,7 +5336,7 @@ namespace Amazon.SimpleNotificationService
         ///  </note>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <c>SetTopicAttributes</c> action uses: <ul> <li>  <c>ApplicationSuccessFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application endpoint. </li> <li>  <c>DeliveryPolicy</c> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <c>DisplayName</c> – The display name to use for a topic with SMS subscriptions. </li> <li>  <c>Policy</c> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> <li>  <c>TracingConfig</c> – Tracing mode of an Amazon SNS topic. By default <c>TracingConfig</c> is set to <c>PassThrough</c>, and the topic passes through the tracing header it receives from an Amazon SNS publisher to its subscriptions. If set to <c>Active</c>, Amazon SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true. This is only supported on standard topics. </li> <li> HTTP <ul> <li>  <c>HTTPSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.  </li> <li>  <c>HTTPSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an HTTP endpoint. </li> <li>  <c>HTTPFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </li> </ul> </li> <li> Amazon Kinesis Data Firehose <ul> <li>  <c>FirehoseSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </li> <li>  <c>FirehoseSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </li> <li>  <c>FirehoseFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint.  </li> </ul> </li> <li> Lambda <ul> <li>  <c>LambdaSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Lambda endpoint. </li> <li>  <c>LambdaSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Lambda endpoint. </li> <li>  <c>LambdaFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Lambda endpoint.  </li> </ul> </li> <li> Platform application endpoint <ul> <li>  <c>ApplicationSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Web Services application endpoint. </li> <li>  <c>ApplicationSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon Web Services application endpoint. </li> <li>  <c>ApplicationFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Web Services application endpoint. </li> </ul> <note> In addition to being able to configure topic attributes for message delivery status of notification messages sent to Amazon SNS application endpoints, you can also configure application attributes for the delivery status of push notification messages sent to push notification services. For example, For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for Message Delivery Status</a>.  </note> </li> <li> Amazon SQS <ul> <li>  <c>SQSSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> <li>  <c>SQSSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> <li>  <c>SQSFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> </ul> </li> </ul> <note> The &lt;ENDPOINT&gt;SuccessFeedbackRoleArn and &lt;ENDPOINT&gt;FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The &lt;ENDPOINT&gt;SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the &lt;ENDPOINT&gt;FailureFeedbackRoleArn attribute, then all failed message deliveries generate CloudWatch Logs.  </note> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <c>KmsMasterKeyId</c> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <c>SignatureVersion</c> – The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By default, <c>SignatureVersion</c> is set to <c>1</c>. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <c>ArchivePolicy</c> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic. </li> <li>  <c>ContentBasedDeduplication</c> – Enables content-based deduplication for FIFO topics. <ul> <li> By default, <c>ContentBasedDeduplication</c> is set to <c>false</c>. If you create a FIFO topic and this attribute is <c>false</c>, you must specify a value for the <c>MessageDeduplicationId</c> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <c>ContentBasedDeduplication</c> to <c>true</c>, Amazon SNS uses a SHA-256 hash to generate the <c>MessageDeduplicationId</c> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the <c>MessageDeduplicationId</c> parameter for the <c>Publish</c> action. </li> </ul> </li> </ul> <ul> <li>  <c>FifoThroughputScope</c> – Enables higher throughput for your FIFO topic by adjusting the scope of deduplication. This attribute has two possible values: <ul> <li>  <c>Topic</c> – The scope of message deduplication is across the entire topic. This is the default value and maintains existing behavior, with a maximum throughput of 3000 messages per second or 20MB per second, whichever comes first. </li> <li>  <c>MessageGroup</c> – The scope of deduplication is within each individual message group, which enables higher throughput per topic subject to regional quotas. For more information on quotas or to request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/sns.html">Amazon SNS service quotas</a> in the Amazon Web Services General Reference. </li> </ul> </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <c>SetTopicAttributes</c> action uses: <ul> <li>  <c>DeliveryPolicy</c> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <c>DisplayName</c> – The display name to use for a topic with SMS subscriptions. </li> <li>  <c>Policy</c> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> <li>  <c>TracingConfig</c> – Tracing mode of an Amazon SNS topic. By default <c>TracingConfig</c> is set to <c>PassThrough</c>, and the topic passes through the tracing header it receives from an Amazon SNS publisher to its subscriptions. If set to <c>Active</c>, Amazon SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true. This is only supported on standard topics. </li> <li> HTTP <ul> <li>  <c>HTTPSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.  </li> <li>  <c>HTTPSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an HTTP endpoint. </li> <li>  <c>HTTPFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </li> </ul> </li> <li> Amazon Data Firehose <ul> <li>  <c>FirehoseSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Data Firehose endpoint. </li> <li>  <c>FirehoseSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon Data Firehose endpoint. </li> <li>  <c>FirehoseFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Data Firehose endpoint.  </li> </ul> </li> <li> Lambda <ul> <li>  <c>LambdaSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Lambda endpoint. </li> <li>  <c>LambdaSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Lambda endpoint. </li> <li>  <c>LambdaFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Lambda endpoint.  </li> </ul> </li> <li> Platform application endpoint <ul> <li>  <c>ApplicationSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an platform application endpoint. </li> <li>  <c>ApplicationSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an platform application endpoint. </li> <li>  <c>ApplicationFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an platform application endpoint. </li> </ul> <note> In addition to being able to configure topic attributes for message delivery status of notification messages sent to Amazon SNS application endpoints, you can also configure application attributes for the delivery status of push notification messages sent to push notification services. For example, For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for Message Delivery Status</a>.  </note> </li> <li> Amazon SQS <ul> <li>  <c>SQSSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> <li>  <c>SQSSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> <li>  <c>SQSFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> </ul> </li> </ul> <note> The &lt;ENDPOINT&gt;SuccessFeedbackRoleArn and &lt;ENDPOINT&gt;FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The &lt;ENDPOINT&gt;SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the &lt;ENDPOINT&gt;FailureFeedbackRoleArn attribute, then all failed message deliveries generate CloudWatch Logs.  </note> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <c>KmsMasterKeyId</c> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <c>SignatureVersion</c> – The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By default, <c>SignatureVersion</c> is set to <c>1</c>. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <c>ArchivePolicy</c> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic. </li> <li>  <c>ContentBasedDeduplication</c> – Enables content-based deduplication for FIFO topics. <ul> <li> By default, <c>ContentBasedDeduplication</c> is set to <c>false</c>. If you create a FIFO topic and this attribute is <c>false</c>, you must specify a value for the <c>MessageDeduplicationId</c> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <c>ContentBasedDeduplication</c> to <c>true</c>, Amazon SNS uses a SHA-256 hash to generate the <c>MessageDeduplicationId</c> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the <c>MessageDeduplicationId</c> parameter for the <c>Publish</c> action. </li> </ul> </li> </ul> <ul> <li>  <c>FifoThroughputScope</c> – Enables higher throughput for your FIFO topic by adjusting the scope of deduplication. This attribute has two possible values: <ul> <li>  <c>Topic</c> – The scope of message deduplication is across the entire topic. This is the default value and maintains existing behavior, with a maximum throughput of 3000 messages per second or 20MB per second, whichever comes first. </li> <li>  <c>MessageGroup</c> – The scope of deduplication is within each individual message group, which enables higher throughput per topic subject to regional quotas. For more information on quotas or to request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/sns.html">Amazon SNS service quotas</a> in the Amazon Web Services General Reference. </li> </ul> </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute.</param>
         /// 
         /// <returns>The response from the SetTopicAttributes service method, as returned by SimpleNotificationService.</returns>
@@ -5396,7 +5420,7 @@ namespace Amazon.SimpleNotificationService
         ///  </note>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <c>SetTopicAttributes</c> action uses: <ul> <li>  <c>ApplicationSuccessFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application endpoint. </li> <li>  <c>DeliveryPolicy</c> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <c>DisplayName</c> – The display name to use for a topic with SMS subscriptions. </li> <li>  <c>Policy</c> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> <li>  <c>TracingConfig</c> – Tracing mode of an Amazon SNS topic. By default <c>TracingConfig</c> is set to <c>PassThrough</c>, and the topic passes through the tracing header it receives from an Amazon SNS publisher to its subscriptions. If set to <c>Active</c>, Amazon SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true. This is only supported on standard topics. </li> <li> HTTP <ul> <li>  <c>HTTPSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.  </li> <li>  <c>HTTPSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an HTTP endpoint. </li> <li>  <c>HTTPFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </li> </ul> </li> <li> Amazon Kinesis Data Firehose <ul> <li>  <c>FirehoseSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </li> <li>  <c>FirehoseSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </li> <li>  <c>FirehoseFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint.  </li> </ul> </li> <li> Lambda <ul> <li>  <c>LambdaSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Lambda endpoint. </li> <li>  <c>LambdaSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Lambda endpoint. </li> <li>  <c>LambdaFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Lambda endpoint.  </li> </ul> </li> <li> Platform application endpoint <ul> <li>  <c>ApplicationSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Web Services application endpoint. </li> <li>  <c>ApplicationSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon Web Services application endpoint. </li> <li>  <c>ApplicationFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Web Services application endpoint. </li> </ul> <note> In addition to being able to configure topic attributes for message delivery status of notification messages sent to Amazon SNS application endpoints, you can also configure application attributes for the delivery status of push notification messages sent to push notification services. For example, For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for Message Delivery Status</a>.  </note> </li> <li> Amazon SQS <ul> <li>  <c>SQSSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> <li>  <c>SQSSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> <li>  <c>SQSFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> </ul> </li> </ul> <note> The &lt;ENDPOINT&gt;SuccessFeedbackRoleArn and &lt;ENDPOINT&gt;FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The &lt;ENDPOINT&gt;SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the &lt;ENDPOINT&gt;FailureFeedbackRoleArn attribute, then all failed message deliveries generate CloudWatch Logs.  </note> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <c>KmsMasterKeyId</c> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <c>SignatureVersion</c> – The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By default, <c>SignatureVersion</c> is set to <c>1</c>. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <c>ArchivePolicy</c> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic. </li> <li>  <c>ContentBasedDeduplication</c> – Enables content-based deduplication for FIFO topics. <ul> <li> By default, <c>ContentBasedDeduplication</c> is set to <c>false</c>. If you create a FIFO topic and this attribute is <c>false</c>, you must specify a value for the <c>MessageDeduplicationId</c> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <c>ContentBasedDeduplication</c> to <c>true</c>, Amazon SNS uses a SHA-256 hash to generate the <c>MessageDeduplicationId</c> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the <c>MessageDeduplicationId</c> parameter for the <c>Publish</c> action. </li> </ul> </li> </ul> <ul> <li>  <c>FifoThroughputScope</c> – Enables higher throughput for your FIFO topic by adjusting the scope of deduplication. This attribute has two possible values: <ul> <li>  <c>Topic</c> – The scope of message deduplication is across the entire topic. This is the default value and maintains existing behavior, with a maximum throughput of 3000 messages per second or 20MB per second, whichever comes first. </li> <li>  <c>MessageGroup</c> – The scope of deduplication is within each individual message group, which enables higher throughput per topic subject to regional quotas. For more information on quotas or to request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/sns.html">Amazon SNS service quotas</a> in the Amazon Web Services General Reference. </li> </ul> </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <c>SetTopicAttributes</c> action uses: <ul> <li>  <c>DeliveryPolicy</c> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <c>DisplayName</c> – The display name to use for a topic with SMS subscriptions. </li> <li>  <c>Policy</c> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> <li>  <c>TracingConfig</c> – Tracing mode of an Amazon SNS topic. By default <c>TracingConfig</c> is set to <c>PassThrough</c>, and the topic passes through the tracing header it receives from an Amazon SNS publisher to its subscriptions. If set to <c>Active</c>, Amazon SNS will vend X-Ray segment data to topic owner account if the sampled flag in the tracing header is true. This is only supported on standard topics. </li> <li> HTTP <ul> <li>  <c>HTTPSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.  </li> <li>  <c>HTTPSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an HTTP endpoint. </li> <li>  <c>HTTPFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </li> </ul> </li> <li> Amazon Data Firehose <ul> <li>  <c>FirehoseSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Data Firehose endpoint. </li> <li>  <c>FirehoseSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon Data Firehose endpoint. </li> <li>  <c>FirehoseFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Data Firehose endpoint.  </li> </ul> </li> <li> Lambda <ul> <li>  <c>LambdaSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Lambda endpoint. </li> <li>  <c>LambdaSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Lambda endpoint. </li> <li>  <c>LambdaFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Lambda endpoint.  </li> </ul> </li> <li> Platform application endpoint <ul> <li>  <c>ApplicationSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an platform application endpoint. </li> <li>  <c>ApplicationSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an platform application endpoint. </li> <li>  <c>ApplicationFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an platform application endpoint. </li> </ul> <note> In addition to being able to configure topic attributes for message delivery status of notification messages sent to Amazon SNS application endpoints, you can also configure application attributes for the delivery status of push notification messages sent to push notification services. For example, For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for Message Delivery Status</a>.  </note> </li> <li> Amazon SQS <ul> <li>  <c>SQSSuccessFeedbackRoleArn</c> – Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> <li>  <c>SQSSuccessFeedbackSampleRate</c> – Indicates percentage of successful messages to sample for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> <li>  <c>SQSFailureFeedbackRoleArn</c> – Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint.  </li> </ul> </li> </ul> <note> The &lt;ENDPOINT&gt;SuccessFeedbackRoleArn and &lt;ENDPOINT&gt;FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The &lt;ENDPOINT&gt;SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the &lt;ENDPOINT&gt;FailureFeedbackRoleArn attribute, then all failed message deliveries generate CloudWatch Logs.  </note> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <c>KmsMasterKeyId</c> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <c>SignatureVersion</c> – The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By default, <c>SignatureVersion</c> is set to <c>1</c>. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>: <ul> <li>  <c>ArchivePolicy</c> – The policy that sets the retention period for messages stored in the message archive of an Amazon SNS FIFO topic. </li> <li>  <c>ContentBasedDeduplication</c> – Enables content-based deduplication for FIFO topics. <ul> <li> By default, <c>ContentBasedDeduplication</c> is set to <c>false</c>. If you create a FIFO topic and this attribute is <c>false</c>, you must specify a value for the <c>MessageDeduplicationId</c> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action.  </li> <li> When you set <c>ContentBasedDeduplication</c> to <c>true</c>, Amazon SNS uses a SHA-256 hash to generate the <c>MessageDeduplicationId</c> using the body of the message (but not the attributes of the message). (Optional) To override the generated value, you can specify a value for the <c>MessageDeduplicationId</c> parameter for the <c>Publish</c> action. </li> </ul> </li> </ul> <ul> <li>  <c>FifoThroughputScope</c> – Enables higher throughput for your FIFO topic by adjusting the scope of deduplication. This attribute has two possible values: <ul> <li>  <c>Topic</c> – The scope of message deduplication is across the entire topic. This is the default value and maintains existing behavior, with a maximum throughput of 3000 messages per second or 20MB per second, whichever comes first. </li> <li>  <c>MessageGroup</c> – The scope of deduplication is within each individual message group, which enables higher throughput per topic subject to regional quotas. For more information on quotas or to request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/sns.html">Amazon SNS service quotas</a> in the Amazon Web Services General Reference. </li> </ul> </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5494,8 +5518,8 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
-        /// <param name="protocol">The protocol that you want to use. Supported protocols include: <ul> <li>  <c>http</c> – delivery of JSON-encoded message via HTTP POST </li> <li>  <c>https</c> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <c>email</c> – delivery of message via SMTP </li> <li>  <c>email-json</c> – delivery of JSON-encoded message via SMTP </li> <li>  <c>sms</c> – delivery of message via SMS </li> <li>  <c>sqs</c> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <c>application</c> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device </li> <li>  <c>lambda</c> – delivery of JSON-encoded message to an Lambda function </li> <li>  <c>firehose</c> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <c>http</c> protocol, the (public) endpoint is a URL beginning with <c>http://</c>. </li> <li> For the <c>https</c> protocol, the (public) endpoint is a URL beginning with <c>https://</c>. </li> <li> For the <c>email</c> protocol, the endpoint is an email address. </li> <li> For the <c>email-json</c> protocol, the endpoint is an email address. </li> <li> For the <c>sms</c> protocol, the endpoint is a phone number of an SMS-enabled device. </li> <li> For the <c>sqs</c> protocol, the endpoint is the ARN of an Amazon SQS queue. </li> <li> For the <c>application</c> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <c>lambda</c> protocol, the endpoint is the ARN of an Lambda function. </li> <li> For the <c>firehose</c> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
+        /// <param name="protocol">The protocol that you want to use. Supported protocols include: <ul> <li>  <c>http</c> – delivery of JSON-encoded message via HTTP POST </li> <li>  <c>https</c> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <c>email</c> – delivery of message via SMTP </li> <li>  <c>email-json</c> – delivery of JSON-encoded message via SMTP </li> <li>  <c>sms</c> – delivery of message via SMS </li> <li>  <c>sqs</c> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <c>application</c> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device </li> <li>  <c>lambda</c> – delivery of JSON-encoded message to an Lambda function </li> <li>  <c>firehose</c> – delivery of JSON-encoded message to an Amazon Data Firehose delivery stream. </li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <c>http</c> protocol, the (public) endpoint is a URL beginning with <c>http://</c>. </li> <li> For the <c>https</c> protocol, the (public) endpoint is a URL beginning with <c>https://</c>. </li> <li> For the <c>email</c> protocol, the endpoint is an email address. </li> <li> For the <c>email-json</c> protocol, the endpoint is an email address. </li> <li> For the <c>sms</c> protocol, the endpoint is a phone number of an SMS-enabled device. </li> <li> For the <c>sqs</c> protocol, the endpoint is the ARN of an Amazon SQS queue. </li> <li> For the <c>application</c> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <c>lambda</c> protocol, the endpoint is the ARN of an Lambda function. </li> <li> For the <c>firehose</c> protocol, the endpoint is the ARN of an Amazon Data Firehose delivery stream. </li> </ul></param>
         /// 
         /// <returns>The response from the Subscribe service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
@@ -5504,7 +5528,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5561,7 +5585,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5610,8 +5634,8 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
-        /// <param name="protocol">The protocol that you want to use. Supported protocols include: <ul> <li>  <c>http</c> – delivery of JSON-encoded message via HTTP POST </li> <li>  <c>https</c> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <c>email</c> – delivery of message via SMTP </li> <li>  <c>email-json</c> – delivery of JSON-encoded message via SMTP </li> <li>  <c>sms</c> – delivery of message via SMS </li> <li>  <c>sqs</c> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <c>application</c> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device </li> <li>  <c>lambda</c> – delivery of JSON-encoded message to an Lambda function </li> <li>  <c>firehose</c> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <c>http</c> protocol, the (public) endpoint is a URL beginning with <c>http://</c>. </li> <li> For the <c>https</c> protocol, the (public) endpoint is a URL beginning with <c>https://</c>. </li> <li> For the <c>email</c> protocol, the endpoint is an email address. </li> <li> For the <c>email-json</c> protocol, the endpoint is an email address. </li> <li> For the <c>sms</c> protocol, the endpoint is a phone number of an SMS-enabled device. </li> <li> For the <c>sqs</c> protocol, the endpoint is the ARN of an Amazon SQS queue. </li> <li> For the <c>application</c> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <c>lambda</c> protocol, the endpoint is the ARN of an Lambda function. </li> <li> For the <c>firehose</c> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
+        /// <param name="protocol">The protocol that you want to use. Supported protocols include: <ul> <li>  <c>http</c> – delivery of JSON-encoded message via HTTP POST </li> <li>  <c>https</c> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <c>email</c> – delivery of message via SMTP </li> <li>  <c>email-json</c> – delivery of JSON-encoded message via SMTP </li> <li>  <c>sms</c> – delivery of message via SMS </li> <li>  <c>sqs</c> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <c>application</c> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device </li> <li>  <c>lambda</c> – delivery of JSON-encoded message to an Lambda function </li> <li>  <c>firehose</c> – delivery of JSON-encoded message to an Amazon Data Firehose delivery stream. </li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <c>http</c> protocol, the (public) endpoint is a URL beginning with <c>http://</c>. </li> <li> For the <c>https</c> protocol, the (public) endpoint is a URL beginning with <c>https://</c>. </li> <li> For the <c>email</c> protocol, the endpoint is an email address. </li> <li> For the <c>email-json</c> protocol, the endpoint is an email address. </li> <li> For the <c>sms</c> protocol, the endpoint is a phone number of an SMS-enabled device. </li> <li> For the <c>sqs</c> protocol, the endpoint is the ARN of an Amazon SQS queue. </li> <li> For the <c>application</c> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <c>lambda</c> protocol, the endpoint is the ARN of an Lambda function. </li> <li> For the <c>firehose</c> protocol, the endpoint is the ARN of an Amazon Data Firehose delivery stream. </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5623,7 +5647,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5683,7 +5707,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web Services Support Center.
+        /// the Amazon Web ServicesSupport Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -5877,13 +5901,7 @@ namespace Amazon.SimpleNotificationService
         /// message is delivered to the endpoint, so that the endpoint owner can easily resubscribe
         /// to the topic if the <c>Unsubscribe</c> request was unintended.
         /// 
-        ///  <note> 
-        /// <para>
-        /// Amazon SQS queue subscriptions require authentication for deletion. Only the owner
-        /// of the subscription, or the owner of the topic can unsubscribe using the required
-        /// Amazon Web Services signature.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// This action is throttled at 100 transactions per second (TPS).
         /// </para>
@@ -5924,13 +5942,7 @@ namespace Amazon.SimpleNotificationService
         /// message is delivered to the endpoint, so that the endpoint owner can easily resubscribe
         /// to the topic if the <c>Unsubscribe</c> request was unintended.
         /// 
-        ///  <note> 
-        /// <para>
-        /// Amazon SQS queue subscriptions require authentication for deletion. Only the owner
-        /// of the subscription, or the owner of the topic can unsubscribe using the required
-        /// Amazon Web Services signature.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// This action is throttled at 100 transactions per second (TPS).
         /// </para>
@@ -5973,13 +5985,7 @@ namespace Amazon.SimpleNotificationService
         /// message is delivered to the endpoint, so that the endpoint owner can easily resubscribe
         /// to the topic if the <c>Unsubscribe</c> request was unintended.
         /// 
-        ///  <note> 
-        /// <para>
-        /// Amazon SQS queue subscriptions require authentication for deletion. Only the owner
-        /// of the subscription, or the owner of the topic can unsubscribe using the required
-        /// Amazon Web Services signature.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// This action is throttled at 100 transactions per second (TPS).
         /// </para>
@@ -6023,13 +6029,7 @@ namespace Amazon.SimpleNotificationService
         /// message is delivered to the endpoint, so that the endpoint owner can easily resubscribe
         /// to the topic if the <c>Unsubscribe</c> request was unintended.
         /// 
-        ///  <note> 
-        /// <para>
-        /// Amazon SQS queue subscriptions require authentication for deletion. Only the owner
-        /// of the subscription, or the owner of the topic can unsubscribe using the required
-        /// Amazon Web Services signature.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// This action is throttled at 100 transactions per second (TPS).
         /// </para>
